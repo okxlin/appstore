@@ -1,0 +1,39 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      envKey: EXTERNAL_IP
+      labelEn: ipAddress
+      labelZh: 外部访问IP
+      required: true
+      type: text
+    - default: 5001
+      envKey: PANEL_APP_PORT_WK_API
+      labelEn: WuKongIM api port
+      labelZh: 悟空IM api端口
+      required: true
+      type: number
+    - default: 5100
+      envKey: PANEL_APP_PORT_WK_TCP
+      labelEn: WuKongIM tcp port
+      labelZh: 悟空IM TCP端口
+      required: true
+      type: number
+    - default: 5200
+      envKey: PANEL_APP_PORT_WK_WS
+      labelEn: WuKongIM ws port
+      labelZh: 悟空IM WS端口
+      required: true
+      type: number
+    - default: "5300"
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: WuKongIM web port
+      labelZh: 悟空IM监控端口
+      required: true
+      type: number
+    - default: 5172
+      envKey: PANEL_APP_PORT_WK_DEMO_SERVER
+      labelEn: WuKongIM demo port
+      labelZh: 悟空IM demo端口
+      required: true
+      type: number
+
