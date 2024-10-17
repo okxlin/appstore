@@ -4,7 +4,7 @@ services:
     restart: always
     networks:
       - 1panel-network
-    image: altran1502/immich-server:v1.117.0
+    image: altran1502/immich-server:v1.118.2
     volumes:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
