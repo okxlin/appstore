@@ -1,0 +1,19 @@
+name: PageSpy
+tags:
+  - 实用工具
+title: 支持远程调试多平台的开源工具
+description: 像使用浏览器控制台调试一样简单
+additionalProperties:
+  key: pagespy
+  name: PageSpy
+  tags:
+    - Tool
+  shortDescZh: 支持远程调试多平台的开源工具
+  shortDescEn: Open-source tool supporting remote debugging for multi-platform projects
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 10
+  website: https://pagespy.org
+  github: https://github.com/HuolalaTech/page-spy-web
+  document: https://www.pagespy.org/#/docs
