@@ -1,0 +1,20 @@
+name: WuKongIM
+tags:
+  - IM
+title: 让信息传递更简单
+type: 工具
+description: 让企业轻松拥有自己的即时通讯
+additionalProperties:
+  key: wukongim
+  name: WuKongIM
+  tags:
+    - Tool
+  shortDescZh: 让信息传递更简单
+  shortDescEn: Make messaging easier
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://githubim.com/
+  github: https://github.com/TangSengDaoDao/TangSengDaoDaoServer
+  document: https://githubim.com/

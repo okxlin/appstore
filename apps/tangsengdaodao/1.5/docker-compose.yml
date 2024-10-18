@@ -1,0 +1,78 @@
+version: '3.1'
+services:
+  tsddwukongim:  # 唐僧叨叨通讯服务（悟空IM）
+    container_name: ${CONTAINER_NAME}-wukongim
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/wukongim:v1.2
+    restart: always
+    ports:
+      - "${PANEL_APP_PORT_WK_TCP}:5100"  # tcp长连接端口（外网开放）
+      - "${PANEL_APP_PORT_WK_WS}:5200" # websocket端口（外网开放）
+      - "${PANEL_APP_PORT_WK_WEB_SERVER}:5300" # 监控端口
+    volumes:
+      - ./wukongim:/root/wukongim
+    environment:
+      - WK_MODE=release
+      - WK_EXTERNAL_IP=${EXTERNAL_IP}
+      - WK_CONVERSATION_ON=true
+      - WK_WEBHOOK_GRPCADDR=tangsengdaodaoserver:6979
+      - WK_DATASOURCE_ADDR=http://tangsengdaodaoserver:8090/v1/datasource
+      - WK_DATASOURCE_CHANNELINFOON=true
+      - WK_TOKENAUTHON=true
+    networks:
+      - 1panel-network
+  tangsengdaodaoserver:  # 唐僧叨叨的业务服务
+    container_name: ${CONTAINER_NAME}-tsdd-server
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/tangsengdaodaoserver:v1.5
+    restart: always
+    command: "api"
+    healthcheck:
+      test: "wget -q -Y off -O /dev/null http://localhost:8090/v1/ping > /dev/null 2>&1"
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    depends_on:
+      - tsddwukongim
+    ports:
+      - "${PANEL_APP_PORT_TS_APP_HTTP}:8090"
+    volumes:
+      - ./tsdd:/home/tsdddata
+      # - ./tsdd/configs/tsdd.yaml:/home/configs/tsdd.yaml
+    environment:
+      - TS_MODE=release
+      - TS_WUKONGIM_APIURL=http://tsddwukongim:5001
+      - TS_DB_MYSQLADDR=${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@tcp(${PANEL_DB_HOST}:${PANEL_DB_PORT})/${PANEL_DB_NAME}?charset=utf8mb4&parseTime=true&loc=Local
+      - TS_DB_REDISADDR=${TS_DB_REDIS_HOST}:${TS_DB_REDIS_PORT}
+      - TS_DB_REDISPASS=${TS_DB_REDISPASS}
+      - TS_EXTERNAL_IP=${EXTERNAL_IP}
+      - TS_SMSCODE=${TS_SMSCODE}
+      - TS_ADMINPWD=${TS_ADMINPWD}
+      - TS_FILESERVICE=minio
+      - TS_MINIO_URL=http://${MINIO_HOST}:${MINIO_PORT}
+      - TS_MINIO_ACCESSKEYID=${MINIO_ROOT_USER}
+      - TS_MINIO_SECRETACCESSKEY=${MINIO_ROOT_PASSWORD}
+      - TS_AVATAR_DEFAULTBASEURL=https://api.multiavatar.com/{avatar}.png
+    networks:
+      - 1panel-network
+  tangsengdaodaoweb:  # 唐僧叨叨的web服务
+    container_name: ${CONTAINER_NAME}-tsdd-web
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/tangsengdaodaoweb:latest
+    restart: always
+    environment:
+      - API_URL=http://${EXTERNAL_IP}:${PANEL_APP_PORT_TS_APP_HTTP}/
+    ports:
+      - "${PANEL_APP_PORT_TS_APP_WEB}:80"
+    networks:
+      - 1panel-network
+  tangsengdaodaomanager:  # 唐僧叨叨的后台管理系统
+    container_name: ${CONTAINER_NAME}-tsdd-manager
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/tangsengdaodaomanager:latest
+    restart: always
+    environment:
+      - API_URL=http://${EXTERNAL_IP}:${PANEL_APP_PORT_TS_APP_HTTP}/
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    networks:
+      - 1panel-network
+networks:
+  1panel-network:
+    external: true

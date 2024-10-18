@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  wukongim: # WuKongIM服务
+    container_name: ${CONTAINER_NAME}-wukongim
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/wukongim:v2.0.5-20240925
+    environment:
+      - "WK_CLUSTER_NODEID=1001"
+      - "WK_CLUSTER_SERVERADDR=${EXTERNAL_IP}:11110" # 节点内部通信请求地址
+      - "WK_TRACE_PROMETHEUSAPIURL=http://prometheus:9090" # prometheus监控地址
+      - "WK_MODE=release" # release模式
+      - "WK_EXTERNAL_IP=${EXTERNAL_IP}" # 服务器外网ip
+    healthcheck:
+      test: "wget -q -Y off -O /dev/null http://localhost:5001/health > /dev/null 2>&1"
+      interval: 10s
+      timeout: 10s
+      retries: 3
+    restart: always
+    volumes:
+      - ./wukongim_data:/root/wukongim # 数据挂载到物理机的目录
+    ports:
+      - ${PANEL_APP_PORT_WK_API}:5001 # http api 端口
+      - ${PANEL_APP_PORT_WK_TCP}:5100 # tcp端口
+      - ${PANEL_APP_PORT_WK_WS}:5200 # websocket端口
+      - ${PANEL_APP_PORT_HTTP}:5300 # 管理端端口
+      - ${PANEL_APP_PORT_WK_DEMO_SERVER}:5172 # demo端口
+      - 11110:11110 # 分布式节点通讯端口
+    networks:
+      - 1panel-network
+  prometheus:  # 监控服务
+    container_name: ${CONTAINER_NAME}-prometheus
+    image: registry.cn-shanghai.aliyuncs.com/wukongim/prometheus:v2.53.1
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
+    ports:
+      - "9090:9090"
+    networks:
+      - 1panel-network
+networks:
+  1panel-network:
+    external: true

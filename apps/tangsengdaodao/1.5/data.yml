@@ -1,0 +1,146 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      envKey: EXTERNAL_IP
+      labelEn: External IP
+      labelZh: 外部访问IP
+      required: true
+      type: text
+    - default: ""
+      envKey: PANEL_DB_HOST
+      key: mysql
+      labelEn: Database Service
+      labelZh: 数据库服务
+      required: true
+      type: service
+    - default: tsdd
+      envKey: PANEL_DB_NAME
+      labelEn: Database
+      labelZh: 数据库名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: tsdd
+      envKey: PANEL_DB_USER
+      labelEn: User
+      labelZh: 数据库用户
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: tsdd@123456
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Password
+      labelZh: 数据库用户密码
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: TS_DB_REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: 缓存服务服务
+      required: true
+      type: service
+    - default: 6379
+      envKey: TS_DB_REDIS_PORT
+      labelEn: Redis Port
+      labelZh: 缓存服务端口
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: TS_DB_REDISPASS
+      labelEn: Redis Service Password
+      labelZh: 缓存服务服务密码
+      required: true
+      rule: paramCommon
+      type: password
+    - default: ""
+      edit: true
+      envKey: MINIO_HOST
+      key: minio
+      labelEn: Minio Service
+      labelZh: minio对象存储服务
+      required: true
+      type: service
+    - default: 9000
+      envKey: MINIO_PORT
+      labelEn: minio port
+      labelZh: minio 端口
+      required: true
+      type: number
+    - default: ""
+      envKey: MINIO_ROOT_USER
+      labelEn: minio
+      labelZh: minio用户
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: MINIO_ROOT_PASSWORD
+      labelEn: MinioPassword
+      labelZh: minio用户密码
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 5100
+      envKey: PANEL_APP_PORT_WK_TCP
+      labelEn: WuKongIM tcp port
+      labelZh: 悟空IM TCP端口
+      required: true
+      type: number
+    - default: 5200
+      envKey: PANEL_APP_PORT_WK_WS
+      labelEn: WuKongIM ws port
+      labelZh: 悟空IM WS端口
+      required: true
+      type: number
+    - default: 5300
+      envKey: PANEL_APP_PORT_WK_WEB_SERVER
+      labelEn: WuKongIM web port
+      labelZh: 悟空IM监控端口
+      required: true
+      type: number
+    - default: 123456
+      envKey: TS_SMSCODE
+      labelEn: SMS
+      labelZh: 唐僧叨叨短信验证码
+      required: true
+      type: number
+    - default: superAdmin
+      disabled: true
+      envKey: TS_ADMIN
+      labelEn: Super Admin User
+      labelZh: 唐僧叨叨超级管理员
+      required: true
+      type: text
+    - default: tsdd@123456
+      envKey: TS_ADMINPWD
+      labelEn: Admin Password
+      labelZh: 唐僧叨叨超级管理员默认密码
+      required: true
+      type: text
+    - default: 8090
+      envKey: PANEL_APP_PORT_TS_APP_HTTP
+      labelEn: TangSengDaoDao port
+      labelZh: 唐僧叨叨端口
+      required: true
+      type: number
+    - default: 82
+      envKey: PANEL_APP_PORT_TS_APP_WEB
+      labelEn: TangSengDaoDao web port
+      labelZh: 唐僧叨叨WEB端口
+      required: true
+      type: number
+    - default: 83
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: TangSengDaoDao Management background port
+      labelZh: 唐僧叨叨管理后台端口
+      required: true
+      type: number
