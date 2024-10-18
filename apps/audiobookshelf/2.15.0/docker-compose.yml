@@ -11,7 +11,7 @@ services:
       - "${DATA_PATH2}:/podcasts"
       - "${DATA_PATH}:/config"
       - "${DATA_PATH3}:/metadata"
-    image: advplyr/audiobookshelf:2.15.0
+    image: advplyr/audiobookshelf:2.15.1
     labels:  
       createdBy: "Apps"
 
