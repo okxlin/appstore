@@ -9,7 +9,7 @@ services:
     volumes:
       - "${DATA_PATH}:/opt/cloudbeaver/workspace"
     tty: true
-    image: dbeaver/cloudbeaver:24.2.2
+    image: dbeaver/cloudbeaver:24.2.3
     labels:  
       createdBy: "Apps"
 
