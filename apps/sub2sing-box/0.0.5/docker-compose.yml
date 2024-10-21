@@ -1,6 +1,6 @@
 services:
   sub2sing-box:
-    image: nite07/sub2sing-box:0.0.5
+    image: nite07/sub2sing-box:0.0.6
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
