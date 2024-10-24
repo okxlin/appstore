@@ -1,6 +1,6 @@
 services:
   plex:
-    image: "linuxserver/plex:1.41.0"
+    image: "linuxserver/plex:1.41.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
