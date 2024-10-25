@@ -2,7 +2,7 @@ services:
   tianji:
     container_name: ${CONTAINER_NAME}
     restart: always
-    image: moonrailgun/tianji:1.16.2
+    image: moonrailgun/tianji:1.16.3
     networks:
       - 1panel-network
     ports:
