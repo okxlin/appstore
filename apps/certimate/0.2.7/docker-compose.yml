@@ -1,6 +1,6 @@
 services:
   certimate:
-    image: "usual2970/certimate:v0.2.7"
+    image: "usual2970/certimate:v0.2.8"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
