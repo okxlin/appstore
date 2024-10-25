@@ -20,7 +20,7 @@ services:
       - NEXT_PUBLIC_CustomLogo=${NEXT_PUBLIC_CustomLogo}
       - NEXT_PUBLIC_CustomTitle=${NEXT_PUBLIC_CustomTitle}
       - NEXT_PUBLIC_CustomDescription=${NEXT_PUBLIC_CustomDescription}
-    image: "hamster1963/nezha-dash:v0.8.0"
+    image: "hamster1963/nezha-dash:v1.0.0"
     labels:
       createdBy: "Apps"
 
