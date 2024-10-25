@@ -1,6 +1,6 @@
 #Reference Links ：https://github.com/joseluisq/alpine-php-fpm/blob/master/8.1-fpm/Dockerfile
 
-FROM php:7.4.33-fpm-alpine
+FROM php:8.3.13-fpm-alpine
 
 ARG UNAME=www-data
 ARG UGROUP=www-data
