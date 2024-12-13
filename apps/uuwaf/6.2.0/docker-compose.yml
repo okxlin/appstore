@@ -25,7 +25,7 @@ services:
        wafdb:
          condition: service_healthy
   wafdb:
-    image: "percona/percona-server:5.7.44"
+    image: "percona/percona-server:8.4.2"
     container_name:  ${CONTAINER_NAME}-db
     networks:
       - 1panel-network
