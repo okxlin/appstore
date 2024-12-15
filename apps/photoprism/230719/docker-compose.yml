@@ -71,7 +71,7 @@ services:
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
-    image: photoprism/photoprism:230719
+    image: photoprism/photoprism:20220121
     labels:  
       createdBy: "Apps"
 
