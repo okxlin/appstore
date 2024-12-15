@@ -19,7 +19,7 @@ services:
       - READER_APP_SECURE=true
       - READER_APP_SECUREKEY=${PASSWORD}
       - READER_APP_INVITECODE=${INVITE_CODE}
-    image: hectorqin/reader:3.2.11
+    image: hectorqin/reader:3.2.12
     labels:  
       createdBy: "Apps"
 
