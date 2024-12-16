@@ -116,7 +116,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.2
-    image: postgres:15.8
+    image: postgres:17.2
     volumes:
     - ${SAFELINE_DIR}/resources/postgres/data:/var/lib/postgresql/data
     - /etc/localtime:/etc/localtime:ro
