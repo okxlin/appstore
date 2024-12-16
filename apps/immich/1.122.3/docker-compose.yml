@@ -48,7 +48,7 @@ services:
     restart: always
     networks:
       - 1panel-network
-    image: "redis:6.2-alpine"
+    image: "redis:7.4-alpine"
     healthcheck:
       test: redis-cli ping || exit 1
     labels:  
