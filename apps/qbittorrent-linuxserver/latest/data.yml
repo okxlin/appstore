@@ -1,0 +1,47 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: 6881
+      edit: true
+      envKey: PANEL_APP_PORT_BT_DOWNLOAD_LISTENER
+      labelEn: BT download listener Port
+      labelZh: BT下载监听端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: 6881
+      edit: true
+      envKey: PANEL_APP_PORT_BT_DWNLOAD_DHT_LISTENER
+      labelEn: BT download DHT listener Port(UDP)
+      labelZh: BT下载DHT监听端口(UDP)
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/config
+      edit: true
+      envKey: CONFIG_PATH
+      labelEn: config folder path
+      labelZh: 配置文件路径
+      required: true
+      type: text
+    - default: ./data/downloads
+      edit: true
+      envKey: DOWNLOAD_PATH
+      labelEn: download folder path
+      labelZh: 下载文件路径
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time zone
+      labelZh: 时区
+      required: true
+      type: text

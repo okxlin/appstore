@@ -1,0 +1,14 @@
+additionalProperties:
+  key: qbittorrent-linuxserver
+  name: qbittorrent/linuxserver
+  tags:
+    - Tool
+  shortDescZh: 由LinuxServer.io提供的Qbittorrent容器
+  shortDescEn: A Qbittorrent container, brought to you by LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.linuxserver.io/blog
+  github: https://github.com/linuxserver/docker-qbittorrent
+  document: https://github.com/linuxserver/docker-qbittorrent

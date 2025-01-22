@@ -1,0 +1,25 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}:6881"
+      - "${PANEL_APP_PORT_BT_DWNLOAD_DHT_LISTENER}:6881/udp"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${DOWNLOAD_PATH}:/downloads"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=6881
+      - TZ=${TIME_ZONE}
+    labels:  
+      createdBy: "Apps"
