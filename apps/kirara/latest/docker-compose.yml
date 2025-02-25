@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  kirara-agent:
+    image: lss233/kirara-agent-framework:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    volumes:
+      - "${DATA_PATH}:/app/data"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    networks:
+      - 1panel-network
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

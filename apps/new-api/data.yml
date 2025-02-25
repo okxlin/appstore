@@ -1,0 +1,19 @@
+name: new api
+tags:
+    - AI / 大模型
+title: OpenAI 接口管理 & 分发系统
+description: OpenAI 接口管理 & 分发系统
+additionalProperties:
+  key: new-api
+  name: new api
+  tags:
+    - AI
+  shortDescZh: AI模型接口管理与分发系统，支持将多种大模型转为OpenAI格式调用、支持Midjourney Proxy、Suno、Rerank，兼容易支付协议，可供个人或者企业内部管理与分发渠道使用，本项目基于One API二次开发。
+  shortDescEn: Access all LLM through the standard OpenAI API format, easy to deploy & use
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://nekoapi.com/
+  github: https://github.com/Calcium-Ion/new-api
+  document: https://github.com/Calcium-Ion/new-api/blob/main/README.md

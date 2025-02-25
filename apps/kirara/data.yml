@@ -1,0 +1,21 @@
+name: kirara
+tags:
+- AI / 大模型
+- 聊天机器人
+title: Kirara AI 聊天机器人框架
+description: Kirara AI 聊天机器人框架
+additionalProperties:
+  key: kirara
+  name: kirara
+  tags:
+  - AI
+  - Chatbot
+  shortDescZh: 插件生态 x 工作流系统，DIY 你自己的 AI 聊天机器人！支持DeepSeek、Claude、Grok、OpenAI、Gemini、ChatGLM、Ollama，人设调教，虚拟女仆、语音对话 | 支持 QQ、Telegram、Discord、微信 等平台
+  shortDescEn: Plugin ecosystem x workflow system, DIY your own AI chatbot! Supports DeepSeek, Claude, Grok, OpenAI, Gemini, ChatGLM, Ollama, character customization, virtual maid, voice chat | Supports QQ, Telegram, Discord, WeChat and other platforms
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://kirara-docs.app.lss233.com/
+  github: https://github.com/lss233/chatgpt-mirai-qq-bot/
+  document: https://github.com/lss233/chatgpt-mirai-qq-bot/blob/master/README.md
