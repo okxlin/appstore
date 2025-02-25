@@ -1,0 +1,47 @@
+additionalProperties:
+  formFields:
+  - default: 40247
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Port
+    labelZh: 端口
+    required: true
+    rule: paramPort
+    type: number
+  - default: "password"
+    edit: true
+    envKey: OPENAI_API_KEY
+    labelEn: OpenAI API Key
+    labelZh: OpenAI API 密钥
+    required: false
+    type: password
+  - default: "https://api.openai.com/v1"
+    edit: true
+    envKey: OPENAI_PROXY_URL
+    labelEn: OpenAI Proxy URL
+    labelZh: OpenAI 代理 URL
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: ACCESS_CODE
+    labelEn: Access Code
+    labelZh: 访问密码
+    random: true
+    required: false
+    rule: paramComplexity
+    type: password
+  - default: ""
+    edit: true
+    envKey: OPENAI_MODEL_LIST
+    labelEn: OpenAI Model List
+    labelZh: OpenAI 模型列表
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: SEARXNG_URL
+    labelEn: SEARXNG_URL
+    labelZh: searxng地址
+    required: false
+    type: text
