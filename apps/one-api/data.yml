@@ -1,0 +1,19 @@
+name: One API
+tags:
+    - AI / 大模型
+title: OpenAI 接口管理 & 分发系统
+description: OpenAI 接口管理 & 分发系统
+additionalProperties:
+  key: one-api
+  name: One API
+  tags:
+    - AI
+  shortDescZh: 通过标准的 OpenAI API 格式访问所有的大模型，开箱即用
+  shortDescEn: Access all LLM through the standard OpenAI API format, easy to deploy & use
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://openai.justsong.cn/
+  github: https://github.com/songquanpeng/one-api
+  document: https://github.com/songquanpeng/one-api

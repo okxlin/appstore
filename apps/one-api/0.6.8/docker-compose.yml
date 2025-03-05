@@ -1,0 +1,24 @@
+services:
+  one-api:
+    image: justsong/one-api:v0.6.8
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:3000
+    networks:
+      - 1panel-network
+    volumes:
+      - ./data:/data
+    environment:
+      - SQL_DSN=${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@tcp(${PANEL_DB_HOST}:3306)/${PANEL_DB_NAME}  # 修改此行，或注释掉以使用 SQLite 作为数据库
+      - TZ=${TZ}
+#      - REDIS_CONN_STRING=redis://redis
+#      - SESSION_SECRET=random_string  # 修改为随机字符串
+#      - NODE_TYPE=slave  # 多机部署时从节点取消注释该行
+#      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
+#      - FRONTEND_BASE_URL=https://openai.justsong.cn  # 多机部署时从节点取消注释该行
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true
