@@ -1,0 +1,18 @@
+name: NodeBB - GHCR
+tags:
+  - 建站
+title: 基于 Node.js 的现代化论坛程序（GHCR版本）
+description: 基于 Node.js 的现代化论坛程序（GHCR版本）
+additionalProperties:
+  key: nodebb_ghcr
+  name: NodeBB - GHCR
+  tags:
+    - Website
+  shortDescZh: 基于 Node.js 的现代化论坛程序（GHCR版本）
+  shortDescEn: Open source Forum Powered by Node.js(GHCR Version)
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://nodebb.org
+  github: https://github.com/NodeBB/NodeBB
+  document: https://docs.nodebb.org
