@@ -45,7 +45,7 @@ services:
       # Postgres
       #- WOODPECKER_DATABASE_DRIVER=postgres
       #- WOODPECKER_DATABASE_DATASOURCE=postgres://root:password@1.2.3.4:5432/postgres?sslmode=disable
-    image: woodpeckerci/woodpecker-server:v2.8.1
+    image: woodpeckerci/woodpecker-server:v2.8.3
     labels:  
       createdBy: "Apps"
 
@@ -63,7 +63,7 @@ services:
     environment:
       - WOODPECKER_SERVER=woodpecker-server:9000
       - WOODPECKER_AGENT_SECRET=${WOODPECKER_AGENT_SECRET}
-    image: woodpeckerci/woodpecker-server:v2.8.1
+    image: woodpeckerci/woodpecker-server:v2.8.3
     labels:  
       createdBy: "Apps"
 
