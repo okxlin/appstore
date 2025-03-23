@@ -12,7 +12,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-    image: ghcr.io/gethomepage/homepage:v0.9.13
+    image: ghcr.io/gethomepage/homepage:v0.10.9
     labels:  
       createdBy: "Apps"
 
