@@ -1,0 +1,47 @@
+services:
+  rsstgbot:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DATA_PATH}:/app/config"
+    environment:
+      - TOKEN=${BOT_TOKEN}  # get it from @BotFather
+      - MANAGER=${TELEGRAM_USER_ID}  # get it from @userinfobot
+      - TELEGRAPH_TOKEN=
+        ${TELEGRAPH_API_TOKEN1}
+        ${TELEGRAPH_API_TOKEN2}
+        ${TELEGRAPH_API_TOKEN3}
+        ${TELEGRAPH_API_TOKEN4}
+        ${TELEGRAPH_API_TOKEN5}
+        ${TELEGRAPH_API_TOKEN6}
+      - MULTIUSER=1  # default: 1
+      - CRON_SECOND=0  # 0-59, default: 0
+      #- DATABASE_URL=postgres://username:password@host:port/db_name  # default: sqlite://path/to/config/db.sqlite3
+      - API_ID=${TG_API_ID}  # get it from https://core.telegram.org/api/obtaining_api_id
+      - API_HASH=${TG_API_HASH}  # get it from https://core.telegram.org/api/obtaining_api_id
+      #- IMG_RELAY_SERVER=https://wsrv.nl/?url=  # default: https://rsstt-img-relay.rongrong.workers.dev/
+      #- IMAGES_WESERV_NL=https://t0.nl/  # default: https://wsrv.nl/
+      - USER_AGENT=${USERAGENT}  # default: RSStT/2.2 RSS Reader
+      #- IPV6_PRIOR=1  # default: 0
+      - T_PROXY=${PROXY_SERVER}  # Proxy used to connect to the Telegram API
+      - R_PROXY=${PROXY_SERVER}  # Proxy used to fetch feeds
+      #- PROXY_BYPASS_PRIVATE=1  # default: 0
+      #- PROXY_BYPASS_DOMAINS=example.com;example.net
+      - HTTP_TIMEOUT=30  # default: 12
+      - HTTP_CONCURRENCY=1024 # default: 1024
+      - HTTP_CONCURRENCY_PER_HOST=16  # default: 16
+      #- TABLE_TO_IMAGE=1  # default: 0
+      #- TRAFFIC_SAVING=1  # default: 0
+      #- LAZY_MEDIA_VALIDATION=1  # default: 0
+      #- MANAGER_PRIVILEGED=1  # default: 0
+      #- NO_UVLOOP=1  # default: 0
+      #- MULTIPROCESSING=1  # default: 0
+      #- DEBUG=1  # debug logging, default: 0
+    image: rongronggg9/rss-to-telegram:2.10.0
+    labels:
+      createdBy: Apps
+networks:
+  1panel-network:
+    external: true

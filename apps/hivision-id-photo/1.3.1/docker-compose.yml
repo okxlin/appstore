@@ -1,0 +1,21 @@
+services:
+  hivision-id-photo:
+    image: "linzeyi/hivision_idphotos:v1.3.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP_INTERNAL}"
+    environment:
+      - FACE_PLUS_API_KEY=${FACE_PLUS_API_KEY}
+      - FACE_PLUS_API_SECRET=${FACE_PLUS_API_SECRET}
+      - RUN_MODE=${RUN_MODE}
+      - DEFAULT_LANG=${DEFAULT_LANG}
+    command: ${COMMAND}
+    labels:  
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
