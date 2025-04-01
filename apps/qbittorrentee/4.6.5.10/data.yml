@@ -1,0 +1,25 @@
+additionalProperties:
+    formFields:
+        - default: 8080
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: WebUI Port
+          labelZh: 网页端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: 6881
+          edit: true
+          envKey: PEER_PORT_VALUE
+          labelEn: Peer Port
+          labelZh: BT端口
+          required: true
+          rule: paramPort
+          type: number
+        - default: ./data/downloads
+          edit: true
+          envKey: DOWNLOAD_PATH
+          labelEn: Download folder path
+          labelZh: 下载文件夹路径
+          required: true
+          type: text

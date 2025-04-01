@@ -1,0 +1,25 @@
+services:
+  qbittorrent:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+        - UID=1000
+        - GID=1000
+        - PEER_PORT=6881
+        - WEB_PORT=${PANEL_APP_PORT_HTTP}
+    ports:
+        - "${PEER_PORT_VALUE}:6881"
+        - "${PEER_PORT_VALUE}:6881/udp"
+        - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+    volumes:
+        - "./data/.config:/data/.config"
+        - "${DOWNLOAD_PATH}:/data/downloads"
+    image: "superng6/qbittorrent:4.6.5_v2.0.10"
+    labels:  
+      createdBy: "Apps"
+   
+networks:  
+  1panel-network:  
+    external: true
