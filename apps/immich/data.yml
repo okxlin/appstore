@@ -1,19 +1,19 @@
-name: Immich
+name: immich
 tags:
-  - 多媒体
-title: 高性能的自托管照片和视频备份方案
-description: 高性能的自托管照片和视频备份方案
+    - 多媒体
+title: 高性能自托管照片和视频管理解决方案
+description: 高性能自托管照片和视频管理解决方案
 additionalProperties:
-  key: immich
-  name: Immich
-  tags:
-    - Media
-  shortDescZh: 高性能的自托管照片和视频备份方案
-  shortDescEn: High performance self-hosted photo and video backup solution
-  type: tool
-  crossVersionUpdate: true
-  limit: 0
-  recommend: 0
-  website: https://immich.app
-  github: https://github.com/immich-app/immich
-  document: https://immich.app/docs
+    key: immich
+    name: immich
+    tags:
+        - Media
+    shortDescZh: 高性能自托管照片和视频管理解决方案
+    shortDescEn: High performance self-hosted photo and video management solution
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://immich.app
+    github: https://github.com/immich-app/immich
+    document: https://immich.app/docs/overview/introduction

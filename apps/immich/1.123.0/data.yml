@@ -1,0 +1,56 @@
+additionalProperties:
+  formFields:
+    - default: 2283
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+
+    - default: ./data/upload
+      edit: true
+      envKey: UPLOAD_LOCATION
+      labelEn: Upload folder path
+      labelZh: 照片上传路径
+      required: true
+      type: text
+    - default: ./data/model
+      edit: true
+      envKey: MODEL_LOCATION
+      labelEn: Model folder path
+      labelZh: 模型缓存路径
+      required: true
+      type: text
+
+    - default: ./data/db
+      edit: true
+      envKey:  DB_DATA_LOCATION
+      labelEn: DB folder path
+      labelZh: 数据库路径
+      required: true
+      type: text
+
+    - default: ""
+      envKey: PANEL_REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: redis 服务
+      required: true
+      type: service
+    - default: ""
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Password
+      labelZh: redis 密码
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 0
+      envKey: PANEL_REDIS_DBINDEX
+      labelEn: Index
+      labelZh: redis 数据库索引
+      random: false
+      required: true
+      type: number
