@@ -1,6 +1,6 @@
 #Reference Links ：https://github.com/docker-library/php/issues/926#issuecomment-567230723
 
-FROM php:8.1.17-fpm
+FROM php:8.4.6-fpm
 
 ARG UNAME=www-data
 ARG UGROUP=www-data
