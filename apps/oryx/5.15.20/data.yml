@@ -1,0 +1,39 @@
+additionalProperties:  #固定参数
+    formFields:  
+        - default: 2022
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Web Port
+          labelZh: Web面板端口
+          required: true
+          type: number
+        - default: 2443
+          envKey: PANEL_APP_PORT_HTTPS
+          labelEn: HTTPS Web Port
+          labelZh: HTTPS Web面板端口
+          required: true
+          type: number
+        - default: 1935
+          envKey: RTMP_PORT
+          labelEn: RTMP Port
+          labelZh: RTMP端口
+          required: true
+          type: number
+        - default: 10080
+          envKey: SRT_PORT
+          labelEn: SRT Port
+          labelZh: SRT端口
+          required: true
+          type: number
+        - default: 8000
+          envKey: WEBRTC_PORT
+          labelEn: WebRTC Port
+          labelZh: WebRTC端口
+          required: true
+          type: number
+        - default: ./data
+          edit: true
+          envKey: DATA_PATH
+          labelEn: Data folder path
+          labelZh: 数据目录
+          required: true
+          type: text
