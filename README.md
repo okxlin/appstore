@@ -25,6 +25,7 @@
   - [2.2 国际互联网络](#22-国际互联网络)
     - [2.2.1 使用 git 命令获取应用](#221-使用-git-命令获取应用)
     - [2.2.2 使用压缩包方式获取应用](#222-使用压缩包方式获取应用)
+  - [2.3 支持fnOS(飞牛OS)的1panel计划任务](#23-支持fnos飞牛os的1panel计划任务)
 - [3. 备注](#3-备注)
 - [4. 应用一览图](#4-应用一览图)
 
@@ -130,7 +131,21 @@ rm -rf /opt/1panel/resource/apps/local/localApps.zip
 
 然后应用商店刷新本地应用即可。
 
+### 2.3 支持fnOS(飞牛OS)的1panel计划任务
 
+请将脚本内的`/vol1`替换为实际存储空间
+
+```shell
+wget -P /vol1/@appdata/1Panel/1panel/resource/apps/local https://gh-proxy.com/https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip &&
+
+unzip -o -d /vol1/@appdata/1Panel/1panel/resource/apps/local/ /vol1/@appdata/1Panel/1panel/resource/apps/local/localApps.zip &&
+
+cp -rf /vol1/@appdata/1Panel/1panel/resource/apps/local/appstore-localApps/apps/* /vol1/@appdata/1Panel/1panel/resource/apps/local/ &&
+
+rm -rf /vol1/@appdata/1Panel/1panel/resource/apps/local/appstore-localApps &&
+
+rm -rf /vol1/@appdata/1Panel/1panel/resource/apps/local/localApps.zip
+```
 ## 3. 备注
 
 **未显示在本地应用列表里的，表示未完全适配应用商店面板操作**
@@ -158,7 +173,6 @@ docker-compose up -d
 cat ./data/hbbs/id_ed25519.pub
 
 ```
-
-## 4. 应用一览图
+## 5. 应用一览图
 
 ![](https://github.com/okxlin/appstore/raw/localApps/docs/app-list.png)
