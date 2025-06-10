@@ -1,0 +1,25 @@
+services:
+  libretv:
+    image: bestzwei/libretv:latest
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${HOST_IP}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - PASSWORD=${PANEL_APP_PASSWORD:-111111}
+    volumes:
+      - libretv_data:/app
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+volumes:
+  libretv_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data
+
+networks:
+  1panel-network:
+    external: true
