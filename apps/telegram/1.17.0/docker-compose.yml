@@ -1,0 +1,24 @@
+services:
+  telegram:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:6901"
+    volumes:
+      - "telegram_data:/home/kasm-user"
+    environment:
+      - VNC_PW=${HTTP_PWD}
+    shm_size: ${MEM_USE}
+    tty: true
+    image: kasmweb/telegram:1.17.0
+    labels:  
+      createdBy: "Apps"
+
+volumes:
+  telegram_data:
+
+networks:  
+  1panel-network:  
+    external: true

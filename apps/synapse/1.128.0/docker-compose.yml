@@ -1,0 +1,29 @@
+services:
+  synapse:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - synapse-data:/data
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8008"
+    environment:
+      - TZ=Asia/Shanghai
+      - UID=1000
+      - GID=1000
+    image: matrixdotorg/synapse:v1.128.0
+    logging:
+      options:
+        max-size: "10m"
+    command: run -m synapse.app.homeserver --config-path=/data/homeserver.yaml
+    labels:  
+      createdBy: "Apps"
+
+volumes:
+  synapse-data:
+    external: true
+
+networks:  
+  1panel-network:  
+    external: true
