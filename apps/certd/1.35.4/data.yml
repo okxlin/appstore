@@ -1,0 +1,76 @@
+additionalProperties:
+  formFields:
+    - default: "40311"
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Path
+      labelZh: 数据路径
+      required: true
+      type: text
+    - default: "223.5.5.5"
+      edit: true
+      envKey: DNS_1
+      labelEn: Primary DNS
+      labelZh: 主 DNS
+      required: true
+      type: text
+    - default: "119.29.29.29"
+      edit: true
+      envKey: DNS_2
+      labelEn: Secondary DNS
+      labelZh: 次 DNS
+      required: true
+      type: text
+    - default: "Asia/Shanghai"
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: HTTPS_PROXY
+      labelEn: HTTPS Proxy
+      labelZh: HTTPS 代理
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: HTTP_PROXY
+      labelEn: HTTP Proxy
+      labelZh: HTTP 代理
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: RESET_ADMIN_PASSWD
+      labelEn: Reset Admin Password
+      labelZh: 重置管理员密码
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: IMMEDIATE_TRIGGER
+      labelEn: Immediate trigger of cron
+      labelZh: 立即触发定时任务
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
