@@ -1,0 +1,13 @@
+additionalProperties:
+  key: oryx
+  name: oryx
+  tags:
+    - Local
+  shortDescZh: 开源音视频服务器
+  shortDescEn: Open-source audio and video server
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  website: https://ossrs.net/oryx
+  github: https://github.com/ossrs/oryx
+  document: https://ossrs.net/lts/zh-cn/docs/v6/doc/getting-started-oryx

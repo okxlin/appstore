@@ -1,0 +1,13 @@
+additionalProperties:
+  crossVersionUpdate: true
+  document: https://github.com/dnl50/tsa
+  github: https://github.com/dnl50/tsa
+  key: timestamp-server
+  limit: 0
+  name: timestamp-server
+  shortDescEn: timestamp-server
+  shortDescZh: 时间戳服务器
+  tags:
+  - Tool
+  type: runtime
+  website: https://github.com/dnl50/tsa
