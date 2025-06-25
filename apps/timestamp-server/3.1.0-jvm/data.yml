@@ -1,0 +1,16 @@
+additionalProperties:
+  formFields:
+    - default: 43718
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: service Port
+      labelZh: 服务端口
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: P12_PASSWORD
+      labelEn: Pfx Cert Password
+      labelZh: Pfx证书密码(无密码不填)
+      required: false
+      type: text
