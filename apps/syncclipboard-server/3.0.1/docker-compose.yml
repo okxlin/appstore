@@ -1,0 +1,17 @@
+services:
+  syncclipboard-server:
+    image: jericx/syncclipboard-server:v3.0.1
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5033"
+    volumes:
+      - ${CONFIG_FILE_PATH}:/app/appsettings.json
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

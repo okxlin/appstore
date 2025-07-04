@@ -1,0 +1,22 @@
+services:
+  mt-photos:
+    image: "mtphotos/mt-photos:1.38.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8063"
+    environment:
+      - TZ=${TIME_ZONE}
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${UPLOAD_PATH}:/upload"
+      - "${MEDIA_PATH}:${MEDIA_PATH_INTERNAL}"
+      - "${MEDIA_PATH_2}:${MEDIA_PATH_INTERNAL_2}"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

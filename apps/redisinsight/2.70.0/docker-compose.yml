@@ -1,0 +1,27 @@
+services:
+  redisinsight:
+    image: "redis/redisinsight:2.70.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+    volumes:
+      - ${DATA_PATH}:/data
+    environment:
+      - RI_APP_PORT=${PANEL_APP_PORT_HTTP}
+      - RI_APP_HOST=${RI_APP_HOST}
+      - RI_SERVER_TLS_KEY=${RI_SERVER_TLS_KEY}
+      - RI_SERVER_TLS_CERT=${RI_SERVER_TLS_CERT}
+      - RI_ENCRYPTION_KEY=${RI_ENCRYPTION_KEY}
+      - RI_LOG_LEVEL=${RI_LOG_LEVEL}
+      - RI_FILES_LOGGER=${RI_FILES_LOGGER}
+      - RI_STDOUT_LOGGER=${RI_STDOUT_LOGGER}
+      - RI_PROXY_PATH=${RI_PROXY_PATH}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

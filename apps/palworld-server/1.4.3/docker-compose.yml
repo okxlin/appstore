@@ -1,0 +1,35 @@
+services:
+  palworld-server:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}/udp
+      - ${PANEL_APP_PORT_RCON}:${PANEL_APP_PORT_RCON}/tcp
+      - ${PANEL_APP_PORT_QUERY}:${PANEL_APP_PORT_QUERY}/udp
+    volumes:
+      - ${DATA_PATH}:/palworld/
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PORT=${PANEL_APP_PORT_HTTP}
+      - PLAYERS=${MAX_PLAYERS}
+      - MULTITHREADING=${MULTITHREAD_SWITCH}
+      - COMMUNITY=${PUBLIC_SWITCH}
+      - PUBLIC_IP=${PUBLIC_IP}
+      - PUBLIC_PORT=${PANEL_APP_PORT_PUBLIC}
+      - UPDATE_ON_BOOT=${UPDATE_SWITCH}
+      - SERVER_NAME=${SERVER_NAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - SERVER_PASSWORD=${SERVER_PASSWORD}
+      - RCON_ENABLED=${RCON_SWITCH}
+      - RCON_PORT=${PANEL_APP_PORT_RCON}
+      - QUERY_PORT=${PANEL_APP_PORT_QUERY}
+    image: thijsvanloef/palworld-server-docker:v1.4.3
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

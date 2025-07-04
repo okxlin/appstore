@@ -1,0 +1,23 @@
+services:
+  flexget:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5050"
+    volumes:
+      - ./data/config:/config
+      - ${DATA_PATH}:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - FG_WEBUI_PASSWD=${WEB_PASSWORD}
+    image: wiserain/flexget:3.16.9
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

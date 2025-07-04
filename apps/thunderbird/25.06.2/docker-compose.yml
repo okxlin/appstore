@@ -1,0 +1,46 @@
+services:
+  thunderbird:
+    image: "jlesage/thunderbird:v25.06.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+      - "${VNC_PORT}:${VNC_PORT}"
+    volumes:
+      - ${CONFIG_PATH}:/config:rw
+    environment:
+      - USER_ID=${USER_ID}
+      - GROUP_ID=${GROUP_ID}
+      - SUP_GROUP_IDS=${SUP_GROUP_IDS}
+      - UMASK=${UMASK}
+      - LANG=${LANG}
+      - TZ=${TZ}
+      - KEEP_APP_RUNNING=${KEEP_APP_RUNNING}
+      - APP_NICENESS=${APP_NICENESS}
+      - INSTALL_PACKAGES=${INSTALL_PACKAGES}
+      - PACKAGES_MIRROR=${PACKAGES_MIRROR}
+      - CONTAINER_DEBUG=${CONTAINER_DEBUG}
+      - DISPLAY_WIDTH=${DISPLAY_WIDTH}
+      - DISPLAY_HEIGHT=${DISPLAY_HEIGHT}
+      - DARK_MODE=${DARK_MODE}
+      - WEB_AUDIO=${WEB_AUDIO}
+      - WEB_AUTHENTICATION=${WEB_AUTHENTICATION}
+      - WEB_AUTHENTICATION_USERNAME=${WEB_AUTHENTICATION_USERNAME}
+      - WEB_AUTHENTICATION_PASSWORD=${WEB_AUTHENTICATION_PASSWORD}
+      - SECURE_CONNECTION=${SECURE_CONNECTION}
+      - SECURE_CONNECTION_VNC_METHOD=${SECURE_CONNECTION_VNC_METHOD}
+      - SECURE_CONNECTION_CERTS_CHECK_INTERVAL=${SECURE_CONNECTION_CERTS_CHECK_INTERVAL}
+      - WEB_LISTENING_PORT=${PANEL_APP_PORT_HTTP}
+      - VNC_LISTENING_PORT=${VNC_PORT}
+      - VNC_PASSWORD=${VNC_PASSWORD}
+      - ENABLE_CJK_FONT=${ENABLE_CJK_FONT}
+    cap_add:
+      - SYS_NICE
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

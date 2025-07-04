@@ -1,0 +1,23 @@
+services:
+  radarr:
+    image: "linuxserver/radarr:5.26.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TIME_ZONE}
+    volumes:
+      - ${RADARR_CONFIG_PATH}:/config
+      - ${MOVIES_PATH}:/movies
+      - ${DOWNLOADS_PATH}:/downloads
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7878"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

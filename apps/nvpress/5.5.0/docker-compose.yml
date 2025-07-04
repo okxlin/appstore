@@ -1,0 +1,19 @@
+services:
+  nvpress:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8081"
+    volumes:
+      - "${DATA_PATH}/nv-content:/usr/src/app/nv-content"
+      - "${DATA_PATH}/nv-themes:/usr/src/app/nv-themes"
+      - "${DATA_PATH}/nv-plugins:/usr/src/app/nv-plugins"
+    image: pandastd/nvpress:5.5.0
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

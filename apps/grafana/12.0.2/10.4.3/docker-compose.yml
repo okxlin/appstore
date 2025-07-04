@@ -1,0 +1,18 @@
+services:
+  grafana:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    volumes:
+      - ./data:/var/lib/grafana
+    user: '0'
+    image: grafana/grafana:12.0.2
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
