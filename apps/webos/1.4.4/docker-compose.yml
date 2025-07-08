@@ -1,0 +1,19 @@
+services:
+  webos:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8088"
+    volumes:
+      - "${DATA_PATH}/rootPath:/webos/api/rootPath"
+      - "${DATA_PATH}/apps:/webos/web/apps"
+    tty: true
+    image: fs185085781/webos:v1.4.4
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

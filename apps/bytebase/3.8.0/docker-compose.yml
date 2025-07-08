@@ -1,0 +1,29 @@
+services:
+  bytebase:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${DATA_PATH}:/var/opt/bytebase"
+    init: true
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5678/healthz", "||", "exit", "1"]
+      interval: 5m
+      timeout: 60s
+    command:
+      - "--data"
+      - "/var/opt/bytebase"
+      - "--port"
+      - "8080"
+      - "--pg"
+      - "postgresql://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${PANEL_DB_NAME}"
+    image: bytebase/bytebase:3.8.0
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

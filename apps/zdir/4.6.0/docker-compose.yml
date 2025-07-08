@@ -1,0 +1,18 @@
+services:
+  zdir:
+    image: helloz/zdir:4.6.0
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:6080"
+    volumes:
+      - "${DATA_PATH}:/data/apps/zdir/data"
+      - "${MOUNT_PATH}:/data/apps/zdir/data/public"
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

@@ -1,0 +1,32 @@
+services:
+  chevereto:
+    image: "chevereto/chevereto:4.3.6"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - ${CHEVERETO_IMAGES_PATH}:/var/www/html/images/
+    environment:
+      - VIRTUAL_HOST=${CHEVERETO_HOSTNAME}
+      - LETSENCRYPT_HOST=${CHEVERETO_HOSTNAME}
+      - CHEVERETO_DB_HOST=${PANEL_DB_HOST}
+      - CHEVERETO_DB_USER=${PANEL_DB_USER}
+      - CHEVERETO_DB_PASS=${PANEL_DB_USER_PASSWORD}
+      - CHEVERETO_DB_PORT=${PANEL_DB_PORT}
+      - CHEVERETO_DB_NAME=${PANEL_DB_NAME}
+      - CHEVERETO_HEADER_CLIENT_IP=${CHEVERETO_HEADER_CLIENT_IP}
+      - CHEVERETO_HOSTNAME=${CHEVERETO_HOSTNAME}
+      - CHEVERETO_HOSTNAME_PATH=${CHEVERETO_HOSTNAME_PATH}
+      - CHEVERETO_ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - CHEVERETO_MAX_POST_SIZE=${CHEVERETO_MAX_POST_SIZE}
+      - CHEVERETO_MAX_UPLOAD_SIZE=${CHEVERETO_MAX_UPLOAD_SIZE}
+      - CHEVERETO_SERVICING=${CHEVERETO_SERVICING}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

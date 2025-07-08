@@ -1,0 +1,17 @@
+services:
+  easynode:
+    image: "chaoszhu/easynode:v3.0.7"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8082"
+    volumes:
+      - ${DATA_PATH}:/easynode/app/db
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

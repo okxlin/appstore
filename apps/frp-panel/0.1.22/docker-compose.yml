@@ -1,0 +1,9 @@
+services:
+  frp-panel:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    command: ${COMMAND_LINE}
+    image: vaalacat/frp-panel:v0.1.22
+    labels:  
+      createdBy: "Apps"

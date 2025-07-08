@@ -1,0 +1,24 @@
+services:
+  upsnap:
+    image: "seriousm4x/upsnap:5.1"
+    container_name: ${CONTAINER_NAME}
+    network_mode: host
+    restart: always
+    volumes:
+      - ${DATA_PATH}:/app/pb_data
+    environment:
+      - TZ=${TIME_ZONE}
+      - UPSNAP_INTERVAL=${UPSNAP_INTERVAL}
+      - UPSNAP_SCAN_RANGE=${UPSNAP_SCAN_RANGE}
+      - UPSNAP_SCAN_TIMEOUT=${UPSNAP_SCAN_TIMEOUT}
+      - UPSNAP_PING_PRIVILEGED=${UPSNAP_PING_PRIVILEGED}
+      - UPSNAP_WEBSITE_TITLE=${UPSNAP_WEBSITE_TITLE}
+    healthcheck:
+      test: curl -fs "http://localhost:${PANEL_APP_PORT_HTTP}/api/health" || exit 1
+      interval: 10s
+    dns:
+      - ${DNS_SERVER_1}
+      - ${DNS_SERVER_2}
+    entrypoint: /bin/sh -c "./upsnap serve --http ${LISTEN_ADDR}:${PANEL_APP_PORT_HTTP}"
+    labels:
+      createdBy: "Apps"

@@ -1,0 +1,20 @@
+services:
+  mediawiki:
+    image: "mediawiki:1.44.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - ${MEDIAWIKI_IMAGES_PATH}:/var/www/html/images
+      - ${MEDIAWIKI_DATA_PATH}:${INTERNAL_DATA_PATH}
+      # 以下行前添加#号表示关闭映射，可进行初始化配置生成
+      - ${LOCAL_SETTINGS_PATH}:/var/www/html/LocalSettings.php
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

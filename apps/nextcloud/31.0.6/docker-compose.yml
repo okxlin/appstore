@@ -1,0 +1,22 @@
+services:
+  nextcloud:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:443"
+    volumes:
+      - "${DATA_PATH}/config:/config"
+      - "${DATA_PATH}/data:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    image: linuxserver/nextcloud:31.0.6
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

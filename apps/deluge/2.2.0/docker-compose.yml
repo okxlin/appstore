@@ -1,0 +1,26 @@
+services:
+  deluge:
+    image: "linuxserver/deluge:2.2.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TIME_ZONE}
+      - DELUGE_LOGLEVEL=${DELUGE_LOGLEVEL}
+    volumes:
+      - ${CONFIG_PATH}:/config
+      - ${DOWNLOAD_PATH}:/downloads
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8112"
+      - "${DELUGE_PEER_PORT}:${DELUGE_PEER_PORT}"
+      - "${DELUGE_PEER_PORT}:${DELUGE_PEER_PORT}/udp"
+      - "${DELUGE_PORT_RPC}:${DELUGE_PORT_RPC}"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

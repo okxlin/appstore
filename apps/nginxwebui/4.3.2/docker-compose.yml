@@ -1,0 +1,13 @@
+services:
+  nginxwebui:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    volumes:
+      - ./data:/home/nginxWebUI
+    environment:
+      - "BOOT_OPTIONS=--server.port=${PANEL_APP_PORT_CONSOLE}"
+    privileged: true
+    image: cym1102/nginxwebui:4.3.2
+    labels:  
+      createdBy: "Apps"

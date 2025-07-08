@@ -1,0 +1,24 @@
+services:
+  seatable:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+      #- "${PANEL_APP_PORT_HTTPS}:443"
+    volumes:
+      - "${DATA_PATH}:/shared"
+    environment:
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_ROOT_PASSWD=${PANEL_DB_ROOT_PASSWORD}
+      - TIME_ZONE=${TIME_ZONE}
+      - SEATABLE_SERVER_HOSTNAME=${SERVER_HOSTNAME}
+      - SEATABLE_SERVER_LETSENCRYPT=false
+    image: seatable/seatable-developer:5.3.0
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

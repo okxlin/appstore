@@ -1,0 +1,29 @@
+services:
+  nezha-dash:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - NezhaBaseUrl=${NEZHA_BASE_URL}
+      - NezhaAuth=${NEZHA_AUTH}
+      - DefaultLocale=${DEFAULT_LOCALE}
+      - ForceShowAllServers=${ForceShowAllServers}
+      - NEXT_PUBLIC_NezhaFetchInterval=${NEXT_PUBLIC_NezhaFetchInterval}
+      - NEXT_PUBLIC_ShowFlag=${NEXT_PUBLIC_ShowFlag}
+      - NEXT_PUBLIC_DisableCartoon=${NEXT_PUBLIC_DisableCartoon}
+      - NEXT_PUBLIC_ShowTag=${NEXT_PUBLIC_ShowTag}
+      - NEXT_PUBLIC_ShowNetTransfer=${NEXT_PUBLIC_ShowNetTransfer}
+      - NEXT_PUBLIC_ForceUseSvgFlag=${NEXT_PUBLIC_ForceUseSvgFlag}
+      - NEXT_PUBLIC_CustomLogo=${NEXT_PUBLIC_CustomLogo}
+      - NEXT_PUBLIC_CustomTitle=${NEXT_PUBLIC_CustomTitle}
+      - NEXT_PUBLIC_CustomDescription=${NEXT_PUBLIC_CustomDescription}
+    image: "hamster1963/nezha-dash:v2.9.6"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,23 @@
+services:
+  freshrss:
+    image: "freshrss/freshrss:1.26.3"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+    volumes:
+      - ${DATA_PATH}/data:/var/www/FreshRSS/data
+      - ${EXTENSIONS_PATH}:/var/www/FreshRSS/extensions
+    environment:
+      - TZ=${TIME_ZONE}
+      - CRON_MIN=${CRON_MIN}
+      - FRESHRSS_ENV=${FRESHRSS_ENV}
+      - LISTEN=0.0.0.0:${PANEL_APP_PORT_HTTP}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

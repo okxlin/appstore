@@ -1,0 +1,20 @@
+services:
+  easytier:
+    image: "easytier/easytier:v2.3.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    privileged: ${PRIVILEGED_MODE}
+    hostname: ${HOSTNAME}
+    environment:
+      - TZ=${TIME_ZONE}
+    volumes:
+      - ${DATA_PATH}:/root
+      - ${CONFIG_FILE_PATH}:${CONFIG_FILE_PATH_INTERNAL}
+    command: ${COMMAND}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

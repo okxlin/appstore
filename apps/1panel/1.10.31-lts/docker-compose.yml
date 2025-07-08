@@ -1,0 +1,15 @@
+services:
+  1panel:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: "host"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+      - ${DATA_PATH}:/opt
+      - /root:/root
+    environment:
+      - TZ=${TIME_ZONE}
+    image: moelin/1panel:v1.10.31-lts
+    labels:  
+      createdBy: "Apps"

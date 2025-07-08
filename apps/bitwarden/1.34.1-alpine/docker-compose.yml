@@ -1,0 +1,21 @@
+services:
+  bitwarden:
+    image: "vaultwarden/server:1.34.1-alpine"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${DATA_PATH}:/data"
+    environment:
+      - SIGNUPS_ALLOWED=${SIGNUPS_ALLOWED}
+      - INVITATIONS_ALLOWED=${INVITATIONS_ALLOWED}
+      - WEBSOCKET_ENABLED=${WEBSOCKET_ENABLED}
+      - ADMIN_TOKEN=${ADMIN_TOKEN}
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,31 @@
+services:
+  slink:
+    image: anirdev/slink:v1.5.0
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    volumes:
+      - ${DATA_PATH}/var/data:/app/var/data
+      - ${DATA_PATH}/images:/app/slink/images
+    environment:
+      - ORIGIN=${ORIGIN}
+      - USER_APPROVAL_REQUIRED=${USER_APPROVAL_REQUIRED}
+      - USER_ALLOW_UNAUTHENTICATED_ACCESS=${USER_ALLOW_UNAUTHENTICATED_ACCESS}
+      - USER_PASSWORD_MIN_LENGTH=${USER_PASSWORD_MIN_LENGTH}
+      - USER_PASSWORD_REQUIREMENTS=${USER_PASSWORD_REQUIREMENTS}
+      - IMAGE_MAX_SIZE=${IMAGE_MAX_SIZE}
+      - IMAGE_STRIP_EXIF_METADATA=${IMAGE_STRIP_EXIF_METADATA}
+      - STORAGE_PROVIDER=${STORAGE_PROVIDER}
+      - SMB_HOST=${SMB_HOST}
+      - SMB_USERNAME=${SMB_USERNAME}
+      - SMB_PASSWORD=${SMB_PASSWORD}
+      - SMB_SHARE=${SMB_SHARE}
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
