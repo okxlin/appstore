@@ -1,0 +1,19 @@
+additionalProperties:
+  formFields:
+    - default: "8060"
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: "mt_photos_ai_extra"
+      edit: true
+      envKey: API_AUTH_KEY
+      labelEn: API Auth Key
+      labelZh: API 授权密钥
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
