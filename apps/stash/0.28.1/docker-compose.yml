@@ -1,0 +1,30 @@
+services:
+  stash:
+    image: "stashapp/stash:v0.28.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+    environment:
+      - STASH_STASH=${STASH_DATA_INTERNAL}
+      - STASH_GENERATED=${STASH_GENERATED_INTERNAL}
+      - STASH_METADATA=${STASH_METADATA_INTERNAL}
+      - STASH_CACHE=${STASH_CACHE_INTERNAL}
+      - STASH_PORT=${PANEL_APP_PORT_HTTP}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - "${CONFIG_PATH}:/root/.stash"
+      - "${STASH_DATA}:${STASH_DATA_INTERNAL}"
+      - "${STASH_GENERATED}:${STASH_GENERATED_INTERNAL}"
+      - "${STASH_METADATA}:${STASH_METADATA_INTERNAL}"
+      - "${STASH_CACHE}:${STASH_CACHE_INTERNAL}"
+      - "${STASH_BLOBS}:${STASH_BLOBS_INTERNAL}"
+    labels:
+      createdBy: "Apps"
+
+
+networks:
+  1panel-network:
+    external: true

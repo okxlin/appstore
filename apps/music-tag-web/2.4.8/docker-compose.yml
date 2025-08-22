@@ -1,0 +1,19 @@
+services:
+  music-tag-web:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8001"
+    volumes:
+      - "${DATA_PATH}:/app/media:rw"
+      - "./config:/app/data"
+    command: /start
+    image: xhongc/music_tag_web:2.4.8
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

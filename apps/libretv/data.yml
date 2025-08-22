@@ -1,0 +1,13 @@
+additionalProperties:
+  crossVersionUpdate: true
+  document: https://libretv.is-an.org
+  github: https://github.com/LibreSpark/LibreTV
+  key: libretv
+  limit: 0
+  name: LibreTV
+  shortDescEn: mPure Go open-source one-stop streaming media server development framework
+  shortDescZh: 轻量级、免费的在线视频搜索与观看平台
+  tags:
+  - Tool
+  type: tool
+  website: https://libretv.is-an.org/

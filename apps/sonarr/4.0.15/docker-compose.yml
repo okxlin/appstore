@@ -1,0 +1,23 @@
+services:
+  sonarr:
+    image: "linuxserver/sonarr:4.0.15"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TIME_ZONE}
+    volumes:
+      - ${SONARR_CONFIG_PATH}:/config
+      - ${TV_SERIES_PATH}:/tv
+      - ${DOWNLOADS_PATH}:/downloads
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8989"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

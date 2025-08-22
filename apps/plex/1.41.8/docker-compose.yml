@@ -1,0 +1,33 @@
+services:
+  plex:
+    image: "linuxserver/plex:1.41.8"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:32400/tcp"
+      - "${PANEL_APP_PORT_TCP_3005}:3005/tcp"
+      - "${PANEL_APP_PORT_TCP_8324}:8324/tcp"
+      - "${PANEL_APP_PORT_TCP_32469}:32469/tcp"
+      - "${PANEL_APP_PORT_UDP_1900}:1900/udp"
+      - "${PANEL_APP_PORT_UDP_32410}:32410/udp"
+      - "${PANEL_APP_PORT_UDP_32412}:32412/udp"
+      - "${PANEL_APP_PORT_UDP_32413}:32413/udp"
+      - "${PANEL_APP_PORT_UDP_32414}:32414/udp"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TIMEZONE}
+      - VERSION=docker
+      - PLEX_CLAIM=${PLEX_CLAIM}
+    volumes:
+      - ${LIBRARY_PATH}:/config
+      - ${TVSERIES_PATH}:/tv
+      - ${MOVIES_PATH}:/movies
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

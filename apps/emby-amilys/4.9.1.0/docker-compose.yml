@@ -1,0 +1,30 @@
+services:
+  emby-amilys:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8096"
+      - "${PANEL_APP_PORT_HTTPS}:8920"
+    volumes:
+      - "${DATA_PATH}:/config"
+      - "${MOUNT_PATH}:/mnt/share1"
+      - "${MOUNT_PATH2}:/mnt/share2"
+    environment:
+      - UID=1000
+      - GID=1000
+      - GIDLIST=1000,0
+      - TZ=${TIME_ZONE}
+      # - NVIDIA_VISIBLE_DEVICES=all # 映射NVIDIA显卡
+      # - NVIDIA_DRIVER_CAPABILITIES=all # 映射NVIDIA显卡
+    #runtime: nvidia # Expose NVIDIA GPUs
+    devices:
+      - /dev/dri:/dev/dri # VAAPI/NVDEC/NVENC render nodes
+      #- /dev/vchiq:/dev/vchiq # MMAL/OMX on Raspberry Pi
+    image: amilys/embyserver:4.9.1.0
+    labels:  
+      createdBy: "Apps"
+networks:  
+  1panel-network:  
+    external: true

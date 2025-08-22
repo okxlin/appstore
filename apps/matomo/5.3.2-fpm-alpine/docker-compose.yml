@@ -1,0 +1,39 @@
+services:
+  matomo:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DATA_PATH}/web:/var/www/html"
+    environment:
+      - MATOMO_DATABASE_HOST=${PANEL_DB_HOST}
+      - MATOMO_DATABASE_ADAPTER=mysql
+      - MATOMO_DATABASE_TABLES_PREFIX=${PANEL_DB_PREFIX}
+      - MATOMO_DATABASE_USERNAME=${PANEL_DB_USER}
+      - MATOMO_DATABASE_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - MATOMO_DATABASE_DBNAME=${PANEL_DB_NAME}
+      - PHP_MEMORY_LIMIT=2048M
+    image: matomo:5.3.2-fpm-alpine
+    labels:
+      createdBy: Apps
+
+  matomo-web:
+    container_name: ${CONTAINER_NAME}-web
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${DATA_PATH}/web:/var/www/html:z,ro"
+      - "./data/matomo.conf:/etc/nginx/conf.d/default.conf:z,ro"
+    image: nginx:alpine
+    depends_on:
+      - matomo
+    labels:
+      createdBy: Apps
+
+networks:
+  1panel-network:
+    external: true

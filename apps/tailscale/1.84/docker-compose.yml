@@ -1,0 +1,28 @@
+services:
+  tailscale:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    volumes:
+      - /var/lib:/var/lib
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      - TS_ACCEPT_DNS=${TS_ACCEPT_DNS}
+      - TS_AUTH_ONCE=${TS_AUTH_ONCE}
+      - TS_AUTHKEY=${TS_AUTHKEY}
+      - TS_DEST_IP=${TS_DEST_IP}
+      - TS_KUBE_SECRET=${TS_KUBE_SECRET}
+      - TS_HOSTNAME=${TS_HOSTNAME}
+      - TS_OUTBOUND_HTTP_PROXY_LISTEN=${TS_OUTBOUND_HTTP_PROXY_LISTEN}
+      - TS_ROUTES=${TS_ROUTES}
+      - TS_SOCKET=${TS_SOCKET}
+      - TS_SOCKS5_SERVER=${TS_SOCKS5_SERVER}
+      - TS_STATE_DIR=${TS_STATE_DIR}
+      - TS_USERSPACE=${TS_USERSPACE}
+      - TS_EXTRA_ARGS=${TS_EXTRA_ARGS}
+    image: tailscale/tailscale:v1.84
+    labels:  
+      createdBy: "Apps"

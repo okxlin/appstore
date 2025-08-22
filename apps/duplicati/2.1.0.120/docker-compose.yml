@@ -1,0 +1,18 @@
+services:
+  duplicati:
+    image: "duplicati/duplicati:2.1.0.120"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8200"
+    volumes:
+      - ${BACKUPS_PATH}:${INTERNAL_BACKUPS_PATH}
+      - ${DATA_PATH}:/data
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,48 @@
+services:
+  ikaros:
+    image: "ikarosrun/ikaros:v0.20.11"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - ${DATA_PATH}:/root/.ikaros
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:9999
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9999/actuator/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    environment:
+      - LANG=${LANG}
+      - LANGUAGE=${LANGUAGE}
+      - LC_ALL=${LC_ALL}
+      - TZ=${TIME_ZONE}
+    command:
+      - --logging.charset.console=UTF-8
+      - --logging.charset.file=UTF-8
+      - --logging.level.run.ikaros.server=${SERVER_LOG_LEVEL}
+      - --logging.level.run.ikaros.plugin=${PLUGIN_LOG_LEVEL}
+      - --sun.jnu.encoding=UTF-8
+      - --spring.r2dbc.url=r2dbc:pool:${PANEL_DB_TYPE}://${PANEL_DB_HOST}/${PANEL_DB_NAME}
+      - --spring.r2dbc.username=${PANEL_DB_USER}
+      - --spring.r2dbc.password=${PANEL_DB_USER_PASSWORD}
+      # Flayway
+      - --spring.flyway.url=jdbc:postgresql://${PANEL_DB_HOST}/${PANEL_DB_NAME}
+      - --spring.flyway.locations=classpath:db/${PANEL_DB_TYPE}/migration
+      - --spring.flyway.user=${PANEL_DB_USER}
+      - --spring.flyway.password=${PANEL_DB_USER_PASSWORD}
+      # springdoc 
+      - --springdoc.api-docs.enabled=false
+      - --springdoc.swagger-ui.enabled=false
+      # ikaros
+      - --ikaros.external-url=${IKAROS_EXTERNAL_URL}
+      - --ikaros.security.initializer.master-username=${IKAROS_ADMIN_USERNAME}
+      - --ikaros.security.initializer.master-password=${IKAROS_ADMIN_PASSWORD}
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true

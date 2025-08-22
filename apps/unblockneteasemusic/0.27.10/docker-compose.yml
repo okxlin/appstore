@@ -1,0 +1,65 @@
+services:
+  unblockneteasemusic:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_PORT_HTTPS}:8081"
+    volumes:
+      - "${DATA_PATH}/server.crt:/data/ssl/server.crt"
+      - "${DATA_PATH}/server.key:/data/ssl/server.key"
+    environment:
+      # 激活无损音质获取
+      - ENABLE_FLAC=true
+      # 激活本地黑胶 VIP，可选值：`true`（等同于 CVIP）、`cvip` 和 `svip`
+      - ENABLE_LOCAL_VIP=svip
+      # 仅对这些 UID 激活本地黑胶 VIP，默认为对全部用户生效
+      #- LOCAL_VIP_UID=123456789,1234,123456
+      # 激活故障的 Netease HTTPDNS 查询（不建议）
+      - ENABLE_HTTPDNS=false
+      # 屏蔽应用内部分广告
+      - BLOCK_ADS=true
+      # 禁用更新检测
+      - DISABLE_UPGRADE_CHECK=true
+      # 激活开发模式。需要自己用 `yarn` 安装依赖 (dependencies)
+      - DEVELOPMENT=false
+      # 严格按照配置音源的顺序进行查询
+      - FOLLOW_SOURCE_ORDER=true
+      # 输出机器可读的 JSON 记录格式
+      - JSON_LOG=true
+      # 停用 cache
+      - NO_CACHE=false
+      # 允许的最低源音质，小于该值将被替换
+      - MIN_BR=320000
+      # 选择所有音源中的最高码率替换音频
+      - SELECT_MAX_BR=false
+      # 日志输出等级。请见〈日志等级〉部分。
+      - LOG_LEVEL=debug
+      # 从 Pino 端设置日志输出的文件位置。也可以用 `*sh` 的输出重导向功能 (`node app.js >> app.log`) 代替
+      - LOG_FILE=app.log
+      # JOOX 音源的 wmid 和 session_key cookie
+      #- JOOX_COOKIE="wmid=<your_wmid>; session_key=<your_session_key>"
+      # 酷我音源的 CSRF Token
+      #- KUWO_COOKIE=Hm_<encpwd>=<token>; Secret=<secret>
+      # 咪咕音源的 aversionid cookie
+      #- MIGU_COOKIE="<your_aversionid>"
+      # QQ 音源的 uin 和 qm_keyst cookie
+      #- QQ_COOKIE="uin=<your_uin>; qm_keyst=<your_qm_keyst>"
+      # Youtube 音源的 Data API v3 Key
+      #- YOUTUBE_KEY="<your_data_api_key>"
+      # 自定义证书文件
+      - SIGN_CERT=/data/ssl/server.crt
+      # 自定义密钥文件
+      - SIGN_KEY=/data/ssl/server.key
+      # 在其他音源搜索歌曲时携带专辑名称（默认搜索条件 `歌曲名 - 歌手`，启用后搜索条件 `歌曲名 - 歌手 专辑名`）
+      - SEARCH_ALBUM=true
+    #command: ["-o", "bilibili"]  # 设置要传递给容器的参数
+    image: pan93412/unblock-netease-music-enhanced:v0.27.10
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

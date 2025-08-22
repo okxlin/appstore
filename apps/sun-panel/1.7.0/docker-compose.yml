@@ -1,0 +1,19 @@
+services:
+  sun-panel:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3002"
+    volumes:
+      - ${DATA_PATH}/conf:/app/conf
+      - ${DATA_PATH}/uploads:/app/uploads
+      - ${DATA_PATH}/database:/app/database
+    image: hslr/sun-panel:1.7.0
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

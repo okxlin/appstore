@@ -1,0 +1,27 @@
+services:
+  syncthing:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    hostname: syncthing
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    volumes:
+      - ${DATA_PATH_APP_CONFIG}:/config
+      - ${DATA_PATH_DATA1}:/data1
+      - ${DATA_PATH_DATA2}:/data2
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:8384
+      - ${SYNCTHING_PORT}:22000/tcp
+      - ${SYNCTHING_PORT}:22000/udp
+      - ${SYNCTHING_PORT_EXTRA_UDP}:21027/udp
+    image: linuxserver/syncthing:1.30.0
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

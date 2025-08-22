@@ -1,0 +1,27 @@
+services:
+  flaresolverr:
+    image: "flaresolverr/flaresolverr:v3.3.25"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_HTML=${LOG_HTML:-false}
+      - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
+      - TZ=${TIME_ZONE:-Asia/Shanghai}
+      - LANG=${LANG:-none}
+      - HEADLESS=${HEADLESS:-true}
+      - BROWSER_TIMEOUT=${BROWSER_TIMEOUT:-40000}
+      - TEST_URL=${TEST_URL:-https://www.google.com}
+      - PORT=${PANEL_APP_PORT_HTTP:-8191}
+      - HOST=${HOST:-0.0.0.0}
+      - PROMETHEUS_ENABLED=${PROMETHEUS_ENABLED:-false}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

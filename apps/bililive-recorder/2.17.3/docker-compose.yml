@@ -1,0 +1,23 @@
+services:
+  recorder:
+    image: "bililive/recorder:2.17.3"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${WORK_SPACE_PATH}:/rec"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:2356"
+    environment:
+      - BREC_HTTP_BASIC_USER=${USER_NAME}
+      - BREC_HTTP_BASIC_PASS=${USER_PASSWORD}
+      - UMASK=${UMASK}
+      - PUID=${PUID}
+      - PGID=${PGID}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

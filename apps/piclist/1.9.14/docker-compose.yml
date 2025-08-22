@@ -1,0 +1,18 @@
+services:
+  piclist:
+    image: "kuingsmile/piclist:v1.9.14"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:36677"
+    volumes:
+      - "${DATA_PATH}:/root/.piclist"
+    command: node /usr/local/bin/picgo-server -k ${AUTH_KEY}
+    labels:
+      createdBy: "Apps"
+   
+networks:
+  1panel-network:
+    external: true

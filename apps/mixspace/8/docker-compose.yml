@@ -1,0 +1,61 @@
+services:
+  mixspace:
+    container_name: ${CONTAINER_NAME}
+    image: innei/mx-server:8
+    command: bash ./docker-run.sh
+    environment:
+      - TZ=${TIME_ZONE}
+      - NODE_ENV=production
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - JWT_SECRET=${JWT_SECRET}
+      - ENCRYPT_KEY=${ENCRYPT_KEY}
+      - ENCRYPT_ENABLE=${ENCRYPT_ENABLE}
+    volumes:
+      - ./data/mx-space:/root/.mx-space
+    ports:
+      - '${PANEL_APP_PORT_HTTP}:2333'
+    networks:
+      - mixspace-network
+    restart: always
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://127.0.0.1:2333/api/v2/ping']
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
+    labels:  
+      createdBy: "Apps" 
+
+  mongo:
+    container_name: ${CONTAINER_NAME}-mongo
+    image: mongo
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - mixspace-network
+    restart: always
+    labels:  
+      createdBy: "Apps" 
+
+  redis:
+    image: redis
+    container_name: ${CONTAINER_NAME}-redis
+    networks:
+      - mixspace-network
+    restart: always
+    labels:  
+      createdBy: "Apps" 
+
+networks:
+  mixspace-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET_PREFIX}.0/16

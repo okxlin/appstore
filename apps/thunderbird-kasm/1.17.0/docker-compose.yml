@@ -1,0 +1,24 @@
+services:
+  thunderbird-kasm:
+    image: "kasmweb/thunderbird:1.17.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:6901"
+    volumes:
+      - "thunderbird_data:/home/kasm-user"
+    environment:
+      - VNC_PW=${HTTP_PWD}
+    shm_size: ${MEM_USE}
+    labels:
+      createdBy: "Apps"
+
+volumes:
+  thunderbird_data:
+    name: thunderbird_data
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,13 @@
+services:
+  beszel-agent:
+    image: "henrygd/beszel-agent:0.11.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    volumes:
+      - ${DOCKER_SOCK_PATH}:/var/run/docker.sock
+    environment:
+      - PORT=${PANEL_APP_PORT_HTTP}
+      - KEY=${KEY}
+    labels:
+      createdBy: "Apps"
