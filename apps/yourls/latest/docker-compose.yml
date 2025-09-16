@@ -5,7 +5,7 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
       - "${DATA_PATH}:/var/www/html"
     environment:
