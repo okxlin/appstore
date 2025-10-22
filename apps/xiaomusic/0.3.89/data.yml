@@ -1,0 +1,19 @@
+additionalProperties:
+  formFields:
+    - default: 6006
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      type: number
+      required: true
+      edit: true
+      random: false
+      rule: paramPort
+    - default:  "/opt/xiaomusic"
+      envKey: APPLICATION_PATH
+      labelEn: Path
+      labelZh: 本地目录
+      type: text
+      required: true
+      edit: true
+      random: false
