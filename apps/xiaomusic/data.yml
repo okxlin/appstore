@@ -1,0 +1,23 @@
+name: xiaomusic
+tags:
+  - 多媒体
+title: 解放小爱音箱无限听歌
+description: 解放小爱音箱无限听歌
+additionalProperties:
+  key: xiaomusic
+  name: xiaomusic
+  tags:
+    - Media
+  shortDescZh: 解放小爱音箱无限听歌
+  shortDescEn: Liberate XiaoAi SoundBox, unlimited music listening。
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://xdocs.hanxi.cc/
+  github: https://github.com/hanxi/xiaomusic
+  document: https://xdocs.hanxi.cc/issues/
+  architectures:
+    - amd64
+    - arm64
+    - arm/v7

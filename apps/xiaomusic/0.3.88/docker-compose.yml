@@ -1,0 +1,18 @@
+services:
+  xiaomusic:
+    image: docker.hanxi.cc/hanxi/xiaomusic:v0.3.88
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:8090
+    volumes:
+      - ${APPLICATION_PATH}/music:/app/music
+      - ${APPLICATION_PATH}/conf:/app/conf
+    environment:
+      - XIAOMUSIC_PUBLIC_PORT=${PANEL_APP_PORT_HTTP}
+
+networks:
+  1panel-network:
+    external: true
