@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  easybot:
+    image: zzh4141/easybot-docker:1.4.0-f36ec
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - ${BRIDGE_PORT}:${BRIDGE_PORT}
+      - "5000:5000"
+    volumes:
+      - ./data:/app
+    environment:
+      - ServerOptions__Host=0.0.0.0
+      - ServerOptions__Port=${BRIDGE_PORT}
+      - Kestrel__Endpoints__web_app__Url=${WEB_APP_HTTP}
+    labels:  
+      createdBy: "Apps"  
+
+networks:
+  1panel-network:
+    external: true
