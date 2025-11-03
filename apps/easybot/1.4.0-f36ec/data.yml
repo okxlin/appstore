@@ -1,0 +1,36 @@
+additionalProperties:
+  formFields:
+    - default: http://0.0.0.0:5000
+      edit: true
+      envKey: WEB_APP_HTTP
+      labelEn: WEB
+      labelZh: 监听地址
+      required: true
+      rule: paramExtUrl
+      type: text
+      label:
+        en: Web Service Listening Address
+        ja: ウェブサービスのリスニングアドレス
+        ms: Alamat Mendengar Perkhidmatan Web
+        pt-br: Endereço de Escuta do Serviço Web
+        ru: Адрес прослушивания веб-сервиса
+        ko: 웹 서비스 수신 주소
+        zh-Hant: 網頁服務監聽地址
+        zh: 网页服务监听地址
+    - default: 26990
+      edit: true
+      envKey: BRIDGE_PORT
+      labelEn: Bridge
+      labelZh: Bridge端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: Bridge Port
+        ja: ブリッジポート
+        ms: Port Jambatan
+        pt-br: Porta da Ponte
+        ru: Порт моста
+        ko: 브리지 포트
+        zh-Hant: Bridge端口
+        zh: Bridge端口
