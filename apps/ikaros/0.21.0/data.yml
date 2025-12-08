@@ -1,0 +1,145 @@
+additionalProperties:
+  formFields:
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
+      default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+    - default: ikaros
+      envKey: PANEL_DB_NAME
+      labelEn: Database
+      labelZh: 数据库名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ikaros
+      envKey: PANEL_DB_USER
+      labelEn: User
+      labelZh: 数据库用户
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ikaros
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Password
+      labelZh: 数据库用户密码
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 40301
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://localhost:40301
+      edit: true
+      envKey: IKAROS_EXTERNAL_URL
+      labelEn: External URL
+      labelZh: 外部访问地址
+      required: true
+      rule: paramHttp
+      type: text
+    - default: "INFO"
+      edit: true
+      envKey: SERVER_LOG_LEVEL
+      labelEn: Core Server Package Log level
+      labelZh: 核心Server包日志级别
+      required: false
+      type: select
+      values:
+        - label: DEBUG
+          value: "DEBUG"
+        - label: INFO
+          value: "INFO"
+        - label: WARNING
+          value: "WARNING"
+        - label: ERROR
+          value: "ERROR"
+        - label: CRITICAL
+          value: "CRITICAL"
+    - default: "INFO"
+      edit: true
+      envKey: PLUGIN_LOG_LEVEL
+      labelEn: Plugin Package Log level
+      labelZh: 插件包日志级别
+      required: false
+      type: select
+      values:
+        - label: DEBUG
+          value: "DEBUG"
+        - label: INFO
+          value: "INFO"
+        - label: WARNING
+          value: "WARNING"
+        - label: ERROR
+          value: "ERROR"
+        - label: CRITICAL
+          value: "CRITICAL"
+    - default: "./data"
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Path
+      labelZh: 数据路径
+      required: true
+      type: text
+    - default: "tomoki"
+      edit: true
+      envKey: IKAROS_ADMIN_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: "tomoki"
+      edit: true
+      envKey: IKAROS_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "Asia/Shanghai"
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      required: true
+      type: text
+    - default: "C.UTF-8"
+      edit: true
+      envKey: LANG
+      labelEn: Language
+      labelZh: 语言
+      required: true
+      type: text
+    - default: "C:zh"
+      edit: true
+      envKey: LANGUAGE
+      labelEn: Language Setting
+      labelZh: 语言设置
+      required: true
+      type: text
+    - default: "C.UTF-8"
+      edit: true
+      envKey: LC_ALL
+      labelEn: Locale Setting
+      labelZh: 地区设置
+      required: true
+      type: text
