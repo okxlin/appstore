@@ -1,0 +1,24 @@
+additionalProperties:
+  key: wavelog   #应用的 key ，仅限英文，用于在 Linux 创建文件夹
+  name: Wavelog  #应用名称
+  tags:
+    - Tool #应用标签，可以有多个，请参照下方的标签列表
+  shortDescZh: 最受欢迎的开源业余无线电通联记录系统  #应用中文描述，不要超过30个字
+  shortDescEn: Open-source amateur radio QSOs logging system #应用英文描述
+  type: website  #应用类型，区别于应用分类，只能有一个，请参照下方的类型列表
+  crossVersionUpdate: true   #是否可以跨大版本升级
+  limit: 0 #应用安装数量限制，0 代表无限制
+  website: https://www.wavelog.org/ #官网地址
+  github: https://github.com/wavelog/wavelog #github 地址
+  document: github.com/wavelog/wavelog/wiki
+  description:
+    en: The most popular open-source amateur radio online contact logging system
+    zh: 最受欢迎的开源业余无线电通联记录系统  #应用中文描述，不要超过30个字
+    zh-Hant:
+    ja: 最も人気のあるオープンソースのアマチュア無線オンライン通信ログシステム
+    ms:
+    pt-br:
+    ru: Самая популярная система онлайн-логирования связей для любительской радиосвязи с открытым исходным кодом
+    ko: 
+  architectures:
+    - amd64

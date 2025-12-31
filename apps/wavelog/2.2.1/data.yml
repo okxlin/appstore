@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: 3792
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        ja: データベースサービス
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
+        ru: Сервис базы данных
+        ko: 데이터베이스 서비스
+        zh: 数据库服务
+        zh-Hant: 數據庫 服務
+      required: true
+      type: apps
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
+      values:
+        - label: MariaDB
+          value: mariadb
+        - label: MySQL
+          value: mysql
+    - default: wavelog-test
+      envKey: PANEL_DB_NAME
+      labelEn: Database
+      labelZh: 数据库名
+      label:
+        en: Database
+        ja: データベース
+        ms: Pangkalan Data
+        pt-br: Banco de Dados
+        ru: База данных
+        ko: 데이터베이스
+        zh: 数据库名
+        zh-Hant: 數據庫名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: wavelog-test
+      envKey: PANEL_DB_USER
+      labelEn: User
+      labelZh: 数据库用户
+      label:
+        en: User
+        ja: ユーザー
+        ms: Pengguna
+        pt-br: Usuário
+        ru: Пользователь
+        ko: 사용자
+        zh: 数据库用户
+        zh-Hant: 數據庫用戶
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: wavelog-test
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Password
+      labelZh: 数据库用户密码
+      label:
+        en: Password
+        ja: パスワード
+        ms: Kata Laluan
+        pt-br: Senha
+        ru: Пароль
+        ko: 비밀번호
+        zh: 数据库用户密码
+        zh-Hant: 數據庫用戶密碼
+      random: true
+      required: true
+      type: password  
