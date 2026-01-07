@@ -6,14 +6,14 @@ additionalProperties:
       labelEn: Docker Image
       labelZh: Docker 镜像
       required: true
-      type: text
+      输入: text
     - default: "always"
       edit: true
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
       required: true
-      type: select
+      输入: select
       values:
         - label: "Always"
           value: "always"
@@ -28,34 +28,34 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the Docker application itself)
       labelZh: 端口 (由 Docker 应用自身决定)
-      required: true
+      required: false
       rule: paramPort
-      type: number
+      输入: number
     - default: "./data"
       edit: true
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
-      required: true
-      type: text
+      required: false
+      输入: text
     - default: "/data"
       edit: true
       envKey: DATA_PATH_INTERNAL
       labelEn: Internal Data Path
       labelZh: 内部数据路径
-      required: true
-      type: text
+      required: false
+      输入: text
     - default: "Asia/Shanghai"
       edit: true
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
       required: true
-      type: text
+      输入: text
     - default: ""
       edit: true
       envKey: ENV1
       labelEn: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
       labelZh: 环境变量 1 (编辑去除compose.yml里的注释生效)
       required: false
-      type: text
+      输入: text

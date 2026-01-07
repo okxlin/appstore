@@ -2,7 +2,6 @@ services:
   1panel-apps:
     image: ${IMAGE}
     container_name: ${CONTAINER_NAME}
-    restart: ${RESTART_POLICY}
     networks:
       - 1panel-network
     ports:
