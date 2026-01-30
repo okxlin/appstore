@@ -1,6 +1,6 @@
 services:
   cloudflared:
-    image: cloudflare/cloudflared:2025.7.0
+    image: cloudflare/cloudflared:2025.11.1
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
