@@ -1,7 +1,7 @@
 services:
   mixspace:
     container_name: ${CONTAINER_NAME}
-    image: innei/mx-server:8
+    image: innei/mx-server:9
     command: bash ./docker-run.sh
     environment:
       - TZ=${TIME_ZONE}
