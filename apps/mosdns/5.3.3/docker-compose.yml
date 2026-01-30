@@ -10,7 +10,7 @@ services:
       - "${PANEL_APP_PORT_API}:8080"
     volumes:
       - "${DATA_PATH}:/etc/mosdns"
-    image: irinesistiana/mosdns:v5.3.3
+    image: irinesistiana/mosdns:v5.3.4
     labels:  
       createdBy: "Apps"
 
