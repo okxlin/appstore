@@ -1,6 +1,6 @@
 services:
   cashbook:
-    image: "dingdangdog/cashbook:4.3.0"
+    image: "dingdangdog/cashbook:4.3.11"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
