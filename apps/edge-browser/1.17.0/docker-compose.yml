@@ -1,6 +1,6 @@
 services:
   edge:
-    image: "kasmweb/edge:1.17.0"
+    image: "kasmweb/edge:1.18.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
