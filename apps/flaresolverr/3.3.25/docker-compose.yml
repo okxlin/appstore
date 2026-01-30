@@ -1,6 +1,6 @@
 services:
   flaresolverr:
-    image: "flaresolverr/flaresolverr:v3.3.25"
+    image: "flaresolverr/flaresolverr:v3.4.6"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
