@@ -1,6 +1,6 @@
 services:
   serverstatus:
-    image: "cppla/serverstatus:1.1.5"
+    image: "cppla/serverstatus:1.1.7"
     healthcheck:
       test: ["CMD-SHELL", "curl --fail http://localhost:80 || bash -c 'kill -s 15 -1 && (sleep 10; kill -s 9 -1)'"]
       interval: 30s
