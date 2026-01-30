@@ -18,7 +18,7 @@ services:
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
     shm_size: ${MEM_USE}
-    image: "linuxserver/firefox:1140.0.2"
+    image: "linuxserver/firefox:1140.0.4"
     labels:
       createdBy: "Apps"
 
