@@ -13,7 +13,7 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
       - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
       - PGADMIN_CONFIG_CONSOLE_LOG_LEVEL=10
-    image: dpage/pgadmin4:9.5
+    image: dpage/pgadmin4:9.11
     labels:  
       createdBy: "Apps"
 
