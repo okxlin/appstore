@@ -10,7 +10,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - "${DATA_PATH}:/opt/onedev"
-    image: 1dev/server:11.6.16
+    image: 1dev/server:14.1.1
     labels:  
       createdBy: "Apps"
 
