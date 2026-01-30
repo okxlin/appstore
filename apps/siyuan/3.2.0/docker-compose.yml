@@ -10,7 +10,7 @@ services:
       - "${DATA_PATH}:/siyuan/workspace"
     user: "1000:1000"
     command: "--workspace=/siyuan/workspace/"
-    image: b3log/siyuan:v3.2.0
+    image: b3log/siyuan:v3.5.4
     labels:  
       createdBy: "Apps"
 
