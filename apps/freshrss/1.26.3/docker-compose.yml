@@ -1,6 +1,6 @@
 services:
   freshrss:
-    image: "freshrss/freshrss:1.26.3"
+    image: "freshrss/freshrss:1.28.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
