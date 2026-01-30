@@ -1,6 +1,6 @@
 services:
   ${SERVICE_NAME}:
-    image: "nattertool/natter:2.1.1"
+    image: "nattertool/natter:2.2.1"
     container_name: ${CONTAINER_NAME}
     command: ${COMMAND}
     volumes:
