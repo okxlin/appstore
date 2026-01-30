@@ -1,6 +1,6 @@
 services:
   radarr:
-    image: "linuxserver/radarr:5.26.2"
+    image: "linuxserver/radarr:6.0.4"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
