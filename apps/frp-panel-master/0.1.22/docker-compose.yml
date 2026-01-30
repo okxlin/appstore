@@ -12,7 +12,7 @@ services:
     environment:
       - APP_GLOBAL_SECRET=${APP_GLOBAL_SECRET}
       - MASTER_RPC_HOST=${MASTER_RPC_HOST}
-    image: vaalacat/frp-panel:v0.1.22
+    image: vaalacat/frp-panel:v0.1.36
     labels:  
       createdBy: "Apps"
 
