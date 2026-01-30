@@ -16,7 +16,7 @@ services:
       - VNC_PW=${HTTP_PWD}
     shm_size: ${MEM_USE}
     tty: true
-    image: kasmweb/qbittorrent:1.17.0
+    image: kasmweb/qbittorrent:1.18.0
     labels:  
       createdBy: "Apps"
 
