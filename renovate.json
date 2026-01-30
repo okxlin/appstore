@@ -1,45 +1,65 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": [
+    "config:recommended"
+  ],
   "gitIgnoredAuthors": [
     "githubaction@githubaction.com"
   ],
   "rebaseWhen": "never",
   "packageRules": [
     {
-      "packageNames": ["docker-compose"],
+      "matchPackageNames": [
+        "docker-compose"
+      ],
       "automerge": true
     },
     {
-      "matchFileNames": ["apps/mysql/5.5.*/*.yml"],
+      "matchFileNames": [
+        "apps/mysql/5.5.*/*.yml"
+      ],
       "allowedVersions": "/^5.5.*/"
     },
     {
-      "matchFileNames": ["apps/mysql/5.6.*/*.yml"],
+      "matchFileNames": [
+        "apps/mysql/5.6.*/*.yml"
+      ],
       "allowedVersions": "/^5.6.*/"
     },
     {
-      "matchFileNames": ["apps/mysql/5.7.*/*.yml"],
+      "matchFileNames": [
+        "apps/mysql/5.7.*/*.yml"
+      ],
       "allowedVersions": "/^5.7.*/"
     },
     {
-      "matchFileNames": ["apps/mysql/8.0.*/*.yml"],
+      "matchFileNames": [
+        "apps/mysql/8.0.*/*.yml"
+      ],
       "allowedVersions": "/^8.0.*/"
     },
     {
-      "matchFileNames": ["apps/mysql/8.4.*/*.yml"],
+      "matchFileNames": [
+        "apps/mysql/8.4.*/*.yml"
+      ],
       "allowedVersions": "/^8.4.*/"
     },
     {
-      "matchFileNames": ["apps/php-unofficial/7.4.*/*.yml"],
+      "matchFileNames": [
+        "apps/php-unofficial/7.4.*/*.yml"
+      ],
       "allowedVersions": "/^7.4.*/"
     },
     {
-      "matchFileNames": ["apps/php-unofficial/8.1.*/*.yml"],
+      "matchFileNames": [
+        "apps/php-unofficial/8.1.*/*.yml"
+      ],
       "allowedVersions": "/^8.1.*/"
     },
     {
-      "matchFileNames": ["apps/reader/2.7.*/*.yml"],
+      "matchFileNames": [
+        "apps/reader/2.7.*/*.yml"
+      ],
       "allowedVersions": "/^2.7.*/"
     }
   ],
