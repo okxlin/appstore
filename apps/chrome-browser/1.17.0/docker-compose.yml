@@ -1,6 +1,6 @@
 services:
   chrome:
-    image: "kasmweb/chrome:1.17.0"
+    image: "kasmweb/chrome:1.18.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
