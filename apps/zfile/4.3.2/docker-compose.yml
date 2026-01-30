@@ -10,7 +10,7 @@ services:
       - "${DATA_PATH}/db:/root/.zfile-v4/db"
       - "${DATA_PATH}/logs:/root/.zfile-v4/logs"
       - "${MOUNT_PATH}:/data/file"
-    image: zhaojun1998/zfile:4.3.2
+    image: zhaojun1998/zfile:4.5.0
     labels:  
       createdBy: "Apps"
 
