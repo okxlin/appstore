@@ -12,6 +12,6 @@ services:
       - "${DATA_PATH}/v2raya:/etc/v2raya"
       - /lib/modules:/lib/modules:ro
       - /etc/resolv.conf:/etc/resolv.conf
-    image: mzz2017/v2raya:v2.2.6
+    image: mzz2017/v2raya:v2.2.7
     labels:  
       createdBy: "Apps"
