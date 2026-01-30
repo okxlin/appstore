@@ -20,7 +20,7 @@ services:
       - "${PANEL_APP_PORT_CONSOLE}:7080"
     environment:
       - TZ=${TIME_ZONE}
-    image: litespeedtech/openlitespeed:1.8.3-lsphp81
+    image: litespeedtech/openlitespeed:1.8.4-lsphp81
     labels:  
       createdBy: "Apps"
 
