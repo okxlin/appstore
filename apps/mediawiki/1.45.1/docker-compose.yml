@@ -1,6 +1,6 @@
 services:
   mediawiki:
-    image: "mediawiki:1.44.0"
+    image: "mediawiki:1.45.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
