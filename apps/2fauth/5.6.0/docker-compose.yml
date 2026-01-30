@@ -1,6 +1,6 @@
 services:
   2fauth:
-    image: "2fauth/2fauth:5.6.0"
+    image: "2fauth/2fauth:5.6.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
