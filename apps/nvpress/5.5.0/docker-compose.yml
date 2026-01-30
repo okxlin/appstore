@@ -10,7 +10,7 @@ services:
       - "${DATA_PATH}/nv-content:/usr/src/app/nv-content"
       - "${DATA_PATH}/nv-themes:/usr/src/app/nv-themes"
       - "${DATA_PATH}/nv-plugins:/usr/src/app/nv-plugins"
-    image: pandastd/nvpress:5.5.0
+    image: pandastd/nvpress:5.8.0
     labels:  
       createdBy: "Apps"
 
