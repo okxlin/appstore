@@ -7,7 +7,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:1188"
     command: ["/app/deeplx", "-token", "${TOKEN_VAULE}"]
-    image: missuo/deeplx:v1.0.7
+    image: missuo/deeplx:v1.1.0
     labels:
       createdBy: "Apps"
 
