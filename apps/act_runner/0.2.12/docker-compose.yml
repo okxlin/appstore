@@ -14,7 +14,7 @@ services:
       - GITEA_RUNNER_REGISTRATION_TOKEN=${RUNNER_REGISTRATION_TOKEN}
       - GITEA_RUNNER_NAME=${RUNNER_NAME}
       - GITEA_RUNNER_LABELS=${RUNNER_LABELS}
-    image: gitea/act_runner:0.2.12
+    image: gitea/act_runner:0.2.13
     labels:  
       createdBy: "Apps"
 
