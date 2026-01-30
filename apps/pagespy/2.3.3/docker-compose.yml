@@ -1,7 +1,7 @@
 services:
   pageSpy:
     container_name: ${CONTAINER_NAME}
-    image: "ghcr.io/huolalatech/page-spy-web:v2.3.3"
+    image: "ghcr.io/huolalatech/page-spy-web:v2.4.5"
     networks:
       - 1panel-network
     ports:
