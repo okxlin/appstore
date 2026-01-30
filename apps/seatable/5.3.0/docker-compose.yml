@@ -15,7 +15,7 @@ services:
       - TIME_ZONE=${TIME_ZONE}
       - SEATABLE_SERVER_HOSTNAME=${SERVER_HOSTNAME}
       - SEATABLE_SERVER_LETSENCRYPT=false
-    image: seatable/seatable-developer:5.3.0
+    image: seatable/seatable-developer:6.0.0
     labels:  
       createdBy: "Apps"
 
