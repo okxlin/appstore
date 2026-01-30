@@ -1,6 +1,6 @@
 services:
   mt-photos:
-    image: "mtphotos/mt-photos:1.38.1"
+    image: "mtphotos/mt-photos:1.45.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
