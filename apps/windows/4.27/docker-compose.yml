@@ -1,6 +1,6 @@
 services:
   windows:
-    image: "dockurr/windows:4.27"
+    image: "dockurr/windows:5.14"
     container_name: ${CONTAINER_NAME}
     restart: ${RESTART_POLICY}
     networks:
