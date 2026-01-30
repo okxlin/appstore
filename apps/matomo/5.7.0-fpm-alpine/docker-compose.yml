@@ -14,7 +14,7 @@ services:
       - MATOMO_DATABASE_PASSWORD=${PANEL_DB_USER_PASSWORD}
       - MATOMO_DATABASE_DBNAME=${PANEL_DB_NAME}
       - PHP_MEMORY_LIMIT=2048M
-    image: matomo:5.3.2-fpm-alpine
+    image: matomo:5.7.0-fpm-alpine
     labels:
       createdBy: Apps
 
