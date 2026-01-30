@@ -15,7 +15,7 @@ services:
       - TZ=${TIME_ZONE}
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
-    image: linuxserver/remmina:1.4.35
+    image: linuxserver/remmina:1.4.40
     labels:  
       createdBy: "Apps"
 
