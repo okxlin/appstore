@@ -7,6 +7,6 @@ services:
         #- "${CONFIG_FILE_PATH}:/etc/frp/frps.ini" #截止5.1.3版本使用ini
         - "${CONFIG_FILE_PATH}:/etc/frp/frps.toml"
         - "${SSL_FOLDER_PATH}:/etc/frp/ssl"
-    image: "snowdreamtech/frps:0.63.0"
+    image: "snowdreamtech/frps:0.66.0"
     labels:  
       createdBy: "Apps"
