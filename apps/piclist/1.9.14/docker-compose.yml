@@ -1,6 +1,6 @@
 services:
   piclist:
-    image: "kuingsmile/piclist:v1.9.14"
+    image: "kuingsmile/piclist:v2.3.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
