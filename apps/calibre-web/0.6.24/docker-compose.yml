@@ -15,7 +15,7 @@ services:
       - TZ=${TIME_ZONE}
       - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
-    image: linuxserver/calibre-web:0.6.24
+    image: linuxserver/calibre-web:0.6.25
     labels:  
       createdBy: "Apps"
 
