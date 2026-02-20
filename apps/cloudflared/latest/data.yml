@@ -1,9 +1,0 @@
-additionalProperties:
-  formFields:
-    - default: ''
-      edit: true
-      envKey: CFD_TOKEN
-      labelEn: Token
-      labelZh: Token
-      required: true
-      type: text
