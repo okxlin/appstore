@@ -1,0 +1,19 @@
+name: nginxpulse
+tags:
+  - 工具
+title: 轻量级 Nginx 访问日志分析与可视化面板，提供实时统计、PV 过滤、IP 归属地与客户端解析
+description: 轻量级 Nginx 访问日志分析与可视化面板，提供实时统计、PV 过滤、IP 归属地与客户端解析
+additionalProperties:
+  key: nginxpulse
+  name: Nginx Pulse
+  tags:
+    - Tool
+  shortDescZh: 轻量级 Nginx 访问日志分析与可视化面板
+  shortDescEn: Lightweight Nginx Access Log Analysis and Visualization Dashboard
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/likaia/nginxpulse
+  github: https://github.com/likaia/nginxpulse
+  document: https://github.com/likaia/nginxpulse

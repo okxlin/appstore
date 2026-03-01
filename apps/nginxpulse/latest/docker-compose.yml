@@ -1,0 +1,23 @@
+services:
+  nginxpulse:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8088"
+    volumes:
+      - "${LOG_PATH}:/share/logs"
+      - "${DATA_PATH}:/app/var/nginxpulse_data"
+      - "${CONFIGS_PATH}:/app/configs"
+    environment:
+      - TZ=Asia/Shanghai
+      - ACCESS_KEYS=${ACCESS_KEYS}
+      - DB_DSN=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+    image: magiccoders/nginxpulse:latest
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
