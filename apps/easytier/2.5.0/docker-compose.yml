@@ -1,6 +1,6 @@
 services:
   easytier:
-    image: "easytier/easytier:v2.3.2"
+    image: "easytier/easytier:v2.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     network_mode: host
