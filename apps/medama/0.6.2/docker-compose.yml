@@ -1,6 +1,6 @@
 services:
   medama:
-    image: "ghcr.io/medama-io/medama:v0.5.2"
+    image: "ghcr.io/medama-io/medama:v0.6.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
