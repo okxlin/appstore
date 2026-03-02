@@ -1,6 +1,6 @@
 services:
   recorder:
-    image: "bililive/recorder:2.17.3"
+    image: "bililive/recorder:2.18.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
