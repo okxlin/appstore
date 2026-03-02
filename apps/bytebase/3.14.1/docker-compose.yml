@@ -20,7 +20,7 @@ services:
       - "8080"
       - "--pg"
       - "postgresql://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${PANEL_DB_NAME}"
-    image: bytebase/bytebase:3.8.0
+    image: bytebase/bytebase:3.14.1
     labels:  
       createdBy: "Apps"
 
