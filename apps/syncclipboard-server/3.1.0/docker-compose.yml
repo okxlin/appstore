@@ -1,6 +1,6 @@
 services:
   syncclipboard-server:
-    image: jericx/syncclipboard-server:v3.0.1
+    image: jericx/syncclipboard-server:v3.1.0
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
