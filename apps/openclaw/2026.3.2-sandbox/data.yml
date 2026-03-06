@@ -1,0 +1,143 @@
+additionalProperties:
+  formFields:
+    - default: 18789
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web UI Port
+      labelZh: Web UI 端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: Web UI Port
+        ja: Web UIポート
+        ms: Port Web UI
+        pt-br: Porta da Web UI
+        ru: Порт веб-интерфейса
+        ko: 웹 UI 포트
+        zh-Hant: Web UI 埠
+        zh: Web UI 端口
+    - default: 18790
+      edit: true
+      envKey: OPENCLAW_BRIDGE_PORT
+      labelEn: Bridge Port
+      labelZh: Bridge 端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: Bridge Port
+        ja: ブリッジポート
+        ms: Port Bridge
+        pt-br: Porta Bridge
+        ru: Порт моста
+        ko: 브리지 포트
+        zh-Hant: Bridge 埠
+        zh: Bridge 端口
+    - default: "./data/conf"
+      disabled: true
+      envKey: OPENCLAW_CONFIG_DIR
+      labelEn: OpenClaw Config Path
+      labelZh: OpenClaw 配置文件路径
+      required: true
+      type: text
+      label:
+        en: OpenClaw Config Path
+        ja: OpenClaw コンフィグパス
+        ms: Path OpenClaw Config
+        pt-br: Caminho do Config OpenClaw
+        ru: Путь конфигурации OpenClaw
+        ko: OpenClaw Config Path
+        zh-Hant: OpenClaw 配置文件路径
+        zh: OpenClaw 配置文件路径
+    - default: "./data/workspace"
+      disabled: true
+      envKey: OPENCLAW_WORKSPACE_DIR
+      labelEn: OpenClaw Workspace Path
+      labelZh: OpenClaw 工作区路径
+      required: true
+      type: text
+      label:
+        en: OpenClaw Workspace Path
+        ja: OpenClaw ワークスペースパス
+        ms: Path OpenClaw Workspace
+        pt-br: Caminho do Workspace OpenClaw
+        ru: Путь к рабочей области OpenClaw
+        ko: OpenClaw 워크스페이스 경로
+        zh-Hant: OpenClaw 工作區路徑
+        zh: OpenClaw 工作区路径
+    - default: "lan"
+      edit: true
+      envKey: OPENCLAW_GATEWAY_BIND
+      labelEn: OpenClaw Gateway Bind
+      labelZh: OpenClaw 网关绑定
+      required: true
+      type: select
+      values:
+        - label: "loopback"
+          value: "loopback"
+        - label: "lan"
+          value: "lan"
+        - label: "tailnet"
+          value: "tailnet"
+        - label: "custom"
+          value: "custom"
+        - label: "auto"
+          value: "auto"
+      label:
+        en: OpenClaw Gateway Bind
+        ja: OpenClaw ゲートウェイバインド
+        ms: OpenClaw Gateway Bind
+        pt-br: OpenClaw Gateway Bind
+        ru: OpenClaw Gateway Bind
+        ko: OpenClaw Gateway Bind
+        zh-Hant: OpenClaw 网关绑定
+        zh: OpenClaw 网关绑定
+    - default: "local"
+      disabled: true
+      envKey: OPENCLAW_MODE
+      labelEn: OpenClaw Mode
+      labelZh: OpenClaw 模式
+      required: true
+      type: text
+      label:
+        en: OpenClaw Mode
+        ja: OpenClaw モード
+        ms: OpenClaw Mode
+        pt-br: OpenClaw Mode
+        ru: OpenClaw Mode
+        ko: OpenClaw Mode
+        zh-Hant: OpenClaw 模式
+        zh: OpenClaw 模式
+    - default: ""
+      edit: true
+      envKey: OPENCLAW_GATEWAY_TOKEN
+      labelEn: Gateway Token (The more complex the better, can be generated using `openssl rand -hex 32`)
+      labelZh: 网关令牌 (建议越复杂越好，可使用 `openssl rand -hex 32` 生成)
+      required: true
+      type: text
+      label:
+        en: "Gateway Token (The more complex the better, can be generated using `openssl rand -hex 32`)"
+        ja: "ゲートウェイトークン (複雑なほど良い、`openssl rand -hex 32` を使用して生成できます)"
+        ms: "Token Gateway (Semakin kompleks semakin baik, boleh dijana menggunakan `openssl rand -hex 32`)"
+        pt-br: "Token de Gateway (Quanto mais complexo melhor, pode ser gerado usando `openssl rand -hex 32`)"
+        ru: "Токен шлюза (чем сложнее, тем лучше, можно сгенерировать с помощью `openssl rand -hex 32`)"
+        ko: "게이트웨이 토큰 (복잡할수록 좋으며, `openssl rand -hex 32`를 사용하여 생성할 수 있습니다)"
+        zh-Hant: "網關權杖 (建議越複雜越好，可使用 `openssl rand -hex 32` 生成)"
+        zh: "网关令牌 (建议越复杂越好，可使用 `openssl rand -hex 32` 生成)"
+    - default: "/var/run/docker.sock"
+      edit: true
+      envKey: DOCKER_SOCK_PATH
+      labelEn: Docker Socket Path
+      labelZh: Docker 套接字路径
+      required: true
+      type: text
+      label:
+        en: Docker Socket Path
+        ja: Docker ソケットパス
+        ms: Laluan Soket Docker
+        pt-br: Caminho do Socket Docker
+        ru: Путь к сокету Docker
+        ko: Docker 소켓 경로
+        zh-Hant: Docker 套接字路徑
+        zh: Docker 套接字路径
