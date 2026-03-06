@@ -1,0 +1,108 @@
+additionalProperties:
+  formFields:
+  - default: 8317
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Web Port (8317)
+    labelZh: Web 访问端口 (8317)
+    label:
+      en: Web Port (8317)
+      ja: Webポート (8317)
+      ms: Web Port (8317)
+      pt-br: Porta Web (8317)
+      ru: Веб-порт (8317)
+      ko: 웹 포트 (8317)
+      zh-Hant: Web 訪問埠 (8317)
+      zh: Web 访问端口 (8317)
+    required: true
+    rule: paramPort
+    type: number
+  - default: 8085
+    edit: true
+    envKey: CLI_PROXY_PORT_8085
+    label:
+      en: Port 8085
+      ja: ポート 8085
+      ms: Port 8085
+      pt-br: Porta 8085
+      ru: Порт 8085
+      ko: 포트 8085
+      zh-Hant: 埠 8085
+      zh: 端口 8085
+    required: true
+    rule: paramPort
+    type: number
+  - default: 1455
+    edit: true
+    envKey: CLI_PROXY_PORT_1455
+    label:
+      en: Port 1455
+      ja: ポート 1455
+      ms: Port 1455
+      pt-br: Porta 1455
+      ru: Порт 1455
+      ko: 포트 1455
+      zh-Hant: 埠 1455
+      zh: 端口 1455
+    required: true
+    rule: paramPort
+    type: number
+  - default: 54545
+    edit: true
+    envKey: CLI_PROXY_PORT_54545
+    label:
+      en: Port 54545
+      ja: ポート 54545
+      ms: Port 54545
+      pt-br: Porta 54545
+      ru: Порт 54545
+      ko: 포트 54545
+      zh-Hant: 埠 54545
+      zh: 端口 54545
+    required: true
+    rule: paramPort
+    type: number
+  - default: 51121
+    edit: true
+    envKey: CLI_PROXY_PORT_51121
+    label:
+      en: Port 51121
+      ja: ポート 51121
+      ms: Port 51121
+      pt-br: Porta 51121
+      ru: Порт 51121
+      ko: 포트 51121
+      zh-Hant: 埠 51121
+      zh: 端口 51121
+    required: true
+    rule: paramPort
+    type: number
+  - default: 11451
+    edit: true
+    envKey: CLI_PROXY_PORT_11451
+    label:
+      en: Port 11451
+      ja: ポート 11451
+      ms: Port 11451
+      pt-br: Porta 11451
+      ru: Порт 11451
+      ko: 포트 11451
+      zh-Hant: 埠 11451
+      zh: 端口 11451
+    required: true
+    rule: paramPort
+    type: number
+  - default: ""
+    edit: true
+    envKey: DEPLOY
+    label:
+      en: Deploy Env Variable
+      ja: デプロイ環境変数
+      ms: Variabel Persekitaran Deploy
+      pt-br: Variável de Ambiente de Deploy
+      ru: Переменная среды развертывания
+      ko: 배포 환경 변수
+      zh-Hant: 部署環境變數
+      zh: 部署环境变量
+    required: false
+    type: text
