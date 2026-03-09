@@ -8,7 +8,7 @@ services:
       - "${PANEL_APP_PORT_HTTP}:5100"
     environment:
       - DATABASE_URL=mysql2://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PWPUSHER_DB_PORT}/${PANEL_DB_NAME}
-    image: pglombardo/pwpush:1.67.1
+    image: pglombardo/pwpush:1.69.3
     labels:  
       createdBy: "Apps"
 
