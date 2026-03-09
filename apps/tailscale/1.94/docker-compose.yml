@@ -23,6 +23,6 @@ services:
       - TS_STATE_DIR=${TS_STATE_DIR}
       - TS_USERSPACE=${TS_USERSPACE}
       - TS_EXTRA_ARGS=${TS_EXTRA_ARGS}
-    image: tailscale/tailscale:v1.92
+    image: tailscale/tailscale:v1.94
     labels:  
       createdBy: "Apps"
