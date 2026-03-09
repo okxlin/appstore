@@ -1,6 +1,6 @@
 services:
   sonarr:
-    image: "linuxserver/sonarr:4.0.15"
+    image: "linuxserver/sonarr:4.0.16"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
