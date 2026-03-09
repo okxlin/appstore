@@ -1,6 +1,6 @@
 services:
   autobangumi:
-    image: "estrellaxd/auto_bangumi:3.1.18"
+    image: "estrellaxd/auto_bangumi:3.2.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
