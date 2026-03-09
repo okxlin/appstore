@@ -1,6 +1,6 @@
 services:
   samba:
-    image: "elswork/samba:4.18.9"
+    image: "elswork/samba:4.21.4"
     container_name: ${CONTAINER_NAME}
     hostname: ${HOSTNAME}
     restart: always
