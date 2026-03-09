@@ -1,6 +1,6 @@
 services:
   chatgpt-on-wechat:
-    image: "zhayujie/chatgpt-on-wechat:1.7.6"
+    image: "zhayujie/chatgpt-on-wechat:2.0.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
