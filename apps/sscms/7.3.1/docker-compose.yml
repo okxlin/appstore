@@ -1,6 +1,6 @@
 services:
   sscms:
-    image: sscms/core:7.3.1
+    image: sscms/core:7.4.0
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
