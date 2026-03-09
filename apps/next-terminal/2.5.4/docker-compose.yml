@@ -16,7 +16,7 @@ services:
       GUACD_HOSTNAME: nt-guacd
       GUACD_PORT: 4822
       SSHD_ENABLE: ${SSHD_SWITCH}
-    image: dushixiang/next-terminal:v2.5.4
+    image: dushixiang/next-terminal:v3.0.2
     labels:  
       createdBy: "Apps"
 
