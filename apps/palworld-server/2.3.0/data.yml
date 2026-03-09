@@ -1,0 +1,108 @@
+additionalProperties:
+  formFields:
+    - default: 8211
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: 25575
+      edit: true
+      envKey: PANEL_APP_PORT_RCON
+      labelEn: RCON Port
+      labelZh: RCON 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: 27015
+      edit: true
+      envKey: PANEL_APP_PORT_QUERY
+      labelEn: Query port used to communicate with Steam servers
+      labelZh: Query 端口 (用于与 Steam 服务器通信的查询端口)
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      required: true
+      type: text
+    - default: 32
+      edit: true
+      envKey: MAX_PLAYERS
+      labelEn: Maximum number of participants on the server
+      labelZh: 玩家数量限制
+      required: true
+      rule: paramPort
+      type: number
+    - default: 'true'
+      edit: true
+      envKey: MULTITHREAD_SWITCH
+      labelEn: Improves performance in multi-threaded CPU environments (true / false)
+      labelZh: 是否启用 CPU 多线程优化 (true / false)
+      required: true
+      type: text
+    - default: 'false'
+      edit: true
+      envKey: PUBLIC_SWITCH
+      labelEn: Setup server as a community server (true / false)
+      labelZh: 是否将服务器设置为社区服务器 (true / false)
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: PUBLIC_IP
+      labelEn: PUBLIC IP (If not specified, it will be detected automatically)
+      labelZh: 服务器 IP (留空自动检测)
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: PANEL_APP_PORT_PUBLIC
+      labelEn: PUBLIC PORT (If not specified, it will be detected automatically)
+      labelZh: 服务器端口 (留空自动检测)
+      required: false
+      rule: paramPort
+      type: text
+    - default: 'true'
+      disabled: true
+      envKey: UPDATE_SWITCH
+      labelEn: Whether the server should be update each time start (true / false)
+      labelZh: 是否每次启动都更新服务器 (true / false)
+      required: true
+      type: text
+    - default: 'Default Palworld Server'
+      edit: true
+      envKey: SERVER_NAME
+      labelEn: Server name
+      labelZh: 服务器名
+      required: true
+      type: text
+    - default: palworld
+      edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Admin password
+      labelZh: 管理员密码
+      random: true
+      required: false
+      rule: paramComplexity
+      type: password
+    - default: ''
+      edit: true
+      envKey: SERVER_PASSWORD
+      labelEn: Server password
+      labelZh: 服务器密码
+      required: false
+      rule: paramComplexity
+      type: password
+    - default: 'false'
+      edit: true
+      envKey: RCON_SWITCH
+      labelEn: Enable RCON (true / false)
+      labelZh: 是否启用 RCON (true / false)
+      required: true
+      type: text
