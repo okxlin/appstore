@@ -1,6 +1,6 @@
 services:
   mattermost:
-    image: "mattermost/mattermost-team-edition:11.3.0"
+    image: "mattermost/mattermost-team-edition:11.5.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
