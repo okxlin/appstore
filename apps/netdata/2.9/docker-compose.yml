@@ -1,6 +1,6 @@
 services:
   netdata:
-    image: "netdata/netdata:v2.8"
+    image: "netdata/netdata:v2.9"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
