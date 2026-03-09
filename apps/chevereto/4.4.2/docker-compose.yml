@@ -1,6 +1,6 @@
 services:
   chevereto:
-    image: "chevereto/chevereto:4.3.6"
+    image: "chevereto/chevereto:4.4.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
