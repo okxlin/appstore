@@ -10,7 +10,7 @@ services:
       - "${DATA_PATH}:/app/media:rw"
       - "./config:/app/data"
     command: /start
-    image: xhongc/music_tag_web:2.6.8
+    image: xhongc/music_tag_web:2.7.0
     labels:  
       createdBy: "Apps"
 
