@@ -1,0 +1,25 @@
+services:
+  docker-mirror-monitor:
+    image: "moelin/docker-mirror-monitor:v1.1.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP_INTERNAL}"
+    volumes:
+      - ${DATA_PATH}:/app/data
+    environment:
+      - TZ=${TIME_ZONE}
+    healthcheck:
+      test: ["CMD", "/app/docker-mirror-monitor", "healthcheck", "-config", "/app/data/config.yaml"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
