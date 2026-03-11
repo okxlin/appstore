@@ -14,7 +14,7 @@ services:
       - ${HOST_IPV4}
       - "-6"
       - ${HOST_IPV6}
-    image: seedgou/zerotier-moon:v1.8.4
+    image: seedgou/zerotier-moon:1.14.2
     labels:  
       createdBy: "Apps"
 
