@@ -1,0 +1,31 @@
+name: ZeroClaw
+tags:
+  - AI
+title: 一个高性能、低资源占用、可组合的自主智能体运行时
+description: 一个高性能、低资源占用、可组合的自主智能体运行时
+additionalProperties:
+  key: zeroclaw
+  name: ZeroClaw
+  tags:
+    - AI
+  shortDescZh: 一个高性能、低资源占用、可组合的自主智能体运行时
+  shortDescEn: A high-performance, low-resource, composable autonomous agent runtime.
+  description:
+    en: A high-performance, low-resource, composable autonomous agent runtime.
+    zh: 一个高性能、低资源占用、可组合的自主智能体运行时
+    zh-hant: 一個高效能、低資源佔用、可組合的自主智能體運行時
+    ja: 高性能・低リソースで、構成可能な自律エージェント実行基盤。
+    ko: 고성능, 저자원, 조합 가능한 자율 에이전트 런타임.
+    ru: Высокопроизводительный, малоресурсный и модульный рантайм для автономных агентов.
+    ms: Runtime ejen autonomi berprestasi tinggi, penggunaan sumber rendah dan boleh digabungkan.
+    pt-br: Runtime de agentes autônomos de alto desempenho, baixo consumo de recursos e composável.
+  type: website
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://zeroclawlabs.ai
+  github: https://github.com/zeroclaw-labs/zeroclaw
+  document: https://www.zeroclawlabs.ai/docs
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,123 @@
+additionalProperties:
+  formFields:
+    - default: 42617
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: 42617
+      envKey: ZEROCLAW_GATEWAY_PORT
+      labelEn: Gateway Port (container)
+      labelZh: 网关端口（容器内）
+      label:
+        en: Gateway Port (container)
+        zh: 网关端口（容器内）
+        zh-Hant: 網關連接埠（容器內）
+        ja: ゲートウェイポート（コンテナ内）
+        ko: 게이트웨이 포트(컨테이너)
+        ru: Порт шлюза (контейнер)
+        ms: Port gerbang (kontena)
+        pt-br: Porta do gateway (contêiner)
+      required: true
+      rule: paramPort
+      type: number
+    - default: "true"
+      envKey: ZEROCLAW_ALLOW_PUBLIC_BIND
+      labelEn: Allow public bind (Docker)
+      labelZh: 允许容器内公网绑定（Docker）
+      label:
+        en: Allow public bind (Docker)
+        zh: 允许容器内公网绑定（Docker）
+        zh-Hant: 允許容器內公網綁定（Docker）
+        ja: コンテナ内のパブリックバインドを許可（Docker）
+        ko: 컨테이너 내 공용 바인드 허용(Docker)
+        ru: Разрешить публичную привязку в контейнере (Docker)
+        ms: Benarkan ikatan awam dalam kontena (Docker)
+        pt-br: Permitir bind público no contêiner (Docker)
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ""
+      envKey: API_KEY
+      labelEn: LLM provider API key
+      labelZh: 模型服务商 API Key
+      label:
+        en: LLM provider API key
+        zh: 模型服务商 API Key
+        zh-Hant: 模型服務商 API Key
+        ja: LLM プロバイダーの API キー
+        ko: LLM 제공자 API 키
+        ru: API-ключ провайдера LLM
+        ms: Kunci API penyedia LLM
+        pt-br: Chave de API do provedor de LLM
+      required: false
+      type: password
+    - default: ""
+      envKey: PROVIDER
+      labelEn: Provider
+      labelZh: 服务商
+      label:
+        en: Provider
+        zh: 服务商
+        zh-Hant: 服務商
+        ja: プロバイダ
+        ko: 제공자
+        ru: Провайдер
+        ms: Pembekal
+        pt-br: Provedor
+      required: false
+      type: select
+      values:
+        - label: ""
+          value: ""
+        - label: OpenRouter
+          value: openrouter
+        - label: OpenAI
+          value: openai
+        - label: Anthropic
+          value: anthropic
+        - label: Ollama
+          value: ollama
+    - default: ""
+      envKey: ZEROCLAW_MODEL
+      labelEn: Model (optional)
+      labelZh: 模型（可选）
+      label:
+        en: Model (optional)
+        zh: 模型（可选）
+        zh-Hant: 模型（可選）
+        ja: モデル（任意）
+        ko: 모델(선택)
+        ru: Модель (необязательно)
+        ms: Model (pilihan)
+        pt-br: Modelo (opcional)
+      required: false
+      type: text
