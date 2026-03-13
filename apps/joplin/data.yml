@@ -1,0 +1,30 @@
+name: Joplin（浏览器版）
+tags:
+  - Tool
+title: Joplin（浏览器版）
+description: Joplin（浏览器版）
+additionalProperties:
+  key: joplin
+  name: Joplin（浏览器版）
+  tags:
+    - Tool
+  shortDescZh: Joplin（浏览器版）
+  shortDescEn: Joplin (browser)
+  description:
+    en: Joplin (browser)
+    zh: Joplin（浏览器版）
+    zh-hant: Joplin（瀏覽器版）
+    ja: Joplin（ブラウザ版）
+    ko: Joplin(브라우저)
+    ru: Joplin (в браузере)
+    ms: Joplin (pelayar)
+    pt-br: Joplin (navegador)
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://joplinapp.org
+  github: https://github.com/laurent22/joplin
+  document: https://github.com/linuxserver/docker-joplin
+  architectures:
+    - amd64
