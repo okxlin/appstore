@@ -1,0 +1,31 @@
+services:
+  transmission:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9091"
+      - "${PEER_PORT_VALUE}:${PEER_PORT_VALUE}"
+      - "${PEER_PORT_VALUE}:${PEER_PORT_VALUE}/udp"
+    volumes:
+      - "./data/config:/config"
+      - "${DOWNLOAD_PATH}:/downloads"
+      - "${WATCH_PATH}:/watch"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER=${WEBUI_USER}
+      - PASS=${WEBUI_PWD}
+      - WHITELIST= #optional
+      - PEERPORT=${PEER_PORT_VALUE}
+      - HOST_WHITELIST= #optional
+    image: linuxserver/transmission:4.1.1
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true

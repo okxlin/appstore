@@ -1,0 +1,32 @@
+name: CLIProxyAPI
+tags:
+    - AI
+title: 一个为 CLI 提供 OpenAI 等兼容 API 接口的代理服务器
+description: 一个为 CLI 提供 OpenAI 等兼容 API 接口的代理服务器
+additionalProperties:
+  key: cli-proxy-api
+  name: CLIProxyAPI
+  tags:
+    - AI
+  shortDescZh: 一个为 CLI 提供 OpenAI 等兼容 API 接口的代理服务器
+  shortDescEn: A proxy server providing OpenAI-compatible API interfaces for CLI
+  description:
+    en: A proxy server providing OpenAI-compatible API interfaces for CLI
+    ja: CLI向けにOpenAI互換APIインターフェースを提供するプロキシサーバー
+    ms: Pelayan proksi yang menyediakan antara muka API serasi OpenAI untuk CLI
+    pt-br: Um servidor proxy que fornece interfaces de API compatíveis com OpenAI para CLI
+    ru: Прокси-сервер, предоставляющий OpenAI-совместимые API-интерфейсы для CLI
+    ko: CLI용 OpenAI 호환 API 인터페이스를 제공하는 프록시 서버
+    zh-Hant: 一個為 CLI 提供 OpenAI 等兼容 API 接口的
+    zh: 一个为 CLI 提供 OpenAI 等兼容 API 接口的代理服务器
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  batchInstallSupport: true
+  website: https://help.router-for.me/
+  github: https://github.com/router-for-me/CLIProxyAPI
+  document: https://help.router-for.me/
+  architectures:
+    - amd64
+    - arm64

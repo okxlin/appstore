@@ -1,0 +1,84 @@
+additionalProperties:
+  formFields:
+    - default: 40337
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: WebUI Port
+      labelZh: 网页端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: WebUI Port
+        ja: WebUI ポート
+        ms: Port WebUI
+        pt-br: Porta WebUI
+        ru: Порт WebUI
+        ko: WebUI 포트
+        zh-Hant: WebUI 埠
+        zh: WebUI 端口
+    - default: 5246
+      edit: true
+      envKey: PANEL_APP_PORT_S3
+      labelEn: S3 Port
+      labelZh: S3 端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: S3 Port
+        ja: S3 ポート
+        ms: Port S3
+        pt-br: Porta S3
+        ru: Порт S3
+        ko: S3 포트
+        zh-Hant: S3 埠
+        zh: S3 端口
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time zone
+      labelZh: 时区
+      label:
+        en: Time zone
+        ja: タイムゾーン
+        ms: Zon masa
+        pt-br: Fuso horário
+        ru: Часовой пояс
+        ko: 시간대
+        zh: 时区
+        zh-Hant: 時區
+      required: true
+      type: text
+    - default: ./data/data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      required: true
+      type: text
+      label:
+        en: Data folder path
+        ja: データフォルダパス
+        ms: Laluan folder data
+        pt-br: Caminho da pasta de dados
+        ru: Путь к папке данных
+        ko: 데이터 폴더 경로
+        zh-Hant: 資料夾路徑
+        zh: 数据文件夹路径
+    - default: ./data/mnt
+      edit: true
+      envKey: MOUNT_PATH
+      labelEn: Mount folder path
+      labelZh: 挂载文件夹路径
+      required: true
+      type: text
+      label:
+        en: Mount folder path
+        ja: マウントフォルダパス
+        ms: Laluan folder lekapan
+        pt-br: Caminho da pasta de montagem
+        ru: Путь к точке монтирования
+        ko: 마운트 폴더 경로
+        zh-Hant: 掛載資料夾路徑
+        zh: 挂载文件夹路径

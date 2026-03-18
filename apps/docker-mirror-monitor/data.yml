@@ -1,0 +1,35 @@
+name: Docker Mirror Monitor
+tags:
+  - 实用工具
+title: Docker镜像监控系统
+description: 实时监控多种容器镜像源的加速器状态，帮助开发者选择最佳的镜像源
+additionalProperties:
+  key: docker-mirror-monitor
+  name: Docker Mirror Monitor
+  tags:
+    - Tool
+  shortDescZh: 实时监控多种容器镜像源的加速器状态
+  shortDescEn: Real-time monitoring of multiple container image source accelerators
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/okxlin/docker-mirror-monitor
+  github: https://github.com/okxlin/docker-mirror-monitor
+  document: https://github.com/okxlin/docker-mirror-monitor/blob/main/README.md
+  description:
+    en: Real-time monitoring of multiple container image source accelerators.
+    zh: 实时监控多种容器镜像源的加速器状态。
+    zh-Hant: 实时监控多種容器鏡像源的加速器状态。
+    ja: 複数のコンテナイメージソースアクセラレータの状態をリアルタイムで監視。
+    ms: Pemantauan masa nyata status pemacu pelbagai sumber imej bekas.
+    pt-br: Monitoramento em tempo real do status de aceleradores de várias fontes de imagem de contêiner.
+    ru: Мониторинг состояния ускорителей различных источников образов контейнеров в реальном времени.
+    ko: 여러 컨테이너 이미지 소스 가속기 상태 실시간 모니터링.
+  batchInstallSupport: true
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - ppc64le
+    - s390x

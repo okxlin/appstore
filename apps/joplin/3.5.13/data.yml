@@ -1,0 +1,124 @@
+additionalProperties:
+  formFields:
+    - default: 40339
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: 40340
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: HTTPS Port
+      labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-hant: HTTPS 埠
+        ja: HTTPS ポート
+        ko: HTTPS 포트
+        ru: HTTPS порт
+        ms: Port HTTPS
+        pt-br: Porta HTTPS
+      required: true
+      rule: paramPort
+      type: number
+    - default: 1000
+      envKey: PUID
+      labelEn: PUID
+      labelZh: PUID
+      label:
+        en: PUID
+        zh: PUID
+        zh-hant: PUID
+        ja: PUID
+        ko: PUID
+        ru: PUID
+        ms: PUID
+        pt-br: PUID
+      required: true
+      type: number
+    - default: 1000
+      envKey: PGID
+      labelEn: PGID
+      labelZh: PGID
+      label:
+        en: PGID
+        zh: PGID
+        zh-hant: PGID
+        ja: PGID
+        ko: PGID
+        ru: PGID
+        ms: PGID
+        pt-br: PGID
+      required: true
+      type: number
+    - default: admin
+      envKey: CUSTOM_USER
+      labelEn: Basic Auth Username
+      labelZh: 访问用户名（Basic Auth）
+      label:
+        en: Basic Auth Username
+        zh: 访问用户名（Basic Auth）
+        zh-hant: 存取使用者名稱（Basic Auth）
+        ja: ベーシック認証ユーザー名
+        ko: 기본 인증 사용자명
+        ru: Имя пользователя (Basic Auth)
+        ms: Nama pengguna (Basic Auth)
+        pt-br: Usuário (Basic Auth)
+      required: true
+      type: text
+    - default: ""
+      envKey: PASSWORD
+      labelEn: Basic Auth Password
+      labelZh: 访问密码（Basic Auth）
+      label:
+        en: Basic Auth Password
+        zh: 访问密码（Basic Auth）
+        zh-hant: 存取密碼（Basic Auth）
+        ja: ベーシック認証パスワード
+        ko: 기본 인증 비밀번호
+        ru: Пароль (Basic Auth)
+        ms: Kata laluan (Basic Auth)
+        pt-br: Senha (Basic Auth)
+      required: true
+      type: password
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: "1gb"
+      envKey: SHM_SIZE
+      labelEn: Shared memory size
+      labelZh: 共享内存大小（shm）
+      label:
+        en: Shared memory size
+        zh: 共享内存大小（shm）
+        zh-hant: 共享記憶體大小（shm）
+        ja: 共有メモリサイズ（shm）
+        ko: 공유 메모리 크기(shm)
+        ru: Размер общей памяти (shm)
+        ms: Saiz memori kongsi (shm)
+        pt-br: Tamanho da memória compartilhada (shm)
+      required: true
+      type: text

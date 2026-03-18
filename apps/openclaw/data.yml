@@ -1,0 +1,32 @@
+name: OpenClaw
+tags:
+  - AI
+title: 开源、自托管的个人 AI 助手
+description: 开源、自托管的个人 AI 助手
+additionalProperties:
+  key: openclaw
+  name: OpenClaw
+  tags:
+    - AI
+  shortDescZh: 开源、自托管的个人 AI 助手
+  shortDescEn: Your own personal AI assistant
+  description:
+    en: Your own personal AI assistant
+    ja: あなた専用のパーソナルAIアシスタント
+    ms: Pembantu AI peribadi anda sendiri
+    pt-br: Seu assistente pessoal de IA
+    ru: Ваш личный помощник на базе ИИ
+    ko: 나만의 개인 AI 비서
+    zh-Hant: 開源、自托管的個人 AI 助手
+    zh: 开源、自托管的个人 AI 助手
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 14
+  batchInstallSupport: true
+  website: https://openclaw.ai/
+  github: https://github.com/openclaw/openclaw
+  document: https://docs.openclaw.ai/
+  architectures:
+    - amd64
+    - arm64

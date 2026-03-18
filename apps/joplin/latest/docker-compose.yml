@@ -1,0 +1,30 @@
+services:
+  joplin:
+    image: "linuxserver/joplin:latest"
+    container_name: ${CONTAINER_NAME}
+    labels:
+      createdBy: "Apps"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTPS}:3001"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
+    volumes:
+      - "joplin-config:/config"
+    shm_size: ${SHM_SIZE}
+    restart: always
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
+    name: 1panel-network
+
+volumes:
+  joplin-config:
+    name: joplin-config

@@ -1,0 +1,10 @@
+services:
+  lucky:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    volumes:
+      - ${DATA_PATH}:/goodluck
+    image: gdy666/lucky:3.0.0
+    labels:  
+      createdBy: "Apps"

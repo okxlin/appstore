@@ -1,0 +1,35 @@
+services:
+  zeroclaw:
+    image: "ghcr.io/zeroclaw-labs/zeroclaw:v0.4.0"
+    container_name: ${CONTAINER_NAME}
+    labels:
+      createdBy: "Apps"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${ZEROCLAW_GATEWAY_PORT}"
+    environment:
+      - TZ=${TZ}
+      - API_KEY=${API_KEY:-}
+      - PROVIDER=${PROVIDER}
+      - ZEROCLAW_MODEL=${ZEROCLAW_MODEL}
+      - ZEROCLAW_ALLOW_PUBLIC_BIND=${ZEROCLAW_ALLOW_PUBLIC_BIND}
+      - ZEROCLAW_GATEWAY_PORT=${ZEROCLAW_GATEWAY_PORT}
+    volumes:
+      - "zeroclaw-data:/zeroclaw-data"
+    healthcheck:
+      test: ["CMD", "zeroclaw", "status"]
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
+    name: 1panel-network
+
+volumes:
+  zeroclaw-data:
+    name: zeroclaw-data
