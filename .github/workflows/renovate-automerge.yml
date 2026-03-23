@@ -1,0 +1,107 @@
+name: Renovate automerge for whitelisted apps
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - localApps
+
+concurrency:
+  group: renovate-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    if: >
+      github.event.pull_request.state == 'open' &&
+      github.event.pull_request.user.login == 'app/renovate'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Verify changed files stay within whitelist
+        id: whitelist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          REPO="${{ github.repository }}"
+
+          mapfile -t apps < <(sed '/^\s*#/d;/^\s*$/d' .github/renovate-automerge-whitelist.txt)
+          mapfile -t files < <(gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')
+
+          if [ ${#apps[@]} -eq 0 ] || [ ${#files[@]} -eq 0 ]; then
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          allowed=true
+          printf 'Whitelisted apps:\n'
+          printf -- '- %s\n' "${apps[@]}"
+          printf 'Changed files:\n'
+
+          for file in "${files[@]}"; do
+            echo "- $file"
+
+
+            if [[ "$file" =~ ^apps/([^/]+)/ ]]; then
+              app_name="${BASH_REMATCH[1]}"
+              matched=false
+              for allowed_app in "${apps[@]}"; do
+                if [[ "$app_name" == "$allowed_app" ]]; then
+                  matched=true
+                  break
+                fi
+              done
+              if [[ "$matched" == false ]]; then
+                allowed=false
+              fi
+            else
+              allowed=false
+            fi
+          done
+
+          echo "allowed=$allowed" >> "$GITHUB_OUTPUT"
+
+      - name: Add marker label for eligible PR
+        if: steps.whitelist.outputs.allowed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          gh pr edit "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --add-label renovate-auto
+
+      - name: Check commits for app-version update marker
+        id: marker
+        if: steps.whitelist.outputs.allowed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          REPO="${{ github.repository }}"
+
+          COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message')
+          echo "$COMMITS"
+
+          if echo "$COMMITS" | grep -Fq "Update app version [skip ci]"; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge PR
+        if: steps.whitelist.outputs.allowed == 'true' && steps.marker.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          gh pr merge "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --merge \
+            --delete-branch=false
