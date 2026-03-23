@@ -324,6 +324,19 @@
         "apps/n8n/2.5.*/*.yml"
       ],
       "allowedVersions": "/^2.5.*/"
+    },
+    {
+      "description": "Require dashboard approval for multi-service multi-image compose apps",
+      "matchFileNames": [
+        "apps/safeline/**/docker-compose.yml",
+        "apps/aurora/**/docker-compose.yml",
+        "apps/immich/**/docker-compose.yml",
+        "apps/udyk-ce/**/docker-compose.yml",
+        "apps/zabbix-server/**/docker-compose.yml",
+        "apps/next-terminal/**/docker-compose.yml",
+        "apps/uuwaf/**/docker-compose.yml"
+      ],
+      "dependencyDashboardApproval": true
     }
   ],
   "prCreation": "immediate"
