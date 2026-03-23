@@ -72,7 +72,7 @@ services:
     networks:
       1panel-network:
         ipv4_address: ${SUBNET_PREFIX}.237
-    image: chaitin/safeline-luigi:7.3.1
+    image: chaitin/safeline-luigi:7.6.3
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${SAFELINE_DIR}/resources/luigi:/app/data
