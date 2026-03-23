@@ -1,0 +1,61 @@
+name: Renovate automerge for whitelisted apps
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+    branches:
+      - localApps
+
+concurrency:
+  group: renovate-automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    if: >
+      github.event.pull_request.state == 'open' &&
+      github.event.pull_request.user.login == 'app/renovate' &&
+      contains(github.event.pull_request.labels.*.name, 'renovate-auto')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check commits for app-version update marker
+        id: marker
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          REPO="${{ github.repository }}"
+
+          COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message')
+
+          echo "$COMMITS"
+
+          if echo "$COMMITS" | grep -Fq "Update app version [skip ci]"; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Enable auto-merge label visibility
+        if: steps.marker.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          gh pr edit "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --add-label renovate-auto
+
+      - name: Merge PR
+        if: steps.marker.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          gh pr merge "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --merge \
+            --delete-branch=false
