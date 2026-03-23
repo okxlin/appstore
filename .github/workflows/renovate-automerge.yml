@@ -23,8 +23,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Verify changed files stay within whitelist
+        id: whitelist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          REPO="${{ github.repository }}"
+
+          mapfile -t files < <(gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[].filename')
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          allowed_regex='^(apps/(upsnap|pwpush|code-server|zeroclaw|next-terminal|dpanel|wallos|chatgpt-on-wechat|music_tag_web|audiobookshelf|clouddrive2|cloudbeaver|dbgate|frigate|openclaw|moviepilot|sonarr|gopeed)/|renovate\.json$)'
+          allowed=true
+
+          printf 'Changed files:\n'
+          for file in "${files[@]}"; do
+            echo "- $file"
+            if [[ ! "$file" =~ $allowed_regex ]]; then
+              allowed=false
+            fi
+          done
+
+          echo "allowed=$allowed" >> "$GITHUB_OUTPUT"
+
       - name: Check commits for app-version update marker
         id: marker
+        if: steps.whitelist.outputs.allowed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
@@ -41,17 +70,8 @@ jobs:
             echo "found=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Enable auto-merge label visibility
-        if: steps.marker.outputs.found == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
-        run: |
-          gh pr edit "${{ github.event.pull_request.number }}" \
-            --repo "${{ github.repository }}" \
-            --add-label renovate-auto
-
       - name: Merge PR
-        if: steps.marker.outputs.found == 'true'
+        if: steps.whitelist.outputs.allowed == 'true' && steps.marker.outputs.found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
