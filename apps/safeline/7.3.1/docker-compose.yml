@@ -129,7 +129,7 @@ services:
     networks:
       1panel-network:
         ipv4_address: ${SUBNET_PREFIX}.240
-    image: chaitin/safeline-chaos:7.3.1
+    image: chaitin/safeline-chaos:7.6.3
     logging:
       options:
         max-size: "100m"
