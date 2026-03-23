@@ -29,7 +29,7 @@ services:
     restart: always
     networks:
       - 1panel-network
-    image: altran1502/immich-machine-learning:v1.122.3
+    image: altran1502/immich-machine-learning:v1.144.1
     volumes:
       - ${CACHE_PATH}:/cache
     environment:
