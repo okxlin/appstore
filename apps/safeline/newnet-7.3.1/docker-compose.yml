@@ -6,7 +6,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.4
-    image: chaitin/safeline-mgt:7.3.1
+    image: chaitin/safeline-mgt:7.6.3
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ${SAFELINE_DIR}/resources/mgt:/app/data
