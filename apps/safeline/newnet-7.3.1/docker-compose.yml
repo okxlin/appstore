@@ -36,7 +36,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.5
-    image: chaitin/safeline-detector:7.3.1
+    image: chaitin/safeline-detector:7.6.3
     volumes:
     - ${SAFELINE_DIR}/resources/detector:/resources/detector
     - ${SAFELINE_DIR}/logs/detector:/logs/detector
