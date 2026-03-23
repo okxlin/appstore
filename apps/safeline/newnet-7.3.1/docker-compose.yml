@@ -99,7 +99,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.8
-    image: chaitin/safeline-fvm:7.3.1
+    image: chaitin/safeline-fvm:7.6.3
     volumes:
       - /etc/localtime:/etc/localtime:ro
     logging:
