@@ -2,7 +2,7 @@ name: Renovate automerge for whitelisted apps
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled]
+    types: [opened, synchronize, reopened]
     branches:
       - localApps
 
@@ -49,9 +49,6 @@ jobs:
           for file in "${files[@]}"; do
             echo "- $file"
 
-            if [[ "$file" == "renovate.json" ]]; then
-              continue
-            fi
 
             if [[ "$file" =~ ^apps/([^/]+)/ ]]; then
               app_name="${BASH_REMATCH[1]}"
