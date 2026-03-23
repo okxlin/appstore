@@ -328,13 +328,13 @@
     {
       "description": "Require dashboard approval for multi-service multi-image compose apps",
       "matchFileNames": [
-        "apps/safeline/**",
-        "apps/aurora/**",
-        "apps/immich/**",
-        "apps/udyk-ce/**",
-        "apps/zabbix-server/**",
-        "apps/next-terminal/**",
-        "apps/uuwaf/**"
+        "apps/safeline/**/docker-compose.yml",
+        "apps/aurora/**/docker-compose.yml",
+        "apps/immich/**/docker-compose.yml",
+        "apps/udyk-ce/**/docker-compose.yml",
+        "apps/zabbix-server/**/docker-compose.yml",
+        "apps/next-terminal/**/docker-compose.yml",
+        "apps/uuwaf/**/docker-compose.yml"
       ],
       "dependencyDashboardApproval": true
     }
