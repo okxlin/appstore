@@ -324,32 +324,6 @@
         "apps/n8n/2.5.*/*.yml"
       ],
       "allowedVersions": "/^2.5.*/"
-    },
-    {
-      "description": "OpenClaw whitelist for Renovate automerge candidates",
-      "matchFileNames": [
-        "apps/upsnap/**",
-        "apps/pwpush/**",
-        "apps/code-server/**",
-        "apps/zeroclaw/**",
-        "apps/next-terminal/**",
-        "apps/dpanel/**",
-        "apps/wallos/**",
-        "apps/chatgpt-on-wechat/**",
-        "apps/music_tag_web/**",
-        "apps/audiobookshelf/**",
-        "apps/clouddrive2/**",
-        "apps/cloudbeaver/**",
-        "apps/dbgate/**",
-        "apps/frigate/**",
-        "apps/openclaw/**",
-        "apps/moviepilot/**",
-        "apps/sonarr/**",
-        "apps/gopeed/**"
-      ],
-      "labels": [
-        "renovate-auto"
-      ]
     }
   ],
   "prCreation": "immediate"
