@@ -80,7 +80,7 @@ services:
       POSTGRES_USER: ${PANEL_DB_USER}
       POSTGRES_PASSWORD: ${PANEL_DB_USER_PASSWORD}
       POSTGRES_DB: ${PANEL_DB_NAME}
-    image: postgres:13-alpine
+    image: postgres:18-alpine
     labels:
       createdBy: Apps
 
