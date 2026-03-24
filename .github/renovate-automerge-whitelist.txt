@@ -38,3 +38,5 @@ siyuan
 mt-photos
 nginxwebui
 reader
+2fauth
+adguardhome
