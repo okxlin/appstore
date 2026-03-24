@@ -37,3 +37,4 @@ ikaros
 siyuan
 mt-photos
 nginxwebui
+reader
