@@ -89,11 +89,19 @@ jobs:
         run: |
           PR_NUMBER="${{ github.event.pull_request.number }}"
           REPO="${{ github.repository }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
 
-          COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message')
-          echo "$COMMITS"
+          PULL_COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message' || true)
+          COMPARE_COMMITS=$(gh api repos/$REPO/compare/${{ github.event.pull_request.base.sha }}...$HEAD_SHA --jq '.commits[].commit.message' || true)
 
-          if echo "$COMMITS" | grep -Fq "Update app version [skip ci]"; then
+          echo "== pull commits =="
+          echo "$PULL_COMMITS"
+          echo "== compare commits =="
+          echo "$COMPARE_COMMITS"
+
+          if printf '%s
+%s
+' "$PULL_COMMITS" "$COMPARE_COMMITS" | grep -Fq "Update app version [skip ci]"; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
