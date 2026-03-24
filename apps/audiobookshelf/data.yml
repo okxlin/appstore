@@ -1,7 +1,6 @@
 name: Audiobookshelf
 tags:
   - 多媒体
-title: 一个自托管有声读物和播客服务器
 type: 工具
 description: 一个自托管有声读物和播客服务器
 additionalProperties:
@@ -18,5 +17,3 @@ additionalProperties:
   website: https://www.audiobookshelf.org/
   github: https://github.com/advplyr/audiobookshelf
   document: https://www.audiobookshelf.org/docs
-  architectures:
-    - amd64

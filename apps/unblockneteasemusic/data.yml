@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/UnblockNeteaseMusic/server
   github: https://github.com/UnblockNeteaseMusic/server
   document: https://github.com/UnblockNeteaseMusic/server
-  architectures:
-    - amd64

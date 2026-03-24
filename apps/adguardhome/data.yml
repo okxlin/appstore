@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/adguard/adguardhome
   github: https://github.com/AdguardTeam/AdGuardHome
   document: https://github.com/AdguardTeam/AdGuardHome/wiki
-  architectures:
-    - amd64

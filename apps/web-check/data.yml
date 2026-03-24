@@ -17,5 +17,3 @@ additionalProperties:
   website: https://web-check.xyz/
   github: https://github.com/lissy93/web-check
   document: https://github.com/lissy93/web-check
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://docs.rsshub.app/
   github: https://github.com/DIYgod/RSSHub
   document: https://docs.rsshub.app/
-  architectures:
-    - amd64

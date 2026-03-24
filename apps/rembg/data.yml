@@ -1,6 +1,6 @@
 name: Rembg
 tags:
-  - AI
+  - AI / 大模型
 title: 图像背景去除工具
 description: 图像背景去除工具
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/danielgatis/rembg
   github: https://github.com/danielgatis/rembg
   document: https://github.com/danielgatis/rembg
-  architectures:
-    - amd64

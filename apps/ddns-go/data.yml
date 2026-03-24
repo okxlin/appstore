@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/jeessy2/ddns-go
   github: https://github.com/jeessy2/ddns-go
   document: https://github.com/jeessy2/ddns-go
-  architectures:
-    - amd64

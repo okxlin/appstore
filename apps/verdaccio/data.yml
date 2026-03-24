@@ -17,5 +17,3 @@ additionalProperties:
   website: https://verdaccio.org/
   github: https://github.com/verdaccio/verdaccio
   document: https://verdaccio.org/docs/what-is-verdaccio
-  architectures:
-    - amd64

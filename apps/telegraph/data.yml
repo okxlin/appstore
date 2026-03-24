@@ -17,5 +17,3 @@ additionalProperties:
   website: https://jiasu.in
   github: https://github.com/0-RTT/telegraph
   document: https://github.com/0-RTT/telegraph
-  architectures:
-    - amd64

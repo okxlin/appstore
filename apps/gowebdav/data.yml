@@ -19,5 +19,3 @@ additionalProperties:
   website: https://github.com/117503445/GoWebDAV
   github: https://github.com/117503445/GoWebDAV
   document: https://github.com/117503445/GoWebDAV
-  architectures:
-    - amd64

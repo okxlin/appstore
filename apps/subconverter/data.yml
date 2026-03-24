@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/tindy2013/subconverter
   github: https://github.com/tindy2013/subconverter
   document: https://github.com/tindy2013/subconverter
-  architectures:
-    - amd64

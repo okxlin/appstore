@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/Jonnyan404/zerotier-planet
   github: https://github.com/Jonnyan404/zerotier-planet
   document: https://github.com/Jonnyan404/zerotier-planet
-  architectures:
-    - amd64

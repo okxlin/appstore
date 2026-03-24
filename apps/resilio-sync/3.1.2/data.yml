@@ -2,7 +2,6 @@ additionalProperties:
   formFields:
     - default: "40237"
       envKey: PANEL_APP_PORT_HTTP
-      rule: paramPort
       labelEn: Port
       labelZh: 端口
       required: true
@@ -10,7 +9,6 @@ additionalProperties:
       edit: true
     - default: "55555"
       envKey: PANEL_APP_PORT_SYNC
-      rule: paramPort
       labelEn: Sync Port
       labelZh: 同步端口
       required: true

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://search.luxirty.com
   github: https://github.com/KoriIku/luxirty-search
   document: https://github.com/KoriIku/luxirty-search
-  architectures:
-    - amd64

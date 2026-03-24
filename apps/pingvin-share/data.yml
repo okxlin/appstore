@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/stonith404/pingvin-share
   github: https://github.com/stonith404/pingvin-share
   document: https://github.com/stonith404/pingvin-share
-  architectures:
-    - amd64

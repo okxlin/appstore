@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/xiaoxinpro/WolGoWeb
   github: https://github.com/xiaoxinpro/WolGoWeb
   document: https://github.com/xiaoxinpro/WolGoWeb
-  architectures:
-    - amd64

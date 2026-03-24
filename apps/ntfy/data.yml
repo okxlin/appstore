@@ -17,5 +17,3 @@ additionalProperties:
   website: https://ntfy.sh/
   github: https://github.com/binwiederhier/ntfy
   document: https://ntfy.sh/docs
-  architectures:
-    - amd64

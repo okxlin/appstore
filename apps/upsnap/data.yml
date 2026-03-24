@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/seriousm4x/UpSnap
   github: https://github.com/seriousm4x/UpSnap
   document: https://github.com/seriousm4x/UpSnap
-  architectures:
-    - amd64

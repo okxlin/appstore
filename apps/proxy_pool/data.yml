@@ -17,5 +17,3 @@ additionalProperties:
   website: https://proxy-pool.readthedocs.io
   github: https://github.com/jhao104/proxy_pool
   document: https://proxy-pool.readthedocs.io
-  architectures:
-    - amd64

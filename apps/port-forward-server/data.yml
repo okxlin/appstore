@@ -17,5 +17,3 @@ additionalProperties:
   website: https://gitee.com/tavenli/port-forward
   github: https://gitee.com/tavenli/port-forward
   document: https://gitee.com/tavenli/port-forward
-  architectures:
-    - amd64

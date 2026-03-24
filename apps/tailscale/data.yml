@@ -17,5 +17,3 @@ additionalProperties:
   website: https://tailscale.com
   github: https://github.com/tailscale/tailscale
   document: https://tailscale.com/kb/1017/install
-  architectures:
-    - amd64

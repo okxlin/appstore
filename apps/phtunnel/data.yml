@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hsk.oray.com
   github: https://hub.docker.com/r/bestoray/phtunnel
   document: https://service.oray.com/question/36626.html
-  architectures:
-    - amd64

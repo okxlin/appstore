@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/traceless/alist-encrypt
   github: https://github.com/traceless/alist-encrypt
   document: https://github.com/traceless/alist-encrypt
-  architectures:
-    - amd64

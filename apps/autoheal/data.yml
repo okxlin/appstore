@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/willfarrell/docker-autoheal
   github: https://github.com/willfarrell/docker-autoheal
   document: https://github.com/willfarrell/docker-autoheal
-  architectures:
-    - amd64

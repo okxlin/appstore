@@ -17,5 +17,3 @@ additionalProperties:
   website: https://voce.chat
   github: https://github.com/Privoce/vocechat-web
   document: https://doc.voce.chat
-  architectures:
-    - amd64

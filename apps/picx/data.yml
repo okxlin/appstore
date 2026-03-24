@@ -17,5 +17,3 @@ additionalProperties:
   website: https://picx.xpoet.cn
   github: https://github.com/XPoet/picx
   document: https://picx-docs.xpoet.cn
-  architectures:
-    - amd64

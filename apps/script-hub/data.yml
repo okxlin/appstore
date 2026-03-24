@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/xxooyy/script-hub
   github: https://github.com/Script-Hub-Org/Script-Hub
   document: https://github.com/Script-Hub-Org/Script-Hub/wiki
-  architectures:
-    - amd64

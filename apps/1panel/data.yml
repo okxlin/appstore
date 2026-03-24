@@ -17,5 +17,3 @@ additionalProperties:
   website: https://1panel.cn
   github: https://github.com/1Panel-dev/1Panel
   document: https://1panel.cn/docs
-  architectures:
-    - amd64

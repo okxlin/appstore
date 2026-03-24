@@ -17,5 +17,3 @@ additionalProperties:
   website: https://music.qier222.com/
   github: https://github.com/qier222/YesPlayMusic
   document: https://github.com/qier222/YesPlayMusic
-  architectures:
-    - amd64

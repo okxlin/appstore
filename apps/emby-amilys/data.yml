@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/amilys/embyserver
   github: https://github.com/amilys
   document: https://hub.docker.com/r/amilys/embyserver
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://ehang-io.github.io/nps
   github: https://github.com/yisier/nps
   document: https://ehang-io.github.io/nps
-  architectures:
-    - amd64

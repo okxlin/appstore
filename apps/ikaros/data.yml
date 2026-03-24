@@ -16,5 +16,3 @@ additionalProperties:
   website: https://ikaros.run
   github: https://github.com/ikaros-dev/ikaros
   document: https://docs.ikaros.run
-  architectures:
-    - amd64

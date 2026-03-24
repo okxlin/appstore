@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/okxlin/appstore
   github: https://github.com/okxlin/appstore
   document: https://github.com/okxlin/appstore
-  architectures:
-    - amd64

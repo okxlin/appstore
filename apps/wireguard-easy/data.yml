@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.wireguard.com/
   github: https://github.com/wg-easy/wg-easy
   document: https://www.wireguard.com/
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://obsidian.md
   github: https://github.com/sytone/obsidian-remote
   document: https://help.obsidian.md
-  architectures:
-    - amd64

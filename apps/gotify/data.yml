@@ -17,5 +17,3 @@ additionalProperties:
   website: https://gotify.net
   github: https://github.com/gotify/server
   document: https://gotify.net/docs/
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/caomingjun/warp
   github: https://github.com/cmj2002/warp-docker
   document: https://github.com/cmj2002/warp-docker
-  architectures:
-    - amd64

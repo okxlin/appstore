@@ -17,5 +17,3 @@ additionalProperties:
   website: https://dos.lol/
   github: https://github.com/rwv/chinese-dos-games
   document: https://github.com/rwv/chinese-dos-games
-  architectures:
-    - amd64

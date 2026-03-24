@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.navidrome.org
   github: https://github.com/navidrome/navidrome
   document: https://www.navidrome.org/docs
-  architectures:
-    - amd64

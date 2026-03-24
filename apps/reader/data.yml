@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/hectorqin/reader
   github: https://github.com/hectorqin/reader
   document: https://github.com/hectorqin/reader
-  architectures:
-    - amd64

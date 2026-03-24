@@ -17,5 +17,3 @@ additionalProperties:
   website: https://vanblog.mereith.com
   github: https://github.com/Mereithhh/vanblog
   document: https://vanblog.mereith.com
-  architectures:
-    - amd64

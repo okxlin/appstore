@@ -17,5 +17,3 @@ additionalProperties:
   website: https://calibre-ebook.com
   github: https://github.com/janeczku/calibre-web
   document: https://calibre-ebook.com/help
-  architectures:
-    - amd64

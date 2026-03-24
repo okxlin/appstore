@@ -17,5 +17,3 @@ additionalProperties:
   website: https://cloudreve.org/
   github: https://github.com/cloudreve/Cloudreve
   document: https://docs.cloudreve.org/
-  architectures:
-    - amd64

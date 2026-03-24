@@ -17,5 +17,3 @@ additionalProperties:
   website: http://app.lizardbyte.dev/Sunshine
   github: https://github.com/LizardByte/Sunshine
   document: https://sunshinestream.readthedocs.io
-  architectures:
-    - amd64

@@ -1,6 +1,6 @@
 name: ChatGPT on WeChat
 tags:
-  - AI
+  - AI / 大模型
 title: 基于大模型的智能对话机器人
 description: 基于大模型的智能对话机器人
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/zhayujie/chatgpt-on-wechat
   github: https://github.com/zhayujie/chatgpt-on-wechat
   document: https://docs.link-ai.tech/cow
-  architectures:
-    - amd64

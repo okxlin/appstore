@@ -17,5 +17,3 @@ additionalProperties:
   website: https://chevereto.com
   github: https://github.com/chevereto/chevereto
   document: https://chevereto.com/docs
-  architectures:
-    - amd64

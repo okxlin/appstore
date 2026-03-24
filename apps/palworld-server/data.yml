@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/kagurazakanyaa/palworld
   github: https://github.com/KagurazakaNyaa/palworld-docker
   document: https://github.com/KagurazakaNyaa/palworld-docker
-  architectures:
-    - amd64

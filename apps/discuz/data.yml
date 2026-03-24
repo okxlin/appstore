@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.discuz.vip/
   github: https://gitee.com/Discuz/DiscuzX
   document: https://open.dismall.com/?ac=document&page=dev
-  architectures:
-    - amd64

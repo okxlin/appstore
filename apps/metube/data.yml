@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/alexta69/metube
   github: https://github.com/alexta69/metube
   document: https://github.com/alexta69/metube
-  architectures:
-    - amd64

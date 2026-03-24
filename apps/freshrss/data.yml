@@ -17,5 +17,3 @@ additionalProperties:
   website: https://freshrss.org
   github: https://github.com/FreshRSS/FreshRSS
   document: https://freshrss.github.io/FreshRSS
-  architectures:
-    - amd64

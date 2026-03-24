@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/jaydenlee2019/mynodequery
   github: https://hub.docker.com/r/jaydenlee2019/mynodequery
   document: https://hub.docker.com/r/jaydenlee2019/mynodequery
-  architectures:
-    - amd64

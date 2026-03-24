@@ -17,5 +17,3 @@ additionalProperties:
   website: https://sonarr.tv
   github: https://github.com/Sonarr/Sonarr
   document: https://wiki.servarr.com
-  architectures:
-    - amd64

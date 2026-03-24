@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.mozilla.org/
   github: https://www.mozilla.org/
   document: https://www.mozilla.org/
-  architectures:
-    - amd64

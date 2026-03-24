@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.resilio.com
   github: https://www.resilio.com
   document: https://help.resilio.com
-  architectures:
-    - amd64

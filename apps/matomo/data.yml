@@ -17,5 +17,3 @@ additionalProperties:
   website: https://matomo.org/
   github: https://github.com/matomo-org/matomo
   document: https://matomo.org/docs
-  architectures:
-    - amd64

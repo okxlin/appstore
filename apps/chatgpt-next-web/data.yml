@@ -1,6 +1,6 @@
 name: ChatGPT-Next-Web
 tags:
-  - AI
+  - AI / 大模型
 title: 一键免费部署你的跨平台私人 ChatGPT 应用
 description: 一键免费部署你的跨平台私人 ChatGPT 应用
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/Yidadaa/ChatGPT-Next-Web
   github: https://github.com/Yidadaa/ChatGPT-Next-Web
   document: https://github.com/Yidadaa/ChatGPT-Next-Web
-  architectures:
-    - amd64

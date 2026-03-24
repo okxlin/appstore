@@ -17,5 +17,3 @@ additionalProperties:
   website: https://stackedit.io
   github: https://github.com/benweet/stackedit
   document: https://github.com/benweet/stackedit
-  architectures:
-    - amd64

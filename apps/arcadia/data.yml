@@ -17,5 +17,3 @@ additionalProperties:
   website: https://arcadia.cool
   github: https://github.com/SuperManito/Arcadia
   document: https://arcadia.cool/docs
-  architectures:
-    - amd64

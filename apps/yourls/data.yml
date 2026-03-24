@@ -17,5 +17,3 @@ additionalProperties:
   website: https://yourls.org/
   github: https://github.com/YOURLS/YOURLS
   document: https://yourls.org/docs
-  architectures:
-    - amd64

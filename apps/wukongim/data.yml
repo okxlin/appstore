@@ -17,5 +17,3 @@ additionalProperties:
   website: https://githubim.com
   github: https://github.com/TangSengDaoDao/TangSengDaoDaoServer
   document: https://githubim.com
-  architectures:
-    - amd64

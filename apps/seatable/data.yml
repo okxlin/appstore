@@ -17,5 +17,3 @@ additionalProperties:
   website: https://seatable.cn
   github: https://github.com/seatable/seatable
   document: https://docs.seatable.cn
-  architectures:
-    - amd64

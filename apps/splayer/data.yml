@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/imsyy/SPlayer
   github: https://github.com/imsyy/SPlayer
   document: https://github.com/imsyy/SPlayer
-  architectures:
-    - amd64

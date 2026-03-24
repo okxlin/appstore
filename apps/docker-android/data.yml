@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/budtmo/docker-android
   github: https://github.com/budtmo/docker-android
   document: https://github.com/budtmo/docker-android
-  architectures:
-    - amd64

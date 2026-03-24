@@ -17,5 +17,3 @@ additionalProperties:
   website: https://metatube-community.github.io
   github: https://github.com/metatube-community/metatube-sdk-go
   document: https://metatube-community.github.io
-  architectures:
-    - amd64

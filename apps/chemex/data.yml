@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/celaraze/chemex
   github: https://github.com/celaraze/chemex
   document: https://github.com/celaraze/chemex
-  architectures:
-    - amd64

@@ -1,6 +1,6 @@
 name: Pandora
 tags:
-  - AI
+  - AI / 大模型
 title: 潘多拉，一个让你呼吸顺畅的 ChatGPT
 description: 潘多拉，一个让你呼吸顺畅的 ChatGPT
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/zhile-io/pandora
   github: https://github.com/zhile-io/pandora
   document: https://github.com/zhile-io/pandora/blob/master/doc/wiki.md
-  architectures:
-    - amd64

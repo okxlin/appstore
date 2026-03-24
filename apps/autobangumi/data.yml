@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.autobangumi.org
   github: https://github.com/EstrellaXD/Auto_Bangumi
   document: https://www.autobangumi.org
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://nextcloud.com/
   github: https://github.com/nextcloud/server
   document: https://docs.nextcloud.com/
-  architectures:
-    - amd64

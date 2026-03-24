@@ -17,5 +17,3 @@ additionalProperties:
   website: https://rec.danmuji.org
   github: https://github.com/BililiveRecorder/BililiveRecorder
   document: https://rec.danmuji.org/install/versions/
-  architectures:
-    - amd64

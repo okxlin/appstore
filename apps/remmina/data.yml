@@ -17,5 +17,3 @@ additionalProperties:
   website: https://remmina.org
   github: https://gitlab.com/Remmina/Remmina
   document: https://gitlab.com/Remmina/Remmina/-/wikis/home
-  architectures:
-    - amd64

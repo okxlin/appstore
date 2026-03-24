@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/alist-org/alist
   github: https://github.com/alist-org/alist
   document: https://alist.nn.ci/zh/
-  architectures:
-    - amd64

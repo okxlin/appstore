@@ -17,5 +17,3 @@ additionalProperties:
   website: https://docs.opentdp.org
   github: https://github.com/opentdp/tdp-cloud
   document: https://docs.opentdp.org
-  architectures:
-    - amd64

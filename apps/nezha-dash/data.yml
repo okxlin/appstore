@@ -17,5 +17,3 @@ additionalProperties:
   website: https://nezha-cf.buycoffee.top
   github: https://github.com/hamster1963/nezha-dash
   document: https://github.com/hamster1963/nezha-dash
-  architectures:
-    - amd64

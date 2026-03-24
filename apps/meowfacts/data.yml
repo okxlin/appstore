@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/wh-iterabb-it/meowfacts
   github: https://github.com/wh-iterabb-it/meowfacts
   document: https://github.com/wh-iterabb-it/meowfacts
-  architectures:
-    - amd64

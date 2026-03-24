@@ -17,5 +17,3 @@ additionalProperties:
   website: https://getdashdot.com
   github: https://github.com/MauriceNino/dashdot
   document: https://getdashdot.com/docs/install
-  architectures:
-    - amd64

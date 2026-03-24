@@ -17,5 +17,3 @@ additionalProperties:
   website: https://os.tenfell.cn
   github: https://github.com/fs185085781/webos
   document: https://os.tenfell.cn/doc
-  architectures:
-    - amd64

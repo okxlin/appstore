@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.tldraw.com
   github: https://github.com/tldraw/tldraw
   document: https://tldraw.dev
-  architectures:
-    - amd64

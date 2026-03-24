@@ -16,5 +16,3 @@ additionalProperties:
   website: https://www.anqicms.com/
   github: https://github.com/fesiong/anqicms
   document: https://www.anqicms.com/help
-  architectures:
-    - amd64

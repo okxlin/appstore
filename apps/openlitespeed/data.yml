@@ -17,5 +17,3 @@ additionalProperties:
   website: https://openlitespeed.org
   github: https://github.com/litespeedtech/openlitespeed
   document: https://openlitespeed.org/#install
-  architectures:
-    - amd64

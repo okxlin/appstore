@@ -17,5 +17,3 @@ additionalProperties:
   website: https://gethomepage.dev
   github: https://github.com/gethomepage/homepage
   document: https://gethomepage.dev
-  architectures:
-    - amd64

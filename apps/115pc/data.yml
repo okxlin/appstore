@@ -17,5 +17,3 @@ additionalProperties:
   website: https://115.com
   github: https://www.github.com/funcman/docker_115pc
   document: https://www.github.com/funcman/docker_115pc
-  architectures:
-    - amd64

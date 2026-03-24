@@ -17,5 +17,3 @@ additionalProperties:
   website: https://docs.lrc.cx
   github: https://github.com/HisAtri/LrcApi
   document: https://docs.lrc.cx
-  architectures:
-    - amd64

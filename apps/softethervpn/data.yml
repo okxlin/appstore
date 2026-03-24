@@ -19,5 +19,3 @@ additionalProperties:
   website: https://www.softether.org
   github: https://github.com/SoftEtherVPN/SoftEtherVPN
   document: https://www.softether.org/4-docs
-  architectures:
-    - amd64

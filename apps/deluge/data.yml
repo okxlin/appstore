@@ -17,5 +17,3 @@ additionalProperties:
   website: https://deluge-torrent.org
   github: https://github.com/linuxserver/docker-deluge
   document: https://deluge.readthedocs.io
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/sissbruecker/linkding
   github: https://github.com/sissbruecker/linkding
   document: https://github.com/sissbruecker/linkding
-  architectures:
-    - amd64

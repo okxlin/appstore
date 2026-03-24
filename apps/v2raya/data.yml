@@ -17,5 +17,3 @@ additionalProperties:
   website: https://v2raya.org
   github: https://github.com/v2rayA/v2rayA
   document: https://v2raya.org/docs/prologue/introduction/
-  architectures:
-    - amd64

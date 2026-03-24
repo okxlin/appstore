@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/gurucomputing/headscale-ui
   github: https://github.com/gurucomputing/headscale-ui
   document: https://github.com/gurucomputing/headscale-ui
-  architectures:
-    - amd64

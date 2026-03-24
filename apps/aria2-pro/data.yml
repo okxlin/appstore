@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/P3TERX/Aria2-Pro-Docker
   github: https://github.com/P3TERX/Aria2-Pro-Docker
   document: https://p3terx.com/archives/docker-aria2-pro.html
-  architectures:
-    - amd64

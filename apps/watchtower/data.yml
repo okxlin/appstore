@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/containrrr/watchtower
   github: https://github.com/containrrr/watchtower
   document: https://containrrr.dev/watchtower/
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://blinko-demo.vercel.app
   github: https://github.com/blinko-space/blinko
   document: https://blinko-doc.vercel.app/intro.html
-  architectures:
-    - amd64

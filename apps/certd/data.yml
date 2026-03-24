@@ -17,5 +17,3 @@ additionalProperties:
   website: https://certd.docmirror.cn
   github: https://github.com/certd/certd
   document: https://certd.docmirror.cn
-  architectures:
-    - amd64

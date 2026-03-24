@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/sickcodes/Docker-OSX
   github: https://github.com/sickcodes/Docker-OSX
   document: https://github.com/sickcodes/Docker-OSX
-  architectures:
-    - amd64

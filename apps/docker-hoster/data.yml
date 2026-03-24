@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/solipsist01/docker-hoster
   github: https://github.com/dvddarias/docker-hoster
   document: https://github.com/dvddarias/docker-hoster
-  architectures:
-    - amd64

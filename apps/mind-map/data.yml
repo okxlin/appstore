@@ -17,5 +17,3 @@ additionalProperties:
   website: https://wanglin2.github.io/mind-map
   github: https://github.com/wanglin2/mind-map
   document: https://wanglin2.github.io/mind-map/#/doc/zh/
-  architectures:
-    - amd64

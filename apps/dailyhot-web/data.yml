@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hot.imsyy.top
   github: https://github.com/imsyy/DailyHot
   document: https://github.com/imsyy/DailyHot
-  architectures:
-    - amd64

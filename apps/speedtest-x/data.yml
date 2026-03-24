@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/BadApple9/speedtest-x
   github: https://github.com/BadApple9/speedtest-x
   document: https://github.com/BadApple9/speedtest-x
-  architectures:
-    - amd64

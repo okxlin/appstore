@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/youshandefeiyang/allinone
   github: https://hub.docker.com/r/youshandefeiyang/allinone
   document: https://hub.docker.com/r/youshandefeiyang/allinone
-  architectures:
-    - amd64

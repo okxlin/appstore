@@ -17,5 +17,3 @@ additionalProperties:
   website: https://ipcheck.ing
   github: https://github.com/jason5ng32/MyIP
   document: https://github.com/jason5ng32/MyIP
-  architectures:
-    - amd64

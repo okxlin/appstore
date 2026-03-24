@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/glanceapp/glance
   github: https://github.com/glanceapp/glance
   document: https://github.com/glanceapp/glance
-  architectures:
-    - amd64

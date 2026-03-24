@@ -17,5 +17,3 @@ additionalProperties:
   website: https://flarum.org/
   github: https://github.com/flarum/flarum
   document: https://docs.flarum.org/
-  architectures:
-    - amd64

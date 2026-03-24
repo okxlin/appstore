@@ -1,6 +1,6 @@
 name: Happy-ChatGPT
 tags:
-  - AI
+  - AI / 大模型
 title: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
 description: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://happy-chat-gpt.vercel.app
   github: https://github.com/vastxie/Happy-ChatGPT
   document: https://github.com/vastxie/Happy-ChatGPT
-  architectures:
-    - amd64

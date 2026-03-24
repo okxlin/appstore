@@ -18,14 +18,14 @@ additionalProperties:
       type: number
     - default: "47984-47989"
       edit: true
-      envKey: SUNSHINE_TCP_PORT_RANGE
+      envKey: PANEL_APP_PORT_TCP
       labelEn: TCP Port Range
       labelZh: TCP 端口范围
       required: true
       type: text
     - default: "47998-48000"
       edit: true
-      envKey: SUNSHINE_UDP_PORT_RANGE
+      envKey: PANEL_APP_PORT_UDP
       labelEn: TUDP Port Range
       labelZh: UDP 端口范围
       required: true

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://joplinapp.org/
   github: https://github.com/laurent22/joplin
   document: https://joplinapp.org/help/
-  architectures:
-    - amd64

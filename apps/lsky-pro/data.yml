@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/halcyonazure/lsky-pro-docker
   github: https://github.com/lsky-org/lsky-pro
   document: https://docs.lsky.pro/
-  architectures:
-    - amd64

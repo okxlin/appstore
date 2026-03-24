@@ -17,5 +17,3 @@ additionalProperties:
   website: https://docs.2fauth.app
   github: https://github.com/Bubka/2FAuth
   document: https://docs.2fauth.app
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/chaos-zhu/easynode
   github: https://github.com/chaos-zhu/easynode
   document: https://github.com/chaos-zhu/easynode
-  architectures:
-    - amd64

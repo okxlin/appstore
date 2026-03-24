@@ -17,5 +17,3 @@ additionalProperties:
   website: https://soft.xiaoz.org
   github: https://github.com/helloxz/zdir
   document: https://doc.xiaoz.me/books/zdir-3
-  architectures:
-    - amd64

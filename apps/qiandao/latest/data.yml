@@ -31,3 +31,5 @@ additionalProperties:
       required: true
       rule: paramCommon
       type: text
+    - default: http
+      edit: true

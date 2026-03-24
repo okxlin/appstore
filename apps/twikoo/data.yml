@@ -17,5 +17,3 @@ additionalProperties:
   website: https://twikoo.js.org
   github: https://github.com/imaegoo/twikoo
   document: https://twikoo.js.org
-  architectures:
-    - amd64

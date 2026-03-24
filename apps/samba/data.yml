@@ -17,5 +17,3 @@ additionalProperties:
   website: https://deft.work/samba
   github: https://github.com/DeftWork/samba
   document: https://github.com/DeftWork/samba
-  architectures:
-    - amd64

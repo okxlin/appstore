@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/dockur/windows
   github: https://github.com/dockur/windows
   document: https://github.com/dockur/windows
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.nginxwebui.cn
   github: https://github.com/cym1102/nginxWebUI
   document: https://www.nginxwebui.cn/product.html
-  architectures:
-    - amd64

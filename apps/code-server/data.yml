@@ -17,5 +17,3 @@ additionalProperties:
   website: https://coder.com/
   github: https://github.com/coder/code-server
   document: https://coder.com/docs/code-server/latest
-  architectures:
-    - amd64

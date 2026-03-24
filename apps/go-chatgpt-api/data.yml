@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/linweiyuan/go-chatgpt-api
   github: https://github.com/linweiyuan/go-chatgpt-api
   document: https://github.com/linweiyuan/go-chatgpt-api
-  architectures:
-    - amd64

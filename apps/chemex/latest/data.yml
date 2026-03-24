@@ -8,7 +8,6 @@ additionalProperties:
         required: true
         type: service
       default: mysql
-      envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
       params:

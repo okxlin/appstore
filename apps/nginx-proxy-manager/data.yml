@@ -17,5 +17,3 @@ additionalProperties:
   website: https://nginxproxymanager.com/
   github: https://github.com/NginxProxyManager/nginx-proxy-manager
   document: https://nginxproxymanager.com/guide/
-  architectures:
-    - amd64

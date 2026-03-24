@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/mouday/spider-admin-pro
   github: https://github.com/mouday/spider-admin-pro
   document: https://github.com/mouday/spider-admin-pro
-  architectures:
-    - amd64

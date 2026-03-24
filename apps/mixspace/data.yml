@@ -16,5 +16,3 @@ additionalProperties:
   website: https://mx-space.js.org
   github: https://github.com/mx-space/core
   document: https://mx-space.js.org/docs
-  architectures:
-    - amd64

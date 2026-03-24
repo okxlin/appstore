@@ -1,6 +1,6 @@
 name: MiGPT
 tags:
-  - AI
+  - AI / 大模型
 title: 将小爱音箱接入 ChatGPT 和豆包
 description: 将小爱音箱接入 ChatGPT 和豆包
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/idootop/mi-gpt
   github: https://github.com/idootop/mi-gpt
   document: https://github.com/idootop/mi-gpt
-  architectures:
-    - amd64

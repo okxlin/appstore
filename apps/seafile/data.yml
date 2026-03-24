@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.seafile.com
   github: https://github.com/haiwen/seafile
   document: https://manual.seafile.com
-  architectures:
-    - amd64

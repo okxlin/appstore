@@ -17,5 +17,3 @@ additionalProperties:
   website: https://librespeed.org/
   github: https://github.com/librespeed/speedtest
   document: https://github.com/librespeed/speedtest
-  architectures:
-    - amd64

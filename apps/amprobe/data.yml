@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/amuluze/amprobe
   github: https://github.com/amuluze/amprobe
   document: https://amprobedoc.amuluze.com
-  architectures:
-    - amd64

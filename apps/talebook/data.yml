@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.talebook.org
   github: https://github.com/talebook/talebook
   document: https://github.com/talebook/talebook
-  architectures:
-    - amd64

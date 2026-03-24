@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/Jeric-X/SyncClipboard
   github: https://github.com/Jeric-X/SyncClipboard
   document: https://github.com/Jeric-X/SyncClipboard
-  architectures:
-    - amd64

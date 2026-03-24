@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.netdata.cloud
   github: https://github.com/netdata/netdata
   document: https://learn.netdata.cloud/docs/
-  architectures:
-    - amd64

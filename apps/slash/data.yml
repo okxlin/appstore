@@ -17,5 +17,3 @@ additionalProperties:
   website: https://demo.slash.yourselfhosted.com/
   github: https://github.com/boojack/slash
   document: https://github.com/boojack/slash/blob/main/docs/install.md
-  architectures:
-    - amd64

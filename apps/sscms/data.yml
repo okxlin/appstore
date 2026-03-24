@@ -17,5 +17,3 @@ additionalProperties:
   website: https://sscms.com
   github: https://github.com/siteserver/cms
   document: https://sscms.com/docs
-  architectures:
-    - amd64

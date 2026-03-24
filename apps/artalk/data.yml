@@ -17,5 +17,3 @@ additionalProperties:
   website: https://artalk.js.org
   github: https://github.com/ArtalkJS/Artalk
   document: https://artalk.js.org/guide/intro.html
-  architectures:
-    - amd64

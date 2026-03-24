@@ -17,5 +17,3 @@ additionalProperties:
   website: https://neko.m1k1o.net
   github: https://github.com/m1k1o/neko
   document: https://neko.m1k1o.net
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/rapiz1/rathole
   github: https://github.com/rapiz1/rathole
   document: https://github.com/rapiz1/rathole/blob/main/README-zh.md
-  architectures:
-    - amd64

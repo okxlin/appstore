@@ -17,5 +17,3 @@ additionalProperties:
   website: https://rustdesk.com/zh/
   github: https://github.com/rustdesk/rustdesk
   document: https://rustdesk.com/docs/zh-cn/
-  architectures:
-    - amd64

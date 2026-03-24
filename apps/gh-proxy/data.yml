@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/hunshcn/gh-proxy
   github: https://github.com/hunshcn/gh-proxy
   document: https://github.com/hunshcn/gh-proxy
-  architectures:
-    - amd64

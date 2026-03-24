@@ -17,5 +17,3 @@ additionalProperties:
   website: https://filebrowser.org/
   github: https://github.com/filebrowser/filebrowser
   document: https://filebrowser.org/
-  architectures:
-    - amd64

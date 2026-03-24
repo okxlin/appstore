@@ -17,5 +17,3 @@ additionalProperties:
   website: https://cook.yunyoujun.cn
   github: https://github.com/YunYouJun/cook
   document: https://github.com/YunYouJun/cook
-  architectures:
-    - amd64

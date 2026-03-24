@@ -17,5 +17,3 @@ additionalProperties:
   website: https://pic.besscroft.com
   github: https://github.com/besscroft/PicImpact
   document: https://github.com/besscroft/PicImpact
-  architectures:
-    - amd64

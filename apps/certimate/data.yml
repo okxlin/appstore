@@ -17,5 +17,3 @@ additionalProperties:
   website: https://docs.certimate.me
   github: https://github.com/usual2970/certimate
   document: https://docs.certimate.me
-  architectures:
-    - amd64

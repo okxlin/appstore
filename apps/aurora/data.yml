@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/Aurora-Admin-Panel/deploy
   github: https://github.com/Aurora-Admin-Panel/deploy
   document: https://github.com/Aurora-Admin-Panel/deploy
-  architectures:
-    - amd64

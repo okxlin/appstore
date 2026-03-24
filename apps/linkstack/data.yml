@@ -17,5 +17,3 @@ additionalProperties:
   website: https://linkstack.org
   github: https://github.com/LinkStackOrg/LinkStack
   document: https://docs.linkstack.org
-  architectures:
-    - amd64

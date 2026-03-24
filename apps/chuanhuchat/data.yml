@@ -1,6 +1,6 @@
 name: 川虎 Chat (Chuanhu Chat)
 tags:
-  - AI
+  - AI / 大模型
 title: 为多种 LLM 提供了一个轻快好用的 Web 图形界面和众多附加功能
 description: 为多种 LLM 提供了一个轻快好用的 Web 图形界面和众多附加功能
 additionalProperties:
@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/GaiZhenbiao/ChuanhuChatGPT
   github: https://github.com/GaiZhenbiao/ChuanhuChatGPT
   document: https://github.com/GaiZhenbiao/ChuanhuChatGPT/wiki
-  architectures:
-    - amd64

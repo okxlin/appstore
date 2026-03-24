@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.mediawiki.org
   github: https://github.com/wikimedia/mediawiki
   document: https://www.mediawiki.org/wiki/Manual:Installation_guide
-  architectures:
-    - amd64

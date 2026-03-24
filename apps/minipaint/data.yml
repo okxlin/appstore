@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/pfav/minipaint
   github: https://github.com/viliusle/miniPaint
   document: https://github.com/viliusle/miniPaint/wiki
-  architectures:
-    - amd64

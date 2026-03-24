@@ -17,5 +17,3 @@ additionalProperties:
     website: https://perfree.org.cn/
     github: https://github.com/PerfreeBlog/PerfreeBlog
     document: https://perfree.org.cn/useDocs/
-    architectures:
-      - amd64

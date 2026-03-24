@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/qdtoday/qd
   github: https://github.com/qd-today/qd
   document: https://qd-today.github.io/qd/zh_CN/
-  architectures:
-    - amd64

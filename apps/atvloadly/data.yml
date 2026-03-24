@@ -19,5 +19,3 @@ additionalProperties:
   website: https://github.com/bitxeno/atvloadly
   github: https://github.com/bitxeno/atvloadly
   document: https://github.com/bitxeno/atvloadly
-  architectures:
-    - amd64

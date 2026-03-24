@@ -17,5 +17,3 @@ additionalProperties:
   website: https://tinyfilemanager.github.io
   github: https://github.com/prasathmani/tinyfilemanager
   document: https://github.com/prasathmani/tinyfilemanager/wiki
-  architectures:
-    - amd64

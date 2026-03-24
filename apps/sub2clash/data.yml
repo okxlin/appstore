@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.nite07.com/sub
   github: https://github.com/nitezs/sub2clash
   document: https://github.com/nitezs/sub2clash
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/easychen/CookieCloud
   github: https://github.com/easychen/CookieCloud
   document: https://github.com/easychen/CookieCloud
-  architectures:
-    - amd64

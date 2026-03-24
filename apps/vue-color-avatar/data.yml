@@ -17,5 +17,3 @@ additionalProperties:
   website: https://vue-color-avatar.leoku.dev
   github: https://github.com/Codennnn/vue-color-avatar
   document: https://github.com/Codennnn/vue-color-avatar
-  architectures:
-    - amd64

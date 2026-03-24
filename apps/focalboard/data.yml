@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.focalboard.com/
   github: https://github.com/mattermost/focalboard
   document: https://docs.mattermost.com/guides/boards.html
-  architectures:
-    - amd64

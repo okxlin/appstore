@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.qbittorrent.org/
   github: https://github.com/qbittorrent/qBittorrent
   document: http://wiki.qbittorrent.org/
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
   github: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
   document: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
-  architectures:
-    - amd64

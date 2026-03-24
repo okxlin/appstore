@@ -17,5 +17,3 @@ additionalProperties:
   website: https://memcached.org/
   github: https://github.com/memcached/memcached
   document: https://github.com/memcached/memcached/wiki
-  architectures:
-    - amd64

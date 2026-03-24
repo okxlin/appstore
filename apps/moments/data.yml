@@ -17,5 +17,3 @@ additionalProperties:
   website: https://moments.shiyu.dev/
   github: https://github.com/Drizzle365/Moments
   document: https://shiyu.dev/archives/2069/
-  architectures:
-    - amd64

@@ -17,5 +17,3 @@ additionalProperties:
   website: https://www.thunderbird.net
   github: https://github.com/thunderbird
   document: https://support.mozilla.org/en-US/products/thunderbird
-  architectures:
-    - amd64

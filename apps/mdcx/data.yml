@@ -17,5 +17,3 @@ additionalProperties:
   website: https://hub.docker.com/r/stainless403/mdcx-builtin-gui-base
   github: https://github.com/northsea4/mdcx-docker
   document: https://github.com/northsea4/mdcx-docker
-  architectures:
-    - amd64

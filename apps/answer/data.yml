@@ -17,5 +17,3 @@ additionalProperties:
   website: https://answer.dev/
   github: https://github.com/answerdev/answer
   document: https://answer.dev/zh-CN/docs
-  architectures:
-    - amd64
