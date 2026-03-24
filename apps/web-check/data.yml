@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/lissy93/web-check
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/power721/alist-tvbox
   architectures:
     - amd64
+    - arm64

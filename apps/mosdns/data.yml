@@ -19,3 +19,5 @@ additionalProperties:
   document: https://irine-sistiana.gitbook.io/mosdns-wiki/
   architectures:
     - amd64
+    - arm
+    - arm64

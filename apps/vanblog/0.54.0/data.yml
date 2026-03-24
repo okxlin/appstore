@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: HTTP 端口
+      label:
+        en: Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Port
       labelZh: HTTPS 端口
+      label:
+        en: Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: EMAIL
       labelEn: Mailbox for automatic https certificate application
       labelZh: 用于自动申请 https 证书的邮箱
+      label:
+        en: Mailbox for automatic https certificate application
+        zh: 用于自动申请 https 证书的邮箱
+        zh-Hant: 用于自动申请 https 证书的邮箱
+        ja: Mailbox for automatic https certificate application
+        ko: Mailbox for automatic https certificate application
+        ru: Mailbox for automatic https certificate application
+        ms: Mailbox for automatic https certificate application
+        pt-br: Mailbox for automatic https certificate application
       required: false
       type: text
     - default: ""
@@ -42,12 +87,30 @@ additionalProperties:
       envKey: VAN_BLOG_CDN_URL
       labelEn: CDN URL
       labelZh: CDN 地址
+      label:
+        en: CDN URL
+        zh: CDN 地址
+        zh-Hant: CDN 地址
+        ja: CDN URL
+        ko: CDN URL
+        ru: CDN URL
+        ms: CDN URL
+        pt-br: CDN URL
       required: false
       type: text
     - default: "waline"
       envKey: VAN_BLOG_WALINE_DB
       labelEn: Database name of the embedded commenting system
       labelZh: 内嵌评论系统的数据库名
+      label:
+        en: Database name of the embedded commenting system
+        zh: 内嵌评论系统的数据库名
+        zh-Hant: 内嵌评论系统的数据库名
+        ja: Database name of the embedded commenting system
+        ko: Database name of the embedded commenting system
+        ru: Database name of the embedded commenting system
+        ms: Database name of the embedded commenting system
+        pt-br: Database name of the embedded commenting system
       required: false
       type: text
       edit: true
@@ -57,6 +120,15 @@ additionalProperties:
       key: mongodb
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: service
     - default: "vanblog"
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: MONGO_DB
       labelEn: Database Name
       labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database Name
+        ko: Database Name
+        ru: Database Name
+        ms: Database Name
+        pt-br: Database Name
       random: true
       required: true
       rule: paramCommon
@@ -73,6 +154,15 @@ additionalProperties:
       envKey: PANEL_DB_ROOT_USER
       labelEn: Database User Name
       labelZh: 数据库用户名
+      label:
+        en: Database User Name
+        zh: 数据库用户名
+        zh-Hant: 数据库用户名
+        ja: Database User Name
+        ko: Database User Name
+        ru: Database User Name
+        ms: Database User Name
+        pt-br: Database User Name
       required: true
       rule: paramCommon
       type: text
@@ -81,6 +171,15 @@ additionalProperties:
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Database User Password
       labelZh: 数据库密码
+      label:
+        en: Database User Password
+        zh: 数据库密码
+        zh-Hant: 数据库密码
+        ja: Database User Password
+        ko: Database User Password
+        ru: Database User Password
+        ms: Database User Password
+        pt-br: Database User Password
       required: true
       rule: paramCommon
       type: password

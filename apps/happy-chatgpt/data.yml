@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/vastxie/Happy-ChatGPT
   architectures:
     - amd64
+    - arm64

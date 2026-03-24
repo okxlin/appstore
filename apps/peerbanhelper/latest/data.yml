@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "0"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "30s"
@@ -41,5 +86,14 @@ additionalProperties:
       envKey: STOP_GRACE_PERIOD
       labelEn: Stop Grace Period
       labelZh: 停止宽限期
+      label:
+        en: Stop Grace Period
+        zh: 停止宽限期
+        zh-Hant: 停止宽限期
+        ja: Stop Grace Period
+        ko: Stop Grace Period
+        ru: Stop Grace Period
+        ms: Stop Grace Period
+        pt-br: Stop Grace Period
       required: true
       type: text

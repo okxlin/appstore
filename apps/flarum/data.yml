@@ -19,3 +19,5 @@ additionalProperties:
   document: https://docs.flarum.org/
   architectures:
     - amd64
+    - arm
+    - arm64

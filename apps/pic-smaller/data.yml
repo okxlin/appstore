@@ -21,3 +21,5 @@ additionalProperties:
   document: https://github.com/joye61/pic-smaller
   architectures:
     - amd64
+    - arm
+    - arm64

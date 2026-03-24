@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "223.5.5.5"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DNS_1
       labelEn: Primary DNS
       labelZh: 主 DNS
+      label:
+        en: Primary DNS
+        zh: 主 DNS
+        zh-Hant: 主 DNS
+        ja: Primary DNS
+        ko: Primary DNS
+        ru: Primary DNS
+        ms: Primary DNS
+        pt-br: Primary DNS
       required: true
       type: text
     - default: "119.29.29.29"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DNS_2
       labelEn: Secondary DNS
       labelZh: 次 DNS
+      label:
+        en: Secondary DNS
+        zh: 次 DNS
+        zh-Hant: 次 DNS
+        ja: Secondary DNS
+        ko: Secondary DNS
+        ru: Secondary DNS
+        ms: Secondary DNS
+        pt-br: Secondary DNS
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS Proxy
       labelZh: HTTPS 代理
+      label:
+        en: HTTPS Proxy
+        zh: HTTPS 代理
+        zh-Hant: HTTPS 代理
+        ja: HTTPS Proxy
+        ko: HTTPS Proxy
+        ru: HTTPS Proxy
+        ms: HTTPS Proxy
+        pt-br: HTTPS Proxy
       required: false
       type: text
     - default: ""
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: HTTP_PROXY
       labelEn: HTTP Proxy
       labelZh: HTTP 代理
+      label:
+        en: HTTP Proxy
+        zh: HTTP 代理
+        zh-Hant: HTTP 代理
+        ja: HTTP Proxy
+        ko: HTTP Proxy
+        ru: HTTP Proxy
+        ms: HTTP Proxy
+        pt-br: HTTP Proxy
       required: false
       type: text
     - default: "false"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: RESET_ADMIN_PASSWD
       labelEn: Reset Admin Password
       labelZh: 重置管理员密码
+      label:
+        en: Reset Admin Password
+        zh: 重置管理员密码
+        zh-Hant: 重置管理员密码
+        ja: Reset Admin Password
+        ko: Reset Admin Password
+        ru: Reset Admin Password
+        ms: Reset Admin Password
+        pt-br: Reset Admin Password
       required: true
       type: select
       values:
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: IMMEDIATE_TRIGGER
       labelEn: Immediate trigger of cron
       labelZh: 立即触发定时任务
+      label:
+        en: Immediate trigger of cron
+        zh: 立即触发定时任务
+        zh-Hant: 立即触发定时任务
+        ja: Immediate trigger of cron
+        ko: Immediate trigger of cron
+        ru: Immediate trigger of cron
+        ms: Immediate trigger of cron
+        pt-br: Immediate trigger of cron
       required: true
       type: select
       values:

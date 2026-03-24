@@ -19,3 +19,4 @@ additionalProperties:
   document: https://www.zabbix.com/manuals
   architectures:
     - amd64
+    - arm64

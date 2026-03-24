@@ -18,3 +18,5 @@ additionalProperties:
   website: https://libretv.is-an.org/
   architectures:
     - amd64
+    - arm
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/gurucomputing/headscale-ui
   architectures:
     - amd64
+    - arm64

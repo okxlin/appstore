@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Console Port
       labelZh: 控制台端口
+      label:
+        en: Console Port
+        zh: 控制台端口
+        zh-Hant: 控制台端口
+        ja: Console Port
+        ko: Console Port
+        ru: Console Port
+        ms: Console Port
+        pt-br: Console Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SERVER
       labelEn: ZeroTier Service Port
       labelZh: ZeroTier服务端口
+      label:
+        en: ZeroTier Service Port
+        zh: ZeroTier服务端口
+        zh-Hant: ZeroTier服务端口
+        ja: ZeroTier Service Port
+        ko: ZeroTier Service Port
+        ru: ZeroTier Service Port
+        ms: ZeroTier Service Port
+        pt-br: ZeroTier Service Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_DOWNLOAD
       labelEn: Planet/moon file download port
       labelZh: planet/moon文件在线下载端口
+      label:
+        en: Planet/moon file download port
+        zh: planet/moon文件在线下载端口
+        zh-Hant: planet/moon文件在线下载端口
+        ja: Planet/moon file download port
+        ko: Planet/moon file download port
+        ru: Planet/moon file download port
+        ms: Planet/moon file download port
+        pt-br: Planet/moon file download port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: HOST_IP_ADDR
       labelEn: Native IP address
       labelZh: 本机IP地址
+      label:
+        en: Native IP address
+        zh: 本机IP地址
+        zh-Hant: 本机IP地址
+        ja: Native IP address
+        ko: Native IP address
+        ru: Native IP address
+        ms: Native IP address
+        pt-br: Native IP address
       required: true
       type: text
     - default: zerotier
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: Password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity

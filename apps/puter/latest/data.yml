@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_INTERNAL
       labelEn: Internal Container Ports
       labelZh: 容器内部端口
+      label:
+        en: Internal Container Ports
+        zh: 容器内部端口
+        zh-Hant: 容器内部端口
+        ja: Internal Container Ports
+        ko: Internal Container Ports
+        ru: Internal Container Ports
+        ms: Internal Container Ports
+        pt-br: Internal Container Ports
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: 1000
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: 1000
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "/etc/puter"
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path (Inside the container)
       labelZh: 配置路径 (容器内部)
+      label:
+        en: Config Path (Inside the container)
+        zh: 配置路径 (容器内部)
+        zh-Hant: 配置路径 (容器内部)
+        ja: Config Path (Inside the container)
+        ko: Config Path (Inside the container)
+        ru: Config Path (Inside the container)
+        ms: Config Path (Inside the container)
+        pt-br: Config Path (Inside the container)
       required: true
       type: text
     - default: "./data"
@@ -49,5 +103,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text

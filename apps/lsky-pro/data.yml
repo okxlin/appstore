@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.lsky.pro/
   architectures:
     - amd64
+    - arm64

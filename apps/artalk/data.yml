@@ -19,3 +19,4 @@ additionalProperties:
   document: https://artalk.js.org/guide/intro.html
   architectures:
     - amd64
+    - arm64

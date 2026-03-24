@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH端口
+      label:
+        en: SSH Port
+        zh: SSH端口
+        zh-Hant: SSH端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: false
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "false"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: SSHD_SWITCH
       labelEn: Enable SSH (true or false)
       labelZh: 启用SSH(true/false)
+      label:
+        en: Enable SSH (true or false)
+        zh: 启用SSH(true/false)
+        zh-Hant: 启用SSH(true/false)
+        ja: Enable SSH (true or false)
+        ko: Enable SSH (true or false)
+        ru: Enable SSH (true or false)
+        ms: Enable SSH (true or false)
+        pt-br: Enable SSH (true or false)
       required: true
       type: text
     - default: ./ssh/id_rsa
@@ -35,5 +71,14 @@ additionalProperties:
       envKey: SSH_KEY_PATH
       labelEn: SSH key file(/root/.ssh/id_rsa)
       labelZh: SSH 私钥文件(/root/.ssh/id_rsa)
+      label:
+        en: SSH key file(/root/.ssh/id_rsa)
+        zh: SSH 私钥文件(/root/.ssh/id_rsa)
+        zh-Hant: SSH 私钥文件(/root/.ssh/id_rsa)
+        ja: SSH key file(/root/.ssh/id_rsa)
+        ko: SSH key file(/root/.ssh/id_rsa)
+        ru: SSH key file(/root/.ssh/id_rsa)
+        ms: SSH key file(/root/.ssh/id_rsa)
+        pt-br: SSH key file(/root/.ssh/id_rsa)
       required: true
       type: text

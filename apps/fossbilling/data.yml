@@ -19,3 +19,4 @@ additionalProperties:
   document: https://fossbilling.org/docs
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: admin
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: GOTIFY_DEFAULTUSER_NAME
       labelEn: Default User Name
       labelZh: 默认用户名
+      label:
+        en: Default User Name
+        zh: 默认用户名
+        zh-Hant: 默认用户名
+        ja: Default User Name
+        ko: Default User Name
+        ru: Default User Name
+        ms: Default User Name
+        pt-br: Default User Name
       required: true
       type: text
     - default: "password"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: GOTIFY_DEFAULTUSER_PASS
       labelEn: Default User Password
       labelZh: 默认用户密码
+      label:
+        en: Default User Password
+        zh: 默认用户密码
+        zh-Hant: 默认用户密码
+        ja: Default User Password
+        ko: Default User Password
+        ru: Default User Password
+        ms: Default User Password
+        pt-br: Default User Password
       required: false
       random: true
       rule: paramComplexity
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: GOTIFY_REGISTRATION
       labelEn: Enable Registration
       labelZh: 允许注册
+      label:
+        en: Enable Registration
+        zh: 允许注册
+        zh-Hant: 允许注册
+        ja: Enable Registration
+        ko: Enable Registration
+        ru: Enable Registration
+        ms: Enable Registration
+        pt-br: Enable Registration
       required: true
       type: select
       values:
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: GOTIFY_PASSSTRENGTH
       labelEn: Minimum Password Strength
       labelZh: 最低密码强度
+      label:
+        en: Minimum Password Strength
+        zh: 最低密码强度
+        zh-Hant: 最低密码强度
+        ja: Minimum Password Strength
+        ko: Minimum Password Strength
+        ru: Minimum Password Strength
+        ms: Minimum Password Strength
+        pt-br: Minimum Password Strength
       required: true
       type: number
     - default: "80"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_PORT
       labelEn: Internal Container Ports
       labelZh: 容器内部端口
+      label:
+        en: Internal Container Ports
+        zh: 容器内部端口
+        zh-Hant: 容器内部端口
+        ja: Internal Container Ports
+        ko: Internal Container Ports
+        ru: Internal Container Ports
+        ms: Internal Container Ports
+        pt-br: Internal Container Ports
       required: true
       rule: paramPort
       type: number
@@ -63,6 +126,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_KEEPALIVEPERIODSECONDS
       labelEn: Keepalive Period (seconds)
       labelZh: 保持活跃时间（秒）
+      label:
+        en: Keepalive Period (seconds)
+        zh: 保持活跃时间（秒）
+        zh-Hant: 保持活跃时间（秒）
+        ja: Keepalive Period (seconds)
+        ko: Keepalive Period (seconds)
+        ru: Keepalive Period (seconds)
+        ms: Keepalive Period (seconds)
+        pt-br: Keepalive Period (seconds)
       required: true
       type: number
     - default: ""
@@ -70,6 +142,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_LISTENADDR
       labelEn: Listen Address
       labelZh: 监听地址
+      label:
+        en: Listen Address
+        zh: 监听地址
+        zh-Hant: 监听地址
+        ja: Listen Address
+        ko: Listen Address
+        ru: Listen Address
+        ms: Listen Address
+        pt-br: Listen Address
       required: false
       type: text
     - default: "false"
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_ENABLED
       labelEn: Enable SSL
       labelZh: 启用 SSL
+      label:
+        en: Enable SSL
+        zh: 启用 SSL
+        zh-Hant: 启用 SSL
+        ja: Enable SSL
+        ko: Enable SSL
+        ru: Enable SSL
+        ms: Enable SSL
+        pt-br: Enable SSL
       required: true
       type: select
       values:
@@ -89,6 +179,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_REDIRECTTOHTTPS
       labelEn: Redirect to HTTPS
       labelZh: 重定向到 HTTPS
+      label:
+        en: Redirect to HTTPS
+        zh: 重定向到 HTTPS
+        zh-Hant: 重定向到 HTTPS
+        ja: Redirect to HTTPS
+        ko: Redirect to HTTPS
+        ru: Redirect to HTTPS
+        ms: Redirect to HTTPS
+        pt-br: Redirect to HTTPS
       required: true
       type: select
       values:
@@ -101,6 +200,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LISTENADDR
       labelEn: SSL Listen Address
       labelZh: SSL 监听地址
+      label:
+        en: SSL Listen Address
+        zh: SSL 监听地址
+        zh-Hant: SSL 监听地址
+        ja: SSL Listen Address
+        ko: SSL Listen Address
+        ru: SSL Listen Address
+        ms: SSL Listen Address
+        pt-br: SSL Listen Address
       required: false
       type: text
     - default: 443
@@ -108,6 +216,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_PORT
       labelEn: SSL Port
       labelZh: SSL 端口
+      label:
+        en: SSL Port
+        zh: SSL 端口
+        zh-Hant: SSL 端口
+        ja: SSL Port
+        ko: SSL Port
+        ru: SSL Port
+        ms: SSL Port
+        pt-br: SSL Port
       required: true
       rule: paramPort
       type: number
@@ -116,6 +233,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_CERTFILE
       labelEn: SSL Certificate File (inside container)
       labelZh: SSL 证书文件 (容器内部)
+      label:
+        en: SSL Certificate File (inside container)
+        zh: SSL 证书文件 (容器内部)
+        zh-Hant: SSL 证书文件 (容器内部)
+        ja: SSL Certificate File (inside container)
+        ko: SSL Certificate File (inside container)
+        ru: SSL Certificate File (inside container)
+        ms: SSL Certificate File (inside container)
+        pt-br: SSL Certificate File (inside container)
       required: false
       type: text
     - default: ""
@@ -123,6 +249,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_CERTKEY
       labelEn: SSL Certificate Key (inside container)
       labelZh: SSL 证书密钥 (容器内部)
+      label:
+        en: SSL Certificate Key (inside container)
+        zh: SSL 证书密钥 (容器内部)
+        zh-Hant: SSL 证书密钥 (容器内部)
+        ja: SSL Certificate Key (inside container)
+        ko: SSL Certificate Key (inside container)
+        ru: SSL Certificate Key (inside container)
+        ms: SSL Certificate Key (inside container)
+        pt-br: SSL Certificate Key (inside container)
       required: false
       type: text
     - default: "false"
@@ -130,6 +265,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_ENABLED
       labelEn: Enable Let's Encrypt
       labelZh: 启用 Let's Encrypt
+      label:
+        en: Enable Let's Encrypt
+        zh: 启用 Let's Encrypt
+        zh-Hant: 启用 Let's Encrypt
+        ja: Enable Let's Encrypt
+        ko: Enable Let's Encrypt
+        ru: Enable Let's Encrypt
+        ms: Enable Let's Encrypt
+        pt-br: Enable Let's Encrypt
       required: true
       type: select
       values:
@@ -142,6 +286,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_ACCEPTTOS
       labelEn: Accept Let's Encrypt TOS
       labelZh: 接受 Let's Encrypt 条款
+      label:
+        en: Accept Let's Encrypt TOS
+        zh: 接受 Let's Encrypt 条款
+        zh-Hant: 接受 Let's Encrypt 条款
+        ja: Accept Let's Encrypt TOS
+        ko: Accept Let's Encrypt TOS
+        ru: Accept Let's Encrypt TOS
+        ms: Accept Let's Encrypt TOS
+        pt-br: Accept Let's Encrypt TOS
       required: true
       type: select
       values:
@@ -154,6 +307,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_CACHE
       labelEn: Let's Encrypt Cache Directory
       labelZh: Let's Encrypt 缓存目录
+      label:
+        en: Let's Encrypt Cache Directory
+        zh: Let's Encrypt 缓存目录
+        zh-Hant: Let's Encrypt 缓存目录
+        ja: Let's Encrypt Cache Directory
+        ko: Let's Encrypt Cache Directory
+        ru: Let's Encrypt Cache Directory
+        ms: Let's Encrypt Cache Directory
+        pt-br: Let's Encrypt Cache Directory
       required: true
       type: text
     - default: ""
@@ -161,6 +323,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_HOSTS
       labelEn: Let's Encrypt Hosts
       labelZh: Let's Encrypt 域名
+      label:
+        en: Let's Encrypt Hosts
+        zh: Let's Encrypt 域名
+        zh-Hant: Let's Encrypt 域名
+        ja: Let's Encrypt Hosts
+        ko: Let's Encrypt Hosts
+        ru: Let's Encrypt Hosts
+        ms: Let's Encrypt Hosts
+        pt-br: Let's Encrypt Hosts
       required: false
       type: text
     - default: ""
@@ -168,6 +339,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_RESPONSEHEADERS
       labelEn: Response Headers
       labelZh: 响应头
+      label:
+        en: Response Headers
+        zh: 响应头
+        zh-Hant: 响应头
+        ja: Response Headers
+        ko: Response Headers
+        ru: Response Headers
+        ms: Response Headers
+        pt-br: Response Headers
       required: false
       type: text
     - default: ""
@@ -175,6 +355,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWORIGINS
       labelEn: CORS Allow Origins
       labelZh: 允许跨域来源
+      label:
+        en: CORS Allow Origins
+        zh: 允许跨域来源
+        zh-Hant: 允许跨域来源
+        ja: CORS Allow Origins
+        ko: CORS Allow Origins
+        ru: CORS Allow Origins
+        ms: CORS Allow Origins
+        pt-br: CORS Allow Origins
       required: false
       type: text
     - default: ""
@@ -182,6 +371,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWMETHODS
       labelEn: CORS Allow Methods
       labelZh: 允许跨域方法
+      label:
+        en: CORS Allow Methods
+        zh: 允许跨域方法
+        zh-Hant: 允许跨域方法
+        ja: CORS Allow Methods
+        ko: CORS Allow Methods
+        ru: CORS Allow Methods
+        ms: CORS Allow Methods
+        pt-br: CORS Allow Methods
       required: false
       type: text
     - default: ""
@@ -189,6 +387,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWHEADERS
       labelEn: CORS Allow Headers
       labelZh: 允许跨域头
+      label:
+        en: CORS Allow Headers
+        zh: 允许跨域头
+        zh-Hant: 允许跨域头
+        ja: CORS Allow Headers
+        ko: CORS Allow Headers
+        ru: CORS Allow Headers
+        ms: CORS Allow Headers
+        pt-br: CORS Allow Headers
       required: false
       type: text
     - default: ""
@@ -196,6 +403,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_STREAM_ALLOWEDORIGINS
       labelEn: Allowed origins for websocket connections
       labelZh: Websocket 连接的允许来源
+      label:
+        en: Allowed origins for websocket connections
+        zh: Websocket 连接的允许来源
+        zh-Hant: Websocket 连接的允许来源
+        ja: Allowed origins for websocket connections
+        ko: Allowed origins for websocket connections
+        ru: Allowed origins for websocket connections
+        ms: Allowed origins for websocket connections
+        pt-br: Allowed origins for websocket connections
       required: false
       type: text
     - default: 45
@@ -203,6 +419,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_STREAM_PINGPERIODSECONDS
       labelEn: The interval in which websocket pings will be sent (seconds)
       labelZh: 发送 websocket ping 的时间间隔（秒）
+      label:
+        en: The interval in which websocket pings will be sent (seconds)
+        zh: 发送 websocket ping 的时间间隔（秒）
+        zh-Hant: 发送 websocket ping 的时间间隔（秒）
+        ja: The interval in which websocket pings will be sent (seconds)
+        ko: The interval in which websocket pings will be sent (seconds)
+        ru: The interval in which websocket pings will be sent (seconds)
+        ms: The interval in which websocket pings will be sent (seconds)
+        pt-br: The interval in which websocket pings will be sent (seconds)
       required: true
       type: number
     - default: sqlite3
@@ -210,6 +435,15 @@ additionalProperties:
       envKey: GOTIFY_DATABASE_DIALECT
       labelEn: Database Dialect
       labelZh: 数据库方式
+      label:
+        en: Database Dialect
+        zh: 数据库方式
+        zh-Hant: 数据库方式
+        ja: Database Dialect
+        ko: Database Dialect
+        ru: Database Dialect
+        ms: Database Dialect
+        pt-br: Database Dialect
       required: true
       type: text
     - default: "data/gotify.db"
@@ -217,6 +451,15 @@ additionalProperties:
       envKey: GOTIFY_DATABASE_CONNECTION
       labelEn: Database Connection
       labelZh: 数据库连接
+      label:
+        en: Database Connection
+        zh: 数据库连接
+        zh-Hant: 数据库连接
+        ja: Database Connection
+        ko: Database Connection
+        ru: Database Connection
+        ms: Database Connection
+        pt-br: Database Connection
       required: true
       type: text
     - default: "data/images"
@@ -224,6 +467,15 @@ additionalProperties:
       envKey: GOTIFY_UPLOADEDIMAGESDIR
       labelEn: Uploaded Images Directory
       labelZh: 上传的图片目录
+      label:
+        en: Uploaded Images Directory
+        zh: 上传的图片目录
+        zh-Hant: 上传的图片目录
+        ja: Uploaded Images Directory
+        ko: Uploaded Images Directory
+        ru: Uploaded Images Directory
+        ms: Uploaded Images Directory
+        pt-br: Uploaded Images Directory
       required: true
       type: text
     - default: "data/plugins"
@@ -231,5 +483,14 @@ additionalProperties:
       envKey: GOTIFY_PLUGINSDIR
       labelEn: Plugins Directory
       labelZh: 插件目录
+      label:
+        en: Plugins Directory
+        zh: 插件目录
+        zh-Hant: 插件目录
+        ja: Plugins Directory
+        ko: Plugins Directory
+        ru: Plugins Directory
+        ms: Plugins Directory
+        pt-br: Plugins Directory
       required: true
       type: text

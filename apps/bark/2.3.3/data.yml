@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "0.0.0.0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: BARK_SERVER_ADDRESS
       labelEn: Bark Server Address
       labelZh: Bark 服务器地址
+      label:
+        en: Bark Server Address
+        zh: Bark 服务器地址
+        zh-Hant: Bark 服务器地址
+        ja: Bark Server Address
+        ko: Bark Server Address
+        ru: Bark Server Address
+        ms: Bark Server Address
+        pt-br: Bark Server Address
       required: true
       type: text
     - default: "/"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: BARK_SERVER_URL_PREFIX
       labelEn: Bark Server URL Prefix
       labelZh: Bark 服务器 URL 前缀
+      label:
+        en: Bark Server URL Prefix
+        zh: Bark 服务器 URL 前缀
+        zh-Hant: Bark 服务器 URL 前缀
+        ja: Bark Server URL Prefix
+        ko: Bark Server URL Prefix
+        ru: Bark Server URL Prefix
+        ms: Bark Server URL Prefix
+        pt-br: Bark Server URL Prefix
       required: true
       type: text
     - default: "/data"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: BARK_SERVER_DATA_DIR
       labelEn: Bark Server Data Directory
       labelZh: Bark 服务器数据目录
+      label:
+        en: Bark Server Data Directory
+        zh: Bark 服务器数据目录
+        zh-Hant: Bark 服务器数据目录
+        ja: Bark Server Data Directory
+        ko: Bark Server Data Directory
+        ru: Bark Server Data Directory
+        ms: Bark Server Data Directory
+        pt-br: Bark Server Data Directory
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: BARK_SERVER_DSN
       labelEn: Bark Server DSN
       labelZh: Bark 服务器 DSN
+      label:
+        en: Bark Server DSN
+        zh: Bark 服务器 DSN
+        zh-Hant: Bark 服务器 DSN
+        ja: Bark Server DSN
+        ko: Bark Server DSN
+        ru: Bark Server DSN
+        ms: Bark Server DSN
+        pt-br: Bark Server DSN
       required: false
       type: text
     - default: "false"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: BARK_SERVER_SERVERLESS
       labelEn: Bark Server Serverless
       labelZh: Bark 服务器无服务器
+      label:
+        en: Bark Server Serverless
+        zh: Bark 服务器无服务器
+        zh-Hant: Bark 服务器无服务器
+        ja: Bark Server Serverless
+        ko: Bark Server Serverless
+        ru: Bark Server Serverless
+        ms: Bark Server Serverless
+        pt-br: Bark Server Serverless
       required: true
       type: select
       values:
@@ -60,6 +123,15 @@ additionalProperties:
       envKey: BARK_SERVER_CERT
       labelEn: Bark Server Certificate
       labelZh: Bark 服务器证书
+      label:
+        en: Bark Server Certificate
+        zh: Bark 服务器证书
+        zh-Hant: Bark 服务器证书
+        ja: Bark Server Certificate
+        ko: Bark Server Certificate
+        ru: Bark Server Certificate
+        ms: Bark Server Certificate
+        pt-br: Bark Server Certificate
       required: false
       type: text
     - default: ""
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: BARK_SERVER_KEY
       labelEn: Bark Server Key
       labelZh: Bark 服务器密钥
+      label:
+        en: Bark Server Key
+        zh: Bark 服务器密钥
+        zh-Hant: Bark 服务器密钥
+        ja: Bark Server Key
+        ko: Bark Server Key
+        ru: Bark Server Key
+        ms: Bark Server Key
+        pt-br: Bark Server Key
       required: false
       type: text
     - default: "false"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: BARK_SERVER_CASE_SENSITIVE
       labelEn: Bark Server Case Sensitive
       labelZh: Bark 服务器区分大小写
+      label:
+        en: Bark Server Case Sensitive
+        zh: Bark 服务器区分大小写
+        zh-Hant: Bark 服务器区分大小写
+        ja: Bark Server Case Sensitive
+        ko: Bark Server Case Sensitive
+        ru: Bark Server Case Sensitive
+        ms: Bark Server Case Sensitive
+        pt-br: Bark Server Case Sensitive
       required: true
       type: select
       values:
@@ -86,6 +176,15 @@ additionalProperties:
       envKey: BARK_SERVER_STRICT_ROUTING
       labelEn: Bark Server Strict Routing
       labelZh: Bark 服务器严格路由
+      label:
+        en: Bark Server Strict Routing
+        zh: Bark 服务器严格路由
+        zh-Hant: Bark 服务器严格路由
+        ja: Bark Server Strict Routing
+        ko: Bark Server Strict Routing
+        ru: Bark Server Strict Routing
+        ms: Bark Server Strict Routing
+        pt-br: Bark Server Strict Routing
       required: true
       type: select
       values:
@@ -98,6 +197,15 @@ additionalProperties:
       envKey: BARK_SERVER_REDUCE_MEMORY_USAGE
       labelEn: Bark Server Reduce Memory Usage
       labelZh: Bark 服务器减少内存使用
+      label:
+        en: Bark Server Reduce Memory Usage
+        zh: Bark 服务器减少内存使用
+        zh-Hant: Bark 服务器减少内存使用
+        ja: Bark Server Reduce Memory Usage
+        ko: Bark Server Reduce Memory Usage
+        ru: Bark Server Reduce Memory Usage
+        ms: Bark Server Reduce Memory Usage
+        pt-br: Bark Server Reduce Memory Usage
       required: true
       type: select
       values:
@@ -110,6 +218,15 @@ additionalProperties:
       envKey: BARK_SERVER_BASIC_AUTH_USER
       labelEn: Bark Server Basic Auth User
       labelZh: Bark 服务器基本身份验证用户
+      label:
+        en: Bark Server Basic Auth User
+        zh: Bark 服务器基本身份验证用户
+        zh-Hant: Bark 服务器基本身份验证用户
+        ja: Bark Server Basic Auth User
+        ko: Bark Server Basic Auth User
+        ru: Bark Server Basic Auth User
+        ms: Bark Server Basic Auth User
+        pt-br: Bark Server Basic Auth User
       required: false
       type: text
     - default: ""
@@ -117,6 +234,15 @@ additionalProperties:
       envKey: BARK_SERVER_BASIC_AUTH_PASSWORD
       labelEn: Bark Server Basic Auth Password
       labelZh: Bark 服务器基本身份验证密码
+      label:
+        en: Bark Server Basic Auth Password
+        zh: Bark 服务器基本身份验证密码
+        zh-Hant: Bark 服务器基本身份验证密码
+        ja: Bark Server Basic Auth Password
+        ko: Bark Server Basic Auth Password
+        ru: Bark Server Basic Auth Password
+        ms: Bark Server Basic Auth Password
+        pt-br: Bark Server Basic Auth Password
       required: false
       type: password
     - default: ""
@@ -124,6 +250,15 @@ additionalProperties:
       envKey: BARK_SERVER_PROXY_HEADER
       labelEn: Bark Server Proxy Header
       labelZh: Bark 服务器代理头
+      label:
+        en: Bark Server Proxy Header
+        zh: Bark 服务器代理头
+        zh-Hant: Bark 服务器代理头
+        ja: Bark Server Proxy Header
+        ko: Bark Server Proxy Header
+        ru: Bark Server Proxy Header
+        ms: Bark Server Proxy Header
+        pt-br: Bark Server Proxy Header
       required: false
       type: text
     - default: "262144"
@@ -131,6 +266,15 @@ additionalProperties:
       envKey: BARK_SERVER_CONCURRENCY
       labelEn: Bark Server Concurrency
       labelZh: Bark 服务器并发
+      label:
+        en: Bark Server Concurrency
+        zh: Bark 服务器并发
+        zh-Hant: Bark 服务器并发
+        ja: Bark Server Concurrency
+        ko: Bark Server Concurrency
+        ru: Bark Server Concurrency
+        ms: Bark Server Concurrency
+        pt-br: Bark Server Concurrency
       required: true
       type: number
     - default: "3s"
@@ -138,6 +282,15 @@ additionalProperties:
       envKey: BARK_SERVER_READ_TIMEOUT
       labelEn: Bark Server Read Timeout
       labelZh: Bark 服务器读取超时
+      label:
+        en: Bark Server Read Timeout
+        zh: Bark 服务器读取超时
+        zh-Hant: Bark 服务器读取超时
+        ja: Bark Server Read Timeout
+        ko: Bark Server Read Timeout
+        ru: Bark Server Read Timeout
+        ms: Bark Server Read Timeout
+        pt-br: Bark Server Read Timeout
       required: true
       type: text
     - default: "3s"
@@ -145,6 +298,15 @@ additionalProperties:
       envKey: BARK_SERVER_WRITE_TIMEOUT
       labelEn: Bark Server Write Timeout
       labelZh: Bark 服务器写入超时
+      label:
+        en: Bark Server Write Timeout
+        zh: Bark 服务器写入超时
+        zh-Hant: Bark 服务器写入超时
+        ja: Bark Server Write Timeout
+        ko: Bark Server Write Timeout
+        ru: Bark Server Write Timeout
+        ms: Bark Server Write Timeout
+        pt-br: Bark Server Write Timeout
       required: true
       type: text
     - default: "10s"
@@ -152,5 +314,14 @@ additionalProperties:
       envKey: BARK_SERVER_IDLE_TIMEOUT
       labelEn: Bark Server Idle Timeout
       labelZh: Bark 服务器空闲超时
+      label:
+        en: Bark Server Idle Timeout
+        zh: Bark 服务器空闲超时
+        zh-Hant: Bark 服务器空闲超时
+        ja: Bark Server Idle Timeout
+        ko: Bark Server Idle Timeout
+        ru: Bark Server Idle Timeout
+        ms: Bark Server Idle Timeout
+        pt-br: Bark Server Idle Timeout
       required: true
       type: text

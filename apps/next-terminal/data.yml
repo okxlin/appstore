@@ -19,3 +19,4 @@ additionalProperties:
   document: https://next-terminal.typesafe.cn/docs/
   architectures:
     - amd64
+    - arm64

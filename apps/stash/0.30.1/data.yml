@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: STASH_DATA
       labelEn: Media Data Path
       labelZh: 媒体数据路径
+      label:
+        en: Media Data Path
+        zh: 媒体数据路径
+        zh-Hant: 媒体数据路径
+        ja: Media Data Path
+        ko: Media Data Path
+        ru: Media Data Path
+        ms: Media Data Path
+        pt-br: Media Data Path
       required: true
       type: text
     - default: "./data/metadata"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: STASH_METADATA
       labelEn: Metadata Path
       labelZh: 元数据路径
+      label:
+        en: Metadata Path
+        zh: 元数据路径
+        zh-Hant: 元数据路径
+        ja: Metadata Path
+        ko: Metadata Path
+        ru: Metadata Path
+        ms: Metadata Path
+        pt-br: Metadata Path
       required: true
       type: text
     - default: "./data/cache"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: STASH_CACHE
       labelEn: Cache Path
       labelZh: 缓存路径
+      label:
+        en: Cache Path
+        zh: 缓存路径
+        zh-Hant: 缓存路径
+        ja: Cache Path
+        ko: Cache Path
+        ru: Cache Path
+        ms: Cache Path
+        pt-br: Cache Path
       required: true
       type: text
     - default: "./data/blobs"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: STASH_BLOBS
       labelEn: Blobs Path (scene covers, images)
       labelZh: 二进制数据路径 (场景封面、图像）
+      label:
+        en: Blobs Path (scene covers, images)
+        zh: 二进制数据路径 (场景封面、图像）
+        zh-Hant: 二进制数据路径 (场景封面、图像）
+        ja: Blobs Path (scene covers, images)
+        ko: Blobs Path (scene covers, images)
+        ru: Blobs Path (scene covers, images)
+        ms: Blobs Path (scene covers, images)
+        pt-br: Blobs Path (scene covers, images)
       required: true
       type: text
     - default: "./data/generated"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: STASH_GENERATED
       labelEn: Generated Path
       labelZh: 生成内容路径
+      label:
+        en: Generated Path
+        zh: 生成内容路径
+        zh-Hant: 生成内容路径
+        ja: Generated Path
+        ko: Generated Path
+        ru: Generated Path
+        ms: Generated Path
+        pt-br: Generated Path
       required: true
       type: text
     - default: "/data"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: STASH_DATA_INTERNAL
       labelEn: Internal Media Data Path
       labelZh: 容器内部媒体数据路径
+      label:
+        en: Internal Media Data Path
+        zh: 容器内部媒体数据路径
+        zh-Hant: 容器内部媒体数据路径
+        ja: Internal Media Data Path
+        ko: Internal Media Data Path
+        ru: Internal Media Data Path
+        ms: Internal Media Data Path
+        pt-br: Internal Media Data Path
       required: true
       type: text
     - default: "/metadata"
@@ -62,6 +134,15 @@ additionalProperties:
       envKey: STASH_METADATA_INTERNAL
       labelEn: Internal Metadata Path
       labelZh: 容器内部元数据路径
+      label:
+        en: Internal Metadata Path
+        zh: 容器内部元数据路径
+        zh-Hant: 容器内部元数据路径
+        ja: Internal Metadata Path
+        ko: Internal Metadata Path
+        ru: Internal Metadata Path
+        ms: Internal Metadata Path
+        pt-br: Internal Metadata Path
       required: true
       type: text
     - default: "/cache"
@@ -69,6 +150,15 @@ additionalProperties:
       envKey: STASH_CACHE_INTERNAL
       labelEn: Internal Cache Path
       labelZh: 容器内部缓存路径
+      label:
+        en: Internal Cache Path
+        zh: 容器内部缓存路径
+        zh-Hant: 容器内部缓存路径
+        ja: Internal Cache Path
+        ko: Internal Cache Path
+        ru: Internal Cache Path
+        ms: Internal Cache Path
+        pt-br: Internal Cache Path
       required: true
       type: text
     - default: "/blobs"
@@ -76,6 +166,15 @@ additionalProperties:
       envKey: STASH_BLOBS_INTERNAL
       labelEn: Internal Blobs Path (scene covers, images)
       labelZh: 容器内部二进制数据路径 (场景封面、图像）
+      label:
+        en: Internal Blobs Path (scene covers, images)
+        zh: 容器内部二进制数据路径 (场景封面、图像）
+        zh-Hant: 容器内部二进制数据路径 (场景封面、图像）
+        ja: Internal Blobs Path (scene covers, images)
+        ko: Internal Blobs Path (scene covers, images)
+        ru: Internal Blobs Path (scene covers, images)
+        ms: Internal Blobs Path (scene covers, images)
+        pt-br: Internal Blobs Path (scene covers, images)
       required: true
       type: text
     - default: "/generated"
@@ -83,5 +182,14 @@ additionalProperties:
       envKey: STASH_GENERATED_INTERNAL
       labelEn: Internal Generated Path
       labelZh: 容器内部生成内容路径
+      label:
+        en: Internal Generated Path
+        zh: 容器内部生成内容路径
+        zh-Hant: 容器内部生成内容路径
+        ja: Internal Generated Path
+        ko: Internal Generated Path
+        ru: Internal Generated Path
+        ms: Internal Generated Path
+        pt-br: Internal Generated Path
       required: true
       type: text

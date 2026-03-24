@@ -19,3 +19,5 @@ additionalProperties:
   document: https://tailscale.com/kb/1017/install
   architectures:
     - amd64
+    - arm
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Mereithhh/van-nav
   architectures:
     - amd64
+    - arm64

@@ -11,13 +11,13 @@ additionalProperties:
       labelZh: 数据库服务
       label:
         en: Database Service
-        ja: データベースサービス
-        ms: Perkhidmatan Pangkalan Data
-        pt-br: Serviço de Banco de Dados
-        ru: Сервис базы данных
-        ko: 데이터베이스 서비스
         zh: 数据库服务
         zh-Hant: 數據庫服務
+        ja: データベースサービス
+        ko: 데이터베이스 서비스
+        ru: Сервис базы данных
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
       required: true
       type: apps
       values:
@@ -29,13 +29,13 @@ additionalProperties:
       labelZh: 数据库名
       label:
         en: Database
-        ja: データベース
-        ms: Pangkalan Data
-        pt-br: Banco de Dados
-        ru: База данных
-        ko: 데이터베이스
         zh: 数据库名
         zh-Hant: 數據庫名
+        ja: データベース
+        ko: 데이터베이스
+        ru: База данных
+        ms: Pangkalan Data
+        pt-br: Banco de Dados
       random: true
       required: true
       rule: paramCommon
@@ -46,13 +46,13 @@ additionalProperties:
       labelZh: 数据库用户
       label:
         en: User
-        ja: ユーザー
-        ms: Pengguna
-        pt-br: Usuário
-        ru: Пользователь
-        ko: 사용자
         zh: 数据库用户
         zh-Hant: 數據庫用戶
+        ja: ユーザー
+        ko: 사용자
+        ru: Пользователь
+        ms: Pengguna
+        pt-br: Usuário
       random: true
       required: true
       rule: paramCommon
@@ -63,13 +63,13 @@ additionalProperties:
       labelZh: 数据库用户密码
       label:
         en: Password
-        ja: パスワード
-        ms: Kata laluan
-        pt-br: Senha
-        ru: Пароль
-        ko: 비밀번호
         zh: 数据库用户密码
         zh-Hant: 數據庫用戶密碼
+        ja: パスワード
+        ko: 비밀번호
+        ru: Пароль
+        ms: Kata laluan
+        pt-br: Senha
       random: true
       required: true
       type: password
@@ -78,6 +78,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -86,6 +95,15 @@ additionalProperties:
       envKey: LOG_PATH
       labelEn: LOG folder path
       labelZh: Nginx日志路径
+      label:
+        en: LOG folder path
+        zh: Nginx日志路径
+        zh-Hant: Nginx日志路径
+        ja: LOG folder path
+        ko: LOG folder path
+        ru: LOG folder path
+        ms: LOG folder path
+        pt-br: LOG folder path
       required: true
       type: text
     - default: ./data/data
@@ -93,6 +111,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ./data/configs
@@ -100,6 +127,15 @@ additionalProperties:
       envKey: CONFIGS_PATH
       labelEn: Configs folder path
       labelZh: 配置文件夹路径
+      label:
+        en: Configs folder path
+        zh: 配置文件夹路径
+        zh-Hant: 配置文件夹路径
+        ja: Configs folder path
+        ko: Configs folder path
+        ru: Configs folder path
+        ms: Configs folder path
+        pt-br: Configs folder path
       required: true
       type: text
     - default: ""
@@ -107,5 +143,14 @@ additionalProperties:
       envKey: ACCESS_KEYS
       labelEn: ACCESS KEYS
       labelZh: 访问密码
+      label:
+        en: ACCESS KEYS
+        zh: 访问密码
+        zh-Hant: 访问密码
+        ja: ACCESS KEYS
+        ko: ACCESS KEYS
+        ru: ACCESS KEYS
+        ms: ACCESS KEYS
+        pt-br: ACCESS KEYS
       required: true
       type: text

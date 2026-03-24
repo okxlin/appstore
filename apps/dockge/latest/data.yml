@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: /opt/dockge/stacks
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: STACKS_PATH
       labelEn: compose yml folder path (Absolute Path)
       labelZh: compose 编排文件路径 (绝对路径)
+      label:
+        en: compose yml folder path (Absolute Path)
+        zh: compose 编排文件路径 (绝对路径)
+        zh-Hant: compose 编排文件路径 (绝对路径)
+        ja: compose yml folder path (Absolute Path)
+        ko: compose yml folder path (Absolute Path)
+        ru: compose yml folder path (Absolute Path)
+        ms: compose yml folder path (Absolute Path)
+        pt-br: compose yml folder path (Absolute Path)
       required: true
       type: text

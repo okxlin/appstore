@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/linuxserver/Heimdall
   architectures:
     - amd64
+    - arm64

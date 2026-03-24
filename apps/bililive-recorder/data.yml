@@ -19,3 +19,5 @@ additionalProperties:
   document: https://rec.danmuji.org/install/versions/
   architectures:
     - amd64
+    - arm
+    - arm64

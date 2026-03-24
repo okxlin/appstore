@@ -19,3 +19,4 @@ additionalProperties:
   document: http://docs.bt.cn/
   architectures:
     - amd64
+    - arm64

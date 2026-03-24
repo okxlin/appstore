@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Aurora-Admin-Panel/deploy
   architectures:
     - amd64
+    - arm64

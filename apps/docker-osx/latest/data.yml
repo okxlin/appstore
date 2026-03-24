@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DISPLAY
       labelEn: Display
       labelZh: 显示
+      label:
+        en: Display
+        zh: 显示
+        zh-Hant: 显示
+        ja: Display
+        ko: Display
+        ru: Display
+        ms: Display
+        pt-br: Display
       required: true
       type: text
     - default: "40287"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: SSH Port
+        zh: SSH 端口
+        zh-Hant: SSH 端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: Restart Policy
+        zh: 重启策略
+        zh-Hant: 重启策略
+        ja: Restart Policy
+        ko: Restart Policy
+        ru: Restart Policy
+        ms: Restart Policy
+        pt-br: Restart Policy
       required: true
       type: select
       values:
@@ -34,6 +61,15 @@ additionalProperties:
       envKey: IMAGE_FILE
       labelEn: System Image File
       labelZh: 系统镜像文件路径
+      label:
+        en: System Image File
+        zh: 系统镜像文件路径
+        zh-Hant: 系统镜像文件路径
+        ja: System Image File
+        ko: System Image File
+        ru: System Image File
+        ms: System Image File
+        pt-br: System Image File
       required: true
       type: text
     - default: "50G"
@@ -41,6 +77,15 @@ additionalProperties:
       envKey: DISK_SIZE
       labelEn: Disk Size
       labelZh: 磁盘大小
+      label:
+        en: Disk Size
+        zh: 磁盘大小
+        zh-Hant: 磁盘大小
+        ja: Disk Size
+        ko: Disk Size
+        ru: Disk Size
+        ms: Disk Size
+        pt-br: Disk Size
       required: true
       type: text
     - default: "4"
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: RAM_SIZE
       labelEn: RAM Size
       labelZh: 内存大小
+      label:
+        en: RAM Size
+        zh: 内存大小
+        zh-Hant: 内存大小
+        ja: RAM Size
+        ko: RAM Size
+        ru: RAM Size
+        ms: RAM Size
+        pt-br: RAM Size
       required: true
       type: number
     - default: "2"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: CPU_CORES
       labelEn: CPU Cores
       labelZh: CPU 核心数
+      label:
+        en: CPU Cores
+        zh: CPU 核心数
+        zh-Hant: CPU 核心数
+        ja: CPU Cores
+        ko: CPU Cores
+        ru: CPU Cores
+        ms: CPU Cores
+        pt-br: CPU Cores
       required: true
       type: number
     - default: "docker"
@@ -62,6 +125,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Login Username
       labelZh: 登录用户名
+      label:
+        en: Login Username
+        zh: 登录用户名
+        zh-Hant: 登录用户名
+        ja: Login Username
+        ko: Login Username
+        ru: Login Username
+        ms: Login Username
+        pt-br: Login Username
       required: true
       type: text
     - default: "password"
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Login Password
       labelZh: 登录密码
+      label:
+        en: Login Password
+        zh: 登录密码
+        zh-Hant: 登录密码
+        ja: Login Password
+        ko: Login Password
+        ru: Login Password
+        ms: Login Password
+        pt-br: Login Password
       random: true
       required: true
       rule: paramComplexity

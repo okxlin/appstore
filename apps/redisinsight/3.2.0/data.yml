@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "0.0.0.0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RI_APP_HOST
       labelEn: Application Host
       labelZh: 应用主机
+      label:
+        en: Application Host
+        zh: 应用主机
+        zh-Hant: 应用主机
+        ja: Application Host
+        ko: Application Host
+        ru: Application Host
+        ms: Application Host
+        pt-br: Application Host
       required: true
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: RI_SERVER_TLS_KEY
       labelEn: TLS Key Path
       labelZh: TLS 密钥路径
+      label:
+        en: TLS Key Path
+        zh: TLS 密钥路径
+        zh-Hant: TLS 密钥路径
+        ja: TLS Key Path
+        ko: TLS Key Path
+        ru: TLS Key Path
+        ms: TLS Key Path
+        pt-br: TLS Key Path
       required: false
       type: text
     - default: ""
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: RI_SERVER_TLS_CERT
       labelEn: TLS Cert Path
       labelZh: TLS 证书路径
+      label:
+        en: TLS Cert Path
+        zh: TLS 证书路径
+        zh-Hant: TLS 证书路径
+        ja: TLS Cert Path
+        ko: TLS Cert Path
+        ru: TLS Cert Path
+        ms: TLS Cert Path
+        pt-br: TLS Cert Path
       required: false
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: RI_ENCRYPTION_KEY
       labelEn: Encryption Key
       labelZh: 加密密钥
+      label:
+        en: Encryption Key
+        zh: 加密密钥
+        zh-Hant: 加密密钥
+        ja: Encryption Key
+        ko: Encryption Key
+        ru: Encryption Key
+        ms: Encryption Key
+        pt-br: Encryption Key
       required: false
       type: password
     - default: "info"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: RI_LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日志级别
+        ja: Log Level
+        ko: Log Level
+        ru: Log Level
+        ms: Log Level
+        pt-br: Log Level
       required: true
       type: select
       values:
@@ -70,6 +133,15 @@ additionalProperties:
       envKey: RI_FILES_LOGGER
       labelEn: Files Logger
       labelZh: 文件日志
+      label:
+        en: Files Logger
+        zh: 文件日志
+        zh-Hant: 文件日志
+        ja: Files Logger
+        ko: Files Logger
+        ru: Files Logger
+        ms: Files Logger
+        pt-br: Files Logger
       required: false
       type: select
       values:
@@ -82,6 +154,15 @@ additionalProperties:
       envKey: RI_STDOUT_LOGGER
       labelEn: Stdout Logger
       labelZh: 标准输出日志
+      label:
+        en: Stdout Logger
+        zh: 标准输出日志
+        zh-Hant: 标准输出日志
+        ja: Stdout Logger
+        ko: Stdout Logger
+        ru: Stdout Logger
+        ms: Stdout Logger
+        pt-br: Stdout Logger
       required: false
       type: select
       values:
@@ -94,5 +175,14 @@ additionalProperties:
       envKey: RI_PROXY_PATH
       labelEn: Proxy Path
       labelZh: 代理路径
+      label:
+        en: Proxy Path
+        zh: 代理路径
+        zh-Hant: 代理路径
+        ja: Proxy Path
+        ko: Proxy Path
+        ru: Proxy Path
+        ms: Proxy Path
+        pt-br: Proxy Path
       required: false
       type: text

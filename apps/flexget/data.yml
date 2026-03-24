@@ -19,3 +19,4 @@ additionalProperties:
   document: https://flexget.com
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.opentdp.org
   architectures:
     - amd64
+    - arm64

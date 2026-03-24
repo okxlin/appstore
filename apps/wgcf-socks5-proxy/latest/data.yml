@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IP_COMMAND
       labelEn: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
       labelZh: 仅IPV4/IPV6(填"-4";"-6")
+      label:
+        en: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
+        zh: 仅IPV4/IPV6(填"-4";"-6")
+        zh-Hant: 仅IPV4/IPV6(填"-4";"-6")
+        ja: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
+        ko: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
+        ru: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
+        ms: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
+        pt-br: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SOCKS_USER
       labelEn: Socks user
       labelZh: Socks用户名
+      label:
+        en: Socks user
+        zh: Socks用户名
+        zh-Hant: Socks用户名
+        ja: Socks user
+        ko: Socks user
+        ru: Socks user
+        ms: Socks user
+        pt-br: Socks user
       required: false
       type: text
     - default: ""
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SOCKS_PWD
       labelEn: Socks password
       labelZh: Socks密码
+      label:
+        en: Socks password
+        zh: Socks密码
+        zh-Hant: Socks密码
+        ja: Socks password
+        ko: Socks password
+        ru: Socks password
+        ms: Socks password
+        pt-br: Socks password
       random: false
       required: false
       rule: paramComplexity
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: SOCKS_PORT
       labelEn: Internal Socks port
       labelZh: 内部Socks端口
+      label:
+        en: Internal Socks port
+        zh: 内部Socks端口
+        zh-Hant: 内部Socks端口
+        ja: Internal Socks port
+        ko: Internal Socks port
+        ru: Internal Socks port
+        ms: Internal Socks port
+        pt-br: Internal Socks port
       required: true
       type: text
     - default: "0.0.0.0"
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: SOCKS_HOST
       labelEn: Internal Socks host
       labelZh: 内部Socks主机
+      label:
+        en: Internal Socks host
+        zh: 内部Socks主机
+        zh-Hant: 内部Socks主机
+        ja: Internal Socks host
+        ko: Internal Socks host
+        ru: Internal Socks host
+        ms: Internal Socks host
+        pt-br: Internal Socks host
       required: true
       type: text

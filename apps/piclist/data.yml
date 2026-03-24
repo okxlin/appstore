@@ -21,3 +21,4 @@ additionalProperties:
   document: https://piclist.cn
   architectures:
     - amd64
+    - arm64

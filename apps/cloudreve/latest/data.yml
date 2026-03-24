@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: UPLOAD_PATH
       labelEn: The upload file save path
       labelZh: 上传文件保存路径
+      label:
+        en: The upload file save path
+        zh: 上传文件保存路径
+        zh-Hant: 上传文件保存路径
+        ja: The upload file save path
+        ko: The upload file save path
+        ru: The upload file save path
+        ms: The upload file save path
+        pt-br: The upload file save path
       required: true
       type: text
     - default: ./data/data
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: TMP_PATH
       labelEn: Temp folder path
       labelZh: 临时文件夹路径
+      label:
+        en: Temp folder path
+        zh: 临时文件夹路径
+        zh-Hant: 临时文件夹路径
+        ja: Temp folder path
+        ko: Temp folder path
+        ru: Temp folder path
+        ms: Temp folder path
+        pt-br: Temp folder path
       required: true
       type: text

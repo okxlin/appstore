@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/239144498/Streaming-Media-Server-Pro
   architectures:
     - amd64
+    - arm
+    - arm64

@@ -19,3 +19,5 @@ additionalProperties:
   document: https://www.wangyunf.com/blossom-doc/
   architectures:
     - amd64
+    - arm
+    - arm64

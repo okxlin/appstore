@@ -19,3 +19,5 @@ additionalProperties:
   document: https://containrrr.dev/watchtower/
   architectures:
     - amd64
+    - arm
+    - arm64

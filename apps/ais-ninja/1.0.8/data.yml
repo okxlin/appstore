@@ -5,12 +5,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
       default: mysql
       envKey: AIS_PLATFORM
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       params:
         - envKey: AIS_DB_PORT
           key: mysql
@@ -29,6 +47,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -37,6 +64,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -55,6 +100,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: Redis Service
+        zh: Redis服务
+        zh-Hant: Redis服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: "6379"
@@ -62,6 +116,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: Redis Service Port
+        zh: Redis服务端口
+        zh-Hant: Redis服务端口
+        ja: Redis Service Port
+        ko: Redis Service Port
+        ru: Redis Service Port
+        ms: Redis Service Port
+        pt-br: Redis Service Port
       required: true
       rule: paramPort
       type: number
@@ -70,6 +133,15 @@ additionalProperties:
       envKey: REDIS_PASS
       labelEn: Redis Service Password
       labelZh: Redis服务密码
+      label:
+        en: Redis Service Password
+        zh: Redis服务密码
+        zh-Hant: Redis服务密码
+        ja: Redis Service Password
+        ko: Redis Service Password
+        ru: Redis Service Password
+        ms: Redis Service Password
+        pt-br: Redis Service Password
       required: true
       rule: paramCommon
       type: password
@@ -78,6 +150,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -86,6 +167,15 @@ additionalProperties:
       envKey: SMTP_HOST
       labelEn: SMTP HOST
       labelZh: SMTP 主机
+      label:
+        en: SMTP HOST
+        zh: SMTP 主机
+        zh-Hant: SMTP 主机
+        ja: SMTP HOST
+        ko: SMTP HOST
+        ru: SMTP HOST
+        ms: SMTP HOST
+        pt-br: SMTP HOST
       required: false
       rule: paramExtUrl
       type: text
@@ -94,6 +184,15 @@ additionalProperties:
       envKey: SMTP_PORT
       labelEn: SMTP Port
       labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 端口
+        ja: SMTP Port
+        ko: SMTP Port
+        ru: SMTP Port
+        ms: SMTP Port
+        pt-br: SMTP Port
       required: false
       rule: paramPort
       type: number
@@ -102,6 +201,15 @@ additionalProperties:
       envKey: EMAIL_SENDER
       labelEn: Email service sender email address
       labelZh: 邮箱服务发送方邮箱地址
+      label:
+        en: Email service sender email address
+        zh: 邮箱服务发送方邮箱地址
+        zh-Hant: 邮箱服务发送方邮箱地址
+        ja: Email service sender email address
+        ko: Email service sender email address
+        ru: Email service sender email address
+        ms: Email service sender email address
+        pt-br: Email service sender email address
       required: false
       type: text
     - default: ""
@@ -109,6 +217,15 @@ additionalProperties:
       envKey: SMTP_USER
       labelEn: Email service user name
       labelZh: 邮箱服务用户名
+      label:
+        en: Email service user name
+        zh: 邮箱服务用户名
+        zh-Hant: 邮箱服务用户名
+        ja: Email service user name
+        ko: Email service user name
+        ru: Email service user name
+        ms: Email service user name
+        pt-br: Email service user name
       required: false
       type: text
     - default: ""
@@ -116,6 +233,15 @@ additionalProperties:
       envKey: SMTP_PASSWORD
       labelEn: Email service password
       labelZh: 邮箱服务密码
+      label:
+        en: Email service password
+        zh: 邮箱服务密码
+        zh-Hant: 邮箱服务密码
+        ja: Email service password
+        ko: Email service password
+        ru: Email service password
+        ms: Email service password
+        pt-br: Email service password
       required: false
       rule: paramCommon
       type: password
@@ -124,6 +250,15 @@ additionalProperties:
       envKey: GOOGLE_CLIENT_ID
       labelEn: Google login client_id
       labelZh: 谷歌登录的client_id
+      label:
+        en: Google login client_id
+        zh: 谷歌登录的client_id
+        zh-Hant: 谷歌登录的client_id
+        ja: Google login client_id
+        ko: Google login client_id
+        ru: Google login client_id
+        ms: Google login client_id
+        pt-br: Google login client_id
       required: false
       type: text
     - default: ""
@@ -131,6 +266,15 @@ additionalProperties:
       envKey: ALI_ACCESS_ID
       labelEn: Alibaba Cloud accessKey ID
       labelZh: 阿里云accessKey ID
+      label:
+        en: Alibaba Cloud accessKey ID
+        zh: 阿里云accessKey ID
+        zh-Hant: 阿里云accessKey ID
+        ja: Alibaba Cloud accessKey ID
+        ko: Alibaba Cloud accessKey ID
+        ru: Alibaba Cloud accessKey ID
+        ms: Alibaba Cloud accessKey ID
+        pt-br: Alibaba Cloud accessKey ID
       required: false
       type: text
     - default: ""
@@ -138,6 +282,15 @@ additionalProperties:
       envKey: ALI_ACCESS_SECRET
       labelEn: Alibaba Cloud accessKeySecret
       labelZh: 阿里云 accessKeySecret
+      label:
+        en: Alibaba Cloud accessKeySecret
+        zh: 阿里云 accessKeySecret
+        zh-Hant: 阿里云 accessKeySecret
+        ja: Alibaba Cloud accessKeySecret
+        ko: Alibaba Cloud accessKeySecret
+        ru: Alibaba Cloud accessKeySecret
+        ms: Alibaba Cloud accessKeySecret
+        pt-br: Alibaba Cloud accessKeySecret
       required: false
       type: text
     - default: ""
@@ -145,6 +298,15 @@ additionalProperties:
       envKey: ALI_SMS_PERMIT
       labelEn: Enable mobile sign-in registration (true or false)
       labelZh: 启用手机登录注册(true or false)
+      label:
+        en: Enable mobile sign-in registration (true or false)
+        zh: 启用手机登录注册(true or false)
+        zh-Hant: 启用手机登录注册(true or false)
+        ja: Enable mobile sign-in registration (true or false)
+        ko: Enable mobile sign-in registration (true or false)
+        ru: Enable mobile sign-in registration (true or false)
+        ms: Enable mobile sign-in registration (true or false)
+        pt-br: Enable mobile sign-in registration (true or false)
       required: false
       type: text
     - default: ""
@@ -152,6 +314,15 @@ additionalProperties:
       envKey: ALI_SMS_SIGN
       labelEn: Alibaba Cloud SMS verification code service signature
       labelZh: 阿里云短信验证码服务签名
+      label:
+        en: Alibaba Cloud SMS verification code service signature
+        zh: 阿里云短信验证码服务签名
+        zh-Hant: 阿里云短信验证码服务签名
+        ja: Alibaba Cloud SMS verification code service signature
+        ko: Alibaba Cloud SMS verification code service signature
+        ru: Alibaba Cloud SMS verification code service signature
+        ms: Alibaba Cloud SMS verification code service signature
+        pt-br: Alibaba Cloud SMS verification code service signature
       required: false
       type: text
     - default: ""
@@ -159,5 +330,14 @@ additionalProperties:
       envKey: ALI_SMS_TEMPLATE
       labelEn: Alibaba Cloud verification code SMS template, which must include {code}
       labelZh: 阿里云验证码短信模板，需要包含 {code}
+      label:
+        en: Alibaba Cloud verification code SMS template, which must include {code}
+        zh: 阿里云验证码短信模板，需要包含 {code}
+        zh-Hant: 阿里云验证码短信模板，需要包含 {code}
+        ja: Alibaba Cloud verification code SMS template, which must include {code}
+        ko: Alibaba Cloud verification code SMS template, which must include {code}
+        ru: Alibaba Cloud verification code SMS template, which must include {code}
+        ms: Alibaba Cloud verification code SMS template, which must include {code}
+        pt-br: Alibaba Cloud verification code SMS template, which must include {code}
       required: false
       type: text

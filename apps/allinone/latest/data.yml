@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privileged Mode
       labelZh: 特权模式
+      label:
+        en: Privileged Mode
+        zh: 特权模式
+        zh-Hant: 特权模式
+        ja: Privileged Mode
+        ko: Privileged Mode
+        ru: Privileged Mode
+        ms: Privileged Mode
+        pt-br: Privileged Mode
       required: true
       type: select
       values:

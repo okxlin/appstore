@@ -19,3 +19,5 @@ additionalProperties:
   document: https://woodpecker-ci.org/docs/intro
   architectures:
     - amd64
+    - arm
+    - arm64

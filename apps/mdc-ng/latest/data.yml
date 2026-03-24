@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/media"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: Media Path
+        zh: 媒体路径
+        zh-Hant: 媒体路径
+        ja: Media Path
+        ko: Media Path
+        ru: Media Path
+        ms: Media Path
+        pt-br: Media Path
       required: true
       type: text
     - default: "/media"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL
       labelEn: Internal Media Path
       labelZh: 容器内部媒体路径
+      label:
+        en: Internal Media Path
+        zh: 容器内部媒体路径
+        zh-Hant: 容器内部媒体路径
+        ja: Internal Media Path
+        ko: Internal Media Path
+        ru: Internal Media Path
+        ms: Internal Media Path
+        pt-br: Internal Media Path
       required: true
       type: text
     - default: "./data/media2"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: MEDIA_PATH_2
       labelEn: Media Path 2
       labelZh: 媒体路径 2
+      label:
+        en: Media Path 2
+        zh: 媒体路径 2
+        zh-Hant: 媒体路径 2
+        ja: Media Path 2
+        ko: Media Path 2
+        ru: Media Path 2
+        ms: Media Path 2
+        pt-br: Media Path 2
       required: true
       type: text
     - default: "/media2"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL_2
       labelEn: Internal Media Path 2
       labelZh: 容器内部媒体路径 2
+      label:
+        en: Internal Media Path 2
+        zh: 容器内部媒体路径 2
+        zh-Hant: 容器内部媒体路径 2
+        ja: Internal Media Path 2
+        ko: Internal Media Path 2
+        ru: Internal Media Path 2
+        ms: Internal Media Path 2
+        pt-br: Internal Media Path 2
       required: true
       type: text
     - default: "1000"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -62,5 +134,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

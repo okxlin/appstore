@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: VNC_PORT
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: VNC Port
+        zh: VNC 端口
+        zh-Hant: VNC 端口
+        ja: VNC Port
+        ko: VNC Port
+        ru: VNC Port
+        ms: VNC Port
+        pt-br: VNC Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DISPLAY_WIDTH
       labelEn: Display Width
       labelZh: 显示宽度
+      label:
+        en: Display Width
+        zh: 显示宽度
+        zh-Hant: 显示宽度
+        ja: Display Width
+        ko: Display Width
+        ru: Display Width
+        ms: Display Width
+        pt-br: Display Width
       required: true
       type: number
     - default: "750"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: DISPLAY_HEIGHT
       labelEn: Display Height
       labelZh: 显示高度
+      label:
+        en: Display Height
+        zh: 显示高度
+        zh-Hant: 显示高度
+        ja: Display Height
+        ko: Display Height
+        ru: Display Height
+        ms: Display Height
+        pt-br: Display Height
       required: true
       type: number
     - default: "password"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: VNC_PASSWORD
       labelEn: VNC Password
       labelZh: VNC 密码
+      label:
+        en: VNC Password
+        zh: VNC 密码
+        zh-Hant: VNC 密码
+        ja: VNC Password
+        ko: VNC Password
+        ru: VNC Password
+        ms: VNC Password
+        pt-br: VNC Password
       random: true
       required: true
       rule: paramComplexity
@@ -44,6 +89,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/mdcx-config"
@@ -51,6 +105,15 @@ additionalProperties:
       envKey: MDCX_CONFIG_PATH
       labelEn: MDCx Config Path
       labelZh: MDCx 配置路径
+      label:
+        en: MDCx Config Path
+        zh: MDCx 配置路径
+        zh-Hant: MDCx 配置路径
+        ja: MDCx Config Path
+        ko: MDCx Config Path
+        ru: MDCx Config Path
+        ms: MDCx Config Path
+        pt-br: MDCx Config Path
       required: true
       type: text
     - default: "./data/mdcx-config/MDCx.config"
@@ -58,6 +121,15 @@ additionalProperties:
       envKey: MDCX_CONFIG_FILE
       labelEn: MDCx Config File
       labelZh: MDCx 配置文件
+      label:
+        en: MDCx Config File
+        zh: MDCx 配置文件
+        zh-Hant: MDCx 配置文件
+        ja: MDCx Config File
+        ko: MDCx Config File
+        ru: MDCx Config File
+        ms: MDCx Config File
+        pt-br: MDCx Config File
       required: true
       type: text
     - default: "./data/logs"
@@ -65,6 +137,15 @@ additionalProperties:
       envKey: LOGS_PATH
       labelEn: Logs Path
       labelZh: 日志路径
+      label:
+        en: Logs Path
+        zh: 日志路径
+        zh-Hant: 日志路径
+        ja: Logs Path
+        ko: Logs Path
+        ru: Logs Path
+        ms: Logs Path
+        pt-br: Logs Path
       required: true
       type: text
     - default: "./data/media"
@@ -72,6 +153,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: Media Path
+        zh: 媒体路径
+        zh-Hant: 媒体路径
+        ja: Media Path
+        ko: Media Path
+        ru: Media Path
+        ms: Media Path
+        pt-br: Media Path
       required: true
       type: text
     - default: "/media"
@@ -79,6 +169,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL
       labelEn: Internal Media Path
       labelZh: 容器内部媒体路径
+      label:
+        en: Internal Media Path
+        zh: 容器内部媒体路径
+        zh-Hant: 容器内部媒体路径
+        ja: Internal Media Path
+        ko: Internal Media Path
+        ru: Internal Media Path
+        ms: Internal Media Path
+        pt-br: Internal Media Path
       required: true
       type: text
     - default: "./data/media2"
@@ -86,6 +185,15 @@ additionalProperties:
       envKey: MEDIA_PATH_2
       labelEn: Media Path 2
       labelZh: 媒体路径 2
+      label:
+        en: Media Path 2
+        zh: 媒体路径 2
+        zh-Hant: 媒体路径 2
+        ja: Media Path 2
+        ko: Media Path 2
+        ru: Media Path 2
+        ms: Media Path 2
+        pt-br: Media Path 2
       required: true
       type: text
     - default: "/media2"
@@ -93,6 +201,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL_2
       labelEn: Internal Media Path 2
       labelZh: 容器内部媒体路径 2
+      label:
+        en: Internal Media Path 2
+        zh: 容器内部媒体路径 2
+        zh-Hant: 容器内部媒体路径 2
+        ja: Internal Media Path 2
+        ko: Internal Media Path 2
+        ru: Internal Media Path 2
+        ms: Internal Media Path 2
+        pt-br: Internal Media Path 2
       required: true
       type: text
     - default: "1000"
@@ -100,6 +217,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -107,6 +233,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -114,5 +249,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

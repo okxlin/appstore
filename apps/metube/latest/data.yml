@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DOWNLOAD_DIR
       labelEn: Download Directory
       labelZh: 下载目录
+      label:
+        en: Download Directory
+        zh: 下载目录
+        zh-Hant: 下载目录
+        ja: Download Directory
+        ko: Download Directory
+        ru: Download Directory
+        ms: Download Directory
+        pt-br: Download Directory
       required: true
       type: text
     - default: "1000"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: UID
       labelEn: UID
       labelZh: 用户 ID
+      label:
+        en: UID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: UID
+        ko: UID
+        ru: UID
+        ms: UID
+        pt-br: UID
       required: true
       type: number
     - default: "1000"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: GID
       labelEn: GID
       labelZh: 用户组 ID
+      label:
+        en: GID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: GID
+        ko: GID
+        ru: GID
+        ms: GID
+        pt-br: GID
       required: true
       type: number
     - default: "auto"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: DEFAULT_THEME
       labelEn: Default Theme
       labelZh: 默认主题
+      label:
+        en: Default Theme
+        zh: 默认主题
+        zh-Hant: 默认主题
+        ja: Default Theme
+        ko: Default Theme
+        ru: Default Theme
+        ms: Default Theme
+        pt-br: Default Theme
       required: true
       type: select
       values:
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: AUDIO_DOWNLOAD_DIR
       labelEn: Audio Download Directory
       labelZh: 音频下载目录
+      label:
+        en: Audio Download Directory
+        zh: 音频下载目录
+        zh-Hant: 音频下载目录
+        ja: Audio Download Directory
+        ko: Audio Download Directory
+        ru: Audio Download Directory
+        ms: Audio Download Directory
+        pt-br: Audio Download Directory
       required: false
       type: text
     - default: "/downloads/.metube"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: STATE_DIR
       labelEn: State Directory
       labelZh: 状态目录
+      label:
+        en: State Directory
+        zh: 状态目录
+        zh-Hant: 状态目录
+        ja: State Directory
+        ko: State Directory
+        ru: State Directory
+        ms: State Directory
+        pt-br: State Directory
       required: true
       type: text
     - default: "/downloads/temp"
@@ -62,6 +125,15 @@ additionalProperties:
       envKey: TEMP_DIR
       labelEn: Temp Directory
       labelZh: 临时目录
+      label:
+        en: Temp Directory
+        zh: 临时目录
+        zh-Hant: 临时目录
+        ja: Temp Directory
+        ko: Temp Directory
+        ru: Temp Directory
+        ms: Temp Directory
+        pt-br: Temp Directory
       required: false
       type: text
     - default: "false"
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: DOWNLOAD_DIRS_INDEXABLE
       labelEn: Download Dirs Indexable
       labelZh: 目录可索引
+      label:
+        en: Download Dirs Indexable
+        zh: 目录可索引
+        zh-Hant: 目录可索引
+        ja: Download Dirs Indexable
+        ko: Download Dirs Indexable
+        ru: Download Dirs Indexable
+        ms: Download Dirs Indexable
+        pt-br: Download Dirs Indexable
       required: true
       type: select
       values:
@@ -81,6 +162,15 @@ additionalProperties:
       envKey: CUSTOM_DIRS
       labelEn: Custom Directories
       labelZh: 自定义目录
+      label:
+        en: Custom Directories
+        zh: 自定义目录
+        zh-Hant: 自定义目录
+        ja: Custom Directories
+        ko: Custom Directories
+        ru: Custom Directories
+        ms: Custom Directories
+        pt-br: Custom Directories
       required: true
       type: select
       values:
@@ -93,6 +183,15 @@ additionalProperties:
       envKey: CREATE_CUSTOM_DIRS
       labelEn: Create Custom Directories
       labelZh: 创建自定义目录
+      label:
+        en: Create Custom Directories
+        zh: 创建自定义目录
+        zh-Hant: 创建自定义目录
+        ja: Create Custom Directories
+        ko: Create Custom Directories
+        ru: Create Custom Directories
+        ms: Create Custom Directories
+        pt-br: Create Custom Directories
       required: true
       type: select
       values:
@@ -105,6 +204,15 @@ additionalProperties:
       envKey: DELETE_FILE_ON_TRASHCAN
       labelEn: Delete File on Trashcan
       labelZh: 删除文件
+      label:
+        en: Delete File on Trashcan
+        zh: 删除文件
+        zh-Hant: 删除文件
+        ja: Delete File on Trashcan
+        ko: Delete File on Trashcan
+        ru: Delete File on Trashcan
+        ms: Delete File on Trashcan
+        pt-br: Delete File on Trashcan
       required: true
       type: select
       values:
@@ -117,6 +225,15 @@ additionalProperties:
       envKey: URL_PREFIX
       labelEn: URL Prefix
       labelZh: URL 前缀
+      label:
+        en: URL Prefix
+        zh: URL 前缀
+        zh-Hant: URL 前缀
+        ja: URL Prefix
+        ko: URL Prefix
+        ru: URL Prefix
+        ms: URL Prefix
+        pt-br: URL Prefix
       required: true
       type: text
     - default: ""
@@ -124,6 +241,15 @@ additionalProperties:
       envKey: PUBLIC_HOST_URL
       labelEn: Public Host URL
       labelZh: 公共主机URL
+      label:
+        en: Public Host URL
+        zh: 公共主机URL
+        zh-Hant: 公共主机URL
+        ja: Public Host URL
+        ko: Public Host URL
+        ru: Public Host URL
+        ms: Public Host URL
+        pt-br: Public Host URL
       required: false
       type: text
     - default: ""
@@ -131,6 +257,15 @@ additionalProperties:
       envKey: PUBLIC_HOST_AUDIO_URL
       labelEn: Public Host Audio URL
       labelZh: 公共音频主机URL
+      label:
+        en: Public Host Audio URL
+        zh: 公共音频主机URL
+        zh-Hant: 公共音频主机URL
+        ja: Public Host Audio URL
+        ko: Public Host Audio URL
+        ru: Public Host Audio URL
+        ms: Public Host Audio URL
+        pt-br: Public Host Audio URL
       required: false
       type: text
     - default: "false"
@@ -138,6 +273,15 @@ additionalProperties:
       envKey: DEFAULT_OPTION_PLAYLIST_STRICT_MODE
       labelEn: Strict Playlist Mode
       labelZh: 严格播放列表模式
+      label:
+        en: Strict Playlist Mode
+        zh: 严格播放列表模式
+        zh-Hant: 严格播放列表模式
+        ja: Strict Playlist Mode
+        ko: Strict Playlist Mode
+        ru: Strict Playlist Mode
+        ms: Strict Playlist Mode
+        pt-br: Strict Playlist Mode
       required: true
       type: select
       values:
@@ -150,5 +294,14 @@ additionalProperties:
       envKey: DEFAULT_OPTION_PLAYLIST_ITEM_LIMIT
       labelEn: Playlist Item Limit
       labelZh: 播放列表项限制
+      label:
+        en: Playlist Item Limit
+        zh: 播放列表项限制
+        zh-Hant: 播放列表项限制
+        ja: Playlist Item Limit
+        ko: Playlist Item Limit
+        ru: Playlist Item Limit
+        ms: Playlist Item Limit
+        pt-br: Playlist Item Limit
       required: true
       type: number

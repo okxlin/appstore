@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: BOT_TOKEN
       labelEn: Telegram Bot token (@BotFather)
       labelZh: Telegram Bot token (@BotFather)
+      label:
+        en: Telegram Bot token (@BotFather)
+        zh: Telegram Bot token (@BotFather)
+        zh-Hant: Telegram Bot token (@BotFather)
+        ja: Telegram Bot token (@BotFather)
+        ko: Telegram Bot token (@BotFather)
+        ru: Telegram Bot token (@BotFather)
+        ms: Telegram Bot token (@BotFather)
+        pt-br: Telegram Bot token (@BotFather)
       required: true
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TELEGRAM_USER_ID
       labelEn: Telegram user id (@userinfobot)
       labelZh: Telegram用户ID (@userinfobot)
+      label:
+        en: Telegram user id (@userinfobot)
+        zh: Telegram用户ID (@userinfobot)
+        zh-Hant: Telegram用户ID (@userinfobot)
+        ja: Telegram user id (@userinfobot)
+        ko: Telegram user id (@userinfobot)
+        ru: Telegram user id (@userinfobot)
+        ms: Telegram user id (@userinfobot)
+        pt-br: Telegram user id (@userinfobot)
       required: true
       type: text
     - default: ""
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN1
       labelEn: Telegram api token 1
       labelZh: Telegram api token 1
+      label:
+        en: Telegram api token 1
+        zh: Telegram api token 1
+        zh-Hant: Telegram api token 1
+        ja: Telegram api token 1
+        ko: Telegram api token 1
+        ru: Telegram api token 1
+        ms: Telegram api token 1
+        pt-br: Telegram api token 1
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN2
       labelEn: Telegram api token 2
       labelZh: Telegram api token 2
+      label:
+        en: Telegram api token 2
+        zh: Telegram api token 2
+        zh-Hant: Telegram api token 2
+        ja: Telegram api token 2
+        ko: Telegram api token 2
+        ru: Telegram api token 2
+        ms: Telegram api token 2
+        pt-br: Telegram api token 2
       required: true
       type: text
     - default: ""
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN3
       labelEn: Telegram api token 3
       labelZh: Telegram api token 3
+      label:
+        en: Telegram api token 3
+        zh: Telegram api token 3
+        zh-Hant: Telegram api token 3
+        ja: Telegram api token 3
+        ko: Telegram api token 3
+        ru: Telegram api token 3
+        ms: Telegram api token 3
+        pt-br: Telegram api token 3
       required: true
       type: text
     - default: ""
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN4
       labelEn: Telegram api token 4
       labelZh: Telegram api token 4
+      label:
+        en: Telegram api token 4
+        zh: Telegram api token 4
+        zh-Hant: Telegram api token 4
+        ja: Telegram api token 4
+        ko: Telegram api token 4
+        ru: Telegram api token 4
+        ms: Telegram api token 4
+        pt-br: Telegram api token 4
       required: true
       type: text
     - default: ""
@@ -62,6 +134,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN5
       labelEn: Telegram api token 5
       labelZh: Telegram api token 5
+      label:
+        en: Telegram api token 5
+        zh: Telegram api token 5
+        zh-Hant: Telegram api token 5
+        ja: Telegram api token 5
+        ko: Telegram api token 5
+        ru: Telegram api token 5
+        ms: Telegram api token 5
+        pt-br: Telegram api token 5
       required: true
       type: text
     - default: ""
@@ -69,6 +150,15 @@ additionalProperties:
       envKey: TELEGRAPH_API_TOKEN6
       labelEn: Telegram api token 6
       labelZh: Telegram api token 6
+      label:
+        en: Telegram api token 6
+        zh: Telegram api token 6
+        zh-Hant: Telegram api token 6
+        ja: Telegram api token 6
+        ko: Telegram api token 6
+        ru: Telegram api token 6
+        ms: Telegram api token 6
+        pt-br: Telegram api token 6
       required: true
       type: text
     - default: ""
@@ -76,6 +166,15 @@ additionalProperties:
       envKey: TG_API_ID
       labelEn: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
       labelZh: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+      label:
+        en: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        zh: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        zh-Hant: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        ja: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        ko: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        ru: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        ms: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
+        pt-br: Telegram api id (https://core.telegram.org/api/obtaining_api_id)
       required: false
       type: text
     - default: ""
@@ -83,6 +182,15 @@ additionalProperties:
       envKey: TG_API_HASH
       labelEn: Telegram api hash
       labelZh: Telegram api hash
+      label:
+        en: Telegram api hash
+        zh: Telegram api hash
+        zh-Hant: Telegram api hash
+        ja: Telegram api hash
+        ko: Telegram api hash
+        ru: Telegram api hash
+        ms: Telegram api hash
+        pt-br: Telegram api hash
       required: false
       type: text
     - default: "Mozilla/5.0 (Android 12; Mobile; rv:68.0) Gecko/68.0 Firefox/96.0"
@@ -90,6 +198,15 @@ additionalProperties:
       envKey: USERAGENT
       labelEn: User-Agent
       labelZh: User-Agent
+      label:
+        en: User-Agent
+        zh: User-Agent
+        zh-Hant: User-Agent
+        ja: User-Agent
+        ko: User-Agent
+        ru: User-Agent
+        ms: User-Agent
+        pt-br: User-Agent
       required: false
       type: text
     - default: ""
@@ -97,5 +214,14 @@ additionalProperties:
       envKey: PROXY_SERVER
       labelEn: SOCKS5 Proxy (socks5://172.17.0.1:1080)
       labelZh: SOCKS5代理 (socks5://172.17.0.1:1080)
+      label:
+        en: SOCKS5 Proxy (socks5://172.17.0.1:1080)
+        zh: SOCKS5代理 (socks5://172.17.0.1:1080)
+        zh-Hant: SOCKS5代理 (socks5://172.17.0.1:1080)
+        ja: SOCKS5 Proxy (socks5://172.17.0.1:1080)
+        ko: SOCKS5 Proxy (socks5://172.17.0.1:1080)
+        ru: SOCKS5 Proxy (socks5://172.17.0.1:1080)
+        ms: SOCKS5 Proxy (socks5://172.17.0.1:1080)
+        pt-br: SOCKS5 Proxy (socks5://172.17.0.1:1080)
       required: false
       type: text

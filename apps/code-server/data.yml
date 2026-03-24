@@ -19,3 +19,4 @@ additionalProperties:
   document: https://coder.com/docs/code-server/latest
   architectures:
     - amd64
+    - arm64

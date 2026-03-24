@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_CONSOLE
       labelEn: Console Port
       labelZh: 控制台端口
+      label:
+        en: Console Port
+        zh: 控制台端口
+        zh-Hant: 控制台端口
+        ja: Console Port
+        ko: Console Port
+        ru: Console Port
+        ms: Console Port
+        pt-br: Console Port
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       rule: paramPort
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       type: number
     - default: 443
@@ -22,5 +40,14 @@ additionalProperties:
       rule: paramPort
       labelEn: HTTPS Port
       labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 端口
+        ja: HTTPS Port
+        ko: HTTPS Port
+        ru: HTTPS Port
+        ms: HTTPS Port
+        pt-br: HTTPS Port
       required: true
       type: number

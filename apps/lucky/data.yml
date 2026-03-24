@@ -19,3 +19,5 @@ additionalProperties:
   document: https://lucky666.cn/docs/intro
   architectures:
     - amd64
+    - arm
+    - arm64

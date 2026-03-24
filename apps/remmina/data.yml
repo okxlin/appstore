@@ -19,3 +19,4 @@ additionalProperties:
   document: https://gitlab.com/Remmina/Remmina/-/wikis/home
   architectures:
     - amd64
+    - arm64

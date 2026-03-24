@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/boojack/slash/blob/main/docs/install.md
   architectures:
     - amd64
+    - arm64

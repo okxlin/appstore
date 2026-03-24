@@ -5,5 +5,14 @@ additionalProperties:
       envKey: TIPS
       labelEn: Tips
       labelZh: 提示
+      label:
+        en: Tips
+        zh: 提示
+        zh-Hant: 提示
+        ja: Tips
+        ko: Tips
+        ru: Tips
+        ms: Tips
+        pt-br: Tips
       required: true
       type: text

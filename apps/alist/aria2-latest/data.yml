@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ./data/mnt
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: MOUNT_PATH
       labelEn: Mount folder path
       labelZh: 挂载文件夹路径
+      label:
+        en: Mount folder path
+        zh: 挂载文件夹路径
+        zh-Hant: 挂载文件夹路径
+        ja: Mount folder path
+        ko: Mount folder path
+        ru: Mount folder path
+        ms: Mount folder path
+        pt-br: Mount folder path
       required: true
       type: text

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Jeric-X/SyncClipboard
   architectures:
     - amd64
+    - arm64

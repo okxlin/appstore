@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Host
       labelZh: Redis 主机
+      label:
+        en: Redis Host
+        zh: Redis 主机
+        zh-Hant: Redis 主机
+        ja: Redis Host
+        ko: Redis Host
+        ru: Redis Host
+        ms: Redis Host
+        pt-br: Redis Host
       required: true
       type: service
     - default: 6379
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Port
       labelZh: Redis 端口
+      label:
+        en: Redis Port
+        zh: Redis 端口
+        zh-Hant: Redis 端口
+        ja: Redis Port
+        ko: Redis Port
+        ru: Redis Port
+        ms: Redis Port
+        pt-br: Redis Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: false
       type: password
     - default: 7
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: REDIS_DB_NUMBER
       labelEn: Redis Database Number
       labelZh: Redis 数据库编号
+      label:
+        en: Redis Database Number
+        zh: Redis 数据库编号
+        zh-Hant: Redis 数据库编号
+        ja: Redis Database Number
+        ko: Redis Database Number
+        ru: Redis Database Number
+        ms: Redis Database Number
+        pt-br: Redis Database Number
       required: true
       type: number

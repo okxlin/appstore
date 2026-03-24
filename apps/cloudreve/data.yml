@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.cloudreve.org/
   architectures:
     - amd64
+    - arm64

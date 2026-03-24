@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.rsshub.app/
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: UPLOAD_LOCATION
       labelEn: Path to folder for uploading
       labelZh: 上传用文件夹路径
+      label:
+        en: Path to folder for uploading
+        zh: 上传用文件夹路径
+        zh-Hant: 上传用文件夹路径
+        ja: Path to folder for uploading
+        ko: Path to folder for uploading
+        ru: Path to folder for uploading
+        ms: Path to folder for uploading
+        pt-br: Path to folder for uploading
       required: true
       type: text
     - default: ./data/cache
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CACHE_PATH
       labelEn: Cache folder path
       labelZh: 缓存文件夹路径
+      label:
+        en: Cache folder path
+        zh: 缓存文件夹路径
+        zh-Hant: 缓存文件夹路径
+        ja: Cache folder path
+        ko: Cache folder path
+        ru: Cache folder path
+        ms: Cache folder path
+        pt-br: Cache folder path
       required: true
       type: text
     - default: ./data/data
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DB_PATH
       labelEn: Database folder path
       labelZh: 数据库文件夹路径
+      label:
+        en: Database folder path
+        zh: 数据库文件夹路径
+        zh-Hant: 数据库文件夹路径
+        ja: Database folder path
+        ko: Database folder path
+        ru: Database folder path
+        ms: Database folder path
+        pt-br: Database folder path
       required: true
       type: text
     - default: immich
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       required: true
       rule: paramCommon
       type: text
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: Postgres User
       labelZh: Postgres 数据库用户
+      label:
+        en: Postgres User
+        zh: Postgres 数据库用户
+        zh-Hant: Postgres 数据库用户
+        ja: Postgres User
+        ko: Postgres User
+        ru: Postgres User
+        ms: Postgres User
+        pt-br: Postgres User
       required: true
       rule: paramCommon
       type: text
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Postgres Password
       labelZh: Postgres 数据库用户密码
+      label:
+        en: Postgres Password
+        zh: Postgres 数据库用户密码
+        zh-Hant: Postgres 数据库用户密码
+        ja: Postgres Password
+        ko: Postgres Password
+        ru: Postgres Password
+        ms: Postgres Password
+        pt-br: Postgres Password
       random: true
       required: true
       rule: paramComplexity

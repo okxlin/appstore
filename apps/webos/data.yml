@@ -19,3 +19,5 @@ additionalProperties:
   document: https://os.tenfell.cn/doc
   architectures:
     - amd64
+    - arm
+    - arm64

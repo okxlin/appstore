@@ -19,3 +19,5 @@ additionalProperties:
   document: https://learn.netdata.cloud/docs/
   architectures:
     - amd64
+    - arm
+    - arm64

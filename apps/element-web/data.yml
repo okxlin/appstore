@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/vector-im/element-web
   architectures:
     - amd64
+    - arm64

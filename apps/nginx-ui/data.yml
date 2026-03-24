@@ -19,3 +19,5 @@ additionalProperties:
   document: https://nginxui.com/
   architectures:
     - amd64
+    - arm
+    - arm64

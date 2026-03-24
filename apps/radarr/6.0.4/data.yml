@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "./data/data"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: RADARR_CONFIG_PATH
       labelEn: Radarr Config Path
       labelZh: Radarr 配置路径
+      label:
+        en: Radarr Config Path
+        zh: Radarr 配置路径
+        zh-Hant: Radarr 配置路径
+        ja: Radarr Config Path
+        ko: Radarr Config Path
+        ru: Radarr Config Path
+        ms: Radarr Config Path
+        pt-br: Radarr Config Path
       required: true
       type: text
     - default: "./data/movies"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: MOVIES_PATH
       labelEn: Movies Path
       labelZh: 电影路径
+      label:
+        en: Movies Path
+        zh: 电影路径
+        zh-Hant: 电影路径
+        ja: Movies Path
+        ko: Movies Path
+        ru: Movies Path
+        ms: Movies Path
+        pt-br: Movies Path
       required: true
       type: text
     - default: "./data/downloads"
@@ -48,5 +102,14 @@ additionalProperties:
       envKey: DOWNLOADS_PATH
       labelEn: Downloads Path
       labelZh: 下载路径
+      label:
+        en: Downloads Path
+        zh: 下载路径
+        zh-Hant: 下载路径
+        ja: Downloads Path
+        ko: Downloads Path
+        ru: Downloads Path
+        ms: Downloads Path
+        pt-br: Downloads Path
       required: true
       type: text

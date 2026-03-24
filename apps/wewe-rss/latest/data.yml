@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "sqlite"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATABASE_TYPE
       labelEn: Database Type
       labelZh: 数据库类型
+      label:
+        en: Database Type
+        zh: 数据库类型
+        zh-Hant: 数据库类型
+        ja: Database Type
+        ko: Database Type
+        ru: Database Type
+        ms: Database Type
+        pt-br: Database Type
       required: true
       type: text
     - default: "password"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: AUTH_CODE
       labelEn: Auth Code
       labelZh: 授权码
+      label:
+        en: Auth Code
+        zh: 授权码
+        zh-Hant: 授权码
+        ja: Auth Code
+        ko: Auth Code
+        ru: Auth Code
+        ms: Auth Code
+        pt-br: Auth Code
       random: true
       required: true
       rule: paramComplexity
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: SERVER_ORIGIN_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       rule: paramExtUrl
       type: text
@@ -44,6 +89,15 @@ additionalProperties:
       envKey: FEED_MODE
       labelEn: Feed Mode
       labelZh: 提取模式
+      label:
+        en: Feed Mode
+        zh: 提取模式
+        zh-Hant: 提取模式
+        ja: Feed Mode
+        ko: Feed Mode
+        ru: Feed Mode
+        ms: Feed Mode
+        pt-br: Feed Mode
       required: false
       type: text
     - default: "35 5,17 * * *"
@@ -51,6 +105,15 @@ additionalProperties:
       envKey: CRON_EXPRESSION
       labelEn: Cron Expression
       labelZh: 定时更新表达式
+      label:
+        en: Cron Expression
+        zh: 定时更新表达式
+        zh-Hant: 定时更新表达式
+        ja: Cron Expression
+        ko: Cron Expression
+        ru: Cron Expression
+        ms: Cron Expression
+        pt-br: Cron Expression
       required: false
       type: text
     - default: "60"
@@ -58,5 +121,14 @@ additionalProperties:
       envKey: MAX_REQUEST_PER_MINUTE
       labelEn: Max Requests Per Minute
       labelZh: 每分钟最大请求次数
+      label:
+        en: Max Requests Per Minute
+        zh: 每分钟最大请求次数
+        zh-Hant: 每分钟最大请求次数
+        ja: Max Requests Per Minute
+        ko: Max Requests Per Minute
+        ru: Max Requests Per Minute
+        ms: Max Requests Per Minute
+        pt-br: Max Requests Per Minute
       required: false
       type: number

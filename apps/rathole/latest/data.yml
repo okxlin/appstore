@@ -6,6 +6,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
+      label:
+        en: Port (determined by the configuration file)
+        zh: 端口 (由配置文件决定)
+        zh-Hant: 端口 (由配置文件决定)
+        ja: Port (determined by the configuration file)
+        ko: Port (determined by the configuration file)
+        ru: Port (determined by the configuration file)
+        ms: Port (determined by the configuration file)
+        pt-br: Port (determined by the configuration file)
       required: true
       type: number
     - default: "./data/server.toml"
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: select
       values:
@@ -25,6 +43,15 @@ additionalProperties:
       envKey: SERVICE_MODE
       labelEn: Service Mode
       labelZh: 服务模式
+      label:
+        en: Service Mode
+        zh: 服务模式
+        zh-Hant: 服务模式
+        ja: Service Mode
+        ko: Service Mode
+        ru: Service Mode
+        ms: Service Mode
+        pt-br: Service Mode
       required: true
       type: select
       values:

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://verdaccio.org/docs/what-is-verdaccio
   architectures:
     - amd64
+    - arm64

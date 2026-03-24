@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: Data storage folder
+        zh: 数据存放文件夹
+        zh-Hant: 数据存放文件夹
+        ja: Data storage folder
+        ko: Data storage folder
+        ru: Data storage folder
+        ms: Data storage folder
+        pt-br: Data storage folder
       required: true
       type: text
     - default: "spend-money-like-water"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: TOKEN_SALT
       labelEn: Token Salt
       labelZh: Token Salt
+      label:
+        en: Token Salt
+        zh: Token Salt
+        zh-Hant: Token Salt
+        ja: Token Salt
+        ko: Token Salt
+        ru: Token Salt
+        ms: Token Salt
+        pt-br: Token Salt
       required: true
       type: text
     - default: "PRO"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: ENVIRONMENT
       labelEn: Environment
       labelZh: 环境
+      label:
+        en: Environment
+        zh: 环境
+        zh-Hant: 环境
+        ja: Environment
+        ko: Environment
+        ru: Environment
+        ms: Environment
+        pt-br: Environment
       required: true
       type: text
     - default: "08cc0348-061d-4193-af05-b6cc02df28ea"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SERVER_KEY
       labelEn: Server Key
       labelZh: 服务密钥
+      label:
+        en: Server Key
+        zh: 服务密钥
+        zh-Hant: 服务密钥
+        ja: Server Key
+        ko: Server Key
+        ru: Server Key
+        ms: Server Key
+        pt-br: Server Key
       required: true
       type: text
     - default: "cashbook"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: DEFAULT_PASSWORD
       labelEn: Default Password
       labelZh: 默认密码
+      label:
+        en: Default Password
+        zh: 默认密码
+        zh-Hant: 默认密码
+        ja: Default Password
+        ko: Default Password
+        ru: Default Password
+        ms: Default Password
+        pt-br: Default Password
       random: true
       required: true
       rule: paramComplexity

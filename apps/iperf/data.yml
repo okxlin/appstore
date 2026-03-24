@@ -19,3 +19,4 @@ additionalProperties:
   document: https://software.es.net/iperf/
   architectures:
     - amd64
+    - arm64

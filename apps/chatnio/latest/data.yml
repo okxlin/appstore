@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: apps
       values:
@@ -24,12 +42,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
     - default: chatnio
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -38,6 +74,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -46,6 +91,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -56,6 +110,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: Redis Service
+        zh: Redis服务
+        zh-Hant: Redis服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: "6379"
@@ -63,6 +126,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: Redis Service Port
+        zh: Redis服务端口
+        zh-Hant: Redis服务端口
+        ja: Redis Service Port
+        ko: Redis Service Port
+        ru: Redis Service Port
+        ms: Redis Service Port
+        pt-br: Redis Service Port
       required: true
       rule: paramPort
       type: number
@@ -70,12 +142,30 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: true
       type: password
     - default: "5"
       envKey: REDIS_DB
       labelEn: Redis Database
       labelZh: Redis 数据库
+      label:
+        en: Redis Database
+        zh: Redis 数据库
+        zh-Hant: Redis 数据库
+        ja: Redis Database
+        ko: Redis Database
+        ru: Redis Database
+        ms: Redis Database
+        pt-br: Redis Database
       required: true
       type: number
     - default: "true"
@@ -83,6 +173,15 @@ additionalProperties:
       envKey: SERVE_STATIC
       labelEn: Serve Static
       labelZh: 是否启用静态文件服务
+      label:
+        en: Serve Static
+        zh: 是否启用静态文件服务
+        zh-Hant: 是否启用静态文件服务
+        ja: Serve Static
+        ko: Serve Static
+        ru: Serve Static
+        ms: Serve Static
+        pt-br: Serve Static
       required: true
       type: select
       values:

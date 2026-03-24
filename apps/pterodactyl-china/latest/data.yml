@@ -4,18 +4,45 @@ additionalProperties:
       envKey: USER_UID
       labelEn: User UID
       labelZh: 用户 UID
+      label:
+        en: User UID
+        zh: 用户 UID
+        zh-Hant: 用户 UID
+        ja: User UID
+        ko: User UID
+        ru: User UID
+        ms: User UID
+        pt-br: User UID
       required: true
       type: text
     - default: 1000
       envKey: USER_GID
       labelEn: User GID
       labelZh: 用户 GID
+      label:
+        en: User GID
+        zh: 用户 GID
+        zh-Hant: 用户 GID
+        ja: User GID
+        ko: User GID
+        ru: User GID
+        ms: User GID
+        pt-br: User GID
       required: true
       type: text
     - default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: apps
       child:
@@ -30,6 +57,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -38,6 +74,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -46,6 +91,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: HTTP 端口
+      label:
+        en: Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -63,6 +126,15 @@ additionalProperties:
       envKey: PANEL_APP_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       rule: paramExtUrl
       type: text
@@ -71,12 +143,30 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: 缓存服务服务
+      label:
+        en: Redis Service
+        zh: 缓存服务服务
+        zh-Hant: 缓存服务服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: ""
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Service Password
       labelZh: 缓存服务服务密码
+      label:
+        en: Redis Service Password
+        zh: 缓存服务服务密码
+        zh-Hant: 缓存服务服务密码
+        ja: Redis Service Password
+        ko: Redis Service Password
+        ru: Redis Service Password
+        ms: Redis Service Password
+        pt-br: Redis Service Password
       required: true
       type: password
     - default: noreply@example.com
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: MAIL_FROM
       labelEn: MAIL FROM
       labelZh: 预设作者邮箱
+      label:
+        en: MAIL FROM
+        zh: 预设作者邮箱
+        zh-Hant: 预设作者邮箱
+        ja: MAIL FROM
+        ko: MAIL FROM
+        ru: MAIL FROM
+        ms: MAIL FROM
+        pt-br: MAIL FROM
       required: true
       type: text
     - default: "true"
@@ -91,6 +190,15 @@ additionalProperties:
       envKey: PANEL_RECAPTCHA_ENABLED
       labelEn: RECAPTCHA ENABLED
       labelZh: 谷歌人机验证
+      label:
+        en: RECAPTCHA ENABLED
+        zh: 谷歌人机验证
+        zh-Hant: 谷歌人机验证
+        ja: RECAPTCHA ENABLED
+        ko: RECAPTCHA ENABLED
+        ru: RECAPTCHA ENABLED
+        ms: RECAPTCHA ENABLED
+        pt-br: RECAPTCHA ENABLED
       required: true
       type: select
       values:
@@ -103,6 +211,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text
     - default: "noreply@example.com"
@@ -110,6 +227,15 @@ additionalProperties:
       envKey: APP_SERVICE_AUTHOR
       labelEn: Application Service Author
       labelZh: 应用服务作者
+      label:
+        en: Application Service Author
+        zh: 应用服务作者
+        zh-Hant: 应用服务作者
+        ja: Application Service Author
+        ko: Application Service Author
+        ru: Application Service Author
+        ms: Application Service Author
+        pt-br: Application Service Author
       required: true
       type: text
     - default: smtp
@@ -117,6 +243,15 @@ additionalProperties:
       envKey: MAIL_DRIVER
       labelEn: Mail Driver
       labelZh: 邮件驱动
+      label:
+        en: Mail Driver
+        zh: 邮件驱动
+        zh-Hant: 邮件驱动
+        ja: Mail Driver
+        ko: Mail Driver
+        ru: Mail Driver
+        ms: Mail Driver
+        pt-br: Mail Driver
       required: true
       type: text
     - default: mail
@@ -124,6 +259,15 @@ additionalProperties:
       envKey: MAIL_HOST
       labelEn: Mail Host
       labelZh: 邮件主机
+      label:
+        en: Mail Host
+        zh: 邮件主机
+        zh-Hant: 邮件主机
+        ja: Mail Host
+        ko: Mail Host
+        ru: Mail Host
+        ms: Mail Host
+        pt-br: Mail Host
       required: true
       type: text
     - default: 1025
@@ -131,6 +275,15 @@ additionalProperties:
       envKey: MAIL_PORT
       labelEn: Mail Port
       labelZh: 邮件端口
+      label:
+        en: Mail Port
+        zh: 邮件端口
+        zh-Hant: 邮件端口
+        ja: Mail Port
+        ko: Mail Port
+        ru: Mail Port
+        ms: Mail Port
+        pt-br: Mail Port
       required: true
       type: text
     - default: ''
@@ -138,6 +291,15 @@ additionalProperties:
       envKey: MAIL_USERNAME
       labelEn: Mail Username
       labelZh: 邮件用户名
+      label:
+        en: Mail Username
+        zh: 邮件用户名
+        zh-Hant: 邮件用户名
+        ja: Mail Username
+        ko: Mail Username
+        ru: Mail Username
+        ms: Mail Username
+        pt-br: Mail Username
       required: false
       type: text
     - default: "true"
@@ -145,6 +307,15 @@ additionalProperties:
       envKey: MAIL_ENCRYPTION
       labelEn: Mail Encryption
       labelZh: 邮件加密
+      label:
+        en: Mail Encryption
+        zh: 邮件加密
+        zh-Hant: 邮件加密
+        ja: Mail Encryption
+        ko: Mail Encryption
+        ru: Mail Encryption
+        ms: Mail Encryption
+        pt-br: Mail Encryption
       required: true
       type: select
       values:
@@ -157,6 +328,15 @@ additionalProperties:
       envKey: APP_ENV
       labelEn: Application Environment
       labelZh: 应用环境
+      label:
+        en: Application Environment
+        zh: 应用环境
+        zh-Hant: 应用环境
+        ja: Application Environment
+        ko: Application Environment
+        ru: Application Environment
+        ms: Application Environment
+        pt-br: Application Environment
       required: true
       type: text
     - default: "false"
@@ -164,6 +344,15 @@ additionalProperties:
       envKey: APP_ENVIRONMENT_ONLY
       labelEn: Application Environment Only
       labelZh: 仅应用环境
+      label:
+        en: Application Environment Only
+        zh: 仅应用环境
+        zh-Hant: 仅应用环境
+        ja: Application Environment Only
+        ko: Application Environment Only
+        ru: Application Environment Only
+        ms: Application Environment Only
+        pt-br: Application Environment Only
       required: true
       type: select
       values:
@@ -176,6 +365,15 @@ additionalProperties:
       envKey: CACHE_DRIVER
       labelEn: Cache Driver
       labelZh: 缓存驱动
+      label:
+        en: Cache Driver
+        zh: 缓存驱动
+        zh-Hant: 缓存驱动
+        ja: Cache Driver
+        ko: Cache Driver
+        ru: Cache Driver
+        ms: Cache Driver
+        pt-br: Cache Driver
       required: true
       type: text
     - default: redis
@@ -183,6 +381,15 @@ additionalProperties:
       envKey: SESSION_DRIVER
       labelEn: Session Driver
       labelZh: 会话驱动
+      label:
+        en: Session Driver
+        zh: 会话驱动
+        zh-Hant: 会话驱动
+        ja: Session Driver
+        ko: Session Driver
+        ru: Session Driver
+        ms: Session Driver
+        pt-br: Session Driver
       required: true
       type: text
     - default: redis
@@ -190,6 +397,15 @@ additionalProperties:
       envKey: QUEUE_DRIVER
       labelEn: Queue Driver
       labelZh: 队列驱动
+      label:
+        en: Queue Driver
+        zh: 队列驱动
+        zh-Hant: 队列驱动
+        ja: Queue Driver
+        ko: Queue Driver
+        ru: Queue Driver
+        ms: Queue Driver
+        pt-br: Queue Driver
       required: true
       type: text
     - default: ""
@@ -197,11 +413,29 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis 服务
+      label:
+        en: Redis Service
+        zh: Redis 服务
+        zh-Hant: Redis 服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: ""
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Service Password
       labelZh: Redis 服务密码
+      label:
+        en: Redis Service Password
+        zh: Redis 服务密码
+        zh-Hant: Redis 服务密码
+        ja: Redis Service Password
+        ko: Redis Service Password
+        ru: Redis Service Password
+        ms: Redis Service Password
+        pt-br: Redis Service Password
       required: true
       type: password

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MAX_LOG_COUNT
       labelEn: Maximum results size
       labelZh: 测速结果数量
+      label:
+        en: Maximum results size
+        zh: 测速结果数量
+        zh-Hant: 测速结果数量
+        ja: Maximum results size
+        ko: Maximum results size
+        ru: Maximum results size
+        ms: Maximum results size
+        pt-br: Maximum results size
       required: true
       type: text
     - default: ipinfo.io
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IP_SERVICE
       labelEn: IP info provider (ip.sb / ipinfo.io)
       labelZh: 使用的 IP 运营商解析服务 (ip.sb / ipinfo.io)
+      label:
+        en: IP info provider (ip.sb / ipinfo.io)
+        zh: 使用的 IP 运营商解析服务 (ip.sb / ipinfo.io)
+        zh-Hant: 使用的 IP 运营商解析服务 (ip.sb / ipinfo.io)
+        ja: IP info provider (ip.sb / ipinfo.io)
+        ko: IP info provider (ip.sb / ipinfo.io)
+        ru: IP info provider (ip.sb / ipinfo.io)
+        ms: IP info provider (ip.sb / ipinfo.io)
+        pt-br: IP info provider (ip.sb / ipinfo.io)
       required: true
       type: text
     - default: "false"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: SAME_IP_MULTI_LOGS
       labelEn: Same IP multi speed test results (true / false)
       labelZh: 是否允许同一 IP 记录多条测速结果 (true / false)
+      label:
+        en: Same IP multi speed test results (true / false)
+        zh: 是否允许同一 IP 记录多条测速结果 (true / false)
+        zh-Hant: 是否允许同一 IP 记录多条测速结果 (true / false)
+        ja: Same IP multi speed test results (true / false)
+        ko: Same IP multi speed test results (true / false)
+        ru: Same IP multi speed test results (true / false)
+        ms: Same IP multi speed test results (true / false)
+        pt-br: Same IP multi speed test results (true / false)
       required: true
       type: text

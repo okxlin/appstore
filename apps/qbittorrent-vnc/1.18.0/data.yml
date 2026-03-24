@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port (Manual setup is required)
       labelZh: 网页端口 (需要手动设置)
+      label:
+        en: WebUI Port (Manual setup is required)
+        zh: 网页端口 (需要手动设置)
+        zh-Hant: 网页端口 (需要手动设置)
+        ja: WebUI Port (Manual setup is required)
+        ko: WebUI Port (Manual setup is required)
+        ru: WebUI Port (Manual setup is required)
+        ms: WebUI Port (Manual setup is required)
+        pt-br: WebUI Port (Manual setup is required)
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Web VNC Port
       labelZh: Web VNC 端口
+      label:
+        en: Web VNC Port
+        zh: Web VNC 端口
+        zh-Hant: Web VNC 端口
+        ja: Web VNC Port
+        ko: Web VNC Port
+        ru: Web VNC Port
+        ms: Web VNC Port
+        pt-br: Web VNC Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_PEER
       labelEn: Peer Port (Manual setup is required)
       labelZh: BT端口 (需要手动设置)
+      label:
+        en: Peer Port (Manual setup is required)
+        zh: BT端口 (需要手动设置)
+        zh-Hant: BT端口 (需要手动设置)
+        ja: Peer Port (Manual setup is required)
+        ko: Peer Port (Manual setup is required)
+        ru: Peer Port (Manual setup is required)
+        ms: Peer Port (Manual setup is required)
+        pt-br: Peer Port (Manual setup is required)
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: Download folder path
+        zh: 下载文件夹路径
+        zh-Hant: 下载文件夹路径
+        ja: Download folder path
+        ko: Download folder path
+        ru: Download folder path
+        ms: Download folder path
+        pt-br: Download folder path
       required: true
       type: text
     - default: kasm_user
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: HTTP_USER
       labelEn: http auth user
       labelZh: HTTP 用户
+      label:
+        en: http auth user
+        zh: HTTP 用户
+        zh-Hant: HTTP 用户
+        ja: http auth user
+        ko: http auth user
+        ru: http auth user
+        ms: http auth user
+        pt-br: http auth user
       required: true
       type: text
     - default: password
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: Access Password
       labelZh: 访问密码
+      label:
+        en: Access Password
+        zh: 访问密码
+        zh-Hant: 访问密码
+        ja: Access Password
+        ko: Access Password
+        ru: Access Password
+        ms: Access Password
+        pt-br: Access Password
       random: true
       required: true
       rule: paramComplexity
@@ -52,5 +106,14 @@ additionalProperties:
       envKey: MEM_USE
       labelEn: Shared memory footprint (1gb)
       labelZh: 共享内存占用(1gb)
+      label:
+        en: Shared memory footprint (1gb)
+        zh: 共享内存占用(1gb)
+        zh-Hant: 共享内存占用(1gb)
+        ja: Shared memory footprint (1gb)
+        ko: Shared memory footprint (1gb)
+        ru: Shared memory footprint (1gb)
+        ms: Shared memory footprint (1gb)
+        pt-br: Shared memory footprint (1gb)
       required: true
       type: text

@@ -9,6 +9,15 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: apps
       values:
@@ -20,6 +29,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +46,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +63,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: SSCMS_SECURITY_KEY
       labelEn: Communication key (GUID string)
       labelZh: 通信密钥 (GUID 字符串)
+      label:
+        en: Communication key (GUID string)
+        zh: 通信密钥 (GUID 字符串)
+        zh-Hant: 通信密钥 (GUID 字符串)
+        ja: Communication key (GUID string)
+        ko: Communication key (GUID string)
+        ru: Communication key (GUID string)
+        ms: Communication key (GUID string)
+        pt-br: Communication key (GUID string)
       required: true
       type: text
     - default: ''
@@ -60,5 +114,14 @@ additionalProperties:
       envKey: SSCMS_REDIS_CONNECTION_STRING
       labelEn: Redis Connection Information (redis:6379,password=123456)
       labelZh: Redis 连接信息 (redis:6379,password=123456)
+      label:
+        en: Redis Connection Information (redis:6379,password=123456)
+        zh: Redis 连接信息 (redis:6379,password=123456)
+        zh-Hant: Redis 连接信息 (redis:6379,password=123456)
+        ja: Redis Connection Information (redis:6379,password=123456)
+        ko: Redis Connection Information (redis:6379,password=123456)
+        ru: Redis Connection Information (redis:6379,password=123456)
+        ms: Redis Connection Information (redis:6379,password=123456)
+        pt-br: Redis Connection Information (redis:6379,password=123456)
       required: false
       type: text

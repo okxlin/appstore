@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONTENT_DIRECTORY
       labelEn: Content Directory
       labelZh: 媒体库目录
+      label:
+        en: Content Directory
+        zh: 媒体库目录
+        zh-Hant: 媒体库目录
+        ja: Content Directory
+        ko: Content Directory
+        ru: Content Directory
+        ms: Content Directory
+        pt-br: Content Directory
       required: true
       type: text
     - default: "./data/thumb"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: THUMBNAIL_DIRECTORY
       labelEn: Thumbnail Directory
       labelZh: 缩略图目录
+      label:
+        en: Thumbnail Directory
+        zh: 缩略图目录
+        zh-Hant: 缩略图目录
+        ja: Thumbnail Directory
+        ko: Thumbnail Directory
+        ru: Thumbnail Directory
+        ms: Thumbnail Directory
+        pt-br: Thumbnail Directory
       required: true
       type: text
     - default: "./data/database"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DATABASE_DIRECTORY
       labelEn: Database Directory
       labelZh: 数据库目录
+      label:
+        en: Database Directory
+        zh: 数据库目录
+        zh-Hant: 数据库目录
+        ja: Database Directory
+        ko: Database Directory
+        ru: Database Directory
+        ms: Database Directory
+        pt-br: Database Directory
       required: true
       type: text
     - default: "./data/plugin"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PLUGIN_DIRECTORY
       labelEn: Plugin Directory
       labelZh: 插件目录
+      label:
+        en: Plugin Directory
+        zh: 插件目录
+        zh-Hant: 插件目录
+        ja: Plugin Directory
+        ko: Plugin Directory
+        ru: Plugin Directory
+        ms: Plugin Directory
+        pt-br: Plugin Directory
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: HTTP_PROXY
       labelEn: HTTP Proxy
       labelZh: HTTP 代理
+      label:
+        en: HTTP Proxy
+        zh: HTTP 代理
+        zh-Hant: HTTP 代理
+        ja: HTTP Proxy
+        ko: HTTP Proxy
+        ru: HTTP Proxy
+        ms: HTTP Proxy
+        pt-br: HTTP Proxy
       required: false
       type: text
     - default: ""
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS Proxy
       labelZh: HTTPS 代理
+      label:
+        en: HTTPS Proxy
+        zh: HTTPS 代理
+        zh-Hant: HTTPS 代理
+        ja: HTTPS Proxy
+        ko: HTTPS Proxy
+        ru: HTTPS Proxy
+        ms: HTTPS Proxy
+        pt-br: HTTPS Proxy
       required: false
       type: text
     - default: "Asia/Shanghai"
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text

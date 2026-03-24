@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/txstc55/ugly-avatar
   architectures:
     - amd64
+    - arm64

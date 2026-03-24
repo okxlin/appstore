@@ -19,3 +19,4 @@ additionalProperties:
   document: https://sunshinestream.readthedocs.io
   architectures:
     - amd64
+    - arm64

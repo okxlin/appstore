@@ -19,3 +19,4 @@ additionalProperties:
   document: https://support.plex.tv
   architectures:
     - amd64
+    - arm64

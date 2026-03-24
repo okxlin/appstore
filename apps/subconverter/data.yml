@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/tindy2013/subconverter
   architectures:
     - amd64
+    - arm
+    - arm64

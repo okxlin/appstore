@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_AUTH_KEY
       labelEn: API Auth Key
       labelZh: API 授权密钥
+      label:
+        en: API Auth Key
+        zh: API 授权密钥
+        zh-Hant: API 授权密钥
+        ja: API Auth Key
+        ko: API Auth Key
+        ru: API Auth Key
+        ms: API Auth Key
+        pt-br: API Auth Key
       random: true
       required: true
       rule: paramComplexity

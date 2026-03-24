@@ -5,12 +5,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
       default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       params:
         - envKey: CHEMEX_DB_PORT
           key: mysql
@@ -29,6 +47,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -37,6 +64,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -54,6 +99,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -62,6 +116,15 @@ additionalProperties:
       envKey: ENV_PATH
       labelEn: Environment configuration file path
       labelZh: 环境配置文件路径
+      label:
+        en: Environment configuration file path
+        zh: 环境配置文件路径
+        zh-Hant: 环境配置文件路径
+        ja: Environment configuration file path
+        ko: Environment configuration file path
+        ru: Environment configuration file path
+        ms: Environment configuration file path
+        pt-br: Environment configuration file path
       required: true
       type: text
     - default: ""
@@ -69,12 +132,30 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis 服务
+      label:
+        en: Redis Service
+        zh: Redis 服务
+        zh-Hant: Redis 服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: ""
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: true
       type: password
     - default: 6379
@@ -82,6 +163,15 @@ additionalProperties:
       envKey: REDIS_DB_PORT
       labelEn: Redis Port
       labelZh: Redis端口
+      label:
+        en: Redis Port
+        zh: Redis端口
+        zh-Hant: Redis端口
+        ja: Redis Port
+        ko: Redis Port
+        ru: Redis Port
+        ms: Redis Port
+        pt-br: Redis Port
       required: true
       rule: paramPort
       type: number

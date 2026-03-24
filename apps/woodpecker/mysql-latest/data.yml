@@ -5,12 +5,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
       default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       params:
         - envKey: WOODPECKER_DB_PORT
           key: mysql
@@ -27,6 +45,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -35,6 +62,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -43,6 +79,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -52,6 +97,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -60,6 +114,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "false"
@@ -67,6 +130,15 @@ additionalProperties:
       envKey: REGISTER_SWITCH
       labelEn: Enable register (true or false)
       labelZh: 启用注册(true/false)
+      label:
+        en: Enable register (true or false)
+        zh: 启用注册(true/false)
+        zh-Hant: 启用注册(true/false)
+        ja: Enable register (true or false)
+        ko: Enable register (true or false)
+        ru: Enable register (true or false)
+        ms: Enable register (true or false)
+        pt-br: Enable register (true or false)
       required: true
       type: text
     - default: http://ci.example.com
@@ -74,6 +146,15 @@ additionalProperties:
       envKey: WOODPECKER_HOST
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       type: text
     - default: ''
@@ -81,6 +162,15 @@ additionalProperties:
       envKey: WOODPECKER_AGENT_SECRET
       labelEn: Github Agent Secret Vaule
       labelZh: Github Agent Secret 值
+      label:
+        en: Github Agent Secret Vaule
+        zh: Github Agent Secret 值
+        zh-Hant: Github Agent Secret 值
+        ja: Github Agent Secret Vaule
+        ko: Github Agent Secret Vaule
+        ru: Github Agent Secret Vaule
+        ms: Github Agent Secret Vaule
+        pt-br: Github Agent Secret Vaule
       required: true
       type: text
     - default: "true"
@@ -88,6 +178,15 @@ additionalProperties:
       envKey: GITHUB_ENABLE_SWITCH
       labelEn: Enable Github (true or false)
       labelZh: 启用Github(true/false)
+      label:
+        en: Enable Github (true or false)
+        zh: 启用Github(true/false)
+        zh-Hant: 启用Github(true/false)
+        ja: Enable Github (true or false)
+        ko: Enable Github (true or false)
+        ru: Enable Github (true or false)
+        ms: Enable Github (true or false)
+        pt-br: Enable Github (true or false)
       required: true
       type: text
     - default: https://github.com
@@ -95,6 +194,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_URL
       labelEn: Github URL
       labelZh: Github地址
+      label:
+        en: Github URL
+        zh: Github地址
+        zh-Hant: Github地址
+        ja: Github URL
+        ko: Github URL
+        ru: Github URL
+        ms: Github URL
+        pt-br: Github URL
       required: false
       type: text
     - default: ''
@@ -102,6 +210,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_CLIENT
       labelEn: Github CLIENT Vaule
       labelZh: Github CLIENT 值
+      label:
+        en: Github CLIENT Vaule
+        zh: Github CLIENT 值
+        zh-Hant: Github CLIENT 值
+        ja: Github CLIENT Vaule
+        ko: Github CLIENT Vaule
+        ru: Github CLIENT Vaule
+        ms: Github CLIENT Vaule
+        pt-br: Github CLIENT Vaule
       required: false
       type: text
     - default: ''
@@ -109,6 +226,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_SECRET
       labelEn: Github SECRET Vaule
       labelZh: Github SECRET 值
+      label:
+        en: Github SECRET Vaule
+        zh: Github SECRET 值
+        zh-Hant: Github SECRET 值
+        ja: Github SECRET Vaule
+        ko: Github SECRET Vaule
+        ru: Github SECRET Vaule
+        ms: Github SECRET Vaule
+        pt-br: Github SECRET Vaule
       required: false
       type: text
     - default: "false"
@@ -116,6 +242,15 @@ additionalProperties:
       envKey: GITEA_ENABLE_SWITCH
       labelEn: Enable Gitea (true or false)
       labelZh: 启用Gitea(true/false)
+      label:
+        en: Enable Gitea (true or false)
+        zh: 启用Gitea(true/false)
+        zh-Hant: 启用Gitea(true/false)
+        ja: Enable Gitea (true or false)
+        ko: Enable Gitea (true or false)
+        ru: Enable Gitea (true or false)
+        ms: Enable Gitea (true or false)
+        pt-br: Enable Gitea (true or false)
       required: true
       type: text
     - default: https://try.gitea.io
@@ -123,6 +258,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_URL
       labelEn: Gitea URL
       labelZh: Gitea地址
+      label:
+        en: Gitea URL
+        zh: Gitea地址
+        zh-Hant: Gitea地址
+        ja: Gitea URL
+        ko: Gitea URL
+        ru: Gitea URL
+        ms: Gitea URL
+        pt-br: Gitea URL
       required: false
       type: text
     - default: ''
@@ -130,6 +274,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_CLIENT
       labelEn: Gitea CLIENT Vaule
       labelZh: Gitea CLIENT 值
+      label:
+        en: Gitea CLIENT Vaule
+        zh: Gitea CLIENT 值
+        zh-Hant: Gitea CLIENT 值
+        ja: Gitea CLIENT Vaule
+        ko: Gitea CLIENT Vaule
+        ru: Gitea CLIENT Vaule
+        ms: Gitea CLIENT Vaule
+        pt-br: Gitea CLIENT Vaule
       required: false
       type: text
     - default: ''
@@ -137,6 +290,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_SECRET
       labelEn: Gitea SECRET Vaule
       labelZh: Gitea SECRET 值
+      label:
+        en: Gitea SECRET Vaule
+        zh: Gitea SECRET 值
+        zh-Hant: Gitea SECRET 值
+        ja: Gitea SECRET Vaule
+        ko: Gitea SECRET Vaule
+        ru: Gitea SECRET Vaule
+        ms: Gitea SECRET Vaule
+        pt-br: Gitea SECRET Vaule
       required: false
       type: text
     - default: "false"
@@ -144,6 +306,15 @@ additionalProperties:
       envKey: GITLAB_ENABLE_SWITCH
       labelEn: Enable GitLab (true or false)
       labelZh: 启用GitLab (true/false)
+      label:
+        en: Enable GitLab (true or false)
+        zh: 启用GitLab (true/false)
+        zh-Hant: 启用GitLab (true/false)
+        ja: Enable GitLab (true or false)
+        ko: Enable GitLab (true or false)
+        ru: Enable GitLab (true or false)
+        ms: Enable GitLab (true or false)
+        pt-br: Enable GitLab (true or false)
       required: true
       type: text
     - default: https://gitlab.com
@@ -151,6 +322,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_URL
       labelEn: GitLab URL
       labelZh: GitLab 地址
+      label:
+        en: GitLab URL
+        zh: GitLab 地址
+        zh-Hant: GitLab 地址
+        ja: GitLab URL
+        ko: GitLab URL
+        ru: GitLab URL
+        ms: GitLab URL
+        pt-br: GitLab URL
       required: false
       type: text
     - default: ''
@@ -158,6 +338,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_CLIENT
       labelEn: GitLab CLIENT Vaule
       labelZh: GitLab CLIENT 值
+      label:
+        en: GitLab CLIENT Vaule
+        zh: GitLab CLIENT 值
+        zh-Hant: GitLab CLIENT 值
+        ja: GitLab CLIENT Vaule
+        ko: GitLab CLIENT Vaule
+        ru: GitLab CLIENT Vaule
+        ms: GitLab CLIENT Vaule
+        pt-br: GitLab CLIENT Vaule
       required: false
       type: text
     - default: ''
@@ -165,6 +354,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_SECRET
       labelEn: GitLab SECRET Vaule
       labelZh: GitLab SECRET 值
+      label:
+        en: GitLab SECRET Vaule
+        zh: GitLab SECRET 值
+        zh-Hant: GitLab SECRET 值
+        ja: GitLab SECRET Vaule
+        ko: GitLab SECRET Vaule
+        ru: GitLab SECRET Vaule
+        ms: GitLab SECRET Vaule
+        pt-br: GitLab SECRET Vaule
       required: false
       type: text
     - default: "false"
@@ -172,6 +370,15 @@ additionalProperties:
       envKey: BITBUCKET_ENABLE_SWITCH
       labelEn: Enable Bitbucket (true or false)
       labelZh: 启用 Bitbucket (true/false)
+      label:
+        en: Enable Bitbucket (true or false)
+        zh: 启用 Bitbucket (true/false)
+        zh-Hant: 启用 Bitbucket (true/false)
+        ja: Enable Bitbucket (true or false)
+        ko: Enable Bitbucket (true or false)
+        ru: Enable Bitbucket (true or false)
+        ms: Enable Bitbucket (true or false)
+        pt-br: Enable Bitbucket (true or false)
       required: true
       type: text
     - default: ''
@@ -179,6 +386,15 @@ additionalProperties:
       envKey: WOODPECKER_BITBUCKET_CLIENT
       labelEn: Bitbucket CLIENT Value
       labelZh: Bitbucket CLIENT 值
+      label:
+        en: Bitbucket CLIENT Value
+        zh: Bitbucket CLIENT 值
+        zh-Hant: Bitbucket CLIENT 值
+        ja: Bitbucket CLIENT Value
+        ko: Bitbucket CLIENT Value
+        ru: Bitbucket CLIENT Value
+        ms: Bitbucket CLIENT Value
+        pt-br: Bitbucket CLIENT Value
       required: false
       type: text
     - default: ''
@@ -186,5 +402,14 @@ additionalProperties:
       envKey: WOODPECKER_BITBUCKET_SECRET
       labelEn: Bitbucket SECRET Value
       labelZh: Bitbucket SECRET 值
+      label:
+        en: Bitbucket SECRET Value
+        zh: Bitbucket SECRET 值
+        zh-Hant: Bitbucket SECRET 值
+        ja: Bitbucket SECRET Value
+        ko: Bitbucket SECRET Value
+        ru: Bitbucket SECRET Value
+        ms: Bitbucket SECRET Value
+        pt-br: Bitbucket SECRET Value
       required: false
       type: text

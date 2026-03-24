@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "/Config"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CLOUDDRIVE_HOME
       labelEn: CloudDrive Home
       labelZh: CloudDrive 根目录
+      label:
+        en: CloudDrive Home
+        zh: CloudDrive 根目录
+        zh-Hant: CloudDrive 根目录
+        ja: CloudDrive Home
+        ko: CloudDrive Home
+        ru: CloudDrive Home
+        ms: CloudDrive Home
+        pt-br: CloudDrive Home
       required: true
       type: text
     - default: "./data/CloudNAS"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: CLOUD_MOUNTS_PATH
       labelEn: Cloud Mounts Path
       labelZh: 云挂载路径
+      label:
+        en: Cloud Mounts Path
+        zh: 云挂载路径
+        zh-Hant: 云挂载路径
+        ja: Cloud Mounts Path
+        ko: Cloud Mounts Path
+        ru: Cloud Mounts Path
+        ms: Cloud Mounts Path
+        pt-br: Cloud Mounts Path
       required: true
       type: text
     - default: "./data/Config"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: APP_DATA_PATH
       labelEn: App Data Path
       labelZh: 应用数据路径
+      label:
+        en: App Data Path
+        zh: 应用数据路径
+        zh-Hant: 应用数据路径
+        ja: App Data Path
+        ko: App Data Path
+        ru: App Data Path
+        ms: App Data Path
+        pt-br: App Data Path
       required: true
       type: text
     - default: "./data/media"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: SHARED_MEDIA_PATH
       labelEn: Shared Media Path
       labelZh: 共享媒体路径
+      label:
+        en: Shared Media Path
+        zh: 共享媒体路径
+        zh-Hant: 共享媒体路径
+        ja: Shared Media Path
+        ko: Shared Media Path
+        ru: Shared Media Path
+        ms: Shared Media Path
+        pt-br: Shared Media Path
       required: true
       type: text
     - default: "true"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privileged Mode
       labelZh: 特权模式
+      label:
+        en: Privileged Mode
+        zh: 特权模式
+        zh-Hant: 特权模式
+        ja: Privileged Mode
+        ko: Privileged Mode
+        ru: Privileged Mode
+        ms: Privileged Mode
+        pt-br: Privileged Mode
       required: true
       type: select
       values:

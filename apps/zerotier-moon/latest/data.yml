@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HOST_IPV4
       labelEn: Native IPV4 address
       labelZh: 本机IPV4地址
+      label:
+        en: Native IPV4 address
+        zh: 本机IPV4地址
+        zh-Hant: 本机IPV4地址
+        ja: Native IPV4 address
+        ko: Native IPV4 address
+        ru: Native IPV4 address
+        ms: Native IPV4 address
+        pt-br: Native IPV4 address
       required: false
       type: text
     - default: ''
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: HOST_IPV6
       labelEn: Native IPV6 address
       labelZh: 本机IPV6地址
+      label:
+        en: Native IPV6 address
+        zh: 本机IPV6地址
+        zh-Hant: 本机IPV6地址
+        ja: Native IPV6 address
+        ko: Native IPV6 address
+        ru: Native IPV6 address
+        ms: Native IPV6 address
+        pt-br: Native IPV6 address
       required: false
       type: text

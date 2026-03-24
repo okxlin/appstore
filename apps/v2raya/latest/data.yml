@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: WebUI Port
+        zh: 网页端口
+        zh-Hant: 网页端口
+        ja: WebUI Port
+        ko: WebUI Port
+        ru: WebUI Port
+        ms: WebUI Port
+        pt-br: WebUI Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PLUGIN_PORT
       labelEn: Internal plug-in port
       labelZh: 内部插件端口
+      label:
+        en: Internal plug-in port
+        zh: 内部插件端口
+        zh-Hant: 内部插件端口
+        ja: Internal plug-in port
+        ko: Internal plug-in port
+        ru: Internal plug-in port
+        ms: Internal plug-in port
+        pt-br: Internal plug-in port
       required: true
       rule: paramPort
       type: number
@@ -21,5 +39,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text

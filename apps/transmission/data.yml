@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/transmission/transmission
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/msgbyte/tianji
   architectures:
     - amd64
+    - arm64

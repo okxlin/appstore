@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SYNCTHING_PORT
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: Sync Port
+        zh: 同步端口
+        zh-Hant: 同步端口
+        ja: Sync Port
+        ko: Sync Port
+        ru: Sync Port
+        ms: Sync Port
+        pt-br: Sync Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: SYNCTHING_PORT_EXTRA_UDP
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: Sync Port
+        zh: 同步端口
+        zh-Hant: 同步端口
+        ja: Sync Port
+        ko: Sync Port
+        ru: Sync Port
+        ms: Sync Port
+        pt-br: Sync Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DATA_PATH_APP_CONFIG
       labelEn: Config folder path
       labelZh: 配置文件夹路径
+      label:
+        en: Config folder path
+        zh: 配置文件夹路径
+        zh-Hant: 配置文件夹路径
+        ja: Config folder path
+        ko: Config folder path
+        ru: Config folder path
+        ms: Config folder path
+        pt-br: Config folder path
       required: true
       type: text
     - default: ./data/data1
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: DATA_PATH_DATA1
       labelEn: Data folder path (internal "/data1")
       labelZh: 数据文件夹路径 (内部"/data1")
+      label:
+        en: Data folder path (internal "/data1")
+        zh: 数据文件夹路径 (内部"/data1")
+        zh-Hant: 数据文件夹路径 (内部"/data1")
+        ja: Data folder path (internal "/data1")
+        ko: Data folder path (internal "/data1")
+        ru: Data folder path (internal "/data1")
+        ms: Data folder path (internal "/data1")
+        pt-br: Data folder path (internal "/data1")
       required: true
       type: text
     - default: ./data/data2
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: DATA_PATH_DATA2
       labelEn: Data folder path (internal "/data2")
       labelZh: 数据文件夹路径 (内部"/data2")
+      label:
+        en: Data folder path (internal "/data2")
+        zh: 数据文件夹路径 (内部"/data2")
+        zh-Hant: 数据文件夹路径 (内部"/data2")
+        ja: Data folder path (internal "/data2")
+        ko: Data folder path (internal "/data2")
+        ru: Data folder path (internal "/data2")
+        ms: Data folder path (internal "/data2")
+        pt-br: Data folder path (internal "/data2")
       required: true
       type: text
     - default: Asia/Shanghai
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

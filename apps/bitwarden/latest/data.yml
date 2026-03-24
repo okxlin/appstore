@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "true"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SIGNUPS_ALLOWED
       labelEn: Allow Signups
       labelZh: 允许注册
+      label:
+        en: Allow Signups
+        zh: 允许注册
+        zh-Hant: 允许注册
+        ja: Allow Signups
+        ko: Allow Signups
+        ru: Allow Signups
+        ms: Allow Signups
+        pt-br: Allow Signups
       required: true
       type: select
       values:
@@ -32,6 +59,15 @@ additionalProperties:
       envKey: INVITATIONS_ALLOWED
       labelEn: Allow Invitations
       labelZh: 允许邀请
+      label:
+        en: Allow Invitations
+        zh: 允许邀请
+        zh-Hant: 允许邀请
+        ja: Allow Invitations
+        ko: Allow Invitations
+        ru: Allow Invitations
+        ms: Allow Invitations
+        pt-br: Allow Invitations
       required: true
       type: select
       values:
@@ -44,6 +80,15 @@ additionalProperties:
       envKey: WEBSOCKET_ENABLED
       labelEn: WebSocket Enabled
       labelZh: 启用 WebSocket
+      label:
+        en: WebSocket Enabled
+        zh: 启用 WebSocket
+        zh-Hant: 启用 WebSocket
+        ja: WebSocket Enabled
+        ko: WebSocket Enabled
+        ru: WebSocket Enabled
+        ms: WebSocket Enabled
+        pt-br: WebSocket Enabled
       required: true
       type: select
       values:
@@ -56,5 +101,14 @@ additionalProperties:
       envKey: ADMIN_TOKEN
       labelEn: Admin Token
       labelZh: 管理员令牌
+      label:
+        en: Admin Token
+        zh: 管理员令牌
+        zh-Hant: 管理员令牌
+        ja: Admin Token
+        ko: Admin Token
+        ru: Admin Token
+        ms: Admin Token
+        pt-br: Admin Token
       required: false
       type: password

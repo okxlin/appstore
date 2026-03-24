@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/jason5ng32/MyIP
   architectures:
     - amd64
+    - arm64

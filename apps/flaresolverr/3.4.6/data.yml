@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日志级别
+        ja: Log Level
+        ko: Log Level
+        ru: Log Level
+        ms: Log Level
+        pt-br: Log Level
       required: true
       type: select
       values:
@@ -27,6 +45,15 @@ additionalProperties:
       envKey: LOG_HTML
       labelEn: Log HTML
       labelZh: 日志 HTML 输出
+      label:
+        en: Log HTML
+        zh: 日志 HTML 输出
+        zh-Hant: 日志 HTML 输出
+        ja: Log HTML
+        ko: Log HTML
+        ru: Log HTML
+        ms: Log HTML
+        pt-br: Log HTML
       required: true
       type: select
       values:
@@ -39,6 +66,15 @@ additionalProperties:
       envKey: CAPTCHA_SOLVER
       labelEn: CAPTCHA Solver
       labelZh: CAPTCHA 解密器
+      label:
+        en: CAPTCHA Solver
+        zh: CAPTCHA 解密器
+        zh-Hant: CAPTCHA 解密器
+        ja: CAPTCHA Solver
+        ko: CAPTCHA Solver
+        ru: CAPTCHA Solver
+        ms: CAPTCHA Solver
+        pt-br: CAPTCHA Solver
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -46,6 +82,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "none"
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Language
       labelZh: 语言
+      label:
+        en: Language
+        zh: 语言
+        zh-Hant: 语言
+        ja: Language
+        ko: Language
+        ru: Language
+        ms: Language
+        pt-br: Language
       required: true
       type: text
     - default: "true"
@@ -60,6 +114,15 @@ additionalProperties:
       envKey: HEADLESS
       labelEn: Headless Mode
       labelZh: 无头模式
+      label:
+        en: Headless Mode
+        zh: 无头模式
+        zh-Hant: 无头模式
+        ja: Headless Mode
+        ko: Headless Mode
+        ru: Headless Mode
+        ms: Headless Mode
+        pt-br: Headless Mode
       required: true
       type: select
       values:
@@ -72,6 +135,15 @@ additionalProperties:
       envKey: BROWSER_TIMEOUT
       labelEn: Browser Timeout
       labelZh: 浏览器超时时间
+      label:
+        en: Browser Timeout
+        zh: 浏览器超时时间
+        zh-Hant: 浏览器超时时间
+        ja: Browser Timeout
+        ko: Browser Timeout
+        ru: Browser Timeout
+        ms: Browser Timeout
+        pt-br: Browser Timeout
       required: true
       type: number
     - default: "https://www.google.com"
@@ -79,6 +151,15 @@ additionalProperties:
       envKey: TEST_URL
       labelEn: Test URL
       labelZh: 测试 URL
+      label:
+        en: Test URL
+        zh: 测试 URL
+        zh-Hant: 测试 URL
+        ja: Test URL
+        ko: Test URL
+        ru: Test URL
+        ms: Test URL
+        pt-br: Test URL
       required: true
       type: text
     - default: "0.0.0.0"
@@ -86,6 +167,15 @@ additionalProperties:
       envKey: HOST
       labelEn: Host
       labelZh: 监听地址
+      label:
+        en: Host
+        zh: 监听地址
+        zh-Hant: 监听地址
+        ja: Host
+        ko: Host
+        ru: Host
+        ms: Host
+        pt-br: Host
       required: true
       type: text
     - default: "false"
@@ -93,6 +183,15 @@ additionalProperties:
       envKey: PROMETHEUS_ENABLED
       labelEn: Prometheus Enabled
       labelZh: 启用 Prometheus
+      label:
+        en: Prometheus Enabled
+        zh: 启用 Prometheus
+        zh-Hant: 启用 Prometheus
+        ja: Prometheus Enabled
+        ko: Prometheus Enabled
+        ru: Prometheus Enabled
+        ms: Prometheus Enabled
+        pt-br: Prometheus Enabled
       required: true
       type: select
       values:

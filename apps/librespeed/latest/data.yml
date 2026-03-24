@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MODE
       labelEn: Mode
       labelZh: 模式
+      label:
+        en: Mode
+        zh: 模式
+        zh-Hant: 模式
+        ja: Mode
+        ko: Mode
+        ru: Mode
+        ms: Mode
+        pt-br: Mode
       required: true
       type: text
     - default: "LibreSpeed"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: TITLE
       labelEn: Title
       labelZh: 标题
+      label:
+        en: Title
+        zh: 标题
+        zh-Hant: 标题
+        ja: Title
+        ko: Title
+        ru: Title
+        ms: Title
+        pt-br: Title
       required: true
       type: text
     - default: "false"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TELEMETRY
       labelEn: Telemetry
       labelZh: 遥测
+      label:
+        en: Telemetry
+        zh: 遥测
+        zh-Hant: 遥测
+        ja: Telemetry
+        ko: Telemetry
+        ru: Telemetry
+        ms: Telemetry
+        pt-br: Telemetry
       required: true
       type: select
       values:
@@ -39,6 +75,15 @@ additionalProperties:
       envKey: ENABLE_ID_OBFUSCATION
       labelEn: Enable ID Obfuscation
       labelZh: 启用 ID 混淆
+      label:
+        en: Enable ID Obfuscation
+        zh: 启用 ID 混淆
+        zh-Hant: 启用 ID 混淆
+        ja: Enable ID Obfuscation
+        ko: Enable ID Obfuscation
+        ru: Enable ID Obfuscation
+        ms: Enable ID Obfuscation
+        pt-br: Enable ID Obfuscation
       required: true
       type: select
       values:
@@ -51,6 +96,15 @@ additionalProperties:
       envKey: REDACT_IP_ADDRESSES
       labelEn: Redact IP Addresses
       labelZh: 隐藏 IP 地址
+      label:
+        en: Redact IP Addresses
+        zh: 隐藏 IP 地址
+        zh-Hant: 隐藏 IP 地址
+        ja: Redact IP Addresses
+        ko: Redact IP Addresses
+        ru: Redact IP Addresses
+        ms: Redact IP Addresses
+        pt-br: Redact IP Addresses
       required: true
       type: select
       values:
@@ -63,6 +117,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: Password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: false
       rule: paramCommon
@@ -72,6 +135,15 @@ additionalProperties:
       envKey: EMAIL
       labelEn: Email address for GDPR requests (must be specified when telemetry is enabled)
       labelZh: GDPR 请求的电子邮件地址 (启用遥测时必须指定)
+      label:
+        en: Email address for GDPR requests (must be specified when telemetry is enabled)
+        zh: GDPR 请求的电子邮件地址 (启用遥测时必须指定)
+        zh-Hant: GDPR 请求的电子邮件地址 (启用遥测时必须指定)
+        ja: Email address for GDPR requests (must be specified when telemetry is enabled)
+        ko: Email address for GDPR requests (must be specified when telemetry is enabled)
+        ru: Email address for GDPR requests (must be specified when telemetry is enabled)
+        ms: Email address for GDPR requests (must be specified when telemetry is enabled)
+        pt-br: Email address for GDPR requests (must be specified when telemetry is enabled)
       required: false
       type: text
     - default: "false"
@@ -79,6 +151,15 @@ additionalProperties:
       envKey: DISABLE_IPINFO
       labelEn: Disable IPInfo
       labelZh: 禁用 IPInfo
+      label:
+        en: Disable IPInfo
+        zh: 禁用 IPInfo
+        zh-Hant: 禁用 IPInfo
+        ja: Disable IPInfo
+        ko: Disable IPInfo
+        ru: Disable IPInfo
+        ms: Disable IPInfo
+        pt-br: Disable IPInfo
       required: true
       type: select
       values:
@@ -91,6 +172,15 @@ additionalProperties:
       envKey: DISTANCE
       labelEn: Distance
       labelZh: 距离
+      label:
+        en: Distance
+        zh: 距离
+        zh-Hant: 距离
+        ja: Distance
+        ko: Distance
+        ru: Distance
+        ms: Distance
+        pt-br: Distance
       required: false
       type: select
       values:

@@ -18,3 +18,4 @@ additionalProperties:
   document: https://mx-space.js.org/docs
   architectures:
     - amd64
+    - arm64

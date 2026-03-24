@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: IYUU_PATH
       labelEn: IYUU Path
       labelZh: IYUU 路径
+      label:
+        en: IYUU Path
+        zh: IYUU 路径
+        zh-Hant: IYUU 路径
+        ja: IYUU Path
+        ko: IYUU Path
+        ru: IYUU Path
+        ms: IYUU Path
+        pt-br: IYUU Path
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "./data/qbittorrent"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: QBITTORRENT_PATH
       labelEn: QBittorrent Path
       labelZh: QBittorrent 路径
+      label:
+        en: QBittorrent Path
+        zh: QBittorrent 路径
+        zh-Hant: QBittorrent 路径
+        ja: QBittorrent Path
+        ko: QBittorrent Path
+        ru: QBittorrent Path
+        ms: QBittorrent Path
+        pt-br: QBittorrent Path
       required: true
       type: text
     - default: "/qbittorrent"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: INTERNAL_QBITTORRENT_PATH
       labelEn: Internal QBittorrent Path
       labelZh: 内部 QBittorrent 路径
+      label:
+        en: Internal QBittorrent Path
+        zh: 内部 QBittorrent 路径
+        zh-Hant: 内部 QBittorrent 路径
+        ja: Internal QBittorrent Path
+        ko: Internal QBittorrent Path
+        ru: Internal QBittorrent Path
+        ms: Internal QBittorrent Path
+        pt-br: Internal QBittorrent Path
       required: true
       type: text
     - default: "./data/transmission"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: TRANSMISSION_PATH
       labelEn: Transmission Path
       labelZh: Transmission 路径
+      label:
+        en: Transmission Path
+        zh: Transmission 路径
+        zh-Hant: Transmission 路径
+        ja: Transmission Path
+        ko: Transmission Path
+        ru: Transmission Path
+        ms: Transmission Path
+        pt-br: Transmission Path
       required: true
       type: text
     - default: "/transmission"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: INTERNAL_TRANSMISSION_PATH
       labelEn: Internal Transmission Path
       labelZh: 内部 Transmission 路径
+      label:
+        en: Internal Transmission Path
+        zh: 内部 Transmission 路径
+        zh-Hant: 内部 Transmission 路径
+        ja: Internal Transmission Path
+        ko: Internal Transmission Path
+        ru: Internal Transmission Path
+        ms: Internal Transmission Path
+        pt-br: Internal Transmission Path
       required: true
       type: text
     - default: "./data/mnt"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: EXTERNAL_MOUNT_PATH
       labelEn: External Mount Path
       labelZh: 外部挂载路径
+      label:
+        en: External Mount Path
+        zh: 外部挂载路径
+        zh-Hant: 外部挂载路径
+        ja: External Mount Path
+        ko: External Mount Path
+        ru: External Mount Path
+        ms: External Mount Path
+        pt-br: External Mount Path
       required: true
       type: text
     - default: "/mnt"
@@ -62,5 +134,14 @@ additionalProperties:
       envKey: INTERNAL_MOUNT_PATH
       labelEn: Internal Mount Path
       labelZh: 内部挂载路径
+      label:
+        en: Internal Mount Path
+        zh: 内部挂载路径
+        zh-Hant: 内部挂载路径
+        ja: Internal Mount Path
+        ko: Internal Mount Path
+        ru: Internal Mount Path
+        ms: Internal Mount Path
+        pt-br: Internal Mount Path
       required: true
       type: text

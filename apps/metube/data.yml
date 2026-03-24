@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/alexta69/metube
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SMB
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: Hostname
+        zh: 主机名
+        zh-Hant: 主机名
+        ja: Hostname
+        ko: Hostname
+        ru: Hostname
+        ms: Hostname
+        pt-br: Hostname
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "./data"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: External Data Path
       labelZh: 外部数据路径
+      label:
+        en: External Data Path
+        zh: 外部数据路径
+        zh-Hant: 外部数据路径
+        ja: External Data Path
+        ko: External Data Path
+        ru: External Data Path
+        ms: External Data Path
+        pt-br: External Data Path
       required: true
       type: text
     - default: "/share/data"
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: Internal container data paths
+        zh: 容器内部数据路径
+        zh-Hant: 容器内部数据路径
+        ja: Internal container data paths
+        ko: Internal container data paths
+        ru: Internal container data paths
+        ms: Internal container data paths
+        pt-br: Internal container data paths
       required: true
       type: text
     - default: "1000:1000:pirate:pirate:put-any-password-here"
@@ -49,6 +103,15 @@ additionalProperties:
       envKey: USER_1
       labelEn: User 1
       labelZh: 用户 1
+      label:
+        en: User 1
+        zh: 用户 1
+        zh-Hant: 用户 1
+        ja: User 1
+        ko: User 1
+        ru: User 1
+        ms: User 1
+        pt-br: User 1
       required: true
       type: text
     - default: "SmbShare:/share/folder:rw:pirate"
@@ -56,6 +119,15 @@ additionalProperties:
       envKey: SHARE_1
       labelEn: Share 1
       labelZh: 共享 1
+      label:
+        en: Share 1
+        zh: 共享 1
+        zh-Hant: 共享 1
+        ja: Share 1
+        ko: Share 1
+        ru: Share 1
+        ms: Share 1
+        pt-br: Share 1
       required: true
       type: text
     - default: ""
@@ -63,6 +135,15 @@ additionalProperties:
       envKey: USER_2
       labelEn: User 2 (Edit to remove comments in compose.yml to take effect)
       labelZh: 用户 2 (编辑去除compose.yml里的注释生效)
+      label:
+        en: User 2 (Edit to remove comments in compose.yml to take effect)
+        zh: 用户 2 (编辑去除compose.yml里的注释生效)
+        zh-Hant: 用户 2 (编辑去除compose.yml里的注释生效)
+        ja: User 2 (Edit to remove comments in compose.yml to take effect)
+        ko: User 2 (Edit to remove comments in compose.yml to take effect)
+        ru: User 2 (Edit to remove comments in compose.yml to take effect)
+        ms: User 2 (Edit to remove comments in compose.yml to take effect)
+        pt-br: User 2 (Edit to remove comments in compose.yml to take effect)
       required: false
       type: text
     - default: ""
@@ -70,6 +151,15 @@ additionalProperties:
       envKey: SHARE_2
       labelEn: Share 2 (Edit to remove comments in compose.yml to take effect)
       labelZh: 共享 2 (编辑去除compose.yml里的注释生效)
+      label:
+        en: Share 2 (Edit to remove comments in compose.yml to take effect)
+        zh: 共享 2 (编辑去除compose.yml里的注释生效)
+        zh-Hant: 共享 2 (编辑去除compose.yml里的注释生效)
+        ja: Share 2 (Edit to remove comments in compose.yml to take effect)
+        ko: Share 2 (Edit to remove comments in compose.yml to take effect)
+        ru: Share 2 (Edit to remove comments in compose.yml to take effect)
+        ms: Share 2 (Edit to remove comments in compose.yml to take effect)
+        pt-br: Share 2 (Edit to remove comments in compose.yml to take effect)
       required: false
       type: text
     - default: ""
@@ -77,6 +167,15 @@ additionalProperties:
       envKey: USER_3
       labelEn: User 3 (Edit to remove comments in compose.yml to take effect)
       labelZh: 用户 3 (编辑去除compose.yml里的注释生效)
+      label:
+        en: User 3 (Edit to remove comments in compose.yml to take effect)
+        zh: 用户 3 (编辑去除compose.yml里的注释生效)
+        zh-Hant: 用户 3 (编辑去除compose.yml里的注释生效)
+        ja: User 3 (Edit to remove comments in compose.yml to take effect)
+        ko: User 3 (Edit to remove comments in compose.yml to take effect)
+        ru: User 3 (Edit to remove comments in compose.yml to take effect)
+        ms: User 3 (Edit to remove comments in compose.yml to take effect)
+        pt-br: User 3 (Edit to remove comments in compose.yml to take effect)
       required: false
       type: text
     - default: ""
@@ -84,5 +183,14 @@ additionalProperties:
       envKey: SHARE_3
       labelEn: Share 3 (Edit to remove comments in compose.yml to take effect)
       labelZh: 共享 3 (编辑去除compose.yml里的注释生效)
+      label:
+        en: Share 3 (Edit to remove comments in compose.yml to take effect)
+        zh: 共享 3 (编辑去除compose.yml里的注释生效)
+        zh-Hant: 共享 3 (编辑去除compose.yml里的注释生效)
+        ja: Share 3 (Edit to remove comments in compose.yml to take effect)
+        ko: Share 3 (Edit to remove comments in compose.yml to take effect)
+        ru: Share 3 (Edit to remove comments in compose.yml to take effect)
+        ms: Share 3 (Edit to remove comments in compose.yml to take effect)
+        pt-br: Share 3 (Edit to remove comments in compose.yml to take effect)
       required: false
       type: text

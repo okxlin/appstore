@@ -19,3 +19,4 @@ additionalProperties:
   document: https://wiki.servarr.com
   architectures:
     - amd64
+    - arm64

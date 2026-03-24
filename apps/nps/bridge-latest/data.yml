@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Management Port
       labelZh: web 管理端口
+      label:
+        en: Web Management Port
+        zh: web 管理端口
+        zh-Hant: web 管理端口
+        ja: Web Management Port
+        ko: Web Management Port
+        ru: Web Management Port
+        ms: Web Management Port
+        pt-br: Web Management Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: NPS_BRIDGE_PORT
       labelEn: Server-Client Communication Port
       labelZh: 服务端客户端通信端口
+      label:
+        en: Server-Client Communication Port
+        zh: 服务端客户端通信端口
+        zh-Hant: 服务端客户端通信端口
+        ja: Server-Client Communication Port
+        ko: Server-Client Communication Port
+        ru: Server-Client Communication Port
+        ms: Server-Client Communication Port
+        pt-br: Server-Client Communication Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: NPS_BRIDGE_TLS_PORT
       labelEn: Server-Client Communication TLS Port
       labelZh: 服务端客户端 tls 通信端口
+      label:
+        en: Server-Client Communication TLS Port
+        zh: 服务端客户端 tls 通信端口
+        zh-Hant: 服务端客户端 tls 通信端口
+        ja: Server-Client Communication TLS Port
+        ko: Server-Client Communication TLS Port
+        ru: Server-Client Communication TLS Port
+        ms: Server-Client Communication TLS Port
+        pt-br: Server-Client Communication TLS Port
       required: true
       rule: paramPort
       type: number
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TLS_ENABLE_SWITCH
       labelEn: Whether TLS is enabled for server-client communication
       labelZh: 服务端与客户端的通信是否启用 TLS
+      label:
+        en: Whether TLS is enabled for server-client communication
+        zh: 服务端与客户端的通信是否启用 TLS
+        zh-Hant: 服务端与客户端的通信是否启用 TLS
+        ja: Whether TLS is enabled for server-client communication
+        ko: Whether TLS is enabled for server-client communication
+        ru: Whether TLS is enabled for server-client communication
+        ms: Whether TLS is enabled for server-client communication
+        pt-br: Whether TLS is enabled for server-client communication
       required: true
       type: select
       values:
@@ -40,6 +76,15 @@ additionalProperties:
       envKey: NPS_WEB_HOST
       labelEn: External URL(If the default address, please replace localhost with the current service IP)
       labelZh: 外部访问地址(若默认地址请替换 localhost 为当前服务 IP)
+      label:
+        en: External URL(If the default address, please replace localhost with the current service IP)
+        zh: 外部访问地址(若默认地址请替换 localhost 为当前服务 IP)
+        zh-Hant: 外部访问地址(若默认地址请替换 localhost 为当前服务 IP)
+        ja: External URL(If the default address, please replace localhost with the current service IP)
+        ko: External URL(If the default address, please replace localhost with the current service IP)
+        ru: External URL(If the default address, please replace localhost with the current service IP)
+        ms: External URL(If the default address, please replace localhost with the current service IP)
+        pt-br: External URL(If the default address, please replace localhost with the current service IP)
       required: true
       rule: paramExtUrl
       type: text
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: NPS_WEB_USERNAME
       labelEn: Web Interface Management Account
       labelZh: web 界面管理账号
+      label:
+        en: Web Interface Management Account
+        zh: web 界面管理账号
+        zh-Hant: web 界面管理账号
+        ja: Web Interface Management Account
+        ko: Web Interface Management Account
+        ru: Web Interface Management Account
+        ms: Web Interface Management Account
+        pt-br: Web Interface Management Account
       random: true
       required: true
       rule: paramCommon
@@ -57,6 +111,15 @@ additionalProperties:
       envKey: NPS_WEB_PASSWORD
       labelEn: Web Interface Management Password
       labelZh: web 界面管理密码
+      label:
+        en: Web Interface Management Password
+        zh: web 界面管理密码
+        zh-Hant: web 界面管理密码
+        ja: Web Interface Management Password
+        ko: Web Interface Management Password
+        ru: Web Interface Management Password
+        ms: Web Interface Management Password
+        pt-br: Web Interface Management Password
       random: true
       required: true
       rule: paramComplexity
@@ -66,6 +129,15 @@ additionalProperties:
       envKey: NPS_WEB_OPEN_SSL
       labelEn: Enable webui https access
       labelZh: web 界面开启 https 访问
+      label:
+        en: Enable webui https access
+        zh: web 界面开启 https 访问
+        zh-Hant: web 界面开启 https 访问
+        ja: Enable webui https access
+        ko: Enable webui https access
+        ru: Enable webui https access
+        ms: Enable webui https access
+        pt-br: Enable webui https access
       required: true
       rule: paramCommon
       type: text
@@ -74,6 +146,15 @@ additionalProperties:
       envKey: NPS_RANDOM_PORT_START
       labelEn: Dynamic Port Range Start
       labelZh: 动态端口范围开始
+      label:
+        en: Dynamic Port Range Start
+        zh: 动态端口范围开始
+        zh-Hant: 动态端口范围开始
+        ja: Dynamic Port Range Start
+        ko: Dynamic Port Range Start
+        ru: Dynamic Port Range Start
+        ms: Dynamic Port Range Start
+        pt-br: Dynamic Port Range Start
       required: true
       rule: paramPort
       type: number
@@ -82,6 +163,15 @@ additionalProperties:
       envKey: NPS_RANDOM_PORT_END
       labelEn: Dynamic Port Range End
       labelZh: 动态端口范围结束
+      label:
+        en: Dynamic Port Range End
+        zh: 动态端口范围结束
+        zh-Hant: 动态端口范围结束
+        ja: Dynamic Port Range End
+        ko: Dynamic Port Range End
+        ru: Dynamic Port Range End
+        ms: Dynamic Port Range End
+        pt-br: Dynamic Port Range End
       required: true
       rule: paramPort
       type: number
@@ -90,6 +180,15 @@ additionalProperties:
       envKey: NPS_PUBLIC_VKEY
       labelEn: Key When the Client Starts in Configuration File Mode
       labelZh: 客户端以配置文件模式启动时的密钥
+      label:
+        en: Key When the Client Starts in Configuration File Mode
+        zh: 客户端以配置文件模式启动时的密钥
+        zh-Hant: 客户端以配置文件模式启动时的密钥
+        ja: Key When the Client Starts in Configuration File Mode
+        ko: Key When the Client Starts in Configuration File Mode
+        ru: Key When the Client Starts in Configuration File Mode
+        ms: Key When the Client Starts in Configuration File Mode
+        pt-br: Key When the Client Starts in Configuration File Mode
       required: true
       rule: paramCommon
       type: text
@@ -98,6 +197,15 @@ additionalProperties:
       envKey: NPS_AUTH_CRYPT_KEY
       labelEn: 16-bit AES Encryption Key
       labelZh: 16 位 AES 加密密钥
+      label:
+        en: 16-bit AES Encryption Key
+        zh: 16 位 AES 加密密钥
+        zh-Hant: 16 位 AES 加密密钥
+        ja: 16-bit AES Encryption Key
+        ko: 16-bit AES Encryption Key
+        ru: 16-bit AES Encryption Key
+        ms: 16-bit AES Encryption Key
+        pt-br: 16-bit AES Encryption Key
       required: true
       rule: paramCommon
       type: text
@@ -106,6 +214,15 @@ additionalProperties:
       envKey: NPS_HTTP_PROXY_IP
       labelEn: Http Proxy IP
       labelZh: 域名代理 http 代理监听地址
+      label:
+        en: Http Proxy IP
+        zh: 域名代理 http 代理监听地址
+        zh-Hant: 域名代理 http 代理监听地址
+        ja: Http Proxy IP
+        ko: Http Proxy IP
+        ru: Http Proxy IP
+        ms: Http Proxy IP
+        pt-br: Http Proxy IP
       required: true
       rule: paramCommon
       type: text
@@ -114,6 +231,15 @@ additionalProperties:
       envKey: NPS_HTTP_PROXY_PORT
       labelEn: Http Proxy Port
       labelZh: 域名代理 http 代理监听端口
+      label:
+        en: Http Proxy Port
+        zh: 域名代理 http 代理监听端口
+        zh-Hant: 域名代理 http 代理监听端口
+        ja: Http Proxy Port
+        ko: Http Proxy Port
+        ru: Http Proxy Port
+        ms: Http Proxy Port
+        pt-br: Http Proxy Port
       required: true
       rule: paramPort
       type: number
@@ -122,6 +248,15 @@ additionalProperties:
       envKey: NPS_HTTPS_PROXY_PORT
       labelEn: Https Proxy Port
       labelZh: 域名代理 https 代理监听端口
+      label:
+        en: Https Proxy Port
+        zh: 域名代理 https 代理监听端口
+        zh-Hant: 域名代理 https 代理监听端口
+        ja: Https Proxy Port
+        ko: Https Proxy Port
+        ru: Https Proxy Port
+        ms: Https Proxy Port
+        pt-br: Https Proxy Port
       required: true
       rule: paramPort
       type: number

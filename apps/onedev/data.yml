@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.onedev.io
   architectures:
     - amd64
+    - arm64

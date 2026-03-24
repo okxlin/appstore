@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: SSH Port
+        zh: SSH 端口
+        zh-Hant: SSH 端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: EXTERNAL_PORT
       labelEn: External port
       labelZh: 外部端口
+      label:
+        en: External port
+        zh: 外部端口
+        zh-Hant: 外部端口
+        ja: External port
+        ko: External port
+        ru: External port
+        ms: External port
+        pt-br: External port
       required: true
       type: text
     - default: 50000-50010
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: INTERNAL_PORT
       labelEn: Internal port
       labelZh: 内部端口
+      label:
+        en: Internal port
+        zh: 内部端口
+        zh-Hant: 内部端口
+        ja: Internal port
+        ko: Internal port
+        ru: Internal port
+        ms: Internal port
+        pt-br: Internal port
       required: true
       type: text
     - default: ./data/data
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: EXTERNAL_DATA1
       labelEn: External folder path 1
       labelZh: 外部文件夹路径1
+      label:
+        en: External folder path 1
+        zh: 外部文件夹路径1
+        zh-Hant: 外部文件夹路径1
+        ja: External folder path 1
+        ko: External folder path 1
+        ru: External folder path 1
+        ms: External folder path 1
+        pt-br: External folder path 1
       required: true
       type: text
     - default: /data
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: INTERNAL_DATA1
       labelEn: Internal folder path 1
       labelZh: 内部文件夹路径1
+      label:
+        en: Internal folder path 1
+        zh: 内部文件夹路径1
+        zh-Hant: 内部文件夹路径1
+        ja: Internal folder path 1
+        ko: Internal folder path 1
+        ru: Internal folder path 1
+        ms: Internal folder path 1
+        pt-br: Internal folder path 1
       required: true
       type: text
     - default: ./data/www
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: EXTERNAL_DATA2
       labelEn: External folder path 2
       labelZh: 外部文件夹路径2
+      label:
+        en: External folder path 2
+        zh: 外部文件夹路径2
+        zh-Hant: 外部文件夹路径2
+        ja: External folder path 2
+        ko: External folder path 2
+        ru: External folder path 2
+        ms: External folder path 2
+        pt-br: External folder path 2
       required: true
       type: text
     - default: /www
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: INTERNAL_DATA2
       labelEn: Internal folder path 2
       labelZh: 内部文件夹路径2
+      label:
+        en: Internal folder path 2
+        zh: 内部文件夹路径2
+        zh-Hant: 内部文件夹路径2
+        ja: Internal folder path 2
+        ko: Internal folder path 2
+        ru: Internal folder path 2
+        ms: Internal folder path 2
+        pt-br: Internal folder path 2
       required: true
       type: text
     - default: ""
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: SSH_KEY
       labelEn: SSH public key
       labelZh: SSH 公钥
+      label:
+        en: SSH public key
+        zh: SSH 公钥
+        zh-Hant: SSH 公钥
+        ja: SSH public key
+        ko: SSH public key
+        ru: SSH public key
+        ms: SSH public key
+        pt-br: SSH public key
       required: false
       type: text
     - default: "lxc1"
@@ -62,5 +134,14 @@ additionalProperties:
       envKey: LXC_HOSTNAME
       labelEn: LXC hostname
       labelZh: LXC主机名
+      label:
+        en: LXC hostname
+        zh: LXC主机名
+        zh-Hant: LXC主机名
+        ja: LXC hostname
+        ko: LXC hostname
+        ru: LXC hostname
+        ms: LXC hostname
+        pt-br: LXC hostname
       required: true
       type: text

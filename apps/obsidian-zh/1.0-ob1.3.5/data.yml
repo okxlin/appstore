@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_VNC
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: VNC Port
+        zh: VNC 端口
+        zh-Hant: VNC 端口
+        ja: VNC Port
+        ko: VNC Port
+        ru: VNC Port
+        ms: VNC Port
+        pt-br: VNC Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: SSH Port
+        zh: SSH 端口
+        zh-Hant: SSH 端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: password
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: Auth password
       labelZh: 密码
+      label:
+        en: Auth password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Auth password
+        ko: Auth password
+        ru: Auth password
+        ms: Auth password
+        pt-br: Auth password
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: DISPLAY_SIZE
       labelEn: Display size
       labelZh: 画面尺寸
+      label:
+        en: Display size
+        zh: 画面尺寸
+        zh-Hant: 画面尺寸
+        ja: Display size
+        ko: Display size
+        ru: Display size
+        ms: Display size
+        pt-br: Display size
       required: true
       type: text
     - default: "true"
@@ -52,5 +106,14 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: Privilege mode switch
+        zh: 特权模式开关
+        zh-Hant: 特权模式开关
+        ja: Privilege mode switch
+        ko: Privilege mode switch
+        ru: Privilege mode switch
+        ms: Privilege mode switch
+        pt-br: Privilege mode switch
       required: true
       type: text

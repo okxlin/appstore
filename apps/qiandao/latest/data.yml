@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,12 +22,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: AESPWD
       envKey: AES_PWD
       labelEn: AES encryption key
       labelZh: AES加密密钥
+      label:
+        en: AES encryption key
+        zh: AES加密密钥
+        zh-Hant: AES加密密钥
+        ja: AES encryption key
+        ko: AES encryption key
+        ru: AES encryption key
+        ms: AES encryption key
+        pt-br: AES encryption key
       random: true
       required: true
       rule: paramCommon
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: COOKIE_PWD
       labelEn: COOKIE encryption key
       labelZh: COOKIE加密密钥
+      label:
+        en: COOKIE encryption key
+        zh: COOKIE加密密钥
+        zh-Hant: COOKIE加密密钥
+        ja: COOKIE encryption key
+        ko: COOKIE encryption key
+        ru: COOKIE encryption key
+        ms: COOKIE encryption key
+        pt-br: COOKIE encryption key
       random: true
       required: true
       rule: paramCommon

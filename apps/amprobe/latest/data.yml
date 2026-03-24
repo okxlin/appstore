@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
+      label:
+        en: Port (determined by the configuration file)
+        zh: 端口 (由配置文件决定)
+        zh-Hant: 端口 (由配置文件决定)
+        ja: Port (determined by the configuration file)
+        ko: Port (determined by the configuration file)
+        ru: Port (determined by the configuration file)
+        ms: Port (determined by the configuration file)
+        pt-br: Port (determined by the configuration file)
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Directory
       labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 数据目录
+        ja: Data Directory
+        ko: Data Directory
+        ru: Data Directory
+        ms: Data Directory
+        pt-br: Data Directory
       required: true
       type: text

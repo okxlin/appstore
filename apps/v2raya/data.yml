@@ -19,3 +19,5 @@ additionalProperties:
   document: https://v2raya.org/docs/prologue/introduction/
   architectures:
     - amd64
+    - arm
+    - arm64

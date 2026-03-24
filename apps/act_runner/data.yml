@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.gitea.com/next/usage/actions/act-runner
   architectures:
     - amd64
+    - arm64

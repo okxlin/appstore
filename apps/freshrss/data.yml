@@ -19,3 +19,5 @@ additionalProperties:
   document: https://freshrss.github.io/FreshRSS
   architectures:
     - amd64
+    - arm
+    - arm64

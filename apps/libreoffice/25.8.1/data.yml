@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: HTTPS Port
       labelZh: HTTPS端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS端口
+        zh-Hant: HTTPS端口
+        ja: HTTPS Port
+        ko: HTTPS Port
+        ru: HTTPS Port
+        ms: HTTPS Port
+        pt-br: HTTPS Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: Asia/Shanghai
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text
     - default: user
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: HTTP_USER
       labelEn: http auth user
       labelZh: HTTP 用户
+      label:
+        en: http auth user
+        zh: HTTP 用户
+        zh-Hant: HTTP 用户
+        ja: http auth user
+        ko: http auth user
+        ru: http auth user
+        ms: http auth user
+        pt-br: http auth user
       required: true
       type: text
     - default: password
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: http auth password
       labelZh: HTTP 密码
+      label:
+        en: http auth password
+        zh: HTTP 密码
+        zh-Hant: HTTP 密码
+        ja: http auth password
+        ko: http auth password
+        ru: http auth password
+        ms: http auth password
+        pt-br: http auth password
       random: true
       required: true
       rule: paramComplexity

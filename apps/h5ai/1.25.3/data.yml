@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: The path to the shared data folder
       labelZh: 分享的数据文件夹路径
+      label:
+        en: The path to the shared data folder
+        zh: 分享的数据文件夹路径
+        zh-Hant: 分享的数据文件夹路径
+        ja: The path to the shared data folder
+        ko: The path to the shared data folder
+        ru: The path to the shared data folder
+        ms: The path to the shared data folder
+        pt-br: The path to the shared data folder
       required: true
       type: text
     - default: ./data/config
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Path to the configuration file
       labelZh: 配置文件所在路径
+      label:
+        en: Path to the configuration file
+        zh: 配置文件所在路径
+        zh-Hant: 配置文件所在路径
+        ja: Path to the configuration file
+        ko: Path to the configuration file
+        ru: Path to the configuration file
+        ms: Path to the configuration file
+        pt-br: Path to the configuration file
       required: true
       type: text
     - default: "true"
@@ -27,12 +54,30 @@ additionalProperties:
       envKey: AUTH_ENABLE
       labelEn: "Authentication (On: true, Off: false)"
       labelZh: 身份验证(开启:true，关闭:false)
+      label:
+        en: "Authentication (On: true, Off: false)"
+        zh: 身份验证(开启:true，关闭:false)
+        zh-Hant: 身份验证(开启:true，关闭:false)
+        ja: "Authentication (On: true, Off: false)"
+        ko: "Authentication (On: true, Off: false)"
+        ru: "Authentication (On: true, Off: false)"
+        ms: "Authentication (On: true, Off: false)"
+        pt-br: "Authentication (On: true, Off: false)"
       required: true
       type: text
     - default: h5ai
       envKey: USER
       labelEn: User
       labelZh: 用户名
+      label:
+        en: User
+        zh: 用户名
+        zh-Hant: 用户名
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: false
       rule: paramCommon
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 用户密码
+      label:
+        en: Password
+        zh: 用户密码
+        zh-Hant: 用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: false
       rule: paramComplexity

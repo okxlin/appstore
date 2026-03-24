@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/gshang2017/docker/tree/master/baidunetdisk
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/mdc-ng/mdc-ng
   architectures:
     - amd64
+    - arm64

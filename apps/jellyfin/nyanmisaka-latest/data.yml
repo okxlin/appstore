@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: WebUI Port
+        zh: 网页端口
+        zh-Hant: 网页端口
+        ja: WebUI Port
+        ko: WebUI Port
+        ru: WebUI Port
+        ms: WebUI Port
+        pt-br: WebUI Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MEDIA_FOLDER_PATH
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: Media folder path
+        zh: 媒体文件夹路径
+        zh-Hant: 媒体文件夹路径
+        ja: Media folder path
+        ko: Media folder path
+        ru: Media folder path
+        ms: Media folder path
+        pt-br: Media folder path
       required: true
       type: text
     - default: ./data/cache
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: CACHE_FOLDER_PATH
       labelEn: Cache folder path
       labelZh: 缓存文件夹路径
+      label:
+        en: Cache folder path
+        zh: 缓存文件夹路径
+        zh-Hant: 缓存文件夹路径
+        ja: Cache folder path
+        ko: Cache folder path
+        ru: Cache folder path
+        ms: Cache folder path
+        pt-br: Cache folder path
       required: true
       type: text

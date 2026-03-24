@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/idootop/mi-gpt
   architectures:
     - amd64
+    - arm
+    - arm64

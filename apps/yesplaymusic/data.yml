@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/qier222/YesPlayMusic
   architectures:
     - amd64
+    - arm64

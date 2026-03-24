@@ -18,3 +18,4 @@ additionalProperties:
   document: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/
   architectures:
     - amd64
+    - arm64

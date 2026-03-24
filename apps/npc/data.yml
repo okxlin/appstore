@@ -19,3 +19,5 @@ additionalProperties:
   document: https://ehang-io.github.io/nps
   architectures:
     - amd64
+    - arm
+    - arm64

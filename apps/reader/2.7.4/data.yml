@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: 50
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USER_LIMIT
       labelEn: User limit
       labelZh: 用户数量限制
+      label:
+        en: User limit
+        zh: 用户数量限制
+        zh-Hant: 用户数量限制
+        ja: User limit
+        ko: User limit
+        ru: User limit
+        ms: User limit
+        pt-br: User limit
       required: true
       rule: paramCommon
       type: number
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: BOOK_LIMIT
       labelEn: Book limit
       labelZh: 书本数量限制
+      label:
+        en: Book limit
+        zh: 书本数量限制
+        zh-Hant: 书本数量限制
+        ja: Book limit
+        ko: Book limit
+        ru: Book limit
+        ms: Book limit
+        pt-br: Book limit
       required: true
       rule: paramCommon
       type: number
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理员密码
+        ja: Admin Password
+        ko: Admin Password
+        ru: Admin Password
+        ms: Admin Password
+        pt-br: Admin Password
       random: true
       required: true
       rule: paramCommon
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: INVITE_CODE
       labelEn: Invitation code
       labelZh: 邀请码
+      label:
+        en: Invitation code
+        zh: 邀请码
+        zh-Hant: 邀请码
+        ja: Invitation code
+        ko: Invitation code
+        ru: Invitation code
+        ms: Invitation code
+        pt-br: Invitation code
       random: true
       required: true
       rule: paramCommon

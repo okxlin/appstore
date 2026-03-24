@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.panda-studio.cn:8282/docs/post-19/page-100
   architectures:
     - amd64
+    - arm64

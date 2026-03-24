@@ -5,6 +5,15 @@ additionalProperties:
       envKey: EXTERNAL_IP
       labelEn: External IP
       labelZh: 外部访问 IP
+      label:
+        en: External IP
+        zh: 外部访问 IP
+        zh-Hant: 外部访问 IP
+        ja: External IP
+        ko: External IP
+        ru: External IP
+        ms: External IP
+        pt-br: External IP
       required: true
       type: text
     - default: ""
@@ -12,12 +21,30 @@ additionalProperties:
       key: mysql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: service
     - default: "tsdd"
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -44,12 +89,30 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: 缓存服务
+      label:
+        en: Redis Service
+        zh: 缓存服务
+        zh-Hant: 缓存服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: 6379
       envKey: TS_DB_REDIS_PORT
       labelEn: Redis Port
       labelZh: Redis 服务端口
+      label:
+        en: Redis Port
+        zh: Redis 服务端口
+        zh-Hant: Redis 服务端口
+        ja: Redis Port
+        ko: Redis Port
+        ru: Redis Port
+        ms: Redis Port
+        pt-br: Redis Port
       required: true
       rule: paramPort
       type: number
@@ -58,6 +121,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: true
       type: password
     - default: ""
@@ -66,12 +138,30 @@ additionalProperties:
       key: minio
       labelEn: Minio Service
       labelZh: minio 对象存储服务
+      label:
+        en: Minio Service
+        zh: minio 对象存储服务
+        zh-Hant: minio 对象存储服务
+        ja: Minio Service
+        ko: Minio Service
+        ru: Minio Service
+        ms: Minio Service
+        pt-br: Minio Service
       required: true
       type: service
     - default: 9000
       envKey: MINIO_PORT
       labelEn: minio port
       labelZh: minio 端口
+      label:
+        en: minio port
+        zh: minio 端口
+        zh-Hant: minio 端口
+        ja: minio port
+        ko: minio port
+        ru: minio port
+        ms: minio port
+        pt-br: minio port
       required: true
       rule: paramPort
       type: number
@@ -80,6 +170,15 @@ additionalProperties:
       envKey: MINIO_ROOT_USER
       labelEn: minio user
       labelZh: minio 用户
+      label:
+        en: minio user
+        zh: minio 用户
+        zh-Hant: minio 用户
+        ja: minio user
+        ko: minio user
+        ru: minio user
+        ms: minio user
+        pt-br: minio user
       required: true
       rule: paramCommon
       type: text
@@ -88,6 +187,15 @@ additionalProperties:
       envKey: MINIO_ROOT_PASSWORD
       labelEn: Minio Password
       labelZh: minio 用户密码
+      label:
+        en: Minio Password
+        zh: minio 用户密码
+        zh-Hant: minio 用户密码
+        ja: Minio Password
+        ko: Minio Password
+        ru: Minio Password
+        ms: Minio Password
+        pt-br: Minio Password
       required: true
       rule: paramComplexity
       type: password
@@ -96,6 +204,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_TCP
       labelEn: WuKongIM tcp port
       labelZh: 悟空 IM TCP 端口
+      label:
+        en: WuKongIM tcp port
+        zh: 悟空 IM TCP 端口
+        zh-Hant: 悟空 IM TCP 端口
+        ja: WuKongIM tcp port
+        ko: WuKongIM tcp port
+        ru: WuKongIM tcp port
+        ms: WuKongIM tcp port
+        pt-br: WuKongIM tcp port
       required: true
       rule: paramPort
       type: number
@@ -104,6 +221,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_WS
       labelEn: WuKongIM ws port
       labelZh: 悟空 IM WS 端口
+      label:
+        en: WuKongIM ws port
+        zh: 悟空 IM WS 端口
+        zh-Hant: 悟空 IM WS 端口
+        ja: WuKongIM ws port
+        ko: WuKongIM ws port
+        ru: WuKongIM ws port
+        ms: WuKongIM ws port
+        pt-br: WuKongIM ws port
       required: true
       rule: paramPort
       type: number
@@ -112,6 +238,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_WEB_SERVER
       labelEn: WuKongIM web port
       labelZh: 悟空 IM 监控端口
+      label:
+        en: WuKongIM web port
+        zh: 悟空 IM 监控端口
+        zh-Hant: 悟空 IM 监控端口
+        ja: WuKongIM web port
+        ko: WuKongIM web port
+        ru: WuKongIM web port
+        ms: WuKongIM web port
+        pt-br: WuKongIM web port
       required: true
       rule: paramPort
       type: number
@@ -120,6 +255,15 @@ additionalProperties:
       envKey: TS_SMSCODE
       labelEn: SMS
       labelZh: 唐僧叨叨短信验证码
+      label:
+        en: SMS
+        zh: 唐僧叨叨短信验证码
+        zh-Hant: 唐僧叨叨短信验证码
+        ja: SMS
+        ko: SMS
+        ru: SMS
+        ms: SMS
+        pt-br: SMS
       required: true
       type: number
     - default: "superAdmin"
@@ -127,6 +271,15 @@ additionalProperties:
       envKey: TS_ADMIN
       labelEn: Super Admin User
       labelZh: 唐僧叨叨超级管理员
+      label:
+        en: Super Admin User
+        zh: 唐僧叨叨超级管理员
+        zh-Hant: 唐僧叨叨超级管理员
+        ja: Super Admin User
+        ko: Super Admin User
+        ru: Super Admin User
+        ms: Super Admin User
+        pt-br: Super Admin User
       required: true
       type: text
     - default: "tsdd@123456"
@@ -134,6 +287,15 @@ additionalProperties:
       envKey: TS_ADMINPWD
       labelEn: Admin Password
       labelZh: 唐僧叨叨超级管理员默认密码
+      label:
+        en: Admin Password
+        zh: 唐僧叨叨超级管理员默认密码
+        zh-Hant: 唐僧叨叨超级管理员默认密码
+        ja: Admin Password
+        ko: Admin Password
+        ru: Admin Password
+        ms: Admin Password
+        pt-br: Admin Password
       random: true
       required: true
       rule: paramComplexity
@@ -143,6 +305,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TS_APP_HTTP
       labelEn: TangSengDaoDao port
       labelZh: 唐僧叨叨端口
+      label:
+        en: TangSengDaoDao port
+        zh: 唐僧叨叨端口
+        zh-Hant: 唐僧叨叨端口
+        ja: TangSengDaoDao port
+        ko: TangSengDaoDao port
+        ru: TangSengDaoDao port
+        ms: TangSengDaoDao port
+        pt-br: TangSengDaoDao port
       required: true
       rule: paramPort
       type: number
@@ -151,6 +322,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TS_APP_WEB
       labelEn: TangSengDaoDao web port
       labelZh: 唐僧叨叨 WEB 端口
+      label:
+        en: TangSengDaoDao web port
+        zh: 唐僧叨叨 WEB 端口
+        zh-Hant: 唐僧叨叨 WEB 端口
+        ja: TangSengDaoDao web port
+        ko: TangSengDaoDao web port
+        ru: TangSengDaoDao web port
+        ms: TangSengDaoDao web port
+        pt-br: TangSengDaoDao web port
       required: true
       rule: paramPort
       type: number
@@ -159,6 +339,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: TangSengDaoDao Management background port
       labelZh: 唐僧叨叨管理后台端口
+      label:
+        en: TangSengDaoDao Management background port
+        zh: 唐僧叨叨管理后台端口
+        zh-Hant: 唐僧叨叨管理后台端口
+        ja: TangSengDaoDao Management background port
+        ko: TangSengDaoDao Management background port
+        ru: TangSengDaoDao Management background port
+        ms: TangSengDaoDao Management background port
+        pt-br: TangSengDaoDao Management background port
       required: true
       rule: paramPort
       type: number

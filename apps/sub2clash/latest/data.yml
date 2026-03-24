@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: META_TEMPLATE
       labelEn: Meta Template
       labelZh: 默认 meta 模板文件名
+      label:
+        en: Meta Template
+        zh: 默认 meta 模板文件名
+        zh-Hant: 默认 meta 模板文件名
+        ja: Meta Template
+        ko: Meta Template
+        ru: Meta Template
+        ms: Meta Template
+        pt-br: Meta Template
       required: true
       type: text
     - default: "template_clash.yaml"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PROXY_TEMPLATE
       labelEn: Clash Template
       labelZh: 默认 clash 模板文件名
+      label:
+        en: Clash Template
+        zh: 默认 clash 模板文件名
+        zh-Hant: 默认 clash 模板文件名
+        ja: Clash Template
+        ko: Clash Template
+        ru: Clash Template
+        ms: Clash Template
+        pt-br: Clash Template
       required: true
       type: text
     - default: "template_clash.yaml"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: CLASH_TEMPLATE
       labelEn: Clash Template
       labelZh: 默认 clash 模板文件名
+      label:
+        en: Clash Template
+        zh: 默认 clash 模板文件名
+        zh-Hant: 默认 clash 模板文件名
+        ja: Clash Template
+        ko: Clash Template
+        ru: Clash Template
+        ms: Clash Template
+        pt-br: Clash Template
       required: true
       type: text
     - default: "3"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: REQUEST_RETRY_TIMES
       labelEn: Request Retry Times
       labelZh: Get 请求重试次数
+      label:
+        en: Request Retry Times
+        zh: Get 请求重试次数
+        zh-Hant: Get 请求重试次数
+        ja: Request Retry Times
+        ko: Request Retry Times
+        ru: Request Retry Times
+        ms: Request Retry Times
+        pt-br: Request Retry Times
       required: true
       type: number
     - default: "1048576"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: REQUEST_MAX_FILE_SIZE
       labelEn: Request Max File Size
       labelZh: Get 请求订阅文件最大大小（byte）
+      label:
+        en: Request Max File Size
+        zh: Get 请求订阅文件最大大小（byte）
+        zh-Hant: Get 请求订阅文件最大大小（byte）
+        ja: Request Max File Size
+        ko: Request Max File Size
+        ru: Request Max File Size
+        ms: Request Max File Size
+        pt-br: Request Max File Size
       required: true
       type: number
     - default: "300"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: CACHE_EXPIRE
       labelEn: Cache Expire
       labelZh: 订阅缓存时间（秒）
+      label:
+        en: Cache Expire
+        zh: 订阅缓存时间（秒）
+        zh-Hant: 订阅缓存时间（秒）
+        ja: Cache Expire
+        ko: Cache Expire
+        ru: Cache Expire
+        ms: Cache Expire
+        pt-br: Cache Expire
       required: true
       type: number
     - default: "info"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志等级
+      label:
+        en: Log Level
+        zh: 日志等级
+        zh-Hant: 日志等级
+        ja: Log Level
+        ko: Log Level
+        ru: Log Level
+        ms: Log Level
+        pt-br: Log Level
       required: true
       type: select
       values:
@@ -71,5 +143,14 @@ additionalProperties:
       envKey: SHORT_LINK_LENGTH
       labelEn: Short Link Length
       labelZh: 短链长度
+      label:
+        en: Short Link Length
+        zh: 短链长度
+        zh-Hant: 短链长度
+        ja: Short Link Length
+        ko: Short Link Length
+        ru: Short Link Length
+        ms: Short Link Length
+        pt-br: Short Link Length
       required: true
       type: number

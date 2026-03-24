@@ -19,3 +19,5 @@ additionalProperties:
   document: http://doc.iyuu.cn
   architectures:
     - amd64
+    - arm
+    - arm64

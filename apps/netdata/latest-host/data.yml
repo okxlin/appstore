@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: Hostname
+        zh: 主机名
+        zh-Hant: 主机名
+        ja: Hostname
+        ko: Hostname
+        ru: Hostname
+        ms: Hostname
+        pt-br: Hostname
       required: true
       type: text
     - default: "/var/run/docker.sock"
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: DOCKER_SOCK_PATH
       labelEn: Docker Socket Path
       labelZh: Docker 套接字路径
+      label:
+        en: Docker Socket Path
+        zh: Docker 套接字路径
+        zh-Hant: Docker 套接字路径
+        ja: Docker Socket Path
+        ko: Docker Socket Path
+        ru: Docker Socket Path
+        ms: Docker Socket Path
+        pt-br: Docker Socket Path
       required: true
       type: text

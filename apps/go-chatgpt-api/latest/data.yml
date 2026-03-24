@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_PANDORA
       labelEn: Pandora API mode
       labelZh: 潘多拉API模式
+      label:
+        en: Pandora API mode
+        zh: 潘多拉API模式
+        zh-Hant: 潘多拉API模式
+        ja: Pandora API mode
+        ko: Pandora API mode
+        ru: Pandora API mode
+        ms: Pandora API mode
+        pt-br: Pandora API mode
       required: false
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: ARKOSE_TOKEN_URL
       labelEn: ARKOSE Token URL
       labelZh: ARKOSE_TOKEN 链接
+      label:
+        en: ARKOSE Token URL
+        zh: ARKOSE_TOKEN 链接
+        zh-Hant: ARKOSE_TOKEN 链接
+        ja: ARKOSE Token URL
+        ko: ARKOSE Token URL
+        ru: ARKOSE Token URL
+        ms: ARKOSE Token URL
+        pt-br: ARKOSE Token URL
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: OPENAI_EMAIL
       labelEn: OpenAI account email
       labelZh: OpenAI账户邮箱
+      label:
+        en: OpenAI account email
+        zh: OpenAI账户邮箱
+        zh-Hant: OpenAI账户邮箱
+        ja: OpenAI account email
+        ko: OpenAI account email
+        ru: OpenAI account email
+        ms: OpenAI account email
+        pt-br: OpenAI account email
       required: false
       type: text
     - default: ""
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: OPENAI_PASSWORD
       labelEn: OpenAI account password
       labelZh: OpenAI账户密码
+      label:
+        en: OpenAI account password
+        zh: OpenAI账户密码
+        zh-Hant: OpenAI账户密码
+        ja: OpenAI account password
+        ko: OpenAI account password
+        ru: OpenAI account password
+        ms: OpenAI account password
+        pt-br: OpenAI account password
       required: false
       type: text

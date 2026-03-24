@@ -5,6 +5,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/core"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: CORE_PATH
       labelEn: Core Path
       labelZh: 核心路径
+      label:
+        en: Core Path
+        zh: 核心路径
+        zh-Hant: 核心路径
+        ja: Core Path
+        ko: Core Path
+        ru: Core Path
+        ms: Core Path
+        pt-br: Core Path
       required: true
       type: text
     - default: "/var/run/docker.sock"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: DOCKER_SOCK_PATH
       labelEn: Docker Socket Path
       labelZh: Docker套接字路径
+      label:
+        en: Docker Socket Path
+        zh: Docker套接字路径
+        zh-Hant: Docker套接字路径
+        ja: Docker Socket Path
+        ko: Docker Socket Path
+        ru: Docker Socket Path
+        ms: Docker Socket Path
+        pt-br: Docker Socket Path
       required: true
       type: text
     - default: "./data/media"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: Media Path
+        zh: 媒体路径
+        zh-Hant: 媒体路径
+        ja: Media Path
+        ko: Media Path
+        ru: Media Path
+        ms: Media Path
+        pt-br: Media Path
       required: true
       type: text
     - default: "moviepilot"
@@ -33,6 +69,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: Hostname
+        zh: 主机名
+        zh-Hant: 主机名
+        ja: Hostname
+        ko: Hostname
+        ru: Hostname
+        ms: Hostname
+        pt-br: Hostname
       required: true
       type: text
     - default: "022"
@@ -40,12 +85,30 @@ additionalProperties:
       envKey: UMASK
       labelEn: File Umask
       labelZh: 文件掩码
+      label:
+        en: File Umask
+        zh: 文件掩码
+        zh-Hant: 文件掩码
+        ja: File Umask
+        ko: File Umask
+        ru: File Umask
+        ms: File Umask
+        pt-br: File Umask
       required: true
       type: text
     - default: "0"
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
       edit: true
@@ -53,6 +116,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
       edit: true
@@ -61,6 +133,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Timezone
+        ko: Timezone
+        ru: Timezone
+        ms: Timezone
+        pt-br: Timezone
       required: true
       type: text
     - default: "release"
@@ -68,6 +149,15 @@ additionalProperties:
       envKey: MOVIEPILOT_AUTO_UPDATE
       labelEn: MoviePilot Auto Update
       labelZh: MoviePilot 自动更新
+      label:
+        en: MoviePilot Auto Update
+        zh: MoviePilot 自动更新
+        zh-Hant: MoviePilot 自动更新
+        ja: MoviePilot Auto Update
+        ko: MoviePilot Auto Update
+        ru: MoviePilot Auto Update
+        ms: MoviePilot Auto Update
+        pt-br: MoviePilot Auto Update
       required: true
       type: select
       values:
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Panel HTTP Port
       labelZh: 面板 HTTP 端口
+      label:
+        en: Panel HTTP Port
+        zh: 面板 HTTP 端口
+        zh-Hant: 面板 HTTP 端口
+        ja: Panel HTTP Port
+        ko: Panel HTTP Port
+        ru: Panel HTTP Port
+        ms: Panel HTTP Port
+        pt-br: Panel HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -92,6 +191,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_API
       labelEn: API Port
       labelZh: API 端口
+      label:
+        en: API Port
+        zh: API 端口
+        zh-Hant: API 端口
+        ja: API Port
+        ko: API Port
+        ru: API Port
+        ms: API Port
+        pt-br: API Port
       required: true
       rule: paramPort
       type: number
@@ -100,6 +208,15 @@ additionalProperties:
       envKey: SUPERUSER
       labelEn: Superuser Username
       labelZh: 超级管理员用户名
+      label:
+        en: Superuser Username
+        zh: 超级管理员用户名
+        zh-Hant: 超级管理员用户名
+        ja: Superuser Username
+        ko: Superuser Username
+        ru: Superuser Username
+        ms: Superuser Username
+        pt-br: Superuser Username
       required: true
       type: text
     - default: "password"
@@ -107,6 +224,15 @@ additionalProperties:
       envKey: SUPERUSER_PASSWORD
       labelEn: Superuser Password
       labelZh: 超级管理员密码
+      label:
+        en: Superuser Password
+        zh: 超级管理员密码
+        zh-Hant: 超级管理员密码
+        ja: Superuser Password
+        ko: Superuser Password
+        ru: Superuser Password
+        ms: Superuser Password
+        pt-br: Superuser Password
       random: true
       required: true
       rule: paramComplexity
@@ -116,6 +242,15 @@ additionalProperties:
       envKey: WALLPAPER
       labelEn: Wallpaper
       labelZh: 登录首页电影海报
+      label:
+        en: Wallpaper
+        zh: 登录首页电影海报
+        zh-Hant: 登录首页电影海报
+        ja: Wallpaper
+        ko: Wallpaper
+        ru: Wallpaper
+        ms: Wallpaper
+        pt-br: Wallpaper
       required: true
       type: select
       values:
@@ -128,6 +263,15 @@ additionalProperties:
       envKey: API_TOKEN
       labelEn: API Token
       labelZh: API 密钥
+      label:
+        en: API Token
+        zh: API 密钥
+        zh-Hant: API 密钥
+        ja: API Token
+        ko: API Token
+        ru: API Token
+        ms: API Token
+        pt-br: API Token
       required: true
       type: text
     - default: ""
@@ -135,6 +279,15 @@ additionalProperties:
       envKey: PROXY_HOST
       labelEn: Proxy host
       labelZh: 网络代理
+      label:
+        en: Proxy host
+        zh: 网络代理
+        zh-Hant: 网络代理
+        ja: Proxy host
+        ko: Proxy host
+        ru: Proxy host
+        ms: Proxy host
+        pt-br: Proxy host
       required: false
       type: text
     - default: "api.themoviedb.org"
@@ -142,6 +295,15 @@ additionalProperties:
       envKey: TMDB_API_DOMAIN
       labelEn: TMDB API Domain
       labelZh: TMDB API 地址
+      label:
+        en: TMDB API Domain
+        zh: TMDB API 地址
+        zh-Hant: TMDB API 地址
+        ja: TMDB API Domain
+        ko: TMDB API Domain
+        ru: TMDB API Domain
+        ms: TMDB API Domain
+        pt-br: TMDB API Domain
       required: true
       type: text
     - default: "/media/downloads"
@@ -149,6 +311,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download Path (in container)
       labelZh: 下载保存目录 (容器内)
+      label:
+        en: Download Path (in container)
+        zh: 下载保存目录 (容器内)
+        zh-Hant: 下载保存目录 (容器内)
+        ja: Download Path (in container)
+        ko: Download Path (in container)
+        ru: Download Path (in container)
+        ms: Download Path (in container)
+        pt-br: Download Path (in container)
       required: true
       type: text
     - default: "/media/downloads/movies"
@@ -156,6 +327,15 @@ additionalProperties:
       envKey: DOWNLOAD_MOVIE_PATH
       labelEn: Download Movie Path (in container)
       labelZh: 电影下载目录 (容器内)
+      label:
+        en: Download Movie Path (in container)
+        zh: 电影下载目录 (容器内)
+        zh-Hant: 电影下载目录 (容器内)
+        ja: Download Movie Path (in container)
+        ko: Download Movie Path (in container)
+        ru: Download Movie Path (in container)
+        ms: Download Movie Path (in container)
+        pt-br: Download Movie Path (in container)
       required: true
       type: text
     - default: "/media/downloads/tv"
@@ -163,6 +343,15 @@ additionalProperties:
       envKey: DOWNLOAD_TV_PATH
       labelEn: Download TV Path (in container)
       labelZh: 电视剧下载目录 (容器内)
+      label:
+        en: Download TV Path (in container)
+        zh: 电视剧下载目录 (容器内)
+        zh-Hant: 电视剧下载目录 (容器内)
+        ja: Download TV Path (in container)
+        ko: Download TV Path (in container)
+        ru: Download TV Path (in container)
+        ms: Download TV Path (in container)
+        pt-br: Download TV Path (in container)
       required: true
       type: text
     - default: "/media/downloads/anime"
@@ -170,6 +359,15 @@ additionalProperties:
       envKey: DOWNLOAD_ANIME_PATH
       labelEn: Download Anime Path (in container)
       labelZh: 动漫下载目录 (容器内)
+      label:
+        en: Download Anime Path (in container)
+        zh: 动漫下载目录 (容器内)
+        zh-Hant: 动漫下载目录 (容器内)
+        ja: Download Anime Path (in container)
+        ko: Download Anime Path (in container)
+        ru: Download Anime Path (in container)
+        ms: Download Anime Path (in container)
+        pt-br: Download Anime Path (in container)
       required: true
       type: text
     - default: "false"
@@ -177,6 +375,15 @@ additionalProperties:
       envKey: DOWNLOAD_SUBTITLE
       labelEn: Download Subtitle
       labelZh: 下载字幕
+      label:
+        en: Download Subtitle
+        zh: 下载字幕
+        zh-Hant: 下载字幕
+        ja: Download Subtitle
+        ko: Download Subtitle
+        ru: Download Subtitle
+        ms: Download Subtitle
+        pt-br: Download Subtitle
       required: true
       type: select
       values:
@@ -189,6 +396,15 @@ additionalProperties:
       envKey: DOWNLOAD_CATEGORY
       labelEn: Download Category
       labelZh: 下载二级分类
+      label:
+        en: Download Category
+        zh: 下载二级分类
+        zh-Hant: 下载二级分类
+        ja: Download Category
+        ko: Download Category
+        ru: Download Category
+        ms: Download Category
+        pt-br: Download Category
       required: true
       type: select
       values:
@@ -201,6 +417,15 @@ additionalProperties:
       envKey: DOWNLOADER_MONITOR
       labelEn: Downloader Monitor
       labelZh: 下载器监控
+      label:
+        en: Downloader Monitor
+        zh: 下载器监控
+        zh-Hant: 下载器监控
+        ja: Downloader Monitor
+        ko: Downloader Monitor
+        ru: Downloader Monitor
+        ms: Downloader Monitor
+        pt-br: Downloader Monitor
       required: true
       type: select
       values:
@@ -213,6 +438,15 @@ additionalProperties:
       envKey: SUBSCRIBE_MODE
       labelEn: Subscribe Mode
       labelZh: 订阅模式
+      label:
+        en: Subscribe Mode
+        zh: 订阅模式
+        zh-Hant: 订阅模式
+        ja: Subscribe Mode
+        ko: Subscribe Mode
+        ru: Subscribe Mode
+        ms: Subscribe Mode
+        pt-br: Subscribe Mode
       required: true
       type: text
     - default: "30"
@@ -220,6 +454,15 @@ additionalProperties:
       envKey: SUBSCRIBE_RSS_INTERVAL
       labelEn: Subscribe RSS Interval
       labelZh: 订阅 RSS 间隔
+      label:
+        en: Subscribe RSS Interval
+        zh: 订阅 RSS 间隔
+        zh-Hant: 订阅 RSS 间隔
+        ja: Subscribe RSS Interval
+        ko: Subscribe RSS Interval
+        ru: Subscribe RSS Interval
+        ms: Subscribe RSS Interval
+        pt-br: Subscribe RSS Interval
       required: true
       type: number
     - default: "true"
@@ -227,6 +470,15 @@ additionalProperties:
       envKey: SCRAP_METADATA
       labelEn: Scrap Metadata
       labelZh: 刮削入库
+      label:
+        en: Scrap Metadata
+        zh: 刮削入库
+        zh-Hant: 刮削入库
+        ja: Scrap Metadata
+        ko: Scrap Metadata
+        ru: Scrap Metadata
+        ms: Scrap Metadata
+        pt-br: Scrap Metadata
       required: true
       type: select
       values:
@@ -239,6 +491,15 @@ additionalProperties:
       envKey: SCRAP_FOLLOW_TMDB
       labelEn: Scrap Follow TMDB
       labelZh: 刮削跟随 TMDB
+      label:
+        en: Scrap Follow TMDB
+        zh: 刮削跟随 TMDB
+        zh-Hant: 刮削跟随 TMDB
+        ja: Scrap Follow TMDB
+        ko: Scrap Follow TMDB
+        ru: Scrap Follow TMDB
+        ms: Scrap Follow TMDB
+        pt-br: Scrap Follow TMDB
       required: true
       type: select
       values:
@@ -251,6 +512,15 @@ additionalProperties:
       envKey: TORRENT_TAG
       labelEn: Torrent Tag
       labelZh: 种子标签
+      label:
+        en: Torrent Tag
+        zh: 种子标签
+        zh-Hant: 种子标签
+        ja: Torrent Tag
+        ko: Torrent Tag
+        ru: Torrent Tag
+        ms: Torrent Tag
+        pt-br: Torrent Tag
       required: true
       type: text
     - default: "/media"
@@ -258,6 +528,15 @@ additionalProperties:
       envKey: LIBRARY_PATH
       labelEn: Library Path (in container)
       labelZh: 媒体库路径 (容器内)
+      label:
+        en: Library Path (in container)
+        zh: 媒体库路径 (容器内)
+        zh-Hant: 媒体库路径 (容器内)
+        ja: Library Path (in container)
+        ko: Library Path (in container)
+        ru: Library Path (in container)
+        ms: Library Path (in container)
+        pt-br: Library Path (in container)
       required: true
       type: text
     - default: "movies"
@@ -265,6 +544,15 @@ additionalProperties:
       envKey: LIBRARY_MOVIE_NAME
       labelEn: Library Movie Name
       labelZh: 电影媒体库名称
+      label:
+        en: Library Movie Name
+        zh: 电影媒体库名称
+        zh-Hant: 电影媒体库名称
+        ja: Library Movie Name
+        ko: Library Movie Name
+        ru: Library Movie Name
+        ms: Library Movie Name
+        pt-br: Library Movie Name
       required: true
       type: text
     - default: "tv"
@@ -272,6 +560,15 @@ additionalProperties:
       envKey: LIBRARY_TV_NAME
       labelEn: Library TV Name
       labelZh: 电视剧媒体库名称
+      label:
+        en: Library TV Name
+        zh: 电视剧媒体库名称
+        zh-Hant: 电视剧媒体库名称
+        ja: Library TV Name
+        ko: Library TV Name
+        ru: Library TV Name
+        ms: Library TV Name
+        pt-br: Library TV Name
       required: true
       type: text
     - default: "anime"
@@ -279,6 +576,15 @@ additionalProperties:
       envKey: LIBRARY_ANIME_NAME
       labelEn: Library Anime Name
       labelZh: 动漫媒体库名称
+      label:
+        en: Library Anime Name
+        zh: 动漫媒体库名称
+        zh-Hant: 动漫媒体库名称
+        ja: Library Anime Name
+        ko: Library Anime Name
+        ru: Library Anime Name
+        ms: Library Anime Name
+        pt-br: Library Anime Name
       required: true
       type: text
     - default: "false"
@@ -286,6 +592,15 @@ additionalProperties:
       envKey: LIBRARY_CATEGORY
       labelEn: Library Category
       labelZh: 媒体库二级分类
+      label:
+        en: Library Category
+        zh: 媒体库二级分类
+        zh-Hant: 媒体库二级分类
+        ja: Library Category
+        ko: Library Category
+        ru: Library Category
+        ms: Library Category
+        pt-br: Library Category
       required: false
       type: select
       values:
@@ -298,6 +613,15 @@ additionalProperties:
       envKey: TRANSFER_TYPE
       labelEn: Transfer Type
       labelZh: 转移方式
+      label:
+        en: Transfer Type
+        zh: 转移方式
+        zh-Hant: 转移方式
+        ja: Transfer Type
+        ko: Transfer Type
+        ru: Transfer Type
+        ms: Transfer Type
+        pt-br: Transfer Type
       required: true
       type: select
       values:
@@ -314,6 +638,15 @@ additionalProperties:
       envKey: OVERWRITE_MODE
       labelEn: Overwrite Mode
       labelZh: 转移覆盖模式
+      label:
+        en: Overwrite Mode
+        zh: 转移覆盖模式
+        zh-Hant: 转移覆盖模式
+        ja: Overwrite Mode
+        ko: Overwrite Mode
+        ru: Overwrite Mode
+        ms: Overwrite Mode
+        pt-br: Overwrite Mode
       required: true
       type: select
       values:
@@ -328,6 +661,15 @@ additionalProperties:
       envKey: COOKIECLOUD_HOST
       labelEn: CookieCloud Host
       labelZh: CookieCloud 服务器地址
+      label:
+        en: CookieCloud Host
+        zh: CookieCloud 服务器地址
+        zh-Hant: CookieCloud 服务器地址
+        ja: CookieCloud Host
+        ko: CookieCloud Host
+        ru: CookieCloud Host
+        ms: CookieCloud Host
+        pt-br: CookieCloud Host
       required: false
       type: text
     - default: ""
@@ -335,6 +677,15 @@ additionalProperties:
       envKey: COOKIECLOUD_KEY
       labelEn: CookieCloud Key
       labelZh: CookieCloud 用户 KEY
+      label:
+        en: CookieCloud Key
+        zh: CookieCloud 用户 KEY
+        zh-Hant: CookieCloud 用户 KEY
+        ja: CookieCloud Key
+        ko: CookieCloud Key
+        ru: CookieCloud Key
+        ms: CookieCloud Key
+        pt-br: CookieCloud Key
       required: false
       type: text
     - default: ""
@@ -342,6 +693,15 @@ additionalProperties:
       envKey: COOKIECLOUD_PASSWORD
       labelEn: CookieCloud Password
       labelZh: CookieCloud 密码
+      label:
+        en: CookieCloud Password
+        zh: CookieCloud 密码
+        zh-Hant: CookieCloud 密码
+        ja: CookieCloud Password
+        ko: CookieCloud Password
+        ru: CookieCloud Password
+        ms: CookieCloud Password
+        pt-br: CookieCloud Password
       required: false
       type: text
     - default: "20"
@@ -349,6 +709,15 @@ additionalProperties:
       envKey: COOKIECLOUD_INTERVAL
       labelEn: CookieCloud Interval
       labelZh: CookieCloud 同步间隔（分钟）
+      label:
+        en: CookieCloud Interval
+        zh: CookieCloud 同步间隔（分钟）
+        zh-Hant: CookieCloud 同步间隔（分钟）
+        ja: CookieCloud Interval
+        ko: CookieCloud Interval
+        ru: CookieCloud Interval
+        ms: CookieCloud Interval
+        pt-br: CookieCloud Interval
       required: false
       type: number
     - default: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
@@ -356,6 +725,15 @@ additionalProperties:
       envKey: USER_AGENT
       labelEn: User Agent
       labelZh: 用户代理
+      label:
+        en: User Agent
+        zh: 用户代理
+        zh-Hant: 用户代理
+        ja: User Agent
+        ko: User Agent
+        ru: User Agent
+        ms: User Agent
+        pt-br: User Agent
       required: true
       type: text
     - default: "false"
@@ -363,6 +741,15 @@ additionalProperties:
       envKey: SUBSCRIBE_SEARCH
       labelEn: Subscribe Search
       labelZh: 订阅搜索
+      label:
+        en: Subscribe Search
+        zh: 订阅搜索
+        zh-Hant: 订阅搜索
+        ja: Subscribe Search
+        ko: Subscribe Search
+        ru: Subscribe Search
+        ms: Subscribe Search
+        pt-br: Subscribe Search
       required: false
       type: select
       values:
@@ -375,6 +762,15 @@ additionalProperties:
       envKey: AUTO_DOWNLOAD_USER
       labelEn: Auto Download User
       labelZh: 自动下载用户
+      label:
+        en: Auto Download User
+        zh: 自动下载用户
+        zh-Hant: 自动下载用户
+        ja: Auto Download User
+        ko: Auto Download User
+        ru: Auto Download User
+        ms: Auto Download User
+        pt-br: Auto Download User
       required: false
       type: text
     - default: "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/"
@@ -382,6 +778,15 @@ additionalProperties:
       envKey: PLUGIN_MARKET
       labelEn: Plugin Market
       labelZh: 插件市场仓库地址
+      label:
+        en: Plugin Market
+        zh: 插件市场仓库地址
+        zh-Hant: 插件市场仓库地址
+        ja: Plugin Market
+        ko: Plugin Market
+        ru: Plugin Market
+        ms: Plugin Market
+        pt-br: Plugin Market
       required: true
       type: text
     - default: "telegram"
@@ -389,6 +794,15 @@ additionalProperties:
       envKey: MESSAGER
       labelEn: Messager
       labelZh: 消息通知渠道
+      label:
+        en: Messager
+        zh: 消息通知渠道
+        zh-Hant: 消息通知渠道
+        ja: Messager
+        ko: Messager
+        ru: Messager
+        ms: Messager
+        pt-br: Messager
       required: true
       type: select
       values:
@@ -405,6 +819,15 @@ additionalProperties:
       envKey: TELEGRAM_TOKEN
       labelEn: Telegram Token
       labelZh: Telegram Token
+      label:
+        en: Telegram Token
+        zh: Telegram Token
+        zh-Hant: Telegram Token
+        ja: Telegram Token
+        ko: Telegram Token
+        ru: Telegram Token
+        ms: Telegram Token
+        pt-br: Telegram Token
       required: false
       type: text
     - default: ""
@@ -412,6 +835,15 @@ additionalProperties:
       envKey: TELEGRAM_CHAT_ID
       labelEn: Telegram Chat ID
       labelZh: Telegram Chat ID
+      label:
+        en: Telegram Chat ID
+        zh: Telegram Chat ID
+        zh-Hant: Telegram Chat ID
+        ja: Telegram Chat ID
+        ko: Telegram Chat ID
+        ru: Telegram Chat ID
+        ms: Telegram Chat ID
+        pt-br: Telegram Chat ID
       required: false
       type: text
     - default: ""
@@ -419,6 +851,15 @@ additionalProperties:
       envKey: TELEGRAM_USERS
       labelEn: Telegram Users
       labelZh: 电报用户
+      label:
+        en: Telegram Users
+        zh: 电报用户
+        zh-Hant: 电报用户
+        ja: Telegram Users
+        ko: Telegram Users
+        ru: Telegram Users
+        ms: Telegram Users
+        pt-br: Telegram Users
       required: false
       type: text
     - default: ""
@@ -426,6 +867,15 @@ additionalProperties:
       envKey: TELEGRAM_ADMINS
       labelEn: Telegram Admins
       labelZh: 电报管理员
+      label:
+        en: Telegram Admins
+        zh: 电报管理员
+        zh-Hant: 电报管理员
+        ja: Telegram Admins
+        ko: Telegram Admins
+        ru: Telegram Admins
+        ms: Telegram Admins
+        pt-br: Telegram Admins
       required: false
       type: text
     - default: ""
@@ -433,6 +883,15 @@ additionalProperties:
       envKey: WECHAT_CORPID
       labelEn: WeChat CorpID
       labelZh: 微信企业ID
+      label:
+        en: WeChat CorpID
+        zh: 微信企业ID
+        zh-Hant: 微信企业ID
+        ja: WeChat CorpID
+        ko: WeChat CorpID
+        ru: WeChat CorpID
+        ms: WeChat CorpID
+        pt-br: WeChat CorpID
       required: false
       type: text
     - default: ""
@@ -440,6 +899,15 @@ additionalProperties:
       envKey: WECHAT_APP_SECRET
       labelEn: WeChat App Secret
       labelZh: 微信应用密钥
+      label:
+        en: WeChat App Secret
+        zh: 微信应用密钥
+        zh-Hant: 微信应用密钥
+        ja: WeChat App Secret
+        ko: WeChat App Secret
+        ru: WeChat App Secret
+        ms: WeChat App Secret
+        pt-br: WeChat App Secret
       required: false
       type: text
     - default: ""
@@ -447,6 +915,15 @@ additionalProperties:
       envKey: WECHAT_APP_ID
       labelEn: WeChat App ID
       labelZh: 微信应用ID
+      label:
+        en: WeChat App ID
+        zh: 微信应用ID
+        zh-Hant: 微信应用ID
+        ja: WeChat App ID
+        ko: WeChat App ID
+        ru: WeChat App ID
+        ms: WeChat App ID
+        pt-br: WeChat App ID
       required: false
       type: text
     - default: ""
@@ -454,6 +931,15 @@ additionalProperties:
       envKey: WECHAT_TOKEN
       labelEn: WeChat Token
       labelZh: 微信令牌
+      label:
+        en: WeChat Token
+        zh: 微信令牌
+        zh-Hant: 微信令牌
+        ja: WeChat Token
+        ko: WeChat Token
+        ru: WeChat Token
+        ms: WeChat Token
+        pt-br: WeChat Token
       required: false
       type: text
     - default: ""
@@ -461,6 +947,15 @@ additionalProperties:
       envKey: WECHAT_ENCODING_AESKEY
       labelEn: WeChat Encoding AES Key
       labelZh: 微信编码 AES 密钥
+      label:
+        en: WeChat Encoding AES Key
+        zh: 微信编码 AES 密钥
+        zh-Hant: 微信编码 AES 密钥
+        ja: WeChat Encoding AES Key
+        ko: WeChat Encoding AES Key
+        ru: WeChat Encoding AES Key
+        ms: WeChat Encoding AES Key
+        pt-br: WeChat Encoding AES Key
       required: false
       type: text
     - default: ""
@@ -468,6 +963,15 @@ additionalProperties:
       envKey: WECHAT_ADMINS
       labelEn: WeChat Admins
       labelZh: 微信管理员
+      label:
+        en: WeChat Admins
+        zh: 微信管理员
+        zh-Hant: 微信管理员
+        ja: WeChat Admins
+        ko: WeChat Admins
+        ru: WeChat Admins
+        ms: WeChat Admins
+        pt-br: WeChat Admins
       required: false
       type: text
     - default: ""
@@ -475,6 +979,15 @@ additionalProperties:
       envKey: WECHAT_PROXY
       labelEn: WeChat Proxy
       labelZh: 微信代理
+      label:
+        en: WeChat Proxy
+        zh: 微信代理
+        zh-Hant: 微信代理
+        ja: WeChat Proxy
+        ko: WeChat Proxy
+        ru: WeChat Proxy
+        ms: WeChat Proxy
+        pt-br: WeChat Proxy
       required: false
       type: text
     - default: ""
@@ -482,6 +995,15 @@ additionalProperties:
       envKey: SLACK_OAUTH_TOKEN
       labelEn: Slack OAuth Token
       labelZh: Slack OAuth 令牌
+      label:
+        en: Slack OAuth Token
+        zh: Slack OAuth 令牌
+        zh-Hant: Slack OAuth 令牌
+        ja: Slack OAuth Token
+        ko: Slack OAuth Token
+        ru: Slack OAuth Token
+        ms: Slack OAuth Token
+        pt-br: Slack OAuth Token
       required: false
       type: text
     - default: ""
@@ -489,6 +1011,15 @@ additionalProperties:
       envKey: SLACK_APP_TOKEN
       labelEn: Slack App Token
       labelZh: Slack 应用令牌
+      label:
+        en: Slack App Token
+        zh: Slack 应用令牌
+        zh-Hant: Slack 应用令牌
+        ja: Slack App Token
+        ko: Slack App Token
+        ru: Slack App Token
+        ms: Slack App Token
+        pt-br: Slack App Token
       required: false
       type: text
     - default: ""
@@ -496,6 +1027,15 @@ additionalProperties:
       envKey: SLACK_CHANNEL
       labelEn: Slack Channel
       labelZh: Slack 频道
+      label:
+        en: Slack Channel
+        zh: Slack 频道
+        zh-Hant: Slack 频道
+        ja: Slack Channel
+        ko: Slack Channel
+        ru: Slack Channel
+        ms: Slack Channel
+        pt-br: Slack Channel
       required: false
       type: text
     - default: ""
@@ -503,6 +1043,15 @@ additionalProperties:
       envKey: SYNOLOGYCHAT_WEBHOOK
       labelEn: Synology Chat Webhook
       labelZh: 群晖聊天 Webhook
+      label:
+        en: Synology Chat Webhook
+        zh: 群晖聊天 Webhook
+        zh-Hant: 群晖聊天 Webhook
+        ja: Synology Chat Webhook
+        ko: Synology Chat Webhook
+        ru: Synology Chat Webhook
+        ms: Synology Chat Webhook
+        pt-br: Synology Chat Webhook
       required: false
       type: text
     - default: ""
@@ -510,6 +1059,15 @@ additionalProperties:
       envKey: SYNOLOGYCHAT_TOKEN
       labelEn: Synology Chat Token
       labelZh: 群晖聊天令牌
+      label:
+        en: Synology Chat Token
+        zh: 群晖聊天令牌
+        zh-Hant: 群晖聊天令牌
+        ja: Synology Chat Token
+        ko: Synology Chat Token
+        ru: Synology Chat Token
+        ms: Synology Chat Token
+        pt-br: Synology Chat Token
       required: false
       type: text
     - default: "qbittorrent"
@@ -517,6 +1075,15 @@ additionalProperties:
       envKey: DOWNLOADER
       labelEn: Downloader
       labelZh: 下载器
+      label:
+        en: Downloader
+        zh: 下载器
+        zh-Hant: 下载器
+        ja: Downloader
+        ko: Downloader
+        ru: Downloader
+        ms: Downloader
+        pt-br: Downloader
       required: true
       type: select
       values:
@@ -529,6 +1096,15 @@ additionalProperties:
       envKey: QB_HOST
       labelEn: QB Host
       labelZh: qBittorrent 主机地址
+      label:
+        en: QB Host
+        zh: qBittorrent 主机地址
+        zh-Hant: qBittorrent 主机地址
+        ja: QB Host
+        ko: QB Host
+        ru: QB Host
+        ms: QB Host
+        pt-br: QB Host
       required: false
       type: text
     - default: ""
@@ -536,6 +1112,15 @@ additionalProperties:
       envKey: QB_USER
       labelEn: QB User
       labelZh: qBittorrent 用户名
+      label:
+        en: QB User
+        zh: qBittorrent 用户名
+        zh-Hant: qBittorrent 用户名
+        ja: QB User
+        ko: QB User
+        ru: QB User
+        ms: QB User
+        pt-br: QB User
       required: false
       type: text
     - default: ""
@@ -543,6 +1128,15 @@ additionalProperties:
       envKey: QB_PASSWORD
       labelEn: QB Password
       labelZh: qBittorrent 密码
+      label:
+        en: QB Password
+        zh: qBittorrent 密码
+        zh-Hant: qBittorrent 密码
+        ja: QB Password
+        ko: QB Password
+        ru: QB Password
+        ms: QB Password
+        pt-br: QB Password
       required: false
       type: text
     - default: "true"
@@ -550,6 +1144,15 @@ additionalProperties:
       envKey: QB_SEQUENTIAL
       labelEn: QB Sequential
       labelZh: qBittorrent 顺序下载
+      label:
+        en: QB Sequential
+        zh: qBittorrent 顺序下载
+        zh-Hant: qBittorrent 顺序下载
+        ja: QB Sequential
+        ko: QB Sequential
+        ru: QB Sequential
+        ms: QB Sequential
+        pt-br: QB Sequential
       required: true
       type: select
       values:
@@ -562,6 +1165,15 @@ additionalProperties:
       envKey: QB_FORCE_RESUME
       labelEn: QB Force Resume
       labelZh: qBittorrent 强制继续下载
+      label:
+        en: QB Force Resume
+        zh: qBittorrent 强制继续下载
+        zh-Hant: qBittorrent 强制继续下载
+        ja: QB Force Resume
+        ko: QB Force Resume
+        ru: QB Force Resume
+        ms: QB Force Resume
+        pt-br: QB Force Resume
       required: true
       type: select
       values:
@@ -574,6 +1186,15 @@ additionalProperties:
       envKey: TR_HOST
       labelEn: Transmission Host
       labelZh: Transmission 主机
+      label:
+        en: Transmission Host
+        zh: Transmission 主机
+        zh-Hant: Transmission 主机
+        ja: Transmission Host
+        ko: Transmission Host
+        ru: Transmission Host
+        ms: Transmission Host
+        pt-br: Transmission Host
       required: false
       type: text
     - default: ""
@@ -581,6 +1202,15 @@ additionalProperties:
       envKey: TR_USER
       labelEn: Transmission Username
       labelZh: Transmission 用户名
+      label:
+        en: Transmission Username
+        zh: Transmission 用户名
+        zh-Hant: Transmission 用户名
+        ja: Transmission Username
+        ko: Transmission Username
+        ru: Transmission Username
+        ms: Transmission Username
+        pt-br: Transmission Username
       required: false
       type: text
     - default: ""
@@ -588,6 +1218,15 @@ additionalProperties:
       envKey: TR_PASSWORD
       labelEn: Transmission Password
       labelZh: Transmission 密码
+      label:
+        en: Transmission Password
+        zh: Transmission 密码
+        zh-Hant: Transmission 密码
+        ja: Transmission Password
+        ko: Transmission Password
+        ru: Transmission Password
+        ms: Transmission Password
+        pt-br: Transmission Password
       required: false
       type: password
     - default: "emby"
@@ -595,6 +1234,15 @@ additionalProperties:
       envKey: MEDIASERVER
       labelEn: Media Server
       labelZh: 媒体服务器
+      label:
+        en: Media Server
+        zh: 媒体服务器
+        zh-Hant: 媒体服务器
+        ja: Media Server
+        ko: Media Server
+        ru: Media Server
+        ms: Media Server
+        pt-br: Media Server
       required: true
       type: select
       values:
@@ -609,6 +1257,15 @@ additionalProperties:
       envKey: EMBY_HOST
       labelEn: Emby Host
       labelZh: Emby 主机地址
+      label:
+        en: Emby Host
+        zh: Emby 主机地址
+        zh-Hant: Emby 主机地址
+        ja: Emby Host
+        ko: Emby Host
+        ru: Emby Host
+        ms: Emby Host
+        pt-br: Emby Host
       required: false
       type: text
     - default: ""
@@ -616,6 +1273,15 @@ additionalProperties:
       envKey: EMBY_API_KEY
       labelEn: Emby API Key
       labelZh: Emby API 密钥
+      label:
+        en: Emby API Key
+        zh: Emby API 密钥
+        zh-Hant: Emby API 密钥
+        ja: Emby API Key
+        ko: Emby API Key
+        ru: Emby API Key
+        ms: Emby API Key
+        pt-br: Emby API Key
       required: false
       type: text
     - default: ""
@@ -623,6 +1289,15 @@ additionalProperties:
       envKey: JELLYFIN_HOST
       labelEn: Jellyfin Host
       labelZh: Jellyfin 主机
+      label:
+        en: Jellyfin Host
+        zh: Jellyfin 主机
+        zh-Hant: Jellyfin 主机
+        ja: Jellyfin Host
+        ko: Jellyfin Host
+        ru: Jellyfin Host
+        ms: Jellyfin Host
+        pt-br: Jellyfin Host
       required: false
       type: text
     - default: ""
@@ -630,6 +1305,15 @@ additionalProperties:
       envKey: JELLYFIN_API_KEY
       labelEn: Jellyfin API Key
       labelZh: Jellyfin API 密钥
+      label:
+        en: Jellyfin API Key
+        zh: Jellyfin API 密钥
+        zh-Hant: Jellyfin API 密钥
+        ja: Jellyfin API Key
+        ko: Jellyfin API Key
+        ru: Jellyfin API Key
+        ms: Jellyfin API Key
+        pt-br: Jellyfin API Key
       required: false
       type: text
     - default: ""
@@ -637,6 +1321,15 @@ additionalProperties:
       envKey: PLEX_HOST
       labelEn: Plex Host
       labelZh: Plex 主机
+      label:
+        en: Plex Host
+        zh: Plex 主机
+        zh-Hant: Plex 主机
+        ja: Plex Host
+        ko: Plex Host
+        ru: Plex Host
+        ms: Plex Host
+        pt-br: Plex Host
       required: false
       type: text
     - default: ""
@@ -644,6 +1337,15 @@ additionalProperties:
       envKey: PLEX_TOKEN
       labelEn: Plex Token
       labelZh: Plex 令牌
+      label:
+        en: Plex Token
+        zh: Plex 令牌
+        zh-Hant: Plex 令牌
+        ja: Plex Token
+        ko: Plex Token
+        ru: Plex Token
+        ms: Plex Token
+        pt-br: Plex Token
       required: false
       type: text
     - default: "6"
@@ -651,6 +1353,15 @@ additionalProperties:
       envKey: MEDIASERVER_SYNC_INTERVAL
       labelEn: Media Server Sync Interval
       labelZh: 媒体服务器同步间隔（小时）
+      label:
+        en: Media Server Sync Interval
+        zh: 媒体服务器同步间隔（小时）
+        zh-Hant: 媒体服务器同步间隔（小时）
+        ja: Media Server Sync Interval
+        ko: Media Server Sync Interval
+        ru: Media Server Sync Interval
+        ms: Media Server Sync Interval
+        pt-br: Media Server Sync Interval
       required: true
       type: number
     - default: ""
@@ -658,6 +1369,15 @@ additionalProperties:
       envKey: MEDIASERVER_SYNC_BLACKLIST
       labelEn: Media Server Sync Blacklist
       labelZh: 媒体服务器同步黑名单
+      label:
+        en: Media Server Sync Blacklist
+        zh: 媒体服务器同步黑名单
+        zh-Hant: 媒体服务器同步黑名单
+        ja: Media Server Sync Blacklist
+        ko: Media Server Sync Blacklist
+        ru: Media Server Sync Blacklist
+        ms: Media Server Sync Blacklist
+        pt-br: Media Server Sync Blacklist
       required: false
       type: text
     - default: "audiences"
@@ -665,6 +1385,15 @@ additionalProperties:
       envKey: AUTH_SITE
       labelEn: Authentication Site
       labelZh: 认证站点
+      label:
+        en: Authentication Site
+        zh: 认证站点
+        zh-Hant: 认证站点
+        ja: Authentication Site
+        ko: Authentication Site
+        ru: Authentication Site
+        ms: Authentication Site
+        pt-br: Authentication Site
       required: true
       type: select
       values:
@@ -709,6 +1438,15 @@ additionalProperties:
       envKey: IYUU_SIGN
       labelEn: IYUU Sign
       labelZh: IYUU 登录令牌
+      label:
+        en: IYUU Sign
+        zh: IYUU 登录令牌
+        zh-Hant: IYUU 登录令牌
+        ja: IYUU Sign
+        ko: IYUU Sign
+        ru: IYUU Sign
+        ms: IYUU Sign
+        pt-br: IYUU Sign
       required: false
       type: text
     - default: ""
@@ -716,6 +1454,15 @@ additionalProperties:
       envKey: HHCLUB_USERNAME
       labelEn: HHClub Username
       labelZh: HHClub 用户名
+      label:
+        en: HHClub Username
+        zh: HHClub 用户名
+        zh-Hant: HHClub 用户名
+        ja: HHClub Username
+        ko: HHClub Username
+        ru: HHClub Username
+        ms: HHClub Username
+        pt-br: HHClub Username
       required: false
       type: text
     - default: ""
@@ -723,6 +1470,15 @@ additionalProperties:
       envKey: HHCLUB_PASSKEY
       labelEn: HHClub Passkey
       labelZh: HHClub 密钥
+      label:
+        en: HHClub Passkey
+        zh: HHClub 密钥
+        zh-Hant: HHClub 密钥
+        ja: HHClub Passkey
+        ko: HHClub Passkey
+        ru: HHClub Passkey
+        ms: HHClub Passkey
+        pt-br: HHClub Passkey
       required: false
       type: text
     - default: ""
@@ -730,6 +1486,15 @@ additionalProperties:
       envKey: AUDIENCES_UID
       labelEn: Audiences UID
       labelZh: Audiences 用户ID
+      label:
+        en: Audiences UID
+        zh: Audiences 用户ID
+        zh-Hant: Audiences 用户ID
+        ja: Audiences UID
+        ko: Audiences UID
+        ru: Audiences UID
+        ms: Audiences UID
+        pt-br: Audiences UID
       required: false
       type: text
     - default: ""
@@ -737,6 +1502,15 @@ additionalProperties:
       envKey: AUDIENCES_PASSKEY
       labelEn: Audiences Passkey
       labelZh: Audiences 密钥
+      label:
+        en: Audiences Passkey
+        zh: Audiences 密钥
+        zh-Hant: Audiences 密钥
+        ja: Audiences Passkey
+        ko: Audiences Passkey
+        ru: Audiences Passkey
+        ms: Audiences Passkey
+        pt-br: Audiences Passkey
       required: false
       type: text
     - default: ""
@@ -744,6 +1518,15 @@ additionalProperties:
       envKey: HDDOLBY_ID
       labelEn: HDDolby ID
       labelZh: HDDolby 用户ID
+      label:
+        en: HDDolby ID
+        zh: HDDolby 用户ID
+        zh-Hant: HDDolby 用户ID
+        ja: HDDolby ID
+        ko: HDDolby ID
+        ru: HDDolby ID
+        ms: HDDolby ID
+        pt-br: HDDolby ID
       required: false
       type: text
     - default: ""
@@ -751,6 +1534,15 @@ additionalProperties:
       envKey: HDDOLBY_PASSKEY
       labelEn: HDDolby Passkey
       labelZh: HDDolby 密钥
+      label:
+        en: HDDolby Passkey
+        zh: HDDolby 密钥
+        zh-Hant: HDDolby 密钥
+        ja: HDDolby Passkey
+        ko: HDDolby Passkey
+        ru: HDDolby Passkey
+        ms: HDDolby Passkey
+        pt-br: HDDolby Passkey
       required: false
       type: text
     - default: ""
@@ -758,6 +1550,15 @@ additionalProperties:
       envKey: ZMPT_UID
       labelEn: ZMPT UID
       labelZh: ZMPT 用户ID
+      label:
+        en: ZMPT UID
+        zh: ZMPT 用户ID
+        zh-Hant: ZMPT 用户ID
+        ja: ZMPT UID
+        ko: ZMPT UID
+        ru: ZMPT UID
+        ms: ZMPT UID
+        pt-br: ZMPT UID
       required: false
       type: text
     - default: ""
@@ -765,6 +1566,15 @@ additionalProperties:
       envKey: ZMPT_PASSKEY
       labelEn: ZMPT Passkey
       labelZh: ZMPT 密钥
+      label:
+        en: ZMPT Passkey
+        zh: ZMPT 密钥
+        zh-Hant: ZMPT 密钥
+        ja: ZMPT Passkey
+        ko: ZMPT Passkey
+        ru: ZMPT Passkey
+        ms: ZMPT Passkey
+        pt-br: ZMPT Passkey
       required: false
       type: text
     - default: ""
@@ -772,6 +1582,15 @@ additionalProperties:
       envKey: FREEFARM_UID
       labelEn: FreeFarm UID
       labelZh: FreeFarm 用户ID
+      label:
+        en: FreeFarm UID
+        zh: FreeFarm 用户ID
+        zh-Hant: FreeFarm 用户ID
+        ja: FreeFarm UID
+        ko: FreeFarm UID
+        ru: FreeFarm UID
+        ms: FreeFarm UID
+        pt-br: FreeFarm UID
       required: false
       type: text
     - default: ""
@@ -779,6 +1598,15 @@ additionalProperties:
       envKey: FREEFARM_PASSKEY
       labelEn: FreeFarm Passkey
       labelZh: FreeFarm 密钥
+      label:
+        en: FreeFarm Passkey
+        zh: FreeFarm 密钥
+        zh-Hant: FreeFarm 密钥
+        ja: FreeFarm Passkey
+        ko: FreeFarm Passkey
+        ru: FreeFarm Passkey
+        ms: FreeFarm Passkey
+        pt-br: FreeFarm Passkey
       required: false
       type: text
     - default: ""
@@ -786,6 +1614,15 @@ additionalProperties:
       envKey: HDFANS_UID
       labelEn: HDFans UID
       labelZh: HDFans 用户ID
+      label:
+        en: HDFans UID
+        zh: HDFans 用户ID
+        zh-Hant: HDFans 用户ID
+        ja: HDFans UID
+        ko: HDFans UID
+        ru: HDFans UID
+        ms: HDFans UID
+        pt-br: HDFans UID
       required: false
       type: text
     - default: ""
@@ -793,6 +1630,15 @@ additionalProperties:
       envKey: HDFANS_PASSKEY
       labelEn: HDFans Passkey
       labelZh: HDFans 密钥
+      label:
+        en: HDFans Passkey
+        zh: HDFans 密钥
+        zh-Hant: HDFans 密钥
+        ja: HDFans Passkey
+        ko: HDFans Passkey
+        ru: HDFans Passkey
+        ms: HDFans Passkey
+        pt-br: HDFans Passkey
       required: false
       type: text
     - default: ""
@@ -800,6 +1646,15 @@ additionalProperties:
       envKey: WINTERSAKURA_UID
       labelEn: WinterSakura UID
       labelZh: WinterSakura 用户ID
+      label:
+        en: WinterSakura UID
+        zh: WinterSakura 用户ID
+        zh-Hant: WinterSakura 用户ID
+        ja: WinterSakura UID
+        ko: WinterSakura UID
+        ru: WinterSakura UID
+        ms: WinterSakura UID
+        pt-br: WinterSakura UID
       required: false
       type: text
     - default: ""
@@ -807,6 +1662,15 @@ additionalProperties:
       envKey: WINTERSAKURA_PASSKEY
       labelEn: WinterSakura Passkey
       labelZh: WinterSakura 密钥
+      label:
+        en: WinterSakura Passkey
+        zh: WinterSakura 密钥
+        zh-Hant: WinterSakura 密钥
+        ja: WinterSakura Passkey
+        ko: WinterSakura Passkey
+        ru: WinterSakura Passkey
+        ms: WinterSakura Passkey
+        pt-br: WinterSakura Passkey
       required: false
       type: text
     - default: ""
@@ -814,6 +1678,15 @@ additionalProperties:
       envKey: LEAVES_UID
       labelEn: Leaves UID
       labelZh: Leaves 用户ID
+      label:
+        en: Leaves UID
+        zh: Leaves 用户ID
+        zh-Hant: Leaves 用户ID
+        ja: Leaves UID
+        ko: Leaves UID
+        ru: Leaves UID
+        ms: Leaves UID
+        pt-br: Leaves UID
       required: false
       type: text
     - default: ""
@@ -821,6 +1694,15 @@ additionalProperties:
       envKey: LEAVES_PASSKEY
       labelEn: Leaves Passkey
       labelZh: Leaves 密钥
+      label:
+        en: Leaves Passkey
+        zh: Leaves 密钥
+        zh-Hant: Leaves 密钥
+        ja: Leaves Passkey
+        ko: Leaves Passkey
+        ru: Leaves Passkey
+        ms: Leaves Passkey
+        pt-br: Leaves Passkey
       required: false
       type: text
     - default: ""
@@ -828,6 +1710,15 @@ additionalProperties:
       envKey: PTBA_UID
       labelEn: PTBA UID
       labelZh: PTBA 用户ID
+      label:
+        en: PTBA UID
+        zh: PTBA 用户ID
+        zh-Hant: PTBA 用户ID
+        ja: PTBA UID
+        ko: PTBA UID
+        ru: PTBA UID
+        ms: PTBA UID
+        pt-br: PTBA UID
       required: false
       type: text
     - default: ""
@@ -835,6 +1726,15 @@ additionalProperties:
       envKey: PTBA_PASSKEY
       labelEn: PTBA Passkey
       labelZh: PTBA 密钥
+      label:
+        en: PTBA Passkey
+        zh: PTBA 密钥
+        zh-Hant: PTBA 密钥
+        ja: PTBA Passkey
+        ko: PTBA Passkey
+        ru: PTBA Passkey
+        ms: PTBA Passkey
+        pt-br: PTBA Passkey
       required: false
       type: text
     - default: ""
@@ -842,6 +1742,15 @@ additionalProperties:
       envKey: ICC2022_UID
       labelEn: ICC2022 UID
       labelZh: ICC2022 用户ID
+      label:
+        en: ICC2022 UID
+        zh: ICC2022 用户ID
+        zh-Hant: ICC2022 用户ID
+        ja: ICC2022 UID
+        ko: ICC2022 UID
+        ru: ICC2022 UID
+        ms: ICC2022 UID
+        pt-br: ICC2022 UID
       required: false
       type: text
     - default: ""
@@ -849,6 +1758,15 @@ additionalProperties:
       envKey: ICC2022_PASSKEY
       labelEn: ICC2022 Passkey
       labelZh: ICC2022 密钥
+      label:
+        en: ICC2022 Passkey
+        zh: ICC2022 密钥
+        zh-Hant: ICC2022 密钥
+        ja: ICC2022 Passkey
+        ko: ICC2022 Passkey
+        ru: ICC2022 Passkey
+        ms: ICC2022 Passkey
+        pt-br: ICC2022 Passkey
       required: false
       type: text
     - default: ""
@@ -856,6 +1774,15 @@ additionalProperties:
       envKey: PTLSP_UID
       labelEn: PTLSP UID
       labelZh: PTLSP 用户ID
+      label:
+        en: PTLSP UID
+        zh: PTLSP 用户ID
+        zh-Hant: PTLSP 用户ID
+        ja: PTLSP UID
+        ko: PTLSP UID
+        ru: PTLSP UID
+        ms: PTLSP UID
+        pt-br: PTLSP UID
       required: false
       type: text
     - default: ""
@@ -863,6 +1790,15 @@ additionalProperties:
       envKey: PTLSP_PASSKEY
       labelEn: PTLSP Passkey
       labelZh: PTLSP 密钥
+      label:
+        en: PTLSP Passkey
+        zh: PTLSP 密钥
+        zh-Hant: PTLSP 密钥
+        ja: PTLSP Passkey
+        ko: PTLSP Passkey
+        ru: PTLSP Passkey
+        ms: PTLSP Passkey
+        pt-br: PTLSP Passkey
       required: false
       type: text
     - default: ""
@@ -870,6 +1806,15 @@ additionalProperties:
       envKey: XINGTAN_UID
       labelEn: XINGTAN UID
       labelZh: XINGTAN 用户ID
+      label:
+        en: XINGTAN UID
+        zh: XINGTAN 用户ID
+        zh-Hant: XINGTAN 用户ID
+        ja: XINGTAN UID
+        ko: XINGTAN UID
+        ru: XINGTAN UID
+        ms: XINGTAN UID
+        pt-br: XINGTAN UID
       required: false
       type: text
     - default: ""
@@ -877,6 +1822,15 @@ additionalProperties:
       envKey: XINGTAN_PASSKEY
       labelEn: XINGTAN Passkey
       labelZh: XINGTAN 密钥
+      label:
+        en: XINGTAN Passkey
+        zh: XINGTAN 密钥
+        zh-Hant: XINGTAN 密钥
+        ja: XINGTAN Passkey
+        ko: XINGTAN Passkey
+        ru: XINGTAN Passkey
+        ms: XINGTAN Passkey
+        pt-br: XINGTAN Passkey
       required: false
       type: text
     - default: ""
@@ -884,6 +1838,15 @@ additionalProperties:
       envKey: PTVICOMO_UID
       labelEn: PTVICOMO UID
       labelZh: PTVICOMO 用户ID
+      label:
+        en: PTVICOMO UID
+        zh: PTVICOMO 用户ID
+        zh-Hant: PTVICOMO 用户ID
+        ja: PTVICOMO UID
+        ko: PTVICOMO UID
+        ru: PTVICOMO UID
+        ms: PTVICOMO UID
+        pt-br: PTVICOMO UID
       required: false
       type: text
     - default: ""
@@ -891,6 +1854,15 @@ additionalProperties:
       envKey: PTVICOMO_PASSKEY
       labelEn: PTVICOMO Passkey
       labelZh: PTVICOMO 密钥
+      label:
+        en: PTVICOMO Passkey
+        zh: PTVICOMO 密钥
+        zh-Hant: PTVICOMO 密钥
+        ja: PTVICOMO Passkey
+        ko: PTVICOMO Passkey
+        ru: PTVICOMO Passkey
+        ms: PTVICOMO Passkey
+        pt-br: PTVICOMO Passkey
       required: false
       type: text
     - default: ""
@@ -898,6 +1870,15 @@ additionalProperties:
       envKey: AGSVPT_UID
       labelEn: AGSVPT UID
       labelZh: AGSVPT 用户ID
+      label:
+        en: AGSVPT UID
+        zh: AGSVPT 用户ID
+        zh-Hant: AGSVPT 用户ID
+        ja: AGSVPT UID
+        ko: AGSVPT UID
+        ru: AGSVPT UID
+        ms: AGSVPT UID
+        pt-br: AGSVPT UID
       required: false
       type: text
     - default: ""
@@ -905,6 +1886,15 @@ additionalProperties:
       envKey: AGSVPT_PASSKEY
       labelEn: AGSVPT Passkey
       labelZh: AGSVPT 密钥
+      label:
+        en: AGSVPT Passkey
+        zh: AGSVPT 密钥
+        zh-Hant: AGSVPT 密钥
+        ja: AGSVPT Passkey
+        ko: AGSVPT Passkey
+        ru: AGSVPT Passkey
+        ms: AGSVPT Passkey
+        pt-br: AGSVPT Passkey
       required: false
       type: text
     - default: ""
@@ -912,6 +1902,15 @@ additionalProperties:
       envKey: HDKYL_UID
       labelEn: HDKYL UID
       labelZh: HDKYL 用户ID
+      label:
+        en: HDKYL UID
+        zh: HDKYL 用户ID
+        zh-Hant: HDKYL 用户ID
+        ja: HDKYL UID
+        ko: HDKYL UID
+        ru: HDKYL UID
+        ms: HDKYL UID
+        pt-br: HDKYL UID
       required: false
       type: text
     - default: ""
@@ -919,6 +1918,15 @@ additionalProperties:
       envKey: HDKYL_PASSKEY
       labelEn: HDKYL Passkey
       labelZh: HDKYL 密钥
+      label:
+        en: HDKYL Passkey
+        zh: HDKYL 密钥
+        zh-Hant: HDKYL 密钥
+        ja: HDKYL Passkey
+        ko: HDKYL Passkey
+        ru: HDKYL Passkey
+        ms: HDKYL Passkey
+        pt-br: HDKYL Passkey
       required: false
       type: text
     - default: ""
@@ -926,6 +1934,15 @@ additionalProperties:
       envKey: QINGWA_UID
       labelEn: QINGWA UID
       labelZh: QINGWA 用户ID
+      label:
+        en: QINGWA UID
+        zh: QINGWA 用户ID
+        zh-Hant: QINGWA 用户ID
+        ja: QINGWA UID
+        ko: QINGWA UID
+        ru: QINGWA UID
+        ms: QINGWA UID
+        pt-br: QINGWA UID
       required: false
       type: text
     - default: ""
@@ -933,6 +1950,15 @@ additionalProperties:
       envKey: QINGWA_PASSKEY
       labelEn: QINGWA Passkey
       labelZh: QINGWA 密钥
+      label:
+        en: QINGWA Passkey
+        zh: QINGWA 密钥
+        zh-Hant: QINGWA 密钥
+        ja: QINGWA Passkey
+        ko: QINGWA Passkey
+        ru: QINGWA Passkey
+        ms: QINGWA Passkey
+        pt-br: QINGWA Passkey
       required: false
       type: text
     - default: ""
@@ -940,6 +1966,15 @@ additionalProperties:
       envKey: DISCFAN_UID
       labelEn: DISCFAN UID
       labelZh: DISCFAN 用户ID
+      label:
+        en: DISCFAN UID
+        zh: DISCFAN 用户ID
+        zh-Hant: DISCFAN 用户ID
+        ja: DISCFAN UID
+        ko: DISCFAN UID
+        ru: DISCFAN UID
+        ms: DISCFAN UID
+        pt-br: DISCFAN UID
       required: false
       type: text
     - default: ""
@@ -947,6 +1982,15 @@ additionalProperties:
       envKey: DISCFAN_PASSKEY
       labelEn: DISCFAN Passkey
       labelZh: DISCFAN 密钥
+      label:
+        en: DISCFAN Passkey
+        zh: DISCFAN 密钥
+        zh-Hant: DISCFAN 密钥
+        ja: DISCFAN Passkey
+        ko: DISCFAN Passkey
+        ru: DISCFAN Passkey
+        ms: DISCFAN Passkey
+        pt-br: DISCFAN Passkey
       required: false
       type: text
     - default: "false"
@@ -954,6 +1998,15 @@ additionalProperties:
       envKey: BIG_MEMORY_MODE
       labelEn: Big Memory Mode
       labelZh: 大内存模式
+      label:
+        en: Big Memory Mode
+        zh: 大内存模式
+        zh-Hant: 大内存模式
+        ja: Big Memory Mode
+        ko: Big Memory Mode
+        ru: Big Memory Mode
+        ms: Big Memory Mode
+        pt-br: Big Memory Mode
       required: true
       type: select
       values:
@@ -966,6 +2019,15 @@ additionalProperties:
       envKey: MOVIE_RENAME_FORMAT
       labelEn: Movie Rename Format
       labelZh: 电影重命名格式
+      label:
+        en: Movie Rename Format
+        zh: 电影重命名格式
+        zh-Hant: 电影重命名格式
+        ja: Movie Rename Format
+        ko: Movie Rename Format
+        ru: Movie Rename Format
+        ms: Movie Rename Format
+        pt-br: Movie Rename Format
       required: true
       type: text
     - default: '{{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}'
@@ -973,5 +2035,14 @@ additionalProperties:
       envKey: TV_RENAME_FORMAT
       labelEn: TV Rename Format
       labelZh: 电视剧重命名格式
+      label:
+        en: TV Rename Format
+        zh: 电视剧重命名格式
+        zh-Hant: 电视剧重命名格式
+        ja: TV Rename Format
+        ko: TV Rename Format
+        ru: TV Rename Format
+        ms: TV Rename Format
+        pt-br: TV Rename Format
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: MEM_CACHED
       labelEn: Maximum memory usage(MB)
       labelZh: 内存最大占用量(MB)
+      label:
+        en: Maximum memory usage(MB)
+        zh: 内存最大占用量(MB)
+        zh-Hant: 内存最大占用量(MB)
+        ja: Maximum memory usage(MB)
+        ko: Maximum memory usage(MB)
+        ru: Maximum memory usage(MB)
+        ms: Maximum memory usage(MB)
+        pt-br: Maximum memory usage(MB)
       required: true
       type: number

@@ -19,3 +19,5 @@ additionalProperties:
   document: https://www.notion.so/xiaoyaliu/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f
   architectures:
     - amd64
+    - arm
+    - arm64

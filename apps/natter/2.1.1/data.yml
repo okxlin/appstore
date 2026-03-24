@@ -5,6 +5,15 @@ additionalProperties:
       envKey: SERVICE_NAME
       labelEn: Service Name
       labelZh: 服务名称
+      label:
+        en: Service Name
+        zh: 服务名称
+        zh-Hant: 服务名称
+        ja: Service Name
+        ko: Service Name
+        ru: Service Name
+        ms: Service Name
+        pt-br: Service Name
       required: true
       rule: paramCommon
       type: text
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command
       labelZh: 命令
+      label:
+        en: Command
+        zh: 命令
+        zh-Hant: 命令
+        ja: Command
+        ko: Command
+        ru: Command
+        ms: Command
+        pt-br: Command
       required: true
       type: text
     - default: "./data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: EXTERNAL_DATA_PATH
       labelEn: External Data Path
       labelZh: 外部数据路径
+      label:
+        en: External Data Path
+        zh: 外部数据路径
+        zh-Hant: 外部数据路径
+        ja: External Data Path
+        ko: External Data Path
+        ru: External Data Path
+        ms: External Data Path
+        pt-br: External Data Path
       required: true
       type: text
     - default: "/data"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: Internal container data paths
+        zh: 容器内部数据路径
+        zh-Hant: 容器内部数据路径
+        ja: Internal container data paths
+        ko: Internal container data paths
+        ru: Internal container data paths
+        ms: Internal container data paths
+        pt-br: Internal container data paths
       required: true
       type: text
     - default: Asia/Shanghai
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

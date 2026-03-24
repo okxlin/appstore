@@ -19,3 +19,4 @@ additionalProperties:
   document: https://matrix-org.github.io/synapse/latest/
   architectures:
     - amd64
+    - arm64

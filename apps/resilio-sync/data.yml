@@ -19,3 +19,4 @@ additionalProperties:
   document: https://help.resilio.com
   architectures:
     - amd64
+    - arm64

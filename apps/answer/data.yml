@@ -19,3 +19,4 @@ additionalProperties:
   document: https://answer.dev/zh-CN/docs
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: CONFIG_FILE_PATH
       labelEn: Configuration file path
       labelZh: 配置文件路径
+      label:
+        en: Configuration file path
+        zh: 配置文件路径
+        zh-Hant: 配置文件路径
+        ja: Configuration file path
+        ko: Configuration file path
+        ru: Configuration file path
+        ms: Configuration file path
+        pt-br: Configuration file path
       required: true
       type: text
     - default: 7000
@@ -13,6 +22,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
+      label:
+        en: Port (determined by the configuration file)
+        zh: 端口 (由配置文件决定)
+        zh-Hant: 端口 (由配置文件决定)
+        ja: Port (determined by the configuration file)
+        ko: Port (determined by the configuration file)
+        ru: Port (determined by the configuration file)
+        ms: Port (determined by the configuration file)
+        pt-br: Port (determined by the configuration file)
       required: true
       type: number
     - default: ./data/ssl
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: SSL_FOLDER_PATH
       labelEn: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
       labelZh: 证书文件夹路径 (对应容器内 "/etc/frp/ssl")
+      label:
+        en: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
+        zh: 证书文件夹路径 (对应容器内 "/etc/frp/ssl")
+        zh-Hant: 证书文件夹路径 (对应容器内 "/etc/frp/ssl")
+        ja: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
+        ko: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
+        ru: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
+        ms: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
+        pt-br: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
       required: true
       type: text

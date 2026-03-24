@@ -5,5 +5,14 @@ additionalProperties:
       envKey: ENV1
       labelEn: Environmental parameters
       labelZh: 环境参数
+      label:
+        en: Environmental parameters
+        zh: 环境参数
+        zh-Hant: 环境参数
+        ja: Environmental parameters
+        ko: Environmental parameters
+        ru: Environmental parameters
+        ms: Environmental parameters
+        pt-br: Environmental parameters
       required: true
       type: text

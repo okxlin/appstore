@@ -5,6 +5,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: Hostname
+        zh: 主机名
+        zh-Hant: 主机名
+        ja: Hostname
+        ko: Hostname
+        ru: Hostname
+        ms: Hostname
+        pt-br: Hostname
       required: true
       type: text
     - default: "nitter"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: TITLE
       labelEn: Title
       labelZh: 标题
+      label:
+        en: Title
+        zh: 标题
+        zh-Hant: 标题
+        ja: Title
+        ko: Title
+        ru: Title
+        ms: Title
+        pt-br: Title
       required: true
       type: text
     - default: "0.0.0.0"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: ADDRESS
       labelEn: Listening Address (in container)
       labelZh: 监听地址 (容器内)
+      label:
+        en: Listening Address (in container)
+        zh: 监听地址 (容器内)
+        zh-Hant: 监听地址 (容器内)
+        ja: Listening Address (in container)
+        ko: Listening Address (in container)
+        ru: Listening Address (in container)
+        ms: Listening Address (in container)
+        pt-br: Listening Address (in container)
       required: true
       type: text
     - default: "40238"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "false"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: HTTPS
       labelEn: HTTPS Enabled
       labelZh: 启用 HTTPS
+      label:
+        en: HTTPS Enabled
+        zh: 启用 HTTPS
+        zh-Hant: 启用 HTTPS
+        ja: HTTPS Enabled
+        ko: HTTPS Enabled
+        ru: HTTPS Enabled
+        ms: HTTPS Enabled
+        pt-br: HTTPS Enabled
       required: true
       type: select
       values:
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: HTTP_MAX_CONNECTIONS
       labelEn: Max HTTP Connections
       labelZh: 最大 HTTP 连接数
+      label:
+        en: Max HTTP Connections
+        zh: 最大 HTTP 连接数
+        zh-Hant: 最大 HTTP 连接数
+        ja: Max HTTP Connections
+        ko: Max HTTP Connections
+        ru: Max HTTP Connections
+        ms: Max HTTP Connections
+        pt-br: Max HTTP Connections
       required: true
       type: number
     - default: "./public"
@@ -60,6 +123,15 @@ additionalProperties:
       envKey: STATIC_DIR
       labelEn: Static Directory
       labelZh: 静态文件目录
+      label:
+        en: Static Directory
+        zh: 静态文件目录
+        zh-Hant: 静态文件目录
+        ja: Static Directory
+        ko: Static Directory
+        ru: Static Directory
+        ms: Static Directory
+        pt-br: Static Directory
       required: true
       type: text
     - default: "240"
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: LIST_MINUTES
       labelEn: List Cache Minutes
       labelZh: 列表缓存分钟数
+      label:
+        en: List Cache Minutes
+        zh: 列表缓存分钟数
+        zh-Hant: 列表缓存分钟数
+        ja: List Cache Minutes
+        ko: List Cache Minutes
+        ru: List Cache Minutes
+        ms: List Cache Minutes
+        pt-br: List Cache Minutes
       required: true
       type: number
     - default: "10"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: RSS_MINUTES
       labelEn: RSS Cache Minutes
       labelZh: RSS 缓存分钟数
+      label:
+        en: RSS Cache Minutes
+        zh: RSS 缓存分钟数
+        zh-Hant: RSS 缓存分钟数
+        ja: RSS Cache Minutes
+        ko: RSS Cache Minutes
+        ru: RSS Cache Minutes
+        ms: RSS Cache Minutes
+        pt-br: RSS Cache Minutes
       required: true
       type: number
     - default: ""
@@ -82,6 +172,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: Redis Service
+        zh: Redis服务
+        zh-Hant: Redis服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: "6379"
@@ -89,6 +188,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: Redis Service Port
+        zh: Redis服务端口
+        zh-Hant: Redis服务端口
+        ja: Redis Service Port
+        ko: Redis Service Port
+        ru: Redis Service Port
+        ms: Redis Service Port
+        pt-br: Redis Service Port
       required: true
       rule: paramPort
       type: number
@@ -97,6 +205,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: true
       type: password
     - default: "20"
@@ -104,6 +221,15 @@ additionalProperties:
       envKey: REDIS_CONNECTIONS
       labelEn: Redis Connections
       labelZh: Redis 连接数
+      label:
+        en: Redis Connections
+        zh: Redis 连接数
+        zh-Hant: Redis 连接数
+        ja: Redis Connections
+        ko: Redis Connections
+        ru: Redis Connections
+        ms: Redis Connections
+        pt-br: Redis Connections
       required: true
       type: number
     - default: "30"
@@ -111,6 +237,15 @@ additionalProperties:
       envKey: REDIS_MAX_CONNECTIONS
       labelEn: Redis Max Connections
       labelZh: Redis 最大连接数
+      label:
+        en: Redis Max Connections
+        zh: Redis 最大连接数
+        zh-Hant: Redis 最大连接数
+        ja: Redis Max Connections
+        ko: Redis Max Connections
+        ru: Redis Max Connections
+        ms: Redis Max Connections
+        pt-br: Redis Max Connections
       required: true
       type: number
     - default: "C7PPBcaNCL5B5Zkt6uHU"
@@ -118,6 +253,15 @@ additionalProperties:
       envKey: HMAC_KEY
       labelEn: Random key for cryptographic signing of video urls
       labelZh: 用于视频网址加密签名的随机密钥
+      label:
+        en: Random key for cryptographic signing of video urls
+        zh: 用于视频网址加密签名的随机密钥
+        zh-Hant: 用于视频网址加密签名的随机密钥
+        ja: Random key for cryptographic signing of video urls
+        ko: Random key for cryptographic signing of video urls
+        ru: Random key for cryptographic signing of video urls
+        ms: Random key for cryptographic signing of video urls
+        pt-br: Random key for cryptographic signing of video urls
       required: true
       type: text
     - default: "false"
@@ -125,6 +269,15 @@ additionalProperties:
       envKey: BASE64_MEDIA
       labelEn: Base64 Media
       labelZh: Base64 媒体
+      label:
+        en: Base64 Media
+        zh: Base64 媒体
+        zh-Hant: Base64 媒体
+        ja: Base64 Media
+        ko: Base64 Media
+        ru: Base64 Media
+        ms: Base64 Media
+        pt-br: Base64 Media
       required: true
       type: text
     - default: "true"
@@ -132,6 +285,15 @@ additionalProperties:
       envKey: ENABLE_RSS
       labelEn: Enable RSS
       labelZh: 启用 RSS
+      label:
+        en: Enable RSS
+        zh: 启用 RSS
+        zh-Hant: 启用 RSS
+        ja: Enable RSS
+        ko: Enable RSS
+        ru: Enable RSS
+        ms: Enable RSS
+        pt-br: Enable RSS
       required: true
       type: select
       values:
@@ -144,6 +306,15 @@ additionalProperties:
       envKey: ENABLE_DEBUG
       labelEn: Enable Debug
       labelZh: 启用调试
+      label:
+        en: Enable Debug
+        zh: 启用调试
+        zh-Hant: 启用调试
+        ja: Enable Debug
+        ko: Enable Debug
+        ru: Enable Debug
+        ms: Enable Debug
+        pt-br: Enable Debug
       required: true
       type: select
       values:
@@ -156,6 +327,15 @@ additionalProperties:
       envKey: PROXY
       labelEn: Proxy
       labelZh: 代理
+      label:
+        en: Proxy
+        zh: 代理
+        zh-Hant: 代理
+        ja: Proxy
+        ko: Proxy
+        ru: Proxy
+        ms: Proxy
+        pt-br: Proxy
       required: false
       type: text
     - default: ""
@@ -163,6 +343,15 @@ additionalProperties:
       envKey: PROXY_AUTH
       labelEn: Proxy Auth
       labelZh: 代理认证
+      label:
+        en: Proxy Auth
+        zh: 代理认证
+        zh-Hant: 代理认证
+        ja: Proxy Auth
+        ko: Proxy Auth
+        ru: Proxy Auth
+        ms: Proxy Auth
+        pt-br: Proxy Auth
       required: false
       type: text
     - default: "10"
@@ -170,6 +359,15 @@ additionalProperties:
       envKey: TOKEN_COUNT
       labelEn: Token Count
       labelZh: Token 数量
+      label:
+        en: Token Count
+        zh: Token 数量
+        zh-Hant: Token 数量
+        ja: Token Count
+        ko: Token Count
+        ru: Token Count
+        ms: Token Count
+        pt-br: Token Count
       required: true
       type: number
     - default: "Nitter"
@@ -177,6 +375,15 @@ additionalProperties:
       envKey: THEME
       labelEn: Theme
       labelZh: 主题
+      label:
+        en: Theme
+        zh: 主题
+        zh-Hant: 主题
+        ja: Theme
+        ko: Theme
+        ru: Theme
+        ms: Theme
+        pt-br: Theme
       required: true
       type: text
     - default: "nitter.net"
@@ -184,6 +391,15 @@ additionalProperties:
       envKey: REPLACE_TWITTER
       labelEn: Replace Twitter
       labelZh: 替换 Twitter
+      label:
+        en: Replace Twitter
+        zh: 替换 Twitter
+        zh-Hant: 替换 Twitter
+        ja: Replace Twitter
+        ko: Replace Twitter
+        ru: Replace Twitter
+        ms: Replace Twitter
+        pt-br: Replace Twitter
       required: true
       type: text
     - default: "piped.video"
@@ -191,6 +407,15 @@ additionalProperties:
       envKey: REPLACE_YOUTUBE
       labelEn: Replace YouTube
       labelZh: 替换 YouTube
+      label:
+        en: Replace YouTube
+        zh: 替换 YouTube
+        zh-Hant: 替换 YouTube
+        ja: Replace YouTube
+        ko: Replace YouTube
+        ru: Replace YouTube
+        ms: Replace YouTube
+        pt-br: Replace YouTube
       required: true
       type: text
     - default: "teddit.net"
@@ -198,6 +423,15 @@ additionalProperties:
       envKey: REPLACE_REDDIT
       labelEn: Replace Reddit
       labelZh: 替换 Reddit
+      label:
+        en: Replace Reddit
+        zh: 替换 Reddit
+        zh-Hant: 替换 Reddit
+        ja: Replace Reddit
+        ko: Replace Reddit
+        ru: Replace Reddit
+        ms: Replace Reddit
+        pt-br: Replace Reddit
       required: true
       type: text
     - default: "true"
@@ -205,6 +439,15 @@ additionalProperties:
       envKey: PROXY_VIDEOS
       labelEn: Proxy Videos
       labelZh: 代理视频
+      label:
+        en: Proxy Videos
+        zh: 代理视频
+        zh-Hant: 代理视频
+        ja: Proxy Videos
+        ko: Proxy Videos
+        ru: Proxy Videos
+        ms: Proxy Videos
+        pt-br: Proxy Videos
       required: true
       type: select
       values:
@@ -217,6 +460,15 @@ additionalProperties:
       envKey: HLS_PLAYBACK
       labelEn: HLS Playback
       labelZh: HLS 播放
+      label:
+        en: HLS Playback
+        zh: HLS 播放
+        zh-Hant: HLS 播放
+        ja: HLS Playback
+        ko: HLS Playback
+        ru: HLS Playback
+        ms: HLS Playback
+        pt-br: HLS Playback
       required: true
       type: select
       values:
@@ -229,6 +481,15 @@ additionalProperties:
       envKey: INFINITE_SCROLL
       labelEn: Infinite Scroll
       labelZh: 无限滚动
+      label:
+        en: Infinite Scroll
+        zh: 无限滚动
+        zh-Hant: 无限滚动
+        ja: Infinite Scroll
+        ko: Infinite Scroll
+        ru: Infinite Scroll
+        ms: Infinite Scroll
+        pt-br: Infinite Scroll
       required: true
       type: select
       values:

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "./data/extensions"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: EXTENSIONS_PATH
       labelEn: Extensions Path
       labelZh: 扩展路径
+      label:
+        en: Extensions Path
+        zh: 扩展路径
+        zh-Hant: 扩展路径
+        ja: Extensions Path
+        ko: Extensions Path
+        ru: Extensions Path
+        ms: Extensions Path
+        pt-br: Extensions Path
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "2,32"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: CRON_MIN
       labelEn: Cron Min
       labelZh: 定时任务分钟
+      label:
+        en: Cron Min
+        zh: 定时任务分钟
+        zh-Hant: 定时任务分钟
+        ja: Cron Min
+        ko: Cron Min
+        ru: Cron Min
+        ms: Cron Min
+        pt-br: Cron Min
       required: true
       type: text
     - default: "development"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: FRESHRSS_ENV
       labelEn: Environment
       labelZh: 环境
+      label:
+        en: Environment
+        zh: 环境
+        zh-Hant: 环境
+        ja: Environment
+        ko: Environment
+        ru: Environment
+        ms: Environment
+        pt-br: Environment
       required: true
       type: select
       values:

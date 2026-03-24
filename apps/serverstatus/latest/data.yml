@@ -5,6 +5,15 @@ additionalProperties:
       envKey: SERVERSTATUS_CONFIG_PATH
       labelEn: Server Status Config Path
       labelZh: 服务器状态配置路径
+      label:
+        en: Server Status Config Path
+        zh: 服务器状态配置路径
+        zh-Hant: 服务器状态配置路径
+        ja: Server Status Config Path
+        ko: Server Status Config Path
+        ru: Server Status Config Path
+        ms: Server Status Config Path
+        pt-br: Server Status Config Path
       required: true
       type: text
     - default: "./data/web/json"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: SERVERSTATUS_JSON_PATH
       labelEn: Server Status Monthly Traffic State Path
       labelZh: 探针月流量状态路径
+      label:
+        en: Server Status Monthly Traffic State Path
+        zh: 探针月流量状态路径
+        zh-Hant: 探针月流量状态路径
+        ja: Server Status Monthly Traffic State Path
+        ko: Server Status Monthly Traffic State Path
+        ru: Server Status Monthly Traffic State Path
+        ms: Server Status Monthly Traffic State Path
+        pt-br: Server Status Monthly Traffic State Path
       required: true
       type: text
     - default: "35601"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_COMM
       labelEn: Communication Port
       labelZh: 通信端口
+      label:
+        en: Communication Port
+        zh: 通信端口
+        zh-Hant: 通信端口
+        ja: Communication Port
+        ko: Communication Port
+        ru: Communication Port
+        ms: Communication Port
+        pt-br: Communication Port
       required: true
       rule: paramPort
       type: number
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Port
       labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 端口
+        ja: Web Port
+        ko: Web Port
+        ru: Web Port
+        ms: Web Port
+        pt-br: Web Port
       required: true
       rule: paramPort
       type: number

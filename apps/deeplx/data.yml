@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/OwO-Network/DeepLX
   architectures:
     - amd64
+    - arm64

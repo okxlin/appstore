@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: KEY
       labelEn: API Key
       labelZh: API 密钥
+      label:
+        en: API Key
+        zh: API 密钥
+        zh-Hant: API 密钥
+        ja: API Key
+        ko: API Key
+        ru: API Key
+        ms: API Key
+        pt-br: API Key
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: Username
+        zh: 用户名
+        zh-Hant: 用户名
+        ja: Username
+        ko: Username
+        ru: Username
+        ms: Username
+        pt-br: Username
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: Password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       required: false
       rule: paramComplexity
       type: password
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: WEB
       labelEn: Web Interface
       labelZh: Web 界面
+      label:
+        en: Web Interface
+        zh: Web 界面
+        zh-Hant: Web 界面
+        ja: Web Interface
+        ko: Web Interface
+        ru: Web Interface
+        ms: Web Interface
+        pt-br: Web Interface
       required: true
       type: select
       values:
@@ -47,5 +92,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text

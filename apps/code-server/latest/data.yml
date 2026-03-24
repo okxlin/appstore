@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,12 +22,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: code
       envKey: WEB_PASSWORD
       labelEn: Web access password
       labelZh: 网页访问密码
+      label:
+        en: Web access password
+        zh: 网页访问密码
+        zh-Hant: 网页访问密码
+        ja: Web access password
+        ko: Web access password
+        ru: Web access password
+        ms: Web access password
+        pt-br: Web access password
       random: true
       required: true
       rule: paramComplexity
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SUDO_PASSWORD
       labelEn: sudo password
       labelZh: sudo密码
+      label:
+        en: sudo password
+        zh: sudo密码
+        zh-Hant: sudo密码
+        ja: sudo password
+        ko: sudo password
+        ru: sudo password
+        ms: sudo password
+        pt-br: sudo password
       random: true
       required: true
       rule: paramComplexity

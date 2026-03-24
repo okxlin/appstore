@@ -19,3 +19,4 @@ additionalProperties:
   document: https://migptgui.com
   architectures:
     - amd64
+    - arm64

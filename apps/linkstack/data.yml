@@ -19,3 +19,5 @@ additionalProperties:
   document: https://docs.linkstack.org
   architectures:
     - amd64
+    - arm
+    - arm64

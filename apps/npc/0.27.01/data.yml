@@ -5,6 +5,15 @@ additionalProperties:
       envKey: NPS_SERVER_ADDR
       labelEn: NPS server address
       labelZh: NPS 服务端地址
+      label:
+        en: NPS server address
+        zh: NPS 服务端地址
+        zh-Hant: NPS 服务端地址
+        ja: NPS server address
+        ko: NPS server address
+        ru: NPS server address
+        ms: NPS server address
+        pt-br: NPS server address
       required: true
       type: text
     - default: "xly7traGe3r0t6UWltristuh1"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: NPS_VKEY
       labelEn: Client connection key displayed by the server
       labelZh: 服务端显示的客户端连接密钥
+      label:
+        en: Client connection key displayed by the server
+        zh: 服务端显示的客户端连接密钥
+        zh-Hant: 服务端显示的客户端连接密钥
+        ja: Client connection key displayed by the server
+        ko: Client connection key displayed by the server
+        ru: Client connection key displayed by the server
+        ms: Client connection key displayed by the server
+        pt-br: Client connection key displayed by the server
       required: true
       rule: paramCommon
       type: text
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: TLS_ENABLE_SWITCH
       labelEn: Whether TLS is enabled for server-client communication
       labelZh: 服务端与客户端的通信是否启用 TLS
+      label:
+        en: Whether TLS is enabled for server-client communication
+        zh: 服务端与客户端的通信是否启用 TLS
+        zh-Hant: 服务端与客户端的通信是否启用 TLS
+        ja: Whether TLS is enabled for server-client communication
+        ko: Whether TLS is enabled for server-client communication
+        ru: Whether TLS is enabled for server-client communication
+        ms: Whether TLS is enabled for server-client communication
+        pt-br: Whether TLS is enabled for server-client communication
       required: true
       type: select
       values:

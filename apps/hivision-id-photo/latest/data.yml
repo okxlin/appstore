@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP_INTERNAL
       labelEn: Internal Port
       labelZh: 内部端口
+      label:
+        en: Internal Port
+        zh: 内部端口
+        zh-Hant: 内部端口
+        ja: Internal Port
+        ko: Internal Port
+        ru: Internal Port
+        ms: Internal Port
+        pt-br: Internal Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command
       labelZh: 启动命令
+      label:
+        en: Command
+        zh: 启动命令
+        zh-Hant: 启动命令
+        ja: Command
+        ko: Command
+        ru: Command
+        ms: Command
+        pt-br: Command
       required: true
       type: text
     - default: ""
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: FACE_PLUS_API_KEY
       labelEn: FACE Plus API Key
       labelZh: FACE Plus API 密钥
+      label:
+        en: FACE Plus API Key
+        zh: FACE Plus API 密钥
+        zh-Hant: FACE Plus API 密钥
+        ja: FACE Plus API Key
+        ko: FACE Plus API Key
+        ru: FACE Plus API Key
+        ms: FACE Plus API Key
+        pt-br: FACE Plus API Key
       required: false
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: FACE_PLUS_API_SECRET
       labelEn: FACE Plus API Secret
       labelZh: FACE Plus API 密钥 Secret
+      label:
+        en: FACE Plus API Secret
+        zh: FACE Plus API 密钥 Secret
+        zh-Hant: FACE Plus API 密钥 Secret
+        ja: FACE Plus API Secret
+        ko: FACE Plus API Secret
+        ru: FACE Plus API Secret
+        ms: FACE Plus API Secret
+        pt-br: FACE Plus API Secret
       required: false
       type: text
     - default: ""
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: RUN_MODE
       labelEn: Run Mode
       labelZh: 运行模式
+      label:
+        en: Run Mode
+        zh: 运行模式
+        zh-Hant: 运行模式
+        ja: Run Mode
+        ko: Run Mode
+        ru: Run Mode
+        ms: Run Mode
+        pt-br: Run Mode
       required: false
       type: text
     - default: "zh"
@@ -49,5 +103,14 @@ additionalProperties:
       envKey: DEFAULT_LANG
       labelEn: Default Language
       labelZh: 默认语言
+      label:
+        en: Default Language
+        zh: 默认语言
+        zh-Hant: 默认语言
+        ja: Default Language
+        ko: Default Language
+        ru: Default Language
+        ms: Default Language
+        pt-br: Default Language
       required: false
       type: text

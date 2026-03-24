@@ -19,3 +19,4 @@ additionalProperties:
   document: https://dbeaver.com/docs/cloudbeaver/
   architectures:
     - amd64
+    - arm64

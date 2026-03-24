@@ -19,3 +19,4 @@ additionalProperties:
   document: https://pbh-btn.github.io/pbh-docs
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: MOUNT_PATH
       labelEn: Mount folder path
       labelZh: 挂载文件夹路径
+      label:
+        en: Mount folder path
+        zh: 挂载文件夹路径
+        zh-Hant: 挂载文件夹路径
+        ja: Mount folder path
+        ko: Mount folder path
+        ru: Mount folder path
+        ms: Mount folder path
+        pt-br: Mount folder path
       required: true
       type: text

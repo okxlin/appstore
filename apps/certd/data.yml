@@ -19,3 +19,4 @@ additionalProperties:
   document: https://certd.docmirror.cn
   architectures:
     - amd64
+    - arm64

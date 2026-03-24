@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: INSTALL
       labelEn: Whether to perform initial installation
       labelZh: 是否进行初始化安装
+      label:
+        en: Whether to perform initial installation
+        zh: 是否进行初始化安装
+        zh-Hant: 是否进行初始化安装
+        ja: Whether to perform initial installation
+        ko: Whether to perform initial installation
+        ru: Whether to perform initial installation
+        ms: Whether to perform initial installation
+        pt-br: Whether to perform initial installation
       required: true
       type: select
       values:
@@ -25,6 +43,15 @@ additionalProperties:
       envKey: MODIFY
       labelEn: Modified or not
       labelZh: 是否已修改
+      label:
+        en: Modified or not
+        zh: 是否已修改
+        zh-Hant: 是否已修改
+        ja: Modified or not
+        ko: Modified or not
+        ru: Modified or not
+        ms: Modified or not
+        pt-br: Modified or not
       required: true
       type: select
       values:

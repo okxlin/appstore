@@ -5,12 +5,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
       default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       params:
         - envKey: PHOTOVIEW_DB_PORT
           key: mysql
@@ -25,6 +43,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database (requires MySQL8)
       labelZh: 数据库名(要求MySQL8)
+      label:
+        en: Database (requires MySQL8)
+        zh: 数据库名(要求MySQL8)
+        zh-Hant: 数据库名(要求MySQL8)
+        ja: Database (requires MySQL8)
+        ko: Database (requires MySQL8)
+        ru: Database (requires MySQL8)
+        ms: Database (requires MySQL8)
+        pt-br: Database (requires MySQL8)
       random: true
       required: true
       rule: paramCommon
@@ -33,6 +60,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -41,6 +77,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -50,6 +95,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -58,6 +112,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Photos folder path (Inside the container "/photos")
       labelZh: 照片文件夹路径(容器内部"/photos")
+      label:
+        en: Photos folder path (Inside the container "/photos")
+        zh: 照片文件夹路径(容器内部"/photos")
+        zh-Hant: 照片文件夹路径(容器内部"/photos")
+        ja: Photos folder path (Inside the container "/photos")
+        ko: Photos folder path (Inside the container "/photos")
+        ru: Photos folder path (Inside the container "/photos")
+        ms: Photos folder path (Inside the container "/photos")
+        pt-br: Photos folder path (Inside the container "/photos")
       required: true
       type: text
     - default: ./data/cache
@@ -65,5 +128,14 @@ additionalProperties:
       envKey: CACHE_PATH
       labelEn: Cache folder path
       labelZh: 缓存文件夹路径
+      label:
+        en: Cache folder path
+        zh: 缓存文件夹路径
+        zh-Hant: 缓存文件夹路径
+        ja: Cache folder path
+        ko: Cache folder path
+        ru: Cache folder path
+        ms: Cache folder path
+        pt-br: Cache folder path
       required: true
       type: text

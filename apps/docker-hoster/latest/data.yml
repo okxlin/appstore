@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DOCKER_SOCK_PATH
       labelEn: Docker Socket Path
       labelZh: Docker 套接字路径
+      label:
+        en: Docker Socket Path
+        zh: Docker 套接字路径
+        zh-Hant: Docker 套接字路径
+        ja: Docker Socket Path
+        ko: Docker Socket Path
+        ru: Docker Socket Path
+        ms: Docker Socket Path
+        pt-br: Docker Socket Path
       required: true
       type: text
     - default: "/etc/hosts"
@@ -12,5 +21,14 @@ additionalProperties:
       envKey: HOSTS_PATH
       labelEn: Hosts File Path
       labelZh: Hosts 文件路径
+      label:
+        en: Hosts File Path
+        zh: Hosts 文件路径
+        zh-Hant: Hosts 文件路径
+        ja: Hosts File Path
+        ko: Hosts File Path
+        ru: Hosts File Path
+        ms: Hosts File Path
+        pt-br: Hosts File Path
       required: true
       type: text

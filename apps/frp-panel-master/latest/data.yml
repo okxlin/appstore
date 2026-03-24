@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (Internal 9000)
       labelZh: 端口 (对应内部 9000)
+      label:
+        en: Port (Internal 9000)
+        zh: 端口 (对应内部 9000)
+        zh-Hant: 端口 (对应内部 9000)
+        ja: Port (Internal 9000)
+        ko: Port (Internal 9000)
+        ru: Port (Internal 9000)
+        ms: Port (Internal 9000)
+        pt-br: Port (Internal 9000)
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_RPC
       labelEn: RPC Port (Internal 9001)
       labelZh: RPC 端口 (对应内部 9001)
+      label:
+        en: RPC Port (Internal 9001)
+        zh: RPC 端口 (对应内部 9001)
+        zh-Hant: RPC 端口 (对应内部 9001)
+        ja: RPC Port (Internal 9001)
+        ko: RPC Port (Internal 9001)
+        ru: RPC Port (Internal 9001)
+        ms: RPC Port (Internal 9001)
+        pt-br: RPC Port (Internal 9001)
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ''
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: APP_GLOBAL_SECRET
       labelEn: Secret Keys
       labelZh: 通信密钥
+      label:
+        en: Secret Keys
+        zh: 通信密钥
+        zh-Hant: 通信密钥
+        ja: Secret Keys
+        ko: Secret Keys
+        ru: Secret Keys
+        ms: Secret Keys
+        pt-br: Secret Keys
       random: true
       required: true
       rule: paramComplexity
@@ -37,5 +73,14 @@ additionalProperties:
       envKey: MASTER_RPC_HOST
       labelEn: The IP that RPC is listening on
       labelZh: RPC 监听 IP
+      label:
+        en: The IP that RPC is listening on
+        zh: RPC 监听 IP
+        zh-Hant: RPC 监听 IP
+        ja: The IP that RPC is listening on
+        ko: The IP that RPC is listening on
+        ru: The IP that RPC is listening on
+        ms: The IP that RPC is listening on
+        pt-br: The IP that RPC is listening on
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: POSTGRES_PASSWORD
       labelEn: Postgres database User Password
       labelZh: Postgres数据库密码
+      label:
+        en: Postgres database User Password
+        zh: Postgres数据库密码
+        zh-Hant: Postgres数据库密码
+        ja: Postgres database User Password
+        ko: Postgres database User Password
+        ru: Postgres database User Password
+        ms: Postgres database User Password
+        pt-br: Postgres database User Password
       required: true
       rule: paramCommon
       type: password
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: SAFELINE_DIR
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: Data storage folder
+        zh: 数据存放文件夹
+        zh-Hant: 数据存放文件夹
+        ja: Data storage folder
+        ko: Data storage folder
+        ru: Data storage folder
+        ms: Data storage folder
+        pt-br: Data storage folder
       required: true
       type: text
     - default: 172.18.0
@@ -28,5 +55,14 @@ additionalProperties:
       envKey: SUBNET_PREFIX
       labelEn: 1panel-network subnet prefix (Check the docker network to get it)
       labelZh: 1panel-network 子网前缀 (查看docker网络获取)
+      label:
+        en: 1panel-network subnet prefix (Check the docker network to get it)
+        zh: 1panel-network 子网前缀 (查看docker网络获取)
+        zh-Hant: 1panel-network 子网前缀 (查看docker网络获取)
+        ja: 1panel-network subnet prefix (Check the docker network to get it)
+        ko: 1panel-network subnet prefix (Check the docker network to get it)
+        ru: 1panel-network subnet prefix (Check the docker network to get it)
+        ms: 1panel-network subnet prefix (Check the docker network to get it)
+        pt-br: 1panel-network subnet prefix (Check the docker network to get it)
       required: true
       type: text

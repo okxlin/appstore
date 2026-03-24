@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: HTTPS Port
       labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 端口
+        ja: HTTPS Port
+        ko: HTTPS Port
+        ru: HTTPS Port
+        ms: HTTPS Port
+        pt-br: HTTPS Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ./data/mnt1
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: MOUNT_PATH
       labelEn: Mount folder path
       labelZh: 挂载文件夹路径
+      label:
+        en: Mount folder path
+        zh: 挂载文件夹路径
+        zh-Hant: 挂载文件夹路径
+        ja: Mount folder path
+        ko: Mount folder path
+        ru: Mount folder path
+        ms: Mount folder path
+        pt-br: Mount folder path
       required: true
       type: text
     - default: ./data/mnt2
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: MOUNT_PATH2
       labelEn: Mount folder path 2
       labelZh: 挂载文件夹路径2
+      label:
+        en: Mount folder path 2
+        zh: 挂载文件夹路径2
+        zh-Hant: 挂载文件夹路径2
+        ja: Mount folder path 2
+        ko: Mount folder path 2
+        ru: Mount folder path 2
+        ms: Mount folder path 2
+        pt-br: Mount folder path 2
       required: true
       type: text
     - default: Asia/Shanghai
@@ -42,5 +87,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

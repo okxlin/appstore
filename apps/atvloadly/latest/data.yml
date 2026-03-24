@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: Privilege mode switch
+        zh: 特权模式开关
+        zh-Hant: 特权模式开关
+        ja: Privilege mode switch
+        ko: Privilege mode switch
+        ru: Privilege mode switch
+        ms: Privilege mode switch
+        pt-br: Privilege mode switch
       required: true
       type: text
     - default: "./data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "/var/run/dbus"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DBUS_PATH
       labelEn: DBus Path
       labelZh: DBus 路径
+      label:
+        en: DBus Path
+        zh: DBus 路径
+        zh-Hant: DBus 路径
+        ja: DBus Path
+        ko: DBus Path
+        ru: DBus Path
+        ms: DBus Path
+        pt-br: DBus Path
       required: true
       type: text
     - default: "/var/run/avahi-daemon"
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: AVAHI_DAEMON_PATH
       labelEn: Avahi Daemon Path
       labelZh: Avahi Daemon 路径
+      label:
+        en: Avahi Daemon Path
+        zh: Avahi Daemon 路径
+        zh-Hant: Avahi Daemon 路径
+        ja: Avahi Daemon Path
+        ko: Avahi Daemon Path
+        ru: Avahi Daemon Path
+        ms: Avahi Daemon Path
+        pt-br: Avahi Daemon Path
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PROXY
       labelEn: Specify the proxy in the format：protocol://user:pass@ip:port.
       labelZh: 指定代理，格式：protocol://user:pass@ip:port。
+      label:
+        en: Specify the proxy in the format：protocol://user:pass@ip:port.
+        zh: 指定代理，格式：protocol://user:pass@ip:port。
+        zh-Hant: 指定代理，格式：protocol://user:pass@ip:port。
+        ja: Specify the proxy in the format：protocol://user:pass@ip:port.
+        ko: Specify the proxy in the format：protocol://user:pass@ip:port.
+        ru: Specify the proxy in the format：protocol://user:pass@ip:port.
+        ms: Specify the proxy in the format：protocol://user:pass@ip:port.
+        pt-br: Specify the proxy in the format：protocol://user:pass@ip:port.
       required: false
       type: text
     - default: https://ai.fakeopen.com
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: API_BASE_URL
       labelEn: OpenAI API interface address
       labelZh: OpenAI API接口地址
+      label:
+        en: OpenAI API interface address
+        zh: OpenAI API接口地址
+        zh-Hant: OpenAI API接口地址
+        ja: OpenAI API interface address
+        ko: OpenAI API interface address
+        ru: OpenAI API interface address
+        ms: OpenAI API interface address
+        pt-br: OpenAI API interface address
       required: true
       type: text
     - default: https://ai.fakeopen.com
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: REVERSE_PROXY
       labelEn: ChatGPT API reverse proxy
       labelZh: ChatGPT API反向代理
+      label:
+        en: ChatGPT API reverse proxy
+        zh: ChatGPT API反向代理
+        zh-Hant: ChatGPT API反向代理
+        ja: ChatGPT API reverse proxy
+        ko: ChatGPT API reverse proxy
+        ru: ChatGPT API reverse proxy
+        ms: ChatGPT API reverse proxy
+        pt-br: ChatGPT API reverse proxy
       required: true
       type: text

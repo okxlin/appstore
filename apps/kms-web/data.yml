@@ -19,3 +19,5 @@ additionalProperties:
   document: https://hub.docker.com/r/johngong/kms
   architectures:
     - amd64
+    - arm
+    - arm64

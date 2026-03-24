@@ -21,3 +21,4 @@ additionalProperties:
   document: https://openvpn.net/access-server-manual/introduction/
   architectures:
     - amd64
+    - arm64

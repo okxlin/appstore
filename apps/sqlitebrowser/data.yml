@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/sqlitebrowser/sqlitebrowser/wiki
   architectures:
     - amd64
+    - arm
+    - arm64

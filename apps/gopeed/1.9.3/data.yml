@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: Download folder path
+        zh: 下载文件夹路径
+        zh-Hant: 下载文件夹路径
+        ja: Download folder path
+        ko: Download folder path
+        ru: Download folder path
+        ms: Download folder path
+        pt-br: Download folder path
       required: true
       type: text

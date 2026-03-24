@@ -19,3 +19,5 @@ additionalProperties:
   document: https://grafana.com/docs/grafana
   architectures:
     - amd64
+    - arm
+    - arm64

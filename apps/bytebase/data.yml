@@ -19,3 +19,4 @@ additionalProperties:
   document: https://www.bytebase.com/docs
   architectures:
     - amd64
+    - arm64

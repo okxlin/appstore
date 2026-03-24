@@ -19,3 +19,4 @@ additionalProperties:
   document: https://www.autobangumi.org
   architectures:
     - amd64
+    - arm64

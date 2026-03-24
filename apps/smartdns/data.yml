@@ -19,3 +19,4 @@ additionalProperties:
   document: https://pymumu.github.io/smartdns
   architectures:
     - amd64
+    - arm64

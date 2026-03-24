@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/jxxghp/MoviePilot
   architectures:
     - amd64
+    - arm64

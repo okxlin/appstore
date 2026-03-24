@@ -10,13 +10,13 @@ additionalProperties:
       type: number
       label:
         en: WebUI Port
+        zh: WebUI 端口
+        zh-Hant: WebUI 埠
         ja: WebUI ポート
+        ko: WebUI 포트
+        ru: Порт WebUI
         ms: Port WebUI
         pt-br: Porta WebUI
-        ru: Порт WebUI
-        ko: WebUI 포트
-        zh-Hant: WebUI 埠
-        zh: WebUI 端口
     - default: 5246
       edit: true
       envKey: PANEL_APP_PORT_S3
@@ -27,13 +27,13 @@ additionalProperties:
       type: number
       label:
         en: S3 Port
+        zh: S3 端口
+        zh-Hant: S3 埠
         ja: S3 ポート
+        ko: S3 포트
+        ru: Порт S3
         ms: Port S3
         pt-br: Porta S3
-        ru: Порт S3
-        ko: S3 포트
-        zh-Hant: S3 埠
-        zh: S3 端口
     - default: Asia/Shanghai
       edit: true
       envKey: TIME_ZONE
@@ -41,13 +41,13 @@ additionalProperties:
       labelZh: 时区
       label:
         en: Time zone
-        ja: タイムゾーン
-        ms: Zon masa
-        pt-br: Fuso horário
-        ru: Часовой пояс
-        ko: 시간대
         zh: 时区
         zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon masa
+        pt-br: Fuso horário
       required: true
       type: text
     - default: ./data/data
@@ -59,13 +59,13 @@ additionalProperties:
       type: text
       label:
         en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 資料夾路徑
         ja: データフォルダパス
+        ko: 데이터 폴더 경로
+        ru: Путь к папке данных
         ms: Laluan folder data
         pt-br: Caminho da pasta de dados
-        ru: Путь к папке данных
-        ko: 데이터 폴더 경로
-        zh-Hant: 資料夾路徑
-        zh: 数据文件夹路径
     - default: ./data/mnt
       edit: true
       envKey: MOUNT_PATH
@@ -75,10 +75,10 @@ additionalProperties:
       type: text
       label:
         en: Mount folder path
+        zh: 挂载文件夹路径
+        zh-Hant: 掛載資料夾路徑
         ja: マウントフォルダパス
+        ko: 마운트 폴더 경로
+        ru: Путь к точке монтирования
         ms: Laluan folder lekapan
         pt-br: Caminho da pasta de montagem
-        ru: Путь к точке монтирования
-        ko: 마운트 폴더 경로
-        zh-Hant: 掛載資料夾路徑
-        zh: 挂载文件夹路径

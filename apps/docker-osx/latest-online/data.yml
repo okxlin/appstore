@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DISPLAY
       labelEn: Display
       labelZh: 显示
+      label:
+        en: Display
+        zh: 显示
+        zh-Hant: 显示
+        ja: Display
+        ko: Display
+        ru: Display
+        ms: Display
+        pt-br: Display
       required: true
       type: text
     - default: "40287"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: SSH Port
+        zh: SSH 端口
+        zh-Hant: SSH 端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: Restart Policy
+        zh: 重启策略
+        zh-Hant: 重启策略
+        ja: Restart Policy
+        ko: Restart Policy
+        ru: Restart Policy
+        ms: Restart Policy
+        pt-br: Restart Policy
       required: true
       type: select
       values:

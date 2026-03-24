@@ -19,3 +19,5 @@ additionalProperties:
   document: https://gitee.com/tznb/TwoNav/wikis
   architectures:
     - amd64
+    - arm
+    - arm64

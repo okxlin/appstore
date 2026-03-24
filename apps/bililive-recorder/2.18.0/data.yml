@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: USER_NAME
       labelEn: WebUI Username
       labelZh: WebUI 的用户名
+      label:
+        en: WebUI Username
+        zh: WebUI 的用户名
+        zh-Hant: WebUI 的用户名
+        ja: WebUI Username
+        ko: WebUI Username
+        ru: WebUI Username
+        ms: WebUI Username
+        pt-br: WebUI Username
       required: true
       type: text
     - default: admin
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USER_PASSWORD
       labelEn: WebUI access password
       labelZh: WebUI 的访问密码
+      label:
+        en: WebUI access password
+        zh: WebUI 的访问密码
+        zh-Hant: WebUI 的访问密码
+        ja: WebUI access password
+        ko: WebUI access password
+        ru: WebUI access password
+        ms: WebUI access password
+        pt-br: WebUI access password
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: WORK_SPACE_PATH
       labelEn: work space path (Pay attention to folder permissions)
       labelZh: 工作目录路径 (注意文件夹权限)
+      label:
+        en: work space path (Pay attention to folder permissions)
+        zh: 工作目录路径 (注意文件夹权限)
+        zh-Hant: 工作目录路径 (注意文件夹权限)
+        ja: work space path (Pay attention to folder permissions)
+        ko: work space path (Pay attention to folder permissions)
+        ru: work space path (Pay attention to folder permissions)
+        ms: work space path (Pay attention to folder permissions)
+        pt-br: work space path (Pay attention to folder permissions)
       required: true
       type: text
     - default: "022"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: UMASK
       labelZh: 文件权限掩码
+      label:
+        en: UMASK
+        zh: 文件权限掩码
+        zh-Hant: 文件权限掩码
+        ja: UMASK
+        ko: UMASK
+        ru: UMASK
+        ms: UMASK
+        pt-br: UMASK
       required: true
       type: text
     - default: "1000"
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number

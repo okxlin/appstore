@@ -19,3 +19,4 @@ additionalProperties:
   document: https://calibre-ebook.com/help
   architectures:
     - amd64
+    - arm64

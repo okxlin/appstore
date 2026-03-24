@@ -5,12 +5,30 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 数据库服务
+          ja: Database Service
+          ko: Database Service
+          ru: Database Service
+          ms: Database Service
+          pt-br: Database Service
         required: true
         type: service
       default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       params:
         - envKey: FLARUM_DB_PORT
           key: mysql
@@ -29,6 +47,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -37,6 +64,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: PANEL_DB_PREFIX
       labelEn: Database prefix
       labelZh: 数据库前缀
+      label:
+        en: Database prefix
+        zh: 数据库前缀
+        zh-Hant: 数据库前缀
+        ja: Database prefix
+        ko: Database prefix
+        ru: Database prefix
+        ms: Database prefix
+        pt-br: Database prefix
       required: true
       type: text
     - default: 40020
@@ -60,6 +114,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -68,6 +131,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: Data storage folder
+        zh: 数据存放文件夹
+        zh-Hant: 数据存放文件夹
+        ja: Data storage folder
+        ko: Data storage folder
+        ru: Data storage folder
+        ms: Data storage folder
+        pt-br: Data storage folder
       required: true
       type: text
     - default: http://localhost:40020
@@ -75,5 +147,14 @@ additionalProperties:
       envKey: FLARUM_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       type: text

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://radarr.video/docs/
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://helpcenter.onlyoffice.com
   architectures:
     - amd64
+    - arm64

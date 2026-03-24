@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "your-refresh-token"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: REFRESH_TOKEN
       labelEn: Refresh Token
       labelZh: 刷新令牌
+      label:
+        en: Refresh Token
+        zh: 刷新令牌
+        zh-Hant: 刷新令牌
+        ja: Refresh Token
+        ko: Refresh Token
+        ru: Refresh Token
+        ms: Refresh Token
+        pt-br: Refresh Token
       required: true
       type: text
     - default: "admin"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: WEBDAV_AUTH_USER
       labelEn: WebDAV Username
       labelZh: WebDAV 用户名
+      label:
+        en: WebDAV Username
+        zh: WebDAV 用户名
+        zh-Hant: WebDAV 用户名
+        ja: WebDAV Username
+        ko: WebDAV Username
+        ru: WebDAV Username
+        ms: WebDAV Username
+        pt-br: WebDAV Username
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: WEBDAV_AUTH_PASSWORD
       labelEn: WebDAV Password
       labelZh: WebDAV 密码
+      label:
+        en: WebDAV Password
+        zh: WebDAV 密码
+        zh-Hant: WebDAV 密码
+        ja: WebDAV Password
+        ko: WebDAV Password
+        ru: WebDAV Password
+        ms: WebDAV Password
+        pt-br: WebDAV Password
       random: true
       required: true
       rule: paramComplexity

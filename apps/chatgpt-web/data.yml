@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Chanzhaoyu/chatgpt-web
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SD_CONSOLE_CLI_COMFY
       labelEn: CLI ARGS for ComfyUI
       labelZh: ComfyUI 的 CLI_ARGS 参数
+      label:
+        en: CLI ARGS for ComfyUI
+        zh: ComfyUI 的 CLI_ARGS 参数
+        zh-Hant: ComfyUI 的 CLI_ARGS 参数
+        ja: CLI ARGS for ComfyUI
+        ko: CLI ARGS for ComfyUI
+        ru: CLI ARGS for ComfyUI
+        ms: CLI ARGS for ComfyUI
+        pt-br: CLI ARGS for ComfyUI
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SD_CONSOLE_APT_COMFY
       labelEn: Install some package if you want (equivalent to apt-get install -y)
       labelZh: 想安装的软件包 (等同 apt-get install -y)
+      label:
+        en: Install some package if you want (equivalent to apt-get install -y)
+        zh: 想安装的软件包 (等同 apt-get install -y)
+        zh-Hant: 想安装的软件包 (等同 apt-get install -y)
+        ja: Install some package if you want (equivalent to apt-get install -y)
+        ko: Install some package if you want (equivalent to apt-get install -y)
+        ru: Install some package if you want (equivalent to apt-get install -y)
+        ms: Install some package if you want (equivalent to apt-get install -y)
+        pt-br: Install some package if you want (equivalent to apt-get install -y)
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SD_CONSOLE_PIP_COMFY
       labelEn: Install pip package if you want (equivalent to pip install)
       labelZh: 想安装的 pip 包 (等同 pip install)
+      label:
+        en: Install pip package if you want (equivalent to pip install)
+        zh: 想安装的 pip 包 (等同 pip install)
+        zh-Hant: 想安装的 pip 包 (等同 pip install)
+        ja: Install pip package if you want (equivalent to pip install)
+        ko: Install pip package if you want (equivalent to pip install)
+        ru: Install pip package if you want (equivalent to pip install)
+        ms: Install pip package if you want (equivalent to pip install)
+        pt-br: Install pip package if you want (equivalent to pip install)
       required: false
       type: text
     - default: 0
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SD_CONSOLE_DEVICE_IDS
       labelEn: GPU ID
       labelZh: SD 运行指定的 GPU 设备 ID
+      label:
+        en: GPU ID
+        zh: SD 运行指定的 GPU 设备 ID
+        zh-Hant: SD 运行指定的 GPU 设备 ID
+        ja: GPU ID
+        ko: GPU ID
+        ru: GPU ID
+        ms: GPU ID
+        pt-br: GPU ID
       required: true
       type: number
     - default: ./data/data
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: Data storage folder
+        zh: 数据存放文件夹
+        zh-Hant: 数据存放文件夹
+        ja: Data storage folder
+        ko: Data storage folder
+        ru: Data storage folder
+        ms: Data storage folder
+        pt-br: Data storage folder
       required: true
       type: text
     - default: ./data/output
@@ -48,5 +102,14 @@ additionalProperties:
       envKey: OUTPUT_PATH
       labelEn: Picture output folder
       labelZh: 图片输出文件夹
+      label:
+        en: Picture output folder
+        zh: 图片输出文件夹
+        zh-Hant: 图片输出文件夹
+        ja: Picture output folder
+        ko: Picture output folder
+        ru: Picture output folder
+        ms: Picture output folder
+        pt-br: Picture output folder
       required: true
       type: text

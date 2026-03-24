@@ -21,3 +21,4 @@ additionalProperties:
   document: https://www.softether.org/4-docs
   architectures:
     - amd64
+    - arm64

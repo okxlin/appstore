@@ -19,3 +19,5 @@ additionalProperties:
   document: https://docs.lrc.cx
   architectures:
     - amd64
+    - arm
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://www.nginxwebui.cn/product.html
   architectures:
     - amd64
+    - arm64

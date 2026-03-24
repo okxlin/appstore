@@ -6,6 +6,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Web Port
       labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 端口
+        ja: Web Port
+        ko: Web Port
+        ru: Web Port
+        ms: Web Port
+        pt-br: Web Port
       required: true
       type: number
     - default: "40328"
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: VNC_PORT
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: VNC Port
+        zh: VNC 端口
+        zh-Hant: VNC 端口
+        ja: VNC Port
+        ko: VNC Port
+        ru: VNC Port
+        ms: VNC Port
+        pt-br: VNC Port
       required: true
       type: number
     - default: "password"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: VNC_PASSWORD
       labelEn: VNC Password
       labelZh: VNC 密码
+      label:
+        en: VNC Password
+        zh: VNC 密码
+        zh-Hant: VNC 密码
+        ja: VNC Password
+        ko: VNC Password
+        ru: VNC Password
+        ms: VNC Password
+        pt-br: VNC Password
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Configuration Path
       labelZh: 配置路径
+      label:
+        en: Configuration Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Configuration Path
+        ko: Configuration Path
+        ru: Configuration Path
+        ms: Configuration Path
+        pt-br: Configuration Path
       required: true
       type: text
     - default: "1000"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: ""
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: SUP_GROUP_IDS
       labelEn: Supplementary Group IDs
       labelZh: 补充用户组 ID
+      label:
+        en: Supplementary Group IDs
+        zh: 补充用户组 ID
+        zh-Hant: 补充用户组 ID
+        ja: Supplementary Group IDs
+        ko: Supplementary Group IDs
+        ru: Supplementary Group IDs
+        ms: Supplementary Group IDs
+        pt-br: Supplementary Group IDs
       required: false
       type: text
     - default: "0022"
@@ -57,6 +120,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: Umask
       labelZh: 文件创建权限掩码
+      label:
+        en: Umask
+        zh: 文件创建权限掩码
+        zh-Hant: 文件创建权限掩码
+        ja: Umask
+        ko: Umask
+        ru: Umask
+        ms: Umask
+        pt-br: Umask
       required: true
       type: text
     - default: "en_US.UTF-8"
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Locale
       labelZh: 语言环境
+      label:
+        en: Locale
+        zh: 语言环境
+        zh-Hant: 语言环境
+        ja: Locale
+        ko: Locale
+        ru: Locale
+        ms: Locale
+        pt-br: Locale
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -71,6 +152,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Timezone
+        ko: Timezone
+        ru: Timezone
+        ms: Timezone
+        pt-br: Timezone
       required: true
       type: text
     - default: "0"
@@ -78,6 +168,15 @@ additionalProperties:
       envKey: KEEP_APP_RUNNING
       labelEn: Keep App Running
       labelZh: 保持应用运行
+      label:
+        en: Keep App Running
+        zh: 保持应用运行
+        zh-Hant: 保持应用运行
+        ja: Keep App Running
+        ko: Keep App Running
+        ru: Keep App Running
+        ms: Keep App Running
+        pt-br: Keep App Running
       required: true
       type: select
       values:
@@ -90,6 +189,15 @@ additionalProperties:
       envKey: APP_NICENESS
       labelEn: App Niceness
       labelZh: 应用优先级
+      label:
+        en: App Niceness
+        zh: 应用优先级
+        zh-Hant: 应用优先级
+        ja: App Niceness
+        ko: App Niceness
+        ru: App Niceness
+        ms: App Niceness
+        pt-br: App Niceness
       required: true
       type: select
       values:
@@ -104,6 +212,15 @@ additionalProperties:
       envKey: INSTALL_PACKAGES
       labelEn: Install Packages
       labelZh: 安装包
+      label:
+        en: Install Packages
+        zh: 安装包
+        zh-Hant: 安装包
+        ja: Install Packages
+        ko: Install Packages
+        ru: Install Packages
+        ms: Install Packages
+        pt-br: Install Packages
       required: false
       type: text
     - default: ""
@@ -111,6 +228,15 @@ additionalProperties:
       envKey: PACKAGES_MIRROR
       labelEn: Packages Mirror
       labelZh: 软件包镜像
+      label:
+        en: Packages Mirror
+        zh: 软件包镜像
+        zh-Hant: 软件包镜像
+        ja: Packages Mirror
+        ko: Packages Mirror
+        ru: Packages Mirror
+        ms: Packages Mirror
+        pt-br: Packages Mirror
       required: false
       type: text
     - default: "0"
@@ -118,6 +244,15 @@ additionalProperties:
       envKey: CONTAINER_DEBUG
       labelEn: Container Debug
       labelZh: 容器调试
+      label:
+        en: Container Debug
+        zh: 容器调试
+        zh-Hant: 容器调试
+        ja: Container Debug
+        ko: Container Debug
+        ru: Container Debug
+        ms: Container Debug
+        pt-br: Container Debug
       required: true
       type: select
       values:
@@ -130,6 +265,15 @@ additionalProperties:
       envKey: DISPLAY_WIDTH
       labelEn: Display Width
       labelZh: 显示宽度
+      label:
+        en: Display Width
+        zh: 显示宽度
+        zh-Hant: 显示宽度
+        ja: Display Width
+        ko: Display Width
+        ru: Display Width
+        ms: Display Width
+        pt-br: Display Width
       required: true
       type: number
     - default: "1080"
@@ -137,6 +281,15 @@ additionalProperties:
       envKey: DISPLAY_HEIGHT
       labelEn: Display Height
       labelZh: 显示高度
+      label:
+        en: Display Height
+        zh: 显示高度
+        zh-Hant: 显示高度
+        ja: Display Height
+        ko: Display Height
+        ru: Display Height
+        ms: Display Height
+        pt-br: Display Height
       required: true
       type: number
     - default: "0"
@@ -144,6 +297,15 @@ additionalProperties:
       envKey: DARK_MODE
       labelEn: Dark Mode
       labelZh: 暗黑模式
+      label:
+        en: Dark Mode
+        zh: 暗黑模式
+        zh-Hant: 暗黑模式
+        ja: Dark Mode
+        ko: Dark Mode
+        ru: Dark Mode
+        ms: Dark Mode
+        pt-br: Dark Mode
       required: true
       type: select
       values:
@@ -156,6 +318,15 @@ additionalProperties:
       envKey: WEB_AUDIO
       labelEn: Web Audio
       labelZh: Web 音频
+      label:
+        en: Web Audio
+        zh: Web 音频
+        zh-Hant: Web 音频
+        ja: Web Audio
+        ko: Web Audio
+        ru: Web Audio
+        ms: Web Audio
+        pt-br: Web Audio
       required: true
       type: select
       values:
@@ -168,6 +339,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION
       labelEn: Web Authentication
       labelZh: Web 身份验证
+      label:
+        en: Web Authentication
+        zh: Web 身份验证
+        zh-Hant: Web 身份验证
+        ja: Web Authentication
+        ko: Web Authentication
+        ru: Web Authentication
+        ms: Web Authentication
+        pt-br: Web Authentication
       required: true
       type: select
       values:
@@ -180,6 +360,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION_USERNAME
       labelEn: Web Authentication Username
       labelZh: Web 身份验证用户名
+      label:
+        en: Web Authentication Username
+        zh: Web 身份验证用户名
+        zh-Hant: Web 身份验证用户名
+        ja: Web Authentication Username
+        ko: Web Authentication Username
+        ru: Web Authentication Username
+        ms: Web Authentication Username
+        pt-br: Web Authentication Username
       required: false
       type: text
     - default: ""
@@ -187,6 +376,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION_PASSWORD
       labelEn: Web Authentication Password
       labelZh: Web 身份验证密码
+      label:
+        en: Web Authentication Password
+        zh: Web 身份验证密码
+        zh-Hant: Web 身份验证密码
+        ja: Web Authentication Password
+        ko: Web Authentication Password
+        ru: Web Authentication Password
+        ms: Web Authentication Password
+        pt-br: Web Authentication Password
       required: false
       type: text
     - default: "1"
@@ -194,6 +392,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION
       labelEn: Secure Connection
       labelZh: 安全连接
+      label:
+        en: Secure Connection
+        zh: 安全连接
+        zh-Hant: 安全连接
+        ja: Secure Connection
+        ko: Secure Connection
+        ru: Secure Connection
+        ms: Secure Connection
+        pt-br: Secure Connection
       required: true
       type: select
       values:
@@ -206,6 +413,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION_VNC_METHOD
       labelEn: Secure VNC Method
       labelZh: 安全 VNC 方法
+      label:
+        en: Secure VNC Method
+        zh: 安全 VNC 方法
+        zh-Hant: 安全 VNC 方法
+        ja: Secure VNC Method
+        ko: Secure VNC Method
+        ru: Secure VNC Method
+        ms: Secure VNC Method
+        pt-br: Secure VNC Method
       required: true
       type: select
       values:
@@ -218,6 +434,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION_CERTS_CHECK_INTERVAL
       labelEn: Secure Connection Certs Check Interval
       labelZh: 安全连接证书检查间隔
+      label:
+        en: Secure Connection Certs Check Interval
+        zh: 安全连接证书检查间隔
+        zh-Hant: 安全连接证书检查间隔
+        ja: Secure Connection Certs Check Interval
+        ko: Secure Connection Certs Check Interval
+        ru: Secure Connection Certs Check Interval
+        ms: Secure Connection Certs Check Interval
+        pt-br: Secure Connection Certs Check Interval
       required: true
       type: number
     - default: "0"
@@ -225,6 +450,15 @@ additionalProperties:
       envKey: ENABLE_CJK_FONT
       labelEn: Enable CJK Font
       labelZh: 启用 CJK 字体
+      label:
+        en: Enable CJK Font
+        zh: 启用 CJK 字体
+        zh-Hant: 启用 CJK 字体
+        ja: Enable CJK Font
+        ko: Enable CJK Font
+        ru: Enable CJK Font
+        ms: Enable CJK Font
+        pt-br: Enable CJK Font
       required: true
       type: select
       values:

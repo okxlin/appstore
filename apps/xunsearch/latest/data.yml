@@ -5,6 +5,15 @@ additionalProperties:
       envKey: INDEX_SERVER_PORT
       labelEn: Index server Port
       labelZh: 索引服务端配置端口
+      label:
+        en: Index server Port
+        zh: 索引服务端配置端口
+        zh-Hant: 索引服务端配置端口
+        ja: Index server Port
+        ko: Index server Port
+        ru: Index server Port
+        ms: Index server Port
+        pt-br: Index server Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SEARCH_SERVER_PORT
       labelEn: Search server port
       labelZh: 搜索服务端配置端口
+      label:
+        en: Search server port
+        zh: 搜索服务端配置端口
+        zh-Hant: 搜索服务端配置端口
+        ja: Search server port
+        ko: Search server port
+        ru: Search server port
+        ms: Search server port
+        pt-br: Search server port
       required: true
       rule: paramPort
       type: number
@@ -21,5 +39,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text

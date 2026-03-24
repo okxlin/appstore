@@ -19,3 +19,5 @@ additionalProperties:
   document: https://troyeguo.notion.site/Koodo-Reader-0c9c7ccdc5104a54825dfc72f1c84bea
   architectures:
     - amd64
+    - arm
+    - arm64

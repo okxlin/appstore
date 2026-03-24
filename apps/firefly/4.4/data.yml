@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: FIREFLY_PASSWORD
       labelEn: Webui password
       labelZh: 网页密码
+      label:
+        en: Webui password
+        zh: 网页密码
+        zh-Hant: 网页密码
+        ja: Webui password
+        ko: Webui password
+        ru: Webui password
+        ms: Webui password
+        pt-br: Webui password
       random: true
       required: true
       rule: paramComplexity
@@ -22,6 +40,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text
     - default: "false"
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: FIREFLY_AUTO_SSL
       labelEn: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
       labelZh: 是否启用自动获取 SSL 证书 (开启则需要将端口设置为 443)
+      label:
+        en: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
+        zh: 是否启用自动获取 SSL 证书 (开启则需要将端口设置为 443)
+        zh-Hant: 是否启用自动获取 SSL 证书 (开启则需要将端口设置为 443)
+        ja: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
+        ko: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
+        ru: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
+        ms: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
+        pt-br: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
       required: true
       type: select
       values:
@@ -41,5 +77,14 @@ additionalProperties:
       envKey: FIREFLY_DEVICE
       labelEn: The network interface names for inbound and outbound traffic with WireGuard
       labelZh: WireGuard 出入流量网卡名称
+      label:
+        en: The network interface names for inbound and outbound traffic with WireGuard
+        zh: WireGuard 出入流量网卡名称
+        zh-Hant: WireGuard 出入流量网卡名称
+        ja: The network interface names for inbound and outbound traffic with WireGuard
+        ko: The network interface names for inbound and outbound traffic with WireGuard
+        ru: The network interface names for inbound and outbound traffic with WireGuard
+        ms: The network interface names for inbound and outbound traffic with WireGuard
+        pt-br: The network interface names for inbound and outbound traffic with WireGuard
       required: false
       type: text

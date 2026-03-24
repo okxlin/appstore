@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/CorentinTh/it-tools
   architectures:
     - amd64
+    - arm64

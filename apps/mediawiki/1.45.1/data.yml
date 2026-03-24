@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MEDIAWIKI_IMAGES_PATH
       labelEn: MediaWiki Images Path
       labelZh: MediaWiki 图片路径
+      label:
+        en: MediaWiki Images Path
+        zh: MediaWiki 图片路径
+        zh-Hant: MediaWiki 图片路径
+        ja: MediaWiki Images Path
+        ko: MediaWiki Images Path
+        ru: MediaWiki Images Path
+        ms: MediaWiki Images Path
+        pt-br: MediaWiki Images Path
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: MEDIAWIKI_DATA_PATH
       labelEn: MediaWiki Data Path
       labelZh: MediaWiki 数据路径
+      label:
+        en: MediaWiki Data Path
+        zh: MediaWiki 数据路径
+        zh-Hant: MediaWiki 数据路径
+        ja: MediaWiki Data Path
+        ko: MediaWiki Data Path
+        ru: MediaWiki Data Path
+        ms: MediaWiki Data Path
+        pt-br: MediaWiki Data Path
       required: true
       type: text
     - default: "/var/www/data"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: Internal container data paths
+        zh: 容器内部数据路径
+        zh-Hant: 容器内部数据路径
+        ja: Internal container data paths
+        ko: Internal container data paths
+        ru: Internal container data paths
+        ms: Internal container data paths
+        pt-br: Internal container data paths
       required: true
       type: text
     - default: "./data/LocalSettings.php"
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: LOCAL_SETTINGS_PATH
       labelEn: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
       labelZh: LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件)
+      label:
+        en: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
+        zh: LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件)
+        zh-Hant: LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件)
+        ja: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
+        ko: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
+        ru: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
+        ms: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
+        pt-br: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
       required: true
       type: text

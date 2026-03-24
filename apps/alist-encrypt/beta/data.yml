@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: '192.168.31.254:5254'
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: ALIST_HOST
       labelEn: Alist Service Address
       labelZh: Alist 服务地址
+      label:
+        en: Alist Service Address
+        zh: Alist 服务地址
+        zh-Hant: Alist 服务地址
+        ja: Alist Service Address
+        ko: Alist Service Address
+        ru: Alist Service Address
+        ms: Alist Service Address
+        pt-br: Alist Service Address
       required: true
       type: text
     - default: Asia/Shanghai
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

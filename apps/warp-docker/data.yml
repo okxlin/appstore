@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/cmj2002/warp-docker
   architectures:
     - amd64
+    - arm64

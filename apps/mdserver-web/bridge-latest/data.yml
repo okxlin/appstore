@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Panel Port
       labelZh: 面板端口
+      label:
+        en: Web Panel Port
+        zh: 面板端口
+        zh-Hant: 面板端口
+        ja: Web Panel Port
+        ko: Web Panel Port
+        ru: Web Panel Port
+        ms: Web Panel Port
+        pt-br: Web Panel Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HTTP_PORT
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HTTPS_PORT
       labelEn: HTTPS Port
       labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 端口
+        ja: HTTPS Port
+        ko: HTTPS Port
+        ru: HTTPS Port
+        ms: HTTPS Port
+        pt-br: HTTPS Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PHPMYAYMIN_PORT
       labelEn: phpMyAdmin Port
       labelZh: phpMyAdmin 端口
+      label:
+        en: phpMyAdmin Port
+        zh: phpMyAdmin 端口
+        zh-Hant: phpMyAdmin 端口
+        ja: phpMyAdmin Port
+        ko: phpMyAdmin Port
+        ru: phpMyAdmin Port
+        ms: phpMyAdmin Port
+        pt-br: phpMyAdmin Port
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: CLOSE_ADMIN_PATH
       labelEn: Close Admin Path
       labelZh: 关闭管理路径
+      label:
+        en: Close Admin Path
+        zh: 关闭管理路径
+        zh-Hant: 关闭管理路径
+        ja: Close Admin Path
+        ko: Close Admin Path
+        ru: Close Admin Path
+        ms: Close Admin Path
+        pt-br: Close Admin Path
       required: true
       type: select
       values:
@@ -49,6 +94,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: Username
+        zh: 用户名
+        zh-Hant: 用户名
+        ja: Username
+        ko: Username
+        ru: Username
+        ms: Username
+        pt-br: Username
       random: true
       required: true
       type: text
@@ -57,6 +111,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: Password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity

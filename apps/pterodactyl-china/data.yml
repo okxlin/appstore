@@ -19,3 +19,4 @@ additionalProperties:
   document: https://pterodactyl.top/
   architectures:
     - amd64
+    - arm64

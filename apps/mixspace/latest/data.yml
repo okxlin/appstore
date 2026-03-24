@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: ALLOWED_ORIGINS
       labelEn: Allowed domain (multiple delimited with ",")
       labelZh: 被允许的域名 (多个使用英文逗号分割)
+      label:
+        en: Allowed domain (multiple delimited with ",")
+        zh: 被允许的域名 (多个使用英文逗号分割)
+        zh-Hant: 被允许的域名 (多个使用英文逗号分割)
+        ja: Allowed domain (multiple delimited with ",")
+        ko: Allowed domain (multiple delimited with ",")
+        ru: Allowed domain (multiple delimited with ",")
+        ms: Allowed domain (multiple delimited with ",")
+        pt-br: Allowed domain (multiple delimited with ",")
       required: true
       type: text
     - default: Np2qgqtiUayA857a
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: JWT_SECRET
       labelEn: JWT key (16 to 32 characters)
       labelZh: JWT 密钥 (16 到 32 位字符)
+      label:
+        en: JWT key (16 to 32 characters)
+        zh: JWT 密钥 (16 到 32 位字符)
+        zh-Hant: JWT 密钥 (16 到 32 位字符)
+        ja: JWT key (16 to 32 characters)
+        ko: JWT key (16 to 32 characters)
+        ru: JWT key (16 to 32 characters)
+        ms: JWT key (16 to 32 characters)
+        pt-br: JWT key (16 to 32 characters)
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: ENCRYPT_KEY
       labelEn: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
       labelZh: 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)
+      label:
+        en: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
+        zh: 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)
+        zh-Hant: 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)
+        ja: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
+        ko: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
+        ru: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
+        ms: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
+        pt-br: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
       required: false
       type: text
     - default: "false"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: ENCRYPT_ENABLE
       labelEn: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
       labelZh: 是否开启加密 (true或false,开启则需要填写加密密钥)
+      label:
+        en: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
+        zh: 是否开启加密 (true或false,开启则需要填写加密密钥)
+        zh-Hant: 是否开启加密 (true或false,开启则需要填写加密密钥)
+        ja: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
+        ko: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
+        ru: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
+        ms: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
+        pt-br: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
       required: true
       type: text
     - default: Asia/Shanghai
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text
     - default: 172.19.0
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: SUBNET_PREFIX
       labelEn: New docker network subnet prefix
       labelZh: 新 docker 网络子网前缀
+      label:
+        en: New docker network subnet prefix
+        zh: 新 docker 网络子网前缀
+        zh-Hant: 新 docker 网络子网前缀
+        ja: New docker network subnet prefix
+        ko: New docker network subnet prefix
+        ru: New docker network subnet prefix
+        ms: New docker network subnet prefix
+        pt-br: New docker network subnet prefix
       required: true
       type: text

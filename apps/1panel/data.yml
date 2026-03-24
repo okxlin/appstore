@@ -19,3 +19,5 @@ additionalProperties:
   document: https://1panel.cn/docs
   architectures:
     - amd64
+    - arm
+    - arm64

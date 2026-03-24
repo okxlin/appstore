@@ -19,3 +19,4 @@ additionalProperties:
   document: https://frigate.video/docs/
   architectures:
     - amd64
+    - arm64

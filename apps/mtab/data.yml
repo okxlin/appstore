@@ -19,3 +19,5 @@ additionalProperties:
   document: https://www.mtab.cc
   architectures:
     - amd64
+    - arm
+    - arm64

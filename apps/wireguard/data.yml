@@ -21,3 +21,4 @@ additionalProperties:
   document: https://www.wireguard.com
   architectures:
     - amd64
+    - arm64

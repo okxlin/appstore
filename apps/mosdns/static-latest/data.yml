@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: DNS service port
       labelZh: DNS服务端口
+      label:
+        en: DNS service port
+        zh: DNS服务端口
+        zh-Hant: DNS服务端口
+        ja: DNS service port
+        ko: DNS service port
+        ru: DNS service port
+        ms: DNS service port
+        pt-br: DNS service port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_API
       labelEn: API port
       labelZh: API端口
+      label:
+        en: API port
+        zh: API端口
+        zh-Hant: API端口
+        ja: API port
+        ko: API port
+        ru: API port
+        ms: API port
+        pt-br: API port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: 172.18.0.240
@@ -28,5 +55,14 @@ additionalProperties:
       envKey: SUBNET
       labelEn: Subnet IP
       labelZh: 子网 IP
+      label:
+        en: Subnet IP
+        zh: 子网 IP
+        zh-Hant: 子网 IP
+        ja: Subnet IP
+        ko: Subnet IP
+        ru: Subnet IP
+        ms: Subnet IP
+        pt-br: Subnet IP
       required: true
       type: text

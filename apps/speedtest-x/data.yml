@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/BadApple9/speedtest-x
   architectures:
     - amd64
+    - arm64

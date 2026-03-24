@@ -19,3 +19,4 @@ additionalProperties:
   document: https://nginxproxymanager.com/guide/
   architectures:
     - amd64
+    - arm64

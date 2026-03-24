@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Configuration Path
       labelZh: 配置路径
+      label:
+        en: Configuration Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Configuration Path
+        ko: Configuration Path
+        ru: Configuration Path
+        ms: Configuration Path
+        pt-br: Configuration Path
       required: true
       type: text
     - default: "bulma"
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: TEMPLATE_NAME
       labelEn: Template Name
       labelZh: 模板名称
+      label:
+        en: Template Name
+        zh: 模板名称
+        zh-Hant: 模板名称
+        ja: Template Name
+        ko: Template Name
+        ru: Template Name
+        ms: Template Name
+        pt-br: Template Name
       required: true
       type: text

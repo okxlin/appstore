@@ -19,3 +19,5 @@ additionalProperties:
   document: https://doc.xiaoz.me/books/zdir-3
   architectures:
     - amd64
+    - arm
+    - arm64

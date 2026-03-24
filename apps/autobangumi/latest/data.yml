@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "0"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "0"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "022"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: Umask
       labelZh: 掩码权限
+      label:
+        en: Umask
+        zh: 掩码权限
+        zh-Hant: 掩码权限
+        ja: Umask
+        ko: Umask
+        ru: Umask
+        ms: Umask
+        pt-br: Umask
       required: true
       type: text
     - default: "223.5.5.5"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: DNS_SERVER
       labelEn: DNS Server
       labelZh: DNS 服务器
+      label:
+        en: DNS Server
+        zh: DNS 服务器
+        zh-Hant: DNS 服务器
+        ja: DNS Server
+        ko: DNS Server
+        ru: DNS Server
+        ms: DNS Server
+        pt-br: DNS Server
       required: true
       type: text
     - default: Asia/Shanghai
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

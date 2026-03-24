@@ -19,3 +19,4 @@ additionalProperties:
   document: https://manual.seafile.com
   architectures:
     - amd64
+    - arm64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ./data/audiobooks
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH1
       labelEn: audiobooks folder path
       labelZh: audiobooks 文件夹路径
+      label:
+        en: audiobooks folder path
+        zh: audiobooks 文件夹路径
+        zh-Hant: audiobooks 文件夹路径
+        ja: audiobooks folder path
+        ko: audiobooks folder path
+        ru: audiobooks folder path
+        ms: audiobooks folder path
+        pt-br: audiobooks folder path
       required: true
       type: text
     - default: ./data/podcasts
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DATA_PATH2
       labelEn: podcasts folder path
       labelZh: podcasts 文件夹路径
+      label:
+        en: podcasts folder path
+        zh: podcasts 文件夹路径
+        zh-Hant: podcasts 文件夹路径
+        ja: podcasts folder path
+        ko: podcasts folder path
+        ru: podcasts folder path
+        ms: podcasts folder path
+        pt-br: podcasts folder path
       required: true
       type: text
     - default: ./data/metadata
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: DATA_PATH3
       labelEn: metadata folder path
       labelZh: metadata 文件夹路径
+      label:
+        en: metadata folder path
+        zh: metadata 文件夹路径
+        zh-Hant: metadata 文件夹路径
+        ja: metadata folder path
+        ko: metadata folder path
+        ru: metadata folder path
+        ms: metadata folder path
+        pt-br: metadata folder path
       required: true
       type: text

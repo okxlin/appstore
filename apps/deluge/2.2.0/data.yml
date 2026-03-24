@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DELUGE_PEER_PORT
       labelEn: Peer Port
       labelZh: Peer 端口
+      label:
+        en: Peer Port
+        zh: Peer 端口
+        zh-Hant: Peer 端口
+        ja: Peer Port
+        ko: Peer Port
+        ru: Peer Port
+        ms: Peer Port
+        pt-br: Peer Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DELUGE_PORT_RPC
       labelEn: RPC Port
       labelZh: RPC 端口
+      label:
+        en: RPC Port
+        zh: RPC 端口
+        zh-Hant: RPC 端口
+        ja: RPC Port
+        ko: RPC Port
+        ru: RPC Port
+        ms: RPC Port
+        pt-br: RPC Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
     - default: "1000"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "error"
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: DELUGE_LOGLEVEL
       labelEn: Deluge Log Level
       labelZh: Deluge 日志级别
+      label:
+        en: Deluge Log Level
+        zh: Deluge 日志级别
+        zh-Hant: Deluge 日志级别
+        ja: Deluge Log Level
+        ko: Deluge Log Level
+        ru: Deluge Log Level
+        ms: Deluge Log Level
+        pt-br: Deluge Log Level
       required: true
       type: text
     - default: "./data/config"
@@ -57,6 +120,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Deluge Config Path
       labelZh: Deluge 配置路径
+      label:
+        en: Deluge Config Path
+        zh: Deluge 配置路径
+        zh-Hant: Deluge 配置路径
+        ja: Deluge Config Path
+        ko: Deluge Config Path
+        ru: Deluge Config Path
+        ms: Deluge Config Path
+        pt-br: Deluge Config Path
       required: true
       type: text
     - default: "./data/downloads"
@@ -64,5 +136,14 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Downloads Path
       labelZh: 下载路径
+      label:
+        en: Downloads Path
+        zh: 下载路径
+        zh-Hant: 下载路径
+        ja: Downloads Path
+        ko: Downloads Path
+        ru: Downloads Path
+        ms: Downloads Path
+        pt-br: Downloads Path
       required: true
       type: text

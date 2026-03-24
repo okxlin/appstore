@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/wikihost-opensource/als
   architectures:
     - amd64
+    - arm64

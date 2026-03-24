@@ -21,3 +21,4 @@ additionalProperties:
   document: https://github.com/117503445/GoWebDAV
   architectures:
     - amd64
+    - arm64

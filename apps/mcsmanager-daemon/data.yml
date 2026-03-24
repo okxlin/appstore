@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.mcsmanager.com/
   architectures:
     - amd64
+    - arm64

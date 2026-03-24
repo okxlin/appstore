@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,12 +22,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: "https://your-domain.com"
       envKey: ORIGIN
       labelEn: External URL (Only https environments can register and login, reverse proxy is required)
       labelZh: 外部访问地址 (只有 https 环境才能注册登录，需要反向代理)
+      label:
+        en: External URL (Only https environments can register and login, reverse proxy is required)
+        zh: 外部访问地址 (只有 https 环境才能注册登录，需要反向代理)
+        zh-Hant: 外部访问地址 (只有 https 环境才能注册登录，需要反向代理)
+        ja: External URL (Only https environments can register and login, reverse proxy is required)
+        ko: External URL (Only https environments can register and login, reverse proxy is required)
+        ru: External URL (Only https environments can register and login, reverse proxy is required)
+        ms: External URL (Only https environments can register and login, reverse proxy is required)
+        pt-br: External URL (Only https environments can register and login, reverse proxy is required)
       required: true
       type: text
       edit: true
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: USER_APPROVAL_REQUIRED
       labelEn: Whether to require user approval before they can upload images
       labelZh: 是否需要用户批准才能上传图像
+      label:
+        en: Whether to require user approval before they can upload images
+        zh: 是否需要用户批准才能上传图像
+        zh-Hant: 是否需要用户批准才能上传图像
+        ja: Whether to require user approval before they can upload images
+        ko: Whether to require user approval before they can upload images
+        ru: Whether to require user approval before they can upload images
+        ms: Whether to require user approval before they can upload images
+        pt-br: Whether to require user approval before they can upload images
       required: true
       type: select
       values:
@@ -38,6 +74,15 @@ additionalProperties:
       envKey: USER_ALLOW_UNAUTHENTICATED_ACCESS
       labelEn: Allow Unauthenticated Access
       labelZh: 允许未认证访问
+      label:
+        en: Allow Unauthenticated Access
+        zh: 允许未认证访问
+        zh-Hant: 允许未认证访问
+        ja: Allow Unauthenticated Access
+        ko: Allow Unauthenticated Access
+        ru: Allow Unauthenticated Access
+        ms: Allow Unauthenticated Access
+        pt-br: Allow Unauthenticated Access
       required: true
       type: select
       values:
@@ -50,6 +95,15 @@ additionalProperties:
       envKey: USER_PASSWORD_MIN_LENGTH
       labelEn: User Password Minimum Length
       labelZh: 用户密码最小长度
+      label:
+        en: User Password Minimum Length
+        zh: 用户密码最小长度
+        zh-Hant: 用户密码最小长度
+        ja: User Password Minimum Length
+        ko: User Password Minimum Length
+        ru: User Password Minimum Length
+        ms: User Password Minimum Length
+        pt-br: User Password Minimum Length
       required: true
       type: number
       edit: true
@@ -57,6 +111,15 @@ additionalProperties:
       envKey: USER_PASSWORD_REQUIREMENTS
       labelEn: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
       labelZh: 用户密码要求 (以下选项的总和：1-数字、2-小写、4-大写、8-特殊字符)
+      label:
+        en: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
+        zh: 用户密码要求 (以下选项的总和：1-数字、2-小写、4-大写、8-特殊字符)
+        zh-Hant: 用户密码要求 (以下选项的总和：1-数字、2-小写、4-大写、8-特殊字符)
+        ja: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
+        ko: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
+        ru: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
+        ms: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
+        pt-br: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
       required: true
       type: number
       edit: true
@@ -64,6 +127,15 @@ additionalProperties:
       envKey: IMAGE_MAX_SIZE
       labelEn: Image Maximum Size (no more than 50M)
       labelZh: 图片最大尺寸(不超过50M)
+      label:
+        en: Image Maximum Size (no more than 50M)
+        zh: 图片最大尺寸(不超过50M)
+        zh-Hant: 图片最大尺寸(不超过50M)
+        ja: Image Maximum Size (no more than 50M)
+        ko: Image Maximum Size (no more than 50M)
+        ru: Image Maximum Size (no more than 50M)
+        ms: Image Maximum Size (no more than 50M)
+        pt-br: Image Maximum Size (no more than 50M)
       required: true
       type: text
       edit: true
@@ -71,6 +143,15 @@ additionalProperties:
       envKey: IMAGE_STRIP_EXIF_METADATA
       labelEn: Strip EXIF Metadata
       labelZh: 剥离 EXIF 元数据
+      label:
+        en: Strip EXIF Metadata
+        zh: 剥离 EXIF 元数据
+        zh-Hant: 剥离 EXIF 元数据
+        ja: Strip EXIF Metadata
+        ko: Strip EXIF Metadata
+        ru: Strip EXIF Metadata
+        ms: Strip EXIF Metadata
+        pt-br: Strip EXIF Metadata
       required: true
       type: select
       values:
@@ -83,6 +164,15 @@ additionalProperties:
       envKey: STORAGE_PROVIDER
       labelEn: Storage Provider
       labelZh: 存储提供商
+      label:
+        en: Storage Provider
+        zh: 存储提供商
+        zh-Hant: 存储提供商
+        ja: Storage Provider
+        ko: Storage Provider
+        ru: Storage Provider
+        ms: Storage Provider
+        pt-br: Storage Provider
       required: true
       type: select
       values:
@@ -95,6 +185,15 @@ additionalProperties:
       envKey: SMB_HOST
       labelEn: SMB Host
       labelZh: SMB 主机
+      label:
+        en: SMB Host
+        zh: SMB 主机
+        zh-Hant: SMB 主机
+        ja: SMB Host
+        ko: SMB Host
+        ru: SMB Host
+        ms: SMB Host
+        pt-br: SMB Host
       required: false
       type: text
       edit: true
@@ -102,6 +201,15 @@ additionalProperties:
       envKey: SMB_USERNAME
       labelEn: SMB Username
       labelZh: SMB 用户名
+      label:
+        en: SMB Username
+        zh: SMB 用户名
+        zh-Hant: SMB 用户名
+        ja: SMB Username
+        ko: SMB Username
+        ru: SMB Username
+        ms: SMB Username
+        pt-br: SMB Username
       required: false
       type: text
       edit: true
@@ -109,6 +217,15 @@ additionalProperties:
       envKey: SMB_PASSWORD
       labelEn: SMB Password
       labelZh: SMB 密码
+      label:
+        en: SMB Password
+        zh: SMB 密码
+        zh-Hant: SMB 密码
+        ja: SMB Password
+        ko: SMB Password
+        ru: SMB Password
+        ms: SMB Password
+        pt-br: SMB Password
       required: false
       type: password
       edit: true
@@ -116,6 +233,15 @@ additionalProperties:
       envKey: SMB_SHARE
       labelEn: SMB Share
       labelZh: SMB 共享
+      label:
+        en: SMB Share
+        zh: SMB 共享
+        zh-Hant: SMB 共享
+        ja: SMB Share
+        ko: SMB Share
+        ru: SMB Share
+        ms: SMB Share
+        pt-br: SMB Share
       required: false
       type: text
       edit: true

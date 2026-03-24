@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/louislam/dockge
   architectures:
     - amd64
+    - arm
+    - arm64

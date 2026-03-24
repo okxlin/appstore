@@ -6,6 +6,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Application HTTP Port
       labelZh: 应用 HTTP 端口
+      label:
+        en: Application HTTP Port
+        zh: 应用 HTTP 端口
+        zh-Hant: 应用 HTTP 端口
+        ja: Application HTTP Port
+        ko: Application HTTP Port
+        ru: Application HTTP Port
+        ms: Application HTTP Port
+        pt-br: Application HTTP Port
       required: true
       type: number
     - default: 40226
@@ -14,6 +23,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Application HTTPS Port
       labelZh: 应用 HTTPS 端口
+      label:
+        en: Application HTTPS Port
+        zh: 应用 HTTPS 端口
+        zh-Hant: 应用 HTTPS 端口
+        ja: Application HTTPS Port
+        ko: Application HTTPS Port
+        ru: Application HTTPS Port
+        ms: Application HTTPS Port
+        pt-br: Application HTTPS Port
       required: true
       type: number
     - default: www.example.xyz
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HTTP_SERVER_NAME
       labelEn: HTTP Server Name
       labelZh: HTTP 服务器名称
+      label:
+        en: HTTP Server Name
+        zh: HTTP 服务器名称
+        zh-Hant: HTTP 服务器名称
+        ja: HTTP Server Name
+        ko: HTTP Server Name
+        ru: HTTP Server Name
+        ms: HTTP Server Name
+        pt-br: HTTP Server Name
       required: true
       type: text
     - default: www.example.xyz
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: HTTPS_SERVER_NAME
       labelEn: HTTPS Server Name
       labelZh: HTTPS 服务器名称
+      label:
+        en: HTTPS Server Name
+        zh: HTTPS 服务器名称
+        zh-Hant: HTTPS 服务器名称
+        ja: HTTPS Server Name
+        ko: HTTPS Server Name
+        ru: HTTPS Server Name
+        ms: HTTPS Server Name
+        pt-br: HTTPS Server Name
       required: true
       type: text
     - default: admin@example.xyz
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: SERVER_ADMIN
       labelEn: Server Admin
       labelZh: 服务器管理员
+      label:
+        en: Server Admin
+        zh: 服务器管理员
+        zh-Hant: 服务器管理员
+        ja: Server Admin
+        ko: Server Admin
+        ru: Server Admin
+        ms: Server Admin
+        pt-br: Server Admin
       required: true
       type: text
     - default: Asia/Shanghai
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text
     - default: 512M
@@ -49,6 +103,15 @@ additionalProperties:
       envKey: PHP_MEMORY_LIMIT
       labelEn: PHP Memory Limit
       labelZh: PHP 内存限制
+      label:
+        en: PHP Memory Limit
+        zh: PHP 内存限制
+        zh-Hant: PHP 内存限制
+        ja: PHP Memory Limit
+        ko: PHP Memory Limit
+        ru: PHP Memory Limit
+        ms: PHP Memory Limit
+        pt-br: PHP Memory Limit
       required: true
       type: text
     - default: 8M
@@ -56,5 +119,14 @@ additionalProperties:
       envKey: UPLOAD_MAX_FILESIZE
       labelEn: Upload Max Filesize
       labelZh: 上传文件最大限制
+      label:
+        en: Upload Max Filesize
+        zh: 上传文件最大限制
+        zh-Hant: 上传文件最大限制
+        ja: Upload Max Filesize
+        ko: Upload Max Filesize
+        ru: Upload Max Filesize
+        ms: Upload Max Filesize
+        pt-br: Upload Max Filesize
       required: true
       type: text

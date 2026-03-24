@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Script-Hub-Org/Script-Hub/wiki
   architectures:
     - amd64
+    - arm64

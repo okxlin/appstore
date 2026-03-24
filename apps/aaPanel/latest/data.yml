@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Panel Port
       labelZh: 面板端口
+      label:
+        en: Web Panel Port
+        zh: 面板端口
+        zh-Hant: 面板端口
+        ja: Web Panel Port
+        ko: Web Panel Port
+        ru: Web Panel Port
+        ms: Web Panel Port
+        pt-br: Web Panel Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HTTP_PORT
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HTTPS_PORT
       labelEn: HTTPS Port
       labelZh: HTTPS端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS端口
+        zh-Hant: HTTPS端口
+        ja: HTTPS Port
+        ko: HTTPS Port
+        ru: HTTPS Port
+        ms: HTTPS Port
+        pt-br: HTTPS Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PHPMYADMIN_PORT
       labelEn: phpMyAdmin Port
       labelZh: phpMyAdmin端口
+      label:
+        en: phpMyAdmin Port
+        zh: phpMyAdmin端口
+        zh-Hant: phpMyAdmin端口
+        ja: phpMyAdmin Port
+        ko: phpMyAdmin Port
+        ru: phpMyAdmin Port
+        ms: phpMyAdmin Port
+        pt-br: phpMyAdmin Port
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: SSH_PORT
       labelEn: SSH Port
       labelZh: 面板内SSH端口
+      label:
+        en: SSH Port
+        zh: 面板内SSH端口
+        zh-Hant: 面板内SSH端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: FTP_PORT
       labelEn: SSH Port
       labelZh: 面板内FTP端口
+      label:
+        en: SSH Port
+        zh: 面板内FTP端口
+        zh-Hant: 面板内FTP端口
+        ja: SSH Port
+        ko: SSH Port
+        ru: SSH Port
+        ms: SSH Port
+        pt-br: SSH Port
       required: true
       rule: paramPort
       type: number

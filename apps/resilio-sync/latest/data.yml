@@ -5,6 +5,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       type: number
       edit: true
@@ -13,6 +22,15 @@ additionalProperties:
       rule: paramPort
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: Sync Port
+        zh: 同步端口
+        zh-Hant: 同步端口
+        ja: Sync Port
+        ko: Sync Port
+        ru: Sync Port
+        ms: Sync Port
+        pt-br: Sync Port
       required: true
       type: number
       edit: true
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
       edit: true
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DOWNLOADS_PATH
       labelEn: Downloads Path
       labelZh: 下载路径
+      label:
+        en: Downloads Path
+        zh: 下载路径
+        zh-Hant: 下载路径
+        ja: Downloads Path
+        ko: Downloads Path
+        ru: Downloads Path
+        ms: Downloads Path
+        pt-br: Downloads Path
       required: true
       type: text
       edit: true
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SYNC_PATH
       labelEn: Sync Path
       labelZh: 同步路径
+      label:
+        en: Sync Path
+        zh: 同步路径
+        zh-Hant: 同步路径
+        ja: Sync Path
+        ko: Sync Path
+        ru: Sync Path
+        ms: Sync Path
+        pt-br: Sync Path
       required: true
       type: text
       edit: true
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: EXTERNAL_MOUNT_PATH
       labelEn: External mount path
       labelZh: 外部挂载路径
+      label:
+        en: External mount path
+        zh: 外部挂载路径
+        zh-Hant: 外部挂载路径
+        ja: External mount path
+        ko: External mount path
+        ru: External mount path
+        ms: External mount path
+        pt-br: External mount path
       required: true
       type: text
       edit: true
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: INTERNAL_MOUNT_PATH
       labelEn: Internal mount path
       labelZh: 内部挂载路径
+      label:
+        en: Internal mount path
+        zh: 内部挂载路径
+        zh-Hant: 内部挂载路径
+        ja: Internal mount path
+        ko: Internal mount path
+        ru: Internal mount path
+        ms: Internal mount path
+        pt-br: Internal mount path
       required: true
       type: text
       edit: true
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: true
       type: number
       edit: true
@@ -62,6 +134,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 用户组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: true
       type: number
       edit: true
@@ -69,6 +150,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
       edit: true

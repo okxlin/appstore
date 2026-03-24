@@ -6,6 +6,15 @@ additionalProperties:
       key: mariadb
       labelEn: MariaDB Database Service
       labelZh: MariaDB数据库服务
+      label:
+        en: MariaDB Database Service
+        zh: MariaDB数据库服务
+        zh-Hant: MariaDB数据库服务
+        ja: MariaDB Database Service
+        ko: MariaDB Database Service
+        ru: MariaDB Database Service
+        ms: MariaDB Database Service
+        pt-br: MariaDB Database Service
       required: true
       type: service
     - default: "3306"
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PHOTOPRISM_DB_PORT
       labelEn: MariaDB Database Service Port
       labelZh: MariaDB数据库服务端口
+      label:
+        en: MariaDB Database Service Port
+        zh: MariaDB数据库服务端口
+        zh-Hant: MariaDB数据库服务端口
+        ja: MariaDB Database Service Port
+        ko: MariaDB Database Service Port
+        ru: MariaDB Database Service Port
+        ms: MariaDB Database Service Port
+        pt-br: MariaDB Database Service Port
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: 1000
@@ -52,6 +106,15 @@ additionalProperties:
       envKey: UID
       labelEn: UID
       labelZh: UID
+      label:
+        en: UID
+        zh: UID
+        zh-Hant: UID
+        ja: UID
+        ko: UID
+        ru: UID
+        ms: UID
+        pt-br: UID
       required: true
       type: number
     - default: 1000
@@ -59,6 +122,15 @@ additionalProperties:
       envKey: GID
       labelEn: GID
       labelZh: GID
+      label:
+        en: GID
+        zh: GID
+        zh-Hant: GID
+        ja: GID
+        ko: GID
+        ru: GID
+        ms: GID
+        pt-br: GID
       required: true
       type: number
     - default: admin
@@ -66,6 +138,15 @@ additionalProperties:
       envKey: ADMIN_USER
       labelEn: Admin user
       labelZh: 管理员用户名
+      label:
+        en: Admin user
+        zh: 管理员用户名
+        zh-Hant: 管理员用户名
+        ja: Admin user
+        ko: Admin user
+        ru: Admin user
+        ms: Admin user
+        pt-br: Admin user
       required: true
       type: text
     - default: photoprism
@@ -73,6 +154,15 @@ additionalProperties:
       envKey: ADMIN_PASSWORD
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理员密码
+        ja: Admin Password
+        ko: Admin Password
+        ru: Admin Password
+        ms: Admin Password
+        pt-br: Admin Password
       random: false
       required: true
       rule: paramComplexity
@@ -82,6 +172,15 @@ additionalProperties:
       envKey: PHOTOPRISM_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       type: text
     - default: ""
@@ -89,6 +188,15 @@ additionalProperties:
       envKey: SITE_DESCRIPTION
       labelEn: Site description
       labelZh: 网站描述
+      label:
+        en: Site description
+        zh: 网站描述
+        zh-Hant: 网站描述
+        ja: Site description
+        ko: Site description
+        ru: Site description
+        ms: Site description
+        pt-br: Site description
       required: false
       type: text
     - default: ""
@@ -96,6 +204,15 @@ additionalProperties:
       envKey: SITE_AUTHOR
       labelEn: Site description
       labelZh: 网站作者
+      label:
+        en: Site description
+        zh: 网站作者
+        zh-Hant: 网站作者
+        ja: Site description
+        ko: Site description
+        ru: Site description
+        ms: Site description
+        pt-br: Site description
       required: false
       type: text
     - default: "AI-Powered Photos App"
@@ -103,5 +220,14 @@ additionalProperties:
       envKey: SITE_CAPTION
       labelEn: Site caption
       labelZh: 网站标题
+      label:
+        en: Site caption
+        zh: 网站标题
+        zh-Hant: 网站标题
+        ja: Site caption
+        ko: Site caption
+        ru: Site caption
+        ms: Site caption
+        pt-br: Site caption
       required: false
       type: text

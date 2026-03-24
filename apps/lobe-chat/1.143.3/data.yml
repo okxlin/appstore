@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: OPENAI_API_KEY
       labelEn: OpenAI API Key
       labelZh: OpenAI API 密钥
+      label:
+        en: OpenAI API Key
+        zh: OpenAI API 密钥
+        zh-Hant: OpenAI API 密钥
+        ja: OpenAI API Key
+        ko: OpenAI API Key
+        ru: OpenAI API Key
+        ms: OpenAI API Key
+        pt-br: OpenAI API Key
       required: false
       type: password
     - default: "https://api.openai.com/v1"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: OPENAI_PROXY_URL
       labelEn: OpenAI Proxy URL
       labelZh: OpenAI 代理 URL
+      label:
+        en: OpenAI Proxy URL
+        zh: OpenAI 代理 URL
+        zh-Hant: OpenAI 代理 URL
+        ja: OpenAI Proxy URL
+        ko: OpenAI Proxy URL
+        ru: OpenAI Proxy URL
+        ms: OpenAI Proxy URL
+        pt-br: OpenAI Proxy URL
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: ACCESS_CODE
       labelEn: Access Code
       labelZh: 访问密码
+      label:
+        en: Access Code
+        zh: 访问密码
+        zh-Hant: 访问密码
+        ja: Access Code
+        ko: Access Code
+        ru: Access Code
+        ms: Access Code
+        pt-br: Access Code
       random: true
       required: false
       rule: paramComplexity
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: OPENAI_MODEL_LIST
       labelEn: OpenAI Model List
       labelZh: OpenAI 模型列表
+      label:
+        en: OpenAI Model List
+        zh: OpenAI 模型列表
+        zh-Hant: OpenAI 模型列表
+        ja: OpenAI Model List
+        ko: OpenAI Model List
+        ru: OpenAI Model List
+        ms: OpenAI Model List
+        pt-br: OpenAI Model List
       required: false
       type: text

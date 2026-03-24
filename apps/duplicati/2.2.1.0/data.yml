@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: BACKUPS_PATH
       labelEn: External Backups Path
       labelZh: 外部备份路径
+      label:
+        en: External Backups Path
+        zh: 外部备份路径
+        zh-Hant: 外部备份路径
+        ja: External Backups Path
+        ko: External Backups Path
+        ru: External Backups Path
+        ms: External Backups Path
+        pt-br: External Backups Path
       required: true
       type: text
     - default: "/backups"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: INTERNAL_BACKUPS_PATH
       labelEn: Internal Backups Path
       labelZh: 内部备份路径
+      label:
+        en: Internal Backups Path
+        zh: 内部备份路径
+        zh-Hant: 内部备份路径
+        ja: Internal Backups Path
+        ko: Internal Backups Path
+        ru: Internal Backups Path
+        ms: Internal Backups Path
+        pt-br: Internal Backups Path
       required: true
       type: text
     - default: "./data/data"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: VPN_PORT_53
       labelEn: VPN Port 53
       labelZh: VPN 端口 53
+      label:
+        en: VPN Port 53
+        zh: VPN 端口 53
+        zh-Hant: VPN 端口 53
+        ja: VPN Port 53
+        ko: VPN Port 53
+        ru: VPN Port 53
+        ms: VPN Port 53
+        pt-br: VPN Port 53
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: VPN_PORT_443
       labelEn: VPN Port 443
       labelZh: VPN 端口 443
+      label:
+        en: VPN Port 443
+        zh: VPN 端口 443
+        zh-Hant: VPN 端口 443
+        ja: VPN Port 443
+        ko: VPN Port 443
+        ru: VPN Port 443
+        ms: VPN Port 443
+        pt-br: VPN Port 443
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: VPN_PORT_992
       labelEn: VPN Port 992
       labelZh: VPN 端口 992
+      label:
+        en: VPN Port 992
+        zh: VPN 端口 992
+        zh-Hant: VPN 端口 992
+        ja: VPN Port 992
+        ko: VPN Port 992
+        ru: VPN Port 992
+        ms: VPN Port 992
+        pt-br: VPN Port 992
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: VPN_PORT_1194_UDP
       labelEn: VPN Port 1194 (UDP)
       labelZh: VPN 端口 1194 (UDP)
+      label:
+        en: VPN Port 1194 (UDP)
+        zh: VPN 端口 1194 (UDP)
+        zh-Hant: VPN 端口 1194 (UDP)
+        ja: VPN Port 1194 (UDP)
+        ko: VPN Port 1194 (UDP)
+        ru: VPN Port 1194 (UDP)
+        ms: VPN Port 1194 (UDP)
+        pt-br: VPN Port 1194 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: VPN_PORT_5555
       labelEn: VPN Port 5555
       labelZh: VPN 端口 5555
+      label:
+        en: VPN Port 5555
+        zh: VPN 端口 5555
+        zh-Hant: VPN 端口 5555
+        ja: VPN Port 5555
+        ko: VPN Port 5555
+        ru: VPN Port 5555
+        ms: VPN Port 5555
+        pt-br: VPN Port 5555
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: VPN_PORT_500_UDP
       labelEn: VPN Port 500 (UDP)
       labelZh: VPN 端口 500 (UDP)
+      label:
+        en: VPN Port 500 (UDP)
+        zh: VPN 端口 500 (UDP)
+        zh-Hant: VPN 端口 500 (UDP)
+        ja: VPN Port 500 (UDP)
+        ko: VPN Port 500 (UDP)
+        ru: VPN Port 500 (UDP)
+        ms: VPN Port 500 (UDP)
+        pt-br: VPN Port 500 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: VPN_PORT_4500_UDP
       labelEn: VPN Port 4500 (UDP)
       labelZh: VPN 端口 4500 (UDP)
+      label:
+        en: VPN Port 4500 (UDP)
+        zh: VPN 端口 4500 (UDP)
+        zh-Hant: VPN 端口 4500 (UDP)
+        ja: VPN Port 4500 (UDP)
+        ko: VPN Port 4500 (UDP)
+        ru: VPN Port 4500 (UDP)
+        ms: VPN Port 4500 (UDP)
+        pt-br: VPN Port 4500 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: VPN_PORT_1701_UDP
       labelEn: VPN Port 1701 (UDP)
       labelZh: VPN 端口 1701 (UDP)
+      label:
+        en: VPN Port 1701 (UDP)
+        zh: VPN 端口 1701 (UDP)
+        zh-Hant: VPN 端口 1701 (UDP)
+        ja: VPN Port 1701 (UDP)
+        ko: VPN Port 1701 (UDP)
+        ru: VPN Port 1701 (UDP)
+        ms: VPN Port 1701 (UDP)
+        pt-br: VPN Port 1701 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: SOFTETHER_DATA_PATH
       labelEn: SoftEther Data Path
       labelZh: SoftEther 数据路径
+      label:
+        en: SoftEther Data Path
+        zh: SoftEther 数据路径
+        zh-Hant: SoftEther 数据路径
+        ja: SoftEther Data Path
+        ko: SoftEther Data Path
+        ru: SoftEther Data Path
+        ms: SoftEther Data Path
+        pt-br: SoftEther Data Path
       required: true
       type: text
     - default: "./data/softether_log"
@@ -76,6 +157,15 @@ additionalProperties:
       envKey: SOFTETHER_LOG_PATH
       labelEn: SoftEther Log Path
       labelZh: SoftEther 日志路径
+      label:
+        en: SoftEther Log Path
+        zh: SoftEther 日志路径
+        zh-Hant: SoftEther 日志路径
+        ja: SoftEther Log Path
+        ko: SoftEther Log Path
+        ru: SoftEther Log Path
+        ms: SoftEther Log Path
+        pt-br: SoftEther Log Path
       required: true
       type: text
     - default: "./data/softether_packetlog"
@@ -83,6 +173,15 @@ additionalProperties:
       envKey: SOFTETHER_PACKETLOG_PATH
       labelEn: SoftEther Packet Log Path
       labelZh: SoftEther 数据包日志路径
+      label:
+        en: SoftEther Packet Log Path
+        zh: SoftEther 数据包日志路径
+        zh-Hant: SoftEther 数据包日志路径
+        ja: SoftEther Packet Log Path
+        ko: SoftEther Packet Log Path
+        ru: SoftEther Packet Log Path
+        ms: SoftEther Packet Log Path
+        pt-br: SoftEther Packet Log Path
       required: true
       type: text
     - default: "./data/softether_securitylog"
@@ -90,5 +189,14 @@ additionalProperties:
       envKey: SOFTETHER_SECURITYLOG_PATH
       labelEn: SoftEther Security Log Path
       labelZh: SoftEther 安全日志路径
+      label:
+        en: SoftEther Security Log Path
+        zh: SoftEther 安全日志路径
+        zh-Hant: SoftEther 安全日志路径
+        ja: SoftEther Security Log Path
+        ko: SoftEther Security Log Path
+        ru: SoftEther Security Log Path
+        ms: SoftEther Security Log Path
+        pt-br: SoftEther Security Log Path
       required: true
       type: text

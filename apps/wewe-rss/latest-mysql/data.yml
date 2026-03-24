@@ -9,6 +9,15 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: apps
       values:
@@ -20,6 +29,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +46,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +63,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: AUTH_CODE
       labelEn: Auth Code
       labelZh: 授权码
+      label:
+        en: Auth Code
+        zh: 授权码
+        zh-Hant: 授权码
+        ja: Auth Code
+        ko: Auth Code
+        ru: Auth Code
+        ms: Auth Code
+        pt-br: Auth Code
       random: true
       required: true
       rule: paramComplexity
@@ -62,6 +116,15 @@ additionalProperties:
       envKey: SERVER_ORIGIN_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       rule: paramExtUrl
       type: text
@@ -70,6 +133,15 @@ additionalProperties:
       envKey: FEED_MODE
       labelEn: Feed Mode
       labelZh: 提取模式
+      label:
+        en: Feed Mode
+        zh: 提取模式
+        zh-Hant: 提取模式
+        ja: Feed Mode
+        ko: Feed Mode
+        ru: Feed Mode
+        ms: Feed Mode
+        pt-br: Feed Mode
       required: false
       type: text
     - default: "35 5,17 * * *"
@@ -77,6 +149,15 @@ additionalProperties:
       envKey: CRON_EXPRESSION
       labelEn: Cron Expression
       labelZh: 定时更新表达式
+      label:
+        en: Cron Expression
+        zh: 定时更新表达式
+        zh-Hant: 定时更新表达式
+        ja: Cron Expression
+        ko: Cron Expression
+        ru: Cron Expression
+        ms: Cron Expression
+        pt-br: Cron Expression
       required: false
       type: text
     - default: "60"
@@ -84,5 +165,14 @@ additionalProperties:
       envKey: MAX_REQUEST_PER_MINUTE
       labelEn: Max Requests Per Minute
       labelZh: 每分钟最大请求次数
+      label:
+        en: Max Requests Per Minute
+        zh: 每分钟最大请求次数
+        zh-Hant: 每分钟最大请求次数
+        ja: Max Requests Per Minute
+        ko: Max Requests Per Minute
+        ru: Max Requests Per Minute
+        ms: Max Requests Per Minute
+        pt-br: Max Requests Per Minute
       required: false
       type: number

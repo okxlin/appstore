@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/Awesome-Technologies/synapse-admin
   architectures:
     - amd64
+    - arm64

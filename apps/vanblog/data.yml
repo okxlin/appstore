@@ -19,3 +19,4 @@ additionalProperties:
   document: https://vanblog.mereith.com
   architectures:
     - amd64
+    - arm64

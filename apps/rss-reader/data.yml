@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/srcrs/rss-reader
   architectures:
     - amd64
+    - arm64

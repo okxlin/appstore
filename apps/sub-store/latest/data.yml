@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SUB_STORE_PUSH_SERVICE
       labelEn: Push Service URL
       labelZh: 推送服务 URL
+      label:
+        en: Push Service URL
+        zh: 推送服务 URL
+        zh-Hant: 推送服务 URL
+        ja: Push Service URL
+        ko: Push Service URL
+        ru: Push Service URL
+        ms: Push Service URL
+        pt-br: Push Service URL
       required: true
       type: text
     - default: "55 23 * * *"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SUB_STORE_CRON
       labelEn: Cron Schedule
       labelZh: Cron 定时任务
+      label:
+        en: Cron Schedule
+        zh: Cron 定时任务
+        zh-Hant: Cron 定时任务
+        ja: Cron Schedule
+        ko: Cron Schedule
+        ru: Cron Schedule
+        ms: Cron Schedule
+        pt-br: Cron Schedule
       required: true
       type: text
     - default: "/2cXaAxRGfddmGz2yx1wA"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SUB_STORE_FRONTEND_BACKEND_PATH
       labelEn: Frontend Backend Path
       labelZh: 前端后端路径
+      label:
+        en: Frontend Backend Path
+        zh: 前端后端路径
+        zh-Hant: 前端后端路径
+        ja: Frontend Backend Path
+        ko: Frontend Backend Path
+        ru: Frontend Backend Path
+        ms: Frontend Backend Path
+        pt-br: Frontend Backend Path
       required: true
       type: text
     - default: "./data"
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Directory
       labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 数据目录
+        ja: Data Directory
+        ko: Data Directory
+        ru: Data Directory
+        ms: Data Directory
+        pt-br: Data Directory
       required: true
       type: text

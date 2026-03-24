@@ -19,3 +19,5 @@ additionalProperties:
   document: https://wanglin2.github.io/mind-map/#/doc/zh/
   architectures:
     - amd64
+    - arm
+    - arm64

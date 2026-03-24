@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: BING_MAP_API_KEY
       labelEn: Bing Map API Key
       labelZh: Bing 地图 API Key
+      label:
+        en: Bing Map API Key
+        zh: Bing 地图 API Key
+        zh-Hant: Bing 地图 API Key
+        ja: Bing Map API Key
+        ko: Bing Map API Key
+        ru: Bing Map API Key
+        ms: Bing Map API Key
+        pt-br: Bing Map API Key
       required: false
       type: text
     - default: ''
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IPINFO_API_TOKEN
       labelEn: IPInfo.io API
       labelZh: IPinfo.io 的 API
+      label:
+        en: IPInfo.io API
+        zh: IPinfo.io 的 API
+        zh-Hant: IPinfo.io 的 API
+        ja: IPInfo.io API
+        ko: IPInfo.io API
+        ru: IPInfo.io API
+        ms: IPInfo.io API
+        pt-br: IPInfo.io API
       required: false
       type: text
     - default: "example.com"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: ALLOWED_DOMAINS
       labelEn: Allowed domains
       labelZh: 允许的域名
+      label:
+        en: Allowed domains
+        zh: 允许的域名
+        zh-Hant: 允许的域名
+        ja: Allowed domains
+        ko: Allowed domains
+        ru: Allowed domains
+        ms: Allowed domains
+        pt-br: Allowed domains
       required: false
       type: text

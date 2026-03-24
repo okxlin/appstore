@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port 32400 (TCP)
       labelZh: 端口 32400 (TCP)
+      label:
+        en: Port 32400 (TCP)
+        zh: 端口 32400 (TCP)
+        zh-Hant: 端口 32400 (TCP)
+        ja: Port 32400 (TCP)
+        ko: Port 32400 (TCP)
+        ru: Port 32400 (TCP)
+        ms: Port 32400 (TCP)
+        pt-br: Port 32400 (TCP)
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_3005
       labelEn: Port 3005 (TCP)
       labelZh: 端口 3005 (TCP)
+      label:
+        en: Port 3005 (TCP)
+        zh: 端口 3005 (TCP)
+        zh-Hant: 端口 3005 (TCP)
+        ja: Port 3005 (TCP)
+        ko: Port 3005 (TCP)
+        ru: Port 3005 (TCP)
+        ms: Port 3005 (TCP)
+        pt-br: Port 3005 (TCP)
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_8324
       labelEn: Port 8324 (TCP)
       labelZh: 端口 8324 (TCP)
+      label:
+        en: Port 8324 (TCP)
+        zh: 端口 8324 (TCP)
+        zh-Hant: 端口 8324 (TCP)
+        ja: Port 8324 (TCP)
+        ko: Port 8324 (TCP)
+        ru: Port 8324 (TCP)
+        ms: Port 8324 (TCP)
+        pt-br: Port 8324 (TCP)
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_32469
       labelEn: Port 32469 (TCP)
       labelZh: 端口 32469 (TCP)
+      label:
+        en: Port 32469 (TCP)
+        zh: 端口 32469 (TCP)
+        zh-Hant: 端口 32469 (TCP)
+        ja: Port 32469 (TCP)
+        ko: Port 32469 (TCP)
+        ru: Port 32469 (TCP)
+        ms: Port 32469 (TCP)
+        pt-br: Port 32469 (TCP)
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_1900
       labelEn: Port 1900 (UDP)
       labelZh: 端口 1900 (UDP)
+      label:
+        en: Port 1900 (UDP)
+        zh: 端口 1900 (UDP)
+        zh-Hant: 端口 1900 (UDP)
+        ja: Port 1900 (UDP)
+        ko: Port 1900 (UDP)
+        ru: Port 1900 (UDP)
+        ms: Port 1900 (UDP)
+        pt-br: Port 1900 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32410
       labelEn: Port 32410 (UDP)
       labelZh: 端口 32410 (UDP)
+      label:
+        en: Port 32410 (UDP)
+        zh: 端口 32410 (UDP)
+        zh-Hant: 端口 32410 (UDP)
+        ja: Port 32410 (UDP)
+        ko: Port 32410 (UDP)
+        ru: Port 32410 (UDP)
+        ms: Port 32410 (UDP)
+        pt-br: Port 32410 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32412
       labelEn: Port 32412 (UDP)
       labelZh: 端口 32412 (UDP)
+      label:
+        en: Port 32412 (UDP)
+        zh: 端口 32412 (UDP)
+        zh-Hant: 端口 32412 (UDP)
+        ja: Port 32412 (UDP)
+        ko: Port 32412 (UDP)
+        ru: Port 32412 (UDP)
+        ms: Port 32412 (UDP)
+        pt-br: Port 32412 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32413
       labelEn: Port 32413 (UDP)
       labelZh: 端口 32413 (UDP)
+      label:
+        en: Port 32413 (UDP)
+        zh: 端口 32413 (UDP)
+        zh-Hant: 端口 32413 (UDP)
+        ja: Port 32413 (UDP)
+        ko: Port 32413 (UDP)
+        ru: Port 32413 (UDP)
+        ms: Port 32413 (UDP)
+        pt-br: Port 32413 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32414
       labelEn: Port 32414 (UDP)
       labelZh: 端口 32414 (UDP)
+      label:
+        en: Port 32414 (UDP)
+        zh: 端口 32414 (UDP)
+        zh-Hant: 端口 32414 (UDP)
+        ja: Port 32414 (UDP)
+        ko: Port 32414 (UDP)
+        ru: Port 32414 (UDP)
+        ms: Port 32414 (UDP)
+        pt-br: Port 32414 (UDP)
       required: true
       rule: paramPort
       type: number
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: TIMEZONE
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Timezone
+        ko: Timezone
+        ru: Timezone
+        ms: Timezone
+        pt-br: Timezone
       required: true
       type: text
     - default: ""
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: PLEX_CLAIM
       labelEn: Plex Claim
       labelZh: Plex 认证令牌
+      label:
+        en: Plex Claim
+        zh: Plex 认证令牌
+        zh-Hant: Plex 认证令牌
+        ja: Plex Claim
+        ko: Plex Claim
+        ru: Plex Claim
+        ms: Plex Claim
+        pt-br: Plex Claim
       required: false
       type: text
     - default: "1000"
@@ -91,6 +190,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 用户 ID
+        ja: User ID
+        ko: User ID
+        ru: User ID
+        ms: User ID
+        pt-br: User ID
       required: false
       type: number
     - default: "1000"
@@ -98,6 +206,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: Group ID
+        zh: 组 ID
+        zh-Hant: 组 ID
+        ja: Group ID
+        ko: Group ID
+        ru: Group ID
+        ms: Group ID
+        pt-br: Group ID
       required: false
       type: number
     - default: "./data/library"
@@ -105,6 +222,15 @@ additionalProperties:
       envKey: LIBRARY_PATH
       labelEn: Library Path
       labelZh: Library 路径
+      label:
+        en: Library Path
+        zh: Library 路径
+        zh-Hant: Library 路径
+        ja: Library Path
+        ko: Library Path
+        ru: Library Path
+        ms: Library Path
+        pt-br: Library Path
       required: true
       type: text
     - default: "./data/tv"
@@ -112,6 +238,15 @@ additionalProperties:
       envKey: TVSERIES_PATH
       labelEn: TV Series Path
       labelZh: 电视剧路径
+      label:
+        en: TV Series Path
+        zh: 电视剧路径
+        zh-Hant: 电视剧路径
+        ja: TV Series Path
+        ko: TV Series Path
+        ru: TV Series Path
+        ms: TV Series Path
+        pt-br: TV Series Path
       required: true
       type: text
     - default: "./data/movies"
@@ -119,5 +254,14 @@ additionalProperties:
       envKey: MOVIES_PATH
       labelEn: Movies Path
       labelZh: 电影路径
+      label:
+        en: Movies Path
+        zh: 电影路径
+        zh-Hant: 电影路径
+        ja: Movies Path
+        ko: Movies Path
+        ru: Movies Path
+        ms: Movies Path
+        pt-br: Movies Path
       required: true
       type: text

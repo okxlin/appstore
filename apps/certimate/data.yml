@@ -19,3 +19,4 @@ additionalProperties:
   document: https://docs.certimate.me
   architectures:
     - amd64
+    - arm64

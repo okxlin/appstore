@@ -19,3 +19,4 @@ additionalProperties:
   document: https://domain-admin.readthedocs.io/
   architectures:
     - amd64
+    - arm64

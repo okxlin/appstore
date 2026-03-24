@@ -19,3 +19,5 @@ additionalProperties:
   document: https://donknap.github.io/dpanel-docs
   architectures:
     - amd64
+    - arm
+    - arm64

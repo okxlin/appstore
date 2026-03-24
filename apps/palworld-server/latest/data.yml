@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_RCON
       labelEn: RCON Port
       labelZh: RCON 端口
+      label:
+        en: RCON Port
+        zh: RCON 端口
+        zh-Hant: RCON 端口
+        ja: RCON Port
+        ko: RCON Port
+        ru: RCON Port
+        ms: RCON Port
+        pt-br: RCON Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: MAX_PLAYERS
       labelEn: Maximum number of participants on the server
       labelZh: 玩家数量限制
+      label:
+        en: Maximum number of participants on the server
+        zh: 玩家数量限制
+        zh-Hant: 玩家数量限制
+        ja: Maximum number of participants on the server
+        ko: Maximum number of participants on the server
+        ru: Maximum number of participants on the server
+        ms: Maximum number of participants on the server
+        pt-br: Maximum number of participants on the server
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: MULTITHREAD_SWITCH
       labelEn: Improves performance in multi-threaded CPU environments (true / false)
       labelZh: 是否启用 CPU 多线程优化 (true / false)
+      label:
+        en: Improves performance in multi-threaded CPU environments (true / false)
+        zh: 是否启用 CPU 多线程优化 (true / false)
+        zh-Hant: 是否启用 CPU 多线程优化 (true / false)
+        ja: Improves performance in multi-threaded CPU environments (true / false)
+        ko: Improves performance in multi-threaded CPU environments (true / false)
+        ru: Improves performance in multi-threaded CPU environments (true / false)
+        ms: Improves performance in multi-threaded CPU environments (true / false)
+        pt-br: Improves performance in multi-threaded CPU environments (true / false)
       required: true
       type: text
     - default: 'false'
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PUBLIC_SWITCH
       labelEn: Setup server as a community server (true / false)
       labelZh: 是否将服务器设置为社区服务器 (true / false)
+      label:
+        en: Setup server as a community server (true / false)
+        zh: 是否将服务器设置为社区服务器 (true / false)
+        zh-Hant: 是否将服务器设置为社区服务器 (true / false)
+        ja: Setup server as a community server (true / false)
+        ko: Setup server as a community server (true / false)
+        ru: Setup server as a community server (true / false)
+        ms: Setup server as a community server (true / false)
+        pt-br: Setup server as a community server (true / false)
       required: true
       type: text
     - default: ''
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: PUBLIC_IP
       labelEn: PUBLIC IP (If not specified, it will be detected automatically)
       labelZh: 服务器 IP (留空自动检测)
+      label:
+        en: PUBLIC IP (If not specified, it will be detected automatically)
+        zh: 服务器 IP (留空自动检测)
+        zh-Hant: 服务器 IP (留空自动检测)
+        ja: PUBLIC IP (If not specified, it will be detected automatically)
+        ko: PUBLIC IP (If not specified, it will be detected automatically)
+        ru: PUBLIC IP (If not specified, it will be detected automatically)
+        ms: PUBLIC IP (If not specified, it will be detected automatically)
+        pt-br: PUBLIC IP (If not specified, it will be detected automatically)
       required: false
       type: text
     - default: ''
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_PUBLIC
       labelEn: PUBLIC PORT (If not specified, it will be detected automatically)
       labelZh: 服务器端口 (留空自动检测)
+      label:
+        en: PUBLIC PORT (If not specified, it will be detected automatically)
+        zh: 服务器端口 (留空自动检测)
+        zh-Hant: 服务器端口 (留空自动检测)
+        ja: PUBLIC PORT (If not specified, it will be detected automatically)
+        ko: PUBLIC PORT (If not specified, it will be detected automatically)
+        ru: PUBLIC PORT (If not specified, it will be detected automatically)
+        ms: PUBLIC PORT (If not specified, it will be detected automatically)
+        pt-br: PUBLIC PORT (If not specified, it will be detected automatically)
       required: false
       rule: paramPort
       type: number
@@ -58,6 +121,15 @@ additionalProperties:
       envKey: UPDATE_SWITCH
       labelEn: Whether the server should be update each time start (true / false)
       labelZh: 是否每次启动都更新服务器 (true / false)
+      label:
+        en: Whether the server should be update each time start (true / false)
+        zh: 是否每次启动都更新服务器 (true / false)
+        zh-Hant: 是否每次启动都更新服务器 (true / false)
+        ja: Whether the server should be update each time start (true / false)
+        ko: Whether the server should be update each time start (true / false)
+        ru: Whether the server should be update each time start (true / false)
+        ms: Whether the server should be update each time start (true / false)
+        pt-br: Whether the server should be update each time start (true / false)
       required: true
       type: text
     - default: 'Default Palworld Server'
@@ -65,6 +137,15 @@ additionalProperties:
       envKey: SERVER_NAME
       labelEn: Server name
       labelZh: 服务器名
+      label:
+        en: Server name
+        zh: 服务器名
+        zh-Hant: 服务器名
+        ja: Server name
+        ko: Server name
+        ru: Server name
+        ms: Server name
+        pt-br: Server name
       required: true
       type: text
     - default: 'Default Palworld Server'
@@ -72,6 +153,15 @@ additionalProperties:
       envKey: SERVER_DESC
       labelEn: Server description
       labelZh: 服务器说明
+      label:
+        en: Server description
+        zh: 服务器说明
+        zh-Hant: 服务器说明
+        ja: Server description
+        ko: Server description
+        ru: Server description
+        ms: Server description
+        pt-br: Server description
       required: true
       type: text
     - default: palworld
@@ -79,6 +169,15 @@ additionalProperties:
       envKey: ADMIN_PASSWORD
       labelEn: Admin password
       labelZh: 管理员密码
+      label:
+        en: Admin password
+        zh: 管理员密码
+        zh-Hant: 管理员密码
+        ja: Admin password
+        ko: Admin password
+        ru: Admin password
+        ms: Admin password
+        pt-br: Admin password
       random: true
       required: false
       rule: paramComplexity
@@ -88,6 +187,15 @@ additionalProperties:
       envKey: SERVER_PASSWORD
       labelEn: Server password
       labelZh: 服务器密码
+      label:
+        en: Server password
+        zh: 服务器密码
+        zh-Hant: 服务器密码
+        ja: Server password
+        ko: Server password
+        ru: Server password
+        ms: Server password
+        pt-br: Server password
       required: false
       rule: paramComplexity
       type: password
@@ -96,5 +204,14 @@ additionalProperties:
       envKey: RCON_SWITCH
       labelEn: Enable RCON (true / false)
       labelZh: 是否启用 RCON (true / false)
+      label:
+        en: Enable RCON (true / false)
+        zh: 是否启用 RCON (true / false)
+        zh-Hant: 是否启用 RCON (true / false)
+        ja: Enable RCON (true / false)
+        ko: Enable RCON (true / false)
+        ru: Enable RCON (true / false)
+        ms: Enable RCON (true / false)
+        pt-br: Enable RCON (true / false)
       required: true
       type: text

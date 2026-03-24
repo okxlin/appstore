@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/northsea4/mdcx-docker
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://chatnio.com/guide
   architectures:
     - amd64
+    - arm64

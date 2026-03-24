@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/imsyy/SPlayer
   architectures:
     - amd64
+    - arm64

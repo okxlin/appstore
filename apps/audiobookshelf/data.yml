@@ -20,3 +20,4 @@ additionalProperties:
   document: https://www.audiobookshelf.org/docs
   architectures:
     - amd64
+    - arm64

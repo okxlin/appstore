@@ -19,3 +19,4 @@ additionalProperties:
   document: https://enchantedcode.co.uk/hasty-paste/
   architectures:
     - amd64
+    - arm64

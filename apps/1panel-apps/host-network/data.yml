@@ -5,6 +5,15 @@ additionalProperties:
       envKey: IMAGE
       labelEn: Docker Image
       labelZh: Docker 镜像
+      label:
+        en: Docker Image
+        zh: Docker 镜像
+        zh-Hant: Docker 镜像
+        ja: Docker Image
+        ko: Docker Image
+        ru: Docker Image
+        ms: Docker Image
+        pt-br: Docker Image
       required: true
       type: text
     - default: "always"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: Restart Policy
+        zh: 重启策略
+        zh-Hant: 重启策略
+        ja: Restart Policy
+        ko: Restart Policy
+        ru: Restart Policy
+        ms: Restart Policy
+        pt-br: Restart Policy
       required: true
       type: select
       values:
@@ -28,6 +46,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the Docker application itself)
       labelZh: 端口 (由 Docker 应用自身决定)
+      label:
+        en: Port (determined by the Docker application itself)
+        zh: 端口 (由 Docker 应用自身决定)
+        zh-Hant: 端口 (由 Docker 应用自身决定)
+        ja: Port (determined by the Docker application itself)
+        ko: Port (determined by the Docker application itself)
+        ru: Port (determined by the Docker application itself)
+        ms: Port (determined by the Docker application itself)
+        pt-br: Port (determined by the Docker application itself)
       required: true
       rule: paramPort
       type: number
@@ -36,6 +63,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "/data"
@@ -43,6 +79,15 @@ additionalProperties:
       envKey: DATA_PATH_INTERNAL
       labelEn: Internal Data Path
       labelZh: 内部数据路径
+      label:
+        en: Internal Data Path
+        zh: 内部数据路径
+        zh-Hant: 内部数据路径
+        ja: Internal Data Path
+        ko: Internal Data Path
+        ru: Internal Data Path
+        ms: Internal Data Path
+        pt-br: Internal Data Path
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -50,6 +95,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: ""
@@ -57,5 +111,14 @@ additionalProperties:
       envKey: ENV1
       labelEn: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
       labelZh: 环境变量 1 (编辑去除compose.yml里的注释生效)
+      label:
+        en: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
+        zh: 环境变量 1 (编辑去除compose.yml里的注释生效)
+        zh-Hant: 环境变量 1 (编辑去除compose.yml里的注释生效)
+        ja: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
+        ko: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
+        ru: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
+        ms: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
+        pt-br: Environment Variable 1 (Edit to remove comments in compose.yml to take effect)
       required: false
       type: text

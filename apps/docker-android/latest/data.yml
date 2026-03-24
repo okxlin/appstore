@@ -5,6 +5,15 @@ additionalProperties:
       envKey: IMAGE
       labelEn: Container Image
       labelZh: 容器镜像
+      label:
+        en: Container Image
+        zh: 容器镜像
+        zh-Hant: 容器镜像
+        ja: Container Image
+        ko: Container Image
+        ru: Container Image
+        ms: Container Image
+        pt-br: Container Image
       required: true
       type: text
     - default: "always"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: Restart Policy
+        zh: 重启策略
+        zh-Hant: 重启策略
+        ja: Restart Policy
+        ko: Restart Policy
+        ru: Restart Policy
+        ms: Restart Policy
+        pt-br: Restart Policy
       required: true
       type: select
       values:
@@ -26,6 +44,15 @@ additionalProperties:
       envKey: EMULATOR_DEVICE
       labelEn: Emulator Device
       labelZh: 模拟的设备
+      label:
+        en: Emulator Device
+        zh: 模拟的设备
+        zh-Hant: 模拟的设备
+        ja: Emulator Device
+        ko: Emulator Device
+        ru: Emulator Device
+        ms: Emulator Device
+        pt-br: Emulator Device
       required: true
       type: text
     - default: "true"
@@ -33,6 +60,15 @@ additionalProperties:
       envKey: WEB_VNC
       labelEn: Web VNC
       labelZh: Web VNC
+      label:
+        en: Web VNC
+        zh: Web VNC
+        zh-Hant: Web VNC
+        ja: Web VNC
+        ko: Web VNC
+        ru: Web VNC
+        ms: Web VNC
+        pt-br: Web VNC
       required: true
       type: select
       values:
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number

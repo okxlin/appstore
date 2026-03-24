@@ -19,3 +19,4 @@ additionalProperties:
   document: https://oss.oetiker.ch/smokeping/doc/index.en.html
   architectures:
     - amd64
+    - arm64

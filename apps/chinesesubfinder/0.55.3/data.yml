@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_IMAGE
       labelEn: WebUI video list with the port used to read pictures (127.0.0.1:port)
       labelZh: webui 视频列表读取图片用的端口 (127.0.0.1:port)
+      label:
+        en: WebUI video list with the port used to read pictures (127.0.0.1:port)
+        zh: webui 视频列表读取图片用的端口 (127.0.0.1:port)
+        zh-Hant: webui 视频列表读取图片用的端口 (127.0.0.1:port)
+        ja: WebUI video list with the port used to read pictures (127.0.0.1:port)
+        ko: WebUI video list with the port used to read pictures (127.0.0.1:port)
+        ru: WebUI video list with the port used to read pictures (127.0.0.1:port)
+        ms: WebUI video list with the port used to read pictures (127.0.0.1:port)
+        pt-br: WebUI video list with the port used to read pictures (127.0.0.1:port)
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: ./data/media
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: Media folder path
+        zh: 媒体文件夹路径
+        zh-Hant: 媒体文件夹路径
+        ja: Media folder path
+        ko: Media folder path
+        ru: Media folder path
+        ms: Media folder path
+        pt-br: Media folder path
       required: true
       type: text
     - default: ./data/media2
@@ -35,5 +71,14 @@ additionalProperties:
       envKey: MEDIA_PATH2
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: Media folder path
+        zh: 媒体文件夹路径
+        zh-Hant: 媒体文件夹路径
+        ja: Media folder path
+        ko: Media folder path
+        ru: Media folder path
+        ms: Media folder path
+        pt-br: Media folder path
       required: true
       type: text

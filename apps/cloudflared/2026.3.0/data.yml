@@ -5,5 +5,14 @@ additionalProperties:
       envKey: CFD_TOKEN
       labelEn: Token
       labelZh: Token
+      label:
+        en: Token
+        zh: Token
+        zh-Hant: Token
+        ja: Token
+        ko: Token
+        ru: Token
+        ms: Token
+        pt-br: Token
       required: true
       type: text

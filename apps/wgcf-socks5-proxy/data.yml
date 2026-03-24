@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/activeliang/wgcf-socks5-proxy
   architectures:
     - amd64
+    - arm64

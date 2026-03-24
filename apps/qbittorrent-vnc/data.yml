@@ -19,3 +19,4 @@ additionalProperties:
   document: http://wiki.qbittorrent.org/
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://nezha.wiki/guide/dashboard.html
   architectures:
     - amd64
+    - arm64

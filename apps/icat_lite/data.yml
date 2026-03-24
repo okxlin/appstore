@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/0ui0/icat_lite_public
   architectures:
     - amd64
+    - arm64

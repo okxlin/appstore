@@ -19,3 +19,5 @@ additionalProperties:
   document: https://sugoi.gitbook.io/lanraragi/v/dev
   architectures:
     - amd64
+    - arm
+    - arm64

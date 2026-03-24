@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/hamster1963/nezha-dash
   architectures:
     - amd64
+    - arm64

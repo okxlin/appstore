@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/zhile-io/pandora/blob/master/doc/wiki.md
   architectures:
     - amd64
+    - arm64

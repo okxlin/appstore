@@ -19,3 +19,4 @@ additionalProperties:
   document: https://help.obsidian.md
   architectures:
     - amd64
+    - arm64

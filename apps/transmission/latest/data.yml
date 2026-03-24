@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: WebUI Port
+        zh: 网页端口
+        zh-Hant: 网页端口
+        ja: WebUI Port
+        ko: WebUI Port
+        ru: WebUI Port
+        ms: WebUI Port
+        pt-br: WebUI Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PEER_PORT_VALUE
       labelEn: Peer Port
       labelZh: BT端口
+      label:
+        en: Peer Port
+        zh: BT端口
+        zh-Hant: BT端口
+        ja: Peer Port
+        ko: Peer Port
+        ru: Peer Port
+        ms: Peer Port
+        pt-br: Peer Port
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: WATCH_PATH
       labelEn: Watch folder for torrent files
       labelZh: 监视种子文件的文件夹
+      label:
+        en: Watch folder for torrent files
+        zh: 监视种子文件的文件夹
+        zh-Hant: 监视种子文件的文件夹
+        ja: Watch folder for torrent files
+        ko: Watch folder for torrent files
+        ru: Watch folder for torrent files
+        ms: Watch folder for torrent files
+        pt-br: Watch folder for torrent files
       required: true
       type: text
     - default: ./data/downloads
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: Download folder path
+        zh: 下载文件夹路径
+        zh-Hant: 下载文件夹路径
+        ja: Download folder path
+        ko: Download folder path
+        ru: Download folder path
+        ms: Download folder path
+        pt-br: Download folder path
       required: true
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: WEBUI_USER
       labelEn: Webui user
       labelZh: 网页用户
+      label:
+        en: Webui user
+        zh: 网页用户
+        zh-Hant: 网页用户
+        ja: Webui user
+        ko: Webui user
+        ru: Webui user
+        ms: Webui user
+        pt-br: Webui user
       required: false
       type: text
     - default: ""
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: WEBUI_PWD
       labelEn: Webui password
       labelZh: 网页密码
+      label:
+        en: Webui password
+        zh: 网页密码
+        zh-Hant: 网页密码
+        ja: Webui password
+        ko: Webui password
+        ru: Webui password
+        ms: Webui password
+        pt-br: Webui password
       random: false
       required: false
       rule: paramComplexity

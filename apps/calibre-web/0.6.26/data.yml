@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Books folder path
       labelZh: 书本文件夹路径
+      label:
+        en: Books folder path
+        zh: 书本文件夹路径
+        zh-Hant: 书本文件夹路径
+        ja: Books folder path
+        ko: Books folder path
+        ru: Books folder path
+        ms: Books folder path
+        pt-br: Books folder path
       required: true
       type: text
     - default: Asia/Shanghai
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

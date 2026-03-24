@@ -6,12 +6,30 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: service
     - default: 5432
       envKey: PANEL_DB_PORT
       labelEn: Database port
       labelZh: 数据库端口
+      label:
+        en: Database port
+        zh: 数据库端口
+        zh-Hant: 数据库端口
+        ja: Database port
+        ko: Database port
+        ru: Database port
+        ms: Database port
+        pt-br: Database port
       random: false
       required: true
       rule: paramPort
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: ICAT_PWDKEY
       labelEn: Key for encrypted password (lost and can't log in)
       labelZh: 用于加密的密码的密钥 (丢失无法登录)
+      label:
+        en: Key for encrypted password (lost and can't log in)
+        zh: 用于加密的密码的密钥 (丢失无法登录)
+        zh-Hant: 用于加密的密码的密钥 (丢失无法登录)
+        ja: Key for encrypted password (lost and can't log in)
+        ko: Key for encrypted password (lost and can't log in)
+        ru: Key for encrypted password (lost and can't log in)
+        ms: Key for encrypted password (lost and can't log in)
+        pt-br: Key for encrypted password (lost and can't log in)
       random: true
       required: true
       type: text
@@ -61,5 +124,14 @@ additionalProperties:
       envKey: ICAT_COOKIEPWD
       labelEn: CookiePassword (at least 32 bits)
       labelZh: 登录状态加密密码 (至少32位)
+      label:
+        en: CookiePassword (at least 32 bits)
+        zh: 登录状态加密密码 (至少32位)
+        zh-Hant: 登录状态加密密码 (至少32位)
+        ja: CookiePassword (at least 32 bits)
+        ko: CookiePassword (at least 32 bits)
+        ru: CookiePassword (at least 32 bits)
+        ms: CookiePassword (at least 32 bits)
+        pt-br: CookiePassword (at least 32 bits)
       required: false
       type: text

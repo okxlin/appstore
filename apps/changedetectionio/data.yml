@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/dgtlmoon/changedetection.io/wiki
   architectures:
     - amd64
+    - arm
+    - arm64

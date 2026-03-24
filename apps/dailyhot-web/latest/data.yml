@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_URL
       labelEn: API interface address (please build your own)
       labelZh: API接口地址 (请自行搭建)
+      label:
+        en: API interface address (please build your own)
+        zh: API接口地址 (请自行搭建)
+        zh-Hant: API接口地址 (请自行搭建)
+        ja: API interface address (please build your own)
+        ko: API interface address (please build your own)
+        ru: API interface address (please build your own)
+        ms: API interface address (please build your own)
+        pt-br: API interface address (please build your own)
       required: true
       type: text
     - default: "没有备案，这里填写备案ICP"
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: ICP_TEXT
       labelEn: ICP address
       labelZh: ICP地址 (自行填写)
+      label:
+        en: ICP address
+        zh: ICP地址 (自行填写)
+        zh-Hant: ICP地址 (自行填写)
+        ja: ICP address
+        ko: ICP address
+        ru: ICP address
+        ms: ICP address
+        pt-br: ICP address
       required: true
       type: text

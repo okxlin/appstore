@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: WebUI Port
+        zh: 网页端口
+        zh-Hant: 网页端口
+        ja: WebUI Port
+        ko: WebUI Port
+        ru: WebUI Port
+        ms: WebUI Port
+        pt-br: WebUI Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: ACCESS_TOKEN
       labelEn: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
       labelZh: OPENAI ACCESS TOKEN(与OPENAI API KEY至少填一个)(https://chat.openai.com/api/auth/session)
+      label:
+        en: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
+        zh: OPENAI ACCESS TOKEN(与OPENAI API KEY至少填一个)(https://chat.openai.com/api/auth/session)
+        zh-Hant: OPENAI ACCESS TOKEN(与OPENAI API KEY至少填一个)(https://chat.openai.com/api/auth/session)
+        ja: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
+        ko: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
+        ru: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
+        ms: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
+        pt-br: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
       required: false
       type: text
     - default: https://bypass.duti.tech/api/conversation
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: REVERSE_PROXY
       labelEn: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
       labelZh: API反向代理，可选(OPENAI ACCESS TOKEN时默认启用,需要注意可用性)
+      label:
+        en: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
+        zh: API反向代理，可选(OPENAI ACCESS TOKEN时默认启用,需要注意可用性)
+        zh-Hant: API反向代理，可选(OPENAI ACCESS TOKEN时默认启用,需要注意可用性)
+        ja: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
+        ko: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
+        ru: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
+        ms: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
+        pt-br: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
       required: false
       type: text
     - default: ''
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: API_KEY
       labelEn: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
       labelZh: OPENAI API KEY(与OPENAI ACCESS TOKEN至少填一个)
+      label:
+        en: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
+        zh: OPENAI API KEY(与OPENAI ACCESS TOKEN至少填一个)
+        zh-Hant: OPENAI API KEY(与OPENAI ACCESS TOKEN至少填一个)
+        ja: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
+        ko: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
+        ru: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
+        ms: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
+        pt-br: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
       required: false
       type: text
     - default: gpt-3.5-turbo
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: API_MODEL
       labelEn: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
       labelZh: API模型，可选，设置OPENAI API KEY时可用(https://platform.openai.com/docs/models)
+      label:
+        en: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
+        zh: API模型，可选，设置OPENAI API KEY时可用(https://platform.openai.com/docs/models)
+        zh-Hant: API模型，可选，设置OPENAI API KEY时可用(https://platform.openai.com/docs/models)
+        ja: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
+        ko: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
+        ru: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
+        ms: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
+        pt-br: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
       required: false
       type: text
     - default: https://api.openai.com
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: API_BASE_URL
       labelEn: API interface address, optional, available when setting OPENAI API KEY
       labelZh: API接口地址，可选，设置OPENAI API KEY时可用
+      label:
+        en: API interface address, optional, available when setting OPENAI API KEY
+        zh: API接口地址，可选，设置OPENAI API KEY时可用
+        zh-Hant: API接口地址，可选，设置OPENAI API KEY时可用
+        ja: API interface address, optional, available when setting OPENAI API KEY
+        ko: API interface address, optional, available when setting OPENAI API KEY
+        ru: API interface address, optional, available when setting OPENAI API KEY
+        ms: API interface address, optional, available when setting OPENAI API KEY
+        pt-br: API interface address, optional, available when setting OPENAI API KEY
       required: false
       type: text
     - default: chatgptweb
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Access rights key, optional (recommended)
       labelZh: 访问权限密钥，可选(强烈建议填写)
+      label:
+        en: Access rights key, optional (recommended)
+        zh: 访问权限密钥，可选(强烈建议填写)
+        zh-Hant: 访问权限密钥，可选(强烈建议填写)
+        ja: Access rights key, optional (recommended)
+        ko: Access rights key, optional (recommended)
+        ru: Access rights key, optional (recommended)
+        ms: Access rights key, optional (recommended)
+        pt-br: Access rights key, optional (recommended)
       random: true
       required: false
       rule: paramComplexity
@@ -57,6 +120,15 @@ additionalProperties:
       envKey: REQUEST_LIMIT
       labelEn: Maximum number of requests per hour, optional, default unlimited
       labelZh: 每小时最大请求次数，可选，默认无限
+      label:
+        en: Maximum number of requests per hour, optional, default unlimited
+        zh: 每小时最大请求次数，可选，默认无限
+        zh-Hant: 每小时最大请求次数，可选，默认无限
+        ja: Maximum number of requests per hour, optional, default unlimited
+        ko: Maximum number of requests per hour, optional, default unlimited
+        ru: Maximum number of requests per hour, optional, default unlimited
+        ms: Maximum number of requests per hour, optional, default unlimited
+        pt-br: Maximum number of requests per hour, optional, default unlimited
       required: false
       type: text
     - default: '60000'
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: TIMEOUT
       labelEn: Timeout, in milliseconds, optional
       labelZh: 超时，单位毫秒，可选
+      label:
+        en: Timeout, in milliseconds, optional
+        zh: 超时，单位毫秒，可选
+        zh-Hant: 超时，单位毫秒，可选
+        ja: Timeout, in milliseconds, optional
+        ko: Timeout, in milliseconds, optional
+        ru: Timeout, in milliseconds, optional
+        ms: Timeout, in milliseconds, optional
+        pt-br: Timeout, in milliseconds, optional
       required: false
       type: text
     - default: ''
@@ -71,6 +152,15 @@ additionalProperties:
       envKey: PROXY_HOST
       labelEn: Socks proxy address, optional, effective when combined with Socks proxy port
       labelZh: Socks代理地址，可选，和Socks代理端口一起时生效
+      label:
+        en: Socks proxy address, optional, effective when combined with Socks proxy port
+        zh: Socks代理地址，可选，和Socks代理端口一起时生效
+        zh-Hant: Socks代理地址，可选，和Socks代理端口一起时生效
+        ja: Socks proxy address, optional, effective when combined with Socks proxy port
+        ko: Socks proxy address, optional, effective when combined with Socks proxy port
+        ru: Socks proxy address, optional, effective when combined with Socks proxy port
+        ms: Socks proxy address, optional, effective when combined with Socks proxy port
+        pt-br: Socks proxy address, optional, effective when combined with Socks proxy port
       required: false
       type: text
     - default: ''
@@ -78,6 +168,15 @@ additionalProperties:
       envKey: PROXY_PORT
       labelEn: Socks proxy port, optional, effective when combined with Socks proxy address
       labelZh: Socks代理端口，可选，和Socks代理地址一起时生效
+      label:
+        en: Socks proxy port, optional, effective when combined with Socks proxy address
+        zh: Socks代理端口，可选，和Socks代理地址一起时生效
+        zh-Hant: Socks代理端口，可选，和Socks代理地址一起时生效
+        ja: Socks proxy port, optional, effective when combined with Socks proxy address
+        ko: Socks proxy port, optional, effective when combined with Socks proxy address
+        ru: Socks proxy port, optional, effective when combined with Socks proxy address
+        ms: Socks proxy port, optional, effective when combined with Socks proxy address
+        pt-br: Socks proxy port, optional, effective when combined with Socks proxy address
       required: false
       type: text
     - default: ''
@@ -85,6 +184,15 @@ additionalProperties:
       envKey: PROXY_USERNAME
       labelEn: Socks proxy user name, optional, effective when combined with Socks proxy address
       labelZh: Socks代理用户名，可选，和Socks代理地址一起时生效
+      label:
+        en: Socks proxy user name, optional, effective when combined with Socks proxy address
+        zh: Socks代理用户名，可选，和Socks代理地址一起时生效
+        zh-Hant: Socks代理用户名，可选，和Socks代理地址一起时生效
+        ja: Socks proxy user name, optional, effective when combined with Socks proxy address
+        ko: Socks proxy user name, optional, effective when combined with Socks proxy address
+        ru: Socks proxy user name, optional, effective when combined with Socks proxy address
+        ms: Socks proxy user name, optional, effective when combined with Socks proxy address
+        pt-br: Socks proxy user name, optional, effective when combined with Socks proxy address
       required: false
       type: text
     - default: ''
@@ -92,6 +200,15 @@ additionalProperties:
       envKey: PROXY_PASSWORD
       labelEn: Socks proxy password, optional, effective when combined with Socks proxy address
       labelZh: Socks代理密码，可选，和Socks代理地址一起时生效
+      label:
+        en: Socks proxy password, optional, effective when combined with Socks proxy address
+        zh: Socks代理密码，可选，和Socks代理地址一起时生效
+        zh-Hant: Socks代理密码，可选，和Socks代理地址一起时生效
+        ja: Socks proxy password, optional, effective when combined with Socks proxy address
+        ko: Socks proxy password, optional, effective when combined with Socks proxy address
+        ru: Socks proxy password, optional, effective when combined with Socks proxy address
+        ms: Socks proxy password, optional, effective when combined with Socks proxy address
+        pt-br: Socks proxy password, optional, effective when combined with Socks proxy address
       required: false
       type: text
     - default: ''
@@ -99,5 +216,14 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS proxy, optional, supports http, https, socks5
       labelZh: HTTPS代理，可选，支持http，https，socks5
+      label:
+        en: HTTPS proxy, optional, supports http, https, socks5
+        zh: HTTPS代理，可选，支持http，https，socks5
+        zh-Hant: HTTPS代理，可选，支持http，https，socks5
+        ja: HTTPS proxy, optional, supports http, https, socks5
+        ko: HTTPS proxy, optional, supports http, https, socks5
+        ru: HTTPS proxy, optional, supports http, https, socks5
+        ms: HTTPS proxy, optional, supports http, https, socks5
+        pt-br: HTTPS proxy, optional, supports http, https, socks5
       required: false
       type: text

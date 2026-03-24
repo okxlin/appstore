@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/xhongc/music-tag-web
   architectures:
     - amd64
+    - arm64

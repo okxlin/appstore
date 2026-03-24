@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       key: postgresql
       labelEn: Postgres database Service
       labelZh: Postgres数据库服务
+      label:
+        en: Postgres database Service
+        zh: Postgres数据库服务
+        zh-Hant: Postgres数据库服务
+        ja: Postgres database Service
+        ko: Postgres database Service
+        ru: Postgres database Service
+        ms: Postgres database Service
+        pt-br: Postgres database Service
       required: true
       type: service
     - default: "5432"
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: POSTGRES_PORT
       labelEn: Postgres database Service Port
       labelZh: Postgres数据库服务端口
+      label:
+        en: Postgres database Service Port
+        zh: Postgres数据库服务端口
+        zh-Hant: Postgres数据库服务端口
+        ja: Postgres database Service Port
+        ko: Postgres database Service Port
+        ru: Postgres database Service Port
+        ms: Postgres database Service Port
+        pt-br: Postgres database Service Port
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: POSTGRES_DB
       labelEn: Postgres database Name
       labelZh: Postgres数据库名
+      label:
+        en: Postgres database Name
+        zh: Postgres数据库名
+        zh-Hant: Postgres数据库名
+        ja: Postgres database Name
+        ko: Postgres database Name
+        ru: Postgres database Name
+        ms: Postgres database Name
+        pt-br: Postgres database Name
       required: true
       rule: paramCommon
       type: text
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: POSTGRES_USER
       labelEn: Postgres database User Name
       labelZh: Postgres数据库用户名
+      label:
+        en: Postgres database User Name
+        zh: Postgres数据库用户名
+        zh-Hant: Postgres数据库用户名
+        ja: Postgres database User Name
+        ko: Postgres database User Name
+        ru: Postgres database User Name
+        ms: Postgres database User Name
+        pt-br: Postgres database User Name
       required: true
       rule: paramCommon
       type: text
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: POSTGRES_PWD
       labelEn: Postgres database User Password
       labelZh: Postgres数据库密码
+      label:
+        en: Postgres database User Password
+        zh: Postgres数据库密码
+        zh-Hant: Postgres数据库密码
+        ja: Postgres database User Password
+        ko: Postgres database User Password
+        ru: Postgres database User Password
+        ms: Postgres database User Password
+        pt-br: Postgres database User Password
       required: true
       rule: paramCommon
       type: password
@@ -53,5 +107,14 @@ additionalProperties:
       envKey: JOPLIN_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部访问地址
+        ja: External URL
+        ko: External URL
+        ru: External URL
+        ms: External URL
+        pt-br: External URL
       required: true
       type: text

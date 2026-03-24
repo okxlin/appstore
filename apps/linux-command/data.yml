@@ -19,3 +19,4 @@ additionalProperties:
   document: https://github.com/jaywcjlove/linux-command
   architectures:
     - amd64
+    - arm64

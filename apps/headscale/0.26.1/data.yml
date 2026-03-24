@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (Corresponding to internal 8080)
       labelZh: 端口 (对应内部 8080)
+      label:
+        en: Port (Corresponding to internal 8080)
+        zh: 端口 (对应内部 8080)
+        zh-Hant: 端口 (对应内部 8080)
+        ja: Port (Corresponding to internal 8080)
+        ko: Port (Corresponding to internal 8080)
+        ru: Port (Corresponding to internal 8080)
+        ms: Port (Corresponding to internal 8080)
+        pt-br: Port (Corresponding to internal 8080)
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: SUBNET
       labelEn: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
       labelZh: 1panel-network 子网 IP (查看docker网络获取网段)
+      label:
+        en: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+        zh: 1panel-network 子网 IP (查看docker网络获取网段)
+        zh-Hant: 1panel-network 子网 IP (查看docker网络获取网段)
+        ja: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+        ko: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+        ru: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+        ms: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+        pt-br: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
       required: true
       type: text

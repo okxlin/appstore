@@ -19,3 +19,5 @@ additionalProperties:
   document: https://icret.github.io/EasyImages2.0/
   architectures:
     - amd64
+    - arm
+    - arm64

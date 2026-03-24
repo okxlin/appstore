@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DISCOURSE_DATA_TO_PERSIST
       labelEn: Data to Persist
       labelZh: 持久化数据
+      label:
+        en: Data to Persist
+        zh: 持久化数据
+        zh-Hant: 持久化数据
+        ja: Data to Persist
+        ko: Data to Persist
+        ru: Data to Persist
+        ms: Data to Persist
+        pt-br: Data to Persist
       required: true
       type: text
     - default: "no"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DISCOURSE_ENABLE_HTTPS
       labelEn: Enable HTTPS
       labelZh: 启用 HTTPS
+      label:
+        en: Enable HTTPS
+        zh: 启用 HTTPS
+        zh-Hant: 启用 HTTPS
+        ja: Enable HTTPS
+        ko: Enable HTTPS
+        ru: Enable HTTPS
+        ms: Enable HTTPS
+        pt-br: Enable HTTPS
       required: true
       type: select
       values:
@@ -32,6 +59,15 @@ additionalProperties:
       envKey: DISCOURSE_EXTERNAL_HTTP_PORT_NUMBER
       labelEn: External HTTP Port
       labelZh: 外部 HTTP 端口
+      label:
+        en: External HTTP Port
+        zh: 外部 HTTP 端口
+        zh-Hant: 外部 HTTP 端口
+        ja: External HTTP Port
+        ko: External HTTP Port
+        ru: External HTTP Port
+        ms: External HTTP Port
+        pt-br: External HTTP Port
       required: true
       type: number
     - default: "443"
@@ -39,6 +75,15 @@ additionalProperties:
       envKey: DISCOURSE_EXTERNAL_HTTPS_PORT_NUMBER
       labelEn: External HTTPS Port
       labelZh: 外部 HTTPS 端口
+      label:
+        en: External HTTPS Port
+        zh: 外部 HTTPS 端口
+        zh-Hant: 外部 HTTPS 端口
+        ja: External HTTPS Port
+        ko: External HTTPS Port
+        ru: External HTTPS Port
+        ms: External HTTPS Port
+        pt-br: External HTTPS Port
       required: true
       type: number
     - default: "www.example.com"
@@ -46,6 +91,15 @@ additionalProperties:
       envKey: DISCOURSE_HOST
       labelEn: Discourse Host
       labelZh: Discourse 主机
+      label:
+        en: Discourse Host
+        zh: Discourse 主机
+        zh-Hant: Discourse 主机
+        ja: Discourse Host
+        ko: Discourse Host
+        ru: Discourse Host
+        ms: Discourse Host
+        pt-br: Discourse Host
       required: true
       type: text
     - default: "3000"
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: DISCOURSE_PORT_NUMBER
       labelEn: Discourse Port
       labelZh: Discourse 端口
+      label:
+        en: Discourse Port
+        zh: Discourse 端口
+        zh-Hant: Discourse 端口
+        ja: Discourse Port
+        ko: Discourse Port
+        ru: Discourse Port
+        ms: Discourse Port
+        pt-br: Discourse Port
       required: true
       type: number
     - default: ""
@@ -60,6 +123,15 @@ additionalProperties:
       envKey: DISCOURSE_SKIP_BOOTSTRAP
       labelEn: Skip Bootstrap
       labelZh: 跳过引导
+      label:
+        en: Skip Bootstrap
+        zh: 跳过引导
+        zh-Hant: 跳过引导
+        ja: Skip Bootstrap
+        ko: Skip Bootstrap
+        ru: Skip Bootstrap
+        ms: Skip Bootstrap
+        pt-br: Skip Bootstrap
       required: false
       type: text
     - default: "My site!"
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: DISCOURSE_SITE_NAME
       labelEn: Site Name
       labelZh: 网站名称
+      label:
+        en: Site Name
+        zh: 网站名称
+        zh-Hant: 网站名称
+        ja: Site Name
+        ko: Site Name
+        ru: Site Name
+        ms: Site Name
+        pt-br: Site Name
       required: true
       type: text
     - default: "production"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: DISCOURSE_ENV
       labelEn: Environment
       labelZh: 环境
+      label:
+        en: Environment
+        zh: 环境
+        zh-Hant: 环境
+        ja: Environment
+        ko: Environment
+        ru: Environment
+        ms: Environment
+        pt-br: Environment
       required: true
       type: select
       values:
@@ -88,6 +178,15 @@ additionalProperties:
       envKey: DISCOURSE_PRECOMPILE_ASSETS
       labelEn: Precompile Assets
       labelZh: 预编译资产
+      label:
+        en: Precompile Assets
+        zh: 预编译资产
+        zh-Hant: 预编译资产
+        ja: Precompile Assets
+        ko: Precompile Assets
+        ru: Precompile Assets
+        ms: Precompile Assets
+        pt-br: Precompile Assets
       required: true
       type: select
       values:
@@ -100,6 +199,15 @@ additionalProperties:
       envKey: DISCOURSE_ENABLE_CONF_PERSISTENCE
       labelEn: Enable Config Persistence
       labelZh: 启用配置持久化
+      label:
+        en: Enable Config Persistence
+        zh: 启用配置持久化
+        zh-Hant: 启用配置持久化
+        ja: Enable Config Persistence
+        ko: Enable Config Persistence
+        ru: Enable Config Persistence
+        ms: Enable Config Persistence
+        pt-br: Enable Config Persistence
       required: true
       type: select
       values:
@@ -112,6 +220,15 @@ additionalProperties:
       envKey: DISCOURSE_EXTRA_CONF_CONTENT
       labelEn: Extra Config Content
       labelZh: 额外配置内容
+      label:
+        en: Extra Config Content
+        zh: 额外配置内容
+        zh-Hant: 额外配置内容
+        ja: Extra Config Content
+        ko: Extra Config Content
+        ru: Extra Config Content
+        ms: Extra Config Content
+        pt-br: Extra Config Content
       required: true
       type: select
       values:
@@ -124,6 +241,15 @@ additionalProperties:
       envKey: DISCOURSE_PASSENGER_SPAWN_METHOD
       labelEn: Passenger Spawn Method
       labelZh: Passenger 启动方法
+      label:
+        en: Passenger Spawn Method
+        zh: Passenger 启动方法
+        zh-Hant: Passenger 启动方法
+        ja: Passenger Spawn Method
+        ko: Passenger Spawn Method
+        ru: Passenger Spawn Method
+        ms: Passenger Spawn Method
+        pt-br: Passenger Spawn Method
       required: true
       type: select
       values:
@@ -136,6 +262,15 @@ additionalProperties:
       envKey: DISCOURSE_PASSENGER_EXTRA_FLAGS
       labelEn: Passenger Extra Flags
       labelZh: Passenger 额外标志
+      label:
+        en: Passenger Extra Flags
+        zh: Passenger 额外标志
+        zh-Hant: Passenger 额外标志
+        ja: Passenger Extra Flags
+        ko: Passenger Extra Flags
+        ru: Passenger Extra Flags
+        ms: Passenger Extra Flags
+        pt-br: Passenger Extra Flags
       required: false
       type: text
     - default: "siteadmin"
@@ -143,6 +278,15 @@ additionalProperties:
       envKey: DISCOURSE_USERNAME
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: Username
+        zh: 用户名
+        zh-Hant: 用户名
+        ja: Username
+        ko: Username
+        ru: Username
+        ms: Username
+        pt-br: Username
       required: true
       type: text
     - default: "siteadmin12345"
@@ -150,6 +294,15 @@ additionalProperties:
       envKey: DISCOURSE_PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: Password
+        zh: 密码
+        zh-Hant: 密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -159,6 +312,15 @@ additionalProperties:
       envKey: DISCOURSE_EMAIL
       labelEn: Email
       labelZh: 电子邮箱
+      label:
+        en: Email
+        zh: 电子邮箱
+        zh-Hant: 电子邮箱
+        ja: Email
+        ko: Email
+        ru: Email
+        ms: Email
+        pt-br: Email
       required: true
       type: text
     - default: "Admin"
@@ -166,6 +328,15 @@ additionalProperties:
       envKey: DISCOURSE_FIRST_NAME
       labelEn: First Name
       labelZh: 名
+      label:
+        en: First Name
+        zh: 名
+        zh-Hant: 名
+        ja: First Name
+        ko: First Name
+        ru: First Name
+        ms: First Name
+        pt-br: First Name
       required: true
       type: text
     - default: "User"
@@ -173,6 +344,15 @@ additionalProperties:
       envKey: DISCOURSE_LAST_NAME
       labelEn: Last Name
       labelZh: 姓
+      label:
+        en: Last Name
+        zh: 姓
+        zh-Hant: 姓
+        ja: Last Name
+        ko: Last Name
+        ru: Last Name
+        ms: Last Name
+        pt-br: Last Name
       required: true
       type: text
     - default: ""
@@ -180,6 +360,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_HOST
       labelEn: SMTP Host
       labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主机
+        ja: SMTP Host
+        ko: SMTP Host
+        ru: SMTP Host
+        ms: SMTP Host
+        pt-br: SMTP Host
       required: false
       type: text
     - default: ""
@@ -187,6 +376,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_PORT_NUMBER
       labelEn: SMTP Port
       labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 端口
+        ja: SMTP Port
+        ko: SMTP Port
+        ru: SMTP Port
+        ms: SMTP Port
+        pt-br: SMTP Port
       required: false
       type: number
     - default: ""
@@ -194,6 +392,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_USER
       labelEn: SMTP User
       labelZh: SMTP 用户名
+      label:
+        en: SMTP User
+        zh: SMTP 用户名
+        zh-Hant: SMTP 用户名
+        ja: SMTP User
+        ko: SMTP User
+        ru: SMTP User
+        ms: SMTP User
+        pt-br: SMTP User
       required: false
       type: text
     - default: ""
@@ -201,6 +408,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_PASSWORD
       labelEn: SMTP Password
       labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密码
+        ja: SMTP Password
+        ko: SMTP Password
+        ru: SMTP Password
+        ms: SMTP Password
+        pt-br: SMTP Password
       required: false
       type: password
     - default: ""
@@ -208,6 +424,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_PROTOCOL
       labelEn: SMTP Protocol
       labelZh: SMTP 协议
+      label:
+        en: SMTP Protocol
+        zh: SMTP 协议
+        zh-Hant: SMTP 协议
+        ja: SMTP Protocol
+        ko: SMTP Protocol
+        ru: SMTP Protocol
+        ms: SMTP Protocol
+        pt-br: SMTP Protocol
       required: false
       type: text
     - default: "login"
@@ -215,6 +440,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_AUTH
       labelEn: SMTP Auth
       labelZh: SMTP 认证
+      label:
+        en: SMTP Auth
+        zh: SMTP 认证
+        zh-Hant: SMTP 认证
+        ja: SMTP Auth
+        ko: SMTP Auth
+        ru: SMTP Auth
+        ms: SMTP Auth
+        pt-br: SMTP Auth
       required: true
       type: select
       values:
@@ -229,6 +463,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_OPEN_TIMEOUT
       labelEn: SMTP Open Timeout
       labelZh: SMTP 打开超时
+      label:
+        en: SMTP Open Timeout
+        zh: SMTP 打开超时
+        zh-Hant: SMTP 打开超时
+        ja: SMTP Open Timeout
+        ko: SMTP Open Timeout
+        ru: SMTP Open Timeout
+        ms: SMTP Open Timeout
+        pt-br: SMTP Open Timeout
       required: false
       type: number
     - default: ""
@@ -236,6 +479,15 @@ additionalProperties:
       envKey: DISCOURSE_SMTP_READ_TIMEOUT
       labelEn: SMTP Read Timeout
       labelZh: SMTP 读取超时
+      label:
+        en: SMTP Read Timeout
+        zh: SMTP 读取超时
+        zh-Hant: SMTP 读取超时
+        ja: SMTP Read Timeout
+        ko: SMTP Read Timeout
+        ru: SMTP Read Timeout
+        ms: SMTP Read Timeout
+        pt-br: SMTP Read Timeout
       required: false
       type: number
     - default: ""
@@ -244,6 +496,15 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: service
     - default: "5432"
@@ -251,6 +512,15 @@ additionalProperties:
       envKey: PANEL_DB_PORT
       labelEn: Database Port Number
       labelZh: 数据库端口号
+      label:
+        en: Database Port Number
+        zh: 数据库端口号
+        zh-Hant: 数据库端口号
+        ja: Database Port Number
+        ko: Database Port Number
+        ru: Database Port Number
+        ms: Database Port Number
+        pt-br: Database Port Number
       required: true
       rule: paramPort
       type: number
@@ -258,6 +528,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: Database
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database
+        ko: Database
+        ru: Database
+        ms: Database
+        pt-br: Database
       random: true
       required: true
       rule: paramCommon
@@ -266,6 +545,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: User
+        ko: User
+        ru: User
+        ms: User
+        pt-br: User
       random: true
       required: true
       rule: paramCommon
@@ -274,6 +562,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Password
+        ko: Password
+        ru: Password
+        ms: Password
+        pt-br: Password
       random: true
       required: true
       rule: paramComplexity
@@ -284,6 +581,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: Redis Service
+        zh: Redis服务
+        zh-Hant: Redis服务
+        ja: Redis Service
+        ko: Redis Service
+        ru: Redis Service
+        ms: Redis Service
+        pt-br: Redis Service
       required: true
       type: service
     - default: "6379"
@@ -291,6 +597,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: Redis Service Port
+        zh: Redis服务端口
+        zh-Hant: Redis服务端口
+        ja: Redis Service Port
+        ko: Redis Service Port
+        ru: Redis Service Port
+        ms: Redis Service Port
+        pt-br: Redis Service Port
       required: true
       rule: paramPort
       type: number
@@ -298,6 +613,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密码
+        ja: Redis Password
+        ko: Redis Password
+        ru: Redis Password
+        ms: Redis Password
+        pt-br: Redis Password
       required: false
       type: password
     - default: "no"
@@ -305,6 +629,15 @@ additionalProperties:
       envKey: DISCOURSE_REDIS_USE_SSL
       labelEn: Redis Use SSL
       labelZh: Redis 使用 SSL
+      label:
+        en: Redis Use SSL
+        zh: Redis 使用 SSL
+        zh-Hant: Redis 使用 SSL
+        ja: Redis Use SSL
+        ko: Redis Use SSL
+        ru: Redis Use SSL
+        ms: Redis Use SSL
+        pt-br: Redis Use SSL
       required: true
       type: select
       values:
@@ -317,5 +650,14 @@ additionalProperties:
       envKey: POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS
       labelEn: PostgreSQL Client Create Database Extensions
       labelZh: PostgreSQL 客户端创建数据库扩展
+      label:
+        en: PostgreSQL Client Create Database Extensions
+        zh: PostgreSQL 客户端创建数据库扩展
+        zh-Hant: PostgreSQL 客户端创建数据库扩展
+        ja: PostgreSQL Client Create Database Extensions
+        ko: PostgreSQL Client Create Database Extensions
+        ru: PostgreSQL Client Create Database Extensions
+        ms: PostgreSQL Client Create Database Extensions
+        pt-br: PostgreSQL Client Create Database Extensions
       required: true
       type: text

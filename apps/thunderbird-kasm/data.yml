@@ -19,3 +19,4 @@ additionalProperties:
   document: https://support.mozilla.org/en-US/products/thunderbird
   architectures:
     - amd64
+    - arm64

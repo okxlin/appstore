@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time Zone
+        ko: Time Zone
+        ru: Time Zone
+        ms: Time Zone
+        pt-br: Time Zone
       required: true
       type: text
     - default: "true"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: Privilege mode switch
+        zh: 特权模式开关
+        zh-Hant: 特权模式开关
+        ja: Privilege mode switch
+        ko: Privilege mode switch
+        ru: Privilege mode switch
+        ms: Privilege mode switch
+        pt-br: Privilege mode switch
       required: true
       type: text
     - default: "easytier"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: Hostname
+        zh: 主机名
+        zh-Hant: 主机名
+        ja: Hostname
+        ko: Hostname
+        ru: Hostname
+        ms: Hostname
+        pt-br: Hostname
       required: true
       type: text
     - default: "-i <ip> --network-name <用户> --network-secret <密码> -e tcp://<服务器地址>:11010 -l <监听地址>"
@@ -33,5 +69,14 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command (modified as required)
       labelZh: 命令 (按需修改)
+      label:
+        en: Command (modified as required)
+        zh: 命令 (按需修改)
+        zh-Hant: 命令 (按需修改)
+        ja: Command (modified as required)
+        ko: Command (modified as required)
+        ru: Command (modified as required)
+        ms: Command (modified as required)
+        pt-br: Command (modified as required)
       required: true
       type: text

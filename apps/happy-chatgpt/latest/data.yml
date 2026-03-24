@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_KEY
       labelEn: OPENAI API KEY
       labelZh: OPENAI API KEY
+      label:
+        en: OPENAI API KEY
+        zh: OPENAI API KEY
+        zh-Hant: OPENAI API KEY
+        ja: OPENAI API KEY
+        ko: OPENAI API KEY
+        ru: OPENAI API KEY
+        ms: OPENAI API KEY
+        pt-br: OPENAI API KEY
       required: true
       type: text
     - default: "happychatgpt"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Access rights key, optional (recommended)
       labelZh: 访问权限密钥，可选(强烈建议填写)
+      label:
+        en: Access rights key, optional (recommended)
+        zh: 访问权限密钥，可选(强烈建议填写)
+        zh-Hant: 访问权限密钥，可选(强烈建议填写)
+        ja: Access rights key, optional (recommended)
+        ko: Access rights key, optional (recommended)
+        ru: Access rights key, optional (recommended)
+        ms: Access rights key, optional (recommended)
+        pt-br: Access rights key, optional (recommended)
       random: true
       required: false
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS proxy (http://127.0.0.1:7890)
       labelZh: HTTPS代理 (http://127.0.0.1:7890)
+      label:
+        en: HTTPS proxy (http://127.0.0.1:7890)
+        zh: HTTPS代理 (http://127.0.0.1:7890)
+        zh-Hant: HTTPS代理 (http://127.0.0.1:7890)
+        ja: HTTPS proxy (http://127.0.0.1:7890)
+        ko: HTTPS proxy (http://127.0.0.1:7890)
+        ru: HTTPS proxy (http://127.0.0.1:7890)
+        ms: HTTPS proxy (http://127.0.0.1:7890)
+        pt-br: HTTPS proxy (http://127.0.0.1:7890)
       required: false
       type: text
     - default: ''
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: API_BASE_URL
       labelEn: API interface address (https://api.openai.com)
       labelZh: API接口地址 (https://api.openai.com)
+      label:
+        en: API interface address (https://api.openai.com)
+        zh: API接口地址 (https://api.openai.com)
+        zh-Hant: API接口地址 (https://api.openai.com)
+        ja: API interface address (https://api.openai.com)
+        ko: API interface address (https://api.openai.com)
+        ru: API interface address (https://api.openai.com)
+        ms: API interface address (https://api.openai.com)
+        pt-br: API interface address (https://api.openai.com)
       required: false
       type: text
     - default: ''
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: API_MODEL
       labelEn: API model, optional (https://platform.openai.com/docs/models)
       labelZh: API模型，可选 (https://platform.openai.com/docs/models)
+      label:
+        en: API model, optional (https://platform.openai.com/docs/models)
+        zh: API模型，可选 (https://platform.openai.com/docs/models)
+        zh-Hant: API模型，可选 (https://platform.openai.com/docs/models)
+        ja: API model, optional (https://platform.openai.com/docs/models)
+        ko: API model, optional (https://platform.openai.com/docs/models)
+        ru: API model, optional (https://platform.openai.com/docs/models)
+        ms: API model, optional (https://platform.openai.com/docs/models)
+        pt-br: API model, optional (https://platform.openai.com/docs/models)
       required: false
       type: text
     - default: ''
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: HEAD_SCRIPTS_VAULE
       labelEn: Inject </head> analytics or other scripts before the page
       labelZh: 在页面的 </head> 之前注入分析或其他脚本
+      label:
+        en: Inject </head> analytics or other scripts before the page
+        zh: 在页面的 </head> 之前注入分析或其他脚本
+        zh-Hant: 在页面的 </head> 之前注入分析或其他脚本
+        ja: Inject </head> analytics or other scripts before the page
+        ko: Inject </head> analytics or other scripts before the page
+        ru: Inject </head> analytics or other scripts before the page
+        ms: Inject </head> analytics or other scripts before the page
+        pt-br: Inject </head> analytics or other scripts before the page
       required: false
       type: text
     - default: ''
@@ -57,5 +120,14 @@ additionalProperties:
       envKey: PUBLIC_SECRET_KEY_VAULE
       labelEn: The secret string for the project. The signature used to generate the API call
       labelZh: 项目的秘密字符串。用于生成 API 调用的签名
+      label:
+        en: The secret string for the project. The signature used to generate the API call
+        zh: 项目的秘密字符串。用于生成 API 调用的签名
+        zh-Hant: 项目的秘密字符串。用于生成 API 调用的签名
+        ja: The secret string for the project. The signature used to generate the API call
+        ko: The secret string for the project. The signature used to generate the API call
+        ru: The secret string for the project. The signature used to generate the API call
+        ms: The secret string for the project. The signature used to generate the API call
+        pt-br: The secret string for the project. The signature used to generate the API call
       required: false
       type: text

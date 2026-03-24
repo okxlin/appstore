@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privileged Mode
       labelZh: 特权模式
+      label:
+        en: Privileged Mode
+        zh: 特权模式
+        zh-Hant: 特权模式
+        ja: Privileged Mode
+        ko: Privileged Mode
+        ru: Privileged Mode
+        ms: Privileged Mode
+        pt-br: Privileged Mode
       required: true
       type: select
       values:
@@ -17,6 +26,15 @@ additionalProperties:
       envKey: SHM_SIZE
       labelEn: Shared Memory Size
       labelZh: 共享内存大小
+      label:
+        en: Shared Memory Size
+        zh: 共享内存大小
+        zh-Hant: 共享内存大小
+        ja: Shared Memory Size
+        ko: Shared Memory Size
+        ru: Shared Memory Size
+        ms: Shared Memory Size
+        pt-br: Shared Memory Size
       required: true
       type: text
     - default: "./data/config"
@@ -24,6 +42,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: Config Path
+        zh: 配置路径
+        zh-Hant: 配置路径
+        ja: Config Path
+        ko: Config Path
+        ru: Config Path
+        ms: Config Path
+        pt-br: Config Path
       required: true
       type: text
     - default: "./data/storage"
@@ -31,6 +58,15 @@ additionalProperties:
       envKey: STORAGE_PATH
       labelEn: Storage Path
       labelZh: 存储路径
+      label:
+        en: Storage Path
+        zh: 存储路径
+        zh-Hant: 存储路径
+        ja: Storage Path
+        ko: Storage Path
+        ru: Storage Path
+        ms: Storage Path
+        pt-br: Storage Path
       required: true
       type: text
     - default: "1000000000"
@@ -38,6 +74,15 @@ additionalProperties:
       envKey: TMPFS_SIZE
       labelEn: Tmpfs Size
       labelZh: Tmpfs 大小
+      label:
+        en: Tmpfs Size
+        zh: Tmpfs 大小
+        zh-Hant: Tmpfs 大小
+        ja: Tmpfs Size
+        ko: Tmpfs Size
+        ru: Tmpfs Size
+        ms: Tmpfs Size
+        pt-br: Tmpfs Size
       required: true
       type: number
     - default: "8971"
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: RTSP_PORT
       labelEn: RTSP Port
       labelZh: RTSP 端口
+      label:
+        en: RTSP Port
+        zh: RTSP 端口
+        zh-Hant: RTSP 端口
+        ja: RTSP Port
+        ko: RTSP Port
+        ru: RTSP Port
+        ms: RTSP Port
+        pt-br: RTSP Port
       required: true
       rule: paramPort
       type: number
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: WEBRTC_TCP_PORT
       labelEn: WebRTC TCP Port
       labelZh: WebRTC TCP 端口
+      label:
+        en: WebRTC TCP Port
+        zh: WebRTC TCP 端口
+        zh-Hant: WebRTC TCP 端口
+        ja: WebRTC TCP Port
+        ko: WebRTC TCP Port
+        ru: WebRTC TCP Port
+        ms: WebRTC TCP Port
+        pt-br: WebRTC TCP Port
       required: true
       rule: paramPort
       type: number
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: WEBRTC_UDP_PORT
       labelEn: WebRTC UDP Port
       labelZh: WebRTC UDP 端口
+      label:
+        en: WebRTC UDP Port
+        zh: WebRTC UDP 端口
+        zh-Hant: WebRTC UDP 端口
+        ja: WebRTC UDP Port
+        ko: WebRTC UDP Port
+        ru: WebRTC UDP Port
+        ms: WebRTC UDP Port
+        pt-br: WebRTC UDP Port
       required: true
       rule: paramPort
       type: number
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: FRIGATE_RTSP_PASSWORD
       labelEn: RTSP Password
       labelZh: RTSP 密码
+      label:
+        en: RTSP Password
+        zh: RTSP 密码
+        zh-Hant: RTSP 密码
+        ja: RTSP Password
+        ko: RTSP Password
+        ru: RTSP Password
+        ms: RTSP Password
+        pt-br: RTSP Password
       random: true
       required: true
       rule: paramComplexity

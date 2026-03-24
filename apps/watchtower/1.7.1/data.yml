@@ -5,6 +5,15 @@ additionalProperties:
       envKey: ENV1
       labelEn: Environmental parameters (split by ;)
       labelZh: 环境参数(以;分割)
+      label:
+        en: Environmental parameters (split by ;)
+        zh: 环境参数(以;分割)
+        zh-Hant: 环境参数(以;分割)
+        ja: Environmental parameters (split by ;)
+        ko: Environmental parameters (split by ;)
+        ru: Environmental parameters (split by ;)
+        ms: Environmental parameters (split by ;)
+        pt-br: Environmental parameters (split by ;)
       required: true
       type: text
     - default: --interval 3600 --cleanup
@@ -12,5 +21,14 @@ additionalProperties:
       envKey: COMMAND1
       labelEn: Command arguments (space-separated, single quotes not supported)
       labelZh: 命令参数（以空格分隔，不支持单引号）
+      label:
+        en: Command arguments (space-separated, single quotes not supported)
+        zh: 命令参数（以空格分隔，不支持单引号）
+        zh-Hant: 命令参数（以空格分隔，不支持单引号）
+        ja: Command arguments (space-separated, single quotes not supported)
+        ko: Command arguments (space-separated, single quotes not supported)
+        ru: Command arguments (space-separated, single quotes not supported)
+        ms: Command arguments (space-separated, single quotes not supported)
+        pt-br: Command arguments (space-separated, single quotes not supported)
       required: true
       type: text

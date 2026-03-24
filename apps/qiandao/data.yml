@@ -19,3 +19,5 @@ additionalProperties:
   document: https://qd-today.github.io/qd/zh_CN/
   architectures:
     - amd64
+    - arm
+    - arm64

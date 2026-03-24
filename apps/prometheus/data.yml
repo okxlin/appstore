@@ -19,3 +19,5 @@ additionalProperties:
   document: https://prometheus.io/docs/
   architectures:
     - amd64
+    - arm
+    - arm64

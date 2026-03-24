@@ -19,3 +19,5 @@ additionalProperties:
   document: https://github.com/ChineseSubFinder/ChineseSubFinder
   architectures:
     - amd64
+    - arm
+    - arm64

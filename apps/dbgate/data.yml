@@ -19,3 +19,5 @@ additionalProperties:
   document: https://dbgate.org/docs/
   architectures:
     - amd64
+    - arm
+    - arm64

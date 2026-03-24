@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: Data folder path
+        zh: 数据文件夹路径
+        zh-Hant: 数据文件夹路径
+        ja: Data folder path
+        ko: Data folder path
+        ru: Data folder path
+        ms: Data folder path
+        pt-br: Data folder path
       required: true
       type: text
     - default: http://1.2.3.4:567
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: GITEA_INSTANCE_URL
       labelEn: Gitea instance URL
       labelZh: Gitea 实例 URL
+      label:
+        en: Gitea instance URL
+        zh: Gitea 实例 URL
+        zh-Hant: Gitea 实例 URL
+        ja: Gitea instance URL
+        ko: Gitea instance URL
+        ru: Gitea instance URL
+        ms: Gitea instance URL
+        pt-br: Gitea instance URL
       required: true
       rule: paramExtUrl
       type: text
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RUNNER_REGISTRATION_TOKEN
       labelEn: Gitea runner REGISTRATION TOKEN
       labelZh: Gitea runner REGISTRATION TOKEN
+      label:
+        en: Gitea runner REGISTRATION TOKEN
+        zh: Gitea runner REGISTRATION TOKEN
+        zh-Hant: Gitea runner REGISTRATION TOKEN
+        ja: Gitea runner REGISTRATION TOKEN
+        ko: Gitea runner REGISTRATION TOKEN
+        ru: Gitea runner REGISTRATION TOKEN
+        ms: Gitea runner REGISTRATION TOKEN
+        pt-br: Gitea runner REGISTRATION TOKEN
       required: true
       type: text
     - default: ''
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: RUNNER_NAME
       labelEn: Gitea runner name
       labelZh: Gitea runner name
+      label:
+        en: Gitea runner name
+        zh: Gitea runner name
+        zh-Hant: Gitea runner name
+        ja: Gitea runner name
+        ko: Gitea runner name
+        ru: Gitea runner name
+        ms: Gitea runner name
+        pt-br: Gitea runner name
       required: true
       type: text
     - default: ''
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: RUNNER_LABELS
       labelEn: Gitea runner labels
       labelZh: Gitea runner labels
+      label:
+        en: Gitea runner labels
+        zh: Gitea runner labels
+        zh-Hant: Gitea runner labels
+        ja: Gitea runner labels
+        ko: Gitea runner labels
+        ru: Gitea runner labels
+        ms: Gitea runner labels
+        pt-br: Gitea runner labels
       required: true
       type: text

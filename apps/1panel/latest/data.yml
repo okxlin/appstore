@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the listening port)
       labelZh: 端口 (由监听端口决定)
+      label:
+        en: Port (determined by the listening port)
+        zh: 端口 (由监听端口决定)
+        zh-Hant: 端口 (由监听端口决定)
+        ja: Port (determined by the listening port)
+        ko: Port (determined by the listening port)
+        ru: Port (determined by the listening port)
+        ms: Port (determined by the listening port)
+        pt-br: Port (determined by the listening port)
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: Data storage folder
+        zh: 数据存放文件夹
+        zh-Hant: 数据存放文件夹
+        ja: Data storage folder
+        ko: Data storage folder
+        ru: Data storage folder
+        ms: Data storage folder
+        pt-br: Data storage folder
       required: true
       type: text
     - default: Asia/Shanghai
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: Time zone
+        zh: 时区
+        zh-Hant: 时区
+        ja: Time zone
+        ko: Time zone
+        ru: Time zone
+        ms: Time zone
+        pt-br: Time zone
       required: true
       type: text

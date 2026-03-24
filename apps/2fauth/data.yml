@@ -19,3 +19,5 @@ additionalProperties:
   document: https://docs.2fauth.app
   architectures:
     - amd64
+    - arm
+    - arm64

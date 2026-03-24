@@ -19,3 +19,5 @@ additionalProperties:
   document: https://filebrowser.org/
   architectures:
     - amd64
+    - arm
+    - arm64

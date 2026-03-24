@@ -19,3 +19,4 @@ additionalProperties:
   document: https://wiki.vertex.icu
   architectures:
     - amd64
+    - arm64

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://lobehub.com/docs
   architectures:
     - amd64
+    - arm64

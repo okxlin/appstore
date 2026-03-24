@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: WARP_SLEEP
       labelEn: Warp Sleep
       labelZh: Warp 睡眠时间
+      label:
+        en: Warp Sleep
+        zh: Warp 睡眠时间
+        zh-Hant: Warp 睡眠时间
+        ja: Warp Sleep
+        ko: Warp Sleep
+        ru: Warp Sleep
+        ms: Warp Sleep
+        pt-br: Warp Sleep
       required: true
       type: number
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: WARP_LICENSE_KEY
       labelEn: Warp License Key
       labelZh: Warp 许可证密钥
+      label:
+        en: Warp License Key
+        zh: Warp 许可证密钥
+        zh-Hant: Warp 许可证密钥
+        ja: Warp License Key
+        ko: Warp License Key
+        ru: Warp License Key
+        ms: Warp License Key
+        pt-br: Warp License Key
       required: false
       type: text
     - default: ./data
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 数据路径
+        ja: Data Path
+        ko: Data Path
+        ru: Data Path
+        ms: Data Path
+        pt-br: Data Path
       required: true
       type: text

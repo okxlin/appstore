@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: Port
+        ko: Port
+        ru: Port
+        ms: Port
+        pt-br: Port
       required: true
       rule: paramPort
       type: number
@@ -14,12 +23,30 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 数据库服务
+        ja: Database Service
+        ko: Database Service
+        ru: Database Service
+        ms: Database Service
+        pt-br: Database Service
       required: true
       type: service
     - default: tianji
       envKey: PANEL_DB_NAME
       labelEn: Database Name
       labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 数据库名
+        ja: Database Name
+        ko: Database Name
+        ru: Database Name
+        ms: Database Name
+        pt-br: Database Name
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: Database User
       labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 数据库用户
+        ja: Database User
+        ko: Database User
+        ru: Database User
+        ms: Database User
+        pt-br: Database User
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Database Password
       labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        zh: 数据库用户密码
+        zh-Hant: 数据库用户密码
+        ja: Database Password
+        ko: Database Password
+        ru: Database Password
+        ms: Database Password
+        pt-br: Database Password
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: JWT_SECRET
       labelEn: Secret
       labelZh: 秘钥
+      label:
+        en: Secret
+        zh: 秘钥
+        zh-Hant: 秘钥
+        ja: Secret
+        ko: Secret
+        ru: Secret
+        ms: Secret
+        pt-br: Secret
       random: true
       required: true
       rule: paramComplexity
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: ALLOW_OPENAPI
       labelEn: Allow OpenAPI
       labelZh: 是否开启OpenAPI
+      label:
+        en: Allow OpenAPI
+        zh: 是否开启OpenAPI
+        zh-Hant: 是否开启OpenAPI
+        ja: Allow OpenAPI
+        ko: Allow OpenAPI
+        ru: Allow OpenAPI
+        ms: Allow OpenAPI
+        pt-br: Allow OpenAPI
       required: true
       type: select
       values:
@@ -64,6 +127,15 @@ additionalProperties:
       envKey: ALLOW_REGISTER
       labelEn: Allow Register
       labelZh: 是否允许注册
+      label:
+        en: Allow Register
+        zh: 是否允许注册
+        zh-Hant: 是否允许注册
+        ja: Allow Register
+        ko: Allow Register
+        ru: Allow Register
+        ms: Allow Register
+        pt-br: Allow Register
       required: true
       type: select
       values:

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: HTTP Port
+        zh: HTTP端口
+        zh-Hant: HTTP端口
+        ja: HTTP Port
+        ko: HTTP Port
+        ru: HTTP Port
+        ms: HTTP Port
+        pt-br: HTTP Port
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: Access Password
       labelZh: 访问密码
+      label:
+        en: Access Password
+        zh: 访问密码
+        zh-Hant: 访问密码
+        ja: Access Password
+        ko: Access Password
+        ru: Access Password
+        ms: Access Password
+        pt-br: Access Password
       random: false
       required: true
       rule: paramComplexity
@@ -22,5 +40,14 @@ additionalProperties:
       envKey: MEM_USE
       labelEn: Shared memory footprint (1gb)
       labelZh: 共享内存占用(1gb)
+      label:
+        en: Shared memory footprint (1gb)
+        zh: 共享内存占用(1gb)
+        zh-Hant: 共享内存占用(1gb)
+        ja: Shared memory footprint (1gb)
+        ko: Shared memory footprint (1gb)
+        ru: Shared memory footprint (1gb)
+        ms: Shared memory footprint (1gb)
+        pt-br: Shared memory footprint (1gb)
       required: true
       type: text

@@ -19,3 +19,4 @@ additionalProperties:
   document: https://oss.medama.io
   architectures:
     - amd64
+    - arm64
