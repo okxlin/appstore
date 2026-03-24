@@ -1,0 +1,119 @@
+name: Reconcile eligible Renovate PRs for automerge
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  pull-requests: write
+  contents: read
+
+concurrency:
+  group: renovate-automerge-reconcile-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Find eligible Renovate PRs missing automerge label
+        id: scan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          mapfile -t apps < <(sed '/^\s*#/d;/^\s*$/d' .github/renovate-automerge-whitelist.txt)
+
+          if [ ${#apps[@]} -eq 0 ]; then
+            echo 'pr_numbers=' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          mapfile -t pr_numbers < <(
+            gh pr list --repo "$REPO" --state open --limit 200 \
+              --json number,author,labels \
+              --jq '.[] | select(.author.login == "app/renovate" or .author.login == "renovate[bot]") | select(([.labels[].name] | index("renovate-auto")) | not) | .number'
+          )
+
+          eligible=()
+
+          for pr_number in "${pr_numbers[@]}"; do
+            mapfile -t files < <(gh api "repos/$REPO/pulls/$pr_number/files" --paginate --jq '.[].filename')
+
+            if [ ${#files[@]} -eq 0 ]; then
+              continue
+            fi
+
+            allowed=true
+            for file in "${files[@]}"; do
+              if [[ "$file" =~ ^apps/([^/]+)/ ]]; then
+                app_name="${BASH_REMATCH[1]}"
+                matched=false
+                for allowed_app in "${apps[@]}"; do
+                  if [[ "$app_name" == "$allowed_app" ]]; then
+                    matched=true
+                    break
+                  fi
+                done
+                if [[ "$matched" == false ]]; then
+                  allowed=false
+                  break
+                fi
+              else
+                allowed=false
+                break
+              fi
+            done
+
+            if [[ "$allowed" == false ]]; then
+              continue
+            fi
+
+            pull_commits=$(gh api "repos/$REPO/pulls/$pr_number/commits" --paginate --jq '.[].commit.message' || true)
+            base_sha=$(gh pr view "$pr_number" --repo "$REPO" --json baseRefOid --jq '.baseRefOid' || true)
+            head_sha=$(gh pr view "$pr_number" --repo "$REPO" --json headRefOid --jq '.headRefOid' || true)
+            compare_commits=''
+            if [ -n "$base_sha" ] && [ -n "$head_sha" ]; then
+              compare_commits=$(gh api "repos/$REPO/compare/$base_sha...$head_sha" --jq '.commits[].commit.message' || true)
+            fi
+
+            all_commits="$(printf '%s\n%s\n' "$pull_commits" "$compare_commits")"
+            if ! echo "$all_commits" | grep -Fq 'Update app version [skip ci]'; then
+              continue
+            fi
+
+            eligible+=("$pr_number")
+          done
+
+          if [ ${#eligible[@]} -eq 0 ]; then
+            echo 'pr_numbers=' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          printf 'Eligible PRs to reconcile:\n'
+          printf -- '- %s\n' "${eligible[@]}"
+
+          {
+            echo 'pr_numbers<<EOF'
+            printf '%s\n' "${eligible[@]}"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch automerge workflow for reconciled PRs
+        if: steps.scan.outputs.pr_numbers != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          while IFS= read -r pr_number; do
+            [ -n "$pr_number" ] || continue
+            gh workflow run .github/workflows/renovate-automerge.yml \
+              --repo "$REPO" \
+              -f pr_number="$pr_number"
+            sleep 2
+          done <<< "${{ steps.scan.outputs.pr_numbers }}"
