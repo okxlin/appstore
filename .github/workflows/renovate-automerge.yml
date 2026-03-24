@@ -103,8 +103,7 @@ jobs:
           echo "== compare commits =="
           echo "$COMPARE_COMMITS"
 
-          ALL_COMMITS="$PULL_COMMITS
-$COMPARE_COMMITS"
+          ALL_COMMITS="$(printf '%s\n%s\n' "$PULL_COMMITS" "$COMPARE_COMMITS")"
 
           if echo "$ALL_COMMITS" | grep -Fq "Update app version [skip ci]"; then
             echo "found=true" >> "$GITHUB_OUTPUT"
