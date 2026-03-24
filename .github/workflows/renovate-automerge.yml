@@ -88,7 +88,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
-          gh pr edit "${{ github.event.pull_request.number }}" \
+          PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
+          gh pr edit "$PR_NUMBER" \
             --repo "${{ github.repository }}" \
             --add-label renovate-auto
 
@@ -135,7 +136,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
-          gh pr merge "${{ github.event.pull_request.number }}" \
+          PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
+          gh pr merge "$PR_NUMBER" \
             --repo "${{ github.repository }}" \
             --merge \
             --delete-branch=false
