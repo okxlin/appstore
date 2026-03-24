@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/xhongc/music-tag-web
   github: https://github.com/xhongc/music-tag-web
   document: https://github.com/xhongc/music-tag-web
+  architectures:
+    - amd64

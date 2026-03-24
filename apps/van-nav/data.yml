@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/Mereithhh/van-nav
   github: https://github.com/Mereithhh/van-nav
   document: https://github.com/Mereithhh/van-nav
+  architectures:
+    - amd64

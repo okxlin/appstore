@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.zfile.vip/
   github: https://github.com/zfile-dev/zfile
   document: https://docs.zfile.vip/
+  architectures:
+    - amd64

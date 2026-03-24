@@ -17,3 +17,5 @@ additionalProperties:
   website: https://grafana.com/
   github: https://github.com/grafana/grafana
   document: https://grafana.com/docs/grafana
+  architectures:
+    - amd64

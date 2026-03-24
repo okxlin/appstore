@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.easytier.top
   github: https://github.com/EasyTier/EasyTier
   document: https://www.easytier.top
+  architectures:
+    - amd64

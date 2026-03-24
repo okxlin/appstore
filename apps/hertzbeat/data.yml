@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hertzbeat.com/
   github: https://github.com/dromara/hertzbeat
   document: https://hertzbeat.com/docs/
+  architectures:
+    - amd64

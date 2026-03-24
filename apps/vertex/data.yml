@@ -17,3 +17,5 @@ additionalProperties:
   website: https://wiki.vertex.icu
   github: https://github.com/vertex-app/vertex
   document: https://wiki.vertex.icu
+  architectures:
+    - amd64

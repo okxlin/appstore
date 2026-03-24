@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/jaaksii/sublink
   github: https://github.com/jaaksii/sublink
   document: https://github.com/jaaksii/sublink
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.plex.tv
   github: https://github.com/plexinc/pms-docker
   document: https://support.plex.tv
+  architectures:
+    - amd64

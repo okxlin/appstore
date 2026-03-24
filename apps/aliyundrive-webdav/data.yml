@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/messense/aliyundrive-webdav
   github: https://github.com/messense/aliyundrive-webdav
   document: https://github.com/messense/aliyundrive-webdav
+  architectures:
+    - amd64

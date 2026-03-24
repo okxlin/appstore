@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.mtab.cc
   github: https://github.com/tsxcw/mtab
   document: https://www.mtab.cc
+  architectures:
+    - amd64

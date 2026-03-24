@@ -17,3 +17,5 @@ additionalProperties:
   website: https://mdgjx.com
   github: https://github.com/work7z/MDGJX
   document: https://github.com/work7z/MDGJX
+  architectures:
+    - amd64

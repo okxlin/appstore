@@ -1,13 +1,13 @@
 name: Woodpecker CI
 tags:
-  - CI/CD
+  - DevOps
 title: 具有极强可扩展性的简单 CI 引擎
 description: 具有极强可扩展性的简单 CI 引擎
 additionalProperties:
   key: woodpecker
   name: Woodpecker CI
   tags:
-    - CI/CD
+    - DevOps
   shortDescZh: 具有极强可扩展性的简单 CI 引擎
   shortDescEn: A simple CI engine with great extensibility
   type: tool
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://woodpecker-ci.org
   github: https://github.com/woodpecker-ci/woodpecker
   document: https://woodpecker-ci.org/docs/intro
+  architectures:
+    - amd64

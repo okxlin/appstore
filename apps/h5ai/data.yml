@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/bin20088/h5ai
   github: https://github.com/lrsjng/h5ai
   document: https://github.com/lrsjng/h5ai
+  architectures:
+    - amd64

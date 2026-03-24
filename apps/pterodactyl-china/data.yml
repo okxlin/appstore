@@ -17,3 +17,5 @@ additionalProperties:
   website: https://pterodactyl.top/
   github: https://github.com/pterodactyl-china/panel
   document: https://pterodactyl.top/
+  architectures:
+    - amd64

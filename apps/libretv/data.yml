@@ -1,3 +1,8 @@
+name: LibreTV
+tags:
+  - Tool
+title: 轻量级、免费的在线视频搜索与观看平台
+description: 轻量级、免费的在线视频搜索与观看平台
 additionalProperties:
   crossVersionUpdate: true
   document: https://libretv.is-an.org
@@ -11,3 +16,5 @@ additionalProperties:
   - Tool
   type: tool
   website: https://libretv.is-an.org/
+  architectures:
+    - amd64

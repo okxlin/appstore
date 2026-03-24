@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.google.com/chrome/
   github: https://www.google.com/chrome/
   document: https://www.google.com/chrome/
+  architectures:
+    - amd64

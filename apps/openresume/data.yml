@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.open-resume.com
   github: https://github.com/xitanggg/open-resume
   document: https://github.com/xitanggg/open-resume
+  architectures:
+    - amd64

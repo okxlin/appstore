@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.duplicati.com
   github: https://github.com/duplicati/duplicati
   document: https://docs.duplicati.com
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://pwpush.com
   github: https://github.com/pglombardo/PasswordPusher
   document: https://github.com/pglombardo/PasswordPusher/wiki
+  architectures:
+    - amd64

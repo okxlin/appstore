@@ -17,3 +17,5 @@ additionalProperties:
   website: https://it-tools.tech
   github: https://github.com/CorentinTh/it-tools
   document: https://github.com/CorentinTh/it-tools
+  architectures:
+    - amd64

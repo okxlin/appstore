@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.bytebase.com
   github: https://github.com/bytebase/bytebase
   document: https://www.bytebase.com/docs
+  architectures:
+    - amd64

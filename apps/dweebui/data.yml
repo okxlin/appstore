@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.dweebui.com
   github: https://github.com/lllllllillllllillll/DweebUI
   document: https://github.com/lllllllillllllillll/DweebUI
+  architectures:
+    - amd64

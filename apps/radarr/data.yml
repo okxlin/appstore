@@ -17,3 +17,5 @@ additionalProperties:
   website: https://radarr.video
   github: https://github.com/Radarr/Radarr
   document: https://radarr.video/docs/
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://software.es.net/iperf/
   github: https://github.com/nerdalert/iperf3
   document: https://software.es.net/iperf/
+  architectures:
+    - amd64

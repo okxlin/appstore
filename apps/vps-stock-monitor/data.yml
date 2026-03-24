@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/vpslog/vps-stock-monitor
   github: https://github.com/vpslog/vps-stock-monitor
   document: https://github.com/vpslog/vps-stock-monitor
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/activeliang/wgcf-socks5-proxy
   github: https://github.com/activeliang/wgcf-socks5-proxy
   document: https://github.com/activeliang/wgcf-socks5-proxy
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/FlareSolverr/FlareSolverr
   github: https://github.com/FlareSolverr/FlareSolverr
   document: https://github.com/FlareSolverr/FlareSolverr
+  architectures:
+    - amd64

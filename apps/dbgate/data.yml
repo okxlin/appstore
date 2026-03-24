@@ -17,3 +17,5 @@ additionalProperties:
   website: https://dbgate.org
   github: https://github.com/dbgate/dbgate
   document: https://dbgate.org/docs/
+  architectures:
+    - amd64

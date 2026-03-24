@@ -17,3 +17,5 @@ additionalProperties:
   website: https://telegram.org
   github: https://github.com/telegramdesktop/tdesktop
   document: https://telegram.org/faq
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://discussion.mblog.club
   github: https://github.com/kingwrcy/discussion
   document: https://github.com/kingwrcy/discussion
+  architectures:
+    - amd64

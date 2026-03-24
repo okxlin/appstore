@@ -1,6 +1,6 @@
 name: ais-ninja
 tags:
-  - AI / 大模型
+  - AI
 title: 基于 ChatGPT 的 Web 应用程序
 description: 基于 ChatGPT 的 Web 应用程序
 additionalProperties:
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/jarvis2f/ais-ninja
   github: https://github.com/jarvis2f/ais-ninja
   document: https://github.com/jarvis2f/ais-ninja
+  architectures:
+    - amd64

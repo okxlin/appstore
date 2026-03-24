@@ -17,3 +17,5 @@ additionalProperties:
   website: https://syncthing.net
   github: https://github.com/syncthing/syncthing
   document: https://docs.syncthing.net
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://sqlitebrowser.org/
   github: https://github.com/sqlitebrowser/sqlitebrowser
   document: https://github.com/sqlitebrowser/sqlitebrowser/wiki
+  architectures:
+    - amd64

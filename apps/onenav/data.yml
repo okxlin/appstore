@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/helloz/onenav
   github: https://github.com/helloxz/onenav
   document: https://doc.xiaoz.org/books/onenav
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://matrix.org/docs/projects/server/synapse
   github: https://github.com/matrix-org/synapse
   document: https://matrix-org.github.io/synapse/latest/
+  architectures:
+    - amd64

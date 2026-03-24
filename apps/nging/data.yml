@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/admpub/nging
   github: https://github.com/admpub/nging
   document: https://github.com/admpub/nging
+  architectures:
+    - amd64

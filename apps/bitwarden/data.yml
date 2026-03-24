@@ -17,3 +17,5 @@ additionalProperties:
   website: https://bitwarden.com/
   github: https://github.com/dani-garcia/vaultwarden
   document: https://github.com/dani-garcia/vaultwarden/wiki
+  architectures:
+    - amd64

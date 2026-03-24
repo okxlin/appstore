@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/239144498/Streaming-Media-Server-Pro
   github: https://github.com/239144498/Streaming-Media-Server-Pro
   document: https://github.com/239144498/Streaming-Media-Server-Pro
+  architectures:
+    - amd64

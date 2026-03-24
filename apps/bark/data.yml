@@ -17,3 +17,5 @@ additionalProperties:
   website: https://bark.day.app
   github: https://github.com/Finb/Bark
   document: https://bark.day.app
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://waf-ce.chaitin.cn/
   github: https://github.com/chaitin/safeline
   document: https://waf-ce.chaitin.cn/posts/guide_introduction
+  architectures:
+    - amd64

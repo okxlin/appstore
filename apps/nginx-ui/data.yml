@@ -17,3 +17,5 @@ additionalProperties:
   website: https://nginxui.com/
   github: https://github.com/0xJacky/nginx-ui
   document: https://nginxui.com/
+  architectures:
+    - amd64

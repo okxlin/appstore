@@ -1,3 +1,8 @@
+name: 友得云客房产系统（社区版)
+tags:
+    - Website
+title: 为房产行业打造的开源的线上营销获客系统
+description: 为房产行业打造的开源的线上营销获客系统
 additionalProperties:
   key: udyk-ce
   name: 友得云客房产系统（社区版)
@@ -11,3 +16,5 @@ additionalProperties:
   website: https://www.youdeyunke.com
   github: https://github.com/youdeyunke/app
   document: https://youdeyunke.yuque.com/r/organizations/homepage
+  architectures:
+    - amd64

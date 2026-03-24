@@ -1,6 +1,6 @@
 name: MiGPT GUI
 tags:
-  - AI / 大模型
+  - AI
 title: 安全、快速的给你的小爱音箱接入人工智能
 description: 安全、快速的给你的小爱音箱接入人工智能
 additionalProperties:
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://migptgui.com
   github: https://github.com/lmk123/migpt-cli
   document: https://migptgui.com
+  architectures:
+    - amd64

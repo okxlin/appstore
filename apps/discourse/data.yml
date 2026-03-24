@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.discourse.org
   github: https://github.com/discourse/discourse
   document: https://docs.discourse.org
+  architectures:
+    - amd64

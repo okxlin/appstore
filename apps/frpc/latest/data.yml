@@ -10,6 +10,7 @@ additionalProperties:
     - default: 6000
       edit: true
       envKey: PANEL_APP_PORT_HTTP
+      rule: paramPort
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
       required: true

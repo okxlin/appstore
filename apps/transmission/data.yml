@@ -17,3 +17,5 @@ additionalProperties:
   website: https://transmissionbt.com/
   github: https://github.com/transmission/transmission
   document: https://github.com/transmission/transmission
+  architectures:
+    - amd64

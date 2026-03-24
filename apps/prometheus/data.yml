@@ -17,3 +17,5 @@ additionalProperties:
   website: https://prometheus.io/
   github: https://github.com/prometheus/prometheus
   document: https://prometheus.io/docs/
+  architectures:
+    - amd64

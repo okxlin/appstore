@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/henrygd/beszel
   github: https://github.com/henrygd/beszel
   document: https://github.com/henrygd/beszel
+  architectures:
+    - amd64

@@ -19,3 +19,5 @@ additionalProperties:
   website: https://www.wireguard.com
   github: https://github.com/wireguard
   document: https://www.wireguard.com
+  architectures:
+    - amd64

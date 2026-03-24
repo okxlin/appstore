@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/VaalaCat/frp-panel
   github: https://github.com/VaalaCat/frp-panel
   document: https://github.com/VaalaCat/frp-panel
+  architectures:
+    - amd64

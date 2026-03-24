@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/jxxghp/MoviePilot
   github: https://github.com/jxxghp/MoviePilot
   document: https://github.com/jxxghp/MoviePilot
+  architectures:
+    - amd64

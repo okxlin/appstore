@@ -17,3 +17,5 @@ additionalProperties:
   website: https://modstart.com
   github: https://github.com/modstart/ModStartCMS
   document: https://modstart.com/doc
+  architectures:
+    - amd64

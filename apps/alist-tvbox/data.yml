@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/power721/alist-tvbox
   github: https://github.com/power721/alist-tvbox
   document: https://github.com/power721/alist-tvbox
+  architectures:
+    - amd64

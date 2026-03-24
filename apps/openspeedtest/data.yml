@@ -17,3 +17,5 @@ additionalProperties:
   website: https://openspeedtest.com
   github: https://github.com/openspeedtest/Speed-Test
   document: https://github.com/openspeedtest/Speed-Test
+  architectures:
+    - amd64

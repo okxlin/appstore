@@ -3,6 +3,7 @@ additionalProperties:
     - default: "40327"
       edit: true
       envKey: PANEL_APP_PORT_HTTP
+      rule: paramPort
       labelEn: Web Port
       labelZh: Web 端口
       required: true

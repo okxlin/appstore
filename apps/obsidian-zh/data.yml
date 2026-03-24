@@ -17,3 +17,5 @@ additionalProperties:
   website: https://obsidian.md
   github: https://github.com/WHG555/obsidian-docker
   document: https://help.obsidian.md
+  architectures:
+    - amd64

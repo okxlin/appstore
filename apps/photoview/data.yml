@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/photoview/photoview
   github: https://github.com/photoview/photoview
   document: https://github.com/photoview/photoview
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/Nriver/trilium-translation
   github: https://github.com/Nriver/trilium-translation
   document: https://github.com/Nriver/trilium-translation/blob/main/README_CN.md
+  architectures:
+    - amd64

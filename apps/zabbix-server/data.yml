@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.zabbix.com/
   github: https://github.com/zabbix/zabbix
   document: https://www.zabbix.com/manuals
+  architectures:
+    - amd64

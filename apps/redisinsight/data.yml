@@ -17,3 +17,5 @@ additionalProperties:
   website: https://redis.com/redis-enterprise/redis-insight/
   github: https://github.com/RedisInsight/RedisInsight
   document: https://docs.redis.com/latest/ri/
+  architectures:
+    - amd64

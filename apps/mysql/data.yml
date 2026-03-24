@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.mysql.com
   github: https://github.com/mysql/mysql-server
   document: https://dev.mysql.com/doc/
+  architectures:
+    - amd64

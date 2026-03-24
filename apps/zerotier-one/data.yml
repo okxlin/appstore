@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.zerotier.com
   github: https://github.com/zerotier/ZeroTierOne
   document: https://docs.zerotier.com
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://minichat.seeyou.me
   github: https://github.com/okhanyu/minichat
   document: https://github.com/okhanyu/minichat
+  architectures:
+    - amd64

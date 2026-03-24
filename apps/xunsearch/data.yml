@@ -17,3 +17,5 @@ additionalProperties:
   website: http://www.xunsearch.com
   github: https://github.com/hightman/xunsearch
   document: http://www.xunsearch.com/doc/php
+  architectures:
+    - amd64

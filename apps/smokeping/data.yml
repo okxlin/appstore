@@ -1,3 +1,8 @@
+name: SmokePing
+tags:
+    - Tool
+title: 一个豪华的延迟测量工具
+description: 一个豪华的延迟测量工具
 additionalProperties:
   key: smokeping
   name: SmokePing
@@ -12,3 +17,5 @@ additionalProperties:
   website: https://oss.oetiker.ch/smokeping/
   github: https://github.com/linuxserver/docker-smokeping
   document: https://oss.oetiker.ch/smokeping/doc/index.en.html
+  architectures:
+    - amd64

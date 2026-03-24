@@ -17,3 +17,5 @@ additionalProperties:
   website: https://dockge.kuma.pet
   github: https://github.com/louislam/dockge
   document: https://github.com/louislam/dockge
+  architectures:
+    - amd64

@@ -1,7 +1,7 @@
 name: MT Photos AI
 tags:
   - 多媒体
-  - AI / 大模型
+  - AI
 title: MT Photos AI 相关的独立服务
 description: MT Photos AI 相关的独立服务
 additionalProperties:
@@ -19,3 +19,5 @@ additionalProperties:
   website: https://mtmt.tech
   github: https://github.com/MT-Photos/mt-photos-ai
   document: https://mtmt.tech
+  architectures:
+    - amd64

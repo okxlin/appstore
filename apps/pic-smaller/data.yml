@@ -19,3 +19,5 @@ additionalProperties:
   website: https://picsmaller.com
   github: https://github.com/joye61/pic-smaller
   document: https://github.com/joye61/pic-smaller
+  architectures:
+    - amd64

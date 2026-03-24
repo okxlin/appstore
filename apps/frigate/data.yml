@@ -17,3 +17,5 @@ additionalProperties:
   website: https://frigate.video
   github: https://github.com/blakeblackshear/frigate
   document: https://frigate.video/docs/
+  architectures:
+    - amd64

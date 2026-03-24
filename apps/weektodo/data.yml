@@ -17,3 +17,5 @@ additionalProperties:
   website: https://weektodo.me
   github: https://github.com/manuelernestog/weektodo
   document: https://github.com/manuelernestog/weektodo
+  architectures:
+    - amd64

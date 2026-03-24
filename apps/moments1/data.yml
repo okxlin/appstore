@@ -17,3 +17,5 @@ additionalProperties:
   website: https://m.mblog.club
   github: https://github.com/kingwrcy/moments
   document: https://github.com/kingwrcy/moments
+  architectures:
+    - amd64

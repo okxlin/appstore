@@ -17,3 +17,5 @@ additionalProperties:
   website: https://puter.com
   github: https://github.com/HeyPuter/puter
   document: https://github.com/HeyPuter/puter
+  architectures:
+    - amd64

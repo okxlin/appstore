@@ -17,3 +17,5 @@ additionalProperties:
   website: https://b3log.org/siyuan
   github: https://github.com/siyuan-note/siyuan
   document: https://github.com/siyuan-note/siyuan
+  architectures:
+    - amd64

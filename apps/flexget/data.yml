@@ -17,3 +17,5 @@ additionalProperties:
   website: https://flexget.com
   github: https://github.com/Flexget/Flexget
   document: https://flexget.com
+  architectures:
+    - amd64

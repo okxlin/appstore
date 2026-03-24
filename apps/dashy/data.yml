@@ -17,3 +17,5 @@ additionalProperties:
   website: https://dashy.to
   github: https://github.com/Lissy93/dashy
   document: https://dashy.to/docs
+  architectures:
+    - amd64

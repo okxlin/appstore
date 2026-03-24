@@ -17,3 +17,5 @@ additionalProperties:
   website: https://fahi.uusec.com
   github: https://github.com/Safe3/firefly
   document: https://github.com/Safe3/firefly/blob/main/README.md
+  architectures:
+    - amd64

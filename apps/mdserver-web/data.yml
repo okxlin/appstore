@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/ddsderek/mdserver-web
   github: https://github.com/midoks/mdserver-web
   document: https://github.com/midoks/mdserver-web/wiki/
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/zadam/trilium
   github: https://github.com/zadam/trilium
   document: https://github.com/zadam/trilium/wiki
+  architectures:
+    - amd64

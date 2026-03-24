@@ -17,3 +17,5 @@ additionalProperties:
   website: https://pymumu.github.io/smartdns
   github: https://github.com/pymumu/smartdns
   document: https://pymumu.github.io/smartdns
+  architectures:
+    - amd64

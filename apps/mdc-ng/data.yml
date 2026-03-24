@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/mdcng/mdc
   github: https://github.com/mdc-ng/mdc-ng
   document: https://github.com/mdc-ng/mdc-ng
+  architectures:
+    - amd64

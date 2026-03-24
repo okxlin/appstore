@@ -17,3 +17,5 @@ additionalProperties:
   website: https://onedev.io
   github: https://github.com/theonedev/onedev
   document: https://docs.onedev.io
+  architectures:
+    - amd64

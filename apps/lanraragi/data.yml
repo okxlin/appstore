@@ -17,3 +17,5 @@ additionalProperties:
   website: https://lrr.tvc-16.science
   github: https://github.com/Difegue/LANraragi
   document: https://sugoi.gitbook.io/lanraragi/v/dev
+  architectures:
+    - amd64

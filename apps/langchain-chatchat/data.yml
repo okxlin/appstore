@@ -1,6 +1,6 @@
 name: LangChain-Chatchat
 tags:
-  - AI / 大模型
+  - AI
 title: 基于 Langchain 与 ChatGLM 等语言模型的本地知识库问答
 description: 基于 Langchain 与 ChatGLM 等语言模型的本地知识库问答
 additionalProperties:
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/chatchat-space/Langchain-Chatchat
   github: https://github.com/chatchat-space/Langchain-Chatchat
   document: https://github.com/chatchat-space/Langchain-Chatchat/wiki
+  architectures:
+    - amd64

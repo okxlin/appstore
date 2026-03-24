@@ -1,6 +1,6 @@
 name: Chat Nio
 tags:
-  - AI / 大模型
+  - AI
 title: 下一代 AI 一站式解决方案
 description: 下一代 AI 一站式解决方案
 additionalProperties:
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://chatnio.com
   github: https://github.com/Deeptrain-Community/chatnio
   document: https://chatnio.com/guide
+  architectures:
+    - amd64

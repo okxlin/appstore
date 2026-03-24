@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/wikihost-opensource/als
   github: https://github.com/wikihost-opensource/als
   document: https://github.com/wikihost-opensource/als
+  architectures:
+    - amd64

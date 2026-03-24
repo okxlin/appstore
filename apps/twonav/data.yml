@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/tznb/twonav
   github: https://github.com/tznb1/TwoNav
   document: https://gitee.com/tznb/TwoNav/wikis
+  architectures:
+    - amd64

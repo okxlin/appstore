@@ -17,3 +17,5 @@ additionalProperties:
   website: https://kkview.cn/zh-cn/index.html
   github: https://github.com/kekingcn/kkFileView
   document: https://kkfileview.keking.cn/zh-cn/docs/home.html
+  architectures:
+    - amd64

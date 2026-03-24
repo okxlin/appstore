@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/Reknij/diosic
   github: https://github.com/Reknij/diosic
   document: https://reknij.github.io/DiosicDocCN/
+  architectures:
+    - amd64

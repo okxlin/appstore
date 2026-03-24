@@ -17,3 +17,5 @@ additionalProperties:
   website: https://lucky666.cn
   github: https://github.com/gdy666/lucky
   document: https://lucky666.cn/docs/intro
+  architectures:
+    - amd64

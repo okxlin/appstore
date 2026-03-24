@@ -17,3 +17,5 @@ additionalProperties:
   website: https://sun-panel-doc.enianteam.com
   github: https://github.com/hslr-s/sun-panel
   document: https://sun-panel-doc.enianteam.com
+  architectures:
+    - amd64

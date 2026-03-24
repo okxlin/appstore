@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/davidsarkany/geekbench
   github: https://github.com/chrisdaish/docker-geekbench
   document: https://github.com/chrisdaish/docker-geekbench
+  architectures:
+    - amd64

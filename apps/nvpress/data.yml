@@ -17,3 +17,5 @@ additionalProperties:
   website: https://docs.panda-studio.cn:8282/docs/post-19/page-100
   github: https://docs.panda-studio.cn:8282/docs/post-19/page-100
   document: https://docs.panda-studio.cn:8282/docs/post-19/page-100
+  architectures:
+    - amd64

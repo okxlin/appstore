@@ -17,3 +17,5 @@ additionalProperties:
   website: https://raneto.com
   github: https://github.com/ryanlelek/Raneto
   document: https://docs.raneto.com
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://fossbilling.org
   github: https://github.com/FOSSBilling/FOSSBilling
   document: https://fossbilling.org/docs
+  architectures:
+    - amd64

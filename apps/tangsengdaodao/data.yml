@@ -17,3 +17,5 @@ additionalProperties:
   website: https://tsdaodao.com
   github: https://github.com/TangSengDaoDao/TangSengDaoDaoServer
   document: https://tsdaodao.com
+  architectures:
+    - amd64

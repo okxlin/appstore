@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/irinesistiana/mosdns
   github: https://github.com/IrineSistiana/mosdns
   document: https://irine-sistiana.gitbook.io/mosdns-wiki/
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://heimdall.site/
   github: https://github.com/linuxserver/Heimdall
   document: https://github.com/linuxserver/Heimdall
+  architectures:
+    - amd64

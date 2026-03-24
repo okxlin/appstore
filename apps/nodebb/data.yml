@@ -16,3 +16,5 @@ additionalProperties:
   website: https://nodebb.org/
   github: https://github.com/NodeBB/NodeBB
   document: https://docs.nodebb.org/
+  architectures:
+    - amd64

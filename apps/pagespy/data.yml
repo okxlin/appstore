@@ -17,3 +17,5 @@ additionalProperties:
   website: https://pagespy.org
   github: https://github.com/HuolalaTech/page-spy-web
   document: https://www.pagespy.org/#/docs
+  architectures:
+    - amd64

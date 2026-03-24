@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/xizeyoupan/Meting-API
   github: https://github.com/xizeyoupan/Meting-API
   document: https://github.com/xizeyoupan/Meting-API
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://singbox.nite07.com/
   github: https://github.com/nitezs/sub2sing-box
   document: https://github.com/nitezs/sub2sing-box
+  architectures:
+    - amd64

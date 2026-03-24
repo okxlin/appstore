@@ -17,3 +17,5 @@ additionalProperties:
   website: https://oss.medama.io
   github: https://github.com/medama-io/medama
   document: https://oss.medama.io
+  architectures:
+    - amd64

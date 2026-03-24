@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/iFargle/headscale-webui
   github: https://github.com/iFargle/headscale-webui
   document: https://github.com/iFargle/headscale-webui
+  architectures:
+    - amd64

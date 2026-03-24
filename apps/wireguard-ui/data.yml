@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.wireguard.com/
   github: https://github.com/ngoduykhanh/wireguard-ui
   document: https://www.wireguard.com/
+  architectures:
+    - amd64

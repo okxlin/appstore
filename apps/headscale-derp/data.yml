@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/fredliang/derper
   github: https://github.com/fredliang44/derper-docker
   document: https://headscale.net
+  architectures:
+    - amd64

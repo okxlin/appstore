@@ -17,3 +17,5 @@ additionalProperties:
   website: https://txstc55.github.io/ugly-avatar
   github: https://github.com/txstc55/ugly-avatar
   document: https://github.com/txstc55/ugly-avatar
+  architectures:
+    - amd64

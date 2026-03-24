@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/cooderl/wewe-rss
   github: https://github.com/cooderl/wewe-rss
   document: https://github.com/cooderl/wewe-rss
+  architectures:
+    - amd64

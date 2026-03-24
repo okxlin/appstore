@@ -17,3 +17,5 @@ additionalProperties:
   website: http://doc.iyuu.cn
   github: https://github.com/ledccn/iyuuplus-dev
   document: http://doc.iyuu.cn
+  architectures:
+    - amd64

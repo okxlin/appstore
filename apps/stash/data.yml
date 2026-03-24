@@ -17,3 +17,5 @@ additionalProperties:
   website: https://stashapp.cc
   github: https://github.com/stashapp/stash
   document: https://docs.stashapp.cc
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/likaia/nginxpulse
   github: https://github.com/likaia/nginxpulse
   document: https://github.com/likaia/nginxpulse
+  architectures:
+    - amd64

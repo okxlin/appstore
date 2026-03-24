@@ -1,6 +1,6 @@
 additionalProperties:
   formFields:
-    - default: 8899                # HTTP端口默认值
+    - default: 8899
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
@@ -8,7 +8,7 @@ additionalProperties:
       edit: true
       rule: paramPort
       type: number
-    - default: "111111"            # 访问密码默认值
+    - default: "111111"
       envKey: PANEL_APP_PASSWORD
       labelEn: Access Password
       labelZh: 访问密码

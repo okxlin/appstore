@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/johngong/kms
   github: https://github.com/gshang2017/docker/tree/master/kms
   document: https://hub.docker.com/r/johngong/kms
+  architectures:
+    - amd64

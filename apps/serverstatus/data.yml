@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/cppla/ServerStatus
   github: https://github.com/cppla/ServerStatus
   document: https://github.com/cppla/ServerStatus
+  architectures:
+    - amd64

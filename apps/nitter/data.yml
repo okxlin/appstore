@@ -17,3 +17,5 @@ additionalProperties:
   website: https://nitter.net
   github: https://github.com/zedeus/nitter
   document: https://github.com/zedeus/nitter
+  architectures:
+    - amd64

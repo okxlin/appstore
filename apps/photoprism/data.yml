@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.photoprism.app
   github: https://github.com/photoprism/photoprism
   document: https://docs.photoprism.app
+  architectures:
+    - amd64

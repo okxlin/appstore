@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.bt.cn/
   github: https://github.com/aaPanel/BaoTa
   document: http://docs.bt.cn/
+  architectures:
+    - amd64

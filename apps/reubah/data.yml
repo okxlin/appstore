@@ -19,3 +19,5 @@ additionalProperties:
   website: https://github.com/dendianugerah/reubah
   github: https://github.com/dendianugerah/reubah
   document: https://github.com/dendianugerah/reubah
+  architectures:
+    - amd64

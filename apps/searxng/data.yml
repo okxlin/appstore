@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/searxng/searxng
   github: https://github.com/searxng/searxng
   document: https://docs.searxng.org/
+  architectures:
+    - amd64

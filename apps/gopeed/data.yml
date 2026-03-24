@@ -17,3 +17,5 @@ additionalProperties:
   website: https://gopeed.com
   github: https://github.com/GopeedLab/gopeed
   document: https://docs.gopeed.com
+  architectures:
+    - amd64

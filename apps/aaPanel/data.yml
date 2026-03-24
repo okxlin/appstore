@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.aapanel.com/new/index.html
   github: https://github.com/aaPanel/aaPanel
   document: https://github.com/aaPanel/aaPanel
+  architectures:
+    - amd64

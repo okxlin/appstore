@@ -3,6 +3,7 @@ additionalProperties:
     - default: 40225
       edit: true
       envKey: PANEL_APP_PORT_HTTP
+      rule: paramPort
       labelEn: Application HTTP Port
       labelZh: 应用 HTTP 端口
       required: true
@@ -10,6 +11,7 @@ additionalProperties:
     - default: 40226
       edit: true
       envKey: PANEL_APP_PORT_HTTPS
+      rule: paramPort
       labelEn: Application HTTPS Port
       labelZh: 应用 HTTPS 端口
       required: true

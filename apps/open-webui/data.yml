@@ -1,6 +1,6 @@
 name: Open WebUI
 tags:
-  - AI / 大模型
+  - AI
 title: 大语言模型 (LLMs) 的用户友好型网络界面
 description: 大语言模型 (LLMs) 的用户友好型网络界面
 additionalProperties:
@@ -17,3 +17,5 @@ additionalProperties:
   website: https://openwebui.com
   github: https://github.com/open-webui/open-webui
   document: https://docs.openwebui.com
+  architectures:
+    - amd64

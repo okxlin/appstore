@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/mouday/domain-admin
   github: https://github.com/mouday/domain-admin
   document: https://domain-admin.readthedocs.io/
+  architectures:
+    - amd64

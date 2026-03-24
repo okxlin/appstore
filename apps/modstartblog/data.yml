@@ -17,3 +17,5 @@ additionalProperties:
   website: https://modstart.com
   github: https://gitee.com/modstart/ModStartBlog
   document: https://modstart.com/doc
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hub.docker.com/r/awesometechnologies/synapse-admin
   github: https://github.com/Awesome-Technologies/synapse-admin
   document: https://github.com/Awesome-Technologies/synapse-admin
+  architectures:
+    - amd64

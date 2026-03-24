@@ -17,3 +17,5 @@ additionalProperties:
   website: https://enchantedcode.co.uk/hasty-paste/
   github: https://github.com/enchant97/hasty-paste
   document: https://enchantedcode.co.uk/hasty-paste/
+  architectures:
+    - amd64

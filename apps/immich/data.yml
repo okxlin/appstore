@@ -17,3 +17,5 @@ additionalProperties:
   website: https://immich.app
   github: https://github.com/immich-app/immich
   document: https://immich.app/docs
+  architectures:
+    - amd64

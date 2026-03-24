@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/MikeWang000000/Natter
   github: https://github.com/MikeWang000000/Natter
   document: https://github.com/MikeWang000000/Natter
+  architectures:
+    - amd64

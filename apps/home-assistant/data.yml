@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.home-assistant.io/
   github: https://github.com/home-assistant/core
   document: https://www.home-assistant.io/docs/
+  architectures:
+    - amd64

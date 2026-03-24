@@ -17,3 +17,5 @@ additionalProperties:
   website: https://changedetection.io/
   github: https://github.com/dgtlmoon/changedetection.io
   document: https://github.com/dgtlmoon/changedetection.io/wiki
+  architectures:
+    - amd64

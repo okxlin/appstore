@@ -17,3 +17,5 @@ additionalProperties:
   website: https://git.io/linux
   github: https://github.com/jaywcjlove/linux-command
   document: https://github.com/jaywcjlove/linux-command
+  architectures:
+    - amd64

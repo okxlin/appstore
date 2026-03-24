@@ -17,3 +17,5 @@ additionalProperties:
   website: https://nezha.wiki
   github: https://github.com/naiba/nezha
   document: https://nezha.wiki/guide/agent.html
+  architectures:
+    - amd64

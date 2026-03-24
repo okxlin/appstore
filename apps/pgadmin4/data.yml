@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.pgadmin.org
   github: https://github.com/pgadmin-org/pgadmin4
   document: https://www.pgadmin.org/docs
+  architectures:
+    - amd64

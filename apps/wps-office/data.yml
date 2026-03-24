@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.wps.com
   github: https://hub.docker.com/r/linuxserver/wps-office
   document: https://www.wps.com
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.microsoft.com/zh-cn/edge
   github: https://www.microsoft.com/zh-cn/edge
   document: https://www.microsoft.com/zh-cn/edge
+  architectures:
+    - amd64

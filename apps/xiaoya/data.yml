@@ -17,3 +17,5 @@ additionalProperties:
   website: http://alist.xiaoya.pro
   github: https://hub.docker.com/r/xiaoyaliu/alist
   document: https://www.notion.so/xiaoyaliu/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f
+  architectures:
+    - amd64

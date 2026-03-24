@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/hsuyelin/nas-tools
   github: https://github.com/hsuyelin/nas-tools
   document: https://github.com/hsuyelin/nas-tools
+  architectures:
+    - amd64

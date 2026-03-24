@@ -17,3 +17,5 @@ additionalProperties:
   website: https://emby.media/
   github: https://github.com/MediaBrowser/Emby
   document: https://emby.media/support/articles/Home.html
+  architectures:
+    - amd64

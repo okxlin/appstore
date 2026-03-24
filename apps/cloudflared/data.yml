@@ -16,3 +16,5 @@ additionalProperties:
   website: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/
   github: https://github.com/cloudflare/cloudflared
   document: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/
+  architectures:
+    - amd64

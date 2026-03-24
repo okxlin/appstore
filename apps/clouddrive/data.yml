@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.clouddrive2.com
   github: https://hub.docker.com/r/cloudnas/clouddrive2
   document: https://www.clouddrive2.com
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/OwO-Network/DeepLX
   github: https://github.com/OwO-Network/DeepLX
   document: https://github.com/OwO-Network/DeepLX
+  architectures:
+    - amd64

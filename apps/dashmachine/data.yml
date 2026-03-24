@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/rmountjoy92/DashMachine
   github: https://github.com/rmountjoy92/DashMachine
   document: https://github.com/rmountjoy92/DashMachine
+  architectures:
+    - amd64

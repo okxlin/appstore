@@ -17,3 +17,5 @@ additionalProperties:
   website: https://rss.lass.cc
   github: https://github.com/srcrs/rss-reader
   document: https://github.com/srcrs/rss-reader
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/andrii-kryvoviaz/slink
   github: https://github.com/andrii-kryvoviaz/slink
   document: https://github.com/andrii-kryvoviaz/slink
+  architectures:
+    - amd64

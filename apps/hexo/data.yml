@@ -17,3 +17,5 @@ additionalProperties:
   website: https://hexo.io/
   github: https://github.com/hexojs/hexo
   document: https://hexo.io/docs/
+  architectures:
+    - amd64

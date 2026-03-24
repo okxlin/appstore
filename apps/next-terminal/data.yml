@@ -17,3 +17,5 @@ additionalProperties:
   website: https://next-terminal.typesafe.cn/
   github: https://github.com/dushixiang/next-terminal
   document: https://next-terminal.typesafe.cn/docs/
+  architectures:
+    - amd64

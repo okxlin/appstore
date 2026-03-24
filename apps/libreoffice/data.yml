@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.libreoffice.org
   github: https://hub.docker.com/r/linuxserver/libreoffice
   document: https://www.libreoffice.org
+  architectures:
+    - amd64

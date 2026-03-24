@@ -17,3 +17,5 @@ additionalProperties:
   website: https://cashbook.oldmoon.top
   github: https://github.com/dingdangdog/cashbook-web
   document: https://github.com/dingdangdog/cashbook-web
+  architectures:
+    - amd64

@@ -19,3 +19,5 @@ additionalProperties:
   website: https://piclist.cn
   github: https://github.com/Kuingsmile/PicList
   document: https://piclist.cn
+  architectures:
+    - amd64

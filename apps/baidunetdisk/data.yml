@@ -17,3 +17,5 @@ additionalProperties:
   website: https://pan.baidu.com/
   github: https://github.com/gshang2017/docker/tree/master/baidunetdisk
   document: https://github.com/gshang2017/docker/tree/master/baidunetdisk
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://dbeaver.com/
   github: https://github.com/dbeaver/cloudbeaver
   document: https://dbeaver.com/docs/cloudbeaver/
+  architectures:
+    - amd64

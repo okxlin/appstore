@@ -17,3 +17,5 @@ additionalProperties:
   website: https://element.io
   github: https://github.com/vector-im/element-web
   document: https://github.com/vector-im/element-web
+  architectures:
+    - amd64

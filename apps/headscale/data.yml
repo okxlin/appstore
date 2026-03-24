@@ -17,3 +17,5 @@ additionalProperties:
   website: https://headscale.net
   github: https://github.com/juanfont/headscale
   document: https://headscale.net
+  architectures:
+    - amd64

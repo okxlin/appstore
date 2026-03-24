@@ -17,3 +17,5 @@ additionalProperties:
   website: https://tianji.msgbyte.com/
   github: https://github.com/msgbyte/tianji
   document: https://github.com/msgbyte/tianji
+  architectures:
+    - amd64

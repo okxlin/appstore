@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.xunlei.com
   github: https://github.com/cnk3x/xunlei/tree/docker
   document: https://github.com/cnk3x/xunlei/tree/docker
+  architectures:
+    - amd64

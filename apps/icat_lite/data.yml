@@ -17,3 +17,5 @@ additionalProperties:
   website: https://miao.o-o.zone
   github: https://github.com/0ui0/icat_lite_public
   document: https://github.com/0ui0/icat_lite_public
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://mattermost.com
   github: https://github.com/mattermost/mattermost
   document: https://docs.mattermost.com
+  architectures:
+    - amd64

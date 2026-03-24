@@ -17,3 +17,5 @@ additionalProperties:
   website: https://mtmt.tech
   github: https://hub.docker.com/r/mtphotos/mt-photos
   document: https://mtmt.tech
+  architectures:
+    - amd64

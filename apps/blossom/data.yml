@@ -17,3 +17,5 @@ additionalProperties:
   website: https://www.wangyunf.com/blossom-doc/
   github: https://github.com/blossom-editor/blossom
   document: https://www.wangyunf.com/blossom-doc/
+  architectures:
+    - amd64

@@ -17,3 +17,5 @@ additionalProperties:
   website: https://github.com/ellite/Wallos
   github: https://github.com/ellite/Wallos
   document: https://github.com/ellite/Wallos/blob/main/README.md
+  architectures:
+    - amd64
