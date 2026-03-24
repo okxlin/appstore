@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 监视和重启不正常的 docker 容器
   shortDescEn: Monitor and restart unhealthy docker containers
+  description:
+    en: Monitor and restart unhealthy Docker containers
+    zh: 监视和重启不正常的 docker 容器
+    zh-Hant: 監視並重啟不正常的 Docker 容器
+    ja: 異常なDockerコンテナを監視して再起動します
+    ko: 비정상 Docker 컨테이너를 모니터링하고 재시작
+    ru: Мониторинг и перезапуск нездоровых контейнеров Docker
+    ms: Memantau dan memulakan semula kontena Docker yang tidak sihat
+    pt-br: Monitore e reinicie contêineres Docker com problemas
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/willfarrell/docker-autoheal
   github: https://github.com/willfarrell/docker-autoheal
   document: https://github.com/willfarrell/docker-autoheal
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 喵空间社区程序 Lite 版
   shortDescEn: A mini bbs/forum/talk communicaty program
+  description:
+    en: Lite edition of the Miao Space community program
+    zh: 喵空间社区程序 Lite 版
+    zh-Hant: 喵空間社群程式 Lite 版
+    ja: 喵空間コミュニティプログラムのLite版
+    ko: 먀오공간 커뮤니티 프로그램 라이트 버전
+    ru: Lite‑версия сообщества «喵空间»
+    ms: Versi Lite program komuniti “Miao Space”
+    pt-br: Versão Lite do programa comunitário “Miao Space”
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://miao.o-o.zone
   github: https://github.com/0ui0/icat_lite_public
   document: https://github.com/0ui0/icat_lite_public
+  architectures:
+    - amd64
+

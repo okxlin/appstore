@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 高级脚本转换器
   shortDescEn: Advanced Script Converter
+  description:
+    en: Advanced script converter
+    zh: 高级脚本转换器
+    zh-Hant: 高級腳本轉換器
+    ja: 高度なスクリプト変換ツール
+    ko: 고급 스크립트 변환기
+    ru: Продвинутый конвертер скриптов
+    ms: Penukar skrip lanjutan
+    pt-br: Conversor avançado de scripts
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/xxooyy/script-hub
   github: https://github.com/Script-Hub-Org/Script-Hub
   document: https://github.com/Script-Hub-Org/Script-Hub/wiki
+
+  architectures:
+    - amd64

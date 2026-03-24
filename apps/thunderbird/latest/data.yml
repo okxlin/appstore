@@ -6,6 +6,7 @@ additionalProperties:
       labelEn: Web Port
       labelZh: Web 端口
       required: true
+      rule: paramPort
       type: number
     - default: "40328"
       edit: true

@@ -1,6 +1,6 @@
 name: MiGPT
 tags:
-  - AI / 大模型
+  - AI
 title: 将小爱音箱接入 ChatGPT 和豆包
 description: 将小爱音箱接入 ChatGPT 和豆包
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 将小爱音箱接入 ChatGPT 和豆包
   shortDescEn: Plugging ChatGPT and Doubao into Xiaomi Speaker
+  description:
+    en: Connect XiaoAi smart speaker to ChatGPT and Doubao
+    zh: 将小爱音箱接入 ChatGPT 和豆包
+    zh-Hant: 將小愛音箱接入 ChatGPT 和豆包
+    ja: 小愛（XiaoAi）スピーカーをChatGPTと豆包に接続
+    ko: 샤오아이 스피커를 ChatGPT와 Doubao에 연결
+    ru: Подключение умной колонки XiaoAi к ChatGPT и Doubao
+    ms: Sambungkan pembesar suara XiaoAi ke ChatGPT dan Doubao
+    pt-br: Conecte o alto-falante XiaoAi ao ChatGPT e ao Doubao
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/idootop/mi-gpt
   github: https://github.com/idootop/mi-gpt
   document: https://github.com/idootop/mi-gpt
+  architectures:
+    - amd64
+

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个可自建的文件分享平台
   shortDescEn: s self-hosted file sharing platform
+  description:
+    en: "Self-hosted file sharing platform."
+    zh: "一个可自建的文件分享平台。"
+    zh-Hant: "一個可自建的檔案分享平台。"
+    ja: "セルフホストできるファイル共有プラットフォームです。"
+    ko: "셀프호스팅 가능한 파일 공유 플랫폼입니다."
+    ru: "Самостоятельно размещаемая платформа для обмена файлами."
+    ms: "Platform perkongsian fail yang boleh dihoskan sendiri."
+    pt-br: "Plataforma de compartilhamento de arquivos auto-hospedada."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/stonith404/pingvin-share
   github: https://github.com/stonith404/pingvin-share
   document: https://github.com/stonith404/pingvin-share
+  architectures:
+    - amd64

@@ -1,3 +1,8 @@
+name: SmokePing
+tags:
+  - Tool
+title: 一个豪华的延迟测量工具
+description: 一个豪华的延迟测量工具
 additionalProperties:
   key: smokeping
   name: SmokePing
@@ -5,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个豪华的延迟测量工具
   shortDescEn: A deluxe latency measurement tool
+  description:
+    en: A deluxe latency measurement tool
+    zh: 一个豪华的延迟测量工具
+    zh-Hant: 一個豪華的延遲測量工具
+    ja: 高機能なレイテンシ計測ツール
+    ko: 고급 지연 시간 측정 도구
+    ru: Продвинутый инструмент измерения задержки
+    ms: Alat pengukuran kependaman yang mewah
+    pt-br: Uma ferramenta sofisticada de medição de latência
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -12,3 +26,5 @@ additionalProperties:
   website: https://oss.oetiker.ch/smokeping/
   github: https://github.com/linuxserver/docker-smokeping
   document: https://oss.oetiker.ch/smokeping/doc/index.en.html
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number

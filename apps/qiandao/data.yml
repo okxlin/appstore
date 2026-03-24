@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个 HTTP 请求定时任务自动执行框架
   shortDescEn: An HTTP request timed task automation framework
+  description:
+    en: An automated scheduled task framework for HTTP requests
+    zh: 一个 HTTP 请求定时任务自动执行框架
+    zh-Hant: 一個 HTTP 請求定時任務自動執行框架
+    ja: HTTP リクエストの定期タスク自動実行フレームワーク
+    ko: HTTP 요청을 위한 예약 작업 자동 실행 프레임워크
+    ru: Фреймворк для автоматического выполнения задач по расписанию для HTTP-запросов
+    ms: Rangka kerja automasi tugas berjadual untuk permintaan HTTP
+    pt-br: Framework de automação de tarefas agendadas para requisições HTTP
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/qdtoday/qd
   github: https://github.com/qd-today/qd
   document: https://qd-today.github.io/qd/zh_CN/
+  architectures:
+    - amd64

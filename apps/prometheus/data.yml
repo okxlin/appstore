@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个系统和服务监控系统
   shortDescEn: A systems and service monitoring system
+  description:
+    en: "Monitoring system for systems and services."
+    zh: "系统和服务监控系统。"
+    zh-Hant: "系統與服務監控系統。"
+    ja: "システムとサービスを監視するモニタリングシステムです。"
+    ko: "시스템과 서비스를 위한 모니터링 시스템입니다."
+    ru: "Система мониторинга для систем и сервисов."
+    ms: "Sistem pemantauan untuk sistem dan perkhidmatan."
+    pt-br: "Sistema de monitoramento para sistemas e serviços."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://prometheus.io/
   github: https://github.com/prometheus/prometheus
   document: https://prometheus.io/docs/
+  architectures:
+    - amd64

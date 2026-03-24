@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个基于 PHP 的轻量级文件管理器
   shortDescEn: A lightweight file manager based on PHP
+  description:
+    en: "Lightweight file manager based on PHP."
+    zh: "一个基于 PHP 的轻量级文件管理器。"
+    zh-Hant: "一個基於 PHP 的輕量級檔案管理器。"
+    ja: "PHP ベースの軽量ファイルマネージャーです。"
+    ko: "PHP 기반의 경량 파일 관리자입니다."
+    ru: "Лёгкий файловый менеджер на базе PHP."
+    ms: "Pengurus fail ringan berasaskan PHP."
+    pt-br: "Gerenciador de arquivos leve baseado em PHP."
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://tinyfilemanager.github.io
   github: https://github.com/prasathmani/tinyfilemanager
   document: https://github.com/prasathmani/tinyfilemanager/wiki
+  architectures:
+    - amd64

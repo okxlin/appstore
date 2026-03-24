@@ -10,6 +10,15 @@ additionalProperties:
     - Storage
   shortDescZh: 多架构 Samba 镜像构建
   shortDescEn: Multi-architecture Samba image build
+  description:
+    en: Multi-architecture Samba image build
+    zh: 多架构 Samba 镜像构建
+    zh-Hant: 多架構 Samba 映像建置
+    ja: マルチアーキテクチャ対応のSambaイメージビルド
+    ko: 멀티 아키텍처 Samba 이미지 빌드
+    ru: Сборка образа Samba для нескольких архитектур
+    ms: Binaan imej Samba berbilang seni bina
+    pt-br: Build de imagem Samba para várias arquiteturas
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,12 @@ additionalProperties:
   website: https://deft.work/samba
   github: https://github.com/DeftWork/samba
   document: https://github.com/DeftWork/samba
+
+  architectures:
+    - amd64
+    - arm64
+    - ppc64le
+    - s390x
+    - 386
+    - armv7
+    - armv6

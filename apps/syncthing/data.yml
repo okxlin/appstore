@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 开源的连续文件同步程序
   shortDescEn: Open Source Continuous File Synchronization
+  description:
+    en: Open-source continuous file synchronization program
+    zh: 开源的连续文件同步程序
+    zh-Hant: 開源的連續檔案同步程式
+    ja: オープンソースの継続的ファイル同期プログラム
+    ko: 오픈소스 연속 파일 동기화 프로그램
+    ru: Открытая программа непрерывной синхронизации файлов
+    ms: Program penyegerakan fail berterusan sumber terbuka
+    pt-br: Programa de sincronização contínua de arquivos de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://syncthing.net
   github: https://github.com/syncthing/syncthing
   document: https://docs.syncthing.net
+
+  architectures:
+    - amd64

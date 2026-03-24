@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 开源免费、企业级、可商用的CMS内容管理系统
   shortDescEn: Open source free, enterprise-class, commercially available CMS content management system
+  description:
+    en: Open source free, enterprise-class, commercially available CMS content management system
+    zh: 开源免费、企业级、可商用的CMS内容管理系统
+    zh-Hant: 開源免費、企業級、可商用的 CMS 內容管理系統
+    ja: オープンソースで無料、エンタープライズ級で商用利用可能なCMSコンテンツ管理システム
+    ko: 오픈소스 무료의 엔터프라이즈급 상업용 CMS 콘텐츠 관리 시스템
+    ru: Бесплатная открытая, корпоративного уровня, пригодная для коммерческого использования CMS-система управления контентом
+    ms: Sistem pengurusan kandungan CMS sumber terbuka percuma, bertaraf perusahaan dan boleh digunakan secara komersial
+    pt-br: Sistema de gerenciamento de conteúdo CMS open source gratuito, de nível empresarial e com uso comercial permitido
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://sscms.com
   github: https://github.com/siteserver/cms
   document: https://sscms.com/docs
+
+  architectures:
+    - amd64

@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.open-resume.com
   github: https://github.com/xitanggg/open-resume
   document: https://github.com/xitanggg/open-resume
+  architectures:
+    - amd64
+  description:
+    en: 'A powerful open-source resume builder and resume parser.'
+    zh: '一个功能强大的开源简历生成器和简历解析器'
+    zh-Hant: '一個功能強大的開源履歷生成器和履歷解析器'
+    ja: '強力なオープンソースの履歴書作成・解析ツールです。'
+    ko: '강력한 오픈소스 이력서 작성기이자 이력서 파서입니다.'
+    ru: 'Мощный генератор и парсер резюме с открытым исходным кодом.'
+    ms: 'Pembina resume dan penghurai resume sumber terbuka yang berkuasa.'
+    pt-br: 'Um poderoso criador e analisador de currículos de código aberto.'

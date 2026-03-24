@@ -6,6 +6,15 @@ description: NAS 媒体库管理工具
 additionalProperties:
   key: nas-tools
   name: NAS-Tools
+  description:
+    en: NAS media library management tool
+    zh: NAS 媒体库管理工具
+    zh-Hant: NAS 媒體庫管理工具
+    ja: NAS メディアライブラリ管理ツール
+    ko: NAS 미디어 라이브러리 관리 도구
+    ru: Инструмент управления медиатекой NAS
+    ms: Alat pengurusan perpustakaan media NAS
+    pt-br: Ferramenta de gerenciamento de biblioteca de mídia NAS
   tags:
     - Media
   shortDescZh: NAS 媒体库管理工具
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/hsuyelin/nas-tools
   github: https://github.com/hsuyelin/nas-tools
   document: https://github.com/hsuyelin/nas-tools
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 面向新闻组和 Bittorrent 流媒体用户的智能 PVR
   shortDescEn: Smart PVR for newsgroup and bittorrent users
+  description:
+    en: Smart PVR for newsgroup and Bittorrent users
+    zh: 面向新闻组和 Bittorrent 流媒体用户的智能 PVR
+    zh-Hant: 面向新聞組和 Bittorrent 串流媒體用戶的智慧 PVR
+    ja: ニュースグループとBittorrentユーザー向けのスマートPVR
+    ko: 뉴스그룹 및 Bittorrent 사용자용 스마트 PVR
+    ru: Интеллектуальный PVR для пользователей новостных групп и BitTorrent
+    ms: PVR pintar untuk pengguna newsgroup dan Bittorrent
+    pt-br: PVR inteligente para usuários de newsgroup e Bittorrent
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://sonarr.tv
   github: https://github.com/Sonarr/Sonarr
   document: https://wiki.servarr.com
+
+  architectures:
+    - amd64

@@ -10,9 +10,21 @@ additionalProperties:
     - Website
   shortDescZh: 专注于 ACGMN 的内容管理系统 (CMS)
   shortDescEn: Dedicated to ACGMN's Content Management System (CMS)
+  description:
+    en: A CMS focused on ACGMN
+    zh: 专注于 ACGMN 的内容管理系统 (CMS)
+    zh-Hant: 專注於 ACGMN 的內容管理系統 (CMS)
+    ja: ACGMNに特化したコンテンツ管理システム（CMS）
+    ko: ACGMN에 초점을 맞춘 콘텐츠 관리 시스템(CMS)
+    ru: CMS, ориентированная на ACGMN
+    ms: Sistem pengurusan kandungan (CMS) yang memfokuskan ACGMN
+    pt-br: CMS focado em ACGMN
   type: website
   crossVersionUpdate: true
   limit: 0
   website: https://ikaros.run
   github: https://github.com/ikaros-dev/ikaros
   document: https://docs.ikaros.run
+  architectures:
+    - amd64
+

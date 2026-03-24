@@ -10,6 +10,15 @@ additionalProperties:
     - Security
   shortDescZh: 南墙 WEB 应用防火墙
   shortDescEn: NanQiang Web Application Firewall
+  description:
+    en: "NanQiang web application firewall."
+    zh: "南墙 Web 应用防火墙。"
+    zh-Hant: "南牆 Web 應用防火牆。"
+    ja: "南牆 Web アプリケーションファイアウォールです。"
+    ko: "난창 웹 애플리케이션 방화벽입니다."
+    ru: "Веб-файрвол приложений NanQiang."
+    ms: "Tembok api aplikasi web NanQiang."
+    pt-br: "Firewall de aplicação web NanQiang."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://waf.uusec.com/#/
   github: https://github.com/Safe3/uuWAF
   document: https://waf.uusec.com/#/?id=main
+  architectures:
+    - amd64

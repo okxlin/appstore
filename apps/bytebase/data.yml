@@ -10,6 +10,15 @@ additionalProperties:
     - DevOps
   shortDescZh: 开源的数据库 DevOps 工具
   shortDescEn: An open-source database DevOps tool
+  description:
+    en: An open-source database DevOps tool
+    zh: 开源的数据库 DevOps 工具
+    zh-Hant: 開源的資料庫 DevOps 工具
+    ja: オープンソースのデータベースDevOpsツール
+    ko: 오픈 소스 데이터베이스 DevOps 도구
+    ru: Открытый инструмент DevOps для баз данных
+    ms: Alat DevOps pangkalan data sumber terbuka
+    pt-br: Ferramenta DevOps de banco de dados open source
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.bytebase.com
   github: https://github.com/bytebase/bytebase
   document: https://www.bytebase.com/docs
+  architectures:
+    - amd64

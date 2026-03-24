@@ -6,6 +6,7 @@ additionalProperties:
       labelEn: Application HTTP Port
       labelZh: 应用 HTTP 端口
       required: true
+      rule: paramPort
       type: number
     - default: 40226
       edit: true
@@ -13,6 +14,7 @@ additionalProperties:
       labelEn: Application HTTPS Port
       labelZh: 应用 HTTPS 端口
       required: true
+      rule: paramPort
       type: number
     - default: www.example.xyz
       edit: true

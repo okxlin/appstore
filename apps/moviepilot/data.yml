@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: NAS 媒体库自动化管理工具
   shortDescEn: NAS Media Library Automation Management Tool
+  description:
+    en: NAS media library automation management tool
+    zh: NAS 媒体库自动化管理工具
+    zh-Hant: NAS 媒體庫自動化管理工具
+    ja: NAS向けメディアライブラリ自動化管理ツール
+    ko: NAS 미디어 라이브러리 자동화 관리 도구
+    ru: Инструмент автоматизации управления медиатекой NAS
+    ms: Alat automasi pengurusan perpustakaan media NAS
+    pt-br: Ferramenta de automação para gerenciamento de biblioteca de mídia em NAS
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/jxxghp/MoviePilot
   github: https://github.com/jxxghp/MoviePilot
   document: https://github.com/jxxghp/MoviePilot
+  architectures:
+    - amd64
+

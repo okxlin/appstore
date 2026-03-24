@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 安全、稳定、高性能的内网穿透工具
   shortDescEn: A secure, stable and high-performance reverse proxy for NAT traversal
+  description:
+    en: A secure, stable, high-performance NAT traversal tool
+    zh: 安全、稳定、高性能的内网穿透工具
+    zh-Hant: 安全、穩定、高效能的內網穿透工具
+    ja: 安全で安定した高性能なNATトラバーサルツール
+    ko: 안전하고 안정적인 고성능 NAT 트래버설 도구
+    ru: Безопасный, стабильный и высокопроизводительный инструмент для NAT-траверсала
+    ms: Alat penembusan NAT yang selamat, stabil dan berprestasi tinggi
+    pt-br: Ferramenta de travessia de NAT segura, estável e de alto desempenho
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/rapiz1/rathole
   github: https://github.com/rapiz1/rathole
   document: https://github.com/rapiz1/rathole/blob/main/README-zh.md
+  architectures:
+    - amd64

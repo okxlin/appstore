@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个聚合了中文热门站点数据的项目(前端)
   shortDescEn: A project that aggregates data for Chinese popular sites (web)
+  description:
+    en: A project that aggregates data for Chinese popular sites (web)
+    zh: 一个聚合了中文热门站点数据的项目(前端)
+    zh-Hant: 一個聚合了中文熱門站點資料的專案（前端）
+    ja: 中国の人気サイトのデータを集約するプロジェクト（フロントエンド）
+    ko: 중국 인기 사이트 데이터를 모아주는 프로젝트(프론트엔드)
+    ru: Проект, агрегирующий данные популярных китайских сайтов (веб)
+    ms: Projek yang mengagregat data laman popular China (web)
+    pt-br: Projeto que agrega dados de sites populares chineses (web)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hot.imsyy.top
   github: https://github.com/imsyy/DailyHot
   document: https://github.com/imsyy/DailyHot
+  architectures:
+    - amd64

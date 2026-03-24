@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 多用途自动化工具
   shortDescEn: A multi-purpose automation tool
+  description:
+    en: A multi-purpose automation tool
+    zh: 多用途自动化工具
+    zh-Hant: 多用途自動化工具
+    ja: 多目的自動化ツール
+    ko: 다목적 자동화 도구
+    ru: Многоцелевой инструмент автоматизации
+    ms: Alat automasi serbaguna
+    pt-br: Ferramenta de automação multiuso
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://flexget.com
   github: https://github.com/Flexget/Flexget
   document: https://flexget.com
+  architectures:
+    - amd64

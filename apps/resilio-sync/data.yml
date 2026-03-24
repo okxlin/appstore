@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 文件同步工具
   shortDescEn: File Sync Tool
+  description:
+    en: File synchronization tool
+    zh: 文件同步工具
+    zh-Hant: 檔案同步工具
+    ja: ファイル同期ツール
+    ko: 파일 동기화 도구
+    ru: Инструмент синхронизации файлов
+    ms: Alat penyegerakan fail
+    pt-br: Ferramenta de sincronização de arquivos
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.resilio.com
   github: https://www.resilio.com
   document: https://help.resilio.com
+
+  architectures:
+    - amd64

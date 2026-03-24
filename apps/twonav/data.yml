@@ -17,3 +17,16 @@ additionalProperties:
   website: https://hub.docker.com/r/tznb/twonav
   github: https://github.com/tznb1/TwoNav
   document: https://gitee.com/tznb/TwoNav/wikis
+  architectures:
+    - arm
+    - arm64
+    - amd64
+  description:
+    en: 'A free and open-source bookmark and navigation manager.'
+    zh: '一款开源免费的书签（导航）管理程序'
+    zh-Hant: '一款開源免費的書籤（導航）管理程式'
+    ja: '無料でオープンソースのブックマーク（ナビゲーション）管理ツールです。'
+    ko: '무료 오픈소스 북마크(내비게이션) 관리 프로그램입니다.'
+    ru: 'Бесплатная программа с открытым исходным кодом для управления закладками и навигацией.'
+    ms: 'Program pengurusan penanda buku (navigasi) yang percuma dan sumber terbuka.'
+    pt-br: 'Programa gratuito e de código aberto para gerenciamento de favoritos e navegação.'

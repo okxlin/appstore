@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个免费、开源、高效且漂亮的运维资产管理平台
   shortDescEn: A free, open-source, efficient and beautiful O&M asset management platform
+  description:
+    en: A free, open-source, efficient and beautiful O&M asset management platform
+    zh: 一个免费、开源、高效且漂亮的运维资产管理平台
+    zh-Hant: 一個免費、開源、高效且漂亮的運維資產管理平台
+    ja: 無料・オープンソースで効率的かつ美しい運用資産管理プラットフォーム
+    ko: 무료 오픈 소스의 효율적이고 아름다운 운영 자산 관리 플랫폼
+    ru: Бесплатная, открытая, эффективная и красивая платформа управления активами эксплуатации
+    ms: Platform pengurusan aset operasi yang percuma, sumber terbuka, cekap dan cantik
+    pt-br: Plataforma de gestão de ativos de O&M gratuita, open source, eficiente e bonita
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/celaraze/chemex
   github: https://github.com/celaraze/chemex
   document: https://github.com/celaraze/chemex
+  architectures:
+    - amd64

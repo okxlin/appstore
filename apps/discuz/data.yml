@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.discuz.vip/
   github: https://gitee.com/Discuz/DiscuzX
   document: https://open.dismall.com/?ac=document&page=dev
+  architectures:
+    - amd64
+  description:
+    en: "Open Source Social Building System"
+    zh: "开源社交建站系统"
+    zh-Hant: "開源社交建站系統"
+    ja: "オープンソースのソーシャルサイト構築システム"
+    ko: "오픈 소스 소셜 웹사이트 구축 시스템"
+    ru: "Система создания социальных сайтов с открытым исходным кодом"
+    ms: "Sistem pembinaan laman sosial sumber terbuka"
+    pt-br: "Sistema de criação de sites sociais de código aberto"

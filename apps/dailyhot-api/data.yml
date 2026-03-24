@@ -17,3 +17,16 @@ additionalProperties:
   website: https://hot.imsyy.top
   github: https://github.com/imsyy/DailyHotApi
   document: https://github.com/imsyy/DailyHotApi
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  description:
+    en: 'An API project that aggregates trending data from popular Chinese websites.'
+    zh: '一个聚合了中文热门站点数据的项目 (API)'
+    zh-Hant: '一個聚合了中文熱門站點資料的專案（API）'
+    ja: '中国の人気サイトのトレンドデータを集約する API プロジェクトです。'
+    ko: '중국의 인기 사이트 데이터를 모아 제공하는 API 프로젝트입니다.'
+    ru: 'API-проект, агрегирующий данные с популярных китайских сайтов.'
+    ms: 'Projek API yang menghimpunkan data tapak popular berbahasa Cina.'
+    pt-br: 'Projeto de API que agrega dados de sites chineses populares.'

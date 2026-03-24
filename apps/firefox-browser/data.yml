@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个免费的开源网络浏览器
   shortDescEn: A free and open-source web browser
+  description:
+    en: A free and open-source web browser
+    zh: 一个免费的开源网络浏览器
+    zh-Hant: 一個免費的開源網路瀏覽器
+    ja: 無料のオープンソースのウェブブラウザ
+    ko: 무료 오픈소스 웹 브라우저
+    ru: Бесплатный браузер с открытым исходным кодом
+    ms: Pelayar web percuma dan sumber terbuka
+    pt-br: Um navegador web gratuito e de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.mozilla.org/
   github: https://www.mozilla.org/
   document: https://www.mozilla.org/
+  architectures:
+    - amd64
+    - arm64

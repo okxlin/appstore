@@ -10,6 +10,15 @@ additionalProperties:
     - DevOps
   shortDescZh: Trello，Notion 和 Asana 的开源自托管替代方案
   shortDescEn: An open source, self-hosted alternative to Trello, Notion, and Asana
+  description:
+    en: An open source, self-hosted alternative to Trello, Notion, and Asana
+    zh: Trello，Notion 和 Asana 的开源自托管替代方案
+    zh-Hant: Trello、Notion 和 Asana 的開源自託管替代方案
+    ja: Trello、Notion、Asana のオープンソースでセルフホスト可能な代替
+    ko: Trello, Notion, Asana의 오픈소스 자체 호스팅 대안
+    ru: Открытый, самохостинг‑альтернативный вариант Trello, Notion и Asana
+    ms: Alternatif sumber terbuka dan dihoskan sendiri untuk Trello, Notion dan Asana
+    pt-br: Alternativa open source e auto-hospedada ao Trello, Notion e Asana
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.focalboard.com/
   github: https://github.com/mattermost/focalboard
   document: https://docs.mattermost.com/guides/boards.html
+  architectures:
+    - amd64

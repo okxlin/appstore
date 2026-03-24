@@ -52,7 +52,7 @@ additionalProperties:
       labelZh: 服务器端口 (留空自动检测)
       required: false
       rule: paramPort
-      type: text
+      type: number
     - default: 'false'
       edit: true
       envKey: UPDATE_SWITCH

@@ -6,6 +6,7 @@ additionalProperties:
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
       required: true
+      rule: paramPort
       type: number
     - default: "./data/server.toml"
       edit: true

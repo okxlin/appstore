@@ -17,3 +17,14 @@ additionalProperties:
   website: https://yourls.org/
   github: https://github.com/YOURLS/YOURLS
   document: https://yourls.org/docs
+  architectures:
+    - amd64
+  description:
+    en: The de facto standard self hosted URL shortener in PHP
+    zh: PHP驱动的标准自托管URL缩短器
+    zh-Hant: PHP 驅動的標準自託管 URL 縮短器
+    ja: PHP製の標準的なセルフホストURL短縮ツール
+    ko: PHP 기반 표준 셀프 호스팅 URL 단축기
+    ru: Стандартный саморазмещаемый сокращатель URL на PHP
+    ms: Pemendek URL standard dihos sendiri berasaskan PHP
+    pt-br: Encurtador de URL auto-hospedado padrão em PHP

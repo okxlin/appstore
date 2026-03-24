@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款现代化的下载器
   shortDescEn: High speed downloader that supports all platforms
+  description:
+    en: A modern downloader
+    zh: 一款现代化的下载器
+    zh-Hant: 一款現代化的下載器
+    ja: モダンなダウンローダー
+    ko: 현대적인 다운로드 도구
+    ru: Современный загрузчик
+    ms: Pemuat turun moden
+    pt-br: Um downloader moderno
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://gopeed.com
   github: https://github.com/GopeedLab/gopeed
   document: https://docs.gopeed.com
+  architectures:
+    - amd64

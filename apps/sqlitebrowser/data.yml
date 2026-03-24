@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 一款高质量、可视化、开源的 SQLite 文件管理工具
   shortDescEn: A high-quality, visual, open-source SQLite file management tool
+  description:
+    en: A high-quality, visual, open-source SQLite file management tool
+    zh: 一款高质量、可视化、开源的 SQLite 文件管理工具
+    zh-Hant: 一款高品質、可視化、開源的 SQLite 檔案管理工具
+    ja: 高品質で視覚的なオープンソースの SQLite ファイル管理ツール
+    ko: 고품질의 시각적 오픈소스 SQLite 파일 관리 도구
+    ru: Высококачественный визуальный инструмент управления файлами SQLite с открытым исходным кодом
+    ms: Alat pengurusan fail SQLite yang berkualiti tinggi, visual dan sumber terbuka
+    pt-br: Ferramenta de gerenciamento de arquivos SQLite de alta qualidade, visual e de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://sqlitebrowser.org/
   github: https://github.com/sqlitebrowser/sqlitebrowser
   document: https://github.com/sqlitebrowser/sqlitebrowser/wiki
+
+  architectures:
+    - amd64

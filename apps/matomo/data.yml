@@ -4,6 +4,15 @@ tags:
 title: 开源的网站分析应用程序
 description: 开源的网站分析应用程序
 additionalProperties:
+  description:
+    en: Open-source web analytics application
+    zh: 开源的网站分析应用程序
+    zh-Hant: 開源的網站分析應用程式
+    ja: オープンソースのウェブ解析アプリケーション
+    ko: 오픈 소스 웹 분석 애플리케ーション
+    ru: Открытое приложение для веб-аналитики
+    ms: Aplikasi analitik web sumber terbuka
+    pt-br: Aplicativo de análise da web de código aberto
   key: matomo
   name: Matomo
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://matomo.org/
   github: https://github.com/matomo-org/matomo
   document: https://matomo.org/docs
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Storage
   shortDescZh: 阿里云盘 WebDAV 服务
   shortDescEn: AliyunDrive WebDAV Service
+  description:
+    en: Aliyun Drive WebDAV service.
+    zh: 阿里云盘 WebDAV 服务
+    zh-Hant: 阿里雲盤 WebDAV 服務
+    ja: 阿里云盘の WebDAV サービス
+    ko: 阿里云盘 WebDAV 서비스
+    ru: Сервис WebDAV для Aliyun Drive.
+    ms: Perkhidmatan WebDAV untuk Aliyun Drive.
+    pt-br: Serviço WebDAV para o Aliyun Drive.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/messense/aliyundrive-webdav
   github: https://github.com/messense/aliyundrive-webdav
   document: https://github.com/messense/aliyundrive-webdav
+  architectures:
+    - amd64

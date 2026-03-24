@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 远程桌面客户端
   shortDescEn: Remote desktop client
+  description:
+    en: Remote desktop client
+    zh: 远程桌面客户端
+    zh-Hant: 遠端桌面客戶端
+    ja: リモートデスクトップクライアント
+    ko: 원격 데스크톱 클라이언트
+    ru: Клиент удаленного рабочего стола
+    ms: Klien desktop jauh
+    pt-br: Cliente de área de trabalho remota
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://remmina.org
   github: https://gitlab.com/Remmina/Remmina
   document: https://gitlab.com/Remmina/Remmina/-/wikis/home
+  architectures:
+    - amd64
+    - arm64

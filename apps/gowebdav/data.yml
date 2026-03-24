@@ -12,6 +12,15 @@ additionalProperties:
     - Tool
   shortDescZh: 轻量易用的 WebDAV 服务器
   shortDescEn: Lightweight and easy-to-use WebDAV server
+  description:
+    en: Lightweight and easy-to-use WebDAV server
+    zh: 轻量易用的 WebDAV 服务器
+    zh-Hant: 輕量且易用的 WebDAV 伺服器
+    ja: 軽量で使いやすい WebDAV サーバー
+    ko: 가볍고 사용하기 쉬운 WebDAV 서버
+    ru: Легкий и простой в использовании сервер WebDAV
+    ms: Pelayan WebDAV yang ringan dan mudah digunakan
+    pt-br: Servidor WebDAV leve e fácil de usar
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,6 @@ additionalProperties:
   website: https://github.com/117503445/GoWebDAV
   github: https://github.com/117503445/GoWebDAV
   document: https://github.com/117503445/GoWebDAV
+  architectures:
+    - amd64
+

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 多节点 FRP WebUI (服务端/客户端)
   shortDescEn: A multi node frp webui (Server/Client)
+  description:
+    en: Multi-node FRP WebUI (server/client)
+    zh: 多节点 FRP WebUI（服务端/客户端）
+    zh-Hant: 多節點 FRP WebUI（伺服端/客戶端）
+    ja: マルチノード FRP WebUI（サーバー/クライアント）
+    ko: 멀티 노드 FRP WebUI(서버/클라이언트)
+    ru: Многоузловой FRP WebUI (сервер/клиент)
+    ms: FRP WebUI berbilang nod (pelayan/klien)
+    pt-br: WebUI do FRP com múltiplos nós (servidor/cliente)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/VaalaCat/frp-panel
   github: https://github.com/VaalaCat/frp-panel
   document: https://github.com/VaalaCat/frp-panel
+  architectures:
+    - amd64

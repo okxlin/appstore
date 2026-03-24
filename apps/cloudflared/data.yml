@@ -10,9 +10,21 @@ additionalProperties:
     - Tool
   shortDescZh: Cloudflare Tunnel 客户端
   shortDescEn: Client for Cloudflare Tunnel
+  description:
+    en: Client for Cloudflare Tunnel
+    zh: Cloudflare Tunnel 客户端
+    zh-Hant: Cloudflare Tunnel 用戶端
+    ja: Cloudflare Tunnel クライアント
+    ko: Cloudflare Tunnel용 클라이언트
+    ru: Клиент Cloudflare Tunnel
+    ms: Klien untuk Cloudflare Tunnel
+    pt-br: Cliente do Cloudflare Tunnel
   type: tool
   crossVersionUpdate: true
   limit: 0
   website: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/
   github: https://github.com/cloudflare/cloudflared
   document: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/
+  architectures:
+    - amd64
+    - arm64

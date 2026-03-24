@@ -34,32 +34,32 @@ additionalProperties:
       type: number
     - default: 1000
       envKey: PUID
-      labelEn: PUID
-      labelZh: PUID
+      labelEn: User ID (PUID)
+      labelZh: 用户ID（PUID）
       label:
-        en: PUID
-        zh: PUID
-        zh-hant: PUID
-        ja: PUID
-        ko: PUID
-        ru: PUID
-        ms: PUID
-        pt-br: PUID
+        en: User ID (PUID)
+        zh: 用户ID（PUID）
+        zh-hant: 使用者ID（PUID）
+        ja: ユーザーID（PUID）
+        ko: 사용자 ID(PUID)
+        ru: Идентификатор пользователя (PUID)
+        ms: ID pengguna (PUID)
+        pt-br: ID do usuário (PUID)
       required: true
       type: number
     - default: 1000
       envKey: PGID
-      labelEn: PGID
-      labelZh: PGID
+      labelEn: Group ID (PGID)
+      labelZh: 用户组ID（PGID）
       label:
-        en: PGID
-        zh: PGID
-        zh-hant: PGID
-        ja: PGID
-        ko: PGID
-        ru: PGID
-        ms: PGID
-        pt-br: PGID
+        en: Group ID (PGID)
+        zh: 用户组ID（PGID）
+        zh-hant: 使用者群組ID（PGID）
+        ja: グループID（PGID）
+        ko: 그룹 ID(PGID)
+        ru: Идентификатор группы (PGID)
+        ms: ID kumpulan (PGID)
+        pt-br: ID do grupo (PGID)
       required: true
       type: number
     - default: admin

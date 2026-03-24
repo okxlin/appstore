@@ -1,9 +1,18 @@
 name: LobeChat
 tags:
-  - AI / 大模型
+  - AI
 title: 现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架
 description: 现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架
 additionalProperties:
+  description:
+    en: Open-source ChatGPT/LLMs chat app and development framework with a modern design
+    zh: 现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架
+    zh-Hant: 現代化設計的開源 ChatGPT/LLMs 聊天應用與開發框架
+    ja: モダンデザインのオープンソース ChatGPT/LLMs チャットアプリ＆開発フレームワーク
+    ko: 모던한 디자인의 오픈 소스 ChatGPT/LLMs 채팅 앱 및 개발 프레임워크
+    ru: Открытое приложение и фреймворк для чата ChatGPT/LLMs с современным дизайном
+    ms: Aplikasi sembang ChatGPT/LLMs sumber terbuka dan rangka kerja pembangunan dengan reka bentuk moden
+    pt-br: Aplicativo de chat ChatGPT/LLMs de código aberto e framework de desenvolvimento com design moderno
   key: lobe-chat
   name: LobeChat
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://lobehub.com
   github: https://github.com/lobehub/lobe-chat
   document: https://lobehub.com/docs
+  architectures:
+    - amd64

@@ -1,6 +1,8 @@
 services:
   uuwaf:
     image: "uusec/nanqiang:v6.2.0"
+    labels:
+      createdBy: "Apps"
     ulimits:
       nproc: 65535
       nofile:
@@ -28,6 +30,8 @@ services:
          condition: service_healthy
   wafdb:
     image: "percona/percona-server:5.7.44"
+    labels:
+      createdBy: "Apps"
     container_name:  ${CONTAINER_NAME}-db
     restart: always
     networks:

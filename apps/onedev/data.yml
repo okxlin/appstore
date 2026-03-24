@@ -10,6 +10,15 @@ additionalProperties:
     - DevOps
   shortDescZh: 具有 CI/CD 和 Kanban 的自托管 Git 服务器
   shortDescEn: Self-hosted Git Server with CI/CD and Kanban
+  description:
+    en: Self-hosted Git Server with CI/CD and Kanban
+    zh: 具有 CI/CD 和 Kanban 的自托管 Git 服务器
+    zh-Hant: 具備 CI/CD 和 Kanban 的自託管 Git 伺服器
+    ja: CI/CDとカンバンを備えたセルフホストGitサーバー
+    ko: CI/CD와 칸반을 갖춘 자체 호스팅 Git 서버
+    ru: Самостоятельно размещаемый Git-сервер с CI/CD и Канбаном
+    ms: Pelayan Git dihoskan sendiri dengan CI/CD dan Kanban
+    pt-br: Servidor Git auto-hospedado com CI/CD e Kanban
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://onedev.io
   github: https://github.com/theonedev/onedev
   document: https://docs.onedev.io
+  architectures:
+    - amd64

@@ -17,3 +17,16 @@ additionalProperties:
   website: https://search.luxirty.com
   github: https://github.com/KoriIku/luxirty-search
   document: https://github.com/KoriIku/luxirty-search
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  description:
+    en: 'A search engine based on Google.'
+    zh: '一个搜索引擎，基于 Google'
+    zh-Hant: '一個搜尋引擎，基於 Google'
+    ja: 'Google をベースにした検索エンジンです。'
+    ko: 'Google 기반의 검색 엔진입니다.'
+    ru: 'Поисковая система на базе Google.'
+    ms: 'Enjin carian berasaskan Google.'
+    pt-br: 'Um mecanismo de busca baseado no Google.'

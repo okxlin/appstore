@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一款简洁实用优雅的个人博客系统
   shortDescEn: A simple, practical and elegant personal blog system
+  description:
+    en: "Simple, practical, and elegant personal blog system."
+    zh: "简洁、实用、优雅的个人博客系统。"
+    zh-Hant: "簡潔、實用且優雅的個人部落格系統。"
+    ja: "シンプルで実用的、そして上品な個人ブログシステムです。"
+    ko: "간결하고 실용적이며 우아한 개인 블로그 시스템입니다."
+    ru: "Простая, практичная и элегантная система личного блога."
+    ms: "Sistem blog peribadi yang ringkas, praktikal dan elegan."
+    pt-br: "Sistema de blog pessoal simples, prático e elegante."
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://vanblog.mereith.com
   github: https://github.com/Mereithhh/vanblog
   document: https://vanblog.mereith.com
+  architectures:
+    - amd64

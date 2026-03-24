@@ -17,3 +17,15 @@ additionalProperties:
   website: https://github.com/admpub/nging
   github: https://github.com/admpub/nging
   document: https://github.com/admpub/nging
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A web management panel written in Go.'
+    zh: 'Go 语言 Web 管理面板'
+    zh-Hant: 'Go 語言 Web 管理面板'
+    ja: 'Go 言語で書かれた Web 管理パネルです。'
+    ko: 'Go 언어로 작성된 웹 관리 패널입니다.'
+    ru: 'Веб-панель управления на языке Go.'
+    ms: 'Panel pengurusan web yang dibina dengan bahasa Go.'
+    pt-br: 'Painel de gerenciamento web escrito em Go.'

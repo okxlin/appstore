@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: MetaTube 服务的后端
   shortDescEn: Backend of the MetaTube service
+  description:
+    en: Backend of the MetaTube service
+    zh: MetaTube 服务的后端
+    zh-Hant: MetaTube 服務的後端
+    ja: MetaTubeサービスのバックエンド
+    ko: MetaTube 서비스의 백엔드
+    ru: Бэкенд сервиса MetaTube
+    ms: Bahagian belakang (backend) perkhidmatan MetaTube
+    pt-br: Backend do serviço MetaTube
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://metatube-community.github.io
   github: https://github.com/metatube-community/metatube-sdk-go
   document: https://metatube-community.github.io
+  architectures:
+    - amd64
+

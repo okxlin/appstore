@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 宝塔面板国际版，开源的Linux面板
   shortDescEn: BT-Panel International Edition, the open source Linux panel
+  description:
+    en: The international edition of BaoTa Panel, an open-source Linux panel.
+    zh: 宝塔面板国际版，开源的Linux面板
+    zh-Hant: 寶塔面板國際版，開源的 Linux 面板
+    ja: 宝塔面板の国際版。オープンソースの Linux パネル
+    ko: 宝塔面板 국제판, 오픈 소스 Linux 패널
+    ru: Международная версия панели BaoTa, открытая панель для Linux.
+    ms: Edisi antarabangsa BaoTa Panel, panel Linux sumber terbuka.
+    pt-br: Edição internacional do BaoTa Panel, um painel Linux de código aberto.
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.aapanel.com/new/index.html
   github: https://github.com/aaPanel/aaPanel
   document: https://github.com/aaPanel/aaPanel
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Go 语言开发的端口转发工具 (客户端)
   shortDescEn: Port forwarding tool developed in Go (Agent)
+  description:
+    en: "Port forwarding tool developed in Go for the client side."
+    zh: "使用 Go 开发的端口转发工具（客户端）。"
+    zh-Hant: "使用 Go 開發的連接埠轉發工具（客戶端）。"
+    ja: "Go で開発されたポートフォワーディングツールのクライアント側です。"
+    ko: "Go로 개발된 포트 포워딩 도구의 클라이언트 측입니다."
+    ru: "Клиентская часть инструмента перенаправления портов, разработанного на Go."
+    ms: "Alat pemajuan port berasaskan Go untuk bahagian klien."
+    pt-br: "Ferramenta de encaminhamento de portas desenvolvida em Go para o lado cliente."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://gitee.com/tavenli/port-forward
   github: https://gitee.com/tavenli/port-forward
   document: https://gitee.com/tavenli/port-forward
+  architectures:
+    - amd64
