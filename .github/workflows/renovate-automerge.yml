@@ -156,6 +156,12 @@ jobs:
               exit 0
             fi
 
+            PR_STATE=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json state,mergedAt --jq 'if .mergedAt then "MERGED" else .state end' 2>/dev/null || true)
+            if [ "$PR_STATE" = "MERGED" ] || [ "$PR_STATE" = "CLOSED" ]; then
+              echo "PR already resolved with state: $PR_STATE"
+              exit 0
+            fi
+
             if echo "$MERGE_OUTPUT" | grep -Fq "Base branch was modified"; then
               if [ "$attempt" -lt 5 ]; then
                 sleep $((attempt * 5))
