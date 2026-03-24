@@ -1,0 +1,20 @@
+name: Label third-party PRs
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+
+permissions:
+  pull-requests: write
+
+jobs:
+  add-pending-label:
+    if: github.event.pull_request.user.login != 'app/renovate' && github.event.pull_request.user.login != 'renovate[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add pending label to third-party PRs
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: pending
