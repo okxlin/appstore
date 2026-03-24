@@ -5,9 +5,15 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - localApps
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: PR number to re-check and merge if eligible
+        required: true
+        type: string
 
 concurrency:
-  group: renovate-automerge-${{ github.event.pull_request.number }}
+  group: renovate-automerge-${{ github.workflow }}-${{ github.event.pull_request.number || inputs.pr_number || github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -17,10 +23,15 @@ permissions:
 jobs:
   automerge:
     if: >
-      github.event.pull_request.state == 'open' &&
       (
-        github.event.pull_request.user.login == 'app/renovate' ||
-        github.event.pull_request.user.login == 'renovate[bot]'
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.state == 'open' &&
+        (
+          github.event.pull_request.user.login == 'app/renovate' ||
+          github.event.pull_request.user.login == 'renovate[bot]'
+        )
+      ) || (
+        github.event_name == 'workflow_dispatch'
       )
     runs-on: ubuntu-latest
 
@@ -33,7 +44,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
-          PR_NUMBER="${{ github.event.pull_request.number }}"
+          PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
 
           mapfile -t apps < <(sed '/^\s*#/d;/^\s*$/d' .github/renovate-automerge-whitelist.txt)
@@ -87,29 +98,37 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
-          PR_NUMBER="${{ github.event.pull_request.number }}"
+          PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
 
-          PULL_COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message' || true)
-          BASE_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json baseRefOid --jq '.baseRefOid' || true)
-          HEAD_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefOid --jq '.headRefOid' || true)
-          COMPARE_COMMITS=""
-          if [ -n "$BASE_SHA" ] && [ -n "$HEAD_SHA" ]; then
-            COMPARE_COMMITS=$(gh api repos/$REPO/compare/$BASE_SHA...$HEAD_SHA --jq '.commits[].commit.message' || true)
-          fi
+          found=false
+          for attempt in 1 2 3 4 5; do
+            PULL_COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message' || true)
+            BASE_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json baseRefOid --jq '.baseRefOid' || true)
+            HEAD_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefOid --jq '.headRefOid' || true)
+            COMPARE_COMMITS=""
+            if [ -n "$BASE_SHA" ] && [ -n "$HEAD_SHA" ]; then
+              COMPARE_COMMITS=$(gh api repos/$REPO/compare/$BASE_SHA...$HEAD_SHA --jq '.commits[].commit.message' || true)
+            fi
 
-          echo "== pull commits =="
-          echo "$PULL_COMMITS"
-          echo "== compare commits =="
-          echo "$COMPARE_COMMITS"
+            echo "== attempt $attempt pull commits =="
+            echo "$PULL_COMMITS"
+            echo "== attempt $attempt compare commits =="
+            echo "$COMPARE_COMMITS"
 
-          ALL_COMMITS="$(printf '%s\n%s\n' "$PULL_COMMITS" "$COMPARE_COMMITS")"
+            ALL_COMMITS="$(printf '%s\n%s\n' "$PULL_COMMITS" "$COMPARE_COMMITS")"
 
-          if echo "$ALL_COMMITS" | grep -Fq "Update app version [skip ci]"; then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          fi
+            if echo "$ALL_COMMITS" | grep -Fq "Update app version [skip ci]"; then
+              found=true
+              break
+            fi
+
+            if [ "$attempt" -lt 5 ]; then
+              sleep 5
+            fi
+          done
+
+          echo "found=$found" >> "$GITHUB_OUTPUT"
 
       - name: Merge PR
         if: steps.whitelist.outputs.allowed == 'true' && steps.marker.outputs.found == 'true'
