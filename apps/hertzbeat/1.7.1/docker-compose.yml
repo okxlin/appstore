@@ -12,7 +12,7 @@ services:
     volumes:
       - "${DATA_PATH}/data:/opt/hertzbeat/data"
       - "${DATA_PATH}/logs:/opt/hertzbeat/logs"
-    image: tancloud/hertzbeat:1.7.1
+    image: tancloud/hertzbeat:1.8.0
     labels:  
       createdBy: "Apps"
 
