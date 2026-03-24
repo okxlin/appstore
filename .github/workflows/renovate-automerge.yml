@@ -137,7 +137,31 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
-          gh pr merge "$PR_NUMBER" \
-            --repo "${{ github.repository }}" \
-            --merge \
-            --delete-branch=false
+          REPO="${{ github.repository }}"
+
+          for attempt in 1 2 3 4 5; do
+            echo "== merge attempt $attempt =="
+
+            set +e
+            MERGE_OUTPUT=$(gh pr merge "$PR_NUMBER" \
+              --repo "$REPO" \
+              --merge \
+              --delete-branch=false 2>&1)
+            MERGE_EXIT=$?
+            set -e
+
+            echo "$MERGE_OUTPUT"
+
+            if [ "$MERGE_EXIT" -eq 0 ]; then
+              exit 0
+            fi
+
+            if echo "$MERGE_OUTPUT" | grep -Fq "Base branch was modified"; then
+              if [ "$attempt" -lt 5 ]; then
+                sleep $((attempt * 5))
+                continue
+              fi
+            fi
+
+            exit "$MERGE_EXIT"
+          done
