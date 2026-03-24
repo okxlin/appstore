@@ -10,7 +10,7 @@ additionalProperties:
     - default: --interval 3600 --cleanup
       edit: true
       envKey: COMMAND1
-      labelEn: Command parameters (separated by spaces)
-      labelZh: 命令参数(以空格分割)
+      labelEn: Command arguments (space-separated, single quotes not supported)
+      labelZh: 命令参数（以空格分隔，不支持单引号）
       required: true
       type: text
