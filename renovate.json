@@ -339,6 +339,13 @@
         "apps/reader/2.7.*/*.yml"
       ],
       "enabled": false
+    },
+    {
+      "description": "Disable Renovate updates for alist 3.44.0",
+      "matchFileNames": [
+        "apps/alist/3.44.0/*.yml"
+      ],
+      "enabled": false
     }
   ],
   "prCreation": "immediate"
