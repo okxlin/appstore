@@ -89,10 +89,14 @@ jobs:
         run: |
           PR_NUMBER="${{ github.event.pull_request.number }}"
           REPO="${{ github.repository }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
 
           PULL_COMMITS=$(gh api repos/$REPO/pulls/$PR_NUMBER/commits --paginate --jq '.[].commit.message' || true)
-          COMPARE_COMMITS=$(gh api repos/$REPO/compare/${{ github.event.pull_request.base.sha }}...$HEAD_SHA --jq '.commits[].commit.message' || true)
+          BASE_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json baseRefOid --jq '.baseRefOid' || true)
+          HEAD_SHA=$(gh pr view "$PR_NUMBER" --repo "$REPO" --json headRefOid --jq '.headRefOid' || true)
+          COMPARE_COMMITS=""
+          if [ -n "$BASE_SHA" ] && [ -n "$HEAD_SHA" ]; then
+            COMPARE_COMMITS=$(gh api repos/$REPO/compare/$BASE_SHA...$HEAD_SHA --jq '.commits[].commit.message' || true)
+          fi
 
           echo "== pull commits =="
           echo "$PULL_COMMITS"
