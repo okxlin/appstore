@@ -10,7 +10,8 @@
   "ignorePaths": [
     "apps/mysql-cluster/**",
     "apps/redis-cluster/**",
-    "apps/postgresql-cluster/**"
+    "apps/postgresql-cluster/**",
+    "**/Dockerfile"
   ],
   "packageRules": [
     {
