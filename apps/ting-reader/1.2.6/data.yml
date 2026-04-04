@@ -1,0 +1,35 @@
+additionalProperties:
+    formFields:
+        - default: 3000
+          edit: true
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: 端口
+          label:
+            en: Port
+            ja: ポート
+            ms: Port
+            pt-br: Porta
+            ru: Порт
+            ko: 포트
+            zh: 端口
+            zh-Hant: 埠
+          required: true
+          rule: paramPort
+          type: number
+        - default: ./storage
+          edit: true
+          envKey: AUDIOBOOK_STORAGE_PATH
+          labelEn: Audiobook Storage Path
+          labelZh: 有声书存储路径
+          label:
+            en: Audiobook Storage Path
+            ja: オーディオブックストレージパス
+            ms: Laluan Penyimpanan Buku Audio
+            pt-br: Caminho de Armazenamento de Audiolivros
+            ru: Путь хранения аудиокниг
+            ko: 오디오북 저장 경로
+            zh: 有声书存储路径
+            zh-Hant: 有聲書存儲路徑
+          required: true
+          type: text
