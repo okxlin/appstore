@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 新一代的论坛软件，使在线讨论变得有趣
   shortDescEn: The next-generation forum software that makes online discussion fun
+  description:
+    en: The next-generation forum software that makes online discussion fun
+    zh: 新一代的论坛软件，使在线讨论变得有趣
+    zh-Hant: 新一代的論壇軟體，讓線上討論更有趣
+    ja: オンライン討論を楽しくする次世代フォーラムソフト
+    ko: 온라인 토론을 즐겁게 만드는 차세대 포럼 소프트웨어
+    ru: Форум нового поколения, делающий онлайн‑обсуждение интересным
+    ms: Perisian forum generasi baharu yang menjadikan perbincangan dalam talian menyeronokkan
+    pt-br: Software de fórum de nova geração que torna as discussões online divertidas
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://flarum.org/
   github: https://github.com/flarum/flarum
   document: https://docs.flarum.org/
+  architectures:
+    - amd64

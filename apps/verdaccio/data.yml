@@ -10,6 +10,15 @@ additionalProperties:
     - DevOps
   shortDescZh: 本地私有 NPM 注册中心
   shortDescEn: local private NPM registry
+  description:
+    en: "Local private NPM registry."
+    zh: "本地私有 NPM 注册中心。"
+    zh-Hant: "本地私有 NPM 註冊中心。"
+    ja: "ローカルで使えるプライベート NPM レジストリです。"
+    ko: "로컬 프라이빗 NPM 레지스트리입니다."
+    ru: "Локальный приватный реестр NPM."
+    ms: "Pendaftaran NPM peribadi tempatan."
+    pt-br: "Registro NPM privado local."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://verdaccio.org/
   github: https://github.com/verdaccio/verdaccio
   document: https://verdaccio.org/docs/what-is-verdaccio
+  architectures:
+    - amd64

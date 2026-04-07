@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 跨平台剪贴板同步方案 (服务端)
   shortDescEn: Cross-Platform Cipboard Syncing Solution (Server)
+  description:
+    en: Cross-platform clipboard sync solution (server)
+    zh: 跨平台剪贴板同步方案 (服务端)
+    zh-Hant: 跨平台剪貼簿同步方案（服務端）
+    ja: クロスプラットフォームのクリップボード同期ソリューション（サーバー）
+    ko: 크로스플랫폼 클립보드 동기화 솔루션(서버)
+    ru: Кроссплатформенное решение синхронизации буфера обмена (сервер)
+    ms: Penyelesaian penyegerakan papan klip merentas platform (pelayan)
+    pt-br: Solução de sincronização de área de transferência multiplataforma (servidor)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/Jeric-X/SyncClipboard
   github: https://github.com/Jeric-X/SyncClipboard
   document: https://github.com/Jeric-X/SyncClipboard
+
+  architectures:
+    - amd64

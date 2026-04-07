@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: docker 里的 CloudFlare warp socks5
   shortDescEn: CloudFlare warp socks5 in docker
+  description:
+    en: CloudFlare WARP SOCKS5 in Docker
+    zh: docker 里的 CloudFlare warp socks5
+    zh-Hant: Docker 裡的 CloudFlare WARP SOCKS5
+    ja: ドッカー内でCloudFlare WARPのSOCKS5を使う
+    ko: 도커에서 클라우드플레어 WARP SOCKS5 사용
+    ru: WARP SOCKS5 от CloudFlare в докере
+    ms: CloudFlare WARP SOCKS5 dalam Docker
+    pt-br: CloudFlare WARP SOCKS5 no Docker
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/activeliang/wgcf-socks5-proxy
   github: https://github.com/activeliang/wgcf-socks5-proxy
   document: https://github.com/activeliang/wgcf-socks5-proxy
+
+  architectures:
+    - amd64

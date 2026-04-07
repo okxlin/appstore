@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 具有隐私保护和团队合作功能的开源云存储系统
   shortDescEn: An open source cloud storage system with privacy protection and teamwork features
+  description:
+    en: An open-source cloud storage system with privacy protection and teamwork features
+    zh: 具有隐私保护和团队合作功能的开源云存储系统
+    zh-Hant: 具有隱私保護和團隊合作功能的開源雲端儲存系統
+    ja: プライバシー保護とチーム協働機能を備えたオープンソースのクラウドストレージシステム
+    ko: 개인정보 보호와 팀 협업 기능을 갖춘 오픈 소스 클라우드 스토리지 시스템
+    ru: Открытая облачная система хранения с защитой приватности и функциями совместной работы
+    ms: Sistem storan awan sumber terbuka dengan perlindungan privasi dan ciri kerjasama pasukan
+    pt-br: Sistema de armazenamento em nuvem de código aberto com proteção de privacidade e recursos de colaboração em equipe
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.seafile.com
   github: https://github.com/haiwen/seafile
   document: https://manual.seafile.com
+
+  architectures:
+    - amd64

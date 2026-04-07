@@ -17,3 +17,14 @@ additionalProperties:
   website: https://donknap.github.io/dpanel-docs
   github: https://github.com/donknap/dpanel
   document: https://donknap.github.io/dpanel-docs
+  architectures:
+    - amd64
+  description:
+    en: "Docker Visualization Panel System"
+    zh: "Docker 可视化面板系统"
+    zh-Hant: "Docker 可視化面板系統"
+    ja: "Docker 可視化パネルシステム"
+    ko: "Docker 시각화 패널 시스템"
+    ru: "Система визуальной панели Docker"
+    ms: "Sistem panel visualisasi Docker"
+    pt-br: "Sistema de painel de visualização do Docker"

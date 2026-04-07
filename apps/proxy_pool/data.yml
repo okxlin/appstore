@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 爬虫代理 IP 池
   shortDescEn: Python ProxyPool for web spider
+  description:
+    en: "Proxy IP pool for web crawlers."
+    zh: "面向爬虫的代理 IP 池。"
+    zh-Hant: "面向爬蟲的代理 IP 池。"
+    ja: "Web クローラー向けのプロキシ IP プールです。"
+    ko: "웹 크롤러용 프록시 IP 풀입니다."
+    ru: "Пул прокси-IP для веб-краулеров."
+    ms: "Kumpulan IP proksi untuk perayap web."
+    pt-br: "Pool de IPs proxy para crawlers da web."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://proxy-pool.readthedocs.io
   github: https://github.com/jhao104/proxy_pool
   document: https://proxy-pool.readthedocs.io
+  architectures:
+    - amd64

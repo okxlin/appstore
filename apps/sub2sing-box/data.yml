@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 将节点和订阅转换为 sing-box 配置
   shortDescEn: Converting nodes and subscriptions to sing-box configuration
+  description:
+    en: Converting nodes and subscriptions to sing-box configuration
+    zh: 将节点和订阅转换为 sing-box 配置
+    zh-Hant: 將節點和訂閱轉換為 sing-box 配置
+    ja: ノードとサブスクリプションを sing-box 設定に変換
+    ko: 노드와 구독을 sing-box 설정으로 변환
+    ru: Преобразование узлов и подписок в конфигурацию sing-box
+    ms: Menukar nod dan langganan kepada konfigurasi sing-box
+    pt-br: Converter nós e assinaturas para configuração sing-box
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://singbox.nite07.com/
   github: https://github.com/nitezs/sub2sing-box
   document: https://github.com/nitezs/sub2sing-box
+
+  architectures:
+    - amd64

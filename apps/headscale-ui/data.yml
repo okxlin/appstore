@@ -17,3 +17,15 @@ additionalProperties:
   website: https://github.com/gurucomputing/headscale-ui
   github: https://github.com/gurucomputing/headscale-ui
   document: https://github.com/gurucomputing/headscale-ui
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A web frontend for the Headscale coordination server compatible with Tailscale.'
+    zh: 'Headscale 与 Tailscale 兼容的协调服务器的 Web 前端'
+    zh-Hant: 'Headscale 與 Tailscale 相容的協調伺服器 Web 前端'
+    ja: 'Tailscale 互換の Headscale 協調サーバー向け Web フロントエンドです。'
+    ko: 'Tailscale 호환 Headscale 조정 서버용 웹 프런트엔드입니다.'
+    ru: 'Веб-интерфейс для сервера координации Headscale, совместимого с Tailscale.'
+    ms: 'Antara muka web untuk pelayan koordinasi Headscale yang serasi dengan Tailscale.'
+    pt-br: 'Frontend web para o servidor de coordenação Headscale compatível com Tailscale.'

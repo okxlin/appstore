@@ -6,6 +6,7 @@ additionalProperties:
       labelZh: 端口
       required: true
       type: number
+      rule: paramPort
       edit: true
     - default: "55555"
       envKey: PANEL_APP_PORT_SYNC
@@ -13,6 +14,7 @@ additionalProperties:
       labelZh: 同步端口
       required: true
       type: number
+      rule: paramPort
       edit: true
     - default: "./data/config"
       envKey: CONFIG_PATH

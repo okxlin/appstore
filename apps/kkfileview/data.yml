@@ -4,6 +4,15 @@ tags:
 title: 一款文件文档在线预览解决方案
 description: 一款文件文档在线预览解决方案
 additionalProperties:
+  description:
+    en: An online preview solution for documents
+    zh: 一款文件文档在线预览解决方案
+    zh-Hant: 一款文件文件在線預覽解決方案
+    ja: ドキュメントのオンラインプレビューソリューション
+    ko: 문서 온라인 미리보기 솔루션
+    ru: Онлайн-решение для предварительного просмотра документов
+    ms: Penyelesaian pratonton dokumen dalam talian
+    pt-br: Solução online de pré-visualização de documentos
   key: kkfileview
   name: kkFileView
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://kkview.cn/zh-cn/index.html
   github: https://github.com/kekingcn/kkFileView
   document: https://kkfileview.keking.cn/zh-cn/docs/home.html
+  architectures:
+    - amd64

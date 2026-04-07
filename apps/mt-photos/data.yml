@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一款简单、好用的照片管理系统
   shortDescEn: A simple, easy-to-use photo management system
+  description:
+    en: A simple, easy-to-use photo management system
+    zh: 一款简单、好用的照片管理系统
+    zh-Hant: 一款簡單、好用的照片管理系統
+    ja: シンプルで使いやすい写真管理システム
+    ko: 간단하고 사용하기 쉬운 사진 관리 시스템
+    ru: Простая и удобная система управления фотографиями
+    ms: Sistem pengurusan foto yang ringkas dan mudah digunakan
+    pt-br: Sistema de gerenciamento de fotos simples e fácil de usar
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://mtmt.tech
   github: https://hub.docker.com/r/mtphotos/mt-photos
   document: https://mtmt.tech
+  architectures:
+    - amd64
+

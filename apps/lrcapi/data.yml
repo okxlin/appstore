@@ -4,6 +4,15 @@ tags:
 title: StreamMusic 的 Flask 应用程序接口
 description: StreamMusic 的 Flask 应用程序接口
 additionalProperties:
+  description:
+    en: A Flask API for StreamMusic
+    zh: StreamMusic 的 Flask 应用程序接口
+    zh-Hant: StreamMusic 的 Flask 應用程式介面
+    ja: StreamMusic向けのフラスク製エーピーアイサービスです
+    ko: StreamMusic용 플라스크 에이피아이 서비스
+    ru: Фласк‑АПИ для СтримМьюзик
+    ms: API Flask untuk StreamMusic
+    pt-br: API Flask para o StreamMusic
   key: lrcapi
   name: LrcApi
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://docs.lrc.cx
   github: https://github.com/HisAtri/LrcApi
   document: https://docs.lrc.cx
+  architectures:
+    - amd64

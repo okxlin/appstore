@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/budtmo/docker-android
   github: https://github.com/budtmo/docker-android
   document: https://github.com/budtmo/docker-android
+  architectures:
+    - amd64
+  description:
+    en: "Run Android in Docker"
+    zh: "在 Docker 中运行 Android"
+    zh-Hant: "在 Docker 中執行 Android"
+    ja: "Docker上でAndroid環境を起動・実行します。"
+    ko: "Docker 환경에서 Android를 실행합니다."
+    ru: "Запуск Android в Docker"
+    ms: "Jalankan Android dalam Docker"
+    pt-br: "Execute o Android no Docker"

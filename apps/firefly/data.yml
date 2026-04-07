@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款简单、易架设的 WireGuard 服务端软件
   shortDescEn: A simple and easy to install WireGuard server software
+  description:
+    en: A simple and easy to deploy WireGuard server software
+    zh: 一款简单、易架设的 WireGuard 服务端软件
+    zh-Hant: 一款簡單、易架設的 WireGuard 伺服端軟體
+    ja: 簡単で構築しやすい WireGuard サーバーソフトウェア
+    ko: 간단하고 구축이 쉬운 WireGuard 서버 소프트웨어
+    ru: Простое и легко развёртываемое серверное ПО WireGuard
+    ms: Perisian pelayan WireGuard yang ringkas dan mudah dipasang
+    pt-br: Software de servidor WireGuard simples e fácil de implantar
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://fahi.uusec.com
   github: https://github.com/Safe3/firefly
   document: https://github.com/Safe3/firefly/blob/main/README.md
+  architectures:
+    - amd64

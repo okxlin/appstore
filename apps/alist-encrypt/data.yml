@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 对 Alist 的服务提供 webdav 的加解密功能
   shortDescEn: Provides webdav encryption and decryption for Alist's services
+  description:
+    en: Provides WebDAV encryption and decryption for AList services.
+    zh: 对 Alist 的服务提供 webdav 的加解密功能
+    zh-Hant: 為 Alist 的服務提供 WebDAV 的加解密功能
+    ja: AList のサービスに WebDAV の暗号化・復号機能を提供
+    ko: AList 서비스에 WebDAV 암호화/복호화 기능을 제공합니다
+    ru: Предоставляет шифрование и расшифровку WebDAV для сервисов AList.
+    ms: Menyediakan fungsi penyulitan dan penyahsulitan WebDAV untuk perkhidmatan AList.
+    pt-br: Fornece criptografia e descriptografia WebDAV para serviços do AList.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/traceless/alist-encrypt
   github: https://github.com/traceless/alist-encrypt
   document: https://github.com/traceless/alist-encrypt
+  architectures:
+    - amd64

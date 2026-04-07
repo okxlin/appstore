@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 图像共享平台（图床）
   shortDescEn: Image Sharing Platform
+  description:
+    en: Image sharing platform (image hosting)
+    zh: 图像共享平台（图床）
+    zh-Hant: 圖像共享平台（圖床）
+    ja: 画像共有プラットフォーム（画像ホスティング）
+    ko: 이미지 공유 플랫폼(이미지 호스팅)
+    ru: Платформа для обмена изображениями (хостинг изображений)
+    ms: Platform perkongsian imej (hos imej)
+    pt-br: Plataforma de compartilhamento de imagens (hospedagem de imagens)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/andrii-kryvoviaz/slink
   github: https://github.com/andrii-kryvoviaz/slink
   document: https://github.com/andrii-kryvoviaz/slink
+
+  architectures:
+    - amd64

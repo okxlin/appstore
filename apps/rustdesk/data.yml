@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: RustDesk是一款开源的远程桌面软件
   shortDescEn: RustDesk is an open source remote desktop software
+  description:
+    en: RustDesk is an open-source remote desktop software
+    zh: RustDesk是一款开源的远程桌面软件
+    zh-Hant: RustDesk是一款開源的遠端桌面軟體
+    ja: RustDeskはオープンソースのリモートデスクトップソフトです
+    ko: RustDesk는 오픈 소스 원격 데스크톱 소프트웨어입니다
+    ru: RustDesk — это программное обеспечение для удаленного рабочего стола с открытым исходным кодом
+    ms: RustDesk ialah perisian desktop jauh sumber terbuka
+    pt-br: O RustDesk é um software de área de trabalho remota de código aberto
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://rustdesk.com/zh/
   github: https://github.com/rustdesk/rustdesk
   document: https://rustdesk.com/docs/zh-cn/
+
+  architectures:
+    - amd64
+    - arm64

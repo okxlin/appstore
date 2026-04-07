@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 自托管个人服务器的照片库
   shortDescEn: Photo gallery for self-hosted personal servers
+  description:
+    en: "Photo gallery for self-hosted personal servers."
+    zh: "适用于自托管个人服务器的照片库。"
+    zh-Hant: "適用於自託管個人伺服器的相片庫。"
+    ja: "セルフホストの個人サーバー向け写真ギャラリーです。"
+    ko: "셀프호스팅 개인 서버용 사진 갤러리입니다."
+    ru: "Фотогалерея для персональных self-hosted серверов."
+    ms: "Galeri foto untuk pelayan peribadi yang dihoskan sendiri."
+    pt-br: "Galeria de fotos para servidores pessoais auto-hospedados."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/photoview/photoview
   github: https://github.com/photoview/photoview
   document: https://github.com/photoview/photoview
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个服务器、NAS导航面板、Homepage、浏览器首页
   shortDescEn: Server, NAS navigation panel, Homepage, Browser homepage
+  description:
+    en: Server and NAS navigation panel, homepage, and browser start page
+    zh: 一个服务器、NAS导航面板、Homepage、浏览器首页
+    zh-Hant: 一個伺服器、NAS 導航面板、Homepage、瀏覽器首頁
+    ja: サーバーとNASのナビゲーションパネル、ホームページ、ブラウザのホームページ
+    ko: 서버·NAS 내비게이션 패널, 홈 페이지, 브라우저 홈
+    ru: Панель навигации сервера и NAS, домашняя страница и домашняя страница браузера
+    ms: Panel navigasi pelayan dan NAS, halaman utama, serta laman utama penyemak imbas
+    pt-br: Painel de navegação de servidor e NAS, página inicial e página inicial do navegador
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://sun-panel-doc.enianteam.com
   github: https://github.com/hslr-s/sun-panel
   document: https://sun-panel-doc.enianteam.com
+
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自托管的 RSS 和 Atom 订阅源聚合器
   shortDescEn: A self-hosted RSS and Atom feed aggregator
+  description:
+    en: A self-hosted RSS and Atom feed aggregator
+    zh: 自托管的 RSS 和 Atom 订阅源聚合器
+    zh-Hant: 自託管的 RSS 和 Atom 訂閱源聚合器
+    ja: セルフホスト型の RSS/Atom フィードアグリゲーター
+    ko: 자체 호스팅 RSS 및 Atom 피드 통합기
+    ru: Самостоятельно размещаемый агрегатор RSS и Atom
+    ms: Pengagregat suapan RSS dan Atom yang dihoskan sendiri
+    pt-br: Agregador de feeds RSS e Atom auto-hospedado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://freshrss.org
   github: https://github.com/FreshRSS/FreshRSS
   document: https://freshrss.github.io/FreshRSS
+  architectures:
+    - amd64
+    - arm
+    - arm64

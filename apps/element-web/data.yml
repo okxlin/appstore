@@ -17,3 +17,14 @@ additionalProperties:
   website: https://element.io
   github: https://github.com/vector-im/element-web
   document: https://github.com/vector-im/element-web
+  architectures:
+    - amd64
+  description:
+    en: "A secure communications platform built around you"
+    zh: "一款围绕您构建的安全通信平台"
+    zh-Hant: "一款圍繞您構建的安全通信平台"
+    ja: "あなたを中心に設計された安全なコミュニケーションプラットフォーム"
+    ko: "사용자를 중심으로 구축된 안전한 커뮤니케이션 플랫폼"
+    ru: "Безопасная коммуникационная платформа, созданная вокруг вас"
+    ms: "Platform komunikasi selamat yang dibina mengelilingi anda"
+    pt-br: "Uma plataforma de comunicação segura feita em torno de você"

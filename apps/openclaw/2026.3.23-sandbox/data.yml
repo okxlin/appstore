@@ -47,7 +47,7 @@ additionalProperties:
         ms: Path OpenClaw Config
         pt-br: Caminho do Config OpenClaw
         ru: Путь конфигурации OpenClaw
-        ko: OpenClaw Config Path
+        ko: OpenClaw 구성 경로
         zh-Hant: OpenClaw 配置文件路径
         zh: OpenClaw 配置文件路径
     - default: "./data/workspace"
@@ -89,8 +89,8 @@ additionalProperties:
         ja: OpenClaw ゲートウェイバインド
         ms: OpenClaw Gateway Bind
         pt-br: OpenClaw Gateway Bind
-        ru: OpenClaw Gateway Bind
-        ko: OpenClaw Gateway Bind
+        ru: Привязка шлюза OpenClaw
+        ko: OpenClaw 게이트웨이 바인드
         zh-Hant: OpenClaw 网关绑定
         zh: OpenClaw 网关绑定
     - default: "local"
@@ -105,8 +105,8 @@ additionalProperties:
         ja: OpenClaw モード
         ms: OpenClaw Mode
         pt-br: OpenClaw Mode
-        ru: OpenClaw Mode
-        ko: OpenClaw Mode
+        ru: Режим OpenClaw
+        ko: OpenClaw 모드
         zh-Hant: OpenClaw 模式
         zh: OpenClaw 模式
     - default: ""

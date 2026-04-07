@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 适用于小规模部署的简单 Headscale 网络用户界面
   shortDescEn: A simple Headscale web UI for small-scale deployments
+  description:
+    en: Simple Headscale web UI for small-scale deployments
+    zh: 适用于小规模部署的简单 Headscale 网络用户界面
+    zh-Hant: 適用於小規模部署的簡易 Headscale 網頁介面
+    ja: 小規模導入向けのシンプルな Headscale Web UI
+    ko: 소규모 배포를 위한 간단한 Headscale 웹 UI
+    ru: Простой веб‑интерфейс Headscale для небольших развертываний
+    ms: UI web Headscale yang ringkas untuk penggunaan skala kecil
+    pt-br: UI web simples do Headscale para implantações de pequeno porte
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/iFargle/headscale-webui
   github: https://github.com/iFargle/headscale-webui
   document: https://github.com/iFargle/headscale-webui
+  architectures:
+    - amd64
+

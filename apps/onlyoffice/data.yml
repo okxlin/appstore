@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个免费的在线办公套件
   shortDescEn: A free collaborative online office suite
+  description:
+    en: A free collaborative online office suite
+    zh: 一个免费的在线办公套件
+    zh-Hant: 一個免費的線上辦公套件
+    ja: 無料のオンラインオフィススイート
+    ko: 무료 온라인 오피스 스위트
+    ru: Бесплатный онлайн-офисный пакет для совместной работы
+    ms: Suite pejabat dalam talian percuma untuk kolaborasi
+    pt-br: Suíte de escritório online gratuita para colaboração
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.onlyoffice.com
   github: https://github.com/ONLYOFFICE
   document: https://helpcenter.onlyoffice.com
+  architectures:
+    - amd64

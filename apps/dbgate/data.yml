@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 跨平台的数据库管理器
   shortDescEn: Cross-platform database manager
+  description:
+    en: Cross-platform database manager
+    zh: 跨平台的数据库管理器
+    zh-Hant: 跨平台的資料庫管理器
+    ja: クロスプラットフォームのデータベース管理ツール
+    ko: 크로스 플랫폼 데이터베이스 관리자
+    ru: Кроссплатформенный менеджер баз данных
+    ms: Pengurus pangkalan data merentas platform
+    pt-br: Gerenciador de banco de dados multiplataforma
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://dbgate.org
   github: https://github.com/dbgate/dbgate
   document: https://dbgate.org/docs/
+  architectures:
+    - amd64

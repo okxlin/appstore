@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一个免费的个人媒体服务器
   shortDescEn: A free personal media server
+  description:
+    en: A free personal media server
+    zh: 一个免费的个人媒体服务器
+    zh-Hant: 一個免費的個人媒體伺服器
+    ja: 無料の個人用メディアサーバー
+    ko: 무료 개인 미디어 서버
+    ru: Бесплатный персональный медиасервер
+    ms: Pelayan media peribadi percuma
+    pt-br: Um servidor de mídia pessoal gratuito
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://emby.media/
   github: https://github.com/MediaBrowser/Emby
   document: https://emby.media/support/articles/Home.html
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个简单的 API，它返回一个 catfact
   shortDescEn: a simple api which returns a catfact
+  description:
+    en: A simple API that returns a cat fact
+    zh: 一个简单的 API，它返回一个 catfact
+    zh-Hant: 一個簡單的 API，會回傳一則貓咪冷知識
+    ja: 猫の豆知識を返すシンプルなAPI
+    ko: 고양이 팩트를 반환하는 간단한 API
+    ru: Простой API, который возвращает факт о кошках
+    ms: API ringkas yang mengembalikan fakta kucing
+    pt-br: Uma API simples que retorna um fato sobre gatos
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/wh-iterabb-it/meowfacts
   github: https://github.com/wh-iterabb-it/meowfacts
   document: https://github.com/wh-iterabb-it/meowfacts
+  architectures:
+    - amd64
+

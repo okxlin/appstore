@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 轻量级、高性能、功能强大的内网穿透代理服务器
   shortDescEn: Lightweight, high-performance, powerful intranet penetration proxy server
+  description:
+    en: Lightweight, high-performance, powerful intranet penetration proxy server
+    zh: 轻量级、高性能、功能强大的内网穿透代理服务器
+    zh-Hant: 輕量級、高性能、功能強大的內網穿透代理伺服器
+    ja: 軽量で高性能、機能豊富な内网穿透プロキシサーバー
+    ko: 가볍고 고성능이며 강력한 내망 관통 프록시 서버
+    ru: Лёгкий, высокопроизводительный и мощный прокси-сервер для проникновения во внутреннюю сеть
+    ms: Pelayan proksi penembusan intranet yang ringan, berprestasi tinggi dan berkuasa
+    pt-br: Servidor proxy de acesso à intranet leve, de alto desempenho e poderoso
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://ehang-io.github.io/nps
   github: https://github.com/yisier/nps
   document: https://ehang-io.github.io/nps
+  architectures:
+    - amd64

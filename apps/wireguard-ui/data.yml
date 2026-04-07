@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Wireguard 网络界面
   shortDescEn: Wireguard web interface
+  description:
+    en: Wireguard web interface
+    zh: Wireguard 网络界面
+    zh-Hant: Wireguard 網路介面
+    ja: Wireguard のWebインターフェース
+    ko: Wireguard 웹 인터페이스
+    ru: Веб‑интерфейс Wireguard
+    ms: Antaramuka web Wireguard
+    pt-br: Interface web do Wireguard
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.wireguard.com/
   github: https://github.com/ngoduykhanh/wireguard-ui
   document: https://www.wireguard.com/
+
+  architectures:
+    - amd64

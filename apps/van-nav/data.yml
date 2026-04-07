@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个轻量导航站，汇总你的所有服务
   shortDescEn: A lightweight navigation station that aggregates all your services
+  description:
+    en: "Lightweight navigation portal that aggregates all your services."
+    zh: "汇总你所有服务的轻量导航站。"
+    zh-Hant: "彙整你所有服務的輕量導覽站。"
+    ja: "すべてのサービスをまとめる軽量ナビゲーションポータルです。"
+    ko: "모든 서비스를 한곳에 모아주는 경량 네비게이션 포털입니다."
+    ru: "Лёгкий навигационный портал, объединяющий все ваши сервисы."
+    ms: "Portal navigasi ringan yang menghimpunkan semua perkhidmatan anda."
+    pt-br: "Portal de navegação leve que reúne todos os seus serviços."
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/Mereithhh/van-nav
   github: https://github.com/Mereithhh/van-nav
   document: https://github.com/Mereithhh/van-nav
+  architectures:
+    - amd64

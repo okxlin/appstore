@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: Redis 图形管理工具
   shortDescEn: Redis graphical management tool
+  description:
+    en: Redis graphical management tool
+    zh: Redis 图形管理工具
+    zh-Hant: Redis 圖形管理工具
+    ja: Redis のGUI管理ツール
+    ko: Redis 그래픽 관리 도구
+    ru: Графический инструмент управления Redis
+    ms: Alat pengurusan grafik Redis
+    pt-br: Ferramenta gráfica de gerenciamento do Redis
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://redis.com/redis-enterprise/redis-insight/
   github: https://github.com/RedisInsight/RedisInsight
   document: https://docs.redis.com/latest/ri/
+  architectures:
+    - amd64

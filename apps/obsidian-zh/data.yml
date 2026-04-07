@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个使用Markdown语法的闭源笔记软件
   shortDescEn: A private and flexible writing app
+  description:
+    en: A private and flexible writing app
+    zh: 一个使用Markdown语法的闭源笔记软件
+    zh-Hant: 一個使用Markdown語法的閉源筆記軟體
+    ja: Markdown記法を使うクローズドソースのノートアプリ
+    ko: Markdown 문법을 사용하는 폐쇄형 노트 앱
+    ru: Закрытое приложение для заметок с поддержкой Markdown
+    ms: Aplikasi nota proprietari yang menggunakan sintaks Markdown
+    pt-br: Aplicativo de notas proprietário que usa sintaxe Markdown
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://obsidian.md
   github: https://github.com/WHG555/obsidian-docker
   document: https://help.obsidian.md
+  architectures:
+    - amd64

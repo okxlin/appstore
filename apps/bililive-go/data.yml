@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个支持多种直播平台的直播录制工具
   shortDescEn: A live recording tool that supports multiple live streaming platforms
+  description:
+    en: A live recording tool that supports multiple streaming platforms
+    zh: 一个支持多种直播平台的直播录制工具
+    zh-Hant: 一個支援多種直播平台的直播錄製工具
+    ja: 複数の配信プラットフォームに対応した録画ツール
+    ko: 여러 라이브 플랫폼을 지원하는 라이브 녹화 도구
+    ru: Инструмент записи стримов с поддержкой нескольких платформ
+    ms: Alat rakaman siaran langsung yang menyokong pelbagai platform
+    pt-br: Ferramenta de gravação de lives com suporte a várias plataformas
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/hr3lxphr6j/bililive-go
   github: https://github.com/hr3lxphr6j/bililive-go
   document: https://github.com/hr3lxphr6j/bililive-go/wiki
+  architectures:
+    - amd64

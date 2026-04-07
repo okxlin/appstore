@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: Plex 媒体服务器
   shortDescEn: Plex Media Server
+  description:
+    en: "Plex media server."
+    zh: "Plex 媒体服务器。"
+    zh-Hant: "Plex 媒體伺服器。"
+    ja: "Plex メディアサーバーです。"
+    ko: "Plex 미디어 서버입니다."
+    ru: "Медиасервер Plex."
+    ms: "Pelayan media Plex."
+    pt-br: "Servidor de mídia Plex."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.plex.tv
   github: https://github.com/plexinc/pms-docker
   document: https://support.plex.tv
+  architectures:
+    - amd64
+    - arm64

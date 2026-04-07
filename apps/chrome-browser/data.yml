@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Google Chrome 浏览器
   shortDescEn: Google Chrome
+  description:
+    en: Google Chrome
+    zh: Google Chrome 浏览器
+    zh-Hant: Google Chrome 瀏覽器
+    ja: グーグルの高速で安全なウェブブラウザ
+    ko: 빠르고 안전한 구글의 웹 브라우저
+    ru: Браузер Google Chrome
+    ms: Pelayar Google Chrome
+    pt-br: Navegador Google Chrome
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.google.com/chrome/
   github: https://www.google.com/chrome/
   document: https://www.google.com/chrome/
+  architectures:
+    - amd64

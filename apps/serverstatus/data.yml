@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 多服务器状态监控
   shortDescEn: Multi-server status monitoring
+  description:
+    en: Multi-server status monitoring
+    zh: 多服务器状态监控
+    zh-Hant: 多伺服器狀態監控
+    ja: 複数サーバーの状態監視
+    ko: 다중 서버 상태 모니터링
+    ru: Мониторинг состояния нескольких серверов
+    ms: Pemantauan status berbilang pelayan
+    pt-br: Monitoramento de status de múltiplos servidores
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/cppla/ServerStatus
   github: https://github.com/cppla/ServerStatus
   document: https://github.com/cppla/ServerStatus
+
+  architectures:
+    - amd64

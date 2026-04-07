@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个支持私有部署的云端双链笔记软件
   shortDescEn: A note-taking software which support self-hosted and cloud-based dual-chain storing
+  description:
+    en: A cloud-based double-link note app that supports private deployment
+    zh: 一个支持私有部署的云端双链笔记软件
+    zh-Hant: 一個支援私有部署的雲端雙鏈筆記軟體
+    ja: プライベート導入に対応したクラウド型双方向リンクノート
+    ko: 프라이빗 배포를 지원하는 클라우드 기반 양방향 링크 노트 앱
+    ru: Облачное двустороннее заметочное приложение с поддержкой приватного развертывания
+    ms: Aplikasi nota pautan dua hala berasaskan awan yang menyokong penggunaan peribadi
+    pt-br: Aplicativo de notas com links bidirecionais na nuvem com suporte a implantação privada
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.wangyunf.com/blossom-doc/
   github: https://github.com/blossom-editor/blossom
   document: https://www.wangyunf.com/blossom-doc/
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个完全由 Javascript 驱动的内容管理程序
   shortDescEn: A content management program driven entirely by Javascript
+  description:
+    en: A content management program driven entirely by Javascript
+    zh: 一个完全由 Javascript 驱动的内容管理程序
+    zh-Hant: 一個完全由 Javascript 驅動的內容管理程式
+    ja: Javascriptだけで動作するコンテンツ管理プログラム
+    ko: Javascript만으로 구동되는 콘텐츠 관리 프로그램
+    ru: Система управления контентом, полностью работающая на Javascript
+    ms: Program pengurusan kandungan yang digerakkan sepenuhnya oleh Javascript
+    pt-br: Programa de gerenciamento de conteúdo totalmente movido a Javascript
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://docs.panda-studio.cn:8282/docs/post-19/page-100
   github: https://docs.panda-studio.cn:8282/docs/post-19/page-100
   document: https://docs.panda-studio.cn:8282/docs/post-19/page-100
+  architectures:
+    - amd64

@@ -6,6 +6,15 @@ description: 一个基于 Next.js 和 哪吒监控 的仪表盘
 additionalProperties:
   key: nezha-dash
   name: NezhaDash
+  description:
+    en: A dashboard based on Next.js and Nezha Monitoring
+    zh: 一个基于 Next.js 和 哪吒监控 的仪表盘
+    zh-Hant: 一個基於 Next.js 和 哪吒監控 的儀表盤
+    ja: Next.js と哪吒監控に基づくダッシュボード
+    ko: Next.js와 哪吒 모니터링 기반 대시보드
+    ru: Панель на базе Next.js и мониторинга Nezha
+    ms: Papan pemuka berasaskan Next.js dan Pemantauan Nezha
+    pt-br: Painel baseado em Next.js e Nezha Monitoring
   tags:
     - Tool
   shortDescZh: 一个基于 Next.js 和 哪吒监控 的仪表盘
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://nezha-cf.buycoffee.top
   github: https://github.com/hamster1963/nezha-dash
   document: https://github.com/hamster1963/nezha-dash
+  architectures:
+    - amd64

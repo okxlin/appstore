@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 应用程序仪表板和启动器
   shortDescEn: An Application dashboard and launcher
+  description:
+    en: Application dashboard and launcher
+    zh: 应用程序仪表板和启动器
+    zh-Hant: 應用程式儀表板與啟動器
+    ja: アプリケーションのダッシュボード兼ランチャー
+    ko: 애플리케이션 대시보드 및 런처
+    ru: Панель и лаунчер приложений
+    ms: Papan pemuka dan pelancar aplikasi
+    pt-br: Painel e lançador de aplicativos
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://heimdall.site/
   github: https://github.com/linuxserver/Heimdall
   document: https://github.com/linuxserver/Heimdall
+  architectures:
+    - amd64
+    - arm64
+

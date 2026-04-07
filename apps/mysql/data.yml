@@ -6,6 +6,15 @@ description: MySQL 开源关系型数据库
 additionalProperties:
   key: mysql
   name: MySQL
+  description:
+    en: MySQL open-source relational database
+    zh: MySQL 开源关系型数据库
+    zh-Hant: MySQL 開源關係型資料庫
+    ja: MySQL オープンソースのリレーショナルデータベース
+    ko: MySQL 오픈 소스 관계형 데이터베이스
+    ru: MySQL — открытая реляционная база данных
+    ms: Pangkalan data relasi sumber terbuka MySQL
+    pt-br: Banco de dados relacional de código aberto MySQL
   tags:
     - Database
   shortDescZh: MySQL 开源关系型数据库
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.mysql.com
   github: https://github.com/mysql/mysql-server
   document: https://dev.mysql.com/doc/
+  architectures:
+    - amd64

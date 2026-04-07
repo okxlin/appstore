@@ -10,6 +10,15 @@ additionalProperties:
     - Security
   shortDescZh: 自由且开源的，功能强大的网络广告和跟踪器屏蔽DNS服务器
   shortDescEn: Free and open source, powerful network-wide ads & trackers blocking DNS server
+  description:
+    en: A free and open-source, powerful DNS server that blocks network ads and trackers.
+    zh: 自由且开源的，功能强大的网络广告和跟踪器屏蔽DNS服务器
+    zh-Hant: 自由且開源的，功能強大的網路廣告和追蹤器屏蔽 DNS 伺服器
+    ja: 無料かつオープンソースで、ネットワーク広告とトラッカーをブロックする強力な DNS サーバー
+    ko: 무료 오픈 소스로, 네트워크 광고와 트래커를 차단하는 강력한 DNS 서버
+    ru: Свободный и открытый мощный DNS-сервер для блокировки сетевой рекламы и трекеров.
+    ms: Pelayan DNS yang percuma dan sumber terbuka, berkuasa untuk menyekat iklan dan penjejak rangkaian.
+    pt-br: Servidor DNS poderoso, livre e de código aberto, que bloqueia anúncios e rastreadores de rede.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/adguard/adguardhome
   github: https://github.com/AdguardTeam/AdGuardHome
   document: https://github.com/AdguardTeam/AdGuardHome/wiki
+  architectures:
+    - amd64

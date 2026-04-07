@@ -6,6 +6,15 @@ description: 自托管虚拟浏览器
 additionalProperties:
   key: neko
   name: Neko
+  description:
+    en: Self-hosted virtual browser
+    zh: 自托管虚拟浏览器
+    zh-Hant: 自託管虛擬瀏覽器
+    ja: セルフホスト型仮想ブラウザ
+    ko: 자체 호스팅 가상 브라우저
+    ru: Самостоятельно размещаемый виртуальный браузер
+    ms: Pelayar maya dihos sendiri
+    pt-br: Navegador virtual auto-hospedado
   tags:
     - Tool
   shortDescZh: 自托管虚拟浏览器
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://neko.m1k1o.net
   github: https://github.com/m1k1o/neko
   document: https://neko.m1k1o.net
+  architectures:
+    - amd64

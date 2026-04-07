@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 支持远程调试多平台的开源工具
   shortDescEn: Open-source tool supporting remote debugging for multi-platform projects
+  description:
+    en: Open-source tool supporting remote debugging for multi-platform projects
+    zh: 支持远程调试多平台的开源工具
+    zh-Hant: 支援遠端調試多平台的開源工具
+    ja: マルチプラットフォームのリモートデバッグを支援するオープンソースツール
+    ko: 멀티플랫폼 원격 디버깅을 지원하는 오픈소스 도구
+    ru: Открытый инструмент для удалённой отладки мультиплатформенных проектов
+    ms: Alat sumber terbuka yang menyokong penyahpepijatan jauh untuk projek berbilang platform
+    pt-br: Ferramenta open-source que suporta depuração remota para projetos multiplataforma
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://pagespy.org
   github: https://github.com/HuolalaTech/page-spy-web
   document: https://www.pagespy.org/#/docs
+  architectures:
+    - amd64
+    - arm64

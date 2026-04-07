@@ -4,6 +4,15 @@ tags:
 title: 可组合的多合一邮件服务器
 description: 可组合的多合一邮件服务器
 additionalProperties:
+  description:
+    en: Composable all-in-one mail server
+    zh: 可组合的多合一邮件服务器
+    zh-Hant: 可組合的多合一郵件伺服器
+    ja: 組み合わせ可能なオールインワンのメールサーバー
+    ko: 조합 가능한 올인원 메일 서버
+    ru: Модульный универсальный почтовый сервер
+    ms: Pelayan mel semua dalam satu yang boleh digubah
+    pt-br: Servidor de e-mail tudo-em-um e componível
   key: maddy-mail
   name: Maddy Mail Server
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://maddy.email
   github: https://github.com/foxcpp/maddy
   document: https://maddy.email
+  architectures:
+    - amd64

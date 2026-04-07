@@ -6,6 +6,15 @@ description: 轻量级 Nginx 访问日志分析与可视化面板，提供实时
 additionalProperties:
   key: nginxpulse
   name: Nginx Pulse
+  description:
+    en: Lightweight Nginx access log analysis and visualization dashboard with real-time stats, PV filtering, IP geolocation, and client parsing.
+    zh: 轻量级 Nginx 访问日志分析与可视化面板，提供实时统计、PV 过滤、IP 归属地与客户端解析
+    zh-Hant: 輕量級 Nginx 存取日誌分析與可視化面板，提供即時統計、PV 過濾、IP 歸屬地與客戶端解析
+    ja: 軽量な Nginx アクセスログ解析・可視化ダッシュボード。リアルタイム統計、PV フィルタ、IP 位置情報、クライアント解析を提供
+    ko: 가벼운 Nginx 액세스 로그 분석 및 시각화 대시보드로 실시간 통계, PV 필터링, IP 위치, 클라이언트 파싱 제공
+    ru: Лёгкая панель анализа и визуализации логов доступа Nginx с оперативной статистикой, фильтрацией PV, геолокацией IP и разбором клиентов
+    ms: Papan pemuka analisis dan visualisasi log akses Nginx yang ringan, dengan statistik masa nyata, penapisan PV, geolokasi IP dan penguraian klien
+    pt-br: Painel leve de análise e visualização de logs de acesso do Nginx, com estatísticas em tempo real, filtro de PV, geolocalização de IP e análise de clientes
   tags:
     - Tool
   shortDescZh: 轻量级 Nginx 访问日志分析与可视化面板
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/likaia/nginxpulse
   github: https://github.com/likaia/nginxpulse
   document: https://github.com/likaia/nginxpulse
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款支持独立部署的个人云社交媒体聊天服务
   shortDescEn: a secure chat software that supports independent deployment
+  description:
+    en: "Independently deployable personal cloud social chat service."
+    zh: "支持独立部署的个人云社交聊天服务。"
+    zh-Hant: "支援獨立部署的個人雲端社交聊天服務。"
+    ja: "独立してデプロイできる個人向けクラウドソーシャルチャットサービスです。"
+    ko: "독립 배포를 지원하는 개인용 클라우드 소셜 채팅 서비스입니다."
+    ru: "Личный облачный социальный чат-сервис с возможностью самостоятельного развёртывания."
+    ms: "Perkhidmatan sembang sosial awan peribadi yang menyokong penggunaan kendiri."
+    pt-br: "Serviço pessoal de chat social em nuvem com implantação independente."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://voce.chat
   github: https://github.com/Privoce/vocechat-web
   document: https://doc.voce.chat
+  architectures:
+    - amd64
+    - arm64

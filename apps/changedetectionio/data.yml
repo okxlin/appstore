@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 网站更改检测、补货监控和通知。
   shortDescEn: Web Site Change Detection, Restock monitoring and notifications
+  description:
+    en: Website change detection, restock monitoring, and notifications
+    zh: 网站更改检测、补货监控和通知。
+    zh-Hant: 網站更改檢測、補貨監控和通知。
+    ja: Webサイトの変更検知、再入荷監視、通知。
+    ko: 웹사이트 변경 감지, 재입고 모니터링 및 알림
+    ru: Отслеживание изменений сайта, мониторинг пополнений и уведомления
+    ms: Pengesanan perubahan laman web, pemantauan stok semula dan pemberitahuan
+    pt-br: Detecção de mudanças em sites, monitoramento de reposição e notificações
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://changedetection.io/
   github: https://github.com/dgtlmoon/changedetection.io
   document: https://github.com/dgtlmoon/changedetection.io/wiki
+  architectures:
+    - amd64

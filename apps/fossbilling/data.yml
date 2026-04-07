@@ -17,3 +17,15 @@ additionalProperties:
   website: https://fossbilling.org
   github: https://github.com/FOSSBilling/FOSSBilling
   document: https://fossbilling.org/docs
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A free and open-source solution for billing and client management.'
+    zh: '一款用于高效计费和客户管理的免费开源解决方案'
+    zh-Hant: '一款用於高效計費和客戶管理的免費開源解決方案'
+    ja: '効率的な請求管理と顧客管理を行うための無料オープンソースソリューションです。'
+    ko: '효율적인 청구 및 고객 관리를 위한 무료 오픈소스 솔루션입니다.'
+    ru: 'Бесплатное решение с открытым исходным кодом для биллинга и управления клиентами.'
+    ms: 'Penyelesaian sumber terbuka percuma untuk pengebilan dan pengurusan pelanggan.'
+    pt-br: 'Solução gratuita e de código aberto para faturamento e gestão de clientes.'

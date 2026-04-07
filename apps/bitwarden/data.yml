@@ -10,6 +10,15 @@ additionalProperties:
     - Security
   shortDescZh: 一个开源的密码管理服务
   shortDescEn: An open source password management service
+  description:
+    en: An open-source password management service
+    zh: 一个开源的密码管理服务
+    zh-Hant: 一個開源的密碼管理服務
+    ja: オープンソースのパスワード管理サービス
+    ko: 오픈 소스 비밀번호 관리 서비스
+    ru: Сервис управления паролями с открытым исходным кодом
+    ms: Perkhidmatan pengurusan kata laluan sumber terbuka
+    pt-br: Serviço de gerenciamento de senhas de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://bitwarden.com/
   github: https://github.com/dani-garcia/vaultwarden
   document: https://github.com/dani-garcia/vaultwarden/wiki
+  architectures:
+    - arm64
+    - amd64
+    - arm

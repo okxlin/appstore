@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 适用于Kasm Workspaces 的 qBittorrent
   shortDescEn: qBittorrent for Kasm Workspaces
+  description:
+    en: "qBittorrent for Kasm Workspaces."
+    zh: "适用于 Kasm Workspaces 的 qBittorrent。"
+    zh-Hant: "適用於 Kasm Workspaces 的 qBittorrent。"
+    ja: "Kasm Workspaces向けに用意されたBitTorrentクライアントのqBittorrentです。"
+    ko: "Kasm Workspaces에서 사용할 수 있는 qBittorrent 클라이언트입니다."
+    ru: "Клиент BitTorrent qBittorrent для среды Kasm Workspaces."
+    ms: "qBittorrent untuk Kasm Workspaces."
+    pt-br: "qBittorrent para Kasm Workspaces."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.qbittorrent.org/
   github: https://github.com/qbittorrent/qBittorrent
   document: http://wiki.qbittorrent.org/
+  architectures:
+    - arm64
+    - amd64

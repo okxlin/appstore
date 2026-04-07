@@ -14,3 +14,4 @@ additionalProperties:
       labelEn: Time zone
       labelZh: 时区
       required: true
+      type: text
