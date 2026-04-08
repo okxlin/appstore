@@ -6,6 +6,15 @@ description: 使用简单、强大的界面管理 Nginx 代理主机
 additionalProperties:
   key: nginx-proxy-manager
   name: NginxProxyManager
+  description:
+    en: Manage Nginx proxy hosts with a simple, powerful interface
+    zh: 使用简单、强大的界面管理 Nginx 代理主机
+    zh-Hant: 使用簡單、強大的介面管理 Nginx 代理主機
+    ja: シンプルで強力なUIで Nginx プロキシホストを管理
+    ko: 간단하고 강력한 인터페이스로 Nginx 프록시 호스트 관리
+    ru: Управляйте прокси-хостами Nginx через простой и мощный интерфейс
+    ms: Urus hos proksi Nginx dengan antara muka yang ringkas dan berkuasa
+    pt-br: Gerencie hosts de proxy Nginx com uma interface simples e poderosa
   tags:
     - Tool
   shortDescZh: 使用简单、强大的界面管理 Nginx 代理主机
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://nginxproxymanager.com/
   github: https://github.com/NginxProxyManager/nginx-proxy-manager
   document: https://nginxproxymanager.com/guide/
+  architectures:
+    - amd64

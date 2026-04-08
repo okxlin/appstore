@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个可视化的 Scrapy 爬虫管理平台，依赖于 Scrapyd
   shortDescEn: A visual Scrapy crawler management platform that relies on Scrapyd
+  description:
+    en: A visual Scrapy crawler management platform that relies on Scrapyd
+    zh: 一个可视化的 Scrapy 爬虫管理平台，依赖于 Scrapyd
+    zh-Hant: 一個可視化的 Scrapy 爬蟲管理平台，依賴於 Scrapyd
+    ja: Scrapyd に依存する可視化された Scrapy クローラー管理プラットフォーム
+    ko: Scrapyd에 의존하는 시각화된 Scrapy 크롤러 관리 플랫폼
+    ru: Визуальная платформа управления краулерами Scrapy, зависящая от Scrapyd
+    ms: Platform pengurusan pengikis Scrapy yang berasaskan visual dan bergantung pada Scrapyd
+    pt-br: Plataforma visual de gerenciamento de crawlers Scrapy que depende do Scrapyd
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/mouday/spider-admin-pro
   github: https://github.com/mouday/spider-admin-pro
   document: https://github.com/mouday/spider-admin-pro
+
+  architectures:
+    - amd64

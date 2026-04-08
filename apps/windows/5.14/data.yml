@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "3389"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RDP_PORT
       labelEn: RDP Port
       labelZh: RDP 远程端口
+      label:
+        en: 'RDP Port'
+        zh: 'RDP 远程端口'
+        zh-Hant: 'RDP 遠端埠'
+        ja: 'RDP ポート'
+        ko: 'RDP 포트'
+        ru: 'Порт RDP'
+        ms: 'Port RDP'
+        pt-br: 'Porta RDP'
       required: true
       rule: paramPort
       type: number
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: IMAGE_ISO_FILE
       labelEn: Windows ISO File
       labelZh: Windows ISO 文件路径
+      label:
+        en: 'Windows ISO File'
+        zh: 'Windows ISO 文件路径'
+        zh-Hant: 'Windows ISO 檔案'
+        ja: 'Windows ISO ファイル'
+        ko: 'Windows ISO 파일'
+        ru: 'Файл ISO Windows'
+        ms: 'Fail ISO Windows'
+        pt-br: 'Arquivo ISO do Windows'
       required: true
       type: text
     - default: "Y"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: MANUAL
       labelEn: Manual Install
       labelZh: 手动安装
+      label:
+        en: 'Manual Install'
+        zh: '手动安装'
+        zh-Hant: '手動安裝'
+        ja: '手動インストール'
+        ko: '수동 설치'
+        ru: 'Ручная установка'
+        ms: 'Pemasangan manual'
+        pt-br: 'Instalação manual'
       required: true
       type: select
       values:
@@ -47,6 +92,15 @@ additionalProperties:
       envKey: DISK_SIZE
       labelEn: Disk Size
       labelZh: 磁盘大小
+      label:
+        en: 'Disk Size'
+        zh: '磁盘大小'
+        zh-Hant: '磁碟大小'
+        ja: 'ディスクサイズ'
+        ko: '디스크 크기'
+        ru: 'Размер диска'
+        ms: 'Saiz cakera'
+        pt-br: 'Tamanho do disco'
       required: true
       type: text
     - default: "4GB"
@@ -54,6 +108,15 @@ additionalProperties:
       envKey: RAM_SIZE
       labelEn: RAM Size
       labelZh: 内存大小
+      label:
+        en: 'RAM Size'
+        zh: '内存大小'
+        zh-Hant: '記憶體大小'
+        ja: 'メモリサイズ'
+        ko: '메모리 크기'
+        ru: 'Размер памяти'
+        ms: 'Saiz RAM'
+        pt-br: 'Tamanho da RAM'
       required: true
       type: text
     - default: "2"
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: CPU_CORES
       labelEn: CPU Cores
       labelZh: CPU 核心数
+      label:
+        en: 'CPU Cores'
+        zh: 'CPU 核心数'
+        zh-Hant: 'CPU 核心數'
+        ja: 'CPU コア数'
+        ko: 'CPU 코어 수'
+        ru: 'Количество ядер CPU'
+        ms: 'Bilangan teras CPU'
+        pt-br: 'Núcleos de CPU'
       required: true
       type: number
     - default: "docker"
@@ -68,6 +140,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Login Username (This setting is not valid for non-matching system images)
       labelZh: 登录用户名 (非匹配的系统镜像则此设置无效)
+      label:
+        en: 'Login Username (This setting is not valid for non-matching system images)'
+        zh: '登录用户名 (非匹配的系统镜像则此设置无效)'
+        zh-Hant: '登入使用者名稱（非匹配的系統映像則此設定無效）'
+        ja: 'ログインユーザー名（一致しないシステムイメージでは無効）'
+        ko: '로그인 사용자 이름(일치하지 않는 시스템 이미지에서는 무효)'
+        ru: 'Имя пользователя для входа (для несовпадающих системных образов недействительно)'
+        ms: 'Nama pengguna log masuk (tidak sah untuk imej sistem yang tidak sepadan)'
+        pt-br: 'Nome de usuário de login (não é válido para imagens de sistema não correspondentes)'
       required: true
       type: text
     - default: "password"
@@ -75,6 +156,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Login Password (This setting is not valid for non-matching system images)
       labelZh: 登录密码 (非匹配的系统镜像则此设置无效)
+      label:
+        en: 'Login Password (This setting is not valid for non-matching system images)'
+        zh: '登录密码 (非匹配的系统镜像则此设置无效)'
+        zh-Hant: '登入密碼（此設定對不匹配的系統映像無效）'
+        ja: 'ログインパスワード（一致しないシステムイメージでは無効）'
+        ko: '로그인 비밀번호(일치하지 않는 시스템 이미지에서는 유효하지 않음)'
+        ru: 'Пароль входа (не действует для несовпадающих системных образов)'
+        ms: 'Kata laluan log masuk (tetapan ini tidak sah untuk imej sistem yang tidak sepadan)'
+        pt-br: 'Senha de login (esta configuração não é válida para imagens de sistema não correspondentes)'
       random: true
       required: true
       rule: paramComplexity
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: 'Restart Policy'
+        zh: '重启策略'
+        zh-Hant: '重啟策略'
+        ja: '再起動ポリシー'
+        ko: '재시작 정책'
+        ru: 'Политика перезапуска'
+        ms: 'Dasar mula semula'
+        pt-br: 'Política de reinicialização'
       required: true
       type: select
       values:

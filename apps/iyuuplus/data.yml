@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 自动辅种工具
   shortDescEn: Automatic seeding tools
+  description:
+    en: Automatic seeding tool
+    zh: 自动辅种工具
+    zh-Hant: 自動輔種工具
+    ja: 自動シード支援ツール
+    ko: 자동 시딩 도구
+    ru: Инструмент автоматического сидирования
+    ms: Alat penyemaian automatik
+    pt-br: Ferramenta de seed automático
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: http://doc.iyuu.cn
   github: https://github.com/ledccn/iyuuplus-dev
   document: http://doc.iyuu.cn
+  architectures:
+    - amd64
+

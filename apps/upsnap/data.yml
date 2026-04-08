@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个简单的唤醒网络应用程序
   shortDescEn: A simple wake on lan web app
+  description:
+    en: "Simple wake-on-LAN web app."
+    zh: "简单的 Wake-on-LAN Web 应用。"
+    zh-Hant: "簡單的 Wake-on-LAN Web 應用。"
+    ja: "シンプルな Wake-on-LAN Web アプリです。"
+    ko: "간단한 Wake-on-LAN 웹 앱입니다."
+    ru: "Простое веб-приложение Wake-on-LAN."
+    ms: "Aplikasi web Wake-on-LAN yang ringkas."
+    pt-br: "Aplicativo web simples de Wake-on-LAN."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,8 @@ additionalProperties:
   website: https://github.com/seriousm4x/UpSnap
   github: https://github.com/seriousm4x/UpSnap
   document: https://github.com/seriousm4x/UpSnap
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - armv6

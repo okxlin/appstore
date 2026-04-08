@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DAV
       labelEn: WebDAV Configuration (referring to the path inside the container)
       labelZh: WebDAV 配置 (指的容器内部的路径)
+      label:
+        en: 'WebDAV Configuration (referring to the path inside the container)'
+        zh: 'WebDAV 配置 (指的容器内部的路径)'
+        zh-Hant: 'WebDAV 設定（指容器內部的路徑）'
+        ja: 'WebDAV 設定（コンテナ内のパス）'
+        ko: 'WebDAV 설정(컨테이너 내부 경로)'
+        ru: 'Настройка WebDAV (путь внутри контейнера)'
+        ms: 'Konfigurasi WebDAV (laluan dalam bekas)'
+        pt-br: 'Configuração do WebDAV (caminho dentro do contêiner)'
       required: true
       type: text
     - default: ./data/data
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 外部数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: /data
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: INNER_DATA_PATH
       labelEn: Path to the internal data folder corresponding to the external data
       labelZh: 外部数据对应的内部数据文件夹路径
+      label:
+        en: 'Path to the internal data folder corresponding to the external data'
+        zh: '外部数据对应的内部数据文件夹路径'
+        zh-Hant: '外部資料對應的內部資料夾路徑'
+        ja: '外部データに対応する内部データフォルダのパス'
+        ko: '외부 데이터에 대응하는 내부 데이터 폴더 경로'
+        ru: 'Путь к внутренней папке данных, соответствующей внешним данным'
+        ms: 'Laluan folder data dalaman yang sepadan dengan data luaran'
+        pt-br: 'Caminho da pasta de dados interna correspondente aos dados externos'
       required: true
       type: text
     - default: ./data/data2
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: DATA_PATH2
       labelEn: Data folder path 2
       labelZh: 外部数据文件夹路径2
+      label:
+        en: 'Data folder path 2'
+        zh: '外部数据文件夹路径2'
+        zh-Hant: '外部資料夾路徑2'
+        ja: 'データフォルダパス 2'
+        ko: '데이터 폴더 경로 2'
+        ru: 'Путь к папке данных 2'
+        ms: 'Laluan folder data 2'
+        pt-br: 'Caminho da pasta de dados 2'
       required: true
       type: text
     - default: /data2
@@ -41,5 +86,14 @@ additionalProperties:
       envKey: INNER_DATA_PATH2
       labelEn: Path to internal data folder corresponding to external data2
       labelZh: 外部数据对应的内部数据文件夹路径2
+      label:
+        en: 'Path to internal data folder corresponding to external data2'
+        zh: '外部数据对应的内部数据文件夹路径2'
+        zh-Hant: '外部資料對應的內部資料夾路徑2'
+        ja: '外部データ2に対応する内部データフォルダのパス'
+        ko: '외부 데이터2에 대응하는 내부 데이터 폴더 경로'
+        ru: 'Путь к внутренней папке данных, соответствующей внешним данным 2'
+        ms: 'Laluan folder data dalaman yang sepadan dengan data luaran 2'
+        pt-br: 'Caminho da pasta de dados interna correspondente aos dados externos 2'
       required: true
       type: text

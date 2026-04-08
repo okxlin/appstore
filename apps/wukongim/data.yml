@@ -17,3 +17,14 @@ additionalProperties:
   website: https://githubim.com
   github: https://github.com/TangSengDaoDao/TangSengDaoDaoServer
   document: https://githubim.com
+  architectures:
+    - amd64
+  description:
+    en: Make messaging easier
+    zh: 让信息传递更简单
+    zh-Hant: 讓信息傳遞更簡單
+    ja: メッセージ送信をより簡単に
+    ko: 메시징을 더 쉽게
+    ru: Делает обмен сообщениями проще
+    ms: Memudahkan pemesejan
+    pt-br: Torna as mensagens mais fáceis

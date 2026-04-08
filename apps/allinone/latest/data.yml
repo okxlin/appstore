@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,10 +22,35 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privileged Mode
       labelZh: 特权模式
+      label:
+        en: 'Privileged Mode'
+        zh: '特权模式'
+        zh-Hant: '特權模式'
+        ja: '特権モード'
+        ko: '특권 모드'
+        ru: 'Привилегированный режим'
+        ms: 'Mod istimewa'
+        pt-br: 'Modo privilegiado'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"

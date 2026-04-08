@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个极简的 RSS 在线浏览工具
   shortDescEn: A minimalist RSS online browsing tool
+  description:
+    en: A minimalist RSS online browsing tool
+    zh: 一个极简的 RSS 在线浏览工具
+    zh-Hant: 一個極簡的 RSS 線上瀏覽工具
+    ja: 極シンプルなRSSオンライン閲覧ツール
+    ko: 미니멀한 RSS 온라인 브라우징 도구
+    ru: Минималистичный онлайн-инструмент для просмотра RSS
+    ms: Alat pelayaran RSS dalam talian yang minimal
+    pt-br: Ferramenta minimalista de navegação RSS online
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://rss.lass.cc
   github: https://github.com/srcrs/rss-reader
   document: https://github.com/srcrs/rss-reader
+
+  architectures:
+    - amd64

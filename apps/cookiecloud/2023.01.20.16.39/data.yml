@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ""
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: API_ROOT
       labelEn: API Directory
       labelZh: API 目录
+      label:
+        en: 'API Directory'
+        zh: 'API 目录'
+        zh-Hant: 'API 目錄'
+        ja: 'API ディレクトリ'
+        ko: 'API 디렉터리'
+        ru: 'Каталог API'
+        ms: 'Direktori API'
+        pt-br: 'Diretório da API'
       required: false
       type: text

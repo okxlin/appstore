@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -67,7 +76,7 @@ additionalProperties:
       labelZh: 服务器端口 (留空自动检测)
       required: false
       rule: paramPort
-      type: text
+      type: number
     - default: 'true'
       disabled: true
       envKey: UPDATE_SWITCH

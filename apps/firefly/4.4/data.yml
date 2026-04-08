@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: FIREFLY_PASSWORD
       labelEn: Webui password
       labelZh: 网页密码
+      label:
+        en: 'Webui password'
+        zh: '网页密码'
+        zh-Hant: '網頁密碼'
+        ja: 'WebUI パスワード'
+        ko: 'WebUI 비밀번호'
+        ru: 'Пароль WebUI'
+        ms: 'Kata laluan WebUI'
+        pt-br: 'Senha da WebUI'
       random: true
       required: true
       rule: paramComplexity
@@ -22,6 +40,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "false"
@@ -29,17 +56,51 @@ additionalProperties:
       envKey: FIREFLY_AUTO_SSL
       labelEn: Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.
       labelZh: 是否启用自动获取 SSL 证书 (开启则需要将端口设置为 443)
+      label:
+        en: 'Should automatic SSL certificate acquisition be enabled? If enabled, the port needs to be set to 443.'
+        zh: '是否启用自动获取 SSL 证书 (开启则需要将端口设置为 443)'
+        zh-Hant: '是否啟用自動取得 SSL 證書？啟用後需將連接埠設為 443。'
+        ja: 'SSL 証明書の自動取得を有効にしますか？有効にする場合、ポートは 443 に設定する必要があります。'
+        ko: 'SSL 인증서 자동 획득을 활성화할까요? 활성화하면 포트를 443으로 설정해야 합니다.'
+        ru: 'Включить автоматическое получение SSL-сертификата? При включении порт должен быть установлен на 443.'
+        ms: 'Dayakan pemerolehan sijil SSL automatik? Jika diaktifkan, port perlu ditetapkan ke 443.'
+        pt-br: 'Ativar a obtenção automática de certificado SSL? Se ativado, a porta deve ser definida como 443.'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ''
       edit: true
       envKey: FIREFLY_DEVICE
       labelEn: The network interface names for inbound and outbound traffic with WireGuard
       labelZh: WireGuard 出入流量网卡名称
+      label:
+        en: 'The network interface names for inbound and outbound traffic with WireGuard'
+        zh: 'WireGuard 出入流量网卡名称'
+        zh-Hant: 'WireGuard 進出流量的網路介面名稱'
+        ja: 'WireGuard の入出力トラフィック用ネットワークインターフェース名'
+        ko: 'WireGuard 인바운드/아웃바운드 트래픽용 네트워크 인터페이스 이름'
+        ru: 'Имена сетевых интерфейсов для входящего и исходящего трафика WireGuard'
+        ms: 'Nama antara muka rangkaian untuk trafik masuk dan keluar WireGuard'
+        pt-br: 'Nomes das interfaces de rede para tráfego de entrada e saída do WireGuard'
       required: false
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: GLANCE_CONFIG_PATH
       labelEn: Glance Configuration Path
       labelZh: Glance 配置文件路径
+      label:
+        en: 'Glance Configuration Path'
+        zh: 'Glance 配置文件路径'
+        zh-Hant: 'Glance 設定檔路徑'
+        ja: 'Glance 設定パス'
+        ko: 'Glance 구성 경로'
+        ru: 'Путь к конфигурации Glance'
+        ms: 'Laluan konfigurasi Glance'
+        pt-br: 'Caminho de configuração do Glance'
       required: true
       type: text

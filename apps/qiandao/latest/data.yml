@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,12 +22,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: AESPWD
       envKey: AES_PWD
       labelEn: AES encryption key
       labelZh: AES加密密钥
+      label:
+        en: 'AES encryption key'
+        zh: 'AES 加密密钥'
+        zh-Hant: 'AES 加密金鑰'
+        ja: 'AES 暗号化キー'
+        ko: 'AES 암호화 키'
+        ru: 'Ключ шифрования AES'
+        ms: 'Kunci penyulitan AES'
+        pt-br: 'Chave de criptografia AES'
       random: true
       required: true
       rule: paramCommon
@@ -27,9 +54,16 @@ additionalProperties:
       envKey: COOKIE_PWD
       labelEn: COOKIE encryption key
       labelZh: COOKIE加密密钥
+      label:
+        en: 'COOKIE encryption key'
+        zh: 'COOKIE 加密密钥'
+        zh-Hant: 'COOKIE 加密金鑰'
+        ja: 'COOKIE 暗号化キー'
+        ko: 'COOKIE 암호化 키'
+        ru: 'Ключ шифрования COOKIE'
+        ms: 'Kunci penyulitan COOKIE'
+        pt-br: 'Chave de criptografia COOKIE'
       random: true
       required: true
       rule: paramCommon
       type: text
-    - default: http
-      edit: true

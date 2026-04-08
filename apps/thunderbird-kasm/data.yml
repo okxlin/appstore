@@ -10,6 +10,15 @@ additionalProperties:
     - Email
   shortDescZh: 开源的电子邮件客户端 (Kasm)
   shortDescEn: Open-source email client (Kasm)
+  description:
+    en: "Open-source email client for Kasm."
+    zh: "适用于 Kasm 的开源电子邮件客户端。"
+    zh-Hant: "適用於 Kasm 的開源電子郵件用戶端。"
+    ja: "Kasm 向けのオープンソースメールクライアントです。"
+    ko: "Kasm용 오픈소스 이메일 클라이언트입니다."
+    ru: "Почтовый клиент с открытым исходным кодом для Kasm."
+    ms: "Klien e-mel sumber terbuka untuk Kasm."
+    pt-br: "Cliente de e-mail de código aberto para Kasm."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.thunderbird.net
   github: https://github.com/thunderbird
   document: https://support.mozilla.org/en-US/products/thunderbird
+  architectures:
+    - amd64

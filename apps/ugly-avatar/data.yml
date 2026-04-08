@@ -17,3 +17,15 @@ additionalProperties:
   website: https://txstc55.github.io/ugly-avatar
   github: https://github.com/txstc55/ugly-avatar
   document: https://github.com/txstc55/ugly-avatar
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'An ugly avatar generator.'
+    zh: '丑陋头像生成器'
+    zh-Hant: '醜陋頭像生成器'
+    ja: 'ユニークでブサイクなアバターを生成するツールです。'
+    ko: '못생긴 스타일의 아바타를 생성하는 도구입니다.'
+    ru: 'Генератор забавных уродливых аватаров.'
+    ms: 'Penjana avatar hodoh yang unik.'
+    pt-br: 'Gerador de avatares engraçadamente feios.'

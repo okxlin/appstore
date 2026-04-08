@@ -17,3 +17,15 @@ additionalProperties:
   website: https://www.tldraw.com
   github: https://github.com/tldraw/tldraw
   document: https://tldraw.dev
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A collaborative digital whiteboard.'
+    zh: '一款协作式数字白板'
+    zh-Hant: '一款協作式數位白板'
+    ja: '共同編集できるデジタルホワイトボードです。'
+    ko: '협업형 디지털 화이트보드입니다.'
+    ru: 'Совместная цифровая доска.'
+    ms: 'Papan putih digital kolaboratif.'
+    pt-br: 'Quadro branco digital colaborativo.'

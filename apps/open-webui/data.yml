@@ -1,6 +1,6 @@
 name: Open WebUI
 tags:
-  - AI / 大模型
+  - AI
 title: 大语言模型 (LLMs) 的用户友好型网络界面
 description: 大语言模型 (LLMs) 的用户友好型网络界面
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 大语言模型 (LLMs) 的用户友好型网络界面
   shortDescEn: User-friendly WebUI for LLMs
+  description:
+    en: User-friendly WebUI for LLMs
+    zh: 大语言模型 (LLMs) 的用户友好型网络界面
+    zh-Hant: 大語言模型 (LLMs) 的使用者友好型網頁介面
+    ja: 大規模言語モデル(LLM)向けの使いやすいWeb UI
+    ko: LLM을 위한 사용자 친화적 웹 UI
+    ru: Удобный веб-интерфейс для LLM
+    ms: Antaramuka Web mesra pengguna untuk LLM
+    pt-br: WebUI amigável para LLMs
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://openwebui.com
   github: https://github.com/open-webui/open-webui
   document: https://docs.openwebui.com
+  architectures:
+    - amd64
+    - arm64

@@ -9,15 +9,41 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
     - default: "chevereto"
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -26,6 +52,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -34,6 +69,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -43,6 +87,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -51,6 +104,15 @@ additionalProperties:
       envKey: CHEVERETO_MAX_POST_SIZE
       labelEn: Max Post Size
       labelZh: 最大 POST 大小
+      label:
+        en: 'Max Post Size'
+        zh: '最大 POST 大小'
+        zh-Hant: '最大 POST 大小'
+        ja: '最大POSTサイズ'
+        ko: '최대 POST 크기'
+        ru: 'Макс. размер POST'
+        ms: 'Saiz POST maksimum'
+        pt-br: 'Tamanho máximo de POST'
       required: true
       type: text
     - default: "2G"
@@ -58,6 +120,15 @@ additionalProperties:
       envKey: CHEVERETO_MAX_UPLOAD_SIZE
       labelEn: Max Upload Size
       labelZh: 最大上传大小
+      label:
+        en: 'Max Upload Size'
+        zh: '最大上传大小'
+        zh-Hant: '最大上傳大小'
+        ja: '最大アップロードサイズ'
+        ko: '최대 업로드 크기'
+        ru: 'Макс. размер загрузки'
+        ms: 'Saiz muat naik maksimum'
+        pt-br: 'Tamanho máximo de upload'
       required: true
       type: text
     - default: "server"
@@ -65,6 +136,15 @@ additionalProperties:
       envKey: CHEVERETO_SERVICING
       labelEn: Servicing
       labelZh: 服务模式
+      label:
+        en: 'Servicing'
+        zh: '服务模式'
+        zh-Hant: '服務模式'
+        ja: 'サービスモード'
+        ko: '서비스 모드'
+        ru: 'Режим обслуживания'
+        ms: 'Mod perkhidmatan'
+        pt-br: 'Modo de serviço'
       required: true
       type: text
     - default: "./data/images"
@@ -72,6 +152,15 @@ additionalProperties:
       envKey: CHEVERETO_IMAGES_PATH
       labelEn: Images Path
       labelZh: 图片路径
+      label:
+        en: 'Images Path'
+        zh: '图片路径'
+        zh-Hant: '圖片路徑'
+        ja: '画像パス'
+        ko: '이미지 경로'
+        ru: 'Путь к изображениям'
+        ms: 'Laluan imej'
+        pt-br: 'Caminho das imagens'
       required: true
       type: text
     - default: "hostname.com"
@@ -79,6 +168,15 @@ additionalProperties:
       envKey: CHEVERETO_HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "/"
@@ -86,6 +184,15 @@ additionalProperties:
       envKey: CHEVERETO_HOSTNAME_PATH
       labelEn: Hostname Path
       labelZh: 主机名路径
+      label:
+        en: 'Hostname Path'
+        zh: '主机名路径'
+        zh-Hant: '主機名路徑'
+        ja: 'ホスト名パス'
+        ko: '호스트명 경로'
+        ru: 'Путь хоста'
+        ms: 'Laluan nama hos'
+        pt-br: 'Caminho do nome do host'
       required: true
       type: text
     - default: "X-Real-IP"
@@ -93,6 +200,15 @@ additionalProperties:
       envKey: CHEVERETO_HEADER_CLIENT_IP
       labelEn: Client IP Header
       labelZh: 客户端 IP 标头
+      label:
+        en: 'Client IP Header'
+        zh: '客户端 IP 标头'
+        zh-Hant: '客戶端 IP 標頭'
+        ja: 'クライアント IP ヘッダー'
+        ko: '클라이언트 IP 헤더'
+        ru: 'Заголовок IP клиента'
+        ms: 'Pengepala IP klien'
+        pt-br: 'Cabeçalho de IP do cliente'
       required: true
       type: text
     - default: ""
@@ -100,5 +216,14 @@ additionalProperties:
       envKey: ENCRYPTION_KEY
       labelEn: Encryption Key
       labelZh: 加密密钥
+      label:
+        en: 'Encryption Key'
+        zh: '加密密钥'
+        zh-Hant: '加密金鑰'
+        ja: '暗号鍵'
+        ko: '암호화 키'
+        ru: 'Ключ шифрования'
+        ms: 'Kunci penyulitan'
+        pt-br: 'Chave de criptografia'
       required: false
       type: text

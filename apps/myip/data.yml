@@ -6,6 +6,15 @@ description: 一个更好的 IP 工具箱
 additionalProperties:
   key: myip
   name: MyIP
+  description:
+    en: A better IP toolbox
+    zh: 一个更好的 IP 工具箱
+    zh-Hant: 一個更好的 IP 工具箱
+    ja: より良い IP ツールボックス
+    ko: 더 나은 IP 도구 모음
+    ru: Более удобный набор инструментов для IP
+    ms: Kotak alat IP yang lebih baik
+    pt-br: Uma caixa de ferramentas de IP melhor
   tags:
     - Tool
   shortDescZh: 一个更好的 IP 工具箱
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://ipcheck.ing
   github: https://github.com/jason5ng32/MyIP
   document: https://github.com/jason5ng32/MyIP
+  architectures:
+    - amd64

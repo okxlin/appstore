@@ -5,6 +5,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "40296"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/media"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: 'Media Path'
+        zh: '媒体路径'
+        zh-Hant: '媒體路徑'
+        ja: 'メディアパス'
+        ko: '미디어 경로'
+        ru: 'Путь к медиа'
+        ms: 'Laluan media'
+        pt-br: 'Caminho de mídia'
       required: true
       type: text
     - default: "0"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "0"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: 'Group ID'
+        zh: '组 ID'
+        zh-Hant: '群組 ID'
+        ja: 'グループ ID'
+        ko: '그룹 ID'
+        ru: 'ID группы'
+        ms: 'ID kumpulan'
+        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "000"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: Umask
       labelZh: 掩码权限
+      label:
+        en: 'Umask'
+        zh: '掩码权限'
+        zh-Hant: 'umask 值'
+        ja: 'umask 値'
+        ko: 'umask 값'
+        ru: 'Значение umask'
+        ms: 'Nilai umask'
+        pt-br: 'Valor do umask'
       required: true
       type: text
     - default: "false"
@@ -55,22 +118,72 @@ additionalProperties:
       envKey: NASTOOL_AUTO_UPDATE
       labelEn: Auto Update
       labelZh: 自动更新
+      label:
+        en: 'Auto Update'
+        zh: '自动更新'
+        zh-Hant: '自動更新'
+        ja: '自動更新'
+        ko: '자동 업데이트'
+        ru: 'Автообновление'
+        ms: 'Kemas kini automatik'
+        pt-br: 'Atualização automática'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "false"
       edit: true
       envKey: NASTOOL_CN_UPDATE
       labelEn: CN Update
       labelZh: 国内更新
+      label:
+        en: 'CN Update'
+        zh: '国内更新'
+        zh-Hant: '國內更新'
+        ja: '国内更新'
+        ko: '국내 업데이트'
+        ru: 'Обновление для Китая'
+        ms: 'Kemas kini CN'
+        pt-br: 'Atualização CN'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"

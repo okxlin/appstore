@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个简洁但强大的私人书籍管理系统
   shortDescEn: A better online books library management website
+  description:
+    en: A concise yet powerful personal book management system
+    zh: 一个简洁但强大的私人书籍管理系统
+    zh-Hant: 一個簡潔但強大的私人書籍管理系統
+    ja: シンプルだが強力な個人向け書籍管理システム
+    ko: 간결하지만 강력한 개인용 도서 관리 시스템
+    ru: Простой, но мощный персональный менеджер книг
+    ms: Sistem pengurusan buku peribadi yang ringkas tetapi berkuasa
+    pt-br: Um sistema de gerenciamento de livros pessoais simples e poderoso
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.talebook.org
   github: https://github.com/talebook/talebook
   document: https://github.com/talebook/talebook
+
+  architectures:
+    - amd64

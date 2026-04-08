@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/OwO-Network/DeepLX
   github: https://github.com/OwO-Network/DeepLX
   document: https://github.com/OwO-Network/DeepLX
+  architectures:
+    - amd64
+  description:
+    en: "DeepL Free API (No TOKEN required)"
+    zh: "DeepL 免费 API（无需 TOKEN）"
+    zh-Hant: "DeepL 免費 API（無需 TOKEN）"
+    ja: "TOKEN不要のDeepL無料API"
+    ko: "TOKEN 없이 사용하는 DeepL 무료 API"
+    ru: "Бесплатный API DeepL (без TOKEN)"
+    ms: "API DeepL percuma (tanpa TOKEN)"
+    pt-br: "API gratuito do DeepL (sem TOKEN)"

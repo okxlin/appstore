@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/xiaoxinpro/WolGoWeb
   github: https://github.com/xiaoxinpro/WolGoWeb
   document: https://github.com/xiaoxinpro/WolGoWeb
+  architectures:
+    - amd64
+  description:
+    en: Wake-on-LAN tool
+    zh: 网络唤醒工具
+    zh-Hant: 網路喚醒工具
+    ja: Wake-on-LAN 用のツール
+    ko: Wake-on-LAN을 위한 도구
+    ru: Инструмент Wake-on-LAN
+    ms: Alat Wake-on-LAN
+    pt-br: Ferramenta Wake-on-LAN

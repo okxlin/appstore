@@ -6,12 +6,30 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: service
     - default: zabbix
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_COMM
       labelEn: Gateway port
       labelZh: 网关端口
+      label:
+        en: 'Gateway port'
+        zh: '网关端口'
+        zh-Hant: '網關埠'
+        ja: 'ゲートウェイポート'
+        ko: '게이트웨이 포트'
+        ru: 'Порт шлюза'
+        ms: 'Port gerbang'
+        pt-br: 'Porta do gateway'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SNMP
       labelEn: Snmptraps Port
       labelZh: Snmptraps 端口
+      label:
+        en: 'Snmptraps Port'
+        zh: 'Snmptraps 端口'
+        zh-Hant: 'Snmptraps 埠'
+        ja: 'Snmptraps ポート'
+        ko: 'Snmptraps 포트'
+        ru: 'Порт Snmptraps'
+        ms: 'Port Snmptraps'
+        pt-br: 'Porta do Snmptraps'
       required: true
       rule: paramPort
       type: number

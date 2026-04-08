@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 媒体下载工具
   shortDescEn: Media downloader tool
+  description:
+    en: Media downloader tool
+    zh: 媒体下载工具
+    zh-Hant: 媒體下載工具
+    ja: メディアダウンロードツール
+    ko: 미디어 다운로드 도구
+    ru: Инструмент для загрузки медиа
+    ms: Alat pemuat turun media
+    pt-br: Ferramenta de download de mídia
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/alexta69/metube
   github: https://github.com/alexta69/metube
   document: https://github.com/alexta69/metube
+  architectures:
+    - amd64
+

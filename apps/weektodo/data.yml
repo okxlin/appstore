@@ -17,3 +17,14 @@ additionalProperties:
   website: https://weektodo.me
   github: https://github.com/manuelernestog/weektodo
   document: https://github.com/manuelernestog/weektodo
+  architectures:
+    - amd64
+  description:
+    en: 'A free minimalist weekly planner focused on privacy.'
+    zh: '一款免费的极简主义每周计划应用程序，专注于隐私'
+    zh-Hant: '一款免費的極簡主義每週計畫應用程式，專注於隱私'
+    ja: 'プライバシー重視の無料ミニマル週間プランナーです。'
+    ko: '개인정보 보호에 초점을 맞춘 무료 미니멀 주간 계획 앱입니다.'
+    ru: 'Бесплатный минималистичный еженедельный планировщик с упором на приватность.'
+    ms: 'Aplikasi perancang mingguan minimalis percuma yang menumpukan pada privasi.'
+    pt-br: 'Aplicativo gratuito de planejamento semanal minimalista com foco em privacidade.'

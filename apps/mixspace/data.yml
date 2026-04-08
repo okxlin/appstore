@@ -10,9 +10,21 @@ additionalProperties:
     - Website
   shortDescZh: 开源自部署个人前后端分离博客系统
   shortDescEn: Open source self-deployed personal front-end and back-end separation blogging system
+  description:
+    en: Open-source self-hosted personal blog system with separated frontend and backend
+    zh: 开源自部署个人前后端分离博客系统
+    zh-Hant: 開源自部署個人前後端分離博客系統
+    ja: オープンソースの自己ホスト型個人ブログ（フロント/バック分離）
+    ko: 오픈 소스 자체 호스팅 개인 프론트/백엔드 분리 블로그 시스템
+    ru: Открытая самохостируемая персональная блог‑система с разделением фронтенда и бэкенда
+    ms: Sistem blog peribadi sumber terbuka yang dihos sendiri dengan pemisahan front-end dan back-end
+    pt-br: Sistema de blog pessoal de código aberto auto-hospedado com front-end e back-end separados
   type: website
   crossVersionUpdate: true
   limit: 0
   website: https://mx-space.js.org
   github: https://github.com/mx-space/core
   document: https://mx-space.js.org/docs
+  architectures:
+    - amd64
+

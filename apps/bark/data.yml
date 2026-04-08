@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: iOS 消息推送工具
   shortDescEn: iOS message push tool
+  description:
+    en: iOS push notification tool
+    zh: iOS 消息推送工具
+    zh-Hant: iOS 訊息推送工具
+    ja: iOS向けプッシュ通知ツール
+    ko: iOS 푸시 알림 도구
+    ru: Инструмент push-уведомлений для iOS
+    ms: Alat pemberitahuan push iOS
+    pt-br: Ferramenta de notificações push para iOS
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://bark.day.app
   github: https://github.com/Finb/Bark
   document: https://bark.day.app
+  architectures:
+    - amd64

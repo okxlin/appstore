@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 绕过 Cloudflare 保护的代理服务器
   shortDescEn: Proxy server to bypass Cloudflare protection
+  description:
+    en: Proxy server to bypass Cloudflare protection
+    zh: 绕过 Cloudflare 保护的代理服务器
+    zh-Hant: 繞過 Cloudflare 保護的代理伺服器
+    ja: Cloudflare の保護を回避するプロキシサーバー
+    ko: Cloudflare 보호를 우회하는 프록시 서버
+    ru: Прокси‑сервер для обхода защиты Cloudflare
+    ms: Pelayan proksi untuk memintas perlindungan Cloudflare
+    pt-br: Servidor proxy para contornar a proteção da Cloudflare
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/FlareSolverr/FlareSolverr
   github: https://github.com/FlareSolverr/FlareSolverr
   document: https://github.com/FlareSolverr/FlareSolverr
+  architectures:
+    - amd64

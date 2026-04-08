@@ -12,6 +12,15 @@ additionalProperties:
     - Media
   shortDescZh: 一款高效的云存储和图床平台管理工具
   shortDescEn: An efficient cloud storage and image hosting platform management tool
+  description:
+    en: "Efficient tool for managing cloud storage and image hosting platforms."
+    zh: "高效管理云存储和图床平台的工具。"
+    zh-Hant: "高效管理雲端儲存與圖床平台的工具。"
+    ja: "クラウドストレージと画像ホスティングを効率よく管理するツールです。"
+    ko: "클라우드 스토리지와 이미지 호스팅 플랫폼을 효율적으로 관리하는 도구입니다."
+    ru: "Эффективный инструмент для управления облачным хранилищем и фотохостингом."
+    ms: "Alat cekap untuk mengurus storan awan dan platform pengehosan imej."
+    pt-br: "Ferramenta eficiente para gerenciar armazenamento em nuvem e plataformas de hospedagem de imagens."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://piclist.cn
   github: https://github.com/Kuingsmile/PicList
   document: https://piclist.cn
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 极简朋友圈
   shortDescEn: Minimalist blogosphere platform
+  description:
+    en: Minimalist moments social feed
+    zh: 极简朋友圈
+    zh-Hant: 極簡朋友圈
+    ja: ミニマルな朋友圈
+    ko: 미니멀한 친구圈(모먼츠)
+    ru: Минималистичная лента «Моменты»
+    ms: Moments minimalis
+    pt-br: Moments minimalista
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://m.mblog.club
   github: https://github.com/kingwrcy/moments
   document: https://github.com/kingwrcy/moments
+  architectures:
+    - amd64
+

@@ -6,6 +6,15 @@ description: Nginx 网络管理界面
 additionalProperties:
   key: nginx-ui
   name: Nginx UI
+  description:
+    en: Nginx web management interface
+    zh: Nginx 网络管理界面
+    zh-Hant: Nginx 網路管理介面
+    ja: Nginx のウェブ管理インターフェース
+    ko: Nginx 웹 관리 인터페이스
+    ru: Веб-интерфейс управления Nginx
+    ms: Antara muka pengurusan web Nginx
+    pt-br: Interface web de gerenciamento do Nginx
   tags:
     - Server
   shortDescZh: Nginx 网络管理界面
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://nginxui.com/
   github: https://github.com/0xJacky/nginx-ui
   document: https://nginxui.com/
+  architectures:
+    - amd64

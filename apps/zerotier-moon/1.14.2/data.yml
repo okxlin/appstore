@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,24 @@ additionalProperties:
       envKey: HOST_IPV4
       labelEn: Native IPV4 address
       labelZh: 本机IPV4地址
+      label:
+        en: 'Native IPV4 address'
+        zh: '本机IPV4地址'
+        zh-Hant: '本機 IPV4 位址'
+        ja: 'ネイティブ IPV4 アドレス'
+        ko: '기본 IPV4 주소'
+        ru: 'Собственный адрес IPV4'
+        ms: 'Alamat IPV4 asal'
+        pt-br: 'Endereço IPV4 nativo'
+      label:
+        en: 'Native IPV4 address'
+        zh: '本机 IPv4 地址'
+        zh-Hant: '本機 IPv4 位址'
+        ja: 'ローカル IPv4 アドレス'
+        ko: '로컬 IPv4 주소'
+        ru: 'Локальный адрес IPv4'
+        ms: 'Alamat IPv4 tempatan'
+        pt-br: 'Endereço IPv4 local'
       required: false
       type: text
     - default: ''
@@ -20,5 +47,23 @@ additionalProperties:
       envKey: HOST_IPV6
       labelEn: Native IPV6 address
       labelZh: 本机IPV6地址
+      label:
+        en: 'Native IPV6 address'
+        zh: '本机IPV6地址'
+        zh-Hant: '本機 IPV6 位址'
+        ja: 'ネイティブ IPV6 アドレス'
+        ko: '기본 IPV6 주소'
+        ru: 'Собственный адрес IPV6'
+        ms: 'Alamat IPV6 asal'
+        pt-br: 'Endereço IPV6 nativo'
+      label:
+        en: 'Native IPV6 address'
+        zh: '本机 IPv6 地址'
+        zh-Hant: '本機 IPv6 位址'
+        ja: 'ローカル IPv6 アドレス'
+        ko: '로컬 IPv6 주소'
+        ru: 'Локальный адрес IPv6'
+        ms: 'Alamat IPv6 tempatan'
+        pt-br: 'Endereço IPv6 local'
       required: false
       type: text

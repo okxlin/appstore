@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (Internal 9000)
       labelZh: 端口 (对应内部 9000)
+      label:
+        en: 'Port (Internal 9000)'
+        zh: '端口 (对应内部 9000)'
+        zh-Hant: '埠（對應內部 9000）'
+        ja: 'ポート（内部 9000）'
+        ko: '포트(내부 9000)'
+        ru: 'Порт (внутренний 9000)'
+        ms: 'Port (dalaman 9000)'
+        pt-br: 'Porta (interna 9000)'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_RPC
       labelEn: RPC Port (Internal 9001)
       labelZh: RPC 端口 (对应内部 9001)
+      label:
+        en: 'RPC Port (Internal 9001)'
+        zh: 'RPC 端口 (对应内部 9001)'
+        zh-Hant: 'RPC 埠（對應內部 9001）'
+        ja: 'RPC ポート（内部 9001）'
+        ko: 'RPC 포트(내부 9001)'
+        ru: 'RPC-порт (внутренний 9001)'
+        ms: 'Port RPC (dalaman 9001)'
+        pt-br: 'Porta RPC (interna 9001)'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ''
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: APP_GLOBAL_SECRET
       labelEn: Secret Keys
       labelZh: 通信密钥
+      label:
+        en: 'Secret Keys'
+        zh: '通信密钥'
+        zh-Hant: '通訊金鑰'
+        ja: 'シークレットキー'
+        ko: '시크릿 키'
+        ru: 'Секретные ключи'
+        ms: 'Kunci rahsia'
+        pt-br: 'Chaves secretas'
       random: true
       required: true
       rule: paramComplexity
@@ -37,5 +73,14 @@ additionalProperties:
       envKey: MASTER_RPC_HOST
       labelEn: The IP that RPC is listening on
       labelZh: RPC 监听 IP
+      label:
+        en: 'The IP that RPC is listening on'
+        zh: 'RPC 监听 IP'
+        zh-Hant: 'RPC 監聽 IP'
+        ja: 'RPC がリッスンする IP'
+        ko: 'RPC가 수신 대기하는 IP'
+        ru: 'IP, на котором слушает RPC'
+        ms: 'IP yang didengar oleh RPC'
+        pt-br: 'IP em que o RPC escuta'
       required: true
       type: text

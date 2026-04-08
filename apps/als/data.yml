@@ -17,3 +17,15 @@ additionalProperties:
   website: https://github.com/wikihost-opensource/als
   github: https://github.com/wikihost-opensource/als
   document: https://github.com/wikihost-opensource/als
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'Another Looking Glass Server for network speed testing.'
+    zh: 'Another Looking-glass Server，测速服务端'
+    zh-Hant: 'Another Looking-glass Server，測速服務端'
+    ja: 'ネットワーク速度テスト向けの Another Looking Glass Server です。'
+    ko: '네트워크 속도 테스트를 위한 Another Looking Glass Server입니다.'
+    ru: 'Another Looking Glass Server для тестирования скорости сети.'
+    ms: 'Another Looking Glass Server untuk ujian kelajuan rangkaian.'
+    pt-br: 'Another Looking Glass Server para testes de velocidade de rede.'

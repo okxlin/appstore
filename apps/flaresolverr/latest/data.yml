@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: 'Log Level'
+        zh: '日志级别'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 수준'
+        ru: 'Уровень логирования'
+        ms: 'Tahap log'
+        pt-br: 'Nível de log'
       required: true
       type: select
       values:
@@ -27,18 +45,52 @@ additionalProperties:
       envKey: LOG_HTML
       labelEn: Log HTML
       labelZh: 日志 HTML 输出
+      label:
+        en: 'Log HTML'
+        zh: '日志 HTML 输出'
+        zh-Hant: '日誌 HTML 輸出'
+        ja: 'HTML ログ'
+        ko: 'HTML 로그'
+        ru: 'HTML журнал'
+        ms: 'Log HTML'
+        pt-br: 'Log HTML'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "none"
       edit: true
       envKey: CAPTCHA_SOLVER
       labelEn: CAPTCHA Solver
-      labelZh: CAPTCHA 解密器
+      labelZh: CAPTCHA 解算器
+      label:
+        en: 'CAPTCHA Solver'
+        zh: 'CAPTCHA 解算器'
+        zh-Hant: 'CAPTCHA 解算器'
+        ja: 'CAPTCHA ソルバー'
+        ko: 'CAPTCHA 해결기'
+        ru: 'Решатель CAPTCHA'
+        ms: 'Penyelesai CAPTCHA'
+        pt-br: 'Solucionador de CAPTCHA'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -46,6 +98,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "none"
@@ -53,6 +114,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Language
       labelZh: 语言
+      label:
+        en: 'Language'
+        zh: '语言'
+        zh-Hant: '語言'
+        ja: '言語'
+        ko: '언어'
+        ru: 'Язык'
+        ms: 'Bahasa'
+        pt-br: 'Idioma'
       required: true
       type: text
     - default: "true"
@@ -60,18 +130,52 @@ additionalProperties:
       envKey: HEADLESS
       labelEn: Headless Mode
       labelZh: 无头模式
+      label:
+        en: 'Headless Mode'
+        zh: '无头模式'
+        zh-Hant: '無頭模式'
+        ja: 'ヘッドレスモード'
+        ko: '헤드리스 모드'
+        ru: 'Безголовый режим'
+        ms: 'Mod tanpa kepala'
+        pt-br: 'Modo headless'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "40000"
       edit: true
       envKey: BROWSER_TIMEOUT
       labelEn: Browser Timeout
       labelZh: 浏览器超时时间
+      label:
+        en: 'Browser Timeout'
+        zh: '浏览器超时时间'
+        zh-Hant: '瀏覽器超時時間'
+        ja: 'ブラウザのタイムアウト'
+        ko: '브라우저 시간 초과'
+        ru: 'Тайм-аут браузера'
+        ms: 'Had masa tamat penyemak imbas'
+        pt-br: 'Tempo limite do navegador'
       required: true
       type: number
     - default: "https://www.google.com"
@@ -79,6 +183,15 @@ additionalProperties:
       envKey: TEST_URL
       labelEn: Test URL
       labelZh: 测试 URL
+      label:
+        en: 'Test URL'
+        zh: '测试 URL'
+        zh-Hant: '測試 URL'
+        ja: 'テストURL'
+        ko: '테스트 URL'
+        ru: 'Тестовый URL'
+        ms: 'URL ujian'
+        pt-br: 'URL de teste'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -86,6 +199,15 @@ additionalProperties:
       envKey: HOST
       labelEn: Host
       labelZh: 监听地址
+      label:
+        en: 'Host'
+        zh: '监听地址'
+        zh-Hant: '監聽位址'
+        ja: 'ホスト'
+        ko: '호스트'
+        ru: 'Хост'
+        ms: 'Hos'
+        pt-br: 'Host'
       required: true
       type: text
     - default: "false"
@@ -93,10 +215,35 @@ additionalProperties:
       envKey: PROMETHEUS_ENABLED
       labelEn: Prometheus Enabled
       labelZh: 启用 Prometheus
+      label:
+        en: 'Prometheus Enabled'
+        zh: '启用 Prometheus'
+        zh-Hant: '啟用 Prometheus'
+        ja: 'Prometheus 有効'
+        ko: 'Prometheus 활성화'
+        ru: 'Prometheus включён'
+        ms: 'Prometheus diaktifkan'
+        pt-br: 'Prometheus ativado'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"

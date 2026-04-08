@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.zerotier.com
   github: https://github.com/zerotier/ZeroTierOne
   document: https://docs.zerotier.com
+  architectures:
+    - amd64
+  description:
+    en: A Smart Ethernet Switch for Earth
+    zh: 多点虚拟化网络解决方案
+    zh-Hant: 多點虛擬化網路解決方案
+    ja: 地球のためのスマートイーサネットスイッチ
+    ko: 지구를 위한 스마트 이더넷 스위치
+    ru: Умный Ethernet-коммутатор для Земли
+    ms: Suis Ethernet pintar untuk Bumi
+    pt-br: Um switch Ethernet inteligente para a Terra

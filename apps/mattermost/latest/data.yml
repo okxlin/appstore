@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_CALLS
       labelEn: RTC Port
       labelZh: RTC 服务端口
+      label:
+        en: 'RTC Port'
+        zh: 'RTC 服务端口'
+        zh-Hant: 'RTC 服務埠'
+        ja: 'RTC ポート'
+        ko: 'RTC 포트'
+        ru: 'Порт RTC'
+        ms: 'Port RTC'
+        pt-br: 'Porta RTC'
       required: true
       rule: paramPort
       type: number
@@ -21,18 +39,52 @@ additionalProperties:
       envKey: MATTERMOST_CONTAINER_READONLY
       labelEn: Read Only Container
       labelZh: 只读容器
+      label:
+        en: 'Read Only Container'
+        zh: '只读容器'
+        zh-Hant: '唯讀容器'
+        ja: '読み取り専用コンテナ'
+        ko: '읽기 전용 컨테이너'
+        ru: 'Контейнер только для чтения'
+        ms: 'Kontena baca sahaja'
+        pt-br: 'Contêiner somente leitura'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "./data/config"
       disabled: true
       envKey: MATTERMOST_CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '설정 경로'
+        ru: 'Путь конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/data"
@@ -40,6 +92,15 @@ additionalProperties:
       envKey: MATTERMOST_DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь данных'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "./data/logs"
@@ -47,6 +108,15 @@ additionalProperties:
       envKey: MATTERMOST_LOGS_PATH
       labelEn: Logs Path
       labelZh: 日志路径
+      label:
+        en: 'Logs Path'
+        zh: '日志路径'
+        zh-Hant: '日誌路徑'
+        ja: 'ログパス'
+        ko: '로그 경로'
+        ru: 'Путь журналов'
+        ms: 'Laluan log'
+        pt-br: 'Caminho de logs'
       required: true
       type: text
     - default: "./data/plugins"
@@ -54,6 +124,15 @@ additionalProperties:
       envKey: MATTERMOST_PLUGINS_PATH
       labelEn: Plugins Path
       labelZh: 插件路径
+      label:
+        en: 'Plugins Path'
+        zh: '插件路径'
+        zh-Hant: '外掛路徑'
+        ja: 'プラグインパス'
+        ko: '플러그인 경로'
+        ru: 'Путь плагинов'
+        ms: 'Laluan pemalam'
+        pt-br: 'Caminho de plugins'
       required: true
       type: text
     - default: "./data/client/plugins"
@@ -61,6 +140,15 @@ additionalProperties:
       envKey: MATTERMOST_CLIENT_PLUGINS_PATH
       labelEn: Client Plugins Path
       labelZh: 客户端插件路径
+      label:
+        en: 'Client Plugins Path'
+        zh: '客户端插件路径'
+        zh-Hant: '用戶端外掛路徑'
+        ja: 'クライアントプラグインパス'
+        ko: '클라이언트 플러그인 경로'
+        ru: 'Путь клиентских плагинов'
+        ms: 'Laluan pemalam klien'
+        pt-br: 'Caminho de plugins do cliente'
       required: true
       type: text
     - default: ""
@@ -68,6 +156,15 @@ additionalProperties:
       envKey: GITLAB_PKI_CHAIN_PATH
       labelEn: GitLab PKI Chain Path (Edit to remove comments in compose.yml to take effect)
       labelZh: GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'GitLab PKI Chain Path (Edit to remove comments in compose.yml to take effect)'
+        zh: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'GitLab PKI 鏈路徑（編輯移除 compose.yml 註解後生效）'
+        ja: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
+        ko: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
+        ru: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
+        ms: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
+        pt-br: 'GitLab PKI 链路径 (编辑去除compose.yml里的注释生效)'
       required: false
       type: text
     - default: "./data/bleve/indexes"
@@ -75,6 +172,15 @@ additionalProperties:
       envKey: MATTERMOST_BLEVE_INDEXES_PATH
       labelEn: Bleve Indexes Path
       labelZh: Bleve 索引路径
+      label:
+        en: 'Bleve Indexes Path'
+        zh: 'Bleve 索引路径'
+        zh-Hant: 'Bleve 索引路徑'
+        ja: 'Bleve インデックスパス'
+        ko: 'Bleve 인덱스 경로'
+        ru: 'Путь индексов Bleve'
+        ms: 'Laluan indeks Bleve'
+        pt-br: 'Caminho de índices Bleve'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -82,6 +188,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "postgres"
@@ -89,6 +204,15 @@ additionalProperties:
       envKey: MM_SQLSETTINGS_DRIVERNAME
       labelEn: SQL Driver Name
       labelZh: SQL 驱动名称
+      label:
+        en: 'SQL Driver Name'
+        zh: 'SQL 驱动名称'
+        zh-Hant: 'SQL 驅動程式名稱'
+        ja: 'SQL ドライバ名'
+        ko: 'SQL 드라이버 이름'
+        ru: 'Имя драйвера SQL'
+        ms: 'Nama pemacu SQL'
+        pt-br: 'Nome do driver SQL'
       required: true
       type: text
     - default: "/mattermost/bleve-indexes"
@@ -96,6 +220,15 @@ additionalProperties:
       envKey: MM_BLEVESETTINGS_INDEXDIR
       labelEn: Bleve Index Directory
       labelZh: Bleve 索引目录
+      label:
+        en: 'Bleve Index Directory'
+        zh: 'Bleve 索引目录'
+        zh-Hant: 'Bleve 索引目錄'
+        ja: 'Bleve インデックスディレクトリ'
+        ko: 'Bleve 인덱스 디렉터리'
+        ru: 'Каталог индексов Bleve'
+        ms: 'Direktori indeks Bleve'
+        pt-br: 'Diretório de índices Bleve'
       required: true
       type: text
     - default: "http://localhost:40271"
@@ -103,6 +236,15 @@ additionalProperties:
       envKey: MM_SERVICESETTINGS_SITEURL
       labelEn: Site URL
       labelZh: 站点 URL
+      label:
+        en: 'Site URL'
+        zh: '站点 URL'
+        zh-Hant: '網站 URL'
+        ja: 'サイトURL'
+        ko: '사이트 URL'
+        ru: 'URL сайта'
+        ms: 'URL laman'
+        pt-br: 'URL do site'
       required: true
       rule: paramExtUrl
       type: text
@@ -110,6 +252,15 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '資料庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan pangkalan data'
+        pt-br: 'Serviço de banco de dados'
       required: true
       type: apps
       child:
@@ -124,6 +275,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '資料庫'
+        ja: 'データベース名'
+        ko: '데이터베이스 이름'
+        ru: 'Имя базы данных'
+        ms: 'Nama pangkalan data'
+        pt-br: 'Nome do banco de dados'
       random: true
       required: true
       rule: paramCommon
@@ -132,6 +292,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '資料庫使用者'
+        ja: 'データベースユーザー'
+        ko: '데이터베이스 사용자'
+        ru: 'Пользователь базы данных'
+        ms: 'Pengguna pangkalan data'
+        pt-br: 'Usuário do banco de dados'
       random: true
       required: true
       rule: paramCommon
@@ -140,6 +309,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '資料庫使用者密碼'
+        ja: 'データベースユーザーパスワード'
+        ko: '데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных'
+        ms: 'Kata laluan pengguna pangkalan data'
+        pt-br: 'Senha do usuário do banco de dados'
       random: true
       required: true
       rule: paramComplexity

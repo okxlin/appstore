@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 更好的问卷考试系统
   shortDescEn: Better Questionnaire Exam System
+  description:
+    en: Better questionnaire and exam system
+    zh: 更好的问卷考试系统
+    zh-Hant: 更好的問卷考試系統
+    ja: より良いアンケート・試験システム
+    ko: 더 나은 설문·시험 시스템
+    ru: Более эффективная система анкетирования и экзаменов
+    ms: Sistem soal selidik dan peperiksaan yang lebih baik
+    pt-br: Um sistema melhor de questionários e provas
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://surveyking.cn
   github: https://github.com/javahuang/surveyking
   document: https://surveyking.cn/help/quickstart
+
+  architectures:
+    - amd64

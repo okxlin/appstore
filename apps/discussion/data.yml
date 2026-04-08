@@ -17,3 +17,14 @@ additionalProperties:
   website: https://discussion.mblog.club
   github: https://github.com/kingwrcy/discussion
   document: https://github.com/kingwrcy/discussion
+  architectures:
+    - amd64
+  description:
+    en: "Minimalist forum"
+    zh: "极简论坛"
+    zh-Hant: "極簡論壇"
+    ja: "ミニマルなフォーラム"
+    ko: "미니멀 포럼"
+    ru: "Минималистичный форум"
+    ms: "Forum minimalis"
+    pt-br: "Fórum minimalista"

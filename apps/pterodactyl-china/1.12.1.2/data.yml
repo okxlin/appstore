@@ -4,18 +4,45 @@ additionalProperties:
       envKey: USER_UID
       labelEn: User UID
       labelZh: 用户 UID
+      label:
+        en: 'User UID'
+        zh: '用户 UID'
+        zh-Hant: '用戶 UID'
+        ja: 'ユーザー UID'
+        ko: '사용자 UID'
+        ru: 'UID пользователя'
+        ms: 'UID pengguna'
+        pt-br: 'UID do usuário'
       required: true
       type: text
     - default: 1000
       envKey: USER_GID
       labelEn: User GID
       labelZh: 用户 GID
+      label:
+        en: 'User GID'
+        zh: '用户 GID'
+        zh-Hant: '用戶 GID'
+        ja: 'ユーザー GID'
+        ko: '사용자 GID'
+        ru: 'GID пользователя'
+        ms: 'GID pengguna'
+        pt-br: 'GID do usuário'
       required: true
       type: text
     - default: mysql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       child:
@@ -24,12 +51,29 @@ additionalProperties:
         required: true
         type: service
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
     - default: pterodactyl
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -38,6 +82,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -46,6 +99,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -55,6 +117,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: HTTP 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -63,6 +134,15 @@ additionalProperties:
       envKey: PANEL_APP_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       rule: paramExtUrl
       type: text
@@ -71,12 +151,30 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: 缓存服务服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: ""
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Service Password
       labelZh: 缓存服务服务密码
+      label:
+        en: 'Redis Service Password'
+        zh: 'Redis服务密码'
+        zh-Hant: 'Redis 服務密碼'
+        ja: 'Redis サービスパスワード'
+        ko: 'Redis 서비스 비밀번호'
+        ru: 'Пароль сервиса Redis'
+        ms: 'Kata laluan perkhidmatan Redis'
+        pt-br: 'Senha do serviço Redis'
       required: true
       type: password
     - default: noreply@example.com
@@ -84,6 +182,15 @@ additionalProperties:
       envKey: MAIL_FROM
       labelEn: MAIL FROM
       labelZh: 预设作者邮箱
+      label:
+        en: 'Mail From'
+        zh: '预设作者邮箱'
+        zh-Hant: '預設作者郵箱'
+        ja: '送信元メールアドレス'
+        ko: '발신자 이메일'
+        ru: 'Адрес отправителя'
+        ms: 'E-mel pengirim'
+        pt-br: 'E-mail do remetente'
       required: true
       type: text
     - default: "true"
@@ -91,6 +198,15 @@ additionalProperties:
       envKey: PANEL_RECAPTCHA_ENABLED
       labelEn: RECAPTCHA ENABLED
       labelZh: 谷歌人机验证
+      label:
+        en: 'reCAPTCHA Enabled'
+        zh: '谷歌人机验证'
+        zh-Hant: 'reCAPTCHA 驗證'
+        ja: 'reCAPTCHA 有効化'
+        ko: 'reCAPTCHA 사용'
+        ru: 'Включить reCAPTCHA'
+        ms: 'reCAPTCHA diaktifkan'
+        pt-br: 'reCAPTCHA ativado'
       required: true
       type: select
       values:
@@ -103,6 +219,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "noreply@example.com"
@@ -110,6 +235,15 @@ additionalProperties:
       envKey: APP_SERVICE_AUTHOR
       labelEn: Application Service Author
       labelZh: 应用服务作者
+      label:
+        en: 'Application Service Author'
+        zh: '应用服务作者'
+        zh-Hant: '應用服務作者'
+        ja: 'アプリサービスの作者'
+        ko: '애플리케이션 서비스 작성자'
+        ru: 'Автор сервиса приложения'
+        ms: 'Pengarang perkhidmatan aplikasi'
+        pt-br: 'Autor do serviço do aplicativo'
       required: true
       type: text
     - default: smtp
@@ -117,6 +251,15 @@ additionalProperties:
       envKey: MAIL_DRIVER
       labelEn: Mail Driver
       labelZh: 邮件驱动
+      label:
+        en: 'Mail Driver'
+        zh: '邮件驱动'
+        zh-Hant: '郵件驅動'
+        ja: 'メールドライバー'
+        ko: '메일 드라이버'
+        ru: 'Драйвер почты'
+        ms: 'Pemacu e-mel'
+        pt-br: 'Driver de e-mail'
       required: true
       type: text
     - default: mail
@@ -124,6 +267,15 @@ additionalProperties:
       envKey: MAIL_HOST
       labelEn: Mail Host
       labelZh: 邮件主机
+      label:
+        en: 'Mail Host'
+        zh: '邮件服务器'
+        zh-Hant: '郵件伺服器'
+        ja: 'メールサーバー'
+        ko: '메일 서버'
+        ru: 'Почтовый сервер'
+        ms: 'Pelayan e-mel'
+        pt-br: 'Servidor de e-mail'
       required: true
       type: text
     - default: 1025
@@ -131,6 +283,15 @@ additionalProperties:
       envKey: MAIL_PORT
       labelEn: Mail Port
       labelZh: 邮件端口
+      label:
+        en: 'Mail Port'
+        zh: '邮件端口'
+        zh-Hant: '郵件埠'
+        ja: 'メールポート'
+        ko: '메일 포트'
+        ru: 'Почтовый порт'
+        ms: 'Port mel'
+        pt-br: 'Porta de e-mail'
       required: true
       type: text
     - default: ''
@@ -138,6 +299,15 @@ additionalProperties:
       envKey: MAIL_USERNAME
       labelEn: Mail Username
       labelZh: 邮件用户名
+      label:
+        en: 'Mail Username'
+        zh: '邮件用户名'
+        zh-Hant: '郵件使用者名稱'
+        ja: 'メールユーザー名'
+        ko: '메일 사용자 이름'
+        ru: 'Имя пользователя почты'
+        ms: 'Nama pengguna e-mel'
+        pt-br: 'Nome de usuário do e-mail'
       required: false
       type: text
     - default: "true"
@@ -145,6 +315,15 @@ additionalProperties:
       envKey: MAIL_ENCRYPTION
       labelEn: Mail Encryption
       labelZh: 邮件加密
+      label:
+        en: 'Mail Encryption'
+        zh: '邮件加密方式'
+        zh-Hant: '郵件加密方式'
+        ja: 'メール暗号化方式'
+        ko: '메일 암호화 방식'
+        ru: 'Способ шифрования почты'
+        ms: 'Kaedah penyulitan e-mel'
+        pt-br: 'Método de criptografia do e-mail'
       required: true
       type: select
       values:
@@ -157,6 +336,15 @@ additionalProperties:
       envKey: APP_ENV
       labelEn: Application Environment
       labelZh: 应用环境
+      label:
+        en: 'Application Environment'
+        zh: '应用环境'
+        zh-Hant: '應用環境'
+        ja: 'アプリ環境'
+        ko: '애플리케이션 환경'
+        ru: 'Среда приложения'
+        ms: 'Persekitaran aplikasi'
+        pt-br: 'Ambiente do aplicativo'
       required: true
       type: text
     - default: "false"
@@ -164,6 +352,15 @@ additionalProperties:
       envKey: APP_ENVIRONMENT_ONLY
       labelEn: Application Environment Only
       labelZh: 仅应用环境
+      label:
+        en: 'Application Environment Only'
+        zh: '仅应用环境'
+        zh-Hant: '僅應用環境'
+        ja: 'アプリ環境のみ'
+        ko: '애플리케이션 환경만'
+        ru: 'Только среда приложения'
+        ms: 'Hanya persekitaran aplikasi'
+        pt-br: 'Apenas ambiente do aplicativo'
       required: true
       type: select
       values:
@@ -176,6 +373,15 @@ additionalProperties:
       envKey: CACHE_DRIVER
       labelEn: Cache Driver
       labelZh: 缓存驱动
+      label:
+        en: 'Cache Driver'
+        zh: '缓存驱动'
+        zh-Hant: '快取驅動'
+        ja: 'キャッシュドライバー'
+        ko: '캐시 드라이버'
+        ru: 'Драйвер кэша'
+        ms: 'Pemacu cache'
+        pt-br: 'Driver de cache'
       required: true
       type: text
     - default: redis
@@ -183,6 +389,15 @@ additionalProperties:
       envKey: SESSION_DRIVER
       labelEn: Session Driver
       labelZh: 会话驱动
+      label:
+        en: 'Session Driver'
+        zh: '会话驱动'
+        zh-Hant: '工作階段驅動'
+        ja: 'セッションドライバー'
+        ko: '세션 드라이버'
+        ru: 'Драйвер сессии'
+        ms: 'Pemacu sesi'
+        pt-br: 'Driver de sessão'
       required: true
       type: text
     - default: redis
@@ -190,6 +405,15 @@ additionalProperties:
       envKey: QUEUE_DRIVER
       labelEn: Queue Driver
       labelZh: 队列驱动
+      label:
+        en: 'Queue Driver'
+        zh: '队列驱动'
+        zh-Hant: '佇列驅動'
+        ja: 'キュードライバー'
+        ko: '큐 드라이버'
+        ru: 'Драйвер очереди'
+        ms: 'Pemacu baris gilir'
+        pt-br: 'Driver de fila'
       required: true
       type: text
     - default: ""
@@ -197,11 +421,29 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis 服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: ""
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Service Password
       labelZh: Redis 服务密码
+      label:
+        en: 'Redis Service Password'
+        zh: 'Redis服务密码'
+        zh-Hant: 'Redis 服務密碼'
+        ja: 'Redis サービスパスワード'
+        ko: 'Redis 서비스 비밀번호'
+        ru: 'Пароль сервиса Redis'
+        ms: 'Kata laluan perkhidmatan Redis'
+        pt-br: 'Senha do serviço Redis'
       required: true
       type: password

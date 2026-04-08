@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WIREGUARD
       labelEn: Wireguard port
       labelZh: Wireguard 端口
+      label:
+        en: 'Wireguard port'
+        zh: 'Wireguard 端口'
+        zh-Hant: 'WireGuard 埠'
+        ja: 'WireGuard ポート'
+        ko: 'WireGuard 포트'
+        ru: 'Порт WireGuard'
+        ms: 'Port WireGuard'
+        pt-br: 'Porta do WireGuard'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: WEBUI_USER
       labelEn: Webui user
       labelZh: 网页用户
+      label:
+        en: 'WebUI User'
+        zh: '网页用户'
+        zh-Hant: '網頁使用者'
+        ja: 'WebUI ユーザー'
+        ko: 'WebUI 사용자'
+        ru: 'Пользователь WebUI'
+        ms: 'Pengguna WebUI'
+        pt-br: 'Usuário da WebUI'
       required: true
       type: text
     - default: "password"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: WEBUI_PWD
       labelEn: Webui password
       labelZh: 网页密码
+      label:
+        en: 'Webui password'
+        zh: '网页密码'
+        zh-Hant: '網頁密碼'
+        ja: 'WebUI パスワード'
+        ko: 'WebUI 비밀번호'
+        ru: 'Пароль WebUI'
+        ms: 'Kata laluan WebUI'
+        pt-br: 'Senha da WebUI'
       random: true
       required: true
       rule: paramComplexity

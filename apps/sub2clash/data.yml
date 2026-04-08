@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 将节点和订阅转换为 clash(meta) 配置
   shortDescEn: Converting nodes and subscriptions to clash(meta) configuration
+  description:
+    en: Converting nodes and subscriptions to clash(meta) configuration
+    zh: 将节点和订阅转换为 clash(meta) 配置
+    zh-Hant: 將節點和訂閱轉換為 clash(meta) 配置
+    ja: ノードとサブスクリプションを clash(meta) 設定に変換
+    ko: 노드와 구독을 clash(meta) 설정으로 변환
+    ru: Преобразование узлов и подписок в конфигурацию clash(meta)
+    ms: Menukar nod dan langganan kepada konfigurasi clash(meta)
+    pt-br: Converter nós e assinaturas para configuração clash(meta)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.nite07.com/sub
   github: https://github.com/nitezs/sub2clash
   document: https://github.com/nitezs/sub2clash
+
+  architectures:
+    - amd64

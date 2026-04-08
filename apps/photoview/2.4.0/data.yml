@@ -5,11 +5,29 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베ース 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
         required: true
         type: service
       default: mysql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
       params:
         - envKey: PHOTOVIEW_DB_PORT
           key: mysql
@@ -18,12 +36,29 @@ additionalProperties:
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
     - default: photoview
       envKey: PANEL_DB_NAME
       labelEn: Database (requires MySQL8)
       labelZh: 数据库名(要求MySQL8)
+      label:
+        en: 'Database (requires MySQL8)'
+        zh: '数据库名(要求MySQL8)'
+        zh-Hant: '資料庫名(要求MySQL8)'
+        ja: 'データベース（MySQL8が必要）'
+        ko: '데이터베이스(MySQL8 필요)'
+        ru: 'База данных (требуется MySQL8)'
+        ms: 'Pangkalan data (memerlukan MySQL8)'
+        pt-br: 'Banco de dados (requer MySQL8)'
       random: true
       required: true
       rule: paramCommon
@@ -32,6 +67,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -40,6 +84,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -49,6 +102,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -57,6 +119,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Photos folder path (Inside the container "/photos")
       labelZh: 照片文件夹路径(容器内部"/photos")
+      label:
+        en: 'Photos folder path (Inside the container "/photos")'
+        zh: '照片文件夹路径(容器内部"/photos")'
+        zh-Hant: '照片資料夾路徑（容器內部"/photos"）'
+        ja: '写真フォルダのパス（コンテナ内"/photos"）'
+        ko: '사진 폴더 경로(컨테이너 내부 "/photos")'
+        ru: 'Путь к папке фотографий (в контейнере "/photos")'
+        ms: 'Laluan folder foto (dalam kontena "/photos")'
+        pt-br: 'Caminho da pasta de fotos (dentro do contêiner "/photos")'
       required: true
       type: text
     - default: ./data/cache
@@ -64,5 +135,14 @@ additionalProperties:
       envKey: CACHE_PATH
       labelEn: Cache folder path
       labelZh: 缓存文件夹路径
+      label:
+        en: 'Cache folder path'
+        zh: '缓存文件夹路径'
+        zh-Hant: '快取資料夾路徑'
+        ja: 'キャッシュフォルダーパス'
+        ko: '캐시 폴더 경로'
+        ru: 'Путь к папке кэша'
+        ms: 'Laluan folder cache'
+        pt-br: 'Caminho da pasta de cache'
       required: true
       type: text

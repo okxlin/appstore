@@ -5,6 +5,15 @@ additionalProperties:
       envKey: NAT_TEST_PORT
       labelEn: NAT type test port
       labelZh: NAT类型测试端口
+      label:
+        en: 'NAT type test port'
+        zh: 'NAT类型测试端口'
+        zh-Hant: 'NAT 類型測試埠'
+        ja: 'NAT タイプテストポート'
+        ko: 'NAT 유형 테스트 포트'
+        ru: 'Порт теста типа NAT'
+        ms: 'Port ujian jenis NAT'
+        pt-br: 'Porta de teste de tipo NAT'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HBBS_PORT
       labelEn: hbbs port (used with IP/domain)
       labelZh: hbbs端口(配合IP/域名使用)
+      label:
+        en: 'hbbs port (used with IP/domain)'
+        zh: 'hbbs端口(配合IP/域名使用)'
+        zh-Hant: 'hbbs 埠（配合 IP/網域使用）'
+        ja: 'hbbs ポート（IP/ドメインと併用）'
+        ko: 'hbbs 포트 (IP/도메인과 함께 사용)'
+        ru: 'Порт hbbs (используется с IP/доменом)'
+        ms: 'Port hbbs (digunakan dengan IP/domain)'
+        pt-br: 'Porta hbbs (usado com IP/domínio)'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HBBR_PORT
       labelEn: hbbr port (client relay server port)
       labelZh: hbbr端口(客户端中继服务器端口)
+      label:
+        en: 'hbbr port (client relay server port)'
+        zh: 'hbbr端口(客户端中继服务器端口)'
+        zh-Hant: 'hbbr 埠（用戶端中繼伺服器埠）'
+        ja: 'hbbr ポート（クライアント中継サーバーポート）'
+        ko: 'hbbr 포트 (클라이언트 중계 서버 포트)'
+        ru: 'Порт hbbr (порт ретрансляционного сервера клиента)'
+        ms: 'Port hbbr (port pelayan relay klien)'
+        pt-br: 'Porta hbbr (porta do servidor de relay do cliente)'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: WEB_CLIENT_PORT1
       labelEn: Web Client Support Port 1
       labelZh: 网页客户端支持端口1
+      label:
+        en: 'Web Client Support Port 1'
+        zh: '网页客户端支持端口1'
+        zh-Hant: '網頁用戶端支援埠 1'
+        ja: 'Web クライアント対応ポート 1'
+        ko: '웹 클라이언트 지원 포트 1'
+        ru: 'Порт поддержки веб-клиента 1'
+        ms: 'Port sokongan klien web 1'
+        pt-br: 'Porta de suporte do cliente web 1'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: WEB_CLIENT_PORT2
       labelEn: Web Client Support Port 2
       labelZh: 网页客户端支持端口2
+      label:
+        en: 'Web Client Support Port 2'
+        zh: '网页客户端支持端口2'
+        zh-Hant: '網頁用戶端支援埠 2'
+        ja: 'Web クライアント対応ポート 2'
+        ko: '웹 클라이언트 지원 포트 2'
+        ru: 'Порт поддержки веб-клиента 2'
+        ms: 'Port sokongan klien web 2'
+        pt-br: 'Porta de suporte do cliente web 2'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: HOST_ADDRESS
       labelEn: IP address or domain name (must change item)
       labelZh: IP地址或域名(必改项)
+      label:
+        en: 'IP address or domain name (must change item)'
+        zh: 'IP地址或域名(必改项)'
+        zh-Hant: 'IP 位址或網域（必改項）'
+        ja: 'IP アドレスまたはドメイン名（要変更）'
+        ko: 'IP 주소 또는 도메인 이름(필수 변경 항목)'
+        ru: 'IP-адрес или доменное имя (обязательно изменить)'
+        ms: 'Alamat IP atau nama domain (wajib diubah)'
+        pt-br: 'Endereço IP ou nome de domínio (obrigatório alterar)'
       required: true
       rule: paramCommon
       type: text

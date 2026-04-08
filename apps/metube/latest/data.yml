@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '連接埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DOWNLOAD_DIR
       labelEn: Download Directory
       labelZh: 下载目录
+      label:
+        en: 'Download Directory'
+        zh: '下载目录'
+        zh-Hant: '下載目錄'
+        ja: 'ダウンロードディレクトリ'
+        ko: '다운로드 디렉터리'
+        ru: 'Каталог загрузок'
+        ms: 'Direktori muat turun'
+        pt-br: 'Diretório de downloads'
       required: true
       type: text
     - default: "1000"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: UID
       labelEn: UID
       labelZh: 用户 ID
+      label:
+        en: 'UID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザーID'
+        ko: '사용자 ID'
+        ru: 'Идентификатор пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: GID
       labelEn: GID
       labelZh: 用户组 ID
+      label:
+        en: 'GID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'グループID'
+        ko: '그룹 ID'
+        ru: 'Идентификатор группы'
+        ms: 'ID kumpulan'
+        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "auto"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: DEFAULT_THEME
       labelEn: Default Theme
       labelZh: 默认主题
+      label:
+        en: 'Default Theme'
+        zh: '默认主题'
+        zh-Hant: '預設主題'
+        ja: 'デフォルトテーマ'
+        ko: '기본 테마'
+        ru: 'Тема по умолчанию'
+        ms: 'Tema lalai'
+        pt-br: 'Tema padrão'
       required: true
       type: select
       values:
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: AUDIO_DOWNLOAD_DIR
       labelEn: Audio Download Directory
       labelZh: 音频下载目录
+      label:
+        en: 'Audio Download Directory'
+        zh: '音频下载目录'
+        zh-Hant: '音訊下載目錄'
+        ja: '音声ダウンロードディレクトリ'
+        ko: '오디오 다운로드 디렉터리'
+        ru: 'Каталог загрузки аудио'
+        ms: 'Direktori muat turun audio'
+        pt-br: 'Diretório de download de áudio'
       required: false
       type: text
     - default: "/downloads/.metube"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: STATE_DIR
       labelEn: State Directory
       labelZh: 状态目录
+      label:
+        en: 'State Directory'
+        zh: '状态目录'
+        zh-Hant: '狀態目錄'
+        ja: '状態ディレクトリ'
+        ko: '상태 디렉터리'
+        ru: 'Каталог состояния'
+        ms: 'Direktori status'
+        pt-br: 'Diretório de estado'
       required: true
       type: text
     - default: "/downloads/temp"
@@ -62,6 +125,15 @@ additionalProperties:
       envKey: TEMP_DIR
       labelEn: Temp Directory
       labelZh: 临时目录
+      label:
+        en: 'Temp Directory'
+        zh: '临时目录'
+        zh-Hant: '臨時目錄'
+        ja: '一時ディレクトリ'
+        ko: '임시 디렉터리'
+        ru: 'Временный каталог'
+        ms: 'Direktori sementara'
+        pt-br: 'Diretório temporário'
       required: false
       type: text
     - default: "false"
@@ -69,68 +141,195 @@ additionalProperties:
       envKey: DOWNLOAD_DIRS_INDEXABLE
       labelEn: Download Dirs Indexable
       labelZh: 目录可索引
+      label:
+        en: 'Download Dirs Indexable'
+        zh: '目录可索引'
+        zh-Hant: '下載目錄可索引'
+        ja: 'ダウンロードディレクトリを索引可能'
+        ko: '다운로드 디렉터리 인덱싱 가능'
+        ru: 'Каталоги загрузок индексируются'
+        ms: 'Direktori muat turun boleh diindeks'
+        pt-br: 'Diretórios de download indexáveis'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "true"
       edit: true
       envKey: CUSTOM_DIRS
       labelEn: Custom Directories
       labelZh: 自定义目录
+      label:
+        en: 'Custom Directories'
+        zh: '自定义目录'
+        zh-Hant: '自訂目錄'
+        ja: 'カスタムディレクトリ'
+        ko: '사용자 지정 디렉터리'
+        ru: 'Пользовательские каталоги'
+        ms: 'Direktori tersuai'
+        pt-br: 'Diretórios personalizados'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "true"
       edit: true
       envKey: CREATE_CUSTOM_DIRS
       labelEn: Create Custom Directories
       labelZh: 创建自定义目录
+      label:
+        en: 'Create Custom Directories'
+        zh: '创建自定义目录'
+        zh-Hant: '建立自訂目錄'
+        ja: 'カスタムディレクトリを作成'
+        ko: '사용자 지정 디렉터리 생성'
+        ru: 'Создавать пользовательские каталоги'
+        ms: 'Cipta direktori tersuai'
+        pt-br: 'Criar diretórios personalizados'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "false"
       edit: true
       envKey: DELETE_FILE_ON_TRASHCAN
       labelEn: Delete File on Trashcan
       labelZh: 删除文件
+      label:
+        en: 'Delete File on Trashcan'
+        zh: '删除文件'
+        zh-Hant: '在回收站刪除檔案'
+        ja: 'ごみ箱でファイルを削除'
+        ko: '휴지통에서 파일 삭제'
+        ru: 'Удалять файл при перемещении в корзину'
+        ms: 'Padam fail ke tong sampah'
+        pt-br: 'Excluir arquivo ao enviar para a lixeira'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "/"
       edit: true
       envKey: URL_PREFIX
       labelEn: URL Prefix
       labelZh: URL 前缀
+      label:
+        en: 'URL Prefix'
+        zh: 'URL 前缀'
+        zh-Hant: 'URL 前綴'
+        ja: 'URL プレフィックス'
+        ko: 'URL 접두사'
+        ru: 'Префикс URL'
+        ms: 'Awalan URL'
+        pt-br: 'Prefixo de URL'
       required: true
       type: text
     - default: ""
       edit: true
       envKey: PUBLIC_HOST_URL
       labelEn: Public Host URL
-      labelZh: 公共主机URL
+      labelZh: 公共主机 URL
+      label:
+        en: 'Public Host URL'
+        zh: '公共主机 URL'
+        zh-Hant: '公開主機 URL'
+        ja: '公開ホストURL'
+        ko: '공개 호스트 URL'
+        ru: 'URL публичного хоста'
+        ms: 'URL hos awam'
+        pt-br: 'URL do host público'
       required: false
       type: text
     - default: ""
       edit: true
       envKey: PUBLIC_HOST_AUDIO_URL
       labelEn: Public Host Audio URL
-      labelZh: 公共音频主机URL
+      labelZh: 公共音频主机 URL
+      label:
+        en: 'Public Host Audio URL'
+        zh: '公共音频主机 URL'
+        zh-Hant: '公開音訊主機 URL'
+        ja: '公開ホスト音声URL'
+        ko: '공개 호스트 오디오 URL'
+        ru: 'URL аудио публичного хоста'
+        ms: 'URL audio hos awam'
+        pt-br: 'URL de áudio do host público'
       required: false
       type: text
     - default: "false"
@@ -138,17 +337,51 @@ additionalProperties:
       envKey: DEFAULT_OPTION_PLAYLIST_STRICT_MODE
       labelEn: Strict Playlist Mode
       labelZh: 严格播放列表模式
+      label:
+        en: 'Strict Playlist Mode'
+        zh: '严格播放列表模式'
+        zh-Hant: '嚴格播放清單模式'
+        ja: '厳格なプレイリストモード'
+        ko: '엄격한 재생목록 모드'
+        ru: 'Строгий режим плейлиста'
+        ms: 'Mod senarai main ketat'
+        pt-br: 'Modo estrito de playlist'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "0"
       edit: true
       envKey: DEFAULT_OPTION_PLAYLIST_ITEM_LIMIT
       labelEn: Playlist Item Limit
       labelZh: 播放列表项限制
+      label:
+        en: 'Playlist Item Limit'
+        zh: '播放列表项限制'
+        zh-Hant: '播放清單項目限制'
+        ja: 'プレイリスト項目制限'
+        ko: '재생목록 항목 제한'
+        ru: 'Лимит элементов плейлиста'
+        ms: 'Had item senarai main'
+        pt-br: 'Limite de itens da playlist'
       required: true
       type: number

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个层次化的笔记应用程序，专注于建立大型个人知识库
   shortDescEn: A hierarchical note taking application with focus on building large personal knowledge bases
+  description:
+    en: "Hierarchical note-taking app focused on building large personal knowledge bases."
+    zh: "专注于构建大型个人知识库的层次化笔记应用。"
+    zh-Hant: "專注於建立大型個人知識庫的階層式筆記應用。"
+    ja: "大規模な個人ナレッジベース構築に特化した階層型ノートアプリです。"
+    ko: "대규모 개인 지식 베이스 구축에 초점을 맞춘 계층형 노트 앱입니다."
+    ru: "Иерархическое приложение для заметок, ориентированное на создание больших личных баз знаний."
+    ms: "Aplikasi nota berhierarki yang memfokuskan pembinaan pangkalan pengetahuan peribadi berskala besar."
+    pt-br: "Aplicativo hierárquico de anotações focado na criação de grandes bases de conhecimento pessoais."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/Nriver/trilium-translation
   github: https://github.com/Nriver/trilium-translation
   document: https://github.com/Nriver/trilium-translation/blob/main/README_CN.md
+  architectures:
+    - amd64

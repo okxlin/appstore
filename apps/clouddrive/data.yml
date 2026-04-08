@@ -10,6 +10,15 @@ additionalProperties:
     - Storage
   shortDescZh: 一个强大的多云盘管理工具
   shortDescEn: A powerful multi-cloud drive management tool
+  description:
+    en: A powerful multi-cloud drive management tool
+    zh: 一个强大的多云盘管理工具
+    zh-Hant: 一個強大的多雲盤管理工具
+    ja: 強力なマルチクラウドドライブ管理ツール
+    ko: 강력한 멀티 클라우드 드라이브 관리 도구
+    ru: Мощный инструмент управления мультиоблачными дисками
+    ms: Alat pengurusan pemacu berbilang awan yang berkuasa
+    pt-br: Ferramenta poderosa de gerenciamento de unidades multi-nuvem
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.clouddrive2.com
   github: https://hub.docker.com/r/cloudnas/clouddrive2
   document: https://www.clouddrive2.com
+  architectures:
+    - amd64

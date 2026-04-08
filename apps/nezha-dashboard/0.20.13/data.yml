@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_GRPC
       labelEn: GRPC Port
       labelZh: GRPC 端口
+      label:
+        en: 'GRPC Port'
+        zh: 'GRPC 端口'
+        zh-Hant: 'GRPC 埠'
+        ja: 'GRPC ポート'
+        ko: 'GRPC 포트'
+        ru: 'Порт GRPC'
+        ms: 'Port GRPC'
+        pt-br: 'Porta GRPC'
       required: true
       rule: paramPort
       type: number

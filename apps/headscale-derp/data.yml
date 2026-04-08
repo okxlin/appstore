@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Headscale 的中继服务
   shortDescEn: Headscale relay service
+  description:
+    en: Headscale relay service
+    zh: Headscale 的中继服务
+    zh-Hant: Headscale 的中繼服務
+    ja: Headscale のリレーサービス
+    ko: Headscale 릴레이 서비스
+    ru: Релейный сервис для Headscale
+    ms: Perkhidmatan relay untuk Headscale
+    pt-br: Serviço de relay do Headscale
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/fredliang/derper
   github: https://github.com/fredliang44/derper-docker
   document: https://headscale.net
+  architectures:
+    - amd64
+

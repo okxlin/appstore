@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: 50
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USER_LIMIT
       labelEn: User limit
       labelZh: 用户数量限制
+      label:
+        en: 'User limit'
+        zh: '用户数量限制'
+        zh-Hant: '使用者數量限制'
+        ja: 'ユーザー数上限'
+        ko: '사용자 수 제한'
+        ru: 'Лимит пользователей'
+        ms: 'Had pengguna'
+        pt-br: 'Limite de usuários'
       required: true
       rule: paramCommon
       type: number
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: BOOK_LIMIT
       labelEn: Book limit
       labelZh: 书本数量限制
+      label:
+        en: 'Book limit'
+        zh: '书本数量限制'
+        zh-Hant: '書籍數量限制'
+        ja: '書籍数上限'
+        ko: '도서 수 제한'
+        ru: 'Лимит книг'
+        ms: 'Had buku'
+        pt-br: 'Limite de livros'
       required: true
       rule: paramCommon
       type: number
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: 'Admin Password'
+        zh: '管理员密码'
+        zh-Hant: '管理員密碼'
+        ja: '管理者パスワード'
+        ko: '관리자 비밀번호'
+        ru: 'Пароль администратора'
+        ms: 'Kata laluan pentadbir'
+        pt-br: 'Senha de administrador'
       random: true
       required: true
       rule: paramCommon
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: INVITE_CODE
       labelEn: Invitation code
       labelZh: 邀请码
+      label:
+        en: 'Invitation code'
+        zh: '邀请码'
+        zh-Hant: '邀請碼'
+        ja: '招待コード'
+        ko: '초대 코드'
+        ru: 'Код приглашения'
+        ms: 'Kod jemputan'
+        pt-br: 'Código de convite'
       random: true
       required: true
       rule: paramCommon

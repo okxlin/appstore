@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Docker 版本的 Microsoft 365 E5 调用 API 续订服务
   shortDescEn: Docker version of Microsoft 365 E5 calls API renewal service
+  description:
+    en: Docker version of the Microsoft 365 E5 API renewal service
+    zh: Docker 版本的 Microsoft 365 E5 调用 API 续订服务
+    zh-Hant: Docker 版本的 Microsoft 365 E5 呼叫 API 續訂服務
+    ja: Microsoft 365 E5 のAPI更新サービスのDocker版
+    ko: Microsoft 365 E5 API를 호출해 갱신하는 서비스를 위한 Docker 버전
+    ru: Docker-версия сервиса продления Microsoft 365 E5 через API
+    ms: Versi Docker bagi perkhidmatan pembaharuan Microsoft 365 E5 melalui API
+    pt-br: Versão Docker do serviço de renovação do Microsoft 365 E5 via API
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/hongyonghan/Docker_Microsoft365_E5_Renew_X
   github: https://github.com/hongyonghan/Docker_Microsoft365_E5_Renew_X
   document: https://blog.csdn.net/qq_33212020/article/details/119747634
+  architectures:
+    - amd64

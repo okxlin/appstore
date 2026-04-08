@@ -5,11 +5,38 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
+      label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
         required: true
         type: service
       default: mysql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
       params:
         - envKey: WOODPECKER_DB_PORT
           key: mysql
@@ -25,12 +52,29 @@ additionalProperties:
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
     - default: woodpecker
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -39,6 +83,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -47,6 +100,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -56,6 +118,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -64,6 +135,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "false"
@@ -71,6 +151,15 @@ additionalProperties:
       envKey: REGISTER_SWITCH
       labelEn: Enable register (true or false)
       labelZh: 启用注册(true/false)
+      label:
+        en: 'Enable register (true or false)'
+        zh: '启用注册(true/false)'
+        zh-Hant: '啟用註冊(true/false)'
+        ja: '登録を有効化（true/false）'
+        ko: '등록 활성화(true/false)'
+        ru: 'Включить регистрацию (true/false)'
+        ms: 'Dayakan pendaftaran (true/false)'
+        pt-br: 'Ativar registro (true/false)'
       required: true
       type: text
     - default: http://ci.example.com
@@ -78,6 +167,15 @@ additionalProperties:
       envKey: WOODPECKER_HOST
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       type: text
     - default: ''
@@ -85,6 +183,15 @@ additionalProperties:
       envKey: WOODPECKER_AGENT_SECRET
       labelEn: Github Agent Secret Vaule
       labelZh: Github Agent Secret 值
+      label:
+        en: 'Github Agent Secret Vaule'
+        zh: 'Github Agent Secret 值'
+        zh-Hant: 'Github Agent Secret 值'
+        ja: 'Github Agent Secret 値'
+        ko: 'Github Agent Secret 값'
+        ru: 'Значение Github Agent Secret'
+        ms: 'Nilai Github Agent Secret'
+        pt-br: 'Valor do Github Agent Secret'
       required: true
       type: text
     - default: "true"
@@ -92,6 +199,15 @@ additionalProperties:
       envKey: GITHUB_ENABLE_SWITCH
       labelEn: Enable Github (true or false)
       labelZh: 启用Github(true/false)
+      label:
+        en: 'Enable Github (true or false)'
+        zh: '启用Github(true/false)'
+        zh-Hant: '啟用Github(true/false)'
+        ja: 'Github を有効化（true/false）'
+        ko: 'Github 활성화(true/false)'
+        ru: 'Включить Github (true/false)'
+        ms: 'Dayakan Github (true/false)'
+        pt-br: 'Ativar Github (true/false)'
       required: true
       type: text
     - default: https://github.com
@@ -99,6 +215,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_URL
       labelEn: Github URL
       labelZh: Github地址
+      label:
+        en: 'Github URL'
+        zh: 'Github地址'
+        zh-Hant: 'Github 地址'
+        ja: 'Github の URL'
+        ko: 'Github URL 주소'
+        ru: 'URL Github'
+        ms: 'URL Github'
+        pt-br: 'URL do Github'
       required: false
       type: text
     - default: ''
@@ -106,6 +231,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_CLIENT
       labelEn: Github CLIENT Vaule
       labelZh: Github CLIENT 值
+      label:
+        en: 'Github CLIENT Vaule'
+        zh: 'Github CLIENT 值'
+        zh-Hant: 'Github CLIENT 值'
+        ja: 'Github CLIENT 値'
+        ko: 'Github CLIENT 값'
+        ru: 'Значение Github CLIENT'
+        ms: 'Nilai Github CLIENT'
+        pt-br: 'Valor do Github CLIENT'
       required: false
       type: text
     - default: ''
@@ -113,6 +247,15 @@ additionalProperties:
       envKey: WOODPECKER_GITHUB_SECRET
       labelEn: Github SECRET Vaule
       labelZh: Github SECRET 值
+      label:
+        en: 'Github SECRET Vaule'
+        zh: 'Github SECRET 值'
+        zh-Hant: 'Github SECRET 值'
+        ja: 'Github SECRET 値'
+        ko: 'Github SECRET 값'
+        ru: 'Значение Github SECRET'
+        ms: 'Nilai Github SECRET'
+        pt-br: 'Valor do Github SECRET'
       required: false
       type: text
     - default: "false"
@@ -120,6 +263,15 @@ additionalProperties:
       envKey: GITEA_ENABLE_SWITCH
       labelEn: Enable Gitea (true or false)
       labelZh: 启用Gitea(true/false)
+      label:
+        en: 'Enable Gitea (true or false)'
+        zh: '启用Gitea(true/false)'
+        zh-Hant: '啟用Gitea(true/false)'
+        ja: 'Gitea を有効化（true/false）'
+        ko: 'Gitea 활성화(true/false)'
+        ru: 'Включить Gitea (true/false)'
+        ms: 'Dayakan Gitea (true/false)'
+        pt-br: 'Ativar Gitea (true/false)'
       required: true
       type: text
     - default: https://try.gitea.io
@@ -127,6 +279,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_URL
       labelEn: Gitea URL
       labelZh: Gitea地址
+      label:
+        en: 'Gitea URL'
+        zh: 'Gitea地址'
+        zh-Hant: 'Gitea 地址'
+        ja: 'Gitea の URL'
+        ko: 'Gitea URL 주소'
+        ru: 'URL Gitea'
+        ms: 'URL Gitea'
+        pt-br: 'URL do Gitea'
       required: false
       type: text
     - default: ''
@@ -134,6 +295,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_CLIENT
       labelEn: Gitea CLIENT Vaule
       labelZh: Gitea CLIENT 值
+      label:
+        en: 'Gitea CLIENT Vaule'
+        zh: 'Gitea CLIENT 值'
+        zh-Hant: 'Gitea CLIENT 值'
+        ja: 'Gitea CLIENT 値'
+        ko: 'Gitea CLIENT 값'
+        ru: 'Значение Gitea CLIENT'
+        ms: 'Nilai Gitea CLIENT'
+        pt-br: 'Valor do Gitea CLIENT'
       required: false
       type: text
     - default: ''
@@ -141,6 +311,15 @@ additionalProperties:
       envKey: WOODPECKER_GITEA_SECRET
       labelEn: Gitea SECRET Vaule
       labelZh: Gitea SECRET 值
+      label:
+        en: 'Gitea SECRET Vaule'
+        zh: 'Gitea SECRET 值'
+        zh-Hant: 'Gitea SECRET 值'
+        ja: 'Gitea SECRET 値'
+        ko: 'Gitea SECRET 값'
+        ru: 'Значение Gitea SECRET'
+        ms: 'Nilai Gitea SECRET'
+        pt-br: 'Valor do Gitea SECRET'
       required: false
       type: text
     - default: "false"
@@ -148,6 +327,15 @@ additionalProperties:
       envKey: GITLAB_ENABLE_SWITCH
       labelEn: Enable GitLab (true or false)
       labelZh: 启用GitLab (true/false)
+      label:
+        en: 'Enable GitLab (true or false)'
+        zh: '启用GitLab (true/false)'
+        zh-Hant: '啟用GitLab (true/false)'
+        ja: 'GitLab を有効化（true/false）'
+        ko: 'GitLab 활성화(true/false)'
+        ru: 'Включить GitLab (true/false)'
+        ms: 'Dayakan GitLab (true/false)'
+        pt-br: 'Ativar GitLab (true/false)'
       required: true
       type: text
     - default: https://gitlab.com
@@ -155,6 +343,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_URL
       labelEn: GitLab URL
       labelZh: GitLab 地址
+      label:
+        en: 'GitLab URL'
+        zh: 'GitLab 地址'
+        zh-Hant: 'GitLab 地址'
+        ja: 'GitLab の URL'
+        ko: 'GitLab URL 주소'
+        ru: 'URL GitLab'
+        ms: 'URL GitLab'
+        pt-br: 'URL do GitLab'
       required: false
       type: text
     - default: ''
@@ -162,6 +359,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_CLIENT
       labelEn: GitLab CLIENT Vaule
       labelZh: GitLab CLIENT 值
+      label:
+        en: 'GitLab CLIENT Vaule'
+        zh: 'GitLab CLIENT 值'
+        zh-Hant: 'GitLab CLIENT 值'
+        ja: 'GitLab CLIENT 値'
+        ko: 'GitLab CLIENT 값'
+        ru: 'Значение GitLab CLIENT'
+        ms: 'Nilai GitLab CLIENT'
+        pt-br: 'Valor do GitLab CLIENT'
       required: false
       type: text
     - default: ''
@@ -169,6 +375,15 @@ additionalProperties:
       envKey: WOODPECKER_GITLAB_SECRET
       labelEn: GitLab SECRET Vaule
       labelZh: GitLab SECRET 值
+      label:
+        en: 'GitLab SECRET Vaule'
+        zh: 'GitLab SECRET 值'
+        zh-Hant: 'GitLab SECRET 值'
+        ja: 'GitLab SECRET 値'
+        ko: 'GitLab SECRET 값'
+        ru: 'Значение GitLab SECRET'
+        ms: 'Nilai GitLab SECRET'
+        pt-br: 'Valor do GitLab SECRET'
       required: false
       type: text
     - default: "false"
@@ -176,6 +391,15 @@ additionalProperties:
       envKey: BITBUCKET_ENABLE_SWITCH
       labelEn: Enable Bitbucket (true or false)
       labelZh: 启用 Bitbucket (true/false)
+      label:
+        en: 'Enable Bitbucket (true or false)'
+        zh: '启用 Bitbucket (true/false)'
+        zh-Hant: '啟用 Bitbucket (true/false)'
+        ja: 'Bitbucket を有効化（true/false）'
+        ko: 'Bitbucket 활성화(true/false)'
+        ru: 'Включить Bitbucket (true/false)'
+        ms: 'Dayakan Bitbucket (true/false)'
+        pt-br: 'Ativar Bitbucket (true/false)'
       required: true
       type: text
     - default: ''
@@ -183,6 +407,15 @@ additionalProperties:
       envKey: WOODPECKER_BITBUCKET_CLIENT
       labelEn: Bitbucket CLIENT Value
       labelZh: Bitbucket CLIENT 值
+      label:
+        en: 'Bitbucket CLIENT Value'
+        zh: 'Bitbucket CLIENT 值'
+        zh-Hant: 'Bitbucket CLIENT 值'
+        ja: 'Bitbucket CLIENT 値'
+        ko: 'Bitbucket CLIENT 값'
+        ru: 'Значение Bitbucket CLIENT'
+        ms: 'Nilai Bitbucket CLIENT'
+        pt-br: 'Valor do Bitbucket CLIENT'
       required: false
       type: text
     - default: ''
@@ -190,5 +423,14 @@ additionalProperties:
       envKey: WOODPECKER_BITBUCKET_SECRET
       labelEn: Bitbucket SECRET Value
       labelZh: Bitbucket SECRET 值
+      label:
+        en: 'Bitbucket SECRET Value'
+        zh: 'Bitbucket SECRET 值'
+        zh-Hant: 'Bitbucket SECRET 值'
+        ja: 'Bitbucket SECRET 値'
+        ko: 'Bitbucket SECRET 값'
+        ru: 'Значение Bitbucket SECRET'
+        ms: 'Nilai Bitbucket SECRET'
+        pt-br: 'Valor do Bitbucket SECRET'
       required: false
       type: text

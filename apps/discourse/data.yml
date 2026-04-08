@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.discourse.org
   github: https://github.com/discourse/discourse
   document: https://docs.discourse.org
+  architectures:
+    - amd64
+  description:
+    en: "Open-source discussion platform"
+    zh: "开源讨论平台"
+    zh-Hant: "開源討論平台"
+    ja: "オープンソースのディスカッションプラットフォーム"
+    ko: "오픈 소스 토론 플랫폼"
+    ru: "Платформа для обсуждений с открытым исходным кодом"
+    ms: "Platform perbincangan sumber terbuka"
+    pt-br: "Plataforma de discussão de código aberto"

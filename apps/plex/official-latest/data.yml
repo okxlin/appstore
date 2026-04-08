@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port 32400 (TCP)
       labelZh: 端口 32400 (TCP)
+      label:
+        en: 'Port 32400 (TCP)'
+        zh: '端口 32400 (TCP)'
+        zh-Hant: '埠 32400 (TCP)'
+        ja: 'ポート 32400 (TCP)'
+        ko: '포트 32400 (TCP)'
+        ru: 'Порт 32400 (TCP)'
+        ms: 'Port 32400 (TCP)'
+        pt-br: 'Porta 32400 (TCP)'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_3005
       labelEn: Port 3005 (TCP)
       labelZh: 端口 3005 (TCP)
+      label:
+        en: 'Port 3005 (TCP)'
+        zh: '端口 3005 (TCP)'
+        zh-Hant: '埠 3005 (TCP)'
+        ja: 'ポート 3005 (TCP)'
+        ko: '포트 3005 (TCP)'
+        ru: 'Порт 3005 (TCP)'
+        ms: 'Port 3005 (TCP)'
+        pt-br: 'Porta 3005 (TCP)'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_8324
       labelEn: Port 8324 (TCP)
       labelZh: 端口 8324 (TCP)
+      label:
+        en: 'Port 8324 (TCP)'
+        zh: '端口 8324 (TCP)'
+        zh-Hant: '埠 8324 (TCP)'
+        ja: 'ポート 8324 (TCP)'
+        ko: '포트 8324 (TCP)'
+        ru: 'Порт 8324 (TCP)'
+        ms: 'Port 8324 (TCP)'
+        pt-br: 'Porta 8324 (TCP)'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_TCP_32469
       labelEn: Port 32469 (TCP)
       labelZh: 端口 32469 (TCP)
+      label:
+        en: 'Port 32469 (TCP)'
+        zh: '端口 32469 (TCP)'
+        zh-Hant: '埠 32469 (TCP)'
+        ja: 'ポート 32469 (TCP)'
+        ko: '포트 32469 (TCP)'
+        ru: 'Порт 32469 (TCP)'
+        ms: 'Port 32469 (TCP)'
+        pt-br: 'Porta 32469 (TCP)'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_1900
       labelEn: Port 1900 (UDP)
       labelZh: 端口 1900 (UDP)
+      label:
+        en: 'Port 1900 (UDP)'
+        zh: '端口 1900 (UDP)'
+        zh-Hant: '埠 1900 (UDP)'
+        ja: 'ポート 1900 (UDP)'
+        ko: '포트 1900 (UDP)'
+        ru: 'Порт 1900 (UDP)'
+        ms: 'Port 1900 (UDP)'
+        pt-br: 'Porta 1900 (UDP)'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32410
       labelEn: Port 32410 (UDP)
       labelZh: 端口 32410 (UDP)
+      label:
+        en: 'Port 32410 (UDP)'
+        zh: '端口 32410 (UDP)'
+        zh-Hant: '埠 32410 (UDP)'
+        ja: 'ポート 32410 (UDP)'
+        ko: '포트 32410 (UDP)'
+        ru: 'Порт 32410 (UDP)'
+        ms: 'Port 32410 (UDP)'
+        pt-br: 'Porta 32410 (UDP)'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32412
       labelEn: Port 32412 (UDP)
       labelZh: 端口 32412 (UDP)
+      label:
+        en: 'Port 32412 (UDP)'
+        zh: '端口 32412 (UDP)'
+        zh-Hant: '埠 32412 (UDP)'
+        ja: 'ポート 32412 (UDP)'
+        ko: '포트 32412 (UDP)'
+        ru: 'Порт 32412 (UDP)'
+        ms: 'Port 32412 (UDP)'
+        pt-br: 'Porta 32412 (UDP)'
       required: true
       rule: paramPort
       type: number
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32413
       labelEn: Port 32413 (UDP)
       labelZh: 端口 32413 (UDP)
+      label:
+        en: 'Port 32413 (UDP)'
+        zh: '端口 32413 (UDP)'
+        zh-Hant: '埠 32413 (UDP)'
+        ja: 'ポート 32413 (UDP)'
+        ko: '포트 32413 (UDP)'
+        ru: 'Порт 32413 (UDP)'
+        ms: 'Port 32413 (UDP)'
+        pt-br: 'Porta 32413 (UDP)'
       required: true
       rule: paramPort
       type: number
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_UDP_32414
       labelEn: Port 32414 (UDP)
       labelZh: 端口 32414 (UDP)
+      label:
+        en: 'Port 32414 (UDP)'
+        zh: '端口 32414 (UDP)'
+        zh-Hant: '埠 32414 (UDP)'
+        ja: 'ポート 32414 (UDP)'
+        ko: '포트 32414 (UDP)'
+        ru: 'Порт 32414 (UDP)'
+        ms: 'Port 32414 (UDP)'
+        pt-br: 'Porta 32414 (UDP)'
       required: true
       rule: paramPort
       type: number
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: TIMEZONE
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: 'Timezone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon waktu'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: ""
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: CLAIM_TOKEN
       labelEn: Claim Token
       labelZh: 声明令牌
+      label:
+        en: 'Claim Token'
+        zh: '声明令牌'
+        zh-Hant: '聲明令牌'
+        ja: 'クレームトークン'
+        ko: '클레임 토큰'
+        ru: 'Claim токен'
+        ms: 'Token Claim'
+        pt-br: 'Token de claim'
       required: false
       type: text
     - default: "http://localhost:32400/"
@@ -91,6 +190,15 @@ additionalProperties:
       envKey: ADVERTISE_IP
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       rule: paramExtUrl
       type: text
@@ -99,6 +207,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "./data/plex/database"
@@ -106,6 +223,15 @@ additionalProperties:
       envKey: DATABASE_PATH
       labelEn: Database Path
       labelZh: 数据库路径
+      label:
+        en: 'Database Path'
+        zh: '数据库路径'
+        zh-Hant: '資料庫路徑'
+        ja: 'データベースパス'
+        ko: '데이터베이스 경로'
+        ru: 'Путь к базе данных'
+        ms: 'Laluan pangkalan data'
+        pt-br: 'Caminho do banco de dados'
       required: true
       type: text
     - default: "./data/transcode/temp"
@@ -113,6 +239,15 @@ additionalProperties:
       envKey: TRANSCODE_PATH
       labelEn: Transcode Path
       labelZh: 转码路径
+      label:
+        en: 'Transcode Path'
+        zh: '转码路径'
+        zh-Hant: '轉碼路徑'
+        ja: 'トランスコードパス'
+        ko: '트랜스코드 경로'
+        ru: 'Путь транскодирования'
+        ms: 'Laluan transkod'
+        pt-br: 'Caminho de transcodificação'
       required: true
       type: text
     - default: "./data/media"
@@ -120,6 +255,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: 'Media Path'
+        zh: '媒体路径'
+        zh-Hant: '媒體路徑'
+        ja: 'メディアパス'
+        ko: '미디어 경로'
+        ru: 'Путь к медиа'
+        ms: 'Laluan media'
+        pt-br: 'Caminho de mídia'
       required: true
       type: text
     - default: ""
@@ -127,6 +271,15 @@ additionalProperties:
       envKey: PLEX_UID
       labelEn: Plex UID
       labelZh: Plex 用户 ID
+      label:
+        en: 'Plex UID'
+        zh: 'Plex 用户 ID'
+        zh-Hant: 'Plex 使用者 ID'
+        ja: 'Plex ユーザー ID'
+        ko: 'Plex 사용자 ID'
+        ru: 'ID пользователя Plex'
+        ms: 'ID pengguna Plex'
+        pt-br: 'ID do usuário Plex'
       required: false
       type: text
     - default: ""
@@ -134,24 +287,67 @@ additionalProperties:
       envKey: PLEX_GID
       labelEn: Plex GID
       labelZh: Plex 组 ID
+      label:
+        en: 'Plex GID'
+        zh: 'Plex 组 ID'
+        zh-Hant: 'Plex 群組 ID'
+        ja: 'Plex グループ ID'
+        ko: 'Plex 그룹 ID'
+        ru: 'ID группы Plex'
+        ms: 'ID kumpulan Plex'
+        pt-br: 'ID do grupo Plex'
       required: false
       type: text
     - default: "true"
       envKey: CHANGE_CONFIG_DIR_OWNERSHIP
       labelEn: Change Config Dir Ownership
       labelZh: 更改配置目录所有权
+      label:
+        en: 'Change Config Dir Ownership'
+        zh: '更改配置目录所有权'
+        zh-Hant: '變更配置目錄所有權'
+        ja: '設定ディレクトリ所有権を変更'
+        ko: '설정 디렉터리 소유권 변경'
+        ru: 'Изменить владельца каталога конфигурации'
+        ms: 'Ubah pemilikan direktori konfigurasi'
+        pt-br: 'Alterar propriedade do diretório de configuração'
       required: true
       type: select
       edit: true
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "192.168.1.0/24,172.18.0.0/16"
       edit: true
       envKey: ALLOWED_NETWORKS
       labelEn: Allowed Networks
       labelZh: 允许的网络
+      label:
+        en: 'Allowed Networks'
+        zh: '允许的网络'
+        zh-Hant: '允許的網路'
+        ja: '許可されたネットワーク'
+        ko: '허용된 네트워크'
+        ru: 'Разрешенные сети'
+        ms: 'Rangkaian yang dibenarkan'
+        pt-br: 'Redes permitidas'
       required: false
       type: text

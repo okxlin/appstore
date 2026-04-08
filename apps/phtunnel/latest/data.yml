@@ -5,5 +5,14 @@ additionalProperties:
       envKey: TIPS
       labelEn: Here's a hint note
       labelZh: 这是一个提示说明
+      label:
+        en: 'Tips'
+        zh: '提示'
+        zh-Hant: '提示'
+        ja: 'ヒント'
+        ko: '팁'
+        ru: 'Подсказка'
+        ms: 'Petua'
+        pt-br: 'Dicas'
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RI_APP_HOST
       labelEn: Application Host
       labelZh: 应用主机
+      label:
+        en: 'Application Host'
+        zh: '应用主机'
+        zh-Hant: '應用主機'
+        ja: 'アプリケーションホスト'
+        ko: '애플리케이션 호스트'
+        ru: 'Хост приложения'
+        ms: 'Hos aplikasi'
+        pt-br: 'Host da aplicação'
       required: true
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: RI_SERVER_TLS_KEY
       labelEn: TLS Key Path
       labelZh: TLS 密钥路径
+      label:
+        en: 'TLS Key Path'
+        zh: 'TLS 密钥路径'
+        zh-Hant: 'TLS 金鑰路徑'
+        ja: 'TLS 鍵パス'
+        ko: 'TLS 키 경로'
+        ru: 'Путь к ключу TLS'
+        ms: 'Laluan kunci TLS'
+        pt-br: 'Caminho da chave TLS'
       required: false
       type: text
     - default: ""
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: RI_SERVER_TLS_CERT
       labelEn: TLS Cert Path
       labelZh: TLS 证书路径
+      label:
+        en: 'TLS Cert Path'
+        zh: 'TLS 证书路径'
+        zh-Hant: 'TLS 憑證路徑'
+        ja: 'TLS 証明書パス'
+        ko: 'TLS 인증서 경로'
+        ru: 'Путь к сертификату TLS'
+        ms: 'Laluan sijil TLS'
+        pt-br: 'Caminho do certificado TLS'
       required: false
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: RI_ENCRYPTION_KEY
       labelEn: Encryption Key
       labelZh: 加密密钥
+      label:
+        en: 'Encryption Key'
+        zh: '加密密钥'
+        zh-Hant: '加密金鑰'
+        ja: '暗号鍵'
+        ko: '암호화 키'
+        ru: 'Ключ шифрования'
+        ms: 'Kunci penyulitan'
+        pt-br: 'Chave de criptografia'
       required: false
       type: password
     - default: "info"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: RI_LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: 'Log Level'
+        zh: '日志级别'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 레벨'
+        ru: 'Уровень логирования'
+        ms: 'Tahap log'
+        pt-br: 'Nível de log'
       required: true
       type: select
       values:
@@ -70,29 +133,88 @@ additionalProperties:
       envKey: RI_FILES_LOGGER
       labelEn: Files Logger
       labelZh: 文件日志
+      label:
+        en: 'Files Logger'
+        zh: '文件日志'
+        zh-Hant: '檔案日誌'
+        ja: 'ファイルログ'
+        ko: '파일 로그'
+        ru: 'Файловый журнал'
+        ms: 'Log fail'
+        pt-br: 'Log de arquivos'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "true"
       edit: true
       envKey: RI_STDOUT_LOGGER
       labelEn: Stdout Logger
       labelZh: 标准输出日志
+      label:
+        en: 'Stdout Logger'
+        zh: '标准输出日志'
+        zh-Hant: '標準輸出日誌'
+        ja: '標準出力ログ'
+        ko: '표준 출력 로그'
+        ru: 'Журнал stdout'
+        ms: 'Log stdout'
+        pt-br: 'Log do stdout'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ""
       edit: true
       envKey: RI_PROXY_PATH
       labelEn: Proxy Path
       labelZh: 代理路径
+      label:
+        en: 'Proxy Path'
+        zh: '代理路径'
+        zh-Hant: '代理路徑'
+        ja: 'プロキシパス'
+        ko: '프록시 경로'
+        ru: 'Путь прокси'
+        ms: 'Laluan proksi'
+        pt-br: 'Caminho do proxy'
       required: false
       type: text

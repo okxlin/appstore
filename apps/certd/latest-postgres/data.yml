@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "223.5.5.5"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DNS_1
       labelEn: Primary DNS
       labelZh: 主 DNS
+      label:
+        en: 'Primary DNS'
+        zh: '主 DNS'
+        zh-Hant: '主 DNS'
+        ja: 'プライマリ DNS'
+        ko: '기본 DNS'
+        ru: 'Основной DNS'
+        ms: 'DNS utama'
+        pt-br: 'DNS primário'
       required: true
       type: text
     - default: "119.29.29.29"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DNS_2
       labelEn: Secondary DNS
       labelZh: 次 DNS
+      label:
+        en: 'Secondary DNS'
+        zh: '次 DNS'
+        zh-Hant: '次 DNS'
+        ja: 'セカンダリ DNS'
+        ko: '보조 DNS'
+        ru: 'Резервный DNS'
+        ms: 'DNS sekunder'
+        pt-br: 'DNS secundário'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS Proxy
       labelZh: HTTPS 代理
+      label:
+        en: 'HTTPS Proxy'
+        zh: 'HTTPS 代理'
+        zh-Hant: 'HTTPS 代理'
+        ja: 'HTTPS プロキシ'
+        ko: 'HTTPS 프록시'
+        ru: 'HTTPS-прокси'
+        ms: 'Proksi HTTPS'
+        pt-br: 'Proxy HTTPS'
       required: false
       type: text
     - default: ""
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: HTTP_PROXY
       labelEn: HTTP Proxy
       labelZh: HTTP 代理
+      label:
+        en: 'HTTP Proxy'
+        zh: 'HTTP 代理'
+        zh-Hant: 'HTTP 代理'
+        ja: 'HTTP プロキシ'
+        ko: 'HTTP 프록시'
+        ru: 'HTTP-прокси'
+        ms: 'Proksi HTTP'
+        pt-br: 'Proxy HTTP'
       required: false
       type: text
     - default: "false"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: RESET_ADMIN_PASSWD
       labelEn: Reset Admin Password
       labelZh: 重置管理员密码
+      label:
+        en: 'Reset Admin Password'
+        zh: '重置管理员密码'
+        zh-Hant: '重置管理員密碼'
+        ja: '管理者パスワードをリセット'
+        ko: '관리자 비밀번호 재설정'
+        ru: 'Сброс пароля администратора'
+        ms: 'Tetapkan semula kata laluan pentadbir'
+        pt-br: 'Redefinir senha do administrador'
       required: true
       type: select
       values:
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: IMMEDIATE_TRIGGER
       labelEn: Immediate trigger of cron
       labelZh: 立即触发定时任务
+      label:
+        en: 'Immediate trigger of cron'
+        zh: '立即触发定时任务'
+        zh-Hant: '立即觸發定時任務'
+        ja: 'cron をすぐに実行'
+        ko: 'cron 즉시 실행'
+        ru: 'Немедленный запуск cron'
+        ms: 'Picu cron serta-merta'
+        pt-br: 'Acionar o cron imediatamente'
       required: true
       type: select
       values:
@@ -80,6 +161,15 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: service
     - default: "5432"
@@ -87,6 +177,15 @@ additionalProperties:
       envKey: PANEL_DB_PORT
       labelEn: Database Port Number
       labelZh: 数据库端口号
+      label:
+        en: 'Database Port Number'
+        zh: '数据库端口号'
+        zh-Hant: '資料庫埠號'
+        ja: 'データベースポート番号'
+        ko: '데이터베이스 포트 번호'
+        ru: 'Номер порта базы данных'
+        ms: 'Nombor port pangkalan data'
+        pt-br: 'Número da porta do banco de dados'
       required: true
       rule: paramPort
       type: number
@@ -94,6 +193,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -102,6 +210,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -110,6 +227,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity

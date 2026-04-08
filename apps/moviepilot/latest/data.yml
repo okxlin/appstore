@@ -5,6 +5,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/core"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: CORE_PATH
       labelEn: Core Path
       labelZh: 核心路径
+      label:
+        en: 'Core Path'
+        zh: '核心路径'
+        zh-Hant: '核心路徑'
+        ja: 'コアパス'
+        ko: '코어 경로'
+        ru: 'Путь к ядру'
+        ms: 'Laluan teras'
+        pt-br: 'Caminho do núcleo'
       required: true
       type: text
     - default: "/var/run/docker.sock"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: DOCKER_SOCK_PATH
       labelEn: Docker Socket Path
       labelZh: Docker套接字路径
+      label:
+        en: 'Docker Socket Path'
+        zh: 'Docker 套接字路径'
+        zh-Hant: 'Docker 套接字路徑'
+        ja: 'Docker ソケットパス'
+        ko: 'Docker 소켓 경로'
+        ru: 'Путь к сокету Docker'
+        ms: 'Laluan Soket Docker'
+        pt-br: 'Caminho do Socket Docker'
       required: true
       type: text
     - default: "./data/media"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: 'Media Path'
+        zh: '媒体路径'
+        zh-Hant: '媒體路徑'
+        ja: 'メディアパス'
+        ko: '미디어 경로'
+        ru: 'Путь к медиа'
+        ms: 'Laluan media'
+        pt-br: 'Caminho de mídia'
       required: true
       type: text
     - default: "moviepilot"
@@ -33,6 +69,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "022"
@@ -40,12 +85,30 @@ additionalProperties:
       envKey: UMASK
       labelEn: File Umask
       labelZh: 文件掩码
+      label:
+        en: 'File Umask'
+        zh: '文件掩码'
+        zh-Hant: '檔案掩碼'
+        ja: 'ファイル umask'
+        ko: '파일 umask'
+        ru: 'Umask файла'
+        ms: 'Umask fail'
+        pt-br: 'Umask do arquivo'
       required: true
       type: text
     - default: "0"
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
       edit: true
@@ -53,6 +116,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
       edit: true
@@ -61,6 +133,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: 'Timezone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon waktu'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "release"
@@ -68,6 +149,15 @@ additionalProperties:
       envKey: MOVIEPILOT_AUTO_UPDATE
       labelEn: MoviePilot Auto Update
       labelZh: MoviePilot 自动更新
+      label:
+        en: 'MoviePilot Auto Update'
+        zh: 'MoviePilot 自动更新'
+        zh-Hant: 'MoviePilot 自動更新'
+        ja: 'MoviePilot 自動更新'
+        ko: 'MoviePilot 자동 업데이트'
+        ru: 'Автообновление MoviePilot'
+        ms: 'Kemas kini automatik MoviePilot'
+        pt-br: 'Atualização automática do MoviePilot'
       required: true
       type: select
       values:
@@ -84,6 +174,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Panel HTTP Port
       labelZh: 面板 HTTP 端口
+      label:
+        en: 'Panel HTTP Port'
+        zh: '面板 HTTP 端口'
+        zh-Hant: '面板 HTTP 埠'
+        ja: 'パネル HTTP ポート'
+        ko: '패널 HTTP 포트'
+        ru: 'HTTP-порт панели'
+        ms: 'Port HTTP panel'
+        pt-br: 'Porta HTTP do painel'
       required: true
       rule: paramPort
       type: number
@@ -92,6 +191,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_API
       labelEn: API Port
       labelZh: API 端口
+      label:
+        en: 'API Port'
+        zh: 'API 端口'
+        zh-Hant: 'API 埠'
+        ja: 'API ポート'
+        ko: 'API 포트'
+        ru: 'Порт API'
+        ms: 'Port API'
+        pt-br: 'Porta da API'
       required: true
       rule: paramPort
       type: number
@@ -100,6 +208,15 @@ additionalProperties:
       envKey: SUPERUSER
       labelEn: Superuser Username
       labelZh: 超级管理员用户名
+      label:
+        en: 'Superuser Username'
+        zh: '超级管理员用户名'
+        zh-Hant: '超級管理員用戶名'
+        ja: 'スーパーユーザー名'
+        ko: '슈퍼유저 사용자 이름'
+        ru: 'Имя суперпользователя'
+        ms: 'Nama pengguna superuser'
+        pt-br: 'Nome de usuário do superusuário'
       required: true
       type: text
     - default: "password"
@@ -107,6 +224,15 @@ additionalProperties:
       envKey: SUPERUSER_PASSWORD
       labelEn: Superuser Password
       labelZh: 超级管理员密码
+      label:
+        en: 'Superuser Password'
+        zh: '超级管理员密码'
+        zh-Hant: '超級管理員密碼'
+        ja: 'スーパーユーザーパスワード'
+        ko: '슈퍼유저 비밀번호'
+        ru: 'Пароль суперпользователя'
+        ms: 'Kata laluan superuser'
+        pt-br: 'Senha do superusuário'
       random: true
       required: true
       rule: paramComplexity
@@ -116,6 +242,15 @@ additionalProperties:
       envKey: WALLPAPER
       labelEn: Wallpaper
       labelZh: 登录首页电影海报
+      label:
+        en: 'Wallpaper'
+        zh: '登录首页电影海报'
+        zh-Hant: '登入首頁電影海報'
+        ja: '壁紙'
+        ko: '배경화면'
+        ru: 'Обои'
+        ms: 'Kertas dinding'
+        pt-br: 'Papel de parede'
       required: true
       type: select
       values:
@@ -128,6 +263,15 @@ additionalProperties:
       envKey: API_TOKEN
       labelEn: API Token
       labelZh: API 密钥
+      label:
+        en: 'API Token'
+        zh: 'API 密钥'
+        zh-Hant: 'API 金鑰'
+        ja: 'API トークン'
+        ko: 'API 토큰'
+        ru: 'Токен API'
+        ms: 'Token API'
+        pt-br: 'Token da API'
       required: true
       type: text
     - default: ""
@@ -135,6 +279,15 @@ additionalProperties:
       envKey: PROXY_HOST
       labelEn: Proxy host
       labelZh: 网络代理
+      label:
+        en: 'Proxy host'
+        zh: '网络代理'
+        zh-Hant: '網路代理'
+        ja: 'プロキシホスト'
+        ko: '프록시 호스트'
+        ru: 'Хост прокси'
+        ms: 'Hos proksi'
+        pt-br: 'Host de proxy'
       required: false
       type: text
     - default: "api.themoviedb.org"
@@ -142,6 +295,15 @@ additionalProperties:
       envKey: TMDB_API_DOMAIN
       labelEn: TMDB API Domain
       labelZh: TMDB API 地址
+      label:
+        en: 'TMDB API Domain'
+        zh: 'TMDB API 地址'
+        zh-Hant: 'TMDB API 位址'
+        ja: 'TMDB API ドメイン'
+        ko: 'TMDB API 도메인'
+        ru: 'Домен API TMDB'
+        ms: 'Domain API TMDB'
+        pt-br: 'Domínio da API TMDB'
       required: true
       type: text
     - default: "/media/downloads"
@@ -149,6 +311,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download Path (in container)
       labelZh: 下载保存目录 (容器内)
+      label:
+        en: 'Download Path (in container)'
+        zh: '下载保存目录 (容器内)'
+        zh-Hant: '下載保存目錄（容器內）'
+        ja: 'ダウンロード保存パス（コンテナ内）'
+        ko: '다운로드 저장 경로(컨테이너 내)'
+        ru: 'Путь сохранения загрузок (в контейнере)'
+        ms: 'Laluan simpanan muat turun (dalam kontena)'
+        pt-br: 'Caminho de download (no contêiner)'
       required: true
       type: text
     - default: "/media/downloads/movies"
@@ -156,6 +327,15 @@ additionalProperties:
       envKey: DOWNLOAD_MOVIE_PATH
       labelEn: Download Movie Path (in container)
       labelZh: 电影下载目录 (容器内)
+      label:
+        en: 'Download Movie Path (in container)'
+        zh: '电影下载目录 (容器内)'
+        zh-Hant: '電影下載目錄（容器內）'
+        ja: '映画ダウンロードパス（コンテナ内）'
+        ko: '영화 다운로드 경로(컨테이너 내)'
+        ru: 'Путь загрузки фильмов (в контейнере)'
+        ms: 'Laluan muat turun filem (dalam kontena)'
+        pt-br: 'Caminho de download de filmes (no contêiner)'
       required: true
       type: text
     - default: "/media/downloads/tv"
@@ -163,6 +343,15 @@ additionalProperties:
       envKey: DOWNLOAD_TV_PATH
       labelEn: Download TV Path (in container)
       labelZh: 电视剧下载目录 (容器内)
+      label:
+        en: 'Download TV Path (in container)'
+        zh: '电视剧下载目录 (容器内)'
+        zh-Hant: '電視劇下載目錄（容器內）'
+        ja: 'テレビ番組ダウンロードパス（コンテナ内）'
+        ko: 'TV 다운로드 경로(컨테이너 내)'
+        ru: 'Путь загрузки сериалов (в контейнере)'
+        ms: 'Laluan muat turun siri TV (dalam kontena)'
+        pt-br: 'Caminho de download de séries (no contêiner)'
       required: true
       type: text
     - default: "/media/downloads/anime"
@@ -170,6 +359,15 @@ additionalProperties:
       envKey: DOWNLOAD_ANIME_PATH
       labelEn: Download Anime Path (in container)
       labelZh: 动漫下载目录 (容器内)
+      label:
+        en: 'Download Anime Path (in container)'
+        zh: '动漫下载目录 (容器内)'
+        zh-Hant: '動漫下載目錄（容器內）'
+        ja: 'アニメダウンロードパス（コンテナ内）'
+        ko: '애니메이션 다운로드 경로(컨테이너 내)'
+        ru: 'Путь загрузки аниме (в контейнере)'
+        ms: 'Laluan muat turun anime (dalam kontena)'
+        pt-br: 'Caminho de download de anime (no contêiner)'
       required: true
       type: text
     - default: "false"
@@ -177,6 +375,15 @@ additionalProperties:
       envKey: DOWNLOAD_SUBTITLE
       labelEn: Download Subtitle
       labelZh: 下载字幕
+      label:
+        en: 'Download Subtitle'
+        zh: '下载字幕'
+        zh-Hant: '下載字幕'
+        ja: '字幕をダウンロード'
+        ko: '자막 다운로드'
+        ru: 'Загрузка субтитров'
+        ms: 'Muat turun sari kata'
+        pt-br: 'Baixar legendas'
       required: true
       type: select
       values:
@@ -189,6 +396,15 @@ additionalProperties:
       envKey: DOWNLOAD_CATEGORY
       labelEn: Download Category
       labelZh: 下载二级分类
+      label:
+        en: 'Download Category'
+        zh: '下载二级分类'
+        zh-Hant: '下載二級分類'
+        ja: 'ダウンロードカテゴリ'
+        ko: '다운로드 하위 분류'
+        ru: 'Категория загрузки'
+        ms: 'Kategori muat turun'
+        pt-br: 'Categoria de download'
       required: true
       type: select
       values:
@@ -201,6 +417,15 @@ additionalProperties:
       envKey: DOWNLOADER_MONITOR
       labelEn: Downloader Monitor
       labelZh: 下载器监控
+      label:
+        en: 'Downloader Monitor'
+        zh: '下载器监控'
+        zh-Hant: '下載器監控'
+        ja: 'ダウンローダ監視'
+        ko: '다운로더 모니터링'
+        ru: 'Мониторинг загрузчика'
+        ms: 'Pemantauan pemuat turun'
+        pt-br: 'Monitoramento do downloader'
       required: true
       type: select
       values:
@@ -213,6 +438,15 @@ additionalProperties:
       envKey: SUBSCRIBE_MODE
       labelEn: Subscribe Mode
       labelZh: 订阅模式
+      label:
+        en: 'Subscribe Mode'
+        zh: '订阅模式'
+        zh-Hant: '訂閱模式'
+        ja: '購読モード'
+        ko: '구독 모드'
+        ru: 'Режим подписки'
+        ms: 'Mod langganan'
+        pt-br: 'Modo de assinatura'
       required: true
       type: text
     - default: "30"
@@ -220,6 +454,15 @@ additionalProperties:
       envKey: SUBSCRIBE_RSS_INTERVAL
       labelEn: Subscribe RSS Interval
       labelZh: 订阅 RSS 间隔
+      label:
+        en: 'Subscribe RSS Interval'
+        zh: '订阅 RSS 间隔'
+        zh-Hant: '訂閱 RSS 間隔'
+        ja: 'RSS 購読間隔'
+        ko: 'RSS 구독 간격'
+        ru: 'Интервал RSS-подписок'
+        ms: 'Selang RSS langganan'
+        pt-br: 'Intervalo de RSS de assinatura'
       required: true
       type: number
     - default: "true"
@@ -227,6 +470,15 @@ additionalProperties:
       envKey: SCRAP_METADATA
       labelEn: Scrap Metadata
       labelZh: 刮削入库
+      label:
+        en: 'Scrap Metadata'
+        zh: '刮削入库'
+        zh-Hant: '刮削入庫'
+        ja: 'メタデータスクレイピング'
+        ko: '메타데이터 스크레이핑'
+        ru: 'Скрапинг метаданных'
+        ms: 'Pengikisan metadata'
+        pt-br: 'Coleta de metadados'
       required: true
       type: select
       values:
@@ -239,6 +491,15 @@ additionalProperties:
       envKey: SCRAP_FOLLOW_TMDB
       labelEn: Scrap Follow TMDB
       labelZh: 刮削跟随 TMDB
+      label:
+        en: 'Scrap Follow TMDB'
+        zh: '刮削跟随 TMDB'
+        zh-Hant: '刮削跟隨 TMDB'
+        ja: 'TMDB に従ってスクレイピング'
+        ko: 'TMDB 따라 스크레이핑'
+        ru: 'Скрапинг с учетом TMDB'
+        ms: 'Pengikisan mengikut TMDB'
+        pt-br: 'Coleta seguindo o TMDB'
       required: true
       type: select
       values:
@@ -251,6 +512,15 @@ additionalProperties:
       envKey: TORRENT_TAG
       labelEn: Torrent Tag
       labelZh: 种子标签
+      label:
+        en: 'Torrent Tag'
+        zh: '种子标签'
+        zh-Hant: '種子標籤'
+        ja: 'トレントタグ'
+        ko: '토렌트 태그'
+        ru: 'Тег торрента'
+        ms: 'Tag torrent'
+        pt-br: 'Tag de torrent'
       required: true
       type: text
     - default: "/media"
@@ -258,6 +528,15 @@ additionalProperties:
       envKey: LIBRARY_PATH
       labelEn: Library Path (in container)
       labelZh: 媒体库路径 (容器内)
+      label:
+        en: 'Library Path (in container)'
+        zh: '媒体库路径 (容器内)'
+        zh-Hant: '媒體庫路徑（容器內）'
+        ja: 'ライブラリーパス（コンテナ内）'
+        ko: '라이브러리 경로(컨테이너 내)'
+        ru: 'Путь медиатеки (в контейнере)'
+        ms: 'Laluan perpustakaan (dalam kontena)'
+        pt-br: 'Caminho da biblioteca (no contêiner)'
       required: true
       type: text
     - default: "movies"
@@ -265,6 +544,15 @@ additionalProperties:
       envKey: LIBRARY_MOVIE_NAME
       labelEn: Library Movie Name
       labelZh: 电影媒体库名称
+      label:
+        en: 'Library Movie Name'
+        zh: '电影媒体库名称'
+        zh-Hant: '電影媒體庫名稱'
+        ja: '映画ライブラリ名'
+        ko: '영화 라이브러리 이름'
+        ru: 'Название библиотеки фильмов'
+        ms: 'Nama pustaka filem'
+        pt-br: 'Nome da biblioteca de filmes'
       required: true
       type: text
     - default: "tv"
@@ -272,6 +560,15 @@ additionalProperties:
       envKey: LIBRARY_TV_NAME
       labelEn: Library TV Name
       labelZh: 电视剧媒体库名称
+      label:
+        en: 'Library TV Name'
+        zh: '电视剧媒体库名称'
+        zh-Hant: '電視劇媒體庫名稱'
+        ja: 'TVライブラリ名'
+        ko: 'TV 라이브러리 이름'
+        ru: 'Название библиотеки сериалов'
+        ms: 'Nama pustaka siri TV'
+        pt-br: 'Nome da biblioteca de séries'
       required: true
       type: text
     - default: "anime"
@@ -279,6 +576,15 @@ additionalProperties:
       envKey: LIBRARY_ANIME_NAME
       labelEn: Library Anime Name
       labelZh: 动漫媒体库名称
+      label:
+        en: 'Library Anime Name'
+        zh: '动漫媒体库名称'
+        zh-Hant: '動漫媒體庫名稱'
+        ja: 'アニメライブラリ名'
+        ko: '애니메이션 라이브러리 이름'
+        ru: 'Название библиотеки аниме'
+        ms: 'Nama pustaka anime'
+        pt-br: 'Nome da biblioteca de anime'
       required: true
       type: text
     - default: "false"
@@ -286,6 +592,15 @@ additionalProperties:
       envKey: LIBRARY_CATEGORY
       labelEn: Library Category
       labelZh: 媒体库二级分类
+      label:
+        en: 'Library Category'
+        zh: '媒体库二级分类'
+        zh-Hant: '媒體庫二級分類'
+        ja: 'ライブラリのサブカテゴリ'
+        ko: '라이브러리 하위 분류'
+        ru: 'Подкатегория библиотеки'
+        ms: 'Kategori sub pustaka'
+        pt-br: 'Subcategoria da biblioteca'
       required: false
       type: select
       values:
@@ -298,6 +613,15 @@ additionalProperties:
       envKey: TRANSFER_TYPE
       labelEn: Transfer Type
       labelZh: 转移方式
+      label:
+        en: 'Transfer Type'
+        zh: '转移方式'
+        zh-Hant: '轉移方式'
+        ja: '転送方式'
+        ko: '전송 방식'
+        ru: 'Тип переноса'
+        ms: 'Jenis pemindahan'
+        pt-br: 'Tipo de transferência'
       required: true
       type: select
       values:
@@ -314,6 +638,15 @@ additionalProperties:
       envKey: OVERWRITE_MODE
       labelEn: Overwrite Mode
       labelZh: 转移覆盖模式
+      label:
+        en: 'Overwrite Mode'
+        zh: '转移覆盖模式'
+        zh-Hant: '轉移覆蓋模式'
+        ja: '上書きモード'
+        ko: '덮어쓰기 모드'
+        ru: 'Режим перезаписи'
+        ms: 'Mod tindih'
+        pt-br: 'Modo de sobrescrita'
       required: true
       type: select
       values:
@@ -328,6 +661,15 @@ additionalProperties:
       envKey: COOKIECLOUD_HOST
       labelEn: CookieCloud Host
       labelZh: CookieCloud 服务器地址
+      label:
+        en: 'CookieCloud Host'
+        zh: 'CookieCloud 服务器地址'
+        zh-Hant: 'CookieCloud 伺服器位址'
+        ja: 'CookieCloud ホスト'
+        ko: 'CookieCloud 호스트'
+        ru: 'Хост CookieCloud'
+        ms: 'Hos CookieCloud'
+        pt-br: 'Host do CookieCloud'
       required: false
       type: text
     - default: ""
@@ -335,6 +677,15 @@ additionalProperties:
       envKey: COOKIECLOUD_KEY
       labelEn: CookieCloud Key
       labelZh: CookieCloud 用户 KEY
+      label:
+        en: 'CookieCloud Key'
+        zh: 'CookieCloud 用户 KEY'
+        zh-Hant: 'CookieCloud 使用者 KEY'
+        ja: 'CookieCloud キー'
+        ko: 'CookieCloud 키'
+        ru: 'Ключ CookieCloud'
+        ms: 'Kunci CookieCloud'
+        pt-br: 'Chave do CookieCloud'
       required: false
       type: text
     - default: ""
@@ -342,6 +693,15 @@ additionalProperties:
       envKey: COOKIECLOUD_PASSWORD
       labelEn: CookieCloud Password
       labelZh: CookieCloud 密码
+      label:
+        en: 'CookieCloud Password'
+        zh: 'CookieCloud 密码'
+        zh-Hant: 'CookieCloud 密碼'
+        ja: 'CookieCloud パスワード'
+        ko: 'CookieCloud 비밀번호'
+        ru: 'Пароль CookieCloud'
+        ms: 'Kata laluan CookieCloud'
+        pt-br: 'Senha do CookieCloud'
       required: false
       type: text
     - default: "20"
@@ -349,6 +709,15 @@ additionalProperties:
       envKey: COOKIECLOUD_INTERVAL
       labelEn: CookieCloud Interval
       labelZh: CookieCloud 同步间隔（分钟）
+      label:
+        en: 'CookieCloud Interval'
+        zh: 'CookieCloud 同步间隔（分钟）'
+        zh-Hant: 'CookieCloud 同步間隔（分鐘）'
+        ja: 'CookieCloud 同期間隔（分）'
+        ko: 'CookieCloud 동기화 간격(분)'
+        ru: 'Интервал синхронизации CookieCloud (мин.)'
+        ms: 'Selang penyegerakan CookieCloud (minit)'
+        pt-br: 'Intervalo de sincronização do CookieCloud (minutos)'
       required: false
       type: number
     - default: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
@@ -356,6 +725,15 @@ additionalProperties:
       envKey: USER_AGENT
       labelEn: User Agent
       labelZh: 用户代理
+      label:
+        en: 'User Agent'
+        zh: '用户代理'
+        zh-Hant: '使用者代理'
+        ja: 'ユーザーエージェント'
+        ko: '사용자 에이전트'
+        ru: 'User-Agent'
+        ms: 'User-Agent'
+        pt-br: 'User-Agent'
       required: true
       type: text
     - default: "false"
@@ -363,6 +741,15 @@ additionalProperties:
       envKey: SUBSCRIBE_SEARCH
       labelEn: Subscribe Search
       labelZh: 订阅搜索
+      label:
+        en: 'Subscribe Search'
+        zh: '订阅搜索'
+        zh-Hant: '訂閱搜尋'
+        ja: '購読検索'
+        ko: '구독 검색'
+        ru: 'Поиск подписок'
+        ms: 'Carian langganan'
+        pt-br: 'Pesquisa de assinatura'
       required: false
       type: select
       values:
@@ -375,6 +762,15 @@ additionalProperties:
       envKey: AUTO_DOWNLOAD_USER
       labelEn: Auto Download User
       labelZh: 自动下载用户
+      label:
+        en: 'Auto Download User'
+        zh: '自动下载用户'
+        zh-Hant: '自動下載使用者'
+        ja: '自動ダウンロードユーザー'
+        ko: '자동 다운로드 사용자'
+        ru: 'Пользователь автозагрузки'
+        ms: 'Pengguna muat turun automatik'
+        pt-br: 'Usuário de download automático'
       required: false
       type: text
     - default: "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/"
@@ -382,6 +778,15 @@ additionalProperties:
       envKey: PLUGIN_MARKET
       labelEn: Plugin Market
       labelZh: 插件市场仓库地址
+      label:
+        en: 'Plugin Market'
+        zh: '插件市场仓库地址'
+        zh-Hant: '插件市場倉庫位址'
+        ja: 'プラグインマーケットのリポジトリURL'
+        ko: '플러그인 마켓 저장소 주소'
+        ru: 'Адрес репозитория маркета плагинов'
+        ms: 'Alamat repositori pasaran pemalam'
+        pt-br: 'Endereço do repositório do mercado de plugins'
       required: true
       type: text
     - default: "telegram"
@@ -389,6 +794,15 @@ additionalProperties:
       envKey: MESSAGER
       labelEn: Messager
       labelZh: 消息通知渠道
+      label:
+        en: 'Messager'
+        zh: '消息通知渠道'
+        zh-Hant: '訊息通知渠道'
+        ja: '通知チャネル'
+        ko: '알림 채널'
+        ru: 'Канал уведомлений'
+        ms: 'Saluran pemberitahuan'
+        pt-br: 'Canal de notificações'
       required: true
       type: select
       values:
@@ -405,6 +819,15 @@ additionalProperties:
       envKey: TELEGRAM_TOKEN
       labelEn: Telegram Token
       labelZh: Telegram Token
+      label:
+        en: 'Telegram Token'
+        zh: 'Telegram 令牌'
+        zh-Hant: 'Telegram 權杖'
+        ja: 'Telegram トークン'
+        ko: 'Telegram 토큰'
+        ru: 'Токен Telegram'
+        ms: 'Token Telegram'
+        pt-br: 'Token do Telegram'
       required: false
       type: text
     - default: ""
@@ -412,6 +835,15 @@ additionalProperties:
       envKey: TELEGRAM_CHAT_ID
       labelEn: Telegram Chat ID
       labelZh: Telegram Chat ID
+      label:
+        en: 'Telegram Chat ID'
+        zh: 'Telegram 聊天 ID'
+        zh-Hant: 'Telegram 聊天室 ID'
+        ja: 'Telegram チャットID'
+        ko: 'Telegram 채팅 ID'
+        ru: 'ID чата Telegram'
+        ms: 'ID sembang Telegram'
+        pt-br: 'ID de chat do Telegram'
       required: false
       type: text
     - default: ""
@@ -419,6 +851,15 @@ additionalProperties:
       envKey: TELEGRAM_USERS
       labelEn: Telegram Users
       labelZh: 电报用户
+      label:
+        en: 'Telegram Users'
+        zh: '电报用户'
+        zh-Hant: '電報使用者'
+        ja: 'Telegram ユーザー'
+        ko: 'Telegram 사용자'
+        ru: 'Пользователи Telegram'
+        ms: 'Pengguna Telegram'
+        pt-br: 'Usuários do Telegram'
       required: false
       type: text
     - default: ""
@@ -426,6 +867,15 @@ additionalProperties:
       envKey: TELEGRAM_ADMINS
       labelEn: Telegram Admins
       labelZh: 电报管理员
+      label:
+        en: 'Telegram Admins'
+        zh: '电报管理员'
+        zh-Hant: '電報管理員'
+        ja: 'Telegram 管理者'
+        ko: 'Telegram 관리자'
+        ru: 'Администраторы Telegram'
+        ms: 'Pentadbir Telegram'
+        pt-br: 'Administradores do Telegram'
       required: false
       type: text
     - default: ""
@@ -433,6 +883,15 @@ additionalProperties:
       envKey: WECHAT_CORPID
       labelEn: WeChat CorpID
       labelZh: 微信企业ID
+      label:
+        en: 'WeChat CorpID'
+        zh: '微信企业ID'
+        zh-Hant: '微信企業ID'
+        ja: 'WeChat 企業ID'
+        ko: 'WeChat 기업 ID'
+        ru: 'Корпоративный ID WeChat'
+        ms: 'ID korporat WeChat'
+        pt-br: 'ID corporativo do WeChat'
       required: false
       type: text
     - default: ""
@@ -440,6 +899,15 @@ additionalProperties:
       envKey: WECHAT_APP_SECRET
       labelEn: WeChat App Secret
       labelZh: 微信应用密钥
+      label:
+        en: 'WeChat App Secret'
+        zh: '微信应用密钥'
+        zh-Hant: '微信應用金鑰'
+        ja: 'WeChat アプリシークレット'
+        ko: 'WeChat 앱 시크릿'
+        ru: 'Секрет приложения WeChat'
+        ms: 'Rahsia aplikasi WeChat'
+        pt-br: 'Segredo do app WeChat'
       required: false
       type: text
     - default: ""
@@ -447,6 +915,15 @@ additionalProperties:
       envKey: WECHAT_APP_ID
       labelEn: WeChat App ID
       labelZh: 微信应用ID
+      label:
+        en: 'WeChat App ID'
+        zh: '微信应用ID'
+        zh-Hant: '微信應用ID'
+        ja: 'WeChat アプリID'
+        ko: 'WeChat 앱 ID'
+        ru: 'ID приложения WeChat'
+        ms: 'ID aplikasi WeChat'
+        pt-br: 'ID do app WeChat'
       required: false
       type: text
     - default: ""
@@ -454,6 +931,15 @@ additionalProperties:
       envKey: WECHAT_TOKEN
       labelEn: WeChat Token
       labelZh: 微信令牌
+      label:
+        en: 'WeChat Token'
+        zh: '微信令牌'
+        zh-Hant: '微信權杖'
+        ja: 'WeChat トークン'
+        ko: 'WeChat 토큰'
+        ru: 'Токен WeChat'
+        ms: 'Token WeChat'
+        pt-br: 'Token do WeChat'
       required: false
       type: text
     - default: ""
@@ -461,6 +947,15 @@ additionalProperties:
       envKey: WECHAT_ENCODING_AESKEY
       labelEn: WeChat Encoding AES Key
       labelZh: 微信编码 AES 密钥
+      label:
+        en: 'WeChat Encoding AES Key'
+        zh: '微信编码 AES 密钥'
+        zh-Hant: '微信編碼 AES 金鑰'
+        ja: 'WeChat エンコード AES キー'
+        ko: 'WeChat 인코딩 AES 키'
+        ru: 'Ключ AES кодирования WeChat'
+        ms: 'Kunci AES pengekodan WeChat'
+        pt-br: 'Chave AES de codificação do WeChat'
       required: false
       type: text
     - default: ""
@@ -468,6 +963,15 @@ additionalProperties:
       envKey: WECHAT_ADMINS
       labelEn: WeChat Admins
       labelZh: 微信管理员
+      label:
+        en: 'WeChat Admins'
+        zh: '微信管理员'
+        zh-Hant: '微信管理員'
+        ja: 'WeChat 管理者'
+        ko: 'WeChat 관리자'
+        ru: 'Администраторы WeChat'
+        ms: 'Pentadbir WeChat'
+        pt-br: 'Administradores do WeChat'
       required: false
       type: text
     - default: ""
@@ -475,6 +979,15 @@ additionalProperties:
       envKey: WECHAT_PROXY
       labelEn: WeChat Proxy
       labelZh: 微信代理
+      label:
+        en: 'WeChat Proxy'
+        zh: '微信代理'
+        zh-Hant: '微信代理主機'
+        ja: 'WeChat プロキシ'
+        ko: 'WeChat 프록시'
+        ru: 'Прокси WeChat'
+        ms: 'Proksi WeChat'
+        pt-br: 'Proxy do WeChat'
       required: false
       type: text
     - default: ""
@@ -482,6 +995,15 @@ additionalProperties:
       envKey: SLACK_OAUTH_TOKEN
       labelEn: Slack OAuth Token
       labelZh: Slack OAuth 令牌
+      label:
+        en: 'Slack OAuth Token'
+        zh: 'Slack OAuth 令牌'
+        zh-Hant: 'Slack OAuth 權杖'
+        ja: 'Slack OAuth トークン'
+        ko: 'Slack OAuth 토큰'
+        ru: 'OAuth-токен Slack'
+        ms: 'Token OAuth Slack'
+        pt-br: 'Token OAuth do Slack'
       required: false
       type: text
     - default: ""
@@ -489,6 +1011,15 @@ additionalProperties:
       envKey: SLACK_APP_TOKEN
       labelEn: Slack App Token
       labelZh: Slack 应用令牌
+      label:
+        en: 'Slack App Token'
+        zh: 'Slack 应用令牌'
+        zh-Hant: 'Slack 應用令牌'
+        ja: 'Slack アプリトークン'
+        ko: 'Slack 앱 토큰'
+        ru: 'Токен приложения Slack'
+        ms: 'Token aplikasi Slack'
+        pt-br: 'Token do app Slack'
       required: false
       type: text
     - default: ""
@@ -496,6 +1027,15 @@ additionalProperties:
       envKey: SLACK_CHANNEL
       labelEn: Slack Channel
       labelZh: Slack 频道
+      label:
+        en: 'Slack Channel'
+        zh: 'Slack 频道'
+        zh-Hant: 'Slack 頻道'
+        ja: 'Slack チャンネル'
+        ko: 'Slack 채널'
+        ru: 'Канал Slack'
+        ms: 'Saluran Slack'
+        pt-br: 'Canal do Slack'
       required: false
       type: text
     - default: ""
@@ -503,6 +1043,15 @@ additionalProperties:
       envKey: SYNOLOGYCHAT_WEBHOOK
       labelEn: Synology Chat Webhook
       labelZh: 群晖聊天 Webhook
+      label:
+        en: 'Synology Chat Webhook'
+        zh: '群晖聊天 Webhook'
+        zh-Hant: '群暉聊天 Webhook'
+        ja: 'Synology Chat の Webhook'
+        ko: 'Synology Chat 웹훅'
+        ru: 'Webhook Synology Chat'
+        ms: 'Webhook Synology Chat'
+        pt-br: 'Webhook do Synology Chat'
       required: false
       type: text
     - default: ""
@@ -510,6 +1059,15 @@ additionalProperties:
       envKey: SYNOLOGYCHAT_TOKEN
       labelEn: Synology Chat Token
       labelZh: 群晖聊天令牌
+      label:
+        en: 'Synology Chat Token'
+        zh: '群晖聊天令牌'
+        zh-Hant: '群暉聊天權杖'
+        ja: 'Synology Chat トークン'
+        ko: 'Synology Chat 토큰'
+        ru: 'Токен Synology Chat'
+        ms: 'Token Synology Chat'
+        pt-br: 'Token do Synology Chat'
       required: false
       type: text
     - default: "qbittorrent"
@@ -517,6 +1075,15 @@ additionalProperties:
       envKey: DOWNLOADER
       labelEn: Downloader
       labelZh: 下载器
+      label:
+        en: 'Downloader'
+        zh: '下载器'
+        zh-Hant: '下載器'
+        ja: 'ダウンローダー'
+        ko: '다운로더'
+        ru: 'Загрузчик'
+        ms: 'Pemuat turun'
+        pt-br: 'Downloader'
       required: true
       type: select
       values:
@@ -529,6 +1096,15 @@ additionalProperties:
       envKey: QB_HOST
       labelEn: QB Host
       labelZh: qBittorrent 主机地址
+      label:
+        en: 'QB Host'
+        zh: 'qBittorrent 主机地址'
+        zh-Hant: 'qBittorrent 主機位址'
+        ja: 'QB ホスト'
+        ko: 'QB 호스트'
+        ru: 'Хост QB'
+        ms: 'Hos QB'
+        pt-br: 'Host do QB'
       required: false
       type: text
     - default: ""
@@ -536,6 +1112,15 @@ additionalProperties:
       envKey: QB_USER
       labelEn: QB User
       labelZh: qBittorrent 用户名
+      label:
+        en: 'QB User'
+        zh: 'qBittorrent 用户名'
+        zh-Hant: 'qBittorrent 使用者名稱'
+        ja: 'QB ユーザー名'
+        ko: 'QB 사용자 이름'
+        ru: 'Имя пользователя QB'
+        ms: 'Nama pengguna QB'
+        pt-br: 'Nome de usuário do QB'
       required: false
       type: text
     - default: ""
@@ -543,6 +1128,15 @@ additionalProperties:
       envKey: QB_PASSWORD
       labelEn: QB Password
       labelZh: qBittorrent 密码
+      label:
+        en: 'QB Password'
+        zh: 'qBittorrent 密码'
+        zh-Hant: 'qBittorrent 密碼'
+        ja: 'QB パスワード'
+        ko: 'QB 비밀번호'
+        ru: 'Пароль QB'
+        ms: 'Kata laluan QB'
+        pt-br: 'Senha do QB'
       required: false
       type: text
     - default: "true"
@@ -550,6 +1144,15 @@ additionalProperties:
       envKey: QB_SEQUENTIAL
       labelEn: QB Sequential
       labelZh: qBittorrent 顺序下载
+      label:
+        en: 'QB Sequential'
+        zh: 'qBittorrent 顺序下载'
+        zh-Hant: 'qBittorrent 順序下載'
+        ja: 'qBittorrent 逐次ダウンロード'
+        ko: 'qBittorrent 순차 다운로드'
+        ru: 'Последовательная загрузка qBittorrent'
+        ms: 'Muat turun berurutan qBittorrent'
+        pt-br: 'Download sequencial do qBittorrent'
       required: true
       type: select
       values:
@@ -562,6 +1165,15 @@ additionalProperties:
       envKey: QB_FORCE_RESUME
       labelEn: QB Force Resume
       labelZh: qBittorrent 强制继续下载
+      label:
+        en: 'QB Force Resume'
+        zh: 'qBittorrent 强制继续下载'
+        zh-Hant: 'qBittorrent 強制繼續下載'
+        ja: 'qBittorrent 強制再開'
+        ko: 'qBittorrent 강제 재개'
+        ru: 'Принудительное возобновление qBittorrent'
+        ms: 'Sambung semula paksa qBittorrent'
+        pt-br: 'Retomar forçado do qBittorrent'
       required: true
       type: select
       values:
@@ -574,6 +1186,15 @@ additionalProperties:
       envKey: TR_HOST
       labelEn: Transmission Host
       labelZh: Transmission 主机
+      label:
+        en: 'Transmission Host'
+        zh: 'Transmission 主机'
+        zh-Hant: 'Transmission 主機'
+        ja: 'Transmission ホスト'
+        ko: 'Transmission 호스트'
+        ru: 'Хост Transmission'
+        ms: 'Hos Transmission'
+        pt-br: 'Host do Transmission'
       required: false
       type: text
     - default: ""
@@ -581,6 +1202,15 @@ additionalProperties:
       envKey: TR_USER
       labelEn: Transmission Username
       labelZh: Transmission 用户名
+      label:
+        en: 'Transmission Username'
+        zh: 'Transmission 用户名'
+        zh-Hant: 'Transmission 使用者名稱'
+        ja: 'Transmission ユーザー名'
+        ko: 'Transmission 사용자 이름'
+        ru: 'Имя пользователя Transmission'
+        ms: 'Nama pengguna Transmission'
+        pt-br: 'Nome de usuário do Transmission'
       required: false
       type: text
     - default: ""
@@ -588,6 +1218,15 @@ additionalProperties:
       envKey: TR_PASSWORD
       labelEn: Transmission Password
       labelZh: Transmission 密码
+      label:
+        en: 'Transmission Password'
+        zh: 'Transmission 密码'
+        zh-Hant: 'Transmission 密碼'
+        ja: 'Transmission パスワード'
+        ko: 'Transmission 비밀번호'
+        ru: 'Пароль Transmission'
+        ms: 'Kata laluan Transmission'
+        pt-br: 'Senha do Transmission'
       required: false
       type: password
     - default: "emby"
@@ -595,6 +1234,15 @@ additionalProperties:
       envKey: MEDIASERVER
       labelEn: Media Server
       labelZh: 媒体服务器
+      label:
+        en: 'Media Server'
+        zh: '媒体服务器'
+        zh-Hant: '媒體伺服器'
+        ja: 'メディアサーバー'
+        ko: '미디어 서버'
+        ru: 'Медиасервер'
+        ms: 'Pelayan media'
+        pt-br: 'Servidor de mídia'
       required: true
       type: select
       values:
@@ -609,6 +1257,15 @@ additionalProperties:
       envKey: EMBY_HOST
       labelEn: Emby Host
       labelZh: Emby 主机地址
+      label:
+        en: 'Emby Host'
+        zh: 'Emby 主机地址'
+        zh-Hant: 'Emby 主機位址'
+        ja: 'Emby ホスト'
+        ko: 'Emby 호스트'
+        ru: 'Хост Emby'
+        ms: 'Hos Emby'
+        pt-br: 'Host do Emby'
       required: false
       type: text
     - default: ""
@@ -616,6 +1273,15 @@ additionalProperties:
       envKey: EMBY_API_KEY
       labelEn: Emby API Key
       labelZh: Emby API 密钥
+      label:
+        en: 'Emby API Key'
+        zh: 'Emby API 密钥'
+        zh-Hant: 'Emby API 密鑰'
+        ja: 'Emby API キー'
+        ko: 'Emby API 키'
+        ru: 'Ключ API Emby'
+        ms: 'Kunci API Emby'
+        pt-br: 'Chave da API do Emby'
       required: false
       type: text
     - default: ""
@@ -623,6 +1289,15 @@ additionalProperties:
       envKey: JELLYFIN_HOST
       labelEn: Jellyfin Host
       labelZh: Jellyfin 主机
+      label:
+        en: 'Jellyfin Host'
+        zh: 'Jellyfin 主机'
+        zh-Hant: 'Jellyfin 主機'
+        ja: 'Jellyfin ホスト'
+        ko: 'Jellyfin 호스트'
+        ru: 'Хост Jellyfin'
+        ms: 'Hos Jellyfin'
+        pt-br: 'Host do Jellyfin'
       required: false
       type: text
     - default: ""
@@ -630,6 +1305,15 @@ additionalProperties:
       envKey: JELLYFIN_API_KEY
       labelEn: Jellyfin API Key
       labelZh: Jellyfin API 密钥
+      label:
+        en: 'Jellyfin API Key'
+        zh: 'Jellyfin API 密钥'
+        zh-Hant: 'Jellyfin API 密鑰'
+        ja: 'Jellyfin API キー'
+        ko: 'Jellyfin API 키'
+        ru: 'Ключ API Jellyfin'
+        ms: 'Kunci API Jellyfin'
+        pt-br: 'Chave da API do Jellyfin'
       required: false
       type: text
     - default: ""
@@ -637,6 +1321,15 @@ additionalProperties:
       envKey: PLEX_HOST
       labelEn: Plex Host
       labelZh: Plex 主机
+      label:
+        en: 'Plex Host'
+        zh: 'Plex 主机'
+        zh-Hant: 'Plex 主機'
+        ja: 'Plex ホスト'
+        ko: 'Plex 호스트'
+        ru: 'Хост Plex'
+        ms: 'Hos Plex'
+        pt-br: 'Host do Plex'
       required: false
       type: text
     - default: ""
@@ -644,6 +1337,15 @@ additionalProperties:
       envKey: PLEX_TOKEN
       labelEn: Plex Token
       labelZh: Plex 令牌
+      label:
+        en: 'Plex Token'
+        zh: 'Plex 令牌'
+        zh-Hant: 'Plex 權杖'
+        ja: 'Plex トークン'
+        ko: 'Plex 토큰'
+        ru: 'Токен Plex'
+        ms: 'Token Plex'
+        pt-br: 'Token do Plex'
       required: false
       type: text
     - default: "6"
@@ -651,6 +1353,15 @@ additionalProperties:
       envKey: MEDIASERVER_SYNC_INTERVAL
       labelEn: Media Server Sync Interval
       labelZh: 媒体服务器同步间隔（小时）
+      label:
+        en: 'Media Server Sync Interval'
+        zh: '媒体服务器同步间隔（小时）'
+        zh-Hant: '媒體伺服器同步間隔（小時）'
+        ja: 'メディアサーバー同期間隔（時間）'
+        ko: '미디어 서버 동기화 간격(시간)'
+        ru: 'Интервал синхронизации медиасервера (часы)'
+        ms: 'Selang penyegerakan pelayan media (jam)'
+        pt-br: 'Intervalo de sincronização do servidor de mídia (horas)'
       required: true
       type: number
     - default: ""
@@ -658,6 +1369,15 @@ additionalProperties:
       envKey: MEDIASERVER_SYNC_BLACKLIST
       labelEn: Media Server Sync Blacklist
       labelZh: 媒体服务器同步黑名单
+      label:
+        en: 'Media Server Sync Blacklist'
+        zh: '媒体服务器同步黑名单'
+        zh-Hant: '媒體伺服器同步黑名單'
+        ja: 'メディアサーバー同期ブラックリスト'
+        ko: '미디어 서버 동기화 블랙리스트'
+        ru: 'Черный список синхронизации медиасервера'
+        ms: 'Senarai hitam penyegerakan pelayan media'
+        pt-br: 'Lista de bloqueio de sincronização do servidor de mídia'
       required: false
       type: text
     - default: "audiences"
@@ -665,6 +1385,15 @@ additionalProperties:
       envKey: AUTH_SITE
       labelEn: Authentication Site
       labelZh: 认证站点
+      label:
+        en: 'Authentication Site'
+        zh: '认证站点'
+        zh-Hant: '認證站點'
+        ja: '認証サイト'
+        ko: '인증 사이트'
+        ru: 'Сайт аутентификации'
+        ms: 'Laman pengesahan'
+        pt-br: 'Site de autenticação'
       required: true
       type: select
       values:
@@ -709,6 +1438,15 @@ additionalProperties:
       envKey: IYUU_SIGN
       labelEn: IYUU Sign
       labelZh: IYUU 登录令牌
+      label:
+        en: 'IYUU Sign'
+        zh: 'IYUU 登录令牌'
+        zh-Hant: 'IYUU 登入令牌'
+        ja: 'IYUU ログイントークン'
+        ko: 'IYUU 로그인 토큰'
+        ru: 'Токен входа IYUU'
+        ms: 'Token log masuk IYUU'
+        pt-br: 'Token de login do IYUU'
       required: false
       type: text
     - default: ""
@@ -716,6 +1454,15 @@ additionalProperties:
       envKey: HHCLUB_USERNAME
       labelEn: HHClub Username
       labelZh: HHClub 用户名
+      label:
+        en: 'HHClub Username'
+        zh: 'HHClub 用户名'
+        zh-Hant: 'HHClub 使用者名稱'
+        ja: 'HHClub ユーザー名'
+        ko: 'HHClub 사용자 이름'
+        ru: 'Имя пользователя HHClub'
+        ms: 'Nama pengguna HHClub'
+        pt-br: 'Nome de usuário do HHClub'
       required: false
       type: text
     - default: ""
@@ -723,6 +1470,15 @@ additionalProperties:
       envKey: HHCLUB_PASSKEY
       labelEn: HHClub Passkey
       labelZh: HHClub 密钥
+      label:
+        en: 'HHClub Passkey'
+        zh: 'HHClub 密钥'
+        zh-Hant: 'HHClub 密鑰'
+        ja: 'HHClub パスキー'
+        ko: 'HHClub 패스키'
+        ru: 'Ключ доступа HHClub'
+        ms: 'Kunci akses HHClub'
+        pt-br: 'Chave de acesso do HHClub'
       required: false
       type: text
     - default: ""
@@ -730,6 +1486,15 @@ additionalProperties:
       envKey: AUDIENCES_UID
       labelEn: Audiences UID
       labelZh: Audiences 用户ID
+      label:
+        en: 'Audiences UID'
+        zh: 'Audiences 用户ID'
+        zh-Hant: 'Audiences 使用者 ID'
+        ja: 'Audiences ユーザー ID'
+        ko: 'Audiences 사용자 ID'
+        ru: 'ID пользователя Audiences'
+        ms: 'ID pengguna Audiences'
+        pt-br: 'ID do usuário do Audiences'
       required: false
       type: text
     - default: ""
@@ -737,6 +1502,15 @@ additionalProperties:
       envKey: AUDIENCES_PASSKEY
       labelEn: Audiences Passkey
       labelZh: Audiences 密钥
+      label:
+        en: 'Audiences Passkey'
+        zh: 'Audiences 密钥'
+        zh-Hant: 'Audiences 密鑰'
+        ja: 'Audiences パスキー'
+        ko: 'Audiences 패스키'
+        ru: 'Ключ доступа Audiences'
+        ms: 'Kunci akses Audiences'
+        pt-br: 'Chave de acesso do Audiences'
       required: false
       type: text
     - default: ""
@@ -744,6 +1518,16 @@ additionalProperties:
       envKey: HDDOLBY_ID
       labelEn: HDDolby ID
       labelZh: HDDolby 用户ID
+      label:
+        en: 'HDDolby ID'
+        zh: 'HDDolby 用户ID'
+        zh-Hant: 'HDDolby 使用者 ID'
+        ja: 'HDDolby ユーザー ID'
+        ko: 'HDDolby 사용자 ID'
+        ru: 'ID пользователя HDDolby'
+        ms: 'ID pengguna HDDolby'
+        pt-br: 'ID do usuário do HDDolby'
+
       required: false
       type: text
     - default: ""
@@ -751,6 +1535,15 @@ additionalProperties:
       envKey: HDDOLBY_PASSKEY
       labelEn: HDDolby Passkey
       labelZh: HDDolby 密钥
+      label:
+        en: 'HDDolby Passkey'
+        zh: 'HDDolby 密钥'
+        zh-Hant: 'HDDolby 密鑰'
+        ja: 'HDDolby パスキー'
+        ko: 'HDDolby 패스키'
+        ru: 'Ключ доступа HDDolby'
+        ms: 'Kunci akses HDDolby'
+        pt-br: 'Chave de acesso do HDDolby'
       required: false
       type: text
     - default: ""
@@ -758,6 +1551,15 @@ additionalProperties:
       envKey: ZMPT_UID
       labelEn: ZMPT UID
       labelZh: ZMPT 用户ID
+      label:
+        en: 'ZMPT UID'
+        zh: 'ZMPT 用户ID'
+        zh-Hant: 'ZMPT 使用者 ID'
+        ja: 'ZMPT ユーザー ID'
+        ko: 'ZMPT 사용자 ID'
+        ru: 'ID пользователя ZMPT'
+        ms: 'ID pengguna ZMPT'
+        pt-br: 'ID do usuário do ZMPT'
       required: false
       type: text
     - default: ""
@@ -765,6 +1567,15 @@ additionalProperties:
       envKey: ZMPT_PASSKEY
       labelEn: ZMPT Passkey
       labelZh: ZMPT 密钥
+      label:
+        en: 'ZMPT Passkey'
+        zh: 'ZMPT 密钥'
+        zh-Hant: 'ZMPT 密鑰'
+        ja: 'ZMPT パスキー'
+        ko: 'ZMPT 패스키'
+        ru: 'Ключ доступа ZMPT'
+        ms: 'Kunci akses ZMPT'
+        pt-br: 'Chave de acesso do ZMPT'
       required: false
       type: text
     - default: ""
@@ -772,6 +1583,15 @@ additionalProperties:
       envKey: FREEFARM_UID
       labelEn: FreeFarm UID
       labelZh: FreeFarm 用户ID
+      label:
+        en: 'FreeFarm UID'
+        zh: 'FreeFarm 用户ID'
+        zh-Hant: 'FreeFarm 使用者 ID'
+        ja: 'FreeFarm ユーザー ID'
+        ko: 'FreeFarm 사용자 ID'
+        ru: 'ID пользователя FreeFarm'
+        ms: 'ID pengguna FreeFarm'
+        pt-br: 'ID do usuário do FreeFarm'
       required: false
       type: text
     - default: ""
@@ -779,6 +1599,15 @@ additionalProperties:
       envKey: FREEFARM_PASSKEY
       labelEn: FreeFarm Passkey
       labelZh: FreeFarm 密钥
+      label:
+        en: 'FreeFarm Passkey'
+        zh: 'FreeFarm 密钥'
+        zh-Hant: 'FreeFarm 密鑰'
+        ja: 'FreeFarm パスキー'
+        ko: 'FreeFarm 패스키'
+        ru: 'Ключ доступа FreeFarm'
+        ms: 'Kunci akses FreeFarm'
+        pt-br: 'Chave de acesso do FreeFarm'
       required: false
       type: text
     - default: ""
@@ -786,6 +1615,15 @@ additionalProperties:
       envKey: HDFANS_UID
       labelEn: HDFans UID
       labelZh: HDFans 用户ID
+      label:
+        en: 'HDFans UID'
+        zh: 'HDFans 用户ID'
+        zh-Hant: 'HDFans 使用者 ID'
+        ja: 'HDFans ユーザー ID'
+        ko: 'HDFans 사용자 ID'
+        ru: 'ID пользователя HDFans'
+        ms: 'ID pengguna HDFans'
+        pt-br: 'ID do usuário do HDFans'
       required: false
       type: text
     - default: ""
@@ -793,6 +1631,15 @@ additionalProperties:
       envKey: HDFANS_PASSKEY
       labelEn: HDFans Passkey
       labelZh: HDFans 密钥
+      label:
+        en: 'HDFans Passkey'
+        zh: 'HDFans 密钥'
+        zh-Hant: 'HDFans 密鑰'
+        ja: 'HDFans パスキー'
+        ko: 'HDFans 패스키'
+        ru: 'Ключ доступа HDFans'
+        ms: 'Kunci akses HDFans'
+        pt-br: 'Chave de acesso do HDFans'
       required: false
       type: text
     - default: ""
@@ -800,6 +1647,15 @@ additionalProperties:
       envKey: WINTERSAKURA_UID
       labelEn: WinterSakura UID
       labelZh: WinterSakura 用户ID
+      label:
+        en: 'WinterSakura UID'
+        zh: 'WinterSakura 用户ID'
+        zh-Hant: 'WinterSakura 使用者 ID'
+        ja: 'WinterSakura ユーザー ID'
+        ko: 'WinterSakura 사용자 ID'
+        ru: 'ID пользователя WinterSakura'
+        ms: 'ID pengguna WinterSakura'
+        pt-br: 'ID do usuário do WinterSakura'
       required: false
       type: text
     - default: ""
@@ -807,6 +1663,15 @@ additionalProperties:
       envKey: WINTERSAKURA_PASSKEY
       labelEn: WinterSakura Passkey
       labelZh: WinterSakura 密钥
+      label:
+        en: 'WinterSakura Passkey'
+        zh: 'WinterSakura 密钥'
+        zh-Hant: 'WinterSakura 密鑰'
+        ja: 'WinterSakura パスキー'
+        ko: 'WinterSakura 패스키'
+        ru: 'Ключ доступа WinterSakura'
+        ms: 'Kunci akses WinterSakura'
+        pt-br: 'Chave de acesso do WinterSakura'
       required: false
       type: text
     - default: ""
@@ -814,6 +1679,15 @@ additionalProperties:
       envKey: LEAVES_UID
       labelEn: Leaves UID
       labelZh: Leaves 用户ID
+      label:
+        en: 'Leaves UID'
+        zh: 'Leaves 用户ID'
+        zh-Hant: 'Leaves 使用者 ID'
+        ja: 'Leaves ユーザー ID'
+        ko: 'Leaves 사용자 ID'
+        ru: 'ID пользователя Leaves'
+        ms: 'ID pengguna Leaves'
+        pt-br: 'ID do usuário do Leaves'
       required: false
       type: text
     - default: ""
@@ -821,6 +1695,15 @@ additionalProperties:
       envKey: LEAVES_PASSKEY
       labelEn: Leaves Passkey
       labelZh: Leaves 密钥
+      label:
+        en: 'Leaves Passkey'
+        zh: 'Leaves 密钥'
+        zh-Hant: 'Leaves 密鑰'
+        ja: 'Leaves パスキー'
+        ko: 'Leaves 패스키'
+        ru: 'Ключ доступа Leaves'
+        ms: 'Kunci akses Leaves'
+        pt-br: 'Chave de acesso do Leaves'
       required: false
       type: text
     - default: ""
@@ -828,6 +1711,15 @@ additionalProperties:
       envKey: PTBA_UID
       labelEn: PTBA UID
       labelZh: PTBA 用户ID
+      label:
+        en: 'PTBA UID'
+        zh: 'PTBA 用户ID'
+        zh-Hant: 'PTBA 使用者 ID'
+        ja: 'PTBA ユーザー ID'
+        ko: 'PTBA 사용자 ID'
+        ru: 'ID пользователя PTBA'
+        ms: 'ID pengguna PTBA'
+        pt-br: 'ID do usuário do PTBA'
       required: false
       type: text
     - default: ""
@@ -835,6 +1727,15 @@ additionalProperties:
       envKey: PTBA_PASSKEY
       labelEn: PTBA Passkey
       labelZh: PTBA 密钥
+      label:
+        en: 'PTBA Passkey'
+        zh: 'PTBA 密钥'
+        zh-Hant: 'PTBA 密鑰'
+        ja: 'PTBA パスキー'
+        ko: 'PTBA 패스키'
+        ru: 'Ключ доступа PTBA'
+        ms: 'Kunci akses PTBA'
+        pt-br: 'Chave de acesso do PTBA'
       required: false
       type: text
     - default: ""
@@ -842,6 +1743,15 @@ additionalProperties:
       envKey: ICC2022_UID
       labelEn: ICC2022 UID
       labelZh: ICC2022 用户ID
+      label:
+        en: 'ICC2022 UID'
+        zh: 'ICC2022 用户ID'
+        zh-Hant: 'ICC2022 使用者 ID'
+        ja: 'ICC2022 ユーザー ID'
+        ko: 'ICC2022 사용자 ID'
+        ru: 'ID пользователя ICC2022'
+        ms: 'ID pengguna ICC2022'
+        pt-br: 'ID do usuário do ICC2022'
       required: false
       type: text
     - default: ""
@@ -849,6 +1759,15 @@ additionalProperties:
       envKey: ICC2022_PASSKEY
       labelEn: ICC2022 Passkey
       labelZh: ICC2022 密钥
+      label:
+        en: 'ICC2022 Passkey'
+        zh: 'ICC2022 密钥'
+        zh-Hant: 'ICC2022 密鑰'
+        ja: 'ICC2022 パスキー'
+        ko: 'ICC2022 패스키'
+        ru: 'Ключ доступа ICC2022'
+        ms: 'Kunci akses ICC2022'
+        pt-br: 'Chave de acesso do ICC2022'
       required: false
       type: text
     - default: ""
@@ -856,6 +1775,15 @@ additionalProperties:
       envKey: PTLSP_UID
       labelEn: PTLSP UID
       labelZh: PTLSP 用户ID
+      label:
+        en: 'PTLSP UID'
+        zh: 'PTLSP 用户ID'
+        zh-Hant: 'PTLSP 使用者 ID'
+        ja: 'PTLSP ユーザー ID'
+        ko: 'PTLSP 사용자 ID'
+        ru: 'ID пользователя PTLSP'
+        ms: 'ID pengguna PTLSP'
+        pt-br: 'ID do usuário do PTLSP'
       required: false
       type: text
     - default: ""
@@ -863,6 +1791,15 @@ additionalProperties:
       envKey: PTLSP_PASSKEY
       labelEn: PTLSP Passkey
       labelZh: PTLSP 密钥
+      label:
+        en: 'PTLSP Passkey'
+        zh: 'PTLSP 密钥'
+        zh-Hant: 'PTLSP 密鑰'
+        ja: 'PTLSP パスキー'
+        ko: 'PTLSP 패스키'
+        ru: 'Ключ доступа PTLSP'
+        ms: 'Kunci akses PTLSP'
+        pt-br: 'Chave de acesso do PTLSP'
       required: false
       type: text
     - default: ""
@@ -870,6 +1807,15 @@ additionalProperties:
       envKey: XINGTAN_UID
       labelEn: XINGTAN UID
       labelZh: XINGTAN 用户ID
+      label:
+        en: 'XINGTAN UID'
+        zh: 'XINGTAN 用户ID'
+        zh-Hant: 'XINGTAN 使用者 ID'
+        ja: 'XINGTAN ユーザー ID'
+        ko: 'XINGTAN 사용자 ID'
+        ru: 'ID пользователя XINGTAN'
+        ms: 'ID pengguna XINGTAN'
+        pt-br: 'ID do usuário do XINGTAN'
       required: false
       type: text
     - default: ""
@@ -877,6 +1823,15 @@ additionalProperties:
       envKey: XINGTAN_PASSKEY
       labelEn: XINGTAN Passkey
       labelZh: XINGTAN 密钥
+      label:
+        en: 'XINGTAN Passkey'
+        zh: 'XINGTAN 密钥'
+        zh-Hant: 'XINGTAN 密鑰'
+        ja: 'XINGTAN パスキー'
+        ko: 'XINGTAN 패스키'
+        ru: 'Ключ доступа XINGTAN'
+        ms: 'Kunci akses XINGTAN'
+        pt-br: 'Chave de acesso do XINGTAN'
       required: false
       type: text
     - default: ""
@@ -884,6 +1839,15 @@ additionalProperties:
       envKey: PTVICOMO_UID
       labelEn: PTVICOMO UID
       labelZh: PTVICOMO 用户ID
+      label:
+        en: 'PTVICOMO UID'
+        zh: 'PTVICOMO 用户ID'
+        zh-Hant: 'PTVICOMO 使用者 ID'
+        ja: 'PTVICOMO ユーザー ID'
+        ko: 'PTVICOMO 사용자 ID'
+        ru: 'ID пользователя PTVICOMO'
+        ms: 'ID pengguna PTVICOMO'
+        pt-br: 'ID do usuário do PTVICOMO'
       required: false
       type: text
     - default: ""
@@ -891,6 +1855,15 @@ additionalProperties:
       envKey: PTVICOMO_PASSKEY
       labelEn: PTVICOMO Passkey
       labelZh: PTVICOMO 密钥
+      label:
+        en: 'PTVICOMO Passkey'
+        zh: 'PTVICOMO 密钥'
+        zh-Hant: 'PTVICOMO 密鑰'
+        ja: 'PTVICOMO パスキー'
+        ko: 'PTVICOMO 패스키'
+        ru: 'Ключ доступа PTVICOMO'
+        ms: 'Kunci akses PTVICOMO'
+        pt-br: 'Chave de acesso do PTVICOMO'
       required: false
       type: text
     - default: ""
@@ -898,6 +1871,15 @@ additionalProperties:
       envKey: AGSVPT_UID
       labelEn: AGSVPT UID
       labelZh: AGSVPT 用户ID
+      label:
+        en: 'AGSVPT UID'
+        zh: 'AGSVPT 用户ID'
+        zh-Hant: 'AGSVPT 使用者 ID'
+        ja: 'AGSVPT ユーザー ID'
+        ko: 'AGSVPT 사용자 ID'
+        ru: 'ID пользователя AGSVPT'
+        ms: 'ID pengguna AGSVPT'
+        pt-br: 'ID do usuário do AGSVPT'
       required: false
       type: text
     - default: ""
@@ -905,6 +1887,15 @@ additionalProperties:
       envKey: AGSVPT_PASSKEY
       labelEn: AGSVPT Passkey
       labelZh: AGSVPT 密钥
+      label:
+        en: 'AGSVPT Passkey'
+        zh: 'AGSVPT 密钥'
+        zh-Hant: 'AGSVPT 密鑰'
+        ja: 'AGSVPT パスキー'
+        ko: 'AGSVPT 패스키'
+        ru: 'Ключ доступа AGSVPT'
+        ms: 'Kunci akses AGSVPT'
+        pt-br: 'Chave de acesso do AGSVPT'
       required: false
       type: text
     - default: ""
@@ -912,6 +1903,15 @@ additionalProperties:
       envKey: HDKYL_UID
       labelEn: HDKYL UID
       labelZh: HDKYL 用户ID
+      label:
+        en: 'HDKYL UID'
+        zh: 'HDKYL 用户ID'
+        zh-Hant: 'HDKYL 使用者 ID'
+        ja: 'HDKYL ユーザー ID'
+        ko: 'HDKYL 사용자 ID'
+        ru: 'ID пользователя HDKYL'
+        ms: 'ID pengguna HDKYL'
+        pt-br: 'ID do usuário do HDKYL'
       required: false
       type: text
     - default: ""
@@ -919,6 +1919,15 @@ additionalProperties:
       envKey: HDKYL_PASSKEY
       labelEn: HDKYL Passkey
       labelZh: HDKYL 密钥
+      label:
+        en: 'HDKYL Passkey'
+        zh: 'HDKYL 密钥'
+        zh-Hant: 'HDKYL 密鑰'
+        ja: 'HDKYL パスキー'
+        ko: 'HDKYL 패스키'
+        ru: 'Ключ доступа HDKYL'
+        ms: 'Kunci akses HDKYL'
+        pt-br: 'Chave de acesso do HDKYL'
       required: false
       type: text
     - default: ""
@@ -926,6 +1935,15 @@ additionalProperties:
       envKey: QINGWA_UID
       labelEn: QINGWA UID
       labelZh: QINGWA 用户ID
+      label:
+        en: 'QINGWA UID'
+        zh: 'QINGWA 用户ID'
+        zh-Hant: 'QINGWA 使用者 ID'
+        ja: 'QINGWA ユーザー ID'
+        ko: 'QINGWA 사용자 ID'
+        ru: 'ID пользователя QINGWA'
+        ms: 'ID pengguna QINGWA'
+        pt-br: 'ID do usuário do QINGWA'
       required: false
       type: text
     - default: ""
@@ -933,6 +1951,15 @@ additionalProperties:
       envKey: QINGWA_PASSKEY
       labelEn: QINGWA Passkey
       labelZh: QINGWA 密钥
+      label:
+        en: 'QINGWA Passkey'
+        zh: 'QINGWA 密钥'
+        zh-Hant: 'QINGWA 密鑰'
+        ja: 'QINGWA パスキー'
+        ko: 'QINGWA 패스키'
+        ru: 'Ключ доступа QINGWA'
+        ms: 'Kunci akses QINGWA'
+        pt-br: 'Chave de acesso do QINGWA'
       required: false
       type: text
     - default: ""
@@ -940,6 +1967,15 @@ additionalProperties:
       envKey: DISCFAN_UID
       labelEn: DISCFAN UID
       labelZh: DISCFAN 用户ID
+      label:
+        en: 'DISCFAN UID'
+        zh: 'DISCFAN 用户ID'
+        zh-Hant: 'DISCFAN 使用者 ID'
+        ja: 'DISCFAN ユーザー ID'
+        ko: 'DISCFAN 사용자 ID'
+        ru: 'ID пользователя DISCFAN'
+        ms: 'ID pengguna DISCFAN'
+        pt-br: 'ID do usuário do DISCFAN'
       required: false
       type: text
     - default: ""
@@ -947,6 +1983,15 @@ additionalProperties:
       envKey: DISCFAN_PASSKEY
       labelEn: DISCFAN Passkey
       labelZh: DISCFAN 密钥
+      label:
+        en: 'DISCFAN Passkey'
+        zh: 'DISCFAN 密钥'
+        zh-Hant: 'DISCFAN 密鑰'
+        ja: 'DISCFAN パスキー'
+        ko: 'DISCFAN 패스키'
+        ru: 'Ключ доступа DISCFAN'
+        ms: 'Kunci akses DISCFAN'
+        pt-br: 'Chave de acesso do DISCFAN'
       required: false
       type: text
     - default: "false"
@@ -954,6 +1999,15 @@ additionalProperties:
       envKey: BIG_MEMORY_MODE
       labelEn: Big Memory Mode
       labelZh: 大内存模式
+      label:
+        en: 'Big Memory Mode'
+        zh: '大内存模式'
+        zh-Hant: '大內存模式'
+        ja: '大容量メモリモード'
+        ko: '대용량 메모리 모드'
+        ru: 'Режим большой памяти'
+        ms: 'Mod memori besar'
+        pt-br: 'Modo de memória grande'
       required: true
       type: select
       values:
@@ -966,6 +2020,15 @@ additionalProperties:
       envKey: MOVIE_RENAME_FORMAT
       labelEn: Movie Rename Format
       labelZh: 电影重命名格式
+      label:
+        en: 'Movie Rename Format'
+        zh: '电影重命名格式'
+        zh-Hant: '電影重新命名格式'
+        ja: '映画のリネーム形式'
+        ko: '영화 이름 변경 형식'
+        ru: 'Формат переименования фильмов'
+        ms: 'Format penamaan semula filem'
+        pt-br: 'Formato de renomeação de filmes'
       required: true
       type: text
     - default: '{{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}'
@@ -973,5 +2036,14 @@ additionalProperties:
       envKey: TV_RENAME_FORMAT
       labelEn: TV Rename Format
       labelZh: 电视剧重命名格式
+      label:
+        en: 'TV Rename Format'
+        zh: '电视剧重命名格式'
+        zh-Hant: '電視劇重新命名格式'
+        ja: 'テレビ番組のリネーム形式'
+        ko: 'TV 이름 변경 형식'
+        ru: 'Формат переименования сериалов'
+        ms: 'Format penamaan semula siri TV'
+        pt-br: 'Formato de renomeação de séries'
       required: true
       type: text

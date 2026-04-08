@@ -4,24 +4,67 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
-        - label: LocalMySQL
+        - label:
+            en: 'LocalMySQL'
+            zh: 'LocalMySQL'
+            zh-Hant: 'LocalMySQL'
+            ja: 'LocalMySQL'
+            ko: 'LocalMySQL'
+            ru: 'LocalMySQL'
+            ms: 'LocalMySQL'
+            pt-br: 'LocalMySQL'
           value: localmysql
       child:
         default: ""
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
         required: true
         type: service
     - default: mysql_root_password
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Database root password
       labelZh: 数据库 root 密码
+      label:
+        en: 'Database root password'
+        zh: '数据库 root 密码'
+        zh-Hant: '資料庫 root 密碼'
+        ja: 'データベースの root パスワード'
+        ko: '데이터베이스 root 비밀번호'
+        ru: 'Пароль root базы данных'
+        ms: 'Kata laluan root pangkalan data'
+        pt-br: 'Senha root do banco de dados'
       required: true
       type: password
     - default: ""
@@ -30,6 +73,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: "6379"
@@ -37,6 +89,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: 'Redis Service Port'
+        zh: 'Redis服务端口'
+        zh-Hant: 'Redis 服務埠'
+        ja: 'Redis サービスポート'
+        ko: 'Redis 서비스 포트'
+        ru: 'Порт сервиса Redis'
+        ms: 'Port perkhidmatan Redis'
+        pt-br: 'Porta do serviço Redis'
       required: true
       rule: paramPort
       type: number
@@ -44,6 +105,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata laluan Redis'
+        pt-br: 'Senha do Redis'
       required: true
       type: password
     - default: 40154
@@ -51,6 +121,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -59,6 +138,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -66,24 +154,67 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: memcached
       envKey: MEMCACHED_TYPE
       labelEn: Memcached Service
       labelZh: Memcached 服务
+      label:
+        en: 'Memcached Service'
+        zh: 'Memcached 服务'
+        zh-Hant: 'Memcached 服務'
+        ja: 'Memcached サービス'
+        ko: 'Memcached 서비스'
+        ru: 'Сервис Memcached'
+        ms: 'Perkhidmatan Memcached'
+        pt-br: 'Serviço Memcached'
       required: true
       type: apps
       values:
-        - label: Memcached
+        - label:
+            en: 'Memcached'
+            zh: 'Memcached'
+            zh-Hant: 'Memcached'
+            ja: 'Memcached'
+            ko: 'Memcached'
+            ru: 'Memcached'
+            ms: 'Memcached'
+            pt-br: 'Memcached'
           value: memcached
-        - label: LocalMemcached
+        - label:
+            en: 'LocalMemcached'
+            zh: 'LocalMemcached'
+            zh-Hant: 'LocalMemcached'
+            ja: 'LocalMemcached'
+            ko: 'LocalMemcached'
+            ru: 'LocalMemcached'
+            ms: 'LocalMemcached'
+            pt-br: 'LocalMemcached'
           value: localmemcached
       child:
         default: ""
         envKey: MEMCACHED_HOST
         labelEn: Memcached Service
         labelZh: Memcached 服务
+        label:
+          en: 'Memcached Service'
+          zh: 'Memcached 服务'
+          zh-Hant: 'Memcached 服務'
+          ja: 'Memcached サービス'
+          ko: 'Memcached 서비스'
+          ru: 'Сервис Memcached'
+          ms: 'Perkhidmatan Memcached'
+          pt-br: 'Serviço Memcached'
         required: true
         type: service
     - default: example.seatable.com
@@ -91,5 +222,14 @@ additionalProperties:
       envKey: SERVER_HOSTNAME
       labelEn: Server hostname
       labelZh: 服务端主机名
+      label:
+        en: 'Server hostname'
+        zh: '服务端主机名'
+        zh-Hant: '服務端主機名'
+        ja: 'サーバーホスト名'
+        ko: '서버 호스트 이름'
+        ru: 'Имя хоста сервера'
+        ms: 'Nama hos pelayan'
+        pt-br: 'Nome do host do servidor'
       required: true
       type: text

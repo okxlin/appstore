@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MAX_LOG_COUNT
       labelEn: Maximum results size
       labelZh: 测速结果数量
+      label:
+        en: 'Maximum results size'
+        zh: '测速结果数量'
+        zh-Hant: '測速結果數量'
+        ja: '結果の最大数'
+        ko: '최대 결과 수'
+        ru: 'Максимальное число результатов'
+        ms: 'Bilangan maksimum hasil'
+        pt-br: 'Número máximo de resultados'
       required: true
       type: text
     - default: ipinfo.io
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IP_SERVICE
       labelEn: IP info provider (ip.sb / ipinfo.io)
       labelZh: 使用的 IP 运营商解析服务 (ip.sb / ipinfo.io)
+      label:
+        en: 'IP info provider (ip.sb / ipinfo.io)'
+        zh: '使用的 IP 运营商解析服务 (ip.sb / ipinfo.io)'
+        zh-Hant: '使用的 IP 解析服務 (ip.sb / ipinfo.io)'
+        ja: 'IP 情報プロバイダー（ip.sb / ipinfo.io）'
+        ko: 'IP 정보 제공자 (ip.sb / ipinfo.io)'
+        ru: 'Провайдер IP-информации (ip.sb / ipinfo.io)'
+        ms: 'Pembekal maklumat IP (ip.sb / ipinfo.io)'
+        pt-br: 'Provedor de informações de IP (ip.sb / ipinfo.io)'
       required: true
       type: text
     - default: "false"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: SAME_IP_MULTI_LOGS
       labelEn: Same IP multi speed test results (true / false)
       labelZh: 是否允许同一 IP 记录多条测速结果 (true / false)
+      label:
+        en: 'Same IP multi speed test results (true / false)'
+        zh: '是否允许同一 IP 记录多条测速结果 (true / false)'
+        zh-Hant: '是否允許同一 IP 記錄多條測速結果（true / false）'
+        ja: '同一 IP の複数結果を許可（true / false）'
+        ko: '동일 IP 다중 결과 허용 (true / false)'
+        ru: 'Разрешить несколько результатов для одного IP (true / false)'
+        ms: 'Benarkan berbilang keputusan bagi IP yang sama (true / false)'
+        pt-br: 'Permitir múltiplos resultados para o mesmo IP (true / false)'
       required: true
       type: text

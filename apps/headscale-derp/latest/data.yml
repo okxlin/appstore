@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_STUN
       labelEn: STUN Service Port
       labelZh: STUN 服务端口
+      label:
+        en: 'STUN Service Port'
+        zh: 'STUN 服务端口'
+        zh-Hant: 'STUN 服務埠'
+        ja: 'STUN サービスポート'
+        ko: 'STUN 서비스 포트'
+        ru: 'Порт службы STUN'
+        ms: 'Port perkhidmatan STUN'
+        pt-br: 'Porta do serviço STUN'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path (Domain certificate needs to be replaced, certificate file name is the same as the server hostname)
       labelZh: 数据文件夹路径 (需要替换域名证书，证书文件名与服务器主机名相同)
+      label:
+        en: 'Data folder path (Domain certificate needs to be replaced, certificate file name is the same as the server hostname)'
+        zh: '数据文件夹路径（需替换域名证书，证书文件名与服务器主机名相同）'
+        zh-Hant: '資料夾路徑（需替換網域憑證，憑證檔名與伺服器主機名相同）'
+        ja: 'データフォルダパス（ドメイン証明書を置き換え、証明書ファイル名はサーバーホスト名と同じ）'
+        ko: '데이터 폴더 경로(도메인 인증서를 교체해야 하며, 인증서 파일명은 서버 호스트명과 동일)'
+        ru: 'Путь к папке данных (замените доменный сертификат, имя файла сертификата совпадает с именем хоста сервера)'
+        ms: 'Laluan folder data (sijil domain perlu diganti, nama fail sijil sama dengan nama hos pelayan)'
+        pt-br: 'Caminho da pasta de dados (o certificado do domínio precisa ser substituído; o nome do arquivo é o mesmo do hostname do servidor)'
       required: true
       type: text
     - default: 'derper.your-domain.com'
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: DERP_DOMAIN
       labelEn: Derper server hostname
       labelZh: Derper服务器主机名
+      label:
+        en: 'Derper server hostname'
+        zh: 'Derper 服务器主机名'
+        zh-Hant: 'Derper 伺服器主機名'
+        ja: 'Derper サーバーホスト名'
+        ko: 'Derper 서버 호스트명'
+        ru: 'Имя хоста сервера Derper'
+        ms: 'Nama hos pelayan Derper'
+        pt-br: 'Nome do host do servidor Derper'
       required: true
       type: text
     - default: "false"
@@ -35,5 +71,14 @@ additionalProperties:
       envKey: CLIENTS_VERIFY_SWITCH
       labelEn: "Client verify (On: true, Off: false)"
       labelZh: 客户端验证(开启:true，关闭:false)
+      label:
+        en: 'Client verify (On: true, Off: false)'
+        zh: '客户端验证（开启: true，关闭: false）'
+        zh-Hant: '用戶端驗證（開啟: true，關閉: false）'
+        ja: 'クライアント検証（オン: true、オフ: false）'
+        ko: '클라이언트 검증(켜짐: true, 꺼짐: false)'
+        ru: 'Проверка клиента (вкл.: true, выкл.: false)'
+        ms: 'Pengesahan klien (Hidup: true, Mati: false)'
+        pt-br: 'Verificação do cliente (Ligado: true, Desligado: false)'
       required: true
       type: text

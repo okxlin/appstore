@@ -17,3 +17,15 @@ additionalProperties:
   website: https://wanglin2.github.io/mind-map
   github: https://github.com/wanglin2/mind-map
   document: https://wanglin2.github.io/mind-map/#/doc/zh/
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A fairly powerful web mind map application.'
+    zh: '一个还算强大的 Web 思维导图'
+    zh-Hant: '一個還算強大的 Web 心智圖'
+    ja: '比較的高機能な Web マインドマップアプリです。'
+    ko: '꽤 강력한 웹 마인드맵 애플리케이션입니다.'
+    ru: 'Довольно мощное веб-приложение для интеллект-карт.'
+    ms: 'Aplikasi peta minda web yang agak berkuasa.'
+    pt-br: 'Um aplicativo web de mapa mental bastante poderoso.'

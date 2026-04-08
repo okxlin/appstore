@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 115网盘是115科技推出的云存储服务
   shortDescEn: 115 network disk is a cloud storage service launched by 115 Technology
+  description:
+    en: 115 Cloud Drive is a cloud storage service launched by 115 Technology.
+    zh: 115网盘是115科技推出的云存储服务
+    zh-Hant: 115網盤是115科技推出的雲端儲存服務
+    ja: 115網盤は115科技が提供するクラウドストレージサービスです
+    ko: 115网盘은 115科技가 출시한 클라우드 스토리지 서비스입니다
+    ru: 115网盘 — облачный сервис хранения от компании 115 Technology.
+    ms: 115网盘 ialah perkhidmatan storan awan yang dilancarkan oleh 115 Technology.
+    pt-br: O 115网盘 é um serviço de armazenamento em nuvem lançado pela 115 Technology.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://115.com
   github: https://www.github.com/funcman/docker_115pc
   document: https://www.github.com/funcman/docker_115pc
+  architectures:
+    - amd64

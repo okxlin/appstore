@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款足够简单、足够好用、足够强的免费 WAF
   shortDescEn: A simple and easy to use WAF tool
+  description:
+    en: A free WAF that is simple, easy to use, and powerful
+    zh: 一款足够简单、足够好用、足够强的免费 WAF
+    zh-Hant: 一款足夠簡單、足夠好用、足夠強的免費 WAF
+    ja: 十分シンプルで使いやすく強力な無料WAF
+    ko: 충분히 단순하고 사용하기 쉬우며 강력한 무료 WAF
+    ru: Бесплатный WAF, достаточно простой, удобный и мощный
+    ms: WAF percuma yang cukup ringkas, mudah digunakan dan berkuasa
+    pt-br: Um WAF gratuito que é simples, fácil de usar e poderoso
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://waf-ce.chaitin.cn/
   github: https://github.com/chaitin/safeline
   document: https://waf-ce.chaitin.cn/posts/guide_introduction
+
+  architectures:
+    - amd64

@@ -5,11 +5,29 @@ additionalProperties:
         envKey: PANEL_DB_HOST
         labelEn: Database Service
         labelZh: 数据库服务
+        label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베ース 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
         required: true
         type: service
       default: mysql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+          en: 'Database Service'
+          zh: '数据库服务'
+          zh-Hant: '數據庫服務'
+          ja: 'データベースサービス'
+          ko: '데이터베이스 서비스'
+          ru: 'Сервис базы данных'
+          ms: 'Perkhidmatan Pangkalan Data'
+          pt-br: 'Serviço de Banco de Dados'
       params:
         - envKey: YOURLS_DB_PORT
           key: mysql
@@ -22,12 +40,29 @@ additionalProperties:
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
     - default: yourls
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +71,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -44,6 +88,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -52,6 +105,15 @@ additionalProperties:
       envKey: PANEL_DB_PREFIX
       labelEn: Database prefix
       labelZh: 数据库前缀
+      label:
+        en: 'Database prefix'
+        zh: '数据库前缀'
+        zh-Hant: '資料庫前綴'
+        ja: 'データベース接頭辞'
+        ko: '데이터베이스 접두사'
+        ru: 'Префикс базы данных'
+        ms: 'Awalan pangkalan data'
+        pt-br: 'Prefixo do banco de dados'
       required: true
       type: text
     - default: 40037
@@ -59,6 +121,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -67,12 +138,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: yourls
       envKey: USERNAME
       labelEn: User
       labelZh: 用户
+      label:
+        en: 'Username'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       random: true
       required: true
       rule: paramCommon
@@ -81,6 +170,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 用户密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -90,5 +188,14 @@ additionalProperties:
       envKey: YOURLS_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       type: text

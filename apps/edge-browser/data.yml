@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.microsoft.com/zh-cn/edge
   github: https://www.microsoft.com/zh-cn/edge
   document: https://www.microsoft.com/zh-cn/edge
+  architectures:
+    - amd64
+  description:
+    en: "Microsoft Edge Insider Preview"
+    zh: "Microsoft Edge Insider 预览版"
+    zh-Hant: "Microsoft Edge Insider 預覽版"
+    ja: "Microsoft Edge Insiderのプレビュー版です。"
+    ko: "Microsoft Edge Insider 미리 보기 버전입니다."
+    ru: "Предварительная версия Microsoft Edge Insider"
+    ms: "Pratonton Microsoft Edge Insider"
+    pt-br: "Prévia do Microsoft Edge Insider"

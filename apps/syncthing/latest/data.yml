@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SYNCTHING_PORT
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: 'Sync Port'
+        zh: '同步端口'
+        zh-Hant: '同步埠'
+        ja: '同期ポート'
+        ko: '동기화 포트'
+        ru: 'Порт синхронизации'
+        ms: 'Port penyegerakan'
+        pt-br: 'Porta de sincronização'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: SYNCTHING_PORT_EXTRA_UDP
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: 'Sync Port'
+        zh: '同步端口'
+        zh-Hant: '同步埠'
+        ja: '同期ポート'
+        ko: '동기화 포트'
+        ru: 'Порт синхронизации'
+        ms: 'Port penyegerakan'
+        pt-br: 'Porta de sincronização'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DATA_PATH_APP_CONFIG
       labelEn: Config folder path
       labelZh: 配置文件夹路径
+      label:
+        en: 'Config folder path'
+        zh: '配置文件夹路径'
+        zh-Hant: '設定資料夾路徑'
+        ja: '設定フォルダーパス'
+        ko: '구성 폴더 경로'
+        ru: 'Путь к папке конфигурации'
+        ms: 'Laluan folder konfigurasi'
+        pt-br: 'Caminho da pasta de configuração'
       required: true
       type: text
     - default: ./data/data1
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: DATA_PATH_DATA1
       labelEn: Data folder path (internal "/data1")
       labelZh: 数据文件夹路径 (内部"/data1")
+      label:
+        en: 'Data folder path (internal "/data1")'
+        zh: '数据文件夹路径 (内部"/data1")'
+        zh-Hant: '資料夾路徑 (內部"/data1")'
+        ja: 'データフォルダーパス (内部"/data1")'
+        ko: '데이터 폴더 경로 (내부 "/data1")'
+        ru: 'Путь к папке данных (внутри "/data1")'
+        ms: 'Laluan folder data (dalaman "/data1")'
+        pt-br: 'Caminho da pasta de dados (interno "/data1")'
       required: true
       type: text
     - default: ./data/data2
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: DATA_PATH_DATA2
       labelEn: Data folder path (internal "/data2")
       labelZh: 数据文件夹路径 (内部"/data2")
+      label:
+        en: 'Data folder path (internal "/data2")'
+        zh: '数据文件夹路径 (内部"/data2")'
+        zh-Hant: '資料夾路徑 (內部"/data2")'
+        ja: 'データフォルダーパス (内部"/data2")'
+        ko: '데이터 폴더 경로 (내부 "/data2")'
+        ru: 'Путь к папке данных (внутри "/data2")'
+        ms: 'Laluan folder data (dalaman "/data2")'
+        pt-br: 'Caminho da pasta de dados (interno "/data2")'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

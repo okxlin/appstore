@@ -5,6 +5,15 @@ additionalProperties:
       envKey: SERVICE_NAME
       labelEn: Service Name
       labelZh: 服务名称
+      label:
+        en: 'Service Name'
+        zh: '服务名称'
+        zh-Hant: '服務名稱'
+        ja: 'サービス名'
+        ko: '서비스 이름'
+        ru: 'Имя службы'
+        ms: 'Nama perkhidmatan'
+        pt-br: 'Nome do serviço'
       required: true
       rule: paramCommon
       type: text
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command
       labelZh: 命令
+      label:
+        en: 'Command'
+        zh: '命令'
+        zh-Hant: '命令'
+        ja: 'コマンド'
+        ko: '명령'
+        ru: 'Команда'
+        ms: 'Perintah'
+        pt-br: 'Comando'
       required: true
       type: text
     - default: "./data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: EXTERNAL_DATA_PATH
       labelEn: External Data Path
       labelZh: 外部数据路径
+      label:
+        en: 'External Data Path'
+        zh: '外部数据路径'
+        zh-Hant: '外部資料路徑'
+        ja: '外部データパス'
+        ko: '외부 데이터 경로'
+        ru: 'Путь к внешним данным'
+        ms: 'Laluan data luaran'
+        pt-br: 'Caminho de dados externos'
       required: true
       type: text
     - default: "/data"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: 'Internal container data paths'
+        zh: '容器内部数据路径'
+        zh-Hant: '容器內部資料路徑'
+        ja: 'コンテナ内部データパス'
+        ko: '컨테이너 내부 데이터 경로'
+        ru: 'Внутренние пути данных контейнера'
+        ms: 'Laluan data dalaman bekas'
+        pt-br: 'Caminhos internos de dados do contêiner'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

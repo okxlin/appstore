@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PLAIN_DNS_PORT
       labelEn: Plain DNS port
       labelZh: 普通DNS端口
+      label:
+        en: 'Plain DNS port'
+        zh: '普通DNS端口'
+        zh-Hant: '普通 DNS 埠'
+        ja: '通常 DNS ポート'
+        ko: '일반 DNS 포트'
+        ru: 'Обычный DNS-порт'
+        ms: 'Port DNS biasa'
+        pt-br: 'Porta DNS padrão'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DHCP_PORT1
       labelEn: DHCP service port 1
       labelZh: DHCP服务端口1
+      label:
+        en: 'DHCP service port 1'
+        zh: 'DHCP服务端口1'
+        zh-Hant: 'DHCP 服務埠 1'
+        ja: 'DHCP サービス ポート 1'
+        ko: 'DHCP 서비스 포트 1'
+        ru: 'Порт службы DHCP 1'
+        ms: 'Port perkhidmatan DHCP 1'
+        pt-br: 'Porta do serviço DHCP 1'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DHCP_PORT2
       labelEn: DHCP service port 2
       labelZh: DHCP服务端口2
+      label:
+        en: 'DHCP service port 2'
+        zh: 'DHCP服务端口2'
+        zh-Hant: 'DHCP 服務埠 2'
+        ja: 'DHCP サービス ポート 2'
+        ko: 'DHCP 서비스 포트 2'
+        ru: 'Порт службы DHCP 2'
+        ms: 'Port perkhidmatan DHCP 2'
+        pt-br: 'Porta do serviço DHCP 2'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: HTTP_PORT
       labelEn: HTTP web port
       labelZh: HTTP网页端口
+      label:
+        en: 'HTTP web port'
+        zh: 'HTTP网页端口'
+        zh-Hant: 'HTTP 網頁埠'
+        ja: 'HTTP ウェブポート'
+        ko: 'HTTP 웹 포트'
+        ru: 'HTTP веб-порт'
+        ms: 'Port web HTTP'
+        pt-br: 'Porta web HTTP'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Initial setup web page port
       labelZh: 初始设置网页端口
+      label:
+        en: 'Initial setup web page port'
+        zh: '初始设置网页端口'
+        zh-Hant: '初始設定網頁埠'
+        ja: '初期設定ページポート'
+        ko: '초기 설정 웹페이지 포트'
+        ru: 'Порт веб-страницы первоначальной настройки'
+        ms: 'Port laman web persediaan awal'
+        pt-br: 'Porta da página de configuração inicial'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: DOH_PORT
       labelEn: DOH service port
       labelZh: DOH服务端口
+      label:
+        en: 'DOH service port'
+        zh: 'DOH服务端口'
+        zh-Hant: 'DoH 服務埠'
+        ja: 'DoH サービス ポート'
+        ko: 'DoH 서비스 포트'
+        ru: 'Порт службы DoH'
+        ms: 'Port perkhidmatan DoH'
+        pt-br: 'Porta do serviço DoH'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: DOT_PORT
       labelEn: DOT service port
       labelZh: DOT服务端口
+      label:
+        en: 'DOT service port'
+        zh: 'DOT服务端口'
+        zh-Hant: 'DoT 服務埠'
+        ja: 'DoT サービス ポート'
+        ko: 'DoT 서비스 포트'
+        ru: 'Порт службы DoT'
+        ms: 'Port perkhidmatan DoT'
+        pt-br: 'Porta do serviço DoT'
       required: true
       rule: paramPort
       type: number
@@ -61,6 +124,15 @@ additionalProperties:
       envKey: QUIC_PORT1
       labelEn: QUIC service port 1
       labelZh: QUIC服务端口1
+      label:
+        en: 'QUIC service port 1'
+        zh: 'QUIC服务端口1'
+        zh-Hant: 'QUIC 服務埠 1'
+        ja: 'QUIC サービス ポート 1'
+        ko: 'QUIC 서비스 포트 1'
+        ru: 'Порт службы QUIC 1'
+        ms: 'Port perkhidmatan QUIC 1'
+        pt-br: 'Porta do serviço QUIC 1'
       required: true
       rule: paramPort
       type: number
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: QUIC_PORT2
       labelEn: QUIC service port 2
       labelZh: QUIC服务端口2
+      label:
+        en: 'QUIC service port 2'
+        zh: 'QUIC服务端口2'
+        zh-Hant: 'QUIC 服務埠 2'
+        ja: 'QUIC サービス ポート 2'
+        ko: 'QUIC 서비스 포트 2'
+        ru: 'Порт службы QUIC 2'
+        ms: 'Port perkhidmatan QUIC 2'
+        pt-br: 'Porta do serviço QUIC 2'
       required: true
       rule: paramPort
       type: number
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: DNS_CRYPT_PORT
       labelEn: DNS Crypt service port
       labelZh: DNS Crypt服务端口
+      label:
+        en: 'DNS Crypt service port'
+        zh: 'DNS Crypt服务端口'
+        zh-Hant: 'DNS Crypt 服務埠'
+        ja: 'DNS Crypt サービス ポート'
+        ko: 'DNS Crypt 서비스 포트'
+        ru: 'Порт службы DNS Crypt'
+        ms: 'Port perkhidmatan DNS Crypt'
+        pt-br: 'Porta do serviço DNS Crypt'
       required: true
       rule: paramPort
       type: number
@@ -85,6 +175,15 @@ additionalProperties:
       envKey: WORK_PATH
       labelEn: Work data folder path
       labelZh: 工作数据文件夹路径
+      label:
+        en: 'Work data folder path'
+        zh: '工作数据文件夹路径'
+        zh-Hant: '工作資料夾路徑'
+        ja: '作業データフォルダパス'
+        ko: '작업 데이터 폴더 경로'
+        ru: 'Путь к рабочей папке данных'
+        ms: 'Laluan folder data kerja'
+        pt-br: 'Caminho da pasta de dados de trabalho'
       required: true
       type: text
     - default: ./data/conf
@@ -92,5 +191,14 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Configuration folder path
       labelZh: 配置文件夹路径
+      label:
+        en: 'Configuration folder path'
+        zh: '配置文件夹路径'
+        zh-Hant: '設定資料夾路徑'
+        ja: '設定フォルダパス'
+        ko: '구성 폴더 경로'
+        ru: 'Путь к папке конфигурации'
+        ms: 'Laluan folder konfigurasi'
+        pt-br: 'Caminho da pasta de configuração'
       required: true
       type: text

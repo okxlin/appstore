@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MEDIAWIKI_IMAGES_PATH
       labelEn: MediaWiki Images Path
       labelZh: MediaWiki 图片路径
+      label:
+        en: 'MediaWiki Images Path'
+        zh: 'MediaWiki 图片路径'
+        zh-Hant: 'MediaWiki 圖片路徑'
+        ja: 'MediaWiki 画像パス'
+        ko: 'MediaWiki 이미지 경로'
+        ru: 'Путь к изображениям MediaWiki'
+        ms: 'Laluan imej MediaWiki'
+        pt-br: 'Caminho de imagens do MediaWiki'
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: MEDIAWIKI_DATA_PATH
       labelEn: MediaWiki Data Path
       labelZh: MediaWiki 数据路径
+      label:
+        en: 'MediaWiki Data Path'
+        zh: 'MediaWiki 数据路径'
+        zh-Hant: 'MediaWiki 資料路徑'
+        ja: 'MediaWiki データパス'
+        ko: 'MediaWiki 데이터 경로'
+        ru: 'Путь к данным MediaWiki'
+        ms: 'Laluan data MediaWiki'
+        pt-br: 'Caminho de dados do MediaWiki'
       required: true
       type: text
     - default: "/var/www/data"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: 'Internal container data paths'
+        zh: '容器内部数据路径'
+        zh-Hant: '容器內部資料路徑'
+        ja: 'コンテナ内部データパス'
+        ko: '컨테이너 내부 데이터 경로'
+        ru: 'Внутренние пути данных контейнера'
+        ms: 'Laluan data dalaman bekas'
+        pt-br: 'Caminhos internos de dados do contêiner'
       required: true
       type: text
     - default: "./data/LocalSettings.php"
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: LOCAL_SETTINGS_PATH
       labelEn: LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)
       labelZh: LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件)
+      label:
+        en: 'LocalSettings.php Path ([necessary] Edit compose.yml to close the mapping to regenerate the configuration file)'
+        zh: 'LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件)'
+        zh-Hant: 'LocalSettings.php 路徑（【必要】編輯 compose.yml 關閉映射以重新生成設定檔）'
+        ja: 'LocalSettings.php パス（【必須】compose.yml のマッピングを無効にして設定ファイルを再生成）'
+        ko: 'LocalSettings.php 경로(【필수】compose.yml에서 매핑을 끄면 설정 파일을 다시 생성합니다)'
+        ru: 'Путь LocalSettings.php (【обязательно】отключите маппинг в compose.yml, чтобы пересоздать конфиг)'
+        ms: 'Laluan LocalSettings.php (【perlu】matikan pemetaan dalam compose.yml untuk jana semula fail konfigurasi)'
+        pt-br: 'Caminho do LocalSettings.php (【obrigatório】desative o mapeamento no compose.yml para regenerar o arquivo de configuração)'
       required: true
       type: text

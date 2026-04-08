@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "0"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: 'Group ID'
+        zh: '组 ID'
+        zh-Hant: '群組 ID'
+        ja: 'グループ ID'
+        ko: '그룹 ID'
+        ru: 'ID группы'
+        ms: 'ID kumpulan'
+        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "30s"
@@ -41,5 +86,14 @@ additionalProperties:
       envKey: STOP_GRACE_PERIOD
       labelEn: Stop Grace Period
       labelZh: 停止宽限期
+      label:
+        en: 'Stop Grace Period'
+        zh: '停止宽限期'
+        zh-Hant: '停止寬限期'
+        ja: '停止猶予期間'
+        ko: '중지 유예 기간'
+        ru: 'Период отсрочки остановки'
+        ms: 'Tempoh tenggang berhenti'
+        pt-br: 'Período de tolerância para parada'
       required: true
       type: text

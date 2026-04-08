@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个轻量级服务器资源监控工具 (客户端)
   shortDescEn: A lightweight server resource monitoring hub (Agent)
+  description:
+    en: A lightweight server resource monitoring tool (agent)
+    zh: 一个轻量级服务器资源监控工具 (客户端)
+    zh-Hant: 一個輕量級伺服器資源監控工具（客戶端）
+    ja: 軽量なサーバーリソース監視ツール（エージェント）
+    ko: 경량 서버 리소스 모니터링 도구(에이전트)
+    ru: Лёгкий инструмент мониторинга ресурсов сервера (агент)
+    ms: Alat pemantauan sumber pelayan yang ringan (agen)
+    pt-br: Ferramenta leve de monitoramento de recursos do servidor (agente)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/henrygd/beszel
   github: https://github.com/henrygd/beszel
   document: https://github.com/henrygd/beszel
+  architectures:
+    - amd64

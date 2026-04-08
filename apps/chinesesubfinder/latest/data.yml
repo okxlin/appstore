@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_IMAGE
       labelEn: WebUI video list with the port used to read pictures (127.0.0.1:port)
       labelZh: webui 视频列表读取图片用的端口 (127.0.0.1:port)
+      label:
+        en: 'WebUI video list with the port used to read pictures (127.0.0.1:port)'
+        zh: 'webui 视频列表读取图片用的端口 (127.0.0.1:port)'
+        zh-Hant: 'WebUI 影片清單讀取圖片所用的連接埠 (127.0.0.1:port)'
+        ja: '画像読み取りに使用する WebUI 動画リストのポート (127.0.0.1:port)'
+        ko: '그림을 읽는 데 사용하는 WebUI 비디오 목록 포트 (127.0.0.1:port)'
+        ru: 'Порт списка видео WebUI для чтения изображений (127.0.0.1:port)'
+        ms: 'Port senarai video WebUI untuk membaca gambar (127.0.0.1:port)'
+        pt-br: 'Porta da lista de vídeos da WebUI usada para ler imagens (127.0.0.1:port)'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ./data/media
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: 'Media folder path'
+        zh: '媒体文件夹路径'
+        zh-Hant: '媒體資料夾路徑'
+        ja: 'メディアフォルダーパス'
+        ko: '미디어 폴더 경로'
+        ru: 'Путь к папке медиа'
+        ms: 'Laluan folder media'
+        pt-br: 'Caminho da pasta de mídia'
       required: true
       type: text
     - default: ./data/media2
@@ -35,5 +71,14 @@ additionalProperties:
       envKey: MEDIA_PATH2
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: 'Media folder path'
+        zh: '媒体文件夹路径'
+        zh-Hant: '媒體資料夾路徑'
+        ja: 'メディアフォルダーパス'
+        ko: '미디어 폴더 경로'
+        ru: 'Путь к папке медиа'
+        ms: 'Laluan folder media'
+        pt-br: 'Caminho da pasta de mídia'
       required: true
       type: text

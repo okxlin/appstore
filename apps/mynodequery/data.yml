@@ -6,6 +6,15 @@ description: 一款简洁好用的探针
 additionalProperties:
   key: mynodequery
   name: MyNodeQuery
+  description:
+    en: A simple and easy-to-use probe
+    zh: 一款简洁好用的探针
+    zh-Hant: 一款簡潔好用的探針
+    ja: シンプルで使いやすいプローブ
+    ko: 간단하고 사용하기 쉬운 프로브
+    ru: Простой и удобный зонд
+    ms: Probe yang ringkas dan mudah digunakan
+    pt-br: Uma sonda simples e fácil de usar
   tags:
     - Tool
   shortDescZh: 一款简洁好用的探针
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/jaydenlee2019/mynodequery
   github: https://hub.docker.com/r/jaydenlee2019/mynodequery
   document: https://hub.docker.com/r/jaydenlee2019/mynodequery
+  architectures:
+    - amd64

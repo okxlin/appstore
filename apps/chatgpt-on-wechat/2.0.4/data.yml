@@ -5,6 +5,15 @@ additionalProperties:
       envKey: OPEN_AI_API_KEY
       labelEn: OpenAI API Key
       labelZh: OpenAI API 密钥
+      label:
+        en: 'OpenAI API Key'
+        zh: 'OpenAI API 密钥'
+        zh-Hant: 'OpenAI API 金鑰'
+        ja: 'OpenAI API キー'
+        ko: 'OpenAI API 키'
+        ru: 'Ключ API OpenAI'
+        ms: 'Kunci API OpenAI'
+        pt-br: 'Chave da API OpenAI'
       required: false
       type: text
     - default: "https://api.openai.com/v1"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: OPEN_AI_API_BASE
       labelEn: OpenAI API Base
       labelZh: OpenAI API 基础地址
+      label:
+        en: 'OpenAI API Base'
+        zh: 'OpenAI API 基础地址'
+        zh-Hant: 'OpenAI API 基礎位址'
+        ja: 'OpenAI API ベースURL'
+        ko: 'OpenAI API 기본 URL'
+        ru: 'Базовый URL API OpenAI'
+        ms: 'URL dasar API OpenAI'
+        pt-br: 'URL base da API OpenAI'
       required: false
       type: text
     - default: "gpt-3.5-turbo"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: MODEL
       labelEn: Model
       labelZh: 模型
+      label:
+        en: 'Model'
+        zh: '模型'
+        zh-Hant: '模型'
+        ja: 'モデル'
+        ko: '모델'
+        ru: 'Модель'
+        ms: 'Model'
+        pt-br: 'Modelo'
       required: false
       type: text
     - default: "false"
@@ -26,18 +53,52 @@ additionalProperties:
       envKey: USE_AZURE_CHATGPT
       labelEn: Use Azure ChatGPT
       labelZh: 使用 Azure ChatGPT
+      label:
+        en: 'Use Azure ChatGPT'
+        zh: '使用 Azure ChatGPT'
+        zh-Hant: '使用 Azure ChatGPT'
+        ja: 'Azure ChatGPT を使用'
+        ko: 'Azure ChatGPT 사용'
+        ru: 'Использовать Azure ChatGPT'
+        ms: 'Gunakan Azure ChatGPT'
+        pt-br: 'Usar Azure ChatGPT'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ""
       edit: true
       envKey: AZURE_DEPLOYMENT_ID
       labelEn: Azure Deployment ID
       labelZh: Azure 部署 ID
+      label:
+        en: 'Azure Deployment ID'
+        zh: 'Azure 部署 ID'
+        zh-Hant: 'Azure 部署 ID'
+        ja: 'Azure デプロイ ID'
+        ko: 'Azure 배포 ID'
+        ru: 'Идентификатор развертывания Azure'
+        ms: 'ID penyebaran Azure'
+        pt-br: 'ID de implantação do Azure'
       required: false
       type: text
     - default: ""
@@ -45,6 +106,15 @@ additionalProperties:
       envKey: AZURE_API_VERSION
       labelEn: Azure API Version
       labelZh: Azure API 版本
+      label:
+        en: 'Azure API Version'
+        zh: 'Azure API 版本'
+        zh-Hant: 'Azure API 版本'
+        ja: 'Azure API バージョン'
+        ko: 'Azure API 버전'
+        ru: 'Версия API Azure'
+        ms: 'Versi API Azure'
+        pt-br: 'Versão da API do Azure'
       required: false
       type: text
     - default: ""
@@ -52,6 +122,15 @@ additionalProperties:
       envKey: PROXY
       labelEn: Proxy
       labelZh: 代理
+      label:
+        en: 'Proxy'
+        zh: '代理'
+        zh-Hant: '代理'
+        ja: 'プロキシ'
+        ko: '프록시'
+        ru: 'Прокси'
+        ms: 'Proksi'
+        pt-br: 'Proxy'
       required: false
       type: text
     - default: '["bot", "@bot"]'
@@ -59,6 +138,15 @@ additionalProperties:
       envKey: SINGLE_CHAT_PREFIX
       labelEn: Single Chat Prefix
       labelZh: 私聊前缀
+      label:
+        en: 'Single Chat Prefix'
+        zh: '私聊前缀'
+        zh-Hant: '私聊前綴'
+        ja: '個別チャット接頭辞'
+        ko: '개인 채팅 접두사'
+        ru: 'Префикс личного чата'
+        ms: 'Awalan sembang peribadi'
+        pt-br: 'Prefixo de chat privado'
       required: true
       type: text
     - default: "[bot] "
@@ -66,6 +154,15 @@ additionalProperties:
       envKey: SINGLE_CHAT_REPLY_PREFIX
       labelEn: Single Chat Reply Prefix
       labelZh: 私聊回复前缀
+      label:
+        en: 'Single Chat Reply Prefix'
+        zh: '私聊回复前缀'
+        zh-Hant: '私聊回覆前綴'
+        ja: '個別チャット返信接頭辞'
+        ko: '개인 채팅 응답 접두사'
+        ru: 'Префикс ответа в личном чате'
+        ms: 'Awalan balasan sembang peribadi'
+        pt-br: 'Prefixo de resposta no chat privado'
       required: false
       type: text
     - default: ""
@@ -73,6 +170,15 @@ additionalProperties:
       envKey: SINGLE_CHAT_REPLY_SUFFIX
       labelEn: Single Chat Reply Suffix
       labelZh: 私聊回复后缀
+      label:
+        en: 'Single Chat Reply Suffix'
+        zh: '私聊回复后缀'
+        zh-Hant: '私聊回覆後綴'
+        ja: '個別チャット返信接尾辞'
+        ko: '개인 채팅 응답 접미사'
+        ru: 'Суффикс ответа в личном чате'
+        ms: 'Akhiran balasan sembang peribadi'
+        pt-br: 'Sufixo de resposta no chat privado'
       required: false
       type: text
     - default: '["@bot"]'
@@ -80,6 +186,15 @@ additionalProperties:
       envKey: GROUP_CHAT_PREFIX
       labelEn: Group Chat Prefix
       labelZh: 群聊前缀
+      label:
+        en: 'Group Chat Prefix'
+        zh: '群聊前缀'
+        zh-Hant: '群聊前綴'
+        ja: 'グループチャット接頭辞'
+        ko: '그룹 채팅 접두사'
+        ru: 'Префикс группового чата'
+        ms: 'Awalan sembang kumpulan'
+        pt-br: 'Prefixo do chat em grupo'
       required: false
       type: text
     - default: ""
@@ -87,6 +202,15 @@ additionalProperties:
       envKey: GROUP_CHAT_REPLY_PREFIX
       labelEn: Group Chat Reply Prefix
       labelZh: 群聊回复前缀
+      label:
+        en: 'Group Chat Reply Prefix'
+        zh: '群聊回复前缀'
+        zh-Hant: '群聊回覆前綴'
+        ja: 'グループチャット返信接頭辞'
+        ko: '그룹 채팅 응답 접두사'
+        ru: 'Префикс ответа в групповом чате'
+        ms: 'Awalan balasan sembang kumpulan'
+        pt-br: 'Prefixo de resposta do chat em grupo'
       required: false
       type: text
     - default: ""
@@ -94,6 +218,15 @@ additionalProperties:
       envKey: GROUP_CHAT_REPLY_SUFFIX
       labelEn: Group Chat Reply Suffix
       labelZh: 群聊回复后缀
+      label:
+        en: 'Group Chat Reply Suffix'
+        zh: '群聊回复后缀'
+        zh-Hant: '群聊回覆後綴'
+        ja: 'グループチャット返信接尾辞'
+        ko: '그룹 채팅 응답 접미사'
+        ru: 'Суффикс ответа в групповом чате'
+        ms: 'Akhiran balasan sembang kumpulan'
+        pt-br: 'Sufixo de resposta do chat em grupo'
       required: false
       type: text
     - default: '[]'
@@ -101,6 +234,15 @@ additionalProperties:
       envKey: GROUP_CHAT_KEYWORD
       labelEn: Keywords for triggering replies in group chats
       labelZh: 群聊触发回复的关键词
+      label:
+        en: 'Keywords for triggering replies in group chats'
+        zh: '群聊触发回复的关键词'
+        zh-Hant: '群聊觸發回覆的關鍵詞'
+        ja: 'グループチャットで返信をトリガーするキーワード'
+        ko: '그룹 채팅에서 응답을 트리거하는 키워드'
+        ru: 'Ключевые слова для триггера ответов в групповом чате'
+        ms: 'Kata kunci untuk mencetuskan balasan dalam sembang kumpulan'
+        pt-br: 'Palavras-chave para acionar respostas no chat em grupo'
       required: false
       type: text
     - default: "false"
@@ -108,18 +250,52 @@ additionalProperties:
       envKey: GROUP_AT_OFF
       labelEn: Group At Off
       labelZh: 关闭群聊@bot触发
+      label:
+        en: 'Group At Off'
+        zh: '关闭群聊@bot触发'
+        zh-Hant: '關閉群聊@bot觸發'
+        ja: 'グループ@botトリガーを無効化'
+        ko: '그룹 @bot 트리거 끄기'
+        ru: 'Отключить триггер @bot в группе'
+        ms: 'Matikan pencetus @bot dalam kumpulan'
+        pt-br: 'Desativar gatilho @bot no grupo'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: '["ChatGPT测试群", "ChatGPT测试群2"]'
       edit: true
       envKey: GROUP_NAME_WHITE_LIST
       labelEn: Group Name White List
       labelZh: 群名称白名单
+      label:
+        en: 'Group Name White List'
+        zh: '群名称白名单'
+        zh-Hant: '群名稱白名單'
+        ja: 'グループ名のホワイトリスト'
+        ko: '그룹 이름 화이트리스트'
+        ru: 'Белый список названий групп'
+        ms: 'Senarai putih nama kumpulan'
+        pt-br: 'Lista de permissões de nomes de grupo'
       required: false
       type: text
     - default: '[]'
@@ -127,6 +303,15 @@ additionalProperties:
       envKey: GROUP_NAME_KEYWORD_WHITE_LIST
       labelEn: Group Name Keyword White List
       labelZh: 群名称关键词白名单
+      label:
+        en: 'Group Name Keyword White List'
+        zh: '群名称关键词白名单'
+        zh-Hant: '群名稱關鍵詞白名單'
+        ja: 'グループ名キーワードのホワイトリスト'
+        ko: '그룹 이름 키워드 화이트리스트'
+        ru: 'Белый список ключевых слов названий групп'
+        ms: 'Senarai putih kata kunci nama kumpulan'
+        pt-br: 'Lista de permissões de palavras-chave do nome do grupo'
       required: false
       type: text
     - default: '["ChatGPT测试群"]'
@@ -134,6 +319,15 @@ additionalProperties:
       envKey: GROUP_CHAT_IN_ONE_SESSION
       labelEn: Group names that support session context sharing
       labelZh: 支持会话上下文共享的群名称
+      label:
+        en: 'Group names that support session context sharing'
+        zh: '支持会话上下文共享的群名称'
+        zh-Hant: '支援會話上下文共享的群名稱'
+        ja: 'セッションコンテキスト共有に対応するグループ名'
+        ko: '세션 컨텍스트 공유를 지원하는 그룹 이름'
+        ru: 'Названия групп с поддержкой совместного контекста сеанса'
+        ms: 'Nama kumpulan yang menyokong perkongsian konteks sesi'
+        pt-br: 'Nomes de grupo que suportam compartilhamento de contexto de sessão'
       required: false
       type: text
     - default: '[]'
@@ -141,6 +335,15 @@ additionalProperties:
       envKey: NICK_NAME_BLACK_LIST
       labelEn: Nickname Blacklist
       labelZh: 昵称黑名单
+      label:
+        en: 'Nickname Blacklist'
+        zh: '昵称黑名单'
+        zh-Hant: '暱稱黑名單'
+        ja: 'ニックネームのブラックリスト'
+        ko: '닉네임 블랙리스트'
+        ru: 'Чёрный список никнеймов'
+        ms: 'Senarai hitam nama panggilan'
+        pt-br: 'Lista negra de apelidos'
       required: false
       type: text
     - default: ""
@@ -148,6 +351,15 @@ additionalProperties:
       envKey: GROUP_WELCOME_MSG
       labelEn: Group Welcome Message
       labelZh: 群欢迎信息
+      label:
+        en: 'Group Welcome Message'
+        zh: '群欢迎信息'
+        zh-Hant: '群歡迎訊息'
+        ja: 'グループ歓迎メッセージ'
+        ko: '그룹 환영 메시지'
+        ru: 'Приветственное сообщение группы'
+        ms: 'Mesej alu-aluan kumpulan'
+        pt-br: 'Mensagem de boas-vindas do grupo'
       required: false
       type: text
     - default: "false"
@@ -155,18 +367,52 @@ additionalProperties:
       envKey: TRIGGER_BY_SELF
       labelEn: Trigger by Self
       labelZh: 是否允许机器人触发
+      label:
+        en: 'Trigger by Self'
+        zh: '是否允许机器人触发'
+        zh-Hant: '是否允許機器人觸發'
+        ja: 'ボットによるトリガーを許可'
+        ko: '봇 트리거 허용'
+        ru: 'Разрешить триггер ботом'
+        ms: 'Benarkan pencetus oleh bot'
+        pt-br: 'Permitir acionamento pelo bot'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "dall-e-2"
       edit: true
       envKey: TEXT_TO_IMAGE
       labelEn: Text to Image Model
       labelZh: 图片生成模型
+      label:
+        en: 'Text to Image Model'
+        zh: '图片生成模型'
+        zh-Hant: '圖片生成模型'
+        ja: 'テキストから画像のモデル'
+        ko: '텍스트-이미지 모델'
+        ru: 'Модель текста в изображение'
+        ms: 'Model teks ke imej'
+        pt-br: 'Modelo de texto para imagem'
       required: false
       type: select
       values:
@@ -179,6 +425,15 @@ additionalProperties:
       envKey: DALLE3_IMAGE_STYLE
       labelEn: Dall-E 3 Image Style
       labelZh: Dall-E 3 图片风格
+      label:
+        en: 'Dall-E 3 Image Style'
+        zh: 'Dall-E 3 图片风格'
+        zh-Hant: 'Dall-E 3 圖片風格'
+        ja: 'Dall‑E 3 画像スタイル'
+        ko: 'Dall‑E 3 이미지 스타일'
+        ru: 'Стиль изображений Dall‑E 3'
+        ms: 'Gaya imej Dall‑E 3'
+        pt-br: 'Estilo de imagem do Dall‑E 3'
       required: false
       type: select
       values:
@@ -191,6 +446,15 @@ additionalProperties:
       envKey: DALLE3_IMAGE_QUALITY
       labelEn: Dall-E 3 Image Quality
       labelZh: Dall-E 3 图片质量
+      label:
+        en: 'Dall-E 3 Image Quality'
+        zh: 'Dall-E 3 图片质量'
+        zh-Hant: 'Dall-E 3 圖片品質'
+        ja: 'Dall‑E 3 画像品質'
+        ko: 'Dall‑E 3 이미지 품질'
+        ru: 'Качество изображения Dall‑E 3'
+        ms: 'Kualiti imej Dall‑E 3'
+        pt-br: 'Qualidade de imagem do Dall‑E 3'
       required: false
       type: select
       values:
@@ -203,6 +467,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_DALLE_API_BASE
       labelEn: Azure OpenAI Dall-E API Base
       labelZh: Azure OpenAI Dall-E API 基础地址
+      label:
+        en: 'Azure OpenAI Dall-E API Base'
+        zh: 'Azure OpenAI Dall-E API 基础地址'
+        zh-Hant: 'Azure OpenAI Dall-E API 基礎位址'
+        ja: 'Azure OpenAI Dall-E API ベース URL'
+        ko: 'Azure OpenAI Dall-E API 기본 URL'
+        ru: 'Базовый URL API Azure OpenAI Dall-E'
+        ms: 'URL asas API Azure OpenAI Dall-E'
+        pt-br: 'URL base da API Azure OpenAI Dall-E'
       required: false
       type: text
     - default: ""
@@ -210,6 +483,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_DALLE_API_KEY
       labelEn: Azure OpenAI Dall-E API Key
       labelZh: Azure OpenAI Dall-E API 密钥
+      label:
+        en: 'Azure OpenAI Dall-E API Key'
+        zh: 'Azure OpenAI Dall-E API 密钥'
+        zh-Hant: 'Azure OpenAI Dall-E API 密鑰'
+        ja: 'Azure OpenAI Dall-E API キー'
+        ko: 'Azure OpenAI Dall-E API 키'
+        ru: 'Ключ API Azure OpenAI Dall-E'
+        ms: 'Kunci API Azure OpenAI Dall-E'
+        pt-br: 'Chave da API Azure OpenAI Dall-E'
       required: false
       type: text
     - default: ""
@@ -217,6 +499,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_DALLE_DEPLOYMENT_ID
       labelEn: Azure OpenAI Dall-E Deployment ID
       labelZh: Azure OpenAI Dall-E 部署 ID
+      label:
+        en: 'Azure OpenAI Dall-E Deployment ID'
+        zh: 'Azure OpenAI Dall-E 部署 ID'
+        zh-Hant: 'Azure OpenAI Dall-E 部署 ID'
+        ja: 'Azure OpenAI Dall-E デプロイ ID'
+        ko: 'Azure OpenAI Dall-E 배포 ID'
+        ru: 'ID развертывания Azure OpenAI Dall-E'
+        ms: 'ID penyebaran Azure OpenAI Dall-E'
+        pt-br: 'ID de implantação do Azure OpenAI Dall-E'
       required: false
       type: text
     - default: "true"
@@ -224,18 +515,52 @@ additionalProperties:
       envKey: IMAGE_PROXY
       labelEn: Image Proxy
       labelZh: 图片代理
+      label:
+        en: 'Image Proxy'
+        zh: '图片代理'
+        zh-Hant: '圖片代理'
+        ja: '画像プロキシ'
+        ko: '이미지 프록시'
+        ru: 'Прокси изображений'
+        ms: 'Proksi imej'
+        pt-br: 'Proxy de imagens'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: '["画", "看", "找"]'
       edit: true
       envKey: IMAGE_CREATE_PREFIX
       labelEn: Prefix when image reply needs to be enabled
       labelZh: 开启图片回复的前缀
+      label:
+        en: 'Prefix when image reply needs to be enabled'
+        zh: '开启图片回复的前缀'
+        zh-Hant: '啟用圖片回覆的前綴'
+        ja: '画像返信を有効にする接頭辞'
+        ko: '이미지 응답을 활성화하는 접두사'
+        ru: 'Префикс для включения ответов изображениями'
+        ms: 'Awalan untuk mengaktifkan balasan imej'
+        pt-br: 'Prefixo para ativar respostas com imagem'
       required: false
       type: text
     - default: "1"
@@ -243,6 +568,15 @@ additionalProperties:
       envKey: CONCURRENCY_IN_SESSION
       labelEn: Concurrency in Session
       labelZh: 会话并发数
+      label:
+        en: 'Concurrency in Session'
+        zh: '会话并发数'
+        zh-Hant: '會話並發數'
+        ja: 'セッション同時実行数'
+        ko: '세션 동시 실행 수'
+        ru: 'Параллельность в сеансе'
+        ms: 'Serentak dalam sesi'
+        pt-br: 'Concorrência na sessão'
       required: false
       type: number
     - default: "256x256"
@@ -250,6 +584,15 @@ additionalProperties:
       envKey: IMAGE_CREATE_SIZE
       labelEn: Image Create Size
       labelZh: 图片生成大小
+      label:
+        en: 'Image Create Size'
+        zh: '图片生成大小'
+        zh-Hant: '圖片生成大小'
+        ja: '画像生成サイズ'
+        ko: '이미지 생성 크기'
+        ru: 'Размер создания изображения'
+        ms: 'Saiz pembuatan imej'
+        pt-br: 'Tamanho de criação de imagem'
       required: false
       type: select
       values:
@@ -264,18 +607,52 @@ additionalProperties:
       envKey: GROUP_CHAT_EXIT_GROUP
       labelEn: Group Chat Exit Group
       labelZh: 退出群聊
+      label:
+        en: 'Group Chat Exit Group'
+        zh: '退出群聊'
+        zh-Hant: '退出群聊'
+        ja: 'グループチャットから退出'
+        ko: '그룹 채팅 나가기'
+        ru: 'Выйти из группового чата'
+        ms: 'Keluar daripada sembang kumpulan'
+        pt-br: 'Sair do chat em grupo'
       required: false
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "3600"
       edit: true
       envKey: EXPIRES_IN_SECONDS
       labelEn: Expires in Seconds
       labelZh: 会话过期时间
+      label:
+        en: 'Expires in Seconds'
+        zh: '会话过期时间'
+        zh-Hant: '會話過期時間'
+        ja: '有効期限（秒）'
+        ko: '만료 시간(초)'
+        ru: 'Срок действия (сек.)'
+        ms: 'Tempoh tamat (saat)'
+        pt-br: 'Expira em segundos'
       required: false
       type: number
     - default: "你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。"
@@ -283,6 +660,15 @@ additionalProperties:
       envKey: CHARACTER_DESC
       labelEn: Character Description
       labelZh: 人格描述
+      label:
+        en: 'Character Description'
+        zh: '人格描述'
+        zh-Hant: '人格描述'
+        ja: 'キャラクター説明'
+        ko: '캐릭터 설명'
+        ru: 'Описание персонажа'
+        ms: 'Penerangan watak'
+        pt-br: 'Descrição do personagem'
       required: false
       type: text
     - default: "1000"
@@ -290,6 +676,15 @@ additionalProperties:
       envKey: CONVERSATION_MAX_TOKENS
       labelEn: Conversation Max Tokens
       labelZh: 会话最大字符数
+      label:
+        en: 'Conversation Max Tokens'
+        zh: '会话最大字符数'
+        zh-Hant: '會話最大字元數'
+        ja: '会話の最大トークン数'
+        ko: '대화 최대 토큰 수'
+        ru: 'Макс. количество токенов в диалоге'
+        ms: 'Maksimum token perbualan'
+        pt-br: 'Máximo de tokens da conversa'
       required: false
       type: number
     - default: "20"
@@ -297,6 +692,15 @@ additionalProperties:
       envKey: RATE_LIMIT_CHATGPT
       labelEn: Rate Limit ChatGPT
       labelZh: ChatGPT 调用频率限制
+      label:
+        en: 'Rate Limit ChatGPT'
+        zh: 'ChatGPT 调用频率限制'
+        zh-Hant: 'ChatGPT 調用頻率限制'
+        ja: 'ChatGPT のレート制限'
+        ko: 'ChatGPT 호출 제한'
+        ru: 'Лимит запросов ChatGPT'
+        ms: 'Had kadar ChatGPT'
+        pt-br: 'Limite de taxa do ChatGPT'
       required: false
       type: number
     - default: "50"
@@ -304,6 +708,15 @@ additionalProperties:
       envKey: RATE_LIMIT_DALLE
       labelEn: Rate Limit DALL-E
       labelZh: DALL-E 调用频率限制
+      label:
+        en: 'Rate Limit DALL-E'
+        zh: 'DALL-E 调用频率限制'
+        zh-Hant: 'DALL-E 調用頻率限制'
+        ja: 'DALL-E のレート制限'
+        ko: 'DALL-E 호출 제한'
+        ru: 'Лимит запросов DALL-E'
+        ms: 'Had kadar DALL-E'
+        pt-br: 'Limite de taxa do DALL-E'
       required: false
       type: number
     - default: "0.9"
@@ -311,6 +724,15 @@ additionalProperties:
       envKey: TEMPERATURE
       labelEn: Temperature
       labelZh: 温度
+      label:
+        en: 'Temperature'
+        zh: '温度'
+        zh-Hant: '溫度'
+        ja: '温度'
+        ko: '온도'
+        ru: 'Температура'
+        ms: 'Suhu'
+        pt-br: 'Temperatura'
       required: false
       type: text
     - default: "0.9"
@@ -318,6 +740,15 @@ additionalProperties:
       envKey: TOP_P
       labelEn: Top P
       labelZh: Top P
+      label:
+        en: 'Top P'
+        zh: 'Top P 值'
+        zh-Hant: 'Top P 值'
+        ja: 'トップP'
+        ko: 'Top P 값'
+        ru: 'Значение Top P'
+        ms: 'Nilai Top P'
+        pt-br: 'Valor Top P'
       required: false
       type: text
     - default: "0.0"
@@ -325,6 +756,15 @@ additionalProperties:
       envKey: FREQUENCY_PENALTY
       labelEn: Frequency Penalty
       labelZh: 频率惩罚
+      label:
+        en: 'Frequency Penalty'
+        zh: '频率惩罚'
+        zh-Hant: '頻率懲罰'
+        ja: '頻度ペナルティ'
+        ko: '빈도 페널티'
+        ru: 'Штраф за частотность'
+        ms: 'Penalti kekerapan'
+        pt-br: 'Penalidade de frequência'
       required: false
       type: text
     - default: "0.0"
@@ -332,6 +772,15 @@ additionalProperties:
       envKey: PRESENCE_PENALTY
       labelEn: Presence Penalty
       labelZh: 存在惩罚
+      label:
+        en: 'Presence Penalty'
+        zh: '存在惩罚'
+        zh-Hant: '存在懲罰'
+        ja: '出現ペナルティ'
+        ko: '존재 페널티'
+        ru: 'Штраф за присутствие'
+        ms: 'Penalti kehadiran'
+        pt-br: 'Penalidade de presença'
       required: false
       type: text
     - default: "30"
@@ -339,6 +788,15 @@ additionalProperties:
       envKey: REQUEST_TIMEOUT
       labelEn: Request Timeout
       labelZh: 请求超时时间
+      label:
+        en: 'Request Timeout'
+        zh: '请求超时时间'
+        zh-Hant: '請求逾時時間'
+        ja: 'リクエストタイムアウト'
+        ko: '요청 시간 초과'
+        ru: 'Тайм-аут запроса'
+        ms: 'Had masa permintaan'
+        pt-br: 'Tempo limite da solicitação'
       required: false
       type: number
     - default: "30"
@@ -346,6 +804,15 @@ additionalProperties:
       envKey: TIMEOUT
       labelEn: Timeout
       labelZh: 超时时间
+      label:
+        en: 'Timeout'
+        zh: '超时时间'
+        zh-Hant: '逾時時間'
+        ja: 'タイムアウト'
+        ko: '타임아웃'
+        ru: 'Тайм-аут'
+        ms: 'Had masa'
+        pt-br: 'Tempo limite'
       required: false
       type: number
     - default: "eb-instant"
@@ -353,6 +820,15 @@ additionalProperties:
       envKey: BAIDU_WENXIN_MODEL
       labelEn: Baidu Wenxin Model
       labelZh: 百度文心模型
+      label:
+        en: 'Baidu Wenxin Model'
+        zh: '百度文心模型'
+        zh-Hant: '百度文心模型'
+        ja: 'Baidu Wenxin モデル'
+        ko: 'Baidu Wenxin 모델'
+        ru: 'Модель Baidu Wenxin'
+        ms: 'Model Baidu Wenxin'
+        pt-br: 'Modelo Baidu Wenxin'
       required: false
       type: text
     - default: ""
@@ -360,6 +836,15 @@ additionalProperties:
       envKey: BAIDU_WENXIN_API_KEY
       labelEn: Baidu Wenxin API Key
       labelZh: 百度文心 API 密钥
+      label:
+        en: 'Baidu Wenxin API Key'
+        zh: '百度文心 API 密钥'
+        zh-Hant: '百度文心 API 密鑰'
+        ja: 'Baidu Wenxin API キー'
+        ko: 'Baidu Wenxin API 키'
+        ru: 'API-ключ Baidu Wenxin'
+        ms: 'Kunci API Baidu Wenxin'
+        pt-br: 'Chave da API Baidu Wenxin'
       required: false
       type: text
     - default: ""
@@ -367,6 +852,15 @@ additionalProperties:
       envKey: BAIDU_WENXIN_SECRET_KEY
       labelEn: Baidu Wenxin Secret Key
       labelZh: 百度文心 Secret 密钥
+      label:
+        en: 'Baidu Wenxin Secret Key'
+        zh: '百度文心 Secret 密钥'
+        zh-Hant: '百度文心 Secret 密鑰'
+        ja: 'Baidu Wenxin シークレットキー'
+        ko: 'Baidu Wenxin 시크릿 키'
+        ru: 'Секретный ключ Baidu Wenxin'
+        ms: 'Kunci Rahsia Baidu Wenxin'
+        pt-br: 'Chave secreta Baidu Wenxin'
       required: false
       type: text
     - default: ""
@@ -374,6 +868,15 @@ additionalProperties:
       envKey: XUNFEI_APP_ID
       labelEn: Xunfei App ID
       labelZh: 讯飞 App ID
+      label:
+        en: 'Xunfei App ID'
+        zh: '讯飞 App ID'
+        zh-Hant: '訊飛 App ID'
+        ja: 'Xunfei アプリ ID'
+        ko: 'Xunfei 앱 ID'
+        ru: 'ID приложения Xunfei'
+        ms: 'ID Apl Xunfei'
+        pt-br: 'ID do app Xunfei'
       required: false
       type: text
     - default: ""
@@ -381,6 +884,15 @@ additionalProperties:
       envKey: XUNFEI_API_KEY
       labelEn: Xunfei API Key
       labelZh: 讯飞 API 密钥
+      label:
+        en: 'Xunfei API Key'
+        zh: '讯飞 API 密钥'
+        zh-Hant: '訊飛 API 密鑰'
+        ja: 'Xunfei API キー'
+        ko: 'Xunfei API 키'
+        ru: 'API-ключ Xunfei'
+        ms: 'Kunci API Xunfei'
+        pt-br: 'Chave da API Xunfei'
       required: false
       type: text
     - default: ""
@@ -388,6 +900,15 @@ additionalProperties:
       envKey: XUNFEI_API_SECRET
       labelEn: Xunfei API Secret
       labelZh: 讯飞 API Secret
+      label:
+        en: 'Xunfei API Secret'
+        zh: '讯飞 API Secret'
+        zh-Hant: '訊飛 API Secret'
+        ja: 'Xunfei API シークレット'
+        ko: 'Xunfei API 시크릿'
+        ru: 'API-секрет Xunfei'
+        ms: 'Rahsia API Xunfei'
+        pt-br: 'Segredo da API Xunfei'
       required: false
       type: text
     - default: ""
@@ -395,6 +916,15 @@ additionalProperties:
       envKey: CLAUDE_API_COOKIE
       labelEn: Claude API Cookie
       labelZh: Claude API Cookie
+      label:
+        en: 'Claude API Cookie'
+        zh: 'Claude API Cookie'
+        zh-Hant: 'Claude API Cookie'
+        ja: 'Claude API クッキー'
+        ko: 'Claude API 쿠키'
+        ru: 'Cookie API Claude'
+        ms: 'Cookie API Claude'
+        pt-br: 'Cookie da API Claude'
       required: false
       type: text
     - default: ""
@@ -402,6 +932,15 @@ additionalProperties:
       envKey: CLAUDE_UUID
       labelEn: Claude UUID
       labelZh: Claude UUID
+      label:
+        en: 'Claude UUID'
+        zh: 'Claude UUID'
+        zh-Hant: 'Claude UUID'
+        ja: 'Claude UUID（識別子）'
+        ko: 'Claude UUID 식별자'
+        ru: 'UUID Claude'
+        ms: 'UUID Claude'
+        pt-br: 'UUID do Claude'
       required: false
       type: text
     - default: ""
@@ -409,6 +948,15 @@ additionalProperties:
       envKey: CLAUDE_API_KEY
       labelEn: Claude API Key
       labelZh: Claude API 密钥
+      label:
+        en: 'Claude API Key'
+        zh: 'Claude API 密钥'
+        zh-Hant: 'Claude API 密鑰'
+        ja: 'Claude API キー'
+        ko: 'Claude API 키'
+        ru: 'API-ключ Claude'
+        ms: 'Kunci API Claude'
+        pt-br: 'Chave da API Claude'
       required: false
       type: text
     - default: ""
@@ -416,6 +964,15 @@ additionalProperties:
       envKey: QWEN_ACCESS_KEY_ID
       labelEn: Qwen Access Key ID
       labelZh: 通义千问 Access Key ID
+      label:
+        en: 'Qwen Access Key ID'
+        zh: '通义千问 Access Key ID'
+        zh-Hant: '通义千问 Access Key ID'
+        ja: 'Qwen アクセスキー ID'
+        ko: 'Qwen 액세스 키 ID'
+        ru: 'ID ключа доступа Qwen'
+        ms: 'ID Kunci Akses Qwen'
+        pt-br: 'ID da chave de acesso Qwen'
       required: false
       type: text
     - default: ""
@@ -423,6 +980,15 @@ additionalProperties:
       envKey: QWEN_ACCESS_KEY_SECRET
       labelEn: Qwen Access Key Secret
       labelZh: 通义千问 Access Key Secret
+      label:
+        en: 'Qwen Access Key Secret'
+        zh: '通义千问 Access Key Secret'
+        zh-Hant: '通义千问 Access Key Secret'
+        ja: 'Qwen アクセスキー シークレット'
+        ko: 'Qwen 액세스 키 시크릿'
+        ru: 'Секрет ключа доступа Qwen'
+        ms: 'Rahsia Kunci Akses Qwen'
+        pt-br: 'Segredo da chave de acesso Qwen'
       required: false
       type: text
     - default: ""
@@ -430,6 +996,15 @@ additionalProperties:
       envKey: QWEN_AGENT_KEY
       labelEn: Qwen Agent Key
       labelZh: 通义千问 Agent Key
+      label:
+        en: 'Qwen Agent Key'
+        zh: '通义千问 Agent Key'
+        zh-Hant: '通义千问 Agent Key'
+        ja: 'Qwen エージェントキー'
+        ko: 'Qwen 에이전트 키'
+        ru: 'Ключ агента Qwen'
+        ms: 'Kunci Agen Qwen'
+        pt-br: 'Chave do agente Qwen'
       required: false
       type: text
     - default: ""
@@ -437,6 +1012,15 @@ additionalProperties:
       envKey: QWEN_APP_ID
       labelEn: Qwen App ID
       labelZh: 通义千问 App ID
+      label:
+        en: 'Qwen App ID'
+        zh: '通义千问 App ID'
+        zh-Hant: '通义千问 App ID'
+        ja: 'Qwen アプリ ID'
+        ko: 'Qwen 앱 ID'
+        ru: 'ID приложения Qwen'
+        ms: 'ID Apl Qwen'
+        pt-br: 'ID do app Qwen'
       required: false
       type: text
     - default: ""
@@ -444,6 +1028,15 @@ additionalProperties:
       envKey: QWEN_NODE_ID
       labelEn: Qwen Node ID
       labelZh: 通义千问 Node ID
+      label:
+        en: 'Qwen Node ID'
+        zh: '通义千问 Node ID'
+        zh-Hant: '通义千问 Node ID'
+        ja: 'Qwen ノード ID'
+        ko: 'Qwen 노드 ID'
+        ru: 'ID узла Qwen'
+        ms: 'ID Nod Qwen'
+        pt-br: 'ID do nó Qwen'
       required: false
       type: text
     - default: ""
@@ -451,6 +1044,15 @@ additionalProperties:
       envKey: DASHSCOPE_API_KEY
       labelEn: Dashscope API Key
       labelZh: Dashscope API 密钥
+      label:
+        en: 'Dashscope API Key'
+        zh: 'Dashscope API 密钥'
+        zh-Hant: 'Dashscope API 密鑰'
+        ja: 'Dashscope API キー'
+        ko: 'Dashscope API 키'
+        ru: 'API-ключ Dashscope'
+        ms: 'Kunci API Dashscope'
+        pt-br: 'Chave da API Dashscope'
       required: false
       type: text
     - default: ""
@@ -458,6 +1060,15 @@ additionalProperties:
       envKey: GEMINI_API_KEY
       labelEn: Gemini API Key
       labelZh: Gemini API 密钥
+      label:
+        en: 'Gemini API Key'
+        zh: 'Gemini API 密钥'
+        zh-Hant: 'Gemini API 密鑰'
+        ja: 'Gemini API キー'
+        ko: 'Gemini API 키'
+        ru: 'API-ключ Gemini'
+        ms: 'Kunci API Gemini'
+        pt-br: 'Chave da API Gemini'
       required: false
       type: text
     - default: "true"
@@ -465,66 +1076,200 @@ additionalProperties:
       envKey: WEWORK_SMART
       labelEn: WeWork Smart
       labelZh: WeWork 智能
+      label:
+        en: 'WeWork Smart'
+        zh: 'WeWork 智能'
+        zh-Hant: 'WeWork 智能'
+        ja: 'WeWork スマート'
+        ko: 'WeWork 스마트'
+        ru: 'Умный WeWork'
+        ms: 'WeWork Smart'
+        pt-br: 'WeWork Smart'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "true"
       edit: true
       envKey: SPEECH_RECOGNITION
       labelEn: Speech Recognition
       labelZh: 语音识别
+      label:
+        en: 'Speech Recognition'
+        zh: '语音识别'
+        zh-Hant: '語音識別'
+        ja: '音声認識'
+        ko: '음성 인식'
+        ru: 'Распознавание речи'
+        ms: 'Pengecaman suara'
+        pt-br: 'Reconhecimento de voz'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "false"
       edit: true
       envKey: GROUP_SPEECH_RECOGNITION
       labelEn: Group Speech Recognition
       labelZh: 群聊语音识别
+      label:
+        en: 'Group Speech Recognition'
+        zh: '群聊语音识别'
+        zh-Hant: '群聊語音識別'
+        ja: 'グループ音声認識'
+        ko: '그룹 음성 인식'
+        ru: 'Групповое распознавание речи'
+        ms: 'Pengecaman suara kumpulan'
+        pt-br: 'Reconhecimento de voz em grupo'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "false"
       edit: true
       envKey: VOICE_REPLY_VOICE
       labelEn: Speech Response Speech
       labelZh: 语音回复语音
+      label:
+        en: 'Speech Response Speech'
+        zh: '语音回复语音'
+        zh-Hant: '語音回覆語音'
+        ja: '音声で返信'
+        ko: '음성으로 응답'
+        ru: 'Ответ голосом'
+        ms: 'Balas dengan suara'
+        pt-br: 'Responder com voz'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "false"
       edit: true
       envKey: ALWAYS_REPLY_VOICE
       labelEn: Always Reply Voice
       labelZh: 总是语音回复
+      label:
+        en: 'Always Reply Voice'
+        zh: '总是语音回复'
+        zh-Hant: '總是語音回覆'
+        ja: '常に音声で返信'
+        ko: '항상 음성으로 응답'
+        ru: 'Всегда отвечать голосом'
+        ms: 'Sentiasa balas dengan suara'
+        pt-br: 'Sempre responder com voz'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "openai"
       edit: true
       envKey: VOICE_TO_TEXT
       labelEn: Speech Recognition Engines
       labelZh: 语音识别引擎
+      label:
+        en: 'Speech Recognition Engines'
+        zh: '语音识别引擎'
+        zh-Hant: '語音識別引擎'
+        ja: '音声認識エンジン'
+        ko: '음성 인식 엔진'
+        ru: 'Движки распознавания речи'
+        ms: 'Enjin pengecaman suara'
+        pt-br: 'Mecanismos de reconhecimento de voz'
       required: false
       type: text
     - default: "false"
@@ -532,6 +1277,15 @@ additionalProperties:
       envKey: TEXT_TO_VOICE
       labelEn: Speech Synthesis Engines
       labelZh: 语音合成引擎
+      label:
+        en: 'Speech Synthesis Engines'
+        zh: '语音合成引擎'
+        zh-Hant: '語音合成引擎'
+        ja: '音声合成エンジン'
+        ko: '음성 합성 엔진'
+        ru: 'Движки синтеза речи'
+        ms: 'Enjin sintesis suara'
+        pt-br: 'Mecanismos de síntese de voz'
       required: false
       type: text
     - default: "tts-1"
@@ -539,6 +1293,15 @@ additionalProperties:
       envKey: TEXT_TO_VOICE_MODEL
       labelEn: Text to Voice Model
       labelZh: 文字转语音模型
+      label:
+        en: 'Text to Voice Model'
+        zh: '文字转语音模型'
+        zh-Hant: '文字轉語音模型'
+        ja: 'テキスト読み上げモデル'
+        ko: '텍스트 음성 변환 모델'
+        ru: 'Модель преобразования текста в речь'
+        ms: 'Model teks ke suara'
+        pt-br: 'Modelo de texto para voz'
       required: false
       type: text
     - default: "alloy"
@@ -546,6 +1309,15 @@ additionalProperties:
       envKey: TTS_VOICE_ID
       labelEn: TTS Voice ID
       labelZh: TTS 语音 ID
+      label:
+        en: 'TTS Voice ID'
+        zh: 'TTS 语音 ID'
+        zh-Hant: 'TTS 語音 ID'
+        ja: 'TTS 音声 ID'
+        ko: 'TTS 음성 ID'
+        ru: 'ID голоса TTS'
+        ms: 'ID suara TTS'
+        pt-br: 'ID de voz TTS'
       required: false
       type: text
     - default: ""
@@ -553,6 +1325,15 @@ additionalProperties:
       envKey: BAIDU_APP_ID
       labelEn: Baidu App ID
       labelZh: 百度 App ID
+      label:
+        en: 'Baidu App ID'
+        zh: '百度 App ID'
+        zh-Hant: '百度 App ID'
+        ja: 'Baidu アプリ ID'
+        ko: 'Baidu 앱 ID'
+        ru: 'Идентификатор приложения Baidu'
+        ms: 'ID Aplikasi Baidu'
+        pt-br: 'ID do app Baidu'
       required: false
       type: text
     - default: ""
@@ -560,6 +1341,15 @@ additionalProperties:
       envKey: BAIDU_API_KEY
       labelEn: Baidu API Key
       labelZh: 百度 API 密钥
+      label:
+        en: 'Baidu API Key'
+        zh: '百度 API 密钥'
+        zh-Hant: '百度 API 密鑰'
+        ja: 'Baidu API キー'
+        ko: 'Baidu API 키'
+        ru: 'API-ключ Baidu'
+        ms: 'Kunci API Baidu'
+        pt-br: 'Chave da API Baidu'
       required: false
       type: text
     - default: ""
@@ -567,12 +1357,31 @@ additionalProperties:
       envKey: BAIDU_SECRET_KEY
       labelEn: Baidu Secret Key
       labelZh: 百度 Secret 密钥
+      label:
+        en: 'Baidu Secret Key'
+        zh: '百度 Secret 密钥'
+        zh-Hant: '百度 Secret 密鑰'
+        ja: 'Baidu シークレットキー'
+        ko: 'Baidu 시크릿 키'
+        ru: 'Секретный ключ Baidu'
+        ms: 'Kunci Rahsia Baidu'
+        pt-br: 'Chave secreta Baidu'
       required: false
       type: text
     - default: "1537"
       edit: true
       envKey: BAIDU_DEV_PID
+      labelEn: Baidu Dev PID
       labelZh: Baidu Dev PID
+      label:
+        en: 'Baidu Dev PID'
+        zh: '百度 Dev PID'
+        zh-Hant: '百度 Dev PID'
+        ja: 'Baidu Dev PID（開発PID）'
+        ko: 'Baidu Dev PID(개발 PID)'
+        ru: 'PID Baidu Dev'
+        ms: 'PID Baidu Dev'
+        pt-br: 'PID Baidu Dev'
       required: false
       type: text
     - default: ""
@@ -580,6 +1389,15 @@ additionalProperties:
       envKey: AZURE_VOICE_API_KEY
       labelEn: Azure Voice API Key
       labelZh: Azure 语音 API 密钥
+      label:
+        en: 'Azure Voice API Key'
+        zh: 'Azure 语音 API 密钥'
+        zh-Hant: 'Azure 語音 API 密鑰'
+        ja: 'Azure 音声 API キー'
+        ko: 'Azure 음성 API 키'
+        ru: 'API-ключ Azure Speech'
+        ms: 'Kunci API Azure Speech'
+        pt-br: 'Chave da API Azure Speech'
       required: false
       type: text
     - default: "japaneast"
@@ -587,6 +1405,15 @@ additionalProperties:
       envKey: AZURE_VOICE_REGION
       labelEn: Azure Voice Region
       labelZh: Azure 语音区域
+      label:
+        en: 'Azure Voice Region'
+        zh: 'Azure 语音区域'
+        zh-Hant: 'Azure 語音區域'
+        ja: 'Azure 音声リージョン'
+        ko: 'Azure 음성 지역'
+        ru: 'Регион Azure Voice'
+        ms: 'Kawasan Azure Voice'
+        pt-br: 'Região do Azure Voice'
       required: false
       type: text
     - default: ""
@@ -594,6 +1421,15 @@ additionalProperties:
       envKey: XI_API_KEY
       labelEn: Elevenlabs API Key
       labelZh: Elevenlabs API 密钥
+      label:
+        en: 'Elevenlabs API Key'
+        zh: 'Elevenlabs API 密钥'
+        zh-Hant: 'Elevenlabs API 密鑰'
+        ja: 'Elevenlabs API キー'
+        ko: 'Elevenlabs API 키'
+        ru: 'API-ключ Elevenlabs'
+        ms: 'Kunci API Elevenlabs'
+        pt-br: 'Chave da API Elevenlabs'
       required: false
       type: text
     - default: ""
@@ -601,6 +1437,15 @@ additionalProperties:
       envKey: XI_VOICE_ID
       labelEn: Elevenlabs Voice ID
       labelZh: Elevenlabs 语音 ID
+      label:
+        en: 'Elevenlabs Voice ID'
+        zh: 'Elevenlabs 语音 ID'
+        zh-Hant: 'Elevenlabs 語音 ID'
+        ja: 'Elevenlabs 音声 ID'
+        ko: 'Elevenlabs 음성 ID'
+        ru: 'ID голоса Elevenlabs'
+        ms: 'ID suara Elevenlabs'
+        pt-br: 'ID de voz do Elevenlabs'
       required: false
       type: text
     - default: "false"
@@ -608,18 +1453,52 @@ additionalProperties:
       envKey: CHAT_TIME_MODULE
       labelEn: Chat Time Module
       labelZh: 服务时间限制
+      label:
+        en: 'Chat Time Module'
+        zh: '服务时间限制'
+        zh-Hant: '服務時間限制'
+        ja: 'サービス時間制限'
+        ko: '서비스 시간 제한'
+        ru: 'Ограничение времени обслуживания'
+        ms: 'Had masa perkhidmatan'
+        pt-br: 'Limite de horário de atendimento'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "00:00"
       edit: true
       envKey: CHAT_START_TIME
       labelEn: Chat Start Time
       labelZh: 服务开始时间
+      label:
+        en: 'Chat Start Time'
+        zh: '服务开始时间'
+        zh-Hant: '服務開始時間'
+        ja: 'サービス開始時間'
+        ko: '서비스 시작 시간'
+        ru: 'Время начала обслуживания'
+        ms: 'Masa mula perkhidmatan'
+        pt-br: 'Horário de início do atendimento'
       required: false
       type: text
     - default: "24:00"
@@ -627,6 +1506,15 @@ additionalProperties:
       envKey: CHAT_STOP_TIME
       labelEn: Chat Stop Time
       labelZh: 服务结束时间
+      label:
+        en: 'Chat Stop Time'
+        zh: '服务结束时间'
+        zh-Hant: '服務結束時間'
+        ja: 'サービス終了時間'
+        ko: '서비스 종료 시간'
+        ru: 'Время окончания обслуживания'
+        ms: 'Masa tamat perkhidmatan'
+        pt-br: 'Horário de término do atendimento'
       required: false
       type: text
     - default: "baidu"
@@ -634,6 +1522,15 @@ additionalProperties:
       envKey: TRANSLATE
       labelEn: Translate
       labelZh: 翻译引擎
+      label:
+        en: 'Translate'
+        zh: '翻译引擎'
+        zh-Hant: '翻譯引擎'
+        ja: '翻訳エンジン'
+        ko: '번역 엔진'
+        ru: 'Движок перевода'
+        ms: 'Enjin terjemahan'
+        pt-br: 'Mecanismo de tradução'
       required: false
       type: text
     - default: ""
@@ -641,6 +1538,15 @@ additionalProperties:
       envKey: BAIDU_TRANSLATE_APP_ID
       labelEn: Baidu Translate App ID
       labelZh: 百度翻译 App ID
+      label:
+        en: 'Baidu Translate App ID'
+        zh: '百度翻译 App ID'
+        zh-Hant: '百度翻译 App ID'
+        ja: 'Baidu 翻訳 App ID'
+        ko: 'Baidu 번역 앱 ID'
+        ru: 'ID приложения Baidu Translate'
+        ms: 'ID aplikasi Baidu Translate'
+        pt-br: 'ID do app do Baidu Translate'
       required: false
       type: text
     - default: ""
@@ -648,6 +1554,15 @@ additionalProperties:
       envKey: BAIDU_TRANSLATE_APP_KEY
       labelEn: Baidu Translate App Key
       labelZh: 百度翻译 App 密钥
+      label:
+        en: 'Baidu Translate App Key'
+        zh: '百度翻译 App 密钥'
+        zh-Hant: '百度翻译 App 密钥'
+        ja: 'Baidu 翻訳アプリキー'
+        ko: 'Baidu 번역 앱 키'
+        ru: 'Ключ приложения Baidu Translate'
+        ms: 'Kunci Apl Terjemahan Baidu'
+        pt-br: 'Chave do app do Baidu Translate'
       required: false
       type: text
     - default: "false"
@@ -655,18 +1570,52 @@ additionalProperties:
       envKey: HOT_RELOAD
       labelEn: Hot Reload
       labelZh: 热重载
+      label:
+        en: 'Hot Reload'
+        zh: '热重载'
+        zh-Hant: '熱重載'
+        ja: 'ホットリロード'
+        ko: '핫 리로드'
+        ru: 'Горячая перезагрузка'
+        ms: 'Muat semula panas'
+        pt-br: 'Recarga a quente'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ""
       edit: true
       envKey: WECHATY_PUPPET_SERVICE_TOKEN
       labelEn: Wechaty Puppet Service Token
       labelZh: Wechaty 机器人服务 Token
+      label:
+        en: 'Wechaty Puppet Service Token'
+        zh: 'Wechaty 机器人服务 Token'
+        zh-Hant: 'Wechaty 機器人服務 Token'
+        ja: 'Wechaty Puppet サービス トークン'
+        ko: 'Wechaty 퍼펫 서비스 토큰'
+        ru: 'Токен сервиса Wechaty Puppet'
+        ms: 'Token perkhidmatan Wechaty Puppet'
+        pt-br: 'Token do serviço Wechaty Puppet'
       required: false
       type: text
     - default: ""
@@ -674,6 +1623,15 @@ additionalProperties:
       envKey: WECHATMP_TOKEN
       labelEn: WechatMP Token
       labelZh: 微信公众平台 Token
+      label:
+        en: 'WechatMP Token'
+        zh: '微信公众平台 Token'
+        zh-Hant: '微信公眾平台 Token'
+        ja: 'WechatMP トークン'
+        ko: 'WechatMP 토큰'
+        ru: 'Токен WechatMP'
+        ms: 'Token WechatMP'
+        pt-br: 'Token do WechatMP'
       required: false
       type: text
     - default: "8080"
@@ -681,6 +1639,15 @@ additionalProperties:
       envKey: WECHATMP_PORT
       labelEn: WechatMP Port
       labelZh: 微信公众平台端口
+      label:
+        en: 'WechatMP Port'
+        zh: '微信公众平台端口'
+        zh-Hant: '微信公眾平台埠'
+        ja: 'WechatMP ポート'
+        ko: 'WechatMP 포트'
+        ru: 'Порт WechatMP'
+        ms: 'Port WechatMP'
+        pt-br: 'Porta do WechatMP'
       required: false
       type: number
     - default: ""
@@ -688,6 +1655,15 @@ additionalProperties:
       envKey: WECHATMP_APP_ID
       labelEn: WechatMP App ID
       labelZh: 微信公众平台 App ID
+      label:
+        en: 'WechatMP App ID'
+        zh: '微信公众平台 App ID'
+        zh-Hant: '微信公眾平台 App ID'
+        ja: 'WechatMP アプリ ID'
+        ko: 'WechatMP 앱 ID'
+        ru: 'ID приложения WechatMP'
+        ms: 'ID Apl WechatMP'
+        pt-br: 'ID do app WechatMP'
       required: false
       type: text
     - default: ""
@@ -695,6 +1671,15 @@ additionalProperties:
       envKey: WECHATMP_APP_SECRET
       labelEn: WechatMP App Secret
       labelZh: 微信公众平台 App Secret
+      label:
+        en: 'WechatMP App Secret'
+        zh: '微信公众平台 App Secret'
+        zh-Hant: '微信公眾平台 App Secret'
+        ja: 'WechatMP アプリ シークレット'
+        ko: 'WechatMP 앱 시크릿'
+        ru: 'Секрет приложения WechatMP'
+        ms: 'Rahsia Apl WechatMP'
+        pt-br: 'Segredo do app WechatMP'
       required: false
       type: text
     - default: ""
@@ -702,6 +1687,15 @@ additionalProperties:
       envKey: WECHATMP_AES_KEY
       labelEn: WechatMP AES Key
       labelZh: 微信公众平台 AES Key
+      label:
+        en: 'WechatMP AES Key'
+        zh: '微信公众平台 AES Key'
+        zh-Hant: '微信公眾平台 AES Key'
+        ja: 'WechatMP AES キー'
+        ko: 'WechatMP AES 키'
+        ru: 'AES-ключ WechatMP'
+        ms: 'Kunci AES WechatMP'
+        pt-br: 'Chave AES do WechatMP'
       required: false
       type: text
     - default: ""
@@ -709,6 +1703,15 @@ additionalProperties:
       envKey: WECHATCOM_CORP_ID
       labelEn: Wechatcom Corp ID
       labelZh: 企业微信公司 Corp ID
+      label:
+        en: 'Wechatcom Corp ID'
+        zh: '企业微信公司 Corp ID'
+        zh-Hant: '企業微信公司 Corp ID'
+        ja: 'WeCom 企業 ID'
+        ko: 'WeCom 기업 ID'
+        ru: 'Корп. ID WeCom'
+        ms: 'ID Korporat WeCom'
+        pt-br: 'ID corporativo do WeCom'
       required: false
       type: text
     - default: ""
@@ -716,6 +1719,15 @@ additionalProperties:
       envKey: WECHATCOMAPP_TOKEN
       labelEn: WechatcomApp Token
       labelZh: 企业微信 App Token
+      label:
+        en: 'WechatcomApp Token'
+        zh: '企业微信 App Token'
+        zh-Hant: '企業微信 App Token'
+        ja: 'WeCom アプリ トークン'
+        ko: 'WeCom 앱 토큰'
+        ru: 'Токен приложения WeCom'
+        ms: 'Token Apl WeCom'
+        pt-br: 'Token do app WeCom'
       required: false
       type: text
     - default: "9898"
@@ -723,6 +1735,15 @@ additionalProperties:
       envKey: WECHATCOMAPP_PORT
       labelEn: WechatcomApp Port
       labelZh: 企业微信 App 端口
+      label:
+        en: 'WechatcomApp Port'
+        zh: '企业微信 App 端口'
+        zh-Hant: '企業微信 App 埠'
+        ja: 'WeCom アプリ ポート'
+        ko: 'WeCom 앱 포트'
+        ru: 'Порт приложения WeCom'
+        ms: 'Port Apl WeCom'
+        pt-br: 'Porta do app WeCom'
       required: false
       type: number
     - default: ""
@@ -730,6 +1751,15 @@ additionalProperties:
       envKey: WECHATCOMAPP_SECRET
       labelEn: WechatcomApp Secret
       labelZh: 企业微信 App Secret
+      label:
+        en: 'WechatcomApp Secret'
+        zh: '企业微信 App Secret'
+        zh-Hant: '企業微信 App Secret'
+        ja: 'WeCom アプリ シークレット'
+        ko: 'WeCom 앱 시크릿'
+        ru: 'Секрет приложения WeCom'
+        ms: 'Rahsia Apl WeCom'
+        pt-br: 'Segredo do app WeCom'
       required: false
       type: text
     - default: ""
@@ -737,6 +1767,15 @@ additionalProperties:
       envKey: WECHATCOMAPP_AGENT_ID
       labelEn: WechatcomApp Agent ID
       labelZh: 企业微信 App Agent ID
+      label:
+        en: 'WechatcomApp Agent ID'
+        zh: '企业微信 App Agent ID'
+        zh-Hant: '企業微信 App Agent ID'
+        ja: 'WeCom アプリ エージェント ID'
+        ko: 'WeCom 앱 에이전트 ID'
+        ru: 'ID агента приложения WeCom'
+        ms: 'ID ejen Apl WeCom'
+        pt-br: 'ID do agente do app WeCom'
       required: false
       type: text
     - default: ""
@@ -744,6 +1783,15 @@ additionalProperties:
       envKey: WECHATCOMAPP_AES_KEY
       labelEn: WechatcomApp AES Key
       labelZh: 企业微信 App AES Key
+      label:
+        en: 'WechatcomApp AES Key'
+        zh: '企业微信 App AES Key'
+        zh-Hant: '企業微信 App AES Key'
+        ja: 'WeCom アプリ AES キー'
+        ko: 'WeCom 앱 AES 키'
+        ru: 'AES-ключ приложения WeCom'
+        ms: 'Kunci AES Apl WeCom'
+        pt-br: 'Chave AES do app WeCom'
       required: false
       type: text
     - default: "80"
@@ -751,6 +1799,15 @@ additionalProperties:
       envKey: FEISHU_PORT
       labelEn: Feishu Port
       labelZh: 飞书 Bot 监听端口
+      label:
+        en: 'Feishu Port'
+        zh: '飞书 Bot 监听端口'
+        zh-Hant: '飛書 Bot 監聽埠'
+        ja: 'Feishu ポート'
+        ko: 'Feishu 포트'
+        ru: 'Порт Feishu'
+        ms: 'Port Feishu'
+        pt-br: 'Porta do Feishu'
       required: false
       type: number
     - default: ""
@@ -758,6 +1815,15 @@ additionalProperties:
       envKey: FEISHU_APP_ID
       labelEn: Feishu App ID
       labelZh: 飞书机器人应用 App ID
+      label:
+        en: 'Feishu App ID'
+        zh: '飞书机器人应用 App ID'
+        zh-Hant: '飛書機器人應用 App ID'
+        ja: 'Feishu アプリ ID'
+        ko: 'Feishu 앱 ID'
+        ru: 'ID приложения Feishu'
+        ms: 'ID Apl Feishu'
+        pt-br: 'ID do app Feishu'
       required: false
       type: text
     - default: ""
@@ -765,6 +1831,15 @@ additionalProperties:
       envKey: FEISHU_APP_SECRET
       labelEn: Feishu App Secret
       labelZh: 飞书机器人 App Secret
+      label:
+        en: 'Feishu App Secret'
+        zh: '飞书机器人 App Secret'
+        zh-Hant: '飛書機器人 App Secret'
+        ja: 'Feishu アプリ シークレット'
+        ko: 'Feishu 앱 시크릿'
+        ru: 'Секрет приложения Feishu'
+        ms: 'Rahsia Apl Feishu'
+        pt-br: 'Segredo do app Feishu'
       required: false
       type: text
     - default: ""
@@ -772,6 +1847,15 @@ additionalProperties:
       envKey: FEISHU_TOKEN
       labelEn: Feishu Token
       labelZh: 飞书 Verification Token
+      label:
+        en: 'Feishu Token'
+        zh: '飞书 Verification Token'
+        zh-Hant: '飛書 Verification Token'
+        ja: 'Feishu 検証トークン'
+        ko: 'Feishu 검증 토큰'
+        ru: 'Проверочный токен Feishu'
+        ms: 'Token pengesahan Feishu'
+        pt-br: 'Token de verificação Feishu'
       required: false
       type: text
     - default: ""
@@ -779,6 +1863,15 @@ additionalProperties:
       envKey: FEISHU_BOT_NAME
       labelEn: Feishu Bot Name
       labelZh: 飞书机器人名称
+      label:
+        en: 'Feishu Bot Name'
+        zh: '飞书机器人名称'
+        zh-Hant: '飛書機器人名稱'
+        ja: 'Feishu ボット名'
+        ko: 'Feishu 봇 이름'
+        ru: 'Имя бота Feishu'
+        ms: 'Nama bot Feishu'
+        pt-br: 'Nome do bot Feishu'
       required: false
       type: text
     - default: ""
@@ -786,6 +1879,15 @@ additionalProperties:
       envKey: DINGTALK_CLIENT_ID
       labelEn: Dingtalk Client ID
       labelZh: 钉钉机器人 Client ID
+      label:
+        en: 'Dingtalk Client ID'
+        zh: '钉钉机器人 Client ID'
+        zh-Hant: '釘釘機器人 Client ID'
+        ja: 'DingTalk クライアント ID'
+        ko: 'DingTalk 클라이언트 ID'
+        ru: 'ID клиента DingTalk'
+        ms: 'ID Klien DingTalk'
+        pt-br: 'ID do cliente DingTalk'
       required: false
       type: text
     - default: ""
@@ -793,6 +1895,15 @@ additionalProperties:
       envKey: DINGTALK_CLIENT_SECRET
       labelEn: Dingtalk Client Secret
       labelZh: 钉钉机器人 Client Secret
+      label:
+        en: 'Dingtalk Client Secret'
+        zh: '钉钉机器人 Client Secret'
+        zh-Hant: '釘釘機器人 Client Secret'
+        ja: 'DingTalk クライアント シークレット'
+        ko: 'DingTalk 클라이언트 시크릿'
+        ru: 'Секрет клиента DingTalk'
+        ms: 'Rahsia Klien DingTalk'
+        pt-br: 'Segredo do cliente DingTalk'
       required: false
       type: text
     - default: "false"
@@ -800,18 +1911,52 @@ additionalProperties:
       envKey: DINGTALK_CARD_ENABLED
       labelEn: Dingtalk Card Enabled
       labelZh: 钉钉卡片开启
+      label:
+        en: 'Dingtalk Card Enabled'
+        zh: '钉钉卡片开启'
+        zh-Hant: '釘釘卡片開啟'
+        ja: 'DingTalk カード有効'
+        ko: 'DingTalk 카드 활성화'
+        ru: 'Включить карточки DingTalk'
+        ms: 'Dayakan kad DingTalk'
+        pt-br: 'Ativar cartão do DingTalk'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ["#清除记忆"]
       edit: true
       envKey: CLEAR_MEMORY_COMMANDS
       labelEn: Clear Memory Commands
       labelZh: 清除记忆指令
+      label:
+        en: 'Clear Memory Commands'
+        zh: '清除记忆指令'
+        zh-Hant: '清除記憶指令'
+        ja: '記憶クリアコマンド'
+        ko: '기억 삭제 명령'
+        ru: 'Команды очистки памяти'
+        ms: 'Arahan kosongkan ingatan'
+        pt-br: 'Comandos para limpar memória'
       required: false
       type: text
     - default: "wx"
@@ -819,6 +1964,15 @@ additionalProperties:
       envKey: CHANNEL_TYPE
       labelEn: Channel Type
       labelZh: 通道类型
+      label:
+        en: 'Channel Type'
+        zh: '通道类型'
+        zh-Hant: '通道类型'
+        ja: 'チャネルタイプ'
+        ko: '채널 유형'
+        ru: 'Тип канала'
+        ms: 'Jenis saluran'
+        pt-br: 'Tipo de canal'
       required: true
       type: select
       values:
@@ -841,6 +1995,15 @@ additionalProperties:
       envKey: SUBSCRIBE_MSG
       labelEn: Subscribe Message
       labelZh: 订阅消息
+      label:
+        en: 'Subscribe Message'
+        zh: '订阅消息'
+        zh-Hant: '訂閱訊息'
+        ja: '購読メッセージ'
+        ko: '구독 메시지'
+        ru: 'Сообщение подписки'
+        ms: 'Mesej langganan'
+        pt-br: 'Mensagem de inscrição'
       required: false
       type: text
     - default: "false"
@@ -848,18 +2011,52 @@ additionalProperties:
       envKey: DEBUG
       labelEn: Debug
       labelZh: 调试模式
+      label:
+        en: 'Debug'
+        zh: '调试模式'
+        zh-Hant: '調試模式'
+        ja: 'デバッグモード'
+        ko: '디버그 모드'
+        ru: 'Режим отладки'
+        ms: 'Mod nyahpepijat'
+        pt-br: 'Modo de depuração'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ""
       edit: true
       envKey: APPDATA_DIR
       labelEn: Appdata Directory
       labelZh: 数据目录
+      label:
+        en: 'Appdata Directory'
+        zh: '数据目录'
+        zh-Hant: '資料目錄'
+        ja: 'データディレクトリ'
+        ko: '데이터 디렉터리'
+        ru: 'Каталог данных'
+        ms: 'Direktori data'
+        pt-br: 'Diretório de dados'
       required: false
       type: text
     - default: "$"
@@ -867,6 +2064,15 @@ additionalProperties:
       envKey: PLUGIN_TRIGGER_PREFIX
       labelEn: Plugin Trigger Prefix
       labelZh: 插件触发前缀
+      label:
+        en: 'Plugin Trigger Prefix'
+        zh: '插件触发前缀'
+        zh-Hant: '外掛觸發前綴'
+        ja: 'プラグイントリガー接頭辞'
+        ko: '플러그인 트리거 접두사'
+        ru: 'Префикс триггера плагина'
+        ms: 'Awalan pencetus pemalam'
+        pt-br: 'Prefixo de gatilho do plugin'
       required: false
       type: text
     - default: "false"
@@ -874,18 +2080,52 @@ additionalProperties:
       envKey: USE_GLOBAL_PLUGIN_CONFIG
       labelEn: Use Global Plugin Config
       labelZh: 使用全局插件配置
+      label:
+        en: 'Use Global Plugin Config'
+        zh: '使用全局插件配置'
+        zh-Hant: '使用全域外掛配置'
+        ja: 'グローバルプラグイン設定を使用'
+        ko: '전역 플러그인 설정 사용'
+        ru: 'Использовать глобальную конфигурацию плагина'
+        ms: 'Guna konfigurasi pemalam global'
+        pt-br: 'Usar configuração global do plugin'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: "3"
       edit: true
       envKey: MAX_MEDIA_SEND_COUNT
       labelEn: Max Media Send Count
       labelZh: 单次最大发送媒体资源数量
+      label:
+        en: 'Max Media Send Count'
+        zh: '单次最大发送媒体资源数量'
+        zh-Hant: '單次最大發送媒體資源數量'
+        ja: '1回の送信での最大メディア数'
+        ko: '한 번에 전송할 최대 미디어 수'
+        ru: 'Макс. медиа за отправку'
+        ms: 'Jumlah maksimum media setiap hantar'
+        pt-br: 'Máximo de mídia por envio'
       required: false
       type: number
     - default: "1"
@@ -893,6 +2133,15 @@ additionalProperties:
       envKey: MEDIA_SEND_INTERVAL
       labelEn: Media Send Interval
       labelZh: 发送图片事件间隔（秒）
+      label:
+        en: 'Media Send Interval'
+        zh: '发送图片事件间隔（秒）'
+        zh-Hant: '發送圖片事件間隔（秒）'
+        ja: 'メディア送信間隔（秒）'
+        ko: '미디어 전송 간격(초)'
+        ru: 'Интервал отправки медиа (с)'
+        ms: 'Selang hantar media (saat)'
+        pt-br: 'Intervalo de envio de mídia (s)'
       required: false
       type: number
     - default: ""
@@ -900,6 +2149,15 @@ additionalProperties:
       envKey: ZHIPU_AI_API_KEY
       labelEn: Zhipu AI API Key
       labelZh: 智谱 AI API 密钥
+      label:
+        en: 'Zhipu AI API Key'
+        zh: '智谱 AI API 密钥'
+        zh-Hant: '智譜 AI API 密鑰'
+        ja: 'Zhipu AI API キー'
+        ko: 'Zhipu AI API 키'
+        ru: 'API-ключ Zhipu AI'
+        ms: 'Kunci API Zhipu AI'
+        pt-br: 'Chave da API Zhipu AI'
       required: false
       type: text
     - default: "https://open.bigmodel.cn/api/paas/v4"
@@ -907,6 +2165,15 @@ additionalProperties:
       envKey: ZHIPU_AI_API_BASE
       labelEn: Zhipu AI API Base
       labelZh: 智谱 AI API 地址
+      label:
+        en: 'Zhipu AI API Base'
+        zh: '智谱 AI API 地址'
+        zh-Hant: '智譜 AI API 位址'
+        ja: 'Zhipu AI API アドレス'
+        ko: 'Zhipu AI API 주소'
+        ru: 'Адрес API Zhipu AI'
+        ms: 'Alamat API Zhipu AI'
+        pt-br: 'Endereço da API Zhipu AI'
       required: false
       type: text
     - default: ""
@@ -914,6 +2181,15 @@ additionalProperties:
       envKey: MOONSHOT_API_KEY
       labelEn: Moonshot API Key
       labelZh: Moonshot API 密钥
+      label:
+        en: 'Moonshot API Key'
+        zh: 'Moonshot API 密钥'
+        zh-Hant: 'Moonshot API 密鑰'
+        ja: 'Moonshot API キー'
+        ko: 'Moonshot API 키'
+        ru: 'API-ключ Moonshot'
+        ms: 'Kunci API Moonshot'
+        pt-br: 'Chave da API Moonshot'
       required: false
       type: text
     - default: "https://api.moonshot.cn/v1/chat/completions"
@@ -921,6 +2197,15 @@ additionalProperties:
       envKey: MOONSHOT_BASE_URL
       labelEn: Moonshot Base URL
       labelZh: Moonshot API 地址
+      label:
+        en: 'Moonshot Base URL'
+        zh: 'Moonshot API 地址'
+        zh-Hant: 'Moonshot API 位址'
+        ja: 'Moonshot API アドレス'
+        ko: 'Moonshot API 주소'
+        ru: 'Адрес API Moonshot'
+        ms: 'Alamat API Moonshot'
+        pt-br: 'Endereço da API Moonshot'
       required: false
       type: text
     - default: "false"
@@ -928,18 +2213,52 @@ additionalProperties:
       envKey: USE_LINKAI
       labelEn: Use LinkAI
       labelZh: 使用 LinkAI
+      label:
+        en: 'Use LinkAI'
+        zh: '使用 LinkAI'
+        zh-Hant: '使用 LinkAI'
+        ja: 'LinkAI を使用'
+        ko: 'LinkAI 사용'
+        ru: 'Использовать LinkAI'
+        ms: 'Guna LinkAI'
+        pt-br: 'Usar LinkAI'
       required: true
       type: select
       values:
-        - label: "True"
+        - label:
+            en: 'True'
+            zh: '是'
+            zh-Hant: '是'
+            ja: 'はい'
+            ko: '예'
+            ru: 'Да'
+            ms: 'Ya'
+            pt-br: 'Sim'
           value: "true"
-        - label: "False"
+        - label:
+            en: 'False'
+            zh: '否'
+            zh-Hant: '否'
+            ja: 'いいえ'
+            ko: '아니요'
+            ru: 'Нет'
+            ms: 'Tidak'
+            pt-br: 'Não'
           value: "false"
     - default: ""
       edit: true
       envKey: LINKAI_API_KEY
       labelEn: LinkAI API Key
       labelZh: LinkAI API 密钥
+      label:
+        en: 'LinkAI API Key'
+        zh: 'LinkAI API 密钥'
+        zh-Hant: 'LinkAI API 密鑰'
+        ja: 'LinkAI API キー'
+        ko: 'LinkAI API 키'
+        ru: 'API-ключ LinkAI'
+        ms: 'Kunci API LinkAI'
+        pt-br: 'Chave da API LinkAI'
       required: false
       type: text
     - default: ""
@@ -947,6 +2266,15 @@ additionalProperties:
       envKey: LINKAI_APP_CODE
       labelEn: LinkAI App Code
       labelZh: LinkAI App Code
+      label:
+        en: 'LinkAI App Code'
+        zh: 'LinkAI 应用码'
+        zh-Hant: 'LinkAI 應用碼'
+        ja: 'LinkAI アプリコード'
+        ko: 'LinkAI 앱 코드'
+        ru: 'Код приложения LinkAI'
+        ms: 'Kod aplikasi LinkAI'
+        pt-br: 'Código do app LinkAI'
       required: false
       type: text
     - default: "https://api.link-ai.tech"
@@ -954,5 +2282,14 @@ additionalProperties:
       envKey: LINKAI_API_BASE
       labelEn: LinkAI API Base
       labelZh: LinkAI API 地址
+      label:
+        en: 'LinkAI API Base'
+        zh: 'LinkAI API 地址'
+        zh-Hant: 'LinkAI API 位址'
+        ja: 'LinkAI API アドレス'
+        ko: 'LinkAI API 주소'
+        ru: 'Адрес API LinkAI'
+        ms: 'Alamat API LinkAI'
+        pt-br: 'Endereço da API LinkAI'
       required: false
       type: text

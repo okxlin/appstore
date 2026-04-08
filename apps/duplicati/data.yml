@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.duplicati.com
   github: https://github.com/duplicati/duplicati
   document: https://docs.duplicati.com
+  architectures:
+    - amd64
+  description:
+    en: "Store securely encrypted backups on cloud storage services"
+    zh: "在云存储服务上安全地存储加密备份"
+    zh-Hant: "在雲端儲存服務上安全地存放加密備份"
+    ja: "クラウドストレージサービスに暗号化バックアップを安全に保存"
+    ko: "클라우드 스토리지 서비스에 암호화 백업을 안전하게 저장"
+    ru: "Безопасное хранение зашифрованных резервных копий в облачных хранилищах"
+    ms: "Simpan sandaran disulitkan dengan selamat pada perkhidmatan storan awan"
+    pt-br: "Armazene backups criptografados com segurança em serviços de armazenamento em nuvem"
