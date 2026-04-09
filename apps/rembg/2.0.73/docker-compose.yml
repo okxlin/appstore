@@ -1,6 +1,6 @@
 services:
   rembg:
-    image: "danielgatis/rembg:2.0.73"
+    image: "danielgatis/rembg:2.0.75"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
