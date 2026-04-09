@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: GIT_USERNAME
       labelEn: Git username
       labelZh: Git 用户名
+      label:
+        en: 'Git username'
+        zh: 'Git 用户名'
+        zh-Hant: 'Git 使用者名稱'
+        ja: 'Git ユーザー名'
+        ko: 'Git 사용자 이름'
+        ru: 'Имя пользователя Git'
+        ms: 'Nama pengguna Git'
+        pt-br: 'Nome de usuário do Git'
       required: true
       type: text
     - default: ""
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: GIT_MAIL
       labelEn: Git Email
       labelZh: Git 邮箱
+      label:
+        en: 'Git Email'
+        zh: 'Git 邮箱'
+        zh-Hant: 'Git 電子郵件'
+        ja: 'Git メール'
+        ko: 'Git 이메일'
+        ru: 'Электронная почта Git'
+        ms: 'E-mel Git'
+        pt-br: 'E-mail do Git'
       required: true
       type: text

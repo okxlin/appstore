@@ -1,3 +1,8 @@
+name: 友得云客房产系统（社区版)
+tags:
+  - Website
+title: 为房产行业打造的开源的线上营销获客系统
+description: 为房产行业打造的开源的线上营销获客系统
 additionalProperties:
   key: udyk-ce
   name: 友得云客房产系统（社区版)
@@ -5,9 +10,20 @@ additionalProperties:
     - Website
   shortDescZh: 为房产行业打造的开源的线上营销获客系统
   shortDescEn: An open-source online marketing and customer acquisition system tailored for the real estate industry.
+  description:
+    en: An open-source online marketing and customer acquisition system built for the real estate industry
+    zh: 为房产行业打造的开源的线上营销获客系统
+    zh-Hant: 為房產行業打造的開源線上行銷獲客系統
+    ja: 不動産業向けに構築されたオープンソースのオンラインマーケティング獲客システム
+    ko: 부동산 업계를 위한 오픈 소스 온라인 마케팅·고객 유치 시스템
+    ru: Открытая система онлайн‑маркетинга и привлечения клиентов для отрасли недвижимости
+    ms: Sistem pemasaran dalam talian dan pemerolehan pelanggan sumber terbuka untuk industri hartanah
+    pt-br: Sistema de marketing online e aquisição de clientes de código aberto para o setor imobiliário
   type: website
   crossVersionUpdate: false
   limit: 1
   website: https://www.youdeyunke.com
   github: https://github.com/youdeyunke/app
   document: https://youdeyunke.yuque.com/r/organizations/homepage
+  architectures:
+    - amd64

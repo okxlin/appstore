@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Synapse是一个开源的Matrix家庭服务器，自建聊天服务端
   shortDescEn: Synapse is an open-source Matrix homeserver,build your own chat server
+  description:
+    en: Synapse is an open-source Matrix homeserver to build your own chat server
+    zh: Synapse是一个开源的Matrix家庭服务器，自建聊天服务端
+    zh-Hant: Synapse 是一個開源的 Matrix 家庭伺服器，自建聊天服務端
+    ja: Synapse はオープンソースの Matrix ホームサーバーで、自分のチャットサーバーを構築できます
+    ko: Synapse는 오픈소스 Matrix 홈서버로, 자체 채팅 서버를 구축할 수 있습니다
+    ru: Synapse — это открытый домашний сервер Matrix, позволяющий развернуть собственный чат‑сервер
+    ms: Synapse ialah pelayan rumah Matrix sumber terbuka untuk membina pelayan sembang sendiri
+    pt-br: Synapse é um homeserver Matrix de código aberto para montar seu próprio servidor de chat
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://matrix.org/docs/projects/server/synapse
   github: https://github.com/matrix-org/synapse
   document: https://matrix-org.github.io/synapse/latest/
+
+  architectures:
+    - amd64

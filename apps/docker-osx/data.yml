@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/sickcodes/Docker-OSX
   github: https://github.com/sickcodes/Docker-OSX
   document: https://github.com/sickcodes/Docker-OSX
+  architectures:
+    - amd64
+  description:
+    en: "Run macOS in Docker"
+    zh: "在 Docker 中运行 macOS"
+    zh-Hant: "在 Docker 中執行 macOS"
+    ja: "DockerでmacOSを実行"
+    ko: "Docker에서 macOS 환경을 실행합니다."
+    ru: "Запуск macOS в Docker"
+    ms: "Jalankan macOS dalam Docker"
+    pt-br: "Execute o macOS no Docker"

@@ -1,28 +1,28 @@
 additionalProperties:
   formFields:
-    - child:
-        default: ""
-        envKey: PANEL_DB_HOST
-        required: true
-        type: service
-      default: postgresql
+    - default: postgresql
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
       label:
-        en: Database Service
-        ja: データベースサービス
-        ms: Perkhidmatan Pangkalan Data
-        pt-br: Serviço de Banco de Dados
-        ru: Сервис базы данных
-        ko: 데이터베이스 서비스
-        zh: 数据库服务
-        zh-Hant: 數據庫服務
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
-        - label: PostgreSQL
+        - label: "PostgreSQL"
           value: postgresql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
     - default: nginxpulse
       envKey: PANEL_DB_NAME
       labelEn: Database
@@ -78,6 +78,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -86,6 +95,15 @@ additionalProperties:
       envKey: LOG_PATH
       labelEn: LOG folder path
       labelZh: Nginx日志路径
+      label:
+        en: 'Log folder path'
+        zh: 'Nginx日志路径'
+        zh-Hant: 'Nginx 日誌路徑'
+        ja: 'Nginx ログパス'
+        ko: 'Nginx 로그 경로'
+        ru: 'Путь к журналам Nginx'
+        ms: 'Laluan log Nginx'
+        pt-br: 'Caminho dos logs do Nginx'
       required: true
       type: text
     - default: ./data/data
@@ -93,6 +111,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ./data/configs
@@ -100,6 +127,15 @@ additionalProperties:
       envKey: CONFIGS_PATH
       labelEn: Configs folder path
       labelZh: 配置文件夹路径
+      label:
+        en: 'Configs folder path'
+        zh: '配置文件夹路径'
+        zh-Hant: '設定資料夾路徑'
+        ja: '設定フォルダパス'
+        ko: '설정 폴더 경로'
+        ru: 'Путь к папке конфигурации'
+        ms: 'Laluan folder konfigurasi'
+        pt-br: 'Caminho da pasta de configurações'
       required: true
       type: text
     - default: ""
@@ -107,5 +143,14 @@ additionalProperties:
       envKey: ACCESS_KEYS
       labelEn: ACCESS KEYS
       labelZh: 访问密码
+      label:
+        en: 'Access Keys'
+        zh: '访问密码'
+        zh-Hant: '訪問密碼'
+        ja: 'アクセスキー'
+        ko: '액세스 키'
+        ru: 'Ключи доступа'
+        ms: 'Kunci akses'
+        pt-br: 'Chaves de acesso'
       required: true
       type: text

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: OPENAI_API_KEY
       labelEn: OpenAI API Key
       labelZh: OpenAI API 密钥
+      label:
+        en: 'OpenAI API Key'
+        zh: 'OpenAI API 密钥'
+        zh-Hant: 'OpenAI API 金鑰'
+        ja: 'OpenAI API キー'
+        ko: 'OpenAI API 키'
+        ru: 'Ключ API OpenAI'
+        ms: 'Kunci API OpenAI'
+        pt-br: 'Chave da API OpenAI'
       required: false
       type: password
     - default: "https://api.openai.com/v1"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: OPENAI_PROXY_URL
       labelEn: OpenAI Proxy URL
       labelZh: OpenAI 代理 URL
+      label:
+        en: 'OpenAI Proxy URL'
+        zh: 'OpenAI 代理 URL'
+        zh-Hant: 'OpenAI 代理 URL'
+        ja: 'OpenAI プロキシ URL'
+        ko: 'OpenAI 프록시 URL'
+        ru: 'Прокси URL OpenAI'
+        ms: 'URL proksi OpenAI'
+        pt-br: 'URL de proxy da OpenAI'
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: ACCESS_CODE
       labelEn: Access Code
       labelZh: 访问密码
+      label:
+        en: 'Access Code'
+        zh: '访问密码'
+        zh-Hant: '存取密碼'
+        ja: 'アクセスコード'
+        ko: '액세스 코드'
+        ru: 'Код доступа'
+        ms: 'Kod akses'
+        pt-br: 'Código de acesso'
       random: true
       required: false
       rule: paramComplexity
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: OPENAI_MODEL_LIST
       labelEn: OpenAI Model List
       labelZh: OpenAI 模型列表
+      label:
+        en: 'OpenAI Model List'
+        zh: 'OpenAI 模型列表'
+        zh-Hant: 'OpenAI 模型列表'
+        ja: 'OpenAI モデル一覧'
+        ko: 'OpenAI 모델 목록'
+        ru: 'Список моделей OpenAI'
+        ms: 'Senarai model OpenAI'
+        pt-br: 'Lista de modelos da OpenAI'
       required: false
       type: text

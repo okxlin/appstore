@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Console Port
       labelZh: 控制台端口
+      label:
+        en: 'Console Port'
+        zh: '控制台端口'
+        zh-Hant: '控制台埠'
+        ja: 'コンソールポート'
+        ko: '콘솔 포트'
+        ru: 'Порт консоли'
+        ms: 'Port konsol'
+        pt-br: 'Porta do console'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SERVER
       labelEn: ZeroTier Service Port
       labelZh: ZeroTier服务端口
+      label:
+        en: 'ZeroTier Service Port'
+        zh: 'ZeroTier服务端口'
+        zh-Hant: 'ZeroTier 服務埠'
+        ja: 'ZeroTier サービスポート'
+        ko: 'ZeroTier 서비스 포트'
+        ru: 'Порт службы ZeroTier'
+        ms: 'Port perkhidmatan ZeroTier'
+        pt-br: 'Porta do serviço ZeroTier'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_DOWNLOAD
       labelEn: Planet/moon file download port
       labelZh: planet/moon文件在线下载端口
+      label:
+        en: 'Planet/moon file download port'
+        zh: 'planet/moon文件在线下载端口'
+        zh-Hant: 'planet/moon 檔案線上下載埠'
+        ja: 'planet/moon ファイルダウンロードポート'
+        ko: 'planet/moon 파일 다운로드 포트'
+        ru: 'Порт загрузки файлов planet/moon'
+        ms: 'Port muat turun fail planet/moon'
+        pt-br: 'Porta de download de arquivos planet/moon'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: HOST_IP_ADDR
       labelEn: Native IP address
       labelZh: 本机IP地址
+      label:
+        en: 'Native IP address'
+        zh: '本机IP地址'
+        zh-Hant: '本機 IP 位址'
+        ja: 'ローカル IP アドレス'
+        ko: '로컬 IP 주소'
+        ru: 'Локальный IP-адрес'
+        ms: 'Alamat IP tempatan'
+        pt-br: 'Endereço IP local'
       required: true
       type: text
     - default: zerotier
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity

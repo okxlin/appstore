@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ./data/library
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: MUSIC_PATH
       labelEn: Music folder path
       labelZh: 音乐文件夹路径
+      label:
+        en: 'Music folder path'
+        zh: '音乐文件夹路径'
+        zh-Hant: '音樂資料夾路徑'
+        ja: '音楽フォルダパス'
+        ko: '음악 폴더 경로'
+        ru: 'Путь к папке музыки'
+        ms: 'Laluan folder muzik'
+        pt-br: 'Caminho da pasta de música'
       required: true
       type: text
     - default: "我的音乐库"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: LIBRARY_NAME
       labelEn: Music library name
       labelZh: 音乐库名称
+      label:
+        en: 'Music library name'
+        zh: '音乐库名称'
+        zh-Hant: '音樂庫名稱'
+        ja: '音楽ライブラリ名'
+        ko: '음악 라이브러리 이름'
+        ru: 'Имя музыкальной библиотеки'
+        ms: 'Nama pustaka muzik'
+        pt-br: 'Nome da biblioteca de música'
       required: true
       type: text

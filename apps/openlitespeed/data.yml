@@ -10,6 +10,15 @@ additionalProperties:
     - Server
   shortDescZh: 一个高性能、轻量级、开源 的 HTTP 服务器
   shortDescEn: A high-performance, lightweight, open source HTTP server
+  description:
+    en: A high-performance, lightweight, open source HTTP server
+    zh: 一个高性能、轻量级、开源 的 HTTP 服务器
+    zh-Hant: 一個高性能、輕量級、開源的 HTTP 伺服器
+    ja: 高性能で軽量なオープンソースHTTPサーバー
+    ko: 고성능·경량 오픈소스 HTTP 서버
+    ru: Высокопроизводительный, лёгкий и открытый HTTP-сервер
+    ms: Pelayan HTTP sumber terbuka yang ringan dan berprestasi tinggi
+    pt-br: Servidor HTTP open-source leve e de alto desempenho
   type: runtime
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://openlitespeed.org
   github: https://github.com/litespeedtech/openlitespeed
   document: https://openlitespeed.org/#install
+  architectures:
+    - amd64

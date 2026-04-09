@@ -5,13 +5,32 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Port
       labelZh: Web 端口
+      label:
+        en: 'Web Port'
+        zh: 'Web 端口'
+        zh-Hant: 'Web 埠'
+        ja: 'Web ポート'
+        ko: '웹 포트'
+        ru: 'Веб-порт'
+        ms: 'Port Web'
+        pt-br: 'Porta Web'
       required: true
+      rule: paramPort
       type: number
     - default: "40328"
       edit: true
       envKey: VNC_PORT
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: 'VNC Port'
+        zh: 'VNC 端口'
+        zh-Hant: 'VNC 埠'
+        ja: 'VNC ポート'
+        ko: 'VNC 포트'
+        ru: 'Порт VNC'
+        ms: 'Port VNC'
+        pt-br: 'Porta VNC'
       required: true
       type: number
     - default: "password"
@@ -19,6 +38,15 @@ additionalProperties:
       envKey: VNC_PASSWORD
       labelEn: VNC Password
       labelZh: VNC 密码
+      label:
+        en: 'VNC Password'
+        zh: 'VNC 密码'
+        zh-Hant: 'VNC 密碼'
+        ja: 'VNC パスワード'
+        ko: 'VNC 비밀번호'
+        ru: 'Пароль VNC'
+        ms: 'Kata laluan VNC'
+        pt-br: 'Senha VNC'
       random: true
       required: true
       rule: paramComplexity
@@ -28,6 +56,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Configuration Path
       labelZh: 配置路径
+      label:
+        en: 'Configuration Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "1000"
@@ -35,6 +72,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -42,6 +88,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
     - default: ""
@@ -49,6 +104,15 @@ additionalProperties:
       envKey: SUP_GROUP_IDS
       labelEn: Supplementary Group IDs
       labelZh: 补充用户组 ID
+      label:
+        en: 'Supplementary Group IDs'
+        zh: '补充用户组 ID'
+        zh-Hant: '補充使用者群組 ID'
+        ja: '追加グループ ID'
+        ko: '추가 그룹 ID'
+        ru: 'Дополнительные ID групп'
+        ms: 'ID kumpulan tambahan'
+        pt-br: 'IDs de grupo suplementares'
       required: false
       type: text
     - default: "0022"
@@ -56,6 +120,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: Umask
       labelZh: 文件创建权限掩码
+      label:
+        en: 'Umask'
+        zh: '文件创建权限掩码'
+        zh-Hant: 'umask 值'
+        ja: 'umask 値'
+        ko: 'umask 값'
+        ru: 'Значение umask'
+        ms: 'Nilai umask'
+        pt-br: 'Valor do umask'
       required: true
       type: text
     - default: "en_US.UTF-8"
@@ -63,6 +136,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Locale
       labelZh: 语言环境
+      label:
+        en: 'Locale'
+        zh: '语言环境'
+        zh-Hant: '語言環境'
+        ja: 'ロケール'
+        ko: '로케일'
+        ru: 'Локаль'
+        ms: 'Locale'
+        pt-br: 'Localidade'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -70,6 +152,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: 'Timezone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon waktu'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "0"
@@ -77,6 +168,15 @@ additionalProperties:
       envKey: KEEP_APP_RUNNING
       labelEn: Keep App Running
       labelZh: 保持应用运行
+      label:
+        en: 'Keep App Running'
+        zh: '保持应用运行'
+        zh-Hant: '保持應用運行'
+        ja: 'アプリを実行し続ける'
+        ko: '앱 계속 실행'
+        ru: 'Поддерживать работу приложения'
+        ms: 'Kekalkan aplikasi berjalan'
+        pt-br: 'Manter o aplicativo em execução'
       required: true
       type: select
       values:
@@ -89,6 +189,15 @@ additionalProperties:
       envKey: APP_NICENESS
       labelEn: App Niceness
       labelZh: 应用优先级
+      label:
+        en: 'App Niceness'
+        zh: '应用优先级'
+        zh-Hant: '應用優先級'
+        ja: 'アプリ優先度'
+        ko: '앱 우선순위'
+        ru: 'Приоритет приложения'
+        ms: 'Keutamaan aplikasi'
+        pt-br: 'Prioridade do aplicativo'
       required: true
       type: select
       values:
@@ -103,6 +212,15 @@ additionalProperties:
       envKey: INSTALL_PACKAGES
       labelEn: Install Packages
       labelZh: 安装包
+      label:
+        en: 'Install Packages'
+        zh: '安装包'
+        zh-Hant: '安裝套件'
+        ja: 'パッケージのインストール'
+        ko: '패키지 설치'
+        ru: 'Установка пакетов'
+        ms: 'Pasang pakej'
+        pt-br: 'Instalar pacotes'
       required: false
       type: text
     - default: ""
@@ -110,6 +228,15 @@ additionalProperties:
       envKey: PACKAGES_MIRROR
       labelEn: Packages Mirror
       labelZh: 软件包镜像
+      label:
+        en: 'Packages Mirror'
+        zh: '软件包镜像'
+        zh-Hant: '套件鏡像'
+        ja: 'パッケージミラー'
+        ko: '패키지 미러'
+        ru: 'Зеркало пакетов'
+        ms: 'Cermin pakej'
+        pt-br: 'Espelho de pacotes'
       required: false
       type: text
     - default: "0"
@@ -117,6 +244,15 @@ additionalProperties:
       envKey: CONTAINER_DEBUG
       labelEn: Container Debug
       labelZh: 容器调试
+      label:
+        en: 'Container Debug'
+        zh: '容器调试'
+        zh-Hant: '容器除錯'
+        ja: 'コンテナデバッグ'
+        ko: '컨테이너 디버그'
+        ru: 'Отладка контейнера'
+        ms: 'Nyahpepijat kontena'
+        pt-br: 'Depuração de contêiner'
       required: true
       type: select
       values:
@@ -129,6 +265,15 @@ additionalProperties:
       envKey: DISPLAY_WIDTH
       labelEn: Display Width
       labelZh: 显示宽度
+      label:
+        en: 'Display Width'
+        zh: '显示宽度'
+        zh-Hant: '顯示寬度'
+        ja: '表示幅'
+        ko: '디스플레이 너비'
+        ru: 'Ширина экрана'
+        ms: 'Lebar paparan'
+        pt-br: 'Largura da tela'
       required: true
       type: number
     - default: "1080"
@@ -136,6 +281,15 @@ additionalProperties:
       envKey: DISPLAY_HEIGHT
       labelEn: Display Height
       labelZh: 显示高度
+      label:
+        en: 'Display Height'
+        zh: '显示高度'
+        zh-Hant: '顯示高度'
+        ja: '表示高さ'
+        ko: '디스플레이 높이'
+        ru: 'Высота экрана'
+        ms: 'Ketinggian paparan'
+        pt-br: 'Altura da tela'
       required: true
       type: number
     - default: "0"
@@ -143,6 +297,15 @@ additionalProperties:
       envKey: DARK_MODE
       labelEn: Dark Mode
       labelZh: 暗黑模式
+      label:
+        en: 'Dark Mode'
+        zh: '暗黑模式'
+        zh-Hant: '深色模式'
+        ja: 'ダークモード'
+        ko: '다크 모드'
+        ru: 'Тёмный режим'
+        ms: 'Mod gelap'
+        pt-br: 'Modo escuro'
       required: true
       type: select
       values:
@@ -155,6 +318,15 @@ additionalProperties:
       envKey: WEB_AUDIO
       labelEn: Web Audio
       labelZh: Web 音频
+      label:
+        en: 'Web Audio'
+        zh: 'Web 音频'
+        zh-Hant: 'Web 音訊'
+        ja: 'Web オーディオ'
+        ko: '웹 오디오'
+        ru: 'Веб-аудио'
+        ms: 'Audio web'
+        pt-br: 'Áudio da Web'
       required: true
       type: select
       values:
@@ -167,6 +339,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION
       labelEn: Web Authentication
       labelZh: Web 身份验证
+      label:
+        en: 'Web Authentication'
+        zh: 'Web 身份验证'
+        zh-Hant: 'Web 身份驗證'
+        ja: 'Web 認証'
+        ko: '웹 인증'
+        ru: 'Веб-аутентификация'
+        ms: 'Pengesahan web'
+        pt-br: 'Autenticação Web'
       required: true
       type: select
       values:
@@ -179,6 +360,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION_USERNAME
       labelEn: Web Authentication Username
       labelZh: Web 身份验证用户名
+      label:
+        en: 'Web Authentication Username'
+        zh: 'Web 身份验证用户名'
+        zh-Hant: 'Web 身份驗證使用者名稱'
+        ja: 'Web 認証ユーザー名'
+        ko: '웹 인증 사용자 이름'
+        ru: 'Имя пользователя веб-аутентификации'
+        ms: 'Nama pengguna pengesahan web'
+        pt-br: 'Nome de usuário da autenticação Web'
       required: false
       type: text
     - default: ""
@@ -186,6 +376,15 @@ additionalProperties:
       envKey: WEB_AUTHENTICATION_PASSWORD
       labelEn: Web Authentication Password
       labelZh: Web 身份验证密码
+      label:
+        en: 'Web Authentication Password'
+        zh: 'Web 身份验证密码'
+        zh-Hant: 'Web 身份驗證密碼'
+        ja: 'Web 認証パスワード'
+        ko: '웹 인증 비밀번호'
+        ru: 'Пароль веб-аутентификации'
+        ms: 'Kata laluan pengesahan web'
+        pt-br: 'Senha da autenticação Web'
       required: false
       type: text
     - default: "1"
@@ -193,6 +392,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION
       labelEn: Secure Connection
       labelZh: 安全连接
+      label:
+        en: 'Secure Connection'
+        zh: '安全连接'
+        zh-Hant: '安全連線'
+        ja: 'セキュア接続'
+        ko: '보안 연결'
+        ru: 'Безопасное соединение'
+        ms: 'Sambungan selamat'
+        pt-br: 'Conexão segura'
       required: true
       type: select
       values:
@@ -205,6 +413,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION_VNC_METHOD
       labelEn: Secure VNC Method
       labelZh: 安全 VNC 方法
+      label:
+        en: 'Secure VNC Method'
+        zh: '安全 VNC 方法'
+        zh-Hant: '安全 VNC 方法'
+        ja: 'セキュア VNC 方法'
+        ko: '보안 VNC 방식'
+        ru: 'Безопасный метод VNC'
+        ms: 'Kaedah VNC selamat'
+        pt-br: 'Método VNC seguro'
       required: true
       type: select
       values:
@@ -217,6 +434,15 @@ additionalProperties:
       envKey: SECURE_CONNECTION_CERTS_CHECK_INTERVAL
       labelEn: Secure Connection Certs Check Interval
       labelZh: 安全连接证书检查间隔
+      label:
+        en: 'Secure Connection Certs Check Interval'
+        zh: '安全连接证书检查间隔'
+        zh-Hant: '安全連線憑證檢查間隔'
+        ja: 'セキュア接続証明書の確認間隔'
+        ko: '보안 연결 인증서 확인 간격'
+        ru: 'Интервал проверки сертификатов безопасного соединения'
+        ms: 'Selang semakan sijil sambungan selamat'
+        pt-br: 'Intervalo de verificação de certificados da conexão segura'
       required: true
       type: number
     - default: "0"
@@ -224,6 +450,15 @@ additionalProperties:
       envKey: ENABLE_CJK_FONT
       labelEn: Enable CJK Font
       labelZh: 启用 CJK 字体
+      label:
+        en: 'Enable CJK Font'
+        zh: '启用 CJK 字体'
+        zh-Hant: '啟用 CJK 字體'
+        ja: 'CJK フォントを有効化'
+        ko: 'CJK 글꼴 사용'
+        ru: 'Включить шрифты CJK'
+        ms: 'Dayakan fon CJK'
+        pt-br: 'Ativar fonte CJK'
       required: true
       type: select
       values:

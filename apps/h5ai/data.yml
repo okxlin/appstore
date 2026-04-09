@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 用于Apache httpd，lighttpd和nginx的HTTP Web服务器索引
   shortDescEn: HTTP web server index for Apache httpd, lighttpd and nginx
+  description:
+    en: HTTP web server index for Apache httpd, lighttpd and nginx
+    zh: 用于Apache httpd，lighttpd和nginx的HTTP Web服务器索引
+    zh-Hant: 用於 Apache httpd、lighttpd 和 nginx 的 HTTP Web 伺服器索引
+    ja: Apache httpd、lighttpd、nginx 用の HTTP ウェブサーバーインデックス
+    ko: Apache httpd, lighttpd, nginx 환경에서 디렉터리 목록을 보기 좋게 제공하는 HTTP 웹 서버 인덱스 도구입니다.
+    ru: Индекс HTTP‑веб‑серверов для Apache httpd, lighttpd и nginx
+    ms: Indeks pelayan web HTTP untuk Apache httpd, lighttpd dan nginx
+    pt-br: Índice de servidor web HTTP para Apache httpd, lighttpd e nginx
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/bin20088/h5ai
   github: https://github.com/lrsjng/h5ai
   document: https://github.com/lrsjng/h5ai
+  architectures:
+    - amd64
+

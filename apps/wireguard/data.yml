@@ -12,6 +12,15 @@ additionalProperties:
     - Security
   shortDescZh: 一种极其简单但快速且现代的 VPN
   shortDescEn: An extremely simple yet fast and modern VPN
+  description:
+    en: An extremely simple yet fast and modern VPN
+    zh: 一种极其简单但快速且现代的 VPN
+    zh-Hant: 一種極其簡單但快速且現代的 VPN
+    ja: 極めてシンプルだが高速でモダンな VPN
+    ko: 매우 단순하지만 빠르고 현대적인 VPN
+    ru: Чрезвычайно простой, но быстрый и современный VPN
+    ms: VPN yang sangat ringkas namun pantas dan moden
+    pt-br: Um VPN extremamente simples, porém rápido e moderno
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,6 @@ additionalProperties:
   website: https://www.wireguard.com
   github: https://github.com/wireguard
   document: https://www.wireguard.com
+
+  architectures:
+    - amd64

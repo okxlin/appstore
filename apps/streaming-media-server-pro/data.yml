@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个强大的 IPTV 源后端服务，具有视频缓冲区功能
   shortDescEn: A powerful IPTV source backend service with video buffer function
+  description:
+    en: A powerful IPTV source backend service with video buffer function
+    zh: 一个强大的 IPTV 源后端服务，具有视频缓冲区功能
+    zh-Hant: 一個強大的 IPTV 源後端服務，具有視頻緩衝區功能
+    ja: ビデオバッファ機能を備えた強力な IPTV ソースのバックエンドサービス
+    ko: 비디오 버퍼 기능을 갖춘 강력한 IPTV 소스 백엔드 서비스
+    ru: Мощный бэкенд-сервис источников IPTV с функцией видеобуфера
+    ms: Perkhidmatan belakang sumber IPTV yang berkuasa dengan fungsi penimbal video
+    pt-br: Serviço de backend de fonte IPTV potente com função de buffer de vídeo
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/239144498/Streaming-Media-Server-Pro
   github: https://github.com/239144498/Streaming-Media-Server-Pro
   document: https://github.com/239144498/Streaming-Media-Server-Pro
+
+  architectures:
+    - amd64

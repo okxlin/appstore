@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 好的，今天我们来做菜！
   shortDescEn: OK, Let's Cook!
+  description:
+    en: OK, Let's Cook!
+    zh: 好的，今天我们来做菜！
+    zh-Hant: 好的，今天我們來做菜！
+    ja: よし、今日は料理しよう！
+    ko: 좋아, 오늘은 요리하자!
+    ru: Ладно, сегодня готовим!
+    ms: Baik, hari ini kita memasak!
+    pt-br: Ok, hoje vamos cozinhar!
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://cook.yunyoujun.cn
   github: https://github.com/YunYouJun/cook
   document: https://github.com/YunYouJun/cook
+  architectures:
+    - amd64

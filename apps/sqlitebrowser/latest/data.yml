@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: HTTPS Port
       labelZh: HTTPS 端口
+      label:
+        en: 'HTTPS Port'
+        zh: 'HTTPS 端口'
+        zh-Hant: 'HTTPS 埠'
+        ja: 'HTTPS ポート'
+        ko: 'HTTPS 포트'
+        ru: 'HTTPS порт'
+        ms: 'Port HTTPS'
+        pt-br: 'Porta HTTPS'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: user
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: HTTP_USER
       labelEn: http auth user
       labelZh: HTTP 用户
+      label:
+        en: 'http auth user'
+        zh: 'HTTP 用户'
+        zh-Hant: 'HTTP 認證使用者'
+        ja: 'HTTP 認証ユーザー'
+        ko: 'HTTP 인증 사용자'
+        ru: 'Пользователь HTTP-аутентификации'
+        ms: 'Pengguna pengesahan HTTP'
+        pt-br: 'Usuário de autenticação HTTP'
       required: true
       type: text
     - default: sqlitebrowser
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: http auth password
       labelZh: HTTP 密码
+      label:
+        en: 'http auth password'
+        zh: 'HTTP 密码'
+        zh-Hant: 'HTTP 認證密碼'
+        ja: 'HTTP 認証パスワード'
+        ko: 'HTTP 인증 비밀번호'
+        ru: 'Пароль HTTP-аутентификации'
+        ms: 'Kata laluan pengesahan HTTP'
+        pt-br: 'Senha de autenticação HTTP'
       random: true
       required: true
       rule: paramComplexity

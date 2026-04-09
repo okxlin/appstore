@@ -5,6 +5,15 @@ additionalProperties:
       envKey: SMTP_IN_PORT
       labelEn: SMTP inbound port
       labelZh: SMTP 入站端口
+      label:
+        en: 'SMTP inbound port'
+        zh: 'SMTP 入站端口'
+        zh-Hant: 'SMTP 入站埠'
+        ja: 'SMTP 受信ポート'
+        ko: 'SMTP 인바운드 포트'
+        ru: 'Входящий порт SMTP'
+        ms: 'Port masuk SMTP'
+        pt-br: 'Porta de entrada SMTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: IMAP4_PORT
       labelEn: IMAP4 port
       labelZh: IMAP4 端口
+      label:
+        en: 'IMAP4 port'
+        zh: 'IMAP4 端口'
+        zh-Hant: 'IMAP4 埠'
+        ja: 'IMAP4 ポート'
+        ko: 'IMAP4 포트'
+        ru: 'Порт IMAP4'
+        ms: 'Port IMAP4'
+        pt-br: 'Porta IMAP4'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: IMAP4_PORT2
       labelEn: IMAP4 port
       labelZh: IMAP4 端口
+      label:
+        en: 'IMAP4 port'
+        zh: 'IMAP4 端口'
+        zh-Hant: 'IMAP4 埠'
+        ja: 'IMAP4 ポート'
+        ko: 'IMAP4 포트'
+        ru: 'Порт IMAP4'
+        ms: 'Port IMAP4'
+        pt-br: 'Porta IMAP4'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: SMTP_S_PORT
       labelEn: SMTP Submission ports
       labelZh: SMTP 提交端口
+      label:
+        en: 'SMTP Submission ports'
+        zh: 'SMTP 提交端口'
+        zh-Hant: 'SMTP 提交埠'
+        ja: 'SMTP 送信ポート'
+        ko: 'SMTP 제출 포트'
+        ru: 'Порты отправки SMTP'
+        ms: 'Port penghantaran SMTP'
+        pt-br: 'Portas de submissão SMTP'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: SMTP_S_PORT2
       labelEn: SMTP Submission ports
       labelZh: SMTP 提交端口
+      label:
+        en: 'SMTP Submission ports'
+        zh: 'SMTP 提交端口'
+        zh-Hant: 'SMTP 提交埠'
+        ja: 'SMTP 送信ポート'
+        ko: 'SMTP 제출 포트'
+        ru: 'Порты отправки SMTP'
+        ms: 'Port penghantaran SMTP'
+        pt-br: 'Portas de submissão SMTP'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: MAIL_HOSTNAME
       labelEn: Mail MX hostname
       labelZh: 邮箱 MX 主机名
+      label:
+        en: 'Mail MX hostname'
+        zh: '邮箱 MX 主机名'
+        zh-Hant: '郵箱 MX 主機名'
+        ja: 'メール MX ホスト名'
+        ko: '메일 MX 호스트명'
+        ru: 'Имя хоста MX почты'
+        ms: 'Nama hos MX mel'
+        pt-br: 'Nome do host MX do e-mail'
       required: true
       type: text
     - default: example.com
@@ -52,5 +106,14 @@ additionalProperties:
       envKey: MAIL_DOMAIN
       labelEn: Mail domain
       labelZh: 邮箱域名
+      label:
+        en: 'Mail domain'
+        zh: '邮箱域名'
+        zh-Hant: '郵箱網域'
+        ja: 'メールドメイン'
+        ko: '메일 도메인'
+        ru: 'Почтовый домен'
+        ms: 'Domain mel'
+        pt-br: 'Domínio de e-mail'
       required: true
       type: text

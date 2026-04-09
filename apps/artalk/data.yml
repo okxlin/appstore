@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款简洁的自托管评论系统
   shortDescEn: A concise self hosted comment system
+  description:
+    en: A concise self-hosted comment system.
+    zh: 一款简洁的自托管评论系统
+    zh-Hant: 一款簡潔的自托管評論系統
+    ja: シンプルなセルフホスト型コメントシステム
+    ko: 간결한 셀프호스팅 댓글 시스템
+    ru: Лаконичная система комментариев для самостоятельного хостинга.
+    ms: Sistem komen ringkas yang dihoskan sendiri.
+    pt-br: Sistema de comentários simples e auto-hospedado.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://artalk.js.org
   github: https://github.com/ArtalkJS/Artalk
   document: https://artalk.js.org/guide/intro.html
+  architectures:
+    - amd64

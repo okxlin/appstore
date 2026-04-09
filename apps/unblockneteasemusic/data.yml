@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 解锁网易云音乐客户端变灰歌曲
   shortDescEn: Revive unavailable songs for Netease Cloud Music
+  description:
+    en: "Restore unavailable songs in Netease Cloud Music clients."
+    zh: "解锁网易云音乐客户端中变灰的歌曲。"
+    zh-Hant: "解鎖網易雲音樂客戶端中變灰的歌曲。"
+    ja: "Netease Cloud Music クライアントで再生できない楽曲を復活させます。"
+    ko: "NetEase Cloud Music 클라이언트에서 회색 처리된 곡을 다시 재생할 수 있게 해줍니다."
+    ru: "Возвращает недоступные песни в клиентах Netease Cloud Music."
+    ms: "Menghidupkan semula lagu yang tidak tersedia dalam klien Netease Cloud Music."
+    pt-br: "Recupera músicas indisponíveis no cliente do Netease Cloud Music."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/UnblockNeteaseMusic/server
   github: https://github.com/UnblockNeteaseMusic/server
   document: https://github.com/UnblockNeteaseMusic/server
+  architectures:
+    - amd64

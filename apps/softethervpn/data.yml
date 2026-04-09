@@ -12,6 +12,15 @@ additionalProperties:
     - Security
   shortDescZh: 开源多协议 VPN 软件
   shortDescEn: Open-source multi-protocol VPN software
+  description:
+    en: Open-source multi-protocol VPN software
+    zh: 开源多协议 VPN 软件
+    zh-Hant: 開源多協定 VPN 軟體
+    ja: オープンソースのマルチプロトコルVPNソフトウェア
+    ko: 오픈 소스 멀티 프로토콜 VPN 소프트웨어
+    ru: Открытое многопротокольное VPN‑ПО
+    ms: Perisian VPN berbilang protokol sumber terbuka
+    pt-br: Software VPN de código aberto multi‑protocolo
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,6 @@ additionalProperties:
   website: https://www.softether.org
   github: https://github.com/SoftEtherVPN/SoftEtherVPN
   document: https://www.softether.org/4-docs
+
+  architectures:
+    - amd64

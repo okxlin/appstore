@@ -54,8 +54,4 @@ services:
 
 networks:
   mixspace-network:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: ${SUBNET_PREFIX}.0/16
+    external: true

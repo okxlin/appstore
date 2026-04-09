@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Host
       labelZh: Redis 主机
+      label:
+        en: 'Redis Host'
+        zh: 'Redis 主机'
+        zh-Hant: 'Redis 主機'
+        ja: 'Redis ホスト'
+        ko: 'Redis 호스트'
+        ru: 'Хост Redis'
+        ms: 'Hos Redis'
+        pt-br: 'Host do Redis'
       required: true
       type: service
     - default: 6379
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Port
       labelZh: Redis 端口
+      label:
+        en: 'Redis Port'
+        zh: 'Redis 端口'
+        zh-Hant: 'Redis 埠'
+        ja: 'Redis ポート'
+        ko: 'Redis 포트'
+        ru: 'Порт Redis'
+        ms: 'Port Redis'
+        pt-br: 'Porta do Redis'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata laluan Redis'
+        pt-br: 'Senha do Redis'
       required: false
       type: password
     - default: 7
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: REDIS_DB_NUMBER
       labelEn: Redis Database Number
       labelZh: Redis 数据库编号
+      label:
+        en: 'Redis Database Number'
+        zh: 'Redis 数据库编号'
+        zh-Hant: 'Redis 資料庫編號'
+        ja: 'Redis データベース番号'
+        ko: 'Redis 데이터베이스 번호'
+        ru: 'Номер базы данных Redis'
+        ms: 'Nombor pangkalan data Redis'
+        pt-br: 'Número do banco de dados Redis'
       required: true
       type: number

@@ -4,20 +4,49 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       type: number
+      rule: paramPort
       edit: true
     - default: "55555"
       envKey: PANEL_APP_PORT_SYNC
       labelEn: Sync Port
       labelZh: 同步端口
+      label:
+        en: 'Sync Port'
+        zh: '同步端口'
+        zh-Hant: '同步埠'
+        ja: '同期ポート'
+        ko: '동기화 포트'
+        ru: 'Порт синхронизации'
+        ms: 'Port penyegerakan'
+        pt-br: 'Porta de sincronização'
       required: true
       type: number
+      rule: paramPort
       edit: true
     - default: "./data/config"
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
       edit: true
@@ -25,6 +54,15 @@ additionalProperties:
       envKey: DOWNLOADS_PATH
       labelEn: Downloads Path
       labelZh: 下载路径
+      label:
+        en: 'Downloads Path'
+        zh: '下载路径'
+        zh-Hant: '下載路徑'
+        ja: 'ダウンロードパス'
+        ko: '다운로드 경로'
+        ru: 'Путь к загрузкам'
+        ms: 'Laluan muat turun'
+        pt-br: 'Caminho de downloads'
       required: true
       type: text
       edit: true
@@ -32,6 +70,15 @@ additionalProperties:
       envKey: SYNC_PATH
       labelEn: Sync Path
       labelZh: 同步路径
+      label:
+        en: 'Sync Path'
+        zh: '同步路径'
+        zh-Hant: '同步路徑'
+        ja: '同期パス'
+        ko: '동기화 경로'
+        ru: 'Путь синхронизации'
+        ms: 'Laluan penyegerakan'
+        pt-br: 'Caminho de sincronização'
       required: true
       type: text
       edit: true
@@ -39,6 +86,15 @@ additionalProperties:
       envKey: EXTERNAL_MOUNT_PATH
       labelEn: External mount path
       labelZh: 外部挂载路径
+      label:
+        en: 'External mount path'
+        zh: '外部挂载路径'
+        zh-Hant: '外部掛載路徑'
+        ja: '外部マウントパス'
+        ko: '외부 마운트 경로'
+        ru: 'Путь внешнего монтирования'
+        ms: 'Laluan lekap luaran'
+        pt-br: 'Caminho de montagem externo'
       required: true
       type: text
       edit: true
@@ -46,6 +102,15 @@ additionalProperties:
       envKey: INTERNAL_MOUNT_PATH
       labelEn: Internal mount path
       labelZh: 内部挂载路径
+      label:
+        en: 'Internal mount path'
+        zh: '内部挂载路径'
+        zh-Hant: '內部掛載路徑'
+        ja: '内部マウントパス'
+        ko: '내부 마운트 경로'
+        ru: 'Путь внутреннего монтирования'
+        ms: 'Laluan lekap dalaman'
+        pt-br: 'Caminho de montagem interno'
       required: true
       type: text
       edit: true
@@ -53,6 +118,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
       edit: true
@@ -60,6 +134,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
       edit: true
@@ -67,6 +150,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
       edit: true

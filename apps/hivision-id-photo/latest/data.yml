@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP_INTERNAL
       labelEn: Internal Port
       labelZh: 内部端口
+      label:
+        en: 'Internal Port'
+        zh: '内部端口'
+        zh-Hant: '內部埠'
+        ja: '内部ポート'
+        ko: '내부 포트'
+        ru: 'Внутренний порт'
+        ms: 'Port dalaman'
+        pt-br: 'Porta interna'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command
       labelZh: 启动命令
+      label:
+        en: 'Command'
+        zh: '命令'
+        zh-Hant: '命令'
+        ja: 'コマンド'
+        ko: '명령'
+        ru: 'Команда'
+        ms: 'Perintah'
+        pt-br: 'Comando'
       required: true
       type: text
     - default: ""
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: FACE_PLUS_API_KEY
       labelEn: FACE Plus API Key
       labelZh: FACE Plus API 密钥
+      label:
+        en: 'FACE Plus API Key'
+        zh: 'FACE Plus API 密钥'
+        zh-Hant: 'FACE Plus API 金鑰'
+        ja: 'FACE Plus API キー'
+        ko: 'FACE Plus API 키'
+        ru: 'API-ключ FACE Plus'
+        ms: 'Kunci API FACE Plus'
+        pt-br: 'Chave de API FACE Plus'
       required: false
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: FACE_PLUS_API_SECRET
       labelEn: FACE Plus API Secret
       labelZh: FACE Plus API 密钥 Secret
+      label:
+        en: 'FACE Plus API Secret'
+        zh: 'FACE Plus API 密钥 Secret'
+        zh-Hant: 'FACE Plus API 密鑰 Secret'
+        ja: 'FACE Plus API シークレット'
+        ko: 'FACE Plus API 시크릿'
+        ru: 'Секрет FACE Plus API'
+        ms: 'Rahsia API FACE Plus'
+        pt-br: 'Segredo da API FACE Plus'
       required: false
       type: text
     - default: ""
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: RUN_MODE
       labelEn: Run Mode
       labelZh: 运行模式
+      label:
+        en: 'Run Mode'
+        zh: '运行模式'
+        zh-Hant: '運行模式'
+        ja: '実行モード'
+        ko: '실행 모드'
+        ru: 'Режим работы'
+        ms: 'Mod jalankan'
+        pt-br: 'Modo de execução'
       required: false
       type: text
     - default: "zh"
@@ -49,5 +103,14 @@ additionalProperties:
       envKey: DEFAULT_LANG
       labelEn: Default Language
       labelZh: 默认语言
+      label:
+        en: 'Default Language'
+        zh: '默认语言'
+        zh-Hant: '預設語言'
+        ja: 'デフォルト言語'
+        ko: '기본 언어'
+        ru: 'Язык по умолчанию'
+        ms: 'Bahasa lalai'
+        pt-br: 'Idioma padrão'
       required: false
       type: text

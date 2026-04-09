@@ -17,3 +17,15 @@ additionalProperties:
   website: https://github.com/hunshcn/gh-proxy
   github: https://github.com/hunshcn/gh-proxy
   document: https://github.com/hunshcn/gh-proxy
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'An acceleration service for GitHub releases, archives, and project files.'
+    zh: 'GitHub release、archive 以及项目文件的加速项目'
+    zh-Hant: 'GitHub release、archive 以及專案檔案的加速專案'
+    ja: 'GitHub のリリース、アーカイブ、プロジェクトファイルを高速化するサービスです。'
+    ko: 'GitHub 릴리스, 아카이브, 프로젝트 파일 다운로드를 가속하는 서비스입니다.'
+    ru: 'Сервис ускорения загрузки релизов, архивов и файлов проектов GitHub.'
+    ms: 'Perkhidmatan pemecut untuk keluaran, arkib dan fail projek GitHub.'
+    pt-br: 'Serviço de aceleração para releases, arquivos e arquivos de projetos do GitHub.'

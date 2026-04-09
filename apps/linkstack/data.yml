@@ -4,6 +4,15 @@ tags:
 title: 高度可定制的链接共享平台，用户界面直观易用
 description: 高度可定制的链接共享平台，用户界面直观易用
 additionalProperties:
+  description:
+    en: A highly customizable link sharing platform with an intuitive, easy-to-use UI
+    zh: 高度可定制的链接共享平台，用户界面直观易用
+    zh-Hant: 高度可定制的連結分享平台，使用者介面直觀易用
+    ja: 高度にカスタマイズ可能で直感的に使えるリンク共有プラットフォーム
+    ko: 직관적이고 사용하기 쉬운 UI를 갖춘 고도로 맞춤화 가능한 링크 공유 플랫폼
+    ru: Высоко настраиваемая платформа для обмена ссылками с интуитивным и удобным интерфейсом
+    ms: Platform perkongsian pautan yang sangat boleh disesuaikan dengan UI yang intuitif dan mudah digunakan
+    pt-br: Plataforma de compartilhamento de links altamente personalizável com uma interface intuitiva e fácil de usar
   key: linkstack
   name: LinkStack
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://linkstack.org
   github: https://github.com/LinkStackOrg/LinkStack
   document: https://docs.linkstack.org
+  architectures:
+    - amd64

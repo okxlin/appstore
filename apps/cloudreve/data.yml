@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 支持多家云存储的云盘系统
   shortDescEn: A cloud disk system that supports multiple cloud storage
+  description:
+    en: A cloud disk system that supports multiple cloud storage
+    zh: 支持多家云存储的云盘系统
+    zh-Hant: 支援多家雲端儲存的雲盤系統
+    ja: 複数のクラウドストレージに対応するクラウドディスクシステム
+    ko: 여러 클라우드 스토리지를 지원하는 클라우드 디스크 시스템
+    ru: Система облачного диска с поддержкой нескольких облачных хранилищ
+    ms: Sistem cakera awan yang menyokong pelbagai storan awan
+    pt-br: Sistema de disco em nuvem que suporta múltiplos armazenamentos em nuvem
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://cloudreve.org/
   github: https://github.com/cloudreve/Cloudreve
   document: https://docs.cloudreve.org/
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个自托管仪表板
   shortDescEn: A self-hosted dashboard
+  description:
+    en: A self-hosted dashboard
+    zh: 一个自托管仪表板
+    zh-Hant: 一個自託管儀表板
+    ja: セルフホスト型ダッシュボード
+    ko: 자체 호스팅 대시보드
+    ru: Самостоятельно размещаемая панель
+    ms: Papan pemuka dihoskan sendiri
+    pt-br: Painel auto-hospedado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/glanceapp/glance
   github: https://github.com/glanceapp/glance
   document: https://github.com/glanceapp/glance
+  architectures:
+    - amd64

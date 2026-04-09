@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款仿 Win11，适合创建属于自己的私有云/存储的网页系统
   shortDescEn: An imitation of Windows 11, suitable for creating your own private cloud
+  description:
+    en: An imitation of Windows 11, suitable for creating your own private cloud/storage web system
+    zh: 一款仿 Win11，适合创建属于自己的私有云/存储的网页系统
+    zh-Hant: 一款仿 Win11，適合建立屬於自己的私有雲/存儲的網頁系統
+    ja: Win11風の、個人用のプライベートクラウド/ストレージを作るのに適したウェブOS
+    ko: Win11을 모방한, 개인용 프라이빗 클라우드/스토리지를 만들기 좋은 웹 시스템
+    ru: Веб‑система в стиле Win11, подходящая для создания собственного частного облака/хранилища
+    ms: Sistem web ala Win11 yang sesuai untuk membina awan/storan peribadi anda sendiri
+    pt-br: Sistema web no estilo Win11, adequado para criar sua própria nuvem/armazenamento privado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://os.tenfell.cn
   github: https://github.com/fs185085781/webos
   document: https://os.tenfell.cn/doc
+
+  architectures:
+    - amd64

@@ -10,9 +10,20 @@ additionalProperties:
     - Website
   shortDescZh: 专注高安全性、多站点、多语言支持的内容管理系统
   shortDescEn: Focused on high security, multi-site, and multilingual support
+  description:
+    en: A content management system focused on high security, multi-site, and multilingual support.
+    zh: 专注高安全性、多站点、多语言支持的内容管理系统
+    zh-Hant: 專注高安全性、多站點、多語言支援的內容管理系統
+    ja: 高いセキュリティ、多サイト、多言語対応に注力した CMS
+    ko: 높은 보안성, 다중 사이트, 다국어 지원에 집중한 콘텐츠 관리 시스템
+    ru: CMS с упором на высокую безопасность, мультисайтность и поддержку нескольких языков.
+    ms: Sistem pengurusan kandungan yang menumpukan pada keselamatan tinggi, pelbagai laman, dan sokongan berbilang bahasa.
+    pt-br: Sistema de gerenciamento de conteúdo focado em alta segurança, multi-site e suporte multilíngue.
   type: website
   crossVersionUpdate: true
   limit: 0
   website: https://www.anqicms.com/
   github: https://github.com/fesiong/anqicms
   document: https://www.anqicms.com/help
+  architectures:
+    - amd64

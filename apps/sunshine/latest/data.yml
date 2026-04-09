@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,28 +22,66 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP2
       labelEn: Port 2
       labelZh: 端口 2
+      label:
+        en: 'Port 2'
+        zh: '端口 2'
+        zh-Hant: '埠 2'
+        ja: 'ポート 2'
+        ko: '포트 2'
+        ru: 'Порт 2'
+        ms: 'Port 2'
+        pt-br: 'Porta 2'
       required: true
       rule: paramPort
       type: number
-    - default: "47984-47989"
+    - default: 47984
       edit: true
       envKey: PANEL_APP_PORT_TCP
       labelEn: TCP Port Range
       labelZh: TCP 端口范围
+      label:
+        en: 'TCP Port Range'
+        zh: 'TCP 端口范围'
+        zh-Hant: 'TCP 埠範圍'
+        ja: 'TCP ポート範囲'
+        ko: 'TCP 포트 범위'
+        ru: 'Диапазон портов TCP'
+        ms: 'Julat port TCP'
+        pt-br: 'Faixa de portas TCP'
       required: true
-      type: text
-    - default: "47998-48000"
+      rule: paramPort
+      type: number
+    - default: 47998
       edit: true
       envKey: PANEL_APP_PORT_UDP
       labelEn: TUDP Port Range
       labelZh: UDP 端口范围
+      label:
+        en: 'TUDP Port Range'
+        zh: 'UDP 端口范围'
+        zh-Hant: 'UDP 埠範圍'
+        ja: 'UDP ポート範囲'
+        ko: 'UDP 포트 범위'
+        ru: 'Диапазон портов UDP'
+        ms: 'Julat port UDP'
+        pt-br: 'Faixa de portas UDP'
       required: true
-      type: text
+      rule: paramPort
+      type: number
     - default: "1001"
       disabled: true
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1001"
@@ -42,6 +89,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -49,6 +105,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: 'Timezone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon waktu'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "./data"
@@ -56,5 +121,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text

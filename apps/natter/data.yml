@@ -6,6 +6,15 @@ description: Fullcone NAT 端口打洞工具
 additionalProperties:
   key: natter
   name: Natter
+  description:
+    en: Full-cone NAT port punching tool
+    zh: Fullcone NAT 端口打洞工具
+    zh-Hant: Fullcone NAT 連接埠打洞工具
+    ja: Full-cone NAT のポートホールパンチングツール
+    ko: 풀콘 NAT 포트 홀펀칭 도구
+    ru: Инструмент проброса портов через full-cone NAT
+    ms: Alat penebukan port Full-cone NAT
+    pt-br: Ferramenta de perfuração de porta para NAT full-cone
   tags:
     - Tool
   shortDescZh: Fullcone NAT 端口打洞工具
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/MikeWang000000/Natter
   github: https://github.com/MikeWang000000/Natter
   document: https://github.com/MikeWang000000/Natter
+  architectures:
+    - amd64

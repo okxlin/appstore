@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 用于浏览、阅读和下载存储在 Calibre 数据库中的电子书的 Web 应用程序
   shortDescEn: Web app for browsing, reading and downloading eBooks stored in a Calibre database
+  description:
+    en: A web app to browse, read, and download e-books stored in a Calibre database
+    zh: 用于浏览、阅读和下载存储在 Calibre 数据库中的电子书的 Web 应用程序
+    zh-Hant: 用於瀏覽、閱讀和下載儲存在 Calibre 資料庫中的電子書的 Web 應用程式
+    ja: Calibreデータベースに保存された電子書籍を閲覧・読書・ダウンロードするWebアプリ
+    ko: Calibre 데이터베이스에 저장된 전자책을 탐색, 읽기, 다운로드하는 웹 앱
+    ru: Веб-приложение для просмотра, чтения и загрузки электронных книг из базы Calibre
+    ms: Aplikasi web untuk menyemak imbas, membaca dan memuat turun e-buku dalam pangkalan data Calibre
+    pt-br: Aplicativo web para navegar, ler e baixar e-books armazenados no banco de dados Calibre
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://calibre-ebook.com
   github: https://github.com/janeczku/calibre-web
   document: https://calibre-ebook.com/help
+  architectures:
+    - amd64
+    - arm64

@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 一站式代码运维平台
   shortDescEn: One-stop code operation and maintenance platform
+  description:
+    en: An all-in-one code operations platform.
+    zh: 一站式代码运维平台
+    zh-Hant: 一站式代碼運維平台
+    ja: ワンストップのコード運用プラットフォーム
+    ko: 원스톱 코드 운영 플랫폼
+    ru: Единая платформа эксплуатации кода.
+    ms: Platform operasi kod sehenti.
+    pt-br: Plataforma de operações de código tudo-em-um.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://arcadia.cool
   github: https://github.com/SuperManito/Arcadia
   document: https://arcadia.cool/docs
+  architectures:
+    - amd64

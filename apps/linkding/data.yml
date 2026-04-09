@@ -4,6 +4,15 @@ tags:
 title: 一个书签管理器，您可以自己托管
 description: 一个书签管理器，您可以自己托管
 additionalProperties:
+  description:
+    en: A bookmark manager you can self-host
+    zh: 一个书签管理器，您可以自己托管
+    zh-Hant: 一個書籤管理器，您可以自行託管
+    ja: 自分でホストできるブックマーク管理ツール
+    ko: 스스로 호스팅할 수 있는 북마크 관리자
+    ru: Менеджер закладок, который можно размещать самостоятельно
+    ms: Pengurus penanda buku yang boleh dihos sendiri
+    pt-br: Gerenciador de favoritos que você pode hospedar por conta própria
   key: linkding
   name: linkding
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/sissbruecker/linkding
   github: https://github.com/sissbruecker/linkding
   document: https://github.com/sissbruecker/linkding
+  architectures:
+    - amd64

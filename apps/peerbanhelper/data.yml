@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: BT 客户端反恶意吸血工具
   shortDescEn: BitTorrent client anti malicious leech tool
+  description:
+    en: "Anti-malicious leech protection tool for BitTorrent clients."
+    zh: "BT 客户端反恶意吸血工具。"
+    zh-Hant: "BT 客戶端反惡意吸血工具。"
+    ja: "BitTorrentクライアント向けの悪質なリーチ対策ツールです。"
+    ko: "BitTorrent 클라이언트를 위한 악성 리처 방지 도구입니다."
+    ru: "Инструмент для защиты BitTorrent-клиентов от вредоносных личеров."
+    ms: "Alat perlindungan klien BitTorrent daripada leecher berniat jahat."
+    pt-br: "Ferramenta de proteção contra leechers maliciosos para clientes BitTorrent."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://pbh-btn.github.io/pbh-docs
   github: https://github.com/PBH-BTN/PeerBanHelper
   document: https://pbh-btn.github.io/pbh-docs
+  architectures:
+    - amd64
+    - arm64

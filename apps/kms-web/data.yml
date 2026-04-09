@@ -4,6 +4,15 @@ tags:
 title: KMS 服务端与 WEB
 description: KMS 服务端与 WEB
 additionalProperties:
+  description:
+    en: KMS server and web
+    zh: KMS 服务端与 WEB
+    zh-Hant: KMS 服務端與 WEB
+    ja: KMS サーバーとWeb
+    ko: KMS 서버 및 웹
+    ru: Сервер KMS и веб
+    ms: Pelayan KMS dan web
+    pt-br: Servidor KMS e web
   key: kms-web
   name: KMS & WEB
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/johngong/kms
   github: https://github.com/gshang2017/docker/tree/master/kms
   document: https://hub.docker.com/r/johngong/kms
+  architectures:
+    - amd64

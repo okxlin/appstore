@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 网页文件浏览器
   shortDescEn: Web File Browser
+  description:
+    en: Web file browser
+    zh: 网页文件浏览器
+    zh-Hant: 網頁檔案瀏覽器
+    ja: ウェブファイルブラウザ
+    ko: 웹 파일 브라우저
+    ru: Веб‑файловый браузер
+    ms: Pelayar fail web
+    pt-br: Navegador de arquivos na web
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://filebrowser.org/
   github: https://github.com/filebrowser/filebrowser
   document: https://filebrowser.org/
+  architectures:
+    - amd64

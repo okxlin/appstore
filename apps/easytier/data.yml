@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.easytier.top
   github: https://github.com/EasyTier/EasyTier
   document: https://www.easytier.top
+  architectures:
+    - amd64
+  description:
+    en: "A simple, safe and decentralized VPN networking solution"
+    zh: "一个简单、安全、去中心化的内网穿透 VPN 组网方案"
+    zh-Hant: "一個簡單、安全、去中心化的內網穿透 VPN 組網方案"
+    ja: "シンプルで安全、分散型のVPNネットワークソリューション"
+    ko: "간단하고 안전하며 탈중앙화된 VPN 네트워킹 솔루션"
+    ru: "Простое, безопасное и децентрализованное VPN-решение для сетей"
+    ms: "Penyelesaian rangkaian VPN yang ringkas, selamat dan terdesentralisasi"
+    pt-br: "Solução de rede VPN simples, segura e descentralizada"

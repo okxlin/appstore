@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个免费的互联网元聚合搜索引擎
   shortDescEn: A free internet meta-aggregator search engine
+  description:
+    en: A free internet meta-aggregator search engine
+    zh: 一个免费的互联网元聚合搜索引擎
+    zh-Hant: 一個免費的網際網路元聚合搜尋引擎
+    ja: 無料のインターネットメタ検索エンジン
+    ko: 무료 인터넷 메타 검색 엔진
+    ru: Бесплатный интернет-метапоисковик
+    ms: Enjin carian meta internet percuma
+    pt-br: Mecanismo de busca meta da internet gratuito
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,8 @@ additionalProperties:
   website: https://github.com/searxng/searxng
   github: https://github.com/searxng/searxng
   document: https://docs.searxng.org/
+
+  architectures:
+    - amd64
+    - arm64
+    - armv7

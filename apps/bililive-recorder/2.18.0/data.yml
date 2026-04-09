@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: USER_NAME
       labelEn: WebUI Username
       labelZh: WebUI 的用户名
+      label:
+        en: 'WebUI Username'
+        zh: 'WebUI 的用户名'
+        zh-Hant: 'WebUI 的使用者名稱'
+        ja: 'WebUI ユーザー名'
+        ko: 'WebUI 사용자 이름'
+        ru: 'Имя пользователя WebUI'
+        ms: 'Nama pengguna WebUI'
+        pt-br: 'Nome de usuário do WebUI'
       required: true
       type: text
     - default: admin
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USER_PASSWORD
       labelEn: WebUI access password
       labelZh: WebUI 的访问密码
+      label:
+        en: 'WebUI access password'
+        zh: 'WebUI 的访问密码'
+        zh-Hant: 'WebUI 的存取密碼'
+        ja: 'WebUI アクセスパスワード'
+        ko: 'WebUI 접근 비밀번호'
+        ru: 'Пароль доступа WebUI'
+        ms: 'Kata laluan akses WebUI'
+        pt-br: 'Senha de acesso do WebUI'
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: WORK_SPACE_PATH
       labelEn: work space path (Pay attention to folder permissions)
       labelZh: 工作目录路径 (注意文件夹权限)
+      label:
+        en: 'Work space path (Pay attention to folder permissions)'
+        zh: '工作目录路径 (注意文件夹权限)'
+        zh-Hant: '工作目錄路徑 (注意資料夾權限)'
+        ja: '作業ディレクトリパス (フォルダー権限に注意)'
+        ko: '작업 디렉터리 경로 (폴더 권한 주의)'
+        ru: 'Путь к рабочему каталогу (обратите внимание на права папки)'
+        ms: 'Laluan direktori kerja (Perhatikan kebenaran folder)'
+        pt-br: 'Caminho do diretório de trabalho (atenção às permissões da pasta)'
       required: true
       type: text
     - default: "022"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: UMASK
       labelZh: 文件权限掩码
+      label:
+        en: 'UMASK'
+        zh: '文件权限掩码'
+        zh-Hant: '檔案權限遮罩'
+        ja: 'UMASK 値'
+        ko: 'UMASK 값'
+        ru: 'Значение UMASK'
+        ms: 'Nilai UMASK'
+        pt-br: 'Valor do UMASK'
       required: true
       type: text
     - default: "1000"
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number

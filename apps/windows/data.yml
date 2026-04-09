@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 在 Docker 容器内运行 Windows
   shortDescEn: Windows inside a Docker container
+  description:
+    en: Run Windows inside a Docker container
+    zh: 在 Docker 容器内运行 Windows
+    zh-Hant: 在 Docker 容器內運行 Windows
+    ja: Docker コンテナ内で Windows を実行
+    ko: Docker 컨테이너에서 Windows 실행
+    ru: Запуск Windows в контейнере Docker
+    ms: Jalankan Windows di dalam kontena Docker
+    pt-br: Execute o Windows dentro de um contêiner Docker
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/dockur/windows
   github: https://github.com/dockur/windows
   document: https://github.com/dockur/windows
+
+  architectures:
+    - amd64

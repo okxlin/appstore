@@ -5,13 +5,32 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
+      label:
+        en: 'Port (determined by the configuration file)'
+        zh: '端口 (由配置文件决定)'
+        zh-Hant: '連接埠 (由設定檔決定)'
+        ja: 'ポート (設定ファイルで決定)'
+        ko: '포트 (구성 파일에 의해 결정됨)'
+        ru: 'Порт (определяется файлом конфигурации)'
+        ms: 'Port (ditentukan oleh fail konfigurasi)'
+        pt-br: 'Porta (determinada pelo arquivo de configuração)'
       required: true
+      rule: paramPort
       type: number
     - default: "./data/server.toml"
       edit: true
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: select
       values:
@@ -24,6 +43,15 @@ additionalProperties:
       envKey: SERVICE_MODE
       labelEn: Service Mode
       labelZh: 服务模式
+      label:
+        en: 'Service Mode'
+        zh: '服务模式'
+        zh-Hant: '服務模式'
+        ja: 'サービスモード'
+        ko: '서비스 모드'
+        ru: 'Режим службы'
+        ms: 'Mod perkhidmatan'
+        pt-br: 'Modo de serviço'
       required: true
       type: select
       values:

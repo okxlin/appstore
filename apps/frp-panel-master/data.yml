@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 多节点 FRP WebUI (控制节点)
   shortDescEn: A multi node frp webui (Console)
+  description:
+    en: Multi-node FRP WebUI (control node)
+    zh: 多节点 FRP WebUI（控制节点）
+    zh-Hant: 多節點 FRP WebUI（控制節點）
+    ja: マルチノード FRP WebUI（コントロールノード）
+    ko: 멀티 노드 FRP WebUI(컨트롤 노드)
+    ru: Многоузловой FRP WebUI (узел управления)
+    ms: FRP WebUI berbilang nod (nod kawalan)
+    pt-br: WebUI do FRP com múltiplos nós (nó de controle)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/VaalaCat/frp-panel
   github: https://github.com/VaalaCat/frp-panel
   document: https://github.com/VaalaCat/frp-panel
+  architectures:
+    - amd64

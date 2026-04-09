@@ -5,6 +5,15 @@ additionalProperties:
       envKey: SERVERSTATUS_CONFIG_PATH
       labelEn: Server Status Config Path
       labelZh: 服务器状态配置路径
+      label:
+        en: 'Server Status Config Path'
+        zh: '服务器状态配置路径'
+        zh-Hant: '伺服器狀態設定路徑'
+        ja: 'サーバーステータス設定パス'
+        ko: '서버 상태 구성 경로'
+        ru: 'Путь к конфигурации Server Status'
+        ms: 'Laluan konfigurasi Server Status'
+        pt-br: 'Caminho de configuração do Server Status'
       required: true
       type: text
     - default: "./data/web/json"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: SERVERSTATUS_JSON_PATH
       labelEn: Server Status Monthly Traffic State Path
       labelZh: 探针月流量状态路径
+      label:
+        en: 'Server Status Monthly Traffic State Path'
+        zh: '探针月流量状态路径'
+        zh-Hant: '探針每月流量狀態路徑'
+        ja: '月間トラフィック状態パス'
+        ko: '월별 트래픽 상태 경로'
+        ru: 'Путь к состоянию месячного трафика'
+        ms: 'Laluan status trafik bulanan'
+        pt-br: 'Caminho do estado do tráfego mensal'
       required: true
       type: text
     - default: "35601"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_COMM
       labelEn: Communication Port
       labelZh: 通信端口
+      label:
+        en: 'Communication Port'
+        zh: '通信端口'
+        zh-Hant: '通訊埠'
+        ja: '通信ポート'
+        ko: '통신 포트'
+        ru: 'Порт связи'
+        ms: 'Port komunikasi'
+        pt-br: 'Porta de comunicação'
       required: true
       rule: paramPort
       type: number
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Port
       labelZh: Web 端口
+      label:
+        en: 'Web Port'
+        zh: 'Web 端口'
+        zh-Hant: 'Web 埠'
+        ja: 'Web ポート'
+        ko: '웹 포트'
+        ru: 'Веб-порт'
+        ms: 'Port Web'
+        pt-br: 'Porta Web'
       required: true
       rule: paramPort
       type: number

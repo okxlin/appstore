@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 云数据库管理器
   shortDescEn: Cloud Database Manager
+  description:
+    en: Cloud Database Manager
+    zh: 云数据库管理器
+    zh-Hant: 雲資料庫管理器
+    ja: クラウドデータベース管理ツール
+    ko: 클라우드 데이터베이스 관리자
+    ru: Облачный менеджер баз данных
+    ms: Pengurus pangkalan data awan
+    pt-br: Gerenciador de banco de dados em nuvem
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://dbeaver.com/
   github: https://github.com/dbeaver/cloudbeaver
   document: https://dbeaver.com/docs/cloudbeaver/
+  architectures:
+    - amd64

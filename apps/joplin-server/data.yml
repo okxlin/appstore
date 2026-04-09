@@ -4,6 +4,15 @@ tags:
 title: 一个开源的记事本应用程序
 description: 一个开源的记事本应用程序
 additionalProperties:
+  description:
+    en: An open-source note-taking app
+    zh: 一个开源的记事本应用程序
+    zh-Hant: 一個開源的記事本應用程式
+    ja: オープンソースのノートアプリ
+    ko: 오픈 소스 메모 앱
+    ru: Открытое приложение для заметок
+    ms: Aplikasi nota sumber terbuka
+    pt-br: Aplicativo de anotações de código aberto
   key: joplin-server
   name: Joplin Server
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://joplinapp.org/
   github: https://github.com/laurent22/joplin
   document: https://joplinapp.org/help/
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: EXTERNAL_IP
       labelEn: ipAddress
       labelZh: 外部访问 IP
+      label:
+        en: 'ipAddress'
+        zh: '外部访问 IP'
+        zh-Hant: '外部存取 IP'
+        ja: '外部アクセス IP'
+        ko: '외부 접속 IP'
+        ru: 'Внешний IP'
+        ms: 'IP akses luaran'
+        pt-br: 'IP de acesso externo'
       required: true
       type: text
     - default: "5001"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_API
       labelEn: WuKongIM api port
       labelZh: 悟空 IM api 端口
+      label:
+        en: 'WuKongIM api port'
+        zh: '悟空 IM api 端口'
+        zh-Hant: '悟空 IM api 埠'
+        ja: 'WuKongIM API ポート'
+        ko: 'WuKongIM API 포트'
+        ru: 'Порт API WuKongIM'
+        ms: 'Port API WuKongIM'
+        pt-br: 'Porta API do WuKongIM'
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_TCP
       labelEn: WuKongIM tcp port
       labelZh: 悟空 IM TCP 端口
+      label:
+        en: 'WuKongIM tcp port'
+        zh: '悟空 IM TCP 端口'
+        zh-Hant: '悟空 IM TCP 埠'
+        ja: 'WuKongIM TCP ポート'
+        ko: 'WuKongIM TCP 포트'
+        ru: 'TCP-порт WuKongIM'
+        ms: 'Port TCP WuKongIM'
+        pt-br: 'Porta TCP do WuKongIM'
       required: true
       rule: paramPort
       type: number
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_WS
       labelEn: WuKongIM ws port
       labelZh: 悟空 IM WS 端口
+      label:
+        en: 'WuKongIM ws port'
+        zh: '悟空 IM WS 端口'
+        zh-Hant: '悟空 IM WS 埠'
+        ja: 'WuKongIM WS ポート'
+        ko: 'WuKongIM WS 포트'
+        ru: 'WS-порт WuKongIM'
+        ms: 'Port WS WuKongIM'
+        pt-br: 'Porta WS do WuKongIM'
       required: true
       rule: paramPort
       type: number
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WuKongIM web port
       labelZh: 悟空 IM 监控端口
+      label:
+        en: 'WuKongIM web port'
+        zh: '悟空 IM 监控端口'
+        zh-Hant: '悟空 IM 監控埠'
+        ja: 'WuKongIM Web ポート'
+        ko: 'WuKongIM 웹 포트'
+        ru: 'Веб-порт WuKongIM'
+        ms: 'Port web WuKongIM'
+        pt-br: 'Porta web do WuKongIM'
       required: true
       rule: paramPort
       type: number
@@ -44,6 +89,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_WK_DEMO_SERVER
       labelEn: WuKongIM demo port
       labelZh: 悟空 IM demo 端口
+      label:
+        en: 'WuKongIM demo port'
+        zh: '悟空 IM demo 端口'
+        zh-Hant: '悟空 IM demo 埠'
+        ja: 'WuKongIM デモポート'
+        ko: 'WuKongIM 데모 포트'
+        ru: 'Демо-порт WuKongIM'
+        ms: 'Port demo WuKongIM'
+        pt-br: 'Porta demo do WuKongIM'
       required: true
       rule: paramPort
       type: number

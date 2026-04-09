@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款以智能表格为基础的新型数字化平台
   shortDescEn: A spreadsheet/database like Airtable
+  description:
+    en: A new digital platform based on smart spreadsheets
+    zh: 一款以智能表格为基础的新型数字化平台
+    zh-Hant: 一款以智慧表格為基礎的新型數位化平台
+    ja: スマートスプレッドシートを基盤とした新しいデジタルプラットフォーム
+    ko: 스마트 스프레드시트를 기반으로 한 새로운 디지털 플랫폼
+    ru: Новая цифровая платформа на основе умных таблиц
+    ms: Platform digital baharu berasaskan hamparan pintar
+    pt-br: Nova plataforma digital baseada em planilhas inteligentes
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://seatable.cn
   github: https://github.com/seatable/seatable
   document: https://docs.seatable.cn
+
+  architectures:
+    - amd64

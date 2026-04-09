@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/chaos-zhu/easynode
   github: https://github.com/chaos-zhu/easynode
   document: https://github.com/chaos-zhu/easynode
+  architectures:
+    - amd64
+  description:
+    en: "A Linux server WEB SSH panel"
+    zh: "一个 Linux 服务器 WEB SSH 面板"
+    zh-Hant: "一個 Linux 伺服器 WEB SSH 面板"
+    ja: "Linuxサーバー向けのWeb SSHパネル"
+    ko: "Linux 서버용 Web SSH 패널"
+    ru: "Web-панель SSH для Linux-серверов"
+    ms: "Panel SSH Web untuk pelayan Linux"
+    pt-br: "Painel WEB SSH para servidores Linux"

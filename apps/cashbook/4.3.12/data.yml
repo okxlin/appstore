@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: 'Data storage folder'
+        zh: '数据存放文件夹'
+        zh-Hant: '資料存放資料夾'
+        ja: 'データ保存フォルダー'
+        ko: '데이터 저장 폴더'
+        ru: 'Папка хранения данных'
+        ms: 'Folder storan data'
+        pt-br: 'Pasta de armazenamento de dados'
       required: true
       type: text
     - default: "spend-money-like-water"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: TOKEN_SALT
       labelEn: Token Salt
       labelZh: Token Salt
+      label:
+        en: 'Token Salt'
+        zh: 'Token 盐值'
+        zh-Hant: 'Token 鹽值'
+        ja: 'トークンソルト'
+        ko: '토큰 솔트'
+        ru: 'Соль токена'
+        ms: 'Garam token'
+        pt-br: 'Sal do token'
       required: true
       type: text
     - default: "PRO"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: ENVIRONMENT
       labelEn: Environment
       labelZh: 环境
+      label:
+        en: 'Environment'
+        zh: '环境'
+        zh-Hant: '環境'
+        ja: '環境'
+        ko: '환경'
+        ru: 'Окружение'
+        ms: 'Persekitaran'
+        pt-br: 'Ambiente'
       required: true
       type: text
     - default: "08cc0348-061d-4193-af05-b6cc02df28ea"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SERVER_KEY
       labelEn: Server Key
       labelZh: 服务密钥
+      label:
+        en: 'Server Key'
+        zh: '服务密钥'
+        zh-Hant: '服務密鑰'
+        ja: 'サーバーキー'
+        ko: '서버 키'
+        ru: 'Ключ сервера'
+        ms: 'Kunci pelayan'
+        pt-br: 'Chave do servidor'
       required: true
       type: text
     - default: "cashbook"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: DEFAULT_PASSWORD
       labelEn: Default Password
       labelZh: 默认密码
+      label:
+        en: 'Default Password'
+        zh: '默认密码'
+        zh-Hant: '預設密碼'
+        ja: 'デフォルトパスワード'
+        ko: '기본 비밀번호'
+        ru: 'Пароль по умолчанию'
+        ms: 'Kata laluan lalai'
+        pt-br: 'Senha padrão'
       random: true
       required: true
       rule: paramComplexity

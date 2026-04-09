@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 网络性能测试工具
   shortDescEn: Network performance testing tool
+  description:
+    en: Network performance testing tool
+    zh: 网络性能测试工具
+    zh-Hant: 網路效能測試工具
+    ja: ネットワーク性能テストツール
+    ko: 네트워크 성능 테스트 도구
+    ru: Инструмент тестирования производительности сети
+    ms: Alat ujian prestasi rangkaian
+    pt-br: Ferramenta de teste de desempenho de rede
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://software.es.net/iperf/
   github: https://github.com/nerdalert/iperf3
   document: https://software.es.net/iperf/
+  architectures:
+    - amd64
+

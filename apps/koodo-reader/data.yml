@@ -17,3 +17,15 @@ additionalProperties:
   website: https://koodo.960960.xyz
   github: https://github.com/troyeguo/koodo-reader
   document: https://troyeguo.notion.site/Koodo-Reader-0c9c7ccdc5104a54825dfc72f1c84bea
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A cross-platform ebook reader.'
+    zh: '一个跨平台的电子书阅读器'
+    zh-Hant: '一個跨平台的電子書閱讀器'
+    ja: 'クロスプラットフォーム対応の電子書籍リーダーです。'
+    ko: '크로스플랫폼 전자책 리더입니다.'
+    ru: 'Кроссплатформенная программа для чтения электронных книг.'
+    ms: 'Pembaca e-buku merentas platform.'
+    pt-br: 'Leitor de e-books multiplataforma.'

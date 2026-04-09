@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个简洁、安全、免费的静态网站评论系统
   shortDescEn: A simple, safe, free comment system
+  description:
+    en: "Simple, secure, and free comment system for static sites."
+    zh: "简洁、安全、免费的静态网站评论系统。"
+    zh-Hant: "簡潔、安全且免費的靜態網站留言系統。"
+    ja: "シンプルで安全、無料の静的サイト向けコメントシステムです。"
+    ko: "간단하고 안전하며 무료인 정적 사이트용 댓글 시스템입니다."
+    ru: "Простая, безопасная и бесплатная система комментариев для статических сайтов."
+    ms: "Sistem komen yang ringkas, selamat dan percuma untuk laman statik."
+    pt-br: "Sistema de comentários simples, seguro e gratuito para sites estáticos."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://twikoo.js.org
   github: https://github.com/imaegoo/twikoo
   document: https://twikoo.js.org
+  architectures:
+    - amd64
+    - armv7

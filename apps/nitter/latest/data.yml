@@ -5,6 +5,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "nitter"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: TITLE
       labelEn: Title
       labelZh: 标题
+      label:
+        en: 'Title'
+        zh: '标题'
+        zh-Hant: '標題'
+        ja: 'タイトル'
+        ko: '제목'
+        ru: 'Заголовок'
+        ms: 'Tajuk'
+        pt-br: 'Título'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: ADDRESS
       labelEn: Listening Address (in container)
       labelZh: 监听地址 (容器内)
+      label:
+        en: 'Listening Address (in container)'
+        zh: '监听地址 (容器内)'
+        zh-Hant: '監聽位址 (容器內)'
+        ja: 'コンテナ内のリッスンアドレス'
+        ko: '컨테이너 내 수신 주소'
+        ru: 'Адрес прослушивания (в контейнере)'
+        ms: 'Alamat pendengaran (dalam kontena)'
+        pt-br: 'Endereço de escuta (no contêiner)'
       required: true
       type: text
     - default: "40238"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "false"
@@ -41,18 +86,36 @@ additionalProperties:
       envKey: HTTPS
       labelEn: HTTPS Enabled
       labelZh: 启用 HTTPS
+      label:
+        en: 'HTTPS Enabled'
+        zh: '启用 HTTPS'
+        zh-Hant: '啟用 HTTPS'
+        ja: 'HTTPS を有効化'
+        ko: 'HTTPS 사용'
+        ru: 'Включить HTTPS'
+        ms: 'Dayakan HTTPS'
+        pt-br: 'Ativar HTTPS'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "100"
       edit: true
       envKey: HTTP_MAX_CONNECTIONS
       labelEn: Max HTTP Connections
       labelZh: 最大 HTTP 连接数
+      label:
+        en: 'Max HTTP Connections'
+        zh: '最大 HTTP 连接数'
+        zh-Hant: '最大 HTTP 連線數'
+        ja: '最大 HTTP 接続数'
+        ko: '최대 HTTP 연결 수'
+        ru: 'Максимум HTTP-соединений'
+        ms: 'Maksimum sambungan HTTP'
+        pt-br: 'Máximo de conexões HTTP'
       required: true
       type: number
     - default: "./public"
@@ -60,6 +123,15 @@ additionalProperties:
       envKey: STATIC_DIR
       labelEn: Static Directory
       labelZh: 静态文件目录
+      label:
+        en: 'Static Directory'
+        zh: '静态文件目录'
+        zh-Hant: '靜態檔案目錄'
+        ja: '静的ディレクトリ'
+        ko: '정적 디렉터리'
+        ru: 'Каталог статических файлов'
+        ms: 'Direktori statik'
+        pt-br: 'Diretório estático'
       required: true
       type: text
     - default: "240"
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: LIST_MINUTES
       labelEn: List Cache Minutes
       labelZh: 列表缓存分钟数
+      label:
+        en: 'List Cache Minutes'
+        zh: '列表缓存分钟数'
+        zh-Hant: '列表快取分鐘數'
+        ja: 'リストキャッシュ（分）'
+        ko: '목록 캐시 분'
+        ru: 'Минуты кеша списка'
+        ms: 'Minit cache senarai'
+        pt-br: 'Minutos de cache da lista'
       required: true
       type: number
     - default: "10"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: RSS_MINUTES
       labelEn: RSS Cache Minutes
       labelZh: RSS 缓存分钟数
+      label:
+        en: 'RSS Cache Minutes'
+        zh: 'RSS 缓存分钟数'
+        zh-Hant: 'RSS 快取分鐘數'
+        ja: 'RSS キャッシュ（分）'
+        ko: 'RSS 캐시 분'
+        ru: 'Минуты кеша RSS'
+        ms: 'Minit cache RSS'
+        pt-br: 'Minutos de cache RSS'
       required: true
       type: number
     - default: ""
@@ -82,6 +172,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: "6379"
@@ -89,6 +188,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: 'Redis Service Port'
+        zh: 'Redis服务端口'
+        zh-Hant: 'Redis 服務埠'
+        ja: 'Redis サービスポート'
+        ko: 'Redis 서비스 포트'
+        ru: 'Порт сервиса Redis'
+        ms: 'Port perkhidmatan Redis'
+        pt-br: 'Porta do serviço Redis'
       required: true
       rule: paramPort
       type: number
@@ -97,6 +205,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata laluan Redis'
+        pt-br: 'Senha do Redis'
       required: true
       type: password
     - default: "20"
@@ -104,6 +221,15 @@ additionalProperties:
       envKey: REDIS_CONNECTIONS
       labelEn: Redis Connections
       labelZh: Redis 连接数
+      label:
+        en: 'Redis Connections'
+        zh: 'Redis 连接数'
+        zh-Hant: 'Redis 連線數'
+        ja: 'Redis 接続数'
+        ko: 'Redis 연결 수'
+        ru: 'Количество подключений Redis'
+        ms: 'Bilangan sambungan Redis'
+        pt-br: 'Quantidade de conexões Redis'
       required: true
       type: number
     - default: "30"
@@ -111,6 +237,15 @@ additionalProperties:
       envKey: REDIS_MAX_CONNECTIONS
       labelEn: Redis Max Connections
       labelZh: Redis 最大连接数
+      label:
+        en: 'Redis Max Connections'
+        zh: 'Redis 最大连接数'
+        zh-Hant: 'Redis 最大連線數'
+        ja: 'Redis 最大接続数'
+        ko: 'Redis 최대 연결 수'
+        ru: 'Максимум подключений Redis'
+        ms: 'Maksimum sambungan Redis'
+        pt-br: 'Máximo de conexões Redis'
       required: true
       type: number
     - default: "C7PPBcaNCL5B5Zkt6uHU"
@@ -118,6 +253,15 @@ additionalProperties:
       envKey: HMAC_KEY
       labelEn: Random key for cryptographic signing of video urls
       labelZh: 用于视频网址加密签名的随机密钥
+      label:
+        en: 'Random key for cryptographic signing of video urls'
+        zh: '用于视频网址加密签名的随机密钥'
+        zh-Hant: '用於影片網址加密簽章的隨機金鑰'
+        ja: '動画URLの暗号署名用ランダムキー'
+        ko: '동영상 URL 암호 서명용 랜덤 키'
+        ru: 'Случайный ключ для криптографической подписи видео URL'
+        ms: 'Kunci rawak untuk tandatangan kriptografi URL video'
+        pt-br: 'Chave aleatória para assinatura criptográfica de URLs de vídeo'
       required: true
       type: text
     - default: "false"
@@ -125,6 +269,15 @@ additionalProperties:
       envKey: BASE64_MEDIA
       labelEn: Base64 Media
       labelZh: Base64 媒体
+      label:
+        en: 'Base64 Media'
+        zh: 'Base64 媒体'
+        zh-Hant: 'Base64 媒體'
+        ja: 'Base64 メディア'
+        ko: 'Base64 미디어'
+        ru: 'Медиа Base64'
+        ms: 'Media Base64'
+        pt-br: 'Mídia Base64'
       required: true
       type: text
     - default: "true"
@@ -132,30 +285,57 @@ additionalProperties:
       envKey: ENABLE_RSS
       labelEn: Enable RSS
       labelZh: 启用 RSS
+      label:
+        en: 'Enable RSS'
+        zh: '启用 RSS'
+        zh-Hant: '啟用 RSS'
+        ja: 'RSS を有効化'
+        ko: 'RSS 사용'
+        ru: 'Включить RSS'
+        ms: 'Dayakan RSS'
+        pt-br: 'Ativar RSS'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "false"
       edit: true
       envKey: ENABLE_DEBUG
       labelEn: Enable Debug
       labelZh: 启用调试
+      label:
+        en: 'Enable Debug'
+        zh: '启用调试'
+        zh-Hant: '啟用偵錯'
+        ja: 'デバッグを有効化'
+        ko: '디버그 사용'
+        ru: 'Включить отладку'
+        ms: 'Dayakan nyahpepijat'
+        pt-br: 'Ativar depuração'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: ""
       edit: true
       envKey: PROXY
       labelEn: Proxy
       labelZh: 代理
+      label:
+        en: 'Proxy'
+        zh: '代理'
+        zh-Hant: '代理'
+        ja: 'プロキシ'
+        ko: '프록시'
+        ru: 'Прокси'
+        ms: 'Proksi'
+        pt-br: 'Proxy'
       required: false
       type: text
     - default: ""
@@ -163,6 +343,15 @@ additionalProperties:
       envKey: PROXY_AUTH
       labelEn: Proxy Auth
       labelZh: 代理认证
+      label:
+        en: 'Proxy Auth'
+        zh: '代理认证'
+        zh-Hant: '代理認證'
+        ja: 'プロキシ認証'
+        ko: '프록시 인증'
+        ru: 'Прокси-аутентификация'
+        ms: 'Pengesahan proksi'
+        pt-br: 'Autenticação de proxy'
       required: false
       type: text
     - default: "10"
@@ -170,6 +359,15 @@ additionalProperties:
       envKey: TOKEN_COUNT
       labelEn: Token Count
       labelZh: Token 数量
+      label:
+        en: 'Token Count'
+        zh: 'Token 数量'
+        zh-Hant: 'Token 數量'
+        ja: 'トークン数'
+        ko: '토큰 개수'
+        ru: 'Количество токенов'
+        ms: 'Bilangan token'
+        pt-br: 'Quantidade de tokens'
       required: true
       type: number
     - default: "Nitter"
@@ -177,6 +375,15 @@ additionalProperties:
       envKey: THEME
       labelEn: Theme
       labelZh: 主题
+      label:
+        en: 'Theme'
+        zh: '主题'
+        zh-Hant: '主題'
+        ja: 'テーマ'
+        ko: '테마'
+        ru: 'Тема'
+        ms: 'Tema'
+        pt-br: 'Tema'
       required: true
       type: text
     - default: "nitter.net"
@@ -184,6 +391,15 @@ additionalProperties:
       envKey: REPLACE_TWITTER
       labelEn: Replace Twitter
       labelZh: 替换 Twitter
+      label:
+        en: 'Replace Twitter'
+        zh: '替换 Twitter'
+        zh-Hant: '替換 Twitter'
+        ja: 'Twitter を置換'
+        ko: 'Twitter 대체'
+        ru: 'Заменить Twitter'
+        ms: 'Ganti Twitter'
+        pt-br: 'Substituir Twitter'
       required: true
       type: text
     - default: "piped.video"
@@ -191,6 +407,15 @@ additionalProperties:
       envKey: REPLACE_YOUTUBE
       labelEn: Replace YouTube
       labelZh: 替换 YouTube
+      label:
+        en: 'Replace YouTube'
+        zh: '替换 YouTube'
+        zh-Hant: '替換 YouTube'
+        ja: 'YouTube を置換'
+        ko: 'YouTube 대체'
+        ru: 'Заменить YouTube'
+        ms: 'Ganti YouTube'
+        pt-br: 'Substituir YouTube'
       required: true
       type: text
     - default: "teddit.net"
@@ -198,6 +423,15 @@ additionalProperties:
       envKey: REPLACE_REDDIT
       labelEn: Replace Reddit
       labelZh: 替换 Reddit
+      label:
+        en: 'Replace Reddit'
+        zh: '替换 Reddit'
+        zh-Hant: '替換 Reddit'
+        ja: 'Reddit を置換'
+        ko: 'Reddit 대체'
+        ru: 'Заменить Reddit'
+        ms: 'Ganti Reddit'
+        pt-br: 'Substituir Reddit'
       required: true
       type: text
     - default: "true"
@@ -205,34 +439,61 @@ additionalProperties:
       envKey: PROXY_VIDEOS
       labelEn: Proxy Videos
       labelZh: 代理视频
+      label:
+        en: 'Proxy Videos'
+        zh: '代理视频'
+        zh-Hant: '代理影片'
+        ja: '動画をプロキシ'
+        ko: '동영상 프록시'
+        ru: 'Проксировать видео'
+        ms: 'Proksi video'
+        pt-br: 'Proxy de vídeos'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "false"
       edit: true
       envKey: HLS_PLAYBACK
       labelEn: HLS Playback
       labelZh: HLS 播放
+      label:
+        en: 'HLS Playback'
+        zh: 'HLS 播放'
+        zh-Hant: 'HLS 播放'
+        ja: 'HLS 再生'
+        ko: 'HLS 재생'
+        ru: 'Воспроизведение HLS'
+        ms: 'Main balik HLS'
+        pt-br: 'Reprodução HLS'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "false"
       edit: true
       envKey: INFINITE_SCROLL
       labelEn: Infinite Scroll
       labelZh: 无限滚动
+      label:
+        en: 'Infinite Scroll'
+        zh: '无限滚动'
+        zh-Hant: '無限捲動'
+        ja: '無限スクロール'
+        ko: '무한 스크롤'
+        ru: 'Бесконечная прокрутка'
+        ms: 'Tatal tanpa had'
+        pt-br: 'Rolagem infinita'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"

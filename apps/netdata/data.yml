@@ -6,6 +6,15 @@ description: 一个实时监控工具
 additionalProperties:
   key: netdata
   name: Netdata
+  description:
+    en: Real-time monitoring tool
+    zh: 一个实时监控工具
+    zh-Hant: 一個即時監控工具
+    ja: リアルタイム監視ツール
+    ko: 실시간 모니터링 도구
+    ru: Инструмент мониторинга в реальном времени
+    ms: Alat pemantauan masa nyata
+    pt-br: Ferramenta de monitoramento em tempo real
   tags:
     - Tool
   shortDescZh: 一个实时监控工具
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.netdata.cloud
   github: https://github.com/netdata/netdata
   document: https://learn.netdata.cloud/docs/
+  architectures:
+    - amd64

@@ -4,6 +4,15 @@ tags:
 title: 开源速度测试工具
 description: 开源速度测试工具
 additionalProperties:
+  description:
+    en: Open-source speed test tool
+    zh: 开源速度测试工具
+    zh-Hant: 開源速度測試工具
+    ja: オープンソースの速度テストツール
+    ko: 오픈 소스 속도 테스트 도구
+    ru: Открытый инструмент тестирования скорости
+    ms: Alat ujian kelajuan sumber terbuka
+    pt-br: Ferramenta de teste de velocidade de código aberto
   key: librespeed
   name: LibreSpeed
   tags:
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://librespeed.org/
   github: https://github.com/librespeed/speedtest
   document: https://github.com/librespeed/speedtest
+  architectures:
+    - amd64
+    - arm64

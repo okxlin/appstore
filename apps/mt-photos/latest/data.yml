@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "./data/config"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/upload"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: UPLOAD_PATH
       labelEn: Upload Path
       labelZh: 上传路径
+      label:
+        en: 'Upload Path'
+        zh: '上传路径'
+        zh-Hant: '上傳路徑'
+        ja: 'アップロードパス'
+        ko: '업로드 경로'
+        ru: 'Путь загрузки'
+        ms: 'Laluan muat naik'
+        pt-br: 'Caminho de upload'
       required: true
       type: text
     - default: "./data/media-1"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: 'Media Path'
+        zh: '媒体路径'
+        zh-Hant: '媒體路徑'
+        ja: 'メディアパス'
+        ko: '미디어 경로'
+        ru: 'Путь к медиа'
+        ms: 'Laluan media'
+        pt-br: 'Caminho de mídia'
       required: true
       type: text
     - default: "/media-1"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL
       labelEn: Internal Media Path
       labelZh: 容器内部媒体路径
+      label:
+        en: 'Internal Media Path'
+        zh: '容器内部媒体路径'
+        zh-Hant: '容器內部媒體路徑'
+        ja: 'コンテナ内部メディアパス'
+        ko: '컨테이너 내부 미디어 경로'
+        ru: 'Внутренний путь к медиа в контейнере'
+        ms: 'Laluan media dalaman kontena'
+        pt-br: 'Caminho interno de mídia do contêiner'
       required: true
       type: text
     - default: "./data/media-2"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: MEDIA_PATH_2
       labelEn: Media Path 2
       labelZh: 媒体路径 2
+      label:
+        en: 'Media Path 2'
+        zh: '媒体路径 2'
+        zh-Hant: '媒體路徑 2'
+        ja: 'メディアパス 2'
+        ko: '미디어 경로 2'
+        ru: 'Путь к медиа 2'
+        ms: 'Laluan media 2'
+        pt-br: 'Caminho de mídia 2'
       required: true
       type: text
     - default: "/media-2"
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL_2
       labelEn: Internal Media Path 2
       labelZh: 容器内部媒体路径 2
+      label:
+        en: 'Internal Media Path 2'
+        zh: '容器内部媒体路径 2'
+        zh-Hant: '容器內部媒體路徑 2'
+        ja: 'コンテナ内部メディアパス 2'
+        ko: '컨테이너 내부 미디어 경로 2'
+        ru: 'Внутренний путь к медиа в контейнере 2'
+        ms: 'Laluan media dalaman kontena 2'
+        pt-br: 'Caminho interno de mídia do contêiner 2'
       required: true
       type: text

@@ -17,3 +17,14 @@ additionalProperties:
   website: https://vue-color-avatar.leoku.dev
   github: https://github.com/Codennnn/vue-color-avatar
   document: https://github.com/Codennnn/vue-color-avatar
+  architectures:
+    - amd64
+  description:
+    en: 'A playful avatar generator implemented entirely on the frontend.'
+    zh: '一个纯前端实现的头像生成网站'
+    zh-Hant: '一個純前端實作的頭像生成網站'
+    ja: 'フロントエンドだけで実装された楽しいアバター生成サイトです。'
+    ko: '순수 프런트엔드로 구현된 재미있는 아바타 생성 사이트입니다.'
+    ru: 'Сайт для генерации аватаров, полностью реализованный на фронтенде.'
+    ms: 'Laman penjana avatar yang dibina sepenuhnya di bahagian frontend.'
+    pt-br: 'Site gerador de avatares implementado inteiramente no frontend.'

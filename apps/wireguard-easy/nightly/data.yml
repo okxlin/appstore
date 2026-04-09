@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: WIREGUARD_PORT
       labelEn: Wireguard port
       labelZh: Wireguard 端口
+      label:
+        en: 'Wireguard port'
+        zh: 'Wireguard 端口'
+        zh-Hant: 'WireGuard 埠'
+        ja: 'WireGuard ポート'
+        ko: 'WireGuard 포트'
+        ru: 'Порт WireGuard'
+        ms: 'Port WireGuard'
+        pt-br: 'Porta do WireGuard'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "$$2a$$12$$0AL3hGeedv8fOfsNtfZY5OO3mMvBqlnZA8QmeBGfWPAQEoZ7LZ/7a"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PASSWORD_HASH
       labelEn: Webui password hash (Note to check the documentation for instructions, the default is `PAssw00rd`)
       labelZh: 网页密码 hash (注意查看说明文档，默认为`PAssw00rd`)
+      label:
+        en: 'Webui password hash (Note to check the documentation for instructions, the default is `PAssw00rd`)'
+        zh: '网页密码 hash (注意查看说明文档，默认为`PAssw00rd`)'
+        zh-Hant: 'WebUI 密碼雜湊（注意查看說明文件，預設為 `PAssw00rd`）'
+        ja: 'WebUI パスワードハッシュ（手順はドキュメント参照。デフォルトは `PAssw00rd`）'
+        ko: 'WebUI 비밀번호 해시(설명 문서를 확인하세요. 기본값은 `PAssw00rd`)'
+        ru: 'Хэш пароля WebUI (см. документацию, значение по умолчанию — `PAssw00rd`)'
+        ms: 'Hash kata laluan WebUI (rujuk dokumentasi; lalai ialah `PAssw00rd`)'
+        pt-br: 'Hash da senha do WebUI (consulte a documentação; padrão: `PAssw00rd`)'
       required: true
       type: password
     - default: "172.17.0.1"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: HOST_ADDRESS
       labelEn: Host address (must change item)
       labelZh: 本机地址(必改项)
+      label:
+        en: 'Host address (must change item)'
+        zh: '本机地址(必改项)'
+        zh-Hant: '主機位址（必改項）'
+        ja: 'ホストアドレス（要変更）'
+        ko: '호스트 주소(필수 변경)'
+        ru: 'Адрес хоста (обязательно изменить)'
+        ms: 'Alamat hos (mesti diubah)'
+        pt-br: 'Endereço do host (deve ser alterado)'
       required: true
       type: text
     - default: "10.0.8.x"
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: WG_DEFAULT_ADDRESS
       labelEn: Default Wireguard Segment
       labelZh: 默认 Wireguard 网段
+      label:
+        en: 'Default Wireguard Segment'
+        zh: '默认 Wireguard 网段'
+        zh-Hant: '預設 WireGuard 網段'
+        ja: 'デフォルト WireGuard セグメント'
+        ko: '기본 WireGuard 세그먼트'
+        ru: 'Сегмент WireGuard по умолчанию'
+        ms: 'Segmen WireGuard lalai'
+        pt-br: 'Segmento WireGuard padrão'
       required: true
       type: text
     - default: "119.29.29.29,1.1.1.1"
@@ -49,6 +103,15 @@ additionalProperties:
       envKey: WG_DEFAULT_DNS
       labelEn: Default Wireguard DNS
       labelZh: 默认 Wireguard DNS
+      label:
+        en: 'Default Wireguard DNS'
+        zh: '默认 Wireguard DNS'
+        zh-Hant: '預設 WireGuard DNS'
+        ja: 'デフォルト WireGuard DNS'
+        ko: '기본 WireGuard DNS'
+        ru: 'DNS WireGuard по умолчанию'
+        ms: 'DNS WireGuard lalai'
+        pt-br: 'DNS WireGuard padrão'
       required: true
       type: text
     - default: "1420"
@@ -56,6 +119,15 @@ additionalProperties:
       envKey: WG_MTU
       labelEn: Wireguard MTU
       labelZh: Wireguard MTU
+      label:
+        en: 'Wireguard MTU'
+        zh: 'Wireguard MTU'
+        zh-Hant: 'WireGuard MTU'
+        ja: 'WireGuard の MTU'
+        ko: 'WireGuard MTU 값'
+        ru: 'MTU WireGuard'
+        ms: 'MTU WireGuard'
+        pt-br: 'MTU do WireGuard'
       required: true
       type: number
     - default: "10.0.8.0/24"
@@ -63,6 +135,15 @@ additionalProperties:
       envKey: WG_ALLOWED_IPS
       labelEn: Wireguard Allowed IPs
       labelZh: Wireguard 允许的 IP 段
+      label:
+        en: 'Wireguard Allowed IPs'
+        zh: 'Wireguard 允许的 IP 段'
+        zh-Hant: 'WireGuard 允許的 IP 段'
+        ja: 'WireGuard 許可 IP'
+        ko: 'WireGuard 허용 IP'
+        ru: 'Разрешённые IP WireGuard'
+        ms: 'IP dibenarkan WireGuard'
+        pt-br: 'IPs permitidos do WireGuard'
       required: true
       type: text
     - default: "25"
@@ -70,5 +151,14 @@ additionalProperties:
       envKey: WG_PERSISTENT_KEEPALIVE
       labelEn: Wireguard Persistent Keepalive
       labelZh: Wireguard 保活间隔
+      label:
+        en: 'Wireguard Persistent Keepalive'
+        zh: 'Wireguard 保活间隔'
+        zh-Hant: 'WireGuard 保活間隔'
+        ja: 'WireGuard キープアライブ間隔'
+        ko: 'WireGuard 킵얼라이브 간격'
+        ru: 'Интервал поддержания WireGuard'
+        ms: 'Selang keepalive WireGuard'
+        pt-br: 'Intervalo de keepalive do WireGuard'
       required: true
       type: number

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: HTTPS Port
       labelZh: HTTPS 端口
+      label:
+        en: 'HTTPS Port'
+        zh: 'HTTPS 端口'
+        zh-Hant: 'HTTPS 埠'
+        ja: 'HTTPS ポート'
+        ko: 'HTTPS 포트'
+        ru: 'HTTPS порт'
+        ms: 'Port HTTPS'
+        pt-br: 'Porta HTTPS'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_CONSOLE
       labelEn: Console Port
       labelZh: 控制台端口
+      label:
+        en: 'Console Port'
+        zh: '控制台端口'
+        zh-Hant: '控制台埠'
+        ja: 'コンソールポート'
+        ko: '콘솔 포트'
+        ru: 'Порт консоли'
+        ms: 'Port konsol'
+        pt-br: 'Porta do console'
       required: true
       rule: paramPort
       type: number
@@ -29,12 +56,30 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "Safe3.WAF"
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       required: true
       rule: paramComplexity
       type: password
@@ -43,5 +88,14 @@ additionalProperties:
       envKey: MYSQL_MAX_CONNECTIONS
       labelEn: MySQL Max Connections
       labelZh: 数据库最大连接数
+      label:
+        en: 'MySQL Max Connections'
+        zh: '数据库最大连接数'
+        zh-Hant: '數據庫最大連接數'
+        ja: 'MySQL 最大接続数'
+        ko: 'MySQL 최대 연결 수'
+        ru: 'Максимальное число подключений MySQL'
+        ms: 'Sambungan Maksimum MySQL'
+        pt-br: 'Máximo de conexões do MySQL'
       required: true
       type: number

@@ -17,3 +17,15 @@ additionalProperties:
   website: https://enchantedcode.co.uk/hasty-paste/
   github: https://github.com/enchant97/hasty-paste
   document: https://enchantedcode.co.uk/hasty-paste/
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A place to quickly paste text and share it.'
+    zh: '一个快速粘贴文本并共享的地方'
+    zh-Hant: '一個快速貼上文字並分享的地方'
+    ja: 'テキストをすばやく貼り付けて共有できる場所です。'
+    ko: '텍스트를 빠르게 붙여넣고 공유할 수 있는 서비스입니다.'
+    ru: 'Сервис, где можно быстро вставить текст и поделиться им.'
+    ms: 'Tempat untuk menampal teks dengan cepat dan berkongsi.'
+    pt-br: 'Um lugar para colar texto rapidamente e compartilhar.'

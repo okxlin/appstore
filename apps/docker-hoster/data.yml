@@ -17,3 +17,14 @@ additionalProperties:
   website: https://hub.docker.com/r/solipsist01/docker-hoster
   github: https://github.com/dvddarias/docker-hoster
   document: https://github.com/dvddarias/docker-hoster
+  architectures:
+    - amd64
+  description:
+    en: "Docker local hostname resolution"
+    zh: "在宿主机 hosts 上解析容器名"
+    zh-Hant: "在宿主機 hosts 上解析容器名"
+    ja: "ホストのhostsでコンテナ名を解決"
+    ko: "호스트의 hosts에서 컨테이너 이름 해석"
+    ru: "Разрешение имён контейнеров в hosts хоста"
+    ms: "Resolusi nama kontena pada hosts hos"
+    pt-br: "Resolução de nomes de contêiner no hosts do host"

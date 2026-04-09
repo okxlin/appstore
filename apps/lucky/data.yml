@@ -4,6 +4,15 @@ tags:
 title: 软硬路由公网神器
 description: 软硬路由公网神器
 additionalProperties:
+  description:
+    en: A public network tool for software and hardware routers
+    zh: 软硬路由公网神器
+    zh-Hant: 軟硬路由公網神器
+    ja: ソフト/ハードルーター向けの公网ツール
+    ko: 소프트/하드 라우터용 공인망 도구
+    ru: Инструмент для доступа к публичной сети для программных и аппаратных роутеров
+    ms: Alat rangkaian awam untuk penghala perisian dan perkakasan
+    pt-br: Ferramenta de rede pública para roteadores de software e hardware
   key: lucky
   name: Lucky
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://lucky666.cn
   github: https://github.com/gdy666/lucky
   document: https://lucky666.cn/docs/intro
+  architectures:
+    - amd64

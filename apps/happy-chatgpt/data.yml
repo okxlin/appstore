@@ -1,6 +1,6 @@
 name: Happy-ChatGPT
 tags:
-  - AI / 大模型
+  - AI
 title: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
 description: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
   shortDescEn: ChatGPT (swear version), learn "authentic" Chinese with GPT
+  description:
+    en: ChatGPT slang edition, learn authentic Chinese with GPT
+    zh: ChatGPT 国粹版，和 GPT 一起学习地道的中国话吧
+    zh-Hant: ChatGPT 國粹版，和 GPT 一起學習地道的中國話吧
+    ja: ChatGPTの国粋（スラング）版、GPTと一緒に本場の中国語を学ぼう
+    ko: ChatGPT 국취(속어) 버전, GPT와 함께 진짜 중국어를 배워보세요
+    ru: "ChatGPT в «народной» версии: учитесь с GPT аутентичному китайскому"
+    ms: Versi “slang” ChatGPT, belajar bahasa Cina yang lebih asli bersama GPT
+    pt-br: Versão “gírias” do ChatGPT; aprenda chinês autêntico com o GPT
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://happy-chat-gpt.vercel.app
   github: https://github.com/vastxie/Happy-ChatGPT
   document: https://github.com/vastxie/Happy-ChatGPT
+  architectures:
+    - amd64
+

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个开源、自托管书签和链接共享平台
   shortDescEn: An open source, self-hosted bookmarks and link sharing platform
+  description:
+    en: An open-source, self-hosted bookmarks and link sharing platform
+    zh: 一个开源、自托管书签和链接共享平台
+    zh-Hant: 一個開源、自託管書籤和連結分享平台
+    ja: オープンソースでセルフホスト可能なブックマーク/リンク共有プラットフォーム
+    ko: 오픈 소스 자체 호스팅 북마크 및 링크 공유 플랫폼
+    ru: Открытая self-hosted платформа для закладок и обмена ссылками
+    ms: Platform sumber terbuka yang dihos sendiri untuk penanda buku dan perkongsian pautan
+    pt-br: Plataforma open source e auto-hospedada de favoritos e compartilhamento de links
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://demo.slash.yourselfhosted.com/
   github: https://github.com/boojack/slash
   document: https://github.com/boojack/slash/blob/main/docs/install.md
+
+  architectures:
+    - amd64

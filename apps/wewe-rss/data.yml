@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 更优雅的微信公众号订阅方式
   shortDescEn: A more elegant way to subscribe to WeChat
+  description:
+    en: A more elegant way to subscribe to WeChat official accounts
+    zh: 更优雅的微信公众号订阅方式
+    zh-Hant: 更優雅的微信公眾號訂閱方式
+    ja: WeChat公式アカウントをより優雅に購読する方法
+    ko: 위챗 공식 계정을 더 우아하게 구독하는 방법
+    ru: Более элегантный способ подписки на официальные аккаунты WeChat
+    ms: Cara yang lebih elegan untuk melanggan akaun rasmi WeChat
+    pt-br: Uma forma mais elegante de assinar contas oficiais do WeChat
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/cooderl/wewe-rss
   github: https://github.com/cooderl/wewe-rss
   document: https://github.com/cooderl/wewe-rss
+
+  architectures:
+    - amd64

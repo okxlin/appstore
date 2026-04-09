@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "true"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: 'Privilege Mode Switch'
+        zh: '特权模式开关'
+        zh-Hant: '特權模式開關'
+        ja: '特権モード切替'
+        ko: '특권 모드 스위치'
+        ru: 'Переключатель привилегированного режима'
+        ms: 'Suis mod keistimewaan'
+        pt-br: 'Chave do modo privilegiado'
       required: true
       type: text
     - default: "easytier"
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "-i <ip> --network-name <用户> --network-secret <密码> -e tcp://<服务器地址>:11010 -l <监听地址>"
@@ -33,5 +69,14 @@ additionalProperties:
       envKey: COMMAND
       labelEn: Command (modified as required)
       labelZh: 命令 (按需修改)
+      label:
+        en: 'Command'
+        zh: '命令'
+        zh-Hant: '命令'
+        ja: 'コマンド'
+        ko: '명령'
+        ru: 'Команда'
+        ms: 'Perintah'
+        pt-br: 'Comando'
       required: true
       type: text

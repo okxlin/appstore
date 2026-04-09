@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自动更新 Docker 容器基础镜像的工具
   shortDescEn: Tool to automatically update Docker container base images
+  description:
+    en: Tool to automatically update Docker container base images
+    zh: 自动更新 Docker 容器基础镜像的工具
+    zh-Hant: 自動更新 Docker 容器基礎映像的工具
+    ja: Docker コンテナのベースイメージを自動更新するツール
+    ko: Docker 컨테이너 베이스 이미지 자동 업데이트 도구
+    ru: Инструмент для автоматического обновления базовых образов Docker‑контейнеров
+    ms: Alat untuk mengemas kini imej asas kontena Docker secara automatik
+    pt-br: Ferramenta para atualizar automaticamente as imagens base de contêineres Docker
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/containrrr/watchtower
   github: https://github.com/containrrr/watchtower
   document: https://containrrr.dev/watchtower/
+
+  architectures:
+    - amd64

@@ -17,3 +17,15 @@ additionalProperties:
   website: https://deluge-torrent.org
   github: https://github.com/linuxserver/docker-deluge
   document: https://deluge.readthedocs.io
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: "Cross-platform BitTorrent client"
+    zh: "跨平台的 BitTorrent 客户端"
+    zh-Hant: "跨平台的 BitTorrent 用戶端"
+    ja: "クロスプラットフォームの BitTorrent クライアント"
+    ko: "크로스 플랫폼 BitTorrent 클라이언트"
+    ru: "Кроссплатформенный клиент BitTorrent"
+    ms: "Klien BitTorrent merentas platform"
+    pt-br: "Cliente BitTorrent multiplataforma"

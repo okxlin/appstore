@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port (Manual setup is required)
       labelZh: 网页端口 (需要手动设置)
+      label:
+        en: 'WebUI Port (Manual setup is required)'
+        zh: '网页端口 (需要手动设置)'
+        zh-Hant: 'WebUI 埠（需要手動設定）'
+        ja: 'WebUI ポート（手動設定が必要）'
+        ko: 'WebUI 포트(수동 설정 필요)'
+        ru: 'Порт WebUI (требуется ручная настройка)'
+        ms: 'Port WebUI (perlu tetapan manual)'
+        pt-br: 'Porta WebUI (configuração manual necessária)'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Web VNC Port
       labelZh: Web VNC 端口
+      label:
+        en: 'Web VNC Port'
+        zh: 'Web VNC 端口'
+        zh-Hant: 'Web VNC 埠'
+        ja: 'Web VNC ポート'
+        ko: 'Web VNC 포트'
+        ru: 'Порт Web VNC'
+        ms: 'Port Web VNC'
+        pt-br: 'Porta Web VNC'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_PEER
       labelEn: Peer Port (Manual setup is required)
       labelZh: BT端口 (需要手动设置)
+      label:
+        en: 'Peer Port (Manual setup is required)'
+        zh: 'BT端口 (需要手动设置)'
+        zh-Hant: 'BT 埠（需要手動設定）'
+        ja: 'ピアポート（手動設定が必要）'
+        ko: '피어 포트(수동 설정 필요)'
+        ru: 'Порт пиринга (требуется ручная настройка)'
+        ms: 'Port peer (perlu tetapan manual)'
+        pt-br: 'Porta de peer (configuração manual necessária)'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: 'Download folder path'
+        zh: '下载文件夹路径'
+        zh-Hant: '下載資料夾路徑'
+        ja: 'ダウンロードフォルダーパス'
+        ko: '다운로드 폴더 경로'
+        ru: 'Путь к папке загрузок'
+        ms: 'Laluan folder muat turun'
+        pt-br: 'Caminho da pasta de downloads'
       required: true
       type: text
     - default: kasm_user
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: HTTP_USER
       labelEn: http auth user
       labelZh: HTTP 用户
+      label:
+        en: 'http auth user'
+        zh: 'HTTP 用户'
+        zh-Hant: 'HTTP 認證使用者'
+        ja: 'HTTP 認証ユーザー'
+        ko: 'HTTP 인증 사용자'
+        ru: 'Пользователь HTTP-аутентификации'
+        ms: 'Pengguna pengesahan HTTP'
+        pt-br: 'Usuário de autenticação HTTP'
       required: true
       type: text
     - default: password
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: Access Password
       labelZh: 访问密码
+      label:
+        en: 'Access Password'
+        zh: '访问密码'
+        zh-Hant: '存取密碼'
+        ja: 'アクセスパスワード'
+        ko: '액세스 비밀번호'
+        ru: 'Пароль доступа'
+        ms: 'Kata laluan akses'
+        pt-br: 'Senha de acesso'
       random: true
       required: true
       rule: paramComplexity
@@ -52,5 +106,14 @@ additionalProperties:
       envKey: MEM_USE
       labelEn: Shared memory footprint (1gb)
       labelZh: 共享内存占用(1gb)
+      label:
+        en: 'Shared memory footprint (1gb)'
+        zh: '共享内存占用(1gb)'
+        zh-Hant: '共享記憶體占用 (1GB)'
+        ja: '共有メモリ使用量 (1GB)'
+        ko: '공유 메모리 사용량 (1GB)'
+        ru: 'Использование общей памяти (1 ГБ)'
+        ms: 'Penggunaan memori kongsi (1GB)'
+        pt-br: 'Uso de memória compartilhada (1GB)'
       required: true
       type: text

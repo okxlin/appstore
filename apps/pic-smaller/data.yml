@@ -12,6 +12,15 @@ additionalProperties:
     - Media
   shortDescZh: 智能压缩 JPEG、PNG、WEBP、AVIF、SVG 和 GIF 图片
   shortDescEn: Compress JPEG, PNG, WEBP, AVIF, SVG and GIF images intelligently
+  description:
+    en: "Intelligent image compression tool for JPEG, PNG, WEBP, AVIF, SVG and GIF."
+    zh: "智能压缩 JPEG、PNG、WEBP、AVIF、SVG 和 GIF 图片的工具。"
+    zh-Hant: "可智慧壓縮 JPEG、PNG、WEBP、AVIF、SVG 與 GIF 圖片的工具。"
+    ja: "JPEG、PNG、WEBP、AVIF、SVG、GIF を賢く圧縮する画像ツールです。"
+    ko: "JPEG, PNG, WEBP, AVIF, SVG, GIF 이미지를 지능적으로 압축하는 도구입니다."
+    ru: "Инструмент для интеллектуального сжатия изображений JPEG, PNG, WEBP, AVIF, SVG и GIF."
+    ms: "Alat pemampatan imej pintar untuk JPEG, PNG, WEBP, AVIF, SVG dan GIF."
+    pt-br: "Ferramenta de compressão inteligente para imagens JPEG, PNG, WEBP, AVIF, SVG e GIF."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://picsmaller.com
   github: https://github.com/joye61/pic-smaller
   document: https://github.com/joye61/pic-smaller
+  architectures:
+    - amd64

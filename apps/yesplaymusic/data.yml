@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一款高颜值的第三方网易云播放器
   shortDescEn: A high-end third-party NetEase cloud player
+  description:
+    en: A good-looking third-party NetEase Cloud Music player
+    zh: 一款高颜值的第三方网易云播放器
+    zh-Hant: 一款高顏值的第三方網易雲播放器
+    ja: 見た目の良いサードパーティ製のNetEase Cloud Musicプレーヤー
+    ko: 외형이 뛰어난 서드파티 NetEase Cloud Music 플레이어
+    ru: Красивый сторонний плеер NetEase Cloud Music
+    ms: Pemain NetEase Cloud Music pihak ketiga yang tampan
+    pt-br: Um player de NetEase Cloud Music de terceiros e com visual bonito
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://music.qier222.com/
   github: https://github.com/qier222/YesPlayMusic
   document: https://github.com/qier222/YesPlayMusic
+
+  architectures:
+    - amd64

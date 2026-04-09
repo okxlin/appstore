@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 在各种订阅格式之间进行转换的实用程序
   shortDescEn: Utility to convert between various proxy subscription formats
+  description:
+    en: Utility to convert between various subscription formats
+    zh: 在各种订阅格式之间进行转换的实用程序
+    zh-Hant: 在各種訂閱格式之間進行轉換的實用程序
+    ja: さまざまなサブスクリプション形式間を変換するユーティリティ
+    ko: 다양한 구독 형식 간 변환 유틸리티
+    ru: Утилита для преобразования между различными форматами подписок
+    ms: Utiliti untuk menukar antara pelbagai format langganan
+    pt-br: Utilitário para converter entre vários formatos de assinatura
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/tindy2013/subconverter
   github: https://github.com/tindy2013/subconverter
   document: https://github.com/tindy2013/subconverter
+
+  architectures:
+    - amd64

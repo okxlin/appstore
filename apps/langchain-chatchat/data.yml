@@ -1,9 +1,18 @@
 name: LangChain-Chatchat
 tags:
-  - AI / 大模型
+  - AI
 title: 基于 Langchain 与 ChatGLM 等语言模型的本地知识库问答
 description: 基于 Langchain 与 ChatGLM 等语言模型的本地知识库问答
 additionalProperties:
+  description:
+    en: Local knowledge base Q&A based on Langchain and language models such as ChatGLM
+    zh: 基于 Langchain 与 ChatGLM 等语言模型的本地知识库问答
+    zh-Hant: 基於 Langchain 與 ChatGLM 等語言模型的本地知識庫問答
+    ja: Langchain と ChatGLM などの言語モデルに基づくローカル知識ベースQ&A
+    ko: Langchain과 ChatGLM 등 언어 모델 기반의 로컬 지식베이스 Q&A
+    ru: Локальная база знаний для вопросов и ответов на основе Langchain и языковых моделей вроде ChatGLM
+    ms: Soal jawab pangkalan pengetahuan setempat berasaskan Langchain dan model bahasa seperti ChatGLM
+    pt-br: Perguntas e respostas de base de conhecimento local com base no Langchain e modelos de linguagem como o ChatGLM
   key: langchain-chatchat
   name: LangChain-Chatchat
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/chatchat-space/Langchain-Chatchat
   github: https://github.com/chatchat-space/Langchain-Chatchat
   document: https://github.com/chatchat-space/Langchain-Chatchat/wiki
+  architectures:
+    - amd64

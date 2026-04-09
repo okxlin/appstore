@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTPS
       labelEn: Port
       labelZh: HTTPS 端口
+      label:
+        en: 'HTTPS Port'
+        zh: 'HTTPS 端口'
+        zh-Hant: 'HTTPS 埠'
+        ja: 'HTTPS ポート'
+        ko: 'HTTPS 포트'
+        ru: 'HTTPS порт'
+        ms: 'Port HTTPS'
+        pt-br: 'Porta HTTPS'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: EMAIL
       labelEn: Mailbox for automatic https certificate application
       labelZh: 用于自动申请 https 证书的邮箱
+      label:
+        en: 'Mailbox for automatic https certificate application'
+        zh: '用于自动申请 https 证书的邮箱'
+        zh-Hant: '用於自動申請 https 證書的郵箱'
+        ja: 'HTTPS証明書自動申請用メールボックス'
+        ko: 'HTTPS 인증서 자동 신청용 메일함'
+        ru: 'Почтовый ящик для автоматической заявки HTTPS-сертификата'
+        ms: 'Peti mel untuk permohonan sijil https automatik'
+        pt-br: 'Caixa de e-mail para solicitação automática de certificado https'
       required: false
       type: text
     - default: ""
@@ -42,12 +87,30 @@ additionalProperties:
       envKey: VAN_BLOG_CDN_URL
       labelEn: CDN URL
       labelZh: CDN 地址
+      label:
+        en: 'CDN URL'
+        zh: 'CDN 地址'
+        zh-Hant: 'CDN 地址'
+        ja: 'CDNのURL'
+        ko: 'CDN 주소'
+        ru: 'URL CDN'
+        ms: 'URL CDN'
+        pt-br: 'URL do CDN'
       required: false
       type: text
     - default: "waline"
       envKey: VAN_BLOG_WALINE_DB
       labelEn: Database name of the embedded commenting system
       labelZh: 内嵌评论系统的数据库名
+      label:
+        en: 'Database name of the embedded commenting system'
+        zh: '内嵌评论系统的数据库名'
+        zh-Hant: '內嵌評論系統的數據庫名'
+        ja: '内蔵コメントシステムのデータベース名'
+        ko: '내장 댓글 시스템 데이터베이스 이름'
+        ru: 'Имя базы данных встроенной системы комментариев'
+        ms: 'Nama pangkalan data sistem komen terbina dalam'
+        pt-br: 'Nome do banco de dados do sistema de comentários incorporado'
       required: false
       type: text
       edit: true
@@ -57,6 +120,15 @@ additionalProperties:
       key: mongodb
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: service
     - default: "vanblog"
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: MONGO_DB
       labelEn: Database Name
       labelZh: 数据库名
+      label:
+        en: 'Database Name'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース名'
+        ko: '데이터베이스 이름'
+        ru: 'Имя базы данных'
+        ms: 'Nama pangkalan data'
+        pt-br: 'Nome do banco de dados'
       random: true
       required: true
       rule: paramCommon
@@ -73,6 +154,15 @@ additionalProperties:
       envKey: PANEL_DB_ROOT_USER
       labelEn: Database User Name
       labelZh: 数据库用户名
+      label:
+        en: 'Database User Name'
+        zh: '数据库用户名'
+        zh-Hant: '數據庫使用者名稱'
+        ja: 'データベースユーザー名'
+        ko: '데이터베이스 사용자 이름'
+        ru: 'Имя пользователя базы данных'
+        ms: 'Nama pengguna pangkalan data'
+        pt-br: 'Nome de usuário do banco de dados'
       required: true
       rule: paramCommon
       type: text
@@ -81,6 +171,15 @@ additionalProperties:
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Database User Password
       labelZh: 数据库密码
+      label:
+        en: 'Database User Password'
+        zh: '数据库密码'
+        zh-Hant: '數據庫密碼'
+        ja: 'データベースユーザーパスワード'
+        ko: '데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных'
+        ms: 'Kata laluan pengguna pangkalan data'
+        pt-br: 'Senha do usuário do banco de dados'
       required: true
       rule: paramCommon
       type: password

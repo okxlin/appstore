@@ -5,6 +5,15 @@ additionalProperties:
       envKey: IMAGE
       labelEn: Container Image
       labelZh: 容器镜像
+      label:
+        en: 'Container Image'
+        zh: '容器镜像'
+        zh-Hant: '容器映像'
+        ja: 'コンテナイメージ'
+        ko: '컨테이너 이미지'
+        ru: 'Образ контейнера'
+        ms: 'Imej kontena'
+        pt-br: 'Imagem do contêiner'
       required: true
       type: text
     - default: "always"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: 'Restart Policy'
+        zh: '重启策略'
+        zh-Hant: '重啟策略'
+        ja: '再起動ポリシー'
+        ko: '재시작 정책'
+        ru: 'Политика перезапуска'
+        ms: 'Dasar mula semula'
+        pt-br: 'Política de reinicialização'
       required: true
       type: select
       values:
@@ -26,6 +44,15 @@ additionalProperties:
       envKey: EMULATOR_DEVICE
       labelEn: Emulator Device
       labelZh: 模拟的设备
+      label:
+        en: 'Emulator Device'
+        zh: '模拟的设备'
+        zh-Hant: '模擬的裝置'
+        ja: 'エミュレーターデバイス'
+        ko: '에뮬레이터 기기'
+        ru: 'Устройство эмулятора'
+        ms: 'Peranti emulator'
+        pt-br: 'Dispositivo do emulador'
       required: true
       type: text
     - default: "true"
@@ -33,6 +60,15 @@ additionalProperties:
       envKey: WEB_VNC
       labelEn: Web VNC
       labelZh: Web VNC
+      label:
+        en: 'Web VNC'
+        zh: '网页 VNC'
+        zh-Hant: '網頁 VNC'
+        ja: 'ウェブ VNC'
+        ko: '웹 VNC'
+        ru: 'Веб VNC'
+        ms: 'VNC Web'
+        pt-br: 'VNC Web'
       required: true
       type: select
       values:
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
