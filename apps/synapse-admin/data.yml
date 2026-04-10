@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Synapse 管理界面
   shortDescEn: Synapse admin ui
+  description:
+    en: Synapse admin interface
+    zh: Synapse 管理界面
+    zh-Hant: Synapse 管理介面
+    ja: Synapse 管理インターフェース
+    ko: 시냅스 관리 인터페이스
+    ru: Интерфейс администрирования Synapse
+    ms: Antaramuka pentadbiran Synapse
+    pt-br: Interface de administração do Synapse
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/awesometechnologies/synapse-admin
   github: https://github.com/Awesome-Technologies/synapse-admin
   document: https://github.com/Awesome-Technologies/synapse-admin
+
+  architectures:
+    - amd64

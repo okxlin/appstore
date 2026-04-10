@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "./data/index.php"
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: INDEX_PHP_PATH
       labelEn: Index.php Path
       labelZh: Index.php 路径
+      label:
+        en: 'Index.php Path'
+        zh: 'Index.php 路径'
+        zh-Hant: 'Index.php 路徑'
+        ja: 'Index.php パス'
+        ko: 'Index.php 경로'
+        ru: 'Путь к Index.php'
+        ms: 'Laluan Index.php'
+        pt-br: 'Caminho do Index.php'
       required: true
       type: text

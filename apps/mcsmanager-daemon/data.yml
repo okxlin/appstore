@@ -4,6 +4,15 @@ tags:
 title: 支持大部分游戏服务端和控制台程序的管理面板(后端)
 description: 支持大部分游戏服务端和控制台程序的管理面板(后端)
 additionalProperties:
+  description:
+    en: Management panel (backend) supporting most game servers and console programs
+    zh: 支持大部分游戏服务端和控制台程序的管理面板(后端)
+    zh-Hant: 支援大部分遊戲伺服器與控制台程式的管理面板（後端）
+    ja: ほとんどのゲームサーバーとコンソールプログラムに対応する管理パネル（バックエンド）
+    ko: 대부분의 게임 서버 및 콘솔 프로그램을 지원하는 관리 패널(백엔드)
+    ru: Панель управления (бэкенд) для большинства игровых серверов и консольных программ
+    ms: Panel pengurusan (bahagian belakang) yang menyokong kebanyakan pelayan permainan dan program konsol
+    pt-br: Painel de gerenciamento (backend) que oferece suporte à maioria dos servidores de jogos e programas de console
   key: mcsmanager-daemon
   name: MCSManager Daemon
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/alisaqaq/mcsmanager-web
   github: https://github.com/MCSManager/MCSManager
   document: https://docs.mcsmanager.com/
+  architectures:
+    - amd64

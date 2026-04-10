@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.dweebui.com
   github: https://github.com/lllllllillllllillll/DweebUI
   document: https://github.com/lllllllillllllillll/DweebUI
+  architectures:
+    - amd64
+  description:
+    en: "A WebUI for managing your containers"
+    zh: "一个用于管理容器的 WebUI"
+    zh-Hant: "用於管理容器的 WebUI"
+    ja: "コンテナ管理用WebUI"
+    ko: "컨테이너 관리를 위한 WebUI"
+    ru: "WebUI для управления контейнерами"
+    ms: "WebUI untuk mengurus kontena anda"
+    pt-br: "WebUI para gerenciar seus contêineres"

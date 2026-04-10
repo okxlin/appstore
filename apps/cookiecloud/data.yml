@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个和自架服务器同步 Cookie 的小工具
   shortDescEn: A small tool for syncing cookies with your self-hosted server
+  description:
+    en: A small tool for syncing cookies with your self-hosted server
+    zh: 一个和自架服务器同步 Cookie 的小工具
+    zh-Hant: 一個和自架伺服器同步 Cookie 的小工具
+    ja: 自ホストサーバーとCookieを同期する小さなツール
+    ko: 자가 호스팅 서버와 쿠키를 동기화하는 작은 도구
+    ru: Небольшой инструмент для синхронизации cookie с собственным сервером
+    ms: Alat kecil untuk menyegerakkan kuki dengan pelayan hos sendiri
+    pt-br: Pequena ferramenta para sincronizar cookies com seu servidor auto-hospedado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/easychen/CookieCloud
   github: https://github.com/easychen/CookieCloud
   document: https://github.com/easychen/CookieCloud
+  architectures:
+    - amd64

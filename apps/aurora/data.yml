@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 极光面板-一个多服务器端口租用管理面板
   shortDescEn: A multi-server port leasing management panel
+  description:
+    en: Aurora Panel - a multi-server port leasing management panel
+    zh: 极光面板-一个多服务器端口租用管理面板
+    zh-Hant: 極光面板－一個多伺服器連接埠租用管理面板
+    ja: Auroraパネル—複数サーバーのポート貸出管理パネル
+    ko: Aurora 패널 - 다중 서버 포트 임대 관리 패널
+    ru: Панель Aurora — управление арендой портов на нескольких серверах
+    ms: Aurora Panel - panel pengurusan pajakan port berbilang pelayan
+    pt-br: Painel Aurora - painel de gerenciamento de locação de portas em vários servidores
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/Aurora-Admin-Panel/deploy
   github: https://github.com/Aurora-Admin-Panel/deploy
   document: https://github.com/Aurora-Admin-Panel/deploy
+  architectures:
+    - amd64

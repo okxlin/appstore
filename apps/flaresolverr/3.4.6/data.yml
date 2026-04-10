@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: '端口'
+        ko: '端口'
+        ru: '端口'
+        ms: '端口'
+        pt-br: '端口'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: 'Log Level'
+        zh: '日志级别'
+        zh-Hant: '日誌等級'
+        ja: '日志级别'
+        ko: '日志级别'
+        ru: '日志级别'
+        ms: '日志级别'
+        pt-br: '日志级别'
       required: true
       type: select
       values:
@@ -27,18 +45,36 @@ additionalProperties:
       envKey: LOG_HTML
       labelEn: Log HTML
       labelZh: 日志 HTML 输出
+      label:
+        en: 'Log HTML'
+        zh: '日志 HTML 输出'
+        zh-Hant: '日誌 HTML 輸出'
+        ja: '日志 HTML 输出'
+        ko: '日志 HTML 输出'
+        ru: '日志 HTML 输出'
+        ms: '日志 HTML 输出'
+        pt-br: '日志 HTML 输出'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "none"
       edit: true
       envKey: CAPTCHA_SOLVER
       labelEn: CAPTCHA Solver
-      labelZh: CAPTCHA 解密器
+      labelZh: CAPTCHA 解算器
+      label:
+        en: 'CAPTCHA Solver'
+        zh: 'CAPTCHA 解算器'
+        zh-Hant: 'CAPTCHA 解算器'
+        ja: 'CAPTCHA ソルバー'
+        ko: 'CAPTCHA 해결기'
+        ru: 'Решатель CAPTCHA'
+        ms: 'Penyelesai CAPTCHA'
+        pt-br: 'Solucionador de CAPTCHA'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -46,6 +82,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: '时区'
+        ko: '时区'
+        ru: '时区'
+        ms: '时区'
+        pt-br: '时区'
       required: true
       type: text
     - default: "none"
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Language
       labelZh: 语言
+      label:
+        en: 'Language'
+        zh: '语言'
+        zh-Hant: '語言'
+        ja: '语言'
+        ko: '语言'
+        ru: '语言'
+        ms: '语言'
+        pt-br: '语言'
       required: true
       type: text
     - default: "true"
@@ -60,18 +114,36 @@ additionalProperties:
       envKey: HEADLESS
       labelEn: Headless Mode
       labelZh: 无头模式
+      label:
+        en: 'Headless Mode'
+        zh: '无头模式'
+        zh-Hant: '無頭模式'
+        ja: '无头模式'
+        ko: '无头模式'
+        ru: '无头模式'
+        ms: '无头模式'
+        pt-br: '无头模式'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "40000"
       edit: true
       envKey: BROWSER_TIMEOUT
       labelEn: Browser Timeout
       labelZh: 浏览器超时时间
+      label:
+        en: 'Browser Timeout'
+        zh: '浏览器超时时间'
+        zh-Hant: '瀏覽器超時時間'
+        ja: '浏览器超时时间'
+        ko: '浏览器超时时间'
+        ru: '浏览器超时时间'
+        ms: '浏览器超时时间'
+        pt-br: '浏览器超时时间'
       required: true
       type: number
     - default: "https://www.google.com"
@@ -79,6 +151,15 @@ additionalProperties:
       envKey: TEST_URL
       labelEn: Test URL
       labelZh: 测试 URL
+      label:
+        en: 'Test URL'
+        zh: '测试 URL'
+        zh-Hant: '測試 URL'
+        ja: '测试 URL'
+        ko: '测试 URL'
+        ru: '测试 URL'
+        ms: '测试 URL'
+        pt-br: '测试 URL'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -86,6 +167,15 @@ additionalProperties:
       envKey: HOST
       labelEn: Host
       labelZh: 监听地址
+      label:
+        en: 'Host'
+        zh: '监听地址'
+        zh-Hant: '監聽位址'
+        ja: '监听地址'
+        ko: '监听地址'
+        ru: '监听地址'
+        ms: '监听地址'
+        pt-br: '监听地址'
       required: true
       type: text
     - default: "false"
@@ -93,10 +183,19 @@ additionalProperties:
       envKey: PROMETHEUS_ENABLED
       labelEn: Prometheus Enabled
       labelZh: 启用 Prometheus
+      label:
+        en: 'Prometheus Enabled'
+        zh: '启用 Prometheus'
+        zh-Hant: '啟用 Prometheus'
+        ja: '启用 Prometheus'
+        ko: '启用 Prometheus'
+        ru: '启用 Prometheus'
+        ms: '启用 Prometheus'
+        pt-br: '启用 Prometheus'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"

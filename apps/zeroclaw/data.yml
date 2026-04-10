@@ -14,6 +14,7 @@ additionalProperties:
     en: A high-performance, low-resource, composable autonomous agent runtime.
     zh: 一个高性能、低资源占用、可组合的自主智能体运行时
     zh-hant: 一個高效能、低資源佔用、可組合的自主智能體運行時
+    zh-Hant: 一個高效能、低資源佔用、可組合的自主智能體運行時
     ja: 高性能・低リソースで、構成可能な自律エージェント実行基盤。
     ko: 고성능, 저자원, 조합 가능한 자율 에이전트 런타임.
     ru: Высокопроизводительный, малоресурсный и модульный рантайм для автономных агентов.

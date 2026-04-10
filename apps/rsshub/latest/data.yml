@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: "6379"
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: 'Redis Service Port'
+        zh: 'Redis服务端口'
+        zh-Hant: 'Redis 服務埠'
+        ja: 'Redis サービスポート'
+        ko: 'Redis 서비스 포트'
+        ru: 'Порт сервиса Redis'
+        ms: 'Port perkhidmatan Redis'
+        pt-br: 'Porta do serviço Redis'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: REDIS_PASS
       labelEn: Redis Service Password
       labelZh: Redis服务密码
+      label:
+        en: 'Redis Service Password'
+        zh: 'Redis服务密码'
+        zh-Hant: 'Redis 服務密碼'
+        ja: 'Redis サービスパスワード'
+        ko: 'Redis 서비스 비밀번호'
+        ru: 'Пароль сервиса Redis'
+        ms: 'Kata laluan perkhidmatan Redis'
+        pt-br: 'Senha do serviço Redis'
       required: true
       rule: paramCommon
       type: password

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: admin
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: GOTIFY_DEFAULTUSER_NAME
       labelEn: Default User Name
       labelZh: 默认用户名
+      label:
+        en: 'Default User Name'
+        zh: '默认用户名'
+        zh-Hant: '預設使用者名稱'
+        ja: 'デフォルトユーザー名'
+        ko: '기본 사용자 이름'
+        ru: 'Имя пользователя по умолчанию'
+        ms: 'Nama pengguna lalai'
+        pt-br: 'Nome de usuário padrão'
       required: true
       type: text
     - default: "password"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: GOTIFY_DEFAULTUSER_PASS
       labelEn: Default User Password
       labelZh: 默认用户密码
+      label:
+        en: 'Default User Password'
+        zh: '默认用户密码'
+        zh-Hant: '預設使用者密碼'
+        ja: 'デフォルトユーザーパスワード'
+        ko: '기본 사용자 비밀번호'
+        ru: 'Пароль пользователя по умолчанию'
+        ms: 'Kata laluan pengguna lalai'
+        pt-br: 'Senha do usuário padrão'
       required: false
       random: true
       rule: paramComplexity
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: GOTIFY_REGISTRATION
       labelEn: Enable Registration
       labelZh: 允许注册
+      label:
+        en: 'Enable Registration'
+        zh: '允许注册'
+        zh-Hant: '允許註冊'
+        ja: '登録を有効化'
+        ko: '등록 활성화'
+        ru: 'Включить регистрацию'
+        ms: 'Dayakan pendaftaran'
+        pt-br: 'Ativar registro'
       required: true
       type: select
       values:
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: GOTIFY_PASSSTRENGTH
       labelEn: Minimum Password Strength
       labelZh: 最低密码强度
+      label:
+        en: 'Minimum Password Strength'
+        zh: '最低密码强度'
+        zh-Hant: '最低密碼強度'
+        ja: '最小パスワード強度'
+        ko: '최소 비밀번호 강도'
+        ru: 'Минимальная сложность пароля'
+        ms: 'Kekuatan kata laluan minimum'
+        pt-br: 'Força mínima da senha'
       required: true
       type: number
     - default: "80"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_PORT
       labelEn: Internal Container Ports
       labelZh: 容器内部端口
+      label:
+        en: 'Internal Container Ports'
+        zh: '容器内部端口'
+        zh-Hant: '容器內部連接埠'
+        ja: 'コンテナ内部ポート'
+        ko: '컨테이너 내부 포트'
+        ru: 'Внутренний порт контейнера'
+        ms: 'Port dalaman kontena'
+        pt-br: 'Portas internas do contêiner'
       required: true
       rule: paramPort
       type: number
@@ -63,6 +126,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_KEEPALIVEPERIODSECONDS
       labelEn: Keepalive Period (seconds)
       labelZh: 保持活跃时间（秒）
+      label:
+        en: 'Keepalive Period (seconds)'
+        zh: '保持活跃时间（秒）'
+        zh-Hant: '保持活躍時間（秒）'
+        ja: 'キープアライブ期間（秒）'
+        ko: '유지 시간(초)'
+        ru: 'Период keepalive (сек.)'
+        ms: 'Tempoh keepalive (saat)'
+        pt-br: 'Período de keepalive (segundos)'
       required: true
       type: number
     - default: ""
@@ -70,6 +142,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_LISTENADDR
       labelEn: Listen Address
       labelZh: 监听地址
+      label:
+        en: 'Listen Address'
+        zh: '监听地址'
+        zh-Hant: '監聽位址'
+        ja: 'リッスンアドレス'
+        ko: '리스닝 주소'
+        ru: 'Адрес прослушивания'
+        ms: 'Alamat mendengar'
+        pt-br: 'Endereço de escuta'
       required: false
       type: text
     - default: "false"
@@ -77,6 +158,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_ENABLED
       labelEn: Enable SSL
       labelZh: 启用 SSL
+      label:
+        en: 'Enable SSL'
+        zh: '启用 SSL'
+        zh-Hant: '啟用 SSL'
+        ja: 'SSLを有効化'
+        ko: 'SSL 활성화'
+        ru: 'Включить SSL'
+        ms: 'Dayakan SSL'
+        pt-br: 'Ativar SSL'
       required: true
       type: select
       values:
@@ -89,6 +179,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_REDIRECTTOHTTPS
       labelEn: Redirect to HTTPS
       labelZh: 重定向到 HTTPS
+      label:
+        en: 'Redirect to HTTPS'
+        zh: '重定向到 HTTPS'
+        zh-Hant: '重新導向到 HTTPS'
+        ja: 'HTTPSへリダイレクト'
+        ko: 'HTTPS로 리디렉션'
+        ru: 'Перенаправлять на HTTPS'
+        ms: 'Hala semula ke HTTPS'
+        pt-br: 'Redirecionar para HTTPS'
       required: true
       type: select
       values:
@@ -101,6 +200,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LISTENADDR
       labelEn: SSL Listen Address
       labelZh: SSL 监听地址
+      label:
+        en: 'SSL Listen Address'
+        zh: 'SSL 监听地址'
+        zh-Hant: 'SSL 監聽位址'
+        ja: 'SSLリッスンアドレス'
+        ko: 'SSL 리스닝 주소'
+        ru: 'Адрес прослушивания SSL'
+        ms: 'Alamat mendengar SSL'
+        pt-br: 'Endereço de escuta SSL'
       required: false
       type: text
     - default: 443
@@ -108,6 +216,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_PORT
       labelEn: SSL Port
       labelZh: SSL 端口
+      label:
+        en: 'SSL Port'
+        zh: 'SSL 端口'
+        zh-Hant: 'SSL 連接埠'
+        ja: 'SSLポート'
+        ko: 'SSL 포트'
+        ru: 'Порт SSL'
+        ms: 'Port SSL'
+        pt-br: 'Porta SSL'
       required: true
       rule: paramPort
       type: number
@@ -116,6 +233,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_CERTFILE
       labelEn: SSL Certificate File (inside container)
       labelZh: SSL 证书文件 (容器内部)
+      label:
+        en: 'SSL Certificate File (inside container)'
+        zh: 'SSL 证书文件 (容器内部)'
+        zh-Hant: 'SSL 憑證檔案（容器內部）'
+        ja: 'SSL証明書ファイル（コンテナ内）'
+        ko: 'SSL 인증서 파일(컨테이너 내부)'
+        ru: 'Файл сертификата SSL (в контейнере)'
+        ms: 'Fail sijil SSL (dalam kontena)'
+        pt-br: 'Arquivo de certificado SSL (no contêiner)'
       required: false
       type: text
     - default: ""
@@ -123,6 +249,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_CERTKEY
       labelEn: SSL Certificate Key (inside container)
       labelZh: SSL 证书密钥 (容器内部)
+      label:
+        en: 'SSL Certificate Key (inside container)'
+        zh: 'SSL 证书密钥 (容器内部)'
+        zh-Hant: 'SSL 憑證金鑰（容器內部）'
+        ja: 'SSL証明書キー（コンテナ内）'
+        ko: 'SSL 인증서 키(컨테이너 내부)'
+        ru: 'Ключ сертификата SSL (в контейнере)'
+        ms: 'Kunci sijil SSL (dalam kontena)'
+        pt-br: 'Chave do certificado SSL (no contêiner)'
       required: false
       type: text
     - default: "false"
@@ -130,6 +265,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_ENABLED
       labelEn: Enable Let's Encrypt
       labelZh: 启用 Let's Encrypt
+      label:
+        en: "Enable Let's Encrypt"
+        zh: "启用 Let's Encrypt"
+        zh-Hant: "啟用 Let's Encrypt"
+        ja: "Let's Encryptを有効化"
+        ko: "Let's Encrypt 활성화"
+        ru: "Включить Let's Encrypt"
+        ms: "Dayakan Let's Encrypt"
+        pt-br: "Ativar Let's Encrypt"
       required: true
       type: select
       values:
@@ -142,6 +286,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_ACCEPTTOS
       labelEn: Accept Let's Encrypt TOS
       labelZh: 接受 Let's Encrypt 条款
+      label:
+        en: "Accept Let's Encrypt TOS"
+        zh: "接受 Let's Encrypt 条款"
+        zh-Hant: "接受 Let's Encrypt 條款"
+        ja: "Let's Encrypt利用規約に同意"
+        ko: "Let's Encrypt 약관 동의"
+        ru: "Принять условия Let's Encrypt"
+        ms: "Terima TOS Let's Encrypt"
+        pt-br: "Aceitar termos do Let's Encrypt"
       required: true
       type: select
       values:
@@ -154,6 +307,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_CACHE
       labelEn: Let's Encrypt Cache Directory
       labelZh: Let's Encrypt 缓存目录
+      label:
+        en: "Let's Encrypt Cache Directory"
+        zh: "Let's Encrypt 缓存目录"
+        zh-Hant: "Let's Encrypt 快取目錄"
+        ja: "Let's Encryptキャッシュディレクトリ"
+        ko: "Let's Encrypt 캐시 디렉터리"
+        ru: "Каталог кэша Let's Encrypt"
+        ms: "Direktori cache Let's Encrypt"
+        pt-br: "Diretório de cache do Let's Encrypt"
       required: true
       type: text
     - default: ""
@@ -161,6 +323,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_SSL_LETSENCRYPT_HOSTS
       labelEn: Let's Encrypt Hosts
       labelZh: Let's Encrypt 域名
+      label:
+        en: "Let's Encrypt Hosts"
+        zh: "Let's Encrypt 域名"
+        zh-Hant: "Let's Encrypt 網域"
+        ja: "Let's Encryptホスト"
+        ko: "Let's Encrypt 호스트"
+        ru: "Хосты Let's Encrypt"
+        ms: "Hos Let's Encrypt"
+        pt-br: "Hosts do Let's Encrypt"
       required: false
       type: text
     - default: ""
@@ -168,6 +339,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_RESPONSEHEADERS
       labelEn: Response Headers
       labelZh: 响应头
+      label:
+        en: 'Response Headers'
+        zh: '响应头'
+        zh-Hant: '回應標頭'
+        ja: 'レスポンスヘッダー'
+        ko: '응답 헤더'
+        ru: 'Заголовки ответа'
+        ms: 'Pengepala respons'
+        pt-br: 'Cabeçalhos de resposta'
       required: false
       type: text
     - default: ""
@@ -175,6 +355,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWORIGINS
       labelEn: CORS Allow Origins
       labelZh: 允许跨域来源
+      label:
+        en: 'CORS Allow Origins'
+        zh: '允许跨域来源'
+        zh-Hant: '允許跨網域來源'
+        ja: 'CORS許可オリジン'
+        ko: 'CORS 허용 출처'
+        ru: 'Разрешённые источники CORS'
+        ms: 'Asal dibenarkan CORS'
+        pt-br: 'Origens permitidas do CORS'
       required: false
       type: text
     - default: ""
@@ -182,6 +371,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWMETHODS
       labelEn: CORS Allow Methods
       labelZh: 允许跨域方法
+      label:
+        en: 'CORS Allow Methods'
+        zh: '允许跨域方法'
+        zh-Hant: '允許跨網域方法'
+        ja: 'CORS許可メソッド'
+        ko: 'CORS 허용 메서드'
+        ru: 'Разрешённые методы CORS'
+        ms: 'Kaedah dibenarkan CORS'
+        pt-br: 'Métodos permitidos do CORS'
       required: false
       type: text
     - default: ""
@@ -189,6 +387,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_CORS_ALLOWHEADERS
       labelEn: CORS Allow Headers
       labelZh: 允许跨域头
+      label:
+        en: 'CORS Allow Headers'
+        zh: '允许跨域头'
+        zh-Hant: '允許跨網域標頭'
+        ja: 'CORS許可ヘッダー'
+        ko: 'CORS 허용 헤더'
+        ru: 'Разрешённые заголовки CORS'
+        ms: 'Pengepala dibenarkan CORS'
+        pt-br: 'Cabeçalhos permitidos do CORS'
       required: false
       type: text
     - default: ""
@@ -196,6 +403,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_STREAM_ALLOWEDORIGINS
       labelEn: Allowed origins for websocket connections
       labelZh: Websocket 连接的允许来源
+      label:
+        en: 'Allowed origins for websocket connections'
+        zh: 'Websocket 连接的允许来源'
+        zh-Hant: 'Websocket 連線的允許來源'
+        ja: 'WebSocket接続の許可オリジン'
+        ko: 'WebSocket 연결 허용 출처'
+        ru: 'Разрешённые источники для подключений WebSocket'
+        ms: 'Asal dibenarkan untuk sambungan WebSocket'
+        pt-br: 'Origens permitidas para conexões WebSocket'
       required: false
       type: text
     - default: 45
@@ -203,6 +419,15 @@ additionalProperties:
       envKey: GOTIFY_SERVER_STREAM_PINGPERIODSECONDS
       labelEn: The interval in which websocket pings will be sent (seconds)
       labelZh: 发送 websocket ping 的时间间隔（秒）
+      label:
+        en: 'The interval in which websocket pings will be sent (seconds)'
+        zh: '发送 websocket ping 的时间间隔（秒）'
+        zh-Hant: '傳送 websocket ping 的時間間隔（秒）'
+        ja: 'WebSocket ping 送信間隔（秒）'
+        ko: 'WebSocket ping 전송 간격(초)'
+        ru: 'Интервал отправки ping WebSocket (сек.)'
+        ms: 'Selang masa ping WebSocket dihantar (saat)'
+        pt-br: 'Intervalo de envio de ping do WebSocket (segundos)'
       required: true
       type: number
     - default: sqlite3
@@ -210,6 +435,15 @@ additionalProperties:
       envKey: GOTIFY_DATABASE_DIALECT
       labelEn: Database Dialect
       labelZh: 数据库方式
+      label:
+        en: 'Database Dialect'
+        zh: '数据库方式'
+        zh-Hant: '資料庫方式'
+        ja: 'データベース方言'
+        ko: '데이터베이스 종류'
+        ru: 'Диалект базы данных'
+        ms: 'Dialek pangkalan data'
+        pt-br: 'Dialeto do banco de dados'
       required: true
       type: text
     - default: "data/gotify.db"
@@ -217,6 +451,15 @@ additionalProperties:
       envKey: GOTIFY_DATABASE_CONNECTION
       labelEn: Database Connection
       labelZh: 数据库连接
+      label:
+        en: 'Database Connection'
+        zh: '数据库连接'
+        zh-Hant: '資料庫連線'
+        ja: 'データベース接続'
+        ko: '데이터베이스 연결'
+        ru: 'Подключение к базе данных'
+        ms: 'Sambungan pangkalan data'
+        pt-br: 'Conexão do banco de dados'
       required: true
       type: text
     - default: "data/images"
@@ -224,6 +467,15 @@ additionalProperties:
       envKey: GOTIFY_UPLOADEDIMAGESDIR
       labelEn: Uploaded Images Directory
       labelZh: 上传的图片目录
+      label:
+        en: 'Uploaded Images Directory'
+        zh: '上传的图片目录'
+        zh-Hant: '上傳的圖片目錄'
+        ja: 'アップロードされた画像ディレクトリ'
+        ko: '업로드된 이미지 디렉터리'
+        ru: 'Каталог загруженных изображений'
+        ms: 'Direktori imej yang dimuat naik'
+        pt-br: 'Diretório de imagens enviadas'
       required: true
       type: text
     - default: "data/plugins"
@@ -231,5 +483,14 @@ additionalProperties:
       envKey: GOTIFY_PLUGINSDIR
       labelEn: Plugins Directory
       labelZh: 插件目录
+      label:
+        en: 'Plugins Directory'
+        zh: '插件目录'
+        zh-Hant: '插件目錄'
+        ja: 'プラグインディレクトリ'
+        ko: '플러그인 디렉터리'
+        ru: 'Каталог плагинов'
+        ms: 'Direktori pemalam'
+        pt-br: 'Diretório de plugins'
       required: true
       type: text

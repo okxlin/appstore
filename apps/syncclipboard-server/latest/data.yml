@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: CONFIG_FILE_PATH
       labelEn: Configuration file path
       labelZh: 配置文件路径
+      label:
+        en: 'Configuration file path'
+        zh: '配置文件路径'
+        zh-Hant: '設定檔路徑'
+        ja: '設定ファイルパス'
+        ko: '구성 파일 경로'
+        ru: 'Путь к файлу конфигурации'
+        ms: 'Laluan fail konfigurasi'
+        pt-br: 'Caminho do arquivo de configuração'
       required: true
       type: text

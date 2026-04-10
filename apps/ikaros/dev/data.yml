@@ -9,6 +9,15 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '資料庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
@@ -18,6 +27,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '資料庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -26,6 +44,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '資料庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -34,6 +61,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '資料庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -43,6 +79,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -51,6 +96,15 @@ additionalProperties:
       envKey: IKAROS_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問位址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       rule: paramHttp
       type: text
@@ -59,6 +113,15 @@ additionalProperties:
       envKey: SERVER_LOG_LEVEL
       labelEn: Core Server Package Log level
       labelZh: 核心Server包日志级别
+      label:
+        en: 'Core Server Package Log level'
+        zh: '核心服务包日志级别'
+        zh-Hant: '核心服務包日誌等級'
+        ja: 'コアサーバーパッケージのログレベル'
+        ko: '코어 서버 패키지 로그 레벨'
+        ru: 'Уровень логирования пакета основного сервера'
+        ms: 'Tahap log pakej pelayan teras'
+        pt-br: 'Nível de log do pacote do servidor principal'
       required: false
       type: select
       values:
@@ -77,6 +140,15 @@ additionalProperties:
       envKey: PLUGIN_LOG_LEVEL
       labelEn: Plugin Package Log level
       labelZh: 插件包日志级别
+      label:
+        en: 'Plugin Package Log level'
+        zh: '插件包日志级别'
+        zh-Hant: '外掛套件日誌等級'
+        ja: 'プラグインパッケージのログレベル'
+        ko: '플러그인 패키지 로그 레벨'
+        ru: 'Уровень логирования пакета плагина'
+        ms: 'Tahap log pakej pemalam'
+        pt-br: 'Nível de log do pacote do plugin'
       required: false
       type: select
       values:
@@ -95,6 +167,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "tomoki"
@@ -102,6 +183,15 @@ additionalProperties:
       envKey: IKAROS_ADMIN_USERNAME
       labelEn: Admin Username
       labelZh: 管理员用户名
+      label:
+        en: 'Admin Username'
+        zh: '管理员用户名'
+        zh-Hant: '管理員使用者名稱'
+        ja: '管理者ユーザー名'
+        ko: '관리자 사용자 이름'
+        ru: 'Имя пользователя администратора'
+        ms: 'Nama pengguna pentadbir'
+        pt-br: 'Nome de usuário do administrador'
       random: true
       required: true
       rule: paramCommon
@@ -111,6 +201,15 @@ additionalProperties:
       envKey: IKAROS_ADMIN_PASSWORD
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: 'Admin Password'
+        zh: '管理员密码'
+        zh-Hant: '管理員密碼'
+        ja: '管理者パスワード'
+        ko: '관리자 비밀번호'
+        ru: 'Пароль администратора'
+        ms: 'Kata laluan pentadbir'
+        pt-br: 'Senha de administrador'
       random: true
       required: true
       rule: paramComplexity
@@ -120,6 +219,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "C.UTF-8"
@@ -127,6 +235,15 @@ additionalProperties:
       envKey: LANG
       labelEn: Language
       labelZh: 语言
+      label:
+        en: 'Language'
+        zh: '语言'
+        zh-Hant: '語言'
+        ja: '言語'
+        ko: '언어'
+        ru: 'Язык'
+        ms: 'Bahasa'
+        pt-br: 'Idioma'
       required: true
       type: text
     - default: "C:zh"
@@ -134,6 +251,15 @@ additionalProperties:
       envKey: LANGUAGE
       labelEn: Language Setting
       labelZh: 语言设置
+      label:
+        en: 'Language Setting'
+        zh: '语言设置'
+        zh-Hant: '語言設定'
+        ja: '言語設定'
+        ko: '언어 설정'
+        ru: 'Настройка языка'
+        ms: 'Tetapan bahasa'
+        pt-br: 'Configuração de idioma'
       required: true
       type: text
     - default: "C.UTF-8"
@@ -141,5 +267,14 @@ additionalProperties:
       envKey: LC_ALL
       labelEn: Locale Setting
       labelZh: 地区设置
+      label:
+        en: 'Locale Setting'
+        zh: '地区设置'
+        zh-Hant: '地區設定'
+        ja: 'ロケール設定'
+        ko: '로케일 설정'
+        ru: 'Настройка локали'
+        ms: 'Tetapan lokal'
+        pt-br: 'Configuração de localidade'
       required: true
       type: text

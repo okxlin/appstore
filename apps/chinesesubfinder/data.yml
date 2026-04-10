@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自动化中文字幕下载
   shortDescEn: Automatic Chinese subtitle download
+  description:
+    en: Automatic Chinese subtitle download
+    zh: 自动化中文字幕下载
+    zh-Hant: 自動化中文字幕下載
+    ja: 中国語字幕の自動ダウンロード
+    ko: 중국어 자막 자동 다운로드
+    ru: Автоматическая загрузка китайских субтитров
+    ms: Muat turun sari kata Cina secara automatik
+    pt-br: Download automático de legendas em chinês
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/ChineseSubFinder/ChineseSubFinder
   github: https://github.com/ChineseSubFinder/ChineseSubFinder
   document: https://github.com/ChineseSubFinder/ChineseSubFinder
+  architectures:
+    - amd64

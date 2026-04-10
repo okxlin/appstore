@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 花生壳内网穿透服务
   shortDescEn: Best Oray Intranet Penetration Service
+  description:
+    en: "Peanut Shell intranet tunneling service."
+    zh: "花生壳内网穿透服务。"
+    zh-Hant: "花生殼內網穿透服務。"
+    ja: "Peanut Shell のイントラネットトンネリングサービスです。"
+    ko: "Peanut Shell 내트워크 터널링 서비스입니다."
+    ru: "Сервис туннелирования внутренней сети Peanut Shell."
+    ms: "Perkhidmatan terowong intranet Peanut Shell."
+    pt-br: "Serviço de tunelamento de rede interna Peanut Shell."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hsk.oray.com
   github: https://hub.docker.com/r/bestoray/phtunnel
   document: https://service.oray.com/question/36626.html
+  architectures:
+    - amd64

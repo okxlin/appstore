@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 媒体管理工具
   shortDescEn: Media Management Tools
+  description:
+    en: Media management tool
+    zh: 媒体管理工具
+    zh-Hant: 媒體管理工具
+    ja: メディア管理ツール
+    ko: 미디어 관리 도구
+    ru: Инструмент управления медиа
+    ms: Alat pengurusan media
+    pt-br: Ferramenta de gerenciamento de mídia
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://stashapp.cc
   github: https://github.com/stashapp/stash
   document: https://docs.stashapp.cc
+
+  architectures:
+    - amd64

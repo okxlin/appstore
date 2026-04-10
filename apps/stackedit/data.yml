@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 浏览器里的全功能开源 Markdown 编辑器
   shortDescEn: In-browser Markdown editor
+  description:
+    en: A full-featured open-source Markdown editor in the browser
+    zh: 浏览器里的全功能开源 Markdown 编辑器
+    zh-Hant: 瀏覽器裡的全功能開源 Markdown 編輯器
+    ja: ブラウザ内のフル機能オープンソース Markdown エディタ
+    ko: 브라우저에서 사용하는 풀기능 오픈소스 Markdown 편집기
+    ru: Полнофункциональный открытый редактор Markdown в браузере
+    ms: Editor Markdown sumber terbuka berfungsi penuh dalam pelayar
+    pt-br: Editor Markdown open source completo no navegador
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://stackedit.io
   github: https://github.com/benweet/stackedit
   document: https://github.com/benweet/stackedit
+
+  architectures:
+    - amd64

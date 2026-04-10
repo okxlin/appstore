@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the listening port)
       labelZh: 端口 (由监听端口决定)
+      label:
+        en: 'Port (determined by the listening port)'
+        zh: '端口 (由监听端口决定)'
+        zh-Hant: '埠（由監聽埠決定）'
+        ja: 'ポート（リッスンポートで決定）'
+        ko: '포트(리스닝 포트에 의해 결정)'
+        ru: 'Порт (определяется портом прослушивания)'
+        ms: 'Port (ditentukan oleh port mendengar)'
+        pt-br: 'Porta (determinada pela porta de escuta)'
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text

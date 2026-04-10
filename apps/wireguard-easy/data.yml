@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 运行 WireGuard VPN + 基于 Web 的管理 UI 的最简单方法
   shortDescEn: The easiest way to run WireGuard VPN + Web-based Admin UI
+  description:
+    en: The easiest way to run WireGuard VPN + web-based admin UI
+    zh: 运行 WireGuard VPN + 基于 Web 的管理 UI 的最简单方法
+    zh-Hant: 運行 WireGuard VPN + 基於 Web 的管理 UI 的最簡單方法
+    ja: WireGuard VPN とWebベースの管理UIを実行する最も簡単な方法
+    ko: WireGuard VPN과 웹 기반 관리 UI를 실행하는 가장 쉬운 방법
+    ru: Самый простой способ запустить WireGuard VPN и веб‑интерфейс администрирования
+    ms: Cara paling mudah untuk menjalankan WireGuard VPN + UI pentadbiran berasaskan web
+    pt-br: A maneira mais fácil de executar o WireGuard VPN + UI de administração baseada na web
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.wireguard.com/
   github: https://github.com/wg-easy/wg-easy
   document: https://www.wireguard.com/
+
+  architectures:
+    - amd64

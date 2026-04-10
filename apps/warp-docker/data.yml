@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 在 Docker 中运行 Cloudflare WARP
   shortDescEn: Run Cloudflare WARP in Docker
+  description:
+    en: Run Cloudflare WARP in Docker
+    zh: 在 Docker 中运行 Cloudflare WARP
+    zh-Hant: 在 Docker 中運行 Cloudflare WARP
+    ja: ドッカーでCloudflare WARPを実行
+    ko: 도커에서 클라우드플레어 WARP를 실행
+    ru: Запуск WARP от Cloudflare в докере
+    ms: Jalankan Cloudflare WARP dalam Docker
+    pt-br: Execute o Cloudflare WARP no Docker
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/caomingjun/warp
   github: https://github.com/cmj2002/warp-docker
   document: https://github.com/cmj2002/warp-docker
+
+  architectures:
+    - amd64

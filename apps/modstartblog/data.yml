@@ -17,3 +17,14 @@ additionalProperties:
   website: https://modstart.com
   github: https://gitee.com/modstart/ModStartBlog
   document: https://modstart.com/doc
+  architectures:
+    - amd64
+  description:
+    en: 'An open-source blog system.'
+    zh: '开源博客系统'
+    zh-Hant: '開源部落格系統'
+    ja: 'オープンソースのブログシステムです。'
+    ko: '오픈소스 블로그 시스템입니다.'
+    ru: 'Блоговая система с открытым исходным кодом.'
+    ms: 'Sistem blog sumber terbuka.'
+    pt-br: 'Sistema de blog de código aberto.'

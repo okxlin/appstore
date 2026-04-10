@@ -4,6 +4,15 @@ tags:
 title: 免费安全的一键式呼出工具箱
 description: 免费安全的一键式呼出工具箱
 additionalProperties:
+  description:
+    en: Free and secure one-click callout toolkit
+    zh: 免费安全的一键式呼出工具箱
+    zh-Hant: 免費安全的一鍵式呼出工具箱
+    ja: 無料で安全なワンクリック呼び出しツールボックス
+    ko: 무료하고 안전한 원클릭 호출 툴박스
+    ru: Бесплатный и безопасный набор инструментов с вызовом в один клик
+    ms: Kotak alat panggilan satu klik yang percuma dan selamat
+    pt-br: Caixa de ferramentas de chamada em um clique gratuita e segura
   key: laftools
   name: 秒达工具箱
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://mdgjx.com
   github: https://github.com/work7z/MDGJX
   document: https://github.com/work7z/MDGJX
+  architectures:
+    - amd64

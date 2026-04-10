@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 免费且免费开源 HTML5 网络性能评估工具
   shortDescEn: A Free & Open-Source HTML5 Network Performance Estimation Tool
+  description:
+    en: A Free & Open-Source HTML5 Network Performance Estimation Tool
+    zh: 免费且免费开源 HTML5 网络性能评估工具
+    zh-Hant: 免費且開源的 HTML5 網路效能評估工具
+    ja: 無料かつオープンソースのHTML5ネットワーク性能測定ツール
+    ko: 무료 오픈소스 HTML5 네트워크 성능 측정 도구
+    ru: Бесплатный открытый инструмент оценки сетевой производительности на HTML5
+    ms: Alat penilaian prestasi rangkaian HTML5 percuma dan sumber terbuka
+    pt-br: Ferramenta HTML5 gratuita e open-source para avaliação de desempenho de rede
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://openspeedtest.com
   github: https://github.com/openspeedtest/Speed-Test
   document: https://github.com/openspeedtest/Speed-Test
+  architectures:
+    - amd64

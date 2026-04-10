@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PEER_PORT_VALUE
       labelEn: Peer Port
       labelZh: BT端口
+      label:
+        en: 'Peer Port'
+        zh: 'BT端口'
+        zh-Hant: 'BT 埠'
+        ja: 'ピアポート'
+        ko: '피어 포트'
+        ru: 'Порт пира'
+        ms: 'Port rakan sebaya'
+        pt-br: 'Porta de peer'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: WATCH_PATH
       labelEn: Watch folder for torrent files
       labelZh: 监视种子文件的文件夹
+      label:
+        en: 'Watch folder for torrent files'
+        zh: '监视种子文件的文件夹'
+        zh-Hant: '監視種子檔案的資料夾'
+        ja: 'Torrent ファイル監視フォルダー'
+        ko: '토렌트 파일 감시 폴더'
+        ru: 'Папка наблюдения за торрент-файлами'
+        ms: 'Folder pantauan untuk fail torrent'
+        pt-br: 'Pasta monitorada para arquivos torrent'
       required: true
       type: text
     - default: ./data/downloads
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: 'Download folder path'
+        zh: '下载文件夹路径'
+        zh-Hant: '下載資料夾路徑'
+        ja: 'ダウンロードフォルダーパス'
+        ko: '다운로드 폴더 경로'
+        ru: 'Путь к папке загрузок'
+        ms: 'Laluan folder muat turun'
+        pt-br: 'Caminho da pasta de downloads'
       required: true
       type: text
     - default: ""
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: WEBUI_USER
       labelEn: Webui user
       labelZh: 网页用户
+      label:
+        en: 'Webui user'
+        zh: '网页用户'
+        zh-Hant: '網頁使用者'
+        ja: 'WebUI ユーザー'
+        ko: 'WebUI 사용자'
+        ru: 'Пользователь WebUI'
+        ms: 'Pengguna WebUI'
+        pt-br: 'Usuário da WebUI'
       required: false
       type: text
     - default: ""
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: WEBUI_PWD
       labelEn: Webui password
       labelZh: 网页密码
+      label:
+        en: 'Webui password'
+        zh: '网页密码'
+        zh-Hant: '網頁密碼'
+        ja: 'WebUI パスワード'
+        ko: 'WebUI 비밀번호'
+        ru: 'Пароль WebUI'
+        ms: 'Kata laluan WebUI'
+        pt-br: 'Senha da WebUI'
       random: false
       required: false
       rule: paramComplexity

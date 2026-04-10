@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: BARK_SERVER_ADDRESS
       labelEn: Bark Server Address
       labelZh: Bark 服务器地址
+      label:
+        en: 'Bark Server Address'
+        zh: 'Bark 服务器地址'
+        zh-Hant: 'Bark 伺服器位址'
+        ja: 'Bark サーバーアドレス'
+        ko: 'Bark 서버 주소'
+        ru: 'Адрес сервера Bark'
+        ms: 'Alamat pelayan Bark'
+        pt-br: 'Endereço do servidor Bark'
       required: true
       type: text
     - default: "/"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: BARK_SERVER_URL_PREFIX
       labelEn: Bark Server URL Prefix
       labelZh: Bark 服务器 URL 前缀
+      label:
+        en: 'Bark Server URL Prefix'
+        zh: 'Bark 服务器 URL 前缀'
+        zh-Hant: 'Bark 伺服器 URL 前綴'
+        ja: 'Bark サーバー URL プレフィックス'
+        ko: 'Bark 서버 URL 접두사'
+        ru: 'Префикс URL сервера Bark'
+        ms: 'Awalan URL pelayan Bark'
+        pt-br: 'Prefixo de URL do servidor Bark'
       required: true
       type: text
     - default: "/data"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: BARK_SERVER_DATA_DIR
       labelEn: Bark Server Data Directory
       labelZh: Bark 服务器数据目录
+      label:
+        en: 'Bark Server Data Directory'
+        zh: 'Bark 服务器数据目录'
+        zh-Hant: 'Bark 伺服器資料目錄'
+        ja: 'Bark サーバーデータディレクトリ'
+        ko: 'Bark 서버 데이터 디렉터리'
+        ru: 'Каталог данных сервера Bark'
+        ms: 'Direktori data pelayan Bark'
+        pt-br: 'Diretório de dados do servidor Bark'
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: BARK_SERVER_DSN
       labelEn: Bark Server DSN
       labelZh: Bark 服务器 DSN
+      label:
+        en: 'Bark Server DSN'
+        zh: 'Bark 服务器 DSN'
+        zh-Hant: 'Bark 伺服器 DSN'
+        ja: 'Bark サーバー DSN'
+        ko: 'Bark 서버 DSN'
+        ru: 'DSN сервера Bark'
+        ms: 'DSN pelayan Bark'
+        pt-br: 'DSN do servidor Bark'
       required: false
       type: text
     - default: "false"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: BARK_SERVER_SERVERLESS
       labelEn: Bark Server Serverless
       labelZh: Bark 服务器无服务器
+      label:
+        en: 'Bark Server Serverless'
+        zh: 'Bark 服务器无服务器'
+        zh-Hant: 'Bark 伺服器無伺服器'
+        ja: 'Bark サーバー Serverless'
+        ko: 'Bark 서버 서버리스'
+        ru: 'Bark Serverless'
+        ms: 'Bark Serverless'
+        pt-br: 'Bark Serverless'
       required: true
       type: select
       values:
@@ -60,6 +123,15 @@ additionalProperties:
       envKey: BARK_SERVER_CERT
       labelEn: Bark Server Certificate
       labelZh: Bark 服务器证书
+      label:
+        en: 'Bark Server Certificate'
+        zh: 'Bark 服务器证书'
+        zh-Hant: 'Bark 伺服器憑證'
+        ja: 'Bark サーバー証明書'
+        ko: 'Bark 서버 인증서'
+        ru: 'Сертификат сервера Bark'
+        ms: 'Sijil pelayan Bark'
+        pt-br: 'Certificado do servidor Bark'
       required: false
       type: text
     - default: ""
@@ -67,6 +139,15 @@ additionalProperties:
       envKey: BARK_SERVER_KEY
       labelEn: Bark Server Key
       labelZh: Bark 服务器密钥
+      label:
+        en: 'Bark Server Key'
+        zh: 'Bark 服务器密钥'
+        zh-Hant: 'Bark 伺服器金鑰'
+        ja: 'Bark サーバーキー'
+        ko: 'Bark 서버 키'
+        ru: 'Ключ сервера Bark'
+        ms: 'Kunci pelayan Bark'
+        pt-br: 'Chave do servidor Bark'
       required: false
       type: text
     - default: "false"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: BARK_SERVER_CASE_SENSITIVE
       labelEn: Bark Server Case Sensitive
       labelZh: Bark 服务器区分大小写
+      label:
+        en: 'Bark Server Case Sensitive'
+        zh: 'Bark 服务器区分大小写'
+        zh-Hant: 'Bark 伺服器區分大小寫'
+        ja: 'Bark サーバー大文字小文字を区別'
+        ko: 'Bark 서버 대/소문자 구분'
+        ru: 'Bark с учетом регистра'
+        ms: 'Bark peka huruf besar/kecil'
+        pt-br: 'Bark sensível a maiúsculas/minúsculas'
       required: true
       type: select
       values:
@@ -86,6 +176,15 @@ additionalProperties:
       envKey: BARK_SERVER_STRICT_ROUTING
       labelEn: Bark Server Strict Routing
       labelZh: Bark 服务器严格路由
+      label:
+        en: 'Bark Server Strict Routing'
+        zh: 'Bark 服务器严格路由'
+        zh-Hant: 'Bark 伺服器嚴格路由'
+        ja: 'Bark サーバー厳格ルーティング'
+        ko: 'Bark 서버 엄격 라우팅'
+        ru: 'Строгая маршрутизация Bark'
+        ms: 'Perutean ketat Bark'
+        pt-br: 'Roteamento estrito do Bark'
       required: true
       type: select
       values:
@@ -98,6 +197,15 @@ additionalProperties:
       envKey: BARK_SERVER_REDUCE_MEMORY_USAGE
       labelEn: Bark Server Reduce Memory Usage
       labelZh: Bark 服务器减少内存使用
+      label:
+        en: 'Bark Server Reduce Memory Usage'
+        zh: 'Bark 服务器减少内存使用'
+        zh-Hant: 'Bark 伺服器減少記憶體使用'
+        ja: 'Bark サーバーメモリ使用量を削減'
+        ko: 'Bark 서버 메모리 사용량 감소'
+        ru: 'Снижение использования памяти Bark'
+        ms: 'Kurangkan penggunaan memori Bark'
+        pt-br: 'Reduzir uso de memória do Bark'
       required: true
       type: select
       values:
@@ -110,6 +218,15 @@ additionalProperties:
       envKey: BARK_SERVER_BASIC_AUTH_USER
       labelEn: Bark Server Basic Auth User
       labelZh: Bark 服务器基本身份验证用户
+      label:
+        en: 'Bark Server Basic Auth User'
+        zh: 'Bark 服务器基本身份验证用户'
+        zh-Hant: 'Bark 伺服器基本驗證使用者'
+        ja: 'Bark サーバー基本認証ユーザー'
+        ko: 'Bark 서버 기본 인증 사용자'
+        ru: 'Пользователь базовой аутентификации Bark'
+        ms: 'Pengguna pengesahan asas Bark'
+        pt-br: 'Usuário de autenticação básica do Bark'
       required: false
       type: text
     - default: ""
@@ -117,6 +234,15 @@ additionalProperties:
       envKey: BARK_SERVER_BASIC_AUTH_PASSWORD
       labelEn: Bark Server Basic Auth Password
       labelZh: Bark 服务器基本身份验证密码
+      label:
+        en: 'Bark Server Basic Auth Password'
+        zh: 'Bark 服务器基本身份验证密码'
+        zh-Hant: 'Bark 伺服器基本驗證密碼'
+        ja: 'Bark サーバー基本認証パスワード'
+        ko: 'Bark 서버 기본 인증 비밀번호'
+        ru: 'Пароль базовой аутентификации Bark'
+        ms: 'Kata laluan pengesahan asas Bark'
+        pt-br: 'Senha de autenticação básica do Bark'
       required: false
       type: password
     - default: ""
@@ -124,6 +250,15 @@ additionalProperties:
       envKey: BARK_SERVER_PROXY_HEADER
       labelEn: Bark Server Proxy Header
       labelZh: Bark 服务器代理头
+      label:
+        en: 'Bark Server Proxy Header'
+        zh: 'Bark 服务器代理头'
+        zh-Hant: 'Bark 伺服器代理標頭'
+        ja: 'Bark サーバー プロキシヘッダー'
+        ko: 'Bark 서버 프록시 헤더'
+        ru: 'Прокси-заголовок Bark'
+        ms: 'Pengepala proksi Bark'
+        pt-br: 'Cabeçalho de proxy do Bark'
       required: false
       type: text
     - default: "262144"
@@ -131,6 +266,15 @@ additionalProperties:
       envKey: BARK_SERVER_CONCURRENCY
       labelEn: Bark Server Concurrency
       labelZh: Bark 服务器并发
+      label:
+        en: 'Bark Server Concurrency'
+        zh: 'Bark 服务器并发'
+        zh-Hant: 'Bark 伺服器並發'
+        ja: 'Bark サーバー同時実行数'
+        ko: 'Bark 서버 동시성'
+        ru: 'Параллельность Bark'
+        ms: 'Kebersamaan Bark'
+        pt-br: 'Concorrência do Bark'
       required: true
       type: number
     - default: "3s"
@@ -138,6 +282,15 @@ additionalProperties:
       envKey: BARK_SERVER_READ_TIMEOUT
       labelEn: Bark Server Read Timeout
       labelZh: Bark 服务器读取超时
+      label:
+        en: 'Bark Server Read Timeout'
+        zh: 'Bark 服务器读取超时'
+        zh-Hant: 'Bark 伺服器讀取逾時'
+        ja: 'Bark サーバー読み取りタイムアウト'
+        ko: 'Bark 서버 읽기 시간 초과'
+        ru: 'Тайм-аут чтения Bark'
+        ms: 'Had masa baca Bark'
+        pt-br: 'Tempo limite de leitura do Bark'
       required: true
       type: text
     - default: "3s"
@@ -145,6 +298,15 @@ additionalProperties:
       envKey: BARK_SERVER_WRITE_TIMEOUT
       labelEn: Bark Server Write Timeout
       labelZh: Bark 服务器写入超时
+      label:
+        en: 'Bark Server Write Timeout'
+        zh: 'Bark 服务器写入超时'
+        zh-Hant: 'Bark 伺服器寫入逾時'
+        ja: 'Bark サーバー書き込みタイムアウト'
+        ko: 'Bark 서버 쓰기 시간 초과'
+        ru: 'Тайм-аут записи Bark'
+        ms: 'Had masa tulis Bark'
+        pt-br: 'Tempo limite de gravação do Bark'
       required: true
       type: text
     - default: "10s"
@@ -152,5 +314,14 @@ additionalProperties:
       envKey: BARK_SERVER_IDLE_TIMEOUT
       labelEn: Bark Server Idle Timeout
       labelZh: Bark 服务器空闲超时
+      label:
+        en: 'Bark Server Idle Timeout'
+        zh: 'Bark 服务器空闲超时'
+        zh-Hant: 'Bark 伺服器閒置逾時'
+        ja: 'Bark サーバーアイドルタイムアウト'
+        ko: 'Bark 서버 유휴 시간 초과'
+        ru: 'Тайм-аут простоя Bark'
+        ms: 'Had masa melahu Bark'
+        pt-br: 'Tempo limite de ociosidade do Bark'
       required: true
       type: text

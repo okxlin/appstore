@@ -6,6 +6,15 @@ description: 哪吒监控 - Dashboard
 additionalProperties:
   key: nezha-dashboard
   name: 哪吒监控 - Dashboard
+  description:
+    en: Nezha Monitoring - Dashboard
+    zh: 哪吒监控 - Dashboard
+    zh-Hant: 哪吒監控 - Dashboard
+    ja: 哪吒監控 - ダッシュボード
+    ko: 哪吒 모니터링 - 대시보드
+    ru: Nezha Monitoring — панель
+    ms: Pemantauan Nezha - Papan Pemuka
+    pt-br: Nezha Monitoring - Painel
   tags:
     - Tool
   shortDescZh: 哪吒监控 - Dashboard
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://nezha.wiki
   github: https://github.com/naiba/nezha
   document: https://nezha.wiki/guide/dashboard.html
+  architectures:
+    - amd64
+    - arm64

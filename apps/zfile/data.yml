@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.zfile.vip/
   github: https://github.com/zfile-dev/zfile
   document: https://docs.zfile.vip/
+  architectures:
+    - amd64
+  description:
+    en: Java-based online disk program
+    zh: 基于 Java 的在线网盘程序
+    zh-Hant: 基於 Java 的線上網盤程式
+    ja: Javaベースのオンラインストレージプログラム
+    ko: Java 기반 온라인 스토리지 프로그램
+    ru: Онлайн-диск на базе Java
+    ms: Program cakera dalam talian berasaskan Java
+    pt-br: Programa de armazenamento online baseado em Java

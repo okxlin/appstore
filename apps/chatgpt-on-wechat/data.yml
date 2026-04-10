@@ -1,6 +1,6 @@
 name: ChatGPT on WeChat
 tags:
-  - AI / 大模型
+  - AI
 title: 基于大模型的智能对话机器人
 description: 基于大模型的智能对话机器人
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 基于大模型的智能对话机器人
   shortDescEn: Intelligent Conversational Bots Based on Large Models
+  description:
+    en: Intelligent conversational bots based on large models
+    zh: 基于大模型的智能对话机器人
+    zh-Hant: 基於大模型的智能對話機器人
+    ja: 大規模言語モデルに基づくインテリジェントな対話ボット
+    ko: 대규모 모델 기반의 지능형 대화 봇
+    ru: Интеллектуальный чат-бот на базе больших моделей
+    ms: Bot perbualan pintar berasaskan model besar
+    pt-br: Bots de conversa inteligentes baseados em grandes modelos
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/zhayujie/chatgpt-on-wechat
   github: https://github.com/zhayujie/chatgpt-on-wechat
   document: https://docs.link-ai.tech/cow
+  architectures:
+    - amd64

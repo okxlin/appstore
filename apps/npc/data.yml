@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 内网穿透代理服务器 NPS 的客户端
   shortDescEn: Intranet Penetrating Proxy Server NPS Client
+  description:
+    en: Intranet Penetrating Proxy Server NPS Client
+    zh: 内网穿透代理服务器 NPS 的客户端
+    zh-Hant: 內網穿透代理伺服器 NPS 的客戶端
+    ja: 内网穿透プロキシサーバーNPSのクライアント
+    ko: 내망 관통 프록시 서버 NPS 클라이언트
+    ru: Клиент NPS для прокси-сервера проникновения во внутреннюю сеть
+    ms: Klien NPS untuk pelayan proksi penembusan intranet
+    pt-br: Cliente NPS para servidor proxy de acesso à intranet
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://ehang-io.github.io/nps
   github: https://github.com/yisier/nps
   document: https://ehang-io.github.io/nps
+  architectures:
+    - amd64

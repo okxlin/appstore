@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "0"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "0"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: 'Group ID'
+        zh: '组 ID'
+        zh-Hant: '群組 ID'
+        ja: 'グループ ID'
+        ko: '그룹 ID'
+        ru: 'ID группы'
+        ms: 'ID kumpulan'
+        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "022"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: UMASK
       labelEn: Umask
       labelZh: 掩码权限
+      label:
+        en: 'Umask'
+        zh: '掩码权限'
+        zh-Hant: 'umask 值'
+        ja: 'umask 値'
+        ko: 'umask 값'
+        ru: 'Значение umask'
+        ms: 'Nilai umask'
+        pt-br: 'Valor do umask'
       required: true
       type: text
     - default: "223.5.5.5"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: DNS_SERVER
       labelEn: DNS Server
       labelZh: DNS 服务器
+      label:
+        en: 'DNS Server'
+        zh: 'DNS 服务器'
+        zh-Hant: 'DNS 伺服器'
+        ja: 'DNS サーバー'
+        ko: 'DNS 서버'
+        ru: 'DNS-сервер'
+        ms: 'Pelayan DNS'
+        pt-br: 'Servidor DNS'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

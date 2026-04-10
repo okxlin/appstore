@@ -17,3 +17,14 @@ additionalProperties:
   website: https://jiasu.in
   github: https://github.com/0-RTT/telegraph
   document: https://github.com/0-RTT/telegraph
+  architectures:
+    - amd64
+  description:
+    en: 'A Telegraph-based image hosting service that auto-compresses images larger than 5 MB.'
+    zh: '基于 telegraph 的图床，图片大于 5MB 自动压缩'
+    zh-Hant: '基於 Telegraph 的圖床，圖片大於 5MB 時會自動壓縮'
+    ja: 'Telegraph ベースの画像ホスティングで、5MB を超える画像を自動圧縮します。'
+    ko: 'Telegraph 기반 이미지 호스팅 서비스로, 5MB보다 큰 이미지를 자동 압축합니다.'
+    ru: 'Хостинг изображений на базе Telegraph с автоматическим сжатием файлов больше 5 МБ.'
+    ms: 'Perkhidmatan hos imej berasaskan Telegraph yang memampatkan imej melebihi 5 MB secara automatik.'
+    pt-br: 'Serviço de hospedagem de imagens baseado no Telegraph que comprime automaticamente imagens maiores que 5 MB.'

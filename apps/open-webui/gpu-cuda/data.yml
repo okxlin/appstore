@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: OLLAMA_BASE_URL
       labelEn: Ollama Base URL (example：https://example.com)
       labelZh: Ollama 基础 URL (例：https://example.com)
+      label:
+        en: 'Ollama Base URL (example：https://example.com)'
+        zh: 'Ollama 基础 URL (例：https://example.com)'
+        zh-Hant: 'Ollama 基礎 URL（例：https://example.com）'
+        ja: 'Ollama ベースURL（例：https://example.com）'
+        ko: 'Ollama 기본 URL (예: https://example.com)'
+        ru: 'Базовый URL Ollama (пример: https://example.com)'
+        ms: 'URL asas Ollama (contoh: https://example.com)'
+        pt-br: 'URL base do Ollama (ex.: https://example.com)'
       required: false
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: OPENAI_API_KEY
       labelEn: OpenAI API Key
       labelZh: OpenAI API 密钥
+      label:
+        en: 'OpenAI API Key'
+        zh: 'OpenAI API 密钥'
+        zh-Hant: 'OpenAI API 金鑰'
+        ja: 'OpenAI API キー'
+        ko: 'OpenAI API 키'
+        ru: 'Ключ API OpenAI'
+        ms: 'Kunci API OpenAI'
+        pt-br: 'Chave da API OpenAI'
       required: false
       type: password
     - default: ./data
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text

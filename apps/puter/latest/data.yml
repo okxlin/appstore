@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_INTERNAL
       labelEn: Internal Container Ports
       labelZh: 容器内部端口
+      label:
+        en: 'Internal Container Ports'
+        zh: '容器内部端口'
+        zh-Hant: '容器內部埠'
+        ja: 'コンテナ内部ポート'
+        ko: '컨테이너 내부 포트'
+        ru: 'Внутренние порты контейнера'
+        ms: 'Port dalaman bekas'
+        pt-br: 'Portas internas do contêiner'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: 1000
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: 1000
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
+      label:
+        en: 'Group ID'
+        zh: '组 ID'
+        zh-Hant: '群組 ID'
+        ja: 'グループ ID'
+        ko: '그룹 ID'
+        ru: 'ID группы'
+        ms: 'ID kumpulan'
+        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "/etc/puter"
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path (Inside the container)
       labelZh: 配置路径 (容器内部)
+      label:
+        en: 'Config Path (Inside the container)'
+        zh: '配置路径 (容器内部)'
+        zh-Hant: '設定路徑（容器內部）'
+        ja: '設定パス（コンテナ内）'
+        ko: '구성 경로(컨테이너 내부)'
+        ru: 'Путь к конфигурации (внутри контейнера)'
+        ms: 'Laluan konfigurasi (dalam bekas)'
+        pt-br: 'Caminho de configuração (dentro do contêiner)'
       required: true
       type: text
     - default: "./data"
@@ -49,5 +103,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text

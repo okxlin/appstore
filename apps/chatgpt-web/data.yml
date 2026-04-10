@@ -1,6 +1,6 @@
 name: ChatGPT Web
 tags:
-  - AI / 大模型
+  - AI
 title: 使用 express 和 vue3 搭建的支持 ChatGPT 双模型演示网页
 description: 使用 express 和 vue3 搭建的支持 ChatGPT 双模型演示网页
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 使用 express 和 vue3 搭建的支持 ChatGPT 双模型演示网页
   shortDescEn: ChatGPT-enabled dual-model demo page built with express and vue3
+  description:
+    en: ChatGPT-enabled dual-model demo page built with express and vue3
+    zh: 使用 express 和 vue3 搭建的支持 ChatGPT 双模型演示网页
+    zh-Hant: 使用 express 和 vue3 搭建的支援 ChatGPT 雙模型演示網頁
+    ja: express と vue3 で構築した ChatGPT 二モデル対応のデモページ
+    ko: express와 vue3로 구축한 ChatGPT 듀얼 모델 데모 페이지
+    ru: Демо-страница с двумя моделями ChatGPT, построенная на express и vue3
+    ms: Halaman demo dua model ChatGPT yang dibina dengan express dan vue3
+    pt-br: Página de demonstração com dois modelos ChatGPT, criada com express e vue3
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/Chanzhaoyu/chatgpt-web
   github: https://github.com/Chanzhaoyu/chatgpt-web
   document: https://github.com/Chanzhaoyu/chatgpt-web
+  architectures:
+    - amd64

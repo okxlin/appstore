@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一个开源的实时视频监控系统
   shortDescEn: NVR With Realtime Object Detection for IP Cameras
+  description:
+    en: An open-source real-time video surveillance system
+    zh: 一个开源的实时视频监控系统
+    zh-Hant: 一個開源的即時視訊監控系統
+    ja: オープンソースのリアルタイム映像監視システム
+    ko: 오픈소스 실시간 영상 감시 시스템
+    ru: Открытая система видеонаблюдения в реальном времени
+    ms: Sistem pemantauan video masa nyata sumber terbuka
+    pt-br: Sistema de vigilância por vídeo em tempo real de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://frigate.video
   github: https://github.com/blakeblackshear/frigate
   document: https://frigate.video/docs/
+  architectures:
+    - amd64
+    - arm64

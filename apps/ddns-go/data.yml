@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自动获得你的公网 IPv4 或 IPv6 地址，并解析到对应的域名服务
   shortDescEn: Automatically obtain your public IPv4 or IPv6 address and resolve it to the corresponding domain name service
+  description:
+    en: Automatically obtain your public IPv4 or IPv6 address and resolve it to the corresponding domain name service
+    zh: 自动获得你的公网 IPv4 或 IPv6 地址，并解析到对应的域名服务
+    zh-Hant: 自動獲得你的公網 IPv4 或 IPv6 位址，並解析到對應的域名服務
+    ja: 公開IPv4/IPv6アドレスを自動取得し、対応するDNSサービスに更新
+    ko: 공인 IPv4/IPv6 주소를 자동으로 가져와 해당 도메인 서비스로 업데이트
+    ru: Автоматически получает ваш публичный IPv4/IPv6 и обновляет соответствующий DNS-сервис
+    ms: Dapatkan alamat IPv4 atau IPv6 awam anda secara automatik dan kemas kini ke perkhidmatan domain yang berkaitan
+    pt-br: Obtém automaticamente seu IPv4/IPv6 público e resolve no serviço de domínio correspondente
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/jeessy2/ddns-go
   github: https://github.com/jeessy2/ddns-go
   document: https://github.com/jeessy2/ddns-go
+  architectures:
+    - amd64

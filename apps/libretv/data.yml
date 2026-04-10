@@ -1,3 +1,8 @@
+name: LibreTV
+tags:
+  - Tool
+title: 轻量级、免费的在线视频搜索与观看平台
+description: 轻量级、免费的在线视频搜索与观看平台
 additionalProperties:
   crossVersionUpdate: true
   document: https://libretv.is-an.org
@@ -6,8 +11,19 @@ additionalProperties:
   limit: 0
   name: LibreTV
   shortDescEn: mPure Go open-source one-stop streaming media server development framework
+  description:
+    en: A lightweight, free platform for searching and watching online videos
+    zh: 轻量级、免费的在线视频搜索与观看平台
+    zh-Hant: 輕量級、免費的線上影片搜尋與觀看平台
+    ja: 軽量で無料のオンライン動画検索・視聴プラットフォーム
+    ko: 가볍고 무료인 온라인 비디오 검색 및 시청 플랫폼
+    ru: Лёгкая бесплатная платформа для поиска и просмотра онлайн-видео
+    ms: Platform ringan dan percuma untuk carian dan tontonan video dalam talian
+    pt-br: Plataforma leve e gratuita para busca e visualização de vídeos online
   shortDescZh: 轻量级、免费的在线视频搜索与观看平台
   tags:
   - Tool
   type: tool
   website: https://libretv.is-an.org/
+  architectures:
+    - amd64

@@ -12,6 +12,15 @@ additionalProperties:
     - Media
   shortDescZh: 轻松将 IPA 侧载到 AppleTV
   shortDescEn: Easily sideload the IPA to AppleTV
+  description:
+    en: Easily sideload IPA files to Apple TV.
+    zh: 轻松将 IPA 侧载到 AppleTV
+    zh-Hant: 輕鬆將 IPA 側載到 AppleTV
+    ja: Apple TV に IPA を簡単にサイドロード
+    ko: Apple TV에 IPA를 쉽게 사이드로드
+    ru: Лёгкая сайдлоадинг IPA на Apple TV.
+    ms: Mudah menyideload fail IPA ke Apple TV.
+    pt-br: Faça sideload de arquivos IPA no Apple TV com facilidade.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://github.com/bitxeno/atvloadly
   github: https://github.com/bitxeno/atvloadly
   document: https://github.com/bitxeno/atvloadly
+  architectures:
+    - amd64

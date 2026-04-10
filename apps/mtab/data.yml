@@ -6,6 +6,15 @@ description: 书签导航程序
 additionalProperties:
   key: mtab
   name: mTab
+  description:
+    en: Bookmark navigation app
+    zh: 书签导航程序
+    zh-Hant: 書籤導覽程式
+    ja: ブックマークナビゲーションアプリ
+    ko: 북마크 탐색 앱
+    ru: Приложение для навигации по закладкам
+    ms: Aplikasi navigasi penanda buku
+    pt-br: Aplicativo de navegação por favoritos
   tags:
     - Website
   shortDescZh: 书签导航程序
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.mtab.cc
   github: https://github.com/tsxcw/mtab
   document: https://www.mtab.cc
+  architectures:
+    - amd64

@@ -6,6 +6,15 @@ description: 哪吒监控 - Agent
 additionalProperties:
   key: nezha-agent
   name: 哪吒监控 - Agent
+  description:
+    en: Nezha Monitoring - Agent
+    zh: 哪吒监控 - Agent
+    zh-Hant: 哪吒監控 - Agent
+    ja: 哪吒監控 - エージェント
+    ko: 哪吒 모니터링 - 에이전트
+    ru: Nezha Monitoring — агент
+    ms: Pemantauan Nezha - Agen
+    pt-br: Nezha Monitoring - Agente
   tags:
     - Tool
   shortDescZh: 哪吒监控 - Agent
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://nezha.wiki
   github: https://github.com/naiba/nezha
   document: https://nezha.wiki/guide/agent.html
+  architectures:
+    - amd64

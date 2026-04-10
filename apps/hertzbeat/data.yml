@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个易用友好的开源实时监控告警系统
   shortDescEn: An open source, real-time monitoring system with custom-monitoring
+  description:
+    en: An easy-to-use open-source real-time monitoring and alerting system
+    zh: 一个易用友好的开源实时监控告警系统
+    zh-Hant: 易用友好的開源即時監控告警系統
+    ja: 使いやすいオープンソースのリアルタイム監視・アラートシステム
+    ko: 사용하기 쉬운 오픈 소스 실시간 모니터링 및 경보 시스템
+    ru: Удобная открытая система мониторинга и оповещений в реальном времени
+    ms: Sistem pemantauan dan amaran masa nyata sumber terbuka yang mudah digunakan
+    pt-br: Sistema de monitoramento e alertas em tempo real, de código aberto e fácil de usar
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hertzbeat.com/
   github: https://github.com/dromara/hertzbeat
   document: https://hertzbeat.com/docs/
+  architectures:
+    - amd64
+

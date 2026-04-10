@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "./data/db.sqlite"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DB_PATH
       labelEn: Database Path
       labelZh: 数据库文件路径
+      label:
+        en: 'Database Path'
+        zh: '数据库路径'
+        zh-Hant: '資料庫路徑'
+        ja: 'データベースパス'
+        ko: '데이터베이스 경로'
+        ru: 'Путь к базе данных'
+        ms: 'Laluan pangkalan data'
+        pt-br: 'Caminho do banco de dados'
       required: true
       type: text
     - default: "MrWiskers"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Secret Key
       labelZh: 秘钥
+      label:
+        en: 'Secret Key'
+        zh: '保密密码'
+        zh-Hant: '保密密碼'
+        ja: 'シークレットキー'
+        ko: '비밀 키'
+        ru: 'Секретный ключ'
+        ms: 'Kunci rahsia'
+        pt-br: 'Chave secreta'
       random: true
       required: true
       rule: paramComplexity
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: DOCKER_SOCK_PATH
       labelEn: Docker Socket Path
       labelZh: Docker 套接字路径
+      label:
+        en: 'Docker Socket Path'
+        zh: 'Docker 套接字路径'
+        zh-Hant: 'Docker 套接字路徑'
+        ja: 'Docker ソケットパス'
+        ko: 'Docker 소켓 경로'
+        ru: 'Путь к сокету Docker'
+        ms: 'Laluan Soket Docker'
+        pt-br: 'Caminho do Socket Docker'
       required: true
       type: text

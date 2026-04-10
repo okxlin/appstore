@@ -4,6 +4,15 @@ tags:
 title: 开源团队协作平台
 description: 开源团队协作平台
 additionalProperties:
+  description:
+    en: Open-source team collaboration platform
+    zh: 开源团队协作平台
+    zh-Hant: 開源團隊協作平台
+    ja: オープンソースのチームコラボレーションプラットフォーム
+    ko: 오픈 소스 팀 협업 플랫폼
+    ru: Открытая платформа для командного взаимодействия
+    ms: Platform kolaborasi pasukan sumber terbuka
+    pt-br: Plataforma de colaboração em equipe de código aberto
   key: mattermost
   name: Mattermost
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://mattermost.com
   github: https://github.com/mattermost/mattermost
   document: https://docs.mattermost.com
+  architectures:
+    - amd64

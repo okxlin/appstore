@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: DNS service port
       labelZh: DNS服务端口
+      label:
+        en: 'DNS service port'
+        zh: 'DNS服务端口'
+        zh-Hant: 'DNS 服務埠'
+        ja: 'DNS サービス ポート'
+        ko: 'DNS 서비스 포트'
+        ru: 'Порт DNS-службы'
+        ms: 'Port perkhidmatan DNS'
+        pt-br: 'Porta do serviço DNS'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_API
       labelEn: API port
       labelZh: API端口
+      label:
+        en: 'API port'
+        zh: 'API端口'
+        zh-Hant: 'API 埠'
+        ja: 'API ポート'
+        ko: 'API 포트'
+        ru: 'Порт API'
+        ms: 'Port API'
+        pt-br: 'Porta da API'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: 172.18.0.240
@@ -28,5 +55,14 @@ additionalProperties:
       envKey: SUBNET
       labelEn: Subnet IP
       labelZh: 子网 IP
+      label:
+        en: 'Subnet IP'
+        zh: '子网 IP'
+        zh-Hant: '子網 IP'
+        ja: 'サブネット IP'
+        ko: '서브넷 IP'
+        ru: 'IP подсети'
+        ms: 'IP subnet'
+        pt-br: 'IP de sub-rede'
       required: true
       type: text

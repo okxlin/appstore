@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 摄影佬专用相片集
   shortDescEn: Photo Album for Photographers
+  description:
+    en: "Photo album designed for photographers."
+    zh: "面向摄影师的相片集工具。"
+    zh-Hant: "面向攝影師的相片集工具。"
+    ja: "写真家向けに設計されたフォトアルバムです。"
+    ko: "사진가를 위한 사진 앨범 도구입니다."
+    ru: "Фотоальбом, созданный специально для фотографов."
+    ms: "Album foto yang direka khas untuk jurugambar."
+    pt-br: "Álbum de fotos feito para fotógrafos."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://pic.besscroft.com
   github: https://github.com/besscroft/PicImpact
   document: https://github.com/besscroft/PicImpact
+  architectures:
+    - amd64

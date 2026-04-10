@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,14 +22,65 @@ additionalProperties:
       envKey: PANEL_APP_PORT_RCON
       labelEn: RCON Port
       labelZh: RCON 端口
+      label:
+        en: 'RCON Port'
+        zh: 'RCON 端口'
+        zh-Hant: 'RCON 埠'
+        ja: 'RCON ポート'
+        ko: 'RCON 포트'
+        ru: 'Порт RCON'
+        ms: 'Port RCON'
+        pt-br: 'Porta RCON'
       required: true
       rule: paramPort
       type: number
+    - default: 27015
+      edit: true
+      envKey: PANEL_APP_PORT_QUERY
+      labelEn: Query port used to communicate with Steam servers
+      labelZh: Query 端口 (用于与 Steam 服务器通信的查询端口)
+      label:
+        en: 'Query port used to communicate with Steam servers'
+        zh: '用于与 Steam 服务器通信的查询端口'
+        zh-Hant: '用於與 Steam 伺服器通訊的查詢埠'
+        ja: 'Steam サーバーとの通信に使用するクエリポート'
+        ko: 'Steam 서버와 통신하는 쿼리 포트'
+        ru: 'Порт запросов для связи с серверами Steam'
+        ms: 'Port kueri untuk berkomunikasi dengan pelayan Steam'
+        pt-br: 'Porta de consulta usada para comunicação com servidores Steam'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
+      required: true
+      type: text
     - default: 32
       edit: true
       envKey: MAX_PLAYERS
       labelEn: Maximum number of participants on the server
       labelZh: 玩家数量限制
+      label:
+        en: 'Maximum number of participants on the server'
+        zh: '服务器最大玩家数量'
+        zh-Hant: '伺服器最大玩家數量'
+        ja: 'サーバーの最大参加人数'
+        ko: '서버 최대 참가자 수'
+        ru: 'Максимальное число участников на сервере'
+        ms: 'Bilangan maksimum peserta pada pelayan'
+        pt-br: 'Número máximo de participantes no servidor'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +89,15 @@ additionalProperties:
       envKey: MULTITHREAD_SWITCH
       labelEn: Improves performance in multi-threaded CPU environments (true / false)
       labelZh: 是否启用 CPU 多线程优化 (true / false)
+      label:
+        en: 'Improves performance in multi-threaded CPU environments (true / false)'
+        zh: '在多线程 CPU 环境中提升性能（true / false）'
+        zh-Hant: '在多執行緒 CPU 環境中提升效能（true / false）'
+        ja: 'マルチスレッド CPU 環境で性能を向上（true / false）'
+        ko: '멀티스레드 CPU 환경에서 성능 향상(true / false)'
+        ru: 'Повышает производительность в многопоточных CPU средах (true / false)'
+        ms: 'Meningkatkan prestasi dalam persekitaran CPU berbilang benang (true / false)'
+        pt-br: 'Melhora o desempenho em ambientes de CPU multithread (true / false)'
       required: true
       type: text
     - default: 'false'
@@ -36,6 +105,15 @@ additionalProperties:
       envKey: PUBLIC_SWITCH
       labelEn: Setup server as a community server (true / false)
       labelZh: 是否将服务器设置为社区服务器 (true / false)
+      label:
+        en: 'Setup server as a community server (true / false)'
+        zh: '将服务器设置为社区服务器（true / false）'
+        zh-Hant: '將伺服器設定為社群伺服器（true / false）'
+        ja: 'サーバーをコミュニティサーバーとして設定（true / false）'
+        ko: '서버를 커뮤니티 서버로 설정(true / false)'
+        ru: 'Настроить сервер как общественный (true / false)'
+        ms: 'Tetapkan pelayan sebagai pelayan komuniti (true / false)'
+        pt-br: 'Configurar o servidor como servidor comunitário (true / false)'
       required: true
       type: text
     - default: ''
@@ -43,6 +121,15 @@ additionalProperties:
       envKey: PUBLIC_IP
       labelEn: PUBLIC IP (If not specified, it will be detected automatically)
       labelZh: 服务器 IP (留空自动检测)
+      label:
+        en: 'PUBLIC IP (If not specified, it will be detected automatically)'
+        zh: '公网 IP（未指定则自动检测）'
+        zh-Hant: '公網 IP（未指定則自動偵測）'
+        ja: '公開 IP（未指定の場合は自動検出）'
+        ko: '공용 IP(지정하지 않으면 자동 감지)'
+        ru: 'Публичный IP (если не указан, будет определён автоматически)'
+        ms: 'IP awam (jika tidak dinyatakan, akan dikesan secara automatik)'
+        pt-br: 'IP público (se não especificado, será detectado automaticamente)'
       required: false
       type: text
     - default: ''
@@ -50,14 +137,32 @@ additionalProperties:
       envKey: PANEL_APP_PORT_PUBLIC
       labelEn: PUBLIC PORT (If not specified, it will be detected automatically)
       labelZh: 服务器端口 (留空自动检测)
+      label:
+        en: 'PUBLIC PORT (If not specified, it will be detected automatically)'
+        zh: '公网端口（未指定则自动检测）'
+        zh-Hant: '公網連接埠（未指定則自動偵測）'
+        ja: '公開ポート（未指定の場合は自動検出）'
+        ko: '공용 포트(지정하지 않으면 자동 감지)'
+        ru: 'Публичный порт (если не указан, будет определён автоматически)'
+        ms: 'Port awam (jika tidak dinyatakan, akan dikesan secara automatik)'
+        pt-br: 'Porta pública (se não especificado, será detectado automaticamente)'
       required: false
       rule: paramPort
-      type: text
-    - default: 'false'
-      edit: true
+      type: number
+    - default: 'true'
+      disabled: true
       envKey: UPDATE_SWITCH
       labelEn: Whether the server should be update each time start (true / false)
       labelZh: 是否每次启动都更新服务器 (true / false)
+      label:
+        en: 'Whether the server should be update each time start (true / false)'
+        zh: '是否每次启动都更新服务器（true / false）'
+        zh-Hant: '是否每次啟動都更新伺服器（true / false）'
+        ja: '起動のたびにサーバーを更新するか（true / false）'
+        ko: '시작할 때마다 서버를 업데이트할지 여부(true / false)'
+        ru: 'Обновлять ли сервер при каждом запуске (true / false)'
+        ms: 'Sama ada pelayan perlu dikemas kini setiap kali dimulakan (true / false)'
+        pt-br: 'Se o servidor deve ser atualizado a cada inicialização (true / false)'
       required: true
       type: text
     - default: 'Default Palworld Server'
@@ -65,13 +170,15 @@ additionalProperties:
       envKey: SERVER_NAME
       labelEn: Server name
       labelZh: 服务器名
-      required: true
-      type: text
-    - default: 'Default Palworld Server'
-      edit: true
-      envKey: SERVER_DESC
-      labelEn: Server description
-      labelZh: 服务器说明
+      label:
+        en: 'Server name'
+        zh: '服务器名称'
+        zh-Hant: '伺服器名稱'
+        ja: 'サーバー名'
+        ko: '서버 이름'
+        ru: 'Имя сервера'
+        ms: 'Nama pelayan'
+        pt-br: 'Nome do servidor'
       required: true
       type: text
     - default: palworld
@@ -79,6 +186,15 @@ additionalProperties:
       envKey: ADMIN_PASSWORD
       labelEn: Admin password
       labelZh: 管理员密码
+      label:
+        en: 'Admin password'
+        zh: '管理员密码'
+        zh-Hant: '管理員密碼'
+        ja: '管理者パスワード'
+        ko: '관리자 비밀번호'
+        ru: 'Пароль администратора'
+        ms: 'Kata laluan pentadbir'
+        pt-br: 'Senha de administrador'
       random: true
       required: false
       rule: paramComplexity
@@ -88,6 +204,15 @@ additionalProperties:
       envKey: SERVER_PASSWORD
       labelEn: Server password
       labelZh: 服务器密码
+      label:
+        en: 'Server password'
+        zh: '服务器密码'
+        zh-Hant: '伺服器密碼'
+        ja: 'サーバーパスワード'
+        ko: '서버 비밀번호'
+        ru: 'Пароль сервера'
+        ms: 'Kata laluan pelayan'
+        pt-br: 'Senha do servidor'
       required: false
       rule: paramComplexity
       type: password
@@ -96,5 +221,14 @@ additionalProperties:
       envKey: RCON_SWITCH
       labelEn: Enable RCON (true / false)
       labelZh: 是否启用 RCON (true / false)
+      label:
+        en: 'Enable RCON (true / false)'
+        zh: '启用 RCON（true / false）'
+        zh-Hant: '啟用 RCON（true / false）'
+        ja: 'RCON を有効化（true / false）'
+        ko: 'RCON 활성화(true / false)'
+        ru: 'Включить RCON (true / false)'
+        ms: 'Dayakan RCON (true / false)'
+        pt-br: 'Ativar RCON (true / false)'
       required: true
       type: text

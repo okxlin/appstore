@@ -5,6 +5,15 @@ additionalProperties:
       envKey: CONFIG_FILE_PATH
       labelEn: Configuration file path
       labelZh: 配置文件路径
+      label:
+        en: 'Configuration file path'
+        zh: '配置文件路径'
+        zh-Hant: '設定檔路徑'
+        ja: '設定ファイルパス'
+        ko: '구성 파일 경로'
+        ru: 'Путь к файлу конфигурации'
+        ms: 'Laluan fail konfigurasi'
+        pt-br: 'Caminho do arquivo de configuração'
       required: true
       type: text
     - default: 6000
@@ -12,12 +21,31 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port (determined by the configuration file)
       labelZh: 端口 (由配置文件决定)
+      label:
+        en: 'Port (determined by the configuration file)'
+        zh: '端口 (由配置文件决定)'
+        zh-Hant: '埠（由設定檔決定）'
+        ja: 'ポート（設定ファイルで決定）'
+        ko: '포트(구성 파일로 결정)'
+        ru: 'Порт (определяется конфигурационным файлом)'
+        ms: 'Port (ditentukan oleh fail konfigurasi)'
+        pt-br: 'Porta (determinada pelo arquivo de configuração)'
       required: true
+      rule: paramPort
       type: number
     - default: ./data/ssl
       edit: true
       envKey: SSL_FOLDER_PATH
       labelEn: Certificate folder path (corresponding to "/etc/frp/ssl" in container)
       labelZh: 证书文件夹路径 (对应容器内 "/etc/frp/ssl")
+      label:
+        en: 'Certificate folder path (corresponding to "/etc/frp/ssl" in container)'
+        zh: '证书文件夹路径 (对应容器内 "/etc/frp/ssl")'
+        zh-Hant: '證書資料夾路徑（對應容器內 "/etc/frp/ssl"）'
+        ja: '証明書フォルダパス（コンテナ内の "/etc/frp/ssl" に対応）'
+        ko: '인증서 폴더 경로(컨테이너 내 "/etc/frp/ssl"에 해당)'
+        ru: 'Путь к папке сертификатов (соответствует "/etc/frp/ssl" в контейнере)'
+        ms: 'Laluan folder sijil (sepadan dengan "/etc/frp/ssl" dalam kontena)'
+        pt-br: 'Caminho da pasta de certificados (correspondente a "/etc/frp/ssl" no contêiner)'
       required: true
       type: text

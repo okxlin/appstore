@@ -17,3 +17,14 @@ additionalProperties:
   website: https://hub.docker.com/r/pfav/minipaint
   github: https://github.com/viliusle/miniPaint
   document: https://github.com/viliusle/miniPaint/wiki
+  architectures:
+    - amd64
+  description:
+    en: 'An online image editor for creating and editing images with HTML5.'
+    zh: '在线图像编辑器，可让您使用HTML5技术创建，编辑图像'
+    zh-Hant: '線上圖像編輯器，可讓您使用 HTML5 技術建立與編輯圖像'
+    ja: 'HTML5 技術で画像の作成と編集ができるオンライン画像エディターです。'
+    ko: 'HTML5 기술로 이미지를 만들고 편집할 수 있는 온라인 이미지 편집기입니다.'
+    ru: 'Онлайн-редактор изображений для создания и редактирования картинок с помощью HTML5.'
+    ms: 'Penyunting imej dalam talian untuk mencipta dan mengedit imej menggunakan HTML5.'
+    pt-br: 'Editor de imagens online para criar e editar imagens com tecnologia HTML5.'

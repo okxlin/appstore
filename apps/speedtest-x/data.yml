@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自托管的速度测试应用程序，提供出色的测试结果数据表
   shortDescEn: A self-hosted speedtest appilication with an awesome test result datasheet
+  description:
+    en: A self-hosted speed test application with an excellent results datasheet
+    zh: 自托管的速度测试应用程序，提供出色的测试结果数据表
+    zh-Hant: 自託管的速度測試應用程式，提供出色的測試結果資料表
+    ja: 優れた結果データシートを備えたセルフホスト型速度テストアプリ
+    ko: 뛰어난 결과 데이터시트를 제공하는 자체 호스팅 속도 테스트 앱
+    ru: Самостоятельно размещаемое приложение для теста скорости с отличной таблицей результатов
+    ms: Aplikasi ujian kelajuan hos sendiri dengan lembaran data keputusan yang cemerlang
+    pt-br: Aplicativo de teste de velocidade auto-hospedado com ótima planilha de resultados
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://github.com/BadApple9/speedtest-x
   github: https://github.com/BadApple9/speedtest-x
   document: https://github.com/BadApple9/speedtest-x
+
+  architectures:
+    - amd64
+    - arm64

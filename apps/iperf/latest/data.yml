@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "-s"
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: IPERF_COMMAND
       labelEn: iPerf Command
       labelZh: iPerf 命令
+      label:
+        en: 'iPerf Command'
+        zh: 'iPerf 命令'
+        zh-Hant: 'iPerf 命令'
+        ja: 'iPerf コマンド'
+        ko: 'iPerf 명령'
+        ru: 'Команда iPerf'
+        ms: 'Perintah iPerf'
+        pt-br: 'Comando iPerf'
       required: true
       type: text

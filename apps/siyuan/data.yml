@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款隐私优先的个人知识管理系统
   shortDescEn: A privacy-first personal knowledge management system
+  description:
+    en: A privacy-first personal knowledge management system
+    zh: 一款隐私优先的个人知识管理系统
+    zh-Hant: 一款隱私優先的個人知識管理系統
+    ja: プライバシー優先の個人ナレッジ管理システム
+    ko: 프라이버시 우선의 개인 지식 관리 시스템
+    ru: Персональная система управления знаниями с приоритетом конфиденциальности
+    ms: Sistem pengurusan pengetahuan peribadi berteraskan privasi
+    pt-br: Sistema de gestão de conhecimento pessoal com foco em privacidade
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://b3log.org/siyuan
   github: https://github.com/siyuan-note/siyuan
   document: https://github.com/siyuan-note/siyuan
+
+  architectures:
+    - amd64

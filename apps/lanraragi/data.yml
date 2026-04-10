@@ -4,6 +4,15 @@ tags:
 title: 一个开源的漫画存档服务
 description: 一个开源的漫画存档服务
 additionalProperties:
+  description:
+    en: An open-source manga archiving service
+    zh: 一个开源的漫画存档服务
+    zh-Hant: 一個開源的漫畫存檔服務
+    ja: オープンソースの漫画アーカイブサービス
+    ko: 오픈 소스 만화 아카이브 서비스
+    ru: Открытый сервис архивирования манги
+    ms: Perkhidmatan pengarkiban manga sumber terbuka
+    pt-br: Serviço de arquivamento de mangás de código aberto
   key: lanraragi
   name: LANraragi
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://lrr.tvc-16.science
   github: https://github.com/Difegue/LANraragi
   document: https://sugoi.gitbook.io/lanraragi/v/dev
+  architectures:
+    - amd64

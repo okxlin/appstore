@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 去中心化网络的人工智能照片应用程序
   shortDescEn: AI-Powered Photos App for the Decentralized Web
+  description:
+    en: "AI-powered photo app for the decentralized web."
+    zh: "面向去中心化网络的 AI 照片应用。"
+    zh-Hant: "面向去中心化網路的 AI 相片應用。"
+    ja: "分散型ウェブ向けの AI 写真アプリです。"
+    ko: "탈중앙화 웹을 위한 AI 사진 애플리케이션입니다."
+    ru: "Фотоприложение с ИИ для децентрализованного интернета."
+    ms: "Aplikasi foto berkuasa AI untuk web teragih."
+    pt-br: "Aplicativo de fotos com IA para a web descentralizada."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.photoprism.app
   github: https://github.com/photoprism/photoprism
   document: https://docs.photoprism.app
+  architectures:
+    - amd64
+    - arm64

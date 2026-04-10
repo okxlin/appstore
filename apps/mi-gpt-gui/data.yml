@@ -1,6 +1,6 @@
 name: MiGPT GUI
 tags:
-  - AI / 大模型
+  - AI
 title: 安全、快速的给你的小爱音箱接入人工智能
 description: 安全、快速的给你的小爱音箱接入人工智能
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 安全、快速的给你的小爱音箱接入人工智能
   shortDescEn: Securely and Quickly Access Artificial Intelligence for Xiaomi Speaker
+  description:
+    en: Safely and quickly connect AI to your XiaoAi speaker
+    zh: 安全、快速的给你的小爱音箱接入人工智能
+    zh-Hant: 安全、快速地讓你的小愛音箱接入人工智慧
+    ja: 安全かつ迅速に小愛スピーカーへAIを接続
+    ko: 안전하고 빠르게 샤오아이 스피커에 AI를 연결
+    ru: Безопасно и быстро подключает ИИ к вашей колонке XiaoAi
+    ms: Sambungkan AI ke pembesar suara XiaoAi anda dengan selamat dan cepat
+    pt-br: Conecte IA ao seu alto-falante XiaoAi com segurança e rapidez
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://migptgui.com
   github: https://github.com/lmk123/migpt-cli
   document: https://migptgui.com
+  architectures:
+    - amd64
+

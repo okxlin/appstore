@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 适用于 PT 玩家的追剧刷流一体化综合管理工具
   shortDescEn: An all-in-one comprehensive management tool for PT players
+  description:
+    en: "All-in-one management tool for PT users to track and seed content."
+    zh: "适用于 PT 玩家的追剧刷流一体化综合管理工具。"
+    zh-Hant: "適用於 PT 玩家的一體化追劇刷流管理工具。"
+    ja: "PT ユーザー向けの追劇・シーディング一体型管理ツールです。"
+    ko: "PT 사용자를 위한 시청 추적과 시딩을 통합한 관리 도구입니다."
+    ru: "Комплексный инструмент для пользователей PT для управления просмотром и раздачей."
+    ms: "Alat pengurusan serba guna untuk pengguna PT bagi menjejak dan melakukan seeding kandungan."
+    pt-br: "Ferramenta completa para usuários de PT gerenciarem acompanhamento e seeding de conteúdo."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://wiki.vertex.icu
   github: https://github.com/vertex-app/vertex
   document: https://wiki.vertex.icu
+  architectures:
+    - amd64
+    - arm64

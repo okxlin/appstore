@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: KMS_PORT
       labelEn: KMS Port
       labelZh: KMS端口
+      label:
+        en: 'KMS Port'
+        zh: 'KMS端口'
+        zh-Hant: 'KMS 埠'
+        ja: 'KMS ポート'
+        ko: 'KMS 포트'
+        ru: 'Порт KMS'
+        ms: 'Port KMS'
+        pt-br: 'Porta KMS'
       required: true
       rule: paramPort
       type: number

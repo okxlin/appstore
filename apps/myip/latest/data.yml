@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: BING_MAP_API_KEY
       labelEn: Bing Map API Key
       labelZh: Bing 地图 API Key
+      label:
+        en: 'Bing Map API Key'
+        zh: 'Bing 地图 API Key'
+        zh-Hant: 'Bing 地圖 API Key'
+        ja: 'Bing マップ API キー'
+        ko: 'Bing 지도 API 키'
+        ru: 'API-ключ Bing Maps'
+        ms: 'Kunci API Bing Map'
+        pt-br: 'Chave da API do Bing Maps'
       required: false
       type: text
     - default: ''
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IPINFO_API_TOKEN
       labelEn: IPInfo.io API
       labelZh: IPinfo.io 的 API
+      label:
+        en: 'IPInfo.io API'
+        zh: 'IPinfo.io 的 API'
+        zh-Hant: 'IPinfo.io 的 API'
+        ja: 'IPinfo.io API キー'
+        ko: 'IPinfo.io API 키'
+        ru: 'API IPinfo.io'
+        ms: 'API IPinfo.io'
+        pt-br: 'API do IPinfo.io'
       required: false
       type: text
     - default: "example.com"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: ALLOWED_DOMAINS
       labelEn: Allowed domains
       labelZh: 允许的域名
+      label:
+        en: 'Allowed domains'
+        zh: '允许的域名'
+        zh-Hant: '允許的網域'
+        ja: '許可ドメイン'
+        ko: '허용된 도메인'
+        ru: 'Разрешённые домены'
+        ms: 'Domain dibenarkan'
+        pt-br: 'Domínios permitidos'
       required: false
       type: text

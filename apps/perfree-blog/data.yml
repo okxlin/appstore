@@ -4,16 +4,27 @@ tags:
 title: 开源的博客/CMS 建站工具
 description: 开源的博客/CMS 建站工具
 additionalProperties:
-    key: perfree-blog
-    name: PerfreeBlog
-    tags:
-        - Website
-    shortDescZh: 开源的博客/CMS 建站工具
-    shortDescEn: open source blog/CMS website builder
-    type: website
-    crossVersionUpdate: true
-    limit: 0
-    recommend: 0
-    website: https://perfree.org.cn/
-    github: https://github.com/PerfreeBlog/PerfreeBlog
-    document: https://perfree.org.cn/useDocs/
+  key: perfree-blog
+  name: PerfreeBlog
+  tags:
+    - Website
+  shortDescZh: 开源的博客/CMS 建站工具
+  shortDescEn: open source blog/CMS website builder
+  description:
+    en: "Open-source blog and CMS website building tool."
+    zh: "开源的博客和 CMS 建站工具。"
+    zh-Hant: "開源的部落格與 CMS 建站工具。"
+    ja: "オープンソースのブログおよび CMS サイト構築ツールです。"
+    ko: "오픈소스 블로그 및 CMS 웹사이트 구축 도구입니다."
+    ru: "Инструмент с открытым исходным кодом для создания блогов и CMS-сайтов."
+    ms: "Alat sumber terbuka untuk membina laman blog dan CMS."
+    pt-br: "Ferramenta de código aberto para criar sites de blog e CMS."
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://perfree.org.cn/
+  github: https://github.com/PerfreeBlog/PerfreeBlog
+  document: https://perfree.org.cn/useDocs/
+  architectures:
+    - amd64

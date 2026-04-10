@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: The drive for which you need to view statistics
       labelZh: 需要查看统计信息的驱动器
+      label:
+        en: 'The drive for which you need to view statistics'
+        zh: '需要查看统计信息的驱动器'
+        zh-Hant: '需要查看統計資訊的磁碟機'
+        ja: '統計情報を表示する必要があるドライブ'
+        ko: '통계 정보를 확인해야 하는 드라이브'
+        ru: 'Диск, для которого нужно просмотреть статистику'
+        ms: 'Pemacu yang perlu anda lihat statistiknya'
+        pt-br: 'A unidade para a qual você precisa ver as estatísticas'
       required: true
       type: text

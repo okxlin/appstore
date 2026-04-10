@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -12,35 +21,80 @@ additionalProperties:
       edit: true
       envKey: ACCESS_TOKEN
       labelEn: OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)
-      labelZh: OPENAI ACCESS TOKEN(与OPENAI API KEY至少填一个)(https://chat.openai.com/api/auth/session)
+      labelZh: OPENAI ACCESS TOKEN（与 OPENAI API KEY 至少填一个）（https://chat.openai.com/api/auth/session）
+      label:
+        en: 'OPENAI ACCESS TOKEN (fill in at least one with OPENAI API KEY)(https://chat.openai.com/api/auth/session)'
+        zh: 'OPENAI ACCESS TOKEN（与 OPENAI API KEY 至少填一个）（https://chat.openai.com/api/auth/session）'
+        zh-Hant: 'OPENAI ACCESS TOKEN（與 OPENAI API KEY 至少填一個）（https://chat.openai.com/api/auth/session）'
+        ja: 'OPENAI ACCESS TOKEN（OPENAI API KEY と少なくとも一方を入力）（https://chat.openai.com/api/auth/session）'
+        ko: 'OPENAI ACCESS TOKEN(OPENAI API KEY와 최소 하나는 입력)(https://chat.openai.com/api/auth/session)'
+        ru: 'OPENAI ACCESS TOKEN (заполните хотя бы одно вместе с OPENAI API KEY) (https://chat.openai.com/api/auth/session)'
+        ms: 'OPENAI ACCESS TOKEN (isi sekurang-kurangnya satu dengan OPENAI API KEY) (https://chat.openai.com/api/auth/session)'
+        pt-br: 'OPENAI ACCESS TOKEN (preencha pelo menos um junto com OPENAI API KEY) (https://chat.openai.com/api/auth/session)'
       required: false
       type: text
     - default: https://bypass.duti.tech/api/conversation
       edit: true
       envKey: REVERSE_PROXY
       labelEn: API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)
-      labelZh: API反向代理，可选(OPENAI ACCESS TOKEN时默认启用,需要注意可用性)
+      labelZh: API 反向代理，可选（OPENAI ACCESS TOKEN 时默认启用，需要注意可用性）
+      label:
+        en: 'API reverse proxy, optional (enabled by default when OPENAI ACCESS TOKEN, need to pay attention to availability)'
+        zh: 'API 反向代理，可选（OPENAI ACCESS TOKEN 时默认启用，需要注意可用性）'
+        zh-Hant: 'API 反向代理，可選（OPENAI ACCESS TOKEN 時預設啟用，需要注意可用性）'
+        ja: 'API リバースプロキシ（任意。OPENAI ACCESS TOKEN 時に既定で有効、可用性に注意）'
+        ko: 'API 리버스 프록시(선택 사항, OPENAI ACCESS TOKEN 시 기본 활성화, 가용성에 주의)'
+        ru: 'Обратный прокси API, необязательно (по умолчанию включается при OPENAI ACCESS TOKEN, обратите внимание на доступность)'
+        ms: 'Proksi songsang API, pilihan (diaktifkan secara lalai apabila OPENAI ACCESS TOKEN, perlu perhatikan ketersediaan)'
+        pt-br: 'Proxy reverso da API, opcional (ativado por padrão quando OPENAI ACCESS TOKEN, atenção à disponibilidade)'
       required: false
       type: text
     - default: ''
       edit: true
       envKey: API_KEY
       labelEn: OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)
-      labelZh: OPENAI API KEY(与OPENAI ACCESS TOKEN至少填一个)
+      labelZh: OPENAI API KEY（与 OPENAI ACCESS TOKEN 至少填一个）
+      label:
+        en: 'OPENAI API KEY (fill in at least one with OPENAI ACCESS TOKEN)'
+        zh: 'OPENAI API KEY（与 OPENAI ACCESS TOKEN 至少填一个）'
+        zh-Hant: 'OPENAI API KEY（與 OPENAI ACCESS TOKEN 至少填一個）'
+        ja: 'OPENAI API KEY（OPENAI ACCESS TOKEN と少なくとも一方を入力）'
+        ko: 'OPENAI API KEY(OPENAI ACCESS TOKEN와 최소 하나는 입력)'
+        ru: 'OPENAI API KEY (заполните хотя бы одно вместе с OPENAI ACCESS TOKEN)'
+        ms: 'OPENAI API KEY (isi sekurang-kurangnya satu dengan OPENAI ACCESS TOKEN)'
+        pt-br: 'OPENAI API KEY (preencha pelo menos um junto com OPENAI ACCESS TOKEN)'
       required: false
       type: text
     - default: gpt-3.5-turbo
       edit: true
       envKey: API_MODEL
       labelEn: API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)
-      labelZh: API模型，可选，设置OPENAI API KEY时可用(https://platform.openai.com/docs/models)
+      labelZh: API 模型，可选，设置 OPENAI API KEY 时可用（https://platform.openai.com/docs/models）
+      label:
+        en: 'API model, optional, available when setting OPENAI API KEY(https://platform.openai.com/docs/models)'
+        zh: 'API 模型，可选，设置 OPENAI API KEY 时可用（https://platform.openai.com/docs/models）'
+        zh-Hant: 'API 模型，可選，設定 OPENAI API KEY 時可用（https://platform.openai.com/docs/models）'
+        ja: 'API モデル（任意。OPENAI API KEY 設定時に利用可能）（https://platform.openai.com/docs/models）'
+        ko: 'API 모델(선택 사항, OPENAI API KEY 설정 시 사용 가능)(https://platform.openai.com/docs/models)'
+        ru: 'Модель API, необязательно, доступно при задании OPENAI API KEY (https://platform.openai.com/docs/models)'
+        ms: 'Model API, pilihan, tersedia apabila menetapkan OPENAI API KEY (https://platform.openai.com/docs/models)'
+        pt-br: 'Modelo da API, opcional, disponível ao definir OPENAI API KEY (https://platform.openai.com/docs/models)'
       required: false
       type: text
     - default: https://api.openai.com
       edit: true
       envKey: API_BASE_URL
       labelEn: API interface address, optional, available when setting OPENAI API KEY
-      labelZh: API接口地址，可选，设置OPENAI API KEY时可用
+      labelZh: API 接口地址，可选，设置 OPENAI API KEY 时可用
+      label:
+        en: 'API interface address, optional, available when setting OPENAI API KEY'
+        zh: 'API 接口地址，可选，设置 OPENAI API KEY 时可用'
+        zh-Hant: 'API 介面位址，可選，設定 OPENAI API KEY 時可用'
+        ja: 'API インターフェースアドレス（任意。OPENAI API KEY 設定時に利用可能）'
+        ko: 'API 인터페이스 주소(선택 사항, OPENAI API KEY 설정 시 사용 가능)'
+        ru: 'Адрес API-интерфейса, необязательно, доступно при задании OPENAI API KEY'
+        ms: 'Alamat antaramuka API, pilihan, tersedia apabila menetapkan OPENAI API KEY'
+        pt-br: 'Endereço da interface da API, opcional, disponível ao definir OPENAI API KEY'
       required: false
       type: text
     - default: chatgptweb
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Access rights key, optional (recommended)
       labelZh: 访问权限密钥，可选(强烈建议填写)
+      label:
+        en: 'Access rights key, optional (recommended)'
+        zh: '访问权限密钥（可选，建议填写）'
+        zh-Hant: '存取權限金鑰（可選，建議填寫）'
+        ja: 'アクセス権キー（任意、推奨）'
+        ko: '접근 권한 키(선택 사항, 권장)'
+        ru: 'Ключ доступа (необязательно, рекомендуется)'
+        ms: 'Kunci akses (pilihan, disyorkan)'
+        pt-br: 'Chave de acesso (opcional, recomendado)'
       random: true
       required: false
       rule: paramComplexity
@@ -57,6 +120,15 @@ additionalProperties:
       envKey: REQUEST_LIMIT
       labelEn: Maximum number of requests per hour, optional, default unlimited
       labelZh: 每小时最大请求次数，可选，默认无限
+      label:
+        en: 'Maximum number of requests per hour, optional, default unlimited'
+        zh: '每小时最大请求次数，可选，默认无限'
+        zh-Hant: '每小時最大請求次數，可選，預設無限'
+        ja: '1時間あたりの最大リクエスト数（任意、既定は無制限）'
+        ko: '시간당 최대 요청 수(선택 사항, 기본 무제한)'
+        ru: 'Максимальное число запросов в час, необязательно, по умолчанию без ограничений'
+        ms: 'Bilangan maksimum permintaan sejam, pilihan, lalai tanpa had'
+        pt-br: 'Número máximo de solicitações por hora, opcional, padrão ilimitado'
       required: false
       type: text
     - default: '60000'
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: TIMEOUT
       labelEn: Timeout, in milliseconds, optional
       labelZh: 超时，单位毫秒，可选
+      label:
+        en: 'Timeout, in milliseconds, optional'
+        zh: '超时，单位毫秒，可选'
+        zh-Hant: '逾時，單位毫秒，可選'
+        ja: 'タイムアウト（ミリ秒、任意）'
+        ko: '타임아웃(밀리초, 선택 사항)'
+        ru: 'Тайм-аут, в миллисекундах, необязательно'
+        ms: 'Had masa tamat, dalam milisaat, pilihan'
+        pt-br: 'Tempo limite, em milissegundos, opcional'
       required: false
       type: text
     - default: ''
@@ -71,6 +152,15 @@ additionalProperties:
       envKey: PROXY_HOST
       labelEn: Socks proxy address, optional, effective when combined with Socks proxy port
       labelZh: Socks代理地址，可选，和Socks代理端口一起时生效
+      label:
+        en: 'Socks proxy address, optional, effective when combined with Socks proxy port'
+        zh: 'Socks代理地址，可选，和Socks代理端口一起时生效'
+        zh-Hant: 'Socks 代理位址，可選，與 Socks 代理埠一起時生效'
+        ja: 'Socks プロキシアドレス（任意。Socks プロキシポートと併用時に有効）'
+        ko: 'Socks 프록시 주소(선택 사항, Socks 프록시 포트와 함께 사용할 때 유효)'
+        ru: 'Адрес прокси Socks, необязательно, действует при использовании вместе с портом прокси Socks'
+        ms: 'Alamat proksi Socks, pilihan, berkesan apabila digabungkan dengan port proksi Socks'
+        pt-br: 'Endereço do proxy Socks, opcional, efetivo quando combinado com a porta do proxy Socks'
       required: false
       type: text
     - default: ''
@@ -78,6 +168,15 @@ additionalProperties:
       envKey: PROXY_PORT
       labelEn: Socks proxy port, optional, effective when combined with Socks proxy address
       labelZh: Socks代理端口，可选，和Socks代理地址一起时生效
+      label:
+        en: 'Socks proxy port, optional, effective when combined with Socks proxy address'
+        zh: 'Socks代理端口，可选，和Socks代理地址一起时生效'
+        zh-Hant: 'Socks 代理埠，可選，與 Socks 代理位址一起時生效'
+        ja: 'Socks プロキシポート（任意。Socks プロキシアドレスと併用時に有効）'
+        ko: 'Socks 프록시 포트(선택 사항, Socks 프록시 주소와 함께 사용할 때 유효)'
+        ru: 'Порт прокси Socks, необязательно, действует при использовании вместе с адресом прокси Socks'
+        ms: 'Port proksi Socks, pilihan, berkesan apabila digabungkan dengan alamat proksi Socks'
+        pt-br: 'Porta do proxy Socks, opcional, efetiva quando combinada com o endereço do proxy Socks'
       required: false
       type: text
     - default: ''
@@ -85,6 +184,15 @@ additionalProperties:
       envKey: PROXY_USERNAME
       labelEn: Socks proxy user name, optional, effective when combined with Socks proxy address
       labelZh: Socks代理用户名，可选，和Socks代理地址一起时生效
+      label:
+        en: 'Socks proxy user name, optional, effective when combined with Socks proxy address'
+        zh: 'Socks代理用户名，可选，和Socks代理地址一起时生效'
+        zh-Hant: 'Socks 代理使用者名稱，可選，與 Socks 代理位址一起時生效'
+        ja: 'Socks プロキシユーザー名（任意。Socks プロキシアドレスと併用時に有効）'
+        ko: 'Socks 프록시 사용자 이름(선택 사항, Socks 프록시 주소와 함께 사용할 때 유효)'
+        ru: 'Имя пользователя прокси Socks, необязательно, действует при использовании вместе с адресом прокси Socks'
+        ms: 'Nama pengguna proksi Socks, pilihan, berkesan apabila digabungkan dengan alamat proksi Socks'
+        pt-br: 'Nome de usuário do proxy Socks, opcional, efetivo quando combinado com o endereço do proxy Socks'
       required: false
       type: text
     - default: ''
@@ -92,12 +200,30 @@ additionalProperties:
       envKey: PROXY_PASSWORD
       labelEn: Socks proxy password, optional, effective when combined with Socks proxy address
       labelZh: Socks代理密码，可选，和Socks代理地址一起时生效
+      label:
+        en: 'Socks proxy password, optional, effective when combined with Socks proxy address'
+        zh: 'Socks代理密码，可选，和Socks代理地址一起时生效'
+        zh-Hant: 'Socks 代理密碼，可選，與 Socks 代理位址一起時生效'
+        ja: 'Socks プロキシパスワード（任意。Socks プロキシアドレスと併用時に有効）'
+        ko: 'Socks 프록시 비밀번호(선택 사항, Socks 프록시 주소와 함께 사용할 때 유효)'
+        ru: 'Пароль прокси Socks, необязательно, действует при использовании вместе с адресом прокси Socks'
+        ms: 'Kata laluan proksi Socks, pilihan, berkesan apabila digabungkan dengan alamat proksi Socks'
+        pt-br: 'Senha do proxy Socks, opcional, efetiva quando combinada com o endereço do proxy Socks'
       required: false
       type: text
     - default: ''
       edit: true
       envKey: HTTPS_PROXY
       labelEn: HTTPS proxy, optional, supports http, https, socks5
-      labelZh: HTTPS代理，可选，支持http，https，socks5
+      labelZh: HTTPS 代理，可选，支持 http、https、socks5
+      label:
+        en: 'HTTPS proxy, optional, supports http, https, socks5'
+        zh: 'HTTPS 代理，可选，支持 http、https、socks5'
+        zh-Hant: 'HTTPS 代理，可選，支援 http、https、socks5'
+        ja: 'HTTPS プロキシ（任意。http、https、socks5 をサポート）'
+        ko: 'HTTPS 프록시(선택 사항, http, https, socks5 지원)'
+        ru: 'HTTPS-прокси, необязательно, поддерживает http, https, socks5'
+        ms: 'Proksi HTTPS, pilihan, menyokong http, https, socks5'
+        pt-br: 'Proxy HTTPS, opcional, suporta http, https, socks5'
       required: false
       type: text

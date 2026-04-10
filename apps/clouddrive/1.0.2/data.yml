@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "/Config"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CLOUDDRIVE_HOME
       labelEn: CloudDrive Home
       labelZh: CloudDrive 根目录
+      label:
+        en: 'CloudDrive Home'
+        zh: 'CloudDrive 根目录'
+        zh-Hant: 'CloudDrive 根目錄'
+        ja: 'CloudDrive ルートディレクトリ'
+        ko: 'CloudDrive 루트 디렉터리'
+        ru: 'Корневой каталог CloudDrive'
+        ms: 'Direktori akar CloudDrive'
+        pt-br: 'Diretório raiz do CloudDrive'
       required: true
       type: text
     - default: "./data/CloudNAS"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: CLOUD_MOUNTS_PATH
       labelEn: Cloud Mounts Path
       labelZh: 云挂载路径
+      label:
+        en: 'Cloud Mounts Path'
+        zh: '云挂载路径'
+        zh-Hant: '雲掛載路徑'
+        ja: 'クラウドマウントパス'
+        ko: '클라우드 마운트 경로'
+        ru: 'Путь облачных монтирований'
+        ms: 'Laluan lekap awan'
+        pt-br: 'Caminho de montagens em nuvem'
       required: true
       type: text
     - default: "./data/Config"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: APP_DATA_PATH
       labelEn: App Data Path
       labelZh: 应用数据路径
+      label:
+        en: 'App Data Path'
+        zh: '应用数据路径'
+        zh-Hant: '應用程式資料路徑'
+        ja: 'アプリデータパス'
+        ko: '앱 데이터 경로'
+        ru: 'Путь данных приложения'
+        ms: 'Laluan data aplikasi'
+        pt-br: 'Caminho de dados do aplicativo'
       required: true
       type: text
     - default: "./data/media"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: SHARED_MEDIA_PATH
       labelEn: Shared Media Path
       labelZh: 共享媒体路径
+      label:
+        en: 'Shared Media Path'
+        zh: '共享媒体路径'
+        zh-Hant: '共享媒體路徑'
+        ja: '共有メディアパス'
+        ko: '공유 미디어 경로'
+        ru: 'Путь общих медиафайлов'
+        ms: 'Laluan media dikongsi'
+        pt-br: 'Caminho de mídia compartilhada'
       required: true
       type: text
     - default: "true"
@@ -48,10 +102,19 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privileged Mode
       labelZh: 特权模式
+      label:
+        en: 'Privileged Mode'
+        zh: '特权模式'
+        zh-Hant: '特權模式'
+        ja: '特権モード'
+        ko: '특권 모드'
+        ru: 'Привилегированный режим'
+        ms: 'Mod istimewa'
+        pt-br: 'Modo privilegiado'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"

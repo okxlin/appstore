@@ -10,9 +10,20 @@ additionalProperties:
     - Website
   shortDescZh: 基于 Node.js 的现代化论坛程序
   shortDescEn: Open source Forum Powered by Node.js
+  description:
+    en: Open source forum powered by Node.js
+    zh: 基于 Node.js 的现代化论坛程序
+    zh-Hant: 基於 Node.js 的現代化論壇程式
+    ja: Node.jsベースのモダンなフォーラムソフト
+    ko: Node.js 기반의 현대적인 포럼 소프트웨어
+    ru: Современный форум на базе Node.js с открытым исходным кодом
+    ms: Perisian forum moden berasaskan Node.js yang sumber terbuka
+    pt-br: Fórum moderno open-source baseado em Node.js
   type: website
   crossVersionUpdate: true
   limit: 0
   website: https://nodebb.org/
   github: https://github.com/NodeBB/NodeBB
   document: https://docs.nodebb.org/
+  architectures:
+    - amd64

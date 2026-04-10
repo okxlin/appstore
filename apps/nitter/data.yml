@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 匿名浏览 Twitter 的开源工具
   shortDescEn: Alternative Twitter front-end
+  description:
+    en: Alternative Twitter front-end
+    zh: 匿名浏览 Twitter 的开源工具
+    zh-Hant: 匿名瀏覽 Twitter 的開源工具
+    ja: 匿名でTwitterを閲覧できるオープンソースツール
+    ko: 익명으로 트위터를 볼 수 있는 오픈소스 도구
+    ru: Открытый инструмент для анонимного просмотра Twitter
+    ms: Alat sumber terbuka untuk melayari Twitter secara anonim
+    pt-br: Ferramenta open-source para navegar no Twitter anonimamente
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://nitter.net
   github: https://github.com/zedeus/nitter
   document: https://github.com/zedeus/nitter
+  architectures:
+    - amd64

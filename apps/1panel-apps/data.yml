@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 适配 1Panel 应用商店的通用应用模板
   shortDescEn: Universal app template for the 1Panel App Store
+  description:
+    en: A generic application template adapted for the 1Panel app store.
+    zh: 适配 1Panel 应用商店的通用应用模板
+    zh-Hant: 適配 1Panel 應用商店的通用應用模板
+    ja: 1Panel アプリストア向けに適合した汎用アプリテンプレート
+    ko: 1Panel 앱 스토어에 맞춘 범용 앱 템플릿
+    ru: Универсальный шаблон приложения, адаптированный для магазина приложений 1Panel.
+    ms: Templat aplikasi umum yang disesuaikan untuk gedung aplikasi 1Panel.
+    pt-br: Template de aplicativo genérico adaptado para a loja de apps do 1Panel.
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/okxlin/appstore
   github: https://github.com/okxlin/appstore
   document: https://github.com/okxlin/appstore
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: frp 是一种反向代理工具，常用于内网穿透(客户端)
   shortDescEn: frp is a reverse proxy tool that is commonly used for intranet penetration(Client)
+  description:
+    en: frp is a reverse proxy tool commonly used for intranet penetration (client)
+    zh: frp 是一种反向代理工具，常用于内网穿透（客户端）
+    zh-Hant: frp 是一種反向代理工具，常用於內網穿透（客戶端）
+    ja: frp は内網穿透によく使われるリバースプロキシツール（クライアント）
+    ko: frp는 주로 내부망 관통에 사용되는 리버스 프록시 도구(클라이언트)
+    ru: frp — инструмент обратного прокси, часто используемый для проброса внутренней сети (клиент)
+    ms: frp ialah alat proksi songsang yang biasa digunakan untuk penembusan rangkaian dalaman (klien)
+    pt-br: frp é uma ferramenta de proxy reverso, comum para atravessar redes internas (cliente)
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/fatedier/frp
   github: https://github.com/fatedier/frp
   document: https://github.com/fatedier/frp/blob/dev/README_zh.md
+  architectures:
+    - amd64

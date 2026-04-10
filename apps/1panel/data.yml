@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 现代化、开源的 Linux 服务器运维管理面板
   shortDescEn: Modern and Open-Source Linux Server Operation and Management Panel
+  description:
+    en: A modern, open-source Linux server operations and management panel.
+    zh: 现代化、开源的 Linux 服务器运维管理面板
+    zh-Hant: 現代化、開源的 Linux 伺服器運維管理面板
+    ja: モダンでオープンソースの Linux サーバー運用管理パネル
+    ko: 현대적이고 오픈 소스인 Linux 서버 운영 관리 패널
+    ru: Современная открытая панель управления эксплуатацией и администрированием Linux-серверов.
+    ms: Panel pengurusan operasi dan pentadbiran pelayan Linux yang moden dan sumber terbuka.
+    pt-br: Painel moderno e de código aberto para operação e gerenciamento de servidores Linux.
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://1panel.cn
   github: https://github.com/1Panel-dev/1Panel
   document: https://1panel.cn/docs
+  architectures:
+    - amd64
+    - arm64

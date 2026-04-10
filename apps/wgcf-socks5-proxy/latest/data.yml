@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: IP_COMMAND
       labelEn: IPV4/IPV6 ONLY (FILL IN "-4"; "-6")
       labelZh: 仅IPV4/IPV6(填"-4";"-6")
+      label:
+        en: 'IPV4/IPV6 ONLY (FILL IN "-4"; "-6")'
+        zh: '仅IPV4/IPV6(填"-4";"-6")'
+        zh-Hant: '僅 IPV4/IPV6（填"-4";"-6"）'
+        ja: 'IPV4/IPV6 のみ（"-4";"-6" を入力）'
+        ko: 'IPV4/IPV6 전용("-4";"-6" 입력)'
+        ru: 'Только IPV4/IPV6 (введите "-4"; "-6")'
+        ms: 'Hanya IPV4/IPV6 (isi "-4"; "-6")'
+        pt-br: 'Apenas IPV4/IPV6 (preencha "-4"; "-6")'
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: SOCKS_USER
       labelEn: Socks user
       labelZh: Socks用户名
+      label:
+        en: 'Socks user'
+        zh: 'Socks 用户名'
+        zh-Hant: 'Socks 使用者名稱'
+        ja: 'Socks ユーザー'
+        ko: 'Socks 사용자'
+        ru: 'Пользователь Socks'
+        ms: 'Pengguna Socks'
+        pt-br: 'Usuário Socks'
       required: false
       type: text
     - default: ""
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: SOCKS_PWD
       labelEn: Socks password
       labelZh: Socks密码
+      label:
+        en: 'Socks password'
+        zh: 'Socks 密码'
+        zh-Hant: 'Socks 密碼'
+        ja: 'Socks パスワード'
+        ko: 'Socks 비밀번호'
+        ru: 'Пароль Socks'
+        ms: 'Kata laluan Socks'
+        pt-br: 'Senha Socks'
       random: false
       required: false
       rule: paramComplexity
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: SOCKS_PORT
       labelEn: Internal Socks port
       labelZh: 内部Socks端口
+      label:
+        en: 'Internal Socks port'
+        zh: '内部Socks端口'
+        zh-Hant: '內部 Socks 埠'
+        ja: '内部 Socks ポート'
+        ko: '내부 Socks 포트'
+        ru: 'Внутренний порт Socks'
+        ms: 'Port Socks dalaman'
+        pt-br: 'Porta Socks interna'
       required: true
       type: text
     - default: "0.0.0.0"
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: SOCKS_HOST
       labelEn: Internal Socks host
       labelZh: 内部Socks主机
+      label:
+        en: 'Internal Socks host'
+        zh: '内部Socks主机'
+        zh-Hant: '內部 Socks 主機'
+        ja: '内部 Socks ホスト'
+        ko: '내부 Socks 호스트'
+        ru: 'Внутренний хост Socks'
+        ms: 'Hos Socks dalaman'
+        pt-br: 'Host Socks interno'
       required: true
       type: text

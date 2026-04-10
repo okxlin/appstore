@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PLUGIN_PORT
       labelEn: Internal plug-in port
       labelZh: 内部插件端口
+      label:
+        en: 'Internal plug-in port'
+        zh: '内部插件端口'
+        zh-Hant: '內部外掛埠'
+        ja: '内部プラグインポート'
+        ko: '내부 플러그인 포트'
+        ru: 'Порт внутреннего плагина'
+        ms: 'Port pemalam dalaman'
+        pt-br: 'Porta do plug-in interno'
       required: true
       rule: paramPort
       type: number
@@ -21,5 +39,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text

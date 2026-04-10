@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 适用于Kasm Workspaces 的电报桌面
   shortDescEn: Telegram Desktop for Kasm Workspaces
+  description:
+    en: "Telegram Desktop for Kasm Workspaces."
+    zh: "适用于 Kasm Workspaces 的 Telegram Desktop。"
+    zh-Hant: "適用於 Kasm Workspaces 的 Telegram Desktop。"
+    ja: "Kasm Workspaces向けのTelegramデスクトップクライアントです。"
+    ko: "Kasm Workspaces용 텔레그램 데스크톱 클라이언트입니다."
+    ru: "Клиент Telegram для Kasm Workspaces."
+    ms: "Telegram Desktop untuk Kasm Workspaces."
+    pt-br: "Telegram Desktop para Kasm Workspaces."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://telegram.org
   github: https://github.com/telegramdesktop/tdesktop
   document: https://telegram.org/faq
+  architectures:
+    - amd64

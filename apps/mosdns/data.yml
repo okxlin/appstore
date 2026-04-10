@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个插件化的 DNS 转发/分流器
   shortDescEn: A plug-in DNS forwarder/tap
+  description:
+    en: A plugin-based DNS forwarder and router
+    zh: 一个插件化的 DNS 转发/分流器
+    zh-Hant: 一個插件化的 DNS 轉發/分流器
+    ja: プラグイン型のDNS転送/分流ツール
+    ko: 플러그인 기반 DNS 포워더/분기 도구
+    ru: Плагинный DNS‑форвардер и маршрутизатор
+    ms: Penghala dan pengarah DNS berasaskan pemalam
+    pt-br: Encaminhador e roteador de DNS com plugins
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/irinesistiana/mosdns
   github: https://github.com/IrineSistiana/mosdns
   document: https://irine-sistiana.gitbook.io/mosdns-wiki/
+  architectures:
+    - amd64
+

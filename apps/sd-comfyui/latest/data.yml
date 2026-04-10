@@ -5,35 +5,72 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
     - default: '--listen 0.0.0.0 --port 8188'
       edit: true
       envKey: SD_CONSOLE_CLI_COMFY
-      labelEn: CLI ARGS for ComfyUI
-      labelZh: ComfyUI 的 CLI_ARGS 参数
+      label:
+        en: 'CLI ARGS for ComfyUI'
+        zh: 'ComfyUI 的 CLI_ARGS 参数'
+        zh-Hant: 'ComfyUI 的 CLI_ARGS 參數'
+        ja: 'ComfyUI の CLI 引数'
+        ko: 'ComfyUI CLI 인수'
+        ru: 'Параметры CLI для ComfyUI'
+        ms: 'Argumen CLI untuk ComfyUI'
+        pt-br: 'Argumentos de CLI para o ComfyUI'
       required: true
       type: text
     - default: ""
       edit: true
       envKey: SD_CONSOLE_APT_COMFY
-      labelEn: Install some package if you want (equivalent to apt-get install -y)
-      labelZh: 想安装的软件包 (等同 apt-get install -y)
+      label:
+        en: 'Install some package if you want (equivalent to apt-get install -y)'
+        zh: '想安装的软件包 (等同 apt-get install -y)'
+        zh-Hant: '想安裝的套件（等同 apt-get install -y）'
+        ja: 'インストールしたいパッケージ（apt-get install -y と同等）'
+        ko: '설치할 패키지(apt-get install -y와 동일)'
+        ru: 'Пакеты для установки (эквивалент apt-get install -y)'
+        ms: 'Pakej yang ingin dipasang (setara dengan apt-get install -y)'
+        pt-br: 'Pacotes a instalar (equivalente a apt-get install -y)'
       required: false
       type: text
     - default: ""
       edit: true
       envKey: SD_CONSOLE_PIP_COMFY
-      labelEn: Install pip package if you want (equivalent to pip install)
-      labelZh: 想安装的 pip 包 (等同 pip install)
+      label:
+        en: 'Install pip package if you want (equivalent to pip install)'
+        zh: '想安装的 pip 包 (等同 pip install)'
+        zh-Hant: '想安裝的 pip 套件（等同 pip install）'
+        ja: 'インストールしたい pip パッケージ（pip install と同等）'
+        ko: '설치할 pip 패키지(pip install과 동일)'
+        ru: 'pip-пакеты для установки (эквивалент pip install)'
+        ms: 'Pakej pip yang ingin dipasang (setara dengan pip install)'
+        pt-br: 'Pacotes pip a instalar (equivalente a pip install)'
       required: false
       type: text
     - default: 0
       edit: true
       envKey: SD_CONSOLE_DEVICE_IDS
-      labelEn: GPU ID
-      labelZh: SD 运行指定的 GPU 设备 ID
+      label:
+        en: 'GPU ID'
+        zh: 'SD 运行指定的 GPU 设备 ID'
+        zh-Hant: 'SD 執行指定的 GPU 裝置 ID'
+        ja: 'SD 実行に使用する GPU デバイス ID'
+        ko: 'SD 실행에 사용할 GPU 장치 ID'
+        ru: 'ID устройства GPU для запуска SD'
+        ms: 'ID peranti GPU untuk menjalankan SD'
+        pt-br: 'ID do dispositivo GPU para executar o SD'
       required: true
       type: number
     - default: ./data/data
@@ -41,6 +78,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: 'Data storage folder'
+        zh: '数据存放文件夹'
+        zh-Hant: '資料存放資料夾'
+        ja: 'データ保存フォルダー'
+        ko: '데이터 저장 폴더'
+        ru: 'Папка хранения данных'
+        ms: 'Folder storan data'
+        pt-br: 'Pasta de armazenamento de dados'
       required: true
       type: text
     - default: ./data/output
@@ -48,5 +94,14 @@ additionalProperties:
       envKey: OUTPUT_PATH
       labelEn: Picture output folder
       labelZh: 图片输出文件夹
+      label:
+        en: 'Picture output folder'
+        zh: '图片输出文件夹'
+        zh-Hant: '圖片輸出資料夾'
+        ja: '画像出力フォルダ'
+        ko: '이미지 출력 폴더'
+        ru: 'Папка вывода изображений'
+        ms: 'Folder output gambar'
+        pt-br: 'Pasta de saída de imagens'
       required: true
       type: text

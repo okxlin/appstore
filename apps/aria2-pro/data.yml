@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 更好用的 Aria2 Docker 容器镜像
   shortDescEn: A better-performing Aria2 Docker container image
+  description:
+    en: A more user-friendly Aria2 Docker image.
+    zh: 更好用的 Aria2 Docker 容器镜像
+    zh-Hant: 更好用的 Aria2 Docker 容器映像
+    ja: より使いやすい Aria2 の Docker イメージ
+    ko: 더 사용하기 쉬운 Aria2 Docker 이미지
+    ru: Более удобный Docker-образ Aria2.
+    ms: Imej Docker Aria2 yang lebih mudah digunakan.
+    pt-br: Imagem Docker do Aria2 mais fácil de usar.
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/P3TERX/Aria2-Pro-Docker
   github: https://github.com/P3TERX/Aria2-Pro-Docker
   document: https://p3terx.com/archives/docker-aria2-pro.html
+  architectures:
+    - amd64

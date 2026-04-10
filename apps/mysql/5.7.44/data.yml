@@ -4,6 +4,15 @@ additionalProperties:
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Root Password
       labelZh: root用户密码
+      label:
+        en: 'Root Password'
+        zh: 'root用户密码'
+        zh-Hant: 'root 使用者密碼'
+        ja: 'root パスワード'
+        ko: 'root 비밀번호'
+        ru: 'Пароль root'
+        ms: 'Kata Laluan Root'
+        pt-br: 'Senha root'
       random: true
       required: true
       rule: paramComplexity
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number

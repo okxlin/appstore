@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LAF_REGION
       labelEn: LAF Region
       labelZh: 地区
+      label:
+        en: 'LAF Region'
+        zh: '地区'
+        zh-Hant: '地區'
+        ja: 'LAF 地域'
+        ko: 'LAF 지역'
+        ru: 'Регион LAF'
+        ms: 'Wilayah LAF'
+        pt-br: 'Região LAF'
       required: true
       type: text
     - default: "zh_CN"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: APP_LANG
       labelEn: App Language
       labelZh: 应用语言
+      label:
+        en: 'App Language'
+        zh: '应用语言'
+        zh-Hant: '應用語言'
+        ja: 'アプリ言語'
+        ko: '앱 언어'
+        ru: 'Язык приложения'
+        ms: 'Bahasa aplikasi'
+        pt-br: 'Idioma do aplicativo'
       required: true
       type: text
     - default: "./data"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text

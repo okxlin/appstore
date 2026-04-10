@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 开源游戏串流服务
   shortDescEn: Open-source game streaming service
+  description:
+    en: Open-source game streaming service
+    zh: 开源游戏串流服务
+    zh-Hant: 開源遊戲串流服務
+    ja: オープンソースのゲームストリーミングサービス
+    ko: 오픈소스 게임 스트리밍 서비스
+    ru: Открытый сервис потоковой передачи игр
+    ms: Perkhidmatan penstriman permainan sumber terbuka
+    pt-br: Serviço de streaming de jogos de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: http://app.lizardbyte.dev/Sunshine
   github: https://github.com/LizardByte/Sunshine
   document: https://sunshinestream.readthedocs.io
+
+  architectures:
+    - amd64

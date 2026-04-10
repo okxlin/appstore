@@ -4,6 +4,15 @@ tags:
 title: 多媒体应用程序软件套装
 description: 多媒体应用程序软件套装
 additionalProperties:
+  description:
+    en: Multimedia application software suite
+    zh: 多媒体应用程序软件套装
+    zh-Hant: 多媒體應用程式軟體套裝
+    ja: マルチメディアアプリケーションのソフトウェアスイート
+    ko: 멀티미디어 애플리케ーション 소프트웨어 모음
+    ru: Набор программ для мультимедийных приложений
+    ms: Suite perisian aplikasi multimedia
+    pt-br: Conjunto de softwares de aplicativos multimídia
   key: jellyfin
   name: Jellyfin
   tags:
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://jellyfin.org/
   github: https://github.com/jellyfin/jellyfin
   document: https://jellyfin.org/docs/
+  architectures:
+    - amd64
+    - arm64

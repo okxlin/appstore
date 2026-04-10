@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SMB
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: TZ
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "./data"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: External Data Path
       labelZh: 外部数据路径
+      label:
+        en: 'External Data Path'
+        zh: '外部数据路径'
+        zh-Hant: '外部資料路徑'
+        ja: '外部データパス'
+        ko: '외부 데이터 경로'
+        ru: 'Путь к внешним данным'
+        ms: 'Laluan data luaran'
+        pt-br: 'Caminho de dados externos'
       required: true
       type: text
     - default: "/share/data"
@@ -42,6 +87,15 @@ additionalProperties:
       envKey: INTERNAL_DATA_PATH
       labelEn: Internal container data paths
       labelZh: 容器内部数据路径
+      label:
+        en: 'Internal container data paths'
+        zh: '容器内部数据路径'
+        zh-Hant: '容器內部資料路徑'
+        ja: 'コンテナ内部データパス'
+        ko: '컨테이너 내부 데이터 경로'
+        ru: 'Внутренние пути данных контейнера'
+        ms: 'Laluan data dalaman bekas'
+        pt-br: 'Caminhos internos de dados do contêiner'
       required: true
       type: text
     - default: "1000:1000:pirate:pirate:put-any-password-here"
@@ -49,6 +103,15 @@ additionalProperties:
       envKey: USER_1
       labelEn: User 1
       labelZh: 用户 1
+      label:
+        en: 'User 1'
+        zh: '用户 1'
+        zh-Hant: '使用者 1'
+        ja: 'ユーザー 1'
+        ko: '사용자 1'
+        ru: 'Пользователь 1'
+        ms: 'Pengguna 1'
+        pt-br: 'Usuário 1'
       required: true
       type: text
     - default: "SmbShare:/share/folder:rw:pirate"
@@ -56,6 +119,15 @@ additionalProperties:
       envKey: SHARE_1
       labelEn: Share 1
       labelZh: 共享 1
+      label:
+        en: 'Share 1'
+        zh: '共享 1'
+        zh-Hant: '共享 1'
+        ja: '共有 1'
+        ko: '공유 1'
+        ru: 'Общий ресурс 1'
+        ms: 'Perkongsian 1'
+        pt-br: 'Compartilhamento 1'
       required: true
       type: text
     - default: ""
@@ -63,6 +135,15 @@ additionalProperties:
       envKey: USER_2
       labelEn: User 2 (Edit to remove comments in compose.yml to take effect)
       labelZh: 用户 2 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'User 2 (Edit to remove comments in compose.yml to take effect)'
+        zh: '用户 2 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '使用者 2（編輯去除 compose.yml 裡的註釋生效）'
+        ja: 'ユーザー 2（compose.yml のコメントを削除して有効化）'
+        ko: '사용자 2 (compose.yml 주석을 제거하면 적용)'
+        ru: 'Пользователь 2 (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Pengguna 2 (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Usuário 2 (remova os comentários no compose.yml para aplicar)'
       required: false
       type: text
     - default: ""
@@ -70,6 +151,15 @@ additionalProperties:
       envKey: SHARE_2
       labelEn: Share 2 (Edit to remove comments in compose.yml to take effect)
       labelZh: 共享 2 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Share 2 (Edit to remove comments in compose.yml to take effect)'
+        zh: '共享 2 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '共享 2（編輯去除 compose.yml 裡的註釋生效）'
+        ja: '共有 2（compose.yml のコメントを削除して有効化）'
+        ko: '공유 2 (compose.yml 주석을 제거하면 적용)'
+        ru: 'Общий ресурс 2 (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Perkongsian 2 (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Compartilhamento 2 (remova os comentários no compose.yml para aplicar)'
       required: false
       type: text
     - default: ""
@@ -77,6 +167,15 @@ additionalProperties:
       envKey: USER_3
       labelEn: User 3 (Edit to remove comments in compose.yml to take effect)
       labelZh: 用户 3 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'User 3 (Edit to remove comments in compose.yml to take effect)'
+        zh: '用户 3 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '使用者 3（編輯去除 compose.yml 裡的註釋生效）'
+        ja: 'ユーザー 3（compose.yml のコメントを削除して有効化）'
+        ko: '사용자 3 (compose.yml 주석을 제거하면 적용)'
+        ru: 'Пользователь 3 (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Pengguna 3 (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Usuário 3 (remova os comentários no compose.yml para aplicar)'
       required: false
       type: text
     - default: ""
@@ -84,5 +183,14 @@ additionalProperties:
       envKey: SHARE_3
       labelEn: Share 3 (Edit to remove comments in compose.yml to take effect)
       labelZh: 共享 3 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Share 3 (Edit to remove comments in compose.yml to take effect)'
+        zh: '共享 3 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '共享 3（編輯去除 compose.yml 裡的註釋生效）'
+        ja: '共有 3（compose.yml のコメントを削除して有効化）'
+        ko: '공유 3 (compose.yml 주석을 제거하면 적용)'
+        ru: 'Общий ресурс 3 (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Perkongsian 3 (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Compartilhamento 3 (remova os comentários no compose.yml para aplicar)'
       required: false
       type: text

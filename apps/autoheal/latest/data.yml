@@ -5,5 +5,20 @@ additionalProperties:
       envKey: ENV1
       labelEn: Environmental parameters
       labelZh: 环境参数
+      label:
+        en: 'Environmental parameters'
+        zh: '环境参数'
+        zh-Hant: '環境參數'
+        ja: '環境パラメータ'
+        ko: '환경 매개변수'
+        ru: 'Параметры среды'
+        ms: 'Parameter persekitaran'
+        pt-br: 'Parâmetros de ambiente'
+        zh-Hant: '環境參數'
+        ja: '環境パラメータ'
+        ko: '환경 매개변수'
+        ru: 'Параметры среды'
+        ms: 'Parameter persekitaran'
+        pt-br: 'Parâmetros de ambiente'
       required: true
       type: text
