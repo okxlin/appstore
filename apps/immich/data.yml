@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 高性能的自托管照片和视频备份方案
   shortDescEn: High performance self-hosted photo and video backup solution
+  description:
+    en: High-performance self-hosted photo and video backup solution
+    zh: 高性能的自托管照片和视频备份方案
+    zh-Hant: 高效能的自託管照片與影片備份方案
+    ja: 高性能なセルフホストの写真・動画バックアップソリューション
+    ko: 고성능 자체 호스팅 사진 및 동영상 백업 솔루션
+    ru: Высокопроизводительное решение для самостоятельного резервного копирования фото и видео
+    ms: Penyelesaian sandaran foto dan video hos kendiri berprestasi tinggi
+    pt-br: Solução de backup de fotos e vídeos auto-hospedada e de alto desempenho
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://immich.app
   github: https://github.com/immich-app/immich
   document: https://immich.app/docs
+  architectures:
+    - amd64
+

@@ -1,7 +1,7 @@
 name: Audiobookshelf
 tags:
   - 多媒体
-type: 工具
+title: 一个自托管有声读物和播客服务器
 description: 一个自托管有声读物和播客服务器
 additionalProperties:
   key: audiobookshelf
@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一个自托管有声读物和播客服务器
   shortDescEn: A Self-hosted audiobook and podcast server
+  description:
+    en: A self-hosted audiobook and podcast server
+    zh: 一个自托管有声读物和播客服务器
+    zh-Hant: 一個自託管有聲讀物和播客伺服器
+    ja: セルフホスト型のオーディオブックとポッドキャストのサーバー
+    ko: 자가 호스팅 오디오북 및 팟캐스트 서버
+    ru: Самостоятельно размещаемый сервер аудиокниг и подкастов
+    ms: Pelayan audiobook dan podcast yang dihos sendiri
+    pt-br: Servidor de audiolivros e podcasts auto-hospedado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.audiobookshelf.org/
   github: https://github.com/advplyr/audiobookshelf
   document: https://www.audiobookshelf.org/docs
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DISPLAY
       labelEn: Display
       labelZh: 显示
+      label:
+        en: 'Display'
+        zh: '显示'
+        zh-Hant: '顯示'
+        ja: '表示'
+        ko: '디스플레이'
+        ru: 'Экран'
+        ms: 'Paparan'
+        pt-br: 'Tela'
       required: true
       type: text
     - default: "40287"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: 'SSH Port'
+        zh: 'SSH 端口'
+        zh-Hant: 'SSH 埠'
+        ja: 'SSH ポート'
+        ko: 'SSH 포트'
+        ru: 'Порт SSH'
+        ms: 'Port SSH'
+        pt-br: 'Porta SSH'
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: 'Restart Policy'
+        zh: '重启策略'
+        zh-Hant: '重啟策略'
+        ja: '再起動ポリシー'
+        ko: '재시작 정책'
+        ru: 'Политика перезапуска'
+        ms: 'Dasar mula semula'
+        pt-br: 'Política de reinicialização'
       required: true
       type: select
       values:

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_KEY
       labelEn: OPENAI API KEY
       labelZh: OPENAI API KEY
+      label:
+        en: 'OPENAI API KEY'
+        zh: 'OPENAI API KEY'
+        zh-Hant: 'OPENAI API KEY'
+        ja: 'OpenAI API キー'
+        ko: 'OpenAI API 키'
+        ru: 'Ключ OpenAI API'
+        ms: 'Kunci API OpenAI'
+        pt-br: 'Chave da API OpenAI'
       required: true
       type: text
     - default: "happychatgpt"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Access rights key, optional (recommended)
       labelZh: 访问权限密钥，可选(强烈建议填写)
+      label:
+        en: 'Access rights key, optional (recommended)'
+        zh: '访问权限密钥，可选(强烈建议填写)'
+        zh-Hant: '存取權限金鑰，可選（建議填寫）'
+        ja: 'アクセス権キー（任意、推奨）'
+        ko: '접근 권한 키(선택, 권장)'
+        ru: 'Ключ доступа, необязательный (рекомендуется)'
+        ms: 'Kunci akses, pilihan (disyorkan)'
+        pt-br: 'Chave de acesso, opcional (recomendado)'
       random: true
       required: false
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS proxy (http://127.0.0.1:7890)
       labelZh: HTTPS代理 (http://127.0.0.1:7890)
+      label:
+        en: 'HTTPS proxy (http://127.0.0.1:7890)'
+        zh: 'HTTPS代理 (http://127.0.0.1:7890)'
+        zh-Hant: 'HTTPS 代理（http://127.0.0.1:7890）'
+        ja: 'HTTPS プロキシ（http://127.0.0.1:7890）'
+        ko: 'HTTPS 프록시(http://127.0.0.1:7890)'
+        ru: 'HTTPS-прокси (http://127.0.0.1:7890)'
+        ms: 'Proksi HTTPS (http://127.0.0.1:7890)'
+        pt-br: 'Proxy HTTPS (http://127.0.0.1:7890)'
       required: false
       type: text
     - default: ''
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: API_BASE_URL
       labelEn: API interface address (https://api.openai.com)
       labelZh: API接口地址 (https://api.openai.com)
+      label:
+        en: 'API interface address (https://api.openai.com)'
+        zh: 'API接口地址 (https://api.openai.com)'
+        zh-Hant: 'API 介面地址（https://api.openai.com）'
+        ja: 'API インターフェースアドレス（https://api.openai.com）'
+        ko: 'API 인터페이스 주소(https://api.openai.com)'
+        ru: 'Адрес API-интерфейса (https://api.openai.com)'
+        ms: 'Alamat antaramuka API (https://api.openai.com)'
+        pt-br: 'Endereço da interface da API (https://api.openai.com)'
       required: false
       type: text
     - default: ''
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: API_MODEL
       labelEn: API model, optional (https://platform.openai.com/docs/models)
       labelZh: API模型，可选 (https://platform.openai.com/docs/models)
+      label:
+        en: 'API model, optional (https://platform.openai.com/docs/models)'
+        zh: 'API模型，可选 (https://platform.openai.com/docs/models)'
+        zh-Hant: 'API 模型，可選（https://platform.openai.com/docs/models）'
+        ja: 'API モデル（任意、https://platform.openai.com/docs/models）'
+        ko: 'API 모델(선택, https://platform.openai.com/docs/models)'
+        ru: 'Модель API, необязательно (https://platform.openai.com/docs/models)'
+        ms: 'Model API, pilihan (https://platform.openai.com/docs/models)'
+        pt-br: 'Modelo da API, opcional (https://platform.openai.com/docs/models)'
       required: false
       type: text
     - default: ''
@@ -50,6 +104,15 @@ additionalProperties:
       envKey: HEAD_SCRIPTS_VAULE
       labelEn: Inject </head> analytics or other scripts before the page
       labelZh: 在页面的 </head> 之前注入分析或其他脚本
+      label:
+        en: 'Inject </head> analytics or other scripts before the page'
+        zh: '在页面的 </head> 之前注入分析或其他脚本'
+        zh-Hant: '在頁面 </head> 之前注入分析或其他腳本'
+        ja: 'ページの </head> 前に分析や他のスクリプトを挿入'
+        ko: '페이지의 </head> 앞에 분석 또는 기타 스크립트를 삽입'
+        ru: 'Вставить аналитические или другие скрипты перед </head> страницы'
+        ms: 'Suntik analitik atau skrip lain sebelum </head> halaman'
+        pt-br: 'Injetar análises ou outros scripts antes do </head> da página'
       required: false
       type: text
     - default: ''
@@ -57,5 +120,14 @@ additionalProperties:
       envKey: PUBLIC_SECRET_KEY_VAULE
       labelEn: The secret string for the project. The signature used to generate the API call
       labelZh: 项目的秘密字符串。用于生成 API 调用的签名
+      label:
+        en: 'The secret string for the project. The signature used to generate the API call'
+        zh: '项目的秘密字符串。用于生成 API 调用的签名'
+        zh-Hant: '專案的密文字串。用於生成 API 呼叫的簽名'
+        ja: 'プロジェクトのシークレット文字列。API 呼び出しの署名生成に使用'
+        ko: '프로젝트의 비밀 문자열. API 호출 서명 생성에 사용'
+        ru: 'Секретная строка проекта. Используется для генерации подписи вызова API'
+        ms: 'Rentetan rahsia projek. Digunakan untuk menjana tandatangan panggilan API'
+        pt-br: 'String secreta do projeto. Usada para gerar a assinatura da chamada da API'
       required: false
       type: text

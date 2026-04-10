@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款简单 Linux 面板服务
   shortDescEn: A simple Linux panel service
+  description:
+    en: A simple Linux panel service
+    zh: 一款简单 Linux 面板服务
+    zh-Hant: 一款簡單的 Linux 面板服務
+    ja: シンプルなLinuxパネルサービス
+    ko: 간단한 Linux 패널 서비스
+    ru: Простая панельная служба для Linux
+    ms: Perkhidmatan panel Linux yang ringkas
+    pt-br: Um serviço de painel Linux simples
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/ddsderek/mdserver-web
   github: https://github.com/midoks/mdserver-web
   document: https://github.com/midoks/mdserver-web/wiki/
+  architectures:
+    - amd64
+

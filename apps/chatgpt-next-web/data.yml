@@ -1,6 +1,6 @@
 name: ChatGPT-Next-Web
 tags:
-  - AI / 大模型
+  - AI
 title: 一键免费部署你的跨平台私人 ChatGPT 应用
 description: 一键免费部署你的跨平台私人 ChatGPT 应用
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 一键免费部署你的跨平台私人 ChatGPT 应用
   shortDescEn: One-Click to get well-designed cross-platform ChatGPT web UI
+  description:
+    en: Deploy your cross-platform private ChatGPT app for free with one click
+    zh: 一键免费部署你的跨平台私人 ChatGPT 应用
+    zh-Hant: 一鍵免費部署你的跨平台私人 ChatGPT 應用
+    ja: ワンクリックで無料のクロスプラットフォーム個人用ChatGPTアプリを展開
+    ko: 원클릭으로 무료로 크로스플랫폼 개인용 ChatGPT 앱 배포
+    ru: Одним кликом бесплатно разверните приватное кроссплатформенное приложение ChatGPT
+    ms: Sebar aplikasi ChatGPT peribadi merentas platform anda secara percuma dengan satu klik
+    pt-br: Implante gratuitamente seu app ChatGPT privado multiplataforma com um clique
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/Yidadaa/ChatGPT-Next-Web
   github: https://github.com/Yidadaa/ChatGPT-Next-Web
   document: https://github.com/Yidadaa/ChatGPT-Next-Web
+  architectures:
+    - amd64

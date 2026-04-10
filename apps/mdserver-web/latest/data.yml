@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Panel Port
       labelZh: 面板端口
+      label:
+        en: 'Web Panel Port'
+        zh: '面板端口'
+        zh-Hant: '網頁面板埠'
+        ja: 'Web パネルポート'
+        ko: '웹 패널 포트'
+        ru: 'Порт веб-панели'
+        ms: 'Port panel web'
+        pt-br: 'Porta do painel web'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CLOSE_ADMIN_PATH
       labelEn: Close Admin Path
       labelZh: 关闭管理路径
+      label:
+        en: 'Close Admin Path'
+        zh: '关闭管理路径'
+        zh-Hant: '關閉管理路徑'
+        ja: '管理パスを閉じる'
+        ko: '관리 경로 닫기'
+        ru: 'Закрыть путь администратора'
+        ms: 'Tutup laluan pentadbir'
+        pt-br: 'Fechar caminho do administrador'
       required: true
       type: select
       values:
@@ -25,6 +43,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: 'Username'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       random: true
       required: true
       type: text
@@ -33,6 +60,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity

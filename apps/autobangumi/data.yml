@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 全自动追番工具
   shortDescEn: Automated anime tracking tool
+  description:
+    en: Fully automated anime tracking tool
+    zh: 全自动追番工具
+    zh-Hant: 全自動追番工具
+    ja: 全自動のアニメ追跡ツール
+    ko: 완전 자동 애니 추적 도구
+    ru: Полностью автоматический инструмент отслеживания аниме
+    ms: Alat penjejakan anime automatik sepenuhnya
+    pt-br: Ferramenta totalmente automática de acompanhamento de anime
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.autobangumi.org
   github: https://github.com/EstrellaXD/Auto_Bangumi
   document: https://www.autobangumi.org
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 使用 WireGuard 和 2FA 的最简单、最安全的方式
   shortDescEn: The easiest, most secure way to use WireGuard and 2FA
+  description:
+    en: The easiest, most secure way to use WireGuard and 2FA
+    zh: 使用 WireGuard 和 2FA 的最简单、最安全的方式
+    zh-Hant: 使用 WireGuard 和 2FA 的最簡單、最安全的方式
+    ja: WireGuard と2FAを使う最も簡単で安全な方法
+    ko: WireGuard와 2FA를 사용하는 가장 쉽고 안전한 방법
+    ru: Самый простой и безопасный способ использовать WireGuard и 2FA
+    ms: Cara paling mudah dan paling selamat untuk menggunakan WireGuard dan 2FA
+    pt-br: A maneira mais fácil e segura de usar WireGuard e 2FA
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://tailscale.com
   github: https://github.com/tailscale/tailscale
   document: https://tailscale.com/kb/1017/install
+
+  architectures:
+    - amd64

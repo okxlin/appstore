@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 开源家庭自动化，将本地控制和隐私放在首位。
   shortDescEn: Open source home automation that puts local control and privacy first.
+  description:
+    en: Open source home automation that puts local control and privacy first
+    zh: 开源家庭自动化，将本地控制和隐私放在首位。
+    zh-Hant: 開源家庭自動化，優先本地控制與隱私
+    ja: ローカル制御とプライバシーを最優先にするオープンソースのホームオートメーション
+    ko: 로컬 제어와 개인정보를 최우선으로 하는 오픈 소스 홈 자동화
+    ru: Домашняя автоматизация с открытым исходным кодом, где в приоритете локальный контроль и конфиденциальность
+    ms: Automasi rumah sumber terbuka yang mengutamakan kawalan tempatan dan privasi
+    pt-br: Automação residencial de código aberto que prioriza controle local e privacidade
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.home-assistant.io/
   github: https://github.com/home-assistant/core
   document: https://www.home-assistant.io/docs/
+  architectures:
+    - amd64
+

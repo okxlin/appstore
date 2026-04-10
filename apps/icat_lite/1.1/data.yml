@@ -6,12 +6,30 @@ additionalProperties:
       key: postgresql
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: service
     - default: 5432
       envKey: PANEL_DB_PORT
       labelEn: Database port
       labelZh: 数据库端口
+      label:
+        en: 'Database port'
+        zh: '数据库端口'
+        zh-Hant: '資料庫埠'
+        ja: 'データベースポート'
+        ko: '데이터베이스 포트'
+        ru: 'Порт базы данных'
+        ms: 'Port pangkalan data'
+        pt-br: 'Porta do banco de dados'
       random: false
       required: true
       rule: paramPort
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +107,15 @@ additionalProperties:
       envKey: ICAT_PWDKEY
       labelEn: Key for encrypted password (lost and can't log in)
       labelZh: 用于加密的密码的密钥 (丢失无法登录)
+      label:
+        en: "Key for encrypted password (lost and can't log in)"
+        zh: '用于加密的密码的密钥 (丢失无法登录)'
+        zh-Hant: '用於加密密碼的金鑰（遺失將無法登入）'
+        ja: '暗号化パスワードのキー（失うとログイン不可）'
+        ko: '암호화 비밀번호 키(분실 시 로그인 불가)'
+        ru: 'Ключ для шифрования пароля (при утрате вход невозможен)'
+        ms: 'Kunci untuk kata laluan yang disulitkan (hilang tidak boleh log masuk)'
+        pt-br: 'Chave para senha criptografada (se perder, não será possível entrar)'
       random: true
       required: true
       type: text
@@ -61,5 +124,14 @@ additionalProperties:
       envKey: ICAT_COOKIEPWD
       labelEn: CookiePassword (at least 32 bits)
       labelZh: 登录状态加密密码 (至少32位)
+      label:
+        en: 'CookiePassword (at least 32 bits)'
+        zh: '登录状态加密密码 (至少32位)'
+        zh-Hant: '登入狀態加密密碼（至少 32 位）'
+        ja: 'CookiePassword（少なくとも32ビット）'
+        ko: 'CookiePassword(최소 32비트)'
+        ru: 'CookiePassword (не менее 32 бит)'
+        ms: 'CookiePassword (sekurang-kurangnya 32 bit)'
+        pt-br: 'CookiePassword (pelo menos 32 bits)'
       required: false
       type: text

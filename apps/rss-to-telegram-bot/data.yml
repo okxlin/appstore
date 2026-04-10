@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 关心你的阅读体验的 Telegram RSS 机器人
   shortDescEn: A Telegram RSS bot that cares about your reading experience
+  description:
+    en: A Telegram RSS bot that cares about your reading experience
+    zh: 关心你的阅读体验的 Telegram RSS 机器人
+    zh-Hant: 關心你的閱讀體驗的 Telegram RSS 機器人
+    ja: 読書体験に配慮したTelegram RSSボット
+    ko: 읽기 경험을 배려하는 Telegram RSS 봇
+    ru: Telegram RSS-бот, который заботится о вашем чтении
+    ms: Bot RSS Telegram yang mengambil berat pengalaman bacaan anda
+    pt-br: Bot RSS do Telegram que se preocupa com sua experiência de leitura
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
   github: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
   document: https://github.com/Rongronggg9/RSS-to-Telegram-Bot
+
+  architectures:
+    - amd64

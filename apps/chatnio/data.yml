@@ -1,6 +1,6 @@
 name: Chat Nio
 tags:
-  - AI / 大模型
+  - AI
 title: 下一代 AI 一站式解决方案
 description: 下一代 AI 一站式解决方案
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 下一代 AI 一站式解决方案
   shortDescEn: Next Generation AI One-Stop Internationalization Solution
+  description:
+    en: Next-generation AI one-stop solution
+    zh: 下一代 AI 一站式解决方案
+    zh-Hant: 下一代 AI 一站式解決方案
+    ja: 次世代AIのワンストップソリューション
+    ko: 차세대 AI 원스톱 솔루션
+    ru: Единое решение следующего поколения для ИИ
+    ms: Penyelesaian AI sehenti generasi baharu
+    pt-br: Solução completa de IA de próxima geração
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://chatnio.com
   github: https://github.com/Deeptrain-Community/chatnio
   document: https://chatnio.com/guide
+  architectures:
+    - amd64

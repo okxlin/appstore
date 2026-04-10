@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: META_TEMPLATE
       labelEn: Meta Template
       labelZh: 默认 meta 模板文件名
+      label:
+        en: 'Meta Template'
+        zh: 'Meta 模板'
+        zh-Hant: 'Meta 範本'
+        ja: 'Meta テンプレート'
+        ko: 'Meta 템플릿'
+        ru: 'Шаблон Meta'
+        ms: 'Templat Meta'
+        pt-br: 'Modelo Meta'
       required: true
       type: text
     - default: "template_clash.yaml"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PROXY_TEMPLATE
       labelEn: Clash Template
       labelZh: 默认 clash 模板文件名
+      label:
+        en: 'Clash Template'
+        zh: 'Clash 模板'
+        zh-Hant: 'Clash 範本'
+        ja: 'Clash テンプレート'
+        ko: 'Clash 템플릿'
+        ru: 'Шаблон Clash'
+        ms: 'Templat Clash'
+        pt-br: 'Modelo Clash'
       required: true
       type: text
     - default: "template_clash.yaml"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: CLASH_TEMPLATE
       labelEn: Clash Template
       labelZh: 默认 clash 模板文件名
+      label:
+        en: 'Clash Template'
+        zh: 'Clash 模板'
+        zh-Hant: 'Clash 範本'
+        ja: 'Clash テンプレート'
+        ko: 'Clash 템플릿'
+        ru: 'Шаблон Clash'
+        ms: 'Templat Clash'
+        pt-br: 'Modelo Clash'
       required: true
       type: text
     - default: "3"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: REQUEST_RETRY_TIMES
       labelEn: Request Retry Times
       labelZh: Get 请求重试次数
+      label:
+        en: 'Request Retry Times'
+        zh: '请求重试次数'
+        zh-Hant: '請求重試次數'
+        ja: 'リクエスト再試行回数'
+        ko: '요청 재시도 횟수'
+        ru: 'Количество повторов запроса'
+        ms: 'Bilangan percubaan semula permintaan'
+        pt-br: 'Número de tentativas de solicitação'
       required: true
       type: number
     - default: "1048576"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: REQUEST_MAX_FILE_SIZE
       labelEn: Request Max File Size
       labelZh: Get 请求订阅文件最大大小（byte）
+      label:
+        en: 'Request Max File Size'
+        zh: '请求文件最大大小'
+        zh-Hant: '請求檔案最大大小'
+        ja: 'リクエスト最大ファイルサイズ'
+        ko: '요청 최대 파일 크기'
+        ru: 'Максимальный размер файла запроса'
+        ms: 'Saiz fail maksimum permintaan'
+        pt-br: 'Tamanho máximo do arquivo de solicitação'
       required: true
       type: number
     - default: "300"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: CACHE_EXPIRE
       labelEn: Cache Expire
       labelZh: 订阅缓存时间（秒）
+      label:
+        en: 'Cache Expire'
+        zh: '缓存过期'
+        zh-Hant: '快取過期'
+        ja: 'キャッシュ有効期限'
+        ko: '캐시 만료'
+        ru: 'Срок действия кеша'
+        ms: 'Tempoh tamat cache'
+        pt-br: 'Expiração do cache'
       required: true
       type: number
     - default: "info"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志等级
+      label:
+        en: 'Log Level'
+        zh: '日志级别'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 레벨'
+        ru: 'Уровень логирования'
+        ms: 'Tahap log'
+        pt-br: 'Nível de log'
       required: true
       type: select
       values:
@@ -71,5 +143,14 @@ additionalProperties:
       envKey: SHORT_LINK_LENGTH
       labelEn: Short Link Length
       labelZh: 短链长度
+      label:
+        en: 'Short Link Length'
+        zh: '短链长度'
+        zh-Hant: '短連結長度'
+        ja: '短縮リンクの長さ'
+        ko: '단축 링크 길이'
+        ru: 'Длина короткой ссылки'
+        ms: 'Panjang pautan pendek'
+        pt-br: 'Comprimento do link curto'
       required: true
       type: number

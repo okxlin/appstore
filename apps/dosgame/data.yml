@@ -17,3 +17,14 @@ additionalProperties:
   website: https://dos.lol/
   github: https://github.com/rwv/chinese-dos-games
   document: https://github.com/rwv/chinese-dos-games
+  architectures:
+    - amd64
+  description:
+    en: 'A collection of Chinese DOS games.'
+    zh: '中文 DOS 游戏合集'
+    zh-Hant: '中文 DOS 遊戲合集'
+    ja: '中国語版 DOS ゲームのコレクションです。'
+    ko: '중국어 DOS 게임 모음집입니다.'
+    ru: 'Коллекция DOS-игр на китайском языке.'
+    ms: 'Koleksi permainan DOS berbahasa Cina.'
+    pt-br: 'Coleção de jogos DOS em chinês.'

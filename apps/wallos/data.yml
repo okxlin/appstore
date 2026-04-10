@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 开源个人订阅跟踪器
   shortDescEn: Open-Source Personal Subscription Tracker
+  description:
+    en: Open-source personal subscription tracker
+    zh: 开源个人订阅跟踪器
+    zh-Hant: 開源個人訂閱追蹤器
+    ja: オープンソースの個人サブスクリプション追跡ツール
+    ko: 오픈 소스 개인 구독 추적기
+    ru: Персональный трекер подписок с открытым исходным кодом
+    ms: Penjejak langganan peribadi sumber terbuka
+    pt-br: Rastreador pessoal de assinaturas de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/ellite/Wallos
   github: https://github.com/ellite/Wallos
   document: https://github.com/ellite/Wallos/blob/main/README.md
+
+  architectures:
+    - amd64

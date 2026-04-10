@@ -9,17 +9,35 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label: "MySQL"
           value: mysql
-        - label: PostgreSQL
+        - label: "PostgreSQL"
           value: postgresql
     - default: sscms
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +46,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +63,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +81,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +98,15 @@ additionalProperties:
       envKey: SSCMS_SECURITY_KEY
       labelEn: Communication key (GUID string)
       labelZh: 通信密钥 (GUID 字符串)
+      label:
+        en: 'Communication key (GUID string)'
+        zh: '通信密钥 (GUID 字符串)'
+        zh-Hant: '通訊金鑰 (GUID 字串)'
+        ja: '通信キー (GUID 文字列)'
+        ko: '통신 키 (GUID 문자열)'
+        ru: 'Ключ связи (строка GUID)'
+        ms: 'Kunci komunikasi (rentetan GUID)'
+        pt-br: 'Chave de comunicação (string GUID)'
       required: true
       type: text
     - default: ''
@@ -60,5 +114,14 @@ additionalProperties:
       envKey: SSCMS_REDIS_CONNECTION_STRING
       labelEn: Redis Connection Information (redis:6379,password=123456)
       labelZh: Redis 连接信息 (redis:6379,password=123456)
+      label:
+        en: 'Redis Connection Information (redis:6379,password=123456)'
+        zh: 'Redis 连接信息 (redis:6379,password=123456)'
+        zh-Hant: 'Redis 連線資訊 (redis:6379,password=123456)'
+        ja: 'Redis 接続情報 (redis:6379,password=123456)'
+        ko: 'Redis 연결 정보 (redis:6379,password=123456)'
+        ru: 'Информация о подключении Redis (redis:6379,password=123456)'
+        ms: 'Maklumat sambungan Redis (redis:6379,password=123456)'
+        pt-br: 'Informações de conexão do Redis (redis:6379,password=123456)'
       required: false
       type: text

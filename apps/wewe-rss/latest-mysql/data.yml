@@ -9,17 +9,51 @@ additionalProperties:
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label:
+            en: 'MySQL'
+            zh: 'MySQL'
+            zh-Hant: 'MySQL'
+            ja: 'MySQL'
+            ko: 'MySQL'
+            ru: 'MySQL'
+            ms: 'MySQL'
+            pt-br: 'MySQL'
           value: mysql
-        - label: LocalMySQL
+        - label:
+            en: 'LocalMySQL'
+            zh: 'LocalMySQL'
+            zh-Hant: 'LocalMySQL'
+            ja: 'LocalMySQL'
+            ko: 'LocalMySQL'
+            ru: 'LocalMySQL'
+            ms: 'LocalMySQL'
+            pt-br: 'LocalMySQL'
           value: localmysql
     - default: "wewe-rss"
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -28,6 +62,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +79,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +97,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -53,6 +114,15 @@ additionalProperties:
       envKey: AUTH_CODE
       labelEn: Auth Code
       labelZh: 授权码
+      label:
+        en: 'Auth Code'
+        zh: '授权码'
+        zh-Hant: '授權碼'
+        ja: '認証コード'
+        ko: '인증 코드'
+        ru: 'Код авторизации'
+        ms: 'Kod pengesahan'
+        pt-br: 'Código de autenticação'
       random: true
       required: true
       rule: paramComplexity
@@ -62,6 +132,15 @@ additionalProperties:
       envKey: SERVER_ORIGIN_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       rule: paramExtUrl
       type: text
@@ -70,6 +149,15 @@ additionalProperties:
       envKey: FEED_MODE
       labelEn: Feed Mode
       labelZh: 提取模式
+      label:
+        en: 'Feed Mode'
+        zh: '提取模式'
+        zh-Hant: '擷取模式'
+        ja: 'フィードモード'
+        ko: '피드 모드'
+        ru: 'Режим ленты'
+        ms: 'Mod suapan'
+        pt-br: 'Modo de feed'
       required: false
       type: text
     - default: "35 5,17 * * *"
@@ -77,6 +165,15 @@ additionalProperties:
       envKey: CRON_EXPRESSION
       labelEn: Cron Expression
       labelZh: 定时更新表达式
+      label:
+        en: 'Cron Expression'
+        zh: '定时更新表达式'
+        zh-Hant: '定時更新表達式'
+        ja: 'Cron 式'
+        ko: '크론 표현식'
+        ru: 'Выражение cron'
+        ms: 'Ungkapan cron'
+        pt-br: 'Expressão cron'
       required: false
       type: text
     - default: "60"
@@ -84,5 +181,14 @@ additionalProperties:
       envKey: MAX_REQUEST_PER_MINUTE
       labelEn: Max Requests Per Minute
       labelZh: 每分钟最大请求次数
+      label:
+        en: 'Max Requests Per Minute'
+        zh: '每分钟最大请求次数'
+        zh-Hant: '每分鐘最大請求次數'
+        ja: '1 分あたりの最大リクエスト数'
+        ko: '분당 최대 요청 수'
+        ru: 'Максимум запросов в минуту'
+        ms: 'Maksimum permintaan per minit'
+        pt-br: 'Máximo de solicitações por minuto'
       required: false
       type: number

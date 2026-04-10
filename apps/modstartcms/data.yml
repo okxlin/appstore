@@ -17,3 +17,14 @@ additionalProperties:
   website: https://modstart.com
   github: https://github.com/modstart/ModStartCMS
   document: https://modstart.com/doc
+  architectures:
+    - amd64
+  description:
+    en: 'An open-source corporate website building system.'
+    zh: '开源企业建站系统'
+    zh-Hant: '開源企業建站系統'
+    ja: 'オープンソースの企業向け Web サイト構築システムです。'
+    ko: '오픈소스 기업용 웹사이트 구축 시스템입니다.'
+    ru: 'Открытая система для создания корпоративных сайтов.'
+    ms: 'Sistem pembinaan laman web korporat sumber terbuka.'
+    pt-br: 'Sistema de criação de sites corporativos de código aberto.'

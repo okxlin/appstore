@@ -1,6 +1,6 @@
 name: JSON Hero
 tags:
-  - 使阅读和理解 JSON 文件变得简单
+  - Tool
 title: 使阅读和理解 JSON 文件变得简单
 description: 使阅读和理解 JSON 文件变得简单
 additionalProperties:
@@ -17,3 +17,14 @@ additionalProperties:
   website: https://jsonhero.io
   github: https://github.com/triggerdotdev/jsonhero-web
   document: https://github.com/triggerdotdev/jsonhero-web
+  architectures:
+    - amd64
+  description:
+    en: 'Makes JSON files easier to read and understand.'
+    zh: '使阅读和理解 JSON 文件变得简单'
+    zh-Hant: '讓閱讀和理解 JSON 檔案變得簡單'
+    ja: 'JSON ファイルの読み取りと理解を簡単にします。'
+    ko: 'JSON 파일을 더 쉽게 읽고 이해할 수 있게 해줍니다.'
+    ru: 'Упрощает чтение и понимание JSON-файлов.'
+    ms: 'Memudahkan pembacaan dan pemahaman fail JSON.'
+    pt-br: 'Facilita a leitura e o entendimento de arquivos JSON.'

@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/Jonnyan404/zerotier-planet
   github: https://github.com/Jonnyan404/zerotier-planet
   document: https://github.com/Jonnyan404/zerotier-planet
+  architectures:
+    - amd64
+  description:
+    en: Zerotier network controller with web UI in a Docker container
+    zh: 具有 Web UI 的 ZeroTier 网络控制器
+    zh-Hant: 具有 Web UI 的 ZeroTier 網路控制器
+    ja: Web UI を備えた ZeroTier ネットワークコントローラ
+    ko: Web UI가 있는 ZeroTier 네트워크 컨트롤러
+    ru: Контроллер сети ZeroTier с веб-интерфейсом
+    ms: Pengawal rangkaian ZeroTier dengan UI Web
+    pt-br: Controlador de rede ZeroTier com interface Web

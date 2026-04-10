@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个现代的、完全静态的、快速的、安全的、完全代理的、高度可定制的应用程序仪表板
   shortDescEn: A modern, fully static, fast, secure fully proxied, highly customizable application dashboard
+  description:
+    en: Modern, fully static, fast, secure, fully proxied, highly customizable application dashboard
+    zh: 一个现代的、完全静态的、快速的、安全的、完全代理的、高度可定制的应用程序仪表板
+    zh-Hant: 現代化、完全靜態、快速、安全、全代理且高度可自訂的應用程式儀表板
+    ja: モダンで完全静的、高速・安全・完全プロキシの高度にカスタマイズ可能なアプリダッシュボード
+    ko: 현대적이며 완전 정적, 빠르고 안전하고 완전 프록시되는 고도로 커스터마이즈 가능한 앱 대시보드
+    ru: Современная полностью статическая, быстрая, безопасная, полностью проксируемая и настраиваемая панель приложений
+    ms: Papan pemuka aplikasi moden, statik sepenuhnya, pantas, selamat, diproksi sepenuhnya dan sangat boleh disesuaikan
+    pt-br: Painel de aplicativos moderno, totalmente estático, rápido, seguro, totalmente proxificado e altamente personalizável
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://gethomepage.dev
   github: https://github.com/gethomepage/homepage
   document: https://gethomepage.dev
+  architectures:
+    - amd64
+    - arm64
+

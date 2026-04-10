@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 先进的开源互联网操作系统
   shortDescEn: An advanced, open-source internet operating system
+  description:
+    en: "Advanced open-source internet operating system."
+    zh: "先进的开源互联网操作系统。"
+    zh-Hant: "先進的開源網際網路作業系統。"
+    ja: "先進的なオープンソースのインターネット OS です。"
+    ko: "고급 오픈소스 인터넷 운영체제입니다."
+    ru: "Продвинутая интернет-операционная система с открытым исходным кодом."
+    ms: "Sistem operasi internet sumber terbuka yang canggih."
+    pt-br: "Sistema operacional de internet avançado e de código aberto."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://puter.com
   github: https://github.com/HeyPuter/puter
   document: https://github.com/HeyPuter/puter
+  architectures:
+    - amd64
+    - arm64

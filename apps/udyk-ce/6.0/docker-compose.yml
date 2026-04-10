@@ -15,6 +15,9 @@ services:
     volumes:
       - "./data/tmp:/tmp"
       - "./data/upload:/app/filestore"
+    labels:
+      createdBy: "Apps"
+
 
   server:
     container_name: udyk-ce-server
@@ -33,6 +36,9 @@ services:
     volumes:
       - "./data/tmp:/tmp"
       - "./data/upload:/app/upload/"
+    labels:
+      createdBy: "Apps"
+
 
 
   redis:
@@ -45,6 +51,9 @@ services:
       LANG: "C.UTF-8"
     volumes:
       - ./data/redis:/data
+    labels:
+      createdBy: "Apps"
+
     expose:
       - 6379
 
@@ -56,6 +65,9 @@ services:
       - 3306
     volumes:
       - ./data/mysql:/var/lib/mysql
+    labels:
+      createdBy: "Apps"
+
     environment:
       MYSQL_DATABASE: udyk_community
       LANG: "C.UTF-8"

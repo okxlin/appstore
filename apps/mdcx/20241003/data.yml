@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: VNC_PORT
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: 'VNC Port'
+        zh: 'VNC 端口'
+        zh-Hant: 'VNC 埠'
+        ja: 'VNC ポート'
+        ko: 'VNC 포트'
+        ru: 'Порт VNC'
+        ms: 'Port VNC'
+        pt-br: 'Porta VNC'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: DISPLAY_WIDTH
       labelEn: Display Width
       labelZh: 显示宽度
+      label:
+        en: 'Display Width'
+        zh: '显示宽度'
+        zh-Hant: '顯示寬度'
+        ja: '表示幅'
+        ko: '디스플레이 너비'
+        ru: 'Ширина экрана'
+        ms: 'Lebar paparan'
+        pt-br: 'Largura da tela'
       required: true
       type: number
     - default: "750"
@@ -28,6 +55,15 @@ additionalProperties:
       envKey: DISPLAY_HEIGHT
       labelEn: Display Height
       labelZh: 显示高度
+      label:
+        en: 'Display Height'
+        zh: '显示高度'
+        zh-Hant: '顯示高度'
+        ja: '表示高さ'
+        ko: '디스플레이 높이'
+        ru: 'Высота экрана'
+        ms: 'Ketinggian paparan'
+        pt-br: 'Altura da tela'
       required: true
       type: number
     - default: "password"
@@ -35,6 +71,15 @@ additionalProperties:
       envKey: VNC_PASSWORD
       labelEn: VNC Password
       labelZh: VNC 密码
+      label:
+        en: 'VNC Password'
+        zh: 'VNC 密码'
+        zh-Hant: 'VNC 密碼'
+        ja: 'VNC パスワード'
+        ko: 'VNC 비밀번호'
+        ru: 'Пароль VNC'
+        ms: 'Kata laluan VNC'
+        pt-br: 'Senha VNC'
       random: true
       required: true
       rule: paramComplexity
@@ -44,6 +89,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/mdcx-config"
@@ -51,6 +105,15 @@ additionalProperties:
       envKey: MDCX_CONFIG_PATH
       labelEn: MDCx Config Path
       labelZh: MDCx 配置路径
+      label:
+        en: 'MDCx Config Path'
+        zh: 'MDCx 配置路径'
+        zh-Hant: 'MDCx 設定路徑'
+        ja: 'MDCx 設定パス'
+        ko: 'MDCx 구성 경로'
+        ru: 'Путь конфигурации MDCx'
+        ms: 'Laluan konfigurasi MDCx'
+        pt-br: 'Caminho de configuração do MDCx'
       required: true
       type: text
     - default: "./data/mdcx-config/MDCx.config"
@@ -58,6 +121,15 @@ additionalProperties:
       envKey: MDCX_CONFIG_FILE
       labelEn: MDCx Config File
       labelZh: MDCx 配置文件
+      label:
+        en: 'MDCx Config File'
+        zh: 'MDCx 配置文件'
+        zh-Hant: 'MDCx 設定檔'
+        ja: 'MDCx 設定ファイル'
+        ko: 'MDCx 구성 파일'
+        ru: 'Файл конфигурации MDCx'
+        ms: 'Fail konfigurasi MDCx'
+        pt-br: 'Arquivo de configuração do MDCx'
       required: true
       type: text
     - default: "./data/logs"
@@ -65,6 +137,15 @@ additionalProperties:
       envKey: LOGS_PATH
       labelEn: Logs Path
       labelZh: 日志路径
+      label:
+        en: 'Logs Path'
+        zh: '日志路径'
+        zh-Hant: '日誌路徑'
+        ja: 'ログパス'
+        ko: '로그 경로'
+        ru: 'Путь журналов'
+        ms: 'Laluan log'
+        pt-br: 'Caminho de logs'
       required: true
       type: text
     - default: "./data/media"
@@ -72,6 +153,15 @@ additionalProperties:
       envKey: MEDIA_PATH
       labelEn: Media Path
       labelZh: 媒体路径
+      label:
+        en: 'Media Path'
+        zh: '媒体路径'
+        zh-Hant: '媒體路徑'
+        ja: 'メディアパス'
+        ko: '미디어 경로'
+        ru: 'Путь к медиа'
+        ms: 'Laluan media'
+        pt-br: 'Caminho de mídia'
       required: true
       type: text
     - default: "/media"
@@ -79,6 +169,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL
       labelEn: Internal Media Path
       labelZh: 容器内部媒体路径
+      label:
+        en: 'Internal Media Path'
+        zh: '容器内部媒体路径'
+        zh-Hant: '容器內部媒體路徑'
+        ja: 'コンテナ内部メディアパス'
+        ko: '컨테이너 내부 미디어 경로'
+        ru: 'Внутренний путь к медиа в контейнере'
+        ms: 'Laluan media dalaman kontena'
+        pt-br: 'Caminho interno de mídia do contêiner'
       required: true
       type: text
     - default: "./data/media2"
@@ -86,6 +185,15 @@ additionalProperties:
       envKey: MEDIA_PATH_2
       labelEn: Media Path 2
       labelZh: 媒体路径 2
+      label:
+        en: 'Media Path 2'
+        zh: '媒体路径 2'
+        zh-Hant: '媒體路徑 2'
+        ja: 'メディアパス 2'
+        ko: '미디어 경로 2'
+        ru: 'Путь к медиа 2'
+        ms: 'Laluan media 2'
+        pt-br: 'Caminho de mídia 2'
       required: true
       type: text
     - default: "/media2"
@@ -93,6 +201,15 @@ additionalProperties:
       envKey: MEDIA_PATH_INTERNAL_2
       labelEn: Internal Media Path 2
       labelZh: 容器内部媒体路径 2
+      label:
+        en: 'Internal Media Path 2'
+        zh: '容器内部媒体路径 2'
+        zh-Hant: '容器內部媒體路徑 2'
+        ja: 'コンテナ内部メディアパス 2'
+        ko: '컨테이너 내부 미디어 경로 2'
+        ru: 'Внутренний путь к медиа в контейнере 2'
+        ms: 'Laluan media dalaman kontena 2'
+        pt-br: 'Caminho interno de mídia do contêiner 2'
       required: true
       type: text
     - default: "1000"
@@ -100,6 +217,15 @@ additionalProperties:
       envKey: USER_ID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -107,6 +233,15 @@ additionalProperties:
       envKey: GROUP_ID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -114,5 +249,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

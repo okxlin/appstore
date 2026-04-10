@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: The path to the shared data folder
       labelZh: 分享的数据文件夹路径
+      label:
+        en: 'The path to the shared data folder'
+        zh: '分享的数据文件夹路径'
+        zh-Hant: '共享資料夾路徑'
+        ja: '共有データフォルダのパス'
+        ko: '공유 데이터 폴더 경로'
+        ru: 'Путь к папке общих данных'
+        ms: 'Laluan folder data kongsi'
+        pt-br: 'Caminho da pasta de dados compartilhada'
       required: true
       type: text
     - default: ./data/config
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Path to the configuration file
       labelZh: 配置文件所在路径
+      label:
+        en: 'Path to the configuration file'
+        zh: '配置文件所在路径'
+        zh-Hant: '設定檔路徑'
+        ja: '設定ファイルのパス'
+        ko: '구성 파일 경로'
+        ru: 'Путь к файлу конфигурации'
+        ms: 'Laluan fail konfigurasi'
+        pt-br: 'Caminho do arquivo de configuração'
       required: true
       type: text
     - default: "true"
@@ -27,12 +54,30 @@ additionalProperties:
       envKey: AUTH_ENABLE
       labelEn: "Authentication (On: true, Off: false)"
       labelZh: 身份验证(开启:true，关闭:false)
+      label:
+        en: 'Authentication (On: true, Off: false)'
+        zh: '身份验证(开启:true，关闭:false)'
+        zh-Hant: '驗證（開：true，關：false）'
+        ja: '認証（オン：true、オフ：false）'
+        ko: '인증(켜기: true, 끄기: false)'
+        ru: 'Аутентификация (вкл.: true, выкл.: false)'
+        ms: 'Pengesahan (Hidup: true, Mati: false)'
+        pt-br: 'Autenticação (Ligado: true, Desligado: false)'
       required: true
       type: text
     - default: h5ai
       envKey: USER
       labelEn: User
       labelZh: 用户名
+      label:
+        en: 'User'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       random: true
       required: false
       rule: paramCommon
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 用户密码
+      label:
+        en: 'Password'
+        zh: '用户密码'
+        zh-Hant: '使用者密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: false
       rule: paramComplexity

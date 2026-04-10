@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 一个简约的音乐播放器
   shortDescEn: A minimalist music player
+  description:
+    en: A minimalist music player
+    zh: 一个简约的音乐播放器
+    zh-Hant: 一個簡約的音樂播放器
+    ja: シンプルな音楽プレーヤー
+    ko: 간결한 음악 플레이어
+    ru: Минималистичный музыкальный плеер
+    ms: Pemain muzik minimalis
+    pt-br: Um reprodutor de música minimalista
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/imsyy/SPlayer
   github: https://github.com/imsyy/SPlayer
   document: https://github.com/imsyy/SPlayer
+
+  architectures:
+    - amd64

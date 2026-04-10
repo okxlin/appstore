@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 直播源代理程序
   shortDescEn: Live feed agent program
+  description:
+    en: A live stream source proxy.
+    zh: 直播源代理程序
+    zh-Hant: 直播源代理程式
+    ja: ライブ配信ソースのプロキシ
+    ko: 라이브 스트림 소스 프록시
+    ru: Прокси для источников直播.
+    ms: Proksi sumber penstriman langsung.
+    pt-br: Proxy de fontes de transmissão ao vivo.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/youshandefeiyang/allinone
   github: https://hub.docker.com/r/youshandefeiyang/allinone
   document: https://hub.docker.com/r/youshandefeiyang/allinone
+  architectures:
+    - amd64

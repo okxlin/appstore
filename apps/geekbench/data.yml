@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 基准测试工具 Docker 版
   shortDescEn: Benchmarking tool Docker version
+  description:
+    en: Benchmarking tool, Docker edition
+    zh: 基准测试工具 Docker 版
+    zh-Hant: 基準測試工具 Docker 版
+    ja: ベンチマークツールの Docker 版
+    ko: 벤치마크 도구 Docker 버전
+    ru: Инструмент бенчмаркинга, версия для Docker
+    ms: Alat penanda aras versi Docker
+    pt-br: Ferramenta de benchmark versão Docker
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/davidsarkany/geekbench
   github: https://github.com/chrisdaish/docker-geekbench
   document: https://github.com/chrisdaish/docker-geekbench
+  architectures:
+    - amd64

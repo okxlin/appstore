@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,12 +22,30 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "https://your-domain.com"
       envKey: ORIGIN
       labelEn: External URL (Only https environments can register and login, reverse proxy is required)
       labelZh: 外部访问地址 (只有 https 环境才能注册登录，需要反向代理)
+      label:
+        en: 'External URL (Only https environments can register and login, reverse proxy is required)'
+        zh: '外部访问地址（仅 https 环境可注册登录，需要反向代理）'
+        zh-Hant: '外部訪問地址（僅 https 環境可註冊登入，需要反向代理）'
+        ja: '外部 URL（https 環境のみ登録・ログイン可能。リバースプロキシが必要）'
+        ko: '외부 URL(https 환경에서만 등록/로그인 가능, 리버스 프록시 필요)'
+        ru: 'Внешний URL (регистрация и вход возможны только в среде https, требуется обратный прокси)'
+        ms: 'URL luaran (hanya persekitaran https boleh daftar dan log masuk, perlu proksi songsang)'
+        pt-br: 'URL externa (apenas ambientes https podem registrar e fazer login; é necessário proxy reverso)'
       required: true
       type: text
       edit: true
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: USER_APPROVAL_REQUIRED
       labelEn: Whether to require user approval before they can upload images
       labelZh: 是否需要用户批准才能上传图像
+      label:
+        en: 'Whether to require user approval before they can upload images'
+        zh: '是否需要用户批准才能上传图片'
+        zh-Hant: '是否需要使用者批准才能上傳圖片'
+        ja: '画像アップロード前にユーザー承認が必要か'
+        ko: '이미지 업로드 전에 사용자 승인이 필요한지'
+        ru: 'Требовать одобрение пользователя перед загрузкой изображений'
+        ms: 'Perlu kelulusan pengguna sebelum memuat naik imej'
+        pt-br: 'Exigir aprovação do usuário antes de enviar imagens'
       required: true
       type: select
       values:
@@ -38,6 +74,15 @@ additionalProperties:
       envKey: USER_ALLOW_UNAUTHENTICATED_ACCESS
       labelEn: Allow Unauthenticated Access
       labelZh: 允许未认证访问
+      label:
+        en: 'Allow Unauthenticated Access'
+        zh: '允许未认证访问'
+        zh-Hant: '允許未認證訪問'
+        ja: '未認証アクセスを許可'
+        ko: '인증되지 않은 접근 허용'
+        ru: 'Разрешить неаутентифицированный доступ'
+        ms: 'Benarkan akses tanpa pengesahan'
+        pt-br: 'Permitir acesso não autenticado'
       required: true
       type: select
       values:
@@ -50,6 +95,15 @@ additionalProperties:
       envKey: USER_PASSWORD_MIN_LENGTH
       labelEn: User Password Minimum Length
       labelZh: 用户密码最小长度
+      label:
+        en: 'User Password Minimum Length'
+        zh: '用户密码最小长度'
+        zh-Hant: '使用者密碼最小長度'
+        ja: 'ユーザーパスワード最小長さ'
+        ko: '사용자 비밀번호 최소 길이'
+        ru: 'Минимальная длина пароля пользователя'
+        ms: 'Panjang minimum kata laluan pengguna'
+        pt-br: 'Comprimento mínimo da senha do usuário'
       required: true
       type: number
       edit: true
@@ -57,6 +111,15 @@ additionalProperties:
       envKey: USER_PASSWORD_REQUIREMENTS
       labelEn: User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)
       labelZh: 用户密码要求 (以下选项的总和：1-数字、2-小写、4-大写、8-特殊字符)
+      label:
+        en: 'User Password Requirements (Sum of the following options:1-numbers, 2-lowercase, 4-uppercase, 8-special characters)'
+        zh: '用户密码要求（以下选项之和：1-数字，2-小写，4-大写，8-特殊字符）'
+        zh-Hant: '使用者密碼要求（以下選項之和：1-數字，2-小寫，4-大寫，8-特殊字元）'
+        ja: 'ユーザーパスワード要件（以下オプションの合計：1-数字、2-小文字、4-大文字、8-特殊文字）'
+        ko: '사용자 비밀번호 요구사항(다음 옵션의 합: 1-숫자, 2-소문자, 4-대문자, 8-특수 문자)'
+        ru: 'Требования к паролю пользователя (сумма следующих опций: 1-цифры, 2-строчные, 4-прописные, 8-спецсимволы)'
+        ms: 'Keperluan kata laluan pengguna (jumlah pilihan berikut: 1-nombor, 2-huruf kecil, 4-huruf besar, 8-aksara khas)'
+        pt-br: 'Requisitos de senha do usuário (soma das opções: 1-números, 2-minúsculas, 4-maiúsculas, 8-caracteres especiais)'
       required: true
       type: number
       edit: true
@@ -64,6 +127,15 @@ additionalProperties:
       envKey: IMAGE_MAX_SIZE
       labelEn: Image Maximum Size (no more than 50M)
       labelZh: 图片最大尺寸(不超过50M)
+      label:
+        en: 'Image Maximum Size (no more than 50M)'
+        zh: '图片最大尺寸（不超过50M）'
+        zh-Hant: '圖片最大尺寸（不超過50M）'
+        ja: '画像の最大サイズ（50M以下）'
+        ko: '이미지 최대 크기(50M 이하)'
+        ru: 'Максимальный размер изображения (не более 50M)'
+        ms: 'Saiz maksimum imej (tidak melebihi 50M)'
+        pt-br: 'Tamanho máximo da imagem (não mais que 50M)'
       required: true
       type: text
       edit: true
@@ -71,6 +143,15 @@ additionalProperties:
       envKey: IMAGE_STRIP_EXIF_METADATA
       labelEn: Strip EXIF Metadata
       labelZh: 剥离 EXIF 元数据
+      label:
+        en: 'Strip EXIF Metadata'
+        zh: '剥离 EXIF 元数据'
+        zh-Hant: '移除 EXIF 中繼資料'
+        ja: 'EXIF メタデータを削除'
+        ko: 'EXIF 메타데이터 제거'
+        ru: 'Удалять метаданные EXIF'
+        ms: 'Buang metadata EXIF'
+        pt-br: 'Remover metadados EXIF'
       required: true
       type: select
       values:
@@ -83,6 +164,15 @@ additionalProperties:
       envKey: STORAGE_PROVIDER
       labelEn: Storage Provider
       labelZh: 存储提供商
+      label:
+        en: 'Storage Provider'
+        zh: '存储提供商'
+        zh-Hant: '儲存提供商'
+        ja: 'ストレージプロバイダー'
+        ko: '스토리지 제공자'
+        ru: 'Поставщик хранилища'
+        ms: 'Penyedia storan'
+        pt-br: 'Provedor de armazenamento'
       required: true
       type: select
       values:
@@ -95,6 +185,15 @@ additionalProperties:
       envKey: SMB_HOST
       labelEn: SMB Host
       labelZh: SMB 主机
+      label:
+        en: 'SMB Host'
+        zh: 'SMB 主机'
+        zh-Hant: 'SMB 主機'
+        ja: 'SMB ホスト'
+        ko: 'SMB 호스트'
+        ru: 'Хост SMB'
+        ms: 'Hos SMB'
+        pt-br: 'Host SMB'
       required: false
       type: text
       edit: true
@@ -102,6 +201,15 @@ additionalProperties:
       envKey: SMB_USERNAME
       labelEn: SMB Username
       labelZh: SMB 用户名
+      label:
+        en: 'SMB Username'
+        zh: 'SMB 用户名'
+        zh-Hant: 'SMB 使用者名稱'
+        ja: 'SMB ユーザー名'
+        ko: 'SMB 사용자 이름'
+        ru: 'Имя пользователя SMB'
+        ms: 'Nama pengguna SMB'
+        pt-br: 'Nome de usuário SMB'
       required: false
       type: text
       edit: true
@@ -109,6 +217,15 @@ additionalProperties:
       envKey: SMB_PASSWORD
       labelEn: SMB Password
       labelZh: SMB 密码
+      label:
+        en: 'SMB Password'
+        zh: 'SMB 密码'
+        zh-Hant: 'SMB 密碼'
+        ja: 'SMB パスワード'
+        ko: 'SMB 비밀번호'
+        ru: 'Пароль SMB'
+        ms: 'Kata laluan SMB'
+        pt-br: 'Senha SMB'
       required: false
       type: password
       edit: true
@@ -116,6 +233,15 @@ additionalProperties:
       envKey: SMB_SHARE
       labelEn: SMB Share
       labelZh: SMB 共享
+      label:
+        en: 'SMB Share'
+        zh: 'SMB 共享'
+        zh-Hant: 'SMB 共享'
+        ja: 'SMB 共有'
+        ko: 'SMB 공유'
+        ru: 'Общий ресурс SMB'
+        ms: 'Perkongsian SMB'
+        pt-br: 'Compartilhamento SMB'
       required: false
       type: text
       edit: true

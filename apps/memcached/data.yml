@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Memcached 是一套分布式的高速缓存系统
   shortDescEn: Memcached is a distributed caching system
+  description:
+    en: Memcached is a distributed high-performance caching system
+    zh: Memcached 是一套分布式的高速缓存系统
+    zh-Hant: Memcached 是一套分散式的高速快取系統
+    ja: Memcachedは分散型の高速キャッシュシステムです
+    ko: Memcached는 분산형 고성능 캐시 시스템입니다
+    ru: Memcached — распределённая высокопроизводительная система кеширования
+    ms: Memcached ialah sistem cache berprestasi tinggi yang teragih
+    pt-br: Memcached é um sistema de cache distribuído de alto desempenho
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://memcached.org/
   github: https://github.com/memcached/memcached
   document: https://github.com/memcached/memcached/wiki
+  architectures:
+    - amd64
+

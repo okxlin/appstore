@@ -17,3 +17,15 @@ additionalProperties:
   website: https://docs.opentdp.org
   github: https://github.com/opentdp/tdp-cloud
   document: https://docs.opentdp.org
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A cloud resource management dashboard deployable across platforms.'
+    zh: '可以跨平台部署的云资源管理面板'
+    zh-Hant: '可以跨平台部署的雲資源管理面板'
+    ja: 'クロスプラットフォームで導入できるクラウドリソース管理ダッシュボードです。'
+    ko: '여러 플랫폼에 배포할 수 있는 클라우드 리소스 관리 대시보드입니다.'
+    ru: 'Панель управления облачными ресурсами, разворачиваемая на разных платформах.'
+    ms: 'Papan pemuka pengurusan sumber awan yang boleh dideploy merentas platform.'
+    pt-br: 'Painel de gerenciamento de recursos em nuvem implantável em várias plataformas.'

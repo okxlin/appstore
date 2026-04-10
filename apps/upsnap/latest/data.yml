@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LISTEN_ADDR
       labelEn: Listening address
       labelZh: 监听地址
+      label:
+        en: 'Listening address'
+        zh: '监听地址'
+        zh-Hant: '監聽位址'
+        ja: 'リッスンアドレス'
+        ko: '수신 주소'
+        ru: 'Адрес прослушивания'
+        ms: 'Alamat pendengaran'
+        pt-br: 'Endereço de escuta'
       required: true
       type: text
     - default: "./data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "@every 10s"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: UPSNAP_INTERVAL
       labelEn: Scan Interval
       labelZh: 扫描间隔
+      label:
+        en: 'Scan Interval'
+        zh: '扫描间隔'
+        zh-Hant: '掃描間隔'
+        ja: 'スキャン間隔'
+        ko: '스캔 간격'
+        ru: 'Интервал сканирования'
+        ms: 'Selang imbasan'
+        pt-br: 'Intervalo de varredura'
       required: true
       type: text
     - default: "192.168.1.0/24"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: UPSNAP_SCAN_RANGE
       labelEn: Scan Range
       labelZh: 扫描网段范围
+      label:
+        en: 'Scan Range'
+        zh: '扫描范围'
+        zh-Hant: '掃描範圍'
+        ja: 'スキャン範囲'
+        ko: '스캔 범위'
+        ru: 'Диапазон сканирования'
+        ms: 'Julat imbasan'
+        pt-br: 'Faixa de varredura'
       required: true
       type: text
     - default: "500ms"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: UPSNAP_SCAN_TIMEOUT
       labelEn: Scan Timeout
       labelZh: 扫描超时
+      label:
+        en: 'Scan Timeout'
+        zh: '扫描超时'
+        zh-Hant: '掃描逾時'
+        ja: 'スキャンタイムアウト'
+        ko: '스캔 시간 초과'
+        ru: 'Тайм-аут сканирования'
+        ms: 'Had masa imbasan'
+        pt-br: 'Tempo limite de varredura'
       required: true
       type: text
     - default: "true"
@@ -55,18 +118,36 @@ additionalProperties:
       envKey: UPSNAP_PING_PRIVILEGED
       labelEn: Ping Privileged
       labelZh: 使用特权权限进行 Ping
+      label:
+        en: 'Ping Privileged'
+        zh: '使用特权权限进行 Ping'
+        zh-Hant: '使用特權權限進行 Ping'
+        ja: '特権で Ping を実行'
+        ko: '특권으로 Ping 실행'
+        ru: 'Ping с привилегиями'
+        ms: 'Ping dengan keistimewaan'
+        pt-br: 'Ping com privilégios'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "Upsnap Dashboard"
       edit: true
       envKey: UPSNAP_WEBSITE_TITLE
       labelEn: Website Title
       labelZh: 网站标题
+      label:
+        en: 'Website Title'
+        zh: '网站标题'
+        zh-Hant: '網站標題'
+        ja: 'サイトタイトル'
+        ko: '웹사이트 제목'
+        ru: 'Заголовок сайта'
+        ms: 'Tajuk laman web'
+        pt-br: 'Título do site'
       required: true
       type: text
     - default: "119.29.29.29"
@@ -74,6 +155,15 @@ additionalProperties:
       envKey: DNS_SERVER_1
       labelEn: DNS Server 1
       labelZh: DNS 服务器 1
+      label:
+        en: 'DNS Server 1'
+        zh: 'DNS 服务器 1'
+        zh-Hant: 'DNS 伺服器 1'
+        ja: 'DNS サーバー 1'
+        ko: 'DNS 서버 1'
+        ru: 'DNS-сервер 1'
+        ms: 'Pelayan DNS 1'
+        pt-br: 'Servidor DNS 1'
       required: true
       type: text
     - default: "223.5.5.5"
@@ -81,5 +171,14 @@ additionalProperties:
       envKey: DNS_SERVER_2
       labelEn: DNS Server 2
       labelZh: DNS 服务器 2
+      label:
+        en: 'DNS Server 2'
+        zh: 'DNS 服务器 2'
+        zh-Hant: 'DNS 伺服器 2'
+        ja: 'DNS サーバー 2'
+        ko: 'DNS 서버 2'
+        ru: 'DNS-сервер 2'
+        ms: 'Pelayan DNS 2'
+        pt-br: 'Servidor DNS 2'
       required: true
       type: text

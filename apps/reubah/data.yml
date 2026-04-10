@@ -12,6 +12,15 @@ additionalProperties:
     - Media
   shortDescZh: 通用文件转换器和图像处理器
   shortDescEn: Universal File Converter & Image Processor
+  description:
+    en: Universal file converter and image processor
+    zh: 通用文件转换器和图像处理器
+    zh-Hant: 通用檔案轉換器和影像處理器
+    ja: 汎用ファイル変換・画像処理ツール
+    ko: 범용 파일 변환기 및 이미지 처리기
+    ru: Универсальный конвертер файлов и обработчик изображений
+    ms: Penukar fail sejagat dan pemproses imej
+    pt-br: Conversor universal de arquivos e processador de imagens
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,6 @@ additionalProperties:
   website: https://github.com/dendianugerah/reubah
   github: https://github.com/dendianugerah/reubah
   document: https://github.com/dendianugerah/reubah
+
+  architectures:
+    - amd64

@@ -1,15 +1,18 @@
 additionalProperties:
   formFields:
-    - child:
-        default: ""
-        envKey: PANEL_DB_HOST
-        labelEn: Database Service
-        labelZh: 数据库服务
-        required: true
-        type: service
-      default: mysql
+    - default: mysql
+      envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
       params:
         - envKey: CHEMEX_DB_PORT
           key: mysql
@@ -22,12 +25,28 @@ additionalProperties:
       required: true
       type: apps
       values:
-        - label: MySQL
+        - label: "MySQL"
           value: mysql
+        - label: "PostgreSQL"
+          value: postgresql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
     - default: chemex
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +55,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -44,6 +72,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -53,6 +90,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -61,6 +107,15 @@ additionalProperties:
       envKey: ENV_PATH
       labelEn: Environment configuration file path
       labelZh: 环境配置文件路径
+      label:
+        en: 'Environment configuration file path'
+        zh: '环境配置文件路径'
+        zh-Hant: '環境配置文件路徑'
+        ja: '環境設定ファイルパス'
+        ko: '환경 구성 파일 경로'
+        ru: 'Путь к файлу конфигурации окружения'
+        ms: 'Laluan fail konfigurasi persekitaran'
+        pt-br: 'Caminho do arquivo de configuração do ambiente'
       required: true
       type: text
     - default: ""
@@ -68,12 +123,30 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis 服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis 服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: ""
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata laluan Redis'
+        pt-br: 'Senha do Redis'
       required: true
       type: password
     - default: 6379
@@ -81,6 +154,15 @@ additionalProperties:
       envKey: REDIS_DB_PORT
       labelEn: Redis Port
       labelZh: Redis端口
+      label:
+        en: 'Redis Port'
+        zh: 'Redis端口'
+        zh-Hant: 'Redis 埠'
+        ja: 'Redis ポート'
+        ko: 'Redis 포트'
+        ru: 'Порт Redis'
+        ms: 'Port Redis'
+        pt-br: 'Porta do Redis'
       required: true
       rule: paramPort
       type: number

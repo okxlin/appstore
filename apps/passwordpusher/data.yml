@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个通过网络传递密码的开源应用程序
   shortDescEn: An opensource application to communicate passwords over the web
+  description:
+    en: An opensource application to communicate passwords over the web
+    zh: 一个通过网络传递密码的开源应用程序
+    zh-Hant: 一個透過網路傳遞密碼的開源應用程式
+    ja: Webでパスワードを伝達するオープンソースアプリ
+    ko: 웹을 통해 비밀번호를 전달하는 오픈소스 애플리케이션
+    ru: Открытое приложение для передачи паролей через веб
+    ms: Aplikasi sumber terbuka untuk menyampaikan kata laluan melalui web
+    pt-br: Aplicativo open-source para compartilhar senhas pela web
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://pwpush.com
   github: https://github.com/pglombardo/PasswordPusher
   document: https://github.com/pglombardo/PasswordPusher/wiki
+  architectures:
+    - amd64

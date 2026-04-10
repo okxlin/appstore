@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 个人记账工具
   shortDescEn: Personal finance management tool
+  description:
+    en: Personal bookkeeping tool
+    zh: 个人记账工具
+    zh-Hant: 個人記帳工具
+    ja: 個人家計簿ツール
+    ko: 개인 가계부 도구
+    ru: Личный инструмент учета расходов
+    ms: Alat perakaunan peribadi
+    pt-br: Ferramenta de controle financeiro pessoal
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://cashbook.oldmoon.top
   github: https://github.com/dingdangdog/cashbook-web
   document: https://github.com/dingdangdog/cashbook-web
+  architectures:
+    - amd64

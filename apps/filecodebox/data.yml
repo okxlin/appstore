@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 文件快递柜-匿名口令分享文本，文件，像拿快递一样取文件
   shortDescEn: Anonymous Passcode Sharing Text, Files, Like Taking Express Delivery for Files
+  description:
+    en: File locker for anonymous passcode sharing of text and files, pickup like parcel delivery
+    zh: 文件快递柜-匿名口令分享文本，文件，像拿快递一样取文件
+    zh-Hant: 文件快遞櫃—匿名口令分享文字、檔案，像拿快遞一樣取檔
+    ja: ファイル宅配ボックス。匿名の合言葉でテキストやファイルを共有し、宅配の受け取りのように取得
+    ko: 파일 택배함—익명 비밀번호로 텍스트와 파일을 공유하고, 택배 받듯이 가져오기
+    ru: "Файловый шкафчик: анонимный код для обмена текстами и файлами, получение как посылки"
+    ms: Loker fail—perkongsian teks dan fail dengan kod laluan tanpa nama, ambil seperti menerima bungkusan
+    pt-br: Armário de arquivos — compartilhamento anônimo de textos e arquivos por senha, retirar como se fosse encomenda
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://share.lanol.cn
   github: https://github.com/vastsa/FileCodeBox
   document: https://github.com/vastsa/FileCodeBox
+  architectures:
+    - amd64

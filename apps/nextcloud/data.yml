@@ -6,6 +6,15 @@ description: Nextcloud 服务器，所有数据的安全家园
 additionalProperties:
   key: nextcloud
   name: Nextcloud
+  description:
+    en: Nextcloud server, a safe home for all your data
+    zh: Nextcloud 服务器，所有数据的安全家园
+    zh-Hant: Nextcloud 伺服器，所有資料的安全家園
+    ja: Nextcloud サーバー、すべてのデータの安全な住まい
+    ko: Nextcloud 서버, 모든 데이터의 안전한 보금자리
+    ru: Сервер Nextcloud — безопасный дом для всех ваших данных
+    ms: Pelayan Nextcloud, rumah selamat untuk semua data anda
+    pt-br: Servidor Nextcloud, um lar seguro para todos os seus dados
   tags:
     - Website
   shortDescZh: Nextcloud 服务器，所有数据的安全家园
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://nextcloud.com/
   github: https://github.com/nextcloud/server
   document: https://docs.nextcloud.com/
+  architectures:
+    - amd64
+    - arm64

@@ -10,6 +10,15 @@ additionalProperties:
     - Server
   shortDescZh: Nginx 网页管理工具
   shortDescEn: Nginx Web page configuration tool
+  description:
+    en: Nginx Web page configuration tool
+    zh: Nginx 网页管理工具
+    zh-Hant: Nginx 網頁管理工具
+    ja: NginxのWeb管理ツール
+    ko: Nginx 웹 관리 도구
+    ru: Веб-инструмент управления Nginx
+    ms: Alat pengurusan web Nginx
+    pt-br: Ferramenta de gerenciamento web do Nginx
   type: runtime
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.nginxwebui.cn
   github: https://github.com/cym1102/nginxWebUI
   document: https://www.nginxwebui.cn/product.html
+  architectures:
+    - amd64

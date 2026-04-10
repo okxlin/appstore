@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: VPS 库存监控工具
   shortDescEn: VPS Stock Monitor Tool
+  description:
+    en: "VPS stock monitoring tool."
+    zh: "VPS 库存监控工具。"
+    zh-Hant: "VPS 庫存監控工具。"
+    ja: "VPS 在庫監視ツールです。"
+    ko: "VPS 재고 모니터링 도구입니다."
+    ru: "Инструмент мониторинга наличия VPS."
+    ms: "Alat pemantauan stok VPS."
+    pt-br: "Ferramenta de monitoramento de estoque de VPS."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/vpslog/vps-stock-monitor
   github: https://github.com/vpslog/vps-stock-monitor
   document: https://github.com/vpslog/vps-stock-monitor
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,5 +22,14 @@ additionalProperties:
       envKey: GPU_DRIVER_TYPE
       labelEn: GPU Driver type
       labelZh: GPU 驱动的类型
+      label:
+        en: 'GPU Driver type'
+        zh: 'GPU 驱动的类型'
+        zh-Hant: 'GPU 驅動的類型'
+        ja: 'GPU ドライバーの種類'
+        ko: 'GPU 드라이버 유형'
+        ru: 'Тип драйвера GPU'
+        ms: 'Jenis pemacu GPU'
+        pt-br: 'Tipo de driver de GPU'
       required: true
       type: text

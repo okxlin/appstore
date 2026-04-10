@@ -6,6 +6,15 @@ description: 基于 Web 的开源音乐收藏服务器和流媒体
 additionalProperties:
   key: navidrome
   name: Navidrome Music Server
+  description:
+    en: Open-source web-based music collection server and streamer
+    zh: 基于 Web 的开源音乐收藏服务器和流媒体
+    zh-Hant: 基於 Web 的開源音樂收藏伺服器和串流媒體
+    ja: Web ベースのオープンソース音楽コレクションサーバーとストリーミング
+    ko: 웹 기반 오픈 소스 음악 컬렉션 서버 및 스트리밍
+    ru: Открытый веб-сервер музыкальной коллекции и стриминга
+    ms: Pelayan koleksi muzik dan penstriman berasaskan web sumber terbuka
+    pt-br: Servidor de coleção de músicas e streaming baseado na web e de código aberto
   tags:
     - Media
   shortDescZh: 基于 Web 的开源音乐收藏服务器和流媒体
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.navidrome.org
   github: https://github.com/navidrome/navidrome
   document: https://www.navidrome.org/docs
+  architectures:
+    - amd64

@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 自托管通知服务器
   shortDescEn: Self-hosted notification server
+  description:
+    en: Self-hosted notification server
+    zh: 自托管通知服务器
+    zh-Hant: 自託管通知伺服器
+    ja: セルフホストの通知サーバー
+    ko: 자체 호스팅 알림 서버
+    ru: Самостоятельно размещаемый сервер уведомлений
+    ms: Pelayan notifikasi hos kendiri
+    pt-br: Servidor de notificações auto-hospedado
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://gotify.net
   github: https://github.com/gotify/server
   document: https://gotify.net/docs/
+  architectures:
+    - amd64
+

@@ -4,6 +4,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -11,6 +20,15 @@ additionalProperties:
       envKey: NEXTAUTH_URL
       labelEn: NextAuth URL
       labelZh: 基本 URL
+      label:
+        en: 'NextAuth URL'
+        zh: '基本 URL'
+        zh-Hant: '基本 URL'
+        ja: 'NextAuth URL（認証用URL）'
+        ko: 'NextAuth URL(인증 URL)'
+        ru: 'URL NextAuth'
+        ms: 'URL NextAuth'
+        pt-br: 'URL do NextAuth'
       required: true
       rule: paramExtUrl
       type: text
@@ -18,6 +36,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_BASE_URL
       labelEn: Next Public Base URL
       labelZh: 公共基本 URL
+      label:
+        en: 'Next Public Base URL'
+        zh: '公共基本 URL'
+        zh-Hant: '公共基本 URL'
+        ja: 'Next 公開ベース URL'
+        ko: 'Next 공개 기본 주소 URL'
+        ru: 'Публичный базовый URL Next'
+        ms: 'URL asas awam Next'
+        pt-br: 'URL base pública do Next'
       required: true
       rule: paramExtUrl
       type: text
@@ -25,6 +52,15 @@ additionalProperties:
       envKey: NEXTAUTH_SECRET
       labelEn: NextAuth Secret
       labelZh: NextAuth 密钥
+      label:
+        en: 'NextAuth Secret'
+        zh: 'NextAuth 密钥'
+        zh-Hant: 'NextAuth 密鑰'
+        ja: 'NextAuth シークレット'
+        ko: 'NextAuth 비밀키'
+        ru: 'Секрет NextAuth'
+        ms: 'Rahsia NextAuth'
+        pt-br: 'Segredo do NextAuth'
       random: true
       required: true
       rule: paramComplexity
@@ -34,6 +70,15 @@ additionalProperties:
       key: postgresql
       labelEn: PostgreSQL Database Service
       labelZh: PostgreSQL 数据库服务
+      label:
+        en: 'PostgreSQL Database Service'
+        zh: 'PostgreSQL 数据库服务'
+        zh-Hant: 'PostgreSQL 資料庫服務'
+        ja: 'PostgreSQL データベースサービス'
+        ko: 'PostgreSQL 데이터베이스 서비스'
+        ru: 'Сервис базы данных PostgreSQL'
+        ms: 'Perkhidmatan pangkalan data PostgreSQL'
+        pt-br: 'Serviço de banco de dados PostgreSQL'
       required: true
       type: service
     - default: "5432"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: PANEL_DB_PORT
       labelEn: Database Port Number
       labelZh: 数据库端口号
+      label:
+        en: 'Database Port Number'
+        zh: '数据库端口号'
+        zh-Hant: '資料庫埠號'
+        ja: 'データベースポート番号'
+        ko: '데이터베이스 포트 번호'
+        ru: 'Номер порта базы данных'
+        ms: 'Nombor port pangkalan data'
+        pt-br: 'Número da porta do banco de dados'
       required: true
       rule: paramPort
       type: number
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '資料庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -56,6 +119,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '資料庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -64,6 +136,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '資料庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity

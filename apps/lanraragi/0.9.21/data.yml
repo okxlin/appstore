@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONTENT_DIRECTORY
       labelEn: Content Directory
       labelZh: 媒体库目录
+      label:
+        en: 'Content Directory'
+        zh: '媒体库目录'
+        zh-Hant: '媒體庫目錄'
+        ja: 'コンテンツディレクトリ'
+        ko: '콘텐츠 디렉터리'
+        ru: 'Каталог контента'
+        ms: 'Direktori kandungan'
+        pt-br: 'Diretório de conteúdo'
       required: true
       type: text
     - default: "./data/thumb"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: THUMBNAIL_DIRECTORY
       labelEn: Thumbnail Directory
       labelZh: 缩略图目录
+      label:
+        en: 'Thumbnail Directory'
+        zh: '缩略图目录'
+        zh-Hant: '縮略圖目錄'
+        ja: 'サムネイルディレクトリ'
+        ko: '썸네일 디렉터리'
+        ru: 'Каталог миниатюр'
+        ms: 'Direktori lakaran kecil'
+        pt-br: 'Diretório de miniaturas'
       required: true
       type: text
     - default: "./data/database"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DATABASE_DIRECTORY
       labelEn: Database Directory
       labelZh: 数据库目录
+      label:
+        en: 'Database Directory'
+        zh: '数据库目录'
+        zh-Hant: '資料庫目錄'
+        ja: 'データベースディレクトリ'
+        ko: '데이터베이스 디렉터리'
+        ru: 'Каталог базы данных'
+        ms: 'Direktori pangkalan data'
+        pt-br: 'Diretório do banco de dados'
       required: true
       type: text
     - default: "./data/plugin"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: PLUGIN_DIRECTORY
       labelEn: Plugin Directory
       labelZh: 插件目录
+      label:
+        en: 'Plugin Directory'
+        zh: '插件目录'
+        zh-Hant: '外掛目錄'
+        ja: 'プラグインディレクトリ'
+        ko: '플러그인 디렉터리'
+        ru: 'Каталог плагинов'
+        ms: 'Direktori pemalam'
+        pt-br: 'Diretório de plugins'
       required: true
       type: text
     - default: ""
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: HTTP_PROXY
       labelEn: HTTP Proxy
       labelZh: HTTP 代理
+      label:
+        en: 'HTTP Proxy'
+        zh: 'HTTP 代理'
+        zh-Hant: 'HTTP 代理'
+        ja: 'HTTP プロキシ'
+        ko: 'HTTP 프록시'
+        ru: 'HTTP-прокси'
+        ms: 'Proksi HTTP'
+        pt-br: 'Proxy HTTP'
       required: false
       type: text
     - default: ""
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS Proxy
       labelZh: HTTPS 代理
+      label:
+        en: 'HTTPS Proxy'
+        zh: 'HTTPS 代理'
+        zh-Hant: 'HTTPS 代理'
+        ja: 'HTTPS プロキシ'
+        ko: 'HTTPS 프록시'
+        ru: 'HTTPS-прокси'
+        ms: 'Proksi HTTPS'
+        pt-br: 'Proxy HTTPS'
       required: false
       type: text
     - default: "Asia/Shanghai"
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

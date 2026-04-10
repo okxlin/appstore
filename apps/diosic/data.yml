@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/Reknij/diosic
   github: https://github.com/Reknij/diosic
   document: https://reknij.github.io/DiosicDocCN/
+  architectures:
+    - amd64
+  description:
+    en: "An open source web-based music collection server and streamer"
+    zh: "一个开源的基于网络的音乐收集服务器和流媒体"
+    zh-Hant: "一個開源的基於網路的音樂收藏伺服器和串流"
+    ja: "オープンソースのWebベース音楽コレクションサーバー兼ストリーマー"
+    ko: "오픈 소스 웹 기반 음악 컬렉션 서버 및 스트리머"
+    ru: "Веб-ориентированный сервер коллекции музыки и стриминга с открытым исходным кодом"
+    ms: "Pelayan koleksi muzik berasaskan web sumber terbuka dan penstrim"
+    pt-br: "Servidor de coleção de músicas baseado na web e streaming de código aberto"

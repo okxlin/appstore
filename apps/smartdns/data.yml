@@ -17,3 +17,15 @@ additionalProperties:
   website: https://pymumu.github.io/smartdns
   github: https://github.com/pymumu/smartdns
   document: https://pymumu.github.io/smartdns
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A DNS server that runs locally.'
+    zh: '一个运行在本地的 DNS 服务器'
+    zh-Hant: '一個運行在本地的 DNS 伺服器'
+    ja: 'ローカルで動作する DNS サーバーです。'
+    ko: '로컬에서 실행되는 DNS 서버입니다.'
+    ru: 'DNS-сервер, работающий локально.'
+    ms: 'Pelayan DNS yang berjalan secara setempat.'
+    pt-br: 'Servidor DNS executado localmente.'

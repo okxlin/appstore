@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款基于 GitHub API 开发的图床工具
   shortDescEn: A picture bed tool based on GitHub API
+  description:
+    en: "Image hosting tool built on the GitHub API."
+    zh: "基于 GitHub API 开发的图床工具。"
+    zh-Hant: "基於 GitHub API 開發的圖床工具。"
+    ja: "GitHub API を基に開発された画像ホスティングツールです。"
+    ko: "GitHub API 기반으로 개발된 이미지 호스팅 도구입니다."
+    ru: "Инструмент для хостинга изображений, построенный на GitHub API."
+    ms: "Alat hos imej yang dibangunkan berasaskan GitHub API."
+    pt-br: "Ferramenta de hospedagem de imagens desenvolvida com a API do GitHub."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://picx.xpoet.cn
   github: https://github.com/XPoet/picx
   document: https://picx-docs.xpoet.cn
+  architectures:
+    - amd64

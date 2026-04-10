@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 专为您打造的可自行托管的个人仪表板
   shortDescEn: A self-hostable personal dashboard built for you
+  description:
+    en: A self-hostable personal dashboard built for you
+    zh: 专为您打造的可自行托管的个人仪表板
+    zh-Hant: 專為您打造的可自行託管的個人儀表板
+    ja: あなたのために作られたセルフホスト可能な個人ダッシュボード
+    ko: 당신을 위해 만들어진 자체 호스팅 개인 대시보드
+    ru: Персональная панель, которую можно самостоятельно хостить, созданная для вас
+    ms: Papan pemuka peribadi boleh hos sendiri yang dibina untuk anda
+    pt-br: Painel pessoal auto-hospedável feito para você
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://dashy.to
   github: https://github.com/Lissy93/dashy
   document: https://dashy.to/docs
+  architectures:
+    - amd64

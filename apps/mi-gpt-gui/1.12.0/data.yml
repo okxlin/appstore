@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: LOGIN_USER
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: 'Username'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       random: true
       required: true
       rule: paramCommon
@@ -22,6 +40,15 @@ additionalProperties:
       envKey: LOGIN_PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity

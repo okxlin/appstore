@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 基于 HTTP 的简单 pub-sub 通知服务
   shortDescEn: A simple HTTP-based pub-sub notification service
+  description:
+    en: A simple HTTP-based pub-sub notification service
+    zh: 基于 HTTP 的简单 pub-sub 通知服务
+    zh-Hant: 基於 HTTP 的簡單 pub-sub 通知服務
+    ja: HTTPベースのシンプルなpub-sub通知サービス
+    ko: HTTP 기반의 간단한 pub-sub 알림 서비스
+    ru: Простой HTTP-сервис уведомлений pub-sub
+    ms: Perkhidmatan pemberitahuan pub-sub ringkas berasaskan HTTP
+    pt-br: Serviço de notificações pub-sub simples baseado em HTTP
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://ntfy.sh/
   github: https://github.com/binwiederhier/ntfy
   document: https://ntfy.sh/docs
+  architectures:
+    - amd64

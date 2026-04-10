@@ -17,3 +17,15 @@ additionalProperties:
   website: https://raneto.com
   github: https://github.com/ryanlelek/Raneto
   document: https://docs.raneto.com
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'A free, open, and simple Node.js knowledge base with Markdown support.'
+    zh: '一个免费、开放、简单的 Markdown 支持的 Node.js 知识库'
+    zh-Hant: '一個免費、開放、簡單且支援 Markdown 的 Node.js 知識庫'
+    ja: '無料でオープン、シンプルな Markdown 対応 Node.js ナレッジベースです。'
+    ko: '무료이고 개방적이며 간단한 Markdown 지원 Node.js 지식 베이스입니다.'
+    ru: 'Бесплатная, открытая и простая база знаний на Node.js с поддержкой Markdown.'
+    ms: 'Pangkalan pengetahuan Node.js yang percuma, terbuka dan ringkas dengan sokongan Markdown.'
+    pt-br: 'Base de conhecimento em Node.js, gratuita, aberta e simples, com suporte a Markdown.'

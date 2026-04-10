@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: /opt/dockge/stacks
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: STACKS_PATH
       labelEn: compose yml folder path (Absolute Path)
       labelZh: compose 编排文件路径 (绝对路径)
+      label:
+        en: 'compose yml folder path (Absolute Path)'
+        zh: 'compose 编排文件路径 (绝对路径)'
+        zh-Hant: 'compose 編排檔路徑（絕對路徑）'
+        ja: 'compose yml フォルダパス（絶対パス）'
+        ko: 'compose yml 폴더 경로(절대 경로)'
+        ru: 'Путь к папке compose yml (абсолютный путь)'
+        ms: 'Laluan folder compose yml (Laluan mutlak)'
+        pt-br: 'Caminho da pasta compose yml (Caminho absoluto)'
       required: true
       type: text

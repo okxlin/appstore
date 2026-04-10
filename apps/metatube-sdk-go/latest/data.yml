@@ -5,27 +5,54 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
-    - child:
+    - default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '數據庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
+      required: true
+      type: apps
+      values:
+        - label: "PostgreSQL"
+          value: postgresql
+      child:
         default: ""
         envKey: PANEL_DB_HOST
         required: true
         type: service
-      default: postgresql
-      envKey: PANEL_DB_TYPE
-      labelEn: Database Service
-      labelZh: 数据库服务
-      required: true
-      type: apps
-      values:
-        - label: PostgreSQL
-          value: postgresql
     - default: "metatube"
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -34,6 +61,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -42,6 +78,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -51,6 +96,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: ""
@@ -58,6 +112,15 @@ additionalProperties:
       envKey: HTTP_PROXY
       labelEn: HTTP Proxy
       labelZh: HTTP 代理
+      label:
+        en: 'HTTP Proxy'
+        zh: 'HTTP 代理'
+        zh-Hant: 'HTTP 代理'
+        ja: 'HTTP プロキシ'
+        ko: 'HTTP 프록시'
+        ru: 'HTTP-прокси'
+        ms: 'Proksi HTTP'
+        pt-br: 'Proxy HTTP'
       required: false
       type: text
     - default: ""
@@ -65,5 +128,14 @@ additionalProperties:
       envKey: HTTPS_PROXY
       labelEn: HTTPS Proxy
       labelZh: HTTPS 代理
+      label:
+        en: 'HTTPS Proxy'
+        zh: 'HTTPS 代理'
+        zh-Hant: 'HTTPS 代理'
+        ja: 'HTTPS プロキシ'
+        ko: 'HTTPS 프록시'
+        ru: 'HTTPS-прокси'
+        ms: 'Proksi HTTPS'
+        pt-br: 'Proxy HTTPS'
       required: false
       type: text

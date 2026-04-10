@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: AList 代理，支持 xiaoya 版 AList 界面管理
   shortDescEn: AList proxy server for TvBox, support playlist and search
+  description:
+    en: An AList proxy that supports managing the Xiaoya edition AList interface.
+    zh: AList 代理，支持 xiaoya 版 AList 界面管理
+    zh-Hant: AList 代理，支援 xiaoya 版 AList 介面管理
+    ja: AList プロキシ。xiaoya 版 AList インターフェースの管理をサポート
+    ko: AList 프록시로, xiaoya 버전 AList 인터페이스 관리를 지원
+    ru: Прокси AList с поддержкой управления интерфейсом AList версии xiaoya.
+    ms: Proksi AList yang menyokong pengurusan antaramuka AList edisi xiaoya.
+    pt-br: Proxy AList com suporte ao gerenciamento da interface AList edição xiaoya.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/power721/alist-tvbox
   github: https://github.com/power721/alist-tvbox
   document: https://github.com/power721/alist-tvbox
+  architectures:
+    - amd64

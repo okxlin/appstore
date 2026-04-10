@@ -6,6 +6,15 @@ description: 一个简单好用安全的开源交互审计系统，支持RDP、S
 additionalProperties:
   key: next-terminal
   name: Next Terminal
+  description:
+    en: A simple, secure open-source interactive audit system supporting RDP, SSH, VNC, Telnet, and Kubernetes.
+    zh: 一个简单好用安全的开源交互审计系统，支持RDP、SSH、VNC、Telnet、Kubernetes协议
+    zh-Hant: 一個簡單好用安全的開源互動審計系統，支援 RDP、SSH、VNC、Telnet、Kubernetes 協議
+    ja: RDP、SSH、VNC、Telnet、Kubernetes をサポートする、シンプルで安全なオープンソースのインタラクティブ監査システム
+    ko: RDP, SSH, VNC, Telnet, Kubernetes 프로토콜을 지원하는 간단하고 안전한 오픈 소스 대화형 감사 시스템
+    ru: Простая и безопасная открытая система интерактивного аудита с поддержкой RDP, SSH, VNC, Telnet и Kubernetes
+    ms: Sistem audit interaktif sumber terbuka yang ringkas, selamat, menyokong RDP, SSH, VNC, Telnet dan Kubernetes
+    pt-br: Sistema de auditoria interativa de código aberto simples e seguro, com suporte a RDP, SSH, VNC, Telnet e Kubernetes
   tags:
     - Tool
   shortDescZh: 一个简单好用安全的开源交互审计系统，支持RDP、SSH、VNC、Telnet、Kubernetes协议
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://next-terminal.typesafe.cn/
   github: https://github.com/dushixiang/next-terminal
   document: https://next-terminal.typesafe.cn/docs/
+  architectures:
+    - amd64

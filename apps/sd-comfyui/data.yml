@@ -1,6 +1,6 @@
 name: Stable Diffusion ComfyUI
 tags:
-  - AI / 大模型
+  - AI
 title: 最强大、模块化的 stable diffusion GUI，具有图形/节点界面
 description: 最强大、模块化的 stable diffusion GUI，具有图形/节点界面
 additionalProperties:
@@ -10,6 +10,15 @@ additionalProperties:
     - AI
   shortDescZh: 最强大、模块化的 stable diffusion GUI，具有图形/节点界面
   shortDescEn: The most powerful and modular stable diffusion GUI with a graph/nodes interface
+  description:
+    en: The most powerful and modular Stable Diffusion GUI with a graph/node interface
+    zh: 最强大、模块化的 stable diffusion GUI，具有图形/节点界面
+    zh-Hant: 最強大、模組化的 stable diffusion GUI，具有圖形/節點介面
+    ja: グラフ/ノードUIを備えた最も強力でモジュール化されたStable Diffusion GUI
+    ko: 그래프/노드 인터페이스를 갖춘 가장 강력하고 모듈화된 Stable Diffusion GUI
+    ru: Самый мощный и модульный GUI для Stable Diffusion с графовым/узловым интерфейсом
+    ms: GUI Stable Diffusion paling berkuasa dan modular dengan antara muka graf/nod
+    pt-br: O GUI do Stable Diffusion mais poderoso e modular, com interface de gráfico/nós
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://github.com/thirdscam/SD-WebUI-Docker
   github: https://github.com/thirdscam/SD-WebUI-Docker
   document: https://github.com/thirdscam/SD-WebUI-Docker
+
+  architectures:
+    - amd64

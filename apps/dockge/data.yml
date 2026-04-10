@@ -17,3 +17,14 @@ additionalProperties:
   website: https://dockge.kuma.pet
   github: https://github.com/louislam/dockge
   document: https://github.com/louislam/dockge
+  architectures:
+    - amd64
+  description:
+    en: "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager"
+    zh: "一个精美的、易于使用的、反应式的自托管 docker compose.yaml 面向堆栈的管理器"
+    zh-Hant: "一個精美、易於使用、反應式的自託管 docker compose.yaml 堆疊管理器"
+    ja: "美しく使いやすい、リアクティブなセルフホスト型の docker compose.yaml スタック管理ツール"
+    ko: "멋지고 사용하기 쉬운 반응형 자체 호스팅 docker compose.yaml 스택 관리자"
+    ru: "Красивый, простой и реактивный самохостинг-менеджер стеков docker compose.yaml"
+    ms: "Pengurus timbunan docker compose.yaml yang cantik, mudah digunakan dan reaktif yang dihos sendiri"
+    pt-br: "Gerenciador de stacks docker compose.yaml auto-hospedado, bonito, fácil de usar e reativo"

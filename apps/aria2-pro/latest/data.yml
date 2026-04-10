@@ -5,6 +5,15 @@ additionalProperties:
       envKey: RPC_PORT_VALUE
       labelEn: RPC port
       labelZh: RPC端口
+      label:
+        en: 'RPC port'
+        zh: 'RPC端口'
+        zh-Hant: 'RPC 埠'
+        ja: 'RPC ポート'
+        ko: 'RPC 포트'
+        ru: 'Порт RPC'
+        ms: 'Port RPC'
+        pt-br: 'Porta RPC'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Listening port
       labelZh: 监听端口
+      label:
+        en: 'Listening port'
+        zh: '监听端口'
+        zh-Hant: '監聽埠'
+        ja: 'リッスンポート'
+        ko: '수신 포트'
+        ru: 'Порт прослушивания'
+        ms: 'Port mendengar'
+        pt-br: 'Porta de escuta'
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: TOKEN
       labelEn: RPC secret
       labelZh: RPC密钥
+      label:
+        en: 'RPC secret'
+        zh: 'RPC密钥'
+        zh-Hant: 'RPC 金鑰'
+        ja: 'RPC シークレット'
+        ko: 'RPC 시크릿'
+        ru: 'Секрет RPC'
+        ms: 'Rahsia RPC'
+        pt-br: 'Segredo RPC'
       random: true
       required: true
       rule: paramCommon
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Path to the configuration file
       labelZh: 配置文件所在路径
+      label:
+        en: 'Path to the configuration file'
+        zh: '配置文件所在路径'
+        zh-Hant: '設定檔所在路徑'
+        ja: '設定ファイルのパス'
+        ko: '설정 파일 경로'
+        ru: 'Путь к файлу конфигурации'
+        ms: 'Laluan fail konfigurasi'
+        pt-br: 'Caminho do arquivo de configuração'
       required: true
       type: text
     - default: ./data/downloads
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download folder path
       labelZh: 下载文件夹路径
+      label:
+        en: 'Download folder path'
+        zh: '下载文件夹路径'
+        zh-Hant: '下載資料夾路徑'
+        ja: 'ダウンロードフォルダーパス'
+        ko: '다운로드 폴더 경로'
+        ru: 'Путь к папке загрузок'
+        ms: 'Laluan folder muat turun'
+        pt-br: 'Caminho da pasta de downloads'
       required: true
       type: text
     - default: https://trackerslist.com/all_aria2.txt
@@ -43,5 +88,14 @@ additionalProperties:
       envKey: TRACKER_URL
       labelEn: TRACKER URL
       labelZh: TRACKER链接
+      label:
+        en: 'TRACKER URL'
+        zh: 'TRACKER链接'
+        zh-Hant: 'TRACKER 連結'
+        ja: 'トラッカー URL'
+        ko: '트래커 URL'
+        ru: 'URL трекера'
+        ms: 'URL TRACKER'
+        pt-br: 'URL do TRACKER'
       required: true
       type: text

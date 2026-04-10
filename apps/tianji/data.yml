@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Tianji 是一款开源的 all-in-one 数据洞察中心
   shortDescEn: Tianji = Website Analytics + Uptime Monitor + Server Status
+  description:
+    en: "Open-source all-in-one data insights hub."
+    zh: "开源的一体化数据洞察中心。"
+    zh-Hant: "開源的一體化資料洞察中心。"
+    ja: "オープンソースのオールインワンデータインサイトセンターです。"
+    ko: "오픈소스 올인원 데이터 인사이트 허브입니다."
+    ru: "Открытый универсальный центр аналитики данных."
+    ms: "Pusat cerapan data serba guna sumber terbuka."
+    pt-br: "Central de insights de dados tudo-em-um e de código aberto."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://tianji.msgbyte.com/
   github: https://github.com/msgbyte/tianji
   document: https://github.com/msgbyte/tianji
+  architectures:
+    - amd64

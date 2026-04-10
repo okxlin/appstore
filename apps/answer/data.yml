@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一款适合任何团队的问答平台软件
   shortDescEn: A Q&A platform software for teams at any scales
+  description:
+    en: A Q&A platform suitable for any team.
+    zh: 一款适合任何团队的问答平台软件
+    zh-Hant: 一款適合任何團隊的問答平台軟體
+    ja: あらゆるチームに適した Q&A プラットフォーム
+    ko: 어떤 팀에도 적합한 Q&A 플랫폼 소프트웨어
+    ru: Платформа вопросов и ответов, подходящая для любой команды.
+    ms: Platform soal jawab yang sesuai untuk mana-mana pasukan.
+    pt-br: Plataforma de perguntas e respostas adequada para qualquer equipe.
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://answer.dev/
   github: https://github.com/answerdev/answer
   document: https://answer.dev/zh-CN/docs
+  architectures:
+    - amd64

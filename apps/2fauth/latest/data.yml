@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: APP_NAME
       labelEn: App Name
       labelZh: 应用名
+      label:
+        en: 'App Name'
+        zh: '应用名'
+        zh-Hant: '應用名'
+        ja: 'アプリ名'
+        ko: '앱 이름'
+        ru: 'Название приложения'
+        ms: 'Nama aplikasi'
+        pt-br: 'Nome do aplicativo'
       required: true
       type: text
     - default: "local"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: APP_ENV
       labelEn: App Environment
       labelZh: 应用环境
+      label:
+        en: 'App Environment'
+        zh: '应用环境'
+        zh-Hant: '應用環境'
+        ja: 'アプリ環境'
+        ko: '앱 환경'
+        ru: 'Среда приложения'
+        ms: 'Persekitaran aplikasi'
+        pt-br: 'Ambiente do aplicativo'
       required: true
       type: select
       values:
@@ -32,6 +59,15 @@ additionalProperties:
       envKey: APP_TIMEZONE
       labelEn: Timezone
       labelZh: 时区
+      label:
+        en: 'Timezone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon waktu'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "false"
@@ -39,18 +75,36 @@ additionalProperties:
       envKey: APP_DEBUG
       labelEn: Debug Mode
       labelZh: 调试模式
+      label:
+        en: 'Debug Mode'
+        zh: '调试模式'
+        zh-Hant: '調試模式'
+        ja: 'デバッグモード'
+        ko: '디버그 모드'
+        ru: 'Режим отладки'
+        ms: 'Mod nyahpepijat'
+        pt-br: 'Modo de depuração'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "admin@localhost.com"
       edit: true
       envKey: SITE_OWNER
       labelEn: Site Owner
       labelZh: 站点拥有者
+      label:
+        en: 'Site Owner'
+        zh: '站点拥有者'
+        zh-Hant: '站點擁有者'
+        ja: 'サイト所有者'
+        ko: '사이트 소유자'
+        ru: 'Владелец сайта'
+        ms: 'Pemilik laman'
+        pt-br: 'Proprietário do site'
       required: true
       type: text
     - default: "yuBiR9dlyokasPeguSPl8oPRLpHiqAbr"
@@ -58,6 +112,15 @@ additionalProperties:
       envKey: APP_KEY
       labelEn: App Key (32 characters)
       labelZh: 应用密钥 (32 位字符)
+      label:
+        en: 'App Key (32 characters)'
+        zh: '应用密钥 (32 位字符)'
+        zh-Hant: '應用金鑰 (32 個字元)'
+        ja: 'アプリキー（32 文字）'
+        ko: '앱 키(32자)'
+        ru: 'Ключ приложения (32 символа)'
+        ms: 'Kunci aplikasi (32 aksara)'
+        pt-br: 'Chave do aplicativo (32 caracteres)'
       required: true
       type: text
     - default: "http://localhost:40273"
@@ -65,6 +128,15 @@ additionalProperties:
       envKey: APP_URL
       labelEn: App URL (External URL)
       labelZh: 应用网址 (外部访问地址)
+      label:
+        en: 'App URL (External URL)'
+        zh: '应用网址 (外部访问地址)'
+        zh-Hant: '應用網址（外部訪問地址）'
+        ja: 'アプリURL（外部アクセスURL）'
+        ko: '앱 URL(외부 접속 주소)'
+        ru: 'URL приложения (внешний адрес)'
+        ms: 'URL aplikasi (alamat luaran)'
+        pt-br: 'URL do aplicativo (endereço externo)'
       required: true
       rule: paramExtUrl
       type: text
@@ -73,18 +145,36 @@ additionalProperties:
       envKey: IS_DEMO_APP
       labelEn: Demo Mode
       labelZh: 演示模式
+      label:
+        en: 'Demo Mode'
+        zh: '演示模式'
+        zh-Hant: '演示模式'
+        ja: 'デモモード'
+        ko: '데모 모드'
+        ru: 'Демо-режим'
+        ms: 'Mod demo'
+        pt-br: 'Modo de demonstração'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "daily"
       edit: true
       envKey: LOG_CHANNEL
       labelEn: Log Channel
       labelZh: 日志通道
+      label:
+        en: 'Log Channel'
+        zh: '日志通道'
+        zh-Hant: '日誌通道'
+        ja: 'ログチャネル'
+        ko: '로그 채널'
+        ru: 'Канал журналов'
+        ms: 'Saluran log'
+        pt-br: 'Canal de log'
       required: true
       type: text
     - default: "notice"
@@ -92,6 +182,15 @@ additionalProperties:
       envKey: LOG_LEVEL
       labelEn: Log Level
       labelZh: 日志级别
+      label:
+        en: 'Log Level'
+        zh: '日志级别'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 레벨'
+        ru: 'Уровень логирования'
+        ms: 'Tahap log'
+        pt-br: 'Nível de log'
       required: true
       type: select
       values:
@@ -116,6 +215,15 @@ additionalProperties:
       envKey: DB_DATABASE
       labelEn: Database Path
       labelZh: 数据库路径
+      label:
+        en: 'Database Path'
+        zh: '数据库路径'
+        zh-Hant: '資料庫路徑'
+        ja: 'データベースパス'
+        ko: '데이터베이스 경로'
+        ru: 'Путь к базе данных'
+        ms: 'Laluan pangkalan data'
+        pt-br: 'Caminho do banco de dados'
       required: true
       type: text
     - default: "file"
@@ -123,6 +231,15 @@ additionalProperties:
       envKey: CACHE_DRIVER
       labelEn: Cache Driver
       labelZh: 缓存驱动
+      label:
+        en: 'Cache Driver'
+        zh: '缓存驱动'
+        zh-Hant: '快取驅動'
+        ja: 'キャッシュドライバー'
+        ko: '캐시 드라이버'
+        ru: 'Драйвер кэша'
+        ms: 'Pemacu cache'
+        pt-br: 'Driver de cache'
       required: true
       type: text
     - default: "file"
@@ -130,6 +247,15 @@ additionalProperties:
       envKey: SESSION_DRIVER
       labelEn: Session Driver
       labelZh: 会话驱动
+      label:
+        en: 'Session Driver'
+        zh: '会话驱动'
+        zh-Hant: '工作階段驅動'
+        ja: 'セッションドライバー'
+        ko: '세션 드라이버'
+        ru: 'Драйвер сессии'
+        ms: 'Pemacu sesi'
+        pt-br: 'Driver de sessão'
       required: true
       type: text
     - default: "log"
@@ -137,6 +263,15 @@ additionalProperties:
       envKey: MAIL_MAILER
       labelEn: Mailer
       labelZh: 邮件发送方式
+      label:
+        en: 'Mailer'
+        zh: '邮件发送方式'
+        zh-Hant: '郵件發送方式'
+        ja: 'メール送信方式'
+        ko: '메일 전송 방식'
+        ru: 'Способ отправки почты'
+        ms: 'Kaedah penghantaran e-mel'
+        pt-br: 'Método de envio de e-mail'
       required: true
       type: text
     - default: ""
@@ -144,6 +279,15 @@ additionalProperties:
       envKey: MAIL_HOST
       labelEn: Mail Host
       labelZh: 邮件服务器
+      label:
+        en: 'Mail Host'
+        zh: '邮件服务器'
+        zh-Hant: '郵件伺服器'
+        ja: 'メールサーバー'
+        ko: '메일 서버'
+        ru: 'Почтовый сервер'
+        ms: 'Pelayan e-mel'
+        pt-br: 'Servidor de e-mail'
       required: false
       type: text
     - default: ""
@@ -151,6 +295,15 @@ additionalProperties:
       envKey: MAIL_PORT
       labelEn: Mail Port
       labelZh: 邮件端口
+      label:
+        en: 'Mail Port'
+        zh: '邮件端口'
+        zh-Hant: '郵件埠'
+        ja: 'メールポート'
+        ko: '메일 포트'
+        ru: 'Почтовый порт'
+        ms: 'Port mel'
+        pt-br: 'Porta de e-mail'
       required: false
       type: number
     - default: ""
@@ -158,6 +311,15 @@ additionalProperties:
       envKey: MAIL_USERNAME
       labelEn: Mail Username
       labelZh: 邮件用户名
+      label:
+        en: 'Mail Username'
+        zh: '邮件用户名'
+        zh-Hant: '郵件使用者名稱'
+        ja: 'メールユーザー名'
+        ko: '메일 사용자 이름'
+        ru: 'Имя пользователя почты'
+        ms: 'Nama pengguna e-mel'
+        pt-br: 'Nome de usuário do e-mail'
       required: false
       type: text
     - default: ""
@@ -165,6 +327,15 @@ additionalProperties:
       envKey: MAIL_PASSWORD
       labelEn: Mail Password
       labelZh: 邮件密码
+      label:
+        en: 'Mail Password'
+        zh: '邮件密码'
+        zh-Hant: '郵件密碼'
+        ja: 'メールパスワード'
+        ko: '메일 비밀번호'
+        ru: 'Пароль почты'
+        ms: 'Kata laluan e-mel'
+        pt-br: 'Senha do e-mail'
       required: false
       type: password
     - default: ""
@@ -172,6 +343,15 @@ additionalProperties:
       envKey: MAIL_ENCRYPTION
       labelEn: Mail Encryption
       labelZh: 邮件加密方式
+      label:
+        en: 'Mail Encryption'
+        zh: '邮件加密方式'
+        zh-Hant: '郵件加密方式'
+        ja: 'メール暗号化方式'
+        ko: '메일 암호화 방식'
+        ru: 'Способ шифрования почты'
+        ms: 'Kaedah penyulitan e-mel'
+        pt-br: 'Método de criptografia do e-mail'
       required: false
       type: text
     - default: ""
@@ -179,6 +359,15 @@ additionalProperties:
       envKey: MAIL_FROM_NAME
       labelEn: Mail From Name
       labelZh: 邮件发件人姓名
+      label:
+        en: 'Mail From Name'
+        zh: '邮件发件人姓名'
+        zh-Hant: '郵件寄件人姓名'
+        ja: '差出人名'
+        ko: '메일 발신자 이름'
+        ru: 'Имя отправителя'
+        ms: 'Nama pengirim e-mel'
+        pt-br: 'Nome do remetente'
       required: false
       type: text
     - default: ""
@@ -186,6 +375,15 @@ additionalProperties:
       envKey: MAIL_FROM_ADDRESS
       labelEn: Mail From Address
       labelZh: 邮件发件人地址
+      label:
+        en: 'Mail From Address'
+        zh: '邮件发件人地址'
+        zh-Hant: '郵件寄件人地址'
+        ja: '差出人アドレス'
+        ko: '메일 발신자 주소'
+        ru: 'Адрес отправителя'
+        ms: 'Alamat pengirim e-mel'
+        pt-br: 'Endereço do remetente'
       required: false
       type: text
     - default: "true"
@@ -193,18 +391,36 @@ additionalProperties:
       envKey: MAIL_VERIFY_SSL_PEER
       labelEn: Mail Verify SSL Peer
       labelZh: 邮件验证 SSL 证书
+      label:
+        en: 'Mail Verify SSL Peer'
+        zh: '邮件验证 SSL 证书'
+        zh-Hant: '郵件驗證 SSL 憑證'
+        ja: 'メールのSSL証明書を検証'
+        ko: '메일 SSL 인증서 검증'
+        ru: 'Проверка SSL-сертификата почты'
+        ms: 'Sahkan sijil SSL e-mel'
+        pt-br: 'Verificar certificado SSL do e-mail'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "60"
       edit: true
       envKey: THROTTLE_API
       labelEn: API Throttle
       labelZh: API 限制
+      label:
+        en: 'API Throttle'
+        zh: 'API 限制'
+        zh-Hant: 'API 限制'
+        ja: 'API 制限'
+        ko: 'API 제한'
+        ru: 'Ограничение API'
+        ms: 'Had API'
+        pt-br: 'Limite da API'
       required: true
       type: number
     - default: "5"
@@ -212,6 +428,15 @@ additionalProperties:
       envKey: LOGIN_THROTTLE
       labelEn: Login Throttle
       labelZh: 登录限制
+      label:
+        en: 'Login Throttle'
+        zh: '登录限制'
+        zh-Hant: '登入限制'
+        ja: 'ログイン制限'
+        ko: '로그인 제한'
+        ru: 'Ограничение входа'
+        ms: 'Had log masuk'
+        pt-br: 'Limite de login'
       required: true
       type: number
     - default: "web-guard"
@@ -219,6 +444,15 @@ additionalProperties:
       envKey: AUTHENTICATION_GUARD
       labelEn: Authentication Guard
       labelZh: 认证保护
+      label:
+        en: 'Authentication Guard'
+        zh: '认证保护'
+        zh-Hant: '驗證保護'
+        ja: '認証ガード'
+        ko: '인증 보호'
+        ru: 'Защита аутентификации'
+        ms: 'Perlindungan pengesahan'
+        pt-br: 'Proteção de autenticação'
       required: true
       type: select
       values:
@@ -231,6 +465,15 @@ additionalProperties:
       envKey: AUTHENTICATION_LOG_RETENTION
       labelEn: Authentication Log Retention
       labelZh: 认证日志保留
+      label:
+        en: 'Authentication Log Retention'
+        zh: '认证日志保留'
+        zh-Hant: '驗證日誌保留'
+        ja: '認証ログ保持'
+        ko: '인증 로그 보존'
+        ru: 'Хранение журналов аутентификации'
+        ms: 'Pengekalan log pengesahan'
+        pt-br: 'Retenção de logs de autenticação'
       required: true
       type: number
     - default: ""
@@ -238,6 +481,15 @@ additionalProperties:
       envKey: AUTH_PROXY_HEADER_FOR_USER
       labelEn: Authentication Proxy Header for User
       labelZh: 用户认证代理头
+      label:
+        en: 'Authentication Proxy Header for User'
+        zh: '用户认证代理头'
+        zh-Hant: '使用者驗證代理標頭'
+        ja: 'ユーザー用認証プロキシヘッダー'
+        ko: '사용자용 인증 프록시 헤더'
+        ru: 'Заголовок прокси-аутентификации для пользователя'
+        ms: 'Pengepala proksi pengesahan untuk pengguna'
+        pt-br: 'Cabeçalho de proxy de autenticação para usuário'
       required: false
       type: text
     - default: ""
@@ -245,6 +497,15 @@ additionalProperties:
       envKey: AUTH_PROXY_HEADER_FOR_EMAIL
       labelEn: Authentication Proxy Header for Email
       labelZh: 邮箱认证代理头
+      label:
+        en: 'Authentication Proxy Header for Email'
+        zh: '邮箱认证代理头'
+        zh-Hant: '電子郵件驗證代理標頭'
+        ja: 'メール用認証プロキシヘッダー'
+        ko: '이메일용 인증 프록시 헤더'
+        ru: 'Заголовок прокси-аутентификации для почты'
+        ms: 'Pengepala proksi pengesahan untuk e-mel'
+        pt-br: 'Cabeçalho de proxy de autenticação para e-mail'
       required: false
       type: text
     - default: ""
@@ -252,6 +513,15 @@ additionalProperties:
       envKey: PROXY_LOGOUT_URL
       labelEn: Proxy Logout URL
       labelZh: 代理注销网址
+      label:
+        en: 'Proxy Logout URL'
+        zh: '代理注销网址'
+        zh-Hant: '代理登出網址'
+        ja: 'プロキシログアウトURL'
+        ko: '프록시 로그아웃 URL'
+        ru: 'URL выхода через прокси'
+        ms: 'URL log keluar proksi'
+        pt-br: 'URL de logout do proxy'
       required: false
       type: text
     - default: "2FAuth"
@@ -259,6 +529,15 @@ additionalProperties:
       envKey: WEBAUTHN_NAME
       labelEn: WebAuthn Name
       labelZh: WebAuthn 名称
+      label:
+        en: 'WebAuthn Name'
+        zh: 'WebAuthn 名称'
+        zh-Hant: 'WebAuthn 名稱'
+        ja: 'WebAuthn 名称'
+        ko: 'WebAuthn 이름'
+        ru: 'Имя WebAuthn'
+        ms: 'Nama WebAuthn'
+        pt-br: 'Nome do WebAuthn'
       required: true
       type: text
     - default: ""
@@ -266,6 +545,15 @@ additionalProperties:
       envKey: WEBAUTHN_ID
       labelEn: WebAuthn ID
       labelZh: WebAuthn ID
+      label:
+        en: 'WebAuthn ID'
+        zh: 'WebAuthn ID'
+        zh-Hant: 'WebAuthn ID'
+        ja: 'WebAuthn 識別子'
+        ko: 'WebAuthn 식별자'
+        ru: 'Идентификатор WebAuthn'
+        ms: 'Pengecam WebAuthn'
+        pt-br: 'Identificador do WebAuthn'
       required: false
       type: text
     - default: "preferred"
@@ -273,6 +561,15 @@ additionalProperties:
       envKey: WEBAUTHN_USER_VERIFICATION
       labelEn: WebAuthn User Verification
       labelZh: WebAuthn 用户验证
+      label:
+        en: 'WebAuthn User Verification'
+        zh: 'WebAuthn 用户验证'
+        zh-Hant: 'WebAuthn 使用者驗證'
+        ja: 'WebAuthn ユーザー検証'
+        ko: 'WebAuthn 사용자 확인'
+        ru: 'Проверка пользователя WebAuthn'
+        ms: 'Pengesahan pengguna WebAuthn'
+        pt-br: 'Verificação de usuário do WebAuthn'
       required: true
       type: select
       values:
@@ -287,6 +584,15 @@ additionalProperties:
       envKey: TRUSTED_PROXIES
       labelEn: Trusted Proxies
       labelZh: 信任代理
+      label:
+        en: 'Trusted Proxies'
+        zh: '信任代理'
+        zh-Hant: '受信任代理'
+        ja: '信頼済みプロキシ'
+        ko: '신뢰할 수 있는 프록시'
+        ru: 'Доверенные прокси'
+        ms: 'Proksi dipercayai'
+        pt-br: 'Proxies confiáveis'
       required: false
       type: text
     - default: ""
@@ -294,6 +600,15 @@ additionalProperties:
       envKey: PROXY_FOR_OUTGOING_REQUESTS
       labelEn: Proxy for Outgoing Requests
       labelZh: 出站请求代理
+      label:
+        en: 'Proxy for Outgoing Requests'
+        zh: '出站请求代理'
+        zh-Hant: '對外請求代理'
+        ja: '外向きリクエスト用プロキシ'
+        ko: '아웃바운드 요청 프록시'
+        ru: 'Прокси для исходящих запросов'
+        ms: 'Proksi untuk permintaan keluar'
+        pt-br: 'Proxy para requisições de saída'
       required: false
       type: text
     - default: "log"
@@ -301,6 +616,15 @@ additionalProperties:
       envKey: BROADCAST_DRIVER
       labelEn: Broadcast Driver
       labelZh: 广播驱动
+      label:
+        en: 'Broadcast Driver'
+        zh: '广播驱动'
+        zh-Hant: '廣播驅動'
+        ja: 'ブロードキャストドライバー'
+        ko: '브로드캐스트 드라이버'
+        ru: 'Драйвер широковещательной рассылки'
+        ms: 'Pemacu siaran'
+        pt-br: 'Driver de broadcast'
       required: true
       type: text
     - default: "sync"
@@ -308,6 +632,15 @@ additionalProperties:
       envKey: QUEUE_DRIVER
       labelEn: Queue Driver
       labelZh: 队列驱动
+      label:
+        en: 'Queue Driver'
+        zh: '队列驱动'
+        zh-Hant: '佇列驅動'
+        ja: 'キュードライバー'
+        ko: '큐 드라이버'
+        ru: 'Драйвер очереди'
+        ms: 'Pemacu baris gilir'
+        pt-br: 'Driver de fila'
       required: true
       type: text
     - default: "120"
@@ -315,6 +648,15 @@ additionalProperties:
       envKey: SESSION_LIFETIME
       labelEn: Session Lifetime
       labelZh: 会话有效期
+      label:
+        en: 'Session Lifetime'
+        zh: '会话有效期'
+        zh-Hant: '工作階段有效期'
+        ja: 'セッション有効期限'
+        ko: '세션 유지 시간'
+        ru: 'Время жизни сессии'
+        ms: 'Tempoh sesi'
+        pt-br: 'Tempo de vida da sessão'
       required: true
       type: number
     - default: ""
@@ -323,6 +665,15 @@ additionalProperties:
       key: redis
       labelEn: Redis Service
       labelZh: Redis服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
       required: true
       type: service
     - default: "6379"
@@ -330,6 +681,15 @@ additionalProperties:
       envKey: REDIS_PORT
       labelEn: Redis Service Port
       labelZh: Redis服务端口
+      label:
+        en: 'Redis Service Port'
+        zh: 'Redis服务端口'
+        zh-Hant: 'Redis 服務埠'
+        ja: 'Redis サービスポート'
+        ko: 'Redis 서비스 포트'
+        ru: 'Порт сервиса Redis'
+        ms: 'Port perkhidmatan Redis'
+        pt-br: 'Porta do serviço Redis'
       required: true
       rule: paramPort
       type: number
@@ -338,6 +698,15 @@ additionalProperties:
       envKey: PANEL_REDIS_ROOT_PASSWORD
       labelEn: Redis Password
       labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata laluan Redis'
+        pt-br: 'Senha do Redis'
       required: true
       type: password
     - default: ""
@@ -345,6 +714,15 @@ additionalProperties:
       envKey: PUSHER_APP_ID
       labelEn: Pusher App ID
       labelZh: Pusher 应用 ID
+      label:
+        en: 'Pusher App ID'
+        zh: 'Pusher 应用 ID'
+        zh-Hant: 'Pusher 應用 ID'
+        ja: 'Pusher アプリ ID'
+        ko: 'Pusher 앱 ID'
+        ru: 'ID приложения Pusher'
+        ms: 'ID aplikasi Pusher'
+        pt-br: 'ID do aplicativo Pusher'
       required: false
       type: text
     - default: ""
@@ -352,6 +730,15 @@ additionalProperties:
       envKey: PUSHER_APP_KEY
       labelEn: Pusher App Key
       labelZh: Pusher 应用密钥
+      label:
+        en: 'Pusher App Key'
+        zh: 'Pusher 应用密钥'
+        zh-Hant: 'Pusher 應用金鑰'
+        ja: 'Pusher アプリキー'
+        ko: 'Pusher 앱 키'
+        ru: 'Ключ приложения Pusher'
+        ms: 'Kunci aplikasi Pusher'
+        pt-br: 'Chave do aplicativo Pusher'
       required: false
       type: text
     - default: ""
@@ -359,6 +746,15 @@ additionalProperties:
       envKey: PUSHER_APP_SECRET
       labelEn: Pusher App Secret
       labelZh: Pusher 应用密钥
+      label:
+        en: 'Pusher App Secret'
+        zh: 'Pusher 应用密钥'
+        zh-Hant: 'Pusher 應用密鑰'
+        ja: 'Pusher アプリシークレット'
+        ko: 'Pusher 앱 시크릿'
+        ru: 'Секрет приложения Pusher'
+        ms: 'Rahsia aplikasi Pusher'
+        pt-br: 'Segredo do aplicativo Pusher'
       required: false
       type: password
     - default: "mt1"
@@ -366,6 +762,15 @@ additionalProperties:
       envKey: PUSHER_APP_CLUSTER
       labelEn: Pusher App Cluster
       labelZh: Pusher 应用集群
+      label:
+        en: 'Pusher App Cluster'
+        zh: 'Pusher 应用集群'
+        zh-Hant: 'Pusher 應用叢集'
+        ja: 'Pusher アプリクラスター'
+        ko: 'Pusher 앱 클러스터'
+        ru: 'Кластер приложения Pusher'
+        ms: 'Kluster aplikasi Pusher'
+        pt-br: 'Cluster do aplicativo Pusher'
       required: true
       type: text
     - default: "local"
@@ -373,6 +778,15 @@ additionalProperties:
       envKey: MIX_ENV
       labelEn: Mix Environment
       labelZh: Mix 环境
+      label:
+        en: 'Mix Environment'
+        zh: 'Mix 环境'
+        zh-Hant: 'Mix 環境'
+        ja: 'Mix 環境'
+        ko: 'Mix 환경'
+        ru: 'Среда Mix'
+        ms: 'Persekitaran Mix'
+        pt-br: 'Ambiente do Mix'
       required: true
       type: text
     - default: ""
@@ -380,6 +794,15 @@ additionalProperties:
       envKey: OPENID_AUTHORIZE_URL
       labelEn: OpenID Authorize URL (Edit to remove comments in compose.yml to take effect)
       labelZh: OpenID 授权 URL (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'OpenID Authorize URL (Edit to remove comments in compose.yml to take effect)'
+        zh: 'OpenID 授权 URL (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'OpenID 授權 URL（編輯移除 compose.yml 註解後生效）'
+        ja: 'OpenID 認可 URL（有効にするには compose.yml のコメントを外してください）'
+        ko: 'OpenID 인증 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL авторизации OpenID (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL kebenaran OpenID (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de autorização OpenID (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -387,6 +810,15 @@ additionalProperties:
       envKey: OPENID_TOKEN_URL
       labelEn: OpenID Token URL (Edit to remove comments in compose.yml to take effect)
       labelZh: OpenID 令牌 URL (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'OpenID Token URL (Edit to remove comments in compose.yml to take effect)'
+        zh: 'OpenID 令牌 URL (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'OpenID 權杖 URL（編輯移除 compose.yml 註解後生效）'
+        ja: 'OpenID トークン URL（有効にするには compose.yml のコメントを外してください）'
+        ko: 'OpenID 토큰 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL токена OpenID (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL token OpenID (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL do token OpenID (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -394,6 +826,15 @@ additionalProperties:
       envKey: OPENID_USERINFO_URL
       labelEn: OpenID Userinfo URL (Edit to remove comments in compose.yml to take effect)
       labelZh: OpenID 用户信息 URL (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'OpenID Userinfo URL (Edit to remove comments in compose.yml to take effect)'
+        zh: 'OpenID 用户信息 URL (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'OpenID 使用者資訊 URL（編輯移除 compose.yml 註解後生效）'
+        ja: 'OpenID Userinfo URL（有効にするには compose.yml のコメントを外してください）'
+        ko: 'OpenID 사용자 정보 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL сведений о пользователе OpenID (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL maklumat pengguna OpenID (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de informações do usuário OpenID (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -401,6 +842,15 @@ additionalProperties:
       envKey: OPENID_CLIENT_ID
       labelEn: OpenID Client ID (Edit to remove comments in compose.yml to take effect)
       labelZh: OpenID 客户端 ID (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'OpenID Client ID (Edit to remove comments in compose.yml to take effect)'
+        zh: 'OpenID 客户端 ID (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'OpenID 用戶端 ID（編輯移除 compose.yml 註解後生效）'
+        ja: 'OpenID クライアント ID（有効にするには compose.yml のコメントを外してください）'
+        ko: 'OpenID 클라이언트 ID (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'ID клиента OpenID (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'ID klien OpenID (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'ID do cliente OpenID (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -408,6 +858,15 @@ additionalProperties:
       envKey: OPENID_CLIENT_SECRET
       labelEn: OpenID Client Secret (Edit to remove comments in compose.yml to take effect)
       labelZh: OpenID 客户端密钥 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'OpenID Client Secret (Edit to remove comments in compose.yml to take effect)'
+        zh: 'OpenID 客户端密钥 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'OpenID 用戶端密鑰（編輯移除 compose.yml 註解後生效）'
+        ja: 'OpenID クライアントシークレット（有効にするには compose.yml のコメントを外してください）'
+        ko: 'OpenID 클라이언트 시크릿 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Секрет клиента OpenID (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Rahsia klien OpenID (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Segredo do cliente OpenID (remova os comentários em compose.yml para ativar)'
       required: false
       type: password
     - default: ""
@@ -415,6 +874,15 @@ additionalProperties:
       envKey: GITHUB_CLIENT_ID
       labelEn: GitHub Client ID (Edit to remove comments in compose.yml to take effect)
       labelZh: GitHub 客户端 ID (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'GitHub Client ID (Edit to remove comments in compose.yml to take effect)'
+        zh: 'GitHub 客户端 ID (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'GitHub 用戶端 ID（編輯移除 compose.yml 註解後生效）'
+        ja: 'GitHub クライアント ID（有効にするには compose.yml のコメントを外してください）'
+        ko: 'GitHub 클라이언트 ID (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'ID клиента GitHub (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'ID klien GitHub (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'ID do cliente GitHub (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -422,5 +890,14 @@ additionalProperties:
       envKey: GITHUB_CLIENT_SECRET
       labelEn: GitHub Client Secret (Edit to remove comments in compose.yml to take effect)
       labelZh: GitHub 客户端密钥 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'GitHub Client Secret (Edit to remove comments in compose.yml to take effect)'
+        zh: 'GitHub 客户端密钥 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'GitHub 用戶端密鑰（編輯移除 compose.yml 註解後生效）'
+        ja: 'GitHub クライアントシークレット（有効にするには compose.yml のコメントを外してください）'
+        ko: 'GitHub 클라이언트 시크릿 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Секрет клиента GitHub (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Rahsia klien GitHub (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Segredo do cliente GitHub (remova os comentários em compose.yml para ativar)'
       required: false
       type: password

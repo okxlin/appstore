@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 电影元数据搜刮器
   shortDescEn: Movie metadata scraper
+  description:
+    en: Movie metadata scraper
+    zh: 电影元数据搜刮器
+    zh-Hant: 電影元資料搜刮器
+    ja: 映画メタデータのスクレイパー
+    ko: 영화 메타데이터 스크래퍼
+    ru: Скрапер метаданных фильмов
+    ms: Pengikis metadata filem
+    pt-br: Coletor de metadados de filmes
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://hub.docker.com/r/stainless403/mdcx-builtin-gui-base
   github: https://github.com/northsea4/mdcx-docker
   document: https://github.com/northsea4/mdcx-docker
+  architectures:
+    - amd64
+

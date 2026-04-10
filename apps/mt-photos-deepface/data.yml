@@ -1,12 +1,21 @@
 name: MT Photos Deepface
 tags:
   - 多媒体
-  - AI / 大模型
+  - AI
 title: MT Photos 人脸识别 API
 description: MT Photos 人脸识别 API
 additionalProperties:
   key: mt-photos-deepface
   name: MT Photos Deepface
+  description:
+    en: MT Photos face recognition API
+    zh: MT Photos 人脸识别 API
+    zh-Hant: MT Photos 人臉識別 API
+    ja: MT Photosの顔認識API
+    ko: MT Photos의 얼굴 인식 기능을 제공하는 API
+    ru: API распознавания лиц MT Photos
+    ms: API pengecaman wajah MT Photos
+    pt-br: API de reconhecimento facial do MT Photos
   tags:
     - Media
     - AI
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://mtmt.tech
   github: https://github.com/MT-Photos/mt-photos-deepface
   document: https://mtmt.tech
+  architectures:
+    - amd64

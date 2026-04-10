@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PGADMIN_EMAIL
       labelEn: Admin Email
       labelZh: 管理员邮箱
+      label:
+        en: 'Admin Email'
+        zh: '管理员邮箱'
+        zh-Hant: '管理員郵箱'
+        ja: '管理者メール'
+        ko: '관리자 이메일'
+        ru: 'Электронная почта администратора'
+        ms: 'E-mel pentadbir'
+        pt-br: 'E-mail do administrador'
       required: true
       type: text
     - default: pgadmin4
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PGADMIN_PASSWORD
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: 'Admin Password'
+        zh: '管理员密码'
+        zh-Hant: '管理員密碼'
+        ja: '管理者パスワード'
+        ko: '관리자 비밀번호'
+        ru: 'Пароль администратора'
+        ms: 'Kata laluan pentadbir'
+        pt-br: 'Senha de administrador'
       random: false
       required: true
       rule: paramComplexity

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: NEZHA_BASE_URL
       labelEn: Nezha Base Url
       labelZh: 哪吒面板地址
+      label:
+        en: 'Nezha Base Url'
+        zh: '哪吒面板地址'
+        zh-Hant: '哪吒面板地址'
+        ja: 'Nezha パネルのURL'
+        ko: 'Nezha 패널 주소'
+        ru: 'Адрес панели Nezha'
+        ms: 'URL panel Nezha'
+        pt-br: 'URL do painel Nezha'
       required: true
       type: text
       edit: true
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: NEZHA_AUTH
       labelEn: Nezha API Token
       labelZh: 哪吒面板 API Token
+      label:
+        en: 'Nezha API Token'
+        zh: '哪吒面板 API Token'
+        zh-Hant: '哪吒面板 API Token'
+        ja: 'Nezha API トークン'
+        ko: 'Nezha API 토큰'
+        ru: 'API-токен Nezha'
+        ms: 'Token API Nezha'
+        pt-br: 'Token da API do Nezha'
       required: true
       type: text
       edit: true
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_NezhaFetchInterval
       labelEn: Nezha Fetch Interval
       labelZh: 获取数据间隔（毫秒）
+      label:
+        en: 'Nezha Fetch Interval'
+        zh: '获取数据间隔（毫秒）'
+        zh-Hant: '取得資料間隔（毫秒）'
+        ja: '取得間隔（ミリ秒）'
+        ko: '가져오기 간격(밀리초)'
+        ru: 'Интервал получения данных (мс)'
+        ms: 'Selang ambil data (ms)'
+        pt-br: 'Intervalo de coleta de dados (ms)'
       required: true
       type: number
     - default: "https://nezha-cf.buycoffee.top/apple-touch-icon.png"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_CustomLogo
       labelEn: Custom Logo
       labelZh: 自定义 Logo
+      label:
+        en: 'Custom Logo'
+        zh: '自定义 Logo'
+        zh-Hant: '自訂 Logo'
+        ja: 'カスタムロゴ'
+        ko: '사용자 지정 로고'
+        ru: 'Пользовательский логотип'
+        ms: 'Logo tersuai'
+        pt-br: 'Logo personalizado'
       required: true
       type: text
     - default: "Nezha-Dash"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_CustomTitle
       labelEn: Custom Title
       labelZh: 自定义标题
+      label:
+        en: 'Custom Title'
+        zh: '自定义标题'
+        zh-Hant: '自訂標題'
+        ja: 'カスタムタイトル'
+        ko: '사용자 지정 제목'
+        ru: 'Пользовательский заголовок'
+        ms: 'Tajuk tersuai'
+        pt-br: 'Título personalizado'
       required: true
       type: text
     - default: "Nezha-Dash"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_CustomDescription
       labelEn: Custom Description
       labelZh: 自定义描述
+      label:
+        en: 'Custom Description'
+        zh: '自定义描述'
+        zh-Hant: '自訂描述'
+        ja: 'カスタム説明'
+        ko: '사용자 지정 설명'
+        ru: 'Пользовательское описание'
+        ms: 'Penerangan tersuai'
+        pt-br: 'Descrição personalizada'
       required: true
       type: text
     - default: "zh"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: DEFAULT_LOCALE
       labelEn: DefaultLocale
       labelZh: 默认语言
+      label:
+        en: 'DefaultLocale'
+        zh: '默认语言'
+        zh-Hant: '預設語言'
+        ja: '既定の言語'
+        ko: '기본 언어'
+        ru: 'Язык по умолчанию'
+        ms: 'Bahasa lalai'
+        pt-br: 'Idioma padrão'
       required: true
       type: select
       values:
@@ -71,6 +143,15 @@ additionalProperties:
       envKey: ForceShowAllServers
       labelEn: Force Show All Servers
       labelZh: 是否强制显示所有服务器
+      label:
+        en: 'Force Show All Servers'
+        zh: '是否强制显示所有服务器'
+        zh-Hant: '是否強制顯示所有伺服器'
+        ja: 'すべてのサーバーを強制表示'
+        ko: '모든 서버 강제 표시'
+        ru: 'Принудительно показывать все серверы'
+        ms: 'Paksa paparkan semua pelayan'
+        pt-br: 'Forçar exibição de todos os servidores'
       required: true
       type: select
       values:
@@ -83,6 +164,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_ShowFlag
       labelEn: Show Flag
       labelZh: 是否显示旗帜
+      label:
+        en: 'Show Flag'
+        zh: '是否显示旗帜'
+        zh-Hant: '是否顯示旗幟'
+        ja: '旗を表示'
+        ko: '국기 표시'
+        ru: 'Показывать флаг'
+        ms: 'Papar bendera'
+        pt-br: 'Mostrar bandeira'
       required: true
       type: select
       values:
@@ -95,6 +185,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_DisableCartoon
       labelEn: Disable Cartoon
       labelZh: 是否禁用卡通人物
+      label:
+        en: 'Disable Cartoon'
+        zh: '是否禁用卡通人物'
+        zh-Hant: '是否停用卡通人物'
+        ja: 'キャラクターを無効化'
+        ko: '캐릭터 비활성화'
+        ru: 'Отключить мультперсонажа'
+        ms: 'Nyahaktifkan watak kartun'
+        pt-br: 'Desativar personagem de desenho'
       required: true
       type: select
       values:
@@ -107,6 +206,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_ShowTag
       labelEn: Show Tag
       labelZh: 是否显示标签
+      label:
+        en: 'Show Tag'
+        zh: '是否显示标签'
+        zh-Hant: '是否顯示標籤'
+        ja: 'タグを表示'
+        ko: '태그 표시'
+        ru: 'Показывать теги'
+        ms: 'Papar tag'
+        pt-br: 'Mostrar etiquetas'
       required: true
       type: select
       values:
@@ -119,6 +227,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_ShowNetTransfer
       labelEn: Show Net Transfer
       labelZh: 是否显示流量信息
+      label:
+        en: 'Show Net Transfer'
+        zh: '是否显示流量信息'
+        zh-Hant: '是否顯示流量資訊'
+        ja: '転送量を表示'
+        ko: '트래픽 정보 표시'
+        ru: 'Показывать трафик'
+        ms: 'Papar maklumat trafik'
+        pt-br: 'Mostrar informações de tráfego'
       required: true
       type: select
       values:
@@ -131,6 +248,15 @@ additionalProperties:
       envKey: NEXT_PUBLIC_ForceUseSvgFlag
       labelEn: Force Use Svg Flag
       labelZh: 是否强制使用 SVG 旗帜
+      label:
+        en: 'Force Use Svg Flag'
+        zh: '是否强制使用 SVG 旗帜'
+        zh-Hant: '是否強制使用 SVG 旗幟'
+        ja: 'SVG 旗を強制使用'
+        ko: 'SVG 국기 강제 사용'
+        ru: 'Принудительно использовать SVG‑флаги'
+        ms: 'Paksa guna bendera SVG'
+        pt-br: 'Forçar uso de bandeiras SVG'
       required: true
       type: select
       values:

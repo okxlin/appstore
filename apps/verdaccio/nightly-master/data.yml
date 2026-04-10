@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: STORAGE_PATH
       labelEn: Storage Path
       labelZh: 存储路径
+      label:
+        en: 'Storage Path'
+        zh: '存储路径'
+        zh-Hant: '儲存路徑'
+        ja: 'ストレージパス'
+        ko: '스토리지 경로'
+        ru: 'Путь хранилища'
+        ms: 'Laluan storan'
+        pt-br: 'Caminho de armazenamento'
       required: true
       type: text
     - default: "./data/config"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/plugins"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PLUGINS_PATH
       labelEn: Plugins Path
       labelZh: 插件路径
+      label:
+        en: 'Plugins Path'
+        zh: '插件路径'
+        zh-Hant: '外掛路徑'
+        ja: 'プラグインパス'
+        ko: '플러그인 경로'
+        ru: 'Путь к плагинам'
+        ms: 'Laluan pemalam'
+        pt-br: 'Caminho dos plugins'
       required: true
       type: text
     - default: "/opt/verdaccio"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: VERDACCIO_APPDIR
       labelEn: App Directory
       labelZh: 应用目录
+      label:
+        en: 'App Directory'
+        zh: '应用目录'
+        zh-Hant: '應用目錄'
+        ja: 'アプリディレクトリ'
+        ko: '앱 디렉터리'
+        ru: 'Каталог приложения'
+        ms: 'Direktori aplikasi'
+        pt-br: 'Diretório do aplicativo'
       required: true
       type: text
     - default: "verdaccio"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: VERDACCIO_USER_NAME
       labelEn: User Name
       labelZh: 用户名
+      label:
+        en: 'User Name'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       required: true
       type: text
     - default: "10001"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: VERDACCIO_USER_UID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "http"
@@ -55,5 +118,14 @@ additionalProperties:
       envKey: VERDACCIO_PROTOCOL
       labelEn: Protocol
       labelZh: 协议
+      label:
+        en: 'Protocol'
+        zh: '协议'
+        zh-Hant: '協定'
+        ja: 'プロトコル'
+        ko: '프로토콜'
+        ru: 'Протокол'
+        ms: 'Protokol'
+        pt-br: 'Protocolo'
       required: true
       type: text

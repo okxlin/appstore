@@ -17,3 +17,14 @@ additionalProperties:
   website: https://www.zabbix.com/
   github: https://github.com/zabbix/zabbix
   document: https://www.zabbix.com/manuals
+  architectures:
+    - amd64
+  description:
+    en: Real-time monitoring of IT components and services (Server)
+    zh: 实时监控 IT 组件和服务(服务端)
+    zh-Hant: 實時監控 IT 組件和服務（服務端）
+    ja: ITコンポーネントとサービスをリアルタイムで監視（サーバー）
+    ko: IT 구성 요소와 서비스를 실시간 모니터링(서버)
+    ru: Мониторинг ИТ-компонентов и сервисов в реальном времени (сервер)
+    ms: Pemantauan masa nyata komponen dan perkhidmatan IT (pelayan)
+    pt-br: Monitoramento em tempo real de componentes e serviços de TI (servidor)

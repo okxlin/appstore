@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: "true"
@@ -20,41 +38,77 @@ additionalProperties:
       envKey: SIGNUPS_ALLOWED
       labelEn: Allow Signups
       labelZh: 允许注册
+      label:
+        en: 'Allow Signups'
+        zh: '允许注册'
+        zh-Hant: '允許註冊'
+        ja: 'サインアップを許可'
+        ko: '가입 허용'
+        ru: 'Разрешить регистрацию'
+        ms: 'Benarkan pendaftaran'
+        pt-br: 'Permitir cadastro'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "true"
       edit: true
       envKey: INVITATIONS_ALLOWED
       labelEn: Allow Invitations
       labelZh: 允许邀请
+      label:
+        en: 'Allow Invitations'
+        zh: '允许邀请'
+        zh-Hant: '允許邀請'
+        ja: '招待を許可'
+        ko: '초대 허용'
+        ru: 'Разрешить приглашения'
+        ms: 'Benarkan jemputan'
+        pt-br: 'Permitir convites'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "false"
       edit: true
       envKey: WEBSOCKET_ENABLED
       labelEn: WebSocket Enabled
       labelZh: 启用 WebSocket
+      label:
+        en: 'WebSocket Enabled'
+        zh: '启用 WebSocket'
+        zh-Hant: '啟用 WebSocket'
+        ja: 'WebSocket を有効化'
+        ko: 'WebSocket 활성화'
+        ru: 'WebSocket включен'
+        ms: 'WebSocket didayakan'
+        pt-br: 'WebSocket ativado'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: ""
       edit: true
       envKey: ADMIN_TOKEN
       labelEn: Admin Token
       labelZh: 管理员令牌
+      label:
+        en: 'Admin Token'
+        zh: '管理员令牌'
+        zh-Hant: '管理員權杖'
+        ja: '管理者トークン'
+        ko: '관리자 토큰'
+        ru: 'Токен администратора'
+        ms: 'Token pentadbir'
+        pt-br: 'Token de administrador'
       required: false
       type: password

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: DISPLAY
       labelEn: Display
       labelZh: 显示
+      label:
+        en: 'Display'
+        zh: '显示'
+        zh-Hant: '顯示'
+        ja: '表示'
+        ko: '디스플레이'
+        ru: 'Экран'
+        ms: 'Paparan'
+        pt-br: 'Tela'
       required: true
       type: text
     - default: "40287"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: 'SSH Port'
+        zh: 'SSH 端口'
+        zh-Hant: 'SSH 埠'
+        ja: 'SSH ポート'
+        ko: 'SSH 포트'
+        ru: 'Порт SSH'
+        ms: 'Port SSH'
+        pt-br: 'Porta SSH'
       required: true
       rule: paramPort
       type: number
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: RESTART_POLICY
       labelEn: Restart Policy
       labelZh: 重启策略
+      label:
+        en: 'Restart Policy'
+        zh: '重启策略'
+        zh-Hant: '重啟策略'
+        ja: '再起動ポリシー'
+        ko: '재시작 정책'
+        ru: 'Политика перезапуска'
+        ms: 'Dasar mula semula'
+        pt-br: 'Política de reinicialização'
       required: true
       type: select
       values:
@@ -34,6 +61,15 @@ additionalProperties:
       envKey: IMAGE_FILE
       labelEn: System Image File
       labelZh: 系统镜像文件路径
+      label:
+        en: 'System Image File'
+        zh: '系统镜像文件路径'
+        zh-Hant: '系統映像檔路徑'
+        ja: 'システムイメージファイル'
+        ko: '시스템 이미지 파일'
+        ru: 'Файл образа системы'
+        ms: 'Fail imej sistem'
+        pt-br: 'Arquivo de imagem do sistema'
       required: true
       type: text
     - default: "50G"
@@ -41,6 +77,15 @@ additionalProperties:
       envKey: DISK_SIZE
       labelEn: Disk Size
       labelZh: 磁盘大小
+      label:
+        en: 'Disk Size'
+        zh: '磁盘大小'
+        zh-Hant: '磁碟大小'
+        ja: 'ディスクサイズ'
+        ko: '디스크 크기'
+        ru: 'Размер диска'
+        ms: 'Saiz cakera'
+        pt-br: 'Tamanho do disco'
       required: true
       type: text
     - default: "4"
@@ -48,6 +93,15 @@ additionalProperties:
       envKey: RAM_SIZE
       labelEn: RAM Size
       labelZh: 内存大小
+      label:
+        en: 'RAM Size'
+        zh: '内存大小'
+        zh-Hant: '記憶體大小'
+        ja: 'メモリサイズ'
+        ko: '메모리 크기'
+        ru: 'Размер памяти'
+        ms: 'Saiz RAM'
+        pt-br: 'Tamanho da RAM'
       required: true
       type: number
     - default: "2"
@@ -55,6 +109,15 @@ additionalProperties:
       envKey: CPU_CORES
       labelEn: CPU Cores
       labelZh: CPU 核心数
+      label:
+        en: 'CPU Cores'
+        zh: 'CPU 核心数'
+        zh-Hant: 'CPU 核心數'
+        ja: 'CPU コア数'
+        ko: 'CPU 코어 수'
+        ru: 'Количество ядер CPU'
+        ms: 'Bilangan teras CPU'
+        pt-br: 'Núcleos de CPU'
       required: true
       type: number
     - default: "docker"
@@ -62,6 +125,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Login Username
       labelZh: 登录用户名
+      label:
+        en: 'Login Username'
+        zh: '登录用户名'
+        zh-Hant: '登入使用者名稱'
+        ja: 'ログインユーザー名'
+        ko: '로그인 사용자 이름'
+        ru: 'Имя пользователя для входа'
+        ms: 'Nama pengguna log masuk'
+        pt-br: 'Nome de usuário de login'
       required: true
       type: text
     - default: "password"
@@ -69,6 +141,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Login Password
       labelZh: 登录密码
+      label:
+        en: 'Login Password'
+        zh: '登录密码'
+        zh-Hant: '登入密碼'
+        ja: 'ログインパスワード'
+        ko: '로그인 비밀번호'
+        ru: 'Пароль для входа'
+        ms: 'Kata laluan log masuk'
+        pt-br: 'Senha de login'
       random: true
       required: true
       rule: paramComplexity

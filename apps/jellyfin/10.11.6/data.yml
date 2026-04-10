@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: WebUI Port
       labelZh: 网页端口
+      label:
+        en: 'WebUI Port'
+        zh: '网页端口'
+        zh-Hant: '網頁埠'
+        ja: 'WebUI ポート'
+        ko: '웹 UI 포트'
+        ru: 'Порт веб-интерфейса'
+        ms: 'Port WebUI'
+        pt-br: 'Porta da WebUI'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MEDIA_FOLDER_PATH
       labelEn: Media folder path
       labelZh: 媒体文件夹路径
+      label:
+        en: 'Media folder path'
+        zh: '媒体文件夹路径'
+        zh-Hant: '媒體資料夾路徑'
+        ja: 'メディアフォルダーパス'
+        ko: '미디어 폴더 경로'
+        ru: 'Путь к папке медиа'
+        ms: 'Laluan folder media'
+        pt-br: 'Caminho da pasta de mídia'
       required: true
       type: text
     - default: ./data/cache
@@ -20,5 +38,14 @@ additionalProperties:
       envKey: CACHE_FOLDER_PATH
       labelEn: Cache folder path
       labelZh: 缓存文件夹路径
+      label:
+        en: 'Cache folder path'
+        zh: '缓存文件夹路径'
+        zh-Hant: '快取資料夾路徑'
+        ja: 'キャッシュフォルダーパス'
+        ko: '캐시 폴더 경로'
+        ru: 'Путь к папке кэша'
+        ms: 'Laluan folder cache'
+        pt-br: 'Caminho da pasta de cache'
       required: true
       type: text

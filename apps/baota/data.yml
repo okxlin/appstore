@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 宝塔面板，服务器运维管理面板
   shortDescEn: BT-Panel , Server O&M management panel
+  description:
+    en: Baota Panel, a server operations management panel
+    zh: 宝塔面板，服务器运维管理面板
+    zh-Hant: 寶塔面板，伺服器運維管理面板
+    ja: 宝塔パネル、サーバー運用管理パネル
+    ko: 바오타 패널, 서버 운영 관리 패널
+    ru: Панель Baota — панель управления серверным администрированием
+    ms: Baota Panel, panel pengurusan operasi pelayan
+    pt-br: Painel Baota, painel de gerenciamento de operações de servidor
   type: tool
   crossVersionUpdate: false
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.bt.cn/
   github: https://github.com/aaPanel/BaoTa
   document: http://docs.bt.cn/
+  architectures:
+    - amd64

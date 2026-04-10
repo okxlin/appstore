@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/xizeyoupan/Meting-API
   github: https://github.com/xizeyoupan/Meting-API
   document: https://github.com/xizeyoupan/Meting-API
+  architectures:
+    - amd64
+  description:
+    en: 'An open-source music API service.'
+    zh: '开源的音乐 API 服务'
+    zh-Hant: '開源的音樂 API 服務'
+    ja: 'オープンソースの音楽 API サービスです。'
+    ko: '오픈소스 음악 API 서비스입니다.'
+    ru: 'Музыкальный API-сервис с открытым исходным кодом.'
+    ms: 'Perkhidmatan API muzik sumber terbuka.'
+    pt-br: 'Serviço de API de música de código aberto.'

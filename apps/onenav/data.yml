@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一款开源免费的书签（导航）管理程序
   shortDescEn: An open source free bookmark (navigation) management program
+  description:
+    en: An open source free bookmark (navigation) management program
+    zh: 一款开源免费的书签（导航）管理程序
+    zh-Hant: 一款開源免費的書籤（導航）管理程式
+    ja: オープンソースで無料のブックマーク（ナビ）管理ツール
+    ko: 오픈소스 무료 북마크(내비게이션) 관리 프로그램
+    ru: Бесплатная программа с открытым исходным кодом для управления закладками (навигацией)
+    ms: Program pengurusan penanda buku (navigasi) sumber terbuka dan percuma
+    pt-br: Programa gratuito e open-source de gerenciamento de favoritos (navegação)
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/helloz/onenav
   github: https://github.com/helloxz/onenav
   document: https://doc.xiaoz.org/books/onenav
+  architectures:
+    - amd64

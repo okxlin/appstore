@@ -3,36 +3,73 @@ additionalProperties:
     - default: 40225
       edit: true
       envKey: PANEL_APP_PORT_HTTP
-      labelEn: Application HTTP Port
-      labelZh: 应用 HTTP 端口
+      label:
+        en: 'Application HTTP Port'
+        zh: '应用 HTTP 端口'
+        zh-Hant: '應用 HTTP 埠'
+        ja: 'アプリケーション HTTP ポート'
+        ko: '애플리케이션 HTTP 포트'
+        ru: 'HTTP-порт приложения'
+        ms: 'Port HTTP aplikasi'
+        pt-br: 'Porta HTTP do aplicativo'
       required: true
+      rule: paramPort
       type: number
     - default: 40226
       edit: true
       envKey: PANEL_APP_PORT_HTTPS
-      labelEn: Application HTTPS Port
-      labelZh: 应用 HTTPS 端口
+      label:
+        en: 'Application HTTPS Port'
+        zh: '应用 HTTPS 端口'
+        zh-Hant: '應用 HTTPS 埠'
+        ja: 'アプリケーション HTTPS ポート'
+        ko: '애플리케이션 HTTPS 포트'
+        ru: 'HTTPS-порт приложения'
+        ms: 'Port HTTPS aplikasi'
+        pt-br: 'Porta HTTPS do aplicativo'
       required: true
+      rule: paramPort
       type: number
     - default: www.example.xyz
       edit: true
       envKey: HTTP_SERVER_NAME
-      labelEn: HTTP Server Name
-      labelZh: HTTP 服务器名称
+      label:
+        en: 'HTTP Server Name'
+        zh: 'HTTP 服务器名称'
+        zh-Hant: 'HTTP 伺服器名稱'
+        ja: 'HTTP サーバー名'
+        ko: 'HTTP 서버 이름'
+        ru: 'Имя HTTP-сервера'
+        ms: 'Nama pelayan HTTP'
+        pt-br: 'Nome do servidor HTTP'
       required: true
       type: text
     - default: www.example.xyz
       edit: true
       envKey: HTTPS_SERVER_NAME
-      labelEn: HTTPS Server Name
-      labelZh: HTTPS 服务器名称
+      label:
+        en: 'HTTPS Server Name'
+        zh: 'HTTPS 服务器名称'
+        zh-Hant: 'HTTPS 伺服器名稱'
+        ja: 'HTTPS サーバー名'
+        ko: 'HTTPS 서버 이름'
+        ru: 'Имя HTTPS-сервера'
+        ms: 'Nama pelayan HTTPS'
+        pt-br: 'Nome do servidor HTTPS'
       required: true
       type: text
     - default: admin@example.xyz
       edit: true
       envKey: SERVER_ADMIN
-      labelEn: Server Admin
-      labelZh: 服务器管理员
+      label:
+        en: 'Server Admin'
+        zh: '服务器管理员'
+        zh-Hant: '伺服器管理員'
+        ja: 'サーバー管理者'
+        ko: '서버 관리자'
+        ru: 'Администратор сервера'
+        ms: 'Pentadbir pelayan'
+        pt-br: 'Administrador do servidor'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -40,19 +77,42 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: 512M
       edit: true
       envKey: PHP_MEMORY_LIMIT
-      labelEn: PHP Memory Limit
-      labelZh: PHP 内存限制
+      label:
+        en: 'PHP Memory Limit'
+        zh: 'PHP 内存限制'
+        zh-Hant: 'PHP 記憶體限制'
+        ja: 'PHP メモリ制限'
+        ko: 'PHP 메모리 제한'
+        ru: 'Лимит памяти PHP'
+        ms: 'Had memori PHP'
+        pt-br: 'Limite de memória do PHP'
       required: true
       type: text
     - default: 8M
       edit: true
       envKey: UPLOAD_MAX_FILESIZE
-      labelEn: Upload Max Filesize
-      labelZh: 上传文件最大限制
+      label:
+        en: 'Upload Max Filesize'
+        zh: '上传文件最大限制'
+        zh-Hant: '上傳檔案大小上限'
+        ja: 'アップロード最大ファイルサイズ'
+        ko: '업로드 최대 파일 크기'
+        ru: 'Максимальный размер загружаемого файла'
+        ms: 'Saiz maksimum fail muat naik'
+        pt-br: 'Tamanho máximo do arquivo de upload'
       required: true
       type: text

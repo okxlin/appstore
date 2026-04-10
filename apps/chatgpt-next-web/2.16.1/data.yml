@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_KEY
       labelEn: OPENAI API KEY
       labelZh: OPENAI API KEY
+      label:
+        en: 'OPENAI API KEY'
+        zh: 'OpenAI API 密钥'
+        zh-Hant: 'OpenAI API 金鑰'
+        ja: 'OpenAI API キー'
+        ko: 'OpenAI API 키'
+        ru: 'Ключ OpenAI API'
+        ms: 'Kunci OpenAI API'
+        pt-br: 'Chave da OpenAI API'
       required: true
       type: text
     - default: "chatgptnextweb"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: SECRET_KEY
       labelEn: Access rights key, optional (recommended)
       labelZh: 访问权限密钥，可选(强烈建议填写)
+      label:
+        en: 'Access rights key, optional (recommended)'
+        zh: '访问权限密钥（可选，建议填写）'
+        zh-Hant: '存取權限金鑰（可選，建議填寫）'
+        ja: 'アクセス権キー（任意、推奨）'
+        ko: '접근 권한 키(선택 사항, 권장)'
+        ru: 'Ключ доступа (необязательно, рекомендуется)'
+        ms: 'Kunci akses (pilihan, disyorkan)'
+        pt-br: 'Chave de acesso (opcional, recomendado)'
       random: true
       required: false
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PROXY
       labelEn: Proxy (example：http://127.0.0.1:7890 user password)
       labelZh: 代理地址(例子：http://127.0.0.1:7890 user password)
+      label:
+        en: 'Proxy (example: http://127.0.0.1:7890 user password)'
+        zh: '代理（示例：http://127.0.0.1:7890 user password）'
+        zh-Hant: '代理（範例：http://127.0.0.1:7890 user password）'
+        ja: 'プロキシ（例：http://127.0.0.1:7890 user password）'
+        ko: '프록시(예: http://127.0.0.1:7890 user password)'
+        ru: 'Прокси (пример: http://127.0.0.1:7890 user password)'
+        ms: 'Proksi (contoh: http://127.0.0.1:7890 user password)'
+        pt-br: 'Proxy (exemplo: http://127.0.0.1:7890 user password)'
       required: false
       type: text
     - default: "https://api.openai.com"
@@ -36,5 +72,14 @@ additionalProperties:
       envKey: API_BASE_URL
       labelEn: API interface address
       labelZh: API接口地址
+      label:
+        en: 'API interface address'
+        zh: 'API接口地址'
+        zh-Hant: 'API 介面位址'
+        ja: 'API インターフェースアドレス'
+        ko: 'API 인터페이스 주소'
+        ru: 'Адрес API-интерфейса'
+        ms: 'Alamat antara muka API'
+        pt-br: 'Endereço da interface de API'
       required: true
       type: text

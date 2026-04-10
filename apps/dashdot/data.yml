@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个简单、现代的服务器仪表板
   shortDescEn: A simple, modern server dashboard
+  description:
+    en: A simple, modern server dashboard
+    zh: 一个简单、现代的服务器仪表板
+    zh-Hant: 一個簡單、現代的伺服器儀表板
+    ja: シンプルでモダンなサーバーダッシュボード
+    ko: 간단하고 현대적인 서버 대시보드
+    ru: Простая современная панель мониторинга сервера
+    ms: Papan pemuka pelayan yang ringkas dan moden
+    pt-br: Painel de servidor simples e moderno
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://getdashdot.com
   github: https://github.com/MauriceNino/dashdot
   document: https://getdashdot.com/docs/install
+  architectures:
+    - amd64

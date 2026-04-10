@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个快速，简单，免费的BitTorrent客户端
   shortDescEn: A fast, easy, and free BitTorrent client
+  description:
+    en: "Fast, easy, and free BitTorrent client."
+    zh: "快速、简单且免费的 BitTorrent 客户端。"
+    zh-Hant: "快速、簡單且免費的 BitTorrent 用戶端。"
+    ja: "高速で簡単、しかも無料の BitTorrent クライアントです。"
+    ko: "빠르고 간단하며 무료인 BitTorrent 클라이언트입니다."
+    ru: "Быстрый, простой и бесплатный BitTorrent-клиент."
+    ms: "Klien BitTorrent yang pantas, mudah dan percuma."
+    pt-br: "Cliente BitTorrent rápido, simples e gratuito."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://transmissionbt.com/
   github: https://github.com/transmission/transmission
   document: https://github.com/transmission/transmission
+  architectures:
+    - amd64

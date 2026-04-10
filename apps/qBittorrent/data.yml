@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: qBittorrent 是一个跨平台的开源 BitTorrent 客户端
   shortDescEn: qBittorrent is a cross-platform open source BitTorrent client
+  description:
+    en: "Cross-platform open-source BitTorrent client."
+    zh: "跨平台开源 BitTorrent 客户端。"
+    zh-Hant: "跨平台開源 BitTorrent 用戶端。"
+    ja: "クロスプラットフォーム対応のオープンソース BitTorrent クライアントです。"
+    ko: "크로스 플랫폼 오픈소스 BitTorrent 클라이언트입니다."
+    ru: "Кроссплатформенный BitTorrent-клиент с открытым исходным кодом."
+    ms: "Klien BitTorrent sumber terbuka merentas platform."
+    pt-br: "Cliente BitTorrent de código aberto e multiplataforma."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.qbittorrent.org/
   github: https://github.com/qbittorrent/qBittorrent
   document: http://wiki.qbittorrent.org/
+  architectures:
+    - amd64
