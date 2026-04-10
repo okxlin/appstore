@@ -5,6 +5,15 @@ additionalProperties:
       envKey: NZ_GRPC_URL
       labelEn: "Nezha gRPC URL"
       labelZh: 哪吒 gRPC 地址
+      label:
+        en: 'Nezha gRPC URL'
+        zh: '哪吒 gRPC 地址'
+        zh-Hant: '哪吒 gRPC 位址'
+        ja: 'Nezha gRPC URL（接続先）'
+        ko: 'Nezha gRPC URL(연결 주소)'
+        ru: 'URL gRPC Nezha'
+        ms: 'URL gRPC Nezha'
+        pt-br: 'URL gRPC do Nezha'
       required: true
       type: text
     - default: ""
@@ -12,5 +21,14 @@ additionalProperties:
       envKey: NZ_CLENT_SECRET
       labelEn: "Nezha client secret"
       labelZh: 哪吒客户端密钥
+      label:
+        en: 'Nezha client secret'
+        zh: '哪吒客户端密钥'
+        zh-Hant: '哪吒用戶端密鑰'
+        ja: 'Nezha クライアントシークレット'
+        ko: 'Nezha 클라이언트 시크릿'
+        ru: 'Секрет клиента Nezha'
+        ms: 'Rahsia klien Nezha'
+        pt-br: 'Segredo do cliente Nezha'
       required: true
       type: password

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: Tailscale 控制服务器的开源自托管实现
   shortDescEn: An open source, self-hosted implementation of the Tailscale control server
+  description:
+    en: Open-source self-hosted implementation of the Tailscale control server
+    zh: Tailscale 控制服务器的开源自托管实现
+    zh-Hant: Tailscale 控制伺服器的開源自託管實作
+    ja: Tailscale コントロールサーバーのオープンソース自己ホスト実装
+    ko: Tailscale 컨트롤 서버의 오픈 소스 자체 호스팅 구현
+    ru: Самостоятельно размещаемая реализация сервера управления Tailscale с открытым исходным кодом
+    ms: Pelaksanaan pelayan kawalan Tailscale sumber terbuka yang dihos sendiri
+    pt-br: Implementação open source e auto-hospedada do servidor de controle do Tailscale
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://headscale.net
   github: https://github.com/juanfont/headscale
   document: https://headscale.net
+  architectures:
+    - amd64
+

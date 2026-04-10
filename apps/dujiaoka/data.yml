@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/assimon/dujiaoka
   github: https://github.com/assimon/dujiaoka
   document: https://github.com/assimon/dujiaoka
+  architectures:
+    - amd64
+  description:
+    en: "Open-source automated sales solution for webmasters"
+    zh: "开源站长自动化售货解决方案"
+    zh-Hant: "開源站長自動化售貨解決方案"
+    ja: "Web管理者向けのオープンソース自動販売ソリューション"
+    ko: "웹마스터를 위한 오픈 소스 자동 판매 솔루션"
+    ru: "Открытое решение для автоматизированных продаж для веб-мастеров"
+    ms: "Penyelesaian jualan automatik sumber terbuka untuk webmaster"
+    pt-br: "Solução de vendas automatizadas de código aberto para webmasters"

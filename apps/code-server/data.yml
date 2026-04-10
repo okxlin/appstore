@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 在任何地方的任何计算机上运行 VS Code 并在浏览器中访问它
   shortDescEn: Run VS Code on any machine anywhere and access it in the browser
+  description:
+    en: Run VS Code on any machine anywhere and access it in the browser
+    zh: 在任何地方的任何计算机上运行 VS Code 并在浏览器中访问它
+    zh-Hant: 在任何地方的任何電腦上運行 VS Code 並在瀏覽器中訪問它
+    ja: どこでも任意のマシンで VS Code を実行し、ブラウザでアクセス
+    ko: 어디서든 어떤 컴퓨터에서든 VS Code를 실행하고 브라우저로 접속
+    ru: Запускайте VS Code на любом компьютере и доступайтесь к нему в браузере
+    ms: Jalankan VS Code pada mana-mana komputer di mana sahaja dan aksesnya melalui pelayar
+    pt-br: Execute o VS Code em qualquer máquina, em qualquer lugar, e acesse pelo navegador
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://coder.com/
   github: https://github.com/coder/code-server
   document: https://coder.com/docs/code-server/latest
+  architectures:
+    - amd64
+    - arm64

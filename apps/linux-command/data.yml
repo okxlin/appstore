@@ -4,6 +4,15 @@ tags:
 title: Linux 命令大全搜索工具
 description: Linux 命令大全搜索工具
 additionalProperties:
+  description:
+    en: Comprehensive Linux command search tool
+    zh: Linux 命令大全搜索工具
+    zh-Hant: Linux 命令大全搜尋工具
+    ja: Linuxコマンド大全の検索ツール
+    ko: Linux 명령어 종합 검색 도구
+    ru: Полный поиск команд Linux
+    ms: Alat carian komprehensif untuk perintah Linux
+    pt-br: Ferramenta de busca completa de comandos Linux
   key: linux-command
   name: Linux Command
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://git.io/linux
   github: https://github.com/jaywcjlove/linux-command
   document: https://github.com/jaywcjlove/linux-command
+  architectures:
+    - amd64

@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/icret/EasyImages2.0
   github: https://github.com/icret/EasyImages2.0
   document: https://icret.github.io/EasyImages2.0/
+  architectures:
+    - amd64
+  description:
+    en: "EasyImage - A powerful database-free image hosting version 2.0"
+    zh: "简单图床 - 一款功能强大无数据库的图床 2.0版"
+    zh-Hant: "簡單圖床 - 一款功能強大無資料庫的圖床 2.0版"
+    ja: "EasyImage - 強力なデータベース不要の画像ホスティング 2.0"
+    ko: "EasyImage - 강력한 데이터베이스 없는 이미지 호스팅 2.0"
+    ru: "EasyImage — мощный хостинг изображений без базы данных, версия 2.0"
+    ms: "EasyImage - pengehosan imej yang berkuasa tanpa pangkalan data versi 2.0"
+    pt-br: "EasyImage - hospedagem de imagens poderosa sem banco de dados, versão 2.0"

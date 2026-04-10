@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个 C# 开发的博客朋友圈平台
   shortDescEn: A C#-developed blogosphere platform
+  description:
+    en: A C#-developed blogosphere platform
+    zh: 一个 C# 开发的博客朋友圈平台
+    zh-Hant: 一個以 C# 開發的博客朋友圈平台
+    ja: C#で開発されたブログ系SNSプラットフォーム
+    ko: C#으로 개발된 블로그형 소셜 플랫폼
+    ru: Платформа блогосферы, разработанная на C#
+    ms: Platform blogosfera yang dibangunkan dengan C#
+    pt-br: Plataforma de blogosfera desenvolvida em C#
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://moments.shiyu.dev/
   github: https://github.com/Drizzle365/Moments
   document: https://shiyu.dev/archives/2069/
+  architectures:
+    - amd64
+

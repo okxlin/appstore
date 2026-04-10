@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Web Panel Port
       labelZh: 面板端口
+      label:
+        en: 'Web Panel Port'
+        zh: '面板端口'
+        zh-Hant: '網頁面板埠'
+        ja: 'Web パネルポート'
+        ko: '웹 패널 포트'
+        ru: 'Порт веб-панели'
+        ms: 'Port panel web'
+        pt-br: 'Porta do painel web'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HTTP_PORT
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: HTTPS_PORT
       labelEn: HTTPS Port
       labelZh: HTTPS端口
+      label:
+        en: 'HTTPS Port'
+        zh: 'HTTPS端口'
+        zh-Hant: 'HTTPS 埠'
+        ja: 'HTTPS ポート'
+        ko: 'HTTPS 포트'
+        ru: 'HTTPS-порт'
+        ms: 'Port HTTPS'
+        pt-br: 'Porta HTTPS'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PHPMYADMIN_PORT
       labelEn: phpMyAdmin Port
       labelZh: phpMyAdmin端口
+      label:
+        en: 'phpMyAdmin Port'
+        zh: 'phpMyAdmin端口'
+        zh-Hant: 'phpMyAdmin 埠'
+        ja: 'phpMyAdmin ポート'
+        ko: 'phpMyAdmin 포트'
+        ru: 'Порт phpMyAdmin'
+        ms: 'Port phpMyAdmin'
+        pt-br: 'Porta do phpMyAdmin'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: SSH_PORT
       labelEn: SSH Port
       labelZh: 面板内SSH端口
+      label:
+        en: 'SSH Port'
+        zh: '面板内SSH端口'
+        zh-Hant: '面板內 SSH 埠'
+        ja: 'SSH ポート'
+        ko: 'SSH 포트'
+        ru: 'Порт SSH'
+        ms: 'Port SSH'
+        pt-br: 'Porta SSH'
       required: true
       rule: paramPort
       type: number
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: FTP_PORT
       labelEn: SSH Port
       labelZh: 面板内FTP端口
+      label:
+        en: 'SSH Port'
+        zh: '面板内FTP端口'
+        zh-Hant: '面板內 FTP 埠'
+        ja: 'SSH ポート'
+        ko: 'SSH 포트'
+        ru: 'Порт SSH'
+        ms: 'Port SSH'
+        pt-br: 'Porta SSH'
       required: true
       rule: paramPort
       type: number

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个尝试绕过 Cloudflare 来使用 ChatGPT 接口的程序
   shortDescEn: A program that attempts to bypass Cloudflare to use the ChatGPT interface
+  description:
+    en: A program that attempts to bypass Cloudflare to use the ChatGPT interface
+    zh: 一个尝试绕过 Cloudflare 来使用 ChatGPT 接口的程序
+    zh-Hant: 一個嘗試繞過 Cloudflare 來使用 ChatGPT 介面的程式
+    ja: Cloudflare を回避して ChatGPT API を利用しようとするプログラム
+    ko: Cloudflare를 우회해 ChatGPT 인터페이스를 사용하려는 프로그램
+    ru: Программа, пытающаяся обойти Cloudflare для использования интерфейса ChatGPT
+    ms: Program yang cuba memintas Cloudflare untuk menggunakan antara muka ChatGPT
+    pt-br: Programa que tenta contornar a Cloudflare para usar a interface do ChatGPT
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/linweiyuan/go-chatgpt-api
   github: https://github.com/linweiyuan/go-chatgpt-api
   document: https://github.com/linweiyuan/go-chatgpt-api
+  architectures:
+    - amd64

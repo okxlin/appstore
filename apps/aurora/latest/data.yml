@@ -4,6 +4,15 @@ additionalProperties:
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
+      label:
+        en: 'Database'
+        zh: '数据库名'
+        zh-Hant: '數據庫名'
+        ja: 'データベース'
+        ko: '데이터베이스'
+        ru: 'База данных'
+        ms: 'Pangkalan Data'
+        pt-br: 'Banco de Dados'
       random: true
       required: true
       rule: paramCommon
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
+      label:
+        en: 'User'
+        zh: '数据库用户'
+        zh-Hant: '數據庫用戶'
+        ja: 'ユーザー'
+        ko: '사용자'
+        ru: 'Пользователь'
+        ms: 'Pengguna'
+        pt-br: 'Usuário'
       random: true
       required: true
       rule: paramCommon
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
+      label:
+        en: 'Password'
+        zh: '数据库用户密码'
+        zh-Hant: '數據庫用戶密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data storage folder
       labelZh: 数据存放文件夹
+      label:
+        en: 'Data storage folder'
+        zh: '数据存放文件夹'
+        zh-Hant: '資料存放資料夾'
+        ja: 'データ保存フォルダー'
+        ko: '데이터 저장 폴더'
+        ru: 'Папка хранения данных'
+        ms: 'Folder storan data'
+        pt-br: 'Pasta de armazenamento de dados'
       required: true
       type: text
     - default: /root/.ssh/id_rsa
@@ -44,12 +89,30 @@ additionalProperties:
       envKey: SSH_KEY_PATH
       labelEn: SSH key file
       labelZh: SSH 私钥文件
+      label:
+        en: 'SSH key file'
+        zh: 'SSH 私钥文件'
+        zh-Hant: 'SSH 私鑰檔案'
+        ja: 'SSH 鍵ファイル'
+        ko: 'SSH 키 파일'
+        ru: 'Файл ключа SSH'
+        ms: 'Fail kunci SSH'
+        pt-br: 'Arquivo de chave SSH'
       required: true
       type: text
     - default: aurora
       envKey: SECRECY_KEY
       labelEn: Secret Key
       labelZh: 保密密码
+      label:
+        en: 'Secret Key'
+        zh: '保密密码'
+        zh-Hant: '保密密碼'
+        ja: 'シークレットキー'
+        ko: '비밀 키'
+        ru: 'Секретный ключ'
+        ms: 'Kunci rahsia'
+        pt-br: 'Chave secreta'
       random: true
       required: true
       rule: paramComplexity

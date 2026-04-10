@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -14,6 +23,15 @@ additionalProperties:
       key: postgresql
       labelEn: Postgres database Service
       labelZh: Postgres数据库服务
+      label:
+        en: 'Postgres database Service'
+        zh: 'Postgres数据库服务'
+        zh-Hant: 'Postgres 資料庫服務'
+        ja: 'Postgres データベースサービス'
+        ko: 'Postgres 데이터베이스 서비스'
+        ru: 'Сервис базы данных Postgres'
+        ms: 'Perkhidmatan Pangkalan Data Postgres'
+        pt-br: 'Serviço de Banco de Dados Postgres'
       required: true
       type: service
     - default: "5432"
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: POSTGRES_PORT
       labelEn: Postgres database Service Port
       labelZh: Postgres数据库服务端口
+      label:
+        en: 'Postgres database Service Port'
+        zh: 'Postgres数据库服务端口'
+        zh-Hant: 'Postgres 資料庫服務埠'
+        ja: 'Postgres データベースサービスポート'
+        ko: 'Postgres 데이터베이스 서비스 포트'
+        ru: 'Порт сервиса базы данных Postgres'
+        ms: 'Port Perkhidmatan Pangkalan Data Postgres'
+        pt-br: 'Porta do Serviço de Banco de Dados Postgres'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: POSTGRES_DB
       labelEn: Postgres database Name
       labelZh: Postgres数据库名
+      label:
+        en: 'Postgres database Name'
+        zh: 'Postgres数据库名'
+        zh-Hant: 'Postgres 數據庫名'
+        ja: 'Postgres データベース名'
+        ko: 'Postgres 데이터베이스 이름'
+        ru: 'Имя базы данных Postgres'
+        ms: 'Nama Pangkalan Data Postgres'
+        pt-br: 'Nome do Banco de Dados Postgres'
       required: true
       rule: paramCommon
       type: text
@@ -37,6 +73,15 @@ additionalProperties:
       envKey: POSTGRES_USER
       labelEn: Postgres database User Name
       labelZh: Postgres数据库用户名
+      label:
+        en: 'Postgres database User Name'
+        zh: 'Postgres数据库用户名'
+        zh-Hant: 'Postgres 數據庫用戶名'
+        ja: 'Postgres データベースユーザー名'
+        ko: 'Postgres 데이터베이스 사용자 이름'
+        ru: 'Имя пользователя базы данных Postgres'
+        ms: 'Nama pengguna pangkalan data Postgres'
+        pt-br: 'Nome de usuário do banco de dados Postgres'
       required: true
       rule: paramCommon
       type: text
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: POSTGRES_PWD
       labelEn: Postgres database User Password
       labelZh: Postgres数据库密码
+      label:
+        en: 'Postgres database User Password'
+        zh: 'Postgres数据库密码'
+        zh-Hant: 'Postgres 資料庫使用者密碼'
+        ja: 'Postgres データベースユーザーパスワード'
+        ko: 'Postgres 데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных Postgres'
+        ms: 'Kata laluan pengguna pangkalan data Postgres'
+        pt-br: 'Senha do usuário do banco de dados Postgres'
       required: true
       rule: paramCommon
       type: password
@@ -53,5 +107,14 @@ additionalProperties:
       envKey: JOPLIN_EXTERNAL_URL
       labelEn: External URL
       labelZh: 外部访问地址
+      label:
+        en: 'External URL'
+        zh: '外部访问地址'
+        zh-Hant: '外部訪問地址'
+        ja: '外部 URL'
+        ko: '외부 URL'
+        ru: 'Внешний URL'
+        ms: 'URL luaran'
+        pt-br: 'URL externa'
       required: true
       type: text

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个开源、简单易用、易于扩展的 RSS 生成器
   shortDescEn: An open-source, easy-to-use, and easy-to-scale RSS generator
+  description:
+    en: An open-source, easy-to-use, and easy-to-extend RSS generator
+    zh: 一个开源、简单易用、易于扩展的 RSS 生成器
+    zh-Hant: 一個開源、簡單易用、易於擴展的 RSS 產生器
+    ja: オープンソースで使いやすく拡張しやすいRSSジェネレーター
+    ko: 오픈 소스이며 사용하기 쉽고 확장하기 쉬운 RSS 생성기
+    ru: Открытый, простой в использовании и легко расширяемый генератор RSS
+    ms: Penjana RSS sumber terbuka yang mudah digunakan dan mudah diperluas
+    pt-br: Gerador de RSS open source, fácil de usar e de expandir
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://docs.rsshub.app/
   github: https://github.com/DIYgod/RSSHub
   document: https://docs.rsshub.app/
+
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: ALLOWED_ORIGINS
       labelEn: Allowed domain (multiple delimited with ",")
       labelZh: 被允许的域名 (多个使用英文逗号分割)
+      label:
+        en: 'Allowed domain (multiple delimited with ",")'
+        zh: '被允许的域名 (多个使用英文逗号分割)'
+        zh-Hant: '允許的網域（多個用英文逗號分隔）'
+        ja: '許可するドメイン（複数は「,」区切り）'
+        ko: '허용된 도메인(여러 개는 ","로 구분)'
+        ru: 'Разрешённые домены (несколько через ",")'
+        ms: 'Domain yang dibenarkan (lebih daripada satu dipisahkan dengan ",")'
+        pt-br: 'Domínios permitidos (múltiplos separados por ",")'
       required: true
       type: text
     - default: Np2qgqtiUayA857a
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: JWT_SECRET
       labelEn: JWT key (16 to 32 characters)
       labelZh: JWT 密钥 (16 到 32 位字符)
+      label:
+        en: 'JWT key (16 to 32 characters)'
+        zh: 'JWT 密钥 (16 到 32 位字符)'
+        zh-Hant: 'JWT 金鑰（16 到 32 位字元）'
+        ja: 'JWT キー（16〜32 文字）'
+        ko: 'JWT 키(16~32자)'
+        ru: 'Ключ JWT (16–32 символа)'
+        ms: 'Kunci JWT (16 hingga 32 aksara)'
+        pt-br: 'Chave JWT (16 a 32 caracteres)'
       random: true
       required: true
       rule: paramComplexity
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: ENCRYPT_KEY
       labelEn: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
       labelZh: 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)
+      label:
+        en: 'Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)'
+        zh: '加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)'
+        zh-Hant: '加密金鑰（非特殊需求不建議填寫，終端執行 "openssl rand -hex 32" 取得）'
+        ja: '暗号化キー（特別な必要がない限り非推奨。端末で "openssl rand -hex 32" を実行して取得）'
+        ko: '암호화 키(특별한 경우가 아니면 권장하지 않음. 터미널에서 "openssl rand -hex 32" 실행으로 획득)'
+        ru: 'Ключ шифрования (не рекомендуется без особой необходимости; получите, выполнив "openssl rand -hex 32" в терминале)'
+        ms: 'Kunci penyulitan (tidak disyorkan kecuali perlu; jalankan "openssl rand -hex 32" di terminal untuk mendapatkannya)'
+        pt-br: 'Chave de criptografia (não recomendada sem necessidade especial; execute "openssl rand -hex 32" no terminal para obtê-la)'
       required: false
       type: text
     - default: "false"
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: ENCRYPT_ENABLE
       labelEn: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
       labelZh: 是否开启加密 (true或false,开启则需要填写加密密钥)
+      label:
+        en: 'Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)'
+        zh: '是否开启加密 (true或false,开启则需要填写加密密钥)'
+        zh-Hant: '是否啟用加密（true 或 false，啟用需填寫加密金鑰）'
+        ja: '暗号化を有効にするか（true/false。有効にする場合は暗号化キーが必要）'
+        ko: '암호화를 활성化할지 여부(true/false, 활성化하려면 암호화 키 입력 필요)'
+        ru: 'Включать шифрование (true/false; для включения требуется ключ шифрования)'
+        ms: 'Sama ada untuk mengaktifkan penyulitan (true/false; jika aktif, perlu masukkan kunci penyulitan)'
+        pt-br: 'Habilitar criptografia (true/false; para habilitar, é necessário inserir a chave de criptografia)'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -43,6 +88,15 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: 172.19.0
@@ -50,5 +104,14 @@ additionalProperties:
       envKey: SUBNET_PREFIX
       labelEn: New docker network subnet prefix
       labelZh: 新 docker 网络子网前缀
+      label:
+        en: 'New docker network subnet prefix'
+        zh: '新 docker 网络子网前缀'
+        zh-Hant: '新的 Docker 網路子網前綴'
+        ja: '新しい Docker ネットワークのサブネットプレフィックス'
+        ko: '새 Docker 네트워크 서브넷 접두사'
+        ru: 'Новый префикс подсети Docker сети'
+        ms: 'Awalan subnet rangkaian Docker baharu'
+        pt-br: 'Novo prefixo de sub-rede da rede Docker'
       required: true
       type: text

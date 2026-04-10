@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 自托管、注重隐私的网站分析
   shortDescEn: Self-hostable, privacy-focused website analytics
+  description:
+    en: Self-hosted, privacy-focused website analytics
+    zh: 自托管、注重隐私的网站分析
+    zh-Hant: 自架、注重隱私的網站分析
+    ja: セルフホストでプライバシー重視のウェブ解析
+    ko: 자체 호스팅이 가능한 개인정보 보호 중심 웹사이트 분석
+    ru: Самостоятельно размещаемая, ориентированная на приватность веб-аналитика
+    ms: Analitik laman web yang dihos sendiri dan berfokus privasi
+    pt-br: Análise de sites auto-hospedada e focada em privacidade
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://oss.medama.io
   github: https://github.com/medama-io/medama
   document: https://oss.medama.io
+  architectures:
+    - amd64
+    - arm64
+

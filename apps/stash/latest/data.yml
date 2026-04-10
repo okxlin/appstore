@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "./data/data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: STASH_DATA
       labelEn: Media Data Path
       labelZh: 媒体数据路径
+      label:
+        en: 'Media Data Path'
+        zh: '媒体数据路径'
+        zh-Hant: '媒體資料路徑'
+        ja: 'メディアデータパス'
+        ko: '미디어 데이터 경로'
+        ru: 'Путь к медиа-данным'
+        ms: 'Laluan data media'
+        pt-br: 'Caminho de dados de mídia'
       required: true
       type: text
     - default: "./data/metadata"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: STASH_METADATA
       labelEn: Metadata Path
       labelZh: 元数据路径
+      label:
+        en: 'Metadata Path'
+        zh: '元数据路径'
+        zh-Hant: '中繼資料路徑'
+        ja: 'メタデータパス'
+        ko: '메타데이터 경로'
+        ru: 'Путь к метаданным'
+        ms: 'Laluan metadata'
+        pt-br: 'Caminho de metadados'
       required: true
       type: text
     - default: "./data/cache"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: STASH_CACHE
       labelEn: Cache Path
       labelZh: 缓存路径
+      label:
+        en: 'Cache Path'
+        zh: '缓存路径'
+        zh-Hant: '快取路徑'
+        ja: 'キャッシュパス'
+        ko: '캐시 경로'
+        ru: 'Путь к кэшу'
+        ms: 'Laluan cache'
+        pt-br: 'Caminho do cache'
       required: true
       type: text
     - default: "./data/blobs"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: STASH_BLOBS
       labelEn: Blobs Path (scene covers, images)
       labelZh: 二进制数据路径 (场景封面、图像）
+      label:
+        en: 'Blobs Path (scene covers, images)'
+        zh: '二进制数据路径 (场景封面、图像）'
+        zh-Hant: '二進位資料路徑（場景封面、影像）'
+        ja: 'バイナリデータのパス（シーンカバー、画像）'
+        ko: '바이너리 데이터 경로(씬 커버, 이미지)'
+        ru: 'Путь к бинарным данным (обложки сцен, изображения)'
+        ms: 'Laluan data binari (kulit adegan, imej)'
+        pt-br: 'Caminho de dados binários (capas de cena, imagens)'
       required: true
       type: text
     - default: "./data/generated"
@@ -48,6 +102,15 @@ additionalProperties:
       envKey: STASH_GENERATED
       labelEn: Generated Path
       labelZh: 生成内容路径
+      label:
+        en: 'Generated Path'
+        zh: '生成内容路径'
+        zh-Hant: '生成內容路徑'
+        ja: '生成パス'
+        ko: '생성 경로'
+        ru: 'Путь к сгенерированным данным'
+        ms: 'Laluan hasil penjanaan'
+        pt-br: 'Caminho de conteúdo gerado'
       required: true
       type: text
     - default: "/data"
@@ -55,6 +118,15 @@ additionalProperties:
       envKey: STASH_DATA_INTERNAL
       labelEn: Internal Media Data Path
       labelZh: 容器内部媒体数据路径
+      label:
+        en: 'Internal Media Data Path'
+        zh: '容器内部媒体数据路径'
+        zh-Hant: '容器內部媒體資料路徑'
+        ja: 'コンテナ内部のメディアデータパス'
+        ko: '컨테이너 내부 미디어 데이터 경로'
+        ru: 'Внутренний путь к медиаданным в контейнере'
+        ms: 'Laluan data media dalaman kontena'
+        pt-br: 'Caminho interno de dados de mídia no contêiner'
       required: true
       type: text
     - default: "/metadata"
@@ -62,6 +134,15 @@ additionalProperties:
       envKey: STASH_METADATA_INTERNAL
       labelEn: Internal Metadata Path
       labelZh: 容器内部元数据路径
+      label:
+        en: 'Internal Metadata Path'
+        zh: '容器内部元数据路径'
+        zh-Hant: '容器內部中繼資料路徑'
+        ja: 'コンテナ内部のメタデータパス'
+        ko: '컨테이너 내부 메타데이터 경로'
+        ru: 'Внутренний путь метаданных в контейнере'
+        ms: 'Laluan metadata dalaman kontena'
+        pt-br: 'Caminho interno de metadados no contêiner'
       required: true
       type: text
     - default: "/cache"
@@ -69,6 +150,15 @@ additionalProperties:
       envKey: STASH_CACHE_INTERNAL
       labelEn: Internal Cache Path
       labelZh: 容器内部缓存路径
+      label:
+        en: 'Internal Cache Path'
+        zh: '容器内部缓存路径'
+        zh-Hant: '容器內部快取路徑'
+        ja: 'コンテナ内部のキャッシュパス'
+        ko: '컨테이너 내부 캐시 경로'
+        ru: 'Внутренний путь кэша в контейнере'
+        ms: 'Laluan cache dalaman kontena'
+        pt-br: 'Caminho interno de cache no contêiner'
       required: true
       type: text
     - default: "/blobs"
@@ -76,6 +166,15 @@ additionalProperties:
       envKey: STASH_BLOBS_INTERNAL
       labelEn: Internal Blobs Path (scene covers, images)
       labelZh: 容器内部二进制数据路径 (场景封面、图像）
+      label:
+        en: 'Internal Blobs Path (scene covers, images)'
+        zh: '容器内部二进制数据路径 (场景封面、图像）'
+        zh-Hant: '容器內部二進位資料路徑（場景封面、影像）'
+        ja: 'コンテナ内部のバイナリデータパス（シーンカバー、画像）'
+        ko: '컨테이너 내부 바이너리 데이터 경로(씬 커버, 이미지)'
+        ru: 'Внутренний путь к бинарным данным (обложки сцен, изображения)'
+        ms: 'Laluan data binari dalaman kontena (kulit adegan, imej)'
+        pt-br: 'Caminho interno de dados binários (capas de cena, imagens)'
       required: true
       type: text
     - default: "/generated"
@@ -83,5 +182,14 @@ additionalProperties:
       envKey: STASH_GENERATED_INTERNAL
       labelEn: Internal Generated Path
       labelZh: 容器内部生成内容路径
+      label:
+        en: 'Internal Generated Path'
+        zh: '容器内部生成内容路径'
+        zh-Hant: '容器內部生成內容路徑'
+        ja: 'コンテナ内部の生成コンテンツパス'
+        ko: '컨테이너 내부 생성 콘텐츠 경로'
+        ru: 'Внутренний путь к сгенерированному содержимому'
+        ms: 'Laluan kandungan terjana dalaman kontena'
+        pt-br: 'Caminho interno de conteúdo gerado'
       required: true
       type: text

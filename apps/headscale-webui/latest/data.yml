@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,36 +22,73 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: '/opt/1panel/apps/local/headscale/headscale/data/config'
       edit: true
       envKey: HEADSCALE_PATH
-      labelEn: Headscale configuration file path
-      labelZh: Headscale 配置文件路径
+      label:
+        en: 'Headscale configuration file path'
+        zh: 'Headscale 配置文件路径'
+        zh-Hant: 'Headscale 設定檔路徑'
+        ja: 'Headscale 設定ファイルパス'
+        ko: 'Headscale 구성 파일 경로'
+        ru: 'Путь к файлу конфигурации Headscale'
+        ms: 'Laluan fail konfigurasi Headscale'
+        pt-br: 'Caminho do arquivo de configuração do Headscale'
       required: true
       type: text
     - default: http://172.18.0.241:8080
       edit: true
       envKey: HS_SERVER
-      labelEn: Headscale server url
-      labelZh: Headscale 服务器链接
+      label:
+        en: 'Headscale server url'
+        zh: 'Headscale 服务器链接'
+        zh-Hant: 'Headscale 伺服器連結'
+        ja: 'Headscale サーバー URL'
+        ko: 'Headscale 서버 URL'
+        ru: 'URL сервера Headscale'
+        ms: 'URL pelayan Headscale'
+        pt-br: 'URL do servidor Headscale'
       required: true
       rule: paramExtUrl
       type: text
     - default: https://hs.example.com
       edit: true
       envKey: External_URL
-      labelEn: External URL (Domain URL)
-      labelZh: 外部访问地址 (域名地址)
+      label:
+        en: 'External URL (Domain URL)'
+        zh: '外部访问地址 (域名地址)'
+        zh-Hant: '外部訪問位址（網域位址）'
+        ja: '外部 URL（ドメイン URL）'
+        ko: '외부 URL(도메인 URL)'
+        ru: 'Внешний URL (доменный URL)'
+        ms: 'URL luaran (URL domain)'
+        pt-br: 'URL externo (URL de domínio)'
       required: true
       rule: paramExtUrl
       type: text
     - default: /admin
       edit: true
       envKey: URL_PATH
-      labelEn: Admin console path
-      labelZh: 后台管理路径
+      label:
+        en: 'Admin console path'
+        zh: '后台管理路径'
+        zh-Hant: '後台管理路徑'
+        ja: '管理コンソールパス'
+        ko: '관리자 콘솔 경로'
+        ru: 'Путь к консоли администратора'
+        ms: 'Laluan konsol pentadbir'
+        pt-br: 'Caminho do console de administração'
       required: true
       type: text
     - default: Asia/Shanghai
@@ -50,20 +96,43 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time zone
       labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: 'TvMhk7FDnAfaIwp0RDRsq3AVNdrYBuhNT0NTPNw4vIQ='
       edit: true
       envKey: SECRET_KEY
-      labelEn: Secret key (Obtained by running 'openssl rand -base64 32')
-      labelZh: 加密密钥 (终端执行'openssl rand -base64 32'获得)
+      label:
+        en: 'Secret key (Obtained by running ''openssl rand -base64 32'')'
+        zh: '加密密钥 (终端执行''openssl rand -base64 32''获得)'
+        zh-Hant: '加密金鑰（終端執行 ''openssl rand -base64 32'' 取得）'
+        ja: 'シークレットキー（''openssl rand -base64 32'' を実行して取得）'
+        ko: '비밀 키(''openssl rand -base64 32'' 실행으로 획득)'
+        ru: 'Секретный ключ (получить, выполнив ''openssl rand -base64 32'')'
+        ms: 'Kunci rahsia (diperoleh dengan menjalankan ''openssl rand -base64 32'')'
+        pt-br: 'Chave secreta (obtida ao executar ''openssl rand -base64 32'')'
       required: true
       type: text
     - default: Basic
       edit: true
       envKey: AUTH_TYPE
-      labelEn: Authentication method (leave blank without http validation)
-      labelZh: 验证方式 (留空无 http 验证)
+      label:
+        en: 'Authentication method (leave blank without http validation)'
+        zh: '验证方式 (留空无 http 验证)'
+        zh-Hant: '驗證方式（留空則無 HTTP 驗證）'
+        ja: '認証方式（空欄で HTTP 検証なし）'
+        ko: '인증 방식(비워두면 HTTP 검증 없음)'
+        ru: 'Метод аутентификации (оставьте пустым без проверки HTTP)'
+        ms: 'Kaedah pengesahan (biarkan kosong tanpa pengesahan HTTP)'
+        pt-br: 'Método de autenticação (deixe em branco sem validação HTTP)'
       required: false
       type: text
     - default: user
@@ -71,6 +140,15 @@ additionalProperties:
       envKey: HTTP_USER
       labelEn: http auth user
       labelZh: HTTP 用户
+      label:
+        en: 'http auth user'
+        zh: 'HTTP 用户'
+        zh-Hant: 'HTTP 認證使用者'
+        ja: 'HTTP 認証ユーザー'
+        ko: 'HTTP 인증 사용자'
+        ru: 'Пользователь HTTP-аутентификации'
+        ms: 'Pengguna pengesahan HTTP'
+        pt-br: 'Usuário de autenticação HTTP'
       required: false
       type: text
     - default: password
@@ -78,6 +156,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: http auth password
       labelZh: HTTP 密码
+      label:
+        en: 'http auth password'
+        zh: 'HTTP 密码'
+        zh-Hant: 'HTTP 認證密碼'
+        ja: 'HTTP 認証パスワード'
+        ko: 'HTTP 인증 비밀번호'
+        ru: 'Пароль HTTP-аутентификации'
+        ms: 'Kata laluan pengesahan HTTP'
+        pt-br: 'Senha de autenticação HTTP'
       random: true
       required: false
       rule: paramComplexity

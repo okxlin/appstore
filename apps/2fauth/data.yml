@@ -10,6 +10,15 @@ additionalProperties:
     - Security
   shortDescZh: 开源双因素认证管理器
   shortDescEn: Open-source two-factor authentication manager
+  description:
+    en: An open-source two-factor authentication manager.
+    zh: 开源双因素认证管理器
+    zh-Hant: 開源雙因素認證管理器
+    ja: オープンソースの二要素認証マネージャー
+    ko: 오픈 소스 이중 인증 관리자
+    ru: Открытый менеджер двухфакторной аутентификации.
+    ms: Pengurus pengesahan dua faktor sumber terbuka.
+    pt-br: Gerenciador de autenticação de dois fatores de código aberto.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://docs.2fauth.app
   github: https://github.com/Bubka/2FAuth
   document: https://docs.2fauth.app
+  architectures:
+    - amd64
+    - arm64

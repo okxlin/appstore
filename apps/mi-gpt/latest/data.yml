@@ -5,6 +5,15 @@ additionalProperties:
       envKey: OPENAI_MODEL
       labelEn: Model
       labelZh: 模型
+      label:
+        en: 'Model'
+        zh: '模型'
+        zh-Hant: '模型'
+        ja: 'モデル'
+        ko: '모델'
+        ru: 'Модель'
+        ms: 'Model'
+        pt-br: 'Modelo'
       required: false
       type: text
     - default: "sk-xxxxxxxxxxxxxxx"
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: OPENAI_API_KEY
       labelEn: API Key
       labelZh: API 密钥
+      label:
+        en: 'API Key'
+        zh: 'API 密钥'
+        zh-Hant: 'API 金鑰'
+        ja: 'API キー'
+        ko: 'API 키'
+        ru: 'Ключ API'
+        ms: 'Kunci API'
+        pt-br: 'Chave da API'
       required: false
       type: password
     - default: "https://api.openai.com/v1"
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: OPENAI_BASE_URL
       labelEn: Base URL
       labelZh: 基础 URL
+      label:
+        en: 'Base URL'
+        zh: '基础 URL'
+        zh-Hant: '基礎 URL'
+        ja: 'ベースURL'
+        ko: '기본 URL'
+        ru: 'Базовый URL'
+        ms: 'URL asas'
+        pt-br: 'URL base'
       required: false
       type: text
     - default: ""
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: OPENAI_API_VERSION
       labelEn: Azure OpenAI API Version (Edit to remove comments in compose.yml to take effect)
       labelZh: Azure OpenAI API 版本 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Azure OpenAI API Version (Edit to remove comments in compose.yml to take effect)'
+        zh: 'Azure OpenAI API 版本 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'Azure OpenAI API 版本（編輯移除 compose.yml 註解後生效）'
+        ja: 'Azure OpenAI API バージョン（有効にするには compose.yml のコメントを外してください）'
+        ko: 'Azure OpenAI API 버전 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Версия API Azure OpenAI (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Versi API Azure OpenAI (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Versão da API Azure OpenAI (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -33,6 +69,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_API_KEY
       labelEn: Azure OpenAI API Key (Edit to remove comments in compose.yml to take effect)
       labelZh: Azure OpenAI API 密钥 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Azure OpenAI API Key (Edit to remove comments in compose.yml to take effect)'
+        zh: 'Azure OpenAI API 密钥 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'Azure OpenAI API 金鑰（編輯移除 compose.yml 註解後生效）'
+        ja: 'Azure OpenAI API キー（有効にするには compose.yml のコメントを外してください）'
+        ko: 'Azure OpenAI API 키 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Ключ API Azure OpenAI (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Kunci API Azure OpenAI (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Chave da API Azure OpenAI (remova os comentários em compose.yml para ativar)'
       required: false
       type: password
     - default: ""
@@ -40,6 +85,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_ENDPOINT
       labelEn: Azure OpenAI Endpoint (Edit to remove comments in compose.yml to take effect)
       labelZh: Azure OpenAI 端点 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Azure OpenAI Endpoint (Edit to remove comments in compose.yml to take effect)'
+        zh: 'Azure OpenAI 端点 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'Azure OpenAI 端點（編輯移除 compose.yml 註解後生效）'
+        ja: 'Azure OpenAI エンドポイント（有効にするには compose.yml のコメントを外してください）'
+        ko: 'Azure OpenAI 엔드포인트 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Конечная точка Azure OpenAI (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Titik akhir Azure OpenAI (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Endpoint do Azure OpenAI (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -47,6 +101,15 @@ additionalProperties:
       envKey: AZURE_OPENAI_DEPLOYMENT
       labelEn: Azure OpenAI Deployment (Edit to remove comments in compose.yml to take effect)
       labelZh: Azure OpenAI 部署名 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Azure OpenAI Deployment (Edit to remove comments in compose.yml to take effect)'
+        zh: 'Azure OpenAI 部署名 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'Azure OpenAI 部署名稱（編輯移除 compose.yml 註解後生效）'
+        ja: 'Azure OpenAI デプロイメント名（有効にするには compose.yml のコメントを外してください）'
+        ko: 'Azure OpenAI 배포 이름 (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Имя развертывания Azure OpenAI (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'Nama penempatan Azure OpenAI (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'Nome de implantação do Azure OpenAI (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -54,6 +117,15 @@ additionalProperties:
       envKey: AUDIO_SILENT
       labelEn: Audio Silent URL (Edit to remove comments in compose.yml to take effect)
       labelZh: 静音音频链接 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Audio Silent URL (Edit to remove comments in compose.yml to take effect)'
+        zh: '静音音频链接 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '靜音音訊連結（編輯移除 compose.yml 註解後生效）'
+        ja: 'サイレント音声URL（有効にするには compose.yml のコメントを外してください）'
+        ko: '무음 오디오 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL тихого аудио (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL audio senyap (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de áudio silencioso (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -61,6 +133,15 @@ additionalProperties:
       envKey: AUDIO_BEEP
       labelEn: Audio Beep URL (Edit to remove comments in compose.yml to take effect)
       labelZh: 提示音链接 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Audio Beep URL (Edit to remove comments in compose.yml to take effect)'
+        zh: '提示音链接 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '提示音連結（編輯移除 compose.yml 註解後生效）'
+        ja: 'ビープ音URL（有効にするには compose.yml のコメントを外してください）'
+        ko: '비프 오디오 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL звукового сигнала (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL audio bip (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de áudio de bip (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -68,6 +149,15 @@ additionalProperties:
       envKey: AUDIO_ACTIVE
       labelEn: Audio Active URL (Edit to remove comments in compose.yml to take effect)
       labelZh: 唤醒音频链接 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Audio Active URL (Edit to remove comments in compose.yml to take effect)'
+        zh: '唤醒音频链接 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '喚醒音訊連結（編輯移除 compose.yml 註解後生效）'
+        ja: '起動音声URL（有効にするには compose.yml のコメントを外してください）'
+        ko: '활성 오디오 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL активного аудио (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL audio aktif (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de áudio ativo (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -75,6 +165,15 @@ additionalProperties:
       envKey: AUDIO_ERROR
       labelEn: Audio Error URL (Edit to remove comments in compose.yml to take effect)
       labelZh: 错误音频链接 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'Audio Error URL (Edit to remove comments in compose.yml to take effect)'
+        zh: '错误音频链接 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: '錯誤音訊連結（編輯移除 compose.yml 註解後生效）'
+        ja: 'エラー音声URL（有効にするには compose.yml のコメントを外してください）'
+        ko: '오류 오디오 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'URL аудио ошибки (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL audio ralat (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL de áudio de erro (remova os comentários em compose.yml para ativar)'
       required: false
       type: text
     - default: ""
@@ -82,5 +181,14 @@ additionalProperties:
       envKey: TTS_BASE_URL
       labelEn: TTS Base URL (Edit to remove comments in compose.yml to take effect)
       labelZh: TTS 接口地址 (编辑去除compose.yml里的注释生效)
+      label:
+        en: 'TTS Base URL (Edit to remove comments in compose.yml to take effect)'
+        zh: 'TTS 接口地址 (编辑去除compose.yml里的注释生效)'
+        zh-Hant: 'TTS 介面位址（編輯移除 compose.yml 註解後生效）'
+        ja: 'TTS ベースURL（有効にするには compose.yml のコメントを外してください）'
+        ko: 'TTS 기본 URL (적용하려면 compose.yml의 주석을 제거하세요)'
+        ru: 'Базовый URL TTS (удалите комментарии в compose.yml, чтобы применить)'
+        ms: 'URL asas TTS (buang komen dalam compose.yml untuk berkuat kuasa)'
+        pt-br: 'URL base do TTS (remova os comentários em compose.yml para ativar)'
       required: false
       type: text

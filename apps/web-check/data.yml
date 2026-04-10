@@ -17,3 +17,15 @@ additionalProperties:
   website: https://web-check.xyz/
   github: https://github.com/lissy93/web-check
   document: https://github.com/lissy93/web-check
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'An all-in-one OSINT tool for analysing any website.'
+    zh: '用于分析任何网站的多合一 OSINT 工具'
+    zh-Hant: '用於分析任何網站的多合一 OSINT 工具'
+    ja: 'あらゆる Web サイトを分析できるオールインワン OSINT ツールです。'
+    ko: '어떤 웹사이트든 분석할 수 있는 올인원 OSINT 도구입니다.'
+    ru: 'Универсальный OSINT-инструмент для анализа любых сайтов.'
+    ms: 'Alat OSINT semua-dalam-satu untuk menganalisis mana-mana laman web.'
+    pt-br: 'Ferramenta OSINT tudo-em-um para analisar qualquer site.'

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: secret
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: JWT_SECRET
       labelEn: JWT Secret
       labelZh: JWT密码
+      label:
+        en: 'JWT Secret'
+        zh: 'JWT密码'
+        zh-Hant: 'JWT 密碼'
+        ja: 'JWT シークレット'
+        ko: 'JWT 시크릿'
+        ru: 'JWT секрет'
+        ms: 'Rahsia JWT'
+        pt-br: 'Segredo JWT'
       random: true
       required: true
       rule: paramComplexity

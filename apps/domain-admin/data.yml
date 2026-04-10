@@ -17,3 +17,14 @@ additionalProperties:
   website: https://github.com/mouday/domain-admin
   github: https://github.com/mouday/domain-admin
   document: https://domain-admin.readthedocs.io/
+  architectures:
+    - amd64
+  description:
+    en: "Domain name and SSL certificate monitoring platform"
+    zh: "域名和SSL证书监测平台"
+    zh-Hant: "網域名稱與 SSL 憑證監測平台"
+    ja: "ドメイン名とSSL証明書の監視プラットフォーム"
+    ko: "도메인 및 SSL 인증서 모니터링 플랫폼"
+    ru: "Платформа мониторинга доменов и SSL-сертификатов"
+    ms: "Platform pemantauan nama domain dan sijil SSL"
+    pt-br: "Plataforma de monitoramento de domínios e certificados SSL"

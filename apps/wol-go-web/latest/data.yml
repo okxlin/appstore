@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: KEY
       labelEn: API Key
       labelZh: API 密钥
+      label:
+        en: 'API Key'
+        zh: 'API 密钥'
+        zh-Hant: 'API 金鑰'
+        ja: 'API キー'
+        ko: 'API 키'
+        ru: 'Ключ API'
+        ms: 'Kunci API'
+        pt-br: 'Chave da API'
       required: true
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: USERNAME
       labelEn: Username
       labelZh: 用户名
+      label:
+        en: 'Username'
+        zh: '用户名'
+        zh-Hant: '使用者名稱'
+        ja: 'ユーザー名'
+        ko: '사용자 이름'
+        ru: 'Имя пользователя'
+        ms: 'Nama pengguna'
+        pt-br: 'Nome de usuário'
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       required: false
       rule: paramComplexity
       type: password
@@ -35,17 +71,35 @@ additionalProperties:
       envKey: WEB
       labelEn: Web Interface
       labelZh: Web 界面
+      label:
+        en: 'Web Interface'
+        zh: 'Web 界面'
+        zh-Hant: 'Web 介面'
+        ja: 'Webインターフェース'
+        ko: '웹 인터페이스'
+        ru: 'Веб-интерфейс'
+        ms: 'Antara muka web'
+        pt-br: 'Interface web'
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "Asia/Shanghai"
       edit: true
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
+      label:
+        en: 'Time Zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
       required: true
       type: text

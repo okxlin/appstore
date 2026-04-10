@@ -17,3 +17,15 @@ additionalProperties:
   website: https://github.com/jaaksii/sublink
   github: https://github.com/jaaksii/sublink
   document: https://github.com/jaaksii/sublink
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'Convert node links into subscriptions.'
+    zh: '节点转换成订阅'
+    zh-Hant: '節點轉換成訂閱'
+    ja: 'ノードリンクをサブスクリプションに変換します。'
+    ko: '노드 링크를 구독 형식으로 변환합니다.'
+    ru: 'Преобразует ссылки узлов в подписки.'
+    ms: 'Menukar pautan nod kepada langganan.'
+    pt-br: 'Converte links de nós em assinaturas.'

@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 极简聊天应用
   shortDescEn: Minimalist chat application
+  description:
+    en: Minimalist chat application
+    zh: 极简聊天应用
+    zh-Hant: 極簡聊天應用
+    ja: ミニマルなチャットアプリ
+    ko: 미니멀한 채팅 앱
+    ru: Минималистичное чат-приложение
+    ms: Aplikasi sembang minimalis
+    pt-br: Aplicativo de chat minimalista
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://minichat.seeyou.me
   github: https://github.com/okhanyu/minichat
   document: https://github.com/okhanyu/minichat
+  architectures:
+    - amd64
+

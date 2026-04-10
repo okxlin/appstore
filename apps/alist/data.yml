@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个支持多存储的文件列表程序
   shortDescEn: A file list program that supports multiple storage
+  description:
+    en: A file listing program that supports multiple storage backends.
+    zh: 一个支持多存储的文件列表程序
+    zh-Hant: 一個支援多存儲的檔案列表程式
+    ja: 複数ストレージをサポートするファイル一覧プログラム
+    ko: 다중 스토리지를 지원하는 파일 목록 프로그램
+    ru: Программа для списка файлов с поддержкой нескольких хранилищ.
+    ms: Program senarai fail yang menyokong pelbagai storan.
+    pt-br: Programa de listagem de arquivos que suporta múltiplos armazenamentos.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/alist-org/alist
   github: https://github.com/alist-org/alist
   document: https://alist.nn.ci/zh/
+  architectures:
+    - amd64

@@ -17,3 +17,15 @@ additionalProperties:
   website: http://alist.xiaoya.pro
   github: https://hub.docker.com/r/xiaoyaliu/alist
   document: https://www.notion.so/xiaoyaliu/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: 'An Alist-based cloud drive aggregation site.'
+    zh: '基于 Alist 的网盘聚合站'
+    zh-Hant: '基於 Alist 的網盤聚合站'
+    ja: 'Alist ベースのクラウドドライブ集約サイトです。'
+    ko: 'Alist 기반의 클라우드 드라이브 통합 사이트입니다.'
+    ru: 'Сайт-агрегатор облачных дисков на базе Alist.'
+    ms: 'Laman agregasi storan awan berasaskan Alist.'
+    pt-br: 'Site agregador de unidades em nuvem baseado em Alist.'

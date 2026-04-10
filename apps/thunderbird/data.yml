@@ -10,6 +10,15 @@ additionalProperties:
     - Email
   shortDescZh: 开源的电子邮件客户端
   shortDescEn: Open-source email client
+  description:
+    en: "Open-source email client."
+    zh: "开源的电子邮件客户端。"
+    zh-Hant: "開源的電子郵件用戶端。"
+    ja: "オープンソースのメールクライアントです。"
+    ko: "오픈소스 이메일 클라이언트입니다."
+    ru: "Почтовый клиент с открытым исходным кодом."
+    ms: "Klien e-mel sumber terbuka."
+    pt-br: "Cliente de e-mail de código aberto."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.thunderbird.net
   github: https://github.com/thunderbird
   document: https://support.mozilla.org/en-US/products/thunderbird
+  architectures:
+    - amd64

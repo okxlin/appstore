@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一个具有有趣功能的 Web 应用程序书签仪表板
   shortDescEn: A web application bookmark dashboard, with fun features
+  description:
+    en: A web application bookmark dashboard, with fun features
+    zh: 一个具有有趣功能的 Web 应用程序书签仪表板
+    zh-Hant: 一個具有有趣功能的 Web 應用程式書籤儀表板
+    ja: 楽しい機能を備えたWebアプリのブックマークダッシュボード
+    ko: 재미있는 기능이 있는 웹 앱 북마크 대시보드
+    ru: Панель закладок веб-приложений с интересными функциями
+    ms: Papan pemuka penanda buku aplikasi web dengan ciri menarik
+    pt-br: Painel de favoritos de aplicativos web, com recursos divertidos
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/rmountjoy92/DashMachine
   github: https://github.com/rmountjoy92/DashMachine
   document: https://github.com/rmountjoy92/DashMachine
+  architectures:
+    - amd64

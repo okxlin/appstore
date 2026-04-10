@@ -4,6 +4,15 @@ tags:
 title: Lsky Pro 是一个用于在线上传、管理图片的图床程序
 description: Lsky Pro 是一个用于在线上传、管理图片的图床程序
 additionalProperties:
+  description:
+    en: Lsky Pro is an image hosting program for uploading and managing images online
+    zh: Lsky Pro 是一个用于在线上传、管理图片的图床程序
+    zh-Hant: Lsky Pro 是一個用於線上上傳、管理圖片的圖床程式
+    ja: Lsky Pro はオンラインで画像をアップロード・管理するための画像ホスティングプログラム
+    ko: Lsky Pro는 온라인에서 이미지를 업로드하고 관리하는 이미지 호스팅 프로그램입니다
+    ru: Lsky Pro — это сервис для онлайн-загрузки и управления изображениями
+    ms: Lsky Pro ialah program pengehosan imej untuk memuat naik dan mengurus imej secara dalam talian
+    pt-br: Lsky Pro é um programa de hospedagem de imagens para enviar e gerenciar imagens online
   key: lsky-pro
   name: 兰空图床 Lsky-pro
   tags:
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://hub.docker.com/r/halcyonazure/lsky-pro-docker
   github: https://github.com/lsky-org/lsky-pro
   document: https://docs.lsky.pro/
+  architectures:
+    - amd64

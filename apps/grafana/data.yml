@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 用于监控和可观察性的开源平台
   shortDescEn: The open-source platform for monitoring and observability
+  description:
+    en: Open-source platform for monitoring and observability
+    zh: 用于监控和可观察性的开源平台
+    zh-Hant: 用於監控與可觀測性的開源平台
+    ja: 監視と可観測性のためのオープンソースプラットフォーム
+    ko: 모니터링과 관측성을 위한 오픈 소스 플랫폼
+    ru: Платформа с открытым исходным кодом для мониторинга и наблюдаемости
+    ms: Platform sumber terbuka untuk pemantauan dan kebolehlihatan
+    pt-br: Plataforma de código aberto para monitoramento e observabilidade
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,7 @@ additionalProperties:
   website: https://grafana.com/
   github: https://github.com/grafana/grafana
   document: https://grafana.com/docs/grafana
+  architectures:
+    - amd64
+    - arm64
+

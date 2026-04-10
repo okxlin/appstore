@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: API_PANDORA
       labelEn: Pandora API mode
       labelZh: 潘多拉API模式
+      label:
+        en: 'Pandora API mode'
+        zh: '潘多拉API模式'
+        zh-Hant: '潘多拉 API 模式'
+        ja: 'Pandora APIモード'
+        ko: 'Pandora API 모드'
+        ru: 'Режим Pandora API'
+        ms: 'Mod API Pandora'
+        pt-br: 'Modo API Pandora'
       required: false
       type: text
     - default: ""
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: ARKOSE_TOKEN_URL
       labelEn: ARKOSE Token URL
       labelZh: ARKOSE_TOKEN 链接
+      label:
+        en: 'ARKOSE Token URL'
+        zh: 'ARKOSE_TOKEN 链接'
+        zh-Hant: 'ARKOSE_TOKEN 連結'
+        ja: 'ARKOSEトークンURL'
+        ko: 'ARKOSE 토큰 URL'
+        ru: 'URL токена ARKOSE'
+        ms: 'URL Token ARKOSE'
+        pt-br: 'URL do token ARKOSE'
       required: false
       type: text
     - default: ""
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: OPENAI_EMAIL
       labelEn: OpenAI account email
       labelZh: OpenAI账户邮箱
+      label:
+        en: 'OpenAI account email'
+        zh: 'OpenAI账户邮箱'
+        zh-Hant: 'OpenAI 帳戶郵箱'
+        ja: 'OpenAIアカウントのメール'
+        ko: 'OpenAI 계정 이메일'
+        ru: 'Email аккаунта OpenAI'
+        ms: 'Emel akaun OpenAI'
+        pt-br: 'E-mail da conta OpenAI'
       required: false
       type: text
     - default: ""
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: OPENAI_PASSWORD
       labelEn: OpenAI account password
       labelZh: OpenAI账户密码
+      label:
+        en: 'OpenAI account password'
+        zh: 'OpenAI账户密码'
+        zh-Hant: 'OpenAI 帳戶密碼'
+        ja: 'OpenAIアカウントのパスワード'
+        ko: 'OpenAI 계정 비밀번호'
+        ru: 'Пароль аккаунта OpenAI'
+        ms: 'Kata laluan akaun OpenAI'
+        pt-br: 'Senha da conta OpenAI'
       required: false
       type: text

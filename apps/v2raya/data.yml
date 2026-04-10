@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 支持全局透明代理的 Project V 的 Linux 客户端
   shortDescEn: A web GUI client of Project V
+  description:
+    en: "Linux client for Project V with global transparent proxy support."
+    zh: "支持全局透明代理的 Project V Linux 客户端。"
+    zh-Hant: "支援全域透明代理的 Project V Linux 用戶端。"
+    ja: "グローバル透過プロキシに対応した Project V の Linux クライアントです。"
+    ko: "전역 투명 프록시를 지원하는 Project V의 Linux 클라이언트입니다."
+    ru: "Linux-клиент Project V с поддержкой глобального прозрачного прокси."
+    ms: "Klien Linux Project V dengan sokongan proksi telus global."
+    pt-br: "Cliente Linux do Project V com suporte a proxy transparente global."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://v2raya.org
   github: https://github.com/v2rayA/v2rayA
   document: https://v2raya.org/docs/prologue/introduction/
+  architectures:
+    - amd64

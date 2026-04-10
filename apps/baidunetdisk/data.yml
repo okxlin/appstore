@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 百度网盘是百度推出的一项云存储服务
   shortDescEn: BaiduNetdisk is a cloud storage service launched by Baidu
+  description:
+    en: Baidu Netdisk is a cloud storage service launched by Baidu
+    zh: 百度网盘是百度推出的一项云存储服务
+    zh-Hant: 百度網盤是百度推出的一項雲端儲存服務
+    ja: Baidu NetdiskはBaiduが提供するクラウドストレージサービスです
+    ko: Baidu Netdisk는 바이두가 제공하는 클라우드 스토리지 서비스입니다
+    ru: Baidu Netdisk — облачное хранилище от Baidu
+    ms: Baidu Netdisk ialah perkhidmatan storan awan daripada Baidu
+    pt-br: Baidu Netdisk é um serviço de armazenamento em nuvem da Baidu
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://pan.baidu.com/
   github: https://github.com/gshang2017/docker/tree/master/baidunetdisk
   document: https://github.com/gshang2017/docker/tree/master/baidunetdisk
+  architectures:
+    - amd64

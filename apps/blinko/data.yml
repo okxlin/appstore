@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 一款开源、自托管的个人笔记工具
   shortDescEn: An open-source, self-hosted personal note tool
+  description:
+    en: An open-source, self-hosted personal note tool
+    zh: 一款开源、自托管的个人笔记工具
+    zh-Hant: 一款開源、自託管的個人筆記工具
+    ja: オープンソースのセルフホスト型個人ノートツール
+    ko: 오픈 소스, 자체 호스팅 개인 노트 도구
+    ru: Открытый и самохостимый инструмент для личных заметок
+    ms: Alat nota peribadi sumber terbuka dan hos sendiri
+    pt-br: Ferramenta pessoal de notas open source e auto-hospedada
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://blinko-demo.vercel.app
   github: https://github.com/blinko-space/blinko
   document: https://blinko-doc.vercel.app/intro.html
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: BASE_URL
       labelEn: Base URL
       labelZh: 基本 URL
+      label:
+        en: 'Base URL'
+        zh: '基本 URL'
+        zh-Hant: '基本 URL'
+        ja: 'ベースURL'
+        ko: '기본 URL'
+        ru: 'Базовый URL'
+        ms: 'URL asas'
+        pt-br: 'URL base'
       required: true
       rule: paramExtUrl
       type: text
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: BETA_PORT
       labelEn: Beta Port
       labelZh: Beta 端口
+      label:
+        en: 'Beta Port'
+        zh: 'Beta 端口'
+        zh-Hant: 'Beta 埠'
+        ja: 'ベータポート'
+        ko: '베타 포트'
+        ru: 'Бета-порт'
+        ms: 'Port Beta'
+        pt-br: 'Porta beta'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: BETA_BASE_URL
       labelEn: Beta Base URL
       labelZh: Beta 基本 URL
+      label:
+        en: 'Beta Base URL'
+        zh: 'Beta 基本 URL'
+        zh-Hant: 'Beta 基本 URL'
+        ja: 'ベータベースURL'
+        ko: '베타 기본 URL'
+        ru: 'Базовый URL бета'
+        ms: 'URL asas Beta'
+        pt-br: 'URL base beta'
       required: true
       rule: paramExtUrl
       type: text

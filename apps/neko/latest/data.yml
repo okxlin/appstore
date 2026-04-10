@@ -5,6 +5,15 @@ additionalProperties:
       envKey: IMAGE_NAME
       labelEn: Image Name
       labelZh: 镜像名称
+      label:
+        en: 'Image Name'
+        zh: '镜像名称'
+        zh-Hant: '鏡像名稱'
+        ja: 'イメージ名'
+        ko: '이미지 이름'
+        ru: 'Имя образа'
+        ms: 'Nama imej'
+        pt-br: 'Nome da imagem'
       required: true
       type: select
       values:
@@ -47,6 +56,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -55,6 +73,15 @@ additionalProperties:
       envKey: NEKO_SCREEN
       labelEn: Screen Resolution
       labelZh: 屏幕分辨率
+      label:
+        en: 'Screen Resolution'
+        zh: '屏幕分辨率'
+        zh-Hant: '螢幕解析度'
+        ja: '画面解像度'
+        ko: '화면 해상도'
+        ru: 'Разрешение экрана'
+        ms: 'Resolusi skrin'
+        pt-br: 'Resolução da tela'
       required: true
       type: text
     - default: "neko"
@@ -62,6 +89,15 @@ additionalProperties:
       envKey: NEKO_PASSWORD
       labelEn: User Password
       labelZh: 用户密码
+      label:
+        en: 'User Password'
+        zh: '用户密码'
+        zh-Hant: '使用者密碼'
+        ja: 'ユーザーパスワード'
+        ko: '사용자 비밀번호'
+        ru: 'Пароль пользователя'
+        ms: 'Kata laluan pengguna'
+        pt-br: 'Senha do usuário'
       required: true
       type: password
     - default: "admin"
@@ -69,6 +105,15 @@ additionalProperties:
       envKey: NEKO_PASSWORD_ADMIN
       labelEn: Admin Password
       labelZh: 管理员密码
+      label:
+        en: 'Admin Password'
+        zh: '管理员密码'
+        zh-Hant: '管理員密碼'
+        ja: '管理者パスワード'
+        ko: '관리자 비밀번호'
+        ru: 'Пароль администратора'
+        ms: 'Kata laluan pentadbir'
+        pt-br: 'Senha de administrador'
       required: true
       type: password
     - default: "52000-52100"
@@ -76,6 +121,15 @@ additionalProperties:
       envKey: NEKO_EPR
       labelEn: WebRTC UDP Port Range
       labelZh: WebRTC UDP 端口范围
+      label:
+        en: 'WebRTC UDP Port Range'
+        zh: 'WebRTC UDP 端口范围'
+        zh-Hant: 'WebRTC UDP 埠範圍'
+        ja: 'WebRTC UDP ポート範囲'
+        ko: 'WebRTC UDP 포트 범위'
+        ru: 'Диапазон UDP-портов WebRTC'
+        ms: 'Julat port UDP WebRTC'
+        pt-br: 'Intervalo de portas UDP do WebRTC'
       required: true
       type: text
     - default: "1"
@@ -83,6 +137,15 @@ additionalProperties:
       envKey: NEKO_ICELITE
       labelEn: ICELite Mode
       labelZh: ICELite 模式
+      label:
+        en: 'ICELite Mode'
+        zh: 'ICELite 模式'
+        zh-Hant: 'ICELite 模式'
+        ja: 'ICELite モード'
+        ko: 'ICELite 모드'
+        ru: 'Режим ICELite'
+        ms: 'Mod ICELite'
+        pt-br: 'Modo ICELite'
       required: true
       type: number
     - default: "2048m"
@@ -90,6 +153,15 @@ additionalProperties:
       envKey: MEM_USE
       labelEn: Shared memory footprint (1gb)
       labelZh: 共享内存占用 (1gb)
+      label:
+        en: 'Shared memory footprint (1gb)'
+        zh: '共享内存占用(1gb)'
+        zh-Hant: '共享記憶體占用 (1GB)'
+        ja: '共有メモリ使用量 (1GB)'
+        ko: '공유 메모리 사용량 (1GB)'
+        ru: 'Использование общей памяти (1 ГБ)'
+        ms: 'Penggunaan memori kongsi (1GB)'
+        pt-br: 'Uso de memória compartilhada (1GB)'
       required: true
       type: text
     - default: "./data/Downloads"
@@ -97,6 +169,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download Path (Pay attention to folder permissions)
       labelZh: 下载文件路径 (注意文件夹权限)
+      label:
+        en: 'Download Path (Pay attention to folder permissions)'
+        zh: '下载文件路径 (注意文件夹权限)'
+        zh-Hant: '下載檔案路徑 (注意資料夾權限)'
+        ja: 'ダウンロードパス（フォルダー権限に注意）'
+        ko: '다운로드 경로(폴더 권한에 유의)'
+        ru: 'Путь загрузки (обратите внимание на права папки)'
+        ms: 'Laluan muat turun (perhatikan kebenaran folder)'
+        pt-br: 'Caminho de download (atenção às permissões da pasta)'
       required: true
       type: text
     - default: "false"
@@ -104,6 +185,15 @@ additionalProperties:
       envKey: NEKO_CONTROL_PROTECTION
       labelEn: Control Protection
       labelZh: 控制保护
+      label:
+        en: 'Control Protection'
+        zh: '控制保护'
+        zh-Hant: '控制保護'
+        ja: '制御保護'
+        ko: '제어 보호'
+        ru: 'Защита управления'
+        ms: 'Perlindungan kawalan'
+        pt-br: 'Proteção de controle'
       required: true
       type: select
       values:
@@ -116,6 +206,15 @@ additionalProperties:
       envKey: NEKO_IMPLICIT_CONTROL
       labelEn: Implicit Control
       labelZh: 隐式控制
+      label:
+        en: 'Implicit Control'
+        zh: '隐式控制'
+        zh-Hant: '隱式控制'
+        ja: '暗黙の制御'
+        ko: '암시적 제어'
+        ru: 'Неявное управление'
+        ms: 'Kawalan tersirat'
+        pt-br: 'Controle implícito'
       required: true
       type: select
       values:
@@ -128,6 +227,15 @@ additionalProperties:
       envKey: NEKO_LOCKS
       labelEn: Locks
       labelZh: 锁定
+      label:
+        en: 'Locks'
+        zh: '锁定'
+        zh-Hant: '鎖定'
+        ja: 'ロック'
+        ko: '잠금'
+        ru: 'Блокировки'
+        ms: 'Kunci'
+        pt-br: 'Bloqueios'
       required: false
       type: text
     - default: ""
@@ -135,6 +243,15 @@ additionalProperties:
       envKey: NEKO_NAT1TO1
       labelEn: NAT1to1 IP
       labelZh: NAT1to1 IP
+      label:
+        en: 'NAT1to1 IP'
+        zh: 'NAT1to1 IP 地址'
+        zh-Hant: 'NAT1to1 IP 位址'
+        ja: 'NAT1to1 IP アドレス'
+        ko: 'NAT1to1 IP 주소'
+        ru: 'IP NAT1to1'
+        ms: 'IP NAT1to1'
+        pt-br: 'IP NAT1to1'
       required: false
       type: text
     - default: ""
@@ -142,6 +259,15 @@ additionalProperties:
       envKey: NEKO_IPFETCH
       labelEn: IP Fetch URL
       labelZh: IP 获取URL
+      label:
+        en: 'IP Fetch URL'
+        zh: 'IP 获取 URL'
+        zh-Hant: 'IP 取得 URL'
+        ja: 'IP 取得 URL'
+        ko: 'IP 가져오기 URL'
+        ru: 'URL получения IP'
+        ms: 'URL ambil IP'
+        pt-br: 'URL para obter IP'
       required: false
       type: text
     - default: ""
@@ -149,6 +275,15 @@ additionalProperties:
       envKey: NEKO_ICESERVER
       labelEn: ICE Server
       labelZh: ICE 服务器
+      label:
+        en: 'ICE Server'
+        zh: 'ICE 服务器'
+        zh-Hant: 'ICE 伺服器'
+        ja: 'ICE サーバー'
+        ko: 'ICE 서버'
+        ru: 'Сервер ICE'
+        ms: 'Pelayan ICE'
+        pt-br: 'Servidor ICE'
       required: false
       type: text
     - default: ""
@@ -156,6 +291,15 @@ additionalProperties:
       envKey: NEKO_ICESERVERS
       labelEn: ICE Servers
       labelZh: ICE 服务器组
+      label:
+        en: 'ICE Servers'
+        zh: 'ICE 服务器组'
+        zh-Hant: 'ICE 伺服器組'
+        ja: 'ICE サーバー群'
+        ko: 'ICE 서버 목록'
+        ru: 'Серверы ICE'
+        ms: 'Pelayan ICE'
+        pt-br: 'Servidores ICE'
       required: false
       type: text
     - default: "vp8"
@@ -163,6 +307,15 @@ additionalProperties:
       envKey: NEKO_VIDEO_CODEC
       labelEn: Video Codec
       labelZh: 视频编解码器
+      label:
+        en: 'Video Codec'
+        zh: '视频编解码器'
+        zh-Hant: '視訊編解碼器'
+        ja: '映像コーデック'
+        ko: '비디오 코덱'
+        ru: 'Видеокодек'
+        ms: 'Kodek video'
+        pt-br: 'Codec de vídeo'
       required: false
       type: text
     - default: "3500"
@@ -170,6 +323,15 @@ additionalProperties:
       envKey: NEKO_VIDEO_BITRATE
       labelEn: Video Bitrate
       labelZh: 视频比特率
+      label:
+        en: 'Video Bitrate'
+        zh: '视频比特率'
+        zh-Hant: '視訊位元率'
+        ja: '映像ビットレート'
+        ko: '비디오 비트레이트'
+        ru: 'Битрейт видео'
+        ms: 'Kadar bit video'
+        pt-br: 'Taxa de bits de vídeo'
       required: false
       type: number
     - default: "0"
@@ -177,6 +339,15 @@ additionalProperties:
       envKey: NEKO_MAX_FPS
       labelEn: Max FPS
       labelZh: 最大FPS
+      label:
+        en: 'Max FPS'
+        zh: '最大 FPS'
+        zh-Hant: '最大 FPS'
+        ja: '最大 FPS'
+        ko: '최대 FPS'
+        ru: 'Макс. FPS'
+        ms: 'FPS maksimum'
+        pt-br: 'FPS máximo'
       required: false
       type: number
     - default: "none"
@@ -184,6 +355,15 @@ additionalProperties:
       envKey: NEKO_HWENC
       labelEn: Hardware Encoder
       labelZh: 硬件编码器
+      label:
+        en: 'Hardware Encoder'
+        zh: '硬件编码器'
+        zh-Hant: '硬體編碼器'
+        ja: 'ハードウェアエンコーダー'
+        ko: '하드웨어 인코더'
+        ru: 'Аппаратный кодировщик'
+        ms: 'Pengekod perkakasan'
+        pt-br: 'Codificador de hardware'
       required: false
       type: text
     - default: "opus"
@@ -191,6 +371,15 @@ additionalProperties:
       envKey: NEKO_AUDIO_CODEC
       labelEn: Audio Codec
       labelZh: 音频编解码器
+      label:
+        en: 'Audio Codec'
+        zh: '音频编解码器'
+        zh-Hant: '音訊編解碼器'
+        ja: '音声コーデック'
+        ko: '오디오 코덱'
+        ru: 'Аудиокодек'
+        ms: 'Kodek audio'
+        pt-br: 'Codec de áudio'
       required: false
       type: text
     - default: 196
@@ -198,6 +387,15 @@ additionalProperties:
       envKey: NEKO_AUDIO_BITRATE
       labelEn: Audio Bitrate
       labelZh: 音频比特率
+      label:
+        en: 'Audio Bitrate'
+        zh: '音频比特率'
+        zh-Hant: '音訊位元率'
+        ja: '音声ビットレート'
+        ko: '오디오 비트레이트'
+        ru: 'Битрейт аудио'
+        ms: 'Kadar bit audio'
+        pt-br: 'Taxa de bits de áudio'
       required: false
       type: number
     - default: ""
@@ -205,6 +403,15 @@ additionalProperties:
       envKey: NEKO_BROADCAST_PIPELINE
       labelEn: Broadcast Pipeline
       labelZh: 广播管道
+      label:
+        en: 'Broadcast Pipeline'
+        zh: '广播管道'
+        zh-Hant: '廣播管道'
+        ja: 'ブロードキャストパイプライン'
+        ko: '브로드캐스트 파이프라인'
+        ru: 'Конвейер трансляции'
+        ms: 'Saluran siaran'
+        pt-br: 'Pipeline de transmissão'
       required: false
       type: text
     - default: ""
@@ -212,6 +419,15 @@ additionalProperties:
       envKey: NEKO_BROADCAST_URL
       labelEn: Broadcast URL
       labelZh: 广播URL
+      label:
+        en: 'Broadcast URL'
+        zh: '广播 URL'
+        zh-Hant: '廣播 URL'
+        ja: 'ブロードキャスト URL'
+        ko: '브로드캐스트 URL'
+        ru: 'URL трансляции'
+        ms: 'URL siaran'
+        pt-br: 'URL de transmissão'
       required: false
       type: text
     - default: "false"
@@ -219,6 +435,15 @@ additionalProperties:
       envKey: NEKO_BROADCAST_AUTOSTART
       labelEn: Broadcast Autostart
       labelZh: 广播自动启动
+      label:
+        en: 'Broadcast Autostart'
+        zh: '广播自动启动'
+        zh-Hant: '廣播自動啟動'
+        ja: 'ブロードキャスト自動起動'
+        ko: '브로드캐스트 자동 시작'
+        ru: 'Автозапуск трансляции'
+        ms: 'Autostart siaran'
+        pt-br: 'Inicialização automática da transmissão'
       required: true
       type: select
       values:
@@ -231,6 +456,15 @@ additionalProperties:
       envKey: NEKO_BIND
       labelEn: Bind Address
       labelZh: 绑定地址
+      label:
+        en: 'Bind Address'
+        zh: '绑定地址'
+        zh-Hant: '綁定地址'
+        ja: 'バインドアドレス'
+        ko: '바인드 주소'
+        ru: 'Адрес привязки'
+        ms: 'Alamat ikatan'
+        pt-br: 'Endereço de vinculação'
       required: true
       rule: paramPort
       type: number
@@ -239,6 +473,15 @@ additionalProperties:
       envKey: NEKO_CERT
       labelEn: SSL Certificate Path
       labelZh: SSL证书路径
+      label:
+        en: 'SSL Certificate Path'
+        zh: 'SSL 证书路径'
+        zh-Hant: 'SSL 憑證路徑'
+        ja: 'SSL 証明書パス'
+        ko: 'SSL 인증서 경로'
+        ru: 'Путь к SSL-сертификату'
+        ms: 'Laluan sijil SSL'
+        pt-br: 'Caminho do certificado SSL'
       required: false
       type: text
     - default: ""
@@ -246,6 +489,15 @@ additionalProperties:
       envKey: NEKO_KEY
       labelEn: SSL Key Path
       labelZh: SSL 密钥路径
+      label:
+        en: 'SSL Key Path'
+        zh: 'SSL 密钥路径'
+        zh-Hant: 'SSL 金鑰路徑'
+        ja: 'SSL キーパス'
+        ko: 'SSL 키 경로'
+        ru: 'Путь к SSL-ключу'
+        ms: 'Laluan kunci SSL'
+        pt-br: 'Caminho da chave SSL'
       required: false
       type: text
     - default: "false"
@@ -253,6 +505,15 @@ additionalProperties:
       envKey: NEKO_PROXY
       labelEn: Proxy Mode
       labelZh: 代理模式
+      label:
+        en: 'Proxy Mode'
+        zh: '代理模式'
+        zh-Hant: '代理模式'
+        ja: 'プロキシモード'
+        ko: '프록시 모드'
+        ru: 'Режим прокси'
+        ms: 'Mod proksi'
+        pt-br: 'Modo de proxy'
       required: true
       type: select
       values:
@@ -265,6 +526,15 @@ additionalProperties:
       envKey: NEKO_PATH_PREFIX
       labelEn: Path Prefix
       labelZh: 路径前缀
+      label:
+        en: 'Path Prefix'
+        zh: '路径前缀'
+        zh-Hant: '路徑前綴'
+        ja: 'パス接頭辞'
+        ko: '경로 접두사'
+        ru: 'Префикс пути'
+        ms: 'Awalan laluan'
+        pt-br: 'Prefixo do caminho'
       required: false
       type: text
     - default: ""
@@ -272,6 +542,15 @@ additionalProperties:
       envKey: NEKO_CORS
       labelEn: CORS
       labelZh: 跨域资源共享
+      label:
+        en: 'CORS'
+        zh: '跨域资源共享'
+        zh-Hant: '跨來源資源共享'
+        ja: 'クロスオリジンリソース共有'
+        ko: '교차 출처 리소스 공유'
+        ru: 'Общий доступ к ресурсам между источниками'
+        ms: 'Perkongsian sumber silang asal'
+        pt-br: 'Compartilhamento de recursos entre origens'
       required: false
       type: text
     - default: "true"
@@ -279,6 +558,15 @@ additionalProperties:
       envKey: NEKO_FILE_TRANSFER_ENABLED
       labelEn: File Transfer Enabled
       labelZh: 文件传输已启用
+      label:
+        en: 'File Transfer Enabled'
+        zh: '文件传输已启用'
+        zh-Hant: '檔案傳輸已啟用'
+        ja: 'ファイル転送を有効化'
+        ko: '파일 전송 활성화'
+        ru: 'Передача файлов включена'
+        ms: 'Pemindahan fail diaktifkan'
+        pt-br: 'Transferência de arquivos ativada'
       required: true
       type: select
       values:
@@ -291,6 +579,15 @@ additionalProperties:
       envKey: NEKO_FILE_TRANSFER_PATH
       labelEn: File Transfer Path
       labelZh: 文件传输路径
+      label:
+        en: 'File Transfer Path'
+        zh: '文件传输路径'
+        zh-Hant: '檔案傳輸路徑'
+        ja: 'ファイル転送パス'
+        ko: '파일 전송 경로'
+        ru: 'Путь передачи файлов'
+        ms: 'Laluan pemindahan fail'
+        pt-br: 'Caminho de transferência de arquivos'
       required: false
       type: text
     - default: ""
@@ -298,6 +595,15 @@ additionalProperties:
       envKey: NEKO_DISPLAY
       labelEn: Display
       labelZh: 显示
+      label:
+        en: 'Display'
+        zh: '显示'
+        zh-Hant: '顯示'
+        ja: '表示'
+        ko: '디스플레이'
+        ru: 'Экран'
+        ms: 'Paparan'
+        pt-br: 'Tela'
       required: false
       type: text
     - default: ""
@@ -305,6 +611,15 @@ additionalProperties:
       envKey: NEKO_DEVICE
       labelEn: Device
       labelZh: 设备
+      label:
+        en: 'Device'
+        zh: '设备'
+        zh-Hant: '裝置'
+        ja: 'デバイス'
+        ko: '장치'
+        ru: 'Устройство'
+        ms: 'Peranti'
+        pt-br: 'Dispositivo'
       required: false
       type: text
     - default: ""
@@ -312,5 +627,14 @@ additionalProperties:
       envKey: NEKO_STATIC
       labelEn: Static Files Path
       labelZh: 静态文件路径
+      label:
+        en: 'Static Files Path'
+        zh: '静态文件路径'
+        zh-Hant: '靜態檔案路徑'
+        ja: '静的ファイルパス'
+        ko: '정적 파일 경로'
+        ru: 'Путь к статическим файлам'
+        ms: 'Laluan fail statik'
+        pt-br: 'Caminho de arquivos estáticos'
       required: false
       type: text

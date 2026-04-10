@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: HTTP Port
       labelZh: HTTP 端口
+      label:
+        en: 'HTTP Port'
+        zh: 'HTTP 端口'
+        zh-Hant: 'HTTP 埠'
+        ja: 'HTTP ポート'
+        ko: 'HTTP 포트'
+        ru: 'HTTP-порт'
+        ms: 'Port HTTP'
+        pt-br: 'Porta HTTP'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_VNC
       labelEn: VNC Port
       labelZh: VNC 端口
+      label:
+        en: 'VNC Port'
+        zh: 'VNC 端口'
+        zh-Hant: 'VNC 埠'
+        ja: 'VNC ポート'
+        ko: 'VNC 포트'
+        ru: 'Порт VNC'
+        ms: 'Port VNC'
+        pt-br: 'Porta VNC'
       required: true
       rule: paramPort
       type: number
@@ -21,6 +39,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_SSH
       labelEn: SSH Port
       labelZh: SSH 端口
+      label:
+        en: 'SSH Port'
+        zh: 'SSH 端口'
+        zh-Hant: 'SSH 埠'
+        ja: 'SSH ポート'
+        ko: 'SSH 포트'
+        ru: 'Порт SSH'
+        ms: 'Port SSH'
+        pt-br: 'Porta SSH'
       required: true
       rule: paramPort
       type: number
@@ -29,6 +56,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
     - default: password
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: HTTP_PWD
       labelEn: Auth password
       labelZh: 密码
+      label:
+        en: 'Auth password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: '認証パスワード'
+        ko: '인증 비밀번호'
+        ru: 'Пароль аутентификации'
+        ms: 'Kata laluan pengesahan'
+        pt-br: 'Senha de autenticação'
       random: true
       required: true
       rule: paramComplexity
@@ -45,6 +90,15 @@ additionalProperties:
       envKey: DISPLAY_SIZE
       labelEn: Display size
       labelZh: 画面尺寸
+      label:
+        en: 'Display size'
+        zh: '画面尺寸'
+        zh-Hant: '畫面尺寸'
+        ja: '画面サイズ'
+        ko: '화면 크기'
+        ru: 'Размер экрана'
+        ms: 'Saiz paparan'
+        pt-br: 'Tamanho da tela'
       required: true
       type: text
     - default: "true"
@@ -52,5 +106,14 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: "Privilege Mode Switch"
+        zh: "特权模式开关"
+        zh-Hant: "特權模式開關"
+        ja: "特権モード切替"
+        ko: "특권 모드 스위치"
+        ru: "Переключатель привилегированного режима"
+        ms: "Suis mod keistimewaan"
+        pt-br: "Chave do modo privilegiado"
       required: true
       type: text

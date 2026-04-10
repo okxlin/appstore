@@ -10,6 +10,15 @@ additionalProperties:
     - DevTool
   shortDescZh: 为开发人员提供方便的在线工具集合，具有出色的用户体验
   shortDescEn: Collection of handy online tools for developers, with great UX
+  description:
+    en: Collection of handy online tools for developers, with great UX
+    zh: 为开发人员提供方便的在线工具集合，具有出色的用户体验
+    zh-Hant: 為開發者提供便捷的線上工具集合，體驗出色
+    ja: 優れたUXを備えた開発者向け便利オンラインツール集
+    ko: 훌륭한 UX를 갖춘 개발자용 편리한 온라인 도구 모음
+    ru: Набор удобных онлайн‑инструментов для разработчиков с отличным UX
+    ms: Koleksi alat dalam talian yang berguna untuk pembangun dengan UX yang hebat
+    pt-br: Coleção de ferramentas online úteis para desenvolvedores, com ótima UX
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://it-tools.tech
   github: https://github.com/CorentinTh/it-tools
   document: https://github.com/CorentinTh/it-tools
+  architectures:
+    - amd64
+

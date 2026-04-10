@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: PostgreSQL 的开源管理和开发平台
   shortDescEn: Open Source administration and development platform for PostgreSQL
+  description:
+    en: "Open-source administration and development platform for PostgreSQL."
+    zh: "PostgreSQL 的开源管理和开发平台。"
+    zh-Hant: "PostgreSQL 的開源管理與開發平台。"
+    ja: "PostgreSQL 向けのオープンソース管理・開発プラットフォームです。"
+    ko: "PostgreSQL용 오픈소스 관리 및 개발 플랫폼입니다."
+    ru: "Платформа с открытым исходным кодом для администрирования и разработки PostgreSQL."
+    ms: "Platform pentadbiran dan pembangunan sumber terbuka untuk PostgreSQL."
+    pt-br: "Plataforma de administração e desenvolvimento de código aberto para PostgreSQL."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://www.pgadmin.org
   github: https://github.com/pgadmin-org/pgadmin4
   document: https://www.pgadmin.org/docs
+  architectures:
+    - amd64

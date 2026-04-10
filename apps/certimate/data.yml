@@ -10,6 +10,15 @@ additionalProperties:
     - Security
   shortDescZh: 开源的 SSL 证书管理工具
   shortDescEn: Open source SSL certificate management tool
+  description:
+    en: An open-source SSL certificate management tool
+    zh: 开源的 SSL 证书管理工具
+    zh-Hant: 開源的 SSL 證書管理工具
+    ja: オープンソースのSSL証明書管理ツール
+    ko: 오픈 소스 SSL 인증서 관리 도구
+    ru: Открытый инструмент управления SSL-сертификатами
+    ms: Alat pengurusan sijil SSL sumber terbuka
+    pt-br: Ferramenta open source de gerenciamento de certificados SSL
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://docs.certimate.me
   github: https://github.com/usual2970/certimate
   document: https://docs.certimate.me
+  architectures:
+    - amd64

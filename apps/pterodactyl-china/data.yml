@@ -10,6 +10,15 @@ additionalProperties:
     - Game
   shortDescZh: 一个免费的开源游戏服务器管理面板（前端）
   shortDescEn: open-source game server management panel(panel)
+  description:
+    en: "Free and open-source game server management panel frontend."
+    zh: "免费开源的游戏服务器管理面板前端。"
+    zh-Hant: "免費開源的遊戲伺服器管理面板前端。"
+    ja: "無料でオープンソースのゲームサーバー管理パネルのフロントエンドです。"
+    ko: "무료 오픈소스 게임 서버 관리 패널의 프런트엔드입니다."
+    ru: "Бесплатный фронтенд панели управления игровыми серверами с открытым исходным кодом."
+    ms: "Frontend panel pengurusan pelayan permainan yang percuma dan sumber terbuka."
+    pt-br: "Frontend de painel de gerenciamento de servidores de jogos gratuito e de código aberto."
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://pterodactyl.top/
   github: https://github.com/pterodactyl-china/panel
   document: https://pterodactyl.top/
+  architectures:
+    - amd64
+    - arm64

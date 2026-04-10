@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: "Privilege Mode Switch"
+        zh: "特权模式开关"
+        zh-Hant: "特權模式開關"
+        ja: "特権モード切替"
+        ko: "특권 모드 스위치"
+        ru: "Переключатель привилегированного режима"
+        ms: "Suis mod keistimewaan"
+        pt-br: "Chave do modo privilegiado"
       required: true
       type: text
     - default: "./data"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "/var/run/dbus"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: DBUS_PATH
       labelEn: DBus Path
       labelZh: DBus 路径
+      label:
+        en: 'DBus Path'
+        zh: 'DBus 路径'
+        zh-Hant: 'DBus 路徑'
+        ja: 'DBus パス'
+        ko: 'DBus 경로'
+        ru: 'Путь к DBus'
+        ms: 'Laluan DBus'
+        pt-br: 'Caminho do DBus'
       required: true
       type: text
     - default: "/var/run/avahi-daemon"
@@ -34,5 +70,14 @@ additionalProperties:
       envKey: AVAHI_DAEMON_PATH
       labelEn: Avahi Daemon Path
       labelZh: Avahi Daemon 路径
+      label:
+        en: 'Avahi Daemon Path'
+        zh: 'Avahi Daemon 路径'
+        zh-Hant: 'Avahi Daemon 路徑'
+        ja: 'Avahi Daemon パス'
+        ko: 'Avahi Daemon 경로'
+        ru: 'Путь к Avahi Daemon'
+        ms: 'Laluan Avahi Daemon'
+        pt-br: 'Caminho do Avahi Daemon'
       required: true
       type: text

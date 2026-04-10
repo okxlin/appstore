@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 开源百科引擎
   shortDescEn: Open-source wiki engine
+  description:
+    en: Open-source wiki engine
+    zh: 开源百科引擎
+    zh-Hant: 開源百科引擎
+    ja: オープンソースのウィキエンジン
+    ko: 오픈 소스 위키 엔진
+    ru: Движок вики с открытым исходным кодом
+    ms: Enjin wiki sumber terbuka
+    pt-br: Motor de wiki de código aberto
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://www.mediawiki.org
   github: https://github.com/wikimedia/mediawiki
   document: https://www.mediawiki.org/wiki/Manual:Installation_guide
+  architectures:
+    - amd64
+

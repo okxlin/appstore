@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: HOSTNAME
       labelEn: Native host name
       labelZh: 本机主机名
+      label:
+        en: 'Native host name'
+        zh: '本机主机名'
+        zh-Hant: '本機主機名'
+        ja: 'ネイティブホスト名'
+        ko: '네이티브 호스트 이름'
+        ru: 'Имя локального хоста'
+        ms: 'Nama hos natif'
+        pt-br: 'Nome do host nativo'
       required: true
       type: text
     - default: 192.168.8.8
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: ZABBIX_SERVER
       labelEn: Zabbix server
       labelZh: Zabbix服务端
+      label:
+        en: 'Zabbix server'
+        zh: 'Zabbix服务端'
+        zh-Hant: 'Zabbix 服務端'
+        ja: 'Zabbixサーバー'
+        ko: 'Zabbix 서버'
+        ru: 'Сервер Zabbix'
+        ms: 'Pelayan Zabbix'
+        pt-br: 'Servidor Zabbix'
       required: true
       type: text
     - default: 10051
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: ZABBIX_SERVER_PORT
       labelEn: Zabbix server P-port
       labelZh: Zabbix服务端端口
+      label:
+        en: 'Zabbix server P-port'
+        zh: 'Zabbix服务端端口'
+        zh-Hant: 'Zabbix 服務端埠'
+        ja: 'Zabbixサーバーポート'
+        ko: 'Zabbix 서버 포트'
+        ru: 'Порт сервера Zabbix'
+        ms: 'Port pelayan Zabbix'
+        pt-br: 'Porta do servidor Zabbix'
       required: true
       rule: paramPort
       type: number

@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 让企业轻松拥有自己的即时通讯
   shortDescEn: Make it easy for businesses to have their own instant messaging
+  description:
+    en: "Help businesses easily build their own instant messaging platform."
+    zh: "让企业轻松拥有自己的即时通讯。"
+    zh-Hant: "讓企業輕鬆擁有自己的即時通訊。"
+    ja: "企業が自前のインスタントメッセージ環境を手軽に持てるようにするサービスです。"
+    ko: "기업이 자체 인스턴트 메시징 환경을 쉽게 구축할 수 있게 해주는 서비스입니다."
+    ru: "Помогает компаниям легко развернуть собственную систему мгновенных сообщений."
+    ms: "Memudahkan perniagaan memiliki platform pesanan segera sendiri."
+    pt-br: "Facilita para empresas terem sua própria plataforma de mensagens instantâneas."
   type: tool
   crossVersionUpdate: true
   limit: 1
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://tsdaodao.com
   github: https://github.com/TangSengDaoDao/TangSengDaoDaoServer
   document: https://tsdaodao.com
+  architectures:
+    - amd64

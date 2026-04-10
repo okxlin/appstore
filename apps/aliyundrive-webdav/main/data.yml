@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Config Path
       labelZh: 配置路径
+      label:
+        en: 'Config Path'
+        zh: '配置路径'
+        zh-Hant: '設定路徑'
+        ja: '設定パス'
+        ko: '구성 경로'
+        ru: 'Путь к конфигурации'
+        ms: 'Laluan konfigurasi'
+        pt-br: 'Caminho de configuração'
       required: true
       type: text
     - default: "your-refresh-token"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: REFRESH_TOKEN
       labelEn: Refresh Token
       labelZh: 刷新令牌
+      label:
+        en: 'Refresh Token'
+        zh: '刷新令牌'
+        zh-Hant: '刷新權杖'
+        ja: 'リフレッシュトークン'
+        ko: '리프레시 토큰'
+        ru: 'Токен обновления'
+        ms: 'Token segar semula'
+        pt-br: 'Token de atualização'
       required: true
       type: text
     - default: "admin"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: WEBDAV_AUTH_USER
       labelEn: WebDAV Username
       labelZh: WebDAV 用户名
+      label:
+        en: 'WebDAV Username'
+        zh: 'WebDAV 用户名'
+        zh-Hant: 'WebDAV 使用者名稱'
+        ja: 'WebDAV ユーザー名'
+        ko: 'WebDAV 사용자 이름'
+        ru: 'Имя пользователя WebDAV'
+        ms: 'Nama pengguna WebDAV'
+        pt-br: 'Nome de usuário do WebDAV'
       random: true
       required: true
       rule: paramCommon
@@ -36,6 +72,15 @@ additionalProperties:
       envKey: WEBDAV_AUTH_PASSWORD
       labelEn: WebDAV Password
       labelZh: WebDAV 密码
+      label:
+        en: 'WebDAV Password'
+        zh: 'WebDAV 密码'
+        zh-Hant: 'WebDAV 密碼'
+        ja: 'WebDAV パスワード'
+        ko: 'WebDAV 비밀번호'
+        ru: 'Пароль WebDAV'
+        ms: 'Kata laluan WebDAV'
+        pt-br: 'Senha do WebDAV'
       random: true
       required: true
       rule: paramComplexity

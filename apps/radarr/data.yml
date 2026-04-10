@@ -10,6 +10,15 @@ additionalProperties:
     - Media
   shortDescZh: 电影收藏管理器
   shortDescEn: Movie organizer/manager
+  description:
+    en: Movie collection manager
+    zh: 电影收藏管理器
+    zh-Hant: 電影收藏管理器
+    ja: 映画コレクション管理ツール
+    ko: 영화 컬렉션 관리 도구
+    ru: Менеджер коллекции фильмов
+    ms: Pengurus koleksi filem
+    pt-br: Gerenciador de coleção de filmes
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,6 @@ additionalProperties:
   website: https://radarr.video
   github: https://github.com/Radarr/Radarr
   document: https://radarr.video/docs/
+  architectures:
+    - amd64
+    - arm64

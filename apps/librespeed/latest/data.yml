@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: MODE
       labelEn: Mode
       labelZh: 模式
+      label:
+        en: 'Mode'
+        zh: '模式'
+        zh-Hant: '模式'
+        ja: 'モード'
+        ko: '모드'
+        ru: 'Режим'
+        ms: 'Mod'
+        pt-br: 'Modo'
       required: true
       type: text
     - default: "LibreSpeed"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: TITLE
       labelEn: Title
       labelZh: 标题
+      label:
+        en: 'Title'
+        zh: '标题'
+        zh-Hant: '標題'
+        ja: 'タイトル'
+        ko: '제목'
+        ru: 'Заголовок'
+        ms: 'Tajuk'
+        pt-br: 'Título'
       required: true
       type: text
     - default: "false"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: TELEMETRY
       labelEn: Telemetry
       labelZh: 遥测
+      label:
+        en: 'Telemetry'
+        zh: '遥测'
+        zh-Hant: '遙測'
+        ja: 'テレメトリ'
+        ko: '텔레메트리'
+        ru: 'Телеметрия'
+        ms: 'Telemetri'
+        pt-br: 'Telemetria'
       required: true
       type: select
       values:
@@ -39,6 +75,15 @@ additionalProperties:
       envKey: ENABLE_ID_OBFUSCATION
       labelEn: Enable ID Obfuscation
       labelZh: 启用 ID 混淆
+      label:
+        en: 'Enable ID Obfuscation'
+        zh: '启用 ID 混淆'
+        zh-Hant: '啟用 ID 混淆'
+        ja: 'ID 難読化を有効化'
+        ko: 'ID 난독화 사용'
+        ru: 'Включить обфускацию ID'
+        ms: 'Dayakan pengaburan ID'
+        pt-br: 'Ativar ofuscação de ID'
       required: true
       type: select
       values:
@@ -51,6 +96,15 @@ additionalProperties:
       envKey: REDACT_IP_ADDRESSES
       labelEn: Redact IP Addresses
       labelZh: 隐藏 IP 地址
+      label:
+        en: 'Redact IP Addresses'
+        zh: '隐藏 IP 地址'
+        zh-Hant: '隱藏 IP 位址'
+        ja: 'IP アドレスを伏せる'
+        ko: 'IP 주소 숨김'
+        ru: 'Скрывать IP-адреса'
+        ms: 'Sembunyikan alamat IP'
+        pt-br: 'Ocultar endereços IP'
       required: true
       type: select
       values:
@@ -63,6 +117,15 @@ additionalProperties:
       envKey: PASSWORD
       labelEn: Password
       labelZh: 密码
+      label:
+        en: 'Password'
+        zh: '密码'
+        zh-Hant: '密碼'
+        ja: 'パスワード'
+        ko: '비밀번호'
+        ru: 'Пароль'
+        ms: 'Kata laluan'
+        pt-br: 'Senha'
       random: true
       required: false
       rule: paramCommon
@@ -72,6 +135,15 @@ additionalProperties:
       envKey: EMAIL
       labelEn: Email address for GDPR requests (must be specified when telemetry is enabled)
       labelZh: GDPR 请求的电子邮件地址 (启用遥测时必须指定)
+      label:
+        en: 'Email address for GDPR requests (must be specified when telemetry is enabled)'
+        zh: 'GDPR 请求邮箱地址（启用遥测时必须填写）'
+        zh-Hant: 'GDPR 請求郵箱位址（啟用遙測時必填）'
+        ja: 'GDPR リクエスト用のメールアドレス（テレメトリ有効時は必須）'
+        ko: 'GDPR 요청용 이메일 주소(텔레메트리 사용 시 필수)'
+        ru: 'Адрес электронной почты для запросов GDPR (обязателен при включенной телеметрии)'
+        ms: 'Alamat e-mel untuk permintaan GDPR (wajib apabila telemetri diaktifkan)'
+        pt-br: 'Endereço de e-mail para solicitações GDPR (obrigatório quando a telemetria estiver habilitada)'
       required: false
       type: text
     - default: "false"
@@ -79,6 +151,15 @@ additionalProperties:
       envKey: DISABLE_IPINFO
       labelEn: Disable IPInfo
       labelZh: 禁用 IPInfo
+      label:
+        en: 'Disable IPInfo'
+        zh: '禁用 IPInfo'
+        zh-Hant: '停用 IPInfo'
+        ja: 'IPInfo を無効化'
+        ko: 'IPInfo 비활성화'
+        ru: 'Отключить IPInfo'
+        ms: 'Lumpuhkan IPInfo'
+        pt-br: 'Desativar IPInfo'
       required: true
       type: select
       values:
@@ -91,6 +172,15 @@ additionalProperties:
       envKey: DISTANCE
       labelEn: Distance
       labelZh: 距离
+      label:
+        en: 'Distance'
+        zh: '距离'
+        zh-Hant: '距離'
+        ja: '距離'
+        ko: '거리'
+        ru: 'Расстояние'
+        ms: 'Jarak'
+        pt-br: 'Distância'
       required: false
       type: select
       values:

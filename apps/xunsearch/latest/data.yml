@@ -5,6 +5,15 @@ additionalProperties:
       envKey: INDEX_SERVER_PORT
       labelEn: Index server Port
       labelZh: 索引服务端配置端口
+      label:
+        en: 'Index server Port'
+        zh: '索引服务端配置端口'
+        zh-Hant: '索引服務端配置埠'
+        ja: 'インデックスサーバーポート'
+        ko: '인덱스 서버 포트'
+        ru: 'Порт сервера индекса'
+        ms: 'Port pelayan indeks'
+        pt-br: 'Porta do servidor de índice'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: SEARCH_SERVER_PORT
       labelEn: Search server port
       labelZh: 搜索服务端配置端口
+      label:
+        en: 'Search server port'
+        zh: '搜索服务端配置端口'
+        zh-Hant: '搜尋服務端配置埠'
+        ja: '検索サーバーポート'
+        ko: '검색 서버 포트'
+        ru: 'Порт поискового сервера'
+        ms: 'Port pelayan carian'
+        pt-br: 'Porta do servidor de busca'
       required: true
       rule: paramPort
       type: number
@@ -21,5 +39,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data folder path
       labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
       required: true
       type: text

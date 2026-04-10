@@ -17,3 +17,14 @@ additionalProperties:
   website: http://www.xunsearch.com
   github: https://github.com/hightman/xunsearch
   document: http://www.xunsearch.com/doc/php
+  architectures:
+    - amd64
+  description:
+    en: A high-performance, full-featured full-text search solution
+    zh: 一个高性能、全功能的全文检索解决方案
+    zh-Hant: 一個高效能、全功能的全文檢索解決方案
+    ja: 高性能でフル機能の全文検索ソリューション
+    ko: 고성능의 완전한 기능을 갖춘 전체 텍스트 검색 솔루션
+    ru: Высокопроизводительное полнофункциональное решение для полнотекстового поиска
+    ms: Penyelesaian carian teks penuh berprestasi tinggi dan lengkap fungsi
+    pt-br: Solução de busca de texto completo de alto desempenho e completa

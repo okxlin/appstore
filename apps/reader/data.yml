@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 阅读3服务器版，不需要手机
   shortDescEn: Legado 3.0 Book Reader Server Version
+  description:
+    en: Legado 3 server version, no phone required
+    zh: 阅读3服务器版，不需要手机
+    zh-Hant: 閱讀3伺服器版，不需要手機
+    ja: Legado 3 サーバー版、スマホ不要
+    ko: Legado 3 서버 버전, 휴대폰 필요 없음
+    ru: Серверная версия Legado 3, телефон не требуется
+    ms: Versi pelayan Legado 3, tidak memerlukan telefon
+    pt-br: Versão servidor do Legado 3, não precisa de celular
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://github.com/hectorqin/reader
   github: https://github.com/hectorqin/reader
   document: https://github.com/hectorqin/reader
+  architectures:
+    - amd64

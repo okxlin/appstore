@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: BACKUPS_PATH
       labelEn: External Backups Path
       labelZh: 外部备份路径
+      label:
+        en: 'External Backups Path'
+        zh: '外部备份路径'
+        zh-Hant: '外部備份路徑'
+        ja: '外部バックアップパス'
+        ko: '외부 백업 경로'
+        ru: 'Путь внешних резервных копий'
+        ms: 'Laluan sandaran luaran'
+        pt-br: 'Caminho de backups externos'
       required: true
       type: text
     - default: "/backups"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: INTERNAL_BACKUPS_PATH
       labelEn: Internal Backups Path
       labelZh: 内部备份路径
+      label:
+        en: 'Internal Backups Path'
+        zh: '内部备份路径'
+        zh-Hant: '內部備份路徑'
+        ja: '内部バックアップパス'
+        ko: '내부 백업 경로'
+        ru: 'Путь внутренних резервных копий'
+        ms: 'Laluan sandaran dalaman'
+        pt-br: 'Caminho de backups internos'
       required: true
       type: text
     - default: "./data/data"
@@ -27,5 +54,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text

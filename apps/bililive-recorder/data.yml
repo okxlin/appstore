@@ -10,6 +10,15 @@ additionalProperties:
     - Tool
   shortDescZh: 哔哩哔哩直播录制工具
   shortDescEn: Bilibili live stream recording tool
+  description:
+    en: Bilibili live stream recording tool
+    zh: 哔哩哔哩直播录制工具
+    zh-Hant: 嗶哩嗶哩直播錄製工具
+    ja: ビリビリ生放送録画ツール
+    ko: 빌리빌리 라이브 녹화 도구
+    ru: Инструмент записи прямых эфиров Bilibili
+    ms: Alat rakaman siaran langsung Bilibili
+    pt-br: Ferramenta de gravação de lives da Bilibili
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://rec.danmuji.org
   github: https://github.com/BililiveRecorder/BililiveRecorder
   document: https://rec.danmuji.org/install/versions/
+  architectures:
+    - amd64

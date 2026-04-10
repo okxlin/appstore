@@ -10,6 +10,15 @@ additionalProperties:
     - Website
   shortDescZh: 一个图像托管平台
   shortDescEn: An image hosting platform
+  description:
+    en: An image hosting platform
+    zh: 一个图像托管平台
+    zh-Hant: 一個圖像託管平台
+    ja: 画像ホスティングプラットフォーム
+    ko: 이미지 호스팅 플랫폼
+    ru: Платформа для хостинга изображений
+    ms: Platform pengehosan imej
+    pt-br: Plataforma de hospedagem de imagens
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -17,3 +26,5 @@ additionalProperties:
   website: https://chevereto.com
   github: https://github.com/chevereto/chevereto
   document: https://chevereto.com/docs
+  architectures:
+    - amd64

@@ -5,6 +5,15 @@ additionalProperties:
       envKey: TS_AUTHKEY
       labelEn: Tailscale Auth Key
       labelZh: Tailscale 认证密钥
+      label:
+        en: 'Tailscale Auth Key'
+        zh: 'Tailscale 认证密钥'
+        zh-Hant: 'Tailscale 認證金鑰'
+        ja: 'Tailscale 認証キー'
+        ko: 'Tailscale 인증 키'
+        ru: 'Ключ аутентификации Tailscale'
+        ms: 'Kunci Pengesahan Tailscale'
+        pt-br: 'Chave de autenticação do Tailscale'
       required: true
       type: text
     - default: 192.168.1.0/24,10.0.0.0/16
@@ -12,6 +21,15 @@ additionalProperties:
       envKey: TS_ROUTES
       labelEn: Advertise Subnet Routes
       labelZh: 广播子网路由
+      label:
+        en: 'Advertise Subnet Routes'
+        zh: '广播子网路由'
+        zh-Hant: '宣告子網路路由'
+        ja: 'サブネットルートをアドバタイズ'
+        ko: '서브넷 라우트 광고'
+        ru: 'Объявлять маршруты подсетей'
+        ms: 'Iklankan laluan subnet'
+        pt-br: 'Anunciar rotas de sub-rede'
       required: true
       type: text
     - default: 'false'
@@ -19,6 +37,15 @@ additionalProperties:
       envKey: TS_ACCEPT_DNS
       labelEn: Accept DNS configuration (true/false)
       labelZh: 是否接受 DNS 配置 (true/false)
+      label:
+        en: 'Accept DNS configuration (true/false)'
+        zh: '是否接受 DNS 配置 (true/false)'
+        zh-Hant: '是否接受 DNS 設定 (true/false)'
+        ja: 'DNS 設定を受け入れる (true/false)'
+        ko: 'DNS 설정 수락 (true/false)'
+        ru: 'Принимать настройки DNS (true/false)'
+        ms: 'Terima konfigurasi DNS (true/false)'
+        pt-br: 'Aceitar configuração de DNS (true/false)'
       required: false
       type: text
     - default: 'false'
@@ -26,6 +53,15 @@ additionalProperties:
       envKey: TS_AUTH_ONCE
       labelEn: Attempt to log in once (true/false)
       labelZh: 尝试仅登录一次 (true/false)
+      label:
+        en: 'Attempt to log in once (true/false)'
+        zh: '尝试仅登录一次 (true/false)'
+        zh-Hant: '嘗試僅登入一次 (true/false)'
+        ja: '一度だけログインを試行 (true/false)'
+        ko: '한 번만 로그인 시도 (true/false)'
+        ru: 'Пытаться войти один раз (true/false)'
+        ms: 'Cuba log masuk sekali sahaja (true/false)'
+        pt-br: 'Tentar fazer login apenas uma vez (true/false)'
       required: false
       type: text
     - default: ''
@@ -33,6 +69,15 @@ additionalProperties:
       envKey: TS_DEST_IP
       labelEn: Destination IP
       labelZh: 目标 IP
+      label:
+        en: 'Destination IP'
+        zh: '目标 IP'
+        zh-Hant: '目標 IP'
+        ja: '宛先 IP'
+        ko: '대상 IP'
+        ru: 'IP назначения'
+        ms: 'IP destinasi'
+        pt-br: 'IP de destino'
       required: false
       type: text
     - default: tailscale
@@ -40,6 +85,15 @@ additionalProperties:
       envKey: TS_KUBE_SECRET
       labelEn: Kubernetes Secret Name
       labelZh: Kubernetes 密钥名称
+      label:
+        en: 'Kubernetes Secret Name'
+        zh: 'Kubernetes 密钥名称'
+        zh-Hant: 'Kubernetes 密鑰名稱'
+        ja: 'Kubernetes シークレット名'
+        ko: 'Kubernetes 시크릿 이름'
+        ru: 'Имя секрета Kubernetes'
+        ms: 'Nama Secret Kubernetes'
+        pt-br: 'Nome do Secret do Kubernetes'
       required: false
       type: text
     - default: my-tailscale-node
@@ -47,6 +101,15 @@ additionalProperties:
       envKey: TS_HOSTNAME
       labelEn: Node Hostname
       labelZh: 节点主机名
+      label:
+        en: 'Node Hostname'
+        zh: '节点主机名'
+        zh-Hant: '節點主機名'
+        ja: 'ノードのホスト名'
+        ko: '노드 호스트명'
+        ru: 'Имя хоста узла'
+        ms: 'Nama hos nod'
+        pt-br: 'Nome de host do nó'
       required: false
       type: text
     - default: ''
@@ -54,6 +117,15 @@ additionalProperties:
       envKey: TS_OUTBOUND_HTTP_PROXY_LISTEN
       labelEn: HTTP Proxy Address and Port (127.0.0.1:1081)
       labelZh: HTTP代理地址和端口 (127.0.0.1:1081)
+      label:
+        en: 'HTTP Proxy Address and Port (127.0.0.1:1081)'
+        zh: 'HTTP代理地址和端口 (127.0.0.1:1081)'
+        zh-Hant: 'HTTP 代理位址與埠 (127.0.0.1:1081)'
+        ja: 'HTTP プロキシアドレスとポート (127.0.0.1:1081)'
+        ko: 'HTTP 프록시 주소 및 포트 (127.0.0.1:1081)'
+        ru: 'Адрес и порт HTTP-прокси (127.0.0.1:1081)'
+        ms: 'Alamat dan port proksi HTTP (127.0.0.1:1081)'
+        pt-br: 'Endereço e porta do proxy HTTP (127.0.0.1:1081)'
       required: false
       type: text
     - default: /var/run/tailscale/tailscaled.sock
@@ -61,6 +133,15 @@ additionalProperties:
       envKey: TS_SOCKET
       labelEn: Tailscale Socket Path
       labelZh: Tailscale Socket 路径
+      label:
+        en: 'Tailscale Socket Path'
+        zh: 'Tailscale Socket 路径'
+        zh-Hant: 'Tailscale Socket 路徑'
+        ja: 'Tailscale ソケットパス'
+        ko: 'Tailscale 소켓 경로'
+        ru: 'Путь к сокету Tailscale'
+        ms: 'Laluan soket Tailscale'
+        pt-br: 'Caminho do socket do Tailscale'
       required: false
       type: text
     - default: ''
@@ -68,6 +149,15 @@ additionalProperties:
       envKey: TS_SOCKS5_SERVER
       labelEn: SOCKS5 Proxy Address and Port (127.0.0.1:1080)
       labelZh: SOCKS5代理地址和端口 (127.0.0.1:1080)
+      label:
+        en: 'SOCKS5 Proxy Address and Port (127.0.0.1:1080)'
+        zh: 'SOCKS5代理地址和端口 (127.0.0.1:1080)'
+        zh-Hant: 'SOCKS5 代理位址與埠 (127.0.0.1:1080)'
+        ja: 'SOCKS5 プロキシアドレスとポート (127.0.0.1:1080)'
+        ko: 'SOCKS5 프록시 주소 및 포트 (127.0.0.1:1080)'
+        ru: 'Адрес и порт SOCKS5-прокси (127.0.0.1:1080)'
+        ms: 'Alamat dan port proksi SOCKS5 (127.0.0.1:1080)'
+        pt-br: 'Endereço e porta do proxy SOCKS5 (127.0.0.1:1080)'
       required: false
       type: text
     - default: /var/lib/tailscale
@@ -75,6 +165,15 @@ additionalProperties:
       envKey: TS_STATE_DIR
       labelEn: Tailscale State Directory
       labelZh: Tailscale 状态目录
+      label:
+        en: 'Tailscale State Directory'
+        zh: 'Tailscale 状态目录'
+        zh-Hant: 'Tailscale 狀態目錄'
+        ja: 'Tailscale 状態ディレクトリ'
+        ko: 'Tailscale 상태 디렉터리'
+        ru: 'Каталог состояния Tailscale'
+        ms: 'Direktori keadaan Tailscale'
+        pt-br: 'Diretório de estado do Tailscale'
       required: false
       type: text
     - default: 'true'
@@ -82,6 +181,15 @@ additionalProperties:
       envKey: TS_USERSPACE
       labelEn: Enable Userspace Networking (true/false)
       labelZh: 启用用户空间网络 (true/false)
+      label:
+        en: 'Enable Userspace Networking (true/false)'
+        zh: '启用用户空间网络 (true/false)'
+        zh-Hant: '啟用使用者空間網路 (true/false)'
+        ja: 'ユーザー空間ネットワークを有効化 (true/false)'
+        ko: '사용자 공간 네트워킹 활성화 (true/false)'
+        ru: 'Включить пользовательскую сеть (true/false)'
+        ms: 'Dayakan rangkaian ruang pengguna (true/false)'
+        pt-br: 'Ativar rede em espaço de usuário (true/false)'
       required: false
       type: text
     - default: ''
@@ -89,5 +197,14 @@ additionalProperties:
       envKey: TS_EXTRA_ARGS
       labelEn: Any other flags for tailscaled (--login-server=https://login.example.com)
       labelZh: 更多命令参数 (--login-server=https://login.example.com)
+      label:
+        en: 'Any other flags for tailscaled (--login-server=https://login.example.com)'
+        zh: '更多命令参数 (--login-server=https://login.example.com)'
+        zh-Hant: 'tailscaled 的其他參數 (--login-server=https://login.example.com)'
+        ja: 'tailscaled のその他のフラグ (--login-server=https://login.example.com)'
+        ko: 'tailscaled 기타 플래그 (--login-server=https://login.example.com)'
+        ru: 'Другие флаги для tailscaled (--login-server=https://login.example.com)'
+        ms: 'Bendera lain untuk tailscaled (--login-server=https://login.example.com)'
+        pt-br: 'Outras flags para o tailscaled (--login-server=https://login.example.com)'
       required: false
       type: text

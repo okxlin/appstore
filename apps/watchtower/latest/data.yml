@@ -5,6 +5,15 @@ additionalProperties:
       envKey: ENV1
       labelEn: Environmental parameters (split by ;)
       labelZh: 环境参数(以;分割)
+      label:
+        en: 'Environmental parameters (split by ;)'
+        zh: '环境参数(以;分割)'
+        zh-Hant: '環境參數（以 ; 分隔）'
+        ja: '環境パラメータ（; で区切る）'
+        ko: '환경 매개변수(;로 구분)'
+        ru: 'Параметры окружения (разделяйте ;)'
+        ms: 'Parameter persekitaran (pisahkan dengan ;)'
+        pt-br: 'Parâmetros de ambiente (separar por ;)'
       required: true
       type: text
     - default: --interval 3600 --cleanup
@@ -12,5 +21,14 @@ additionalProperties:
       envKey: COMMAND1
       labelEn: Command arguments (space-separated, single quotes not supported)
       labelZh: 命令参数（以空格分隔，不支持单引号）
+      label:
+        en: 'Command arguments (space-separated, single quotes not supported)'
+        zh: '命令参数（以空格分隔，不支持单引号）'
+        zh-Hant: '命令參數（以空格分隔，不支援單引號）'
+        ja: 'コマンド引数（空白区切り、単一引用符は非対応）'
+        ko: '명령 인수(공백으로 구분, 작은따옴표 미지원)'
+        ru: 'Аргументы команды (через пробел, одинарные кавычки не поддерживаются)'
+        ms: 'Argumen perintah (dipisah ruang, tanda petik tunggal tidak disokong)'
+        pt-br: 'Argumentos do comando (separados por espaço, aspas simples não suportadas)'
       required: true
       type: text

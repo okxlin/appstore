@@ -12,6 +12,15 @@ additionalProperties:
     - Security
   shortDescZh: 开源 VPN 解决方案
   shortDescEn: Open-source VPN solution
+  description:
+    en: Open-source VPN solution
+    zh: 开源 VPN 解决方案
+    zh-Hant: 開源 VPN 解決方案
+    ja: オープンソースVPNソリューション
+    ko: 오픈소스 VPN 솔루션
+    ru: Открытое VPN-решение
+    ms: Penyelesaian VPN sumber terbuka
+    pt-br: Solução VPN open-source
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://openvpn.net/
   github: https://github.com/OpenVPN/openvpn
   document: https://openvpn.net/access-server-manual/introduction/
+  architectures:
+    - amd64

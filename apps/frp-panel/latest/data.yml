@@ -5,5 +5,14 @@ additionalProperties:
       envKey: COMMAND_LINE
       labelEn: Command parameters (Determined by the control node)
       labelZh: 命令参数 (由控制节点决定，注意修改具体)
+      label:
+        en: 'Command parameters (Determined by the control node)'
+        zh: '命令参数 (由控制节点决定，注意修改具体)'
+        zh-Hant: '命令參數（由控制節點決定）'
+        ja: 'コマンドパラメータ（制御ノードで決定）'
+        ko: '명령 매개변수(컨트롤 노드에서 결정)'
+        ru: 'Параметры команды (определяются управляющим узлом)'
+        ms: 'Parameter arahan (ditentukan oleh nod kawalan)'
+        pt-br: 'Parâmetros do comando (definidos pelo nó de controle)'
       required: true
       type: text

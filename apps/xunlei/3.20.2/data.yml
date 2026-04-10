@@ -5,6 +5,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -13,6 +22,15 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
       required: true
       type: text
     - default: "./data/downloads"
@@ -20,6 +38,15 @@ additionalProperties:
       envKey: DOWNLOAD_PATH
       labelEn: Download Path
       labelZh: 下载路径
+      label:
+        en: "Download Path"
+        zh: "下载路径"
+        zh-Hant: "下載路徑"
+        ja: "ダウンロードパス"
+        ko: "다운로드 경로"
+        ru: "Путь загрузки"
+        ms: "Laluan muat turun"
+        pt-br: "Caminho de download"
       required: true
       type: text
     - default: "0.0.0.0"
@@ -27,6 +54,15 @@ additionalProperties:
       envKey: XL_DASHBOARD_IP
       labelEn: Dashboard IP
       labelZh: 控制台 IP
+      label:
+        en: "Dashboard IP"
+        zh: "控制台 IP"
+        zh-Hant: "控制台 IP"
+        ja: "ダッシュボード IP"
+        ko: "대시보드 IP"
+        ru: "IP панели"
+        ms: "IP papan pemuka"
+        pt-br: "IP do painel"
       required: true
       type: text
     - default: "user"
@@ -34,6 +70,15 @@ additionalProperties:
       envKey: XL_DASHBOARD_USERNAME
       labelEn: Dashboard Username
       labelZh: 控制台用户名
+      label:
+        en: "Dashboard Username"
+        zh: "控制台用户名"
+        zh-Hant: "控制台使用者名稱"
+        ja: "ダッシュボードユーザー名"
+        ko: "대시보드 사용자 이름"
+        ru: "Имя пользователя панели"
+        ms: "Nama pengguna papan pemuka"
+        pt-br: "Nome de usuário do painel"
       required: false
       type: text
     - default: "xunlei"
@@ -41,6 +86,15 @@ additionalProperties:
       envKey: XL_DASHBOARD_PASSWORD
       labelEn: Dashboard Password
       labelZh: 控制台密码
+      label:
+        en: "Dashboard Password"
+        zh: "控制台密码"
+        zh-Hant: "控制台密碼"
+        ja: "ダッシュボードパスワード"
+        ko: "대시보드 비밀번호"
+        ru: "Пароль панели"
+        ms: "Kata laluan papan pemuka"
+        pt-br: "Senha do painel"
       required: false
       rule: paramComplexity
       type: password
@@ -49,6 +103,15 @@ additionalProperties:
       envKey: XL_DIR_DOWNLOAD
       labelEn: Download Directory (in container)
       labelZh: 下载目录 (容器内)
+      label:
+        en: "Download Directory (in container)"
+        zh: "下载目录 (容器内)"
+        zh-Hant: "下載目錄（容器內）"
+        ja: "ダウンロードディレクトリ（コンテナ内）"
+        ko: "다운로드 디렉터리(컨테이너 내부)"
+        ru: "Каталог загрузок (в контейнере)"
+        ms: "Direktori muat turun (dalam kontena)"
+        pt-br: "Diretório de download (no contêiner)"
       required: true
       type: text
     - default: "/xunlei/data"
@@ -56,6 +119,15 @@ additionalProperties:
       envKey: XL_DIR_DATA
       labelEn: Data Directory (in container)
       labelZh: 数据目录 (容器内)
+      label:
+        en: "Data Directory (in container)"
+        zh: "数据目录 (容器内)"
+        zh-Hant: "資料目錄（容器內）"
+        ja: "データディレクトリ（コンテナ内）"
+        ko: "데이터 디렉터리(컨테이너 내부)"
+        ru: "Каталог данных (в контейнере)"
+        ms: "Direktori data (dalam kontena)"
+        pt-br: "Diretório de dados (no contêiner)"
       required: true
       type: text
     - default: "1000"
@@ -63,6 +135,15 @@ additionalProperties:
       envKey: XL_UID
       labelEn: User ID
       labelZh: 用户 ID
+      label:
+        en: 'User ID'
+        zh: '用户 ID'
+        zh-Hant: '使用者 ID'
+        ja: 'ユーザー ID'
+        ko: '사용자 ID'
+        ru: 'ID пользователя'
+        ms: 'ID pengguna'
+        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -70,6 +151,15 @@ additionalProperties:
       envKey: XL_GID
       labelEn: Group ID
       labelZh: 用户组 ID
+      label:
+        en: 'Group ID'
+        zh: '用户组 ID'
+        zh-Hant: '使用者群組 ID'
+        ja: 'ユーザーグループ ID'
+        ko: '사용자 그룹 ID'
+        ru: 'ID группы пользователей'
+        ms: 'ID kumpulan pengguna'
+        pt-br: 'ID do grupo de usuários'
       required: true
       type: number
     - default: "true"
@@ -77,30 +167,57 @@ additionalProperties:
       envKey: XL_PREVENT_UPDATE
       labelEn: Prevent Update
       labelZh: 阻止更新
+      label:
+        en: "Prevent Update"
+        zh: "阻止更新"
+        zh-Hant: "阻止更新"
+        ja: "更新を防止"
+        ko: "업데이트 방지"
+        ru: "Запрет обновления"
+        ms: "Cegah kemas kini"
+        pt-br: "Impedir atualização"
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "false"
       edit: true
       envKey: XL_DEBUG
       labelEn: Debug Mode
       labelZh: 调试模式
+      label:
+        en: "Debug Mode"
+        zh: "调试模式"
+        zh-Hant: "調試模式"
+        ja: "デバッグモード"
+        ko: "디버그 모드"
+        ru: "Режим отладки"
+        ms: "Mod nyahpepijat"
+        pt-br: "Modo de depuração"
       required: true
       type: select
       values:
-        - label: "True"
+        - label: "true"
           value: "true"
-        - label: "False"
+        - label: "false"
           value: "false"
     - default: "mynas"
       edit: true
       envKey: HOSTNAME
       labelEn: Hostname
       labelZh: 主机名
+      label:
+        en: 'Hostname'
+        zh: '主机名'
+        zh-Hant: '主機名稱'
+        ja: 'ホスト名'
+        ko: '호스트명'
+        ru: 'Имя хоста'
+        ms: 'Nama hos'
+        pt-br: 'Nome do host'
       required: false
       type: text
     - default: "true"
@@ -108,5 +225,14 @@ additionalProperties:
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
+      label:
+        en: "Privilege Mode Switch"
+        zh: "特权模式开关"
+        zh-Hant: "特權模式開關"
+        ja: "特権モード切替"
+        ko: "특권 모드 스위치"
+        ru: "Переключатель привилегированного режима"
+        ms: "Suis mod keistimewaan"
+        pt-br: "Chave do modo privilegiado"
       required: true
       type: text
