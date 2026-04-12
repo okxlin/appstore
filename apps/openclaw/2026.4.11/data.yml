@@ -71,15 +71,6 @@ additionalProperties:
       envKey: OPENCLAW_GATEWAY_BIND
       labelEn: OpenClaw Gateway Bind
       labelZh: OpenClaw 网关绑定
-      label:
-        en: 'OpenClaw Gateway Bind'
-        zh: 'OpenClaw 网关绑定'
-        zh-Hant: 'OpenClaw 網關綁定'
-        ja: 'OpenClaw ゲートウェイ バインド'
-        ko: 'OpenClaw 게이트웨이 바인드'
-        ru: 'Привязка шлюза OpenClaw'
-        ms: 'Pengikatan gerbang OpenClaw'
-        pt-br: 'Vinculação do gateway do OpenClaw'
       required: true
       type: select
       values:

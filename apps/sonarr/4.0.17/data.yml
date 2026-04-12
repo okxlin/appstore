@@ -5,15 +5,6 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
-      label:
-        en: 'Port'
-        zh: '端口'
-        zh-Hant: '埠'
-        ja: 'ポート'
-        ko: '포트'
-        ru: 'Порт'
-        ms: 'Port'
-        pt-br: 'Porta'
       required: true
       rule: paramPort
       type: number
@@ -22,15 +13,6 @@ additionalProperties:
       envKey: PUID
       labelEn: User ID
       labelZh: 用户 ID
-      label:
-        en: 'User ID'
-        zh: '用户 ID'
-        zh-Hant: '使用者 ID'
-        ja: 'ユーザー ID'
-        ko: '사용자 ID'
-        ru: 'ID пользователя'
-        ms: 'ID pengguna'
-        pt-br: 'ID do usuário'
       required: true
       type: number
     - default: "1000"
@@ -38,15 +20,6 @@ additionalProperties:
       envKey: PGID
       labelEn: Group ID
       labelZh: 组 ID
-      label:
-        en: 'Group ID'
-        zh: '组 ID'
-        zh-Hant: '群組 ID'
-        ja: 'グループ ID'
-        ko: '그룹 ID'
-        ru: 'ID группы'
-        ms: 'ID kumpulan'
-        pt-br: 'ID do grupo'
       required: true
       type: number
     - default: "Asia/Shanghai"
@@ -54,15 +27,6 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
-      label:
-        en: 'Time Zone'
-        zh: '时区'
-        zh-Hant: '時區'
-        ja: 'タイムゾーン'
-        ko: '시간대'
-        ru: 'Часовой пояс'
-        ms: 'Zon masa'
-        pt-br: 'Fuso horário'
       required: true
       type: text
     - default: "./data/config"
@@ -70,15 +34,6 @@ additionalProperties:
       envKey: SONARR_CONFIG_PATH
       labelEn: Sonarr Config Path
       labelZh: Sonarr 配置路径
-      label:
-        en: 'Sonarr Config Path'
-        zh: 'Sonarr 配置路径'
-        zh-Hant: 'Sonarr 設定路徑'
-        ja: 'Sonarr 設定パス'
-        ko: 'Sonarr 구성 경로'
-        ru: 'Путь к конфигурации Sonarr'
-        ms: 'Laluan konfigurasi Sonarr'
-        pt-br: 'Caminho de configuração do Sonarr'
       required: true
       type: text
     - default: "./data/tv"
@@ -86,15 +41,6 @@ additionalProperties:
       envKey: TV_SERIES_PATH
       labelEn: TV Series Path
       labelZh: 电视剧路径
-      label:
-        en: 'TV Series Path'
-        zh: '电视剧路径'
-        zh-Hant: '電視劇路徑'
-        ja: 'テレビシリーズパス'
-        ko: 'TV 시리즈 경로'
-        ru: 'Путь к сериалам'
-        ms: 'Laluan siri TV'
-        pt-br: 'Caminho das séries de TV'
       required: true
       type: text
     - default: "./data/downloads"
@@ -102,14 +48,5 @@ additionalProperties:
       envKey: DOWNLOADS_PATH
       labelEn: Downloads Path
       labelZh: 下载路径
-      label:
-        en: 'Downloads Path'
-        zh: '下载路径'
-        zh-Hant: '下載路徑'
-        ja: 'ダウンロードパス'
-        ko: '다운로드 경로'
-        ru: 'Путь к загрузкам'
-        ms: 'Laluan muat turun'
-        pt-br: 'Caminho de downloads'
       required: true
       type: text
