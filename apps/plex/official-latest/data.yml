@@ -315,25 +315,9 @@ additionalProperties:
       type: select
       edit: true
       values:
-        - label:
-            en: 'True'
-            zh: '是'
-            zh-Hant: '是'
-            ja: 'はい'
-            ko: '예'
-            ru: 'Да'
-            ms: 'Ya'
-            pt-br: 'Sim'
+        - label: "True"
           value: "true"
-        - label:
-            en: 'False'
-            zh: '否'
-            zh-Hant: '否'
-            ja: 'いいえ'
-            ko: '아니요'
-            ru: 'Нет'
-            ms: 'Tidak'
-            pt-br: 'Não'
+        - label: "False"
           value: "false"
     - default: "192.168.1.0/24,172.18.0.0/16"
       edit: true

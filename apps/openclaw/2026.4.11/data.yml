@@ -93,15 +93,6 @@ additionalProperties:
           value: "custom"
         - label: "auto"
           value: "auto"
-      label:
-        en: OpenClaw Gateway Bind
-        ja: OpenClaw ゲートウェイバインド
-        ms: Ikatan Gateway OpenClaw
-        pt-br: Vinculação do Gateway OpenClaw
-        ru: Привязка шлюза OpenClaw
-        ko: OpenClaw 게이트웨이 바인드
-        zh-Hant: OpenClaw 網關綁定
-        zh: OpenClaw 网关绑定
     - default: "local"
       disabled: true
       envKey: OPENCLAW_MODE
