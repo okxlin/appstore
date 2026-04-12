@@ -14,11 +14,5 @@ additionalProperties:
         ru: 'Параметры среды'
         ms: 'Parameter persekitaran'
         pt-br: 'Parâmetros de ambiente'
-        zh-Hant: '環境參數'
-        ja: '環境パラメータ'
-        ko: '환경 매개변수'
-        ru: 'Параметры среды'
-        ms: 'Parameter persekitaran'
-        pt-br: 'Parâmetros de ambiente'
       required: true
       type: text

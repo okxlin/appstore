@@ -79,15 +79,6 @@ additionalProperties:
         ru: 'Путь к конфигурации Radarr'
         ms: 'Laluan konfigurasi Radarr'
         pt-br: 'Caminho de configuração do Radarr'
-      label:
-        en: 'Radarr Config Path'
-        zh: 'Radarr 配置路径'
-        zh-Hant: 'Radarr 配置路徑'
-        ja: 'Radarr 設定パス'
-        ko: 'Radarr 구성 경로'
-        ru: 'Путь к конфигурации Radarr'
-        ms: 'Laluan konfigurasi Radarr'
-        pt-br: 'Caminho de configuração do Radarr'
       required: true
       type: text
     - default: "./data/movies"
@@ -104,15 +95,6 @@ additionalProperties:
         ru: 'Путь к фильмам'
         ms: 'Laluan filem'
         pt-br: 'Caminho de filmes'
-      label:
-        en: 'Movies Path'
-        zh: '电影路径'
-        zh-Hant: '電影路徑'
-        ja: '映画パス'
-        ko: '영화 경로'
-        ru: 'Путь к фильмам'
-        ms: 'Laluan filem'
-        pt-br: 'Caminho dos filmes'
       required: true
       type: text
     - default: "./data/downloads"
