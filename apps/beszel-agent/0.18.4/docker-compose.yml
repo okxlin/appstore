@@ -1,6 +1,6 @@
 services:
   beszel-agent:
-    image: "henrygd/beszel-agent:0.18.4"
+    image: "henrygd/beszel-agent:0.18.7"
     container_name: ${CONTAINER_NAME}
     restart: always
     network_mode: host
