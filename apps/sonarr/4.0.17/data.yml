@@ -79,15 +79,6 @@ additionalProperties:
         ru: 'Путь к конфигурации Sonarr'
         ms: 'Laluan konfigurasi Sonarr'
         pt-br: 'Caminho de configuração do Sonarr'
-      label:
-        en: 'Sonarr Config Path'
-        zh: 'Sonarr 配置路径'
-        zh-Hant: 'Sonarr 配置路徑'
-        ja: 'Sonarr 設定パス'
-        ko: 'Sonarr 구성 경로'
-        ru: 'Путь к конфигурации Sonarr'
-        ms: 'Laluan konfigurasi Sonarr'
-        pt-br: 'Caminho de configuração do Sonarr'
       required: true
       type: text
     - default: "./data/tv"
@@ -95,15 +86,6 @@ additionalProperties:
       envKey: TV_SERIES_PATH
       labelEn: TV Series Path
       labelZh: 电视剧路径
-      label:
-        en: 'TV Series Path'
-        zh: '电视剧路径'
-        zh-Hant: '電視劇路徑'
-        ja: 'テレビシリーズパス'
-        ko: 'TV 시리즈 경로'
-        ru: 'Путь к сериалам'
-        ms: 'Laluan siri TV'
-        pt-br: 'Caminho das séries de TV'
       label:
         en: 'TV Series Path'
         zh: '电视剧路径'

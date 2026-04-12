@@ -21,25 +21,9 @@ additionalProperties:
       required: true
       type: apps
       values:
-        - label:
-            en: 'MySQL'
-            zh: 'MySQL'
-            zh-Hant: 'MySQL'
-            ja: 'MySQL'
-            ko: 'MySQL'
-            ru: 'MySQL'
-            ms: 'MySQL'
-            pt-br: 'MySQL'
+        - label: "MySQL"
           value: mysql
-        - label:
-            en: 'LocalMySQL'
-            zh: 'LocalMySQL'
-            zh-Hant: 'LocalMySQL'
-            ja: 'LocalMySQL'
-            ko: 'LocalMySQL'
-            ru: 'LocalMySQL'
-            ms: 'LocalMySQL'
-            pt-br: 'LocalMySQL'
+        - label: "LocalMySQL"
           value: localmysql
     - default: "wewe-rss"
       envKey: PANEL_DB_NAME
