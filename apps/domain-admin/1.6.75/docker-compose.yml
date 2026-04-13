@@ -9,7 +9,7 @@ services:
     volumes:
       - "${DATA_PATH}/database:/app/database"
       - "${DATA_PATH}/logs:/app/logs"
-    image: mouday/domain-admin:v1.6.75
+    image: mouday/domain-admin:v1.6.76
     labels:  
       createdBy: "Apps"
 
