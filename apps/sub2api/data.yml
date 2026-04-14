@@ -1,0 +1,30 @@
+name: Sub2API
+tags:
+  - AI
+title: 提供 OpenAI 兼容接口的 AI 网关服务
+description: 提供 OpenAI 兼容接口的 AI 网关服务
+additionalProperties:
+  key: sub2api
+  name: Sub2API
+  tags:
+    - AI
+  shortDescZh: 提供 OpenAI 兼容接口的 AI 网关服务
+  shortDescEn: AI gateway service with OpenAI-compatible APIs
+  description:
+    en: AI gateway service with OpenAI-compatible APIs
+    zh: 提供 OpenAI 兼容接口的 AI 网关服务
+    zh-Hant: 提供 OpenAI 相容介面的 AI 閘道服務
+    ja: OpenAI 互換 API を提供する AI ゲートウェイサービス
+    ko: OpenAI 호환 API를 제공하는 AI 게이트웨이 서비스
+    ru: AI-шлюз с API, совместимыми с OpenAI
+    ms: Perkhidmatan gerbang AI dengan API serasi OpenAI
+    pt-br: Serviço de gateway de IA com APIs compatíveis com OpenAI
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Wei-Shaw/sub2api
+  github: https://github.com/Wei-Shaw/sub2api
+  document: https://github.com/Wei-Shaw/sub2api
+  architectures:
+    - amd64

@@ -1,0 +1,350 @@
+additionalProperties:
+  formFields:
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: Database Service
+        labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-hant: 資料庫服務
+          ja: データベースサービス
+          ko: 데이터베이스 서비스
+          ru: Служба базы данных
+          ms: Perkhidmatan Pangkalan Data
+          pt-br: Serviço de Banco de Dados
+        required: true
+        type: service
+      default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database
+      labelZh: 数据库服务
+      label:
+        en: Database
+        zh: 数据库服务
+        zh-hant: 資料庫服務
+        ja: データベース
+        ko: 데이터베이스
+        ru: База данных
+        ms: Pangkalan Data
+        pt-br: Banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+    - default: sub2api
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: sub2api
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Nama pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        zh: 数据库用户密码
+        zh-hant: 資料庫使用者密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis服务
+      label:
+        en: Redis Service
+        zh: Redis服务
+        zh-hant: Redis 服務
+        ja: Redis サービス
+        ko: Redis 서비스
+        ru: Служба Redis
+        ms: Perkhidmatan Redis
+        pt-br: Serviço Redis
+      required: true
+      type: service
+    - default: 6379
+      edit: true
+      envKey: REDIS_PORT
+      labelEn: Redis Service Port
+      labelZh: Redis服务端口
+      label:
+        en: Redis Service Port
+        zh: Redis服务端口
+        zh-hant: Redis 服務連接埠
+        ja: Redis サービスポート
+        ko: Redis 서비스 포트
+        ru: Порт службы Redis
+        ms: Port Perkhidmatan Redis
+        pt-br: Porta do serviço Redis
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Redis Password
+      labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-hant: Redis 密碼
+        ja: Redis パスワード
+        ko: Redis 비밀번호
+        ru: Пароль Redis
+        ms: Kata laluan Redis
+        pt-br: Senha do Redis
+      random: true
+      required: true
+      type: password
+    - default: 0
+      edit: true
+      envKey: REDIS_DB
+      labelEn: Redis Database
+      labelZh: Redis 数据库
+      label:
+        en: Redis Database
+        zh: Redis 数据库
+        zh-hant: Redis 資料庫
+        ja: Redis データベース
+        ko: Redis 데이터베이스
+        ru: База данных Redis
+        ms: Pangkalan Data Redis
+        pt-br: Banco de dados Redis
+      required: true
+      type: number
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-hant: Web 訪問埠
+        ja: Webポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon masa
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: release
+      edit: true
+      envKey: SERVER_MODE
+      labelEn: Server Mode
+      labelZh: 服务模式
+      label:
+        en: Server Mode
+        zh: 服务模式
+        zh-hant: 服務模式
+        ja: サーバーモード
+        ko: 서버 모드
+        ru: Режим сервера
+        ms: Mod pelayan
+        pt-br: Modo do servidor
+      required: true
+      type: select
+      values:
+        - label: release
+          value: release
+        - label: debug
+          value: debug
+    - default: standard
+      edit: true
+      envKey: RUN_MODE
+      labelEn: Run Mode
+      labelZh: 运行模式
+      label:
+        en: Run Mode
+        zh: 运行模式
+        zh-hant: 運行模式
+        ja: 実行モード
+        ko: 실행 모드
+        ru: Режим работы
+        ms: Mod jalanan
+        pt-br: Modo de execução
+      required: true
+      type: select
+      values:
+        - label: standard
+          value: standard
+        - label: simple
+          value: simple
+    - default: admin@sub2api.local
+      edit: true
+      envKey: ADMIN_EMAIL
+      labelEn: Admin Email
+      labelZh: 管理员邮箱
+      label:
+        en: Admin Email
+        zh: 管理员邮箱
+        zh-hant: 管理員郵箱
+        ja: 管理者メール
+        ko: 관리자 이메일
+        ru: Email администратора
+        ms: E-mel pentadbir
+        pt-br: E-mail do administrador
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: false
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT Secret
+      labelZh: JWT 密钥
+      label:
+        en: JWT Secret
+        zh: JWT 密钥
+        zh-hant: JWT 金鑰
+        ja: JWT シークレット
+        ko: JWT 시크릿
+        ru: JWT-секрет
+        ms: Rahsia JWT
+        pt-br: Segredo JWT
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: TOTP_ENCRYPTION_KEY
+      labelEn: TOTP Encryption Key
+      labelZh: TOTP 加密密钥
+      label:
+        en: TOTP Encryption Key
+        zh: TOTP 加密密钥
+        zh-hant: TOTP 加密金鑰
+        ja: TOTP 暗号化キー
+        ko: TOTP 암호화 키
+        ru: Ключ шифрования TOTP
+        ms: Kunci penyulitan TOTP
+        pt-br: Chave de criptografia TOTP
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: UPDATE_PROXY_URL
+      labelEn: Update Proxy URL
+      labelZh: 更新代理地址
+      label:
+        en: Update Proxy URL
+        zh: 更新代理地址
+        zh-hant: 更新代理地址
+        ja: 更新プロキシ URL
+        ko: 업데이트 프록시 URL
+        ru: URL прокси для обновлений
+        ms: URL proksi kemas kini
+        pt-br: URL do proxy de atualização
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR_1
+      labelEn: App Data Directory
+      labelZh: 应用数据目录
+      label:
+        en: App Data Directory
+        zh: 应用数据目录
+        zh-hant: 應用資料目錄
+        ja: アプリデータディレクトリ
+        ko: 앱 데이터 디렉터리
+        ru: Каталог данных приложения
+        ms: Direktori data aplikasi
+        pt-br: Diretório de dados da aplicação
+      required: true
+      type: text
