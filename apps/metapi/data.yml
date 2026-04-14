@@ -1,0 +1,30 @@
+name: Metapi
+tags:
+  - AI
+title: 聚合多个 AI 中转站的统一网关
+description: 聚合多个 AI 中转站的统一网关
+additionalProperties:
+  key: metapi
+  name: Metapi
+  tags:
+    - AI
+  shortDescZh: 聚合多个 AI 中转站的统一网关
+  shortDescEn: Unified gateway aggregating multiple AI relay services
+  description:
+    en: Unified gateway aggregating multiple AI relay services
+    zh: 聚合多个 AI 中转站的统一网关
+    zh-Hant: 聚合多個 AI 中轉站的統一網關
+    ja: 複数のAI中継サービスを統合する統一ゲートウェイ
+    ko: 여러 AI 중계 서비스를 통합하는 통합 게이트웨이
+    ru: Единый шлюз, объединяющий несколько AI‑ретрансляторов
+    ms: Gerbang bersatu yang menggabungkan pelbagai relay AI
+    pt-br: Gateway unificado que agrega múltiplos relay de IA
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://metapi.cita777.me
+  github: https://github.com/cita-777/metapi
+  document: https://metapi.cita777.me
+  architectures:
+    - amd64
