@@ -102,3 +102,6 @@ cloudreve
 changedetectionio
 gotify
 mdc-ng
+piclist
+mediawiki
+plex
