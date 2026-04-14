@@ -1,0 +1,18 @@
+services:
+  metapi:
+    image: "1467078763/metapi:latest"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4000"
+    environment:
+      - "AUTH_TOKEN=${AUTH_TOKEN:?AUTH_TOKEN is required}"
+      - "PROXY_TOKEN=${PROXY_TOKEN:?PROXY_TOKEN is required}"
+      - "CHECKIN_CRON=${CHECKIN_CRON:-0 8 * * *}"
+      - "BALANCE_REFRESH_CRON=${BALANCE_REFRESH_CRON:-0 * * * *}"
+      - "PORT=4000"
+      - "DATA_DIR=/app/data"
+      - "TZ=${TZ}"
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"

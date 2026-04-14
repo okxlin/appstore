@@ -1,0 +1,118 @@
+additionalProperties:
+  formFields:
+    - default: 4000
+      envKey: PANEL_APP_PORT_HTTP
+      edit: true
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      envKey: APP_DATA_DIR
+      edit: true
+      labelEn: Data directory
+      labelZh: 数据目录
+      label:
+        en: Data directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: AUTH_TOKEN
+      edit: true
+      labelEn: Admin token
+      labelZh: 管理员令牌
+      label:
+        en: Admin token
+        zh: 管理员令牌
+        zh-Hant: 管理員令牌
+        ja: 管理者トークン
+        ko: 관리자 토큰
+        ru: Администраторский токен
+        ms: Token pentadbir
+        pt-br: Token de administrador
+      required: true
+      type: password
+    - default: ""
+      envKey: PROXY_TOKEN
+      edit: true
+      labelEn: Proxy token
+      labelZh: 代理令牌
+      label:
+        en: Proxy token
+        zh: 代理令牌
+        zh-Hant: 代理令牌
+        ja: プロキシトークン
+        ko: 프록시 토큰
+        ru: Прокси‑токен
+        ms: Token proksi
+        pt-br: Token de proxy
+      required: true
+      type: password
+    - default: "0 8 * * *"
+      envKey: CHECKIN_CRON
+      edit: true
+      labelEn: Check-in cron
+      labelZh: 签到 Cron
+      label:
+        en: Check-in cron
+        zh: 签到 Cron
+        zh-Hant: 簽到 Cron
+        ja: チェックイン Cron
+        ko: 체크인 Cron
+        ru: Cron для签到
+        ms: Cron daftar masuk
+        pt-br: Cron de check-in
+      required: false
+      rule: paramCommon
+      type: text
+    - default: "0 * * * *"
+      envKey: BALANCE_REFRESH_CRON
+      edit: true
+      labelEn: Balance refresh cron
+      labelZh: 余额刷新 Cron
+      label:
+        en: Balance refresh cron
+        zh: 余额刷新 Cron
+        zh-Hant: 餘額刷新 Cron
+        ja: 残高更新 Cron
+        ko: 잔액 새로고침 Cron
+        ru: Cron обновления баланса
+        ms: Cron segar semula baki
+        pt-br: Cron de atualização de saldo
+      required: false
+      rule: paramCommon
+      type: text
+    - default: Asia/Shanghai
+      envKey: TZ
+      edit: true
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
