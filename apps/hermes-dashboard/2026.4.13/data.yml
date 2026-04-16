@@ -1,0 +1,101 @@
+additionalProperties:
+  formFields:
+    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。"
+      disabled: true
+      envKey: TIPS
+      labelEn: Tips
+      labelZh: 提示
+      label:
+        en: Tips
+        zh: 提示
+        zh-Hant: 提示
+        ja: ヒント
+        ko: 팁
+        ru: Подсказка
+        ms: Petua
+        pt-br: Dicas
+      edit: true
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      edit: true
+      required: true
+      type: text
+    - default: /opt/1panel/apps/local/hermes-agent/hermes-agent/data
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      edit: true
+      required: true
+      type: text
+    - default: 9119
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Dashboard Port
+      labelZh: Dashboard 端口
+      label:
+        en: Dashboard Port
+        zh: Dashboard 端口
+        zh-Hant: Dashboard 連接埠
+        ja: Dashboard ポート
+        ko: 대시보드 포트
+        ru: Порт dashboard
+        ms: Port dashboard
+        pt-br: Porta do dashboard
+      edit: true
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://172.18.0.240:8642
+      envKey: GATEWAY_HEALTH_URL
+      labelEn: Gateway Health URL
+      labelZh: 网关健康检查 URL
+      label:
+        en: Gateway Health URL
+        zh: 网关健康检查 URL
+        zh-Hant: 閘道健康檢查 URL
+        ja: Gateway ヘルス URL
+        ko: 게이트웨이 헬스 URL
+        ru: URL проверки шлюза
+        ms: URL kesihatan gateway
+        pt-br: URL de verificação do gateway
+      edit: true
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: dashboard --host 0.0.0.0 --insecure
+      envKey: DASHBOARD_RUN_COMMAND
+      labelEn: Dashboard Run Command
+      labelZh: Dashboard 启动命令
+      label:
+        en: Dashboard Run Command
+        zh: Dashboard 启动命令
+        zh-Hant: Dashboard 啟動命令
+        ja: Dashboard 起動コマンド
+        ko: Dashboard 실행 명령
+        ru: Команда запуска dashboard
+        ms: Perintah jalan dashboard
+        pt-br: Comando de execução do dashboard
+      edit: true
+      required: true
+      type: text
