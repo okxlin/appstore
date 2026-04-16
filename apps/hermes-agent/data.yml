@@ -1,0 +1,31 @@
+name: Hermes Agent
+tags:
+  - AI
+title: Hermes Agent 消息网关
+description: Hermes Agent 消息网关
+additionalProperties:
+  key: hermes-agent
+  name: Hermes Agent
+  tags:
+    - AI
+  shortDescZh: Hermes Agent 消息网关
+  shortDescEn: Hermes Agent messaging gateway
+  description:
+    en: Deploy Hermes Agent as a persistent messaging gateway in 1Panel.
+    zh: 在 1Panel 中部署 Hermes Agent 作为持久化消息网关。
+    zh-Hant: 在 1Panel 中部署 Hermes Agent 作為持久化訊息閘道。
+    ja: 1Panel で Hermes Agent を永続的なメッセージゲートウェイとしてデプロイします。
+    ko: 1Panel에서 Hermes Agent를 지속 실행되는 메시지 게이트웨이로 배포합니다.
+    ru: Разверните Hermes Agent в 1Panel как постоянный шлюз сообщений.
+    ms: Pasang Hermes Agent di 1Panel sebagai gateway pemesejan berterusan.
+    pt-br: Implante o Hermes Agent no 1Panel como gateway de mensagens persistente.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://hermes-agent.nousresearch.com/docs/
+  github: https://github.com/NousResearch/hermes-agent
+  document: https://hermes-agent.nousresearch.com/docs/user-guide/docker
+  architectures:
+    - amd64
+    - arm64
