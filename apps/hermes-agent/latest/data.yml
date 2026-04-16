@@ -1,0 +1,1149 @@
+additionalProperties:
+  formFields:
+    - default: "安装后容器会以 gateway run 常驻运行。至少需要配置 1 个模型提供商 Key；若要直接接入 Telegram，再补 TELEGRAM_BOT_TOKEN。对于第三方 OpenAI-compatible 供应商，建议把 API Key 放到 /opt/data/.env 的 OPENAI_API_KEY 中，并手动在 /opt/data/config.yaml 里设置 model.default、provider: custom、base_url；不要把密钥直接写进 config.yaml。"
+      disabled: true
+      envKey: TIPS
+      labelEn: Tips
+      labelZh: 提示
+      label:
+        en: Tips
+        zh: 提示
+        zh-Hant: 提示
+        ja: ヒント
+        ko: 팁
+        ru: Подсказка
+        ms: Petua
+        pt-br: Dicas
+      edit: true
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      edit: true
+      required: true
+      type: text
+    - default: ./data
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      edit: true
+      required: true
+      type: text
+    - default: 8642
+      envKey: PANEL_APP_PORT_API
+      labelEn: Gateway API Port
+      labelZh: 网关 API 端口
+      label:
+        en: Gateway API Port
+        zh: 网关 API 端口
+        zh-Hant: 閘道 API 連接埠
+        ja: Gateway API ポート
+        ko: 게이트웨이 API 포트
+        ru: Порт API шлюза
+        ms: Port API gerbang
+        pt-br: Porta da API do gateway
+      edit: true
+      required: true
+      rule: paramPort
+      type: number
+    - default: 172.18.0.240
+      envKey: GATEWAY_STATIC_IP
+      labelEn: Gateway Static IP
+      labelZh: 网关静态 IP
+      label:
+        en: Gateway Static IP
+        zh: 网关静态 IP
+        zh-Hant: 閘道靜態 IP
+        ja: Gateway 静的 IP
+        ko: 게이트웨이 고정 IP
+        ru: Статический IP шлюза
+        ms: IP statik gateway
+        pt-br: IP estático do gateway
+      edit: true
+      required: true
+      type: text
+    - default: ""
+      envKey: OPENAI_API_KEY
+      labelEn: OpenAI / OpenAI-compatible API Key
+      labelZh: OpenAI / OpenAI-compatible API 密钥
+      label:
+        en: OpenAI / OpenAI-compatible API Key
+        zh: OpenAI / OpenAI-compatible API 密钥
+        zh-Hant: OpenAI / OpenAI-compatible API 金鑰
+        ja: OpenAI / OpenAI-compatible API キー
+        ko: OpenAI / OpenAI-compatible API 키
+        ru: API-ключ OpenAI / OpenAI-compatible
+        ms: Kunci API OpenAI / OpenAI-compatible
+        pt-br: Chave de API OpenAI / OpenAI-compatible
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: OPENROUTER_API_KEY
+      labelEn: OpenRouter API Key
+      labelZh: OpenRouter API 密钥
+      label:
+        en: OpenRouter API Key
+        zh: OpenRouter API 密钥
+        zh-Hant: OpenRouter API 金鑰
+        ja: OpenRouter API キー
+        ko: OpenRouter API 키
+        ru: API-ключ OpenRouter
+        ms: Kunci API OpenRouter
+        pt-br: Chave de API OpenRouter
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: ANTHROPIC_TOKEN
+      labelEn: Anthropic API Token
+      labelZh: Anthropic API 密钥
+      label:
+        en: Anthropic API Token
+        zh: Anthropic API 密钥
+        zh-Hant: Anthropic API 金鑰
+        ja: Anthropic API トークン
+        ko: Anthropic API 토큰
+        ru: Токен API Anthropic
+        ms: Token API Anthropic
+        pt-br: Token da API Anthropic
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: ANTHROPIC_BASE_URL
+      labelEn: Anthropic Base URL
+      labelZh: Anthropic 基础地址
+      label:
+        en: Anthropic Base URL
+        zh: Anthropic 基础地址
+        zh-Hant: Anthropic 基礎位址
+        ja: Anthropic ベース URL
+        ko: Anthropic 기본 URL
+        ru: Базовый URL Anthropic
+        ms: URL Asas Anthropic
+        pt-br: URL base da Anthropic
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: GOOGLE_API_KEY
+      labelEn: Google API Key
+      labelZh: Google API 密钥
+      label:
+        en: Google API Key
+        zh: Google API 密钥
+        zh-Hant: Google API 金鑰
+        ja: Google API キー
+        ko: Google API 키
+        ru: API-ключ Google
+        ms: Kunci API Google
+        pt-br: Chave de API Google
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: DEEPSEEK_API_KEY
+      labelEn: DeepSeek API Key
+      labelZh: DeepSeek API 密钥
+      label:
+        en: DeepSeek API Key
+        zh: DeepSeek API 密钥
+        zh-Hant: DeepSeek API 金鑰
+        ja: DeepSeek API キー
+        ko: DeepSeek API 키
+        ru: API-ключ DeepSeek
+        ms: Kunci API DeepSeek
+        pt-br: Chave de API DeepSeek
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: MISTRAL_API_KEY
+      labelEn: Mistral API Key
+      labelZh: Mistral API 密钥
+      label:
+        en: Mistral API Key
+        zh: Mistral API 密钥
+        zh-Hant: Mistral API 金鑰
+        ja: Mistral API キー
+        ko: Mistral API 키
+        ru: API-ключ Mistral
+        ms: Kunci API Mistral
+        pt-br: Chave de API Mistral
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: GROQ_API_KEY
+      labelEn: Groq API Key
+      labelZh: Groq API 密钥
+      label:
+        en: Groq API Key
+        zh: Groq API 密钥
+        zh-Hant: Groq API 金鑰
+        ja: Groq API キー
+        ko: Groq API 키
+        ru: API-ключ Groq
+        ms: Kunci API Groq
+        pt-br: Chave de API Groq
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: TOGETHER_API_KEY
+      labelEn: Together API Key
+      labelZh: Together API 密钥
+      label:
+        en: Together API Key
+        zh: Together API 密钥
+        zh-Hant: Together API 金鑰
+        ja: Together API キー
+        ko: Together API 키
+        ru: API-ключ Together
+        ms: Kunci API Together
+        pt-br: Chave de API Together
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: PERPLEXITY_API_KEY
+      labelEn: Perplexity API Key
+      labelZh: Perplexity API 密钥
+      label:
+        en: Perplexity API Key
+        zh: Perplexity API 密钥
+        zh-Hant: Perplexity API 金鑰
+        ja: Perplexity API キー
+        ko: Perplexity API 키
+        ru: API-ключ Perplexity
+        ms: Kunci API Perplexity
+        pt-br: Chave de API Perplexity
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: COHERE_API_KEY
+      labelEn: Cohere API Key
+      labelZh: Cohere API 密钥
+      label:
+        en: Cohere API Key
+        zh: Cohere API 密钥
+        zh-Hant: Cohere API 金鑰
+        ja: Cohere API キー
+        ko: Cohere API 키
+        ru: API-ключ Cohere
+        ms: Kunci API Cohere
+        pt-br: Chave de API Cohere
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: FIREWORKS_API_KEY
+      labelEn: Fireworks API Key
+      labelZh: Fireworks API 密钥
+      label:
+        en: Fireworks API Key
+        zh: Fireworks API 密钥
+        zh-Hant: Fireworks API 金鑰
+        ja: Fireworks API キー
+        ko: Fireworks API 키
+        ru: API-ключ Fireworks
+        ms: Kunci API Fireworks
+        pt-br: Chave de API Fireworks
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: XAI_API_KEY
+      labelEn: xAI API Key
+      labelZh: xAI API 密钥
+      label:
+        en: xAI API Key
+        zh: xAI API 密钥
+        zh-Hant: xAI API 金鑰
+        ja: xAI API キー
+        ko: xAI API 키
+        ru: API-ключ xAI
+        ms: Kunci API xAI
+        pt-br: Chave de API xAI
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: GLM_API_KEY
+      labelEn: GLM API Key
+      labelZh: GLM API 密钥
+      label:
+        en: GLM API Key
+        zh: GLM API 密钥
+        zh-Hant: GLM API 金鑰
+        ja: GLM API キー
+        ko: GLM API 키
+        ru: API-ключ GLM
+        ms: Kunci API GLM
+        pt-br: Chave de API GLM
+      edit: true
+      required: false
+      type: password
+    - default: https://api.z.ai/api/paas/v4
+      envKey: GLM_BASE_URL
+      labelEn: GLM Base URL
+      labelZh: GLM 基础地址
+      label:
+        en: GLM Base URL
+        zh: GLM 基础地址
+        zh-Hant: GLM 基礎位址
+        ja: GLM ベース URL
+        ko: GLM 기본 URL
+        ru: Базовый URL GLM
+        ms: URL Asas GLM
+        pt-br: URL base do GLM
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: KIMI_API_KEY
+      labelEn: Kimi API Key
+      labelZh: Kimi API 密钥
+      label:
+        en: Kimi API Key
+        zh: Kimi API 密钥
+        zh-Hant: Kimi API 金鑰
+        ja: Kimi API キー
+        ko: Kimi API 키
+        ru: API-ключ Kimi
+        ms: Kunci API Kimi
+        pt-br: Chave de API Kimi
+      edit: true
+      required: false
+      type: password
+    - default: https://api.kimi.com/coding/v1
+      envKey: KIMI_BASE_URL
+      labelEn: Kimi Base URL
+      labelZh: Kimi 基础地址
+      label:
+        en: Kimi Base URL
+        zh: Kimi 基础地址
+        zh-Hant: Kimi 基礎位址
+        ja: Kimi ベース URL
+        ko: Kimi 기본 URL
+        ru: Базовый URL Kimi
+        ms: URL Asas Kimi
+        pt-br: URL base do Kimi
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: MINIMAX_API_KEY
+      labelEn: MiniMax API Key
+      labelZh: MiniMax API 密钥
+      label:
+        en: MiniMax API Key
+        zh: MiniMax API 密钥
+        zh-Hant: MiniMax API 金鑰
+        ja: MiniMax API キー
+        ko: MiniMax API 키
+        ru: API-ключ MiniMax
+        ms: Kunci API MiniMax
+        pt-br: Chave de API MiniMax
+      edit: true
+      required: false
+      type: password
+    - default: https://api.minimax.io/v1
+      envKey: MINIMAX_BASE_URL
+      labelEn: MiniMax Base URL
+      labelZh: MiniMax 基础地址
+      label:
+        en: MiniMax Base URL
+        zh: MiniMax 基础地址
+        zh-Hant: MiniMax 基礎位址
+        ja: MiniMax ベース URL
+        ko: MiniMax 기본 URL
+        ru: Базовый URL MiniMax
+        ms: URL Asas MiniMax
+        pt-br: URL base do MiniMax
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: HF_TOKEN
+      labelEn: Hugging Face Token
+      labelZh: Hugging Face Token
+      label:
+        en: Hugging Face Token
+        zh: Hugging Face Token
+        zh-Hant: Hugging Face Token
+        ja: Hugging Face トークン
+        ko: Hugging Face 토큰
+        ru: Токен Hugging Face
+        ms: Token Hugging Face
+        pt-br: Token do Hugging Face
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: TELEGRAM_BOT_TOKEN
+      labelEn: Telegram Bot Token
+      labelZh: Telegram 机器人 Token
+      label:
+        en: Telegram Bot Token
+        zh: Telegram 机器人 Token
+        zh-Hant: Telegram 機器人 Token
+        ja: Telegram ボットトークン
+        ko: Telegram 봇 토큰
+        ru: Токен Telegram-бота
+        ms: Token Bot Telegram
+        pt-br: Token do bot do Telegram
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: TELEGRAM_ALLOWED_USERS
+      labelEn: Telegram Allowed Users
+      labelZh: Telegram 允许用户 ID
+      label:
+        en: Telegram Allowed Users
+        zh: Telegram 允许用户 ID
+        zh-Hant: Telegram 允許使用者 ID
+        ja: Telegram 許可ユーザー ID
+        ko: Telegram 허용 사용자 ID
+        ru: Разрешённые ID пользователей Telegram
+        ms: ID pengguna Telegram yang dibenarkan
+        pt-br: IDs de usuários permitidos do Telegram
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: TELEGRAM_HOME_CHANNEL
+      labelEn: Telegram Home Channel
+      labelZh: Telegram 默认回传会话
+      label:
+        en: Telegram Home Channel
+        zh: Telegram 默认回传会话
+        zh-Hant: Telegram 預設回傳會話
+        ja: Telegram 既定返信先チャネル
+        ko: Telegram 기본 회신 채널
+        ru: Домашний канал Telegram
+        ms: Saluran rumah Telegram
+        pt-br: Canal principal do Telegram
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: TELEGRAM_HOME_CHANNEL_NAME
+      labelEn: Telegram Home Channel Name
+      labelZh: Telegram 默认回传会话名
+      label:
+        en: Telegram Home Channel Name
+        zh: Telegram 默认回传会话名
+        zh-Hant: Telegram 預設回傳會話名稱
+        ja: Telegram 既定返信先名
+        ko: Telegram 기본 회신 채널명
+        ru: Имя домашнего канала Telegram
+        ms: Nama saluran rumah Telegram
+        pt-br: Nome do canal principal do Telegram
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: DISCORD_HOME_CHANNEL
+      labelEn: Discord Home Channel
+      labelZh: Discord 默认回传频道
+      label:
+        en: Discord Home Channel
+        zh: Discord 默认回传频道
+        zh-Hant: Discord 預設回傳頻道
+        ja: Discord 既定返信先チャンネル
+        ko: Discord 기본 회신 채널
+        ru: Домашний канал Discord
+        ms: Saluran rumah Discord
+        pt-br: Canal principal do Discord
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: DISCORD_HOME_CHANNEL_NAME
+      labelEn: Discord Home Channel Name
+      labelZh: Discord 默认回传频道名
+      label:
+        en: Discord Home Channel Name
+        zh: Discord 默认回传频道名
+        zh-Hant: Discord 預設回傳頻道名稱
+        ja: Discord 既定返信先名
+        ko: Discord 기본 회신 채널명
+        ru: Имя домашнего канала Discord
+        ms: Nama saluran rumah Discord
+        pt-br: Nome do canal principal do Discord
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: "false"
+      envKey: DISCORD_REQUIRE_MENTION
+      labelEn: Discord Require Mention
+      labelZh: Discord 仅提及时响应
+      label:
+        en: Discord Require Mention
+        zh: Discord 仅提及时响应
+        zh-Hant: Discord 僅被提及時回應
+        ja: Discord メンション時のみ応答
+        ko: Discord 멘션 시에만 응답
+        ru: Discord отвечает только при упоминании
+        ms: Discord hanya membalas apabila disebut
+        pt-br: Discord responde apenas quando mencionado
+      edit: true
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      envKey: DISCORD_FREE_RESPONSE_CHANNELS
+      labelEn: Discord Free Response Channels
+      labelZh: Discord 自由回复频道
+      label:
+        en: Discord Free Response Channels
+        zh: Discord 自由回复频道
+        zh-Hant: Discord 自由回覆頻道
+        ja: Discord 自由応答チャンネル
+        ko: Discord 자유 응답 채널
+        ru: Каналы Discord со свободным ответом
+        ms: Saluran balasan bebas Discord
+        pt-br: Canais de resposta livre do Discord
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: "false"
+      envKey: DISCORD_AUTO_THREAD
+      labelEn: Discord Auto Thread
+      labelZh: Discord 自动线程
+      label:
+        en: Discord Auto Thread
+        zh: Discord 自动线程
+        zh-Hant: Discord 自動討論串
+        ja: Discord 自動スレッド
+        ko: Discord 자동 스레드
+        ru: Авто-треды Discord
+        ms: Thread automatik Discord
+        pt-br: Thread automático do Discord
+      edit: true
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      envKey: SLACK_HOME_CHANNEL
+      labelEn: Slack Home Channel
+      labelZh: Slack 默认回传频道
+      label:
+        en: Slack Home Channel
+        zh: Slack 默认回传频道
+        zh-Hant: Slack 預設回傳頻道
+        ja: Slack 既定返信先チャンネル
+        ko: Slack 기본 회신 채널
+        ru: Домашний канал Slack
+        ms: Saluran rumah Slack
+        pt-br: Canal principal do Slack
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SLACK_HOME_CHANNEL_NAME
+      labelEn: Slack Home Channel Name
+      labelZh: Slack 默认回传频道名
+      label:
+        en: Slack Home Channel Name
+        zh: Slack 默认回传频道名
+        zh-Hant: Slack 預設回傳頻道名稱
+        ja: Slack 既定返信先名
+        ko: Slack 기본 회신 채널명
+        ru: Имя домашнего канала Slack
+        ms: Nama saluran rumah Slack
+        pt-br: Nome do canal principal do Slack
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SLACK_ALLOWED_USERS
+      labelEn: Slack Allowed Users
+      labelZh: Slack 允许用户
+      label:
+        en: Slack Allowed Users
+        zh: Slack 允许用户
+        zh-Hant: Slack 允許使用者
+        ja: Slack 許可ユーザー
+        ko: Slack 허용 사용자
+        ru: Разрешённые пользователи Slack
+        ms: Pengguna Slack yang dibenarkan
+        pt-br: Usuários permitidos do Slack
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: "false"
+      envKey: WHATSAPP_ENABLED
+      labelEn: WhatsApp Enabled
+      labelZh: 启用 WhatsApp
+      label:
+        en: WhatsApp Enabled
+        zh: 启用 WhatsApp
+        zh-Hant: 啟用 WhatsApp
+        ja: WhatsApp を有効化
+        ko: WhatsApp 활성화
+        ru: Включить WhatsApp
+        ms: Dayakan WhatsApp
+        pt-br: Ativar WhatsApp
+      edit: true
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: personal
+      envKey: WHATSAPP_MODE
+      labelEn: WhatsApp Mode
+      labelZh: WhatsApp 模式
+      label:
+        en: WhatsApp Mode
+        zh: WhatsApp 模式
+        zh-Hant: WhatsApp 模式
+        ja: WhatsApp モード
+        ko: WhatsApp 모드
+        ru: Режим WhatsApp
+        ms: Mod WhatsApp
+        pt-br: Modo do WhatsApp
+      edit: true
+      required: false
+      type: select
+      values:
+        - label: personal
+          value: personal
+        - label: business
+          value: business
+    - default: ""
+      envKey: WHATSAPP_ALLOWED_USERS
+      labelEn: WhatsApp Allowed Users
+      labelZh: WhatsApp 允许用户
+      label:
+        en: WhatsApp Allowed Users
+        zh: WhatsApp 允许用户
+        zh-Hant: WhatsApp 允許使用者
+        ja: WhatsApp 許可ユーザー
+        ko: WhatsApp 허용 사용자
+        ru: Разрешённые пользователи WhatsApp
+        ms: Pengguna WhatsApp yang dibenarkan
+        pt-br: Usuários permitidos do WhatsApp
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SIGNAL_HTTP_URL
+      labelEn: Signal HTTP URL
+      labelZh: Signal HTTP 地址
+      label:
+        en: Signal HTTP URL
+        zh: Signal HTTP 地址
+        zh-Hant: Signal HTTP 位址
+        ja: Signal HTTP アドレス
+        ko: Signal HTTP 주소
+        ru: HTTP URL Signal
+        ms: URL HTTP Signal
+        pt-br: URL HTTP do Signal
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: SIGNAL_ACCOUNT
+      labelEn: Signal Account
+      labelZh: Signal 账号
+      label:
+        en: Signal Account
+        zh: Signal 账号
+        zh-Hant: Signal 帳號
+        ja: Signal アカウント
+        ko: Signal 계정
+        ru: Аккаунт Signal
+        ms: Akaun Signal
+        pt-br: Conta do Signal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SIGNAL_ALLOWED_USERS
+      labelEn: Signal Allowed Users
+      labelZh: Signal 允许用户
+      label:
+        en: Signal Allowed Users
+        zh: Signal 允许用户
+        zh-Hant: Signal 允許使用者
+        ja: Signal 許可ユーザー
+        ko: Signal 허용 사용자
+        ru: Разрешённые пользователи Signal
+        ms: Pengguna Signal yang dibenarkan
+        pt-br: Usuários permitidos do Signal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SIGNAL_GROUP_ALLOWED_USERS
+      labelEn: Signal Group Allowed Users
+      labelZh: Signal 群组允许用户
+      label:
+        en: Signal Group Allowed Users
+        zh: Signal 群组允许用户
+        zh-Hant: Signal 群組允許使用者
+        ja: Signal グループ許可ユーザー
+        ko: Signal 그룹 허용 사용자
+        ru: Разрешённые пользователи групп Signal
+        ms: Pengguna kumpulan Signal yang dibenarkan
+        pt-br: Usuários permitidos de grupos do Signal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SIGNAL_HOME_CHANNEL
+      labelEn: Signal Home Channel
+      labelZh: Signal 默认回传会话
+      label:
+        en: Signal Home Channel
+        zh: Signal 默认回传会话
+        zh-Hant: Signal 預設回傳會話
+        ja: Signal 既定返信先
+        ko: Signal 기본 회신 채널
+        ru: Домашний канал Signal
+        ms: Saluran rumah Signal
+        pt-br: Canal principal do Signal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: SIGNAL_HOME_CHANNEL_NAME
+      labelEn: Signal Home Channel Name
+      labelZh: Signal 默认回传会话名
+      label:
+        en: Signal Home Channel Name
+        zh: Signal 默认回传会话名
+        zh-Hant: Signal 預設回傳會話名稱
+        ja: Signal 既定返信先名
+        ko: Signal 기본 회신 채널명
+        ru: Имя домашнего канала Signal
+        ms: Nama saluran rumah Signal
+        pt-br: Nome do canal principal do Signal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: "false"
+      envKey: SIGNAL_IGNORE_STORIES
+      labelEn: Signal Ignore Stories
+      labelZh: Signal 忽略动态
+      label:
+        en: Signal Ignore Stories
+        zh: Signal 忽略动态
+        zh-Hant: Signal 忽略動態
+        ja: Signal ストーリーを無視
+        ko: Signal 스토리 무시
+        ru: Игнорировать stories в Signal
+        ms: Abaikan stories Signal
+        pt-br: Ignorar stories do Signal
+      edit: true
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      envKey: EMAIL_ADDRESS
+      labelEn: Email Address
+      labelZh: 邮箱地址
+      label:
+        en: Email Address
+        zh: 邮箱地址
+        zh-Hant: 郵箱地址
+        ja: メールアドレス
+        ko: 이메일 주소
+        ru: Адрес электронной почты
+        ms: Alamat e-mel
+        pt-br: Endereço de e-mail
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: EMAIL_PASSWORD
+      labelEn: Email Password
+      labelZh: 邮箱密码
+      label:
+        en: Email Password
+        zh: 邮箱密码
+        zh-Hant: 郵箱密碼
+        ja: メールパスワード
+        ko: 이메일 비밀번호
+        ru: Пароль почты
+        ms: Kata laluan e-mel
+        pt-br: Senha do e-mail
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: EMAIL_IMAP_HOST
+      labelEn: Email IMAP Host
+      labelZh: 邮箱 IMAP 主机
+      label:
+        en: Email IMAP Host
+        zh: 邮箱 IMAP 主机
+        zh-Hant: 郵箱 IMAP 主機
+        ja: メール IMAP ホスト
+        ko: 이메일 IMAP 호스트
+        ru: IMAP-хост почты
+        ms: Hos IMAP e-mel
+        pt-br: Host IMAP do e-mail
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: EMAIL_SMTP_HOST
+      labelEn: Email SMTP Host
+      labelZh: 邮箱 SMTP 主机
+      label:
+        en: Email SMTP Host
+        zh: 邮箱 SMTP 主机
+        zh-Hant: 郵箱 SMTP 主機
+        ja: メール SMTP ホスト
+        ko: 이메일 SMTP 호스트
+        ru: SMTP-хост почты
+        ms: Hos SMTP e-mel
+        pt-br: Host SMTP do e-mail
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: EMAIL_HOME_ADDRESS
+      labelEn: Email Home Address
+      labelZh: 默认收件地址
+      label:
+        en: Email Home Address
+        zh: 默认收件地址
+        zh-Hant: 預設收件地址
+        ja: 既定受信アドレス
+        ko: 기본 수신 주소
+        ru: Домашний адрес почты
+        ms: Alamat rumah e-mel
+        pt-br: Endereço principal de e-mail
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: EMAIL_HOME_ADDRESS_NAME
+      labelEn: Email Home Address Name
+      labelZh: 默认收件名称
+      label:
+        en: Email Home Address Name
+        zh: 默认收件名称
+        zh-Hant: 預設收件名稱
+        ja: 既定受信名
+        ko: 기본 수신 이름
+        ru: Имя домашнего адреса почты
+        ms: Nama alamat rumah e-mel
+        pt-br: Nome do endereço principal de e-mail
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: GH_TOKEN
+      labelEn: GitHub Token
+      labelZh: GitHub Token
+      label:
+        en: GitHub Token
+        zh: GitHub Token
+        zh-Hant: GitHub Token
+        ja: GitHub トークン
+        ko: GitHub 토큰
+        ru: Токен GitHub
+        ms: Token GitHub
+        pt-br: Token do GitHub
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: GITHUB_APP_ID
+      labelEn: GitHub App ID
+      labelZh: GitHub App ID
+      label:
+        en: GitHub App ID
+        zh: GitHub App ID
+        zh-Hant: GitHub App ID
+        ja: GitHub App 識別子
+        ko: GitHub 앱 ID
+        ru: ID GitHub App
+        ms: ID GitHub App
+        pt-br: ID do GitHub App
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: GITHUB_APP_PRIVATE_KEY_PATH
+      labelEn: GitHub App Private Key Path
+      labelZh: GitHub App 私钥路径
+      label:
+        en: GitHub App Private Key Path
+        zh: GitHub App 私钥路径
+        zh-Hant: GitHub App 私鑰路徑
+        ja: GitHub App 秘密鍵パス
+        ko: GitHub App 비공개 키 경로
+        ru: Путь к приватному ключу GitHub App
+        ms: Laluan kunci peribadi GitHub App
+        pt-br: Caminho da chave privada do GitHub App
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: GITHUB_APP_INSTALLATION_ID
+      labelEn: GitHub App Installation ID
+      labelZh: GitHub App Installation ID
+      label:
+        en: GitHub App Installation ID
+        zh: GitHub App Installation ID
+        zh-Hant: GitHub App Installation ID
+        ja: GitHub App インストール ID
+        ko: GitHub App 설치 ID
+        ru: ID установки GitHub App
+        ms: ID pemasangan GitHub App
+        pt-br: ID de instalação do GitHub App
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: EXA_API_KEY
+      labelEn: Exa API Key
+      labelZh: Exa API 密钥
+      label:
+        en: Exa API Key
+        zh: Exa API 密钥
+        zh-Hant: Exa API 金鑰
+        ja: Exa API キー
+        ko: Exa API 키
+        ru: API-ключ Exa
+        ms: Kunci API Exa
+        pt-br: Chave de API Exa
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: PARALLEL_API_KEY
+      labelEn: Parallel API Key
+      labelZh: Parallel API 密钥
+      label:
+        en: Parallel API Key
+        zh: Parallel API 密钥
+        zh-Hant: Parallel API 金鑰
+        ja: Parallel API キー
+        ko: Parallel API 키
+        ru: API-ключ Parallel
+        ms: Kunci API Parallel
+        pt-br: Chave de API Parallel
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: FIRECRAWL_API_KEY
+      labelEn: Firecrawl API Key
+      labelZh: Firecrawl API 密钥
+      label:
+        en: Firecrawl API Key
+        zh: Firecrawl API 密钥
+        zh-Hant: Firecrawl API 金鑰
+        ja: Firecrawl API キー
+        ko: Firecrawl API 키
+        ru: API-ключ Firecrawl
+        ms: Kunci API Firecrawl
+        pt-br: Chave de API Firecrawl
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: FIRECRAWL_API_URL
+      labelEn: Firecrawl API URL
+      labelZh: Firecrawl API 地址
+      label:
+        en: Firecrawl API URL
+        zh: Firecrawl API 地址
+        zh-Hant: Firecrawl API 位址
+        ja: Firecrawl API アドレス
+        ko: Firecrawl API 주소
+        ru: URL API Firecrawl
+        ms: URL API Firecrawl
+        pt-br: URL da API Firecrawl
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: HELICONE_API_KEY
+      labelEn: Helicone API Key
+      labelZh: Helicone API 密钥
+      label:
+        en: Helicone API Key
+        zh: Helicone API 密钥
+        zh-Hant: Helicone API 金鑰
+        ja: Helicone API キー
+        ko: Helicone API 키
+        ru: API-ключ Helicone
+        ms: Kunci API Helicone
+        pt-br: Chave de API Helicone
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: HASS_URL
+      labelEn: Home Assistant URL
+      labelZh: Home Assistant 地址
+      label:
+        en: Home Assistant URL
+        zh: Home Assistant 地址
+        zh-Hant: Home Assistant 位址
+        ja: Home Assistant アドレス
+        ko: Home Assistant 주소
+        ru: URL Home Assistant
+        ms: URL Home Assistant
+        pt-br: URL do Home Assistant
+      edit: true
+      required: false
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      envKey: HASS_TOKEN
+      labelEn: Home Assistant Token
+      labelZh: Home Assistant Token
+      label:
+        en: Home Assistant Token
+        zh: Home Assistant Token
+        zh-Hant: Home Assistant Token
+        ja: Home Assistant トークン
+        ko: Home Assistant 토큰
+        ru: Токен Home Assistant
+        ms: Token Home Assistant
+        pt-br: Token do Home Assistant
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: GATEWAY_ALLOWED_USERS
+      labelEn: Gateway Allowed Users
+      labelZh: 网关允许用户
+      label:
+        en: Gateway Allowed Users
+        zh: 网关允许用户
+        zh-Hant: 網關允許使用者
+        ja: ゲートウェイ許可ユーザー
+        ko: 게이트웨이 허용 사용자
+        ru: Разрешённые пользователи шлюза
+        ms: Pengguna gerbang yang dibenarkan
+        pt-br: Usuários permitidos do gateway
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: MODAL_TOKEN_ID
+      labelEn: Modal Token ID
+      labelZh: Modal Token ID
+      label:
+        en: Modal Token ID
+        zh: Modal Token ID
+        zh-Hant: Modal Token ID
+        ja: Modal トークン ID
+        ko: Modal 토큰 ID
+        ru: Token ID Modal
+        ms: ID token Modal
+        pt-br: ID do token Modal
+      edit: true
+      required: false
+      rule: paramCommon
+      type: text
+    - default: ""
+      envKey: MODAL_TOKEN_SECRET
+      labelEn: Modal Token Secret
+      labelZh: Modal Token Secret
+      label:
+        en: Modal Token Secret
+        zh: Modal Token Secret
+        zh-Hant: Modal Token Secret
+        ja: Modal トークンシークレット
+        ko: Modal 토큰 시크릿
+        ru: Секрет токена Modal
+        ms: Rahsia token Modal
+        pt-br: Segredo do token Modal
+      edit: true
+      required: false
+      type: password
+    - default: ""
+      envKey: DAYTONA_API_KEY
+      labelEn: Daytona API Key
+      labelZh: Daytona API 密钥
+      label:
+        en: Daytona API Key
+        zh: Daytona API 密钥
+        zh-Hant: Daytona API 金鑰
+        ja: Daytona API キー
+        ko: Daytona API 키
+        ru: API-ключ Daytona
+        ms: Kunci API Daytona
+        pt-br: Chave de API Daytona
+      edit: true
+      required: false
+      type: password
