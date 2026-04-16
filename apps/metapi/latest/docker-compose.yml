@@ -1,6 +1,6 @@
 services:
   metapi:
-    image: "1467078763/metapi:v1.3.0"
+    image: "1467078763/metapi:latest"
     ports:
       - "${PANEL_APP_PORT_HTTP}:4000"
     environment:
