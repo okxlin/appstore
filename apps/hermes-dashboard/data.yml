@@ -1,0 +1,31 @@
+name: Hermes Dashboard
+tags:
+  - AI
+title: Hermes Dashboard 附属应用
+description: Hermes Dashboard 附属应用
+additionalProperties:
+  key: hermes-dashboard
+  name: Hermes Dashboard
+  tags:
+    - AI
+  shortDescZh: Hermes Dashboard 附属应用
+  shortDescEn: Optional web dashboard for Hermes Agent
+  description:
+    en: Deploy the optional Hermes web dashboard in 1Panel and connect it to an existing Hermes gateway.
+    zh: 在 1Panel 中部署可选的 Hermes Web Dashboard，并连接到已有的 Hermes gateway。
+    zh-Hant: 在 1Panel 中部署可選的 Hermes Web Dashboard，並連接到既有的 Hermes gateway。
+    ja: 1Panel でオプションの Hermes Web Dashboard をデプロイし、既存の Hermes gateway に接続します。
+    ko: 1Panel에서 선택형 Hermes Web Dashboard를 배포하고 기존 Hermes gateway에 연결합니다.
+    ru: Разверните в 1Panel дополнительную веб-панель Hermes и подключите её к существующему шлюзу Hermes.
+    ms: Pasang papan pemuka web Hermes pilihan di 1Panel dan sambungkannya ke gateway Hermes sedia ada.
+    pt-br: Implante no 1Panel o dashboard web opcional do Hermes e conecte-o a um gateway Hermes existente.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://hermes-agent.nousresearch.com/docs/
+  github: https://github.com/NousResearch/hermes-agent
+  document: https://hermes-agent.nousresearch.com/docs/user-guide/docker
+  architectures:
+    - amd64
+    - arm64

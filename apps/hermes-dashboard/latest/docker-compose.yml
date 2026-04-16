@@ -1,0 +1,21 @@
+services:
+  hermes-dashboard:
+    image: "nousresearch/hermes-agent:latest"
+    container_name: "${CONTAINER_NAME}"
+    command: ${DASHBOARD_RUN_COMMAND}
+    environment:
+      - TZ=${TZ}
+      - GATEWAY_HEALTH_URL=${GATEWAY_HEALTH_URL}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9119"
+    volumes:
+      - "${APP_DATA_DIR}:/opt/data"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
