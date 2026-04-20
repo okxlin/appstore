@@ -4,6 +4,6 @@ services:
     restart: always
     network_mode: host
     command: ${COMMAND_LINE}
-    image: vaalacat/frp-panel:v0.1.36
+    image: vaalacat/frp-panel:v0.1.37
     labels:  
       createdBy: "Apps"
