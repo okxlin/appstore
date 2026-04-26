@@ -1,6 +1,6 @@
 services:
   deluge:
-    image: "linuxserver/deluge:2.2.0"
+    image: "linuxserver/deluge:18.04.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
