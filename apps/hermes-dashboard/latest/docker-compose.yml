@@ -5,6 +5,8 @@ services:
     command: ${DASHBOARD_RUN_COMMAND}
     environment:
       - TZ=${TZ}
+      - HERMES_UID=${HERMES_UID:-10000}
+      - HERMES_GID=${HERMES_GID:-10000}
       - GATEWAY_HEALTH_URL=${GATEWAY_HEALTH_URL}
     ports:
       - "${PANEL_APP_PORT_HTTP}:9119"

@@ -1,6 +1,6 @@
 additionalProperties:
   formFields:
-    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。"
+    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；这里建议与 Hermes Agent 保持一致。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。"
       disabled: true
       envKey: TIPS
       labelEn: Tips
@@ -49,6 +49,38 @@ additionalProperties:
       edit: true
       required: true
       type: text
+    - default: 10000
+      envKey: HERMES_UID
+      labelEn: Hermes Runtime UID
+      labelZh: Hermes 运行用户 UID
+      label:
+        en: Hermes Runtime UID
+        zh: Hermes 运行用户 UID
+        zh-Hant: Hermes 執行使用者 UID
+        ja: Hermes 実行ユーザー UID
+        ko: Hermes 실행 사용자 UID
+        ru: UID пользователя Hermes
+        ms: UID pengguna runtime Hermes
+        pt-br: UID do usuário de execução do Hermes
+      edit: true
+      required: true
+      type: number
+    - default: 10000
+      envKey: HERMES_GID
+      labelEn: Hermes Runtime GID
+      labelZh: Hermes 运行用户 GID
+      label:
+        en: Hermes Runtime GID
+        zh: Hermes 运行用户 GID
+        zh-Hant: Hermes 執行使用者 GID
+        ja: Hermes 実行ユーザー GID
+        ko: Hermes 실행 사용자 GID
+        ru: GID пользователя Hermes
+        ms: GID pengguna runtime Hermes
+        pt-br: GID do usuário de execução do Hermes
+      edit: true
+      required: true
+      type: number
     - default: 9119
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Dashboard Port
