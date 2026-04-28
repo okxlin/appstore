@@ -1,6 +1,6 @@
 services:
   moviepilot:
-    image: jxxghp/moviepilot:2.10.6
+    image: jxxghp/moviepilot:2.10.7
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
