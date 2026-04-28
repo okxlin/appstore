@@ -1,0 +1,30 @@
+name: Oh My OpenCode Runtime
+tags:
+  - Tool
+title: 面向 OpenCode 的可持久化多智能体开发运行环境
+description: 面向 OpenCode 的可持久化多智能体开发运行环境
+additionalProperties:
+  key: oh-my-opencode
+  name: Oh My OpenCode Runtime
+  tags:
+    - Tool
+  shortDescZh: 面向 OpenCode 的可持久化多智能体开发运行环境
+  shortDescEn: Persistent OpenCode multi-agent runtime with plugin-friendly storage.
+  description:
+    en: Persistent OpenCode multi-agent runtime with plugin-friendly storage.
+    zh: 面向 OpenCode 的可持久化多智能体开发运行环境
+    zh-Hant: 面向 OpenCode 的可持久化多智慧體開發執行環境
+    ja: OpenCode 向けの永続化対応マルチエージェント開発ランタイムです。
+    ko: OpenCode용 영속 스토리지를 갖춘 멀티 에이전트 개발 런타임입니다.
+    ru: Постоянное рантайм-окружение OpenCode для мультиагентной разработки с удобным хранением плагинов.
+    ms: Persekitaran runtime OpenCode berterusan untuk pembangunan multi-ejen dengan storan plugin.
+    pt-br: Runtime persistente do OpenCode para desenvolvimento multiagente com armazenamento amigável para plugins.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: "https://github.com/okxlin/release-factory"
+  github: "https://github.com/okxlin/release-factory"
+  document: "https://github.com/okxlin/release-factory"
+  architectures:
+    - amd64

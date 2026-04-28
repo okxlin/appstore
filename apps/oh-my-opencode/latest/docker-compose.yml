@@ -1,0 +1,71 @@
+services:
+  oh-my-opencode:
+    image: "${IMAGE_REPO}:${IMAGE_TAG}"
+    container_name: "${CONTAINER_NAME}"
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4096"
+      - "${PANEL_APP_PORT_ACP}:8765"
+    environment:
+      - TZ=${TZ}
+      - OPENCODE_RUNTIME_MODE=${OPENCODE_RUNTIME_MODE}
+      - ACP_HOST=0.0.0.0
+      - ACP_PORT=8765
+      - SERVE_HOST=0.0.0.0
+      - SERVE_PORT=4096
+      - OPENCODE_BOOTSTRAP=${OPENCODE_BOOTSTRAP}
+      - OMO_AUTO_INSTALL=${OMO_AUTO_INSTALL}
+      - DCP_INSTALL=${DCP_INSTALL}
+      - GPT_UNLOCKED_INSTALL=${GPT_UNLOCKED_INSTALL}
+      - OMO_CLAUDE_MODE=${OMO_CLAUDE_MODE}
+      - OMO_GEMINI_MODE=${OMO_GEMINI_MODE}
+      - OMO_COPILOT_MODE=${OMO_COPILOT_MODE}
+      - OMO_INSTALL_ARGS=${OMO_INSTALL_ARGS}
+      - OPENCODE_INSTALL_DIR=/data/opencode
+      - OPENCODE_NPM_BIN_DIR=/data/bin
+      - OPENCODE_CONFIG_DIR=/config/opencode
+      - OMO_INSTALL_DIR=/data/oh-my-opencode
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - ANTHROPIC_BASE_URL=${ANTHROPIC_BASE_URL}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_BASE_URL=${GEMINI_BASE_URL}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GPT_UNLOCKED_BASE_URL=${GPT_UNLOCKED_BASE_URL}
+      - GPT_UNLOCKED_API_KEY=${GPT_UNLOCKED_API_KEY}
+      - GPT_UNLOCKED_MODEL=${GPT_UNLOCKED_MODEL}
+    volumes:
+      - ${APP_DATA_DIR_1}:/workspace
+      - ${APP_DATA_DIR_2}:/config
+      - ${APP_DATA_DIR_3}:/cache
+      - ${APP_DATA_DIR_4}:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          if [ "$OPENCODE_RUNTIME_MODE" = "serve" ]; then
+            ps -ef | grep -v grep | grep "opencode serve" >/dev/null;
+          else
+            ps -ef | grep -v grep | grep "opencode acp" >/dev/null;
+          fi
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    command: ["runtime"]
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
