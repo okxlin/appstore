@@ -1,0 +1,31 @@
+name: 每日股票分析
+tags:
+  - AI
+title: 每日股票分析
+description: LLM驱动的A股/港股/美股智能分析系统，多数据源行情+实时新闻+AI决策仪表盘+多渠道推送
+additionalProperties:
+  key: daily-stock-analysis
+  name: 每日股票分析
+  tags:
+    - AI
+  shortDescZh: LLM驱动的A股/港股/美股智能分析系统，多数据源行情+实时新闻+AI决策仪表盘+多渠道推送
+  shortDescEn: LLM-powered stock analysis for A/H/US markets with multi-source data, real-time news, AI dashboard, and multi-channel notifications
+  description:
+    en: LLM-powered intelligent stock analysis system for A-share, HK, and US markets. Aggregates multi-source market data, real-time news, technical indicators, and AI-generated decision dashboards, with push notifications to WeChat, Feishu, Telegram, Discord, Slack, or email.
+    zh: 基于大模型的A股/港股/美股智能分析系统，聚合多数据源行情、实时新闻、技术指标与AI决策仪表盘，支持企业微信/飞书/Telegram/Discord/Slack/邮件等多渠道推送。
+    zh-Hant: 基於大模型的A股/港股/美股智慧分析系統，聚合多資料源行情、即時新聞、技術指標與AI決策儀表板，支援企業微信/飛書/Telegram/Discord/Slack/郵件等多管道推播。
+    ja: A株/香港株/米国株向けLLM駆動の知的株式分析システム。マルチソースの市場データ、リアルタイムニュース、テクニカル指標、AI生成の意思決定ダッシュボードを集約し、WeChat/Feishu/Telegram/Discord/Slack/メールで通知。
+    ko: A주/홍콩주/미국주를 위한 LLM 기반 지능형 주식 분석 시스템. 다중 소스 시장 데이터, 실시간 뉴스, 기술 지표, AI 의사결정 대시보드를 집계하여 WeChat/Feishu/Telegram/Discord/Slack/이메일로 푸시 알림.
+    ru: Система интеллектуального анализа акций на базе LLM для рынков A-акций, Гонконга и США. Объединяет мульти-источники данных, новости в реальном времени, технические индикаторы и AI-дашборды с уведомлениями через WeChat, Feishu, Telegram, Discord, Slack или email.
+    ms: Sistem analisis saham pintar berasaskan LLM untuk pasaran A-share, HK, dan AS. Mengagregat data pasaran pelbagai sumber, berita masa nyata, penunjuk teknikal dan papan pemuka keputusan AI, dengan pemberitahuan ke WeChat, Feishu, Telegram, Discord, Slack, atau email.
+    pt-br: Sistema inteligente de análise de ações baseado em LLM para ações A, HK e EUA. Agrega dados de mercado de múltiplas fontes, notícias em tempo real, indicadores técnicos e painéis de decisão com IA, com notificações via WeChat, Feishu, Telegram, Discord, Slack ou email.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: "https://github.com/ZhuLinsen/daily_stock_analysis"
+  github: "https://github.com/ZhuLinsen/daily_stock_analysis"
+  document: "https://github.com/ZhuLinsen/daily_stock_analysis/blob/main/docs/full-guide.md"
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,72 @@
+additionalProperties:
+  formFields:
+    # === Port ===
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 端口
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      type: number
+      rule: paramPort
+    # === Data Directory ===
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉토리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    # === Timezone ===
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    # === Stock List (configurable in WebUI, removed from form) ===
+    # === Admin Auth (security: always enabled) ===
+    - default: "true"
+      disabled: true
+      envKey: ADMIN_AUTH_ENABLED
+      labelEn: Admin Password
+      labelZh: 管理密码（首次访问 WebUI 设置）
+      label:
+        en: Admin Password (set on first WebUI visit)
+        zh: 管理密码（首次访问 WebUI 设置）
+        zh-Hant: 管理密碼（首次訪問 WebUI 設定）
+        ja: 管理パスワード（初回 WebUI 訪問時に設定）
+        ko: 관리자 비밀번호（최초 WebUI 방문 시 설정）
+        ru: Пароль администратора (настройка при первом входе)
+        ms: Kata laluan admin (tetapkan pada lawatan WebUI pertama)
+        pt-br: Senha admin (configurar na primeira visita ao WebUI)
+      required: false
+      type: text
