@@ -4,6 +4,7 @@ services:
     container_name: "${CONTAINER_NAME}"
     labels:
       createdBy: "Apps"
+    user: "0:0"
     restart: unless-stopped
     env_file:
       - .env

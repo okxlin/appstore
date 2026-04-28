@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/okxlin/release-factory",
+  "dockerDocs": "https://github.com/okxlin/release-factory",
+  "composeFile": "https://github.com/okxlin/release-factory/tree/main/oh-my-opencode-image-handoff/1panel-apps/oh-my-opencode/latest/docker-compose.yml"
+}
