@@ -1,0 +1,24 @@
+services:
+  daily-stock-analysis:
+    image: "zhulinsen/daily_stock_analysis:latest"
+    container_name: "${CONTAINER_NAME}"
+    labels:
+      createdBy: "Apps"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - TZ=${TZ}
+      - WEBUI_ENABLED=true
+      - WEBUI_HOST=0.0.0.0
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/data
+      - ${APP_DATA_DIR}/logs:/app/logs
+      - ${APP_DATA_DIR}/reports:/app/reports
+      - ./env.defaults:/app/.env
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true
