@@ -12,7 +12,7 @@ services:
       - TZ=Asia/Shanghai
       - UID=1000
       - GID=1000
-    image: matrixdotorg/synapse:v1.151.0
+    image: matrixdotorg/synapse:v1.152.0
     logging:
       options:
         max-size: "10m"
