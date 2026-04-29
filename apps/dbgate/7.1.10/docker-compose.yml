@@ -8,7 +8,7 @@ services:
         - "${PANEL_APP_PORT_HTTP}:3000"
     volumes:
         - "${DATA_PATH}:/root/.dbgate"
-    image: "dbgate/dbgate:7.1.9"
+    image: "dbgate/dbgate:7.1.10"
     labels:  
       createdBy: "Apps"
 
