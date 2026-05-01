@@ -1,6 +1,6 @@
 services:
   zeroclaw:
-    image: "ghcr.io/zeroclaw-labs/zeroclaw:v0.7.3"
+    image: "ghcr.io/zeroclaw-labs/zeroclaw:v0.7.4"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
