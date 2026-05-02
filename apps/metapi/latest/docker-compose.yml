@@ -1,6 +1,7 @@
 services:
   metapi:
     image: "1467078763/metapi:latest"
+    container_name: "${CONTAINER_NAME}"
     ports:
       - "${PANEL_APP_PORT_HTTP}:4000"
     environment:
@@ -12,7 +13,11 @@ services:
       - "DATA_DIR=/app/data"
       - "TZ=${TZ}"
     volumes:
-      - "${APP_DATA_DIR}:/app/data"
+      - "metapi_data:/app/data"
     restart: unless-stopped
     labels:
       createdBy: "Apps"
+
+volumes:
+  metapi_data:
+    name: "${APP_DATA_DIR:-data}"
