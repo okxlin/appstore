@@ -17,20 +17,20 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
-    - default: ./data
+    - default: data
       envKey: APP_DATA_DIR
       edit: true
-      labelEn: Data directory
-      labelZh: 数据目录
+      labelEn: Data volume name
+      labelZh: 数据卷名
       label:
-        en: Data directory
-        zh: 数据目录
-        zh-Hant: 資料目錄
-        ja: データディレクトリ
-        ko: 데이터 디렉터리
-        ru: Каталог данных
-        ms: Direktori data
-        pt-br: Diretório de dados
+        en: Data volume name
+        zh: 数据卷名
+        zh-Hant: 資料卷名稱
+        ja: データボリューム名
+        ko: 데이터 볼륨 이름
+        ru: Имя тома данных
+        ms: Nama volum data
+        pt-br: Nome do volume de dados
       required: true
       rule: paramCommon
       type: text

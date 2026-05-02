@@ -12,7 +12,7 @@ services:
       - "DATA_DIR=/app/data"
       - "TZ=${TZ}"
     volumes:
-      - "${APP_DATA_DIR}:/app/data"
+      - "${APP_DATA_DIR:-data}:/app/data"
     restart: unless-stopped
     labels:
       createdBy: "Apps"
