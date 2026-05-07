@@ -1,0 +1,43 @@
+services:
+  cpa-usage-keeper:
+    image: ghcr.io/willxup/cpa-usage-keeper:latest
+    container_name: ${CONTAINER_NAME}
+    ports:
+    - ${PANEL_APP_PORT_HTTP}:8080
+    environment:
+    - TZ=${TZ}
+    - CPA_BASE_URL=${CPA_BASE_URL}
+    - CPA_MANAGEMENT_KEY=${CPA_MANAGEMENT_KEY}
+    - REDIS_QUEUE_ADDR=${REDIS_QUEUE_ADDR}
+    - AUTH_ENABLED=${AUTH_ENABLED}
+    - LOGIN_PASSWORD=${LOGIN_PASSWORD}
+    - APP_BASE_PATH=${APP_BASE_PATH}
+    - WORK_DIR=/data
+    - AUTH_SESSION_TTL=${AUTH_SESSION_TTL}
+    - REDIS_QUEUE_TLS=${REDIS_QUEUE_TLS}
+    - REDIS_QUEUE_BATCH_SIZE=${REDIS_QUEUE_BATCH_SIZE}
+    - REDIS_QUEUE_IDLE_INTERVAL=${REDIS_QUEUE_IDLE_INTERVAL}
+    - REQUEST_TIMEOUT=${REQUEST_TIMEOUT}
+    - TLS_SKIP_VERIFY=${TLS_SKIP_VERIFY}
+    - LOG_LEVEL=${LOG_LEVEL}
+    - LOG_FILE_ENABLED=${LOG_FILE_ENABLED}
+    - LOG_RETENTION_DAYS=${LOG_RETENTION_DAYS}
+    - BACKUP_ENABLED=${BACKUP_ENABLED}
+    - BACKUP_INTERVAL=${BACKUP_INTERVAL}
+    - BACKUP_RETENTION_DAYS=${BACKUP_RETENTION_DAYS}
+    volumes:
+    - ${APP_DATA_DIR}:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      createdBy: Apps
+    networks:
+    - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

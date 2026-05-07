@@ -1,0 +1,30 @@
+name: CPA Usage Keeper
+tags:
+- Tool
+title: 独立的 Cli-Proxy-API 用量追踪与展示服务
+description: 独立的 Cli-Proxy-API 用量追踪与展示服务
+additionalProperties:
+  key: cpa-usage-keeper
+  name: CPA Usage Keeper
+  tags:
+  - Tool
+  shortDescZh: 独立的 Cli-Proxy-API 用量追踪与展示服务
+  shortDescEn: Standalone Cli-Proxy-API usage tracker
+  description:
+    en: Standalone Cli-Proxy-API usage tracker
+    zh: 独立的 Cli-Proxy-API 用量追踪与展示服务
+    zh-Hant: 獨立的 Cli-Proxy-API 用量追蹤與展示服務
+    ja: 独立した Cli-Proxy-API 使用量トラッカー
+    ko: 독립형 Cli-Proxy-API 사용량 추적기
+    ru: Автономный трекер использования Cli-Proxy-API
+    ms: Penjejak penggunaan Cli-Proxy-API bebas
+    pt-br: Rastreador de uso autônomo do Cli-Proxy-API
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/Willxup/cpa-usage-keeper
+  github: https://github.com/Willxup/cpa-usage-keeper
+  document: https://github.com/Willxup/cpa-usage-keeper/blob/main/README.md
+  architectures:
+  - amd64
+  - arm64

@@ -119,6 +119,7 @@ chinesesubfinder
 chrome-browser
 cook
 cookiecloud
+cpa-usage-keeper
 deluge
 discussion
 discuz
