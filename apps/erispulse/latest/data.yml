@@ -1,0 +1,57 @@
+additionalProperties:
+  formFields:
+    - default: "8000"
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Path
+      labelZh: 数据路径
+      label:
+        en: Data Path
+        zh: 数据路径
+        zh-Hant: 資料路徑
+        ja: データパス
+        ko: 데이터 경로
+      required: true
+      type: text
+    - default: "Asia/Shanghai"
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: ERISPULSE_DASHBOARD_TOKEN
+      labelEn: Dashboard Token
+      labelZh: Dashboard 登录令牌
+      label:
+        en: Dashboard Login Token
+        zh: Dashboard 登录令牌
+        zh-Hant: Dashboard 登入令牌
+        ja: ダッシュボードログイントークン
+        ko: 대시보드 로그인 토큰
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
