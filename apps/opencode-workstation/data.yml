@@ -1,0 +1,30 @@
+name: OpenCode Workstation
+tags:
+  - Tool
+title: OpenCode Workstation – 可持久化的多智能体开发运行环境
+description: OpenCode Workstation – 可持久化的多智能体开发运行环境
+additionalProperties:
+  key: opencode-workstation
+  name: OpenCode Workstation
+  tags:
+    - Tool
+  shortDescZh: OpenCode Workstation – 可持久化的多智能体开发运行环境
+  shortDescEn: OpenCode Workstation – persistent multi-agent dev runtime.
+  description:
+    en: OpenCode Workstation – persistent multi-agent dev runtime with oh-my-opencode bootstrap and plugin-friendly storage.
+    zh: OpenCode Workstation – 可持久化的多智能体开发运行环境
+    zh-Hant: OpenCode Workstation – 可持久化的多智慧體開發執行環境
+    ja: OpenCode Workstation – 永続化対応マルチエージェント開発ランタイム
+    ko: OpenCode Workstation – 영속 스토리지를 갖춘 멀티 에이전트 개발 런타임
+    ru: OpenCode Workstation – постоянное рантайм-окружение для мультиагентной разработки
+    ms: OpenCode Workstation – persekitaran runtime berterusan untuk pembangunan multi-ejen
+    pt-br: OpenCode Workstation – runtime persistente para desenvolvimento multiagente
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: "https://github.com/okxlin/release-factory"
+  github: "https://github.com/okxlin/release-factory"
+  document: "https://github.com/okxlin/release-factory"
+  architectures:
+    - amd64

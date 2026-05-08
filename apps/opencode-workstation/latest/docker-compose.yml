@@ -1,0 +1,83 @@
+services:
+  opencode-workstation:
+    image: "ghcr.io/okxlin/opencode-workstation:latest"
+    container_name: ${CONTAINER_NAME}
+    labels:
+      createdBy: "Apps"
+    user: "0:0"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4096"
+      - "${PANEL_APP_PORT_ACP}:8765"
+    environment:
+      - TZ=${TZ}
+      - OPENCODE_RUNTIME_MODE=${OPENCODE_RUNTIME_MODE}
+      - ACP_HOST=0.0.0.0
+      - ACP_PORT=8765
+      - SERVE_HOST=0.0.0.0
+      - SERVE_PORT=4096
+      - OPENCODE_BOOTSTRAP=${OPENCODE_BOOTSTRAP}
+      - OMO_AUTO_INSTALL=${OMO_AUTO_INSTALL}
+      - DCP_INSTALL=${DCP_INSTALL}
+      - GPT_UNLOCKED_INSTALL=${GPT_UNLOCKED_INSTALL}
+      - OMO_CLAUDE_MODE=${OMO_CLAUDE_MODE}
+      - OMO_GEMINI_MODE=${OMO_GEMINI_MODE}
+      - OMO_COPILOT_MODE=${OMO_COPILOT_MODE}
+      - OMO_INSTALL_ARGS=${OMO_INSTALL_ARGS}
+      - OPENCODE_NPM_PACKAGE=${OPENCODE_NPM_PACKAGE}
+      - OMO_PACKAGE=${OMO_PACKAGE}
+      - OPENCODE_INSTALL_DIR=/data/opencode
+      - XDG_DATA_HOME=/data/xdg-data
+      - OPENCODE_NPM_BIN_DIR=/data/bin
+      - OPENCODE_CONFIG_DIR=/config/opencode
+      - OMO_INSTALL_DIR=/data/oh-my-opencode
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - OPENCODE_MODEL=${OPENCODE_MODEL}
+      - OPENCODE_SMALL_MODEL=${OPENCODE_SMALL_MODEL}
+      - OPENCODE_PROVIDER_ID=${OPENCODE_PROVIDER_ID}
+      - OPENCODE_EXTRA_PLUGINS=${OPENCODE_EXTRA_PLUGINS}
+      - OPENCODE_SERVER_USERNAME=${OPENCODE_SERVER_USERNAME}
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - ANTHROPIC_BASE_URL=${ANTHROPIC_BASE_URL}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_BASE_URL=${OPENROUTER_BASE_URL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_BASE_URL=${GEMINI_BASE_URL}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME}
+      - GIT_AUTHOR_EMAIL=${GIT_AUTHOR_EMAIL}
+      - GIT_COMMITTER_NAME=${GIT_COMMITTER_NAME}
+      - GIT_COMMITTER_EMAIL=${GIT_COMMITTER_EMAIL}
+      - GPT_UNLOCKED_BASE_URL=${GPT_UNLOCKED_BASE_URL}
+      - GPT_UNLOCKED_API_KEY=${GPT_UNLOCKED_API_KEY}
+      - GPT_UNLOCKED_MODEL=${GPT_UNLOCKED_MODEL}
+    volumes:
+      - ${APP_DATA_DIR_1}:/workspace
+      - ${APP_DATA_DIR_2}:/config
+      - ${APP_DATA_DIR_3}:/cache
+      - ${APP_DATA_DIR_4}:/data
+      - ${DOCKER_SOCK_SRC}:/var/run/docker.sock
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          if [ "$OPENCODE_RUNTIME_MODE" = "serve" ]; then
+            ps -ef | grep -v grep | grep "opencode serve" >/dev/null;
+          else
+            ps -ef | grep -v grep | grep "opencode acp" >/dev/null;
+          fi
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    command: ["runtime"]
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

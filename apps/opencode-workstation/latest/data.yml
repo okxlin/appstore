@@ -1,0 +1,702 @@
+additionalProperties:
+  formFields:
+    - default: 4096
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      type: number
+      required: true
+      rule: paramPort
+      labelEn: Serve Port
+      labelZh: Serve 端口
+      label:
+        en: Serve Port
+        zh: Serve 端口
+        zh-Hant: Serve 端口
+        ja: Serve ポート
+        ko: Serve 포트
+        ru: Порт Serve
+        ms: Port Serve
+        pt-br: Porta do Serve
+    - default: 8765
+      edit: true
+      envKey: PANEL_APP_PORT_ACP
+      type: number
+      required: true
+      rule: paramPort
+      labelEn: ACP Port
+      labelZh: ACP 端口
+      label:
+        en: ACP Port
+        zh: ACP 端口
+        zh-Hant: ACP 端口
+        ja: ACP ポート
+        ko: ACP 포트
+        ru: Порт ACP
+        ms: Port ACP
+        pt-br: Porta ACP
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      type: text
+      required: true
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+    - default: "./data/workspace"
+      edit: true
+      envKey: APP_DATA_DIR_1
+      type: text
+      required: true
+      labelEn: Workspace Mount Path
+      labelZh: 工作区挂载目录
+      label:
+        en: Workspace Mount Path
+        zh: 工作区挂载目录
+        zh-Hant: 工作區掛載目錄
+        ja: ワークスペースマウントパス
+        ko: 작업공간 마운트 경로
+        ru: Путь монтирования рабочей области
+        ms: Laluan lekap ruang kerja
+        pt-br: Caminho de montagem do workspace
+    - default: "./data/config"
+      edit: true
+      envKey: APP_DATA_DIR_2
+      type: text
+      required: true
+      labelEn: Config Mount Path
+      labelZh: 配置挂载目录
+      label:
+        en: Config Mount Path
+        zh: 配置挂载目录
+        zh-Hant: 配置掛載目錄
+        ja: 設定マウントパス
+        ko: 설정 마운트 경로
+        ru: Путь монтирования конфигурации
+        ms: Laluan lekap konfigurasi
+        pt-br: Caminho de montagem da configuração
+    - default: "./data/cache"
+      edit: true
+      envKey: APP_DATA_DIR_3
+      type: text
+      required: true
+      labelEn: Cache Mount Path
+      labelZh: 缓存挂载目录
+      label:
+        en: Cache Mount Path
+        zh: 缓存挂载目录
+        zh-Hant: 快取掛載目錄
+        ja: キャッシュマウントパス
+        ko: 캐시 마운트 경로
+        ru: Путь монтирования кэша
+        ms: Laluan lekap cache
+        pt-br: Caminho de montagem do cache
+    - default: "./data/runtime"
+      edit: true
+      envKey: APP_DATA_DIR_4
+      type: text
+      required: true
+      labelEn: Runtime Mount Path
+      labelZh: 运行时挂载目录
+      label:
+        en: Runtime Mount Path
+        zh: 运行时挂载目录
+        zh-Hant: 運行時掛載目錄
+        ja: ランタイムマウントパス
+        ko: 런타임 마운트 경로
+        ru: Путь монтирования рантайма
+        ms: Laluan lekap runtime
+        pt-br: Caminho de montagem do runtime
+    - default: /var/run/docker.sock
+      edit: true
+      envKey: DOCKER_SOCK_SRC
+      type: text
+      required: false
+      labelEn: Docker Socket Path (leave empty to disable)
+      labelZh: Docker 套接字路径（留空禁用）
+      label:
+        en: Docker Socket Path (leave empty to disable)
+        zh: Docker 套接字路径（留空禁用）
+        zh-Hant: Docker 套接字路徑（留空禁用）
+        ja: Docker ソケットパス（空欄で無効）
+        ko: Docker 소켓 경로 (비우면 비활성화)
+        ru: Путь к Docker-сокету (оставьте пустым для отключения)
+        ms: Laluan soket Docker (kosongkan untuk lumpuhkan)
+        pt-br: Caminho do socket Docker (deixe em branco para desabilitar)
+    - default: serve
+      edit: true
+      envKey: OPENCODE_RUNTIME_MODE
+      type: select
+      required: true
+      labelEn: Runtime Mode
+      labelZh: 运行模式
+      label:
+        en: Runtime Mode
+        zh: 运行模式
+        zh-Hant: 運行模式
+        ja: 実行モード
+        ko: 실행 모드
+        ru: Режим запуска
+        ms: Mod runtime
+        pt-br: Modo de execução
+      values:
+        - label: serve
+          value: serve
+        - label: acp
+          value: acp
+    - default: "1"
+      edit: true
+      envKey: OPENCODE_BOOTSTRAP
+      type: select
+      required: true
+      labelEn: Bootstrap OpenCode on Start
+      labelZh: 启动时安装 OpenCode
+      label:
+        en: Bootstrap OpenCode on Start
+        zh: 启动时安装 OpenCode
+        zh-Hant: 啟動時安裝 OpenCode
+        ja: 起動時にOpenCodeをインストール
+        ko: 시작 시 OpenCode 설치
+        ru: Установить OpenCode при запуске
+        ms: Pasang OpenCode semasa mula
+        pt-br: Instalar OpenCode na inicialização
+      values:
+        - label: "true"
+          value: "1"
+        - label: "false"
+          value: "0"
+    - default: "1"
+      edit: true
+      envKey: OMO_AUTO_INSTALL
+      type: select
+      required: true
+      labelEn: Auto Install oh-my-opencode
+      labelZh: 启动时自动安装 oh-my-opencode
+      label:
+        en: Auto Install oh-my-opencode
+        zh: 启动时自动安装 oh-my-opencode
+        zh-Hant: 啟動時自動安裝 oh-my-opencode
+        ja: 起動時にoh-my-opencodeを自動インストール
+        ko: 시작 시 oh-my-opencode 자동 설치
+        ru: Автоустановка oh-my-opencode при запуске
+        ms: Pasang oh-my-opencode secara automatik semasa mula
+        pt-br: Instalar oh-my-opencode automaticamente na inicialização
+      values:
+        - label: "true"
+          value: "1"
+        - label: "false"
+          value: "0"
+    - default: "1"
+      edit: true
+      envKey: DCP_INSTALL
+      type: select
+      required: true
+      labelEn: Install DCP Plugin
+      labelZh: 安装 DCP 插件
+      label:
+        en: Install DCP Plugin
+        zh: 安装 DCP 插件
+        zh-Hant: 安裝 DCP 外掛
+        ja: DCPプラグインをインストール
+        ko: DCP 플러그인 설치
+        ru: Установить плагин DCP
+        ms: Pasang plugin DCP
+        pt-br: Instalar plugin DCP
+      values:
+        - label: "true"
+          value: "1"
+        - label: "false"
+          value: "0"
+    - default: "1"
+      edit: true
+      envKey: GPT_UNLOCKED_INSTALL
+      type: select
+      required: true
+      labelEn: Install GPT Unlocked Plugin
+      labelZh: 安装 GPT Unlocked 插件
+      label:
+        en: Install GPT Unlocked Plugin
+        zh: 安装 GPT Unlocked 插件
+        zh-Hant: 安裝 GPT Unlocked 外掛
+        ja: GPT Unlockedプラグインをインストール
+        ko: GPT Unlocked 플러그인 설치
+        ru: Установить плагин GPT Unlocked
+        ms: Pasang plugin GPT Unlocked
+        pt-br: Instalar plugin GPT Unlocked
+      values:
+        - label: "true"
+          value: "1"
+        - label: "false"
+          value: "0"
+    - default: "no"
+      edit: true
+      envKey: OMO_CLAUDE_MODE
+      type: select
+      required: true
+      labelEn: Claude Install Mode
+      labelZh: Claude 安装模式
+      label:
+        en: Claude Install Mode
+        zh: Claude 安装模式
+        zh-Hant: Claude 安裝模式
+        ja: Claudeインストールモード
+        ko: Claude 설치 모드
+        ru: Режим установки Claude
+        ms: Mod pemasangan Claude
+        pt-br: Modo de instalação do Claude
+      values:
+        - label: "no"
+          value: "no"
+        - label: "yes"
+          value: "yes"
+        - label: max20
+          value: max20
+    - default: "no"
+      edit: true
+      envKey: OMO_GEMINI_MODE
+      type: select
+      required: true
+      labelEn: Gemini Install Mode
+      labelZh: Gemini 安装模式
+      label:
+        en: Gemini Install Mode
+        zh: Gemini 安装模式
+        zh-Hant: Gemini 安裝模式
+        ja: Geminiインストールモード
+        ko: Gemini 설치 모드
+        ru: Режим установки Gemini
+        ms: Mod pemasangan Gemini
+        pt-br: Modo de instalação do Gemini
+      values:
+        - label: "no"
+          value: "no"
+        - label: "yes"
+          value: "yes"
+    - default: "no"
+      edit: true
+      envKey: OMO_COPILOT_MODE
+      type: select
+      required: true
+      labelEn: Copilot Install Mode
+      labelZh: Copilot 安装模式
+      label:
+        en: Copilot Install Mode
+        zh: Copilot 安装模式
+        zh-Hant: Copilot 安裝模式
+        ja: Copilotインストールモード
+        ko: Copilot 설치 모드
+        ru: Режим установки Copilot
+        ms: Mod pemasangan Copilot
+        pt-br: Modo de instalação do Copilot
+      values:
+        - label: "no"
+          value: "no"
+        - label: "yes"
+          value: "yes"
+    - default: ""
+      edit: true
+      envKey: OMO_INSTALL_ARGS
+      type: text
+      required: false
+      labelEn: Extra Install Args
+      labelZh: 额外安装参数
+      label:
+        en: Extra Install Args
+        zh: 额外安装参数
+        zh-Hant: 額外安裝參數
+        ja: 追加インストール引数
+        ko: 추가 설치 인수
+        ru: Дополнительные аргументы установки
+        ms: Argumen pemasangan tambahan
+        pt-br: Argumentos extras de instalação
+    - default: "opencode-ai"
+      edit: true
+      envKey: OPENCODE_NPM_PACKAGE
+      type: text
+      required: false
+      labelEn: OpenCode Package
+      labelZh: OpenCode 安装包
+      label:
+        en: OpenCode Package
+        zh: OpenCode 安装包
+        zh-Hant: OpenCode 安裝包
+        ja: OpenCode パッケージ
+        ko: OpenCode 패키지
+        ru: Пакет OpenCode
+        ms: Pakej OpenCode
+        pt-br: Pacote do OpenCode
+    - default: "oh-my-opencode"
+      edit: true
+      envKey: OMO_PACKAGE
+      type: text
+      required: false
+      labelEn: oh-my-opencode Package
+      labelZh: oh-my-opencode 安装包
+      label:
+        en: oh-my-opencode Package
+        zh: oh-my-opencode 安装包
+        zh-Hant: oh-my-opencode 安裝包
+        ja: oh-my-opencode パッケージ
+        ko: oh-my-opencode 패키지
+        ru: Пакет oh-my-opencode
+        ms: Pakej oh-my-opencode
+        pt-br: Pacote do oh-my-opencode
+    - default: ""
+      edit: true
+      envKey: OPENAI_API_KEY
+      type: password
+      required: false
+      labelEn: OpenAI API Key
+      labelZh: OpenAI API Key
+      label:
+        en: OpenAI API Key
+        zh: OpenAI API Key
+        zh-Hant: OpenAI API Key
+        ja: OpenAI API Key
+        ko: OpenAI API Key
+        ru: OpenAI API Key
+        ms: OpenAI API Key
+        pt-br: OpenAI API Key
+    - default: ""
+      edit: true
+      envKey: OPENAI_BASE_URL
+      type: text
+      required: false
+      labelEn: OpenAI Base URL
+      labelZh: OpenAI 接口地址（兼容第三方）
+      label:
+        en: OpenAI Base URL
+        zh: OpenAI 接口地址（兼容第三方）
+        zh-Hant: OpenAI 接口地址（兼容第三方）
+        ja: OpenAI APIエンドポイント（互換可）
+        ko: OpenAI API 엔드포인트（호환 가능）
+        ru: OpenAI endpoint（совместим с аналогами）
+        ms: OpenAI URL endpoint（serasi pihak ketiga）
+        pt-br: OpenAI endpoint（compatível com terceiros）
+    - default: ""
+      edit: true
+      envKey: OPENCODE_MODEL
+      type: text
+      required: false
+      labelEn: OpenCode Default Model
+      labelZh: OpenCode 默认模型
+      label:
+        en: OpenCode Default Model
+        zh: OpenCode 默认模型
+        zh-Hant: OpenCode 預設模型
+        ja: OpenCodeデフォルトモデル
+        ko: OpenCode 기본 모델
+        ru: Модель OpenCode по умолчанию
+        ms: Model lalai OpenCode
+        pt-br: Modelo padrão do OpenCode
+    - default: ""
+      edit: true
+      envKey: OPENCODE_SMALL_MODEL
+      type: text
+      required: false
+      labelEn: OpenCode Small Model
+      labelZh: OpenCode 轻量模型
+      label:
+        en: OpenCode Small Model
+        zh: OpenCode 轻量模型
+        zh-Hant: OpenCode 輕量模型
+        ja: OpenCode軽量モデル
+        ko: OpenCode 경량 모델
+        ru: Лёгкая модель OpenCode
+        ms: Model ringan OpenCode
+        pt-br: Modelo leve do OpenCode
+    - default: ""
+      edit: true
+      envKey: OPENCODE_PROVIDER_ID
+      type: text
+      required: false
+      labelEn: OpenCode Provider ID Override
+      labelZh: OpenCode Provider ID 覆盖
+      label:
+        en: OpenCode Provider ID Override
+        zh: OpenCode Provider ID 覆盖
+        zh-Hant: OpenCode Provider ID 覆寫
+        ja: OpenCode Provider IDの上書き
+        ko: OpenCode Provider ID 재정의
+        ru: Переопределение Provider ID OpenCode
+        ms: Override ID provider OpenCode
+        pt-br: Sobrescrever Provider ID do OpenCode
+    - default: ""
+      edit: true
+      envKey: OPENCODE_EXTRA_PLUGINS
+      type: text
+      required: false
+      labelEn: OpenCode Extra Plugins
+      labelZh: OpenCode 额外插件
+      label:
+        en: OpenCode Extra Plugins
+        zh: OpenCode 额外插件
+        zh-Hant: OpenCode 額外插件
+        ja: OpenCode追加プラグイン
+        ko: OpenCode 추가 플러그인
+        ru: Дополнительные плагины OpenCode
+        ms: Plugin tambahan OpenCode
+        pt-br: Plugins extras do OpenCode
+    - default: "opencode"
+      edit: true
+      envKey: OPENCODE_SERVER_USERNAME
+      type: text
+      required: false
+      labelEn: Serve Basic Auth Username
+      labelZh: Serve 基本认证用户名
+      label:
+        en: Serve Basic Auth Username
+        zh: Serve 基本认证用户名
+        zh-Hant: Serve 基本認證使用者名稱
+        ja: Serve Basic認証ユーザー名
+        ko: Serve 기본 인증 사용자 이름
+        ru: Имя пользователя Basic Auth для serve
+        ms: Nama pengguna Basic Auth untuk serve
+        pt-br: Usuário de autenticação básica do serve
+    - default: ""
+      edit: true
+      envKey: OPENCODE_SERVER_PASSWORD
+      type: password
+      required: false
+      labelEn: Serve Basic Auth Password
+      labelZh: Serve 基本认证密码
+      label:
+        en: Serve Basic Auth Password
+        zh: Serve 基本认证密码
+        zh-Hant: Serve 基本認證密碼
+        ja: Serve Basic認証パスワード
+        ko: Serve 기본 인증 비밀번호
+        ru: Пароль Basic Auth для serve
+        ms: Kata laluan Basic Auth untuk serve
+        pt-br: Senha de autenticação básica do serve
+    - default: ""
+      edit: true
+      envKey: ANTHROPIC_API_KEY
+      type: password
+      required: false
+      labelEn: Anthropic API Key
+      labelZh: Anthropic API Key
+      label:
+        en: Anthropic API Key
+        zh: Anthropic API Key
+        zh-Hant: Anthropic API Key
+        ja: Anthropic API Key
+        ko: Anthropic API Key
+        ru: Anthropic API Key
+        ms: Anthropic API Key
+        pt-br: Anthropic API Key
+    - default: ""
+      edit: true
+      envKey: ANTHROPIC_BASE_URL
+      type: text
+      required: false
+      labelEn: Anthropic Base URL
+      labelZh: Anthropic Base URL
+      label:
+        en: Anthropic Base URL
+        zh: Anthropic Base URL
+        zh-Hant: Anthropic Base URL
+        ja: Anthropic Base URL
+        ko: Anthropic Base URL
+        ru: Anthropic Base URL
+        ms: Anthropic Base URL
+        pt-br: Anthropic Base URL
+    - default: ""
+      edit: true
+      envKey: OPENROUTER_API_KEY
+      type: password
+      required: false
+      labelEn: OpenRouter API Key
+      labelZh: OpenRouter API Key
+      label:
+        en: OpenRouter API Key
+        zh: OpenRouter API Key
+        zh-Hant: OpenRouter API Key
+        ja: OpenRouter API Key
+        ko: OpenRouter API Key
+        ru: OpenRouter API Key
+        ms: OpenRouter API Key
+        pt-br: OpenRouter API Key
+    - default: ""
+      edit: true
+      envKey: OPENROUTER_BASE_URL
+      type: text
+      required: false
+      labelEn: OpenRouter Base URL
+      labelZh: OpenRouter Base URL
+      label:
+        en: OpenRouter Base URL
+        zh: OpenRouter Base URL
+        zh-Hant: OpenRouter Base URL
+        ja: OpenRouter Base URL
+        ko: OpenRouter Base URL
+        ru: OpenRouter Base URL
+        ms: OpenRouter Base URL
+        pt-br: OpenRouter Base URL
+    - default: ""
+      edit: true
+      envKey: GEMINI_API_KEY
+      type: password
+      required: false
+      labelEn: Gemini API Key
+      labelZh: Gemini API Key
+      label:
+        en: Gemini API Key
+        zh: Gemini API Key
+        zh-Hant: Gemini API Key
+        ja: Gemini API Key
+        ko: Gemini API Key
+        ru: Gemini API Key
+        ms: Gemini API Key
+        pt-br: Gemini API Key
+    - default: ""
+      edit: true
+      envKey: GEMINI_BASE_URL
+      type: text
+      required: false
+      labelEn: Gemini Base URL
+      labelZh: Gemini Base URL
+      label:
+        en: Gemini Base URL
+        zh: Gemini Base URL
+        zh-Hant: Gemini Base URL
+        ja: Gemini Base URL
+        ko: Gemini Base URL
+        ru: Gemini Base URL
+        ms: Gemini Base URL
+        pt-br: Gemini Base URL
+    - default: ""
+      edit: true
+      envKey: GITHUB_TOKEN
+      type: password
+      required: false
+      labelEn: GitHub Token
+      labelZh: GitHub Token
+      label:
+        en: GitHub Token
+        zh: GitHub Token
+        zh-Hant: GitHub Token
+        ja: GitHub Token
+        ko: GitHub Token
+        ru: GitHub Token
+        ms: GitHub Token
+        pt-br: GitHub Token
+    - default: ""
+      edit: true
+      envKey: GIT_AUTHOR_NAME
+      type: text
+      required: false
+      labelEn: Git Author Name
+      labelZh: Git 作者名
+      label:
+        en: Git Author Name
+        zh: Git 作者名
+        zh-Hant: Git 作者名
+        ja: Git作成者名
+        ko: Git 작성자 이름
+        ru: Имя автора Git
+        ms: Nama pengarang Git
+        pt-br: Nome do autor Git
+    - default: ""
+      edit: true
+      envKey: GIT_AUTHOR_EMAIL
+      type: text
+      required: false
+      labelEn: Git Author Email
+      labelZh: Git 作者邮箱
+      label:
+        en: Git Author Email
+        zh: Git 作者邮箱
+        zh-Hant: Git 作者郵箱
+        ja: Git作成者メール
+        ko: Git 작성자 이메일
+        ru: Email автора Git
+        ms: E-mel pengarang Git
+        pt-br: Email do autor Git
+    - default: ""
+      edit: true
+      envKey: GIT_COMMITTER_NAME
+      type: text
+      required: false
+      labelEn: Git Committer Name
+      labelZh: Git 提交者名
+      label:
+        en: Git Committer Name
+        zh: Git 提交者名
+        zh-Hant: Git 提交者名
+        ja: Gitコミッター名
+        ko: Git 커미터 이름
+        ru: Имя коммиттера Git
+        ms: Nama komit Git
+        pt-br: Nome do committer Git
+    - default: ""
+      edit: true
+      envKey: GIT_COMMITTER_EMAIL
+      type: text
+      required: false
+      labelEn: Git Committer Email
+      labelZh: Git 提交者邮箱
+      label:
+        en: Git Committer Email
+        zh: Git 提交者邮箱
+        zh-Hant: Git 提交者郵箱
+        ja: Gitコミッターメール
+        ko: Git 커미터 이메일
+        ru: Email коммиттера Git
+        ms: E-mel komit Git
+        pt-br: Email do committer Git
+    - default: ""
+      edit: true
+      envKey: GPT_UNLOCKED_BASE_URL
+      type: text
+      required: false
+      labelEn: GPT Unlocked Base URL
+      labelZh: GPT Unlocked Base URL
+      label:
+        en: GPT Unlocked Base URL
+        zh: GPT Unlocked Base URL
+        zh-Hant: GPT Unlocked Base URL
+        ja: GPT Unlocked Base URL
+        ko: GPT Unlocked Base URL
+        ru: GPT Unlocked Base URL
+        ms: GPT Unlocked Base URL
+        pt-br: GPT Unlocked Base URL
+    - default: ""
+      edit: true
+      envKey: GPT_UNLOCKED_API_KEY
+      type: password
+      required: false
+      labelEn: GPT Unlocked API Key
+      labelZh: GPT Unlocked API Key
+      label:
+        en: GPT Unlocked API Key
+        zh: GPT Unlocked API Key
+        zh-Hant: GPT Unlocked API Key
+        ja: GPT Unlocked API Key
+        ko: GPT Unlocked API Key
+        ru: GPT Unlocked API Key
+        ms: GPT Unlocked API Key
+        pt-br: GPT Unlocked API Key
+    - default: ""
+      edit: true
+      envKey: GPT_UNLOCKED_MODEL
+      type: text
+      required: false
+      labelEn: GPT Unlocked Model
+      labelZh: GPT Unlocked 模型
+      label:
+        en: GPT Unlocked Model
+        zh: GPT Unlocked 模型
+        zh-Hant: GPT Unlocked 模型
+        ja: GPT Unlockedモデル
+        ko: GPT Unlocked 모델
+        ru: Модель GPT Unlocked
+        ms: Model GPT Unlocked
+        pt-br: Modelo GPT Unlocked
