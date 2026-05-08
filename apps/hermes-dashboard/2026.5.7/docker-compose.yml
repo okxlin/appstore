@@ -1,6 +1,6 @@
 services:
   hermes-dashboard:
-    image: "nousresearch/hermes-agent:v2026.4.30"
+    image: "nousresearch/hermes-agent:v2026.5.7"
     container_name: "${CONTAINER_NAME}"
     command: ${DASHBOARD_RUN_COMMAND}
     environment:
