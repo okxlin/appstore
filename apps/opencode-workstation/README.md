@@ -2,107 +2,60 @@
 
 ## 产品介绍
 
-这是一个按 1Panel v2 应用商店目录组织的 OpenCode 运行环境。容器封装了持久化存储、运行时模式切换、oh-my-opencode 自动安装等能力，可在 1Panel 上快速部署一个带 Web UI 或 ACP 接口的 OpenCode 工作节点。
+这是一个面向 1Panel 的 OpenCode Workstation 应用，提供可持久化的 OpenCode 运行环境，支持 Web UI（`serve`）和 ACP 接口（`acp`）两种运行模式，并可按需集成 `oh-my-opencode`、DCP、GPT Unlocked 等扩展能力。
 
 ## 主要功能
 
-- **持久化存储**：工作区、配置、缓存、运行时数据分别独立挂载，容器重建不丢失
-- **双模式运行**：`serve`（Web UI）和 `acp`（agent<->agent 协议）两种模式
-- **oh-my-opencode 集成**：支持单次执行或持久化安装，配套 DCP / GPT Unlocked 插件可选
-- **多 provider 支持**：OpenAI、Anthropic、OpenRouter、Gemini 等 API Key / Base URL 均可通过表单配置
-- **Docker 套接字可选**：通过表单可配置是否挂载宿主机 Docker 套接字
+- **官方 HOME 路径持久化**：直接按 OpenCode 官方目录模型运行，减少兼容问题
+- **双模式运行**：支持 `serve`（Web UI）和 `acp`（协议模式）
+- **oh-my-opencode 集成**：支持自动安装与扩展刷新
+- **多 provider 支持**：OpenAI、Anthropic、OpenRouter、Gemini 等可通过表单配置
+- **Docker 套接字可选**：可按需挂载宿主机 Docker 套接字
 
 ## 访问说明
 
 - Web / serve 默认端口：`http://<host>:4096`
 - ACP 默认端口：`8765`
-- `serve` 模式适合通过 1Panel 反向代理后再对外提供访问
-- `acp` 端口用于 ACP transport，不适合用浏览器页面探活
+- `serve` 模式适合通过 1Panel 反向代理后再对外访问
+- `acp` 端口用于 ACP transport，不适合直接用浏览器访问
 
-## 环境变量
+## 运行时目录模型
 
-所有敏感信息（API Key 等）通过表单中的 `password` 字段填写，写入 `.env` 文件。容器启动后由 `entrypoint.sh` 动态注入 OpenCode 配置。
+当前应用按 OpenCode 官方 HOME 路径运行：
 
-## 内部升级指南
+- `~/.config/opencode`
+- `~/.agents`
+- `~/.claude`
+- `~/.opencode`
+- `~/.local/share/opencode`
+- `~/.local/share/oh-my-opencode`
+- `/workspace`
 
-这个镜像的升级分成两部分：
+这样做的原因：
 
-- **OpenCode userland**：升级 `opencode-ai` 本体
-- **oh-my-opencode**：刷新插件、安装脚本和相关配置逻辑
+- 与 OpenCode upstream 源码目录发现逻辑一致
+- `skills` / `agents` / `claude-compatible` 扩展不需要额外路径翻译
+- 避免旧版 `/config -> HOME` 单文件同步漂移
+- 后续 upstream 扩展 HOME 目录扫描时兼容风险更低
 
-### 重建容器会更新什么
+## 持久化数据说明
 
-重建容器会拉取最新镜像，但**不会保证自动升级已持久化的 OpenCode 本体**。
+应用数据按用途拆分挂载，重建容器不会丢失：
 
-原因是容器启动时：
-- `OPENCODE_BOOTSTRAP=1` 只会在 `opencode` 不存在时执行首次安装
-- 如果 `/data/opencode` 里已经有现成的 `opencode`，bootstrap 会直接跳过
-- `OMO_AUTO_INSTALL=1` 则会在每次启动时重新执行 `oh-my-opencode` 安装/刷新流程
+- `APP_DATA_DIR_1`（`./data/workspace`）→ `/workspace`
+- `APP_DATA_DIR_2`（`./data/home-config`）→ `/home/opencode/.config`
+- `APP_DATA_DIR_3`（`./data/home-share`）→ `/home/opencode/.local/share`
+- `APP_DATA_DIR_4`（`./data/home-agents`）→ `/home/opencode/.agents`
+- `APP_DATA_DIR_5`（`./data/home-claude`）→ `/home/opencode/.claude`
+- `APP_DATA_DIR_6`（`./data/home-opencode`）→ `/home/opencode/.opencode`
 
-所以真实效果是：
-- **重建容器**：一定会更新镜像层
-- **OpenCode 本体**：已存在时默认不会自动升级
-- **oh-my-opencode**：开启自动安装时会刷新
+其中：
 
-### 手动升级 OpenCode userland
-
-如果你要升级已持久化的 OpenCode 本体，应直接在容器内执行：
-
-```bash
-docker exec -it <container_name> bash
-/app/scripts/update-opencode-userland.sh
-```
-
-升级完成后，可检查版本文件：
-
-```bash
-cat /data/state/oh-my-opencode-bootstrap/opencode.version
-```
-
-### 刷新 oh-my-opencode
-
-如果你希望同步最新的 `oh-my-opencode` 安装逻辑、插件注册和配置刷新，有两种方式：
-
-#### 方式一：重建容器
-
-前提：
-- `启动时自动安装 oh-my-opencode = true`
-
-执行：
-1. 打开 1Panel → 已安装应用 → OpenCode Workstation
-2. 点击 **重建**
-
-#### 方式二：容器内手动刷新
-
-```bash
-docker exec -it <container_name> bash
-bunx oh-my-opencode install --no-tui ...
-bunx oh-my-opencode doctor
-```
-
-### 什么时候用哪种方式
-
-- **只更新 OpenCode 本体**：执行 `/app/scripts/update-opencode-userland.sh`
-- **只刷新 oh-my-opencode 行为**：重建容器，或手动重新执行 `bunx oh-my-opencode install ...`
-- **安装指定版本**：
-  - `OpenCode Package` 主要影响首次安装，或清空 `/data/opencode` 后重新安装
-  - `oh-my-opencode Package` 可配合重建容器或手动安装流程生效
-- **镜像层也要更新**：在 1Panel 里重建容器
-
-### 在 1Panel 里重建容器
-
-1. 1Panel 应用商店 → 已安装应用 → OpenCode Workstation → 参数/重建
-2. 按当前表单参数重新创建容器
-
-### 持久化数据说明
-
-容器数据按功能拆分挂载，重建容器不会丢失：
-- `APP_DATA_DIR_1`（./data/workspace）：工作区代码
-- `APP_DATA_DIR_2`（./data/config）：OpenCode 配置
-- `APP_DATA_DIR_3`（./data/cache）：npm/opencode 缓存
-- `APP_DATA_DIR_4`（./data/runtime）：运行时数据
-
-销毁容器时若勾选"删除数据目录"才会丢失持久化数据。
+- `home-config`：OpenCode 配置、skills、插件配置
+- `home-share`：OpenCode 安装本体、数据库、日志、运行时数据
+- `home-agents`：agent-compatible skills / agents
+- `home-claude`：claude-compatible skills
+- `home-opencode`：OpenCode HOME / project-style 兼容目录
 
 ## 表单填写指南
 
@@ -113,49 +66,55 @@ bunx oh-my-opencode doctor
 | Serve Port | Web UI 访问端口，默认 4096 |
 | ACP Port | ACP 协议端口，默认 8765 |
 | 时区 | 容器时区，默认 `Asia/Shanghai` |
-| 工作区/配置/缓存/运行时挂载目录 | 四个数据持久化目录，默认挂载到 `./data/` 下 |
+| 各挂载目录 | OpenCode HOME 及工作区持久化目录 |
 | 运行模式 | `serve`（Web UI）或 `acp`（协议模式） |
 
 ### oh-my-opencode 选项
 
 | 字段 | 说明 |
 |---|---|
-| Bootstrap OpenCode on Start | 首次运行此开关打开即自动安装 OpenCode 本体 |
-| 启动时自动安装 oh-my-opencode | 默认开启，自动安装 oh-my-opencode 及其配套插件 |
-| Install DCP Plugin | 启用 DCP（分布式代码处理）插件，默认开启 |
-| Install GPT Unlocked Plugin | 启用 GPT Unlocked 插件，默认开启 |
-| Claude / Gemini / Copilot Install Mode | 控制各模型 provider 的安装模式 |
+| Bootstrap OpenCode on Start | 首次运行时自动安装 OpenCode 本体 |
+| Auto Install oh-my-opencode | 启动时自动安装 / 刷新 oh-my-opencode |
+| Install DCP Plugin | 启用 DCP 插件 |
+| Install GPT Unlocked Plugin | 启用 GPT Unlocked 插件 |
+| Claude / Gemini / Copilot Install Mode | 控制对应 provider 的安装模式 |
 | Extra Install Args | 传递给 oh-my-opencode 安装脚本的额外参数 |
-| OpenCode Package | 默认为 `opencode-ai`；可改为 `opencode-ai@版本`，主要用于首次安装或重装 |
-| oh-my-opencode Package | 默认为 `oh-my-opencode`；可改为 `oh-my-opencode@版本` |
 
 ### API Key 填写
 
 | 字段 | 说明 |
 |---|---|
-| OpenAI API Key + Base URL | 填写 OpenAI 或兼容第三方接口（vLLM、LiteLLM、Ollama 等）的 Key 与地址 |
-| Anthropic / OpenRouter / Gemini | 对应 provider 的 Key 与自定义地址（若有） |
-| GitHub Token | 用于 Git 操作（拉取私有仓库等） |
-| Git Author / Committer | 容器内 Git 提交的作者信息 |
+| OpenAI API Key + Base URL | OpenAI 或兼容第三方接口的 Key / 地址 |
+| Anthropic / OpenRouter / Gemini | 对应 provider 的 Key 与可选自定义地址 |
+| GitHub Token | 用于 Git 操作（如拉取私有仓库） |
+| Git Author / Committer | 容器内 Git 提交作者信息 |
 
-### 高级选项
+## 配置分层
 
-| 字段 | 说明 |
-|---|---|
-| OpenCode Default Model / Small Model | 覆盖 OpenCode 默认使用的模型 ID |
-| OpenCode Provider ID Override | 覆盖默认 provider ID |
-| OpenCode Extra Plugins | 额外注册的 OpenCode 插件（逗号分隔的 npm 包名） |
-| Docker 套接字路径 | 留空等于不挂载 Docker 套接字 |
+推荐按三层使用：
 
-## Introduction
+1. **部署级环境变量层**
+   - 通过 `.env` / 1Panel 表单注入
+   - 适合：`OPENCODE_MODEL`、`OPENCODE_SMALL_MODEL`、`OPENCODE_PROVIDER_ID`、`OPENCODE_EXTRA_PLUGINS`、各类 `*_BASE_URL` / `*_API_KEY`
+2. **生成配置层**
+   - `~/.config/opencode/opencode.json`
+   - 由启动脚本和 `update_opencode_config.py` 动态生成
+3. **用户覆盖层**
+   - `~/.config/opencode/opencode.user.json` 或 `~/.config/opencode/opencode.user.jsonc`
+   - 适合手工追加 provider、models、plugin 高级配置、额外 MCP 条目
 
-A persistent OpenCode workstation packaged as a 1Panel v2 app. Supports serve and ACP modes, oh-my-opencode auto-install, and multi-provider LLM configuration through the deployment form.
+## 内部升级说明
 
-## Features
+重建容器会更新镜像层，但是否重新安装 / 刷新 OpenCode 与 oh-my-opencode，取决于当前表单开关和持久化目录状态。
 
-- Persistent volumes for workspace, config, cache, and runtime data
-- Switchable serve (Web UI) and ACP (agent protocol) modes
-- oh-my-opencode integration with DCP and GPT Unlocked plugins
-- Multi-provider support via form fields (OpenAI, Anthropic, OpenRouter, Gemini)
-- Optional Docker socket mount
-- git author identity configuration
+常见场景：
+
+- **镜像层更新**：在 1Panel 中重建容器
+- **刷新 OpenCode 本体**：进入容器执行 `/app/scripts/update-opencode-userland.sh`
+- **刷新 oh-my-opencode 行为**：重建容器，或手动重新执行 `bunx oh-my-opencode install --no-tui ...`
+
+## 注意事项
+
+- 不要把真实密钥硬编码进 `opencode.user.json`，优先使用环境变量
+- `~/.config/opencode/opencode.json` 是生成产物，不建议长期手工维护
+- 若不需要容器内调用 Docker，请将 Docker Socket 路径留空
