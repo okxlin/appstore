@@ -32,7 +32,6 @@ additionalProperties:
         ms: Direktori data
         pt-br: Diretório de dados
       required: true
-      rule: paramCommon
       type: text
     - default: ""
       envKey: AUTH_TOKEN
@@ -81,7 +80,6 @@ additionalProperties:
         ms: Cron daftar masuk
         pt-br: Cron de check-in
       required: false
-      rule: paramCommon
       type: text
     - default: "0 * * * *"
       envKey: BALANCE_REFRESH_CRON
@@ -98,7 +96,6 @@ additionalProperties:
         ms: Cron segar semula baki
         pt-br: Cron de atualização de saldo
       required: false
-      rule: paramCommon
       type: text
     - default: Asia/Shanghai
       envKey: TZ
