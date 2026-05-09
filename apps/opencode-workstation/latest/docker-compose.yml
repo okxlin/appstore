@@ -28,11 +28,11 @@ services:
       - OMO_INSTALL_ARGS=${OMO_INSTALL_ARGS}
       - OPENCODE_NPM_PACKAGE=${OPENCODE_NPM_PACKAGE}
       - OMO_PACKAGE=${OMO_PACKAGE}
-      - OPENCODE_INSTALL_DIR=/data/opencode
-      - XDG_DATA_HOME=/data/xdg-data
-      - OPENCODE_NPM_BIN_DIR=/data/bin
-      - OPENCODE_CONFIG_DIR=/config/opencode
-      - OMO_INSTALL_DIR=/data/oh-my-opencode
+      - OPENCODE_INSTALL_DIR=/home/opencode/.local/share/opencode
+      - XDG_DATA_HOME=/home/opencode/.local/share
+      - OPENCODE_NPM_BIN_DIR=/home/opencode/.local/bin
+      - OPENCODE_CONFIG_DIR=/home/opencode/.config/opencode
+      - OMO_INSTALL_DIR=/home/opencode/.local/share/oh-my-opencode
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OPENAI_BASE_URL=${OPENAI_BASE_URL}
       - OPENCODE_MODEL=${OPENCODE_MODEL}
@@ -57,9 +57,11 @@ services:
       - GPT_UNLOCKED_MODEL=${GPT_UNLOCKED_MODEL}
     volumes:
       - ${APP_DATA_DIR_1}:/workspace
-      - ${APP_DATA_DIR_2}:/config
-      - ${APP_DATA_DIR_3}:/cache
-      - ${APP_DATA_DIR_4}:/data
+      - ${APP_DATA_DIR_2}:/home/opencode/.config
+      - ${APP_DATA_DIR_3}:/home/opencode/.local/share
+      - ${APP_DATA_DIR_4}:/home/opencode/.agents
+      - ${APP_DATA_DIR_5}:/home/opencode/.claude
+      - ${APP_DATA_DIR_6}:/home/opencode/.opencode
       - ${DOCKER_SOCK_SRC}:/var/run/docker.sock
     healthcheck:
       test:

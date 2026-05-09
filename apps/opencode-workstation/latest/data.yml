@@ -66,54 +66,86 @@ additionalProperties:
         ru: Путь монтирования рабочей области
         ms: Laluan lekap ruang kerja
         pt-br: Caminho de montagem do workspace
-    - default: "./data/config"
+    - default: "./data/home-config"
       edit: true
       envKey: APP_DATA_DIR_2
       type: text
       required: true
-      labelEn: Config Mount Path
-      labelZh: 配置挂载目录
+      labelEn: Home Config Mount Path
+      labelZh: HOME 配置挂载目录
       label:
-        en: Config Mount Path
-        zh: 配置挂载目录
-        zh-Hant: 配置掛載目錄
-        ja: 設定マウントパス
-        ko: 설정 마운트 경로
-        ru: Путь монтирования конфигурации
-        ms: Laluan lekap konfigurasi
-        pt-br: Caminho de montagem da configuração
-    - default: "./data/cache"
+        en: Home Config Mount Path
+        zh: HOME 配置挂载目录
+        zh-Hant: HOME 配置掛載目錄
+        ja: Home Config マウントパス
+        ko: HOME 설정 마운트 경로
+        ru: Путь монтирования HOME-конфигурации
+        ms: Laluan lekap HOME config
+        pt-br: Caminho de montagem da configuração HOME
+    - default: "./data/home-share"
       edit: true
       envKey: APP_DATA_DIR_3
       type: text
       required: true
-      labelEn: Cache Mount Path
-      labelZh: 缓存挂载目录
+      labelEn: Home Share Mount Path
+      labelZh: HOME Share 挂载目录
       label:
-        en: Cache Mount Path
-        zh: 缓存挂载目录
-        zh-Hant: 快取掛載目錄
-        ja: キャッシュマウントパス
-        ko: 캐시 마운트 경로
-        ru: Путь монтирования кэша
-        ms: Laluan lekap cache
-        pt-br: Caminho de montagem do cache
-    - default: "./data/runtime"
+        en: Home Share Mount Path
+        zh: HOME Share 挂载目录
+        zh-Hant: HOME Share 掛載目錄
+        ja: Home Share マウントパス
+        ko: HOME Share 마운트 경로
+        ru: Путь монтирования HOME Share
+        ms: Laluan lekap HOME Share
+        pt-br: Caminho de montagem do HOME Share
+    - default: "./data/home-agents"
       edit: true
       envKey: APP_DATA_DIR_4
       type: text
       required: true
-      labelEn: Runtime Mount Path
-      labelZh: 运行时挂载目录
+      labelEn: Agents Home Mount Path
+      labelZh: Agents HOME 挂载目录
       label:
-        en: Runtime Mount Path
-        zh: 运行时挂载目录
-        zh-Hant: 運行時掛載目錄
-        ja: ランタイムマウントパス
-        ko: 런타임 마운트 경로
-        ru: Путь монтирования рантайма
-        ms: Laluan lekap runtime
-        pt-br: Caminho de montagem do runtime
+        en: Agents Home Mount Path
+        zh: Agents HOME 挂载目录
+        zh-Hant: Agents HOME 掛載目錄
+        ja: Agents Home マウントパス
+        ko: Agents HOME 마운트 경로
+        ru: Путь монтирования Agents HOME
+        ms: Laluan lekap Agents HOME
+        pt-br: Caminho de montagem do Agents HOME
+    - default: "./data/home-claude"
+      edit: true
+      envKey: APP_DATA_DIR_5
+      type: text
+      required: true
+      labelEn: Claude Home Mount Path
+      labelZh: Claude HOME 挂载目录
+      label:
+        en: Claude Home Mount Path
+        zh: Claude HOME 挂载目录
+        zh-Hant: Claude HOME 掛載目錄
+        ja: Claude Home マウントパス
+        ko: Claude HOME 마운트 경로
+        ru: Путь монтирования Claude HOME
+        ms: Laluan lekap Claude HOME
+        pt-br: Caminho de montagem do Claude HOME
+    - default: "./data/home-opencode"
+      edit: true
+      envKey: APP_DATA_DIR_6
+      type: text
+      required: true
+      labelEn: OpenCode Home Mount Path
+      labelZh: OpenCode HOME 挂载目录
+      label:
+        en: OpenCode Home Mount Path
+        zh: OpenCode HOME 挂载目录
+        zh-Hant: OpenCode HOME 掛載目錄
+        ja: OpenCode Home マウントパス
+        ko: OpenCode HOME 마운트 경로
+        ru: Путь монтирования OpenCode HOME
+        ms: Laluan lekap OpenCode HOME
+        pt-br: Caminho de montagem do OpenCode HOME
     - default: /var/run/docker.sock
       edit: true
       envKey: DOCKER_SOCK_SRC
