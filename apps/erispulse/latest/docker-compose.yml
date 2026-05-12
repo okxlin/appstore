@@ -1,6 +1,6 @@
 services:
   erispulse:
-    image: "erispulse/erispulse:latest"
+    image: erispulse/erispulse:latest
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
@@ -12,6 +12,8 @@ services:
     environment:
       - TZ=${TIME_ZONE}
       - ERISPULSE_DASHBOARD_TOKEN=${ERISPULSE_DASHBOARD_TOKEN}
+      - ERISPULSE_CHANNEL=${ERISPULSE_CHANNEL_SELECT}
+      - ERISPULSE_UPDATE_ON_START=${ERISPULSE_UPDATE_ON_START}
     labels:
       createdBy: "Apps"
 
