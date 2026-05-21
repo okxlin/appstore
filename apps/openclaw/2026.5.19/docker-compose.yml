@@ -1,7 +1,7 @@
 services:
   openclaw:
     container_name: ${CONTAINER_NAME}
-    image: "ghcr.io/openclaw/openclaw:2026.5.19"
+    image: "ghcr.io/openclaw/openclaw:2026.5.20"
     restart: unless-stopped
     networks:
       - 1panel-network
