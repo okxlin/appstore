@@ -13,7 +13,7 @@ services:
       - ${DATA_PATH}/db:/var/lib/postgresql
     environment:
       - JWT_SECRET=${JWT_SECRET}
-    image: onlyoffice/documentserver:9.3.1.2
+    image: onlyoffice/documentserver:9.4.0.1
     labels:  
       createdBy: "Apps"
 
