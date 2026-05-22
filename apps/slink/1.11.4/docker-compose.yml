@@ -1,6 +1,6 @@
 services:
   slink:
-    image: anirdev/slink:v1.11.3
+    image: anirdev/slink:v1.11.4
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
