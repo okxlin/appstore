@@ -1,6 +1,6 @@
 services:
   pterodactyl-china:
-    image: ghcr.io/pterodactyl-china/panel:v1.12.2.1
+    image: ghcr.io/pterodactyl-china/panel:v1.12.3.0
     command: >
       /bin/sh -c "
       if [ ! -f /app/var/initialized ]; then
