@@ -17,7 +17,7 @@ services:
       - YOURLS_DB_USER=${PANEL_DB_USER}
       - YOURLS_DB_PASS=${PANEL_DB_USER_PASSWORD}
       - YOURLS_DB_PREFIX=${PANEL_DB_PREFIX}
-    image: yourls:1.10.3
+    image: yourls:1.10.4
     labels:  
       createdBy: "Apps"
 
