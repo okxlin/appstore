@@ -1,6 +1,6 @@
 services:
   glance:
-    image: "glanceapp/glance:v0.8.4"
+    image: "glanceapp/glance:v0.8.5"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
