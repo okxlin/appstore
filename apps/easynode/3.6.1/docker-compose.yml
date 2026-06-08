@@ -1,6 +1,6 @@
 services:
   easynode:
-    image: "chaoszhu/easynode:v3.6.1"
+    image: "chaoszhu/easynode:v3.7.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
