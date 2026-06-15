@@ -1,0 +1,29 @@
+name: Codex Claude Workstation
+tags:
+  - Tool
+title: Codex Claude Workstation
+description: 浏览器可访问的 Codex + Claude AI 编程工作站
+additionalProperties:
+  key: codex-claude-workstation
+  name: Codex Claude Workstation
+  tags:
+    - Tool
+  type: tool
+  website: https://github.com/openai/codex
+  document: https://github.com/openai/codex
+  architectures:
+    - amd64
+  github: https://github.com/okxlin/release-factory
+  shortDescZh: 浏览器可访问的 Codex + Claude AI 编程工作站
+  shortDescEn: Browser-accessible Codex + Claude AI workstation
+  description:
+    en: Browser-accessible Codex + Claude AI workstation with code-server (VS Code)
+    zh: 浏览器可访问的 Codex + Claude AI 编程工作站，集成 code-server (VS Code)
+    zh-Hant: 瀏覽器可訪問的 Codex + Claude AI 編程工作站，集成 code-server (VS Code)
+    ja: ブラウザからアクセス可能な Codex + Claude AI 開発ワークステーション
+    ko: 브라우저에서 접근 가능한 Codex + Claude AI 개발 워크스테이션
+    ru: Доступная через браузер рабочая станция Codex + Claude AI
+    ms: Stesen kerja pembangunan Codex + Claude AI yang boleh diakses melalui pelayar
+    pt-br: Estação de trabalho Codex + Claude AI acessível pelo navegador
+  crossVersionUpdate: false
+  limit: 1

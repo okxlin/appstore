@@ -1,0 +1,101 @@
+additionalProperties:
+  formFields:
+    - envKey: PANEL_APP_PORT_HTTP
+      type: number
+      required: true
+      default: 8080
+      rule: paramPort
+      labelZh: Web 访问端口
+      labelEn: Web Port
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 訪問端口
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      edit: true
+    - envKey: CODE_SERVER_PASSWORD
+      type: password
+      required: true
+      random: true
+      default: change-me
+      labelZh: code-server 密码
+      labelEn: Code-server Password
+      label:
+        en: Code-server Password
+        zh: code-server 密码
+        zh-Hant: code-server 密碼
+        ja: code-server パスワード
+        ko: code-server 비밀번호
+        ru: Пароль code-server
+        ms: Kata Laluan code-server
+        pt-br: Senha do code-server
+      edit: true
+    - envKey: ROOT_PASSWORD
+      type: password
+      required: false
+      random: true
+      default: codex2024
+      labelZh: Root 密码
+      labelEn: Root Password
+      label:
+        en: Root Password
+        zh: Root 密码
+        zh-Hant: Root 密碼
+        ja: Root パスワード
+        ko: Root 비밀번호
+        ru: Пароль Root
+        ms: Kata Laluan Root
+        pt-br: Senha do Root
+      edit: true
+    - default: /var/run/docker.sock
+      edit: true
+      envKey: DOCKER_SOCK_SRC
+      type: text
+      required: false
+      labelEn: Docker Socket Path (leave empty to disable)
+      labelZh: Docker 套接字路径（留空禁用）
+      label:
+        en: Docker Socket Path (leave empty to disable)
+        zh: Docker 套接字路径（留空禁用）
+        zh-Hant: Docker 套接字路徑（留空禁用）
+        ja: Docker ソケットパス（空欄で無効）
+        ko: Docker 소켓 경로 (비우면 비활성화)
+        ru: Путь к Docker-сокету (оставьте пустым для отключения)
+        ms: Laluan soket Docker (kosongkan untuk lumpuhkan)
+        pt-br: Caminho do socket Docker (deixe em branco para desabilitar)
+    - envKey: APP_DATA_DIR
+      type: text
+      required: true
+      default: ./data
+      labelZh: 数据目录
+      labelEn: Data Directory
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 數據目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉토리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      edit: true
+    - envKey: TZ
+      type: text
+      required: false
+      default: Asia/Shanghai
+      labelZh: 时区
+      labelEn: Timezone
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horário
+      edit: true
