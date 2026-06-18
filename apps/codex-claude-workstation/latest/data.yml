@@ -83,6 +83,22 @@ additionalProperties:
         ms: Direktori Data
         pt-br: Diretório de Dados
       edit: true
+    - default: "false"
+      edit: true
+      envKey: FIX_WORKSPACE_OWNERSHIP_RECURSIVE
+      type: text
+      required: true
+      labelEn: Recursive Workspace Ownership Repair
+      labelZh: 递归修复工作区权限
+      label:
+        en: Recursive Workspace Ownership Repair
+        zh: 递归修复工作区权限
+        zh-Hant: 遞歸修復工作區權限
+        ja: ワークスペース所有権の再帰修復
+        ko: 작업공간 소유권 재귀 복구
+        ru: Рекурсивное исправление владельца рабочей области
+        ms: Baiki pemilikan ruang kerja secara rekursif
+        pt-br: Reparo recursivo de propriedade do workspace
     - envKey: TZ
       type: text
       required: false

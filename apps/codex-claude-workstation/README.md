@@ -68,16 +68,17 @@ ghcr.io/okxlin/codex-claude-workstation:latest
 - 默认 `Asia/Shanghai`
 - 可选，留空使用系统默认
 
+**`FIX_WORKSPACE_OWNERSHIP_RECURSIVE`** — 工作区递归权限修复
+- 默认 `false`，启动时只修复 `/workspace` 目录本身的 ownership
+- 可填 `false` 或 `true`
+- 如果历史数据里已有 root-owned 子文件，可临时设为 `true` 后重启一次容器
+
 ### 不在安装表单中的参数
 
 **`PROXY_ENABLED`** — 代理 (手动启用)
 - 默认不启动；内置 clash-meta / sing-box / xray 二进制
 - 通过 `supervisorctl start clash-meta|sing-box|xray` 按需启用
 - 代理配置文件放入 `/home/dev/proxy/`（持久化），如 `clash-meta.yaml` / `sing-box.json` / `xray.json`
-
-**`FIX_WORKSPACE_OWNERSHIP_RECURSIVE`** — 工作区递归权限修复
-- 默认 `false`，启动时只修复 `/workspace` 目录本身的 ownership
-- 如果历史数据里已有 root-owned 子文件，可临时设为 `true` 后重启一次容器
 
 ## 访问说明
 
