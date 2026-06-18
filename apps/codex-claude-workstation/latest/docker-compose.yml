@@ -6,14 +6,19 @@ services:
     restart: always
     labels:
       createdBy: "Apps"
+    # Required by Codex/bubblewrap sandbox; keeps the container non-privileged.
+    security_opt:
+      - seccomp=unconfined
+      - apparmor=unconfined
     environment:
       - TZ=${TZ:-Asia/Shanghai}
       - PASSWORD=${CODE_SERVER_PASSWORD:-change-me}
       - ROOT_PASSWORD=${ROOT_PASSWORD:-codex2024}
+      - FIX_WORKSPACE_OWNERSHIP_RECURSIVE=${FIX_WORKSPACE_OWNERSHIP_RECURSIVE:-false}
     volumes:
       - ${APP_DATA_DIR:-./data}/workspace:/workspace
       - codex-home:/home/dev
-      - ${DOCKER_SOCK_SRC:-/var/run/docker.sock}:/var/run/docker.sock
+      - ${DOCKER_SOCK_SRC:-/dev/null}:/var/run/docker.sock
     ports:
       - ${PANEL_APP_PORT_HTTP}:8080
     healthcheck:
