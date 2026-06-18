@@ -1,8 +1,8 @@
 name: Codex Claude Workstation
 tags:
   - Tool
-title: Codex Claude Workstation
-description: 浏览器可访问的 Codex + Claude AI 编程工作站
+title: Codex Claude Workstation - 浏览器可访问的 Codex + Claude AI 编程工作站
+description: Codex Claude Workstation - 浏览器可访问的 Codex + Claude AI 编程工作站
 additionalProperties:
   key: codex-claude-workstation
   name: Codex Claude Workstation
@@ -14,7 +14,7 @@ additionalProperties:
   architectures:
     - amd64
   github: https://github.com/okxlin/release-factory
-  shortDescZh: 浏览器可访问的 Codex + Claude AI 编程工作站
+  shortDescZh: Codex Claude Workstation - 浏览器可访问的 Codex + Claude AI 编程工作站
   shortDescEn: Browser-accessible Codex + Claude AI workstation
   description:
     en: Browser-accessible Codex + Claude AI workstation with code-server (VS Code)
