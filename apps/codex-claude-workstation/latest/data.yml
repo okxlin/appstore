@@ -99,6 +99,102 @@ additionalProperties:
         ru: Рекурсивное исправление владельца рабочей области
         ms: Baiki pemilikan ruang kerja secara rekursif
         pt-br: Reparo recursivo de propriedade do workspace
+    - default: ./data/custom.env
+      edit: true
+      envKey: CUSTOM_ENV_FILE
+      type: text
+      required: false
+      labelEn: Custom Env File
+      labelZh: 自定义环境变量文件
+      label:
+        en: Custom Env File
+        zh: 自定义环境变量文件
+        zh-Hant: 自訂環境變量文件
+        ja: カスタム環境変数ファイル
+        ko: 사용자 지정 환경 변수 파일
+        ru: Пользовательский файл переменных окружения
+        ms: Fail env tersuai
+        pt-br: Arquivo env personalizado
+    - default: ""
+      edit: true
+      envKey: GITHUB_TOKEN
+      type: password
+      required: false
+      labelEn: GitHub Token
+      labelZh: GitHub 访问令牌
+      label:
+        en: GitHub Token
+        zh: GitHub 访问令牌
+        zh-Hant: GitHub 存取權杖
+        ja: GitHubアクセストークン
+        ko: GitHub 액세스 토큰
+        ru: Токен доступа GitHub
+        ms: Token akses GitHub
+        pt-br: Token de acesso do GitHub
+    - default: ""
+      edit: true
+      envKey: GIT_AUTHOR_NAME
+      type: text
+      required: false
+      labelEn: Git Author Name
+      labelZh: Git 作者名
+      label:
+        en: Git Author Name
+        zh: Git 作者名
+        zh-Hant: Git 作者名
+        ja: Git作成者名
+        ko: Git 작성자 이름
+        ru: Имя автора Git
+        ms: Nama pengarang Git
+        pt-br: Nome do autor Git
+    - default: ""
+      edit: true
+      envKey: GIT_AUTHOR_EMAIL
+      type: text
+      required: false
+      labelEn: Git Author Email
+      labelZh: Git 作者邮箱
+      label:
+        en: Git Author Email
+        zh: Git 作者邮箱
+        zh-Hant: Git 作者郵箱
+        ja: Git作成者メール
+        ko: Git 작성자 이메일
+        ru: Email автора Git
+        ms: E-mel pengarang Git
+        pt-br: Email do autor Git
+    - default: ""
+      edit: true
+      envKey: GIT_COMMITTER_NAME
+      type: text
+      required: false
+      labelEn: Git Committer Name
+      labelZh: Git 提交者名
+      label:
+        en: Git Committer Name
+        zh: Git 提交者名
+        zh-Hant: Git 提交者名
+        ja: Gitコミッター名
+        ko: Git 커미터 이름
+        ru: Имя коммиттера Git
+        ms: Nama komit Git
+        pt-br: Nome do committer Git
+    - default: ""
+      edit: true
+      envKey: GIT_COMMITTER_EMAIL
+      type: text
+      required: false
+      labelEn: Git Committer Email
+      labelZh: Git 提交者邮箱
+      label:
+        en: Git Committer Email
+        zh: Git 提交者邮箱
+        zh-Hant: Git 提交者郵箱
+        ja: Gitコミッターメール
+        ko: Git 커미터 이메일
+        ru: Email коммиттера Git
+        ms: E-mel komit Git
+        pt-br: Email do committer Git
     - envKey: TZ
       type: text
       required: false

@@ -4,24 +4,35 @@ set -eo pipefail
 
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 APP_DATA_DIR_RAW="${APP_DATA_DIR:-./data}"
+CUSTOM_ENV_FILE_RAW="${CUSTOM_ENV_FILE:-./data/custom.env}"
 CODEX_UID="${CODEX_UID:-1001}"
 CODEX_GID="${CODEX_GID:-1001}"
 
-if [[ "$APP_DATA_DIR_RAW" = /* ]]; then
-  APP_DATA_DIR_ABS="$APP_DATA_DIR_RAW"
-else
-  APP_DATA_DIR_ABS="$ROOT_DIR/${APP_DATA_DIR_RAW#./}"
-fi
+resolve_app_path() {
+  local raw="$1"
+  if [[ "$raw" = /* ]]; then
+    printf '%s\n' "$raw"
+  else
+    printf '%s\n' "$ROOT_DIR/${raw#./}"
+  fi
+}
+
+APP_DATA_DIR_ABS="$(resolve_app_path "$APP_DATA_DIR_RAW")"
+CUSTOM_ENV_FILE_ABS="$(resolve_app_path "$CUSTOM_ENV_FILE_RAW")"
 
 WORKSPACE_DIR="$APP_DATA_DIR_ABS/workspace"
 
 mkdir -p "$WORKSPACE_DIR"
+mkdir -p "$(dirname "$CUSTOM_ENV_FILE_ABS")"
+touch "$CUSTOM_ENV_FILE_ABS"
 chown -R "$CODEX_UID:$CODEX_GID" "$WORKSPACE_DIR" 2>/dev/null || true
+chown "$CODEX_UID:$CODEX_GID" "$CUSTOM_ENV_FILE_ABS" 2>/dev/null || true
 
 echo "Codex Claude Workstation installed successfully."
 echo ""
 echo "Persistent directories:"
 echo "  ${WORKSPACE_DIR} -> /workspace (${CODEX_UID}:${CODEX_GID})"
+echo "  ${CUSTOM_ENV_FILE_ABS} -> custom env_file"
 echo ""
 echo "Access:"
 echo "  http://<server-ip>:${PANEL_APP_PORT_HTTP}"

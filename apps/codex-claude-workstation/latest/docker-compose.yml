@@ -15,6 +15,14 @@ services:
       - PASSWORD=${CODE_SERVER_PASSWORD:-change-me}
       - ROOT_PASSWORD=${ROOT_PASSWORD:-codex2024}
       - FIX_WORKSPACE_OWNERSHIP_RECURSIVE=${FIX_WORKSPACE_OWNERSHIP_RECURSIVE:-false}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME}
+      - GIT_AUTHOR_EMAIL=${GIT_AUTHOR_EMAIL}
+      - GIT_COMMITTER_NAME=${GIT_COMMITTER_NAME}
+      - GIT_COMMITTER_EMAIL=${GIT_COMMITTER_EMAIL}
+    env_file:
+      - path: ${CUSTOM_ENV_FILE:-./data/custom.env}
+        required: false
     volumes:
       - ${APP_DATA_DIR:-./data}/workspace:/workspace
       - codex-home:/home/dev

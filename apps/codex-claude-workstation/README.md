@@ -73,6 +73,22 @@ ghcr.io/okxlin/codex-claude-workstation:latest
 - 可填 `false` 或 `true`
 - 如果历史数据里已有 root-owned 子文件，可临时设为 `true` 后重启一次容器
 
+**`CUSTOM_ENV_FILE`** — 自定义环境变量文件
+- 默认 `./data/custom.env`
+- 会以 Docker Compose `env_file` 形式注入容器，适合后续追加 VPS 测试服务、临时接口地址、项目专用变量等
+- 文件不存在时安装/升级脚本会自动创建；每行格式为 `KEY=value`
+- 1Panel 表单中的显式变量优先级高于 `CUSTOM_ENV_FILE` 中的同名变量
+
+**`GITHUB_TOKEN`** — GitHub Token
+- 可选，用于容器内 GitHub CLI、私有仓库拉取或 Git 相关自动化
+- 建议只授予所需最小权限
+
+**`GIT_AUTHOR_NAME` / `GIT_AUTHOR_EMAIL`** — Git 作者信息
+- 可选，传入容器作为 Git author 环境变量
+
+**`GIT_COMMITTER_NAME` / `GIT_COMMITTER_EMAIL`** — Git 提交者信息
+- 可选，传入容器作为 Git committer 环境变量
+
 ### 不在安装表单中的参数
 
 **`PROXY_ENABLED`** — 代理 (手动启用)
