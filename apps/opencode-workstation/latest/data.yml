@@ -162,6 +162,22 @@ additionalProperties:
         ru: Путь к Docker-сокету (оставьте пустым для отключения)
         ms: Laluan soket Docker (kosongkan untuk lumpuhkan)
         pt-br: Caminho do socket Docker (deixe em branco para desabilitar)
+    - default: ./data/custom.env
+      edit: true
+      envKey: CUSTOM_ENV_FILE
+      type: text
+      required: false
+      labelEn: Custom Env File
+      labelZh: 自定义环境变量文件
+      label:
+        en: Custom Env File
+        zh: 自定义环境变量文件
+        zh-Hant: 自訂環境變量文件
+        ja: カスタム環境変数ファイル
+        ko: 사용자 지정 환경 변수 파일
+        ru: Пользовательский файл переменных окружения
+        ms: Fail env tersuai
+        pt-br: Arquivo env personalizado
     - default: serve
       edit: true
       envKey: OPENCODE_RUNTIME_MODE

@@ -55,6 +55,9 @@ services:
       - GPT_UNLOCKED_BASE_URL=${GPT_UNLOCKED_BASE_URL}
       - GPT_UNLOCKED_API_KEY=${GPT_UNLOCKED_API_KEY}
       - GPT_UNLOCKED_MODEL=${GPT_UNLOCKED_MODEL}
+    env_file:
+      - path: ${CUSTOM_ENV_FILE:-./data/custom.env}
+        required: false
     volumes:
       - ${APP_DATA_DIR_1}:/workspace
       - ${APP_DATA_DIR_2}:/home/opencode/.config

@@ -56,6 +56,7 @@
 - `home-agents`：agent-compatible skills / agents
 - `home-claude`：claude-compatible skills
 - `home-opencode`：OpenCode HOME / project-style 兼容目录
+- `CUSTOM_ENV_FILE`（默认 `./data/custom.env`）：额外环境变量文件，适合放测试服务、VPS、私有 API 网关等自定义变量
 
 ## 表单填写指南
 
@@ -94,7 +95,8 @@
 推荐按三层使用：
 
 1. **部署级环境变量层**
-   - 通过 `.env` / 1Panel 表单注入
+   - 通过 `.env` / 1Panel 表单 / `CUSTOM_ENV_FILE` 注入
+   - `.env` / 1Panel 表单中的显式变量优先级高于 `CUSTOM_ENV_FILE` 中的同名变量
    - 适合：`OPENCODE_MODEL`、`OPENCODE_SMALL_MODEL`、`OPENCODE_PROVIDER_ID`、`OPENCODE_EXTRA_PLUGINS`、各类 `*_BASE_URL` / `*_API_KEY`
 2. **生成配置层**
    - `~/.config/opencode/opencode.json`
@@ -112,6 +114,7 @@
 - **镜像层更新**：在 1Panel 中重建容器
 - **刷新 OpenCode 本体**：进入容器执行 `/app/scripts/update-opencode-userland.sh`
 - **刷新 oh-my-opencode 行为**：重建容器，或手动重新执行 `bunx oh-my-opencode install --no-tui ...`
+- **额外环境变量**：升级脚本会确保 `CUSTOM_ENV_FILE` 存在；后续可直接编辑该文件追加自定义变量
 
 ## 注意事项
 
