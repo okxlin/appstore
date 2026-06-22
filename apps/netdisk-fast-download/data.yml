@@ -1,0 +1,21 @@
+name: NFD 网盘直链解析
+tags:
+  - 实用工具
+  - 云存储
+title: 各类网盘直链解析
+description: 各类网盘直链解析
+additionalProperties:
+  key: netdisk-fast-download
+  name: NFD 网盘直链解析
+  tags:
+    - Storage
+    - Tool
+  shortDescZh: 各类网盘直链解析
+  shortDescEn: netdisk direct link parser
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/qaiu/netdisk-fast-download
+  github: https://github.com/qaiu/netdisk-fast-download
+  document: https://github.com/qaiu/netdisk-fast-download
