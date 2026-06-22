@@ -1,0 +1,5 @@
+{
+  "repository": "https://codeberg.org/forgejo/forgejo",
+  "dockerDocs": "https://forgejo.org/docs/",
+  "composeFile": "https://forgejo.org/docs/"
+}
