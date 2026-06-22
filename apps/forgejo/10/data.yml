@@ -1,0 +1,110 @@
+additionalProperties:
+    formFields:
+        - default: mysql
+          envKey: PANEL_DB_TYPE
+          labelEn: Database Service
+          labelZh: 数据库服务
+          required: true
+          type: apps
+          child:
+            default: ""
+            envKey: PANEL_DB_HOST
+            required: true
+            type: service
+          values:
+            - label: MySQL
+              value: mysql
+            - label: PostgreSQL
+              value: postgres
+          label:
+            en: Database Service
+            ja: データベースサービス
+            ms: Perkhidmatan Pangkalan Data
+            pt-br: Serviço de Banco de Dados
+            ru: Сервис баз данных
+            ko: 데이터베이스 서비스
+            zh-hant: 資料庫服務
+            zh: 数据库服务
+        - default: forgejo
+          envKey: PANEL_DB_NAME
+          labelEn: Database
+          labelZh: 数据库名
+          random: true
+          required: true
+          rule: paramCommon
+          type: text
+          label:
+            en: Database
+            ja: データベース
+            ms: Pangkalan Data
+            pt-br: Banco de Dados
+            ru: База данных
+            ko: 데이터베이스
+            zh-hant: 資料庫
+            zh: 数据库
+        - default: forgejo
+          envKey: PANEL_DB_USER
+          random: true
+          required: true
+          rule: paramCommon
+          type: text
+          labelEn: Database User
+          labelZh: 数据库用户
+          label:
+            en: Database User
+            ja: データベースユーザー
+            ms: Pengguna Pangkalan Data
+            pt-br: Usuário do Banco de Dados
+            ru: Пользователь базы данных
+            ko: 데이터베이스 사용자
+            zh-hant: 資料庫用戶
+            zh: 数据库用户
+        - default: forgejo
+          envKey: PANEL_DB_USER_PASSWORD
+          random: true
+          required: true
+          rule: paramComplexity
+          type: password
+          labelEn: Database Password
+          labelZh: 数据库密码
+          label:
+            en: Database Password
+            ja: データベースのパスワード
+            ms: Kata Laluan Pangkalan Data
+            pt-br: Senha do Banco de Dados
+            ru: Пароль базы данных
+            ko: 데이터베이스 비밀번호
+            zh-hant: 資料庫密碼
+            zh: 数据库密码
+        - default: 3000
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: Port
+          labelZh: HTTP 端口
+          required: true
+          rule: paramPort
+          type: number
+          label:
+            en: HTTP Port
+            ja: HTTP ポート
+            ms: HTTP Port
+            pt-br: HTTP Porta
+            ru: HTTP Порт
+            ko: HTTP 포트
+            zh-Hant: HTTP 埠
+            zh: HTTP 端口
+        - default: 222
+          envKey: PANEL_APP_PORT_SSH
+          labelEn: Port
+          labelZh: SSH 端口
+          required: true
+          rule: paramPort
+          type: number
+          label:
+            en: SSH Port
+            ja: SSH ポート
+            ms: SSH Port
+            pt-br: SSH Porta
+            ru: SSH Порт
+            ko: SSH 포트
+            zh-Hant: SSH 埠
+            zh: SSH 端口

@@ -1,0 +1,27 @@
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:10
+    container_name: ${CONTAINER_NAME}
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - forgejo__database__DB_TYPE=${PANEL_DB_TYPE}
+      - forgejo__database__HOST=${PANEL_DB_HOST}:${PANEL_DB_PORT}
+      - forgejo__database__NAME=${PANEL_DB_NAME}
+      - forgejo__database__USER=${PANEL_DB_USER}
+      - forgejo__database__PASSWD=${PANEL_DB_USER_PASSWORD}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_SSH}:22"
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true
