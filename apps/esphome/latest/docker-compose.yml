@@ -1,0 +1,16 @@
+services:
+  esphome:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    privileged: true
+    network_mode: host
+    volumes:
+      - "${DATA_PATH}:/config"
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Asia/Shanghai
+      - "USERNAME=${USERNAME}"
+      - "PASSWORD=${PASSWORD}"
+    image: esphome/esphome:latest
+    labels:
+      createdBy: "Apps"

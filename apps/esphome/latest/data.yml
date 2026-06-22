@@ -1,0 +1,31 @@
+additionalProperties:
+  formFields:
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Config folder path
+      labelZh: 数据文件夹路径
+      required: true
+      type: text
+    - default: 6052
+      disabled: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: HTTP 端口
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: USERNAME
+      labelEn: Web Password
+      labelZh: 控制台用户名
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: PASSWORD
+      labelEn: Web Password
+      labelZh: 控制台密码
+      required: false
+      type: password
