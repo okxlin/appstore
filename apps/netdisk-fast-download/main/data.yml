@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+  - default: 6401
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: WebUI Port
+    labelZh: 网页端口
+    required: true
+    rule: paramPort
+    type: number
+    label:
+      en: WebUI Port
+      zh: 网页端口
+      zh-Hant: 网页端口（佔位）
+      ja: WebUI Port（プレースホルダー）
+      ko: WebUI Port（플레이스홀더）
+      ru: WebUI Port（заполнитель）
+      ms: WebUI Port (placeholder)
+      pt-br: WebUI Port (placeholder)
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

@@ -1,0 +1,31 @@
+name: NFD 网盘直链解析
+tags:
+- Storage
+- Tool
+title: 各类网盘直链解析
+description: 各类网盘直链解析
+additionalProperties:
+  key: netdisk-fast-download
+  name: NFD 网盘直链解析
+  tags:
+  - Storage
+  - Tool
+  type: tool
+  website: https://github.com/qaiu/netdisk-fast-download
+  document: https://github.com/qaiu/netdisk-fast-download
+  github: https://github.com/qaiu/netdisk-fast-download
+  shortDescZh: 各类网盘直链解析
+  shortDescEn: netdisk direct link parser
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  description:
+    en: netdisk direct link parser
+    zh: 各类网盘直链解析
+    zh-Hant: 各类网盘直链解析（佔位）
+    ja: 各类网盘直链解析（プレースホルダー）
+    ko: 各类网盘直链解析（플레이스홀더）
+    ru: 各类网盘直链解析（заполнитель）
+    ms: 各类网盘直链解析（ruang letak）
+    pt-br: 各类网盘直链解析(preenchimento)
