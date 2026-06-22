@@ -1,0 +1,33 @@
+name: GoTab
+tags:
+- Website
+title: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+description: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+additionalProperties:
+  key: gotab
+  name: GoTab
+  tags:
+  - Website
+  type: website
+  website: https://www.gotab.cn/
+  document: https://github.com/dengxiwang/gotab-personal
+  github: https://github.com/dengxiwang/gotab-personal
+  shortDescZh: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+  shortDescEn: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  description:
+    en: GoTab is a personalized browser new tab page, start page, and personal home
+      page.
+    zh: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+    zh-Hant: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。（佔位）
+    ja: GoTabは、パーソナライズされたブラウザの新しいタブページ、スタートページ、個人用ホームページです。
+    ko: GoTab은 개인화된 브라우저 새 탭 페이지, 시작 페이지 및 개인 홈 페이지입니다.
+    ru: GoTab — это персонифицированная новая вкладка браузера, стартовая страница
+      и личная домашняя страница.
+    ms: GoTab ialah halaman tab baharu, halaman permulaan, dan halaman rumah peribadi
+      pelayar yang diperibadikan.
+    pt-br: GoTab é uma página de nova aba personalizada do navegador, página inicial
+      e página inicial pessoal.
