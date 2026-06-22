@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+  - default: 8080
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Port
+    labelZh: 端口
+    required: true
+    rule: paramPort
+    type: number
+    label:
+      en: Port
+      zh: 端口
+      zh-Hant: 端口（佔位）
+      ja: Port（プレースホルダー）
+      ko: Port（플레이스홀더）
+      ru: Port（заполнитель）
+      ms: Port (placeholder)
+      pt-br: Port (placeholder)
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

@@ -1,0 +1,29 @@
+name: puff
+tags:
+- Tool
+title: 一个Go的域名监控程序
+description: 一个Go的域名监控程序
+additionalProperties:
+  key: puff
+  name: puff
+  tags:
+  - Tool
+  type: tool
+  website: https://github.com/BitAUR/Puff
+  document: https://roy.wang/puff/
+  github: https://github.com/BitAUR/Puff
+  shortDescZh: 一个Go的域名监控程序
+  shortDescEn: A Go domain monitor
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  description:
+    en: A Go domain monitor
+    zh: 一个Go的域名监控程序
+    zh-Hant: 一个Go的域名监控程序（佔位）
+    ja: 一个Go的域名监控程序（プレースホルダー）
+    ko: 一个Go的域名监控程序（플레이스홀더）
+    ru: 一个Go的域名监控程序（заполнитель）
+    ms: 一个Go的域名监控程序（ruang letak）
+    pt-br: 一个Go的域名监控程序(preenchimento)

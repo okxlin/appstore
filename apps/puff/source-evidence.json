@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/BitAUR/Puff",
+  "dockerDocs": "https://roy.wang/puff/",
+  "composeFile": "https://roy.wang/puff/"
+}
