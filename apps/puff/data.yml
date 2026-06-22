@@ -1,0 +1,20 @@
+name: puff
+tags:
+    - 工具
+title: 一个Go的域名监控程序
+type: 工具
+description: 一个Go的域名监控程序
+additionalProperties:
+    key: puff
+    name: puff
+    tags:
+        - Tool
+    shortDescZh: 一个Go的域名监控程序
+    shortDescEn: A Go domain monitor
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://github.com/BitAUR/Puff
+    github: https://github.com/BitAUR/Puff
+    document: https://roy.wang/puff/
