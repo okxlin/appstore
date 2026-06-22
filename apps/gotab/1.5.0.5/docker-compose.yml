@@ -1,0 +1,20 @@
+services:
+  gotab-server:
+    image: doxwant/gotab:1.5.0.5
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:8080
+    volumes:
+      - ./data/uploads:/app/uploads
+      - ./data/sourceStore:/app/sourceStore
+      - ./data/config.toml:/app/config.toml
+    environment:
+      - SERVER_PORT=8080
+      - TZ=${TIME_ZONE}
+    networks:                                 
+      - 1panel-network   
+    labels:
+      createdBy: Apps
+networks:
+  1panel-network:
+    external: true

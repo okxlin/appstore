@@ -1,0 +1,84 @@
+# === 官方应用商店兼容字段（上架官方商店必填，其余情况选填） ===
+# https://apps.fit2cloud.com/1panel
+# 显示名称
+name: GoTab
+# 分类标签
+tags:
+  - 建站
+# 副标题
+title: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+# 应用描述
+description: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+
+# === 以下为 1Panel 应用商店解析的数据结构，必须保留此结构 ===
+additionalProperties:
+  # === 必填字段 ===
+  # 应用程序唯一标识符，用于系统内部识别及创建文件夹，仅限英文小写（必填）
+  key: gotab
+  # 应用程序显示名称（必填）
+  name: GoTab
+  # 应用程序类型（必填）
+  # 可选值: website: 网站应用，支持在1Panel中一键部署，如 Wordpress、Halo等
+  #        runtime: 运行时环境，如 MySQL、Redis、OpenResty 等
+  #        tool: 工具类应用，大部分应用不属于上述两类的，可归为工具类，如 FileBrowser、phpMyAdmin 等
+  type: website
+  # 分类标签数组，用于应用商店分类显示（必填），可选值可见：https://github.com/1Panel-dev/appstore/blob/dev/data.yaml
+  tags:
+    - Website
+
+  # === 描述信息字段（选填，建议填写）===
+  # 多语言描述，建议20-30个字符，v2 版本格式
+  description:
+    # 简体中文
+    zh: GoTab 是一个个性化浏览器新标签页、起始页、个人主页。
+    # 繁体中文
+    zh-hant: GoTab 是一個个性化瀏覽器新標籤頁、起始頁、個人主頁。
+    # 英文
+    en: GoTab is a personalized browser new tab page, start page, and personal home page.
+    # 日语
+    ja: GoTabは、パーソナライズされたブラウザの新しいタブページ、スタートページ、個人用ホームページです。
+    # 马来语
+    ms: GoTab ialah halaman tab baharu, halaman permulaan, dan halaman rumah peribadi pelayar yang diperibadikan.
+    # 巴西葡萄牙语
+    pt-br: GoTab é uma página de nova aba personalizada do navegador, página inicial e página inicial pessoal.
+    # 俄语
+    ru: GoTab — это персонифицированная новая вкладка браузера, стартовая страница и личная домашняя страница.
+    # 韩语
+    ko: GoTab은 개인화된 브라우저 새 탭 페이지, 시작 페이지 및 개인 홈 페이지입니다.
+    # 土耳其语
+    tr: GoTab, kişiselleştirilmiş bir tarayıcı yeni sekme sayfası, başlangıç sayfası ve kişisel ana sayfasıdır.
+
+  # === 功能配置字段（选填）===
+  # 是否支持跨版本更新，默认false
+  crossVersionUpdate: true
+  # 安装数量限制，0表示无限制，默认0
+  limit: 0
+  # 推荐级别，数值越小越推荐，用于应用商店排序，默认9999
+  recommend: 0
+
+  # === 链接信息字段（选填）===
+  # 官方网站链接，必须是有效的 HTTP/HTTPS URL
+  website: https://www.gotab.cn/
+  # GitHub 仓库链接，必须是有效的HTTP/HTTPS URL
+  github: https://github.com/dengxiwang/gotab-personal
+  # 文档链接，必须是有效的HTTP/HTTPS URL
+  document: https://github.com/dengxiwang/gotab-personal
+
+  # === 系统要求字段（选填）===
+  # 内存要求（MB），用于系统资源检查和用户提示
+  # 常见值：512, 1024, 2048, 4096
+  # memoryRequired: 512
+  # 支持的 CPU 架构数组
+  # 可选值：amd64, arm64, armv7, ppc64le, s390x, riscv64
+  architectures:
+    - amd64
+    - arm64
+  # 是否需要GPU支持，默认false
+  gpuSupport: false
+  
+  # === 版本兼容性字段（选填）===
+  # 最低面板版本要求，0表示无要求，默认0
+  # 示例：1.0, 1.5, 2.0
+  version: 0
+  # 废弃版本标记，0表示未废弃，默认0，若不为 0，则与当前系统版本号对比，若大于等于该版本号，则不出现在应用商店中
+  deprecated: 0
