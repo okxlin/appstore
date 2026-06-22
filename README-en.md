@@ -1,33 +1,37 @@
 [中文](https://github.com/okxlin/appstore/blob/localApps/README.md) | English
+
+# 1Panel Third-Party App Store
+
+Docker app configurations adapted for the `1Panel` app store `2.0`. After import, apps can be installed from the 1Panel local app store or run directly with `docker-compose` from each app version directory.
+
+## Support
+
+[**Support via AFDIAN**](https://afdian.com/a/dockerapps)
+
+[![Support via AFDIAN](https://github.com/okxlin/appstore/raw/localApps/docs/afdian-logo.png)](https://afdian.com/a/dockerapps)
+
+**WeChat Reward Code**
+
+<img src="docs/wechat-reward.webp" alt="WeChat reward code" width="240">
+
 ***
-
-## Contribution Link
-
-[**Click here to contribute with AFDIAN**](https://afdian.com/a/dockerapps)
-
-[![**Click here to contribute with AFDIAN**](https://github.com/okxlin/appstore/raw/localApps/docs/afdian-logo.png)](https://afdian.com/a/dockerapps)
-
-* * *
 
 ## Table of Contents
 
-- [Contribution Link](#contribution-link)
+- [Support](#support)
 - [Table of Contents](#table-of-contents)
 - [Disclaimer](#disclaimer)
   - [1. Image Container Adaptation](#1-image-container-adaptation)
   - [2. Compliance with Laws](#2-compliance-with-laws)
   - [3. Acceptance of Disclaimer](#3-acceptance-of-disclaimer)
 - [1. Introduction](#1-introduction)
-  - [1Panel Third-Party App Store Categories and Introduction](#1panel-third-party-app-store-categories-and-introduction)
-- [2. Usage](#2-usage)
-  - [2.1 Domestic Network](#21-domestic-network)
-    - [2.1.1 Getting Apps via Git Command](#211-getting-apps-via-git-command)
-    - [2.1.2 Getting Apps via Compressed Package](#212-getting-apps-via-compressed-package)
-  - [2.2 International Network](#22-international-network)
-    - [2.2.1 Getting Apps via Git Command](#221-getting-apps-via-git-command)
-    - [2.2.2 Getting Apps via Compressed Package](#222-getting-apps-via-compressed-package)
-- [3. Remarks](#3-remarks)
-- [4. App Overview](#4-app-overview)
+- [2. Contributing Apps](#2-contributing-apps)
+- [3. Usage](#3-usage)
+  - [3.1 GitHub Network Notes](#31-github-network-notes)
+  - [3.2 Getting Apps via Git Command](#32-getting-apps-via-git-command)
+  - [3.3 Getting Apps via Compressed Package](#33-getting-apps-via-compressed-package)
+- [4. Remarks](#4-remarks)
+- [5. App Overview](#5-app-overview)
 
 
 ***
@@ -51,61 +55,28 @@ Before using this repository, please ensure that you have read, understood, and 
 ## 1. Introduction
 These are some configurations of docker applications adapted for the `1Panel` store version 2.0.
 
-Dedicated to running various Docker applications with just one click. Enjoy convenience and efficiency without complex configurations.
+This repository keeps app directories, metadata, form variables, and compose files recognizable by 1Panel so users can avoid repeated manual deployment work.
 
-### 1Panel Third-Party App Store Categories and Introduction
+## 2. Contributing Apps
 
-- https://1p.131.gs
+> [!IMPORTANT]
+> Before submitting an app PR, third-party developers are encouraged to generate or validate the app package with [okxlin/1panel-app-adapter](https://github.com/okxlin/1panel-app-adapter). It checks the 1Panel v2 directory layout, `data.yml`, `docker-compose.yml`, environment variable closure, i18n labels, and common release issues.
 
-**Special thanks to the author [@baozishu](https://github.com/baozishu)**
+When opening a PR, include reproducible upstream sources, image sources, default ports, data directories, required dependencies, and test results. Commit only the final app directory to this repository; temporary test output and process files are not needed.
 
-## 2. Usage
+## 3. Usage
 
 The default installation path of `1Panel` is `/opt/`, which can be modified as needed.
 
-### 2.1 Domestic Network
+### 3.1 GitHub Network Notes
 
-> GitHub Acceleration Methods
->> - (Added to this repository) Self-built: https://github.com/hunshcn/gh-proxy
->> - https://ghp.ci
+GitHub proxy mirrors change often, so this README no longer maintains a fixed acceleration domain list. If your network cannot reach GitHub, use a trusted proxy, a self-hosted `gh-proxy`, or another acceleration method, and verify that the proxy does not modify repository content.
 
-#### 2.1.1 Getting Apps via Git Command
+The examples below use official GitHub URLs. Replace them according to your proxy rules if needed.
 
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run the following command in the terminal:
+### 3.2 Getting Apps via Git Command
 
-```shell
-git clone -b localApps https://ghp.ci/https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
-
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
-
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
-```
-
-Then refresh the local applications in the app store.
-
-#### 2.1.2 Getting Apps via Compressed Package
-
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run the following command in the terminal:
-
-```shell
-wget -P /opt/1panel/resource/apps/local https://ghp.ci/https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
-
-unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
-
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
-
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
-
-rm -rf /opt/1panel/resource/apps/local/localApps.zip
-```
-
-Then refresh the local applications in the app store.
-
-### 2.2 International Network
-
-#### 2.2.1 Getting Apps via Git Command
-
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run the following command in the terminal:
+In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run it in a terminal:
 
 ```shell
 git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
@@ -117,9 +88,9 @@ rm -rf /opt/1panel/resource/apps/local/appstore-localApps
 
 Then refresh the local applications in the app store.
 
-#### 2.2.2 Getting Apps via Compressed Package
+### 3.3 Getting Apps via Compressed Package
 
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run the following command in the terminal:
+In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run it in a terminal:
 
 ```shell
 wget -P /opt/1panel/resource/apps/local https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
@@ -135,7 +106,7 @@ rm -rf /opt/1panel/resource/apps/local/localApps.zip
 
 Then refresh the local applications in the app store.
 
-## 3. Remarks
+## 4. Remarks
 
 **If an application is not displayed in the local app list, it means it has not been fully adapted for operation in the app store panel.**
 
@@ -163,6 +134,6 @@ cat ./data/hbbs/id_ed25519.pub
 
 ```
 
-## 4. App Overview
+## 5. App Overview
 
 ![](https://github.com/okxlin/appstore/raw/localApps/docs/app-list.png)
