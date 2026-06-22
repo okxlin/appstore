@@ -1,0 +1,20 @@
+additionalProperties:
+  key: EasyBot
+  name: EasyBot
+  tags:
+    - Tool
+  description:
+    en: ""
+    zh: 这是一款多功能功能于一体的服务器管理工具，全方位优化游戏社区体验!
+    zh-Hant: 這是一款多功能於一體的伺服器管理工具，全方位優化遊戲社群體驗！
+    ja: ""
+    ms: ""
+    pt-br: ""
+    ru: ""
+    ko: ""
+  type: Tool
+  crossVersionUpdate: true
+  limit: 1
+  website: https://docs.inectar.cn/
+  github: https://github.com/easybot-team/
+  document: https://docs.inectar.cn/docs/easybot/intor

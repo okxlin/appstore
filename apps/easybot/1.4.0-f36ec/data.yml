@@ -1,0 +1,36 @@
+additionalProperties:
+  formFields:
+    - default: 5000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: PANEL_APP_PORT_HTTP
+      labelZh: 监听端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: Web Service Listening Port
+        ja: Webサービスリッスンポート
+        ms: Port Mendengar Perkhidmatan Web
+        pt-br: Porta de Escuta do Serviço Web
+        ru: Порт прослушивания веб-сервиса
+        ko: 웹 서비스 수신 포트
+        zh-Hant: 網頁服務監聽端口
+        zh: 网页服务监听端口
+    - default: 26990
+      edit: true
+      envKey: BRIDGE_PORT
+      labelEn: Bridge
+      labelZh: Bridge端口
+      required: true
+      rule: paramPort
+      type: number
+      label:
+        en: Bridge Port
+        ja: ブリッジポート
+        ms: Port Jambatan
+        pt-br: Porta da Ponte
+        ru: Порт моста
+        ko: 브리지 포트
+        zh-Hant: Bridge端口
+        zh: Bridge端口
