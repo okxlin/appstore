@@ -11,8 +11,8 @@ services:
     environment:
       - SERVER_PORT=8080
       - TZ=${TIME_ZONE}
-    networks:                                 
-      - 1panel-network   
+    networks:
+      - 1panel-network
     labels:
       createdBy: Apps
 networks:

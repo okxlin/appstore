@@ -19,9 +19,9 @@ services:
       - DATA_DIR=/app/data
       - STORAGE_DIR=/app/storage
     image: dqsq2e2/ting-reader:1.2.6
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

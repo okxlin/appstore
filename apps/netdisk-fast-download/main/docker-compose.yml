@@ -13,7 +13,7 @@ services:
       - ./data/logs:/app/logs
     environment:
       - TZ=Asia/Shanghai
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:
