@@ -1,0 +1,31 @@
+name: ErisPulse
+tags:
+- Tool
+title: 事件驱动的多平台机器人开发框架
+description: ErisPulse 是一个基于 Python 的事件驱动型多平台机器人开发框架
+additionalProperties:
+  key: erispulse
+  name: ErisPulse
+  tags:
+  - Tool
+  type: tool
+  website: https://www.erisdev.com
+  document: https://github.com/ErisPulse/ErisPulse
+  github: https://github.com/ErisPulse/ErisPulse
+  shortDescZh: 事件驱动的多平台机器人开发框架
+  shortDescEn: Event-driven multi-platform bot development framework
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
+  description:
+    en: An event-driven multi-platform bot development framework based on Python,
+      supporting OneBot12 standard interface for cross-platform deployment
+    zh: 事件驱动的多平台机器人开发框架，通过统一接口一次编写代码即可在多个平台部署
+    zh-Hant: 事件驅動的多平台機器人開發框架，通過統一接口一次編寫代碼即可在多個平台部署
+    ja: イベント駆動型マルチプラットフォームボット開発フレームワーク
+    ko: 이벤트 기반 멀티 플랫폼 봇 개발 프레임워크
+    ru: 事件驱动的多平台机器人开发框架（заполнитель）
+    ms: 事件驱动的多平台机器人开发框架（ruang letak）
+    pt-br: 事件驱动的多平台机器人开发框架(preenchimento)
