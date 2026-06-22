@@ -1,7 +1,7 @@
 name: DBX
 tags:
 - Tool
-title: 轻量级数据库管理工具
+title: 轻量级数据库管理工具，支持 25+ 种数据库
 description: 轻量级数据库管理工具，支持 25+ 种数据库
 additionalProperties:
   key: dbx
@@ -21,9 +21,9 @@ additionalProperties:
   description:
     en: Lightweight database manager supporting 25+ databases
     zh: 轻量级数据库管理工具，支持 25+ 种数据库
-    zh-Hant: 轻量级数据库管理工具（佔位）
-    ja: 轻量级数据库管理工具（プレースホルダー）
-    ko: 轻量级数据库管理工具（플레이스홀더）
-    ru: 轻量级数据库管理工具（заполнитель）
-    ms: 轻量级数据库管理工具（ruang letak）
-    pt-br: 轻量级数据库管理工具(preenchimento)
+    zh-Hant: 輕量級資料庫管理工具，支援 25 種以上資料庫
+    ja: 25 種類以上のデータベースに対応した軽量データベース管理ツール
+    ko: 25개 이상의 데이터베이스를 지원하는 경량 데이터베이스 관리 도구
+    ru: Легкий менеджер баз данных с поддержкой более 25 баз данных
+    ms: Pengurus pangkalan data ringan yang menyokong lebih daripada 25 pangkalan data
+    pt-br: Gerenciador de banco de dados leve com suporte a mais de 25 bancos de dados

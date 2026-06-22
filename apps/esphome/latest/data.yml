@@ -10,12 +10,12 @@ additionalProperties:
     label:
       en: Config folder path
       zh: 数据文件夹路径
-      zh-Hant: 数据文件夹路径（佔位）
-      ja: Config folder path（プレースホルダー）
-      ko: Config folder path（플레이스홀더）
-      ru: Config folder path（заполнитель）
-      ms: Config folder path (placeholder)
-      pt-br: Config folder path (placeholder)
+      zh-Hant: 設定資料夾路徑
+      ja: 設定フォルダーパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan Folder Konfigurasi
+      pt-br: Caminho da pasta de configuração
   - default: 6052
     disabled: true
     envKey: PANEL_APP_PORT_HTTP
@@ -28,12 +28,12 @@ additionalProperties:
     label:
       en: Port
       zh: HTTP 端口
-      zh-Hant: HTTP 端口（佔位）
-      ja: Port（プレースホルダー）
-      ko: Port（플레이스홀더）
-      ru: Port（заполнитель）
-      ms: Port (placeholder)
-      pt-br: Port (placeholder)
+      zh-Hant: HTTP 連接埠
+      ja: HTTPポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
   - default: admin
     edit: true
     envKey: ESPHOME_USERNAME

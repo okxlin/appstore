@@ -8,6 +8,12 @@ additionalProperties:
     label:
       zh: 端口
       en: Port
+      zh-Hant: 連接埠
+      ja: ポート
+      ko: 포트
+      ru: Порт
+      ms: Port
+      pt-br: Porta
     required: true
     rule: paramPort
     type: number
@@ -19,6 +25,12 @@ additionalProperties:
     label:
       zh: 访问密码
       en: Access Password
+      zh-Hant: 存取密碼
+      ja: アクセスパスワード
+      ko: 접속 비밀번호
+      ru: Пароль доступа
+      ms: Kata Laluan Akses
+      pt-br: Senha de acesso
     required: true
     rule: paramComplexity
     type: password

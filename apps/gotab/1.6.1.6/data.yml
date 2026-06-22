@@ -4,8 +4,14 @@ additionalProperties:
     edit: true
     envKey: PANEL_APP_PORT_HTTP
     label:
-      zh: Web 端口
       en: Web Port
+      zh: Web 端口
+      zh-Hant: Web 連接埠
+      ja: Webポート
+      ko: 웹 포트
+      ru: Веб-порт
+      ms: Port Web
+      pt-br: Porta Web
     required: true
     rule: paramPort
     type: number
@@ -13,8 +19,14 @@ additionalProperties:
     edit: true
     envKey: TIME_ZONE
     label:
-      zh: 时区
       en: Time Zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
     required: true
     type: text
   - default: Asia/Shanghai

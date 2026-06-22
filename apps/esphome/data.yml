@@ -1,8 +1,8 @@
 name: ESPHome
 tags:
 - Tool
-title: 通过简单的配置文件控制您的 ESP8266/ESP32。
-description: 将 ESP32、ESP8266、BK72xx、RP2040 和其他支持的板子通过简单的 YAML 配置转变为强大的智能家居设备。
+title: 简单强大的 ESP8266/ESP32 配置与固件编译工具。
+description: 简单强大的 ESP8266/ESP32 配置与固件编译工具。
 additionalProperties:
   key: esphome
   name: ESPHome
@@ -24,9 +24,9 @@ additionalProperties:
     en: ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration
       files.
     zh: 简单强大的 ESP8266/ESP32 配置与固件编译工具。
-    zh-Hant: 通过简单的配置文件控制您的 ESP8266/ESP32。（佔位）
-    ja: 通过简单的配置文件控制您的 ESP8266/ESP32。（プレースホルダー）
-    ko: 通过简单的配置文件控制您的 ESP8266/ESP32。（플레이스홀더）
-    ru: 通过简单的配置文件控制您的 ESP8266/ESP32。（заполнитель）
-    ms: 通过简单的配置文件控制您的 ESP8266/ESP32。（ruang letak）
-    pt-br: 通过简单的配置文件控制您的 ESP8266/ESP32。(preenchimento)
+    zh-Hant: 使用簡單而強大的設定檔控制 ESP8266/ESP32 裝置。
+    ja: シンプルで強力な設定ファイルで ESP8266/ESP32 デバイスを制御します。
+    ko: 간단하면서도 강력한 설정 파일로 ESP8266/ESP32 장치를 제어합니다.
+    ru: Управляйте устройствами ESP8266/ESP32 с помощью простых и мощных файлов конфигурации.
+    ms: Kawal peranti ESP8266/ESP32 dengan fail konfigurasi yang ringkas tetapi berkuasa.
+    pt-br: Controle dispositivos ESP8266/ESP32 com arquivos de configuração simples e poderosos.

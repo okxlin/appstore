@@ -1,8 +1,8 @@
 name: EasyBot
 tags:
 - Tool
-title: EasyBot
-description: EasyBot
+title: 面向游戏服务器的社区互通与管理服务
+description: 面向游戏服务器的社区互通与管理服务
 additionalProperties:
   key: easybot
   name: EasyBot
@@ -12,18 +12,18 @@ additionalProperties:
   website: https://docs.inectar.cn/
   document: https://docs.inectar.cn/docs/easybot/quick_start/install_docker/
   github: https://github.com/easybot-team/easybot-docker
-  shortDescZh: EasyBot
-  shortDescEn: EasyBot
+  shortDescZh: 面向游戏服务器的社区互通与管理服务
+  shortDescEn: Game server community bridge and management service
   crossVersionUpdate: true
   limit: 1
   architectures:
   - amd64
   description:
-    en: EasyBot
-    zh: 这是一款多功能功能于一体的服务器管理工具，全方位优化游戏社区体验!
-    zh-Hant: 這是一款多功能於一體的伺服器管理工具，全方位優化遊戲社群體驗！
-    ja: EasyBot（プレースホルダー）
-    ko: EasyBot（플레이스홀더）
-    ru: EasyBot（заполнитель）
-    ms: EasyBot（ruang letak）
-    pt-br: EasyBot(preenchimento)
+    en: EasyBot bridges game servers with community channels and provides management tools for game communities.
+    zh: EasyBot 面向游戏服务器提供社区互通、消息同步和管理工具。
+    zh-Hant: EasyBot 為遊戲伺服器提供社群互通、訊息同步和管理工具。
+    ja: EasyBot はゲームサーバー向けにコミュニティ連携、メッセージ同期、管理ツールを提供します。
+    ko: EasyBot은 게임 서버를 위한 커뮤니티 연동, 메시지 동기화 및 관리 도구를 제공합니다.
+    ru: EasyBot предоставляет для игровых серверов интеграцию с сообществами, синхронизацию сообщений и инструменты управления.
+    ms: EasyBot menyediakan penyepaduan komuniti, penyegerakan mesej dan alat pengurusan untuk pelayan permainan.
+    pt-br: O EasyBot oferece integração com comunidades, sincronização de mensagens e ferramentas de gestão para servidores de jogos.
