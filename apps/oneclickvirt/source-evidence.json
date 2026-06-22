@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/oneclickvirt/oneclickvirt",
+  "dockerDocs": "https://github.com/oneclickvirt/oneclickvirt",
+  "composeFile": "https://github.com/oneclickvirt/oneclickvirt"
+}

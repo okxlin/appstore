@@ -1,0 +1,44 @@
+services:
+  oneclickvirt:
+    image: "spiritlhl/oneclickvirt:no-db"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:80
+    environment:
+      - FRONTEND_URL=${FRONTEND_URL}
+      - PANEL_DB_HOST=${PANEL_DB_HOST}
+      - PANEL_DB_PORT=${PANEL_DB_PORT}
+      - PANEL_DB_NAME=${PANEL_DB_NAME}
+      - PANEL_DB_USER=${PANEL_DB_USER}
+      - PANEL_DB_USER_PASSWORD=${PANEL_DB_USER_PASSWORD}
+    volumes:
+      - ./storage:/app/storage
+    command:
+      - /bin/bash
+      - -c
+      - |
+        awk '
+          /^mysql:/{in_mysql=1}
+          /^[a-zA-Z]/ && !/^mysql:/{in_mysql=0}
+          in_mysql && /^    path:/{print "    path: " ENVIRON["PANEL_DB_HOST"]; next}
+          in_mysql && /^    port:/{print "    port: " ENVIRON["PANEL_DB_PORT"]; next}
+          in_mysql && /^    db-name:/{print "    db-name: " ENVIRON["PANEL_DB_NAME"]; next}
+          in_mysql && /^    username:/{print "    username: " ENVIRON["PANEL_DB_USER"]; next}
+          in_mysql && /^    password:/{print "    password: " ENVIRON["PANEL_DB_USER_PASSWORD"]; next}
+          {print}
+        ' /app/config.yaml > /tmp/config.yaml.tmp && mv /tmp/config.yaml.tmp /app/config.yaml &&
+        exec /start.sh
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://localhost/api/v1/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+networks:
+  1panel-network:
+    external: true
