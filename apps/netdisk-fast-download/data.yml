@@ -11,7 +11,16 @@ additionalProperties:
     - Storage
     - Tool
   shortDescZh: 各类网盘直链解析
-  shortDescEn: netdisk direct link parser
+  shortDescEn: Netdisk direct link parser
+  description:
+    en: Netdisk Fast Download converts shared cloud drive links into direct download links for multiple providers.
+    zh: 网盘直链解析工具，可将多种网盘分享链接转换为直链下载地址。
+    zh-Hant: 網盤直連解析工具，可將多種網盤分享連結轉換為直連下載地址。
+    ja: 複数のクラウドストレージ共有リンクを直接ダウンロードリンクに変換するツールです。
+    ko: 여러 클라우드 드라이브 공유 링크를 직접 다운로드 링크로 변환하는 도구입니다.
+    ru: Инструмент преобразует ссылки общего доступа облачных дисков в прямые ссылки для скачивания.
+    ms: Alat ini menukar pautan perkongsian storan awan kepada pautan muat turun terus.
+    pt-br: Ferramenta para converter links compartilhados de discos em nuvem em links diretos de download.
   type: tool
   crossVersionUpdate: true
   limit: 0
@@ -19,3 +28,5 @@ additionalProperties:
   website: https://github.com/qaiu/netdisk-fast-download
   github: https://github.com/qaiu/netdisk-fast-download
   document: https://github.com/qaiu/netdisk-fast-download
+  architectures:
+    - amd64

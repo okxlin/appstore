@@ -1,8 +1,8 @@
 name: OneClickVirt
 tags:
     - 实用工具
-title: 一键虚拟化管理面板
-description: 一键虚拟化管理面板
+title: 可扩展的通用虚拟化管理平台，需外部 MySQL/MariaDB
+description: 可扩展的通用虚拟化管理平台，需外部 MySQL/MariaDB
 additionalProperties:
     key: oneclickvirt
     name: OneClickVirt

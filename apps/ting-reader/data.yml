@@ -1,14 +1,14 @@
 name: Ting Reader
 tags:
     - 多媒体
-title: 轻量级自托管有声书平台
+title: 轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步
 description: 轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步
 additionalProperties:
   key: ting-reader
   name: Ting Reader
   tags:
       - Media
-  shortDescZh: 轻量级自托管有声书平台
+  shortDescZh: 轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步
   shortDescEn: Lightweight self-hosted audiobook platform
   type: tool
   crossVersionUpdate: true

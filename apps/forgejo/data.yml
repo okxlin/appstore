@@ -26,3 +26,6 @@ additionalProperties:
     website: https://forgejo.org/
     github: https://codeberg.org/forgejo/forgejo
     document: https://forgejo.org/docs/
+    architectures:
+        - amd64
+        - arm64

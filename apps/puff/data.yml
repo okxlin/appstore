@@ -10,7 +10,16 @@ additionalProperties:
     tags:
         - Tool
     shortDescZh: 一个Go的域名监控程序
-    shortDescEn: A Go domain monitor
+    shortDescEn: Go-based domain monitoring tool
+    description:
+        en: Puff is a Go-based domain monitoring tool for tracking domain status and related changes.
+        zh: Puff 是一个基于 Go 的域名监控程序，用于跟踪域名状态及相关变更。
+        zh-Hant: Puff 是一個基於 Go 的網域監控程式，用於追蹤網域狀態及相關變更。
+        ja: Puff は Go 製のドメイン監視ツールで、ドメイン状態や関連する変更を追跡できます。
+        ko: Puff는 도메인 상태와 관련 변경 사항을 추적하는 Go 기반 도메인 모니터링 도구입니다.
+        ru: Puff — инструмент мониторинга доменов на Go для отслеживания состояния доменов и связанных изменений.
+        ms: Puff ialah alat pemantauan domain berasaskan Go untuk menjejak status domain dan perubahan berkaitan.
+        pt-br: Puff é uma ferramenta de monitoramento de domínios baseada em Go para acompanhar o status e alterações relacionadas.
     type: tool
     crossVersionUpdate: true
     limit: 0
@@ -18,3 +27,5 @@ additionalProperties:
     website: https://github.com/BitAUR/Puff
     github: https://github.com/BitAUR/Puff
     document: https://roy.wang/puff/
+    architectures:
+        - amd64
