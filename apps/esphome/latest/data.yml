@@ -1,31 +1,86 @@
 additionalProperties:
   formFields:
-    - default: ./data
-      edit: true
-      envKey: DATA_PATH
-      labelEn: Config folder path
-      labelZh: 数据文件夹路径
-      required: true
-      type: text
-    - default: 6052
-      disabled: true
-      envKey: PANEL_APP_PORT_HTTP
-      labelEn: Port
-      labelZh: HTTP 端口
-      required: true
-      rule: paramPort
-      type: number
-    - default: ""
-      edit: true
-      envKey: USERNAME
-      labelEn: Web Password
-      labelZh: 控制台用户名
-      required: false
-      type: text
-    - default: ""
-      edit: true
-      envKey: PASSWORD
-      labelEn: Web Password
-      labelZh: 控制台密码
-      required: false
-      type: password
+  - default: ./data
+    edit: true
+    envKey: DATA_PATH
+    labelEn: Config folder path
+    labelZh: 数据文件夹路径
+    required: true
+    type: text
+    label:
+      en: Config folder path
+      zh: 数据文件夹路径
+      zh-Hant: 数据文件夹路径（佔位）
+      ja: Config folder path（プレースホルダー）
+      ko: Config folder path（플레이스홀더）
+      ru: Config folder path（заполнитель）
+      ms: Config folder path (placeholder)
+      pt-br: Config folder path (placeholder)
+  - default: 6052
+    disabled: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Port
+    labelZh: HTTP 端口
+    required: true
+    rule: paramPort
+    type: number
+    edit: false
+    label:
+      en: Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 端口（佔位）
+      ja: Port（プレースホルダー）
+      ko: Port（플레이스홀더）
+      ru: Port（заполнитель）
+      ms: Port (placeholder)
+      pt-br: Port (placeholder)
+  - default: admin
+    edit: true
+    envKey: ESPHOME_USERNAME
+    labelEn: Dashboard Username
+    labelZh: 控制台用户名
+    required: true
+    type: text
+    label:
+      en: Dashboard Username
+      zh: 控制台用户名
+      zh-Hant: 控制台使用者名稱
+      ja: ダッシュボードユーザー名
+      ko: 대시보드 사용자 이름
+      ru: Имя пользователя панели
+      ms: Nama Pengguna Dashboard
+      pt-br: Usuario do Dashboard
+  - default: ''
+    edit: true
+    envKey: ESPHOME_PASSWORD
+    labelEn: Dashboard Password
+    labelZh: 控制台密码
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+    label:
+      en: Dashboard Password
+      zh: 控制台密码
+      zh-Hant: 控制台密碼
+      ja: ダッシュボードパスワード
+      ko: 대시보드 비밀번호
+      ru: Пароль панели
+      ms: Kata Laluan Dashboard
+      pt-br: Senha do Dashboard
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

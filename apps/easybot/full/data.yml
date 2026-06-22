@@ -1,0 +1,69 @@
+additionalProperties:
+  formFields:
+  - default: 5000
+    edit: true
+    envKey: PANEL_APP_PORT_WEB
+    labelEn: Web Port
+    labelZh: Web 端口
+    required: true
+    rule: paramPort
+    type: number
+    label:
+      en: Web Port
+      ja: Webポート
+      ms: Port Web
+      pt-br: Porta Web
+      ru: Веб-порт
+      ko: 웹 포트
+      zh-Hant: Web 端口
+      zh: Web 端口
+  - default: 5001
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Endpoint Port
+    labelZh: HTTP 端口
+    required: true
+    rule: paramPort
+    type: number
+    label:
+      en: HTTP Endpoint Port
+      ja: HTTPエンドポイントポート
+      ms: Port Titik Akhir HTTP
+      pt-br: Porta do endpoint HTTP
+      ru: Порт HTTP-точки входа
+      ko: HTTP 엔드포인트 포트
+      zh-Hant: HTTP 端口
+      zh: HTTP 端口
+  - default: 26990
+    edit: true
+    envKey: PANEL_APP_PORT_BRIDGE
+    labelEn: Bridge
+    labelZh: Bridge端口
+    required: true
+    rule: paramPort
+    type: number
+    label:
+      en: Bridge Port
+      ja: ブリッジポート
+      ms: Port Jambatan
+      pt-br: Porta da Ponte
+      ru: Порт моста
+      ko: 브리지 포트
+      zh-Hant: Bridge端口
+      zh: Bridge端口
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
