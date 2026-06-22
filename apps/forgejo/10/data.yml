@@ -23,8 +23,25 @@ additionalProperties:
             pt-br: Serviço de Banco de Dados
             ru: Сервис баз данных
             ko: 데이터베이스 서비스
-            zh-hant: 資料庫服務
+            zh-Hant: 資料庫服務
             zh: 数据库服务
+        - default: 3306
+          edit: true
+          envKey: PANEL_DB_PORT
+          labelEn: Database Port
+          labelZh: 数据库端口
+          label:
+            en: Database Port
+            zh: 数据库端口
+            zh-Hant: 資料庫連接埠
+            ja: データベースポート
+            ko: 데이터베이스 포트
+            ru: Порт базы данных
+            ms: Port pangkalan data
+            pt-br: Porta do banco de dados
+          required: true
+          rule: paramPort
+          type: number
         - default: forgejo
           envKey: PANEL_DB_NAME
           labelEn: Database
@@ -40,7 +57,7 @@ additionalProperties:
             pt-br: Banco de Dados
             ru: База данных
             ko: 데이터베이스
-            zh-hant: 資料庫
+            zh-Hant: 資料庫
             zh: 数据库
         - default: forgejo
           envKey: PANEL_DB_USER
@@ -57,7 +74,7 @@ additionalProperties:
             pt-br: Usuário do Banco de Dados
             ru: Пользователь базы данных
             ko: 데이터베이스 사용자
-            zh-hant: 資料庫用戶
+            zh-Hant: 資料庫用戶
             zh: 数据库用户
         - default: forgejo
           envKey: PANEL_DB_USER_PASSWORD
@@ -74,7 +91,7 @@ additionalProperties:
             pt-br: Senha do Banco de Dados
             ru: Пароль базы данных
             ko: 데이터베이스 비밀번호
-            zh-hant: 資料庫密碼
+            zh-Hant: 資料庫密碼
             zh: 数据库密码
         - default: 3000
           envKey: PANEL_APP_PORT_HTTP

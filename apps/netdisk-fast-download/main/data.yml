@@ -3,6 +3,15 @@ additionalProperties:
         - default: 6401
           edit: true
           envKey: PANEL_APP_PORT_HTTP
+          label:
+            en: WebUI Port
+            zh: 网页端口
+            zh-Hant: 網頁連接埠
+            ja: WebUI ポート
+            ko: WebUI 포트
+            ru: Порт WebUI
+            ms: Port WebUI
+            pt-br: Porta WebUI
           labelEn: WebUI Port
           labelZh: 网页端口
           required: true

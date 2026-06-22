@@ -9,6 +9,9 @@ additionalProperties:
         en: "Port"
         ja: "ポート"
         ko: "포트"
+        ru: "Порт"
+        ms: "Port"
+        pt-br: "Porta"
       description:
         zh: "设置应用的 HTTP 访问端口，有效范围：1-65535"
         zh-Hant: "設定應用程式的 HTTP 存取埠，有效範圍：1-65535"
@@ -30,6 +33,9 @@ additionalProperties:
         en: "Data Path"
         ja: "データパス"
         ko: "데이터 경로"
+        ru: "Путь к данным"
+        ms: "Laluan Data"
+        pt-br: "Caminho dos dados"
       description:
         zh: "配置文件的存储路径，用于持久化应用数据"
         zh-Hant: "配置檔案的儲存路徑，用於持久化應用程式資料"
@@ -50,6 +56,9 @@ additionalProperties:
         en: "Timezone"
         ja: "タイムゾーン"
         ko: "시간대"
+        ru: "Часовой пояс"
+        ms: "Zon waktu"
+        pt-br: "Fuso horário"
       description:
         zh: "容器时区设置，影响日志和时间显示"
         zh-Hant: "容器時區設定，影響日誌和時間顯示"
@@ -70,6 +79,9 @@ additionalProperties:
         en: "Dashboard Login Token"
         ja: "ダッシュボードログイントークン"
         ko: "대시보드 로그인 토큰"
+        ru: "Токен панели"
+        ms: "Token Dashboard"
+        pt-br: "Token do Dashboard"
       description:
         zh: "Dashboard 登录密码，安装后用于访问 Web 管理面板"
         zh-Hant: "Dashboard 登入密碼，安裝後用於存取 Web 管理面板"
@@ -92,6 +104,9 @@ additionalProperties:
         en: "Update Channel"
         ja: "アップデートチャンネル"
         ko: "업데이트 채널"
+        ru: "Канал обновлений"
+        ms: "Saluran kemas kini"
+        pt-br: "Canal de atualização"
       description:
         zh: "选择 stable 获取稳定版本，选择 dev 获取最新预发布版本"
         zh-Hant: "選擇 stable 獲取穩定版本，選擇 dev 獲取最新預發布版本"
@@ -117,6 +132,9 @@ additionalProperties:
         en: "Auto Update on Start"
         ja: "起動時自動更新"
         ko: "시작 시 자동 업데이트"
+        ru: "Автообновление при запуске"
+        ms: "Kemas kini automatik semasa mula"
+        pt-br: "Atualizar ao iniciar"
       description:
         zh: "开启后容器每次启动时会自动检查并更新 ErisPulse 到最新版本"
         zh-Hant: "開啟後容器每次啟動時會自動檢查並更新 ErisPulse 到最新版本"

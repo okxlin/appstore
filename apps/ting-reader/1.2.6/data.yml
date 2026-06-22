@@ -33,3 +33,21 @@ additionalProperties:
             zh-Hant: 有聲書存儲路徑
           required: true
           type: text
+        - default: ""
+          edit: true
+          envKey: TING_SECURITY__JWT_SECRET
+          labelEn: JWT Secret
+          labelZh: JWT 密钥
+          label:
+            en: JWT Secret
+            zh: JWT 密钥
+            zh-Hant: JWT 密鑰
+            ja: JWT シークレット
+            ko: JWT 시크릿
+            ru: Секрет JWT
+            ms: Rahsia JWT
+            pt-br: Segredo JWT
+          random: true
+          required: true
+          rule: paramComplexity
+          type: password

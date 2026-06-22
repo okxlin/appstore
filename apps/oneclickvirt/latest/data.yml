@@ -23,6 +23,21 @@ additionalProperties:
                 value: mysql
               - label: MariaDB
                 value: mariadb
+        - default: 3306
+          edit: true
+          envKey: PANEL_DB_PORT
+          label:
+              en: Database Port
+              ja: データベースポート
+              ms: Port pangkalan data
+              pt-br: Porta do banco de dados
+              ru: Порт базы данных
+              ko: 데이터베이스 포트
+              zh-Hant: 資料庫連接埠
+              zh: 数据库端口
+          required: true
+          rule: paramPort
+          type: number
         - default: oneclickvirt
           envKey: PANEL_DB_NAME
           label:

@@ -29,5 +29,10 @@
   - **桌面** - 许多 ESPHome 组件可以在使用主机平台的情况下在桌面计算机上运行！
 
 ### 注意事项：
-1. **网络模式**：本应用使用 `host` 网络模式，以便能够自动发现局域网内的 ESP 设备。
-2. **USB 烧录**：如果您需要通过 USB 串口直接从服务器烧录固件，可能需要在 Docker 中映射设备路径（如 `/dev/ttyUSB0`），或使用 ESPHome Web 端口进行首次烧录。
+1. **网络模式**：本应用使用 `host` 网络模式。ESPHome 官方文档说明，Device Builder 在 Docker 中需要 host 网络模式来显示设备在线状态。
+2. **特权模式**：本应用默认不启用 `privileged`。官方文档中的 `--privileged` 用于通过 USB 串口首次烧录固件，并且需要同时映射串口设备，例如 `/dev/ttyUSB0`。仅运行 Dashboard、编译固件、OTA 更新不需要默认开启特权模式。
+3. **USB 烧录**：如果您需要从服务器通过 USB 串口直接烧录固件，请根据实际设备路径手动调整 compose，例如映射 `/dev/ttyUSB0`。也可以使用 ESPHome Web 或 esptool 完成首次烧录，之后再通过 OTA 更新。
+
+官方参考：
+- https://esphome.io/guides/getting_started_command_line/#bonus-esphome-device-builder
+- https://esphome.io/guides/getting_started_command_line/#first-uploading

@@ -3,6 +3,15 @@ additionalProperties:
         - default: 8080
           edit: true
           envKey: PANEL_APP_PORT_HTTP
+          label:
+            en: Port
+            zh: 端口
+            zh-Hant: 連接埠
+            ja: ポート
+            ko: 포트
+            ru: Порт
+            ms: Port
+            pt-br: Porta
           labelEn: Port
           labelZh: 端口
           required: true
