@@ -1,0 +1,33 @@
+name: Ting Reader
+tags:
+- Media
+title: 轻量级自托管有声书平台
+description: 轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步
+additionalProperties:
+  key: ting-reader
+  name: Ting Reader
+  tags:
+  - Media
+  type: tool
+  website: https://www.tingreader.cn
+  document: https://www.tingreader.cn/guide
+  github: https://github.com/dqsq2e2/ting-reader
+  shortDescZh: 轻量级自托管有声书平台
+  shortDescEn: Lightweight self-hosted audiobook platform
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  description:
+    en: Lightweight self-hosted audiobook platform with metadata scraping and multi-device
+      sync
+    zh: 轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步
+    zh-Hant: 輕量級自託管有聲書平台，支援自動刮削元數據、多端播放進度同步
+    ja: メタデータスクレイピングとマルチデバイス同期をサポートする軽量オーディオブックプラットフォーム
+    ko: 메타데이터 스크래핑 및 다중 장치 동기화를 지원하는 경량 오디오북 플랫폼
+    ru: Легкая платформа для аудиокниг со скрапингом метаданных и синхронизацией между
+      устройствами
+    ms: Platform buku audio ringan dengan pengikisan metadata dan penyegerakan berbilang
+      peranti
+    pt-br: Plataforma de audiolivros leve com raspagem de metadados e sincronização
+      multi-dispositivo

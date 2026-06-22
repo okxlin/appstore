@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/dqsq2e2/ting-reader",
+  "dockerDocs": "https://www.tingreader.cn/guide",
+  "composeFile": "https://www.tingreader.cn/guide"
+}

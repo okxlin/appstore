@@ -1,0 +1,27 @@
+services:
+  tingreader:
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    volumes:
+      - "./data:/app/data"
+      - "./plugins:/app/plugins"
+      - "./temp:/app/temp"
+      - "${AUDIOBOOK_STORAGE_PATH}:/app/storage"
+    environment:
+      - TING_SERVER__HOST=0.0.0.0
+      - TING_SERVER__PORT=3000
+      - TING_SECURITY__JWT_SECRET=${TING_SECURITY__JWT_SECRET}
+      - TEMP_DIR=/app/temp
+      - DATA_DIR=/app/data
+      - STORAGE_DIR=/app/storage
+    image: "dqsq2e2/ting-reader:1.2.6"
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
