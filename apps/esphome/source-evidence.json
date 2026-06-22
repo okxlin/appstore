@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/esphome/esphome",
+  "dockerDocs": "https://esphome.io/guides/getting_started_command_line/",
+  "composeFile": "https://esphome.io/guides/getting_started_command_line/"
+}

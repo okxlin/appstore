@@ -1,0 +1,15 @@
+services:
+  esphome:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    volumes:
+      - "${DATA_PATH}:/config"
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=${TZ}
+      - ESPHOME_USERNAME=${ESPHOME_USERNAME}
+      - ESPHOME_PASSWORD=${ESPHOME_PASSWORD}
+    image: "esphome/esphome:latest"
+    labels:
+      createdBy: "Apps"
