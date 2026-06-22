@@ -1,0 +1,29 @@
+name: EasyBot
+tags:
+- Tool
+title: EasyBot
+description: EasyBot
+additionalProperties:
+  key: easybot
+  name: EasyBot
+  tags:
+  - Tool
+  type: tool
+  website: https://docs.inectar.cn/
+  document: https://docs.inectar.cn/docs/easybot/quick_start/install_docker/
+  github: https://github.com/easybot-team/easybot-docker
+  shortDescZh: EasyBot
+  shortDescEn: EasyBot
+  crossVersionUpdate: true
+  limit: 1
+  architectures:
+  - amd64
+  description:
+    en: EasyBot
+    zh: 这是一款多功能功能于一体的服务器管理工具，全方位优化游戏社区体验!
+    zh-Hant: 這是一款多功能於一體的伺服器管理工具，全方位優化遊戲社群體驗！
+    ja: EasyBot（プレースホルダー）
+    ko: EasyBot（플레이스홀더）
+    ru: EasyBot（заполнитель）
+    ms: EasyBot（ruang letak）
+    pt-br: EasyBot(preenchimento)

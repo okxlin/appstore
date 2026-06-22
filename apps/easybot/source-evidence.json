@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/easybot-team/easybot-docker",
+  "dockerImage": "miuxue/easybot:full",
+  "dockerDocs": "https://docs.inectar.cn/docs/easybot/quick_start/install_docker/",
+  "composeFile": "https://docs.inectar.cn/docs/easybot/quick_start/install_docker/"
+}
