@@ -9,11 +9,6 @@ services:
       - "${PANEL_APP_PORT_HTTP}:8060"
     environment:
       - API_AUTH_KEY=${API_AUTH_KEY}
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
     labels:
       createdBy: "Apps"
 

@@ -1,6 +1,6 @@
 services:
   mt-photos-ai:
-    image: "mtphotos/mt-photos-ai:1.2.1"
+    image: "mtphotos/mt-photos-ai:latest"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -9,6 +9,12 @@ services:
       - "${PANEL_APP_PORT_HTTP}:8060"
     environment:
       - API_AUTH_KEY=${API_AUTH_KEY}
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
     labels:
       createdBy: "Apps"
 
