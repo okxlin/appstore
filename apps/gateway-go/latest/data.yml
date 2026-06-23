@@ -1,10 +1,20 @@
 additionalProperties:
   formFields:
     - default: "34323"
-      edit: true
+      disabled: true
+      edit: false
       envKey: PANEL_APP_PORT_HTTP
-      labelEn: Port
-      labelZh: 端口
+      labelEn: Fixed Web Port
+      labelZh: 固定 Web 端口
+      label:
+        en: Fixed Web Port
+        ja: 固定 Web ポート
+        ms: Port Web Tetap
+        pt-br: Porta Web fixa
+        ru: Fiksirovannyy veb-port
+        ko: 고정 웹 포트
+        zh: 固定 Web 端口
+        zh-Hant: 固定 Web 連接埠
       required: true
       rule: paramPort
       type: number
@@ -13,5 +23,14 @@ additionalProperties:
       envKey: DATA_PATH
       labelEn: Data Path
       labelZh: 数据路径
+      label:
+        en: Data Path
+        ja: データパス
+        ms: Laluan Data
+        pt-br: Caminho dos dados
+        ru: Put k dannym
+        ko: 데이터 경로
+        zh: 数据路径
+        zh-Hant: 資料路徑
       required: true
       type: text

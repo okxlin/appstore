@@ -1,5 +1,5 @@
 services:
-  ddns-go:
+  gateway-go:
     container_name: ${CONTAINER_NAME}
     restart: always
     network_mode: "host"

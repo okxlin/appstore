@@ -5,10 +5,19 @@ additionalProperties:
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Port
       labelZh: 端口
+      label:
+        en: Web Port
+        ja: Web ポート
+        ms: Port Web
+        pt-br: Porta Web
+        ru: Веб-порт
+        ko: 웹 포트
+        zh: Web 端口
+        zh-Hant: Web 連接埠
       required: true
       rule: paramPort
       type: number
-    - default: mysql
+    - default: mariadb
       envKey: PANEL_DB_TYPE
       labelEn: Database Service
       labelZh: 数据库服务
@@ -20,7 +29,7 @@ additionalProperties:
         ru: Сервис базы данных
         ko: 데이터베이스 서비스
         zh: 数据库服务
-        zh-Hant: 數據庫 服務
+        zh-Hant: 資料庫服務
       required: true
       type: apps
       child:
@@ -33,7 +42,8 @@ additionalProperties:
           value: mariadb
         - label: MySQL
           value: mysql
-    - default: wavelog-test
+    - default: wavelog
+      edit: true
       envKey: PANEL_DB_NAME
       labelEn: Database
       labelZh: 数据库名
@@ -50,7 +60,8 @@ additionalProperties:
       required: true
       rule: paramCommon
       type: text
-    - default: wavelog-test
+    - default: wavelog
+      edit: true
       envKey: PANEL_DB_USER
       labelEn: User
       labelZh: 数据库用户
@@ -67,7 +78,8 @@ additionalProperties:
       required: true
       rule: paramCommon
       type: text
-    - default: wavelog-test
+    - default: ""
+      edit: true
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Password
       labelZh: 数据库用户密码
@@ -82,4 +94,20 @@ additionalProperties:
         zh-Hant: 數據庫用戶密碼
       random: true
       required: true
-      type: password  
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        ja: タイムゾーン
+        ms: Zon Masa
+        pt-br: Fuso horario
+        ru: Chasovoy poyas
+        ko: 시간대
+        zh: 时区
+        zh-Hant: 時區
+      required: true
+      type: text

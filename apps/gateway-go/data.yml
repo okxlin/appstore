@@ -1,19 +1,32 @@
 name: gateway-go
 tags:
-    - 实用工具
-title: 简单易用的 内网穿透工具
-description: 简单易用的 内网穿透工具
+  - 实用工具
+title: 云亿连内网穿透网关
+description: 云亿连内网穿透网关
 additionalProperties:
-    key: gateway-go
-    name: gateway-go
-    tags:
-        - Tool
-    shortDescZh: 简单易用的 内网穿透工具,支持全平台APP访问,支持p2p,未来也将支持所有docker应用的远程访问
-    shortDescEn: Help you expose a local server behind a NAT or firewall to the internet.
-    type: tool
-    crossVersionUpdate: true
-    limit: 0
-    recommend: 0
-    website: https://github.com/OpenIoTHub/gateway-go
-    github: https://github.com/OpenIoTHub/gateway-go
-    document: https://docs.iothub.cloud
+  key: gateway-go
+  name: gateway-go
+  tags:
+    - Tool
+  shortDescZh: 云亿连内网穿透网关
+  shortDescEn: OpenIoTHub remote access gateway
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/OpenIoTHub/gateway-go
+  github: https://github.com/OpenIoTHub/gateway-go
+  document: https://docs.iothub.cloud/
+  description:
+    en: OpenIoTHub gateway for remote access to LAN services behind NAT or firewall.
+    zh: 云亿连内网端网关，用于远程访问 NAT 或防火墙后的局域网服务。
+    zh-Hant: 雲億連內網端閘道，用於遠端存取 NAT 或防火牆後的區域網路服務。
+    ja: NAT やファイアウォール配下の LAN サービスへリモートアクセスする OpenIoTHub ゲートウェイです。
+    ms: Gerbang OpenIoTHub untuk akses jauh kepada perkhidmatan LAN di sebalik NAT atau tembok api.
+    pt-br: Gateway OpenIoTHub para acesso remoto a servicos LAN atras de NAT ou firewall.
+    ru: Shlyuz OpenIoTHub dlya udalennogo dostupa k sluzhbam LAN za NAT ili mezhsetevym ekranom.
+    ko: NAT 또는 방화벽 뒤의 LAN 서비스에 원격 접속하기 위한 OpenIoTHub 게이트웨이입니다.
+  architectures:
+    - amd64
+    - arm64
+    - arm/v7

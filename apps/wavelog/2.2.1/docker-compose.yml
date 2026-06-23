@@ -1,27 +1,22 @@
 services:
-  wavelog-main:
+  wavelog:
     container_name: ${CONTAINER_NAME}
-    image: nearlyheadlessjack/wavelog-1panel:2.2.1
+    image: ghcr.io/wavelog/wavelog:2.2.1
     environment:
-      CI_ENV: docker
-      DB_HOST: ${PANEL_DB_HOST}:${PANEL_DB_PORT}
-      DB_HOST_PORT: ${PANEL_DB_PORT}
-      DATABASE: ${PANEL_DB_NAME}
-      DATABASE_USERNAME: ${PANEL_DB_USER}
-      DATABASE_PASSWORD: ${PANEL_DB_USER_PASSWORD}
-    networks:  
-      - 1panel-network 
+      - CI_ENV=docker
+      - TZ=${TZ:-Asia/Shanghai}
+    networks:
+      - 1panel-network
     volumes:
       - ./data/wavelog-config:/var/www/html/application/config/docker
       - ./data/wavelog-uploads:/var/www/html/uploads
       - ./data/wavelog-userdata:/var/www/html/userdata
     ports:
       - ${PANEL_APP_PORT_HTTP}:80
-    restart: always
-    labels:  
-      createdBy: "Apps"  
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
-

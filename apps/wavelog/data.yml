@@ -1,24 +1,32 @@
+name: Wavelog
+tags:
+  - 实用工具
+title: 开源业余无线电通联日志
+description: 开源业余无线电通联日志
 additionalProperties:
-  key: wavelog   #应用的 key ，仅限英文，用于在 Linux 创建文件夹
-  name: Wavelog  #应用名称
+  key: wavelog
+  name: Wavelog
   tags:
-    - Tool #应用标签，可以有多个，请参照下方的标签列表
-  shortDescZh: 最受欢迎的开源业余无线电通联记录系统  #应用中文描述，不要超过30个字
-  shortDescEn: Open-source amateur radio QSOs logging system #应用英文描述
-  type: website  #应用类型，区别于应用分类，只能有一个，请参照下方的类型列表
-  crossVersionUpdate: true   #是否可以跨大版本升级
-  limit: 0 #应用安装数量限制，0 代表无限制
-  website: https://www.wavelog.org/ #官网地址
-  github: https://github.com/wavelog/wavelog #github 地址
-  document: github.com/wavelog/wavelog/wiki
+    - Tool
+  shortDescZh: 开源业余无线电通联日志
+  shortDescEn: Open-source amateur radio QSO logger
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.wavelog.org/
+  github: https://github.com/wavelog/wavelog
+  document: https://docs.wavelog.org/
   description:
-    en: The most popular open-source amateur radio online contact logging system
-    zh: 最受欢迎的开源业余无线电通联记录系统  #应用中文描述，不要超过30个字
-    zh-Hant:
-    ja: 最も人気のあるオープンソースのアマチュア無線オンライン通信ログシステム
-    ms:
-    pt-br:
-    ru: Самая популярная система онлайн-логирования связей для любительской радиосвязи с открытым исходным кодом
-    ko: 
+    en: Open-source online contact logging system for amateur radio operators.
+    zh: 面向业余无线电爱好者的开源在线通联日志系统。
+    zh-Hant: 面向業餘無線電愛好者的開源線上通聯日誌系統。
+    ja: アマチュア無線家向けのオープンソースオンライン交信ログシステムです。
+    ms: Sistem log hubungan radio amatur dalam talian sumber terbuka.
+    pt-br: Sistema open-source de registro online de contatos para radioamadores.
+    ru: Otkrytaya onlayn-sistema zhurnala radiosvyazey dlya radiolyubiteley.
+    ko: 아마추어 무선 사용자를 위한 오픈 소스 온라인 교신 로그 시스템입니다.
   architectures:
     - amd64
+    - arm64
+    - arm/v7
