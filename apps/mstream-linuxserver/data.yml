@@ -1,0 +1,30 @@
+name: mStream LinuxServer
+tags:
+- Media
+title: mStream 音乐流媒体服务器
+description: mStream 音乐流媒体服务器
+additionalProperties:
+  key: mstream-linuxserver
+  name: mStream LinuxServer
+  tags:
+  - Media
+  shortDescZh: mStream 音乐流媒体服务器
+  shortDescEn: Music streaming server maintained by LinuxServer.io
+  description:
+    en: Music streaming server maintained by LinuxServer.io
+    zh: mStream 音乐流媒体服务器
+    zh-Hant: mStream 音樂串流伺服器
+    ja: LinuxServer.io が保守する音楽ストリーミングサーバー
+    ko: LinuxServer.io에서 유지 관리하는 음악 스트리밍 서버
+    ru: Сервер потоковой музыки, поддерживаемый LinuxServer.io
+    ms: Pelayan penstriman muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de streaming de musica mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://mstream.io/
+  github: https://github.com/linuxserver/docker-mstream
+  document: https://docs.linuxserver.io/images/docker-mstream/
+  architectures:
+  - amd64
+  - arm64

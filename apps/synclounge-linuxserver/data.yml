@@ -1,0 +1,30 @@
+name: SyncLounge LinuxServer
+tags:
+- Media
+title: SyncLounge Plex 同步观看
+description: SyncLounge Plex 同步观看
+additionalProperties:
+  key: synclounge-linuxserver
+  name: SyncLounge LinuxServer
+  tags:
+  - Media
+  shortDescZh: SyncLounge Plex 同步观看
+  shortDescEn: Plex watch party service maintained by LinuxServer.io
+  description:
+    en: Plex watch party service maintained by LinuxServer.io
+    zh: SyncLounge Plex 同步观看
+    zh-Hant: SyncLounge Plex 同步觀看
+    ja: LinuxServer.io が保守する Plex 同時視聴サービス
+    ko: LinuxServer.io에서 유지 관리하는 Plex 동시 시청 서비스
+    ru: Сервис совместного просмотра Plex, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan tontonan bersama Plex yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de assistir junto para Plex mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://synclounge.tv/
+  github: https://github.com/linuxserver/docker-synclounge
+  document: https://docs.linuxserver.io/images/docker-synclounge/
+  architectures:
+  - amd64
+  - arm64

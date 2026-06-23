@@ -1,0 +1,30 @@
+name: Mylar3 LinuxServer
+tags:
+- Media
+title: Mylar3 漫画管理器
+description: Mylar3 漫画管理器
+additionalProperties:
+  key: mylar3-linuxserver
+  name: Mylar3 LinuxServer
+  tags:
+  - Media
+  shortDescZh: Mylar3 漫画管理器
+  shortDescEn: Comic manager maintained by LinuxServer.io
+  description:
+    en: Comic manager maintained by LinuxServer.io
+    zh: Mylar3 漫画管理器
+    zh-Hant: Mylar3 漫畫管理器
+    ja: LinuxServer.io が保守するコミック管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 만화 관리자
+    ru: Менеджер комиксов, поддерживаемый LinuxServer.io
+    ms: Pengurus komik yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de quadrinhos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/mylar3/mylar3
+  github: https://github.com/linuxserver/docker-mylar3
+  document: https://docs.linuxserver.io/images/docker-mylar3/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+  - default: 8088
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ''
+    edit: true
+    envKey: AUTH_LIST
+    labelEn: Allowed Plex users
+    labelZh: 允许的 Plex 用户
+    label:
+      en: Allowed Plex users
+      zh: 允许的 Plex 用户
+      zh-Hant: 允許的 Plex 使用者
+      ja: 許可する Plex ユーザー
+      ko: 허용된 Plex 사용자
+      ru: Разрешенные пользователи Plex
+      ms: Pengguna Plex dibenarkan
+      pt-br: Usuarios Plex permitidos
+    required: false
+    type: text
