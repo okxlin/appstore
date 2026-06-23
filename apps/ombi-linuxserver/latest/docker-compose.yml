@@ -2,22 +2,20 @@ networks:
   1panel-network:
     external: true
 services:
-  nzbget:
-    image: "linuxserver/nzbget:latest"
+  ombi:
+    image: "linuxserver/ombi:latest"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:6789"
+      - "${PANEL_APP_PORT_HTTP}:3579"
     volumes:
       - "${CONFIG_PATH}:/config"
-      - "${DOWNLOAD_PATH}:/downloads"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - NZBGET_USER=${NZBGET_USER}
-      - NZBGET_PASS=${NZBGET_PASS}
+      - BASE_URL=${BASE_URL}
     labels:
       createdBy: "Apps"

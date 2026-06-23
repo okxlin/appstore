@@ -1,0 +1,30 @@
+name: Ombi LinuxServer
+tags:
+- Media
+title: Ombi 媒体请求平台
+description: Ombi 媒体请求平台
+additionalProperties:
+  key: ombi-linuxserver
+  name: Ombi LinuxServer
+  tags:
+  - Media
+  shortDescZh: Ombi 媒体请求平台
+  shortDescEn: Media request platform maintained by LinuxServer.io
+  description:
+    en: Media request platform maintained by LinuxServer.io
+    zh: Ombi 媒体请求平台
+    zh-Hant: Ombi 媒體請求平台
+    ja: LinuxServer.io が保守するメディアリクエストプラットフォーム
+    ko: LinuxServer.io에서 유지 관리하는 미디어 요청 플랫폼
+    ru: Платформа запросов медиа, поддерживаемая LinuxServer.io
+    ms: Platform permintaan media yang diselenggara oleh LinuxServer.io
+    pt-br: Plataforma de solicitacoes de midia mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ombi.io/
+  github: https://github.com/linuxserver/docker-ombi
+  document: https://docs.linuxserver.io/images/docker-ombi/
+  architectures:
+  - amd64
+  - arm64

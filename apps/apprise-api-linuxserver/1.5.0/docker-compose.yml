@@ -2,22 +2,21 @@ networks:
   1panel-network:
     external: true
 services:
-  nzbget:
-    image: "linuxserver/nzbget:latest"
+  apprise-api:
+    image: "linuxserver/apprise-api:1.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:6789"
+      - "${PANEL_APP_PORT_HTTP}:8000"
     volumes:
       - "${CONFIG_PATH}:/config"
-      - "${DOWNLOAD_PATH}:/downloads"
+      - "${ATTACHMENTS_PATH}:/attachments"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - NZBGET_USER=${NZBGET_USER}
-      - NZBGET_PASS=${NZBGET_PASS}
+      - APPRISE_ATTACH_SIZE=${APPRISE_ATTACH_SIZE}
     labels:
       createdBy: "Apps"

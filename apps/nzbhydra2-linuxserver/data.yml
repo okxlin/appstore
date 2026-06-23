@@ -1,0 +1,30 @@
+name: NZBHydra2 LinuxServer
+tags:
+- Media
+title: NZBHydra2 NZB 聚合搜索
+description: NZBHydra2 NZB 聚合搜索
+additionalProperties:
+  key: nzbhydra2-linuxserver
+  name: NZBHydra2 LinuxServer
+  tags:
+  - Media
+  shortDescZh: NZBHydra2 NZB 聚合搜索
+  shortDescEn: NZB meta search maintained by LinuxServer.io
+  description:
+    en: NZB meta search maintained by LinuxServer.io
+    zh: NZBHydra2 NZB 聚合搜索
+    zh-Hant: NZBHydra2 NZB 聚合搜尋
+    ja: LinuxServer.io が保守する NZB メタ検索
+    ko: LinuxServer.io에서 유지 관리하는 NZB 메타 검색
+    ru: Метапоиск NZB, поддерживаемый LinuxServer.io
+    ms: Carian meta NZB yang diselenggara oleh LinuxServer.io
+    pt-br: Metabusca NZB mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/theotherp/nzbhydra2
+  github: https://github.com/linuxserver/docker-nzbhydra2
+  document: https://docs.linuxserver.io/images/docker-nzbhydra2/
+  architectures:
+  - amd64
+  - arm64

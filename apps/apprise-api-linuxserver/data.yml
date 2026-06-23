@@ -1,0 +1,30 @@
+name: Apprise API LinuxServer
+tags:
+- Tool
+title: Apprise 通知 API 服务
+description: Apprise 通知 API 服务
+additionalProperties:
+  key: apprise-api-linuxserver
+  name: Apprise API LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Apprise 通知 API 服务
+  shortDescEn: Notification API service maintained by LinuxServer.io
+  description:
+    en: Notification API service maintained by LinuxServer.io
+    zh: Apprise 通知 API 服务
+    zh-Hant: Apprise 通知 API 服務
+    ja: LinuxServer.io が保守する通知 API サービス
+    ko: LinuxServer.io에서 유지 관리하는 알림 API 서비스
+    ru: API-сервис уведомлений, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan API pemberitahuan yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de API de notificacoes mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/caronc/apprise-api
+  github: https://github.com/linuxserver/docker-apprise-api
+  document: https://docs.linuxserver.io/images/docker-apprise-api/
+  architectures:
+  - amd64
+  - arm64

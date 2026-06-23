@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   thelounge:
-    image: "linuxserver/thelounge:4.5.0"
+    image: "linuxserver/thelounge:latest"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
