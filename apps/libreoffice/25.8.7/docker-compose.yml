@@ -17,7 +17,7 @@ services:
       - PASSWORD=${HTTP_PWD}
     #security_opt:
     #  - seccomp:unconfined #optional
-    image: linuxserver/libreoffice:25.8.1
+    image: linuxserver/libreoffice:25.8.7
     labels:  
       createdBy: "Apps"
 
