@@ -1,0 +1,10 @@
+services:
+  ddns-go:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: "host"
+    volumes:
+      - "${DATA_PATH}:/root"
+    image: openiothub/gateway-go:latest
+    labels:
+      createdBy: "Apps"

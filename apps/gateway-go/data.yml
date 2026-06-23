@@ -1,0 +1,19 @@
+name: gateway-go
+tags:
+    - 实用工具
+title: 简单易用的 内网穿透工具
+description: 简单易用的 内网穿透工具
+additionalProperties:
+    key: gateway-go
+    name: gateway-go
+    tags:
+        - Tool
+    shortDescZh: 简单易用的 内网穿透工具,支持全平台APP访问,支持p2p,未来也将支持所有docker应用的远程访问
+    shortDescEn: Help you expose a local server behind a NAT or firewall to the internet.
+    type: tool
+    crossVersionUpdate: true
+    limit: 0
+    recommend: 0
+    website: https://github.com/OpenIoTHub/gateway-go
+    github: https://github.com/OpenIoTHub/gateway-go
+    document: https://docs.iothub.cloud
