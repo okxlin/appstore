@@ -5,6 +5,6 @@ services:
     network_mode: "host"
     volumes:
       - "${DATA_PATH}:/root"
-    image: openiothub/gateway-go:v0.3.20
+    image: openiothub/gateway-go:v0.3.23
     labels:
       createdBy: "Apps"
