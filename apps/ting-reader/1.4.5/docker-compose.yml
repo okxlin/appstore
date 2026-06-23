@@ -18,7 +18,7 @@ services:
       - TEMP_DIR=/app/temp
       - DATA_DIR=/app/data
       - STORAGE_DIR=/app/storage
-    image: dqsq2e2/ting-reader:1.2.6
+    image: dqsq2e2/ting-reader:1.4.5
     labels:
       createdBy: "Apps"
 
