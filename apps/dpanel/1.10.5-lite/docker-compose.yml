@@ -1,6 +1,6 @@
 services:
   dpanel:
-    image: "dpanel/dpanel:1.10.3-lite"
+    image: "dpanel/dpanel:1.10.5-lite"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
