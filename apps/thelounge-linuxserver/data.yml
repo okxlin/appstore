@@ -1,0 +1,30 @@
+name: The Lounge LinuxServer
+tags:
+- Tool
+title: Web IRC 客户端
+description: Web IRC 客户端
+additionalProperties:
+  key: thelounge-linuxserver
+  name: The Lounge LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Web IRC 客户端
+  shortDescEn: Self-hosted web IRC client maintained by LinuxServer.io
+  description:
+    en: Self-hosted web IRC client maintained by LinuxServer.io
+    zh: Web IRC 客户端
+    zh-Hant: Web IRC 用戶端
+    ja: LinuxServer.io が保守するセルフホスト型 Web IRC クライアント
+    ko: LinuxServer.io에서 유지 관리하는 자체 호스팅 Web IRC 클라이언트
+    ru: Самостоятельно размещаемый веб-клиент IRC, поддерживаемый LinuxServer.io
+    ms: Klien IRC web kendiri yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente IRC web auto-hospedado mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://thelounge.chat
+  github: https://github.com/linuxserver/docker-thelounge
+  document: https://docs.linuxserver.io/images/docker-thelounge/
+  architectures:
+  - amd64
+  - arm64
