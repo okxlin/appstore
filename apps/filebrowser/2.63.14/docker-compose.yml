@@ -11,7 +11,7 @@ services:
       - "./data/database.db:/database.db"
       - "./data/.filebrowser.json:/.filebrowser.json"
     user: "${UID}:${GID}"
-    image: filebrowser/filebrowser:v2.63.14
+    image: filebrowser/filebrowser:v2.63.15
     labels:  
       createdBy: "Apps"
 
