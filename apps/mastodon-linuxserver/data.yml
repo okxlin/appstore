@@ -1,0 +1,30 @@
+name: Mastodon LinuxServer
+tags:
+- Website
+title: Mastodon ActivityPub 社交网络服务
+description: Mastodon ActivityPub 社交网络服务
+additionalProperties:
+  key: mastodon-linuxserver
+  name: Mastodon LinuxServer
+  tags:
+  - Website
+  shortDescZh: Mastodon ActivityPub 社交网络服务
+  shortDescEn: ActivityPub social network server maintained by LinuxServer.io
+  description:
+    en: ActivityPub social network server maintained by LinuxServer.io
+    zh: Mastodon ActivityPub 社交网络服务
+    zh-Hant: Mastodon ActivityPub 社交網路服務
+    ja: LinuxServer.io が保守する ActivityPub ソーシャルネットワークサーバー
+    ko: LinuxServer.io에서 유지 관리하는 ActivityPub 소셜 네트워크 서버
+    ru: Сервер социальной сети ActivityPub, поддерживаемый LinuxServer.io
+    ms: Pelayan rangkaian sosial ActivityPub yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de rede social ActivityPub mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://joinmastodon.org/
+  github: https://github.com/linuxserver/docker-mastodon
+  document: https://docs.linuxserver.io/images/docker-mastodon/
+  architectures:
+  - amd64
+  - arm64
