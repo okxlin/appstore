@@ -1,0 +1,30 @@
+name: Weixin LinuxServer
+tags:
+- Tool
+title: 微信桌面客户端
+description: 微信桌面客户端
+additionalProperties:
+  key: weixin-linuxserver
+  name: Weixin LinuxServer
+  tags:
+  - Tool
+  shortDescZh: 微信桌面客户端
+  shortDescEn: Weixin desktop client maintained by LinuxServer.io
+  description:
+    en: Weixin desktop client maintained by LinuxServer.io
+    zh: 微信桌面客户端
+    zh-Hant: 微信桌面用戶端
+    ja: LinuxServer.io が保守する Weixin デスクトップクライアント
+    ko: LinuxServer.io에서 유지 관리하는 Weixin 데스크톱 클라이언트
+    ru: Настольный клиент Weixin, поддерживаемый LinuxServer.io
+    ms: Klien desktop Weixin yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente desktop Weixin mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://weixin.qq.com/
+  github: https://github.com/linuxserver/docker-weixin
+  document: https://docs.linuxserver.io/images/docker-weixin/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,30 @@
+name: Dolphin LinuxServer
+tags:
+- Game
+title: Dolphin 游戏模拟器桌面
+description: Dolphin 游戏模拟器桌面
+additionalProperties:
+  key: dolphin-linuxserver
+  name: Dolphin LinuxServer
+  tags:
+  - Game
+  shortDescZh: Dolphin 游戏模拟器桌面
+  shortDescEn: Game emulator desktop maintained by LinuxServer.io
+  description:
+    en: Game emulator desktop maintained by LinuxServer.io
+    zh: Dolphin 游戏模拟器桌面
+    zh-Hant: Dolphin 遊戲模擬器桌面
+    ja: LinuxServer.io が保守するゲームエミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 게임 에뮬레이터 데스크톱
+    ru: Рабочий стол игрового эмулятора, поддерживаемый LinuxServer.io
+    ms: Desktop emulator permainan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador de jogos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://dolphin-emu.org/
+  github: https://github.com/linuxserver/docker-dolphin
+  document: https://docs.linuxserver.io/images/docker-dolphin/
+  architectures:
+  - amd64
+  - arm64

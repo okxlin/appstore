@@ -1,0 +1,30 @@
+name: DuckStation LinuxServer
+tags:
+- Game
+title: DuckStation PlayStation 模拟器桌面
+description: DuckStation PlayStation 模拟器桌面
+additionalProperties:
+  key: duckstation-linuxserver
+  name: DuckStation LinuxServer
+  tags:
+  - Game
+  shortDescZh: DuckStation PlayStation 模拟器桌面
+  shortDescEn: PlayStation emulator desktop maintained by LinuxServer.io
+  description:
+    en: PlayStation emulator desktop maintained by LinuxServer.io
+    zh: DuckStation PlayStation 模拟器桌面
+    zh-Hant: DuckStation PlayStation 模擬器桌面
+    ja: LinuxServer.io が保守する PlayStation エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 PlayStation 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора PlayStation, поддерживаемый LinuxServer.io
+    ms: Desktop emulator PlayStation yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador PlayStation mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.duckstation.org/
+  github: https://github.com/linuxserver/docker-duckstation
+  document: https://docs.linuxserver.io/images/docker-duckstation/
+  architectures:
+  - amd64
+  - arm64
