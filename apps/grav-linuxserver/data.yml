@@ -1,0 +1,30 @@
+name: Grav LinuxServer
+tags:
+- Website
+title: Grav 平面文件 CMS
+description: Grav 平面文件 CMS
+additionalProperties:
+  key: grav-linuxserver
+  name: Grav LinuxServer
+  tags:
+  - Website
+  shortDescZh: Grav 平面文件 CMS
+  shortDescEn: Flat-file CMS maintained by LinuxServer.io
+  description:
+    en: Flat-file CMS maintained by LinuxServer.io
+    zh: Grav 平面文件 CMS
+    zh-Hant: Grav 平面檔案 CMS
+    ja: LinuxServer.io が保守するフラットファイル CMS
+    ko: LinuxServer.io에서 유지 관리하는 플랫 파일 CMS
+    ru: Плоскофайловая CMS, поддерживаемая LinuxServer.io
+    ms: CMS fail rata yang diselenggara oleh LinuxServer.io
+    pt-br: CMS de arquivos planos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://getgrav.org/
+  github: https://github.com/linuxserver/docker-grav
+  document: https://docs.linuxserver.io/images/docker-grav/
+  architectures:
+  - amd64
+  - arm64

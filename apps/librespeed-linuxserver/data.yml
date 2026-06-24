@@ -1,0 +1,30 @@
+name: LibreSpeed LinuxServer
+tags:
+- Tool
+title: LibreSpeed 网速测试
+description: LibreSpeed 网速测试
+additionalProperties:
+  key: librespeed-linuxserver
+  name: LibreSpeed LinuxServer
+  tags:
+  - Tool
+  shortDescZh: LibreSpeed 网速测试
+  shortDescEn: Speed test service maintained by LinuxServer.io
+  description:
+    en: Speed test service maintained by LinuxServer.io
+    zh: LibreSpeed 网速测试
+    zh-Hant: LibreSpeed 網速測試
+    ja: LinuxServer.io が保守する速度テストサービス
+    ko: LinuxServer.io에서 유지 관리하는 속도 테스트 서비스
+    ru: Сервис проверки скорости, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan ujian kelajuan yang diselenggara oleh LinuxServer.io
+    pt-br: Serviço de teste de velocidade mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://librespeed.org/
+  github: https://github.com/linuxserver/docker-librespeed
+  document: https://docs.linuxserver.io/images/docker-librespeed/
+  architectures:
+  - amd64
+  - arm64

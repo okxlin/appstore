@@ -1,0 +1,30 @@
+name: Resilio Sync LinuxServer
+tags:
+- Storage
+title: Resilio Sync 文件同步
+description: Resilio Sync 文件同步
+additionalProperties:
+  key: resilio-sync-linuxserver
+  name: Resilio Sync LinuxServer
+  tags:
+  - Storage
+  shortDescZh: Resilio Sync 文件同步
+  shortDescEn: Peer-to-peer file synchronization maintained by LinuxServer.io
+  description:
+    en: Peer-to-peer file synchronization maintained by LinuxServer.io
+    zh: Resilio Sync 文件同步
+    zh-Hant: Resilio Sync 檔案同步
+    ja: LinuxServer.io が保守する P2P ファイル同期サービス
+    ko: LinuxServer.io에서 유지 관리하는 P2P 파일 동기화 서비스
+    ru: P2P-синхронизация файлов, поддерживаемая LinuxServer.io
+    ms: Penyegerakan fail P2P yang diselenggara oleh LinuxServer.io
+    pt-br: Sincronização de arquivos P2P mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.resilio.com/sync/
+  github: https://github.com/linuxserver/docker-resilio-sync
+  document: https://docs.linuxserver.io/images/docker-resilio-sync/
+  architectures:
+  - amd64
+  - arm64

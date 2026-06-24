@@ -1,0 +1,30 @@
+name: Raneto LinuxServer
+tags:
+- Website
+title: Raneto Markdown 知识库
+description: Raneto Markdown 知识库
+additionalProperties:
+  key: raneto-linuxserver
+  name: Raneto LinuxServer
+  tags:
+  - Website
+  shortDescZh: Raneto Markdown 知识库
+  shortDescEn: Markdown knowledge base maintained by LinuxServer.io
+  description:
+    en: Markdown knowledge base maintained by LinuxServer.io
+    zh: Raneto Markdown 知识库
+    zh-Hant: Raneto Markdown 知識庫
+    ja: LinuxServer.io が保守する Markdown ナレッジベース
+    ko: LinuxServer.io에서 유지 관리하는 Markdown 지식 베이스
+    ru: Markdown-база знаний, поддерживаемая LinuxServer.io
+    ms: Pangkalan pengetahuan Markdown yang diselenggara oleh LinuxServer.io
+    pt-br: Base de conhecimento Markdown mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://raneto.com/
+  github: https://github.com/linuxserver/docker-raneto
+  document: https://docs.linuxserver.io/images/docker-raneto/
+  architectures:
+  - amd64
+  - arm64
