@@ -1,0 +1,30 @@
+name: Bitcoin Knots LinuxServer
+tags:
+- Tool
+title: Bitcoin Knots 全节点桌面
+description: Bitcoin Knots 全节点桌面
+additionalProperties:
+  key: bitcoin-knots-linuxserver
+  name: Bitcoin Knots LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Bitcoin Knots 全节点桌面
+  shortDescEn: Bitcoin full node desktop maintained by LinuxServer.io
+  description:
+    en: Bitcoin full node desktop maintained by LinuxServer.io
+    zh: Bitcoin Knots 全节点桌面
+    zh-Hant: Bitcoin Knots 全節點桌面
+    ja: LinuxServer.io が保守する Bitcoin フルノードデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Bitcoin 풀 노드 데스크톱
+    ru: Рабочий стол полного узла Bitcoin, поддерживаемый LinuxServer.io
+    ms: Desktop nod penuh Bitcoin yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de no completo Bitcoin mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://bitcoinknots.org/
+  github: https://github.com/linuxserver/docker-bitcoin-knots
+  document: https://docs.linuxserver.io/images/docker-bitcoin-knots/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,30 @@
+name: BOINC LinuxServer
+tags:
+- Tool
+title: BOINC 分布式计算桌面
+description: BOINC 分布式计算桌面
+additionalProperties:
+  key: boinc-linuxserver
+  name: BOINC LinuxServer
+  tags:
+  - Tool
+  shortDescZh: BOINC 分布式计算桌面
+  shortDescEn: Distributed computing desktop maintained by LinuxServer.io
+  description:
+    en: Distributed computing desktop maintained by LinuxServer.io
+    zh: BOINC 分布式计算桌面
+    zh-Hant: BOINC 分散式運算桌面
+    ja: LinuxServer.io が保守する分散コンピューティングデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 분산 컴퓨팅 데스크톱
+    ru: Рабочий стол распределенных вычислений, поддерживаемый LinuxServer.io
+    ms: Desktop pengkomputeran teragih yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de computacao distribuida mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://boinc.berkeley.edu/
+  github: https://github.com/linuxserver/docker-boinc
+  document: https://docs.linuxserver.io/images/docker-boinc/
+  architectures:
+  - amd64
+  - arm64

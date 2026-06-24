@@ -1,0 +1,30 @@
+name: OpenSSH Server LinuxServer
+tags:
+- Tool
+title: OpenSSH SSH 服务
+description: OpenSSH SSH 服务
+additionalProperties:
+  key: openssh-server-linuxserver
+  name: OpenSSH Server LinuxServer
+  tags:
+  - Tool
+  shortDescZh: OpenSSH SSH 服务
+  shortDescEn: SSH service maintained by LinuxServer.io
+  description:
+    en: SSH service maintained by LinuxServer.io
+    zh: OpenSSH SSH 服务
+    zh-Hant: OpenSSH SSH 服務
+    ja: LinuxServer.io が保守する SSH サービス
+    ko: LinuxServer.io에서 유지 관리하는 SSH 서비스
+    ru: SSH-сервис, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan SSH yang diselenggara oleh LinuxServer.io
+    pt-br: Servico SSH mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.openssh.com/
+  github: https://github.com/linuxserver/docker-openssh-server
+  document: https://docs.linuxserver.io/images/docker-openssh-server/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,29 @@
+name: DOSBox Staging LinuxServer
+tags:
+- Game
+title: DOSBox Staging DOS 模拟器桌面
+description: DOSBox Staging DOS 模拟器桌面
+additionalProperties:
+  key: dosbox-staging-linuxserver
+  name: DOSBox Staging LinuxServer
+  tags:
+  - Game
+  shortDescZh: DOSBox Staging DOS 模拟器桌面
+  shortDescEn: DOS emulator desktop maintained by LinuxServer.io
+  description:
+    en: DOS emulator desktop maintained by LinuxServer.io
+    zh: DOSBox Staging DOS 模拟器桌面
+    zh-Hant: DOSBox Staging DOS 模擬器桌面
+    ja: LinuxServer.io が保守する DOS エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 DOS 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора DOS, поддерживаемый LinuxServer.io
+    ms: Desktop emulator DOS yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador DOS mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.dosbox-staging.org/
+  github: https://github.com/linuxserver/docker-dosbox-staging
+  document: https://docs.linuxserver.io/images/docker-dosbox-staging/
+  architectures:
+  - amd64

@@ -1,0 +1,24 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  openssh-server:
+    image: "linuxserver/openssh-server:10.2_p1-r0-ls228"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_SSH}:2222"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - USER_NAME=${USER_NAME}
+      - PUBLIC_KEY=${PUBLIC_KEY}
+      - PASSWORD_ACCESS=false
+      - SUDO_ACCESS=false
+    labels:
+      createdBy: "Apps"
