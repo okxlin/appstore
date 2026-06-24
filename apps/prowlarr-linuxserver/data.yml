@@ -1,0 +1,30 @@
+name: Prowlarr LinuxServer
+tags:
+- Media
+title: Prowlarr 索引器管理器
+description: Prowlarr 索引器管理器
+additionalProperties:
+  key: prowlarr-linuxserver
+  name: Prowlarr LinuxServer
+  tags:
+  - Media
+  shortDescZh: Prowlarr 索引器管理器
+  shortDescEn: Indexer manager maintained by LinuxServer.io
+  description:
+    en: Indexer manager maintained by LinuxServer.io
+    zh: Prowlarr 索引器管理器
+    zh-Hant: Prowlarr 索引器管理器
+    ja: LinuxServer.io が保守するインデクサー管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 인덱서 관리자
+    ru: Менеджер индексаторов, поддерживаемый LinuxServer.io
+    ms: Pengurus pengindeks yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de indexadores mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://prowlarr.com/
+  github: https://github.com/linuxserver/docker-prowlarr
+  document: https://docs.linuxserver.io/images/docker-prowlarr/
+  architectures:
+  - amd64
+  - arm64

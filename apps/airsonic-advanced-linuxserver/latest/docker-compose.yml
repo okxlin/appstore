@@ -1,0 +1,26 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  airsonic-advanced:
+    image: "linuxserver/airsonic-advanced:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4040"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${MUSIC_PATH}:/music"
+      - "${PLAYLISTS_PATH}:/playlists"
+      - "${PODCASTS_PATH}:/podcasts"
+      - "${MEDIA_PATH}:/media"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - CONTEXT_PATH=${CONTEXT_PATH:-}
+      - JAVA_OPTS=${JAVA_OPTS:-}
+    labels:
+      createdBy: "Apps"

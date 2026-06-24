@@ -1,0 +1,147 @@
+additionalProperties:
+  formFields:
+  - default: 4040
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/music
+    edit: true
+    envKey: MUSIC_PATH
+    labelEn: Music path
+    labelZh: 音乐目录
+    label:
+      en: Music path
+      zh: 音乐目录
+      zh-Hant: 音樂目錄
+      ja: 音楽ディレクトリ
+      ko: 음악 디렉터리
+      ru: Каталог музыки
+      ms: Laluan muzik
+      pt-br: Caminho de musicas
+    required: true
+    type: text
+  - default: ./data/playlists
+    edit: true
+    envKey: PLAYLISTS_PATH
+    labelEn: Playlists path
+    labelZh: 播放列表目录
+    label:
+      en: Playlists path
+      zh: 播放列表目录
+      zh-Hant: 播放清單目錄
+      ja: プレイリストディレクトリ
+      ko: 재생목록 디렉터리
+      ru: Каталог плейлистов
+      ms: Laluan senarai main
+      pt-br: Caminho de playlists
+    required: true
+    type: text
+  - default: ./data/podcasts
+    edit: true
+    envKey: PODCASTS_PATH
+    labelEn: Podcasts path
+    labelZh: 播客目录
+    label:
+      en: Podcasts path
+      zh: 播客目录
+      zh-Hant: Podcast 目錄
+      ja: ポッドキャストディレクトリ
+      ko: 팟캐스트 디렉터리
+      ru: Каталог подкастов
+      ms: Laluan podcast
+      pt-br: Caminho de podcasts
+    required: true
+    type: text
+  - default: ./data/media
+    edit: true
+    envKey: MEDIA_PATH
+    labelEn: Extra media path
+    labelZh: 额外媒体目录
+    label:
+      en: Extra media path
+      zh: 额外媒体目录
+      zh-Hant: 額外媒體目錄
+      ja: 追加メディアディレクトリ
+      ko: 추가 미디어 디렉터리
+      ru: Дополнительный каталог медиа
+      ms: Laluan media tambahan
+      pt-br: Caminho de midia extra
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: CONTEXT_PATH
+    labelEn: Context path
+    labelZh: 上下文路径
+    label:
+      en: Context path
+      zh: 上下文路径
+      zh-Hant: 上下文路徑
+      ja: コンテキストパス
+      ko: 컨텍스트 경로
+      ru: Контекстный путь
+      ms: Laluan konteks
+      pt-br: Caminho de contexto
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: JAVA_OPTS
+    labelEn: Java options
+    labelZh: Java 参数
+    label:
+      en: Java options
+      zh: Java 参数
+      zh-Hant: Java 參數
+      ja: Java オプション
+      ko: Java 옵션
+      ru: Параметры Java
+      ms: Pilihan Java
+      pt-br: Opcoes Java
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

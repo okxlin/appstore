@@ -1,0 +1,30 @@
+name: SickGear LinuxServer
+tags:
+- Media
+title: SickGear 剧集管理器
+description: SickGear 剧集管理器
+additionalProperties:
+  key: sickgear-linuxserver
+  name: SickGear LinuxServer
+  tags:
+  - Media
+  shortDescZh: SickGear 剧集管理器
+  shortDescEn: TV library manager maintained by LinuxServer.io
+  description:
+    en: TV library manager maintained by LinuxServer.io
+    zh: SickGear 剧集管理器
+    zh-Hant: SickGear 劇集管理器
+    ja: LinuxServer.io が保守するテレビ番組管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 TV 라이브러리 관리자
+    ru: Менеджер сериалов, поддерживаемый LinuxServer.io
+    ms: Pengurus siri TV yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de series mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/SickGear/SickGear
+  github: https://github.com/linuxserver/docker-sickgear
+  document: https://docs.linuxserver.io/images/docker-sickgear/
+  architectures:
+  - amd64
+  - arm64

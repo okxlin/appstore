@@ -1,0 +1,30 @@
+name: Overseerr LinuxServer
+tags:
+- Media
+title: Overseerr 媒体请求平台
+description: Overseerr 媒体请求平台
+additionalProperties:
+  key: overseerr-linuxserver
+  name: Overseerr LinuxServer
+  tags:
+  - Media
+  shortDescZh: Overseerr 媒体请求平台
+  shortDescEn: Media request platform maintained by LinuxServer.io
+  description:
+    en: Media request platform maintained by LinuxServer.io
+    zh: Overseerr 媒体请求平台
+    zh-Hant: Overseerr 媒體請求平台
+    ja: LinuxServer.io が保守するメディアリクエストプラットフォーム
+    ko: LinuxServer.io에서 유지 관리하는 미디어 요청 플랫폼
+    ru: Платформа запросов медиа, поддерживаемая LinuxServer.io
+    ms: Platform permintaan media yang diselenggara oleh LinuxServer.io
+    pt-br: Plataforma de solicitacoes de midia mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://overseerr.dev/
+  github: https://github.com/linuxserver/docker-overseerr
+  document: https://docs.linuxserver.io/images/docker-overseerr/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,22 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  sickgear:
+    image: "linuxserver/sickgear:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8081"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${TV_PATH}:/tv"
+      - "${DOWNLOAD_PATH}:/downloads"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

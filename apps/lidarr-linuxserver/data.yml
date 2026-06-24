@@ -1,0 +1,30 @@
+name: Lidarr LinuxServer
+tags:
+- Media
+title: Lidarr 音乐库管理器
+description: Lidarr 音乐库管理器
+additionalProperties:
+  key: lidarr-linuxserver
+  name: Lidarr LinuxServer
+  tags:
+  - Media
+  shortDescZh: Lidarr 音乐库管理器
+  shortDescEn: Music library manager maintained by LinuxServer.io
+  description:
+    en: Music library manager maintained by LinuxServer.io
+    zh: Lidarr 音乐库管理器
+    zh-Hant: Lidarr 音樂庫管理器
+    ja: LinuxServer.io が保守する音楽ライブラリ管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 음악 라이브러리 관리자
+    ru: Менеджер музыкальной библиотеки, поддерживаемый LinuxServer.io
+    ms: Pengurus pustaka muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de biblioteca musical mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://lidarr.audio/
+  github: https://github.com/linuxserver/docker-lidarr
+  document: https://docs.linuxserver.io/images/docker-lidarr/
+  architectures:
+  - amd64
+  - arm64
