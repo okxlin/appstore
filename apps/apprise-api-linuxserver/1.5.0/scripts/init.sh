@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
-mkdir -p ./data
+
+paths=(
+  "${ATTACHMENTS_PATH:-./data/attachments}"
+  "${CONFIG_PATH:-./data/config}"
+)
+
+mkdir -p "${paths[@]}"

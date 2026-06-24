@@ -13,6 +13,7 @@ services:
       - "${PANEL_APP_PORT_HTTPS}:3001"
     volumes:
       - "${CONFIG_PATH}:/config"
+      - "${DATA_PATH}:/data"
     environment:
       - PUID=1000
       - PGID=1000

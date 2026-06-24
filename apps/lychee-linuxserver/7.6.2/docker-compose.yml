@@ -18,6 +18,10 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - DB_CONNECTION=sqlite
+      - DB_HOST=${DB_HOST:-}
+      - DB_PORT=${DB_PORT:-}
+      - DB_USERNAME=${DB_USERNAME:-}
+      - DB_PASSWORD=${DB_PASSWORD:-}
       - DB_DATABASE=/config/lychee.sqlite
     labels:
       createdBy: "Apps"

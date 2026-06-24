@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
-mkdir -p ./data/config ./data/music ./data/downloads
-chown -R 1000:1000 ./data 2>/dev/null || true
+
+paths=(
+  "${CONFIG_PATH:-./data/config}"
+  "${DOWNLOAD_PATH:-./data/downloads}"
+  "${MUSIC_PATH:-./data/music}"
+)
+
+mkdir -p "${paths[@]}"
+for path in "${paths[@]}"; do
+  case "$path" in
+    ./*|../*) chown -R 1000:1000 "$path" 2>/dev/null || true ;;
+  esac
+done

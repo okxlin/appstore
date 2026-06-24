@@ -66,3 +66,19 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: ./data/mame
+    edit: true
+    envKey: MAME_PATH
+    labelEn: MAME assets path
+    labelZh: MAME 资源目录
+    label:
+      en: MAME assets path
+      zh: MAME 资源目录
+      zh-Hant: MAME 資源目錄
+      ja: MAME アセットディレクトリ
+      ko: MAME 에셋 디렉터리
+      ru: Каталог ресурсов MAME
+      ms: Laluan aset MAME
+      pt-br: Caminho de recursos MAME
+    required: true
+    type: text

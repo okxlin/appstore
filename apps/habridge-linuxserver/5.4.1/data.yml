@@ -66,3 +66,21 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: SEC_KEY
+    labelEn: Security key
+    labelZh: 安全密钥
+    label:
+      en: Security key
+      zh: 安全密钥
+      zh-Hant: 安全金鑰
+      ja: セキュリティキー
+      ko: 보안 키
+      ru: Ключ безопасности
+      ms: Kunci keselamatan
+      pt-br: Chave de seguranca
+    required: true
+    type: password
+    random: true
+    rule: paramComplexity
