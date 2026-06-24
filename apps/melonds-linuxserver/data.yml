@@ -1,0 +1,30 @@
+name: melonDS LinuxServer
+tags:
+- Game
+title: melonDS Nintendo DS 模拟器桌面
+description: melonDS Nintendo DS 模拟器桌面
+additionalProperties:
+  key: melonds-linuxserver
+  name: melonDS LinuxServer
+  tags:
+  - Game
+  shortDescZh: melonDS Nintendo DS 模拟器桌面
+  shortDescEn: Nintendo DS emulator desktop maintained by LinuxServer.io
+  description:
+    en: Nintendo DS emulator desktop maintained by LinuxServer.io
+    zh: melonDS Nintendo DS 模拟器桌面
+    zh-Hant: melonDS Nintendo DS 模擬器桌面
+    ja: LinuxServer.io が保守する Nintendo DS エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Nintendo DS 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора Nintendo DS, поддерживаемый LinuxServer.io
+    ms: Desktop emulator Nintendo DS yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador Nintendo DS mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://melonds.kuribo64.net/
+  github: https://github.com/linuxserver/docker-melonds
+  document: https://docs.linuxserver.io/images/docker-melonds/
+  architectures:
+  - amd64
+  - arm64

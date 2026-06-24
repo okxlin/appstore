@@ -1,0 +1,30 @@
+name: xemu LinuxServer
+tags:
+- Game
+title: xemu Xbox 模拟器桌面
+description: xemu Xbox 模拟器桌面
+additionalProperties:
+  key: xemu-linuxserver
+  name: xemu LinuxServer
+  tags:
+  - Game
+  shortDescZh: xemu Xbox 模拟器桌面
+  shortDescEn: Xbox emulator desktop maintained by LinuxServer.io
+  description:
+    en: Xbox emulator desktop maintained by LinuxServer.io
+    zh: xemu Xbox 模拟器桌面
+    zh-Hant: xemu Xbox 模擬器桌面
+    ja: LinuxServer.io が保守する Xbox エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Xbox 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора Xbox, поддерживаемый LinuxServer.io
+    ms: Desktop emulator Xbox yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador Xbox mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://xemu.app/
+  github: https://github.com/linuxserver/docker-xemu
+  document: https://docs.linuxserver.io/images/docker-xemu/
+  architectures:
+  - amd64
+  - arm64

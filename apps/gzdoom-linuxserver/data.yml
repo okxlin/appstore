@@ -1,0 +1,30 @@
+name: GZDoom LinuxServer
+tags:
+- Game
+title: GZDoom 游戏引擎桌面
+description: GZDoom 游戏引擎桌面
+additionalProperties:
+  key: gzdoom-linuxserver
+  name: GZDoom LinuxServer
+  tags:
+  - Game
+  shortDescZh: GZDoom 游戏引擎桌面
+  shortDescEn: Doom engine desktop maintained by LinuxServer.io
+  description:
+    en: Doom engine desktop maintained by LinuxServer.io
+    zh: GZDoom 游戏引擎桌面
+    zh-Hant: GZDoom 遊戲引擎桌面
+    ja: LinuxServer.io が保守する Doom エンジンデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Doom 엔진 데스크톱
+    ru: Рабочий стол движка Doom, поддерживаемый LinuxServer.io
+    ms: Desktop enjin Doom yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de motor Doom mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://zdoom.org/index
+  github: https://github.com/linuxserver/docker-gzdoom
+  document: https://docs.linuxserver.io/images/docker-gzdoom/
+  architectures:
+  - amd64
+  - arm64
