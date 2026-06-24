@@ -1,0 +1,30 @@
+name: UniFi Network Application LinuxServer
+tags:
+- DevOps
+title: UniFi Network 网络控制器
+description: UniFi Network 网络控制器
+additionalProperties:
+  key: unifi-network-application-linuxserver
+  name: UniFi Network Application LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: UniFi Network 网络控制器
+  shortDescEn: UniFi Network controller maintained by LinuxServer.io
+  description:
+    en: UniFi Network controller maintained by LinuxServer.io
+    zh: UniFi Network 网络控制器
+    zh-Hant: UniFi Network 網路控制器
+    ja: LinuxServer.io が保守する UniFi Network コントローラー
+    ko: LinuxServer.io에서 유지 관리하는 UniFi Network 컨트롤러
+    ru: Контроллер UniFi Network, поддерживаемый LinuxServer.io
+    ms: Pengawal UniFi Network yang diselenggara oleh LinuxServer.io
+    pt-br: Controlador UniFi Network mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ui.com/
+  github: https://github.com/linuxserver/docker-unifi-network-application
+  document: https://docs.linuxserver.io/images/docker-unifi-network-application/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,150 @@
+additionalProperties:
+  formFields:
+  - default: 80
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 443
+    edit: true
+    envKey: PANEL_APP_PORT_HTTPS
+    labelEn: HTTPS Port
+    labelZh: HTTPS 端口
+    label:
+      en: HTTPS Port
+      zh: HTTPS 端口
+      zh-Hant: HTTPS 連接埠
+      ja: HTTPS ポート
+      ko: HTTPS 포트
+      ru: HTTPS-порт
+      ms: Port HTTPS
+      pt-br: Porta HTTPS
+    required: true
+    type: number
+    rule: paramPort
+  - default: http://localhost
+    edit: true
+    envKey: APP_URL
+    labelEn: Application URL
+    labelZh: 应用访问 URL
+    label:
+      en: Application URL
+      zh: 应用访问 URL
+      zh-Hant: 應用程式存取 URL
+      ja: アプリケーション URL
+      ko: 애플리케이션 URL
+      ru: URL приложения
+      ms: URL aplikasi
+      pt-br: URL do aplicativo
+    required: true
+    type: text
+  - default: replace-with-client-id
+    edit: true
+    envKey: SPOTIFY_PUBLIC
+    labelEn: Spotify client ID
+    labelZh: Spotify 客户端 ID
+    label:
+      en: Spotify client ID
+      zh: Spotify 客户端 ID
+      zh-Hant: Spotify 用戶端 ID
+      ja: Spotify クライアント ID
+      ko: Spotify 클라이언트 ID
+      ru: ID клиента Spotify
+      ms: ID klien Spotify
+      pt-br: ID do cliente Spotify
+    required: true
+    type: text
+  - default: replace-with-client-secret
+    edit: true
+    envKey: SPOTIFY_SECRET
+    labelEn: Spotify client secret
+    labelZh: Spotify 客户端密钥
+    label:
+      en: Spotify client secret
+      zh: Spotify 客户端密钥
+      zh-Hant: Spotify 用戶端密鑰
+      ja: Spotify クライアントシークレット
+      ko: Spotify 클라이언트 시크릿
+      ru: Секрет клиента Spotify
+      ms: Rahsia klien Spotify
+      pt-br: Segredo do cliente Spotify
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: 2000
+    edit: true
+    envKey: SPOTIFY_API_DELAY_MS
+    labelEn: Spotify API delay ms
+    labelZh: Spotify API 延迟毫秒
+    label:
+      en: Spotify API delay ms
+      zh: Spotify API 延迟毫秒
+      zh-Hant: Spotify API 延遲毫秒
+      ja: Spotify API 遅延ミリ秒
+      ko: Spotify API 지연 ms
+      ru: Задержка API Spotify, мс
+      ms: Lengah API Spotify ms
+      pt-br: Atraso da API Spotify em ms
+    required: true
+    type: number
+    rule: paramCommon
+  - default: all
+    edit: true
+    envKey: CORS
+    labelEn: CORS origins
+    labelZh: CORS 来源
+    label:
+      en: CORS origins
+      zh: CORS 来源
+      zh-Hant: CORS 來源
+      ja: CORS オリジン
+      ko: CORS 원본
+      ru: Источники CORS
+      ms: Asal CORS
+      pt-br: Origens CORS
+    required: true
+    type: text
+  - default: ./data/mongo
+    edit: true
+    envKey: MONGO_DATA_PATH
+    labelEn: Mongo data path
+    labelZh: Mongo 数据目录
+    label:
+      en: Mongo data path
+      zh: Mongo 数据目录
+      zh-Hant: Mongo 資料目錄
+      ja: Mongo データディレクトリ
+      ko: Mongo 데이터 디렉터리
+      ru: Каталог данных Mongo
+      ms: Laluan data Mongo
+      pt-br: Caminho de dados do Mongo
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

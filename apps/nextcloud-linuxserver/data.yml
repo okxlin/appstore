@@ -1,0 +1,30 @@
+name: Nextcloud LinuxServer
+tags:
+- Storage
+title: Nextcloud 私有云协作平台
+description: Nextcloud 私有云协作平台
+additionalProperties:
+  key: nextcloud-linuxserver
+  name: Nextcloud LinuxServer
+  tags:
+  - Storage
+  shortDescZh: Nextcloud 私有云协作平台
+  shortDescEn: Private cloud collaboration platform maintained by LinuxServer.io
+  description:
+    en: Private cloud collaboration platform maintained by LinuxServer.io
+    zh: Nextcloud 私有云协作平台
+    zh-Hant: Nextcloud 私有雲協作平台
+    ja: LinuxServer.io が保守するプライベートクラウド共同作業プラットフォーム
+    ko: LinuxServer.io에서 유지 관리하는 프라이빗 클라우드 협업 플랫폼
+    ru: Платформа частного облака для совместной работы, поддерживаемая LinuxServer.io
+    ms: Platform kerjasama awan persendirian yang diselenggara oleh LinuxServer.io
+    pt-br: Plataforma de colaboracao em nuvem privada mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://nextcloud.com/
+  github: https://github.com/linuxserver/docker-nextcloud
+  document: https://docs.linuxserver.io/images/docker-nextcloud/
+  architectures:
+  - amd64
+  - arm64
