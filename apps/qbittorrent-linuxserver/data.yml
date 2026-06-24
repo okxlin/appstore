@@ -1,8 +1,8 @@
 name: qbittorrent-linuxserver
 tags:
 - Tool
-title: qbittorrent-linuxserver
-description: qbittorrent-linuxserver
+title: 由LinuxServer.io提供的Qbittorrent容器
+description: 由LinuxServer.io提供的Qbittorrent容器
 additionalProperties:
   key: qbittorrent-linuxserver
   name: qbittorrent-linuxserver
@@ -10,7 +10,7 @@ additionalProperties:
   - Tool
   type: tool
   website: https://www.linuxserver.io/blog
-  document: https://github.com/linuxserver/docker-qbittorrent
+  document: https://docs.linuxserver.io/images/docker-qbittorrent/
   github: https://github.com/linuxserver/docker-qbittorrent
   shortDescZh: 由LinuxServer.io提供的Qbittorrent容器
   shortDescEn: A Qbittorrent container, brought to you by LinuxServer.io
