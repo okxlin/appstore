@@ -1,0 +1,30 @@
+name: Ferdium LinuxServer
+tags:
+- Tool
+title: Ferdium 消息聚合桌面
+description: Ferdium 消息聚合桌面
+additionalProperties:
+  key: ferdium-linuxserver
+  name: Ferdium LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Ferdium 消息聚合桌面
+  shortDescEn: Messaging workspace desktop maintained by LinuxServer.io
+  description:
+    en: Messaging workspace desktop maintained by LinuxServer.io
+    zh: Ferdium 消息聚合桌面
+    zh-Hant: Ferdium 訊息聚合桌面
+    ja: LinuxServer.io が保守するメッセージングワークスペースデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 메시징 워크스페이스 데스크톱
+    ru: Рабочий стол рабочей области сообщений, поддерживаемый LinuxServer.io
+    ms: Desktop ruang kerja pemesejan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de espaco de mensagens mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ferdium.org/
+  github: https://github.com/linuxserver/docker-ferdium
+  document: https://docs.linuxserver.io/images/docker-ferdium/
+  architectures:
+  - amd64
+  - arm64

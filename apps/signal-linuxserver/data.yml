@@ -1,0 +1,29 @@
+name: Signal LinuxServer
+tags:
+- Tool
+title: Signal 消息客户端桌面
+description: Signal 消息客户端桌面
+additionalProperties:
+  key: signal-linuxserver
+  name: Signal LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Signal 消息客户端桌面
+  shortDescEn: Messaging client desktop maintained by LinuxServer.io
+  description:
+    en: Messaging client desktop maintained by LinuxServer.io
+    zh: Signal 消息客户端桌面
+    zh-Hant: Signal 訊息用戶端桌面
+    ja: LinuxServer.io が保守するメッセージングクライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 메시징 클라이언트 데스크톱
+    ru: Рабочий стол клиента обмена сообщениями, поддерживаемый LinuxServer.io
+    ms: Desktop klien pemesejan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente de mensagens mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://signal.org/
+  github: https://github.com/linuxserver/docker-signal
+  document: https://docs.linuxserver.io/images/docker-signal/
+  architectures:
+  - amd64

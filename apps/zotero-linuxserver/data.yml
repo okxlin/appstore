@@ -1,0 +1,29 @@
+name: Zotero LinuxServer
+tags:
+- Tool
+title: Zotero 文献管理桌面
+description: Zotero 文献管理桌面
+additionalProperties:
+  key: zotero-linuxserver
+  name: Zotero LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Zotero 文献管理桌面
+  shortDescEn: Reference manager desktop maintained by LinuxServer.io
+  description:
+    en: Reference manager desktop maintained by LinuxServer.io
+    zh: Zotero 文献管理桌面
+    zh-Hant: Zotero 文獻管理桌面
+    ja: LinuxServer.io が保守する文献管理デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 참고문헌 관리자 데스크톱
+    ru: Рабочий стол менеджера библиографии, поддерживаемый LinuxServer.io
+    ms: Desktop pengurus rujukan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de gerenciador de referencias mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.zotero.org/
+  github: https://github.com/linuxserver/docker-zotero
+  document: https://docs.linuxserver.io/images/docker-zotero/
+  architectures:
+  - amd64
