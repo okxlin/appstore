@@ -1,0 +1,30 @@
+name: XBackBone LinuxServer
+tags:
+- Storage
+title: XBackBone 文件分享服务
+description: XBackBone 文件分享服务
+additionalProperties:
+  key: xbackbone-linuxserver
+  name: XBackBone LinuxServer
+  tags:
+  - Storage
+  shortDescZh: XBackBone 文件分享服务
+  shortDescEn: File sharing service maintained by LinuxServer.io
+  description:
+    en: File sharing service maintained by LinuxServer.io
+    zh: XBackBone 文件分享服务
+    zh-Hant: XBackBone 檔案分享服務
+    ja: LinuxServer.io が保守するファイル共有サービス
+    ko: LinuxServer.io에서 유지 관리하는 파일 공유 서비스
+    ru: Сервис обмена файлами, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan perkongsian fail yang diselenggara oleh LinuxServer.io
+    pt-br: Serviço de compartilhamento de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://xbackbone.app/
+  github: https://github.com/linuxserver/docker-xbackbone
+  document: https://docs.linuxserver.io/images/docker-xbackbone/
+  architectures:
+  - amd64
+  - arm64
