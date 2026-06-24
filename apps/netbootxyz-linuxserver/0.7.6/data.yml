@@ -1,0 +1,133 @@
+additionalProperties:
+  formFields:
+  - default: 3000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 69
+    edit: true
+    envKey: PANEL_APP_PORT_TFTP
+    labelEn: TFTP UDP Port
+    labelZh: TFTP UDP 端口
+    label:
+      en: TFTP UDP Port
+      zh: TFTP UDP 端口
+      zh-Hant: TFTP UDP 連接埠
+      ja: TFTP UDP ポート
+      ko: TFTP UDP 포트
+      ru: UDP-порт TFTP
+      ms: Port UDP TFTP
+      pt-br: Porta UDP TFTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 8080
+    edit: true
+    envKey: PANEL_APP_PORT_ASSETS
+    labelEn: Assets HTTP Port
+    labelZh: 资源 HTTP 端口
+    label:
+      en: Assets HTTP Port
+      zh: 资源 HTTP 端口
+      zh-Hant: 資源 HTTP 連接埠
+      ja: アセット HTTP ポート
+      ko: 자산 HTTP 포트
+      ru: HTTP-порт ресурсов
+      ms: Port HTTP aset
+      pt-br: Porta HTTP de assets
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/assets
+    edit: true
+    envKey: ASSETS_PATH
+    labelEn: Assets path
+    labelZh: 启动资源目录
+    label:
+      en: Assets path
+      zh: 启动资源目录
+      zh-Hant: 啟動資源目錄
+      ja: ブートアセットディレクトリ
+      ko: 부팅 자산 디렉터리
+      ru: Каталог загрузочных ресурсов
+      ms: Laluan aset but
+      pt-br: Caminho de assets de boot
+    required: true
+    type: text
+  - default: 1.9.9
+    edit: true
+    envKey: MENU_VERSION
+    labelEn: Menu version
+    labelZh: 菜单版本
+    label:
+      en: Menu version
+      zh: 菜单版本
+      zh-Hant: 選單版本
+      ja: メニューバージョン
+      ko: 메뉴 버전
+      ru: Версия меню
+      ms: Versi menu
+      pt-br: Versao do menu
+    required: false
+    type: text
+  - default: /
+    edit: true
+    envKey: SUBFOLDER
+    labelEn: Subfolder
+    labelZh: 子路径
+    label:
+      en: Subfolder
+      zh: 子路径
+      zh-Hant: 子路徑
+      ja: サブフォルダー
+      ko: 하위 폴더
+      ru: Подпапка
+      ms: Subfolder
+      pt-br: Subpasta
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
