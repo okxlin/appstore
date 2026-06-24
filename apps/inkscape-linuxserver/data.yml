@@ -1,0 +1,30 @@
+name: Inkscape LinuxServer
+tags:
+- Media
+title: Inkscape 矢量图形桌面
+description: Inkscape 矢量图形桌面
+additionalProperties:
+  key: inkscape-linuxserver
+  name: Inkscape LinuxServer
+  tags:
+  - Media
+  shortDescZh: Inkscape 矢量图形桌面
+  shortDescEn: Vector graphics desktop maintained by LinuxServer.io
+  description:
+    en: Vector graphics desktop maintained by LinuxServer.io
+    zh: Inkscape 矢量图形桌面
+    zh-Hant: Inkscape 向量圖形桌面
+    ja: LinuxServer.io が保守するベクターグラフィックスデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 벡터 그래픽 데스크톱
+    ru: Рабочий стол векторной графики, поддерживаемый LinuxServer.io
+    ms: Desktop grafik vektor yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de graficos vetoriais mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://inkscape.org/
+  github: https://github.com/linuxserver/docker-inkscape
+  document: https://docs.linuxserver.io/images/docker-inkscape/
+  architectures:
+  - amd64
+  - arm64

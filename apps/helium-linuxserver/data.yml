@@ -1,0 +1,30 @@
+name: Helium LinuxServer
+tags:
+- Tool
+title: Helium 浏览器桌面
+description: Helium 浏览器桌面
+additionalProperties:
+  key: helium-linuxserver
+  name: Helium LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Helium 浏览器桌面
+  shortDescEn: Privacy-focused browser desktop maintained by LinuxServer.io
+  description:
+    en: Privacy-focused browser desktop maintained by LinuxServer.io
+    zh: Helium 浏览器桌面
+    zh-Hant: Helium 瀏覽器桌面
+    ja: LinuxServer.io が保守するプライバシー重視ブラウザデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 개인정보 보호 중심 브라우저 데스크톱
+    ru: Рабочий стол браузера с акцентом на приватность, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar berfokus privasi yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador com foco em privacidade mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://helium.computer/
+  github: https://github.com/linuxserver/docker-helium
+  document: https://docs.linuxserver.io/images/docker-helium/
+  architectures:
+  - amd64
+  - arm64

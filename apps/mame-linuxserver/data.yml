@@ -1,0 +1,30 @@
+name: MAME LinuxServer
+tags:
+- Game
+title: MAME 街机模拟器桌面
+description: MAME 街机模拟器桌面
+additionalProperties:
+  key: mame-linuxserver
+  name: MAME LinuxServer
+  tags:
+  - Game
+  shortDescZh: MAME 街机模拟器桌面
+  shortDescEn: Arcade emulator desktop maintained by LinuxServer.io
+  description:
+    en: Arcade emulator desktop maintained by LinuxServer.io
+    zh: MAME 街机模拟器桌面
+    zh-Hant: MAME 街機模擬器桌面
+    ja: LinuxServer.io が保守するアーケードエミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 아케이드 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора аркадных систем, поддерживаемый LinuxServer.io
+    ms: Desktop emulator arked yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador de arcade mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.mamedev.org/
+  github: https://github.com/linuxserver/docker-mame
+  document: https://docs.linuxserver.io/images/docker-mame/
+  architectures:
+  - amd64
+  - arm64
