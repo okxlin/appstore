@@ -1,0 +1,30 @@
+name: Socket Proxy LinuxServer
+tags:
+- Security
+title: Socket Proxy Docker API 访问代理
+description: Socket Proxy Docker API 访问代理
+additionalProperties:
+  key: socket-proxy-linuxserver
+  name: Socket Proxy LinuxServer
+  tags:
+  - Security
+  shortDescZh: Socket Proxy Docker API 访问代理
+  shortDescEn: Docker API access proxy maintained by LinuxServer.io
+  description:
+    en: Docker API access proxy maintained by LinuxServer.io
+    zh: Socket Proxy Docker API 访问代理
+    zh-Hant: Socket Proxy Docker API 存取代理
+    ja: LinuxServer.io が保守する Docker API アクセスプロキシ
+    ko: LinuxServer.io에서 유지 관리하는 Docker API 접근 프록시
+    ru: Прокси доступа к Docker API, поддерживаемый LinuxServer.io
+    ms: Proksi akses Docker API yang diselenggara oleh LinuxServer.io
+    pt-br: Proxy de acesso a API Docker mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.linuxserver.io/
+  github: https://github.com/linuxserver/docker-socket-proxy
+  document: https://docs.linuxserver.io/images/docker-socket-proxy/
+  architectures:
+  - amd64
+  - arm64

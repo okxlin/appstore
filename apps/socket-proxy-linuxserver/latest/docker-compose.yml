@@ -1,0 +1,49 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  socket-proxy:
+    image: "linuxserver/socket-proxy:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    tmpfs:
+      - /run
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DOCKER_SOCK_PATH}:/var/run/docker.sock:ro"
+    environment:
+      - ALLOW_START=0
+      - ALLOW_STOP=0
+      - ALLOW_RESTARTS=0
+      - ALLOW_PAUSE=0
+      - ALLOW_UNPAUSE=0
+      - AUTH=0
+      - BUILD=0
+      - COMMIT=0
+      - CONFIGS=0
+      - CONTAINERS=${CONTAINERS}
+      - DISABLE_IPV6=0
+      - DISTRIBUTION=0
+      - EVENTS=1
+      - EXEC=0
+      - IMAGES=${IMAGES}
+      - INFO=0
+      - LOG_LEVEL=${LOG_LEVEL}
+      - NETWORKS=${NETWORKS}
+      - NODES=0
+      - PING=1
+      - PLUGINS=0
+      - POST=${POST}
+      - SECRETS=0
+      - SERVICES=0
+      - SESSION=0
+      - SWARM=0
+      - SYSTEM=0
+      - TASKS=0
+      - TZ=${TIME_ZONE}
+      - VERSION=1
+      - VOLUMES=${VOLUMES}
+    labels:
+      createdBy: "Apps"
