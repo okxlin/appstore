@@ -1,0 +1,30 @@
+name: Chrome LinuxServer
+tags:
+- Tool
+title: Chrome 浏览器桌面
+description: Chrome 浏览器桌面
+additionalProperties:
+  key: chrome-linuxserver
+  name: Chrome LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Chrome 浏览器桌面
+  shortDescEn: Browser desktop maintained by LinuxServer.io
+  description:
+    en: Browser desktop maintained by LinuxServer.io
+    zh: Chrome 浏览器桌面
+    zh-Hant: Chrome 瀏覽器桌面
+    ja: LinuxServer.io が保守するブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 데스크톱
+    ru: Браузерный рабочий стол, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.google.com/chrome/
+  github: https://github.com/linuxserver/docker-chrome
+  document: https://docs.linuxserver.io/images/docker-chrome/
+  architectures:
+  - amd64
+  - arm64

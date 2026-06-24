@@ -1,0 +1,30 @@
+name: Thunderbird LinuxServer
+tags:
+- Tool
+title: Thunderbird 邮件客户端桌面
+description: Thunderbird 邮件客户端桌面
+additionalProperties:
+  key: thunderbird-linuxserver
+  name: Thunderbird LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Thunderbird 邮件客户端桌面
+  shortDescEn: Mail client desktop maintained by LinuxServer.io
+  description:
+    en: Mail client desktop maintained by LinuxServer.io
+    zh: Thunderbird 邮件客户端桌面
+    zh-Hant: Thunderbird 郵件用戶端桌面
+    ja: LinuxServer.io が保守するメールクライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 메일 클라이언트 데스크톱
+    ru: Рабочий стол почтового клиента, поддерживаемый LinuxServer.io
+    ms: Desktop klien mel yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente de email mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.thunderbird.net/
+  github: https://github.com/linuxserver/docker-thunderbird
+  document: https://docs.linuxserver.io/images/docker-thunderbird/
+  architectures:
+  - amd64
+  - arm64

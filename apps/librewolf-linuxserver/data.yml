@@ -1,0 +1,30 @@
+name: LibreWolf LinuxServer
+tags:
+- Tool
+title: LibreWolf 浏览器桌面
+description: LibreWolf 浏览器桌面
+additionalProperties:
+  key: librewolf-linuxserver
+  name: LibreWolf LinuxServer
+  tags:
+  - Tool
+  shortDescZh: LibreWolf 浏览器桌面
+  shortDescEn: Privacy browser desktop maintained by LinuxServer.io
+  description:
+    en: Privacy browser desktop maintained by LinuxServer.io
+    zh: LibreWolf 浏览器桌面
+    zh-Hant: LibreWolf 瀏覽器桌面
+    ja: LinuxServer.io が保守するプライバシーブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 개인정보 보호 브라우저 데스크톱
+    ru: Приватный браузерный рабочий стол, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar privasi yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador de privacidade mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://librewolf.net/
+  github: https://github.com/linuxserver/docker-librewolf
+  document: https://docs.linuxserver.io/images/docker-librewolf/
+  architectures:
+  - amd64
+  - arm64
