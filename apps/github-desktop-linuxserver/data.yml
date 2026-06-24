@@ -1,0 +1,30 @@
+name: GitHub Desktop LinuxServer
+tags:
+- DevOps
+title: GitHub Desktop 代码协作桌面
+description: GitHub Desktop 代码协作桌面
+additionalProperties:
+  key: github-desktop-linuxserver
+  name: GitHub Desktop LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: GitHub Desktop 代码协作桌面
+  shortDescEn: GitHub workflow desktop maintained by LinuxServer.io
+  description:
+    en: GitHub workflow desktop maintained by LinuxServer.io
+    zh: GitHub Desktop 代码协作桌面
+    zh-Hant: GitHub Desktop 程式碼協作桌面
+    ja: LinuxServer.io が保守する GitHub ワークフローデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 GitHub 워크플로 데스크톱
+    ru: Рабочий стол GitHub workflow, поддерживаемый LinuxServer.io
+    ms: Desktop aliran kerja GitHub yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de fluxo de trabalho GitHub mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://desktop.github.com/
+  github: https://github.com/linuxserver/docker-github-desktop
+  document: https://docs.linuxserver.io/images/docker-github-desktop/
+  architectures:
+  - amd64
+  - arm64

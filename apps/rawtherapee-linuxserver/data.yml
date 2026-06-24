@@ -1,0 +1,30 @@
+name: RawTherapee LinuxServer
+tags:
+- Media
+title: RawTherapee RAW 照片处理桌面
+description: RawTherapee RAW 照片处理桌面
+additionalProperties:
+  key: rawtherapee-linuxserver
+  name: RawTherapee LinuxServer
+  tags:
+  - Media
+  shortDescZh: RawTherapee RAW 照片处理桌面
+  shortDescEn: RAW photo processing desktop maintained by LinuxServer.io
+  description:
+    en: RAW photo processing desktop maintained by LinuxServer.io
+    zh: RawTherapee RAW 照片处理桌面
+    zh-Hant: RawTherapee RAW 相片處理桌面
+    ja: LinuxServer.io が保守する RAW 写真処理デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 RAW 사진 처리 데스크톱
+    ru: Рабочий стол обработки RAW-фотографий, поддерживаемый LinuxServer.io
+    ms: Desktop pemprosesan foto RAW yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de processamento de fotos RAW mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.rawtherapee.com/
+  github: https://github.com/linuxserver/docker-rawtherapee
+  document: https://docs.linuxserver.io/images/docker-rawtherapee/
+  architectures:
+  - amd64
+  - arm64
