@@ -1,0 +1,30 @@
+name: Brave LinuxServer
+tags:
+- Tool
+title: Brave 浏览器桌面
+description: Brave 浏览器桌面
+additionalProperties:
+  key: brave-linuxserver
+  name: Brave LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Brave 浏览器桌面
+  shortDescEn: Privacy browser desktop maintained by LinuxServer.io
+  description:
+    en: Privacy browser desktop maintained by LinuxServer.io
+    zh: Brave 浏览器桌面
+    zh-Hant: Brave 瀏覽器桌面
+    ja: LinuxServer.io が保守するプライバシーブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 개인정보 보호 브라우저 데스크톱
+    ru: Приватный браузерный рабочий стол, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar privasi yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador de privacidade mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://brave.com/
+  github: https://github.com/linuxserver/docker-brave
+  document: https://docs.linuxserver.io/images/docker-brave/
+  architectures:
+  - amd64
+  - arm64
