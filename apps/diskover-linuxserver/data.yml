@@ -1,0 +1,30 @@
+name: Diskover LinuxServer
+tags:
+- Storage
+title: Diskover 文件系统索引与搜索
+description: Diskover 文件系统索引与搜索
+additionalProperties:
+  key: diskover-linuxserver
+  name: Diskover LinuxServer
+  tags:
+  - Storage
+  shortDescZh: Diskover 文件系统索引与搜索
+  shortDescEn: Filesystem indexer maintained by LinuxServer.io
+  description:
+    en: Filesystem indexer maintained by LinuxServer.io
+    zh: Diskover 文件系统索引与搜索
+    zh-Hant: Diskover 檔案系統索引與搜尋
+    ja: LinuxServer.io が保守するファイルシステムインデクサー
+    ko: LinuxServer.io에서 유지 관리하는 파일 시스템 인덱서
+    ru: Индексатор файловой системы, поддерживаемый LinuxServer.io
+    ms: Pengindeks sistem fail yang diselenggara oleh LinuxServer.io
+    pt-br: Indexador de sistema de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/diskoverdata/diskover-community
+  github: https://github.com/linuxserver/docker-diskover
+  document: https://docs.linuxserver.io/images/docker-diskover/
+  architectures:
+  - amd64
+  - arm64
