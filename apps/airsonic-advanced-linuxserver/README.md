@@ -1,31 +1,46 @@
 # Airsonic Advanced
-## 产品介绍
 
-Airsonic Advanced 是一个自托管音乐流媒体服务器，可在浏览器和兼容客户端中访问音乐库。本应用使用 LinuxServer.io 维护的 `linuxserver/airsonic-advanced` 镜像。
+## 应用简介
+Airsonic Advanced 音乐服务器。
 
-## 主要功能
+英文说明：Music streaming server maintained by LinuxServer.io.
 
-- 通过 Web UI 管理和播放音乐库
-- 持久化保存配置、音乐、播放列表和播客目录
-- 使用 4040 端口提供 Web 界面
-- 支持上下文路径、Java 参数和时区配置
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`11.1.4`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 4040 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成媒体服务、索引器或资料库配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| MUSIC_PATH | 音乐目录 | ./data/music | 是 |
+| PLAYLISTS_PATH | 播放列表目录 | ./data/playlists | 是 |
+| PODCASTS_PATH | 播客目录 | ./data/podcasts | 是 |
+| MEDIA_PATH | 额外媒体目录 | ./data/media | 是 |
+| CONTEXT_PATH | 上下文路径 | - | 否 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Airsonic Advanced is a self-hosted music streaming server for accessing a music library from browsers and compatible clients. This app uses the LinuxServer.io maintained `linuxserver/airsonic-advanced` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| JAVA_OPTS | Java 参数 | - | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage and play a music library from the Web UI
-- Persist configuration, music, playlists, and podcasts
-- Expose the Web interface on port 4040
-- Configure context path, Java options, and time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-airsonic-advanced/>
-- Project website: <https://github.com/airsonic-advanced/airsonic-advanced>
+## 参考资料
+- 官网: <https://github.com/airsonic-advanced/airsonic-advanced>
+- 文档: <https://docs.linuxserver.io/images/docker-airsonic-advanced/>
+- 源码: <https://github.com/linuxserver/docker-airsonic-advanced>

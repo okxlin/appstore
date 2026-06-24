@@ -1,24 +1,46 @@
 # CPA Usage Keeper
 
-## 产品介绍
+## 应用简介
+独立的 Cli-Proxy-API 用量追踪与展示服务。
 
-CPA Usage Keeper 是一个独立的 Cli-Proxy-API 用量追踪与展示服务，内置 SQLite 持久化和 Dashboard。它依赖 CLIProxyAPI（CPA）作为后端数据来源，在 CPA 之上补充持久化存储与统计分析能力。
+英文说明：Standalone Cli-Proxy-API usage tracker.
 
-## 主要功能
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.11.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- CPA usage 数据持久化到 SQLite
-- usage 聚合 API 与 pricing API
-- 内置 React Dashboard
-- 可选密码登录保护
-- SQLite 数据库本地备份与保留策略
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 8080 | 是 |
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| APP_BASE_PATH | 子路径前缀 | - | 否 |
+| APP_DATA_DIR | 数据目录 | ./data | 是 |
 
-- 默认通过 PANEL_APP_PORT_HTTP（8080）端口访问
-- 安装后访问地址：http://<server-ip>:<port>
-- 如需启用登录保护，设置 AUTH_ENABLED=true 并配置 LOGIN_PASSWORD
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 配置说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CPA_BASE_URL | CPA 服务地址 | - | 是 |
+| CPA_MANAGEMENT_KEY | CPA 管理密钥 | - | 是 |
+| REDIS_QUEUE_ADDR | CPA Redis 地址 | - | 否 |
+| AUTH_ENABLED | 启用登录保护 | false | 否 |
+| LOGIN_PASSWORD | 登录密码 | - | 否 |
+| LOG_LEVEL | 日志级别 | info | 否 |
+| AUTH_SESSION_TTL | 登录会话时长 | 168h | 否 |
+| REDIS_QUEUE_TLS | Redis TLS | false | 否 |
+| REDIS_QUEUE_BATCH_SIZE | Redis 批次大小 | 1000 | 否 |
+| REDIS_QUEUE_IDLE_INTERVAL | Redis 空闲间隔 | 1s | 否 |
+
+## 使用说明
+### 配置说明
 
 | 变量 | 必填 | 默认值 | 说明 |
 |------|------|--------|------|
@@ -43,19 +65,6 @@ CPA Usage Keeper 是一个独立的 Cli-Proxy-API 用量追踪与展示服务，
 | `BACKUP_INTERVAL` | 否 | `24h` | 备份间隔 |
 | `BACKUP_RETENTION_DAYS` | 否 | `7` | 备份保留天数 |
 
-## Introduction
-
-CPA Usage Keeper is a standalone Cli-Proxy-API usage tracker with SQLite persistence and built-in dashboard. It relies on CLIProxyAPI (CPA) as the backend data source, adding persistent storage and statistical analysis capabilities on top of CPA.
-
-## Features
-
-- CPA usage data persistence to SQLite
-- Usage aggregation API and pricing API
-- Built-in React Dashboard
-- Optional password-based login protection
-- SQLite database local backup and retention policy
-
-## 相关链接
-
-- [GitHub 仓库](https://github.com/Willxup/cpa-usage-keeper)
-- [官方文档](https://github.com/Willxup/cpa-usage-keeper/blob/main/README.md)
+## 参考资料
+- 官网: <https://github.com/Willxup/cpa-usage-keeper>
+- 文档: <https://github.com/Willxup/cpa-usage-keeper/blob/main/README.md>

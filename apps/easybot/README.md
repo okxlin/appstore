@@ -1,15 +1,36 @@
 # EasyBot
-这是一款集消息同步、自定义命令、绑定管理、高级权限控制、群组互动、自定义模板支持以及自定义插件支持等全方位功能于一体的服务器管理工具，全方位优化游戏社区体验!
-# 注意
-本应用使用官方 Docker 文档推荐的 `miuxue/easybot:full` 镜像，数据保存在应用目录的 `data` 和 `logs` 中。
-# 🚀 核心功能
-1. 消息同步系统 - 实现多平台消息无缝同步
-2. 自定义命令 - 灵活配置个性化管理命令
-3. 绑定管理 - 完善的用户绑定和权限管理
-4. 权限控制 - 多层次、精细化的权限控制系统
 
-# 🛠️ 高级功能
-1. 群组互动 - 增强社区互动体验
-2. 模板支持 - 自定义消息和界面模板
-3. 插件系统 - 支持自定义插件扩展功能
-4. Web UI - 直观的网页管理界面
+## 应用简介
+面向游戏服务器的社区互通与管理服务。
+
+英文说明：Game server community bridge and management service.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`full`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_WEB | Web 端口 | 5000 | 是 |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 5001 | 是 |
+| PANEL_APP_PORT_BRIDGE | Bridge端口 | 26990 | 是 |
+
+## 数据持久化
+- `./data:/app/appdata`
+- `./logs:/app/logs`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://docs.inectar.cn/>
+- 文档: <https://docs.inectar.cn/docs/easybot/quick_start/install_docker/>
+- 源码: <https://github.com/easybot-team/easybot-docker>

@@ -1,35 +1,36 @@
 # Feed2toot
-## 产品介绍
 
-Feed2toot 使用 LinuxServer.io 维护的 `linuxserver/feed2toot` 镜像，提供 Feed2toot RSS 到 Mastodon 转发 能力。
+## 应用简介
+Feed2toot RSS 到 Mastodon 转发。
 
-## 主要功能
+英文说明：RSS to Mastodon poster maintained by LinuxServer.io.
 
-- 提供 RSS 到 Mastodon 自动转发 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`0.17.20251115`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-该应用没有 Web 界面；安装后在配置目录中维护 feed2toot 配置和 Mastodon 授权文件。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## Introduction
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| FEED_LIMIT | Feed 限制 | 5 | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-Feed2toot uses the LinuxServer.io maintained `linuxserver/feed2toot` image for RSS to Mastodon posting.
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Features
-
-- Provide RSS to Mastodon posting
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-This app does not provide a web interface; maintain feed2toot configuration and Mastodon authorization files in the config directory.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/deprecated_images/docker-feed2toot/>
-- Project website: <https://gitlab.com/chaica/feed2toot>
+## 参考资料
+- 官网: <https://gitlab.com/chaica/feed2toot>
+- 文档: <https://docs.linuxserver.io/deprecated_images/docker-feed2toot/>
+- 源码: <https://github.com/linuxserver/docker-feed2toot>

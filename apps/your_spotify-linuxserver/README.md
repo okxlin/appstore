@@ -1,35 +1,46 @@
 # Your Spotify
-## 产品介绍
 
-Your Spotify 使用 LinuxServer.io 维护的 `linuxserver/your_spotify` 镜像，提供 Your Spotify 听歌统计面板 能力。
+## 应用简介
+Your Spotify 听歌统计面板。
 
-## 主要功能
+英文说明：Spotify listening statistics dashboard maintained by LinuxServer.io.
 
-- 提供 Spotify 听歌统计展示 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.20.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 80 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 443 | 是 |
 
-安装完成后，通过 HTTP 或 HTTPS 端口访问 Your Spotify，并在 Spotify 开发者后台配置回调地址。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MONGO_DATA_PATH | Mongo 数据目录 | ./data/mongo | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Your Spotify uses the LinuxServer.io maintained `linuxserver/your_spotify` image for Spotify listening statistics.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| APP_URL | 应用访问 URL | http://localhost | 是 |
+| SPOTIFY_PUBLIC | Spotify 客户端 ID | replace-with-client-id | 是 |
+| SPOTIFY_SECRET | Spotify 客户端密钥 | replace-with-client-secret | 是 |
+| SPOTIFY_API_DELAY_MS | Spotify API 延迟毫秒 | 2000 | 是 |
+| CORS | CORS 来源 | all | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide Spotify listening statistics
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open Your Spotify from the HTTP or HTTPS port and configure the callback URL in the Spotify developer dashboard.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-your_spotify/>
-- Project website: <https://github.com/Yooooomi/your_spotify>
+## 参考资料
+- 官网: <https://github.com/Yooooomi/your_spotify>
+- 文档: <https://docs.linuxserver.io/images/docker-your_spotify/>
+- 源码: <https://github.com/linuxserver/docker-your_spotify>

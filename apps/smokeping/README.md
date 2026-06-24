@@ -1,20 +1,42 @@
-[Smokeping](https://oss.oetiker.ch/smokeping/) keeps track of your network latency. For a full example of what this application is capable of visit [UCDavis](http://smokeping.ucdavis.edu/cgi-bin/smokeping.fcgi).
+# SmokePing
 
-## Application Setup
+## 应用简介
+一个豪华的延迟测量工具。
 
-* Once running, the URL will be `http://<host-ip>/smokeping/smokeping.cgi`. For example, a full URL might look like `https://smokeping.yourdomain.com/smokeping/smokeping.cgi`.
-* Basic setup: edit the `Targets` file to ping the hosts you're interested in to match the format found there.
-* Wait 10 minutes.
-* To reload the configuration without restarting the container, run `docker exec smokeping pkill -f -HUP '/usr/bin/perl /usr/s?bin/smokeping(_cgi)?'`, where `smokeping` is the container ID.
-* To restart the container, run `docker restart smokeping`, where `smokeping` is the container ID.
-* Note that the default `Targets` file includes items that may or may not work. These are simply to provide examples of configuration.
-* Slave setup: modify the `Targets`, `Slaves`, and `smokeping_secrets` files on the master host, per [the documentation](https://manpages.ubuntu.com/manpages/trusty/en/man7/smokeping_master_slave.7.html).
+英文说明：A deluxe latency measurement tool.
 
-> 中文说明
-* 运行后，URL 将是 `http://<host-ip>/smokeping/smokeping.cgi`。例如，完整的 URL 可能是 `https://smokeping.yourdomain.com/smokeping/smokeping.cgi`。
-* 基本设置：编辑 `Targets` 文件，ping 你感兴趣的主机，使其与文件中的格式一致。
-* 等待 10 分钟。
-* 要在不重启容器的情况下重新加载配置，请运行 `docker exec smokeping pkill -f -HUP '/usr/bin/perl /usr/s?bin/smokeping(_cgi)?'` ，其中 `smokeping` 是容器 ID。
-* 要重新启动容器，请运行 `docker restart smokeping`，其中 `smokeping` 是容器 ID。
-* 请注意，默认的 `Targets` 文件包含的项目可能有效，也可能无效。这些只是为了提供配置示例。
-* 从属设置：根据 [文档](https://manpages.ubuntu.com/manpages/trusty/en/man7/smokeping_master_slave.7.html)，修改主主机上的 `Targets`、`Slaves` 和 `smokeping_secrets` 文件。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.9.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40213 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MASTER_URL | 外部访问地址 | http://:40213/smokeping/ | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| SHARED_SECRET | 主共享密钥 (从属模式) | - | 否 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://oss.oetiker.ch/smokeping/>
+- 文档: <https://oss.oetiker.ch/smokeping/doc/index.en.html>
+- 源码: <https://github.com/linuxserver/docker-smokeping>

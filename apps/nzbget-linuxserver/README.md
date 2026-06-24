@@ -1,31 +1,43 @@
 # NZBGet
-## 产品介绍
 
-NZBGet 是一个以性能为目标的 Usenet 下载器。本应用使用 LinuxServer.io 维护的 `linuxserver/nzbget` 镜像，提供 Web UI、配置持久化和下载目录挂载。
+## 应用简介
+Usenet 下载器。
 
-## 主要功能
+英文说明：Usenet downloader maintained by LinuxServer.io.
 
-- 通过 Web UI 管理 Usenet 下载任务
-- 自定义 Web 登录用户名和密码
-- 持久化保存配置目录和下载目录
-- 支持自定义时区，适合与媒体管理应用配合使用
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`26.2.20260618`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 6789 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 NZBGet。Web 登录用户名和密码由安装表单中的 `Web 用户名` 与 `Web 密码` 决定。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 下载目录 | ./data/downloads | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-NZBGet is a Usenet downloader designed for high performance and low resource usage. This app uses the LinuxServer.io maintained `linuxserver/nzbget` image and provides a Web UI with persistent config and downloads directories.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| NZBGET_USER | Web 用户名 | nzbget | 是 |
+| NZBGET_PASS | Web 密码 | - | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage Usenet downloads from the Web UI
-- Configure the Web login username and password
-- Persist configuration and downloaded files
-- Configure the container time zone from the app form
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-nzbget/>
-- NZBGet project: <https://nzbget.com/>
+## 参考资料
+- 官网: <https://nzbget.com>
+- 文档: <https://docs.linuxserver.io/images/docker-nzbget/>
+- 源码: <https://github.com/linuxserver/docker-nzbget>

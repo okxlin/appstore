@@ -1,5 +1,42 @@
 # Radarr
 
-**Radarr** 是一款针对 Usenet 和 BitTorrent 用户的电影收藏管理器。它可以监控多个 RSS 源，获取新电影，并与客户端和索引器进行交互，自动下载、分类和重命名电影文件。Radarr 还可以配置为在库中的现有文件有更高质量格式时自动升级其质量。
+## 应用简介
+电影收藏管理器。
 
-请注意，每部电影只能支持一种格式。如果你想要同一部电影的 4k 版本和 1080p 版本，你需要设置多个实例。
+英文说明：Movie organizer/manager.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`6.2.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40316 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| RADARR_CONFIG_PATH | Radarr 配置路径 | ./data/data | 是 |
+| MOVIES_PATH | 电影路径 | ./data/movies | 是 |
+| DOWNLOADS_PATH | 下载路径 | ./data/downloads | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://radarr.video>
+- 文档: <https://radarr.video/docs/>
+- 源码: <https://github.com/Radarr/Radarr>

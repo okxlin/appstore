@@ -1,54 +1,38 @@
-Emby Server
-============
+# Emby Server
 
-Emby Server is a personal media server with apps on just about every device.
+## 应用简介
+一个免费的个人媒体服务器。
 
-It features a REST-based API with built-in documention to facilitate client development. We also have client libraries for our API to enable rapid development.
+英文说明：A free personal media server.
 
-## Emby Apps
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64。
+- 可选版本：`latest`、`arm32v7`、`arm64v8`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- [Android Mobile (Play Store)](https://play.google.com/store/apps/details?id=com.mb.android "Android Mobile (Play Store)")
-- [Android Mobile (Amazon)](http://www.amazon.com/Emby-for-Android/dp/B00GVH9O0I "Android Mobile (Amazon)")
-- [Android TV](https://play.google.com/store/apps/details?id=tv.emby.embyatv "Android TV")
-- [Amazon Fire TV](http://www.amazon.com/Emby-for-Fire-TV/dp/B00VVJKTW8 "Amazon Fire TV")
-- [HTML5](http://app.emby.media "HTML5")
-- [iPad](https://itunes.apple.com/us/app/emby/id992180193?ls=1&mt=8 "iPad")
-- [iPhone](https://itunes.apple.com/us/app/emby/id992180193?ls=1&mt=8 "iPhone")
-- [Kodi](http://emby.media/download/ "Kodi")
-- [Media Portal](http://www.team-mediaportal.com/ "Media Portal")
-- [Roku](https://www.roku.com/channels#!details/44191/emby "Roku")
-- [Windows Desktop](http://emby.media/download/ "Windows Desktop")
-- [Windows Media Center](http://emby.media/download/ "Windows Media Center")
-- [Windows Phone](http://www.windowsphone.com/s?appid=f4971ed9-f651-4bf6-84bb-94fd98613b86 "Windows Phone")
-- [Windows 8](http://apps.microsoft.com/windows/en-us/app/media-browser/ad55a2f0-9897-47bd-8944-bed3aefd5d06 "Windows 8.1")
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP端口 | 40091 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS端口 | 40092 | 是 |
 
-## New Users ##
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data/config | 是 |
+| MOUNT_PATH | 挂载文件夹路径 | ./data/mnt1 | 是 |
+| MOUNT_PATH2 | 挂载文件夹路径2 | ./data/mnt2 | 是 |
 
-If you're a new user looking to install Emby Server, please head over to [emby.media](http://www.emby.media/ "emby.media")
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## Developer Info ##
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-[Api Docs](https://github.com/MediaBrowser/MediaBrowser/wiki "Api Workflow")
-
-[How to Build a Server Plugin](https://github.com/MediaBrowser/MediaBrowser/wiki/How-to-build-a-Server-Plugin "How to build a server plugin")
-
-
-## Visit our community: ##
-
-http://emby.media/community
-
-## Images
-
-![Android](https://dl.dropboxusercontent.com/u/4038856/android1.png)
-![Android](https://dl.dropboxusercontent.com/u/4038856/android2.png)
-![Html5](https://github.com/MediaBrowser/MediaBrowser.Resources/raw/master/apps/html5.png)
-![iOS](https://github.com/MediaBrowser/MediaBrowser.Resources/raw/master/apps/ios_1.jpg)
-![iOS](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/ios_2.jpg)
-![Emby Theater](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/mbt.png)
-![Emby Theater](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/mbt1.png)
-![Windows Phone](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/winphone.png)
-![Roku](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/roku2.jpg)
-![iOS](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/ios_3.jpg)
-![Dashboard](https://raw.github.com/MediaBrowser/MediaBrowser.Resources/master/apps/dashboard.png)
-![iOS](http://i.imgur.com/prrzxMc.jpg)
-![iOS](http://i.imgur.com/c9Vd1w5.jpg)
+## 参考资料
+- 官网: <https://emby.media/>
+- 文档: <https://emby.media/support/articles/Home.html>
+- 源码: <https://github.com/MediaBrowser/Emby>

@@ -1,38 +1,43 @@
-## 产品介绍
+# Wavelog
 
-**Wavelog** 是一个开源的业余无线电通联日志管理系统，业余无线电爱好者可以借助 Wavelog 管理通联记录，并与 QRZ.com、LoTW 等平台同步。
+## 应用简介
+开源业余无线电通联日志。
 
-## 主要功能
+英文说明：Open-source amateur radio QSO logger.
 
-* 自定义电台呼号、站点和位置，在云端记录日常通联
-* 上传/下载 LoTW、QRZ.com 等平台的通联记录
-* 支持通过 API 或网关与 GridTracker2 等业余无线电软件、硬件联动
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64、arm/v7。
+- 可选版本：`2.2.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 3792 | 是 |
 
-安装后访问 `http://<服务器 IP>:<Web 端口>/install/`，在安装向导中填写 1Panel 生成的数据库信息。官方容器采用首次访问安装向导写入配置的方式，1Panel 表单创建的 MariaDB/MySQL 数据库不会自动写入配置文件。
+## 数据持久化
+- `./data/wavelog-config:/var/www/html/application/config/docker`
+- `./data/wavelog-uploads:/var/www/html/uploads`
+- `./data/wavelog-userdata:/var/www/html/userdata`
 
-数据库信息对应关系：
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-* 数据库主机：安装表单中的数据库服务地址
-* 数据库名：`PANEL_DB_NAME`
-* 数据库用户：`PANEL_DB_USER`
-* 数据库密码：`PANEL_DB_USER_PASSWORD`
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mariadb | 是 |
+| PANEL_DB_NAME | 数据库名 | wavelog | 是 |
+| PANEL_DB_USER | 数据库用户 | wavelog | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | - | 是 |
 
-Wavelog 官方推荐 MariaDB，MariaDB >= 10.2 或 MySQL >= 8。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-安装完成后，网站 Base URL 会保存在 `./data/wavelog-config/config.php`。如果外网访问地址、反向代理域名或端口发生变化，请同步修改 `base_url`。
-
-## 安全说明
-
-本应用使用 Wavelog 官方镜像 `ghcr.io/wavelog/wavelog:2.2.1`。维护侧扫描该镜像时发现 Debian 运行时依赖仍存在较多 Critical/High CVE，其中部分已有上游修复版本但镜像尚未更新。该风险来自上游官方镜像基础系统包，介意风险的用户建议等待上游镜像更新后再部署，或仅在可信内网/反向代理鉴权后使用。
-
-## Introduction
-
-Wavelog is an open-source online contact logging system for amateur radio operators.
-
-## Features
-
-* Manage callsigns, stations, locations, and daily QSOs
-* Import and export contacts with LoTW, QRZ.com, and related platforms
-* Integrate with amateur-radio tools and gateways through API workflows
+## 参考资料
+- 官网: <https://www.wavelog.org/>
+- 文档: <https://docs.wavelog.org/>
+- 源码: <https://github.com/wavelog/wavelog>

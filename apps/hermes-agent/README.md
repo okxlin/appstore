@@ -1,69 +1,51 @@
 # Hermes Agent
 
-Hermes Agent 是一个可长期运行的 AI Agent 消息网关，适合把同一个助手接入 Telegram、Discord、Slack、WhatsApp、Signal、Email 等消息入口。这个应用现在只保留 **gateway** 主功能，dashboard 已拆分为可选附属应用 `hermes-dashboard`。
+## 应用简介
+Hermes Agent 消息网关。
 
-## 应用内容
+英文说明：Hermes Agent messaging gateway.
 
-本产物默认安装一个容器：
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2026.6.19`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- **hermes-agent**：常驻消息网关，命令为 `gateway run`
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_API | 网关 API 端口 | 8642 | 是 |
 
-其中：
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIPS | 提示 | 安装后容器会以 gateway run 常驻运行。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；若你有自定义用户，请在升级前先调整为自己的值。至少需要配置 1 个模型提供商 Key；若要直接接入 Telegram，再补 TELEGRAM_BOT_TOKEN。对于第三方 OpenAI-compatible 供应商，建议把 API Key 放到 /opt/data/.env 的 OPENAI_API_KEY 中，并手动在 /opt/data/config.yaml 里设置 model.default、provider: custom、base_url；不要把密钥直接写进 config.yaml。 | 是 |
+| APP_DATA_DIR | 数据目录 | ./data | 是 |
+| GITHUB_APP_PRIVATE_KEY_PATH | GitHub App 私钥路径 | - | 否 |
 
-- `8642`：Hermes 网关 API / health 端口
-- `GATEWAY_STATIC_IP`：给 gateway 指定 1Panel 网络内的固定 IP，方便附属 dashboard 或其它容器稳定访问
-- `/opt/data`：统一持久化目录，保存 `.env`、`config.yaml`、会话、记忆、技能、日志等数据
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 版本说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| HERMES_UID | Hermes 运行用户 UID | 10000 | 是 |
+| HERMES_GID | Hermes 运行用户 GID | 10000 | 是 |
+| GATEWAY_STATIC_IP | 网关静态 IP | 172.18.0.240 | 是 |
+| OPENAI_API_KEY | OpenAI / OpenAI-compatible API 密钥 | - | 否 |
+| OPENROUTER_API_KEY | OpenRouter API 密钥 | - | 否 |
+| ANTHROPIC_TOKEN | Anthropic API 密钥 | - | 否 |
+| ANTHROPIC_BASE_URL | Anthropic 基础地址 | - | 否 |
+| GOOGLE_API_KEY | Google API 密钥 | - | 否 |
+| DEEPSEEK_API_KEY | DeepSeek API 密钥 | - | 否 |
+| MISTRAL_API_KEY | Mistral API 密钥 | - | 否 |
 
-产物同时保留两个安装入口：
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-| 目录 | 说明 |
-| --- | --- |
-| `latest/` | 跟随上游最新镜像 |
-| 数字版本目录 | 保留一个最新的稳定数字版本，便于需要固定版本部署时使用 |
-
-## 安装前建议
-
-建议至少准备以下一类配置：
-
-- 一个模型提供商密钥：如 `OPENAI_API_KEY`、`OPENROUTER_API_KEY`、`ANTHROPIC_TOKEN`、`GOOGLE_API_KEY`
-- 一个消息入口凭据：如 `TELEGRAM_BOT_TOKEN`
-
-若两个都不配，容器可以启动，但不会形成可直接使用的聊天入口。
-
-## 安装后访问
-
-- API / Health 地址：`http://服务器IP:面板里填写的 Gateway API 端口`
-
-若后续要安装 `hermes-dashboard`，建议先给本应用设置独立的 `GATEWAY_STATIC_IP`，再在 dashboard 里把 `GATEWAY_HEALTH_URL` 写成对应完整地址。
-
-## 持久化目录
-
-统一数据目录挂载到 `/opt/data`，常见内容如下：
-
-- `/opt/data/.env`：环境变量与密钥
-- `/opt/data/config.yaml`：Hermes 主配置
-- `/opt/data/sessions/`：会话数据
-- `/opt/data/memories/`：记忆数据
-- `/opt/data/skills/`：技能目录
-- `/opt/data/logs/`：运行日志
-
-## 配置建议
-
-1Panel 首屏表单保留了较完整的环境变量集合，方便直接在面板里配置；clone 下来手工部署时，也可以直接使用版本目录中的 `.env.sample`。
-
-对于 OpenAI-compatible 供应商，推荐做法：
-
-- API Key 写入 `/opt/data/.env` 的 `OPENAI_API_KEY`
-- 模型、provider、base_url 写入 `/opt/data/config.yaml`
-
-## 可选附属应用
-
-如果你需要 Web Dashboard，请额外安装 `hermes-dashboard`。它是独立附属应用，不装也不影响 gateway 正常工作。
-
-## 上游项目
-
-- GitHub：https://github.com/NousResearch/hermes-agent
-- 文档：https://hermes-agent.nousresearch.com/docs/
-- Docker 文档：https://hermes-agent.nousresearch.com/docs/user-guide/docker
+## 参考资料
+- 官网: <https://hermes-agent.nousresearch.com/docs/>
+- 文档: <https://hermes-agent.nousresearch.com/docs/user-guide/docker>
+- 源码: <https://github.com/NousResearch/hermes-agent>

@@ -1,6 +1,44 @@
-# 使用说明
+# Headscale-WebUI
 
-## 数据文件夹授权
+## 应用简介
+适用于小规模部署的简单 Headscale 网络用户界面。
+
+英文说明：A simple Headscale web UI for small-scale deployments.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40185 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+| HEADSCALE_PATH | Headscale 配置文件路径 | /opt/1panel/apps/local/headscale/headscale/data/config | 是 |
+| URL_PATH | 后台管理路径 | /admin | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| HS_SERVER | Headscale 服务器链接 | http://172.18.0.241:8080 | 是 |
+| External_URL | 外部访问地址 (域名地址) | https://hs.example.com | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| SECRET_KEY | 加密密钥 (终端执行'openssl rand -base64 32'获得) | TvMhk7FDnAfaIwp0RDRsq3AVNdrYBuhNT0NTPNw4vIQ= | 是 |
+| AUTH_TYPE | 验证方式 (留空无 http 验证) | Basic | 否 |
+| HTTP_USER | HTTP 用户 | user | 否 |
+| HTTP_PWD | HTTP 密码 | password | 否 |
+
+## 使用说明
+### 数据文件夹授权
 
 - 1、**必要操作：** 首次安装完成后，进入已安装应用界面，点击跳转数据目录，修改目录下的`data`文件夹为`1000`用户和用户组。
 
@@ -11,72 +49,5 @@ chown -R 1000:1000 /opt/1panel/apps/local/headscale-webui/headscale-webui/data
 
 - 2、回到已安装应用界面，重建应用。
 
-
-# 原始相关
-***
-<p align="center">
-  <a href="https://github.com/juanfont/headscale">
-    <img src="https://github.com/iFargle/headscale-webui/raw/main/static/img/headscale3-dots.png" width="250">
-  </a>
-</p>
-
-<h2 align="center">Headscale-WebUI</h3>
-
-<p align="center">
-  A simple Headscale web UI for small-scale deployments.
-</p>
-<p align="center">
-  <a href="https://github.com/iFargle/headscale-webui/blob/main/README.md#Screenshots">Screenshots</a> | <a href="https://github.com/iFargle/headscale-webui/blob/main/SETUP.md">Installation</a> | <a href="https://github.com/iFargle/headscale-webui/issues">Issues</a>
-</p>
-
----
-# Features
-1.  Enable/Disable routes and exit nodes
-    * Manage failover routes as well
-2.  Add, move, rename, and remove machines
-3.  Add and remove users/namespaces
-4.  Add and expire PreAuth keys
-5.  Add and remove machine tags
-6.  View machine details
-    * Hostname
-    * User associated with the machine
-    * IP addresses in the Tailnet
-    * Last seen by the control server
-    * Last update with the control server
-    * Creation date
-    * Expiration date (will also display a badge when nearing expiration)
-    * PreAuth key associated with the machine
-    * Enable / disable routes and exit nodes
-    * Add and delete machine tags
-7.  Basic and OIDC Authentication
-    * OIDC Authentication tested with Authelia and Keycloak
-8.  Change your color theme! See MaterializeCSS Documentation for Colors for examples.
-9.  Search your machines and users.
-    * Machines have tags you can use to filter search:
-        * `tag:tagname` Searches only for specific tags
-        * `machine:machine-name` Searches only for specific machines
-        * `user:user-name` Searches only for specific users
-
-
----
-# Installation
-* See [SETUP.md](SETUP.md) for installation and configuration instructions.
-
----
-# Screenshots:
-![Overview](https://github.com/iFargle/headscale-webui/raw/main/screenshots/overview.png)
-![Routes](https://github.com/iFargle/headscale-webui/raw/main/screenshots/routes.png)
-![Machines](https://github.com/iFargle/headscale-webui/raw/main/screenshots/machines.png)
-![Users](https://github.com/iFargle/headscale-webui/raw/main/screenshots/users.png)
-![Settings](https://github.com/iFargle/headscale-webui/raw/main/screenshots/settings.png)
-
----
-# Tech used:
-* Python - [Link](https://www.python.org/)
-* Poetry - [Link](https://python-poetry.org/)
-* MaterializeCSS - [Link](https://github.com/Dogfalo/materialize)
-* jQuery - [Link](https://jquery.com/)
-
-For Python libraries, see [pyproject.toml](https://github.com/iFargle/headscale-webui/blob/main/pyproject.toml)
-
-If you use this project, please reach out!  It keeps me motivated!  Thank you!
+## 参考资料
+- 官网: <https://github.com/iFargle/headscale-webui>

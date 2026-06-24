@@ -1,12 +1,36 @@
-<div align="center"><a name="readme-top"></a>
+# LobeChat
 
-<h1>Lobe Chat</h1>
+## 应用简介
+现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架。
 
-现代化设计的开源 ChatGPT/LLMs 聊天应用与开发框架<br/>
-支持语音合成、多模态、可扩展的（[function call][docs-functionc-call]）插件系统<br/>
-一键**免费**拥有你自己的 ChatGPT/Gemini/Claude/Ollama 应用
+英文说明：An open-source, modern-design ChatGPT/LLMs UI/Framework.
 
-[English](https://github.com/lobehub/lobe-chat/blob/main/README.md) · **简体中文** · [更新日志](https://github.com/lobehub/lobe-chat/blob/main/CHANGELOG.md) · [文档](https://lobehub.com/docs) · [报告问题](https://github.com/lobehub/lobe-chat/issues) · [请求功能](https://github.com/lobehub/lobe-chat/issues)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.143.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40247 | 是 |
 
-![](https://private-user-images.githubusercontent.com/28616219/306135690-9f155dff-4737-429f-9cad-a70a1a860c5f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYyNjc0OTgsIm5iZiI6MTcxNjI2NzE5OCwicGF0aCI6Ii8yODYxNjIxOS8zMDYxMzU2OTAtOWYxNTVkZmYtNDczNy00MjlmLTljYWQtYTcwYTFhODYwYzVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA1MjElMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNTIxVDA0NTMxOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJlOWNlODY5NmI4ODA2Y2Y5NmM3NzVjNzU4MjAzYWE3NDU2YmJlMzdmOWU1YjIyNjcwMGRjNTJhNTRhYTFjZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.5xWoXxU6RhqvqRFH2e17oshXIeMqJLUDPLonpz9wTGU)
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| OPENAI_API_KEY | OpenAI API 密钥 | password | 否 |
+| OPENAI_PROXY_URL | OpenAI 代理 URL | https://api.openai.com/v1 | 否 |
+| ACCESS_CODE | 访问密码 | - | 否 |
+| OPENAI_MODEL_LIST | OpenAI 模型列表 | - | 否 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://lobehub.com>
+- 文档: <https://lobehub.com/docs>
+- 源码: <https://github.com/lobehub/lobe-chat>

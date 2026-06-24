@@ -1,43 +1,43 @@
 # Fleet
-## 产品介绍
 
-Fleet 使用 LinuxServer.io 维护的 `linuxserver/fleet` 镜像，提供 Fleet 镜像仓库展示界面 能力。
+## 应用简介
+Fleet 镜像仓库展示界面。
 
-## 主要功能
+英文说明：Image repository dashboard maintained by LinuxServer.io.
 
-- 提供 镜像仓库展示与管理 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`2.3.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8080 | 是 |
 
-安装完成后，通过 HTTP 端口访问 Fleet Web UI。使用 DATABASE 模式时，可通过 `/setup` 初始化用户。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| DB_DATA_PATH | 数据库数据目录 | ./data/db | 是 |
 
-## 运行说明
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-LinuxServer 已将该镜像和 Fleet 应用标记为 deprecated。本适配保留 `2.3.3` numbered tag，用于兼容 LinuxServer 镜像部署。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DB_PASSWORD | 数据库密码 | fleet-change-me | 是 |
+| FLEET_ADMIN_SECRET | 管理员密钥 | fleet-admin-secret-change-me | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-Fleet uses the LinuxServer.io maintained `linuxserver/fleet` image for image repository display and management.
-
-## Features
-
-- Provide image repository display and management
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open Fleet from the HTTP port. In DATABASE mode, initialize the first user from `/setup`.
-
-## Runtime Notes
-
-LinuxServer marks this image and the Fleet application as deprecated. This package keeps the `2.3.3` numbered tag for LinuxServer image compatibility.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-fleet/>
-- Project website: <https://github.com/linuxserver/fleet>
+## 参考资料
+- 官网: <https://github.com/linuxserver/fleet>
+- 文档: <https://docs.linuxserver.io/images/docker-fleet/>
+- 源码: <https://github.com/linuxserver/docker-fleet>

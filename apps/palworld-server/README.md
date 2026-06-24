@@ -1,53 +1,51 @@
-# 使用说明
+# Palworld Dedicated Server (幻兽帕鲁)
 
+## 应用简介
+幻兽帕鲁服务端。
+
+英文说明：Palworld Dedicated Server (幻兽帕鲁).
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：游戏。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.4.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 8211 | 是 |
+| PANEL_APP_PORT_RCON | RCON 端口 | 25575 | 是 |
+| PANEL_APP_PORT_QUERY | Query 端口 (用于与 Steam 服务器通信的查询端口) | 27015 | 是 |
+| MAX_PLAYERS | 玩家数量限制 | 32 | 是 |
+| PANEL_APP_PORT_PUBLIC | 服务器端口 (留空自动检测) | - | 否 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MULTITHREAD_SWITCH | 是否启用 CPU 多线程优化 (true / false) | true | 是 |
+| PUBLIC_SWITCH | 是否将服务器设置为社区服务器 (true / false) | false | 是 |
+| PUBLIC_IP | 服务器 IP (留空自动检测) | - | 否 |
+| UPDATE_SWITCH | 是否每次启动都更新服务器 (true / false) | true | 是 |
+| SERVER_NAME | 服务器名 | Default Palworld Server | 是 |
+| ADMIN_PASSWORD | 管理员密码 | palworld | 否 |
+| SERVER_PASSWORD | 服务器密码 | - | 否 |
+| RCON_SWITCH | 是否启用 RCON (true / false) | false | 是 |
+
+## 使用说明
 **镜像标签版本是不同的，不可以覆盖**
 
 - `latest`是下载了整合包，镜像体积比较大。
 - 数字版本的是安装好了会自动在线下载所需内容的。
 
-# 原始相关
-***
-
-# palworld-docker
-
-[![Check Update](https://github.com/KagurazakaNyaa/palworld-docker/actions/workflows/update.yml/badge.svg)](https://github.com/KagurazakaNyaa/palworld-docker/actions/workflows/update.yml)
-[![Build Docker Image](https://github.com/KagurazakaNyaa/palworld-docker/actions/workflows/build.yml/badge.svg)](https://github.com/KagurazakaNyaa/palworld-docker/actions/workflows/build.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/kagurazakanyaa/palworld)
-![Docker Stars](https://img.shields.io/docker/stars/kagurazakanyaa/palworld)
-![Image Size](https://img.shields.io/docker/image-size/kagurazakanyaa/palworld/latest)
-
-Palworld dedicated server with docker
-
-## Environments
-
-The variables in the table below affect the server's startup command, see <https://tech.palworldgame.com/dedicated-server-guide#settings> and <https://tech.palworldgame.com/community-server-guide>
-| Variable           | Describe                                                    | Default Values | Allowed Values       |
-|--------------------|-------------------------------------------------------------|----------------|----------------------|
-| MAX_PLAYERS        | Change the maximum number of participants on the server.    | 32             | 1-32                 |
-| GAME_PORT          | Change the port number used to listen to the server.        | 8211           | 1024-65535           |
-| ENABLE_MULTITHREAD | Improves performance in multi-threaded CPU environments.    | true           | true/false           |
-| IS_PUBLIC          | Setup server as a community server.                         | false          | true/false           |
-| PUBLIC_IP          | If not specified, it will be detected automatically.        |                | all vaild ip address |
-| PUBLIC_PORT        | If not specified, it will be detected automatically.        |                | 1024-65535           |
-| FORCE_UPDATE       | Whether the server should be update each time start.        | false          | true/false           |
-
-The variables in the table below only valid during initialization, if you need to make it valid, please delete `/opt/palworld/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini` and restart the container.
-| Variable           | Describe                 | Default Values          | Allowed Values |
-|--------------------|--------------------------|-------------------------|----------------|
-| SERVER_NAME        | Server name              | Default Palworld Server | string         |
-| SERVER_DESC        | Server description       | Default Palworld Server | string         |
-| ADMIN_PASSWORD     | AdminPassword            |                         | string         |
-| SERVER_PASSWORD    | Set the server password. |                         | string         |
-| RCON_ENABLED       | Enable RCON              | false                   | true/false     |
-| RCON_PORT          | Port number for RCON     | 25575                   | 1024-65535     |
-
-For balance changes, please directly modify `/opt/palworld/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini`, please refer to <https://tech.palworldgame.com/optimize-game-balance>
-
-## Volumes
-
-|Path                      |Describe              |
-|--------------------------|----------------------|
-|`/opt/palworld/Pal/Saved` |Game config and saves.|
-
-NOTE: If you use bind instead of volume to mount, you need to manually change the volume owner to uid=1000.
-In the case of the docker-compose.yml of the example, you need to execute `chown -R 1000:1000 ./data`
+## 参考资料
+- 官网: <https://hub.docker.com/r/kagurazakanyaa/palworld>
+- 文档: <https://github.com/KagurazakaNyaa/palworld-docker>

@@ -1,59 +1,35 @@
-# 使用说明
+# Grafana
 
+## 应用简介
+用于监控和可观察性的开源平台。
+
+英文说明：The open-source platform for monitoring and observability.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`13.0.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40038 | 是 |
+
+## 数据持久化
+- `./data:/var/lib/grafana`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
 默认账户与密码
 ```
 username:admin
 password:admin
 ```
 
-# 原始相关
-
-![Grafana](https://raw.githubusercontent.com/grafana/grafana/main/docs/logo-horizontal.png)
-
-The open-source platform for monitoring and observability
-
-[![License](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
-[![Drone](https://drone.grafana.net/api/badges/grafana/grafana/status.svg)](https://drone.grafana.net/grafana/grafana)
-[![Go Report Card](https://goreportcard.com/badge/github.com/grafana/grafana)](https://goreportcard.com/report/github.com/grafana/grafana)
-
-Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data-driven culture:
-
-- **Visualizations:** Fast and flexible client side graphs with a multitude of options. Panel plugins offer many different ways to visualize metrics and logs.
-- **Dynamic Dashboards:** Create dynamic & reusable dashboards with template variables that appear as dropdowns at the top of the dashboard.
-- **Explore Metrics:** Explore your data through ad-hoc queries and dynamic drilldown. Split view and compare different time ranges, queries and data sources side by side.
-- **Explore Logs:** Experience the magic of switching from metrics to logs with preserved label filters. Quickly search through all your logs or streaming them live.
-- **Alerting:** Visually define alert rules for your most important metrics. Grafana will continuously evaluate and send notifications to systems like Slack, PagerDuty, VictorOps, OpsGenie.
-- **Mixed Data Sources:** Mix different data sources in the same graph! You can specify a data source on a per-query basis. This works for even custom datasources.
-
-## Get started
-
-- [Get Grafana](https://grafana.com/get)
-- [Installation guides](https://grafana.com/docs/grafana/latest/setup-grafana/installation/)
-
-Unsure if Grafana is for you? Watch Grafana in action on [play.grafana.org](https://play.grafana.org/)!
-
-## Documentation
-
-The Grafana documentation is available at [grafana.com/docs](https://grafana.com/docs/).
-
-## Contributing
-
-If you're interested in contributing to the Grafana project:
-
-- Start by reading the [Contributing guide](https://github.com/grafana/grafana/blob/HEAD/CONTRIBUTING.md).
-- Learn how to set up your local environment, in our [Developer guide](https://github.com/grafana/grafana/blob/HEAD/contribute/developer-guide.md).
-- Explore our [beginner-friendly issues](https://github.com/grafana/grafana/issues?q=is%3Aopen+is%3Aissue+label%3A%22beginner+friendly%22).
-- Look through our [style guide and Storybook](https://developers.grafana.com/ui/latest/index.html).
-
-## Get involved
-
-- Follow [@grafana on Twitter](https://twitter.com/grafana/).
-- Read and subscribe to the [Grafana blog](https://grafana.com/blog/).
-- If you have a specific question, check out our [discussion forums](https://community.grafana.com/).
-- For general discussions, join us on the [official Slack](https://slack.grafana.com) team.
-
-This project is tested with [BrowserStack](https://www.browserstack.com/)
-
-## License
-
-Grafana is distributed under [AGPL-3.0-only](LICENSE). For Apache-2.0 exceptions, see [LICENSING.md](https://github.com/grafana/grafana/blob/HEAD/LICENSING.md).
+## 参考资料
+- 官网: <https://grafana.com/>
+- 文档: <https://grafana.com/docs/grafana>
+- 源码: <https://github.com/grafana/grafana>

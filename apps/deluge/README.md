@@ -1,38 +1,44 @@
 # Deluge
 
-## 产品介绍
+## 应用简介
+跨平台的 BitTorrent 客户端。
 
-Deluge 是一个轻量级、跨平台的 BitTorrent 客户端，支持 Web UI、插件扩展、任务调度、带宽控制和传输加密。
+英文说明：Cross-platform BitTorrent client.
 
-## 主要功能
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2.2.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 通过浏览器管理下载任务
-- 支持插件扩展和队列管理
-- 支持下载、监控目录等持久化路径配置
-- LinuxServer 版本提供 PUID/PGID、时区和配置目录映射
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40321 | 是 |
+| DELUGE_PEER_PORT | Peer 端口 | 6881 | 是 |
+| DELUGE_PORT_RPC | RPC 端口 | 58846 | 是 |
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | Deluge 配置路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 下载路径 | ./data/downloads | 是 |
 
-安装完成后，通过应用配置的 HTTP 端口访问 Deluge Web UI。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-默认登录信息：
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| DELUGE_LOGLEVEL | Deluge 日志级别 | error | 是 |
 
-```text
-username: admin
-password: deluge
-```
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-Deluge is a lightweight cross-platform BitTorrent client with a Web UI, plugin support, scheduling, bandwidth controls, and encrypted transfers.
-
-## Features
-
-- Manage download tasks from a browser
-- Plugin-based extension model and queue management
-- Configurable persistent paths for config, downloads, and watch folders
-- LinuxServer versions expose PUID/PGID, timezone, and persistent path mapping
-
-## Access
-
-After installation, open Deluge from the configured HTTP port.
+## 参考资料
+- 官网: <https://deluge-torrent.org>
+- 文档: <https://deluge.readthedocs.io>
+- 源码: <https://github.com/linuxserver/docker-deluge>

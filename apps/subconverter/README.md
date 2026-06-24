@@ -1,12 +1,31 @@
 # subconverter
 
-在各种订阅格式之间进行转换的实用程序.
+## 应用简介
+在各种订阅格式之间进行转换的实用程序。
 
-[![Build Status](https://github.com/tindy2013/subconverter/actions/workflows/build.yml/badge.svg)](https://github.com/tindy2013/subconverter/actions)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/tindy2013/subconverter.svg)](https://github.com/tindy2013/subconverter/tags)
-[![GitHub release](https://img.shields.io/github/release/tindy2013/subconverter.svg)](https://github.com/tindy2013/subconverter/releases)
-[![GitHub license](https://img.shields.io/github/license/tindy2013/subconverter.svg)](https://github.com/tindy2013/subconverter/blob/master/LICENSE)
+英文说明：Utility to convert between various proxy subscription formats.
 
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.9.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 详细用法查看原始文档
-- https://github.com/tindy2013/subconverter/blob/master/README-cn.md
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40230 | 是 |
+
+## 数据持久化
+- `./data:/mnt`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/tindy2013/subconverter>

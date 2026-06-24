@@ -1,123 +1,49 @@
-<p align="center">
-  <a href="https://github.com/woodpecker-ci/woodpecker/">
-    <img alt="Woodpecker" src="https://github.com/woodpecker-ci/woodpecker/raw/main/docs/static/img/logo.svg" width="220"/>
-  </a>
-</p>
-<br/>
-<p align="center">
-  <a href="https://ci.woodpecker-ci.org/woodpecker-ci/woodpecker" title="Build Status">
-    <img src="https://ci.woodpecker-ci.org/api/badges/woodpecker-ci/woodpecker/status.svg">
-  </a>
-  <a href="https://codecov.io/gh/woodpecker-ci/woodpecker">
-    <img src="https://codecov.io/gh/woodpecker-ci/woodpecker/branch/main/graph/badge.svg"/>
-  </a>
-  <a href="https://translate.woodpecker-ci.org/engage/woodpecker-ci/">
-    <img src="https://translate.woodpecker-ci.org/widgets/woodpecker-ci/-/ui/svg-badge.svg" alt="Translation status" />
-  </a>
-  <a href="https://discord.gg/fcMQqSMXJy" title="Join the Discord chat at https://discord.gg/fcMQqSMXJy">
-    <img src="https://img.shields.io/discord/838698813463724034.svg?label=discord">
-  </a>
-  <a href="https://matrix.to/#/#woodpecker:matrix.org" title="Join the Matrix space at https://matrix.to/#/#woodpecker:matrix.org">
-    <img src="https://img.shields.io/matrix/woodpecker:matrix.org?label=matrix">
-  </a>
-  <a href="https://goreportcard.com/badge/github.com/woodpecker-ci/woodpecker" title="Go Report Card">
-    <img src="https://goreportcard.com/badge/github.com/woodpecker-ci/woodpecker">
-  </a>
-  <a href="https://godoc.org/github.com/woodpecker-ci/woodpecker" title="GoDoc">
-    <img src="https://godoc.org/github.com/woodpecker-ci/woodpecker?status.svg">
-  </a>
-  <a href="https://github.com/woodpecker-ci/woodpecker/releases/latest" title="GitHub release">
-    <img src="https://img.shields.io/github/v/release/woodpecker-ci/woodpecker?sort=semver">
-  </a>
-  <a href="https://hub.docker.com/r/woodpeckerci/woodpecker-server" title="Docker pulls">
-    <img src="https://img.shields.io/docker/pulls/woodpeckerci/woodpecker-server">
-  </a>
-  <a href="https://opensource.org/licenses/Apache-2.0" title="License: Apache-2.0">
-    <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg">
-  </a>
-  <a href="https://bestpractices.coreinfrastructure.org/projects/5309">
-    <img src="https://bestpractices.coreinfrastructure.org/projects/5309/badge">
-  </a>
-  <a href="https://www.tickgit.com/browse?repo=github.com/woodpecker-ci/woodpecker" title="TODOs">
-    <img src="https://badgen.net/https/api.tickgit.com/badgen/github.com/woodpecker-ci/woodpecker">
-  </a>
-</p>
-<br/>
+# Woodpecker CI
 
-# Woodpecker
+## 应用简介
+具有极强可扩展性的简单 CI 引擎。
 
-> Woodpecker is a community fork of the Drone CI system.
+英文说明：A simple CI engine with great extensibility.
 
-![woodpecker](https://github.com/woodpecker-ci/woodpecker/raw/main/docs/docs/woodpecker.png)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：运维。
+- 支持架构：amd64。
+- 可选版本：`latest`、`3.15.0`、`mysql-latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 🫶 Support
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40122 | 是 |
 
-Please consider to donate and become a backer. 🙏 [[Become a backer](https://opencollective.com/woodpecker-ci#category-CONTRIBUTE)]
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-<a href="https://opencollective.com/woodpecker-ci" target="_blank"><img src="https://opencollective.com/woodpecker-ci/backers.svg?width=890"></a>
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 🚀 Usage
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| REGISTER_SWITCH | 启用注册(true/false) | false | 是 |
+| WOODPECKER_HOST | 外部访问地址 | http://ci.example.com | 是 |
+| WOODPECKER_AGENT_SECRET | Github Agent Secret 值 | - | 是 |
+| GITHUB_ENABLE_SWITCH | 启用Github(true/false) | true | 是 |
+| WOODPECKER_GITHUB_URL | Github地址 | https://github.com | 否 |
+| WOODPECKER_GITHUB_CLIENT | Github CLIENT 值 | - | 否 |
+| WOODPECKER_GITHUB_SECRET | Github SECRET 值 | - | 否 |
+| GITEA_ENABLE_SWITCH | 启用Gitea(true/false) | false | 是 |
+| WOODPECKER_GITEA_URL | Gitea地址 | https://try.gitea.io | 否 |
+| WOODPECKER_GITEA_CLIENT | Gitea CLIENT 值 | - | 否 |
 
-### .woodpecker.yml
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Place your pipeline in a file named `.woodpecker.yml` in your repository
-- Pipeline steps can be named as you like
-- Run any command in the commands section
-
-[Read More](https://woodpecker-ci.org/docs/usage/intro)
-
-### Build steps are containers
-
-- Define any Docker image as context
-- Install the needed tools in custom Docker images, use them as context
-
-[Read More](https://woodpecker-ci.org/docs/usage/pipeline-syntax#steps)
-
-### Plugins
-
-Woodpecker has [official plugins](https://woodpecker-ci.org/plugins), but you can also use your own.
-
-[Read More](https://woodpecker-ci.org/docs/usage/plugins/plugins)
-
-## 📖 Documentation
-
-https://woodpecker-ci.org/
-
-## ✨ Contribute
-
-See [Contributing Guide](https://github.com/woodpecker-ci/woodpecker/blob/main/CONTRIBUTING.md)
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://woodpecker-ci.org/docs/next/development/getting-started#gitpod)
-
-## 📣 Translate
-
-We use an own [Weblate](https://weblate.org/en/) instance at [translate.woodpecker-ci.org](https://translate.woodpecker-ci.org).
-
-<a href="https://translate.woodpecker-ci.org/engage/woodpecker-ci/">
-  <img src="https://translate.woodpecker-ci.org/widgets/woodpecker-ci/-/ui/multi-blue.svg" alt="Translation status" />
-</a>
-
-## 👋 Who uses Woodpecker?
-
-[Codeberg](https://codeberg.org), the Woodpecker project itself, and many others.
-
-Leave a [comment](https://github.com/woodpecker-ci/woodpecker/issues/122) if you're using it as well.
-
-Also consider using the topic `WoodpeckerCI` in your repository, so others can learn from your config and use the hashtag `#WoodpeckerCI` when talking about the project on social media!
-
-Here are some places where people mention Woodpecker:
-
-- [GitHub](https://github.com/topics/WoodpeckerCI)
-- [Codeberg](https://codeberg.org/explore/repos?q=woodpeckerci&topic=1)
-- [Twitter](https://twitter.com/search?q=%23WoodpeckerCI&src=typed_query)
-- [Fediverse](https://mastodon.social/tags/WoodpeckerCI)
-
-## ✨ Stars over time
-
-[![Stargazers over time](https://starchart.cc/woodpecker-ci/woodpecker.svg)](https://starchart.cc/woodpecker-ci/woodpecker)
-
-## License
-
-Woodpecker is Apache 2.0 licensed with the source files in this repository having a header indicating which license they are under and what copyrights apply.
-
-Files under the `docs/` folder are licensed under Creative Commons Attribution-ShareAlike 4.0 International Public License.
+## 参考资料
+- 官网: <https://woodpecker-ci.org>
+- 文档: <https://woodpecker-ci.org/docs/intro>
+- 源码: <https://github.com/woodpecker-ci/woodpecker>

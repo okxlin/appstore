@@ -1,31 +1,34 @@
-## 产品介绍
+# gateway-go
 
-gateway-go 是云亿连/OpenIoTHub 的内网端网关，用于让移动端或桌面客户端远程访问局域网内服务。
+## 应用简介
+云亿连内网穿透网关。
 
-## 主要功能
+英文说明：OpenIoTHub remote access gateway.
 
-- 支持 Android、iOS、macOS、Windows、Linux 客户端
-- 支持 ARM、x86 架构镜像
-- 支持 P2P 连接，客户端扫码添加网关后配置需要访问的主机和端口
-- 支持远程访问网关所在局域网内的管理页面和应用服务
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64、arm/v7。
+- 可选版本：`latest`、`0.3.23`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 固定 Web 端口 | 34323 | 是 |
 
-应用使用 `network_mode: host`，gateway-go Web 页面固定监听宿主机 `34323` 端口。安装后访问 `http://<服务器 IP>:34323` 查看二维码，再使用云亿连/OpenIoTHub 客户端扫码添加网关。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
 
-## 安全说明
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-gateway-go 需要 host 网络以发现并访问局域网服务，这会扩大容器网络权限边界。请仅在可信主机上部署，并确认 34323 端口不会暴露到不可信公网。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-维护侧扫描 `openiothub/gateway-go` 镜像时发现可修复 Critical/High CVE，主要来自 Alpine OpenSSL 运行时包与 Go 依赖。当前按功能需求和来源可信度接受该风险入库，建议上游镜像更新后及时升级。
-
-## Introduction
-
-gateway-go is the OpenIoTHub LAN gateway for remote access to services behind NAT or firewall.
-
-## Features
-
-- Supports Android, iOS, macOS, Windows, and Linux clients
-- Supports ARM and x86 container images
-- Provides P2P remote access after pairing the gateway from the client
-- Helps access management pages and application services inside the LAN
+## 参考资料
+- 官网: <https://github.com/OpenIoTHub/gateway-go>
+- 文档: <https://docs.iothub.cloud/>

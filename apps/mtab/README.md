@@ -1,31 +1,32 @@
-# mTab新标签页
+# mTab
 
-![logo](https://raw.githubusercontent.com/tsxcw/imagesHouse/itushan/mTabReadme/192.png)
+## 应用简介
+书签导航程序。
 
-### [mTab书签官网](https://mtab.cc) | [安装文档](https://mtab.cc/document.html)  | [作者Blog](https://blog.mcecy.com) | QQ群：694155153
+英文说明：Bookmark navigator.
 
-![](https://raw.githubusercontent.com/tsxcw/imagesHouse/itushan/mTabReadme/1.png?x-image-process=image/resize,m_lfit,w_900)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.9.7`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40214 | 是 |
 
-### 主要有以下特点
+## 数据持久化
+- `"./data:/app`
 
-跨设备同步：不再为了在不同设备上找不到书签或笔记而苦恼。Mtab书签让你的收藏网址和重要笔记在所有设备上同步。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-跨浏览器支持：Mtab书签支持所有主流浏览器。Chrome、Firefox、Edge、Safari，无论你的选择是什么，都能在一应俱全的工具箱中找到你的书签和笔记。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-多功能一体：Mtab书签不仅仅是一个书签工具，它还提供了一个实用的记事本功能，让你随时随地记录想法、灵感和待办事项。此外，它还内置了一些在线小工具，解决您的日常工作问题。
-
-私有部署：如果部你对数据安全性有更高要求，Mtab书签也支持私有部署。你可以将它部署在自己的服务器上，完全掌控你的数据，不受任何干扰。
-
-免费无广告：Mtab书签坚守“免费无广告”的原则，为用户提供清爽的使用体验，没有任何干扰。
-
-Mtab书签的界面设计美观简洁，操作简单直观，让你可以专注于你的网络活动，而不是应用本身。它是你高效、无忧的网络生活的理想伴侣。
-高效流畅的操作体验：超级简约却强大的操作逻辑，没有繁琐的操作流程即可处理复杂的事情。
-
-## Demo演示站
-
-#### **[演示站Demo入口](https://demo.mtab.cc)**
-
-演示账号：admin
-
-演示密码：123456
+## 参考资料
+- 官网: <https://www.mtab.cc>
+- 源码: <https://github.com/tsxcw/mtab>

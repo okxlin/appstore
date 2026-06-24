@@ -1,35 +1,45 @@
 # netboot.xyz
-## 产品介绍
 
-netboot.xyz 使用 LinuxServer.io 维护的 `linuxserver/netbootxyz` 镜像，提供 netboot.xyz 网络启动服务 能力。
+## 应用简介
+netboot.xyz 网络启动服务。
 
-## 主要功能
+英文说明：Network boot service maintained by LinuxServer.io.
 
-- 提供 网络启动管理 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`0.7.6`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3000 | 是 |
+| PANEL_APP_PORT_TFTP | TFTP UDP 端口 | 69 | 是 |
+| PANEL_APP_PORT_ASSETS | 资源 HTTP 端口 | 8080 | 是 |
 
-安装完成后，通过 HTTP 端口访问 netboot.xyz Web 配置界面；TFTP 和资源端口用于网络启动客户端。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| ASSETS_PATH | 启动资源目录 | ./data/assets | 是 |
+| SUBFOLDER | 子路径 | / | 否 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-netboot.xyz uses the LinuxServer.io maintained `linuxserver/netbootxyz` image for network boot management.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MENU_VERSION | 菜单版本 | 1.9.9 | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide network boot management
-- Persist configuration and application data
-- Configure service ports from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open the netboot.xyz web configuration interface from the HTTP port; TFTP and assets ports are used by network boot clients.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-netbootxyz/>
-- Project website: <https://netboot.xyz/>
+## 参考资料
+- 官网: <https://netboot.xyz/>
+- 文档: <https://docs.linuxserver.io/images/docker-netbootxyz/>
+- 源码: <https://github.com/linuxserver/docker-netbootxyz>

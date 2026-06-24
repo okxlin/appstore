@@ -1,3 +1,27 @@
-# ugly-face
+# Ugly Avatar
 
-This project is under Attribution-NonCommercial 4.0 International License. This means no commercial use for the project. I thought about this for a time. If you want to use this as part of your website that needs an avatar generator, you are free to use it. If you however, buid an app solely on this code as your main project, I am highly against that practice. I don't want to have the frustration of "oh someone copied my code and made money with it".
+## 应用简介
+丑陋头像生成器。
+
+英文说明：Ugly Avatar Generator.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40240 | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://txstc55.github.io/ugly-avatar>
+- 文档: <https://github.com/txstc55/ugly-avatar>

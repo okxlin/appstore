@@ -1,4 +1,30 @@
-## 账号密码
+# Raneto
+
+## 应用简介
+一个免费、开放、简单的 Markdown 支持的 Node.js 知识库。
+
+英文说明：A free, open, and simple Markdown supported Node.js knowledge base.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40216 | 是 |
+
+## 数据持久化
+- `"./data/config:/opt/raneto/config`
+- `"./data/content/pages:/opt/raneto/content/pages`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+### 账号密码
 > 默认账户1
 - 账号：admin
 - 密码：password
@@ -7,45 +33,7 @@
 - 账号：admin2
 - 密码：password
 
-## MD文档
-
-需要展示的 `Markdown` 文档，需要放置在应用数据目录下的 `/data/content/pages` 文件夹下。
-
-在此文件夹下新建文件夹，则就是网页上的新建分类。
-
-## 配置文件
-
-> `Raneto` 的配置文件为 `config.js`，在应用数据目录下的 `/data/config` 目录下，编辑`config.js`文件修改设置。
-
-
-## 注意
-
-编辑 `config.js` 文件修改设置。
-
-- 站点名称
-
-```shel
-site_title: 'Raneto Docs',
-```
-
-- 用户名和密码
-```shell
-  credentials: [
-    {
-      username: 'admin',
-      password: 'password',
-    },
-    {
-      username: 'admin2',
-      password: 'password',
-    },
-  ],
-  ```
-
-- 支持中文语言
-```shell
-locale: 'zh',
-
-  // Support search with extra languages
-  searchExtraLanguages: ['zh'],
-```
+## 参考资料
+- 官网: <https://raneto.com>
+- 文档: <https://docs.raneto.com>
+- 源码: <https://github.com/ryanlelek/Raneto>

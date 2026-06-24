@@ -1,22 +1,45 @@
-# Blinko - 开源、自托管
+# Blinko
 
-Blinko 是一个创新的开源项目，专为需要快速捕捉和组织灵感的用户设计。通过自托管，Blinko 保障您的数据隐私和完整的控制权。
+## 应用简介
+一款开源、自托管的个人笔记工具。
 
-## 🚀 主要功能
-- **AI 增强的笔记检索**：使用先进的 AI 驱动搜索，可通过自然语言快速找到相关笔记。
-- **数据隐私**：所有笔记都安全地存储在自托管环境中，确保数据的私密性。
-- **快速且轻量**：基于 Next.js 架构，提供流畅且高效的使用体验。
-- **完全免费 & 开源**：Blinko 完全免费，欢迎社区贡献力量，共同成长。
+英文说明：An open-source, self-hosted personal note tool.
 
-## 环境配置
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.8.8`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-您可以通过设置不同的选项在运行时配置Blinko服务器。这些选项既可以作为环境变量定义，也可以作为命令行参数在启动服务器时指定。如果两种方法同时使用，命令行参数将优先于环境变量。以下是可用的配置选项列表：
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 1111 | 是 |
+| PANEL_DB_PORT | 数据库端口号 | 5432 | 是 |
 
-| 环境变量               | 描述                                           |
-|------------------------|------------------------------------------------|
-| NEXTAUTH_URL           | 指定应用程序的基础URL，通常是部署站点的根URL，用于身份验证回调和重定向。 |
-| NEXT_PUBLIC_BASE_URL   | 定义应用程序的公共基础URL，用作前端和API请求的基础路径。 |
-| NEXTAUTH_SECRET        | 用于加密会话和身份验证令牌的密钥，以确保用户数据的安全性。 |
-| DATABASE_URL           | 数据库连接URL，用于连接和访问Blinko的数据库。 |
+## 数据持久化
+- `"./data:/app/.blinko`
 
-更多信息，请访问 [主页](https://blinko-doc.vercel.app/)、[在线演示](https://blinko-demo.vercel.app/) 或查看 [文档](https://blinko-doc.vercel.app/intro.html)。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| NEXTAUTH_URL | 基本 URL | http://1.2.3.4:1111 | 是 |
+| NEXT_PUBLIC_BASE_URL | 公共基本 URL | http://1.2.3.4:1111 | 是 |
+| NEXTAUTH_SECRET | NextAuth 密钥 | my_ultra_secure_nextauth_secret | 是 |
+| PANEL_DB_HOST | PostgreSQL 数据库服务 | - | 是 |
+| PANEL_DB_NAME | 数据库名 | blinko | 是 |
+| PANEL_DB_USER | 数据库用户 | blinko | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | blinko | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://blinko-demo.vercel.app>
+- 文档: <https://blinko-doc.vercel.app/intro.html>
+- 源码: <https://github.com/blinko-space/blinko>

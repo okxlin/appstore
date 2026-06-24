@@ -1,24 +1,47 @@
 # Certd
 
-Certd 是一个免费全自动申请和自动部署更新SSL证书的管理系统。       
-后缀d取自linux守护进程的命名风格，意为证书守护进程。    
+## 应用简介
+开源 SSL 证书管理工具。
 
-关键字：证书自动申请、证书自动更新、证书自动续期、证书自动续签、证书管理工具
+英文说明：Open source SSL certificate management tool.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：安全。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.41.4`、`latest-postgres`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40311 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DNS_1 | 主 DNS | 223.5.5.5 | 是 |
+| DNS_2 | 次 DNS | 119.29.29.29 | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| HTTPS_PROXY | HTTPS 代理 | - | 否 |
+| HTTP_PROXY | HTTP 代理 | - | 否 |
+| RESET_ADMIN_PASSWD | 重置管理员密码 | false | 是 |
+| IMMEDIATE_TRIGGER | 立即触发定时任务 | false | 是 |
 
 ## 使用说明
-
 - 账户密码
 ```
 username: admin
 password: 123456
 ```
 
-## 特性
-本项目不仅支持证书申请过程自动化，还可以自动化部署更新证书，让你的证书永不过期。     
-
-* 全自动申请证书（支持所有注册商注册的域名）
-* 全自动部署更新证书（目前支持部署到主机、部署到阿里云、腾讯云等，目前已支持30+部署插件）
-* 支持通配符域名/泛域名，支持多个域名打到一个证书上
-* 邮件通知
-* 私有化部署，保障数据安全
-* 支持sqlite，postgresql数据库
+## 参考资料
+- 官网: <https://certd.docmirror.cn>
+- 源码: <https://github.com/certd/certd>

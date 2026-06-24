@@ -1,22 +1,40 @@
-<p align="center">
-<img width="203" src="https://github.com/work7z/MDGJX/raw/master/modules/web/src/favicon.png" alt="favicon.png">
-<br>
-<span style="font-size:20px">秒达工具箱 -- 免费安全的一键式呼出工具箱
-</span>
-<br><br>
-</p>
+# 秒达工具箱
 
-# 🔮 简介
+## 应用简介
+免费安全的一键式呼出工具箱。
 
-秒达工具箱是一款隐私优先，可自部署且完全开源的中文工具箱！
+英文说明：Free and Secure One-Click Callout Toolkit.
 
-# 💌 特色
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：DevTool。
+- 支持架构：amd64。
+- 可选版本：`latest`、`5.5.20`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 永远的自由软件
-- 轻量级运行时
-- 全平台支持（包括ARMv8）
-- 完全类似 GPT 的支持
-- 与高效的 UI 高度集成
-- 可用的 Docker 映像和便携式版本
-- 桌面版支持
-- 开源插件库
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40306 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| LAF_REGION | 地区 | CN | 是 |
+| APP_LANG | 应用语言 | zh_CN | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://mdgjx.com>
+- 文档: <https://github.com/work7z/MDGJX>

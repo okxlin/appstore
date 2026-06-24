@@ -1,43 +1,37 @@
 # Fail2ban
-## 产品介绍
 
-Fail2ban 使用 LinuxServer.io 维护的 `linuxserver/fail2ban` 镜像，提供 Fail2ban 主机入侵防护服务 能力。
+## 应用简介
+Fail2ban 主机入侵防护服务。
 
-## 主要功能
+英文说明：Host intrusion prevention service maintained by LinuxServer.io.
 
-- 提供 日志监控和封禁规则 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置数据路径、主机日志路径和日志级别
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：安全。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.1.0`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| HOST_LOG_PATH | 主机日志路径 | /var/log | 是 |
 
-Fail2ban 没有 Web 界面。安装完成后，在配置目录中编辑 jail 配置并查看 `/config/log/fail2ban/fail2ban.log`。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 运行说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| VERBOSITY | 日志详细级别 | -vv | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-该应用使用 host network，并需要 `NET_ADMIN`、`NET_RAW` 权限读取日志并管理封禁规则。默认 LinuxServer 配置中的 jail 处于禁用状态，请仅在确认日志路径和封禁规则后启用需要的 jail。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-Fail2ban uses the LinuxServer.io maintained `linuxserver/fail2ban` image for log monitoring and ban rules.
-
-## Features
-
-- Provide log monitoring and ban rules
-- Persist configuration and application data
-- Configure data paths, host log path, and log verbosity from the install form
-- Configure the container time zone
-
-## Access
-
-Fail2ban does not provide a web interface. After installation, edit jail files in the config directory and check `/config/log/fail2ban/fail2ban.log`.
-
-## Runtime Notes
-
-This app uses host networking and requires `NET_ADMIN` and `NET_RAW` so it can read logs and manage ban rules. LinuxServer's default jail configuration is disabled; enable only the jails whose log paths and ban actions you have reviewed.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-fail2ban/>
-- Project website: <http://www.fail2ban.org/>
+## 参考资料
+- 官网: <http://www.fail2ban.org/>
+- 文档: <https://docs.linuxserver.io/images/docker-fail2ban/>
+- 源码: <https://github.com/linuxserver/docker-fail2ban>

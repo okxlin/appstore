@@ -1,35 +1,43 @@
 # Pylon
-## 产品介绍
 
-Pylon 使用 LinuxServer.io 维护的 `linuxserver/pylon` 镜像，提供 Pylon Web IDE 能力。
+## 应用简介
+Pylon Web IDE。
 
-## 主要功能
+英文说明：Web IDE maintained by LinuxServer.io.
 
-- 提供 Web IDE 开发环境 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：运维。
+- 支持架构：amd64、arm64。
+- 可选版本：`2.10.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3131 | 是 |
 
-安装完成后，通过 HTTP 端口访问 Pylon Web IDE。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CODE_PATH | 配置文件路径 | ./data/code | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Pylon uses the LinuxServer.io maintained `linuxserver/pylon` image for web IDE development.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| GITURL | Git 地址 | https://github.com/linuxserver/docker-pylon.git | 否 |
+| PYUSER | Pylon 用户 | myuser | 否 |
+| PYPASS | Pylon 密码 | mypass | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide web IDE development
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open the Pylon Web IDE from the HTTP port.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/deprecated_images/docker-pylon/>
-- Project website: <https://github.com/pylonide/pylon>
+## 参考资料
+- 官网: <https://github.com/pylonide/pylon>
+- 文档: <https://docs.linuxserver.io/deprecated_images/docker-pylon/>
+- 源码: <https://github.com/linuxserver/docker-pylon>

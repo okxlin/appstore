@@ -1,62 +1,43 @@
+# Amilys Emby Server
+
+## 应用简介
+一个免费的个人媒体服务器 (开心版)。
+
+英文说明：A free personal media server.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.9.3.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40258 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 40259 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data/config | 是 |
+| MOUNT_PATH | 挂载文件夹路径 | ./data/mnt1 | 是 |
+| MOUNT_PATH2 | 挂载文件夹路径2 | ./data/mnt2 | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+
 ## 使用说明
-
-
 > 如果需要显卡加速，安装的时候，请选择编辑`compose`文件，然后编辑显卡加速相关的配置。
 
 ***
 已添加功能：
-## 1. emby-erx Emby 增强/美化 插件
 
-- 作者：[https://github.com/Nolovenodie/emby-crx](https://github.com/Nolovenodie/emby-crx)  
-开启请在/config/config/ext.sh 添加媒体库ID 再重启容器和Ctrl+F5刷新网页
-
-## 2. dd-danmaku Emby 弹幕库插件
-
-- 作者：[https://github.com/RyoLee/dd-danmaku](https://github.com/RyoLee/dd-danmaku)  
-开启/关闭 请在/config/config/ext.sh 中设置
-
-## 3. emby调用外部播放器
-
-- 作者：[https://github.com/bpking1/embyExternalUrl](https://github.com/bpking1/embyExternalUrl) 开启/关闭 请在/config/config/ext.sh 中设置
-
-安卓与电视客户端：[http://res.ssr0.cn:8000/?/Emby/](http://res.ssr0.cn:8000/?/Emby/)
-
-ext.sh (docker/config/ext.sh)扩展脚本：  
-脚本更新需要自己手动添加，或者删除原脚本重启容器更新
-```bash
-#!/bin/sh
-
-######## 说明 2023-07-30 ########
-#一个sh脚本，容器每次启动时运行
-#方便自定义添加功能
-#################################
-
-
-echo "Emby扩展启动脚本"
-
-#去掉下行注释可以关闭次脚本
-#exit 0
-
-########下面可以自行添加功能########
-
-## 修改容器hosts
-
-#echo -e "13.226.210.20     api.themoviedb.org" >> /etc/hosts
-#echo -e "13.225.142.99     api4.thetvdb.com" >> /etc/hosts
-
-## Emby-crx 美化 媒体库ID为空时不启用
-
-## 媒体库id，用逗号分隔。进入媒体库后url里的parentId
-## MediaId="21466,21463"
-MediaId=""
-
-## 扩展插件: 
-# embyLaunchPotplayer 外部播放
-# ede.user 弹幕
-# actorPlus 未知演员隐藏
-extmod='["embyLaunchPotplayer","ede.user","actorPlus"]'
-
-sed -i '/\ extmod/s/\[.*\]/'$extmod'/g' /system/dashboard-ui/ext.js
-
-exit 0
-```
+## 参考资料
+- 官网: <https://hub.docker.com/r/amilys/embyserver>
+- 源码: <https://github.com/amilys>

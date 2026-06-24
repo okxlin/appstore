@@ -1,43 +1,39 @@
 # DuckDNS
-## 产品介绍
 
-DuckDNS 使用 LinuxServer.io 维护的 `linuxserver/duckdns` 镜像，提供 DuckDNS 动态 DNS 更新服务能力。
+## 应用简介
+DuckDNS 动态 DNS 更新服务。
 
-## 主要功能
+英文说明：DuckDNS dynamic DNS updater maintained by LinuxServer.io.
 
-- 将 DuckDNS 子域名更新到当前公网 IP
-- 持久化保存配置和业务数据
-- 使用安装表单配置子域名、令牌、IP 更新模式和日志开关
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`d67e71cc-ls82`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-安装完成后，容器会定期向 DuckDNS 更新子域名记录；该应用没有 Web 界面。`SUBDOMAINS` 填写 DuckDNS 子域名前缀，多个值使用英文逗号分隔，例如 `home,media`。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 运行说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| SUBDOMAINS | DuckDNS 子域名 | subdomain1 | 是 |
+| TOKEN | DuckDNS 令牌 | replace-with-your-duckdns-token | 是 |
+| UPDATE_IP | IP 更新模式 | ipv4 | 是 |
+| LOG_FILE | 写入日志文件 | false | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-`UPDATE_IP=ipv4` 为默认模式；选择 `ipv6` 或 `both` 时，LinuxServer 官方文档建议使用 host networking 以便 IPv6 检测。本通用适配保留 bridge 网络，适合常规 IPv4 更新场景。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-DuckDNS uses the LinuxServer.io maintained `linuxserver/duckdns` image for DuckDNS dynamic DNS updates.
-
-## Features
-
-- Update DuckDNS subdomains to the current public IP address
-- Persist configuration and application data
-- Configure subdomains, token, IP update mode, and log writing from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, the container periodically updates DuckDNS records; this app does not provide a Web UI. Set `SUBDOMAINS` to DuckDNS subdomain prefixes, separated by commas, for example `home,media`.
-
-## Runtime Notes
-
-`UPDATE_IP=ipv4` is the default mode. LinuxServer's documentation recommends host networking for `ipv6` or `both` detection. This generic package keeps bridge networking for common IPv4 update deployments.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-duckdns/>
-- Project website: <https://www.duckdns.org/>
+## 参考资料
+- 官网: <https://www.duckdns.org/>
+- 文档: <https://docs.linuxserver.io/images/docker-duckdns/>
+- 源码: <https://github.com/linuxserver/docker-duckdns>

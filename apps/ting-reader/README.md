@@ -1,39 +1,43 @@
 # Ting Reader
 
-Ting Reader 是一个轻量级的自托管有声书平台，专为有声书爱好者打造。
+## 应用简介
+轻量级自托管有声书平台，支持自动刮削元数据、多端播放进度同步。
 
-## 功能特性
+英文说明：Lightweight self-hosted audiobook platform.
 
-- ⚡ Rust 核心，资源占用极低，响应速度极快
-- 📚 自动刮削元数据，支持喜马拉雅等平台
-- 🔌 插件系统，支持 JS、WASM 和 Native 插件
-- 🎨 自适应主题，根据封面自动调色
-- 🎵 支持 MP3, M4A, M4B, WAV, FLAC, OGG, OPUS, AAC, WMA等主流格式
-- 🎧 沉浸式播放，支持跳过片头/片尾、速度调节、进度记忆
-- 🌓 完美的深色模式
-- 🔐 完善的权限管理
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`1.4.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 默认账号
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 3000 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| AUDIOBOOK_STORAGE_PATH | 有声书存储路径 | ./storage | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TING_SECURITY__JWT_SECRET | JWT 密钥 | - | 是 |
+
+## 使用说明
+### 默认账号
 
 - 用户名：`admin`
 - 密码：`admin123`
 
 ⚠️ 首次登录后请务必修改默认密码！
 
-## 使用说明
-
-1. 安装完成后访问应用
-2. 使用默认账号登录
-3. 在管理后台添加存储库，指向有声书文件目录
-4. 系统会自动扫描并刮削元数据
-5. 开始享受有声书之旅！
-
-## 相关链接
-
-- 官方网站：https://www.tingreader.cn
-- GitHub：https://github.com/dqsq2e2/ting-reader
-- QQ 交流群：1082770534
-
-## 开源协议
-
-MIT License
+## 参考资料
+- 官网: <https://www.tingreader.cn>
+- 文档: <https://www.tingreader.cn/guide>
+- 源码: <https://github.com/dqsq2e2/ting-reader>

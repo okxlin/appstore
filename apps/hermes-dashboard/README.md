@@ -1,44 +1,44 @@
 # Hermes Dashboard
 
-Hermes Dashboard 是 Hermes Agent 的可选附属应用，用来提供 Web Dashboard 界面。不安装它也不影响 Hermes gateway 正常工作。
+## 应用简介
+Hermes Dashboard 附属应用。
 
-## 应用内容
+英文说明：Optional web dashboard for Hermes Agent.
 
-本产物默认安装一个容器：
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2026.6.19`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- **hermes-dashboard**：Hermes Web Dashboard，默认命令为 `dashboard --host 0.0.0.0 --insecure`
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | Dashboard 端口 | 9119 | 是 |
 
-其中：
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIPS | 提示 | Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；这里建议与 Hermes Agent 保持一致。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。 | 是 |
+| APP_DATA_DIR | 数据目录 | /opt/1panel/apps/local/hermes-agent/hermes-agent/data | 是 |
 
-- `9119`：Hermes Web Dashboard 端口
-- `GATEWAY_HEALTH_URL`：指向已部署 Hermes gateway 的完整健康检查地址，例如 `http://172.18.0.240:8642`
-- `DASHBOARD_RUN_COMMAND`：Dashboard 启动命令；若切到 `dashboard --host 0.0.0.0 --insecure`，即表示允许外部访问
-- `/opt/data`：建议挂载到对应 Hermes gateway 使用的同一份数据目录，默认示例路径为 `/opt/1panel/apps/local/hermes-agent/hermes-agent/data`
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 安装前建议
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| HERMES_UID | Hermes 运行用户 UID | 10000 | 是 |
+| HERMES_GID | Hermes 运行用户 GID | 10000 | 是 |
+| GATEWAY_HEALTH_URL | 网关健康检查 URL | http://172.18.0.240:8642 | 是 |
+| DASHBOARD_RUN_COMMAND | Dashboard 启动命令 | dashboard --host 0.0.0.0 --insecure | 是 |
 
-安装本应用前，应先确保已经部署并运行了 `hermes-agent` 主应用，或其它可用的 Hermes gateway。若使用本地应用默认目录结构，建议把 `APP_DATA_DIR` 直接填写为 `/opt/1panel/apps/local/hermes-agent/hermes-agent/data`。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## 安全警告
-
-`dashboard --host 0.0.0.0 --insecure` 会允许外部访问 Dashboard，同时暴露 API keys 与配置内容。这个模式只适合可信内网、临时调试，或你已经在前面加了自己的反向代理鉴权。若直接暴露到不可信网络，风险很高。
-
-## 安装后访问
-
-- Dashboard 地址：`http://服务器IP:面板里填写的 Dashboard 端口`
-
-如果 dashboard 需要显示 gateway 在线状态，`GATEWAY_HEALTH_URL` 必须填写为可从 dashboard 容器访问到的完整 URL。默认命令已经是 `dashboard --host 0.0.0.0 --insecure`，这会暴露 API keys 与配置；只应在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。
-
-## 持久化目录
-
-建议将 `/opt/data` 指向与对应 Hermes gateway 相同的数据目录，以便 dashboard 读取本地配置、日志与会话数据。对当前拆分后的 1Panel 本地应用，推荐直接使用 `/opt/1panel/apps/local/hermes-agent/hermes-agent/data`。
-
-## 多实例说明
-
-多实例场景下，每个 dashboard 都应连接到各自 gateway 的独立 `GATEWAY_HEALTH_URL`。若 gateway 使用 1Panel 网络静态 IP，可直接填写类似 `http://172.18.0.240:8642` 的地址。
-
-## 上游项目
-
-- GitHub：https://github.com/NousResearch/hermes-agent
-- 文档：https://hermes-agent.nousresearch.com/docs/
-- Docker 文档：https://hermes-agent.nousresearch.com/docs/user-guide/docker
+## 参考资料
+- 官网: <https://hermes-agent.nousresearch.com/docs/>
+- 文档: <https://hermes-agent.nousresearch.com/docs/user-guide/docker>
+- 源码: <https://github.com/NousResearch/hermes-agent>

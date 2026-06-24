@@ -1,31 +1,40 @@
 # The Lounge
-## 产品介绍
 
-The Lounge 是一个可自托管的 Web IRC 客户端，可以在浏览器中连接和管理 IRC 网络。本应用使用 LinuxServer.io 维护的 `linuxserver/thelounge` 镜像。
+## 应用简介
+Web IRC 客户端。
 
-## 主要功能
+英文说明：Self-hosted web IRC client maintained by LinuxServer.io.
 
-- 通过浏览器访问 IRC 客户端界面
-- 持久化保存 The Lounge 配置和用户数据
-- 支持自定义时区，容器数据由应用目录保存
-- 可按官方说明进入容器创建 The Lounge 用户
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`4.5.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 9000 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 The Lounge。首次使用前请按官方文档创建用户，例如进入容器执行 `s6-setuidgid abc thelounge add <user>`。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-The Lounge is a self-hosted web IRC client. It lets you connect to and manage IRC networks from a browser. This app uses the LinuxServer.io maintained `linuxserver/thelounge` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Access a web IRC client from the browser
-- Persist The Lounge configuration and user data
-- Configure the container time zone from the app form
-- Create The Lounge users inside the container following the official docs
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-thelounge/>
-- The Lounge project: <https://thelounge.chat/>
+## 参考资料
+- 官网: <https://thelounge.chat>
+- 文档: <https://docs.linuxserver.io/images/docker-thelounge/>
+- 源码: <https://github.com/linuxserver/docker-thelounge>

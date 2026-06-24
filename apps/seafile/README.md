@@ -1,120 +1,46 @@
-## Introduction
+# Seafile
 
-Seafile is an open source cloud storage system with privacy protection and teamwork features. Collections of files are called libraries. Each library can be synced separately. A library can also be encrypted with a user chosen password. Seafile also allows users to create groups and easily sharing files into groups.
+## 应用简介
+具有隐私保护和团队合作功能的开源云存储系统。
 
+英文说明：An open source cloud storage system with privacy protection and teamwork features.
 
-## Feature Summary
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`13.0.24`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-Seafile has the following features:
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP端口 | 40130 | 是 |
 
-### File syncing
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-1. Selective sync for any folder.
-2. Correctly handles file conflicts based on history instead of timestamp.
-3. Only transfer content delta to the server. Interrupted transfers can be resumed.
-4. Sync with two or more servers.
-5. Sync with existing folders.
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_ROOT_PASSWORD | 数据库 root 密码 | mysql_root_password | 是 |
+| ADMIN_EMAIL | 管理员邮箱 | admin@localhost.com | 是 |
+| ADMIN_PASSWORD | 管理员密码 | seafile | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| MEMCACHED_TYPE | Memcached 服务 | memcached | 是 |
+| SERVER_HOSTNAME | 服务端主机名 (域名 或 IP) | localhost.com | 是 |
 
-### File sharing and collaboration
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-1. Sharing folders between users or into groups.
-3. Download links with password protection
-4. Upload links
-5. Version control
-
-### Drive client
-
-* Access all files in the cloud via virtual drive.
-* Files are synced on demand.
-
-### Privacy protection
-
-1. Library encryption with a user chosen password.
-2. Client side encryption when using the desktop syncing.
-
-### Online documents and knowledge management (New)
-
-* Online Markdown editing in WYSIWYG way
-* A draft review workflow for online documents
-* Metadata management, including
-  * File labels
-  * Related documents
-* Wiki mode
-* Realtime notifications
-
-
-## Source repositories for Seafile components
-
-
-Each component of Seafile has its own source code repository on Github.
-
-* Sync client daemon (this repository): https://github.com/haiwen/seafile
-* Sync client GUI: https://github.com/haiwen/seafile-client
-* Server core: https://github.com/haiwen/seafile-server
-* Server web UI: https://github.com/haiwen/seahub
-* iOS app: https://github.com/haiwen/seafile-iOS
-* Android app: https://github.com/haiwen/seadroid
-* WebDAV: https://github.com/haiwen/seafdav
-
-Before version 6.0, the source code of "sync client daemon" and "server core" was mixed together in https://github.com/haiwen/seafile.
-But after 6.0 version, the server core is separated into its own repository.
-For this reason, the sync client daemon repository is still the "front page" for Seafile project on Github.
-
-Build and Run
-=============
-
-See <https://manual.seafile.com/build_seafile/server>
-
-Bug and Feature Request Reports
-===============================
-
-Please only submit bugs in GitHub issues (Pro customers should contact us via Email):
-
-* Server, Web interface (Seahub) and desktop clients: https://github.com/haiwen/seafile/issues
-* Android client: https://github.com/haiwen/seadroid/issues
-* iOS client: https://github.com/haiwen/seafile-iOS/issues
-
-Feature requests can be made and installation/usage problems can be discussed in the forum https://forum.seafile.com/.
-
-Internationalization (I18n)
-===========================
-
-* [Translate Seafile web ui](https://github.com/haiwen/seafile/wiki/Seahub-Translation)
-* [Translate Seafile desktop client](https://github.com/haiwen/seafile-client/#internationalization)
-* [Translate Seafile Android app](https://github.com/haiwen/seadroid#internationalization)
-* [Translate Seafile iOS app](https://github.com/haiwen/seafile-ios#internationalization-i18n)
-
-Change Logs
-===========
-
-See <https://manual.seafile.com/changelog/server-changelog/>
-
-
-Why Open Source
-===============
-
-Our primary goal is to build a first-class product. We think this goal can only be achieved by collaborating with the whole world.
-
-
-Contributing
-===========
-
-For more information read [Contribution](https://manual.seafile.com/contribution/).
-
-
-License
-=======
-
-- Seafile iOS client: Apache License v2
-- Seafile Android client: GPLv3
-- Desktop syncing client (this repository): GPLv2
-- Seafile Server core: AGPLv3
-- Seahub (Seafile server Web UI): Apache License v2
-
-Contact
-=======
-
-Twitter: @seafile <https://twitter.com/seafile>
-
-Forum: <https://forum.seafile.com>
+## 参考资料
+- 官网: <https://www.seafile.com>
+- 文档: <https://manual.seafile.com>
+- 源码: <https://github.com/haiwen/seafile>

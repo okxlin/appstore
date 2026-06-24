@@ -1,29 +1,34 @@
 # Amprobe
 
-![MIT License](https://img.shields.io/badge/License-MIT-green.svg) ![Go Reference](https://pkg.go.dev/badge/github.com/shirou/gopsutil/v3.svg)
+## 应用简介
+一款轻量级主机及 Docker 容器监控工具。
 
-## 简介
+英文说明：A lightweight host and Docker container monitoring tool.
 
-`Amprobe` 是一款轻量级主机及 `Docker` 容器监控工具，它可以轻松的帮助我们完成以下几方面的工作：
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 监控主机的 CPU、内存、磁盘 IO、网络 IO情况
-- 监控部署于主机上 Docker 容器的运行状态、CPU、内存使用情况
-- 实时查看 Docker 容器的日志，并支持日志下载
-- 针对管理员用户提供简单的 Docker 容器、镜像运维操作
-- 操作日志记录
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 (由配置文件决定) | 40235 | 是 |
 
-安装文档：[文档 | Amprobe (amuluze.com)](https://amprobedoc.amuluze.com/)
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据目录 | ./data | 是 |
 
-## 注意
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-配置文件在应用数据目录的`data/configs`文件夹下，默认账户的设置也在里面，注意修改。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-默认存在两个账户。
-
-- 管理员账户
-  - admin
-  - 123456
-
-- 普通账户
-  - amprobe
-  - 123456
+## 参考资料
+- 官网: <https://github.com/amuluze/amprobe>
+- 文档: <https://amprobedoc.amuluze.com>

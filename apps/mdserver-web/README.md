@@ -1,25 +1,41 @@
-<p align="center">
-  <img alt="logo" src="https://cdn.jsdelivr.net/gh/midoks/mdserver-web@latest/route/static/logo.png" height="140" />
-  <h3 align="center">mdserver-web</h3>
-  <p align="center">一款简单Linux面板服务</p>
-  <p align="center">强烈推荐系统:debian</p>
-</p>
+# mdserver-web
 
-### 简介
+## 应用简介
+一款简单 Linux 面板服务。
 
-简单的Linux面板,感谢BT.CN写出如此好的web管理软件。我一看到，就知道这是我一直想要的页面化管理方式。
-复制了后台管理界面，按照自己想要的方式写了一版。
+英文说明：A simple Linux panel service.
 
-> 使用说明：
->> - 注意查看容器日志获取相关信息，如安全入口等。
->> - 持久化使用存储卷方式，存储卷名字如`mdserver-web-data`
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`bridge-latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-![EulerOS](https://img.shields.io/badge/LINUX-EulerOS-blue?style=for-the-badge&logo=EulerOS)
-![Debian](https://img.shields.io/badge/LINUX-Debian-blue?style=for-the-badge&logo=Debian)
-![Ubuntu](https://img.shields.io/badge/LINUX-Ubuntu-blue?style=for-the-badge&logo=Ubuntu)
-![Fedora](https://img.shields.io/badge/LINUX-Fedora-blue?style=for-the-badge&logo=Fedora)
-![CentOS](https://img.shields.io/badge/LINUX-CentOS-blue?style=for-the-badge&logo=CentOS)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 面板端口 | 7200 | 是 |
 
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CLOSE_ADMIN_PATH | 关闭管理路径 | true | 是 |
 
-[![Wiki](https://img.shields.io/badge/MW-Wiki-red?style=for-the-badge&logo=wiki)](https://github.com/midoks/mdserver-web/wiki)
-[![jsdelivr](https://data.jsdelivr.com/v1/package/gh/midoks/mdserver-web/badge)](https://www.jsdelivr.com/package/gh/midoks/mdserver-web)
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| USERNAME | 用户名 | ddsrem | 是 |
+| PASSWORD | 密码 | password | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://hub.docker.com/r/ddsderek/mdserver-web>
+- 文档: <https://github.com/midoks/mdserver-web/wiki/>
+- 源码: <https://github.com/midoks/mdserver-web>

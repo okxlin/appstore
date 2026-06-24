@@ -1,35 +1,41 @@
 # DOSBox Staging
-## 产品介绍
 
-DOSBox Staging 使用 LinuxServer.io 维护的 `linuxserver/dosbox-staging` 镜像，提供 DOSBox Staging DOS 模拟器桌面 能力。
+## 应用简介
+DOSBox Staging DOS 模拟器桌面。
 
-## 主要功能
+英文说明：DOS emulator desktop maintained by LinuxServer.io.
 
-- 提供 DOS 模拟运行 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：游戏。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.82.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3000 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 3001 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 HTTP 端口访问 DOSBox Staging 桌面。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-DOSBox Staging uses the LinuxServer.io maintained `linuxserver/dosbox-staging` image for DOS emulation.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide DOS emulation
-- Persist configuration and application data
-- Configure service ports from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open the DOSBox Staging desktop from the 1Panel app entry or the HTTP port.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-dosbox-staging/>
-- Project website: <https://www.dosbox-staging.org/>
+## 参考资料
+- 官网: <https://www.dosbox-staging.org/>
+- 文档: <https://docs.linuxserver.io/images/docker-dosbox-staging/>
+- 源码: <https://github.com/linuxserver/docker-dosbox-staging>

@@ -1,9 +1,44 @@
-# 使用说明
-## 账户密码
+# flarum
+
+## 应用简介
+新一代的论坛软件，使在线讨论变得有趣。
+
+英文说明：The next-generation forum software that makes online discussion fun.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.8.10`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40020 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据存放文件夹 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_NAME | 数据库名 | flarum | 是 |
+| PANEL_DB_USER | 数据库用户 | flarum | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | flarum | 是 |
+| PANEL_DB_PREFIX | 数据库前缀 | flarum_ | 是 |
+| FLARUM_EXTERNAL_URL | 外部访问地址 | http://localhost:40020 | 是 |
+
+## 使用说明
+### 账户密码
 - 初始账户: flarum
 - 初始密码: flarum
 
-## 中文语言包
+### 中文语言包
 
 > 中文语言包：
 >> - https://github.com/flarum-lang/chinese-simplified 
@@ -18,52 +53,13 @@ composer require flarum-lang/chinese-simplified
 php flarum cache:clear
 ```
 
-## 所使用docker镜像相关:
+### 所使用docker镜像相关:
 
 > 项目链接
 >> - https://hub.docker.com/r/crazymax/flarum
 >> - https://github.com/crazy-max/docker-flarum
 
-# 原始相关
-
-<p align="center">
-<a href="https://flarum.org/"><img src="https://flarum.org/assets/img/logo.png"></a>
-</p>
-
-<p align="center">
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/license.svg" alt="License"></a>
-</p>
-
-## About Flarum
-
-**[Flarum](https://flarum.org/) is a delightfully simple discussion platform for your website.** It's fast and easy to use, with all the features you need to run a successful community. It is designed to be:
-
-* **Fast and simple.** No clutter, no bloat, no complex dependencies. Flarum is built with PHP so it’s quick and easy to deploy. The interface is powered by Mithril, a performant JavaScript framework with a tiny footprint.
-
-* **Beautiful and responsive.** This is forum software for humans. Flarum is carefully designed to be consistent and intuitive across platforms, out-of-the-box.
-
-* **Powerful and extensible.** Customize, extend, and integrate Flarum to suit your community. Flarum’s architecture is amazingly flexible, with a powerful Extension API.
-
-![screenshot](https://flarum.org/assets/img/home-screenshot.png)
-
-## Installation
-
-Read the **[Installation guide](https://docs.flarum.org/install)** to get started. For support, refer to the [documentation](https://docs.flarum.org/), and ask questions on the [community forum](https://discuss.flarum.org/) or [Discord chat](https://flarum.org/discord/).
-
-## Contributing
-
-Thank you for considering contributing to Flarum! Please read the **[Contributing guide](https://docs.flarum.org/contributing)** to learn how you can help.
-
-This repository only holds the Flarum skeleton application. Most development happens in [flarum/core](https://github.com/flarum/core).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Flarum, please follow our [security policy](https://github.com/flarum/core/security/policy) so we can address it promptly.
-
-## License
-
-Flarum is open-source software licensed under the [MIT License](https://github.com/flarum/flarum/blob/master/LICENSE).
-
-
+## 参考资料
+- 官网: <https://flarum.org/>
+- 文档: <https://docs.flarum.org/>
+- 源码: <https://github.com/flarum/flarum>

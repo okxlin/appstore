@@ -1,31 +1,42 @@
 # Apprise API
-## 产品介绍
 
-Apprise API 为 Apprise 通知库提供 Web UI 和 HTTP API，可统一发送多种通知服务。本应用使用 LinuxServer.io 维护的 `linuxserver/apprise-api` 镜像。
+## 应用简介
+Apprise 通知 API 服务。
 
-## 主要功能
+英文说明：Notification API service maintained by LinuxServer.io.
 
-- 通过 Web UI 和 HTTP API 管理通知发送
-- 持久化保存配置和可选附件目录
-- 使用 8000 端口提供 Web/API 入口
-- 支持配置附件大小限制和时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.5.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8000 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或后端服务配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| ATTACHMENTS_PATH | 附件目录 | ./data/attachments | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Apprise API provides a Web UI and HTTP API for the Apprise notification library, making many notification services available from one endpoint. This app uses the LinuxServer.io maintained `linuxserver/apprise-api` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| APPRISE_ATTACH_SIZE | 附件大小限制 | 0 | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage notification delivery through a Web UI and HTTP API
-- Persist configuration and optional attachments
-- Expose the Web/API endpoint on port 8000
-- Configure attachment size limits and time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-apprise-api/>
-- Project website: <https://github.com/caronc/apprise-api>
+## 参考资料
+- 官网: <https://github.com/caronc/apprise-api>
+- 文档: <https://docs.linuxserver.io/images/docker-apprise-api/>
+- 源码: <https://github.com/linuxserver/docker-apprise-api>

@@ -1,43 +1,42 @@
 # Diskover
-## 产品介绍
 
-Diskover 使用 LinuxServer.io 维护的 `linuxserver/diskover` 镜像，提供 Diskover 文件系统索引与搜索 能力。
+## 应用简介
+Diskover 文件系统索引与搜索。
 
-## 主要功能
+英文说明：Filesystem indexer maintained by LinuxServer.io.
 
-- 提供 文件系统索引与 Web 检索 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：存储。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2.3.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 80 | 是 |
 
-安装完成后，通过 HTTP 端口访问 Diskover Web UI。默认账号为 diskover，密码为 darkdata。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| DATA_PATH | 数据目录 | ./data/crawl | 是 |
+| ES_DATA_PATH | Elasticsearch 数据目录 | ./data/elasticsearch | 是 |
 
-## 运行说明
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-该应用随包启动 Elasticsearch 7.17.22。根据 LinuxServer 官方 compose 示例，安装时会运行一个短生命周期的 privileged helper，用于设置 `vm.max_map_count=262144`，满足 Elasticsearch 启动要求。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-Diskover uses the LinuxServer.io maintained `linuxserver/diskover` image for filesystem indexing and web search.
-
-## Features
-
-- Provide filesystem indexing and web search
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open Diskover from the HTTP port. The default username is diskover and the password is darkdata.
-
-## Runtime Notes
-
-This package starts Elasticsearch 7.17.22 alongside Diskover. Following the LinuxServer official compose example, installation runs a short-lived privileged helper to set `vm.max_map_count=262144`, which Elasticsearch requires at startup.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-diskover/>
-- Project website: <https://github.com/diskoverdata/diskover-community>
+## 参考资料
+- 官网: <https://github.com/diskoverdata/diskover-community>
+- 文档: <https://docs.linuxserver.io/images/docker-diskover/>
+- 源码: <https://github.com/linuxserver/docker-diskover>

@@ -1,79 +1,28 @@
-## 群晖nas自用
+# KMS & WEB
 
-### GitHub:
+## 应用简介
+KMS 服务端与 WEB。
 
-[https://github.com/gshang2017/docker](https://github.com/gshang2017/docker)
+英文说明：KMS server and WEB.
 
-### 感谢以下项目:
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1113`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[https://github.com/Wind4/vlmcsd](https://github.com/Wind4/vlmcsd "https://github.com/Wind4/vlmcsd")
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40051 | 是 |
+| KMS_PORT | KMS端口 | 1688 | 是 |
 
-### 版本：
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-|名称|版本|说明|
-|:-|:-|:-|
-|vlmcsd|1113|amd64;arm64v8;arm32v7|
-
-### docker命令行设置：
-
-* 变量名变更
-
-    |版本|1113|1112|
-    |:-:|:-|:-|
-    |1|KMS_README_WEB|WEB|
-
-1. 下载镜像
-
-    |镜像源|命令|
-    |:-|:-|
-    |DockerHub|docker pull johngong/kms:latest|
-    |GitHub|docker pull ghcr.io/gshang2017/kms:latest|
-
-2. 创建 kms容器
-
-        docker create \
-           --name=kms \
-           -p 1688:1688 \
-           -p 80:80 \
-           --restart unless-stopped \
-          johngong/kms:latest
-
-3. 运行
-
-       docker start kms
-
-4. 停止
-
-       docker stop kms
-
-5. 删除容器
-
-       docker rm kms
-
-6. 删除镜像
-
-       docker image rm johngong/kms:latest
-
-### 变量:
-
-|参数|说明|
-|:-|:-|
-| `--name=kms` |容器名|
-| `-p 1688:1688 ` |kms服务器端口|
-| `-p 80:80` |KMS使用说明web访问端口|
-| `-e KMS_README_WEB=true` |(true\|false)KMS使用说明，默认开启|
-
-### 群晖docker设置：
-
-1. 端口
-
-|参数|说明|
-|:-|:-|
-| `本地端口1:1688` |kms服务器端口|
-| `本地端口2:80` |KMS使用说明web访问端口|
-
-2. 环境变量
-
-|参数|说明|
-|:-|:-|
-| `KMS_README_WEB=true` |(true\|false)KMS使用说明，默认开启|
+## 参考资料
+- 官网: <https://hub.docker.com/r/johngong/kms>
+- 源码: <https://github.com/gshang2017/docker/tree/master/kms>

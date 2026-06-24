@@ -1,31 +1,45 @@
 # Faster Whisper
-## 产品介绍
 
-Faster Whisper 使用 LinuxServer.io 维护的 `linuxserver/faster-whisper` 镜像，提供 Faster Whisper 语音转写服务 能力。
+## 应用简介
+Faster Whisper 语音转写服务。
 
-## 主要功能
+英文说明：Wyoming speech transcription service maintained by LinuxServer.io.
 
-- 提供 Wyoming 协议语音转写服务
-- 持久化保存配置和业务数据
-- 使用 10300 端口供 Home Assistant 等 Wyoming 客户端连接
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`3.2.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_WYOMING | Wyoming 端口 | 10300 | 是 |
 
-安装完成后，在支持 Wyoming 协议的客户端中配置 `服务器地址:Wyoming端口`。该服务不提供传统 Web 管理界面。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Faster Whisper uses the LinuxServer.io maintained `linuxserver/faster-whisper` image for Wyoming speech transcription.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DEBUG | 调试模式 | - | 否 |
+| LOCAL_ONLY | 仅本地模式 | - | 否 |
+| WHISPER_BEAM | Whisper beam 大小 | 1 | 否 |
+| WHISPER_LANG | Whisper 语言 | auto | 否 |
+| WHISPER_MODEL | Whisper 模型 | auto | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide a Wyoming protocol speech transcription service
-- Persist configuration and application data
-- Expose port 10300 for Wyoming clients such as Home Assistant
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-faster-whisper/>
-- Project website: <https://github.com/SYSTRAN/faster-whisper>
+## 参考资料
+- 官网: <https://github.com/SYSTRAN/faster-whisper>
+- 文档: <https://docs.linuxserver.io/images/docker-faster-whisper/>
+- 源码: <https://github.com/linuxserver/docker-faster-whisper>

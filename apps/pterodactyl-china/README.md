@@ -1,19 +1,53 @@
-# Pterodactyl®
+# Pterodactyl (翼龙中国版)
 
-**Pterodactyl®** 是一个免费的开源游戏服务器管理面板，使用 PHP、React 和 Go 构建。Pterodactyl 在设计时考虑了安全性，在隔离的 Docker 容器中运行所有游戏服务器，同时向最终用户展示了美观直观的 UI。
+## 应用简介
+一个免费的开源游戏服务器管理面板（前端）。
 
-## 优势：
+英文说明：open-source game server management panel(panel).
 
-- **安全至上**：安全性是该项目的首要目标，具有 bcrypt 哈希、AES-256-CBC 加密和开箱即用的 HTTPS 支持。
-- **现代化工具**：建立在现代堆栈上，利用最佳设计实践，使其易于进入和修改。
-- **以Docker为核心**：所有服务器都在隔离的Docker容器中运行，限制了攻击媒介，提供了严格的资源限制，并提供了为每个特定游戏量身定做的环境。
-- **免费和开源**：翼龙是100%免费的，并在MIT许可下授权。我们所有的代码也是完全开源的。
-- **对用户友好**：把愤怒的点击和尖叫留给《守望先锋》吧。翼龙的界面设计得非常好，甚至连半藏都能使用它。
-- **可扩展性**：无论你是一家IDC服务商，还是下一个Hyplex，又或者是一起玩游戏的好朋友，我们都能为你提供服务。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：游戏。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.13.0.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 默认账户
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40222 | 是 |
+| MAIL_PORT | 邮件端口 | 1025 | 是 |
+
+## 数据持久化
+- `./data/var/:/app/var/`
+- `./data/nginx/:/etc/nginx/http.d/`
+- `./data/certs/:/etc/letsencrypt/`
+- `./data/logs/:/app/storage/logs`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| USER_UID | 用户 UID | 1000 | 是 |
+| USER_GID | 用户 GID | 1000 | 是 |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_NAME | 数据库名 | pterodactyl | 是 |
+| PANEL_DB_USER | 数据库用户 | pterodactyl | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | pterodactyl | 是 |
+| PANEL_APP_URL | 外部访问地址 | http://localhost:40222 | 是 |
+| PANEL_REDIS_DB_HOST | 缓存服务服务 | - | 是 |
+| PANEL_REDIS_ROOT_PASSWORD | 缓存服务服务密码 | - | 是 |
+| MAIL_FROM | 预设作者邮箱 | noreply@example.com | 是 |
+
+## 使用说明
+### 默认账户
 
 - 账户：**admin**
 - 密码：**123456**
 
 **！！！请一定一定一定要进后台用户页将你的账户信息进行修改，否则很容易被他人访问！！！**
+
+## 参考资料
+- 官网: <https://pterodactyl.top/>
+- 源码: <https://github.com/pterodactyl-china/panel>

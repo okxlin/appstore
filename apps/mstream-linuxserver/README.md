@@ -1,31 +1,41 @@
 # mStream
-## 产品介绍
 
-mStream 是一个轻量音乐流媒体服务器，可通过浏览器播放和管理个人音乐库。本应用使用 LinuxServer.io 维护的 `linuxserver/mstream` 镜像。
+## 应用简介
+mStream 音乐流媒体服务器。
 
-## 主要功能
+英文说明：Music streaming server maintained by LinuxServer.io.
 
-- 通过 Web UI 播放和浏览音乐库
-- 持久化保存配置和音乐目录
-- 使用 3000 端口提供 Web 界面
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`6.12.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3000 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或媒体目录配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| MUSIC_PATH | 音乐目录 | ./data/music | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-mStream is a lightweight music streaming server for playing and managing a personal music library in the browser. This app uses the LinuxServer.io maintained `linuxserver/mstream` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Play and browse a music library from the Web UI
-- Persist configuration and music folders
-- Expose the Web interface on port 3000
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-mstream/>
-- Project website: <https://mstream.io/>
+## 参考资料
+- 官网: <https://mstream.io/>
+- 文档: <https://docs.linuxserver.io/images/docker-mstream/>
+- 源码: <https://github.com/linuxserver/docker-mstream>

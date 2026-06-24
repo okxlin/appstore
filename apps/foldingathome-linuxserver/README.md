@@ -1,35 +1,43 @@
 # Folding@home
-## 产品介绍
 
-Folding@home 使用 LinuxServer.io 维护的 `linuxserver/foldingathome` 镜像，提供 Folding@home 分布式计算客户端 能力。
+## 应用简介
+Folding@home 分布式计算客户端。
 
-## 主要功能
+英文说明：Distributed computing client maintained by LinuxServer.io.
 
-- 提供 分布式计算任务运行 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`8.5.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 7396 | 是 |
 
-安装完成后，通过 HTTP 端口访问 Folding@home Web Control。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Folding@home uses the LinuxServer.io maintained `linuxserver/foldingathome` image for distributed computing work.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| ACCOUNT_TOKEN | 账户令牌 | - | 否 |
+| MACHINE_NAME | 机器名称 | 1panel-foldingathome | 是 |
+| CLI_ARGS | 命令行参数 | - | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide distributed computing work
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open Folding@home Web Control from the HTTP port.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-foldingathome/>
-- Project website: <https://foldingathome.org/>
+## 参考资料
+- 官网: <https://foldingathome.org/>
+- 文档: <https://docs.linuxserver.io/images/docker-foldingathome/>
+- 源码: <https://github.com/linuxserver/docker-foldingathome>

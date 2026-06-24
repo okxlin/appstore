@@ -1,10 +1,31 @@
 # Docker-Android
 
-Docker-Android 是一个用于 Android 相关一切事务的 Docker 镜像。它可以用于应用程序开发和测试（包括原生应用、网页应用和混合应用）。
+## 应用简介
+在 Docker 中运行 Android。
 
+英文说明：Run Android in Docker.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40288 | 是 |
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| IMAGE | 容器镜像 | budtmo/docker-android:latest | 是 |
+| RESTART_POLICY | 重启策略 | always | 是 |
+| EMULATOR_DEVICE | 模拟的设备 | Samsung Galaxy S10 | 是 |
+| WEB_VNC | Web VNC | true | 是 |
 
 ## 使用说明
-
 要验证您的系统是否支持 KVM，请运行以下命令：
 
 ```
@@ -42,3 +63,6 @@ Docker 镜像列表
 |手机  | Nexus One|
 |手机  | Nexus S|
 |平板 | Nexus 7|
+
+## 参考资料
+- 官网: <https://github.com/budtmo/docker-android>

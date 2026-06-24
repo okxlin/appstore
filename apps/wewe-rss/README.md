@@ -1,17 +1,41 @@
 # WeWe RSS
 
+## 应用简介
 更优雅的微信公众号订阅方式。
 
-## 使用方式
+英文说明：A more elegant way to subscribe to WeChat.
 
-1. 进入账号管理，点击添加账号，微信扫码登录微信读书账号。
-   <img width="400" src="https://github.com/cooderl/wewe-rss/raw/main/assets/preview2.png"/>
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.6.1`、`latest-mysql`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-2. 进入公众号源，点击添加，通过提交微信公众号分享链接，订阅微信公众号。
-   **（添加频率过高容易被封控，等24小时解封）**
-   <img width="400" src="https://github.com/cooderl/wewe-rss/raw/main/assets/preview3.png"/>
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40332 | 是 |
 
-## 账号状态说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
+| DATABASE_TYPE | 数据库类型 | sqlite | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| AUTH_CODE | 授权码 | password | 是 |
+| SERVER_ORIGIN_URL | 外部访问地址 | http://1.2.3.4:40332 | 是 |
+| FEED_MODE | 提取模式 | fulltext | 否 |
+| CRON_EXPRESSION | 定时更新表达式 | 35 5,17 * * * | 否 |
+| MAX_REQUEST_PER_MINUTE | 每分钟最大请求次数 | 60 | 否 |
+
+## 使用说明
+### 账号状态说明
 
 - 今日小黑屋
 
@@ -25,6 +49,5 @@
 - 失效
   > 账号登录状态失效，需要重新登录
 
-## 风险声明
-
-为了确保本项目的持久运行，某些接口请求将通过`weread.111965.xyz`进行转发。请放心，该转发服务不会保存任何数据。
+## 参考资料
+- 官网: <https://github.com/cooderl/wewe-rss>

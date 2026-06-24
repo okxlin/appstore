@@ -1,47 +1,34 @@
-# 🌏 Trilium Translation
+# Trilium Notes 中文
 
-[![Github all releases](https://img.shields.io/github/downloads/nriver/trilium-translation/total.svg)](https://GitHub.com/nriver/trilium-translation/releases/)
-[![GitHub license](https://badgen.net/github/license/nriver/trilium-translation)](https://github.com/nriver/trilium-translation/blob/master/LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/nriver/trilium-translation/graphs/commit-activity)
-[![GitHub release](https://img.shields.io/github/v/release/nriver/trilium-translation.svg)](https://github.com/nriver/trilium-translation/releases/)
-[![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/repository/docker/nriver/trilium-cn/general)
+## 应用简介
+一个层次化的笔记应用程序，专注于建立大型个人知识库。
 
-我把这个牛逼的笔记软件[Trilium Notes](https://github.com/zadam/trilium)做了中文翻译. 翻译会持续跟进Trilium Notes的稳定版.
+英文说明：A hierarchical note taking application with focus on building large personal knowledge bases.
 
-如果你想把Trilium翻译成其它语言，可以参考[这里](https://github.com/Nriver/trilium-translation/blob/main/README_CN.md#%E5%A4%AA%E9%95%BF-%E5%88%AB%E7%9C%8B-%E8%87%AA%E5%B7%B1%E7%BC%96%E8%AF%91)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.63.7`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-如果你觉得不错, 可以留下一个star, 谢谢 ^_^
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40173 | 是 |
 
-如果你是老用户, 使用前最好备份数据以防万一.
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-<a href="https://github.com/Nriver"><img align="center" src="https://moe-counter--nriver1.repl.co/get/@Nriver_trilium-translation"></a><br>
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-qq群满了请优先加TG群
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-Trilium Notes 学习交流 TG群 https://t.me/trilium_cn
-
-![tg](https://user-images.githubusercontent.com/6752679/224602865-44bf8e9c-f31b-4d4c-b22c-2fdf349e8d5e.png)
-
-Trilium Notes 交流qq群
-
-1群 686232370 (已满)
-
-<!-- ![qq1](https://user-images.githubusercontent.com/6752679/125550117-ec2a118c-8628-46e4-99f4-7f7e12ba7ba6.png) -->
-
-2群 535368955
-
-![qq2](https://user-images.githubusercontent.com/6752679/224601193-f1d9eead-731a-4468-8a94-cd954e88efe9.png)
-
-# 🔔 声明
-
-Trilium Notes 汉化版目前只通过以下渠道发布:
-
-Trilium Notes 汉化版 Github代码仓库 https://github.com/Nriver/trilium-translation
-
-Trilium Notes 汉化版 Docker镜像 https://hub.docker.com/r/nriver/trilium-cn
-
-Nriver 的 scoop 仓库 http://github.com/Nriver/Scoop-Nriver
-
-Archlinux AUR 仓库 客户端 https://aur.archlinux.org/packages/trilium-cn
-
-Archlinux AUR 仓库 服务端 https://aur.archlinux.org/packages/trilium-server-cn
+## 参考资料
+- 官网: <https://github.com/Nriver/trilium-translation>
+- 文档: <https://github.com/Nriver/trilium-translation/blob/main/README_CN.md>

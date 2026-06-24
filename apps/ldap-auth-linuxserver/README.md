@@ -1,35 +1,33 @@
 # LDAP Auth
-## 产品介绍
 
-LDAP Auth 使用 LinuxServer.io 维护的 `linuxserver/ldap-auth` 镜像，提供 LDAP Auth 认证服务 能力。
+## 应用简介
+LDAP Auth 认证服务。
 
-## 主要功能
+英文说明：LDAP authentication service maintained by LinuxServer.io.
 
-- 提供 LDAP 认证代理 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`3.4.7`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 9000 | 是 |
+| PANEL_APP_PORT_AUTH | 认证守护进程端口 | 8888 | 是 |
 
-安装完成后，通过 HTTP 端口访问 LDAP Auth 登录页，认证守护进程端口供反向代理等组件调用。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-LDAP Auth uses the LinuxServer.io maintained `linuxserver/ldap-auth` image for LDAP authentication proxy.
-
-## Features
-
-- Provide LDAP authentication proxy
-- Persist configuration and application data
-- Configure service ports from the install form when the image exposes ports
-- Configure the container time zone
-
-## Access
-
-After installation, open the LDAP Auth login page from the HTTP port; the auth daemon port is used by reverse proxies and related integrations.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-ldap-auth/>
-- Project website: <https://github.com/linuxserver/docker-ldap-auth>
+## 参考资料
+- 官网: <https://github.com/linuxserver/docker-ldap-auth>
+- 文档: <https://docs.linuxserver.io/images/docker-ldap-auth/>

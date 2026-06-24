@@ -1,35 +1,41 @@
 # Webstation
-## 产品介绍
 
-Webstation 使用 LinuxServer.io 维护的 `linuxserver/webstation` 镜像，提供 Webstation 浏览器桌面环境能力。
+## 应用简介
+Webstation 浏览器桌面环境。
 
-## 主要功能
+英文说明：Browser-accessible desktop environment maintained by LinuxServer.io.
 
-- 提供浏览器访问的 Webstation 桌面环境
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`5700aa7d-ls22`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3000 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 3001 | 是 |
 
-安装完成后，通过 HTTP 或 HTTPS 端口访问 Webstation 桌面。本适配不启用 GPU、Docker socket 或 privileged 模式。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Webstation uses the LinuxServer.io maintained `linuxserver/webstation` image for a browser-accessible Webstation desktop environment.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide a browser-accessible Webstation desktop environment
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open the Webstation desktop from the HTTP or HTTPS port. This adapter does not enable GPU, Docker socket, or privileged mode.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-webstation/>
-- Project website: <https://www.linuxserver.io/>
+## 参考资料
+- 官网: <https://www.linuxserver.io/>
+- 文档: <https://docs.linuxserver.io/images/docker-webstation/>
+- 源码: <https://github.com/linuxserver/docker-webstation>
