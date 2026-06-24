@@ -1,0 +1,29 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  doplarr:
+    image: "linuxserver/doplarr:3.8.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - DISCORD__TOKEN=${DISCORD_TOKEN}
+      - OVERSEERR__API=${OVERSEERR_API}
+      - OVERSEERR__URL=${OVERSEERR_URL}
+      - RADARR__API=${RADARR_API}
+      - RADARR__URL=${RADARR_URL}
+      - SONARR__API=${SONARR_API}
+      - SONARR__URL=${SONARR_URL}
+      - DISCORD__MAX_RESULTS=${DISCORD_MAX_RESULTS}
+      - DISCORD__REQUESTED_MSG_STYLE=${DISCORD_REQUESTED_MSG_STYLE}
+      - PARTIAL_SEASONS=${PARTIAL_SEASONS}
+      - LOG_LEVEL=${LOG_LEVEL}
+    labels:
+      createdBy: "Apps"
