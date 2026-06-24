@@ -1,0 +1,30 @@
+name: VSCodium Web LinuxServer
+tags:
+- Development
+title: VSCodium Web 代码编辑器
+description: VSCodium Web 代码编辑器
+additionalProperties:
+  key: vscodium-web-linuxserver
+  name: VSCodium Web LinuxServer
+  tags:
+  - Development
+  shortDescZh: VSCodium Web 代码编辑器
+  shortDescEn: Web code editor maintained by LinuxServer.io
+  description:
+    en: Web code editor maintained by LinuxServer.io
+    zh: VSCodium Web 代码编辑器
+    zh-Hant: VSCodium Web 程式碼編輯器
+    ja: LinuxServer.io が保守する Web コードエディター
+    ko: LinuxServer.io에서 유지 관리하는 웹 코드 편집기
+    ru: Веб-редактор кода, поддерживаемый LinuxServer.io
+    ms: Editor kod web yang diselenggara oleh LinuxServer.io
+    pt-br: Editor de codigo web mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://vscodium.com/
+  github: https://github.com/linuxserver/docker-vscodium-web
+  document: https://docs.linuxserver.io/images/docker-vscodium-web/
+  architectures:
+  - amd64
+  - arm64

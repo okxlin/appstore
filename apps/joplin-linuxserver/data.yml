@@ -1,0 +1,29 @@
+name: Joplin LinuxServer
+tags:
+- Tool
+title: Joplin 笔记客户端桌面
+description: Joplin 笔记客户端桌面
+additionalProperties:
+  key: joplin-linuxserver
+  name: Joplin LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Joplin 笔记客户端桌面
+  shortDescEn: Note client desktop maintained by LinuxServer.io
+  description:
+    en: Note client desktop maintained by LinuxServer.io
+    zh: Joplin 笔记客户端桌面
+    zh-Hant: Joplin 筆記用戶端桌面
+    ja: LinuxServer.io が保守するノートクライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 노트 클라이언트 데스크톱
+    ru: Рабочий стол клиента заметок, поддерживаемый LinuxServer.io
+    ms: Desktop klien nota yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente de notas mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://joplinapp.org/
+  github: https://github.com/linuxserver/docker-joplin
+  document: https://docs.linuxserver.io/images/docker-joplin/
+  architectures:
+  - amd64
