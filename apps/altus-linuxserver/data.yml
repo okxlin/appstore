@@ -1,0 +1,30 @@
+name: Altus LinuxServer
+tags:
+- Tool
+title: Altus WhatsApp 桌面客户端
+description: Altus WhatsApp 桌面客户端
+additionalProperties:
+  key: altus-linuxserver
+  name: Altus LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Altus WhatsApp 桌面客户端
+  shortDescEn: WhatsApp desktop client maintained by LinuxServer.io
+  description:
+    en: WhatsApp desktop client maintained by LinuxServer.io
+    zh: Altus WhatsApp 桌面客户端
+    zh-Hant: Altus WhatsApp 桌面用戶端
+    ja: LinuxServer.io が保守する WhatsApp デスクトップクライアント
+    ko: LinuxServer.io에서 유지 관리하는 WhatsApp 데스크톱 클라이언트
+    ru: Настольный клиент WhatsApp, поддерживаемый LinuxServer.io
+    ms: Klien desktop WhatsApp yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente desktop WhatsApp mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/amanharwara/altus
+  github: https://github.com/linuxserver/docker-altus
+  document: https://docs.linuxserver.io/images/docker-altus/
+  architectures:
+  - amd64
+  - arm64

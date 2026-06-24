@@ -1,0 +1,30 @@
+name: Krita LinuxServer
+tags:
+- Media
+title: Krita 数字绘画桌面
+description: Krita 数字绘画桌面
+additionalProperties:
+  key: krita-linuxserver
+  name: Krita LinuxServer
+  tags:
+  - Media
+  shortDescZh: Krita 数字绘画桌面
+  shortDescEn: Digital painting desktop maintained by LinuxServer.io
+  description:
+    en: Digital painting desktop maintained by LinuxServer.io
+    zh: Krita 数字绘画桌面
+    zh-Hant: Krita 數位繪畫桌面
+    ja: LinuxServer.io が保守するデジタルペイントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 디지털 페인팅 데스크톱
+    ru: Рабочий стол цифровой живописи, поддерживаемый LinuxServer.io
+    ms: Desktop lukisan digital yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de pintura digital mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://krita.org/
+  github: https://github.com/linuxserver/docker-krita
+  document: https://docs.linuxserver.io/images/docker-krita/
+  architectures:
+  - amd64
+  - arm64

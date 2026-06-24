@@ -1,0 +1,30 @@
+name: Lollypop LinuxServer
+tags:
+- Media
+title: Lollypop 音乐播放器桌面
+description: Lollypop 音乐播放器桌面
+additionalProperties:
+  key: lollypop-linuxserver
+  name: Lollypop LinuxServer
+  tags:
+  - Media
+  shortDescZh: Lollypop 音乐播放器桌面
+  shortDescEn: Music player desktop maintained by LinuxServer.io
+  description:
+    en: Music player desktop maintained by LinuxServer.io
+    zh: Lollypop 音乐播放器桌面
+    zh-Hant: Lollypop 音樂播放器桌面
+    ja: LinuxServer.io が保守する音楽プレーヤーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 음악 플레이어 데스크톱
+    ru: Рабочий стол музыкального проигрывателя, поддерживаемый LinuxServer.io
+    ms: Desktop pemain muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de reprodutor de musica mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://wiki.gnome.org/Apps/Lollypop
+  github: https://github.com/linuxserver/docker-lollypop
+  document: https://docs.linuxserver.io/images/docker-lollypop/
+  architectures:
+  - amd64
+  - arm64
