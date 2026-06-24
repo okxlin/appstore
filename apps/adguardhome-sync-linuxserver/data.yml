@@ -1,0 +1,30 @@
+name: AdGuardHome Sync LinuxServer
+tags:
+- Tool
+title: AdGuardHome Sync 配置同步服务
+description: AdGuardHome Sync 配置同步服务
+additionalProperties:
+  key: adguardhome-sync-linuxserver
+  name: AdGuardHome Sync LinuxServer
+  tags:
+  - Tool
+  shortDescZh: AdGuardHome Sync 配置同步服务
+  shortDescEn: AdGuard Home synchronization service maintained by LinuxServer.io
+  description:
+    en: AdGuard Home synchronization service maintained by LinuxServer.io
+    zh: AdGuardHome Sync 配置同步服务
+    zh-Hant: AdGuardHome Sync 設定同步服務
+    ja: LinuxServer.io が保守する AdGuard Home 同期サービス
+    ko: LinuxServer.io에서 유지 관리하는 AdGuard Home 동기화 서비스
+    ru: Сервис синхронизации AdGuard Home, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan penyegerakan AdGuard Home yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de sincronizacao do AdGuard Home mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/bakito/adguardhome-sync
+  github: https://github.com/linuxserver/docker-adguardhome-sync
+  document: https://docs.linuxserver.io/images/docker-adguardhome-sync/
+  architectures:
+  - amd64
+  - arm64
