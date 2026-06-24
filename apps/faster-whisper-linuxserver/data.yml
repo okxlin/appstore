@@ -1,0 +1,30 @@
+name: Faster Whisper LinuxServer
+tags:
+- AI
+title: Faster Whisper 语音转写服务
+description: Faster Whisper 语音转写服务
+additionalProperties:
+  key: faster-whisper-linuxserver
+  name: Faster Whisper LinuxServer
+  tags:
+  - AI
+  shortDescZh: Faster Whisper 语音转写服务
+  shortDescEn: Wyoming speech transcription service maintained by LinuxServer.io
+  description:
+    en: Wyoming speech transcription service maintained by LinuxServer.io
+    zh: Faster Whisper 语音转写服务
+    zh-Hant: Faster Whisper 語音轉寫服務
+    ja: LinuxServer.io が保守する Wyoming 音声文字起こしサービス
+    ko: LinuxServer.io에서 유지 관리하는 Wyoming 음성 전사 서비스
+    ru: Сервис распознавания речи Wyoming, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan transkripsi pertuturan Wyoming yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de transcricao de voz Wyoming mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/SYSTRAN/faster-whisper
+  github: https://github.com/linuxserver/docker-faster-whisper
+  document: https://docs.linuxserver.io/images/docker-faster-whisper/
+  architectures:
+  - amd64
+  - arm64

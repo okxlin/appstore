@@ -1,0 +1,30 @@
+name: Ubooquity LinuxServer
+tags:
+- Media
+title: Ubooquity 电子书漫画服务
+description: Ubooquity 电子书漫画服务
+additionalProperties:
+  key: ubooquity-linuxserver
+  name: Ubooquity LinuxServer
+  tags:
+  - Media
+  shortDescZh: Ubooquity 电子书漫画服务
+  shortDescEn: Ebook and comic server maintained by LinuxServer.io
+  description:
+    en: Ebook and comic server maintained by LinuxServer.io
+    zh: Ubooquity 电子书漫画服务
+    zh-Hant: Ubooquity 電子書漫畫服務
+    ja: LinuxServer.io が保守する電子書籍とコミックサーバー
+    ko: LinuxServer.io에서 유지 관리하는 전자책 및 만화 서버
+    ru: Сервер электронных книг и комиксов, поддерживаемый LinuxServer.io
+    ms: Pelayan ebook dan komik yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de ebooks e quadrinhos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://vaemendis.net/ubooquity/
+  github: https://github.com/linuxserver/docker-ubooquity
+  document: https://docs.linuxserver.io/images/docker-ubooquity/
+  architectures:
+  - amd64
+  - arm64

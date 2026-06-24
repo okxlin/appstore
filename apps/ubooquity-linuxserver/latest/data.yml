@@ -1,0 +1,132 @@
+additionalProperties:
+  formFields:
+  - default: 2202
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 2203
+    edit: true
+    envKey: PANEL_APP_PORT_ADMIN
+    labelEn: Admin Port
+    labelZh: Admin 端口
+    label:
+      en: Admin Port
+      zh: Admin 端口
+      zh-Hant: Admin 連接埠
+      ja: Admin ポート
+      ko: Admin 포트
+      ru: Порт Admin
+      ms: Port Admin
+      pt-br: Porta Admin
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/books
+    edit: true
+    envKey: BOOKS_PATH
+    labelEn: Books path
+    labelZh: 图书目录
+    label:
+      en: Books path
+      zh: 图书目录
+      zh-Hant: 圖書目錄
+      ja: 書籍目錄
+      ko: 도서 디렉터리
+      ru: Каталог книг
+      ms: Laluan buku
+      pt-br: Caminho de livros
+    required: true
+    type: text
+  - default: ./data/comics
+    edit: true
+    envKey: COMICS_PATH
+    labelEn: Comics path
+    labelZh: 漫画目录
+    label:
+      en: Comics path
+      zh: 漫画目录
+      zh-Hant: 漫畫目錄
+      ja: コミックディレクトリ
+      ko: 만화 디렉터리
+      ru: Каталог комиксов
+      ms: Laluan komik
+      pt-br: Caminho de quadrinhos
+    required: true
+    type: text
+  - default: ./data/files
+    edit: true
+    envKey: FILES_PATH
+    labelEn: Raw files path
+    labelZh: 原始文件目录
+    label:
+      en: Raw files path
+      zh: 原始文件目录
+      zh-Hant: 原始檔案目錄
+      ja: 元ファイルディレクトリ
+      ko: 원본 파일 디렉터리
+      ru: Каталог исходных файлов
+      ms: Laluan fail mentah
+      pt-br: Caminho de arquivos brutos
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAXMEM
+    labelEn: Maximum memory
+    labelZh: 最大内存
+    label:
+      en: Maximum memory
+      zh: 最大内存
+      zh-Hant: 最大記憶體
+      ja: 最大メモリ
+      ko: 최대 메모리
+      ru: Максимальная память
+      ms: Memori maksimum
+      pt-br: Memoria maxima
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

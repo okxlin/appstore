@@ -1,0 +1,30 @@
+name: hiSHtory Server LinuxServer
+tags:
+- DevOps
+title: hiSHtory Shell 历史同步服务
+description: hiSHtory Shell 历史同步服务
+additionalProperties:
+  key: hishtory-server-linuxserver
+  name: hiSHtory Server LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: hiSHtory Shell 历史同步服务
+  shortDescEn: Shell history sync server maintained by LinuxServer.io
+  description:
+    en: Shell history sync server maintained by LinuxServer.io
+    zh: hiSHtory Shell 历史同步服务
+    zh-Hant: hiSHtory Shell 歷史同步服務
+    ja: LinuxServer.io が保守するシェル履歴同期サーバー
+    ko: LinuxServer.io에서 유지 관리하는 셸 기록 동기화 서버
+    ru: Сервер синхронизации истории shell, поддерживаемый LinuxServer.io
+    ms: Pelayan penyegerakan sejarah shell yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de sincronizacao de historico shell mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/ddworken/hishtory
+  github: https://github.com/linuxserver/docker-hishtory-server
+  document: https://docs.linuxserver.io/images/docker-hishtory-server/
+  architectures:
+  - amd64
+  - arm64
