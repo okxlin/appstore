@@ -1,0 +1,30 @@
+name: DokuWiki LinuxServer
+tags:
+- Website
+title: DokuWiki 知识库 Wiki
+description: DokuWiki 知识库 Wiki
+additionalProperties:
+  key: dokuwiki-linuxserver
+  name: DokuWiki LinuxServer
+  tags:
+  - Website
+  shortDescZh: DokuWiki 知识库 Wiki
+  shortDescEn: Wiki knowledge base maintained by LinuxServer.io
+  description:
+    en: Wiki knowledge base maintained by LinuxServer.io
+    zh: DokuWiki 知识库 Wiki
+    zh-Hant: DokuWiki 知識庫 Wiki
+    ja: LinuxServer.io が保守する Wiki ナレッジベース
+    ko: LinuxServer.io에서 유지 관리하는 위키 지식 베이스
+    ru: Wiki-база знаний, поддерживаемая LinuxServer.io
+    ms: Pangkalan pengetahuan Wiki yang diselenggara oleh LinuxServer.io
+    pt-br: Base de conhecimento Wiki mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.dokuwiki.org/
+  github: https://github.com/linuxserver/docker-dokuwiki
+  document: https://docs.linuxserver.io/images/docker-dokuwiki/
+  architectures:
+  - amd64
+  - arm64

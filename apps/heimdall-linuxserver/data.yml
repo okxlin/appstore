@@ -1,0 +1,30 @@
+name: Heimdall LinuxServer
+tags:
+- Tool
+title: Heimdall 应用导航页
+description: Heimdall 应用导航页
+additionalProperties:
+  key: heimdall-linuxserver
+  name: Heimdall LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Heimdall 应用导航页
+  shortDescEn: Application dashboard maintained by LinuxServer.io
+  description:
+    en: Application dashboard maintained by LinuxServer.io
+    zh: Heimdall 应用导航页
+    zh-Hant: Heimdall 應用導航頁
+    ja: LinuxServer.io が保守するアプリケーションダッシュボード
+    ko: LinuxServer.io에서 유지 관리하는 애플리케이션 대시보드
+    ru: Панель приложений, поддерживаемая LinuxServer.io
+    ms: Papan pemuka aplikasi yang diselenggara oleh LinuxServer.io
+    pt-br: Painel de aplicativos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://heimdall.site/
+  github: https://github.com/linuxserver/docker-heimdall
+  document: https://docs.linuxserver.io/images/docker-heimdall/
+  architectures:
+  - amd64
+  - arm64

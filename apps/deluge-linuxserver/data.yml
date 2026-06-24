@@ -1,0 +1,30 @@
+name: Deluge LinuxServer
+tags:
+- Tool
+title: Deluge 下载管理
+description: Deluge 下载管理
+additionalProperties:
+  key: deluge-linuxserver
+  name: Deluge LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Deluge 下载管理
+  shortDescEn: Torrent download manager maintained by LinuxServer.io
+  description:
+    en: Torrent download manager maintained by LinuxServer.io
+    zh: Deluge 下载管理
+    zh-Hant: Deluge 下載管理
+    ja: LinuxServer.io が保守する Torrent ダウンロード管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 토렌트 다운로드 관리자
+    ru: Менеджер торрент-загрузок, поддерживаемый LinuxServer.io
+    ms: Pengurus muat turun torrent yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de downloads torrent mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://deluge-torrent.org/
+  github: https://github.com/linuxserver/docker-deluge
+  document: https://docs.linuxserver.io/images/docker-deluge/
+  architectures:
+  - amd64
+  - arm64
