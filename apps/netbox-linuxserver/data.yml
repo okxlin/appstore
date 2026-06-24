@@ -1,0 +1,30 @@
+name: NetBox LinuxServer
+tags:
+- DevOps
+title: NetBox IPAM 与机房资产管理
+description: NetBox IPAM 与机房资产管理
+additionalProperties:
+  key: netbox-linuxserver
+  name: NetBox LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: NetBox IPAM 与机房资产管理
+  shortDescEn: IPAM and DCIM platform maintained by LinuxServer.io
+  description:
+    en: IPAM and DCIM platform maintained by LinuxServer.io
+    zh: NetBox IPAM 与机房资产管理
+    zh-Hant: NetBox IPAM 與機房資產管理
+    ja: LinuxServer.io が保守する IPAM および DCIM プラットフォーム
+    ko: LinuxServer.io에서 유지 관리하는 IPAM 및 DCIM 플랫폼
+    ru: Платформа IPAM и DCIM, поддерживаемая LinuxServer.io
+    ms: Platform IPAM dan DCIM yang diselenggara oleh LinuxServer.io
+    pt-br: Plataforma IPAM e DCIM mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/netbox-community/netbox
+  github: https://github.com/linuxserver/docker-netbox
+  document: https://docs.linuxserver.io/images/docker-netbox/
+  architectures:
+  - amd64
+  - arm64
