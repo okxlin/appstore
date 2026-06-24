@@ -1,0 +1,23 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  rdesktop:
+    image: "linuxserver/rdesktop:ubuntu-xfce-80684ffb-ls191"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_RDP}:3389"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    shm_size: "1gb"
+    labels:
+      createdBy: "Apps"
