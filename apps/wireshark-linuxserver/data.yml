@@ -1,0 +1,30 @@
+name: Wireshark LinuxServer
+tags:
+- DevOps
+title: Wireshark 网络协议分析桌面
+description: Wireshark 网络协议分析桌面
+additionalProperties:
+  key: wireshark-linuxserver
+  name: Wireshark LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: Wireshark 网络协议分析桌面
+  shortDescEn: Network protocol analyzer desktop maintained by LinuxServer.io
+  description:
+    en: Network protocol analyzer desktop maintained by LinuxServer.io
+    zh: Wireshark 网络协议分析桌面
+    zh-Hant: Wireshark 網路協定分析桌面
+    ja: LinuxServer.io が保守するネットワークプロトコル解析デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 네트워크 프로토콜 분석기 데스크톱
+    ru: Рабочий стол анализатора сетевых протоколов, поддерживаемый LinuxServer.io
+    ms: Desktop penganalisis protokol rangkaian yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de analisador de protocolo de rede mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.wireshark.org/
+  github: https://github.com/linuxserver/docker-wireshark
+  document: https://docs.linuxserver.io/images/docker-wireshark/
+  architectures:
+  - amd64
+  - arm64

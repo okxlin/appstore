@@ -1,0 +1,30 @@
+name: DB Browser for SQLite LinuxServer
+tags:
+- Database
+title: SQLite 数据库浏览器桌面
+description: SQLite 数据库浏览器桌面
+additionalProperties:
+  key: sqlitebrowser-linuxserver
+  name: DB Browser for SQLite LinuxServer
+  tags:
+  - Database
+  shortDescZh: SQLite 数据库浏览器桌面
+  shortDescEn: SQLite database browser desktop maintained by LinuxServer.io
+  description:
+    en: SQLite database browser desktop maintained by LinuxServer.io
+    zh: SQLite 数据库浏览器桌面
+    zh-Hant: SQLite 資料庫瀏覽器桌面
+    ja: LinuxServer.io が保守する SQLite データベースブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 SQLite 데이터베이스 브라우저 데스크톱
+    ru: Рабочий стол браузера базы данных SQLite, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar pangkalan data SQLite yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador de banco de dados SQLite mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://sqlitebrowser.org/
+  github: https://github.com/linuxserver/docker-sqlitebrowser
+  document: https://docs.linuxserver.io/images/docker-sqlitebrowser/
+  architectures:
+  - amd64
+  - arm64

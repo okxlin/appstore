@@ -1,0 +1,30 @@
+name: Visual Studio Code LinuxServer
+tags:
+- Tool
+title: Visual Studio Code 桌面开发环境
+description: Visual Studio Code 桌面开发环境
+additionalProperties:
+  key: vscode-linuxserver
+  name: Visual Studio Code LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Visual Studio Code 桌面开发环境
+  shortDescEn: Code editor desktop maintained by LinuxServer.io
+  description:
+    en: Code editor desktop maintained by LinuxServer.io
+    zh: Visual Studio Code 桌面开发环境
+    zh-Hant: Visual Studio Code 桌面開發環境
+    ja: LinuxServer.io が保守するコードエディターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 코드 편집기 데스크톱
+    ru: Рабочий стол редактора кода, поддерживаемый LinuxServer.io
+    ms: Desktop editor kod yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de editor de codigo mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://code.visualstudio.com/
+  github: https://github.com/linuxserver/docker-vscode
+  document: https://docs.linuxserver.io/images/docker-vscode/
+  architectures:
+  - amd64
+  - arm64

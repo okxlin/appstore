@@ -1,0 +1,30 @@
+name: VSCodium LinuxServer
+tags:
+- Tool
+title: VSCodium 桌面开发环境
+description: VSCodium 桌面开发环境
+additionalProperties:
+  key: vscodium-linuxserver
+  name: VSCodium LinuxServer
+  tags:
+  - Tool
+  shortDescZh: VSCodium 桌面开发环境
+  shortDescEn: Code editor desktop maintained by LinuxServer.io
+  description:
+    en: Code editor desktop maintained by LinuxServer.io
+    zh: VSCodium 桌面开发环境
+    zh-Hant: VSCodium 桌面開發環境
+    ja: LinuxServer.io が保守するコードエディターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 코드 편집기 데스크톱
+    ru: Рабочий стол редактора кода, поддерживаемый LinuxServer.io
+    ms: Desktop editor kod yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de editor de codigo mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://vscodium.com/
+  github: https://github.com/linuxserver/docker-vscodium
+  document: https://docs.linuxserver.io/images/docker-vscodium/
+  architectures:
+  - amd64
+  - arm64
