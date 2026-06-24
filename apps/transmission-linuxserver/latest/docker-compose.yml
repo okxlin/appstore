@@ -1,0 +1,24 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  transmission:
+    image: "linuxserver/transmission:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9091"
+      - "${PANEL_APP_PORT_PEER_TCP}:51413"
+      - "${PANEL_APP_PORT_PEER_UDP}:51413/udp"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${DOWNLOADS_PATH}:/downloads"
+      - "${WATCH_PATH}:/watch"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

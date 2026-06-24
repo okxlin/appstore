@@ -1,0 +1,30 @@
+name: Duplicati LinuxServer
+tags:
+- Storage
+title: Duplicati 备份管理
+description: Duplicati 备份管理
+additionalProperties:
+  key: duplicati-linuxserver
+  name: Duplicati LinuxServer
+  tags:
+  - Storage
+  shortDescZh: Duplicati 备份管理
+  shortDescEn: Backup manager maintained by LinuxServer.io
+  description:
+    en: Backup manager maintained by LinuxServer.io
+    zh: Duplicati 备份管理
+    zh-Hant: Duplicati 備份管理
+    ja: LinuxServer.io が保守するバックアップ管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 백업 관리자
+    ru: Менеджер резервного копирования, поддерживаемый LinuxServer.io
+    ms: Pengurus sandaran yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de backups mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.duplicati.com/
+  github: https://github.com/linuxserver/docker-duplicati
+  document: https://docs.linuxserver.io/images/docker-duplicati/
+  architectures:
+  - amd64
+  - arm64

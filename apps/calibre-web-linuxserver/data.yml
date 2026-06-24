@@ -1,0 +1,30 @@
+name: Calibre-Web LinuxServer
+tags:
+- Media
+title: Calibre-Web 电子书管理
+description: Calibre-Web 电子书管理
+additionalProperties:
+  key: calibre-web-linuxserver
+  name: Calibre-Web LinuxServer
+  tags:
+  - Media
+  shortDescZh: Calibre-Web 电子书管理
+  shortDescEn: Ebook library web interface maintained by LinuxServer.io
+  description:
+    en: Ebook library web interface maintained by LinuxServer.io
+    zh: Calibre-Web 电子书管理
+    zh-Hant: Calibre-Web 電子書管理
+    ja: LinuxServer.io が保守する電子書籍ライブラリ Web インターフェース
+    ko: LinuxServer.io에서 유지 관리하는 전자책 라이브러리 웹 인터페이스
+    ru: Веб-интерфейс электронной библиотеки, поддерживаемый LinuxServer.io
+    ms: Antara muka web pustaka ebook yang diselenggara oleh LinuxServer.io
+    pt-br: Interface web de biblioteca de ebooks mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/janeczku/calibre-web
+  github: https://github.com/linuxserver/docker-calibre-web
+  document: https://docs.linuxserver.io/images/docker-calibre-web/
+  architectures:
+  - amd64
+  - arm64
