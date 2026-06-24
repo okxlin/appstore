@@ -1,0 +1,13 @@
+services:
+  modmanager:
+    image: "linuxserver/modmanager:9ae6695d-ls51"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    volumes:
+      - "${MODCACHE_PATH}:/modcache"
+    environment:
+      - DOCKER_MODS=${DOCKER_MODS}
+      - DOCKER_HOST=${DOCKER_HOST:-}
+      - DOCKER_MODS_EXTRA_HOSTS=${DOCKER_MODS_EXTRA_HOSTS:-}
+    labels:
+      createdBy: "Apps"

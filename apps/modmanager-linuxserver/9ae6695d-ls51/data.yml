@@ -1,0 +1,66 @@
+additionalProperties:
+  formFields:
+  - default: ./data/modcache
+    edit: true
+    envKey: MODCACHE_PATH
+    labelEn: Mod cache path
+    labelZh: Mods 缓存路径
+    label:
+      en: Mod cache path
+      zh: Mods 缓存路径
+      zh-Hant: Mods 快取路徑
+      ja: Mods キャッシュパス
+      ko: Mods 캐시 경로
+      ru: Путь к кэшу mods
+      ms: Laluan cache mods
+      pt-br: Caminho do cache de mods
+    required: true
+    type: text
+  - default: linuxserver/mods:universal-git
+    edit: true
+    envKey: DOCKER_MODS
+    labelEn: Docker mods list
+    labelZh: Docker Mods 列表
+    label:
+      en: Docker mods list
+      zh: Docker Mods 列表
+      zh-Hant: Docker Mods 清單
+      ja: Docker Mods リスト
+      ko: Docker Mods 목록
+      ru: Список Docker mods
+      ms: Senarai Docker mods
+      pt-br: Lista de Docker mods
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: DOCKER_HOST
+    labelEn: Docker host endpoint
+    labelZh: Docker Host 端点
+    label:
+      en: Docker host endpoint
+      zh: Docker Host 端点
+      zh-Hant: Docker Host 端點
+      ja: Docker Host エンドポイント
+      ko: Docker Host 엔드포인트
+      ru: Конечная точка Docker host
+      ms: Titik akhir Docker host
+      pt-br: Endpoint do Docker host
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DOCKER_MODS_EXTRA_HOSTS
+    labelEn: Extra Docker hosts
+    labelZh: 额外 Docker 主机
+    label:
+      en: Extra Docker hosts
+      zh: 额外 Docker 主机
+      zh-Hant: 額外 Docker 主機
+      ja: 追加 Docker ホスト
+      ko: 추가 Docker 호스트
+      ru: Дополнительные Docker hosts
+      ms: Hos Docker tambahan
+      pt-br: Hosts Docker extras
+    required: false
+    type: text
