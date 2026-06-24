@@ -1,0 +1,30 @@
+name: Speedtest Tracker LinuxServer
+tags:
+- Tool
+title: Speedtest Tracker 网速监测
+description: Speedtest Tracker 网速监测
+additionalProperties:
+  key: speedtest-tracker-linuxserver
+  name: Speedtest Tracker LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Speedtest Tracker 网速监测
+  shortDescEn: Internet speed tracker maintained by LinuxServer.io
+  description:
+    en: Internet speed tracker maintained by LinuxServer.io
+    zh: Speedtest Tracker 网速监测
+    zh-Hant: Speedtest Tracker 網速監測
+    ja: LinuxServer.io が保守するインターネット速度追跡ツール
+    ko: LinuxServer.io에서 유지 관리하는 인터넷 속도 추적기
+    ru: Трекер скорости интернета, поддерживаемый LinuxServer.io
+    ms: Penjejak kelajuan internet yang diselenggara oleh LinuxServer.io
+    pt-br: Rastreador de velocidade da internet mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://speedtest-tracker.dev/
+  github: https://github.com/linuxserver/docker-speedtest-tracker
+  document: https://docs.linuxserver.io/images/docker-speedtest-tracker/
+  architectures:
+  - amd64
+  - arm64

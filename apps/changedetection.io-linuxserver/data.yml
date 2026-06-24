@@ -1,0 +1,30 @@
+name: ChangeDetection.io LinuxServer
+tags:
+- Tool
+title: ChangeDetection.io 网页变更监控
+description: ChangeDetection.io 网页变更监控
+additionalProperties:
+  key: changedetection.io-linuxserver
+  name: ChangeDetection.io LinuxServer
+  tags:
+  - Tool
+  shortDescZh: ChangeDetection.io 网页变更监控
+  shortDescEn: Website change monitor maintained by LinuxServer.io
+  description:
+    en: Website change monitor maintained by LinuxServer.io
+    zh: ChangeDetection.io 网页变更监控
+    zh-Hant: ChangeDetection.io 網頁變更監控
+    ja: LinuxServer.io が保守する Web サイト変更監視ツール
+    ko: LinuxServer.io에서 유지 관리하는 웹사이트 변경 모니터
+    ru: Монитор изменений сайтов, поддерживаемый LinuxServer.io
+    ms: Pemantau perubahan laman web yang diselenggara oleh LinuxServer.io
+    pt-br: Monitor de alteracoes de sites mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://changedetection.io/
+  github: https://github.com/linuxserver/docker-changedetection.io
+  document: https://docs.linuxserver.io/images/docker-changedetection.io/
+  architectures:
+  - amd64
+  - arm64

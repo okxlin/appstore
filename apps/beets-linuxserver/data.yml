@@ -1,0 +1,30 @@
+name: Beets LinuxServer
+tags:
+- Media
+title: Beets 音乐库管理
+description: Beets 音乐库管理
+additionalProperties:
+  key: beets-linuxserver
+  name: Beets LinuxServer
+  tags:
+  - Media
+  shortDescZh: Beets 音乐库管理
+  shortDescEn: Music library manager maintained by LinuxServer.io
+  description:
+    en: Music library manager maintained by LinuxServer.io
+    zh: Beets 音乐库管理
+    zh-Hant: Beets 音樂庫管理
+    ja: LinuxServer.io が保守する音楽ライブラリ管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 음악 라이브러리 관리자
+    ru: Менеджер музыкальной библиотеки, поддерживаемый LinuxServer.io
+    ms: Pengurus perpustakaan muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de biblioteca musical mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://beets.io/
+  github: https://github.com/linuxserver/docker-beets
+  document: https://docs.linuxserver.io/images/docker-beets/
+  architectures:
+  - amd64
+  - arm64
