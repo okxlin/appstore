@@ -1,0 +1,19 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  webgrabplus:
+    image: "linuxserver/webgrabplus:5.6.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${DATA_PATH}:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

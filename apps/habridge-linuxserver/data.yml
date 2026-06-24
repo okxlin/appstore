@@ -1,0 +1,30 @@
+name: HABridge LinuxServer
+tags:
+- Tool
+title: HABridge 智能家居桥接
+description: HABridge 智能家居桥接
+additionalProperties:
+  key: habridge-linuxserver
+  name: HABridge LinuxServer
+  tags:
+  - Tool
+  shortDescZh: HABridge 智能家居桥接
+  shortDescEn: Home automation bridge maintained by LinuxServer.io
+  description:
+    en: Home automation bridge maintained by LinuxServer.io
+    zh: HABridge 智能家居桥接
+    zh-Hant: HABridge 智慧家庭橋接
+    ja: LinuxServer.io が保守するホームオートメーションブリッジ
+    ko: LinuxServer.io에서 유지 관리하는 홈 자동화 브리지
+    ru: Мост домашней автоматизации, поддерживаемый LinuxServer.io
+    ms: Jambatan automasi rumah yang diselenggara oleh LinuxServer.io
+    pt-br: Ponte de automacao residencial mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/bwssytems/ha-bridge
+  github: https://github.com/linuxserver/docker-habridge
+  document: https://docs.linuxserver.io/images/docker-habridge/
+  architectures:
+  - amd64
+  - arm64

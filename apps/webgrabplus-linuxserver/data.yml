@@ -1,0 +1,30 @@
+name: WebGrabPlus LinuxServer
+tags:
+- Media
+title: WebGrabPlus 电视节目抓取服务
+description: WebGrabPlus 电视节目抓取服务
+additionalProperties:
+  key: webgrabplus-linuxserver
+  name: WebGrabPlus LinuxServer
+  tags:
+  - Media
+  shortDescZh: WebGrabPlus 电视节目抓取服务
+  shortDescEn: TV guide grabber maintained by LinuxServer.io
+  description:
+    en: TV guide grabber maintained by LinuxServer.io
+    zh: WebGrabPlus 电视节目抓取服务
+    zh-Hant: WebGrabPlus 電視節目擷取服務
+    ja: LinuxServer.io が保守するテレビ番組表取得サービス
+    ko: LinuxServer.io에서 유지 관리하는 TV 가이드 수집 서비스
+    ru: Сервис получения телепрограммы, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan pengambil panduan TV yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de captura de guia de TV mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: http://www.webgrabplus.com/
+  github: https://github.com/linuxserver/docker-webgrabplus
+  document: https://docs.linuxserver.io/images/docker-webgrabplus/
+  architectures:
+  - amd64
+  - arm64
