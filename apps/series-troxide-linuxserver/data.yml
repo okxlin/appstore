@@ -1,0 +1,30 @@
+name: Series Troxide LinuxServer
+tags:
+- Media
+title: Series Troxide 剧集追踪桌面
+description: Series Troxide 剧集追踪桌面
+additionalProperties:
+  key: series-troxide-linuxserver
+  name: Series Troxide LinuxServer
+  tags:
+  - Media
+  shortDescZh: Series Troxide 剧集追踪桌面
+  shortDescEn: Series tracker desktop maintained by LinuxServer.io
+  description:
+    en: Series tracker desktop maintained by LinuxServer.io
+    zh: Series Troxide 剧集追踪桌面
+    zh-Hant: Series Troxide 劇集追蹤桌面
+    ja: LinuxServer.io が保守するシリーズ追跡デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 시리즈 추적 데스크톱
+    ru: Рабочий стол трекера сериалов, поддерживаемый LinuxServer.io
+    ms: Desktop penjejak siri yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de rastreamento de series mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/MaarifaMaarifa/series-troxide
+  github: https://github.com/linuxserver/docker-series-troxide
+  document: https://docs.linuxserver.io/images/docker-series-troxide/
+  architectures:
+  - amd64
+  - arm64
