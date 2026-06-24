@@ -1,0 +1,30 @@
+name: Fleet LinuxServer
+tags:
+- Tool
+title: Fleet 镜像仓库展示界面
+description: Fleet 镜像仓库展示界面
+additionalProperties:
+  key: fleet-linuxserver
+  name: Fleet LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Fleet 镜像仓库展示界面
+  shortDescEn: Image repository dashboard maintained by LinuxServer.io
+  description:
+    en: Image repository dashboard maintained by LinuxServer.io
+    zh: Fleet 镜像仓库展示界面
+    zh-Hant: Fleet 映像倉庫展示介面
+    ja: LinuxServer.io が保守するイメージリポジトリダッシュボード
+    ko: LinuxServer.io에서 유지 관리하는 이미지 저장소 대시보드
+    ru: Панель репозиториев образов, поддерживаемая LinuxServer.io
+    ms: Papan pemuka repositori imej yang diselenggara oleh LinuxServer.io
+    pt-br: Painel de repositorios de imagens mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/linuxserver/fleet
+  github: https://github.com/linuxserver/docker-fleet
+  document: https://docs.linuxserver.io/images/docker-fleet/
+  architectures:
+  - amd64
+  - arm64
