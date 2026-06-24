@@ -1,0 +1,30 @@
+name: GitQlient LinuxServer
+tags:
+- DevOps
+title: GitQlient Git 客户端桌面
+description: GitQlient Git 客户端桌面
+additionalProperties:
+  key: gitqlient-linuxserver
+  name: GitQlient LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: GitQlient Git 客户端桌面
+  shortDescEn: Git client desktop maintained by LinuxServer.io
+  description:
+    en: Git client desktop maintained by LinuxServer.io
+    zh: GitQlient Git 客户端桌面
+    zh-Hant: GitQlient Git 用戶端桌面
+    ja: LinuxServer.io が保守する Git クライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Git 클라이언트 데스크톱
+    ru: Рабочий стол Git-клиента, поддерживаемый LinuxServer.io
+    ms: Desktop klien Git yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente Git mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://gitqlient.github.io/
+  github: https://github.com/linuxserver/docker-gitqlient
+  document: https://docs.linuxserver.io/images/docker-gitqlient/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,30 @@
+name: Calligra LinuxServer
+tags:
+- Tool
+title: Calligra 办公创作套件桌面
+description: Calligra 办公创作套件桌面
+additionalProperties:
+  key: calligra-linuxserver
+  name: Calligra LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Calligra 办公创作套件桌面
+  shortDescEn: Office and graphics suite desktop maintained by LinuxServer.io
+  description:
+    en: Office and graphics suite desktop maintained by LinuxServer.io
+    zh: Calligra 办公创作套件桌面
+    zh-Hant: Calligra 辦公創作套件桌面
+    ja: LinuxServer.io が保守するオフィスおよびグラフィックススイートデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 오피스 및 그래픽 제품군 데스크톱
+    ru: Рабочий стол офисного и графического пакета, поддерживаемый LinuxServer.io
+    ms: Desktop suite pejabat dan grafik yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de suite de escritorio e graficos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://calligra.org/
+  github: https://github.com/linuxserver/docker-calligra
+  document: https://docs.linuxserver.io/images/docker-calligra/
+  architectures:
+  - amd64
+  - arm64

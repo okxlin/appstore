@@ -1,0 +1,30 @@
+name: OpenShot LinuxServer
+tags:
+- Media
+title: OpenShot 视频编辑桌面
+description: OpenShot 视频编辑桌面
+additionalProperties:
+  key: openshot-linuxserver
+  name: OpenShot LinuxServer
+  tags:
+  - Media
+  shortDescZh: OpenShot 视频编辑桌面
+  shortDescEn: Video editor desktop maintained by LinuxServer.io
+  description:
+    en: Video editor desktop maintained by LinuxServer.io
+    zh: OpenShot 视频编辑桌面
+    zh-Hant: OpenShot 影片編輯桌面
+    ja: LinuxServer.io が保守する動画編集デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 비디오 편집 데스크톱
+    ru: Рабочий стол видеоредактора, поддерживаемый LinuxServer.io
+    ms: Desktop penyunting video yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de editor de video mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.openshot.org/
+  github: https://github.com/linuxserver/docker-openshot
+  document: https://docs.linuxserver.io/images/docker-openshot/
+  architectures:
+  - amd64
+  - arm64
