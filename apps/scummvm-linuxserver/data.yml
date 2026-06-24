@@ -1,0 +1,29 @@
+name: ScummVM LinuxServer
+tags:
+- Game
+title: ScummVM 冒险游戏引擎桌面
+description: ScummVM 冒险游戏引擎桌面
+additionalProperties:
+  key: scummvm-linuxserver
+  name: ScummVM LinuxServer
+  tags:
+  - Game
+  shortDescZh: ScummVM 冒险游戏引擎桌面
+  shortDescEn: Adventure game engine desktop maintained by LinuxServer.io
+  description:
+    en: Adventure game engine desktop maintained by LinuxServer.io
+    zh: ScummVM 冒险游戏引擎桌面
+    zh-Hant: ScummVM 冒險遊戲引擎桌面
+    ja: LinuxServer.io が保守するアドベンチャーゲームエンジンデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 어드벤처 게임 엔진 데스크톱
+    ru: Рабочий стол движка приключенческих игр, поддерживаемый LinuxServer.io
+    ms: Desktop enjin permainan pengembaraan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de motor de jogos de aventura mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.scummvm.org/
+  github: https://github.com/linuxserver/docker-scummvm
+  document: https://docs.linuxserver.io/images/docker-scummvm/
+  architectures:
+  - amd64

@@ -1,0 +1,29 @@
+name: Flycast LinuxServer
+tags:
+- Game
+title: Flycast Dreamcast 模拟器桌面
+description: Flycast Dreamcast 模拟器桌面
+additionalProperties:
+  key: flycast-linuxserver
+  name: Flycast LinuxServer
+  tags:
+  - Game
+  shortDescZh: Flycast Dreamcast 模拟器桌面
+  shortDescEn: Dreamcast emulator desktop maintained by LinuxServer.io
+  description:
+    en: Dreamcast emulator desktop maintained by LinuxServer.io
+    zh: Flycast Dreamcast 模拟器桌面
+    zh-Hant: Flycast Dreamcast 模擬器桌面
+    ja: LinuxServer.io が保守する Dreamcast エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Dreamcast 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора Dreamcast, поддерживаемый LinuxServer.io
+    ms: Desktop emulator Dreamcast yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador Dreamcast mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://flyinghead.github.io/flycast-builds/
+  github: https://github.com/linuxserver/docker-flycast
+  document: https://docs.linuxserver.io/images/docker-flycast/
+  architectures:
+  - amd64

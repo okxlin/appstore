@@ -1,0 +1,30 @@
+name: Spotube LinuxServer
+tags:
+- Media
+title: Spotube 音乐客户端桌面
+description: Spotube 音乐客户端桌面
+additionalProperties:
+  key: spotube-linuxserver
+  name: Spotube LinuxServer
+  tags:
+  - Media
+  shortDescZh: Spotube 音乐客户端桌面
+  shortDescEn: Music client desktop maintained by LinuxServer.io
+  description:
+    en: Music client desktop maintained by LinuxServer.io
+    zh: Spotube 音乐客户端桌面
+    zh-Hant: Spotube 音樂用戶端桌面
+    ja: LinuxServer.io が保守する音楽クライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 음악 클라이언트 데스크톱
+    ru: Рабочий стол музыкального клиента, поддерживаемый LinuxServer.io
+    ms: Desktop klien muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente de musica mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://spotube.krtirtho.dev/
+  github: https://github.com/linuxserver/docker-spotube
+  document: https://docs.linuxserver.io/images/docker-spotube/
+  architectures:
+  - amd64
+  - arm64

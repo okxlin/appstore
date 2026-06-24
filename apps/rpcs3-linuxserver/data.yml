@@ -1,0 +1,30 @@
+name: RPCS3 LinuxServer
+tags:
+- Game
+title: RPCS3 PlayStation 3 模拟器桌面
+description: RPCS3 PlayStation 3 模拟器桌面
+additionalProperties:
+  key: rpcs3-linuxserver
+  name: RPCS3 LinuxServer
+  tags:
+  - Game
+  shortDescZh: RPCS3 PlayStation 3 模拟器桌面
+  shortDescEn: PlayStation 3 emulator desktop maintained by LinuxServer.io
+  description:
+    en: PlayStation 3 emulator desktop maintained by LinuxServer.io
+    zh: RPCS3 PlayStation 3 模拟器桌面
+    zh-Hant: RPCS3 PlayStation 3 模擬器桌面
+    ja: LinuxServer.io が保守する PlayStation 3 エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 PlayStation 3 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора PlayStation 3, поддерживаемый LinuxServer.io
+    ms: Desktop emulator PlayStation 3 yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador PlayStation 3 mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://rpcs3.net/
+  github: https://github.com/linuxserver/docker-rpcs3
+  document: https://docs.linuxserver.io/images/docker-rpcs3/
+  architectures:
+  - amd64
+  - arm64
