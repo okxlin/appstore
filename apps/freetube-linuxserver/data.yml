@@ -1,0 +1,30 @@
+name: FreeTube LinuxServer
+tags:
+- Media
+title: FreeTube 视频客户端桌面
+description: FreeTube 视频客户端桌面
+additionalProperties:
+  key: freetube-linuxserver
+  name: FreeTube LinuxServer
+  tags:
+  - Media
+  shortDescZh: FreeTube 视频客户端桌面
+  shortDescEn: Video client desktop maintained by LinuxServer.io
+  description:
+    en: Video client desktop maintained by LinuxServer.io
+    zh: FreeTube 视频客户端桌面
+    zh-Hant: FreeTube 影片用戶端桌面
+    ja: LinuxServer.io が保守する動画クライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 비디오 클라이언트 데스크톱
+    ru: Рабочий стол видеоклиента, поддерживаемый LinuxServer.io
+    ms: Desktop klien video yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente de video mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://freetubeapp.io/
+  github: https://github.com/linuxserver/docker-freetube
+  document: https://docs.linuxserver.io/images/docker-freetube/
+  architectures:
+  - amd64
+  - arm64
