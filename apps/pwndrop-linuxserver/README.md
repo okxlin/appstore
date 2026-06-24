@@ -1,8 +1,7 @@
-# Pwndrop LinuxServer
-
+# Pwndrop
 ## 产品介绍
 
-Pwndrop LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/pwndrop` 镜像，提供 Pwndrop 文件投递服务 能力。
+Pwndrop 使用 LinuxServer.io 维护的 `linuxserver/pwndrop` 镜像，提供 Pwndrop 文件投递服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Pwndrop LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/pwndrop` 镜像
 
 ## Introduction
 
-Pwndrop LinuxServer uses the LinuxServer.io maintained `linuxserver/pwndrop` image for file delivery and sharing.
+Pwndrop uses the LinuxServer.io maintained `linuxserver/pwndrop` image for file delivery and sharing.
 
 ## Features
 

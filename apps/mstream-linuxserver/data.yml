@@ -1,11 +1,11 @@
-name: mStream LinuxServer
+name: mStream
 tags:
 - Media
 title: mStream 音乐流媒体服务器
 description: mStream 音乐流媒体服务器
 additionalProperties:
   key: mstream-linuxserver
-  name: mStream LinuxServer
+  name: mStream
   tags:
   - Media
   shortDescZh: mStream 音乐流媒体服务器

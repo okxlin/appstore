@@ -1,11 +1,11 @@
-name: Emby LinuxServer
+name: Emby
 tags:
 - Media
 title: Emby 媒体服务器
 description: Emby 媒体服务器
 additionalProperties:
   key: emby-linuxserver
-  name: Emby LinuxServer
+  name: Emby
   tags:
   - Media
   shortDescZh: Emby 媒体服务器

@@ -1,8 +1,7 @@
-# WineGUI LinuxServer
-
+# WineGUI
 ## 产品介绍
 
-WineGUI LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/winegui` 镜像，提供 WineGUI Wine 管理桌面 能力。
+WineGUI 使用 LinuxServer.io 维护的 `linuxserver/winegui` 镜像，提供 WineGUI Wine 管理桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ WineGUI LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/winegui` 镜像
 
 ## Introduction
 
-WineGUI LinuxServer uses the LinuxServer.io maintained `linuxserver/winegui` image for Wine bottle management.
+WineGUI uses the LinuxServer.io maintained `linuxserver/winegui` image for Wine bottle management.
 
 ## Features
 

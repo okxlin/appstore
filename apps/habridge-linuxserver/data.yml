@@ -1,11 +1,11 @@
-name: HABridge LinuxServer
+name: HABridge
 tags:
 - Tool
 title: HABridge 智能家居桥接
 description: HABridge 智能家居桥接
 additionalProperties:
   key: habridge-linuxserver
-  name: HABridge LinuxServer
+  name: HABridge
   tags:
   - Tool
   shortDescZh: HABridge 智能家居桥接

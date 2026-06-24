@@ -1,11 +1,11 @@
-name: Healthchecks LinuxServer
+name: Healthchecks
 tags:
 - DevOps
 title: Healthchecks 定时任务监控
 description: Healthchecks 定时任务监控
 additionalProperties:
   key: healthchecks-linuxserver
-  name: Healthchecks LinuxServer
+  name: Healthchecks
   tags:
   - DevOps
   shortDescZh: Healthchecks 定时任务监控

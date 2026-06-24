@@ -1,8 +1,7 @@
-# Blender LinuxServer
-
+# Blender
 ## 产品介绍
 
-Blender LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/blender` 镜像，提供 Blender 3D 创作桌面 能力。
+Blender 使用 LinuxServer.io 维护的 `linuxserver/blender` 镜像，提供 Blender 3D 创作桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Blender LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/blender` 镜像
 
 ## Introduction
 
-Blender LinuxServer uses the LinuxServer.io maintained `linuxserver/blender` image for 3D creation.
+Blender uses the LinuxServer.io maintained `linuxserver/blender` image for 3D creation.
 
 ## Features
 

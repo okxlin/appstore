@@ -1,5 +1,4 @@
-# COPS LinuxServer
-
+# COPS
 ## 产品介绍
 
 COPS 是一个轻量的 Calibre OPDS 和 HTML 电子书服务器，可通过浏览器访问书库。本应用使用 LinuxServer.io 维护的 `linuxserver/cops` 镜像。

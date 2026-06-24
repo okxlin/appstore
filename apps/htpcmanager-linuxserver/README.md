@@ -1,8 +1,7 @@
-# HTPC Manager LinuxServer
-
+# HTPC Manager
 ## 产品介绍
 
-HTPC Manager LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/htpcmanager` 镜像，提供 HTPC Manager 家庭媒体控制台 能力。
+HTPC Manager 使用 LinuxServer.io 维护的 `linuxserver/htpcmanager` 镜像，提供 HTPC Manager 家庭媒体控制台 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ HTPC Manager LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/htpcmanage
 
 ## Introduction
 
-HTPC Manager LinuxServer uses the LinuxServer.io maintained `linuxserver/htpcmanager` image for HTPC service dashboard.
+HTPC Manager uses the LinuxServer.io maintained `linuxserver/htpcmanager` image for HTPC service dashboard.
 
 ## Features
 

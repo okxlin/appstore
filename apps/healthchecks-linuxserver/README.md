@@ -1,8 +1,7 @@
-# Healthchecks LinuxServer
-
+# Healthchecks
 ## 产品介绍
 
-Healthchecks LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/healthchecks` 镜像，提供 Healthchecks 定时任务监控 能力。
+Healthchecks 使用 LinuxServer.io 维护的 `linuxserver/healthchecks` 镜像，提供 Healthchecks 定时任务监控 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Healthchecks LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/healthchec
 
 ## Introduction
 
-Healthchecks LinuxServer uses the LinuxServer.io maintained `linuxserver/healthchecks` image for cron job monitoring.
+Healthchecks uses the LinuxServer.io maintained `linuxserver/healthchecks` image for cron job monitoring.
 
 ## Features
 

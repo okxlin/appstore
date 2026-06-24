@@ -1,8 +1,7 @@
-# Microsoft Edge LinuxServer
-
+# Microsoft Edge
 ## 产品介绍
 
-Microsoft Edge LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/msedge` 镜像，提供 Microsoft Edge 浏览器桌面 能力。
+Microsoft Edge 使用 LinuxServer.io 维护的 `linuxserver/msedge` 镜像，提供 Microsoft Edge 浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Microsoft Edge LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/msedge` 
 
 ## Introduction
 
-Microsoft Edge LinuxServer uses the LinuxServer.io maintained `linuxserver/msedge` image for browser desktop access.
+Microsoft Edge uses the LinuxServer.io maintained `linuxserver/msedge` image for browser desktop access.
 
 ## Features
 

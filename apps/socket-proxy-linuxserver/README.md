@@ -1,8 +1,7 @@
-# Socket Proxy LinuxServer
-
+# Socket Proxy
 ## 产品介绍
 
-Socket Proxy LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/socket-proxy` 镜像，提供带访问规则的 Docker API 代理。
+Socket Proxy 使用 LinuxServer.io 维护的 `linuxserver/socket-proxy` 镜像，提供带访问规则的 Docker API 代理。
 
 ## 主要功能
 
@@ -21,7 +20,7 @@ Socket Proxy LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/socket-pro
 
 ## Introduction
 
-Socket Proxy LinuxServer uses the LinuxServer.io maintained `linuxserver/socket-proxy` image to provide a rule-based Docker API proxy.
+Socket Proxy uses the LinuxServer.io maintained `linuxserver/socket-proxy` image to provide a rule-based Docker API proxy.
 
 ## Features
 

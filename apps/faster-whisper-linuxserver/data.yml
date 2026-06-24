@@ -1,11 +1,11 @@
-name: Faster Whisper LinuxServer
+name: Faster Whisper
 tags:
 - AI
 title: Faster Whisper 语音转写服务
 description: Faster Whisper 语音转写服务
 additionalProperties:
   key: faster-whisper-linuxserver
-  name: Faster Whisper LinuxServer
+  name: Faster Whisper
   tags:
   - AI
   shortDescZh: Faster Whisper 语音转写服务

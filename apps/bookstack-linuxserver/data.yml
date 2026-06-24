@@ -1,11 +1,11 @@
-name: BookStack LinuxServer
+name: BookStack
 tags:
 - Tool
 title: BookStack 文档知识库
 description: BookStack 文档知识库
 additionalProperties:
   key: bookstack-linuxserver
-  name: BookStack LinuxServer
+  name: BookStack
   tags:
   - Tool
   shortDescZh: BookStack 文档知识库

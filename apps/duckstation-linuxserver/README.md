@@ -1,8 +1,7 @@
-# DuckStation LinuxServer
-
+# DuckStation
 ## 产品介绍
 
-DuckStation LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/duckstation` 镜像，提供 DuckStation PlayStation 模拟器桌面 能力。
+DuckStation 使用 LinuxServer.io 维护的 `linuxserver/duckstation` 镜像，提供 DuckStation PlayStation 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ DuckStation LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/duckstation
 
 ## Introduction
 
-DuckStation LinuxServer uses the LinuxServer.io maintained `linuxserver/duckstation` image for PlayStation emulator desktop.
+DuckStation uses the LinuxServer.io maintained `linuxserver/duckstation` image for PlayStation emulator desktop.
 
 ## Features
 

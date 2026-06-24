@@ -1,11 +1,11 @@
-name: QDirStat LinuxServer
+name: QDirStat
 tags:
 - Tool
 title: QDirStat 磁盘占用分析桌面
 description: QDirStat 磁盘占用分析桌面
 additionalProperties:
   key: qdirstat-linuxserver
-  name: QDirStat LinuxServer
+  name: QDirStat
   tags:
   - Tool
   shortDescZh: QDirStat 磁盘占用分析桌面

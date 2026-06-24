@@ -1,11 +1,11 @@
-name: Bitcoin Knots LinuxServer
+name: Bitcoin Knots
 tags:
 - Tool
 title: Bitcoin Knots 全节点桌面
 description: Bitcoin Knots 全节点桌面
 additionalProperties:
   key: bitcoin-knots-linuxserver
-  name: Bitcoin Knots LinuxServer
+  name: Bitcoin Knots
   tags:
   - Tool
   shortDescZh: Bitcoin Knots 全节点桌面

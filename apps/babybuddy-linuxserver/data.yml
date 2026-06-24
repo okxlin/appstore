@@ -1,11 +1,11 @@
-name: Baby Buddy LinuxServer
+name: Baby Buddy
 tags:
 - Tool
 title: Baby Buddy 育儿记录
 description: Baby Buddy 育儿记录
 additionalProperties:
   key: babybuddy-linuxserver
-  name: Baby Buddy LinuxServer
+  name: Baby Buddy
   tags:
   - Tool
   shortDescZh: Baby Buddy 育儿记录

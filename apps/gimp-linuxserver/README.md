@@ -1,8 +1,7 @@
-# GIMP LinuxServer
-
+# GIMP
 ## 产品介绍
 
-GIMP LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/gimp` 镜像，提供 GIMP 图像编辑桌面 能力。
+GIMP 使用 LinuxServer.io 维护的 `linuxserver/gimp` 镜像，提供 GIMP 图像编辑桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ GIMP LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/gimp` 镜像，提
 
 ## Introduction
 
-GIMP LinuxServer uses the LinuxServer.io maintained `linuxserver/gimp` image for image editing desktop.
+GIMP uses the LinuxServer.io maintained `linuxserver/gimp` image for image editing desktop.
 
 ## Features
 

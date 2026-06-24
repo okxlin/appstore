@@ -1,11 +1,11 @@
-name: Firefox LinuxServer
+name: Firefox
 tags:
 - Tool
 title: Firefox 浏览器桌面
 description: Firefox 浏览器桌面
 additionalProperties:
   key: firefox-linuxserver
-  name: Firefox LinuxServer
+  name: Firefox
   tags:
   - Tool
   shortDescZh: Firefox 浏览器桌面

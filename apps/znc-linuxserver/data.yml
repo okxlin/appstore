@@ -1,11 +1,11 @@
-name: ZNC LinuxServer
+name: ZNC
 tags:
 - Tool
 title: ZNC IRC 反向代理
 description: ZNC IRC 反向代理
 additionalProperties:
   key: znc-linuxserver
-  name: ZNC LinuxServer
+  name: ZNC
   tags:
   - Tool
   shortDescZh: ZNC IRC 反向代理

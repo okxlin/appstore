@@ -1,11 +1,11 @@
-name: Pidgin LinuxServer
+name: Pidgin
 tags:
 - Tool
 title: Pidgin 即时通讯桌面
 description: Pidgin 即时通讯桌面
 additionalProperties:
   key: pidgin-linuxserver
-  name: Pidgin LinuxServer
+  name: Pidgin
   tags:
   - Tool
   shortDescZh: Pidgin 即时通讯桌面

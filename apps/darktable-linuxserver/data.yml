@@ -1,11 +1,11 @@
-name: darktable LinuxServer
+name: darktable
 tags:
 - Media
 title: darktable 摄影工作流桌面
 description: darktable 摄影工作流桌面
 additionalProperties:
   key: darktable-linuxserver
-  name: darktable LinuxServer
+  name: darktable
   tags:
   - Media
   shortDescZh: darktable 摄影工作流桌面

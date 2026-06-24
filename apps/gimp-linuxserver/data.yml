@@ -1,11 +1,11 @@
-name: GIMP LinuxServer
+name: GIMP
 tags:
 - Media
 title: GIMP 图像编辑桌面
 description: GIMP 图像编辑桌面
 additionalProperties:
   key: gimp-linuxserver
-  name: GIMP LinuxServer
+  name: GIMP
   tags:
   - Media
   shortDescZh: GIMP 图像编辑桌面

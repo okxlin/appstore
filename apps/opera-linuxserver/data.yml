@@ -1,11 +1,11 @@
-name: Opera LinuxServer
+name: Opera
 tags:
 - Tool
 title: Opera 浏览器桌面
 description: Opera 浏览器桌面
 additionalProperties:
   key: opera-linuxserver
-  name: Opera LinuxServer
+  name: Opera
   tags:
   - Tool
   shortDescZh: Opera 浏览器桌面

@@ -1,11 +1,11 @@
-name: Webtop LinuxServer
+name: Webtop
 tags:
 - Tool
 title: Webtop 浏览器桌面环境
 description: Webtop 浏览器桌面环境
 additionalProperties:
   key: webtop-linuxserver
-  name: Webtop LinuxServer
+  name: Webtop
   tags:
   - Tool
   shortDescZh: Webtop 浏览器桌面环境

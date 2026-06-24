@@ -1,11 +1,11 @@
-name: Fail2ban LinuxServer
+name: Fail2ban
 tags:
 - Security
 title: Fail2ban 主机入侵防护服务
 description: Fail2ban 主机入侵防护服务
 additionalProperties:
   key: fail2ban-linuxserver
-  name: Fail2ban LinuxServer
+  name: Fail2ban
   tags:
   - Security
   shortDescZh: Fail2ban 主机入侵防护服务

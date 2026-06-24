@@ -1,11 +1,11 @@
-name: Lollypop LinuxServer
+name: Lollypop
 tags:
 - Media
 title: Lollypop 音乐播放器桌面
 description: Lollypop 音乐播放器桌面
 additionalProperties:
   key: lollypop-linuxserver
-  name: Lollypop LinuxServer
+  name: Lollypop
   tags:
   - Media
   shortDescZh: Lollypop 音乐播放器桌面

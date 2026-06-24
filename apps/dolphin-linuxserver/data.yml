@@ -1,11 +1,11 @@
-name: Dolphin LinuxServer
+name: Dolphin
 tags:
 - Game
 title: Dolphin 游戏模拟器桌面
 description: Dolphin 游戏模拟器桌面
 additionalProperties:
   key: dolphin-linuxserver
-  name: Dolphin LinuxServer
+  name: Dolphin
   tags:
   - Game
   shortDescZh: Dolphin 游戏模拟器桌面

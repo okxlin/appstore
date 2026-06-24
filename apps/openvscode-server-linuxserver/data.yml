@@ -1,11 +1,11 @@
-name: OpenVSCode Server LinuxServer
+name: OpenVSCode Server
 tags:
 - DevOps
 title: OpenVSCode Server 浏览器 IDE
 description: OpenVSCode Server 浏览器 IDE
 additionalProperties:
   key: openvscode-server-linuxserver
-  name: OpenVSCode Server LinuxServer
+  name: OpenVSCode Server
   tags:
   - DevOps
   shortDescZh: OpenVSCode Server 浏览器 IDE

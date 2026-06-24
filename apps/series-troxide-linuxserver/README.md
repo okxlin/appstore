@@ -1,8 +1,7 @@
-# Series Troxide LinuxServer
-
+# Series Troxide
 ## 产品介绍
 
-Series Troxide LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/series-troxide` 镜像，提供 Series Troxide 剧集追踪桌面 能力。
+Series Troxide 使用 LinuxServer.io 维护的 `linuxserver/series-troxide` 镜像，提供 Series Troxide 剧集追踪桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Series Troxide LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/series-t
 
 ## Introduction
 
-Series Troxide LinuxServer uses the LinuxServer.io maintained `linuxserver/series-troxide` image for a browser-accessible desktop application.
+Series Troxide uses the LinuxServer.io maintained `linuxserver/series-troxide` image for a browser-accessible desktop application.
 
 ## Features
 

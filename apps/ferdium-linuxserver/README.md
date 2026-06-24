@@ -1,8 +1,7 @@
-# Ferdium LinuxServer
-
+# Ferdium
 ## 产品介绍
 
-Ferdium LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/ferdium` 镜像，提供 Ferdium 消息聚合桌面 能力。
+Ferdium 使用 LinuxServer.io 维护的 `linuxserver/ferdium` 镜像，提供 Ferdium 消息聚合桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Ferdium LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/ferdium` 镜像
 
 ## Introduction
 
-Ferdium LinuxServer uses the LinuxServer.io maintained `linuxserver/ferdium` image for messaging workspace.
+Ferdium uses the LinuxServer.io maintained `linuxserver/ferdium` image for messaging workspace.
 
 ## Features
 

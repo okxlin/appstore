@@ -1,8 +1,7 @@
-# Bitcoin Knots LinuxServer
-
+# Bitcoin Knots
 ## 产品介绍
 
-Bitcoin Knots LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/bitcoin-knots` 镜像，提供 Bitcoin Knots 全节点桌面 能力。
+Bitcoin Knots 使用 LinuxServer.io 维护的 `linuxserver/bitcoin-knots` 镜像，提供 Bitcoin Knots 全节点桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Bitcoin Knots LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/bitcoin-k
 
 ## Introduction
 
-Bitcoin Knots LinuxServer uses the LinuxServer.io maintained `linuxserver/bitcoin-knots` image for Bitcoin full node management.
+Bitcoin Knots uses the LinuxServer.io maintained `linuxserver/bitcoin-knots` image for Bitcoin full node management.
 
 ## Features
 

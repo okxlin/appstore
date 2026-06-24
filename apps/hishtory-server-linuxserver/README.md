@@ -1,8 +1,7 @@
-# hiSHtory Server LinuxServer
-
+# hiSHtory Server
 ## 产品介绍
 
-hiSHtory Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/hishtory-server` 镜像，提供 hiSHtory Shell 历史同步服务 能力。
+hiSHtory Server 使用 LinuxServer.io 维护的 `linuxserver/hishtory-server` 镜像，提供 hiSHtory Shell 历史同步服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ hiSHtory Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/hishtor
 
 ## Introduction
 
-hiSHtory Server LinuxServer uses the LinuxServer.io maintained `linuxserver/hishtory-server` image for shell history synchronization.
+hiSHtory Server uses the LinuxServer.io maintained `linuxserver/hishtory-server` image for shell history synchronization.
 
 ## Features
 

@@ -1,11 +1,11 @@
-name: NetBox LinuxServer
+name: NetBox
 tags:
 - DevOps
 title: NetBox IPAM 与机房资产管理
 description: NetBox IPAM 与机房资产管理
 additionalProperties:
   key: netbox-linuxserver
-  name: NetBox LinuxServer
+  name: NetBox
   tags:
   - DevOps
   shortDescZh: NetBox IPAM 与机房资产管理

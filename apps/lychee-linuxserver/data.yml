@@ -1,11 +1,11 @@
-name: Lychee LinuxServer
+name: Lychee
 tags:
 - Media
 title: Lychee 相册管理
 description: Lychee 相册管理
 additionalProperties:
   key: lychee-linuxserver
-  name: Lychee LinuxServer
+  name: Lychee
   tags:
   - Media
   shortDescZh: Lychee 相册管理

@@ -1,11 +1,11 @@
-name: MediaElch LinuxServer
+name: MediaElch
 tags:
 - Media
 title: MediaElch 媒体元数据桌面
 description: MediaElch 媒体元数据桌面
 additionalProperties:
   key: mediaelch-linuxserver
-  name: MediaElch LinuxServer
+  name: MediaElch
   tags:
   - Media
   shortDescZh: MediaElch 媒体元数据桌面

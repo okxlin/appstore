@@ -1,11 +1,11 @@
-name: Zotero LinuxServer
+name: Zotero
 tags:
 - Tool
 title: Zotero 文献管理桌面
 description: Zotero 文献管理桌面
 additionalProperties:
   key: zotero-linuxserver
-  name: Zotero LinuxServer
+  name: Zotero
   tags:
   - Tool
   shortDescZh: Zotero 文献管理桌面

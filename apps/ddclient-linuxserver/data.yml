@@ -1,11 +1,11 @@
-name: ddclient LinuxServer
+name: ddclient
 tags:
 - Tool
 title: ddclient 动态 DNS 更新服务
 description: ddclient 动态 DNS 更新服务
 additionalProperties:
   key: ddclient-linuxserver
-  name: ddclient LinuxServer
+  name: ddclient
   tags:
   - Tool
   shortDescZh: ddclient 动态 DNS 更新服务

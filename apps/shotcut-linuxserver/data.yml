@@ -1,11 +1,11 @@
-name: Shotcut LinuxServer
+name: Shotcut
 tags:
 - Media
 title: Shotcut 视频编辑桌面
 description: Shotcut 视频编辑桌面
 additionalProperties:
   key: shotcut-linuxserver
-  name: Shotcut LinuxServer
+  name: Shotcut
   tags:
   - Media
   shortDescZh: Shotcut 视频编辑桌面

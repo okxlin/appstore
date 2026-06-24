@@ -1,11 +1,11 @@
-name: WebGrabPlus LinuxServer
+name: WebGrabPlus
 tags:
 - Media
 title: WebGrabPlus 电视节目抓取服务
 description: WebGrabPlus 电视节目抓取服务
 additionalProperties:
   key: webgrabplus-linuxserver
-  name: WebGrabPlus LinuxServer
+  name: WebGrabPlus
   tags:
   - Media
   shortDescZh: WebGrabPlus 电视节目抓取服务

@@ -1,5 +1,4 @@
-# Bazarr LinuxServer
-
+# Bazarr
 ## 产品介绍
 
 Bazarr 是面向 Sonarr 和 Radarr 的字幕管理器，可自动搜索和管理影视字幕。本应用使用 LinuxServer.io 维护的 `linuxserver/bazarr` 镜像。

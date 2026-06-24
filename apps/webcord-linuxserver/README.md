@@ -1,8 +1,7 @@
-# WebCord LinuxServer
-
+# WebCord
 ## 产品介绍
 
-WebCord LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webcord` 镜像，提供 WebCord Discord 客户端桌面 能力。
+WebCord 使用 LinuxServer.io 维护的 `linuxserver/webcord` 镜像，提供 WebCord Discord 客户端桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ WebCord LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webcord` 镜像
 
 ## Introduction
 
-WebCord LinuxServer uses the LinuxServer.io maintained `linuxserver/webcord` image for Discord client access.
+WebCord uses the LinuxServer.io maintained `linuxserver/webcord` image for Discord client access.
 
 ## Features
 

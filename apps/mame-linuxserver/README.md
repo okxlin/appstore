@@ -1,8 +1,7 @@
-# MAME LinuxServer
-
+# MAME
 ## 产品介绍
 
-MAME LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mame` 镜像，提供 MAME 街机模拟器桌面 能力。
+MAME 使用 LinuxServer.io 维护的 `linuxserver/mame` 镜像，提供 MAME 街机模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ MAME LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mame` 镜像，提
 
 ## Introduction
 
-MAME LinuxServer uses the LinuxServer.io maintained `linuxserver/mame` image for arcade emulation.
+MAME uses the LinuxServer.io maintained `linuxserver/mame` image for arcade emulation.
 
 ## Features
 

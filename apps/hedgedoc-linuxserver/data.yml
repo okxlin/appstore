@@ -1,11 +1,11 @@
-name: HedgeDoc LinuxServer
+name: HedgeDoc
 tags:
 - Tool
 title: HedgeDoc 协作文档编辑器
 description: HedgeDoc 协作文档编辑器
 additionalProperties:
   key: hedgedoc-linuxserver
-  name: HedgeDoc LinuxServer
+  name: HedgeDoc
   tags:
   - Tool
   shortDescZh: HedgeDoc 协作文档编辑器

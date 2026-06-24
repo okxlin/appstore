@@ -1,11 +1,11 @@
-name: RetroArch LinuxServer
+name: RetroArch
 tags:
 - Game
 title: RetroArch 复古游戏前端桌面
 description: RetroArch 复古游戏前端桌面
 additionalProperties:
   key: retroarch-linuxserver
-  name: RetroArch LinuxServer
+  name: RetroArch
   tags:
   - Game
   shortDescZh: RetroArch 复古游戏前端桌面

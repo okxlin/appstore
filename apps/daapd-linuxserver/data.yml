@@ -1,11 +1,11 @@
-name: DAAPD LinuxServer
+name: DAAPD
 tags:
 - Media
 title: DAAPD/OwnTone 媒体服务器
 description: DAAPD/OwnTone 媒体服务器
 additionalProperties:
   key: daapd-linuxserver
-  name: DAAPD LinuxServer
+  name: DAAPD
   tags:
   - Media
   shortDescZh: DAAPD/OwnTone 媒体服务器

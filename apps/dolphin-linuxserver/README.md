@@ -1,8 +1,7 @@
-# Dolphin LinuxServer
-
+# Dolphin
 ## 产品介绍
 
-Dolphin LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dolphin` 镜像，提供 Dolphin 游戏模拟器桌面 能力。
+Dolphin 使用 LinuxServer.io 维护的 `linuxserver/dolphin` 镜像，提供 Dolphin 游戏模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Dolphin LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dolphin` 镜像
 
 ## Introduction
 
-Dolphin LinuxServer uses the LinuxServer.io maintained `linuxserver/dolphin` image for game emulator desktop.
+Dolphin uses the LinuxServer.io maintained `linuxserver/dolphin` image for game emulator desktop.
 
 ## Features
 

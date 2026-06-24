@@ -1,11 +1,11 @@
-name: SickChill LinuxServer
+name: SickChill
 tags:
 - Media
 title: SickChill 电视节目管理
 description: SickChill 电视节目管理
 additionalProperties:
   key: sickchill-linuxserver
-  name: SickChill LinuxServer
+  name: SickChill
   tags:
   - Media
   shortDescZh: SickChill 电视节目管理

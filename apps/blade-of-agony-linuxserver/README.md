@@ -1,8 +1,7 @@
-# Blade of Agony LinuxServer
-
+# Blade of Agony
 ## 产品介绍
 
-Blade of Agony LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/blade-of-agony` 镜像，提供 Blade of Agony 游戏桌面 能力。
+Blade of Agony 使用 LinuxServer.io 维护的 `linuxserver/blade-of-agony` 镜像，提供 Blade of Agony 游戏桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Blade of Agony LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/blade-of
 
 ## Introduction
 
-Blade of Agony LinuxServer uses the LinuxServer.io maintained `linuxserver/blade-of-agony` image for Wolfenstein-inspired gameplay.
+Blade of Agony uses the LinuxServer.io maintained `linuxserver/blade-of-agony` image for Wolfenstein-inspired gameplay.
 
 ## Features
 

@@ -1,11 +1,11 @@
-name: Brave LinuxServer
+name: Brave
 tags:
 - Tool
 title: Brave 浏览器桌面
 description: Brave 浏览器桌面
 additionalProperties:
   key: brave-linuxserver
-  name: Brave LinuxServer
+  name: Brave
   tags:
   - Tool
   shortDescZh: Brave 浏览器桌面

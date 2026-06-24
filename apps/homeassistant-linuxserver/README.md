@@ -1,8 +1,7 @@
-# Home Assistant LinuxServer
-
+# Home Assistant
 ## 产品介绍
 
-Home Assistant LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/homeassistant` 镜像，提供 Home Assistant 智能家居平台 能力。
+Home Assistant 使用 LinuxServer.io 维护的 `linuxserver/homeassistant` 镜像，提供 Home Assistant 智能家居平台 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Home Assistant LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/homeassi
 
 ## Introduction
 
-Home Assistant LinuxServer uses the LinuxServer.io maintained `linuxserver/homeassistant` image for smart home management.
+Home Assistant uses the LinuxServer.io maintained `linuxserver/homeassistant` image for smart home management.
 
 ## Features
 

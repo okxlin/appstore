@@ -1,5 +1,4 @@
-# qBittorrent LinuxServer
-
+# qBittorrent
 ## 产品介绍
 
 qBittorrent 是一款开源 BitTorrent 客户端，目标是提供一个轻量、跨平台且无广告的下载工具。本应用使用 LinuxServer.io 维护的 Docker Hub `linuxserver/qbittorrent` 镜像，适合在 1Panel 中部署 Web UI 管理端和 BT 下载监听端口。

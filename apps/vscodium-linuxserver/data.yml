@@ -1,11 +1,11 @@
-name: VSCodium LinuxServer
+name: VSCodium
 tags:
 - Tool
 title: VSCodium 桌面开发环境
 description: VSCodium 桌面开发环境
 additionalProperties:
   key: vscodium-linuxserver
-  name: VSCodium LinuxServer
+  name: VSCodium
   tags:
   - Tool
   shortDescZh: VSCodium 桌面开发环境

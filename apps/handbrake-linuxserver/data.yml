@@ -1,11 +1,11 @@
-name: HandBrake LinuxServer
+name: HandBrake
 tags:
 - Media
 title: HandBrake 视频转码桌面
 description: HandBrake 视频转码桌面
 additionalProperties:
   key: handbrake-linuxserver
-  name: HandBrake LinuxServer
+  name: HandBrake
   tags:
   - Media
   shortDescZh: HandBrake 视频转码桌面

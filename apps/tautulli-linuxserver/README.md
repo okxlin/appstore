@@ -1,5 +1,4 @@
-# Tautulli LinuxServer
-
+# Tautulli
 ## 产品介绍
 
 Tautulli 是 Plex 媒体服务器的监控和统计工具，可查看播放活动、历史记录和通知配置。本应用使用 LinuxServer.io 维护的 `linuxserver/tautulli` 镜像。

@@ -1,8 +1,7 @@
-# Cura LinuxServer
-
+# Cura
 ## 产品介绍
 
-Cura LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/cura` 镜像，提供 Cura 3D 打印切片桌面 能力。
+Cura 使用 LinuxServer.io 维护的 `linuxserver/cura` 镜像，提供 Cura 3D 打印切片桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Cura LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/cura` 镜像，提
 
 ## Introduction
 
-Cura LinuxServer uses the LinuxServer.io maintained `linuxserver/cura` image for 3D printing slicing.
+Cura uses the LinuxServer.io maintained `linuxserver/cura` image for 3D printing slicing.
 
 ## Features
 

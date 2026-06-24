@@ -1,11 +1,11 @@
-name: DuckStation LinuxServer
+name: DuckStation
 tags:
 - Game
 title: DuckStation PlayStation 模拟器桌面
 description: DuckStation PlayStation 模拟器桌面
 additionalProperties:
   key: duckstation-linuxserver
-  name: DuckStation LinuxServer
+  name: DuckStation
   tags:
   - Game
   shortDescZh: DuckStation PlayStation 模拟器桌面

@@ -1,8 +1,7 @@
-# Flycast LinuxServer
-
+# Flycast
 ## 产品介绍
 
-Flycast LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/flycast` 镜像，提供 Flycast Dreamcast 模拟器桌面 能力。
+Flycast 使用 LinuxServer.io 维护的 `linuxserver/flycast` 镜像，提供 Flycast Dreamcast 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Flycast LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/flycast` 镜像
 
 ## Introduction
 
-Flycast LinuxServer uses the LinuxServer.io maintained `linuxserver/flycast` image for Dreamcast emulation.
+Flycast uses the LinuxServer.io maintained `linuxserver/flycast` image for Dreamcast emulation.
 
 ## Features
 

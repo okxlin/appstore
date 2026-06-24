@@ -1,11 +1,11 @@
-name: Grav LinuxServer
+name: Grav
 tags:
 - Website
 title: Grav 平面文件 CMS
 description: Grav 平面文件 CMS
 additionalProperties:
   key: grav-linuxserver
-  name: Grav LinuxServer
+  name: Grav
   tags:
   - Website
   shortDescZh: Grav 平面文件 CMS

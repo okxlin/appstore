@@ -1,11 +1,11 @@
-name: Altus LinuxServer
+name: Altus
 tags:
 - Tool
 title: Altus WhatsApp 桌面客户端
 description: Altus WhatsApp 桌面客户端
 additionalProperties:
   key: altus-linuxserver
-  name: Altus LinuxServer
+  name: Altus
   tags:
   - Tool
   shortDescZh: Altus WhatsApp 桌面客户端

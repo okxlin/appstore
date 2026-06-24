@@ -1,11 +1,11 @@
-name: DuckDNS LinuxServer
+name: DuckDNS
 tags:
 - Tool
 title: DuckDNS 动态 DNS 更新服务
 description: DuckDNS 动态 DNS 更新服务
 additionalProperties:
   key: duckdns-linuxserver
-  name: DuckDNS LinuxServer
+  name: DuckDNS
   tags:
   - Tool
   shortDescZh: DuckDNS 动态 DNS 更新服务

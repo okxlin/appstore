@@ -1,11 +1,11 @@
-name: Mylar3 LinuxServer
+name: Mylar3
 tags:
 - Media
 title: Mylar3 漫画管理器
 description: Mylar3 漫画管理器
 additionalProperties:
   key: mylar3-linuxserver
-  name: Mylar3 LinuxServer
+  name: Mylar3
   tags:
   - Media
   shortDescZh: Mylar3 漫画管理器

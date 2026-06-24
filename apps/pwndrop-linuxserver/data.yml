@@ -1,11 +1,11 @@
-name: Pwndrop LinuxServer
+name: Pwndrop
 tags:
 - Storage
 title: Pwndrop 文件投递服务
 description: Pwndrop 文件投递服务
 additionalProperties:
   key: pwndrop-linuxserver
-  name: Pwndrop LinuxServer
+  name: Pwndrop
   tags:
   - Storage
   shortDescZh: Pwndrop 文件投递服务

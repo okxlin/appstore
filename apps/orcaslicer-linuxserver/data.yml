@@ -1,11 +1,11 @@
-name: OrcaSlicer LinuxServer
+name: OrcaSlicer
 tags:
 - Tool
 title: OrcaSlicer 3D 打印切片桌面
 description: OrcaSlicer 3D 打印切片桌面
 additionalProperties:
   key: orcaslicer-linuxserver
-  name: OrcaSlicer LinuxServer
+  name: OrcaSlicer
   tags:
   - Tool
   shortDescZh: OrcaSlicer 3D 打印切片桌面

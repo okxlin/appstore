@@ -1,8 +1,7 @@
-# ProjectSend LinuxServer
-
+# ProjectSend
 ## 产品介绍
 
-ProjectSend LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/projectsend` 镜像，提供 ProjectSend 文件分享门户 能力。
+ProjectSend 使用 LinuxServer.io 维护的 `linuxserver/projectsend` 镜像，提供 ProjectSend 文件分享门户 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ ProjectSend LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/projectsend
 
 ## Introduction
 
-ProjectSend LinuxServer uses the LinuxServer.io maintained `linuxserver/projectsend` image for file sharing portal management.
+ProjectSend uses the LinuxServer.io maintained `linuxserver/projectsend` image for file sharing portal management.
 
 ## Features
 

@@ -1,5 +1,4 @@
-# mStream LinuxServer
-
+# mStream
 ## 产品介绍
 
 mStream 是一个轻量音乐流媒体服务器，可通过浏览器播放和管理个人音乐库。本应用使用 LinuxServer.io 维护的 `linuxserver/mstream` 镜像。

@@ -1,11 +1,11 @@
-name: VSCodium Web LinuxServer
+name: VSCodium Web
 tags:
 - Development
 title: VSCodium Web 代码编辑器
 description: VSCodium Web 代码编辑器
 additionalProperties:
   key: vscodium-web-linuxserver
-  name: VSCodium Web LinuxServer
+  name: VSCodium Web
   tags:
   - Development
   shortDescZh: VSCodium Web 代码编辑器

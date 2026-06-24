@@ -1,11 +1,11 @@
-name: phpMyAdmin LinuxServer
+name: phpMyAdmin
 tags:
 - Database
 title: phpMyAdmin 数据库管理
 description: phpMyAdmin 数据库管理
 additionalProperties:
   key: phpmyadmin-linuxserver
-  name: phpMyAdmin LinuxServer
+  name: phpMyAdmin
   tags:
   - Database
   shortDescZh: phpMyAdmin 数据库管理

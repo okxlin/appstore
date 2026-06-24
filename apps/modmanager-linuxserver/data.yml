@@ -1,19 +1,19 @@
-name: Modmanager LinuxServer
+name: Modmanager
 tags:
 - Tool
-title: LinuxServer Docker Mods 缓存更新服务
-description: LinuxServer Docker Mods 缓存更新服务
+title: Docker Mods 缓存更新服务
+description: Docker Mods 缓存更新服务
 additionalProperties:
   key: modmanager-linuxserver
-  name: Modmanager LinuxServer
+  name: Modmanager
   tags:
   - Tool
-  shortDescZh: LinuxServer Docker Mods 缓存更新服务
+  shortDescZh: Docker Mods 缓存更新服务
   shortDescEn: Docker Mods cache updater maintained by LinuxServer.io
   description:
     en: Docker Mods cache updater maintained by LinuxServer.io
-    zh: LinuxServer Docker Mods 缓存更新服务
-    zh-Hant: LinuxServer Docker Mods 快取更新服務
+    zh: Docker Mods 缓存更新服务
+    zh-Hant: Docker Mods 快取更新服務
     ja: LinuxServer.io が保守する Docker Mods キャッシュ更新サービス
     ko: LinuxServer.io에서 유지 관리하는 Docker Mods 캐시 업데이트 서비스
     ru: Служба обновления кэша Docker Mods, поддерживаемая LinuxServer.io

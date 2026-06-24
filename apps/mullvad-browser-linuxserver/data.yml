@@ -1,11 +1,11 @@
-name: Mullvad Browser LinuxServer
+name: Mullvad Browser
 tags:
 - Tool
 title: Mullvad Browser 隐私浏览器桌面
 description: Mullvad Browser 隐私浏览器桌面
 additionalProperties:
   key: mullvad-browser-linuxserver
-  name: Mullvad Browser LinuxServer
+  name: Mullvad Browser
   tags:
   - Tool
   shortDescZh: Mullvad Browser 隐私浏览器桌面

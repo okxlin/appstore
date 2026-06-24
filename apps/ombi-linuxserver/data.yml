@@ -1,11 +1,11 @@
-name: Ombi LinuxServer
+name: Ombi
 tags:
 - Media
 title: Ombi 媒体请求平台
 description: Ombi 媒体请求平台
 additionalProperties:
   key: ombi-linuxserver
-  name: Ombi LinuxServer
+  name: Ombi
   tags:
   - Media
   shortDescZh: Ombi 媒体请求平台

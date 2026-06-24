@@ -1,11 +1,11 @@
-name: Signal LinuxServer
+name: Signal
 tags:
 - Tool
 title: Signal 消息客户端桌面
 description: Signal 消息客户端桌面
 additionalProperties:
   key: signal-linuxserver
-  name: Signal LinuxServer
+  name: Signal
   tags:
   - Tool
   shortDescZh: Signal 消息客户端桌面

@@ -1,11 +1,11 @@
-name: Double Commander LinuxServer
+name: Double Commander
 tags:
 - Tool
 title: Double Commander 文件管理桌面
 description: Double Commander 文件管理桌面
 additionalProperties:
   key: doublecommander-linuxserver
-  name: Double Commander LinuxServer
+  name: Double Commander
   tags:
   - Tool
   shortDescZh: Double Commander 文件管理桌面

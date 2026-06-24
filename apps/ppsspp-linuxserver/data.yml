@@ -1,11 +1,11 @@
-name: PPSSPP LinuxServer
+name: PPSSPP
 tags:
 - Game
 title: PPSSPP PSP 模拟器桌面
 description: PPSSPP PSP 模拟器桌面
 additionalProperties:
   key: ppsspp-linuxserver
-  name: PPSSPP LinuxServer
+  name: PPSSPP
   tags:
   - Game
   shortDescZh: PPSSPP PSP 模拟器桌面

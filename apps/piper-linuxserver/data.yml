@@ -1,11 +1,11 @@
-name: Piper LinuxServer
+name: Piper
 tags:
 - AI
 title: Piper 文本转语音 Wyoming 服务
 description: Piper 文本转语音 Wyoming 服务
 additionalProperties:
   key: piper-linuxserver
-  name: Piper LinuxServer
+  name: Piper
   tags:
   - AI
   shortDescZh: Piper 文本转语音 Wyoming 服务

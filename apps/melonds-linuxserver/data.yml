@@ -1,11 +1,11 @@
-name: melonDS LinuxServer
+name: melonDS
 tags:
 - Game
 title: melonDS Nintendo DS 模拟器桌面
 description: melonDS Nintendo DS 模拟器桌面
 additionalProperties:
   key: melonds-linuxserver
-  name: melonDS LinuxServer
+  name: melonDS
   tags:
   - Game
   shortDescZh: melonDS Nintendo DS 模拟器桌面

@@ -1,11 +1,11 @@
-name: Planka LinuxServer
+name: Planka
 tags:
 - DevOps
 title: Planka 看板项目管理
 description: Planka 看板项目管理
 additionalProperties:
   key: planka-linuxserver
-  name: Planka LinuxServer
+  name: Planka
   tags:
   - DevOps
   shortDescZh: Planka 看板项目管理

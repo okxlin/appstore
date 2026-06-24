@@ -1,8 +1,7 @@
-# RawTherapee LinuxServer
-
+# RawTherapee
 ## 产品介绍
 
-RawTherapee LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/rawtherapee` 镜像，提供 RawTherapee RAW 照片处理桌面 能力。
+RawTherapee 使用 LinuxServer.io 维护的 `linuxserver/rawtherapee` 镜像，提供 RawTherapee RAW 照片处理桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ RawTherapee LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/rawtherapee
 
 ## Introduction
 
-RawTherapee LinuxServer uses the LinuxServer.io maintained `linuxserver/rawtherapee` image for RAW photo processing.
+RawTherapee uses the LinuxServer.io maintained `linuxserver/rawtherapee` image for RAW photo processing.
 
 ## Features
 

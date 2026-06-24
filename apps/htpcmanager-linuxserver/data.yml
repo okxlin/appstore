@@ -1,11 +1,11 @@
-name: HTPC Manager LinuxServer
+name: HTPC Manager
 tags:
 - Media
 title: HTPC Manager 家庭媒体控制台
 description: HTPC Manager 家庭媒体控制台
 additionalProperties:
   key: htpcmanager-linuxserver
-  name: HTPC Manager LinuxServer
+  name: HTPC Manager
   tags:
   - Media
   shortDescZh: HTPC Manager 家庭媒体控制台

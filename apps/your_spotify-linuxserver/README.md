@@ -1,8 +1,7 @@
-# Your Spotify LinuxServer
-
+# Your Spotify
 ## 产品介绍
 
-Your Spotify LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/your_spotify` 镜像，提供 Your Spotify 听歌统计面板 能力。
+Your Spotify 使用 LinuxServer.io 维护的 `linuxserver/your_spotify` 镜像，提供 Your Spotify 听歌统计面板 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Your Spotify LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/your_spoti
 
 ## Introduction
 
-Your Spotify LinuxServer uses the LinuxServer.io maintained `linuxserver/your_spotify` image for Spotify listening statistics.
+Your Spotify uses the LinuxServer.io maintained `linuxserver/your_spotify` image for Spotify listening statistics.
 
 ## Features
 

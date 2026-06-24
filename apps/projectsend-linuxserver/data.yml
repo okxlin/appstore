@@ -1,11 +1,11 @@
-name: ProjectSend LinuxServer
+name: ProjectSend
 tags:
 - Storage
 title: ProjectSend 文件分享门户
 description: ProjectSend 文件分享门户
 additionalProperties:
   key: projectsend-linuxserver
-  name: ProjectSend LinuxServer
+  name: ProjectSend
   tags:
   - Storage
   shortDescZh: ProjectSend 文件分享门户

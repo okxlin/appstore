@@ -1,8 +1,7 @@
-# LazyLibrarian LinuxServer
-
+# LazyLibrarian
 ## 产品介绍
 
-LazyLibrarian LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/lazylibrarian` 镜像，提供 LazyLibrarian 图书馆管理 能力。
+LazyLibrarian 使用 LinuxServer.io 维护的 `linuxserver/lazylibrarian` 镜像，提供 LazyLibrarian 图书馆管理 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ LazyLibrarian LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/lazylibra
 
 ## Introduction
 
-LazyLibrarian LinuxServer uses the LinuxServer.io maintained `linuxserver/lazylibrarian` image for book library management.
+LazyLibrarian uses the LinuxServer.io maintained `linuxserver/lazylibrarian` image for book library management.
 
 ## Features
 

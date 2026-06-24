@@ -1,11 +1,11 @@
-name: Microsoft Edge LinuxServer
+name: Microsoft Edge
 tags:
 - Tool
 title: Microsoft Edge 浏览器桌面
 description: Microsoft Edge 浏览器桌面
 additionalProperties:
   key: msedge-linuxserver
-  name: Microsoft Edge LinuxServer
+  name: Microsoft Edge
   tags:
   - Tool
   shortDescZh: Microsoft Edge 浏览器桌面

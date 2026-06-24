@@ -1,11 +1,11 @@
-name: WineGUI LinuxServer
+name: WineGUI
 tags:
 - Tool
 title: WineGUI Wine 管理桌面
 description: WineGUI Wine 管理桌面
 additionalProperties:
   key: winegui-linuxserver
-  name: WineGUI LinuxServer
+  name: WineGUI
   tags:
   - Tool
   shortDescZh: WineGUI Wine 管理桌面

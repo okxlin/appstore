@@ -1,11 +1,11 @@
-name: Nginx LinuxServer
+name: Nginx
 tags:
 - Website
 title: Nginx Web 服务器
 description: Nginx Web 服务器
 additionalProperties:
   key: nginx-linuxserver
-  name: Nginx LinuxServer
+  name: Nginx
   tags:
   - Website
   shortDescZh: Nginx Web 服务器

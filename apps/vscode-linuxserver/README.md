@@ -1,8 +1,7 @@
-# Visual Studio Code LinuxServer
-
+# Visual Studio Code
 ## 产品介绍
 
-Visual Studio Code LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vscode` 镜像，提供 Visual Studio Code 桌面开发环境 能力。
+Visual Studio Code 使用 LinuxServer.io 维护的 `linuxserver/vscode` 镜像，提供 Visual Studio Code 桌面开发环境 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Visual Studio Code LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vsco
 
 ## Introduction
 
-Visual Studio Code LinuxServer uses the LinuxServer.io maintained `linuxserver/vscode` image for code editing.
+Visual Studio Code uses the LinuxServer.io maintained `linuxserver/vscode` image for code editing.
 
 ## Features
 

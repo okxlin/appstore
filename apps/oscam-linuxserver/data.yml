@@ -1,11 +1,11 @@
-name: OSCam LinuxServer
+name: OSCam
 tags:
 - Media
 title: OSCam 条件接收服务
 description: OSCam 条件接收服务
 additionalProperties:
   key: oscam-linuxserver
-  name: OSCam LinuxServer
+  name: OSCam
   tags:
   - Media
   shortDescZh: OSCam 条件接收服务

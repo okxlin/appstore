@@ -1,8 +1,7 @@
-# Calibre LinuxServer
-
+# Calibre
 ## 产品介绍
 
-Calibre LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/calibre` 镜像，提供 Calibre 电子书桌面服务 能力。
+Calibre 使用 LinuxServer.io 维护的 `linuxserver/calibre` 镜像，提供 Calibre 电子书桌面服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Calibre LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/calibre` 镜像
 
 ## Introduction
 
-Calibre LinuxServer uses the LinuxServer.io maintained `linuxserver/calibre` image for ebook desktop management.
+Calibre uses the LinuxServer.io maintained `linuxserver/calibre` image for ebook desktop management.
 
 ## Features
 

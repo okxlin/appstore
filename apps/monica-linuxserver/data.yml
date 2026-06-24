@@ -1,11 +1,11 @@
-name: Monica LinuxServer
+name: Monica
 tags:
 - CRM
 title: Monica 个人关系管理系统
 description: Monica 个人关系管理系统
 additionalProperties:
   key: monica-linuxserver
-  name: Monica LinuxServer
+  name: Monica
   tags:
   - CRM
   shortDescZh: Monica 个人关系管理系统

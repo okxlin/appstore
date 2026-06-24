@@ -1,11 +1,11 @@
-name: KeePassXC LinuxServer
+name: KeePassXC
 tags:
 - Security
 title: KeePassXC 密码管理桌面
 description: KeePassXC 密码管理桌面
 additionalProperties:
   key: keepassxc-linuxserver
-  name: KeePassXC LinuxServer
+  name: KeePassXC
   tags:
   - Security
   shortDescZh: KeePassXC 密码管理桌面

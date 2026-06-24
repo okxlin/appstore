@@ -1,11 +1,11 @@
-name: Ungoogled Chromium LinuxServer
+name: Ungoogled Chromium
 tags:
 - Tool
 title: Ungoogled Chromium 浏览器桌面
 description: Ungoogled Chromium 浏览器桌面
 additionalProperties:
   key: ungoogled-chromium-linuxserver
-  name: Ungoogled Chromium LinuxServer
+  name: Ungoogled Chromium
   tags:
   - Tool
   shortDescZh: Ungoogled Chromium 浏览器桌面

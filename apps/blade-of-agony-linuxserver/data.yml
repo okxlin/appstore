@@ -1,11 +1,11 @@
-name: Blade of Agony LinuxServer
+name: Blade of Agony
 tags:
 - Game
 title: Blade of Agony 游戏桌面
 description: Blade of Agony 游戏桌面
 additionalProperties:
   key: blade-of-agony-linuxserver
-  name: Blade of Agony LinuxServer
+  name: Blade of Agony
   tags:
   - Game
   shortDescZh: Blade of Agony 游戏桌面

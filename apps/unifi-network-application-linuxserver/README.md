@@ -1,8 +1,7 @@
-# UniFi Network Application LinuxServer
-
+# UniFi Network Application
 ## 产品介绍
 
-UniFi Network Application LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/unifi-network-application` 镜像，提供 UniFi Network 网络控制器 能力。
+UniFi Network Application 使用 LinuxServer.io 维护的 `linuxserver/unifi-network-application` 镜像，提供 UniFi Network 网络控制器 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ UniFi Network Application LinuxServer 使用 LinuxServer.io 维护的 `linuxserv
 
 ## Introduction
 
-UniFi Network Application LinuxServer uses the LinuxServer.io maintained `linuxserver/unifi-network-application` image for UniFi network device control.
+UniFi Network Application uses the LinuxServer.io maintained `linuxserver/unifi-network-application` image for UniFi network device control.
 
 ## Features
 

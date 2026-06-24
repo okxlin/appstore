@@ -1,11 +1,11 @@
-name: Minetest LinuxServer
+name: Minetest
 tags:
 - Game
 title: Minetest 沙盒游戏服务器
 description: Minetest 沙盒游戏服务器
 additionalProperties:
   key: minetest-linuxserver
-  name: Minetest LinuxServer
+  name: Minetest
   tags:
   - Game
   shortDescZh: Minetest 沙盒游戏服务器

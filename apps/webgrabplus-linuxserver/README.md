@@ -1,8 +1,7 @@
-# WebGrabPlus LinuxServer
-
+# WebGrabPlus
 ## 产品介绍
 
-WebGrabPlus LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webgrabplus` 镜像，提供 WebGrabPlus 电视节目抓取服务 能力。
+WebGrabPlus 使用 LinuxServer.io 维护的 `linuxserver/webgrabplus` 镜像，提供 WebGrabPlus 电视节目抓取服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ WebGrabPlus LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webgrabplus
 
 ## Introduction
 
-WebGrabPlus LinuxServer uses the LinuxServer.io maintained `linuxserver/webgrabplus` image for TV guide grabbing.
+WebGrabPlus uses the LinuxServer.io maintained `linuxserver/webgrabplus` image for TV guide grabbing.
 
 ## Features
 

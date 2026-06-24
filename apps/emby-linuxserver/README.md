@@ -1,8 +1,7 @@
-# Emby LinuxServer
-
+# Emby
 ## 产品介绍
 
-Emby LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/emby` 镜像，提供 Emby 媒体服务器 能力。
+Emby 使用 LinuxServer.io 维护的 `linuxserver/emby` 镜像，提供 Emby 媒体服务器 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Emby LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/emby` 镜像，提
 
 ## Introduction
 
-Emby LinuxServer uses the LinuxServer.io maintained `linuxserver/emby` image for media streaming.
+Emby uses the LinuxServer.io maintained `linuxserver/emby` image for media streaming.
 
 ## Features
 

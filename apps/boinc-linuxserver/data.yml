@@ -1,11 +1,11 @@
-name: BOINC LinuxServer
+name: BOINC
 tags:
 - Tool
 title: BOINC 分布式计算桌面
 description: BOINC 分布式计算桌面
 additionalProperties:
   key: boinc-linuxserver
-  name: BOINC LinuxServer
+  name: BOINC
   tags:
   - Tool
   shortDescZh: BOINC 分布式计算桌面

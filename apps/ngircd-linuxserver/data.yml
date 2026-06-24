@@ -1,11 +1,11 @@
-name: ngIRCd LinuxServer
+name: ngIRCd
 tags:
 - Tool
 title: ngIRCd IRC 服务
 description: ngIRCd IRC 服务
 additionalProperties:
   key: ngircd-linuxserver
-  name: ngIRCd LinuxServer
+  name: ngIRCd
   tags:
   - Tool
   shortDescZh: ngIRCd IRC 服务

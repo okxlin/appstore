@@ -1,11 +1,11 @@
-name: Readarr LinuxServer
+name: Readarr
 tags:
 - Media
 title: Readarr 电子书媒体管理
 description: Readarr 电子书媒体管理
 additionalProperties:
   key: readarr-linuxserver
-  name: Readarr LinuxServer
+  name: Readarr
   tags:
   - Media
   shortDescZh: Readarr 电子书媒体管理

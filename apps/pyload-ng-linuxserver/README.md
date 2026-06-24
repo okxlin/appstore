@@ -1,5 +1,4 @@
-# pyLoad NG LinuxServer
-
+# pyLoad NG
 ## 产品介绍
 
 pyLoad NG 是一个轻量下载管理器，提供 Web 管理界面和 ClickNLoad 支持。本应用使用 LinuxServer.io 维护的 `linuxserver/pyload-ng` 镜像。

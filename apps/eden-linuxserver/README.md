@@ -1,8 +1,7 @@
-# Eden LinuxServer
-
+# Eden
 ## 产品介绍
 
-Eden LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/eden` 镜像，提供 Eden Switch 模拟器桌面 能力。
+Eden 使用 LinuxServer.io 维护的 `linuxserver/eden` 镜像，提供 Eden Switch 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Eden LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/eden` 镜像，提
 
 ## Introduction
 
-Eden LinuxServer uses the LinuxServer.io maintained `linuxserver/eden` image for a browser-accessible desktop application.
+Eden uses the LinuxServer.io maintained `linuxserver/eden` image for a browser-accessible desktop application.
 
 ## Features
 

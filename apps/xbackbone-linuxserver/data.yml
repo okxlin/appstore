@@ -1,11 +1,11 @@
-name: XBackBone LinuxServer
+name: XBackBone
 tags:
 - Storage
 title: XBackBone 文件分享服务
 description: XBackBone 文件分享服务
 additionalProperties:
   key: xbackbone-linuxserver
-  name: XBackBone LinuxServer
+  name: XBackBone
   tags:
   - Storage
   shortDescZh: XBackBone 文件分享服务

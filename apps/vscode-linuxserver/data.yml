@@ -1,11 +1,11 @@
-name: Visual Studio Code LinuxServer
+name: Visual Studio Code
 tags:
 - Tool
 title: Visual Studio Code 桌面开发环境
 description: Visual Studio Code 桌面开发环境
 additionalProperties:
   key: vscode-linuxserver
-  name: Visual Studio Code LinuxServer
+  name: Visual Studio Code
   tags:
   - Tool
   shortDescZh: Visual Studio Code 桌面开发环境

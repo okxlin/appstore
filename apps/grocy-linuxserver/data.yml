@@ -1,11 +1,11 @@
-name: Grocy LinuxServer
+name: Grocy
 tags:
 - Tool
 title: Grocy 家庭库存管理
 description: Grocy 家庭库存管理
 additionalProperties:
   key: grocy-linuxserver
-  name: Grocy LinuxServer
+  name: Grocy
   tags:
   - Tool
   shortDescZh: Grocy 家庭库存管理

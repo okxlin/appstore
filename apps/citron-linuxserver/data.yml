@@ -1,11 +1,11 @@
-name: Citron LinuxServer
+name: Citron
 tags:
 - Game
 title: Citron Switch 模拟器桌面
 description: Citron Switch 模拟器桌面
 additionalProperties:
   key: citron-linuxserver
-  name: Citron LinuxServer
+  name: Citron
   tags:
   - Game
   shortDescZh: Citron Switch 模拟器桌面

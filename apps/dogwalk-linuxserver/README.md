@@ -1,8 +1,7 @@
-# DOGWALK LinuxServer
-
+# DOGWALK
 ## 产品介绍
 
-DOGWALK LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dogwalk` 镜像，提供 DOGWALK 浏览器桌面环境能力。
+DOGWALK 使用 LinuxServer.io 维护的 `linuxserver/dogwalk` 镜像，提供 DOGWALK 浏览器桌面环境能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ DOGWALK LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dogwalk` 镜像
 
 ## Introduction
 
-DOGWALK LinuxServer uses the LinuxServer.io maintained `linuxserver/dogwalk` image for a browser-accessible DOGWALK desktop environment.
+DOGWALK uses the LinuxServer.io maintained `linuxserver/dogwalk` image for a browser-accessible DOGWALK desktop environment.
 
 ## Features
 

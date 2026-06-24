@@ -1,11 +1,11 @@
-name: Weixin LinuxServer
+name: Weixin
 tags:
 - Tool
 title: 微信桌面客户端
 description: 微信桌面客户端
 additionalProperties:
   key: weixin-linuxserver
-  name: Weixin LinuxServer
+  name: Weixin
   tags:
   - Tool
   shortDescZh: 微信桌面客户端

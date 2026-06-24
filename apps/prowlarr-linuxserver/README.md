@@ -1,5 +1,4 @@
-# Prowlarr LinuxServer
-
+# Prowlarr
 ## 产品介绍
 
 Prowlarr 是面向 Sonarr、Radarr、Lidarr 等应用的索引器管理工具。本应用使用 LinuxServer.io 维护的 `linuxserver/prowlarr` 镜像。

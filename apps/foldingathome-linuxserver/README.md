@@ -1,8 +1,7 @@
-# Folding@home LinuxServer
-
+# Folding@home
 ## 产品介绍
 
-Folding@home LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/foldingathome` 镜像，提供 Folding@home 分布式计算客户端 能力。
+Folding@home 使用 LinuxServer.io 维护的 `linuxserver/foldingathome` 镜像，提供 Folding@home 分布式计算客户端 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Folding@home LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/foldingath
 
 ## Introduction
 
-Folding@home LinuxServer uses the LinuxServer.io maintained `linuxserver/foldingathome` image for distributed computing work.
+Folding@home uses the LinuxServer.io maintained `linuxserver/foldingathome` image for distributed computing work.
 
 ## Features
 

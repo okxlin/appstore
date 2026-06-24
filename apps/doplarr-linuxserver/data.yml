@@ -1,11 +1,11 @@
-name: Doplarr LinuxServer
+name: Doplarr
 tags:
 - Tool
 title: Doplarr Discord 媒体请求机器人
 description: Doplarr Discord 媒体请求机器人
 additionalProperties:
   key: doplarr-linuxserver
-  name: Doplarr LinuxServer
+  name: Doplarr
   tags:
   - Tool
   shortDescZh: Doplarr Discord 媒体请求机器人

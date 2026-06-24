@@ -1,11 +1,11 @@
-name: IntelliJ IDEA LinuxServer
+name: IntelliJ IDEA
 tags:
 - Development
 title: IntelliJ IDEA Java IDE 桌面
 description: IntelliJ IDEA Java IDE 桌面
 additionalProperties:
   key: intellij-idea-linuxserver
-  name: IntelliJ IDEA LinuxServer
+  name: IntelliJ IDEA
   tags:
   - Development
   shortDescZh: IntelliJ IDEA Java IDE 桌面

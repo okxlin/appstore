@@ -1,11 +1,11 @@
-name: Folding@home LinuxServer
+name: Folding@home
 tags:
 - Tool
 title: Folding@home 分布式计算客户端
 description: Folding@home 分布式计算客户端
 additionalProperties:
   key: foldingathome-linuxserver
-  name: Folding@home LinuxServer
+  name: Folding@home
   tags:
   - Tool
   shortDescZh: Folding@home 分布式计算客户端

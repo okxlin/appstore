@@ -1,11 +1,11 @@
-name: SickGear LinuxServer
+name: SickGear
 tags:
 - Media
 title: SickGear 剧集管理器
 description: SickGear 剧集管理器
 additionalProperties:
   key: sickgear-linuxserver
-  name: SickGear LinuxServer
+  name: SickGear
   tags:
   - Media
   shortDescZh: SickGear 剧集管理器

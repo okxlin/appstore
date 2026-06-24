@@ -1,5 +1,4 @@
-# Medusa LinuxServer
-
+# Medusa
 ## 产品介绍
 
 Medusa 是一个剧集库和下载自动化工具，可管理剧集、字幕和下载任务。本应用使用 LinuxServer.io 维护的 `linuxserver/medusa` 镜像。

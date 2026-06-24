@@ -1,8 +1,7 @@
-# ChangeDetection.io LinuxServer
-
+# ChangeDetection.io
 ## 产品介绍
 
-ChangeDetection.io LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/changedetection.io` 镜像，提供 ChangeDetection.io 网页变更监控 能力。
+ChangeDetection.io 使用 LinuxServer.io 维护的 `linuxserver/changedetection.io` 镜像，提供 ChangeDetection.io 网页变更监控 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ ChangeDetection.io LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/chan
 
 ## Introduction
 
-ChangeDetection.io LinuxServer uses the LinuxServer.io maintained `linuxserver/changedetection.io` image for website change monitoring.
+ChangeDetection.io uses the LinuxServer.io maintained `linuxserver/changedetection.io` image for website change monitoring.
 
 ## Features
 

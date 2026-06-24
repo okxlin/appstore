@@ -1,11 +1,11 @@
-name: Inkscape LinuxServer
+name: Inkscape
 tags:
 - Media
 title: Inkscape 矢量图形桌面
 description: Inkscape 矢量图形桌面
 additionalProperties:
   key: inkscape-linuxserver
-  name: Inkscape LinuxServer
+  name: Inkscape
   tags:
   - Media
   shortDescZh: Inkscape 矢量图形桌面

@@ -1,11 +1,11 @@
-name: Vivaldi LinuxServer
+name: Vivaldi
 tags:
 - Tool
 title: Vivaldi 浏览器桌面
 description: Vivaldi 浏览器桌面
 additionalProperties:
   key: vivaldi-linuxserver
-  name: Vivaldi LinuxServer
+  name: Vivaldi
   tags:
   - Tool
   shortDescZh: Vivaldi 浏览器桌面

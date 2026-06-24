@@ -1,11 +1,11 @@
-name: syslog-ng LinuxServer
+name: syslog-ng
 tags:
 - DevOps
 title: syslog-ng 日志收集服务
 description: syslog-ng 日志收集服务
 additionalProperties:
   key: syslog-ng-linuxserver
-  name: syslog-ng LinuxServer
+  name: syslog-ng
   tags:
   - DevOps
   shortDescZh: syslog-ng 日志收集服务

@@ -1,11 +1,11 @@
-name: GitHub Desktop LinuxServer
+name: GitHub Desktop
 tags:
 - DevOps
 title: GitHub Desktop 代码协作桌面
 description: GitHub Desktop 代码协作桌面
 additionalProperties:
   key: github-desktop-linuxserver
-  name: GitHub Desktop LinuxServer
+  name: GitHub Desktop
   tags:
   - DevOps
   shortDescZh: GitHub Desktop 代码协作桌面

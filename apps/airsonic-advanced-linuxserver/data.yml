@@ -1,11 +1,11 @@
-name: Airsonic Advanced LinuxServer
+name: Airsonic Advanced
 tags:
 - Media
 title: Airsonic Advanced 音乐服务器
 description: Airsonic Advanced 音乐服务器
 additionalProperties:
   key: airsonic-advanced-linuxserver
-  name: Airsonic Advanced LinuxServer
+  name: Airsonic Advanced
   tags:
   - Media
   shortDescZh: Airsonic Advanced 音乐服务器

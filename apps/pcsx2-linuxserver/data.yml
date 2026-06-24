@@ -1,11 +1,11 @@
-name: PCSX2 LinuxServer
+name: PCSX2
 tags:
 - Game
 title: PCSX2 PlayStation 2 模拟器桌面
 description: PCSX2 PlayStation 2 模拟器桌面
 additionalProperties:
   key: pcsx2-linuxserver
-  name: PCSX2 LinuxServer
+  name: PCSX2
   tags:
   - Game
   shortDescZh: PCSX2 PlayStation 2 模拟器桌面

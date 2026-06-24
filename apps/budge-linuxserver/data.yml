@@ -1,11 +1,11 @@
-name: Budge LinuxServer
+name: Budge
 tags:
 - Tool
 title: Budge 信封预算管理
 description: Budge 信封预算管理
 additionalProperties:
   key: budge-linuxserver
-  name: Budge LinuxServer
+  name: Budge
   tags:
   - Tool
   shortDescZh: Budge 信封预算管理

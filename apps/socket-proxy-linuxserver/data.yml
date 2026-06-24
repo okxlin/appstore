@@ -1,11 +1,11 @@
-name: Socket Proxy LinuxServer
+name: Socket Proxy
 tags:
 - Security
 title: Socket Proxy Docker API 访问代理
 description: Socket Proxy Docker API 访问代理
 additionalProperties:
   key: socket-proxy-linuxserver
-  name: Socket Proxy LinuxServer
+  name: Socket Proxy
   tags:
   - Security
   shortDescZh: Socket Proxy Docker API 访问代理

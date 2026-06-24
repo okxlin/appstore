@@ -1,8 +1,7 @@
-# Ungoogled Chromium LinuxServer
-
+# Ungoogled Chromium
 ## 产品介绍
 
-Ungoogled Chromium LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/ungoogled-chromium` 镜像，提供 Ungoogled Chromium 浏览器桌面 能力。
+Ungoogled Chromium 使用 LinuxServer.io 维护的 `linuxserver/ungoogled-chromium` 镜像，提供 Ungoogled Chromium 浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Ungoogled Chromium LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/ungo
 
 ## Introduction
 
-Ungoogled Chromium LinuxServer uses the LinuxServer.io maintained `linuxserver/ungoogled-chromium` image for Chromium browser desktop access.
+Ungoogled Chromium uses the LinuxServer.io maintained `linuxserver/ungoogled-chromium` image for Chromium browser desktop access.
 
 ## Features
 

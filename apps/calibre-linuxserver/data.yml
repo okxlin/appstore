@@ -1,11 +1,11 @@
-name: Calibre LinuxServer
+name: Calibre
 tags:
 - Media
 title: Calibre 电子书桌面服务
 description: Calibre 电子书桌面服务
 additionalProperties:
   key: calibre-linuxserver
-  name: Calibre LinuxServer
+  name: Calibre
   tags:
   - Media
   shortDescZh: Calibre 电子书桌面服务

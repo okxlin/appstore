@@ -1,11 +1,11 @@
-name: Mastodon LinuxServer
+name: Mastodon
 tags:
 - Website
 title: Mastodon ActivityPub 社交网络服务
 description: Mastodon ActivityPub 社交网络服务
 additionalProperties:
   key: mastodon-linuxserver
-  name: Mastodon LinuxServer
+  name: Mastodon
   tags:
   - Website
   shortDescZh: Mastodon ActivityPub 社交网络服务

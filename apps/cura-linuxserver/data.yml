@@ -1,11 +1,11 @@
-name: Cura LinuxServer
+name: Cura
 tags:
 - Tool
 title: Cura 3D 打印切片桌面
 description: Cura 3D 打印切片桌面
 additionalProperties:
   key: cura-linuxserver
-  name: Cura LinuxServer
+  name: Cura
   tags:
   - Tool
   shortDescZh: Cura 3D 打印切片桌面

@@ -1,8 +1,7 @@
-# Webstation LinuxServer
-
+# Webstation
 ## 产品介绍
 
-Webstation LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webstation` 镜像，提供 Webstation 浏览器桌面环境能力。
+Webstation 使用 LinuxServer.io 维护的 `linuxserver/webstation` 镜像，提供 Webstation 浏览器桌面环境能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Webstation LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/webstation` 
 
 ## Introduction
 
-Webstation LinuxServer uses the LinuxServer.io maintained `linuxserver/webstation` image for a browser-accessible Webstation desktop environment.
+Webstation uses the LinuxServer.io maintained `linuxserver/webstation` image for a browser-accessible Webstation desktop environment.
 
 ## Features
 

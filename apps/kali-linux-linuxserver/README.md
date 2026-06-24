@@ -1,8 +1,7 @@
-# Kali Linux LinuxServer
-
+# Kali Linux
 ## 产品介绍
 
-Kali Linux LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/kali-linux` 镜像，提供 Kali Linux 浏览器桌面环境 能力。
+Kali Linux 使用 LinuxServer.io 维护的 `linuxserver/kali-linux` 镜像，提供 Kali Linux 浏览器桌面环境 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Kali Linux LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/kali-linux` 
 
 ## Introduction
 
-Kali Linux LinuxServer uses the LinuxServer.io maintained `linuxserver/kali-linux` image for Kali Linux browser desktop.
+Kali Linux uses the LinuxServer.io maintained `linuxserver/kali-linux` image for Kali Linux browser desktop.
 
 ## Features
 

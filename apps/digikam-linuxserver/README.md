@@ -1,8 +1,7 @@
-# digiKam LinuxServer
-
+# digiKam
 ## 产品介绍
 
-digiKam LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/digikam` 镜像，提供 digiKam 照片管理桌面 能力。
+digiKam 使用 LinuxServer.io 维护的 `linuxserver/digikam` 镜像，提供 digiKam 照片管理桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ digiKam LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/digikam` 镜像
 
 ## Introduction
 
-digiKam LinuxServer uses the LinuxServer.io maintained `linuxserver/digikam` image for photo management.
+digiKam uses the LinuxServer.io maintained `linuxserver/digikam` image for photo management.
 
 ## Features
 

@@ -1,11 +1,11 @@
-name: Fleet LinuxServer
+name: Fleet
 tags:
 - Tool
 title: Fleet 镜像仓库展示界面
 description: Fleet 镜像仓库展示界面
 additionalProperties:
   key: fleet-linuxserver
-  name: Fleet LinuxServer
+  name: Fleet
   tags:
   - Tool
   shortDescZh: Fleet 镜像仓库展示界面

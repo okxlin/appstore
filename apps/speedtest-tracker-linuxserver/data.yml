@@ -1,11 +1,11 @@
-name: Speedtest Tracker LinuxServer
+name: Speedtest Tracker
 tags:
 - Tool
 title: Speedtest Tracker 网速监测
 description: Speedtest Tracker 网速监测
 additionalProperties:
   key: speedtest-tracker-linuxserver
-  name: Speedtest Tracker LinuxServer
+  name: Speedtest Tracker
   tags:
   - Tool
   shortDescZh: Speedtest Tracker 网速监测

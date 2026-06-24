@@ -1,11 +1,11 @@
-name: Diskover LinuxServer
+name: Diskover
 tags:
 - Storage
 title: Diskover 文件系统索引与搜索
 description: Diskover 文件系统索引与搜索
 additionalProperties:
   key: diskover-linuxserver
-  name: Diskover LinuxServer
+  name: Diskover
   tags:
   - Storage
   shortDescZh: Diskover 文件系统索引与搜索

@@ -1,11 +1,11 @@
-name: Ardour LinuxServer
+name: Ardour
 tags:
 - Media
 title: Ardour 数字音频工作站桌面
 description: Ardour 数字音频工作站桌面
 additionalProperties:
   key: ardour-linuxserver
-  name: Ardour LinuxServer
+  name: Ardour
   tags:
   - Media
   shortDescZh: Ardour 数字音频工作站桌面

@@ -1,11 +1,11 @@
-name: VLC LinuxServer
+name: VLC
 tags:
 - Media
 title: VLC 媒体播放器桌面
 description: VLC 媒体播放器桌面
 additionalProperties:
   key: vlc-linuxserver
-  name: VLC LinuxServer
+  name: VLC
   tags:
   - Media
   shortDescZh: VLC 媒体播放器桌面

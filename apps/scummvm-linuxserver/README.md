@@ -1,8 +1,7 @@
-# ScummVM LinuxServer
-
+# ScummVM
 ## 产品介绍
 
-ScummVM LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/scummvm` 镜像，提供 ScummVM 冒险游戏引擎桌面 能力。
+ScummVM 使用 LinuxServer.io 维护的 `linuxserver/scummvm` 镜像，提供 ScummVM 冒险游戏引擎桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ ScummVM LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/scummvm` 镜像
 
 ## Introduction
 
-ScummVM LinuxServer uses the LinuxServer.io maintained `linuxserver/scummvm` image for adventure game engine.
+ScummVM uses the LinuxServer.io maintained `linuxserver/scummvm` image for adventure game engine.
 
 ## Features
 

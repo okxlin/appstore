@@ -1,11 +1,11 @@
-name: LDAP Auth LinuxServer
+name: LDAP Auth
 tags:
 - Tool
 title: LDAP Auth 认证服务
 description: LDAP Auth 认证服务
 additionalProperties:
   key: ldap-auth-linuxserver
-  name: LDAP Auth LinuxServer
+  name: LDAP Auth
   tags:
   - Tool
   shortDescZh: LDAP Auth 认证服务

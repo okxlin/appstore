@@ -1,11 +1,11 @@
-name: Luanti LinuxServer
+name: Luanti
 tags:
 - Game
 title: Luanti 沙盒游戏服务器
 description: Luanti 沙盒游戏服务器
 additionalProperties:
   key: luanti-linuxserver
-  name: Luanti LinuxServer
+  name: Luanti
   tags:
   - Game
   shortDescZh: Luanti 沙盒游戏服务器

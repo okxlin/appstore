@@ -1,11 +1,11 @@
-name: Spotube LinuxServer
+name: Spotube
 tags:
 - Media
 title: Spotube 音乐客户端桌面
 description: Spotube 音乐客户端桌面
 additionalProperties:
   key: spotube-linuxserver
-  name: Spotube LinuxServer
+  name: Spotube
   tags:
   - Media
   shortDescZh: Spotube 音乐客户端桌面

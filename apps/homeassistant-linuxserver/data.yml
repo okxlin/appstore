@@ -1,11 +1,11 @@
-name: Home Assistant LinuxServer
+name: Home Assistant
 tags:
 - Tool
 title: Home Assistant 智能家居平台
 description: Home Assistant 智能家居平台
 additionalProperties:
   key: homeassistant-linuxserver
-  name: Home Assistant LinuxServer
+  name: Home Assistant
   tags:
   - Tool
   shortDescZh: Home Assistant 智能家居平台

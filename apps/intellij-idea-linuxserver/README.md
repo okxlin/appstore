@@ -1,8 +1,7 @@
-# IntelliJ IDEA LinuxServer
-
+# IntelliJ IDEA
 ## 产品介绍
 
-IntelliJ IDEA LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/intellij-idea` 镜像，提供 IntelliJ IDEA Java IDE 桌面 能力。
+IntelliJ IDEA 使用 LinuxServer.io 维护的 `linuxserver/intellij-idea` 镜像，提供 IntelliJ IDEA Java IDE 桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ IntelliJ IDEA LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/intellij-
 
 ## Introduction
 
-IntelliJ IDEA LinuxServer uses the LinuxServer.io maintained `linuxserver/intellij-idea` image for Java development.
+IntelliJ IDEA uses the LinuxServer.io maintained `linuxserver/intellij-idea` image for Java development.
 
 ## Features
 

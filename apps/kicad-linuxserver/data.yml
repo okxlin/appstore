@@ -1,11 +1,11 @@
-name: KiCad LinuxServer
+name: KiCad
 tags:
 - Tool
 title: KiCad 电子设计桌面
 description: KiCad 电子设计桌面
 additionalProperties:
   key: kicad-linuxserver
-  name: KiCad LinuxServer
+  name: KiCad
   tags:
   - Tool
   shortDescZh: KiCad 电子设计桌面

@@ -1,11 +1,11 @@
-name: Feed2toot LinuxServer
+name: Feed2toot
 tags:
 - Tool
 title: Feed2toot RSS 到 Mastodon 转发
 description: Feed2toot RSS 到 Mastodon 转发
 additionalProperties:
   key: feed2toot-linuxserver
-  name: Feed2toot LinuxServer
+  name: Feed2toot
   tags:
   - Tool
   shortDescZh: Feed2toot RSS 到 Mastodon 转发

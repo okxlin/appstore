@@ -1,11 +1,11 @@
-name: Prowlarr LinuxServer
+name: Prowlarr
 tags:
 - Media
 title: Prowlarr 索引器管理器
 description: Prowlarr 索引器管理器
 additionalProperties:
   key: prowlarr-linuxserver
-  name: Prowlarr LinuxServer
+  name: Prowlarr
   tags:
   - Media
   shortDescZh: Prowlarr 索引器管理器

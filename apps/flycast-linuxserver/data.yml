@@ -1,11 +1,11 @@
-name: Flycast LinuxServer
+name: Flycast
 tags:
 - Game
 title: Flycast Dreamcast 模拟器桌面
 description: Flycast Dreamcast 模拟器桌面
 additionalProperties:
   key: flycast-linuxserver
-  name: Flycast LinuxServer
+  name: Flycast
   tags:
   - Game
   shortDescZh: Flycast Dreamcast 模拟器桌面

@@ -1,5 +1,4 @@
-# Jackett LinuxServer
-
+# Jackett
 ## 产品介绍
 
 Jackett 是面向 Sonarr、Radarr 等媒体管理工具的索引器代理。它将应用发出的搜索请求转换为各 Tracker 站点的查询请求，并把结果整理后返回给调用方。本应用使用 LinuxServer.io 维护的 `linuxserver/jackett` 镜像。

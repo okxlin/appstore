@@ -1,8 +1,7 @@
-# Fail2ban LinuxServer
-
+# Fail2ban
 ## 产品介绍
 
-Fail2ban LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/fail2ban` 镜像，提供 Fail2ban 主机入侵防护服务 能力。
+Fail2ban 使用 LinuxServer.io 维护的 `linuxserver/fail2ban` 镜像，提供 Fail2ban 主机入侵防护服务 能力。
 
 ## 主要功能
 
@@ -21,7 +20,7 @@ Fail2ban 没有 Web 界面。安装完成后，在配置目录中编辑 jail 配
 
 ## Introduction
 
-Fail2ban LinuxServer uses the LinuxServer.io maintained `linuxserver/fail2ban` image for log monitoring and ban rules.
+Fail2ban uses the LinuxServer.io maintained `linuxserver/fail2ban` image for log monitoring and ban rules.
 
 ## Features
 

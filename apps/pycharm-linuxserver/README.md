@@ -1,8 +1,7 @@
-# PyCharm LinuxServer
-
+# PyCharm
 ## 产品介绍
 
-PyCharm LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/pycharm` 镜像，提供 PyCharm Python IDE 桌面 能力。
+PyCharm 使用 LinuxServer.io 维护的 `linuxserver/pycharm` 镜像，提供 PyCharm Python IDE 桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ PyCharm LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/pycharm` 镜像
 
 ## Introduction
 
-PyCharm LinuxServer uses the LinuxServer.io maintained `linuxserver/pycharm` image for Python development.
+PyCharm uses the LinuxServer.io maintained `linuxserver/pycharm` image for Python development.
 
 ## Features
 

@@ -1,8 +1,7 @@
-# DOSBox Staging LinuxServer
-
+# DOSBox Staging
 ## 产品介绍
 
-DOSBox Staging LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dosbox-staging` 镜像，提供 DOSBox Staging DOS 模拟器桌面 能力。
+DOSBox Staging 使用 LinuxServer.io 维护的 `linuxserver/dosbox-staging` 镜像，提供 DOSBox Staging DOS 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ DOSBox Staging LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/dosbox-s
 
 ## Introduction
 
-DOSBox Staging LinuxServer uses the LinuxServer.io maintained `linuxserver/dosbox-staging` image for DOS emulation.
+DOSBox Staging uses the LinuxServer.io maintained `linuxserver/dosbox-staging` image for DOS emulation.
 
 ## Features
 

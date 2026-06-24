@@ -1,8 +1,7 @@
-# OpenVSCode Server LinuxServer
-
+# OpenVSCode Server
 ## 产品介绍
 
-OpenVSCode Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/openvscode-server` 镜像，提供 OpenVSCode Server 浏览器 IDE 能力。
+OpenVSCode Server 使用 LinuxServer.io 维护的 `linuxserver/openvscode-server` 镜像，提供 OpenVSCode Server 浏览器 IDE 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ OpenVSCode Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/openv
 
 ## Introduction
 
-OpenVSCode Server LinuxServer uses the LinuxServer.io maintained `linuxserver/openvscode-server` image for browser-based development.
+OpenVSCode Server uses the LinuxServer.io maintained `linuxserver/openvscode-server` image for browser-based development.
 
 ## Features
 

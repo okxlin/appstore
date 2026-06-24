@@ -1,11 +1,11 @@
-name: FreeCAD LinuxServer
+name: FreeCAD
 tags:
 - Tool
 title: FreeCAD 参数化 CAD 桌面
 description: FreeCAD 参数化 CAD 桌面
 additionalProperties:
   key: freecad-linuxserver
-  name: FreeCAD LinuxServer
+  name: FreeCAD
   tags:
   - Tool
   shortDescZh: FreeCAD 参数化 CAD 桌面

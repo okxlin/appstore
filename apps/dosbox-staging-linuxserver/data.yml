@@ -1,11 +1,11 @@
-name: DOSBox Staging LinuxServer
+name: DOSBox Staging
 tags:
 - Game
 title: DOSBox Staging DOS 模拟器桌面
 description: DOSBox Staging DOS 模拟器桌面
 additionalProperties:
   key: dosbox-staging-linuxserver
-  name: DOSBox Staging LinuxServer
+  name: DOSBox Staging
   tags:
   - Game
   shortDescZh: DOSBox Staging DOS 模拟器桌面

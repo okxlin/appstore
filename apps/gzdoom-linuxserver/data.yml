@@ -1,11 +1,11 @@
-name: GZDoom LinuxServer
+name: GZDoom
 tags:
 - Game
 title: GZDoom 游戏引擎桌面
 description: GZDoom 游戏引擎桌面
 additionalProperties:
   key: gzdoom-linuxserver
-  name: GZDoom LinuxServer
+  name: GZDoom
   tags:
   - Game
   shortDescZh: GZDoom 游戏引擎桌面

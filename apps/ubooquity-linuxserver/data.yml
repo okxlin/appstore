@@ -1,11 +1,11 @@
-name: Ubooquity LinuxServer
+name: Ubooquity
 tags:
 - Media
 title: Ubooquity 电子书漫画服务
 description: Ubooquity 电子书漫画服务
 additionalProperties:
   key: ubooquity-linuxserver
-  name: Ubooquity LinuxServer
+  name: Ubooquity
   tags:
   - Media
   shortDescZh: Ubooquity 电子书漫画服务

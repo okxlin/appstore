@@ -1,11 +1,11 @@
-name: RawTherapee LinuxServer
+name: RawTherapee
 tags:
 - Media
 title: RawTherapee RAW 照片处理桌面
 description: RawTherapee RAW 照片处理桌面
 additionalProperties:
   key: rawtherapee-linuxserver
-  name: RawTherapee LinuxServer
+  name: RawTherapee
   tags:
   - Media
   shortDescZh: RawTherapee RAW 照片处理桌面

@@ -1,5 +1,4 @@
-# Ombi LinuxServer
-
+# Ombi
 ## 产品介绍
 
 Ombi 是一个媒体请求平台，常用于让用户向 Plex、Emby 或 Jellyfin 管理者提交内容请求。本应用使用 LinuxServer.io 维护的 `linuxserver/ombi` 镜像。

@@ -1,5 +1,4 @@
-# SABnzbd LinuxServer
-
+# SABnzbd
 ## 产品介绍
 
 SABnzbd 是一个基于 Web 的 Usenet 下载器，可管理队列、分类、速度限制和下载目录。本应用使用 LinuxServer.io 维护的 `linuxserver/sabnzbd` 镜像。

@@ -1,11 +1,11 @@
-name: Yaak LinuxServer
+name: Yaak
 tags:
 - DevOps
 title: Yaak API 客户端桌面
 description: Yaak API 客户端桌面
 additionalProperties:
   key: yaak-linuxserver
-  name: Yaak LinuxServer
+  name: Yaak
   tags:
   - DevOps
   shortDescZh: Yaak API 客户端桌面

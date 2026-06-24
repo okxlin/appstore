@@ -1,11 +1,11 @@
-name: DOGWALK LinuxServer
+name: DOGWALK
 tags:
 - Tool
 title: DOGWALK 浏览器桌面环境
 description: DOGWALK 浏览器桌面环境
 additionalProperties:
   key: dogwalk-linuxserver
-  name: DOGWALK LinuxServer
+  name: DOGWALK
   tags:
   - Tool
   shortDescZh: DOGWALK 浏览器桌面环境

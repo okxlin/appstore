@@ -1,11 +1,11 @@
-name: LazyLibrarian LinuxServer
+name: LazyLibrarian
 tags:
 - Media
 title: LazyLibrarian 图书馆管理
 description: LazyLibrarian 图书馆管理
 additionalProperties:
   key: lazylibrarian-linuxserver
-  name: LazyLibrarian LinuxServer
+  name: LazyLibrarian
   tags:
   - Media
   shortDescZh: LazyLibrarian 图书馆管理

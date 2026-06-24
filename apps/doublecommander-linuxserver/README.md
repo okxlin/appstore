@@ -1,8 +1,7 @@
-# Double Commander LinuxServer
-
+# Double Commander
 ## 产品介绍
 
-Double Commander LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/doublecommander` 镜像，提供 Double Commander 文件管理桌面 能力。
+Double Commander 使用 LinuxServer.io 维护的 `linuxserver/doublecommander` 镜像，提供 Double Commander 文件管理桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Double Commander LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/double
 
 ## Introduction
 
-Double Commander LinuxServer uses the LinuxServer.io maintained `linuxserver/doublecommander` image for file management desktop.
+Double Commander uses the LinuxServer.io maintained `linuxserver/doublecommander` image for file management desktop.
 
 ## Features
 

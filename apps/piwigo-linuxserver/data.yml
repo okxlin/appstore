@@ -1,11 +1,11 @@
-name: Piwigo LinuxServer
+name: Piwigo
 tags:
 - Media
 title: Piwigo 相册管理
 description: Piwigo 相册管理
 additionalProperties:
   key: piwigo-linuxserver
-  name: Piwigo LinuxServer
+  name: Piwigo
   tags:
   - Media
   shortDescZh: Piwigo 相册管理

@@ -1,11 +1,11 @@
-name: Series Troxide LinuxServer
+name: Series Troxide
 tags:
 - Media
 title: Series Troxide 剧集追踪桌面
 description: Series Troxide 剧集追踪桌面
 additionalProperties:
   key: series-troxide-linuxserver
-  name: Series Troxide LinuxServer
+  name: Series Troxide
   tags:
   - Media
   shortDescZh: Series Troxide 剧集追踪桌面

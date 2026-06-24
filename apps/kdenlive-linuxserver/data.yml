@@ -1,11 +1,11 @@
-name: Kdenlive LinuxServer
+name: Kdenlive
 tags:
 - Media
 title: Kdenlive 视频编辑桌面
 description: Kdenlive 视频编辑桌面
 additionalProperties:
   key: kdenlive-linuxserver
-  name: Kdenlive LinuxServer
+  name: Kdenlive
   tags:
   - Media
   shortDescZh: Kdenlive 视频编辑桌面

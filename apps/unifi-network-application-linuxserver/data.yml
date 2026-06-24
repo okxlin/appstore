@@ -1,11 +1,11 @@
-name: UniFi Network Application LinuxServer
+name: UniFi Network Application
 tags:
 - DevOps
 title: UniFi Network 网络控制器
 description: UniFi Network 网络控制器
 additionalProperties:
   key: unifi-network-application-linuxserver
-  name: UniFi Network Application LinuxServer
+  name: UniFi Network Application
   tags:
   - DevOps
   shortDescZh: UniFi Network 网络控制器

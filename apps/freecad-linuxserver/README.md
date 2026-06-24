@@ -1,8 +1,7 @@
-# FreeCAD LinuxServer
-
+# FreeCAD
 ## 产品介绍
 
-FreeCAD LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/freecad` 镜像，提供 FreeCAD 参数化 CAD 桌面 能力。
+FreeCAD 使用 LinuxServer.io 维护的 `linuxserver/freecad` 镜像，提供 FreeCAD 参数化 CAD 桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ FreeCAD LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/freecad` 镜像
 
 ## Introduction
 
-FreeCAD LinuxServer uses the LinuxServer.io maintained `linuxserver/freecad` image for parametric CAD modeling.
+FreeCAD uses the LinuxServer.io maintained `linuxserver/freecad` image for parametric CAD modeling.
 
 ## Features
 

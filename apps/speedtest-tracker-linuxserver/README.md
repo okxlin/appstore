@@ -1,8 +1,7 @@
-# Speedtest Tracker LinuxServer
-
+# Speedtest Tracker
 ## 产品介绍
 
-Speedtest Tracker LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/speedtest-tracker` 镜像，提供 Speedtest Tracker 网速监测 能力。
+Speedtest Tracker 使用 LinuxServer.io 维护的 `linuxserver/speedtest-tracker` 镜像，提供 Speedtest Tracker 网速监测 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Speedtest Tracker LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/speed
 
 ## Introduction
 
-Speedtest Tracker LinuxServer uses the LinuxServer.io maintained `linuxserver/speedtest-tracker` image for internet speed tracking.
+Speedtest Tracker uses the LinuxServer.io maintained `linuxserver/speedtest-tracker` image for internet speed tracking.
 
 ## Features
 

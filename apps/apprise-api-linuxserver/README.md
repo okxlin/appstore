@@ -1,5 +1,4 @@
-# Apprise API LinuxServer
-
+# Apprise API
 ## 产品介绍
 
 Apprise API 为 Apprise 通知库提供 Web UI 和 HTTP API，可统一发送多种通知服务。本应用使用 LinuxServer.io 维护的 `linuxserver/apprise-api` 镜像。

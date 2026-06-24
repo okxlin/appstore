@@ -1,11 +1,11 @@
-name: PyCharm LinuxServer
+name: PyCharm
 tags:
 - Development
 title: PyCharm Python IDE 桌面
 description: PyCharm Python IDE 桌面
 additionalProperties:
   key: pycharm-linuxserver
-  name: PyCharm LinuxServer
+  name: PyCharm
   tags:
   - Development
   shortDescZh: PyCharm Python IDE 桌面

@@ -1,8 +1,7 @@
-# Zen Browser LinuxServer
-
+# Zen Browser
 ## 产品介绍
 
-Zen Browser LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/zen` 镜像，提供 Zen Browser 浏览器桌面 能力。
+Zen Browser 使用 LinuxServer.io 维护的 `linuxserver/zen` 镜像，提供 Zen Browser 浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Zen Browser LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/zen` 镜像
 
 ## Introduction
 
-Zen Browser LinuxServer uses the LinuxServer.io maintained `linuxserver/zen` image for browser desktop access.
+Zen Browser uses the LinuxServer.io maintained `linuxserver/zen` image for browser desktop access.
 
 ## Features
 

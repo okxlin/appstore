@@ -1,11 +1,11 @@
-name: WebCord LinuxServer
+name: WebCord
 tags:
 - Tool
 title: WebCord Discord 客户端桌面
 description: WebCord Discord 客户端桌面
 additionalProperties:
   key: webcord-linuxserver
-  name: WebCord LinuxServer
+  name: WebCord
   tags:
   - Tool
   shortDescZh: WebCord Discord 客户端桌面

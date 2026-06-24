@@ -1,8 +1,7 @@
-# netboot.xyz LinuxServer
-
+# netboot.xyz
 ## 产品介绍
 
-netboot.xyz LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/netbootxyz` 镜像，提供 netboot.xyz 网络启动服务 能力。
+netboot.xyz 使用 LinuxServer.io 维护的 `linuxserver/netbootxyz` 镜像，提供 netboot.xyz 网络启动服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ netboot.xyz LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/netbootxyz`
 
 ## Introduction
 
-netboot.xyz LinuxServer uses the LinuxServer.io maintained `linuxserver/netbootxyz` image for network boot management.
+netboot.xyz uses the LinuxServer.io maintained `linuxserver/netbootxyz` image for network boot management.
 
 ## Features
 

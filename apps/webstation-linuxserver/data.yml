@@ -1,11 +1,11 @@
-name: Webstation LinuxServer
+name: Webstation
 tags:
 - Tool
 title: Webstation 浏览器桌面环境
 description: Webstation 浏览器桌面环境
 additionalProperties:
   key: webstation-linuxserver
-  name: Webstation LinuxServer
+  name: Webstation
   tags:
   - Tool
   shortDescZh: Webstation 浏览器桌面环境

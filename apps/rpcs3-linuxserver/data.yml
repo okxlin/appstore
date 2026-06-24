@@ -1,11 +1,11 @@
-name: RPCS3 LinuxServer
+name: RPCS3
 tags:
 - Game
 title: RPCS3 PlayStation 3 模拟器桌面
 description: RPCS3 PlayStation 3 模拟器桌面
 additionalProperties:
   key: rpcs3-linuxserver
-  name: RPCS3 LinuxServer
+  name: RPCS3
   tags:
   - Game
   shortDescZh: RPCS3 PlayStation 3 模拟器桌面

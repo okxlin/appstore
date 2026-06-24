@@ -1,8 +1,7 @@
-# DAAPD LinuxServer
-
+# DAAPD
 ## 产品介绍
 
-DAAPD LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/daapd` 镜像，提供 DAAPD/OwnTone 媒体服务器 能力。
+DAAPD 使用 LinuxServer.io 维护的 `linuxserver/daapd` 镜像，提供 DAAPD/OwnTone 媒体服务器 能力。
 
 ## 主要功能
 
@@ -21,7 +20,7 @@ LinuxServer 已将该镜像标记为 deprecated，并建议迁移到 OwnTone 官
 
 ## Introduction
 
-DAAPD LinuxServer uses the LinuxServer.io maintained `linuxserver/daapd` image for music library sharing and web management.
+DAAPD uses the LinuxServer.io maintained `linuxserver/daapd` image for music library sharing and web management.
 
 ## Features
 

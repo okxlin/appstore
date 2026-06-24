@@ -1,8 +1,7 @@
-# phpMyAdmin LinuxServer
-
+# phpMyAdmin
 ## 产品介绍
 
-phpMyAdmin LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/phpmyadmin` 镜像，提供 phpMyAdmin 数据库管理 能力。
+phpMyAdmin 使用 LinuxServer.io 维护的 `linuxserver/phpmyadmin` 镜像，提供 phpMyAdmin 数据库管理 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ phpMyAdmin LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/phpmyadmin` 
 
 ## Introduction
 
-phpMyAdmin LinuxServer uses the LinuxServer.io maintained `linuxserver/phpmyadmin` image for database administration.
+phpMyAdmin uses the LinuxServer.io maintained `linuxserver/phpmyadmin` image for database administration.
 
 ## Features
 

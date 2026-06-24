@@ -1,8 +1,7 @@
-# EmulatorJS LinuxServer
-
+# EmulatorJS
 ## 产品介绍
 
-EmulatorJS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/emulatorjs` 镜像，提供 EmulatorJS 游戏模拟器前端 能力。
+EmulatorJS 使用 LinuxServer.io 维护的 `linuxserver/emulatorjs` 镜像，提供 EmulatorJS 游戏模拟器前端 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ EmulatorJS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/emulatorjs` 
 
 ## Introduction
 
-EmulatorJS LinuxServer uses the LinuxServer.io maintained `linuxserver/emulatorjs` image for game emulator frontend management.
+EmulatorJS uses the LinuxServer.io maintained `linuxserver/emulatorjs` image for game emulator frontend management.
 
 ## Features
 

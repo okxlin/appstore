@@ -1,11 +1,11 @@
-name: Davos LinuxServer
+name: Davos
 tags:
 - Tool
 title: Davos 文件下载管理
 description: Davos 文件下载管理
 additionalProperties:
   key: davos-linuxserver
-  name: Davos LinuxServer
+  name: Davos
   tags:
   - Tool
   shortDescZh: Davos 文件下载管理

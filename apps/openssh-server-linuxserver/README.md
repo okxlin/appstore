@@ -1,8 +1,7 @@
-# OpenSSH Server LinuxServer
-
+# OpenSSH Server
 ## 产品介绍
 
-OpenSSH Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/openssh-server` 镜像，提供 OpenSSH SSH 服务 能力。
+OpenSSH Server 使用 LinuxServer.io 维护的 `linuxserver/openssh-server` 镜像，提供 OpenSSH SSH 服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ OpenSSH Server LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/openssh-
 
 ## Introduction
 
-OpenSSH Server LinuxServer uses the LinuxServer.io maintained `linuxserver/openssh-server` image for SSH service.
+OpenSSH Server uses the LinuxServer.io maintained `linuxserver/openssh-server` image for SSH service.
 
 ## Features
 

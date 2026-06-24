@@ -1,8 +1,7 @@
-# VSCodium Web LinuxServer
-
+# VSCodium Web
 ## 产品介绍
 
-VSCodium Web LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vscodium-web` 镜像，提供 VSCodium Web 代码编辑器 能力。
+VSCodium Web 使用 LinuxServer.io 维护的 `linuxserver/vscodium-web` 镜像，提供 VSCodium Web 代码编辑器 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ VSCodium Web LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vscodium-w
 
 ## Introduction
 
-VSCodium Web LinuxServer uses the LinuxServer.io maintained `linuxserver/vscodium-web` image for web code editing.
+VSCodium Web uses the LinuxServer.io maintained `linuxserver/vscodium-web` image for web code editing.
 
 ## Features
 

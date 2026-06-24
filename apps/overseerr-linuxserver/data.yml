@@ -1,11 +1,11 @@
-name: Overseerr LinuxServer
+name: Overseerr
 tags:
 - Media
 title: Overseerr 媒体请求平台
 description: Overseerr 媒体请求平台
 additionalProperties:
   key: overseerr-linuxserver
-  name: Overseerr LinuxServer
+  name: Overseerr
   tags:
   - Media
   shortDescZh: Overseerr 媒体请求平台

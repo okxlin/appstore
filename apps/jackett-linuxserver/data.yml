@@ -1,11 +1,11 @@
-name: Jackett LinuxServer
+name: Jackett
 tags:
 - Media
 title: Jackett 索引器代理
 description: Jackett 索引器代理
 additionalProperties:
   key: jackett-linuxserver
-  name: Jackett LinuxServer
+  name: Jackett
   tags:
   - Media
   shortDescZh: Jackett 索引器代理

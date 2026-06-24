@@ -1,5 +1,4 @@
-# Kavita LinuxServer
-
+# Kavita
 ## 产品介绍
 
 Kavita 是一个自托管阅读服务器，适合管理漫画、漫画书和电子书库。本应用使用 LinuxServer.io 维护的 `linuxserver/kavita` 镜像。

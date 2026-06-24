@@ -1,11 +1,11 @@
-name: Pylon LinuxServer
+name: Pylon
 tags:
 - DevOps
 title: Pylon Web IDE
 description: Pylon Web IDE
 additionalProperties:
   key: pylon-linuxserver
-  name: Pylon LinuxServer
+  name: Pylon
   tags:
   - DevOps
   shortDescZh: Pylon Web IDE

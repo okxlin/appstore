@@ -1,11 +1,11 @@
-name: MariaDB LinuxServer
+name: MariaDB
 tags:
 - Database
 title: MariaDB 数据库服务
 description: MariaDB 数据库服务
 additionalProperties:
   key: mariadb-linuxserver
-  name: MariaDB LinuxServer
+  name: MariaDB
   tags:
   - Database
   shortDescZh: MariaDB 数据库服务

@@ -1,8 +1,7 @@
-# Mullvad Browser LinuxServer
-
+# Mullvad Browser
 ## 产品介绍
 
-Mullvad Browser LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mullvad-browser` 镜像，提供 Mullvad Browser 隐私浏览器桌面 能力。
+Mullvad Browser 使用 LinuxServer.io 维护的 `linuxserver/mullvad-browser` 镜像，提供 Mullvad Browser 隐私浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Mullvad Browser LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mullvad
 
 ## Introduction
 
-Mullvad Browser LinuxServer uses the LinuxServer.io maintained `linuxserver/mullvad-browser` image for privacy browser desktop access.
+Mullvad Browser uses the LinuxServer.io maintained `linuxserver/mullvad-browser` image for privacy browser desktop access.
 
 ## Features
 

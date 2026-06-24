@@ -1,11 +1,11 @@
-name: FreeTube LinuxServer
+name: FreeTube
 tags:
 - Media
 title: FreeTube 视频客户端桌面
 description: FreeTube 视频客户端桌面
 additionalProperties:
   key: freetube-linuxserver
-  name: FreeTube LinuxServer
+  name: FreeTube
   tags:
   - Media
   shortDescZh: FreeTube 视频客户端桌面

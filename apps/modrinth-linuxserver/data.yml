@@ -1,11 +1,11 @@
-name: Modrinth LinuxServer
+name: Modrinth
 tags:
 - Game
 title: Modrinth 模组启动器桌面
 description: Modrinth 模组启动器桌面
 additionalProperties:
   key: modrinth-linuxserver
-  name: Modrinth LinuxServer
+  name: Modrinth
   tags:
   - Game
   shortDescZh: Modrinth 模组启动器桌面

@@ -1,8 +1,7 @@
-# Firefox LinuxServer
-
+# Firefox
 ## 产品介绍
 
-Firefox LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/firefox` 镜像，提供 Firefox 浏览器桌面 能力。
+Firefox 使用 LinuxServer.io 维护的 `linuxserver/firefox` 镜像，提供 Firefox 浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Firefox LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/firefox` 镜像
 
 ## Introduction
 
-Firefox LinuxServer uses the LinuxServer.io maintained `linuxserver/firefox` image for browser desktop access.
+Firefox uses the LinuxServer.io maintained `linuxserver/firefox` image for browser desktop access.
 
 ## Features
 

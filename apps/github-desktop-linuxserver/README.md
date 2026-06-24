@@ -1,8 +1,7 @@
-# GitHub Desktop LinuxServer
-
+# GitHub Desktop
 ## 产品介绍
 
-GitHub Desktop LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/github-desktop` 镜像，提供 GitHub Desktop 代码协作桌面 能力。
+GitHub Desktop 使用 LinuxServer.io 维护的 `linuxserver/github-desktop` 镜像，提供 GitHub Desktop 代码协作桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ GitHub Desktop LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/github-d
 
 ## Introduction
 
-GitHub Desktop LinuxServer uses the LinuxServer.io maintained `linuxserver/github-desktop` image for GitHub workflow management.
+GitHub Desktop uses the LinuxServer.io maintained `linuxserver/github-desktop` image for GitHub workflow management.
 
 ## Features
 

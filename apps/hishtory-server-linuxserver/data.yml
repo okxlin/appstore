@@ -1,11 +1,11 @@
-name: hiSHtory Server LinuxServer
+name: hiSHtory Server
 tags:
 - DevOps
 title: hiSHtory Shell 历史同步服务
 description: hiSHtory Shell 历史同步服务
 additionalProperties:
   key: hishtory-server-linuxserver
-  name: hiSHtory Server LinuxServer
+  name: hiSHtory Server
   tags:
   - DevOps
   shortDescZh: hiSHtory Shell 历史同步服务

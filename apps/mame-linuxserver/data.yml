@@ -1,11 +1,11 @@
-name: MAME LinuxServer
+name: MAME
 tags:
 - Game
 title: MAME 街机模拟器桌面
 description: MAME 街机模拟器桌面
 additionalProperties:
   key: mame-linuxserver
-  name: MAME LinuxServer
+  name: MAME
   tags:
   - Game
   shortDescZh: MAME 街机模拟器桌面

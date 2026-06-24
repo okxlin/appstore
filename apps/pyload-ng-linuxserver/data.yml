@@ -1,11 +1,11 @@
-name: pyLoad NG LinuxServer
+name: pyLoad NG
 tags:
 - Tool
 title: pyLoad NG 下载管理器
 description: pyLoad NG 下载管理器
 additionalProperties:
   key: pyload-ng-linuxserver
-  name: pyLoad NG LinuxServer
+  name: pyLoad NG
   tags:
   - Tool
   shortDescZh: pyLoad NG 下载管理器

@@ -1,11 +1,11 @@
-name: xemu LinuxServer
+name: xemu
 tags:
 - Game
 title: xemu Xbox 模拟器桌面
 description: xemu Xbox 模拟器桌面
 additionalProperties:
   key: xemu-linuxserver
-  name: xemu LinuxServer
+  name: xemu
   tags:
   - Game
   shortDescZh: xemu Xbox 模拟器桌面

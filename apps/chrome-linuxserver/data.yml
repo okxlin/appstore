@@ -1,11 +1,11 @@
-name: Chrome LinuxServer
+name: Chrome
 tags:
 - Tool
 title: Chrome 浏览器桌面
 description: Chrome 浏览器桌面
 additionalProperties:
   key: chrome-linuxserver
-  name: Chrome LinuxServer
+  name: Chrome
   tags:
   - Tool
   shortDescZh: Chrome 浏览器桌面

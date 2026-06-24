@@ -1,11 +1,11 @@
-name: Calligra LinuxServer
+name: Calligra
 tags:
 - Tool
 title: Calligra 办公创作套件桌面
 description: Calligra 办公创作套件桌面
 additionalProperties:
   key: calligra-linuxserver
-  name: Calligra LinuxServer
+  name: Calligra
   tags:
   - Tool
   shortDescZh: Calligra 办公创作套件桌面

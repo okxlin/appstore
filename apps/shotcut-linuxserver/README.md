@@ -1,8 +1,7 @@
-# Shotcut LinuxServer
-
+# Shotcut
 ## 产品介绍
 
-Shotcut LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/shotcut` 镜像，提供 Shotcut 视频编辑桌面 能力。
+Shotcut 使用 LinuxServer.io 维护的 `linuxserver/shotcut` 镜像，提供 Shotcut 视频编辑桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Shotcut LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/shotcut` 镜像
 
 ## Introduction
 
-Shotcut LinuxServer uses the LinuxServer.io maintained `linuxserver/shotcut` image for video editing.
+Shotcut uses the LinuxServer.io maintained `linuxserver/shotcut` image for video editing.
 
 ## Features
 

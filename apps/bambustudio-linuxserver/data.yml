@@ -1,11 +1,11 @@
-name: Bambu Studio LinuxServer
+name: Bambu Studio
 tags:
 - Tool
 title: Bambu Studio 3D 打印切片桌面
 description: Bambu Studio 3D 打印切片桌面
 additionalProperties:
   key: bambustudio-linuxserver
-  name: Bambu Studio LinuxServer
+  name: Bambu Studio
   tags:
   - Tool
   shortDescZh: Bambu Studio 3D 打印切片桌面

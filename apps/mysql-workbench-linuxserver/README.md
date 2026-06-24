@@ -1,8 +1,7 @@
-# MySQL Workbench LinuxServer
-
+# MySQL Workbench
 ## 产品介绍
 
-MySQL Workbench LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mysql-workbench` 镜像，提供 MySQL Workbench 数据库桌面 能力。
+MySQL Workbench 使用 LinuxServer.io 维护的 `linuxserver/mysql-workbench` 镜像，提供 MySQL Workbench 数据库桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ MySQL Workbench LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mysql-w
 
 ## Introduction
 
-MySQL Workbench LinuxServer uses the LinuxServer.io maintained `linuxserver/mysql-workbench` image for database administration.
+MySQL Workbench uses the LinuxServer.io maintained `linuxserver/mysql-workbench` image for database administration.
 
 ## Features
 

@@ -1,11 +1,11 @@
-name: Chromium LinuxServer
+name: Chromium
 tags:
 - Tool
 title: Chromium 浏览器桌面
 description: Chromium 浏览器桌面
 additionalProperties:
   key: chromium-linuxserver
-  name: Chromium LinuxServer
+  name: Chromium
   tags:
   - Tool
   shortDescZh: Chromium 浏览器桌面

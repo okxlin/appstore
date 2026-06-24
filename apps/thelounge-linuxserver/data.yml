@@ -1,11 +1,11 @@
-name: The Lounge LinuxServer
+name: The Lounge
 tags:
 - Tool
 title: Web IRC 客户端
 description: Web IRC 客户端
 additionalProperties:
   key: thelounge-linuxserver
-  name: The Lounge LinuxServer
+  name: The Lounge
   tags:
   - Tool
   shortDescZh: Web IRC 客户端

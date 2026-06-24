@@ -1,11 +1,11 @@
-name: GitQlient LinuxServer
+name: GitQlient
 tags:
 - DevOps
 title: GitQlient Git 客户端桌面
 description: GitQlient Git 客户端桌面
 additionalProperties:
   key: gitqlient-linuxserver
-  name: GitQlient LinuxServer
+  name: GitQlient
   tags:
   - DevOps
   shortDescZh: GitQlient Git 客户端桌面

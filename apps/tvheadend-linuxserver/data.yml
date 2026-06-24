@@ -1,11 +1,11 @@
-name: TVHeadend LinuxServer
+name: TVHeadend
 tags:
 - Media
 title: TVHeadend 电视流媒体服务
 description: TVHeadend 电视流媒体服务
 additionalProperties:
   key: tvheadend-linuxserver
-  name: TVHeadend LinuxServer
+  name: TVHeadend
   tags:
   - Media
   shortDescZh: TVHeadend 电视流媒体服务

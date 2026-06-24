@@ -1,8 +1,7 @@
-# Yaak LinuxServer
-
+# Yaak
 ## 产品介绍
 
-Yaak LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/yaak` 镜像，提供 Yaak API 客户端桌面 能力。
+Yaak 使用 LinuxServer.io 维护的 `linuxserver/yaak` 镜像，提供 Yaak API 客户端桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Yaak LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/yaak` 镜像，提
 
 ## Introduction
 
-Yaak LinuxServer uses the LinuxServer.io maintained `linuxserver/yaak` image for API request testing.
+Yaak uses the LinuxServer.io maintained `linuxserver/yaak` image for API request testing.
 
 ## Features
 

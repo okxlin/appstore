@@ -1,11 +1,11 @@
-name: LibreWolf LinuxServer
+name: LibreWolf
 tags:
 - Tool
 title: LibreWolf 浏览器桌面
 description: LibreWolf 浏览器桌面
 additionalProperties:
   key: librewolf-linuxserver
-  name: LibreWolf LinuxServer
+  name: LibreWolf
   tags:
   - Tool
   shortDescZh: LibreWolf 浏览器桌面

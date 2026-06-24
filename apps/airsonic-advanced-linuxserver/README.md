@@ -1,5 +1,4 @@
-# Airsonic Advanced LinuxServer
-
+# Airsonic Advanced
 ## 产品介绍
 
 Airsonic Advanced 是一个自托管音乐流媒体服务器，可在浏览器和兼容客户端中访问音乐库。本应用使用 LinuxServer.io 维护的 `linuxserver/airsonic-advanced` 镜像。

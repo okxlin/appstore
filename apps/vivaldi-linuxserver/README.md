@@ -1,8 +1,7 @@
-# Vivaldi LinuxServer
-
+# Vivaldi
 ## 产品介绍
 
-Vivaldi LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vivaldi` 镜像，提供 Vivaldi 浏览器桌面 能力。
+Vivaldi 使用 LinuxServer.io 维护的 `linuxserver/vivaldi` 镜像，提供 Vivaldi 浏览器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Vivaldi LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/vivaldi` 镜像
 
 ## Introduction
 
-Vivaldi LinuxServer uses the LinuxServer.io maintained `linuxserver/vivaldi` image for browser desktop access.
+Vivaldi uses the LinuxServer.io maintained `linuxserver/vivaldi` image for browser desktop access.
 
 ## Features
 

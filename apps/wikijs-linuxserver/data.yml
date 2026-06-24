@@ -1,11 +1,11 @@
-name: Wiki.js LinuxServer
+name: Wiki.js
 tags:
 - Website
 title: Wiki.js 知识库 Wiki
 description: Wiki.js 知识库 Wiki
 additionalProperties:
   key: wikijs-linuxserver
-  name: Wiki.js LinuxServer
+  name: Wiki.js
   tags:
   - Website
   shortDescZh: Wiki.js 知识库 Wiki

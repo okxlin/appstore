@@ -1,8 +1,7 @@
-# Doplarr LinuxServer
-
+# Doplarr
 ## 产品介绍
 
-Doplarr LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/doplarr` 镜像，提供 Discord 中的 Sonarr、Radarr 或 Overseerr 媒体请求机器人能力。
+Doplarr 使用 LinuxServer.io 维护的 `linuxserver/doplarr` 镜像，提供 Discord 中的 Sonarr、Radarr 或 Overseerr 媒体请求机器人能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Doplarr LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/doplarr` 镜像
 
 ## Introduction
 
-Doplarr LinuxServer uses the LinuxServer.io maintained `linuxserver/doplarr` image for a Discord media request bot backed by Sonarr, Radarr, or Overseerr.
+Doplarr uses the LinuxServer.io maintained `linuxserver/doplarr` image for a Discord media request bot backed by Sonarr, Radarr, or Overseerr.
 
 ## Features
 

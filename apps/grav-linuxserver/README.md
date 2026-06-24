@@ -1,8 +1,7 @@
-# Grav LinuxServer
-
+# Grav
 ## 产品介绍
 
-Grav LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/grav` 镜像，提供 Grav 平面文件 CMS 能力。
+Grav 使用 LinuxServer.io 维护的 `linuxserver/grav` 镜像，提供 Grav 平面文件 CMS 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Grav LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/grav` 镜像，提
 
 ## Introduction
 
-Grav LinuxServer uses the LinuxServer.io maintained `linuxserver/grav` image for flat-file website management.
+Grav uses the LinuxServer.io maintained `linuxserver/grav` image for flat-file website management.
 
 ## Features
 

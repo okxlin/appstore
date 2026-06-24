@@ -1,11 +1,11 @@
-name: rsnapshot LinuxServer
+name: rsnapshot
 tags:
 - Storage
 title: rsnapshot 快照备份服务
 description: rsnapshot 快照备份服务
 additionalProperties:
   key: rsnapshot-linuxserver
-  name: rsnapshot LinuxServer
+  name: rsnapshot
   tags:
   - Storage
   shortDescZh: rsnapshot 快照备份服务

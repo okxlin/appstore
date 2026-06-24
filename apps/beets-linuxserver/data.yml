@@ -1,11 +1,11 @@
-name: Beets LinuxServer
+name: Beets
 tags:
 - Media
 title: Beets 音乐库管理
 description: Beets 音乐库管理
 additionalProperties:
   key: beets-linuxserver
-  name: Beets LinuxServer
+  name: Beets
   tags:
   - Media
   shortDescZh: Beets 音乐库管理

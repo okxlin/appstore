@@ -1,11 +1,11 @@
-name: Kali Linux LinuxServer
+name: Kali Linux
 tags:
 - Security
 title: Kali Linux 浏览器桌面环境
 description: Kali Linux 浏览器桌面环境
 additionalProperties:
   key: kali-linux-linuxserver
-  name: Kali Linux LinuxServer
+  name: Kali Linux
   tags:
   - Security
   shortDescZh: Kali Linux 浏览器桌面环境

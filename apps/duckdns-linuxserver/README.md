@@ -1,8 +1,7 @@
-# DuckDNS LinuxServer
-
+# DuckDNS
 ## 产品介绍
 
-DuckDNS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/duckdns` 镜像，提供 DuckDNS 动态 DNS 更新服务能力。
+DuckDNS 使用 LinuxServer.io 维护的 `linuxserver/duckdns` 镜像，提供 DuckDNS 动态 DNS 更新服务能力。
 
 ## 主要功能
 
@@ -21,7 +20,7 @@ DuckDNS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/duckdns` 镜像
 
 ## Introduction
 
-DuckDNS LinuxServer uses the LinuxServer.io maintained `linuxserver/duckdns` image for DuckDNS dynamic DNS updates.
+DuckDNS uses the LinuxServer.io maintained `linuxserver/duckdns` image for DuckDNS dynamic DNS updates.
 
 ## Features
 

@@ -1,11 +1,11 @@
-name: MySQL Workbench LinuxServer
+name: MySQL Workbench
 tags:
 - Database
 title: MySQL Workbench 数据库桌面
 description: MySQL Workbench 数据库桌面
 additionalProperties:
   key: mysql-workbench-linuxserver
-  name: MySQL Workbench LinuxServer
+  name: MySQL Workbench
   tags:
   - Database
   shortDescZh: MySQL Workbench 数据库桌面

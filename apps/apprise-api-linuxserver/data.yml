@@ -1,11 +1,11 @@
-name: Apprise API LinuxServer
+name: Apprise API
 tags:
 - Tool
 title: Apprise 通知 API 服务
 description: Apprise 通知 API 服务
 additionalProperties:
   key: apprise-api-linuxserver
-  name: Apprise API LinuxServer
+  name: Apprise API
   tags:
   - Tool
   shortDescZh: Apprise 通知 API 服务

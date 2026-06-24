@@ -1,11 +1,11 @@
-name: COPS LinuxServer
+name: COPS
 tags:
 - Media
 title: COPS 电子书服务器
 description: COPS 电子书服务器
 additionalProperties:
   key: cops-linuxserver
-  name: COPS LinuxServer
+  name: COPS
   tags:
   - Media
   shortDescZh: COPS 电子书服务器

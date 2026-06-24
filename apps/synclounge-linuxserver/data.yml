@@ -1,11 +1,11 @@
-name: SyncLounge LinuxServer
+name: SyncLounge
 tags:
 - Media
 title: SyncLounge Plex 同步观看
 description: SyncLounge Plex 同步观看
 additionalProperties:
   key: synclounge-linuxserver
-  name: SyncLounge LinuxServer
+  name: SyncLounge
   tags:
   - Media
   shortDescZh: SyncLounge Plex 同步观看

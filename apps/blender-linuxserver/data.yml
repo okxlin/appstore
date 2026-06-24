@@ -1,11 +1,11 @@
-name: Blender LinuxServer
+name: Blender
 tags:
 - Media
 title: Blender 3D 创作桌面
 description: Blender 3D 创作桌面
 additionalProperties:
   key: blender-linuxserver
-  name: Blender LinuxServer
+  name: Blender
   tags:
   - Media
   shortDescZh: Blender 3D 创作桌面

@@ -1,11 +1,11 @@
-name: ScummVM LinuxServer
+name: ScummVM
 tags:
 - Game
 title: ScummVM 冒险游戏引擎桌面
 description: ScummVM 冒险游戏引擎桌面
 additionalProperties:
   key: scummvm-linuxserver
-  name: ScummVM LinuxServer
+  name: ScummVM
   tags:
   - Game
   shortDescZh: ScummVM 冒险游戏引擎桌面

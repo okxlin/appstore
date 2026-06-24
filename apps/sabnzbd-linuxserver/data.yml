@@ -1,11 +1,11 @@
-name: SABnzbd LinuxServer
+name: SABnzbd
 tags:
 - Media
 title: SABnzbd Usenet 下载器
 description: SABnzbd Usenet 下载器
 additionalProperties:
   key: sabnzbd-linuxserver
-  name: SABnzbd LinuxServer
+  name: SABnzbd
   tags:
   - Media
   shortDescZh: SABnzbd Usenet 下载器

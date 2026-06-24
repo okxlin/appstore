@@ -1,11 +1,11 @@
-name: Manyfold LinuxServer
+name: Manyfold
 tags:
 - Media
 title: Manyfold 3D 模型管理
 description: Manyfold 3D 模型管理
 additionalProperties:
   key: manyfold-linuxserver
-  name: Manyfold LinuxServer
+  name: Manyfold
   tags:
   - Media
   shortDescZh: Manyfold 3D 模型管理

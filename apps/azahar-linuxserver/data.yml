@@ -1,11 +1,11 @@
-name: Azahar LinuxServer
+name: Azahar
 tags:
 - Game
 title: Azahar Nintendo 3DS 模拟器桌面
 description: Azahar Nintendo 3DS 模拟器桌面
 additionalProperties:
   key: azahar-linuxserver
-  name: Azahar LinuxServer
+  name: Azahar
   tags:
   - Game
   shortDescZh: Azahar Nintendo 3DS 模拟器桌面

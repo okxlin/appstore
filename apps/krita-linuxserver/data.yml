@@ -1,11 +1,11 @@
-name: Krita LinuxServer
+name: Krita
 tags:
 - Media
 title: Krita 数字绘画桌面
 description: Krita 数字绘画桌面
 additionalProperties:
   key: krita-linuxserver
-  name: Krita LinuxServer
+  name: Krita
   tags:
   - Media
   shortDescZh: Krita 数字绘画桌面

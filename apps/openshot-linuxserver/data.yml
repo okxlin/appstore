@@ -1,11 +1,11 @@
-name: OpenShot LinuxServer
+name: OpenShot
 tags:
 - Media
 title: OpenShot 视频编辑桌面
 description: OpenShot 视频编辑桌面
 additionalProperties:
   key: openshot-linuxserver
-  name: OpenShot LinuxServer
+  name: OpenShot
   tags:
   - Media
   shortDescZh: OpenShot 视频编辑桌面

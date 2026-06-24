@@ -1,5 +1,4 @@
-# NZBHydra2 LinuxServer
-
+# NZBHydra2
 ## 产品介绍
 
 NZBHydra2 是一个 NZB 索引器聚合搜索工具，可统一管理 indexer 并为下载器提供搜索入口。本应用使用 LinuxServer.io 维护的 `linuxserver/nzbhydra2` 镜像。

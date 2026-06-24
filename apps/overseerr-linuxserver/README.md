@@ -1,5 +1,4 @@
-# Overseerr LinuxServer
-
+# Overseerr
 ## 产品介绍
 
 Overseerr 是一个面向 Plex 的媒体请求和发现平台，可与 Sonarr、Radarr 集成。本应用使用 LinuxServer.io 维护的 `linuxserver/overseerr` 镜像。

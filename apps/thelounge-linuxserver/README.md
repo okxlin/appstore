@@ -1,5 +1,4 @@
-# The Lounge LinuxServer
-
+# The Lounge
 ## 产品介绍
 
 The Lounge 是一个可自托管的 Web IRC 客户端，可以在浏览器中连接和管理 IRC 网络。本应用使用 LinuxServer.io 维护的 `linuxserver/thelounge` 镜像。

@@ -1,11 +1,11 @@
-name: netboot.xyz LinuxServer
+name: netboot.xyz
 tags:
 - Tool
 title: netboot.xyz 网络启动服务
 description: netboot.xyz 网络启动服务
 additionalProperties:
   key: netbootxyz-linuxserver
-  name: netboot.xyz LinuxServer
+  name: netboot.xyz
   tags:
   - Tool
   shortDescZh: netboot.xyz 网络启动服务

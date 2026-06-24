@@ -1,11 +1,11 @@
-name: Audacity LinuxServer
+name: Audacity
 tags:
 - Media
 title: Audacity 音频编辑桌面
 description: Audacity 音频编辑桌面
 additionalProperties:
   key: audacity-linuxserver
-  name: Audacity LinuxServer
+  name: Audacity
   tags:
   - Media
   shortDescZh: Audacity 音频编辑桌面

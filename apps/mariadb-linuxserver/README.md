@@ -1,8 +1,7 @@
-# MariaDB LinuxServer
-
+# MariaDB
 ## 产品介绍
 
-MariaDB LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mariadb` 镜像，提供 MariaDB 数据库服务 能力。
+MariaDB 使用 LinuxServer.io 维护的 `linuxserver/mariadb` 镜像，提供 MariaDB 数据库服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ MariaDB LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/mariadb` 镜像
 
 ## Introduction
 
-MariaDB LinuxServer uses the LinuxServer.io maintained `linuxserver/mariadb` image for relational database.
+MariaDB uses the LinuxServer.io maintained `linuxserver/mariadb` image for relational database.
 
 ## Features
 

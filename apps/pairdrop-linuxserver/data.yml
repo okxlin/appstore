@@ -1,11 +1,11 @@
-name: PairDrop LinuxServer
+name: PairDrop
 tags:
 - Tool
 title: PairDrop 局域网文件传输
 description: PairDrop 局域网文件传输
 additionalProperties:
   key: pairdrop-linuxserver
-  name: PairDrop LinuxServer
+  name: PairDrop
   tags:
   - Tool
   shortDescZh: PairDrop 局域网文件传输

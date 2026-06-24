@@ -1,11 +1,11 @@
-name: NZBGet LinuxServer
+name: NZBGet
 tags:
 - Media
 title: Usenet 下载器
 description: Usenet 下载器
 additionalProperties:
   key: nzbget-linuxserver
-  name: NZBGet LinuxServer
+  name: NZBGet
   tags:
   - Media
   shortDescZh: Usenet 下载器

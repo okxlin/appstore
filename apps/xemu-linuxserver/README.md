@@ -1,8 +1,7 @@
-# xemu LinuxServer
-
+# xemu
 ## 产品介绍
 
-xemu LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/xemu` 镜像，提供 xemu Xbox 模拟器桌面 能力。
+xemu 使用 LinuxServer.io 维护的 `linuxserver/xemu` 镜像，提供 xemu Xbox 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ xemu LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/xemu` 镜像，提
 
 ## Introduction
 
-xemu LinuxServer uses the LinuxServer.io maintained `linuxserver/xemu` image for Xbox emulation.
+xemu uses the LinuxServer.io maintained `linuxserver/xemu` image for Xbox emulation.
 
 ## Features
 

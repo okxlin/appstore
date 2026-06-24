@@ -1,11 +1,11 @@
-name: Eden LinuxServer
+name: Eden
 tags:
 - Game
 title: Eden Switch 模拟器桌面
 description: Eden Switch 模拟器桌面
 additionalProperties:
   key: eden-linuxserver
-  name: Eden LinuxServer
+  name: Eden
   tags:
   - Game
   shortDescZh: Eden Switch 模拟器桌面

@@ -1,11 +1,11 @@
-name: digiKam LinuxServer
+name: digiKam
 tags:
 - Media
 title: digiKam 照片管理桌面
 description: digiKam 照片管理桌面
 additionalProperties:
   key: digikam-linuxserver
-  name: digiKam LinuxServer
+  name: digiKam
   tags:
   - Media
   shortDescZh: digiKam 照片管理桌面

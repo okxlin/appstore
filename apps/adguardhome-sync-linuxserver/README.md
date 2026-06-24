@@ -1,8 +1,7 @@
-# AdGuardHome Sync LinuxServer
-
+# AdGuardHome Sync
 ## 产品介绍
 
-AdGuardHome Sync LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/adguardhome-sync` 镜像，提供 AdGuardHome Sync 配置同步服务 能力。
+AdGuardHome Sync 使用 LinuxServer.io 维护的 `linuxserver/adguardhome-sync` 镜像，提供 AdGuardHome Sync 配置同步服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ AdGuardHome Sync LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/adguar
 
 ## Introduction
 
-AdGuardHome Sync LinuxServer uses the LinuxServer.io maintained `linuxserver/adguardhome-sync` image for AdGuard Home configuration synchronization.
+AdGuardHome Sync uses the LinuxServer.io maintained `linuxserver/adguardhome-sync` image for AdGuard Home configuration synchronization.
 
 ## Features
 

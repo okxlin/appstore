@@ -1,11 +1,11 @@
-name: EmulatorJS LinuxServer
+name: EmulatorJS
 tags:
 - Game
 title: EmulatorJS 游戏模拟器前端
 description: EmulatorJS 游戏模拟器前端
 additionalProperties:
   key: emulatorjs-linuxserver
-  name: EmulatorJS LinuxServer
+  name: EmulatorJS
   tags:
   - Game
   shortDescZh: EmulatorJS 游戏模拟器前端

@@ -1,8 +1,7 @@
-# Snipe-IT LinuxServer
-
+# Snipe-IT
 ## 产品介绍
 
-Snipe-IT LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/snipe-it` 镜像，提供 Snipe-IT 资产管理系统 能力。
+Snipe-IT 使用 LinuxServer.io 维护的 `linuxserver/snipe-it` 镜像，提供 Snipe-IT 资产管理系统 能力。
 
 ## 主要功能
 
@@ -21,7 +20,7 @@ LinuxServer 已将该镜像标记为 deprecated，并建议迁移到 Grokability
 
 ## Introduction
 
-Snipe-IT LinuxServer uses the LinuxServer.io maintained `linuxserver/snipe-it` image for asset, license and consumable management.
+Snipe-IT uses the LinuxServer.io maintained `linuxserver/snipe-it` image for asset, license and consumable management.
 
 ## Features
 

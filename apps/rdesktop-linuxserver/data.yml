@@ -1,11 +1,11 @@
-name: RDesktop LinuxServer
+name: RDesktop
 tags:
 - Tool
 title: RDesktop 远程桌面环境
 description: RDesktop 远程桌面环境
 additionalProperties:
   key: rdesktop-linuxserver
-  name: RDesktop LinuxServer
+  name: RDesktop
   tags:
   - Tool
   shortDescZh: RDesktop 远程桌面环境

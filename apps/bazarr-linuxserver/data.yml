@@ -1,11 +1,11 @@
-name: Bazarr LinuxServer
+name: Bazarr
 tags:
 - Media
 title: Bazarr 字幕管理器
 description: Bazarr 字幕管理器
 additionalProperties:
   key: bazarr-linuxserver
-  name: Bazarr LinuxServer
+  name: Bazarr
   tags:
   - Media
   shortDescZh: Bazarr 字幕管理器

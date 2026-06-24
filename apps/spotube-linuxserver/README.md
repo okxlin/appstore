@@ -1,8 +1,7 @@
-# Spotube LinuxServer
-
+# Spotube
 ## 产品介绍
 
-Spotube LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/spotube` 镜像，提供 Spotube 音乐客户端桌面 能力。
+Spotube 使用 LinuxServer.io 维护的 `linuxserver/spotube` 镜像，提供 Spotube 音乐客户端桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Spotube LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/spotube` 镜像
 
 ## Introduction
 
-Spotube LinuxServer uses the LinuxServer.io maintained `linuxserver/spotube` image for music client access.
+Spotube uses the LinuxServer.io maintained `linuxserver/spotube` image for music client access.
 
 ## Features
 

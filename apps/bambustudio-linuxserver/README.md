@@ -1,8 +1,7 @@
-# Bambu Studio LinuxServer
-
+# Bambu Studio
 ## 产品介绍
 
-Bambu Studio LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/bambustudio` 镜像，提供 Bambu Studio 3D 打印切片桌面 能力。
+Bambu Studio 使用 LinuxServer.io 维护的 `linuxserver/bambustudio` 镜像，提供 Bambu Studio 3D 打印切片桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Bambu Studio LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/bambustudi
 
 ## Introduction
 
-Bambu Studio LinuxServer uses the LinuxServer.io maintained `linuxserver/bambustudio` image for 3D printing slicing.
+Bambu Studio uses the LinuxServer.io maintained `linuxserver/bambustudio` image for 3D printing slicing.
 
 ## Features
 

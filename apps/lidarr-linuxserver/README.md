@@ -1,5 +1,4 @@
-# Lidarr LinuxServer
-
+# Lidarr
 ## 产品介绍
 
 Lidarr 是一个音乐库管理和自动化工具，可与下载器和索引器配合使用。本应用使用 LinuxServer.io 维护的 `linuxserver/lidarr` 镜像。

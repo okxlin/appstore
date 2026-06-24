@@ -1,11 +1,11 @@
-name: NZBHydra2 LinuxServer
+name: NZBHydra2
 tags:
 - Media
 title: NZBHydra2 NZB 聚合搜索
 description: NZBHydra2 NZB 聚合搜索
 additionalProperties:
   key: nzbhydra2-linuxserver
-  name: NZBHydra2 LinuxServer
+  name: NZBHydra2
   tags:
   - Media
   shortDescZh: NZBHydra2 NZB 聚合搜索

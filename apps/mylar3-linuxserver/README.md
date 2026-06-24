@@ -1,5 +1,4 @@
-# Mylar3 LinuxServer
-
+# Mylar3
 ## 产品介绍
 
 Mylar3 是一个漫画库和下载管理工具，可管理漫画目录、下载器和元数据。本应用使用 LinuxServer.io 维护的 `linuxserver/mylar3` 镜像。

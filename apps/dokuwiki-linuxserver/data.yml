@@ -1,11 +1,11 @@
-name: DokuWiki LinuxServer
+name: DokuWiki
 tags:
 - Website
 title: DokuWiki 知识库 Wiki
 description: DokuWiki 知识库 Wiki
 additionalProperties:
   key: dokuwiki-linuxserver
-  name: DokuWiki LinuxServer
+  name: DokuWiki
   tags:
   - Website
   shortDescZh: DokuWiki 知识库 Wiki

@@ -1,8 +1,7 @@
-# OrcaSlicer LinuxServer
-
+# OrcaSlicer
 ## 产品介绍
 
-OrcaSlicer LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/orcaslicer` 镜像，提供 OrcaSlicer 3D 打印切片桌面 能力。
+OrcaSlicer 使用 LinuxServer.io 维护的 `linuxserver/orcaslicer` 镜像，提供 OrcaSlicer 3D 打印切片桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ OrcaSlicer LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/orcaslicer` 
 
 ## Introduction
 
-OrcaSlicer LinuxServer uses the LinuxServer.io maintained `linuxserver/orcaslicer` image for 3D printing slicing.
+OrcaSlicer uses the LinuxServer.io maintained `linuxserver/orcaslicer` image for 3D printing slicing.
 
 ## Features
 

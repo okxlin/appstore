@@ -1,5 +1,4 @@
-# NZBGet LinuxServer
-
+# NZBGet
 ## 产品介绍
 
 NZBGet 是一个以性能为目标的 Usenet 下载器。本应用使用 LinuxServer.io 维护的 `linuxserver/nzbget` 镜像，提供 Web UI、配置持久化和下载目录挂载。

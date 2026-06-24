@@ -1,11 +1,11 @@
-name: Kimai LinuxServer
+name: Kimai
 tags:
 - CRM
 title: Kimai 时间跟踪系统
 description: Kimai 时间跟踪系统
 additionalProperties:
   key: kimai-linuxserver
-  name: Kimai LinuxServer
+  name: Kimai
   tags:
   - CRM
   shortDescZh: Kimai 时间跟踪系统

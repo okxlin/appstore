@@ -1,11 +1,11 @@
-name: Lidarr LinuxServer
+name: Lidarr
 tags:
 - Media
 title: Lidarr 音乐库管理器
 description: Lidarr 音乐库管理器
 additionalProperties:
   key: lidarr-linuxserver
-  name: Lidarr LinuxServer
+  name: Lidarr
   tags:
   - Media
   shortDescZh: Lidarr 音乐库管理器

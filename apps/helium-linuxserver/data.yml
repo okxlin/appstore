@@ -1,11 +1,11 @@
-name: Helium LinuxServer
+name: Helium
 tags:
 - Tool
 title: Helium 浏览器桌面
 description: Helium 浏览器桌面
 additionalProperties:
   key: helium-linuxserver
-  name: Helium LinuxServer
+  name: Helium
   tags:
   - Tool
   shortDescZh: Helium 浏览器桌面

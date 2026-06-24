@@ -1,5 +1,4 @@
-# SickGear LinuxServer
-
+# SickGear
 ## 产品介绍
 
 SickGear 是一个剧集库和下载自动化工具，可管理剧集、下载器和媒体目录。本应用使用 LinuxServer.io 维护的 `linuxserver/sickgear` 镜像。

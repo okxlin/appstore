@@ -1,8 +1,7 @@
-# Faster Whisper LinuxServer
-
+# Faster Whisper
 ## 产品介绍
 
-Faster Whisper LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/faster-whisper` 镜像，提供 Faster Whisper 语音转写服务 能力。
+Faster Whisper 使用 LinuxServer.io 维护的 `linuxserver/faster-whisper` 镜像，提供 Faster Whisper 语音转写服务 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Faster Whisper LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/faster-w
 
 ## Introduction
 
-Faster Whisper LinuxServer uses the LinuxServer.io maintained `linuxserver/faster-whisper` image for Wyoming speech transcription.
+Faster Whisper uses the LinuxServer.io maintained `linuxserver/faster-whisper` image for Wyoming speech transcription.
 
 ## Features
 

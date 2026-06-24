@@ -1,8 +1,7 @@
-# Readarr LinuxServer
-
+# Readarr
 ## 产品介绍
 
-Readarr LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/readarr` 镜像，提供 Readarr 电子书媒体管理 能力。
+Readarr 使用 LinuxServer.io 维护的 `linuxserver/readarr` 镜像，提供 Readarr 电子书媒体管理 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ Readarr LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/readarr` 镜像
 
 ## Introduction
 
-Readarr LinuxServer uses the LinuxServer.io maintained `linuxserver/readarr` image for ebook collection management.
+Readarr uses the LinuxServer.io maintained `linuxserver/readarr` image for ebook collection management.
 
 ## Features
 

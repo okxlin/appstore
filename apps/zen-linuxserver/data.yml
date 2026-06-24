@@ -1,11 +1,11 @@
-name: Zen Browser LinuxServer
+name: Zen Browser
 tags:
 - Tool
 title: Zen Browser 浏览器桌面
 description: Zen Browser 浏览器桌面
 additionalProperties:
   key: zen-linuxserver
-  name: Zen Browser LinuxServer
+  name: Zen Browser
   tags:
   - Tool
   shortDescZh: Zen Browser 浏览器桌面

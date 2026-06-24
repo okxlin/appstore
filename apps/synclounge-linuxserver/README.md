@@ -1,5 +1,4 @@
-# SyncLounge LinuxServer
-
+# SyncLounge
 ## 产品介绍
 
 SyncLounge 是一个 Plex 同步观看服务，可让多个用户在浏览器中同步播放进度。本应用使用 LinuxServer.io 维护的 `linuxserver/synclounge` 镜像。

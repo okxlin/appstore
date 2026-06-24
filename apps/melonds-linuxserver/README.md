@@ -1,8 +1,7 @@
-# melonDS LinuxServer
-
+# melonDS
 ## 产品介绍
 
-melonDS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/melonds` 镜像，提供 melonDS Nintendo DS 模拟器桌面 能力。
+melonDS 使用 LinuxServer.io 维护的 `linuxserver/melonds` 镜像，提供 melonDS Nintendo DS 模拟器桌面 能力。
 
 ## 主要功能
 
@@ -17,7 +16,7 @@ melonDS LinuxServer 使用 LinuxServer.io 维护的 `linuxserver/melonds` 镜像
 
 ## Introduction
 
-melonDS LinuxServer uses the LinuxServer.io maintained `linuxserver/melonds` image for Nintendo DS emulation.
+melonDS uses the LinuxServer.io maintained `linuxserver/melonds` image for Nintendo DS emulation.
 
 ## Features
 

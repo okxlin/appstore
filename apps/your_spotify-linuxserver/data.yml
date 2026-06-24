@@ -1,11 +1,11 @@
-name: Your Spotify LinuxServer
+name: Your Spotify
 tags:
 - Tool
 title: Your Spotify 听歌统计面板
 description: Your Spotify 听歌统计面板
 additionalProperties:
   key: your_spotify-linuxserver
-  name: Your Spotify LinuxServer
+  name: Your Spotify
   tags:
   - Tool
   shortDescZh: Your Spotify 听歌统计面板

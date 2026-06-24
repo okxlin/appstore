@@ -1,11 +1,11 @@
-name: ChangeDetection.io LinuxServer
+name: ChangeDetection.io
 tags:
 - Tool
 title: ChangeDetection.io 网页变更监控
 description: ChangeDetection.io 网页变更监控
 additionalProperties:
   key: changedetection.io-linuxserver
-  name: ChangeDetection.io LinuxServer
+  name: ChangeDetection.io
   tags:
   - Tool
   shortDescZh: ChangeDetection.io 网页变更监控

@@ -1,11 +1,11 @@
-name: AdGuardHome Sync LinuxServer
+name: AdGuardHome Sync
 tags:
 - Tool
 title: AdGuardHome Sync 配置同步服务
 description: AdGuardHome Sync 配置同步服务
 additionalProperties:
   key: adguardhome-sync-linuxserver
-  name: AdGuardHome Sync LinuxServer
+  name: AdGuardHome Sync
   tags:
   - Tool
   shortDescZh: AdGuardHome Sync 配置同步服务

@@ -1,11 +1,11 @@
-name: Tautulli LinuxServer
+name: Tautulli
 tags:
 - Media
 title: Tautulli Plex 监控工具
 description: Tautulli Plex 监控工具
 additionalProperties:
   key: tautulli-linuxserver
-  name: Tautulli LinuxServer
+  name: Tautulli
   tags:
   - Media
   shortDescZh: Tautulli Plex 监控工具

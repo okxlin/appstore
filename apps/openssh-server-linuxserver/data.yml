@@ -1,11 +1,11 @@
-name: OpenSSH Server LinuxServer
+name: OpenSSH Server
 tags:
 - Tool
 title: OpenSSH SSH 服务
 description: OpenSSH SSH 服务
 additionalProperties:
   key: openssh-server-linuxserver
-  name: OpenSSH Server LinuxServer
+  name: OpenSSH Server
   tags:
   - Tool
   shortDescZh: OpenSSH SSH 服务
