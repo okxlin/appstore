@@ -1,0 +1,29 @@
+name: Cura LinuxServer
+tags:
+- Tool
+title: Cura 3D 打印切片桌面
+description: Cura 3D 打印切片桌面
+additionalProperties:
+  key: cura-linuxserver
+  name: Cura LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Cura 3D 打印切片桌面
+  shortDescEn: 3D printing slicer desktop maintained by LinuxServer.io
+  description:
+    en: 3D printing slicer desktop maintained by LinuxServer.io
+    zh: Cura 3D 打印切片桌面
+    zh-Hant: Cura 3D 列印切片桌面
+    ja: LinuxServer.io が保守する 3D プリントスライサーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 3D 프린팅 슬라이서 데스크톱
+    ru: Рабочий стол слайсера 3D-печати, поддерживаемый LinuxServer.io
+    ms: Desktop penghiris cetakan 3D yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de fatiador de impressao 3D mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ultimaker.com/software/ultimaker-cura/
+  github: https://github.com/linuxserver/docker-cura
+  document: https://docs.linuxserver.io/images/docker-cura/
+  architectures:
+  - amd64

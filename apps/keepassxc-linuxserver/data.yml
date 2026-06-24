@@ -1,0 +1,30 @@
+name: KeePassXC LinuxServer
+tags:
+- Security
+title: KeePassXC 密码管理桌面
+description: KeePassXC 密码管理桌面
+additionalProperties:
+  key: keepassxc-linuxserver
+  name: KeePassXC LinuxServer
+  tags:
+  - Security
+  shortDescZh: KeePassXC 密码管理桌面
+  shortDescEn: Password manager desktop maintained by LinuxServer.io
+  description:
+    en: Password manager desktop maintained by LinuxServer.io
+    zh: KeePassXC 密码管理桌面
+    zh-Hant: KeePassXC 密碼管理桌面
+    ja: LinuxServer.io が保守するパスワードマネージャーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 비밀번호 관리자 데스크톱
+    ru: Рабочий стол менеджера паролей, поддерживаемый LinuxServer.io
+    ms: Desktop pengurus kata laluan yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de gerenciador de senhas mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://keepassxc.org/
+  github: https://github.com/linuxserver/docker-keepassxc
+  document: https://docs.linuxserver.io/images/docker-keepassxc/
+  architectures:
+  - amd64
+  - arm64
