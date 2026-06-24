@@ -1,0 +1,30 @@
+name: FlexGet LinuxServer
+tags:
+- Tool
+title: FlexGet 自动化下载
+description: FlexGet 自动化下载
+additionalProperties:
+  key: flexget-linuxserver
+  name: FlexGet LinuxServer
+  tags:
+  - Tool
+  shortDescZh: FlexGet 自动化下载
+  shortDescEn: Automation download tool maintained by LinuxServer.io
+  description:
+    en: Automation download tool maintained by LinuxServer.io
+    zh: FlexGet 自动化下载
+    zh-Hant: FlexGet 自動化下載
+    ja: LinuxServer.io が保守する自動化ダウンロードツール
+    ko: LinuxServer.io에서 유지 관리하는 자동화 다운로드 도구
+    ru: Инструмент автоматизации загрузок, поддерживаемый LinuxServer.io
+    ms: Alat automasi muat turun yang diselenggara oleh LinuxServer.io
+    pt-br: Ferramenta de automacao de downloads mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://flexget.com/
+  github: https://github.com/linuxserver/docker-flexget
+  document: https://docs.linuxserver.io/images/docker-flexget/
+  architectures:
+  - amd64
+  - arm64

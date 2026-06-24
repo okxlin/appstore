@@ -1,0 +1,26 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  healthchecks:
+    image: "linuxserver/healthchecks:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+      - "${PANEL_APP_PORT_SMTP}:2525"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - SECRET_KEY=${SECRET_KEY}
+      - SITE_ROOT=${SITE_ROOT}
+      - SITE_NAME=${SITE_NAME}
+      - SUPERUSER_EMAIL=${SUPERUSER_EMAIL}
+      - SUPERUSER_PASSWORD=${SUPERUSER_PASSWORD}
+    labels:
+      createdBy: "Apps"

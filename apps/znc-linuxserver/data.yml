@@ -1,0 +1,30 @@
+name: ZNC LinuxServer
+tags:
+- Tool
+title: ZNC IRC 反向代理
+description: ZNC IRC 反向代理
+additionalProperties:
+  key: znc-linuxserver
+  name: ZNC LinuxServer
+  tags:
+  - Tool
+  shortDescZh: ZNC IRC 反向代理
+  shortDescEn: IRC bouncer maintained by LinuxServer.io
+  description:
+    en: IRC bouncer maintained by LinuxServer.io
+    zh: ZNC IRC 反向代理
+    zh-Hant: ZNC IRC 反向代理
+    ja: LinuxServer.io が保守する IRC バウンサー
+    ko: LinuxServer.io에서 유지 관리하는 IRC 바운서
+    ru: IRC-баунсер, поддерживаемый LinuxServer.io
+    ms: Bouncer IRC yang diselenggara oleh LinuxServer.io
+    pt-br: Bouncer IRC mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://wiki.znc.in/ZNC
+  github: https://github.com/linuxserver/docker-znc
+  document: https://docs.linuxserver.io/images/docker-znc/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,30 @@
+name: Davos LinuxServer
+tags:
+- Tool
+title: Davos 文件下载管理
+description: Davos 文件下载管理
+additionalProperties:
+  key: davos-linuxserver
+  name: Davos LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Davos 文件下载管理
+  shortDescEn: Download manager maintained by LinuxServer.io
+  description:
+    en: Download manager maintained by LinuxServer.io
+    zh: Davos 文件下载管理
+    zh-Hant: Davos 檔案下載管理
+    ja: LinuxServer.io が保守するダウンロード管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 다운로드 관리자
+    ru: Менеджер загрузок, поддерживаемый LinuxServer.io
+    ms: Pengurus muat turun yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de downloads mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/linuxserver/docker-davos
+  github: https://github.com/linuxserver/docker-davos
+  document: https://docs.linuxserver.io/images/docker-davos/
+  architectures:
+  - amd64
+  - arm64
