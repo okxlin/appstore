@@ -1,0 +1,30 @@
+name: Nginx LinuxServer
+tags:
+- Website
+title: Nginx Web 服务器
+description: Nginx Web 服务器
+additionalProperties:
+  key: nginx-linuxserver
+  name: Nginx LinuxServer
+  tags:
+  - Website
+  shortDescZh: Nginx Web 服务器
+  shortDescEn: Web server maintained by LinuxServer.io
+  description:
+    en: Web server maintained by LinuxServer.io
+    zh: Nginx Web 服务器
+    zh-Hant: Nginx Web 伺服器
+    ja: LinuxServer.io が保守する Web サーバー
+    ko: LinuxServer.io에서 유지 관리하는 웹 서버
+    ru: Веб-сервер, поддерживаемый LinuxServer.io
+    ms: Pelayan web yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor web mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.nginx.com/
+  github: https://github.com/linuxserver/docker-nginx
+  document: https://docs.linuxserver.io/images/docker-nginx/
+  architectures:
+  - amd64
+  - arm64

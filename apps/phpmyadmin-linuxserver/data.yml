@@ -1,0 +1,30 @@
+name: phpMyAdmin LinuxServer
+tags:
+- Database
+title: phpMyAdmin 数据库管理
+description: phpMyAdmin 数据库管理
+additionalProperties:
+  key: phpmyadmin-linuxserver
+  name: phpMyAdmin LinuxServer
+  tags:
+  - Database
+  shortDescZh: phpMyAdmin 数据库管理
+  shortDescEn: Database administration UI maintained by LinuxServer.io
+  description:
+    en: Database administration UI maintained by LinuxServer.io
+    zh: phpMyAdmin 数据库管理
+    zh-Hant: phpMyAdmin 資料庫管理
+    ja: LinuxServer.io が保守するデータベース管理 UI
+    ko: LinuxServer.io에서 유지 관리하는 데이터베이스 관리 UI
+    ru: Интерфейс администрирования баз данных, поддерживаемый LinuxServer.io
+    ms: UI pentadbiran pangkalan data yang diselenggara oleh LinuxServer.io
+    pt-br: Interface de administracao de bancos de dados mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.phpmyadmin.net/
+  github: https://github.com/linuxserver/docker-phpmyadmin
+  document: https://docs.linuxserver.io/images/docker-phpmyadmin/
+  architectures:
+  - amd64
+  - arm64

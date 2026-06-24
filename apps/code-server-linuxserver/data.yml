@@ -1,0 +1,30 @@
+name: Code Server LinuxServer
+tags:
+- DevOps
+title: Code Server 浏览器 IDE
+description: Code Server 浏览器 IDE
+additionalProperties:
+  key: code-server-linuxserver
+  name: Code Server LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: Code Server 浏览器 IDE
+  shortDescEn: Browser IDE maintained by LinuxServer.io
+  description:
+    en: Browser IDE maintained by LinuxServer.io
+    zh: Code Server 浏览器 IDE
+    zh-Hant: Code Server 瀏覽器 IDE
+    ja: LinuxServer.io が保守するブラウザー IDE
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 IDE
+    ru: Браузерная IDE, поддерживаемая LinuxServer.io
+    ms: IDE pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: IDE no navegador mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://coder.com/
+  github: https://github.com/linuxserver/docker-code-server
+  document: https://docs.linuxserver.io/images/docker-code-server/
+  architectures:
+  - amd64
+  - arm64
