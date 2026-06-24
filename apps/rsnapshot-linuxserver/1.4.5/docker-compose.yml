@@ -1,0 +1,20 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  rsnapshot:
+    image: "linuxserver/rsnapshot:1.4.5"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${SNAPSHOT_PATH}:/.snapshots"
+      - "${DATA_PATH}:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

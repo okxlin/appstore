@@ -1,0 +1,21 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  luanti:
+    image: "linuxserver/luanti:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_GAME_UDP}:30000/udp"
+    volumes:
+      - "${CONFIG_PATH}:/config/.minetest"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - CLI_ARGS=${CLI_ARGS}
+    labels:
+      createdBy: "Apps"

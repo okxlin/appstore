@@ -1,0 +1,30 @@
+name: Luanti LinuxServer
+tags:
+- Game
+title: Luanti 沙盒游戏服务器
+description: Luanti 沙盒游戏服务器
+additionalProperties:
+  key: luanti-linuxserver
+  name: Luanti LinuxServer
+  tags:
+  - Game
+  shortDescZh: Luanti 沙盒游戏服务器
+  shortDescEn: Sandbox game server maintained by LinuxServer.io
+  description:
+    en: Sandbox game server maintained by LinuxServer.io
+    zh: Luanti 沙盒游戏服务器
+    zh-Hant: Luanti 沙盒遊戲伺服器
+    ja: LinuxServer.io が保守するサンドボックスゲームサーバー
+    ko: LinuxServer.io에서 유지 관리하는 샌드박스 게임 서버
+    ru: Сервер песочницы, поддерживаемый LinuxServer.io
+    ms: Pelayan permainan sandbox yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de jogo sandbox mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.luanti.org/
+  github: https://github.com/linuxserver/docker-luanti
+  document: https://docs.linuxserver.io/images/docker-luanti/
+  architectures:
+  - amd64
+  - arm64

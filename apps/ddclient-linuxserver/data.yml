@@ -1,0 +1,30 @@
+name: ddclient LinuxServer
+tags:
+- Tool
+title: ddclient 动态 DNS 更新服务
+description: ddclient 动态 DNS 更新服务
+additionalProperties:
+  key: ddclient-linuxserver
+  name: ddclient LinuxServer
+  tags:
+  - Tool
+  shortDescZh: ddclient 动态 DNS 更新服务
+  shortDescEn: Dynamic DNS updater maintained by LinuxServer.io
+  description:
+    en: Dynamic DNS updater maintained by LinuxServer.io
+    zh: ddclient 动态 DNS 更新服务
+    zh-Hant: ddclient 動態 DNS 更新服務
+    ja: LinuxServer.io が保守する動的 DNS 更新サービス
+    ko: LinuxServer.io에서 유지 관리하는 동적 DNS 업데이트 서비스
+    ru: Сервис обновления динамического DNS, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan kemas kini DNS dinamik yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de atualizacao DNS dinamico mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ddclient.net/
+  github: https://github.com/linuxserver/docker-ddclient
+  document: https://docs.linuxserver.io/images/docker-ddclient/
+  architectures:
+  - amd64
+  - arm64
