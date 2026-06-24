@@ -1,0 +1,30 @@
+name: Folding@home LinuxServer
+tags:
+- Tool
+title: Folding@home 分布式计算客户端
+description: Folding@home 分布式计算客户端
+additionalProperties:
+  key: foldingathome-linuxserver
+  name: Folding@home LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Folding@home 分布式计算客户端
+  shortDescEn: Distributed computing client maintained by LinuxServer.io
+  description:
+    en: Distributed computing client maintained by LinuxServer.io
+    zh: Folding@home 分布式计算客户端
+    zh-Hant: Folding@home 分散式運算用戶端
+    ja: LinuxServer.io が保守する分散コンピューティングクライアント
+    ko: LinuxServer.io에서 유지 관리하는 분산 컴퓨팅 클라이언트
+    ru: Клиент распределенных вычислений, поддерживаемый LinuxServer.io
+    ms: Klien pengkomputeran teragih yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente de computacao distribuida mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://foldingathome.org/
+  github: https://github.com/linuxserver/docker-foldingathome
+  document: https://docs.linuxserver.io/images/docker-foldingathome/
+  architectures:
+  - amd64
+  - arm64

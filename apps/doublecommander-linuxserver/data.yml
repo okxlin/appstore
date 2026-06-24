@@ -1,0 +1,30 @@
+name: Double Commander LinuxServer
+tags:
+- Tool
+title: Double Commander 文件管理桌面
+description: Double Commander 文件管理桌面
+additionalProperties:
+  key: doublecommander-linuxserver
+  name: Double Commander LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Double Commander 文件管理桌面
+  shortDescEn: File manager desktop maintained by LinuxServer.io
+  description:
+    en: File manager desktop maintained by LinuxServer.io
+    zh: Double Commander 文件管理桌面
+    zh-Hant: Double Commander 檔案管理桌面
+    ja: LinuxServer.io が保守するファイル管理デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 파일 관리자 데스크톱
+    ru: Рабочий стол файлового менеджера, поддерживаемый LinuxServer.io
+    ms: Desktop pengurus fail yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de gerenciador de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://doublecmd.sourceforge.io/
+  github: https://github.com/linuxserver/docker-doublecommander
+  document: https://docs.linuxserver.io/images/docker-doublecommander/
+  architectures:
+  - amd64
+  - arm64
