@@ -1,0 +1,182 @@
+additionalProperties:
+  formFields:
+  - default: 1337
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: http://localhost:1337
+    edit: true
+    envKey: BASE_URL
+    labelEn: Base URL
+    labelZh: 基础 URL
+    label:
+      en: Base URL
+      zh: 基础 URL
+      zh-Hant: 基礎 URL
+      ja: ベース URL
+      ko: 기본 URL
+      ru: Базовый URL
+      ms: URL asas
+      pt-br: URL base
+    required: true
+    type: text
+  - default: planka-change-me
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: admin@example.com
+    edit: true
+    envKey: DEFAULT_ADMIN_EMAIL
+    labelEn: Admin email
+    labelZh: 管理员邮箱
+    label:
+      en: Admin email
+      zh: 管理员邮箱
+      zh-Hant: 管理員信箱
+      ja: 管理者メール
+      ko: 관리자 이메일
+      ru: Email администратора
+      ms: E-mel pentadbir
+      pt-br: Email do administrador
+    required: true
+    type: text
+  - default: admin
+    edit: true
+    envKey: DEFAULT_ADMIN_USERNAME
+    labelEn: Admin username
+    labelZh: 管理员用户名
+    label:
+      en: Admin username
+      zh: 管理员用户名
+      zh-Hant: 管理員使用者名稱
+      ja: 管理者ユーザー名
+      ko: 관리자 사용자 이름
+      ru: Имя администратора
+      ms: Nama pengguna pentadbir
+      pt-br: Usuario administrador
+    required: true
+    type: text
+  - default: planka-admin-change-me
+    edit: true
+    envKey: DEFAULT_ADMIN_PASSWORD
+    labelEn: Admin password
+    labelZh: 管理员密码
+    label:
+      en: Admin password
+      zh: 管理员密码
+      zh-Hant: 管理員密碼
+      ja: 管理者パスワード
+      ko: 관리자 비밀번호
+      ru: Пароль администратора
+      ms: Kata laluan pentadbir
+      pt-br: Senha do administrador
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: Planka Admin
+    edit: true
+    envKey: DEFAULT_ADMIN_NAME
+    labelEn: Admin display name
+    labelZh: 管理员显示名
+    label:
+      en: Admin display name
+      zh: 管理员显示名
+      zh-Hant: 管理員顯示名稱
+      ja: 管理者表示名
+      ko: 관리자 표시 이름
+      ru: Отображаемое имя администратора
+      ms: Nama paparan pentadbir
+      pt-br: Nome exibido do administrador
+    required: true
+    type: text
+  - default: change-this-secret-key-32-characters
+    edit: true
+    envKey: SECRET_KEY
+    labelEn: Secret key
+    labelZh: 会话密钥
+    label:
+      en: Secret key
+      zh: 会话密钥
+      zh-Hant: 工作階段密鑰
+      ja: シークレットキー
+      ko: 시크릿 키
+      ru: Секретный ключ
+      ms: Kunci rahsia
+      pt-br: Chave secreta
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ./data/db
+    edit: true
+    envKey: DB_DATA_PATH
+    labelEn: Database data path
+    labelZh: 数据库数据目录
+    label:
+      en: Database data path
+      zh: 数据库数据目录
+      zh-Hant: 資料庫資料目錄
+      ja: データベースデータディレクトリ
+      ko: 데이터베이스 데이터 디렉터리
+      ru: Каталог данных базы
+      ms: Laluan data pangkalan data
+      pt-br: Caminho de dados do banco
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

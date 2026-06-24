@@ -1,0 +1,43 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  planka:
+    image: "linuxserver/planka:2.1.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:1337"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - BASE_URL=${BASE_URL}
+      - DATABASE_URL=postgresql://planka:${DB_PASSWORD}@planka-db:5432/planka
+      - DEFAULT_ADMIN_EMAIL=${DEFAULT_ADMIN_EMAIL}
+      - DEFAULT_ADMIN_USERNAME=${DEFAULT_ADMIN_USERNAME}
+      - DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD}
+      - DEFAULT_ADMIN_NAME=${DEFAULT_ADMIN_NAME}
+      - SECRET_KEY=${SECRET_KEY}
+      - TRUST_PROXY=false
+    depends_on:
+      - planka-db
+    labels:
+      createdBy: "Apps"
+  planka-db:
+    image: "postgres:16-alpine"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DB_DATA_PATH}:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=planka
+      - POSTGRES_USER=planka
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    labels:
+      createdBy: "Apps"

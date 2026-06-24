@@ -1,0 +1,30 @@
+name: Planka LinuxServer
+tags:
+- DevOps
+title: Planka 看板项目管理
+description: Planka 看板项目管理
+additionalProperties:
+  key: planka-linuxserver
+  name: Planka LinuxServer
+  tags:
+  - DevOps
+  shortDescZh: Planka 看板项目管理
+  shortDescEn: Kanban project management maintained by LinuxServer.io
+  description:
+    en: Kanban project management maintained by LinuxServer.io
+    zh: Planka 看板项目管理
+    zh-Hant: Planka 看板專案管理
+    ja: LinuxServer.io が保守するカンバンプロジェクト管理
+    ko: LinuxServer.io에서 유지 관리하는 칸반 프로젝트 관리
+    ru: Канбан-управление проектами, поддерживаемое LinuxServer.io
+    ms: Pengurusan projek Kanban yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciamento de projetos Kanban mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://planka.app/
+  github: https://github.com/linuxserver/docker-planka
+  document: https://docs.linuxserver.io/images/docker-planka/
+  architectures:
+  - amd64
+  - arm64
