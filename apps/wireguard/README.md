@@ -1,5 +1,39 @@
 # WireGuard
 
-[WireGuard®](https://www.wireguard.com/) 是一种极其简单、高速且现代化的 VPN，采用了最先进的加密技术。它旨在比 IPsec 更快、更简单、更轻量，同时避免复杂的配置问题，并在性能上远超 OpenVPN。WireGuard 被设计为通用 VPN，可在嵌入式设备和超级计算机上运行，适用于多种场景。
+## 产品介绍
 
-最初发布于 Linux 内核，如今已支持多平台（Windows、macOS、BSD、iOS、Android），并广泛部署。尽管仍在积极开发中，WireGuard 已被认为是行业内最安全、最易用、最简单的 VPN 解决方案之一。
+WireGuard 是一种简单、快速且现代化的 VPN。该应用使用 LinuxServer.io 维护的 `linuxserver/wireguard` 镜像，保留官方镜像的 `/config` 持久化目录、UDP 服务端口和 Peer 配置生成方式。
+
+## 主要功能
+
+- 部署 WireGuard VPN 服务端
+- 自动生成服务端和 Peer 配置
+- 支持自定义服务端地址、Peer 数量、DNS、内网网段和 Allowed IPs
+- 持久化保存 WireGuard 配置文件
+
+## 访问说明
+
+安装时请将“Host address”改为客户端可访问的公网 IP 或域名。安装完成后，客户端配置会生成在配置目录下的 `peer*` 子目录中，默认 UDP 端口为 `51820`。
+
+## 运行说明
+
+该应用需要 `NET_ADMIN` 和 `SYS_MODULE` 能力，并挂载主机 `/lib/modules`，用于加载和管理 WireGuard 网络能力。请只在可信主机上部署，并确认防火墙已放行所设置的 UDP 端口。
+
+## Introduction
+
+WireGuard is a simple, fast, and modern VPN. This package uses the LinuxServer.io `linuxserver/wireguard` image and keeps its official `/config` persistence path, UDP server port, and peer configuration workflow.
+
+## Features
+
+- Deploy a WireGuard VPN server
+- Generate server and peer configuration files
+- Configure server address, peer count, DNS, internal subnet, and allowed IPs
+- Persist WireGuard configuration files
+
+## Access
+
+Set "Host address" to the public IP address or domain name reachable by clients before installation. After installation, peer configuration files are created under `peer*` directories in the config path. The default UDP port is `51820`.
+
+## Runtime Notes
+
+This app requires `NET_ADMIN` and `SYS_MODULE` capabilities and mounts host `/lib/modules` so WireGuard networking can be managed by the container. Deploy it only on trusted hosts and allow the configured UDP port in the firewall.

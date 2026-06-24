@@ -6,13 +6,13 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${SERVERPORT}:51820/udp"
+      - "${PANEL_APP_PORT_UDP}:51820/udp"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TIME_ZONE}
       - SERVERURL=${SERVERURL}
-      - SERVERPORT=${SERVERPORT}
+      - SERVERPORT=${PANEL_APP_PORT_UDP}
       - PEERS=${PEERS}
       - PEERDNS=${PEERDNS}
       - INTERNAL_SUBNET=${INTERNAL_SUBNET}
@@ -20,7 +20,7 @@ services:
       - PERSISTENTKEEPALIVE_PEERS=${PERSISTENTKEEPALIVE_PEERS}
       - LOG_CONFS=${LOG_CONFS}
     volumes:
-      - ${CONFIG_PATH}:/config
+      - "${CONFIG_PATH}:/config"
       - /lib/modules:/lib/modules
     cap_add:
       - NET_ADMIN
