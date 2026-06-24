@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+  - default: 10200
+    edit: true
+    envKey: PANEL_APP_PORT_WYOMING
+    labelEn: Wyoming Port
+    labelZh: Wyoming 端口
+    label:
+      en: Wyoming Port
+      zh: Wyoming 端口
+      zh-Hant: Wyoming 連接埠
+      ja: Wyoming ポート
+      ko: Wyoming 포트
+      ru: Порт Wyoming
+      ms: Port Wyoming
+      pt-br: Porta Wyoming
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
+  - default: en_US-lessac-medium
+    edit: true
+    envKey: PIPER_VOICE
+    labelEn: Piper voice
+    labelZh: Piper 语音
+    label:
+      en: Piper voice
+      zh: Piper 语音
+      zh-Hant: Piper 語音
+      ja: Piper 音声
+      ko: Piper 음성
+      ru: Голос Piper
+      ms: Suara Piper
+      pt-br: Voz do Piper
+    required: true
+    type: text

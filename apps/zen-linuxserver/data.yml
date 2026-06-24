@@ -1,0 +1,30 @@
+name: Zen Browser LinuxServer
+tags:
+- Tool
+title: Zen Browser 浏览器桌面
+description: Zen Browser 浏览器桌面
+additionalProperties:
+  key: zen-linuxserver
+  name: Zen Browser LinuxServer
+  tags:
+  - Tool
+  shortDescZh: Zen Browser 浏览器桌面
+  shortDescEn: Browser desktop maintained by LinuxServer.io
+  description:
+    en: Browser desktop maintained by LinuxServer.io
+    zh: Zen Browser 浏览器桌面
+    zh-Hant: Zen Browser 瀏覽器桌面
+    ja: LinuxServer.io が保守するブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 데스크톱
+    ru: Браузерный рабочий стол, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://zen-browser.app/
+  github: https://github.com/linuxserver/docker-zen
+  document: https://docs.linuxserver.io/images/docker-zen/
+  architectures:
+  - amd64
+  - arm64

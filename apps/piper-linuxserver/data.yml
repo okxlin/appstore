@@ -1,0 +1,30 @@
+name: Piper LinuxServer
+tags:
+- AI
+title: Piper 文本转语音 Wyoming 服务
+description: Piper 文本转语音 Wyoming 服务
+additionalProperties:
+  key: piper-linuxserver
+  name: Piper LinuxServer
+  tags:
+  - AI
+  shortDescZh: Piper 文本转语音 Wyoming 服务
+  shortDescEn: Text to speech Wyoming service maintained by LinuxServer.io
+  description:
+    en: Text to speech Wyoming service maintained by LinuxServer.io
+    zh: Piper 文本转语音 Wyoming 服务
+    zh-Hant: Piper 文字轉語音 Wyoming 服務
+    ja: LinuxServer.io が保守するテキスト読み上げ Wyoming サービス
+    ko: LinuxServer.io에서 유지 관리하는 텍스트 음성 변환 Wyoming 서비스
+    ru: Сервис синтеза речи Wyoming, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan teks ke pertuturan Wyoming yang diselenggara oleh LinuxServer.io
+    pt-br: Servico Wyoming de texto para fala mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/rhasspy/piper
+  github: https://github.com/linuxserver/docker-piper
+  document: https://docs.linuxserver.io/images/docker-piper/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,30 @@
+name: KiCad LinuxServer
+tags:
+- Tool
+title: KiCad 电子设计桌面
+description: KiCad 电子设计桌面
+additionalProperties:
+  key: kicad-linuxserver
+  name: KiCad LinuxServer
+  tags:
+  - Tool
+  shortDescZh: KiCad 电子设计桌面
+  shortDescEn: Electronic design desktop maintained by LinuxServer.io
+  description:
+    en: Electronic design desktop maintained by LinuxServer.io
+    zh: KiCad 电子设计桌面
+    zh-Hant: KiCad 電子設計桌面
+    ja: LinuxServer.io が保守する電子設計デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 전자 설계 데스크톱
+    ru: Рабочий стол электронного проектирования, поддерживаемый LinuxServer.io
+    ms: Desktop reka bentuk elektronik yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de design eletronico mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.kicad.org/
+  github: https://github.com/linuxserver/docker-kicad
+  document: https://docs.linuxserver.io/images/docker-kicad/
+  architectures:
+  - amd64
+  - arm64
