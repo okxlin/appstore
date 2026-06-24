@@ -1,0 +1,29 @@
+name: DOGWALK LinuxServer
+tags:
+- Tool
+title: DOGWALK 浏览器桌面环境
+description: DOGWALK 浏览器桌面环境
+additionalProperties:
+  key: dogwalk-linuxserver
+  name: DOGWALK LinuxServer
+  tags:
+  - Tool
+  shortDescZh: DOGWALK 浏览器桌面环境
+  shortDescEn: Browser-accessible desktop environment maintained by LinuxServer.io
+  description:
+    en: Browser-accessible desktop environment maintained by LinuxServer.io
+    zh: DOGWALK 浏览器桌面环境
+    zh-Hant: DOGWALK 瀏覽器桌面環境
+    ja: LinuxServer.io が保守するブラウザーアクセス型デスクトップ環境
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 접속 데스크톱 환경
+    ru: Доступная из браузера среда рабочего стола, поддерживаемая LinuxServer.io
+    ms: Persekitaran desktop melalui pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: Ambiente de desktop acessivel pelo navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.linuxserver.io/
+  github: https://github.com/linuxserver/docker-dogwalk
+  document: https://docs.linuxserver.io/images/docker-dogwalk/
+  architectures:
+  - amd64
