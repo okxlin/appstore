@@ -1,0 +1,19 @@
+services:
+  fail2ban:
+    image: "linuxserver/fail2ban:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${HOST_LOG_PATH}:/var/log:ro"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - VERBOSITY=${VERBOSITY}
+    labels:
+      createdBy: "Apps"

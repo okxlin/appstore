@@ -1,0 +1,30 @@
+name: Fail2ban LinuxServer
+tags:
+- Security
+title: Fail2ban 主机入侵防护服务
+description: Fail2ban 主机入侵防护服务
+additionalProperties:
+  key: fail2ban-linuxserver
+  name: Fail2ban LinuxServer
+  tags:
+  - Security
+  shortDescZh: Fail2ban 主机入侵防护服务
+  shortDescEn: Host intrusion prevention service maintained by LinuxServer.io
+  description:
+    en: Host intrusion prevention service maintained by LinuxServer.io
+    zh: Fail2ban 主机入侵防护服务
+    zh-Hant: Fail2ban 主機入侵防護服務
+    ja: LinuxServer.io が保守するホスト侵入防止サービス
+    ko: LinuxServer.io에서 유지 관리하는 호스트 침입 방지 서비스
+    ru: Служба предотвращения вторжений на хост, поддерживаемая LinuxServer.io
+    ms: Perkhidmatan pencegahan pencerobohan hos yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de prevencao de intrusao no host mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: http://www.fail2ban.org/
+  github: https://github.com/linuxserver/docker-fail2ban
+  document: https://docs.linuxserver.io/images/docker-fail2ban/
+  architectures:
+  - amd64
+  - arm64
