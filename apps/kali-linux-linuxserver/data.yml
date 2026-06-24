@@ -1,0 +1,30 @@
+name: Kali Linux LinuxServer
+tags:
+- Security
+title: Kali Linux 浏览器桌面环境
+description: Kali Linux 浏览器桌面环境
+additionalProperties:
+  key: kali-linux-linuxserver
+  name: Kali Linux LinuxServer
+  tags:
+  - Security
+  shortDescZh: Kali Linux 浏览器桌面环境
+  shortDescEn: Kali Linux browser desktop maintained by LinuxServer.io
+  description:
+    en: Kali Linux browser desktop maintained by LinuxServer.io
+    zh: Kali Linux 浏览器桌面环境
+    zh-Hant: Kali Linux 瀏覽器桌面環境
+    ja: LinuxServer.io が保守する Kali Linux ブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Kali Linux 브라우저 데스크톱
+    ru: Браузерный рабочий стол Kali Linux, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar Kali Linux yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop Kali Linux acessivel pelo navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.kali.org/
+  github: https://github.com/linuxserver/docker-kali-linux
+  document: https://docs.linuxserver.io/images/docker-kali-linux/
+  architectures:
+  - amd64
+  - arm64
