@@ -19,6 +19,7 @@ services:
       - TZ=${TIME_ZONE}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-ONLYOFFICE Desktop Editors}
       - LC_ALL=${LC_ALL:-zh_CN.UTF-8}
     shm_size: ${SHM_SIZE}
     labels:
