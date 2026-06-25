@@ -28,6 +28,10 @@ Piper 文本转语音 Wyoming 服务。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | PIPER_VOICE | Piper 语音 | en_US-lessac-medium | 是 |
+| PIPER_LENGTH | 语音语速，低于 1.0 更快，高于 1.0 更慢 | 1.0 | 否 |
+| PIPER_NOISE | 语音变化噪声，过高会降低质量 | 0.667 | 否 |
+| PIPER_NOISEW | 语调节奏噪声，过高可能导致停顿异常 | 0.333 | 否 |
+| PIPER_SPEAKER | 多说话人语音模型的说话人编号 | 0 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

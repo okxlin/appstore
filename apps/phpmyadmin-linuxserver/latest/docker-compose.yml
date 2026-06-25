@@ -17,5 +17,6 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - PMA_ARBITRARY=1
+      - PMA_ABSOLUTE_URI=${PMA_ABSOLUTE_URI:-}
     labels:
       createdBy: "Apps"

@@ -33,3 +33,61 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: "false"
+    edit: true
+    envKey: RATE_LIMIT
+    labelEn: Request rate limit
+    labelZh: 请求限流
+    label:
+      en: Request rate limit
+      zh: 请求限流
+      zh-Hant: 請求限流
+      ja: リクエスト制限
+      ko: 요청 속도 제한
+      ru: Ограничение частоты запросов
+      ms: Had kadar permintaan
+      pt-br: Limite de requisicoes
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: "false"
+    edit: true
+    envKey: WS_FALLBACK
+    labelEn: WebSocket fallback
+    labelZh: WebSocket 回退
+    label:
+      en: WebSocket fallback
+      zh: WebSocket 回退
+      zh-Hant: WebSocket 備援
+      ja: WebSocket フォールバック
+      ko: WebSocket 폴백
+      ru: Резервный WebSocket
+      ms: Sandaran WebSocket
+      pt-br: Fallback WebSocket
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: ''
+    edit: true
+    envKey: RTC_CONFIG
+    labelEn: RTC config file path
+    labelZh: RTC 配置文件路径
+    label:
+      en: RTC config file path
+      zh: RTC 配置文件路径
+      zh-Hant: RTC 設定檔路徑
+      ja: RTC 設定ファイルパス
+      ko: RTC 설정 파일 경로
+      ru: Путь к файлу конфигурации RTC
+      ms: Laluan fail konfigurasi RTC
+      pt-br: Caminho do arquivo de configuracao RTC
+    required: false
+    type: text

@@ -32,6 +32,8 @@ Monica 个人关系管理系统。
 | DB_PASSWORD | 数据库密码 | monica-change-me | 是 |
 | APP_URL | 应用访问 URL | http://localhost | 是 |
 | TRUSTED_PROXIES | 可信代理 | - | 否 |
+| APP_ENV | 应用运行环境 | local | 否 |
+| APP_DISABLE_SIGNUP | 禁用新用户注册 | true | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

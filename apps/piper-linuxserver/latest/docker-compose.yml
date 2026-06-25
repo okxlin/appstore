@@ -17,5 +17,9 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - PIPER_VOICE=${PIPER_VOICE}
+      - PIPER_LENGTH=${PIPER_LENGTH:-1.0}
+      - PIPER_NOISE=${PIPER_NOISE:-0.667}
+      - PIPER_NOISEW=${PIPER_NOISEW:-0.333}
+      - PIPER_SPEAKER=${PIPER_SPEAKER:-0}
     labels:
       createdBy: "Apps"

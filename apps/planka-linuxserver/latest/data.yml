@@ -148,6 +148,43 @@ additionalProperties:
     required: true
     type: password
     rule: paramComplexity
+  - default: "false"
+    edit: true
+    envKey: TRUST_PROXY
+    labelEn: Trust reverse proxy
+    labelZh: 信任反向代理
+    label:
+      en: Trust reverse proxy
+      zh: 信任反向代理
+      zh-Hant: 信任反向代理
+      ja: リバースプロキシを信頼
+      ko: 리버스 프록시 신뢰
+      ru: Доверять обратному прокси
+      ms: Percayai proksi songsang
+      pt-br: Confiar no proxy reverso
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: en-US
+    edit: true
+    envKey: DEFAULT_LANGUAGE
+    labelEn: Default language
+    labelZh: 默认语言
+    label:
+      en: Default language
+      zh: 默认语言
+      zh-Hant: 預設語言
+      ja: 既定の言語
+      ko: 기본 언어
+      ru: Язык по умолчанию
+      ms: Bahasa lalai
+      pt-br: Idioma padrao
+    required: false
+    type: text
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH

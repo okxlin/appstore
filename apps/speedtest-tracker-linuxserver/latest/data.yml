@@ -114,3 +114,19 @@ additionalProperties:
       pt-br: IDs de servidores de teste
     required: false
     type: text
+  - default: 0
+    edit: true
+    envKey: PRUNE_RESULTS_OLDER_THAN
+    labelEn: Result retention days
+    labelZh: 结果保留天数
+    label:
+      en: Result retention days
+      zh: 结果保留天数
+      zh-Hant: 結果保留天數
+      ja: 結果保持日数
+      ko: 결과 보관 일수
+      ru: Дней хранения результатов
+      ms: Hari simpan hasil
+      pt-br: Dias de retencao dos resultados
+    required: false
+    type: number

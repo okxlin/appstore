@@ -31,6 +31,7 @@ BookStack 文档知识库。
 | APP_URL | 应用访问 URL | http://localhost:6875 | 是 |
 | APP_KEY | 应用密钥 | base64:j1wQ2YbRrQ3j0tG5h6v8cYpV1gW9mN4uQ2xZ7aE3sT8= | 是 |
 | DB_PASSWORD | 数据库密码 | bookstack-change-me | 是 |
+| QUEUE_CONNECTION | 异步队列连接 |  | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

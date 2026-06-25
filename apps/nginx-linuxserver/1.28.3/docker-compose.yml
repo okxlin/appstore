@@ -17,5 +17,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - NGINX_AUTORELOAD=${NGINX_AUTORELOAD:-false}
+      - NGINX_AUTORELOAD_WATCHLIST=${NGINX_AUTORELOAD_WATCHLIST:-}
     labels:
       createdBy: "Apps"

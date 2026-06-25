@@ -100,6 +100,48 @@ additionalProperties:
       pt-br: Proxies confiaveis
     required: false
     type: text
+  - default: local
+    edit: true
+    envKey: APP_ENV
+    labelEn: App environment
+    labelZh: 应用运行环境
+    label:
+      en: App environment
+      zh: 应用运行环境
+      zh-Hant: 應用執行環境
+      ja: アプリ実行環境
+      ko: 앱 실행 환경
+      ru: Среда приложения
+      ms: Persekitaran aplikasi
+      pt-br: Ambiente do aplicativo
+    required: false
+    type: select
+    values:
+      - label: local
+        value: local
+      - label: production
+        value: production
+  - default: "true"
+    edit: true
+    envKey: APP_DISABLE_SIGNUP
+    labelEn: Disable signup
+    labelZh: 禁用注册
+    label:
+      en: Disable signup
+      zh: 禁用注册
+      zh-Hant: 停用註冊
+      ja: サインアップを無効化
+      ko: 가입 비활성화
+      ru: Отключить регистрацию
+      ms: Lumpuhkan pendaftaran
+      pt-br: Desativar cadastro
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH

@@ -28,6 +28,7 @@ phpMyAdmin 数据库管理。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| PMA_ABSOLUTE_URI | 反向代理或公网访问时使用的 Web 前端 URL | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

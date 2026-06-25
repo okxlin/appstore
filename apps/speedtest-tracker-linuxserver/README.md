@@ -32,6 +32,7 @@ Speedtest Tracker 网速监测。
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | SPEEDTEST_SCHEDULE | 测速计划 | 0 */6 * * * | 否 |
 | SPEEDTEST_SERVERS | 测速服务器 ID | - | 否 |
+| PRUNE_RESULTS_OLDER_THAN | 测速结果保留天数，0 表示不清理 | 0 | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

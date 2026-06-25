@@ -23,6 +23,7 @@ services:
       - DB_USERNAME=bookstack
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=bookstack
+      - QUEUE_CONNECTION=${QUEUE_CONNECTION:-}
     depends_on:
       - bookstack-db
     labels:

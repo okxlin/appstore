@@ -21,6 +21,9 @@ PairDrop 局域网文件传输。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| RATE_LIMIT | 启用 100 次/5 分钟客户端请求限流 | false | 否 |
+| WS_FALLBACK | WebRTC 不可用时启用 WebSocket 回退 | false | 否 |
+| RTC_CONFIG | 自定义 STUN/TURN JSON 配置文件路径 | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

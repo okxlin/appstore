@@ -18,7 +18,9 @@ services:
       - TZ=${TIME_ZONE}
       - USER_NAME=${USER_NAME}
       - PUBLIC_KEY=${PUBLIC_KEY}
+      - PUBLIC_KEY_URL=${PUBLIC_KEY_URL:-}
       - PASSWORD_ACCESS=false
       - SUDO_ACCESS=false
+      - LOG_STDOUT=${LOG_STDOUT:-false}
     labels:
       createdBy: "Apps"

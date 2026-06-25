@@ -35,6 +35,8 @@ Planka 看板项目管理。
 | DEFAULT_ADMIN_PASSWORD | 管理员密码 | planka-admin-change-me | 是 |
 | DEFAULT_ADMIN_NAME | 管理员显示名 | Planka Admin | 是 |
 | SECRET_KEY | 会话密钥 | change-this-secret-key-32-characters | 是 |
+| TRUST_PROXY | 反向代理部署时信任上游代理头 | false | 否 |
+| DEFAULT_LANGUAGE | 通知和看板的默认语言 | en-US | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

@@ -23,7 +23,8 @@ services:
       - DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD}
       - DEFAULT_ADMIN_NAME=${DEFAULT_ADMIN_NAME}
       - SECRET_KEY=${SECRET_KEY}
-      - TRUST_PROXY=false
+      - TRUST_PROXY=${TRUST_PROXY:-false}
+      - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE:-en-US}
     depends_on:
       - planka-db
     labels:

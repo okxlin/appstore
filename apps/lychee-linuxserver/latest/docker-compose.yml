@@ -23,5 +23,8 @@ services:
       - DB_USERNAME=${DB_USERNAME:-}
       - DB_PASSWORD=${DB_PASSWORD:-}
       - DB_DATABASE=/config/lychee.sqlite
+      - APP_NAME=${APP_NAME:-Lychee}
+      - APP_URL=${APP_URL:-}
+      - TRUSTED_PROXIES=${TRUSTED_PROXIES:-}
     labels:
       createdBy: "Apps"

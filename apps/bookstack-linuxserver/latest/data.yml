@@ -83,6 +83,27 @@ additionalProperties:
     required: true
     type: password
     rule: paramComplexity
+  - default: ''
+    edit: true
+    envKey: QUEUE_CONNECTION
+    labelEn: Async queue connection
+    labelZh: 异步队列连接
+    label:
+      en: Async queue connection
+      zh: 异步队列连接
+      zh-Hant: 非同步佇列連線
+      ja: 非同期キュー接続
+      ko: 비동기 큐 연결
+      ru: Подключение асинхронной очереди
+      ms: Sambungan baris gilir tak segerak
+      pt-br: Conexao de fila assincrona
+    required: false
+    type: select
+    values:
+      - label: disabled
+        value: ''
+      - label: database
+        value: database
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH

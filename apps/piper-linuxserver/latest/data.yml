@@ -49,6 +49,70 @@ additionalProperties:
       pt-br: Voz do Piper
     required: true
     type: text
+  - default: "1.0"
+    edit: true
+    envKey: PIPER_LENGTH
+    labelEn: Voice speaking rate
+    labelZh: 语音语速
+    label:
+      en: Voice speaking rate
+      zh: 语音语速
+      zh-Hant: 語音語速
+      ja: 音声の読み上げ速度
+      ko: 음성 말하기 속도
+      ru: Скорость речи
+      ms: Kadar pertuturan suara
+      pt-br: Velocidade da fala
+    required: false
+    type: text
+  - default: "0.667"
+    edit: true
+    envKey: PIPER_NOISE
+    labelEn: Voice noise
+    labelZh: 语音变化噪声
+    label:
+      en: Voice noise
+      zh: 语音变化噪声
+      zh-Hant: 語音變化噪聲
+      ja: 音声ノイズ
+      ko: 음성 노이즈
+      ru: Шум вариативности голоса
+      ms: Hingar variasi suara
+      pt-br: Ruido de variacao da voz
+    required: false
+    type: text
+  - default: "0.333"
+    edit: true
+    envKey: PIPER_NOISEW
+    labelEn: Cadence noise
+    labelZh: 语调节奏噪声
+    label:
+      en: Cadence noise
+      zh: 语调节奏噪声
+      zh-Hant: 語調節奏噪聲
+      ja: リズムノイズ
+      ko: 운율 노이즈
+      ru: Шум речевого ритма
+      ms: Hingar rentak pertuturan
+      pt-br: Ruido de cadencia
+    required: false
+    type: text
+  - default: "0"
+    edit: true
+    envKey: PIPER_SPEAKER
+    labelEn: Speaker number
+    labelZh: 说话人编号
+    label:
+      en: Speaker number
+      zh: 说话人编号
+      zh-Hant: 說話人編號
+      ja: 話者番号
+      ko: 화자 번호
+      ru: Номер диктора
+      ms: Nombor penutur
+      pt-br: Numero do locutor
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

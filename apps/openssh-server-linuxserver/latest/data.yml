@@ -65,6 +65,23 @@ additionalProperties:
       pt-br: Chave publica SSH
     required: false
     type: text
+  - default: ''
+    edit: true
+    envKey: PUBLIC_KEY_URL
+    labelEn: SSH public key URL
+    labelZh: SSH 公钥 URL
+    label:
+      en: SSH public key URL
+      zh: SSH 公钥 URL
+      zh-Hant: SSH 公鑰 URL
+      ja: SSH 公開鍵 URL
+      ko: SSH 공개 키 URL
+      ru: URL открытого ключа SSH
+      ms: URL kunci awam SSH
+      pt-br: URL da chave publica SSH
+    required: false
+    rule: paramExtUrl
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -81,3 +98,24 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: "false"
+    edit: true
+    envKey: LOG_STDOUT
+    labelEn: Log to stdout
+    labelZh: 日志输出到标准输出
+    label:
+      en: Log to stdout
+      zh: 日志输出到标准输出
+      zh-Hant: 日誌輸出到標準輸出
+      ja: ログを標準出力へ出力
+      ko: 로그를 표준 출력으로 출력
+      ru: Выводить журналы в stdout
+      ms: Log ke stdout
+      pt-br: Enviar logs para stdout
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"

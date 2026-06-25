@@ -29,7 +29,9 @@ OpenSSH SSH 服务。
 | --- | --- | --- | --- |
 | USER_NAME | SSH 用户名 | linuxserver.io | 是 |
 | PUBLIC_KEY | SSH 公钥 | - | 否 |
+| PUBLIC_KEY_URL | 包含 SSH 公钥的 URL | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| LOG_STDOUT | 将 OpenSSH 日志输出到容器标准输出 | false | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

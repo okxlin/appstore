@@ -29,6 +29,8 @@ Nginx Web 服务器。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| NGINX_AUTORELOAD | 配置变更时自动重载 Nginx | false | 否 |
+| NGINX_AUTORELOAD_WATCHLIST | 额外监听目录，使用竖线分隔 | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

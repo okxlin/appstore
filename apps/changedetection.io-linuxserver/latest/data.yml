@@ -49,3 +49,20 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: BASE_URL
+    labelEn: Public base URL
+    labelZh: 公开基础 URL
+    label:
+      en: Public base URL
+      zh: 公开基础 URL
+      zh-Hant: 公開基礎 URL
+      ja: 公開ベース URL
+      ko: 공개 기본 URL
+      ru: Публичный базовый URL
+      ms: URL asas awam
+      pt-br: URL base publica
+    required: false
+    rule: paramExtUrl
+    type: text

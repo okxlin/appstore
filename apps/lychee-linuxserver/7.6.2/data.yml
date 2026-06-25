@@ -65,6 +65,55 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: Lychee
+    edit: true
+    envKey: APP_NAME
+    labelEn: Gallery name
+    labelZh: 相册名称
+    label:
+      en: Gallery name
+      zh: 相册名称
+      zh-Hant: 相簿名稱
+      ja: ギャラリー名
+      ko: 갤러리 이름
+      ru: Название галереи
+      ms: Nama galeri
+      pt-br: Nome da galeria
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: APP_URL
+    labelEn: Public app URL
+    labelZh: 公开访问 URL
+    label:
+      en: Public app URL
+      zh: 公开访问 URL
+      zh-Hant: 公開存取 URL
+      ja: 公開アプリ URL
+      ko: 공개 앱 URL
+      ru: Публичный URL приложения
+      ms: URL aplikasi awam
+      pt-br: URL publico do aplicativo
+    required: false
+    rule: paramExtUrl
+    type: text
+  - default: ''
+    edit: true
+    envKey: TRUSTED_PROXIES
+    labelEn: Trusted proxies
+    labelZh: 可信代理
+    label:
+      en: Trusted proxies
+      zh: 可信代理
+      zh-Hant: 可信代理
+      ja: 信頼済みプロキシ
+      ko: 신뢰할 수 있는 프록시
+      ru: Доверенные прокси
+      ms: Proksi dipercayai
+      pt-br: Proxies confiaveis
+    required: false
+    type: text
   - default: ''
     edit: true
     envKey: DB_HOST
