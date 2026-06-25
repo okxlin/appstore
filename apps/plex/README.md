@@ -38,6 +38,7 @@ Plex 媒体服务器。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIMEZONE | 时区 | Asia/Shanghai | 是 |
+| VERSION | Plex 版本来源 | docker | 是 |
 | PLEX_CLAIM | Plex 认证令牌 | - | 否 |
 
 ## 使用说明
