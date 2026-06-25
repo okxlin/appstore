@@ -90,6 +90,38 @@ additionalProperties:
       value: warning
     - label: error
       value: error
+  - default: /config/flexget.log
+    edit: true
+    envKey: FG_LOG_FILE
+    labelEn: Log file path
+    labelZh: 日志文件路径
+    label:
+      en: Log file path
+      zh: 日志文件路径
+      zh-Hant: 日誌檔案路徑
+      ja: ログファイルパス
+      ko: 로그 파일 경로
+      ru: Путь к файлу журнала
+      ms: Laluan fail log
+      pt-br: Caminho do arquivo de log
+    required: false
+    type: text
+  - default: /config/.flexget/config.yml
+    edit: true
+    envKey: FG_CONFIG_FILE
+    labelEn: Config file path
+    labelZh: 配置文件路径
+    label:
+      en: Config file path
+      zh: 配置文件路径
+      zh-Hant: 設定檔路徑
+      ja: 設定ファイルパス
+      ko: 설정 파일 경로
+      ru: Путь к файлу конфигурации
+      ms: Laluan fail konfigurasi
+      pt-br: Caminho do arquivo de configuracao
+    required: false
+    type: text
   - default: linuxserver-change-me
     edit: true
     envKey: FG_WEBUI_PASSWORD

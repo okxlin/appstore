@@ -18,8 +18,8 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - FG_LOG_LEVEL=${FG_LOG_LEVEL}
-      - FG_LOG_FILE=/config/flexget.log
-      - FG_CONFIG_FILE=/config/.flexget/config.yml
+      - FG_LOG_FILE=${FG_LOG_FILE}
+      - FG_CONFIG_FILE=${FG_CONFIG_FILE}
       - FG_WEBUI_PASSWORD=${FG_WEBUI_PASSWORD}
     labels:
       createdBy: "Apps"

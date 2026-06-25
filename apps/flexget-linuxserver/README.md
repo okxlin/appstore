@@ -48,6 +48,8 @@ FlexGet 自动化工具。
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | FG_LOG_LEVEL | 日志级别 | info | 是 |
+| FG_LOG_FILE | FlexGet 日志文件路径 | /config/flexget.log | 否 |
+| FG_CONFIG_FILE | FlexGet 配置文件路径 | /config/.flexget/config.yml | 否 |
 | FG_WEBUI_PASSWORD | Web UI 密码 | 随机生成 | 是 |
 
 ## 使用说明
