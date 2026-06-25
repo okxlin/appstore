@@ -19,17 +19,23 @@ Wireguard 网络界面。
 | PANEL_APP_PORT_WIREGUARD | Wireguard 端口 | 51820 | 是 |
 
 ## 数据持久化
-- `./data/db:/app/db`
-- `./data/config:/etc/wireguard`
-- `./data/config:/config`
+- `${DATA_PATH}/db:/app/db`
+- `${DATA_PATH}/config:/etc/wireguard`
+- `${DATA_PATH}/config:/config`
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 | WEBUI_USER | 网页用户 | admin | 是 |
 | WEBUI_PWD | 网页密码 | password | 是 |
+| SESSION_SECRET | 会话密钥 | 随机值 | 是 |
+| BASE_PATH | 反向代理子路径 | 空 | 否 |
+| WGUI_LOG_LEVEL | 日志等级 | INFO | 否 |
+| WGUI_MANAGE_START | 容器启动/停止时管理 WireGuard | false | 否 |
+| WGUI_MANAGE_RESTART | 应用配置后自动重启 WireGuard | true | 否 |
 
 ## 使用说明
 新版本的镜像假如遇到网页登录存在问题，或许可以尝试重启应用再登录。

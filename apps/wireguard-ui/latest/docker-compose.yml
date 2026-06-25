@@ -8,21 +8,19 @@ services:
       - NET_ADMIN
     network_mode: service:wireguard
     environment:
-      - SENDGRID_API_KEY
-      - EMAIL_FROM_ADDRESS
-      - EMAIL_FROM_NAME
-      - SESSION_SECRET
+      - SESSION_SECRET=${SESSION_SECRET}
+      - BASE_PATH=${BASE_PATH}
       - WGUI_USERNAME=${WEBUI_USER}
       - WGUI_PASSWORD=${WEBUI_PWD}
-      - WG_CONF_TEMPLATE
-      - WGUI_MANAGE_START=false
-      - WGUI_MANAGE_RESTART=true
+      - WGUI_MANAGE_START=${WGUI_MANAGE_START}
+      - WGUI_MANAGE_RESTART=${WGUI_MANAGE_RESTART}
       - WGUI_SERVER_LISTEN_PORT=${PANEL_APP_PORT_WIREGUARD}
+      - WGUI_LOG_LEVEL=${WGUI_LOG_LEVEL}
       - BIND_ADDRESS=0.0.0.0:${PANEL_APP_PORT_HTTP}
     volumes:
-      - ./data/db:/app/db
-      - ./data/config:/etc/wireguard
-    image: ngoduykhanh/wireguard-ui:latest
+      - ${DATA_PATH}/db:/app/db
+      - ${DATA_PATH}/config:/etc/wireguard
+    image: "ngoduykhanh/wireguard-ui:latest"
     logging:
       driver: json-file
       options:
@@ -38,7 +36,7 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./data/config:/config
+      - ${DATA_PATH}/config:/config
     ports:
       - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
       - "${PANEL_APP_PORT_WIREGUARD}:${PANEL_APP_PORT_WIREGUARD}/udp"

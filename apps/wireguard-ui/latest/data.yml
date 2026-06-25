@@ -34,6 +34,22 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
+      required: true
+      type: text
     - default: "admin"
       edit: true
       envKey: WEBUI_USER
@@ -68,3 +84,106 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: "wireguard-ui-session-secret"
+      edit: true
+      envKey: SESSION_SECRET
+      labelEn: Session secret
+      labelZh: 会话密钥
+      label:
+        en: 'Session secret'
+        zh: '会话密钥'
+        zh-Hant: '會話密鑰'
+        ja: 'セッションシークレット'
+        ko: '세션 시크릿'
+        ru: 'Секрет сессии'
+        ms: 'Rahsia sesi'
+        pt-br: 'Segredo de sessao'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: BASE_PATH
+      labelEn: Reverse proxy base path
+      labelZh: 反向代理子路径
+      label:
+        en: 'Reverse proxy base path'
+        zh: '反向代理子路径'
+        zh-Hant: '反向代理子路徑'
+        ja: 'リバースプロキシのベースパス'
+        ko: '리버스 프록시 기본 경로'
+        ru: 'Базовый путь обратного прокси'
+        ms: 'Laluan asas proksi songsang'
+        pt-br: 'Caminho base do proxy reverso'
+      required: false
+      type: text
+    - default: "INFO"
+      edit: true
+      envKey: WGUI_LOG_LEVEL
+      labelEn: Log level
+      labelZh: 日志等级
+      label:
+        en: 'Log level'
+        zh: '日志等级'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 레벨'
+        ru: 'Уровень журнала'
+        ms: 'Tahap log'
+        pt-br: 'Nivel de log'
+      required: false
+      type: select
+      values:
+        - label: "DEBUG"
+          value: "DEBUG"
+        - label: "INFO"
+          value: "INFO"
+        - label: "WARN"
+          value: "WARN"
+        - label: "ERROR"
+          value: "ERROR"
+        - label: "OFF"
+          value: "OFF"
+    - default: "false"
+      edit: true
+      envKey: WGUI_MANAGE_START
+      labelEn: Manage WireGuard on start
+      labelZh: 启停时管理 WireGuard
+      label:
+        en: 'Manage WireGuard on start'
+        zh: '启停时管理 WireGuard'
+        zh-Hant: '啟停時管理 WireGuard'
+        ja: '起動時に WireGuard を管理'
+        ko: '시작 시 WireGuard 관리'
+        ru: 'Управлять WireGuard при запуске'
+        ms: 'Urus WireGuard semasa mula'
+        pt-br: 'Gerenciar WireGuard ao iniciar'
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: WGUI_MANAGE_RESTART
+      labelEn: Restart WireGuard after changes
+      labelZh: 配置变更后重启 WireGuard
+      label:
+        en: 'Restart WireGuard after changes'
+        zh: '配置变更后重启 WireGuard'
+        zh-Hant: '配置變更後重啟 WireGuard'
+        ja: '変更後に WireGuard を再起動'
+        ko: '변경 후 WireGuard 재시작'
+        ru: 'Перезапускать WireGuard после изменений'
+        ms: 'Mulakan semula WireGuard selepas perubahan'
+        pt-br: 'Reiniciar WireGuard apos alteracoes'
+      required: false
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
