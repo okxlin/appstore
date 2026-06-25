@@ -30,12 +30,16 @@ OpenSSH SSH 服务。
 | USER_NAME | SSH 用户名 | linuxserver.io | 是 |
 | PUBLIC_KEY | SSH 公钥 | - | 否 |
 | PUBLIC_KEY_URL | 包含 SSH 公钥的 URL | - | 否 |
+| PASSWORD_ACCESS | 允许 SSH 密码登录 | false | 否 |
+| SUDO_ACCESS | 允许 SSH 用户 sudo | false | 否 |
+| USER_PASSWORD | SSH/sudo 密码 | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | LOG_STDOUT | 将 OpenSSH 日志输出到容器标准输出 | false | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
 - 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 启用 `PASSWORD_ACCESS` 或 `SUDO_ACCESS` 时建议同时填写 `USER_PASSWORD`；仅启用 `SUDO_ACCESS` 且未设置密码时，上游容器会允许免密 sudo。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
