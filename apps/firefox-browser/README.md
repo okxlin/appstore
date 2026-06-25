@@ -31,6 +31,7 @@
 | HTTP_USER | 访问用户 | user | 是 |
 | HTTP_PWD | 访问密码 | Password | 是 |
 | MEM_USE | 共享内存占用(1gb) | 512m | 是 |
+| FIREFOX_CLI | 启动 URL 或 CLI 参数 | https://www.linuxserver.io/ | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明

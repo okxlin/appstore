@@ -28,6 +28,7 @@ Mullvad Browser 隐私浏览器桌面。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| LOCAL_NET | 本地网络 CIDR | 192.168.0.0/16 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |

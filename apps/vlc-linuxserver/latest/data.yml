@@ -50,6 +50,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: "--no-qt-minimal-view"
+    edit: true
+    envKey: VLC_CLI
+    labelEn: VLC CLI flags
+    labelZh: VLC 命令行参数
+    label:
+      en: VLC CLI flags
+      zh: VLC 命令行参数
+      zh-Hant: VLC 命令列參數
+      ja: VLC CLI フラグ
+      ko: VLC CLI 플래그
+      ru: Параметры CLI VLC
+      ms: Bendera CLI VLC
+      pt-br: Flags CLI do VLC
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

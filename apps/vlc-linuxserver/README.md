@@ -28,6 +28,7 @@ VLC 媒体播放器桌面。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| VLC_CLI | VLC CLI 参数 | --no-qt-minimal-view | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |

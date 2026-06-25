@@ -49,6 +49,7 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "CONNECTION_TOKEN" "$(generate_secret)" true
+  ensure_env_default "CODE_ARGS" "" false
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

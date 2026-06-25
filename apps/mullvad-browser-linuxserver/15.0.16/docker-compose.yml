@@ -17,6 +17,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - LOCAL_NET=${LOCAL_NET:-192.168.0.0/16}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
       - LC_ALL=${LC_ALL}

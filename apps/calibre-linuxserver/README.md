@@ -29,6 +29,7 @@ Calibre 电子书桌面服务。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| CLI_ARGS | Calibre 启动参数 | 空 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |

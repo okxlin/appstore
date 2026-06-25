@@ -27,6 +27,7 @@ VSCodium Web 代码编辑器。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| CODE_ARGS | VSCodium CLI 参数 | 空 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CONNECTION_TOKEN | Web UI 访问令牌 | 随机生成 | 是 |
 

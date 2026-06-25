@@ -67,6 +67,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: ""
+    edit: true
+    envKey: CLI_ARGS
+    labelEn: Calibre CLI arguments
+    labelZh: Calibre 命令行参数
+    label:
+      en: Calibre CLI arguments
+      zh: Calibre 命令行参数
+      zh-Hant: Calibre 命令列參數
+      ja: Calibre CLI 引数
+      ko: Calibre CLI 인수
+      ru: Аргументы CLI Calibre
+      ms: Argumen CLI Calibre
+      pt-br: Argumentos CLI do Calibre
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

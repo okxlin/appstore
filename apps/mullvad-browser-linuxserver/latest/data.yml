@@ -50,6 +50,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: 192.168.0.0/16
+    edit: true
+    envKey: LOCAL_NET
+    labelEn: Local network CIDR
+    labelZh: 本地网络 CIDR
+    label:
+      en: Local network CIDR
+      zh: 本地网络 CIDR
+      zh-Hant: 本機網路 CIDR
+      ja: ローカルネットワーク CIDR
+      ko: 로컬 네트워크 CIDR
+      ru: CIDR локальной сети
+      ms: CIDR rangkaian tempatan
+      pt-br: CIDR da rede local
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

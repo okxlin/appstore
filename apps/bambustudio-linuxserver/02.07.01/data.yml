@@ -50,6 +50,27 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: "true"
+    edit: true
+    envKey: DARK_MODE
+    labelEn: Dark mode
+    labelZh: 深色模式
+    label:
+      en: Dark mode
+      zh: 深色模式
+      zh-Hant: 深色模式
+      ja: ダークモード
+      ko: 다크 모드
+      ru: Темный режим
+      ms: Mod gelap
+      pt-br: Modo escuro
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

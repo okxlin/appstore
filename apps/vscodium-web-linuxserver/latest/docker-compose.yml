@@ -16,6 +16,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - CODE_ARGS=${CODE_ARGS:-}
       - CONNECTION_TOKEN=${CONNECTION_TOKEN}
     labels:
       createdBy: "Apps"

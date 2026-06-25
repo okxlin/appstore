@@ -33,6 +33,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: ""
+    edit: true
+    envKey: CODE_ARGS
+    labelEn: VSCodium CLI arguments
+    labelZh: VSCodium 命令行参数
+    label:
+      en: VSCodium CLI arguments
+      zh: VSCodium 命令行参数
+      zh-Hant: VSCodium 命令列參數
+      ja: VSCodium CLI 引数
+      ko: VSCodium CLI 인수
+      ru: Аргументы CLI VSCodium
+      ms: Argumen CLI VSCodium
+      pt-br: Argumentos CLI do VSCodium
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
