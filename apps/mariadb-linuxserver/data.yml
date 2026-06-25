@@ -1,0 +1,30 @@
+name: MariaDB
+tags:
+- Database
+title: MariaDB 数据库服务
+description: MariaDB 数据库服务
+additionalProperties:
+  key: mariadb-linuxserver
+  name: MariaDB
+  tags:
+  - Database
+  shortDescZh: MariaDB 数据库服务
+  shortDescEn: MariaDB database service maintained by LinuxServer.io
+  description:
+    en: MariaDB database service maintained by LinuxServer.io
+    zh: MariaDB 数据库服务
+    zh-Hant: MariaDB 資料庫服務
+    ja: LinuxServer.io が保守する MariaDB データベースサービス
+    ko: LinuxServer.io에서 유지 관리하는 MariaDB 데이터베이스 서비스
+    ru: Служба базы данных MariaDB, поддерживаемая LinuxServer.io
+    ms: Perkhidmatan pangkalan data MariaDB yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de banco de dados MariaDB mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://mariadb.org/
+  github: https://github.com/linuxserver/docker-mariadb
+  document: https://docs.linuxserver.io/images/docker-mariadb/
+  architectures:
+  - amd64
+  - arm64

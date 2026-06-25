@@ -1,0 +1,166 @@
+additionalProperties:
+  formFields:
+  - default: /var/run/docker.sock
+    edit: true
+    envKey: DOCKER_SOCK_PATH
+    labelEn: Docker socket path
+    labelZh: Docker Socket 路径
+    label:
+      en: Docker socket path
+      zh: Docker Socket 路径
+      zh-Hant: Docker Socket 路徑
+      ja: Docker ソケットパス
+      ko: Docker 소켓 경로
+      ru: Путь к сокету Docker
+      ms: Laluan soket Docker
+      pt-br: Caminho do socket Docker
+    required: true
+    type: text
+  - default: info
+    edit: true
+    envKey: LOG_LEVEL
+    labelEn: Log level
+    labelZh: 日志级别
+    label:
+      en: Log level
+      zh: 日志级别
+      zh-Hant: 日誌層級
+      ja: ログレベル
+      ko: 로그 수준
+      ru: Уровень журнала
+      ms: Tahap log
+      pt-br: Nivel de log
+    required: true
+    type: select
+    values:
+    - label: debug
+      value: debug
+    - label: info
+      value: info
+    - label: notice
+      value: notice
+    - label: warning
+      value: warning
+    - label: err
+      value: err
+  - default: "0"
+    edit: true
+    envKey: CONTAINERS
+    labelEn: Containers endpoint
+    labelZh: 容器接口
+    label:
+      en: Containers endpoint
+      zh: 容器接口
+      zh-Hant: 容器介面
+      ja: コンテナーエンドポイント
+      ko: 컨테이너 엔드포인트
+      ru: Раздел containers API
+      ms: Titik akhir kontena
+      pt-br: Endpoint de containers
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: IMAGES
+    labelEn: Images endpoint
+    labelZh: 镜像接口
+    label:
+      en: Images endpoint
+      zh: 镜像接口
+      zh-Hant: 映像介面
+      ja: イメージエンドポイント
+      ko: 이미지 엔드포인트
+      ru: Раздел images API
+      ms: Titik akhir imej
+      pt-br: Endpoint de imagens
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: NETWORKS
+    labelEn: Networks endpoint
+    labelZh: 网络接口
+    label:
+      en: Networks endpoint
+      zh: 网络接口
+      zh-Hant: 網路介面
+      ja: ネットワークエンドポイント
+      ko: 네트워크 엔드포인트
+      ru: Раздел networks API
+      ms: Titik akhir rangkaian
+      pt-br: Endpoint de redes
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: VOLUMES
+    labelEn: Volumes endpoint
+    labelZh: 卷接口
+    label:
+      en: Volumes endpoint
+      zh: 卷接口
+      zh-Hant: 磁碟區介面
+      ja: ボリュームエンドポイント
+      ko: 볼륨 엔드포인트
+      ru: Раздел volumes API
+      ms: Titik akhir volum
+      pt-br: Endpoint de volumes
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: POST
+    labelEn: Allow POST API
+    labelZh: 允许 POST API
+    label:
+      en: Allow POST API
+      zh: 允许 POST API
+      zh-Hant: 允許 POST API
+      ja: POST API を許可
+      ko: POST API 허용
+      ru: Разрешить POST API
+      ms: Benarkan API POST
+      pt-br: Permitir API POST
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

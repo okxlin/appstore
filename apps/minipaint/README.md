@@ -1,63 +1,28 @@
 # miniPaint
 
-Online image editor lets you create, edit images using HTML5 technologies.
-No need to buy, download, install or have obsolete flash. No ads.
-Key features: layers, filters, HTML5, open source, Photoshop alternative.
+## 应用简介
+在线图像编辑器，可让您使用HTML5技术创建，编辑图像。
 
-miniPaint operates directly in the browser. You can create images, paste from the clipboard (ctrl+v) 
-or upload from the computer (using menu or drag & drop). Nothing will be sent to any server. Everything stays in your 
-browser. 
+英文说明：Online image editor lets you create, edit images using HTML5 technologies.
 
-## URL:
-**https://viliusle.github.io/miniPaint/**
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Preview:
-![miniPaint](https://raw.githubusercontent.com/viliusle/miniPaint/master/images/preview.gif)
-(generated using miniPaint)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40127 | 是 |
 
-**Change log:** [/miniPaint/releases](https://github.com/viliusle/miniPaint/releases)
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Browser Support
-- Chrome
-- Firefox
-- Opera
-- Edge
-- Safari
-
-## Features
-
-- **Files**: open images, directories, URL, data URL, drag and drop, save (PNG, JPG, BMP, WEBP, animated GIF, TIFF, JSON 
-(layers data), print.
-- **Edit**: Undo, cut, copy, paste, selection, paste from clipboard.
-- **Image**: information, EXIF, trim, zoom, resize (Hermite resample, default resize), rotate, flip, 
-color corrections (brightness, contrast, hue, saturation, luminance), auto adjust colors, grid, histogram, negative.
-- **Layers**: multiple layers system, differences, merge, flatten, Transparency support.
-- **Effects**: Black and White, Blur (box, Gaussian, stack, zoom), Bulge/Pinch, Denoise, Desaturate, Dither, Dot Screen, 
-Edge, Emboss, Enrich, Gamma, Grains, GrayScale, Heatmap, JPG Compression, Mosaic, Oil, Sepia, Sharpen, Solarize, 
-Tilt Shift, Vignette, Vibrance, Vintage, Blueprint, Night Vision, Pencil, also Instagram Filters: 1977, Aden, Clarendon, 
-Gingham, Inkwell, Lo-fi, Toaster, Valencia, X-Pro II.
-- **Tools**: pencil, brush, magic wand, erase, fill, color picker, letters, crop, blur, sharpen, desaturate, clone,
- borders, sprites, key-points, color zoom, replace color, restore alpha, content fill.
-- **Help**: keyboard shortcuts, translations.
-
-## Embed
-To embed this app in the other page, use this HTML code:
-
-    <iframe style="width:100%; height:1000px;" id="miniPaint" src="https://viliusle.github.io/miniPaint/" allow="camera"></iframe>
-
-## Build instructions
-See [Wiki > Build instructions](https://github.com/viliusle/miniPaint/wiki/Build-instructions)
-
-## Wiki
-See [Wiki](https://github.com/viliusle/miniPaint/wiki)
-
-## Contributors
-<a align="center" href="https://github.com/viliusle/miniPaint/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=viliusle/miniPaint" />
-</a>
-
-## License
-MIT License
-
-## Support
-Please use the GitHub issues for support, features, issues or use mail www.viliusl@gmail.com for contacts.
+## 参考资料
+- 官网: <https://hub.docker.com/r/pfav/minipaint>
+- 文档: <https://github.com/viliusle/miniPaint/wiki>
+- 源码: <https://github.com/viliusle/miniPaint>

@@ -1,0 +1,30 @@
+name: ProjectSend
+tags:
+- Storage
+title: ProjectSend 文件分享门户
+description: ProjectSend 文件分享门户
+additionalProperties:
+  key: projectsend-linuxserver
+  name: ProjectSend
+  tags:
+  - Storage
+  shortDescZh: ProjectSend 文件分享门户
+  shortDescEn: File sharing portal maintained by LinuxServer.io
+  description:
+    en: File sharing portal maintained by LinuxServer.io
+    zh: ProjectSend 文件分享门户
+    zh-Hant: ProjectSend 檔案分享入口網站
+    ja: LinuxServer.io が保守するファイル共有ポータル
+    ko: LinuxServer.io에서 유지 관리하는 파일 공유 포털
+    ru: Портал обмена файлами, поддерживаемый LinuxServer.io
+    ms: Portal perkongsian fail yang diselenggara oleh LinuxServer.io
+    pt-br: Portal de compartilhamento de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.projectsend.org/
+  github: https://github.com/linuxserver/docker-projectsend
+  document: https://docs.linuxserver.io/images/docker-projectsend/
+  architectures:
+  - amd64
+  - arm64

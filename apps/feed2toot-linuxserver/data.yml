@@ -1,0 +1,30 @@
+name: Feed2toot
+tags:
+- Tool
+title: Feed2toot RSS 到 Mastodon 转发
+description: Feed2toot RSS 到 Mastodon 转发
+additionalProperties:
+  key: feed2toot-linuxserver
+  name: Feed2toot
+  tags:
+  - Tool
+  shortDescZh: Feed2toot RSS 到 Mastodon 转发
+  shortDescEn: RSS to Mastodon poster maintained by LinuxServer.io
+  description:
+    en: RSS to Mastodon poster maintained by LinuxServer.io
+    zh: Feed2toot RSS 到 Mastodon 转发
+    zh-Hant: Feed2toot RSS 到 Mastodon 轉發
+    ja: LinuxServer.io が保守する RSS から Mastodon への投稿ツール
+    ko: LinuxServer.io에서 유지 관리하는 RSS-Mastodon 게시 도구
+    ru: Публикатор RSS в Mastodon, поддерживаемый LinuxServer.io
+    ms: Penghantar RSS ke Mastodon yang diselenggara oleh LinuxServer.io
+    pt-br: Publicador de RSS para Mastodon mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://gitlab.com/chaica/feed2toot
+  github: https://github.com/linuxserver/docker-feed2toot
+  document: https://docs.linuxserver.io/deprecated_images/docker-feed2toot/
+  architectures:
+  - amd64
+  - arm64

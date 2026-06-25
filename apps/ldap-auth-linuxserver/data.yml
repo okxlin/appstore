@@ -1,0 +1,30 @@
+name: LDAP Auth
+tags:
+- Tool
+title: LDAP Auth 认证服务
+description: LDAP Auth 认证服务
+additionalProperties:
+  key: ldap-auth-linuxserver
+  name: LDAP Auth
+  tags:
+  - Tool
+  shortDescZh: LDAP Auth 认证服务
+  shortDescEn: LDAP authentication service maintained by LinuxServer.io
+  description:
+    en: LDAP authentication service maintained by LinuxServer.io
+    zh: LDAP Auth 认证服务
+    zh-Hant: LDAP Auth 認證服務
+    ja: LinuxServer.io が保守する LDAP 認証サービス
+    ko: LinuxServer.io에서 유지 관리하는 LDAP 인증 서비스
+    ru: Сервис LDAP-аутентификации, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan pengesahan LDAP yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de autenticacao LDAP mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/linuxserver/docker-ldap-auth
+  github: https://github.com/linuxserver/docker-ldap-auth
+  document: https://docs.linuxserver.io/images/docker-ldap-auth/
+  architectures:
+  - amd64
+  - arm64

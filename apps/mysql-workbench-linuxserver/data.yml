@@ -1,0 +1,30 @@
+name: MySQL Workbench
+tags:
+- Database
+title: MySQL Workbench 数据库桌面
+description: MySQL Workbench 数据库桌面
+additionalProperties:
+  key: mysql-workbench-linuxserver
+  name: MySQL Workbench
+  tags:
+  - Database
+  shortDescZh: MySQL Workbench 数据库桌面
+  shortDescEn: Database administration desktop maintained by LinuxServer.io
+  description:
+    en: Database administration desktop maintained by LinuxServer.io
+    zh: MySQL Workbench 数据库桌面
+    zh-Hant: MySQL Workbench 資料庫桌面
+    ja: LinuxServer.io が保守するデータベース管理デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 데이터베이스 관리 데스크톱
+    ru: Рабочий стол администрирования баз данных, поддерживаемый LinuxServer.io
+    ms: Desktop pentadbiran pangkalan data yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de administracao de banco de dados mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.mysql.com/products/workbench/
+  github: https://github.com/linuxserver/docker-mysql-workbench
+  document: https://docs.linuxserver.io/images/docker-mysql-workbench/
+  architectures:
+  - amd64
+  - arm64

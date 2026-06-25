@@ -1,0 +1,30 @@
+name: FreeCAD
+tags:
+- Tool
+title: FreeCAD 参数化 CAD 桌面
+description: FreeCAD 参数化 CAD 桌面
+additionalProperties:
+  key: freecad-linuxserver
+  name: FreeCAD
+  tags:
+  - Tool
+  shortDescZh: FreeCAD 参数化 CAD 桌面
+  shortDescEn: Parametric CAD desktop maintained by LinuxServer.io
+  description:
+    en: Parametric CAD desktop maintained by LinuxServer.io
+    zh: FreeCAD 参数化 CAD 桌面
+    zh-Hant: FreeCAD 參數化 CAD 桌面
+    ja: LinuxServer.io が保守するパラメトリック CAD デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 파라메트릭 CAD 데스크톱
+    ru: Рабочий стол параметрического CAD, поддерживаемый LinuxServer.io
+    ms: Desktop CAD parametrik yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop CAD parametrico mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.freecad.org/
+  github: https://github.com/linuxserver/docker-freecad
+  document: https://docs.linuxserver.io/images/docker-freecad/
+  architectures:
+  - amd64
+  - arm64

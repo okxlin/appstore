@@ -1,0 +1,30 @@
+name: Home Assistant
+tags:
+- Tool
+title: Home Assistant 智能家居平台
+description: Home Assistant 智能家居平台
+additionalProperties:
+  key: homeassistant-linuxserver
+  name: Home Assistant
+  tags:
+  - Tool
+  shortDescZh: Home Assistant 智能家居平台
+  shortDescEn: Smart home platform maintained by LinuxServer.io
+  description:
+    en: Smart home platform maintained by LinuxServer.io
+    zh: Home Assistant 智能家居平台
+    zh-Hant: Home Assistant 智慧家庭平台
+    ja: LinuxServer.io が保守するスマートホームプラットフォーム
+    ko: LinuxServer.io에서 유지 관리하는 스마트 홈 플랫폼
+    ru: Платформа умного дома, поддерживаемая LinuxServer.io
+    ms: Platform rumah pintar yang diselenggara oleh LinuxServer.io
+    pt-br: Plataforma de casa inteligente mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.home-assistant.io/
+  github: https://github.com/linuxserver/docker-homeassistant
+  document: https://docs.linuxserver.io/images/docker-homeassistant/
+  architectures:
+  - amd64
+  - arm64

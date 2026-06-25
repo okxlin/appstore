@@ -1,0 +1,30 @@
+name: PPSSPP
+tags:
+- Game
+title: PPSSPP PSP 模拟器桌面
+description: PPSSPP PSP 模拟器桌面
+additionalProperties:
+  key: ppsspp-linuxserver
+  name: PPSSPP
+  tags:
+  - Game
+  shortDescZh: PPSSPP PSP 模拟器桌面
+  shortDescEn: PSP emulator desktop maintained by LinuxServer.io
+  description:
+    en: PSP emulator desktop maintained by LinuxServer.io
+    zh: PPSSPP PSP 模拟器桌面
+    zh-Hant: PPSSPP PSP 模擬器桌面
+    ja: LinuxServer.io が保守する PSP エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 PSP 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора PSP, поддерживаемый LinuxServer.io
+    ms: Desktop emulator PSP yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador PSP mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.ppsspp.org/
+  github: https://github.com/linuxserver/docker-ppsspp
+  document: https://docs.linuxserver.io/images/docker-ppsspp/
+  architectures:
+  - amd64
+  - arm64

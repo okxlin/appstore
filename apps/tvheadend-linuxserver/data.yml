@@ -1,0 +1,30 @@
+name: TVHeadend
+tags:
+- Media
+title: TVHeadend 电视流媒体服务
+description: TVHeadend 电视流媒体服务
+additionalProperties:
+  key: tvheadend-linuxserver
+  name: TVHeadend
+  tags:
+  - Media
+  shortDescZh: TVHeadend 电视流媒体服务
+  shortDescEn: TV streaming server maintained by LinuxServer.io
+  description:
+    en: TV streaming server maintained by LinuxServer.io
+    zh: TVHeadend 电视流媒体服务
+    zh-Hant: TVHeadend 電視串流服務
+    ja: LinuxServer.io が保守するテレビストリーミングサーバー
+    ko: LinuxServer.io에서 유지 관리하는 TV 스트리밍 서버
+    ru: Сервер ТВ-трансляций, поддерживаемый LinuxServer.io
+    ms: Pelayan penstriman TV yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de streaming de TV mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://tvheadend.org/
+  github: https://github.com/linuxserver/docker-tvheadend
+  document: https://docs.linuxserver.io/images/docker-tvheadend/
+  architectures:
+  - amd64
+  - arm64

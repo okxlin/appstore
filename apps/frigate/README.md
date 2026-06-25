@@ -1,23 +1,45 @@
 # Frigate
 
-Frigate 是一个为 [Home Assistant](https://www.home-assistant.io) 设计的完整本地 NVR，具备 AI 物体检测功能。它使用 OpenCV 和 TensorFlow 实现 IP 摄像头的实时物体检测。
+## 应用简介
+一个开源的实时视频监控系统。
 
+英文说明：NVR With Realtime Object Detection for IP Cameras.
 
-- 与 Home Assistant 的紧密集成，通过 [自定义组件](https://github.com/blakeblackshear/frigate-hass-integration) 实现
-- 旨在通过仅在必要时和适当位置寻找物体来最小化资源使用并最大化性能
-- 大量利用多进程，强调实时性而非处理每一帧
-- 使用非常低开销的运动检测来确定何时进行物体检测
-- TensorFlow 的物体检测在单独的进程中运行，以实现最大 FPS
-- 通过 MQTT 进行通信，方便与其他系统集成
-- 基于检测到的物体记录视频并设置保留策略
-- 24/7 录制
-- 通过 RTSP 进行重流，以减少对摄像头的连接数量
-- 支持 WebRTC 和 MSE，实现低延迟实时视图
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`stable`、`0.17.1`、`0.17.1-standard-arm64`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 文档
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTPS | 端口 | 8971 | 是 |
+| RTSP_PORT | RTSP 端口 | 8554 | 是 |
+| WEBRTC_TCP_PORT | WebRTC TCP 端口 | 8555 | 是 |
+| WEBRTC_UDP_PORT | WebRTC UDP 端口 | 8555 | 是 |
 
-查看文档：[https://docs.frigate.video](https://docs.frigate.video)
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置路径 | ./data/config | 是 |
+| STORAGE_PATH | 存储路径 | ./data/storage | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PRIVILEGED_MODE | 特权模式 | true | 是 |
+| SHM_SIZE | 共享内存大小 | 64mb | 是 |
+| TMPFS_SIZE | Tmpfs 大小 | 1000000000 | 是 |
+| FRIGATE_RTSP_PASSWORD | RTSP 密码 | password | 是 |
 
 ## 使用说明
-
 用户名与密码通过查看容器日志获取
+
+## 参考资料
+- 官网: <https://frigate.video>
+- 文档: <https://frigate.video/docs/>
+- 源码: <https://github.com/blakeblackshear/frigate>

@@ -1,26 +1,37 @@
-# Nezha Dashboard
+# 哪吒监控 - Dashboard
 
-Nezha Dashboard 是一款强大的开源监控和可视化工具，主要用于实时监控服务器、应用性能、网络状况等，并提供直观的图形化展示。
+## 应用简介
+哪吒监控 - Dashboard。
 
-## 主要功能：
+英文说明：Nezha Monitoring - Dashboard.
 
-- **实时监控**：Nezha Dashboard 提供实时的服务器资源使用情况，如 CPU、内存、磁盘、网络等，帮助用户及时发现并处理性能问题。
-- **多设备支持**：支持监控多个设备的状态，可以集中管理多台服务器的数据。
-- **自定义告警**：用户可以设置自定义告警规则，当监控项超出预设值时，系统会发送告警通知，帮助及时处理问题。
-- **历史数据存储与查看**：Nezha Dashboard 会记录监控数据，用户可以回溯查看历史性能趋势，方便进行长期分析和优化。
-- **支持多种监控插件**：Nezha Dashboard 支持集成多种监控插件，扩展性强，可以根据需求添加对特定应用或服务的监控。
-- **可视化图表**：数据通过易读的图表形式展示，帮助用户直观理解系统性能与健康状态。
-- **轻量级部署**：Nezha Dashboard 可以轻量级部署，资源占用低，非常适合中小型项目或个人开发者使用。
-- **多平台支持**：支持 Linux、Windows 等多种操作系统，适应性强。
-- **用户权限管理**：提供细粒度的用户权限控制，确保监控数据的安全性。
-- **开放API**：提供 RESTful API，方便与其他系统集成。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.20.13`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-Nezha Dashboard 是一个高度可定制、可扩展的监控平台，适合不同规模的用户，帮助运维人员和开发者及时掌握系统健康状态，进行系统调优与性能管理。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40308 | 是 |
+| PANEL_APP_PORT_GRPC | GRPC 端口 | 5555 | 是 |
+
+## 数据持久化
+- `./data:/dashboard/data`
+- `./config.yaml:/dashboard/data/config.yaml`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 使用说明
-
 可以通过编辑目录下的配置文件来修改一些配置。
 例如：
 ```
 /opt/1panel/apps/local/nezha-dashboard/nezha-dashboard/config.yaml
 ```
+
+## 参考资料
+- 官网: <https://nezha.wiki>
+- 文档: <https://nezha.wiki/guide/dashboard.html>
+- 源码: <https://github.com/naiba/nezha>

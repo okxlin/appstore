@@ -1,19 +1,27 @@
 # Luxirty Search
 
-[search.luxirty.com](https://search.luxirty.com)
+## 应用简介
+一个搜索引擎，基于 Google。
 
-一个搜索引擎，基于 Google，屏蔽内容农场，无广告，无跟踪，干净，简洁，快。
+英文说明：A search engine, based on Google.
 
-如果想添加到浏览器中，搜索语法是 `search.luxirty.com/search?q=`
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64、arm、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 特性&功能
-1. 内置内容农场屏蔽，包括csdn、华x云、百度云智能、腾讯云开发者等seo网站，以及一些 stackoverflow 中文翻译站。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40307 | 是 |
 
-> [!NOTE]  
-> 你可以在 [/docs/block_list.txt](https://github.com/KoriIku/luxirty-search/blob/main/docs/block_list.txt)中查看完整的屏蔽名单。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-1. 点击`For Program`一键拉高 GitHub、Stackoverflow、v2ex、cnblog 权重，免去手打 site: 的麻烦。
-
-2. 一键搜索 v2ex 、 Raddit
-
-3. 内置广告屏蔽、跟踪链接移除。
+## 参考资料
+- 官网: <https://search.luxirty.com>
+- 文档: <https://github.com/KoriIku/luxirty-search>

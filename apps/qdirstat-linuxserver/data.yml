@@ -1,0 +1,30 @@
+name: QDirStat
+tags:
+- Tool
+title: QDirStat 磁盘占用分析桌面
+description: QDirStat 磁盘占用分析桌面
+additionalProperties:
+  key: qdirstat-linuxserver
+  name: QDirStat
+  tags:
+  - Tool
+  shortDescZh: QDirStat 磁盘占用分析桌面
+  shortDescEn: Disk usage analysis desktop maintained by LinuxServer.io
+  description:
+    en: Disk usage analysis desktop maintained by LinuxServer.io
+    zh: QDirStat 磁盘占用分析桌面
+    zh-Hant: QDirStat 磁碟使用量分析桌面
+    ja: LinuxServer.io が保守するディスク使用量分析デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 디스크 사용량 분석 데스크톱
+    ru: Рабочий стол анализа использования диска, поддерживаемый LinuxServer.io
+    ms: Desktop analisis penggunaan cakera yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de analise de uso de disco mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/shundhammer/qdirstat
+  github: https://github.com/linuxserver/docker-qdirstat
+  document: https://docs.linuxserver.io/images/docker-qdirstat/
+  architectures:
+  - amd64
+  - arm64

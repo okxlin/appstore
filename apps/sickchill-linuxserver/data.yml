@@ -1,0 +1,30 @@
+name: SickChill
+tags:
+- Media
+title: SickChill 电视节目管理
+description: SickChill 电视节目管理
+additionalProperties:
+  key: sickchill-linuxserver
+  name: SickChill
+  tags:
+  - Media
+  shortDescZh: SickChill 电视节目管理
+  shortDescEn: TV show manager maintained by LinuxServer.io
+  description:
+    en: TV show manager maintained by LinuxServer.io
+    zh: SickChill 电视节目管理
+    zh-Hant: SickChill 電視節目管理
+    ja: LinuxServer.io が保守するテレビ番組管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 TV 프로그램 관리자
+    ru: Менеджер телесериалов, поддерживаемый LinuxServer.io
+    ms: Pengurus rancangan TV yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de series de TV mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://sickchill.github.io/
+  github: https://github.com/linuxserver/docker-sickchill
+  document: https://docs.linuxserver.io/images/docker-sickchill/
+  architectures:
+  - amd64
+  - arm64

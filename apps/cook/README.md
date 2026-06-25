@@ -1,26 +1,27 @@
 # Cook
 
-> 好的，今天我们来做菜 🥬
-> Note: This is primarily a Chinese project and we do not intend to translate to English due to the fact that all the ingredients we are familiar with are in Chinese.
+## 应用简介
+好的，今天我们来做菜！
 
-## 版本
+英文说明：OK, Let's Cook!.
 
-[![Release](https://github.com/YunYouJun/cook/actions/workflows/release.yml/badge.svg)](https://github.com/YunYouJun/cook/actions/workflows/release.yml)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.2.4`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-### 网页版本
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40228 | 是 |
 
-- 网站链接：[cook.yunyoujun.cn](https://cook.yunyoujun.cn)
-- 备用：[cook.yyj.moe](https://cook.yyj.moe)
-- 开发版：[cook.yunle.app](https://cook.yunle.app)
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## 说明
-
-本项目初衷是方便特殊时期隔离在家而材料有限的小伙伴，因此菜谱材料会尽量限制在特定范围内。
-
-更多可参见 [来做菜 | 关于](https://cook.yunyoujun.cn/about)。
-
-欢迎反馈更多菜谱数据：
-
-- 相关链接
-  - [居家菜谱投稿](https://docs.qq.com/form/page/DWk9GWW9oTmlXZU9V)
-  - [反馈建议分享-兔小巢](https://support.qq.com/products/507827)
+## 参考资料
+- 官网: <https://cook.yunyoujun.cn>
+- 文档: <https://github.com/YunYouJun/cook>

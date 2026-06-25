@@ -1,0 +1,30 @@
+name: PairDrop
+tags:
+- Tool
+title: PairDrop 局域网文件传输
+description: PairDrop 局域网文件传输
+additionalProperties:
+  key: pairdrop-linuxserver
+  name: PairDrop
+  tags:
+  - Tool
+  shortDescZh: PairDrop 局域网文件传输
+  shortDescEn: Local file transfer service maintained by LinuxServer.io
+  description:
+    en: Local file transfer service maintained by LinuxServer.io
+    zh: PairDrop 局域网文件传输
+    zh-Hant: PairDrop 區域網路檔案傳輸
+    ja: LinuxServer.io が保守するローカルファイル転送サービス
+    ko: LinuxServer.io에서 유지 관리하는 로컬 파일 전송 서비스
+    ru: Сервис локальной передачи файлов, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan pemindahan fail setempat yang diselenggara oleh LinuxServer.io
+    pt-br: Serviço local de transferência de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://pairdrop.net/
+  github: https://github.com/linuxserver/docker-pairdrop
+  document: https://docs.linuxserver.io/images/docker-pairdrop/
+  architectures:
+  - amd64
+  - arm64

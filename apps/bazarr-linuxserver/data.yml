@@ -1,0 +1,30 @@
+name: Bazarr
+tags:
+- Media
+title: Bazarr 字幕管理器
+description: Bazarr 字幕管理器
+additionalProperties:
+  key: bazarr-linuxserver
+  name: Bazarr
+  tags:
+  - Media
+  shortDescZh: Bazarr 字幕管理器
+  shortDescEn: Subtitle manager maintained by LinuxServer.io
+  description:
+    en: Subtitle manager maintained by LinuxServer.io
+    zh: Bazarr 字幕管理器
+    zh-Hant: Bazarr 字幕管理器
+    ja: LinuxServer.io が保守する字幕管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 자막 관리자
+    ru: Менеджер субтитров, поддерживаемый LinuxServer.io
+    ms: Pengurus sari kata yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de legendas mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.bazarr.media/
+  github: https://github.com/linuxserver/docker-bazarr
+  document: https://docs.linuxserver.io/images/docker-bazarr/
+  architectures:
+  - amd64
+  - arm64

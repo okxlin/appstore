@@ -1,0 +1,30 @@
+name: Manyfold
+tags:
+- Media
+title: Manyfold 3D 模型管理
+description: Manyfold 3D 模型管理
+additionalProperties:
+  key: manyfold-linuxserver
+  name: Manyfold
+  tags:
+  - Media
+  shortDescZh: Manyfold 3D 模型管理
+  shortDescEn: 3D model library manager maintained by LinuxServer.io
+  description:
+    en: 3D model library manager maintained by LinuxServer.io
+    zh: Manyfold 3D 模型管理
+    zh-Hant: Manyfold 3D 模型管理
+    ja: LinuxServer.io が保守する 3D モデルライブラリ管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 3D 모델 라이브러리 관리자
+    ru: Менеджер библиотеки 3D-моделей, поддерживаемый LinuxServer.io
+    ms: Pengurus pustaka model 3D yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de biblioteca de modelos 3D mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://manyfold.app/
+  github: https://github.com/linuxserver/docker-manyfold
+  document: https://docs.linuxserver.io/images/docker-manyfold/
+  architectures:
+  - amd64
+  - arm64

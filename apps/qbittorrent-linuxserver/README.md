@@ -1,34 +1,43 @@
-# qBittorrent LinuxServer
+# qBittorrent
 
-## 产品介绍
+## 应用简介
+qBittorrent 下载客户端。
 
-qBittorrent 是一款开源 BitTorrent 客户端，目标是提供一个轻量、跨平台且无广告的下载工具。本应用使用 LinuxServer.io 维护的 `lscr.io/linuxserver/qbittorrent` 镜像，适合在 1Panel 中部署 Web UI 管理端和 BT 下载监听端口。
+英文说明：qBittorrent download client.
 
-## 主要功能
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`5.2.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- Web UI 管理下载任务、队列、分类和速度限制
-- 支持 TCP 与 UDP 监听端口，适配常见 BT 下载场景
-- 配置目录和下载目录可独立挂载，便于备份和迁移
-- 支持自定义时区，容器数据由应用目录持久化保存
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8080 | 是 |
+| PANEL_APP_PORT_BT_DOWNLOAD_LISTENER | BT下载监听端口 | 6881 | 是 |
+| PANEL_APP_PORT_BT_DOWNLOAD_DHT_LISTENER | BT下载DHT监听端口(UDP) | 6881 | 是 |
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 下载文件路径 | ./data/downloads | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 qBittorrent Web UI。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-首次访问时请查看容器日志中的临时管理员密码，并在登录后及时修改默认凭据。若需要公网访问，请确认 HTTP 端口、BT TCP 端口和 BT UDP 端口已按实际网络环境放行。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-qBittorrent is an open-source BitTorrent client designed as a lightweight, cross-platform, and ad-free download tool. This app uses the LinuxServer.io maintained `lscr.io/linuxserver/qbittorrent` image and exposes both the Web UI and torrent listener ports for 1Panel deployments.
-
-## Features
-
-- Manage downloads, queues, categories, and speed limits from the Web UI
-- Expose TCP and UDP listener ports for common BitTorrent workflows
-- Persist configuration and downloads in separate mounted directories
-- Configure the container time zone from the app form
-
-## Links
-
-- LinuxServer image documentation: <https://github.com/linuxserver/docker-qbittorrent>
-- qBittorrent project: <https://www.qbittorrent.org/>
+## 参考资料
+- 官网: <https://www.linuxserver.io/blog>
+- 文档: <https://docs.linuxserver.io/images/docker-qbittorrent/>
+- 源码: <https://github.com/linuxserver/docker-qbittorrent>

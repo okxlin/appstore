@@ -1,0 +1,21 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  kavita:
+    image: "linuxserver/kavita:0.9.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5000"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${LIBRARY_PATH}:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

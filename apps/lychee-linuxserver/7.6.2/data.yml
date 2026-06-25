@@ -1,0 +1,131 @@
+additionalProperties:
+  formFields:
+  - default: 80
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/pictures
+    edit: true
+    envKey: PICTURES_PATH
+    labelEn: Pictures path
+    labelZh: 图片目录
+    label:
+      en: Pictures path
+      zh: 图片目录
+      zh-Hant: 圖片目錄
+      ja: 画像ディレクトリ
+      ko: 사진 디렉터리
+      ru: Каталог изображений
+      ms: Laluan gambar
+      pt-br: Caminho de imagens
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_HOST
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco de dados
+    required: false
+    type: number
+  - default: ''
+    edit: true
+    envKey: DB_USERNAME
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Имя пользователя базы данных
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: false
+    type: password

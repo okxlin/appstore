@@ -1,0 +1,23 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  syslog-ng:
+    image: "linuxserver/syslog-ng:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_SYSLOG_UDP}:5514/udp"
+      - "${PANEL_APP_PORT_SYSLOG_TCP}:6601/tcp"
+      - "${PANEL_APP_PORT_SYSLOG_TLS}:6514/tcp"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${LOG_PATH}:/var/log"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

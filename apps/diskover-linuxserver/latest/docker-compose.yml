@@ -1,0 +1,54 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  diskover:
+    image: "linuxserver/diskover:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${DATA_PATH}:/data"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - ES_HOST=diskover-elasticsearch
+      - ES_PORT=9200
+    mem_limit: 4096m
+    depends_on:
+      - diskover-elasticsearch
+    labels:
+      createdBy: "Apps"
+  diskover-elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:7.17.22"
+    restart: always
+    networks:
+      - 1panel-network
+    depends_on:
+      - diskover-elasticsearch-helper
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - "${ES_DATA_PATH}:/usr/share/elasticsearch/data"
+    labels:
+      createdBy: "Apps"
+  diskover-elasticsearch-helper:
+    image: "alpine:3.20"
+    command: sh -c "sysctl -w vm.max_map_count=262144"
+    privileged: true
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"

@@ -1,102 +1,40 @@
-## 群晖nas自用：
+# 百度网盘
 
-### GitHub:
+## 应用简介
+百度网盘是百度推出的一项云存储服务。
 
-[https://github.com/gshang2017/docker](https://github.com/gshang2017/docker)
+英文说明：BaiduNetdisk is a cloud storage service launched by Baidu.
 
-### 感谢以下项目:
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.14.6_arm64v8`、`4.17.7`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[https://github.com/jlesage/docker-baseimage-gui](https://github.com/jlesage/docker-baseimage-gui "https://github.com/jlesage/docker-baseimage-gui")                                       
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 网页端口 | 40035 | 是 |
 
-### 版本：
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件所在路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 下载文件夹路径 | ./data/downloads | 是 |
 
-|名称|版本|说明|
-|:-|:-|:-|
-|baidunetdisk|4.17.7|amd64|
-|baidunetdisk|4.14.6|arm64|
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-#### 注意：
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| VNC_PASSWORD | 访问密码 | VNCPassword | 是 |
 
-   * 重启群晖，网盘(baidunetdisk:3.0.1.2)不能登陆：只需要删除配置文件夹下baidunetdiskdata.db(下载进度会保留)，如果网盘设置闪退需删除帐户文件夹下userConf.db，重启docker。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-   * 升级 baidunetdisk:3.5.0，下载位置需手动配置(右上角-设置)。
-
-### docker命令行设置：
-
-1. 下载镜像
-
-    |镜像源|命令|
-    |:-|:-|
-    |DockerHub|docker pull johngong/baidunetdisk:latest|
-    |GitHub|docker pull ghcr.io/gshang2017/baidunetdisk:latest|
-
-2. 创建baidunetdisk容器
-
-        docker create \
-           --name=baidunetdisk \
-           -p 5800:5800 \
-           -p 5900:5900 \
-           -v /配置文件位置:/config \
-           -v /下载位置:/config/baidunetdiskdownload \
-           --restart unless-stopped \
-           johngong/baidunetdisk:latest
-
-3. 运行
-
-       docker start baidunetdisk
-
-4. 停止
-
-       docker stop baidunetdisk
-
-5. 删除容器
-
-       docker rm baidunetdisk
-
-6. 删除镜像
-
-       docker image rm johngong/baidunetdisk:latest
-
-### 变量:
-
-|参数|说明|
-|:-|:-|
-| `--name=baidunetdisk` |容器名|
-| `-p 5800:5800` |Web界面访问端口,[ip:5800](ip:5800)|
-| `-p 5900:5900` |VNC协议访问端口.如果未使用VNC客户端,则为可选,[ip:5900](ip:5900)|
-| `-v /配置文件位置:/config` |baidunetdisk配置文件位置|
-| `-v /下载位置:/config/baidunetdiskdownload` |baidunetdisk下载路径(3.3.2需手动设置)|
-| `-e VNC_PASSWORD=VNC密码` |VNC密码|
-| `-e USER_ID=1000` |uid设置,默认为1000|
-| `-e GROUP_ID=1000` |gid设置,默认为1000|
-| `-e NOVNC_LANGUAGE="zh_Hans"` |(zh_Hans\|en)设定novnc语言,默认为中文|
-
-
-更多参数设置详见:[https://registry.hub.docker.com/r/jlesage/baseimage-gui](https://registry.hub.docker.com/r/jlesage/baseimage-gui "https://registry.hub.docker.com/r/jlesage/baseimage-gui")                                     
-
-
-### 群晖docker设置：
-
-1. 卷
-
-|参数|说明|
-|:-|:-|
-| `本地文件夹1:/config/baidunetdiskdownload` |baidunetdisk下载路径(3.3.2需手动设置)|
-| `本地文件夹2:/config` |baidunetdisk配置文件位置|
-
-2. 端口
-
-|参数|说明|
-|:-|:-|
-| `本地端口1:5800`  |Web界面访问端口,[ip:本地端口1](ip:本地端口1)|
-| `本地端口2:5900`  |VNC协议访问端口.如果未使用VNC客户端,则为可选,[ip:本地端口2](ip:本地端口2)|
-
-3. 环境变量
-
-|参数|说明|
-|:-|:-|
-| `VNC_PASSWORD=VNC密码` |VNC密码|
-| `USER_ID=1000` |uid设置,默认为1000|
-| `GROUP_ID=1000` |gid设置,默认为1000|
-| `NOVNC_LANGUAGE="zh_Hans"` |(zh_Hans\|en)设定novnc语言,默认为中文|
-
+## 参考资料
+- 官网: <https://pan.baidu.com/>
+- 文档: <https://github.com/gshang2017/docker/tree/master/baidunetdisk>

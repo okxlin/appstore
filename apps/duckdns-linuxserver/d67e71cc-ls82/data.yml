@@ -1,0 +1,111 @@
+additionalProperties:
+  formFields:
+  - default: subdomain1
+    edit: true
+    envKey: SUBDOMAINS
+    labelEn: DuckDNS subdomains
+    labelZh: DuckDNS 子域名
+    label:
+      en: DuckDNS subdomains
+      zh: DuckDNS 子域名
+      zh-Hant: DuckDNS 子網域
+      ja: DuckDNS サブドメイン
+      ko: DuckDNS 하위 도메인
+      ru: Поддомены DuckDNS
+      ms: Subdomain DuckDNS
+      pt-br: Subdominios DuckDNS
+    required: true
+    type: text
+  - default: replace-with-your-duckdns-token
+    edit: true
+    envKey: TOKEN
+    labelEn: DuckDNS token
+    labelZh: DuckDNS 令牌
+    label:
+      en: DuckDNS token
+      zh: DuckDNS 令牌
+      zh-Hant: DuckDNS 權杖
+      ja: DuckDNS トークン
+      ko: DuckDNS 토큰
+      ru: Токен DuckDNS
+      ms: Token DuckDNS
+      pt-br: Token DuckDNS
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ipv4
+    edit: true
+    envKey: UPDATE_IP
+    labelEn: IP update mode
+    labelZh: IP 更新模式
+    label:
+      en: IP update mode
+      zh: IP 更新模式
+      zh-Hant: IP 更新模式
+      ja: IP 更新モード
+      ko: IP 업데이트 모드
+      ru: Режим обновления IP
+      ms: Mod kemas kini IP
+      pt-br: Modo de atualizacao de IP
+    required: true
+    type: select
+    values:
+    - label: ipv4
+      value: ipv4
+    - label: ipv6
+      value: ipv6
+    - label: both
+      value: both
+  - default: "false"
+    edit: true
+    envKey: LOG_FILE
+    labelEn: Write log file
+    labelZh: 写入日志文件
+    label:
+      en: Write log file
+      zh: 写入日志文件
+      zh-Hant: 寫入日誌檔案
+      ja: ログファイルに書き込む
+      ko: 로그 파일 쓰기
+      ru: Записывать файл журнала
+      ms: Tulis fail log
+      pt-br: Gravar arquivo de log
+    required: true
+    type: select
+    values:
+    - label: "false"
+      value: "false"
+    - label: "true"
+      value: "true"
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

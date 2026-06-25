@@ -1,0 +1,30 @@
+name: Pylon
+tags:
+- DevOps
+title: Pylon Web IDE
+description: Pylon Web IDE
+additionalProperties:
+  key: pylon-linuxserver
+  name: Pylon
+  tags:
+  - DevOps
+  shortDescZh: Pylon Web IDE
+  shortDescEn: Web IDE maintained by LinuxServer.io
+  description:
+    en: Web IDE maintained by LinuxServer.io
+    zh: Pylon Web IDE
+    zh-Hant: Pylon Web IDE
+    ja: LinuxServer.io が保守する Web IDE
+    ko: LinuxServer.io에서 유지 관리하는 Web IDE
+    ru: Web IDE, поддерживаемая LinuxServer.io
+    ms: Web IDE yang diselenggara oleh LinuxServer.io
+    pt-br: Web IDE mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/pylonide/pylon
+  github: https://github.com/linuxserver/docker-pylon
+  document: https://docs.linuxserver.io/deprecated_images/docker-pylon/
+  architectures:
+  - amd64
+  - arm64

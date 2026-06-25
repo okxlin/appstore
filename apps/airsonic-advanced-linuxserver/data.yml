@@ -1,0 +1,30 @@
+name: Airsonic Advanced
+tags:
+- Media
+title: Airsonic Advanced 音乐服务器
+description: Airsonic Advanced 音乐服务器
+additionalProperties:
+  key: airsonic-advanced-linuxserver
+  name: Airsonic Advanced
+  tags:
+  - Media
+  shortDescZh: Airsonic Advanced 音乐服务器
+  shortDescEn: Music streaming server maintained by LinuxServer.io
+  description:
+    en: Music streaming server maintained by LinuxServer.io
+    zh: Airsonic Advanced 音乐服务器
+    zh-Hant: Airsonic Advanced 音樂伺服器
+    ja: LinuxServer.io が保守する音楽ストリーミングサーバー
+    ko: LinuxServer.io에서 유지 관리하는 음악 스트리밍 서버
+    ru: Сервер потоковой музыки, поддерживаемый LinuxServer.io
+    ms: Pelayan penstriman muzik yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de streaming de musica mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/airsonic-advanced/airsonic-advanced
+  github: https://github.com/linuxserver/docker-airsonic-advanced
+  document: https://docs.linuxserver.io/images/docker-airsonic-advanced/
+  architectures:
+  - amd64
+  - arm64

@@ -1,24 +1,26 @@
-# Meting
+# Meting-API
 
-## 简介
-Meting 是一个开源的音乐 API 服务。
+## 应用简介
+开源的音乐 API 服务。
 
-## 安装步骤
-1. 确保已经安装并配置好 Docker 和 1Panel。
-2. 按照提示填写相关配置参数并完成安装。
-3. 反向代理时添加如下内容
-```
-location /meting/ {
-    proxy_pass http://localhost:3000/;
-    proxy_set_header X-Forwarded-Host $scheme://$host:$server_port/meting;
-}
-```
+英文说明：Open-source music API service.
 
-## 升级
-- 目前没有升级脚本，直接重新部署最新版本即可。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 卸载
-- 删除 Docker 容器和相关数据即可。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40246 | 是 |
 
-## 文档
-- 详细使用文档请参考 [官方文档](https://github.com/xizeyoupan/Meting-API)。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/xizeyoupan/Meting-API>

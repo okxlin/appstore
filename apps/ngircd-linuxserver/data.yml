@@ -1,0 +1,30 @@
+name: ngIRCd
+tags:
+- Tool
+title: ngIRCd IRC 服务
+description: ngIRCd IRC 服务
+additionalProperties:
+  key: ngircd-linuxserver
+  name: ngIRCd
+  tags:
+  - Tool
+  shortDescZh: ngIRCd IRC 服务
+  shortDescEn: IRC service maintained by LinuxServer.io
+  description:
+    en: IRC service maintained by LinuxServer.io
+    zh: ngIRCd IRC 服务
+    zh-Hant: ngIRCd IRC 服務
+    ja: LinuxServer.io が保守する IRC サービス
+    ko: LinuxServer.io에서 유지 관리하는 IRC 서비스
+    ru: IRC-сервис, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan IRC yang diselenggara oleh LinuxServer.io
+    pt-br: Servico IRC mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ngircd.barton.de/
+  github: https://github.com/linuxserver/docker-ngircd
+  document: https://docs.linuxserver.io/images/docker-ngircd/
+  architectures:
+  - amd64
+  - arm64

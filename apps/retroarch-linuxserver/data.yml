@@ -1,0 +1,30 @@
+name: RetroArch
+tags:
+- Game
+title: RetroArch 复古游戏前端桌面
+description: RetroArch 复古游戏前端桌面
+additionalProperties:
+  key: retroarch-linuxserver
+  name: RetroArch
+  tags:
+  - Game
+  shortDescZh: RetroArch 复古游戏前端桌面
+  shortDescEn: Retro gaming frontend desktop maintained by LinuxServer.io
+  description:
+    en: Retro gaming frontend desktop maintained by LinuxServer.io
+    zh: RetroArch 复古游戏前端桌面
+    zh-Hant: RetroArch 復古遊戲前端桌面
+    ja: LinuxServer.io が保守するレトロゲームフロントエンドデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 레트로 게임 프런트엔드 데스크톱
+    ru: Рабочий стол ретро-игрового фронтенда, поддерживаемый LinuxServer.io
+    ms: Desktop frontend permainan retro yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de frontend de jogos retro mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.retroarch.com/
+  github: https://github.com/linuxserver/docker-retroarch
+  document: https://docs.linuxserver.io/images/docker-retroarch/
+  architectures:
+  - amd64
+  - arm64

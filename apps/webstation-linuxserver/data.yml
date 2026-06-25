@@ -1,0 +1,29 @@
+name: Webstation
+tags:
+- Tool
+title: Webstation 浏览器桌面环境
+description: Webstation 浏览器桌面环境
+additionalProperties:
+  key: webstation-linuxserver
+  name: Webstation
+  tags:
+  - Tool
+  shortDescZh: Webstation 浏览器桌面环境
+  shortDescEn: Browser-accessible desktop environment maintained by LinuxServer.io
+  description:
+    en: Browser-accessible desktop environment maintained by LinuxServer.io
+    zh: Webstation 浏览器桌面环境
+    zh-Hant: Webstation 瀏覽器桌面環境
+    ja: LinuxServer.io が保守するブラウザーアクセス型デスクトップ環境
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 접속 데스크톱 환경
+    ru: Доступная из браузера среда рабочего стола, поддерживаемая LinuxServer.io
+    ms: Persekitaran desktop melalui pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: Ambiente de desktop acessivel pelo navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.linuxserver.io/
+  github: https://github.com/linuxserver/docker-webstation
+  document: https://docs.linuxserver.io/images/docker-webstation/
+  architectures:
+  - amd64

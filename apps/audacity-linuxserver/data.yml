@@ -1,0 +1,29 @@
+name: Audacity
+tags:
+- Media
+title: Audacity 音频编辑桌面
+description: Audacity 音频编辑桌面
+additionalProperties:
+  key: audacity-linuxserver
+  name: Audacity
+  tags:
+  - Media
+  shortDescZh: Audacity 音频编辑桌面
+  shortDescEn: Audio editor desktop maintained by LinuxServer.io
+  description:
+    en: Audio editor desktop maintained by LinuxServer.io
+    zh: Audacity 音频编辑桌面
+    zh-Hant: Audacity 音訊編輯桌面
+    ja: LinuxServer.io が保守するオーディオエディターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 오디오 편집기 데스크톱
+    ru: Рабочий стол аудиоредактора, поддерживаемый LinuxServer.io
+    ms: Desktop editor audio yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de editor de audio mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.audacityteam.org/
+  github: https://github.com/linuxserver/docker-audacity
+  document: https://docs.linuxserver.io/images/docker-audacity/
+  architectures:
+  - amd64

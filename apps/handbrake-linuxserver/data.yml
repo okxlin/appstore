@@ -1,0 +1,29 @@
+name: HandBrake
+tags:
+- Media
+title: HandBrake 视频转码桌面
+description: HandBrake 视频转码桌面
+additionalProperties:
+  key: handbrake-linuxserver
+  name: HandBrake
+  tags:
+  - Media
+  shortDescZh: HandBrake 视频转码桌面
+  shortDescEn: Video transcoder desktop maintained by LinuxServer.io
+  description:
+    en: Video transcoder desktop maintained by LinuxServer.io
+    zh: HandBrake 视频转码桌面
+    zh-Hant: HandBrake 影片轉碼桌面
+    ja: LinuxServer.io が保守する動画トランスコーダーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 비디오 트랜스코더 데스크톱
+    ru: Рабочий стол видеотранскодера, поддерживаемый LinuxServer.io
+    ms: Desktop transkoder video yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de transcodificador de video mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://handbrake.fr/
+  github: https://github.com/linuxserver/docker-handbrake
+  document: https://docs.linuxserver.io/images/docker-handbrake/
+  architectures:
+  - amd64

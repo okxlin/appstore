@@ -1,17 +1,45 @@
 # Verdaccio
 
-[Verdaccio](https://verdaccio.org/) 是一个简单的，**无需配置的本地私有 npm 注册表**。
-不需要整个数据库就可以开始使用！Verdaccio 开箱即用，**自带一个小型数据库**，并且可以代理其他注册表（例如 npmjs.org），在此过程中缓存下载的模块。
-对于那些希望扩展存储功能的人，Verdaccio **支持各种社区制作的插件，以连接到诸如亚马逊的 S3、谷歌云存储等服务**，或者创建您自己的插件。
+## 应用简介
+本地私有 NPM 注册中心。
 
-[![verdaccio (latest)](https://img.shields.io/npm/v/verdaccio/latest.svg)](https://www.npmjs.com/package/verdaccio)
-[![verdaccio (downloads)](https://img.shields.io/npm/dy/verdaccio.svg)](https://www.npmjs.com/package/verdaccio)
-[![docker pulls](https://img.shields.io/docker/pulls/verdaccio/verdaccio.svg?maxAge=43200)](https://verdaccio.org/docs/en/docker.html)
-[![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
-[![stackshare](https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&style=flat)](https://stackshare.io/verdaccio)
+英文说明：local private NPM registry.
 
-[![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/verdaccio/verdaccio/blob/master/LICENSE)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/verdaccio/localized.svg)](https://crowdin.com/project/verdaccio)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：运维。
+- 支持架构：amd64。
+- 可选版本：`6.7.4`、`nightly-master`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[![Github](https://img.shields.io/github/stars/verdaccio/verdaccio.svg?style=social&label=Stars)](https://github.com/verdaccio/verdaccio/stargazers)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40087 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| STORAGE_PATH | 存储路径 | ./data/storage | 是 |
+| CONFIG_PATH | 配置路径 | ./data/config | 是 |
+| PLUGINS_PATH | 插件路径 | ./data/plugins | 是 |
+| VERDACCIO_APPDIR | 应用目录 | /opt/verdaccio | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| VERDACCIO_USER_NAME | 用户名 | verdaccio | 是 |
+| VERDACCIO_USER_UID | 用户 ID | 10001 | 是 |
+| VERDACCIO_PROTOCOL | 协议 | http | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://verdaccio.org/>
+- 文档: <https://verdaccio.org/docs/what-is-verdaccio>
+- 源码: <https://github.com/verdaccio/verdaccio>

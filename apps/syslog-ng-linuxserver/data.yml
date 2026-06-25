@@ -1,0 +1,30 @@
+name: syslog-ng
+tags:
+- DevOps
+title: syslog-ng 日志收集服务
+description: syslog-ng 日志收集服务
+additionalProperties:
+  key: syslog-ng-linuxserver
+  name: syslog-ng
+  tags:
+  - DevOps
+  shortDescZh: syslog-ng 日志收集服务
+  shortDescEn: Syslog collection service maintained by LinuxServer.io
+  description:
+    en: Syslog collection service maintained by LinuxServer.io
+    zh: syslog-ng 日志收集服务
+    zh-Hant: syslog-ng 日誌收集服務
+    ja: LinuxServer.io が保守する Syslog 収集サービス
+    ko: LinuxServer.io에서 유지 관리하는 Syslog 수집 서비스
+    ru: Сервис сбора Syslog, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan pengumpulan Syslog yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de coleta Syslog mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.syslog-ng.com/
+  github: https://github.com/linuxserver/docker-syslog-ng
+  document: https://docs.linuxserver.io/images/docker-syslog-ng/
+  architectures:
+  - amd64
+  - arm64

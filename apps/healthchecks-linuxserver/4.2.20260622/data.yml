@@ -1,0 +1,152 @@
+additionalProperties:
+  formFields:
+  - default: 8000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 2525
+    edit: true
+    envKey: PANEL_APP_PORT_SMTP
+    labelEn: Smtp Port
+    labelZh: Smtp 端口
+    label:
+      en: Smtp Port
+      zh: Smtp 端口
+      zh-Hant: Smtp 連接埠
+      ja: Smtp ポート
+      ko: Smtp 포트
+      ru: Порт Smtp
+      ms: Port Smtp
+      pt-br: Porta Smtp
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: SECRET_KEY
+    labelEn: Secret key
+    labelZh: 密钥
+    label:
+      en: Secret key
+      zh: 密钥
+      zh-Hant: 金鑰
+      ja: シークレットキー
+      ko: 비밀 키
+      ru: Секретный ключ
+      ms: Kunci rahsia
+      pt-br: Chave secreta
+    random: true
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: http://127.0.0.1:8000
+    edit: true
+    envKey: SITE_ROOT
+    labelEn: Site root URL
+    labelZh: 站点根 URL
+    label:
+      en: Site root URL
+      zh: 站点根 URL
+      zh-Hant: 站台根 URL
+      ja: サイトルート URL
+      ko: 사이트 루트 URL
+      ru: Корневой URL сайта
+      ms: URL akar tapak
+      pt-br: URL raiz do site
+    required: true
+    type: text
+  - default: Healthchecks
+    edit: true
+    envKey: SITE_NAME
+    labelEn: Site name
+    labelZh: 站点名称
+    label:
+      en: Site name
+      zh: 站点名称
+      zh-Hant: 站台名稱
+      ja: サイト名
+      ko: 사이트 이름
+      ru: Название сайта
+      ms: Nama tapak
+      pt-br: Nome do site
+    required: true
+    type: text
+  - default: admin@example.com
+    edit: true
+    envKey: SUPERUSER_EMAIL
+    labelEn: Superuser email
+    labelZh: 管理员邮箱
+    label:
+      en: Superuser email
+      zh: 管理员邮箱
+      zh-Hant: 管理員信箱
+      ja: スーパーユーザーメール
+      ko: 관리자 이메일
+      ru: Email суперпользователя
+      ms: E-mel superuser
+      pt-br: Email do superusuario
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: SUPERUSER_PASSWORD
+    labelEn: Superuser password
+    labelZh: 管理员密码
+    label:
+      en: Superuser password
+      zh: 管理员密码
+      zh-Hant: 管理員密碼
+      ja: スーパーユーザーパスワード
+      ko: 관리자 비밀번호
+      ru: Пароль суперпользователя
+      ms: Kata laluan superuser
+      pt-br: Senha do superusuario
+    random: true
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

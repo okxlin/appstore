@@ -1,30 +1,30 @@
-name: qbittorrent-linuxserver
+name: qBittorrent
 tags:
 - Tool
-title: qbittorrent-linuxserver
-description: qbittorrent-linuxserver
+title: qBittorrent 下载客户端
+description: qBittorrent 下载客户端
 additionalProperties:
   key: qbittorrent-linuxserver
-  name: qbittorrent-linuxserver
+  name: qBittorrent
   tags:
   - Tool
   type: tool
   website: https://www.linuxserver.io/blog
-  document: https://github.com/linuxserver/docker-qbittorrent
+  document: https://docs.linuxserver.io/images/docker-qbittorrent/
   github: https://github.com/linuxserver/docker-qbittorrent
-  shortDescZh: 由LinuxServer.io提供的Qbittorrent容器
-  shortDescEn: A Qbittorrent container, brought to you by LinuxServer.io
+  shortDescZh: qBittorrent 下载客户端
+  shortDescEn: qBittorrent download client
   crossVersionUpdate: true
   limit: 0
   architectures:
   - amd64
   - arm64
   description:
-    en: A Qbittorrent container, brought to you by LinuxServer.io
-    zh: 由LinuxServer.io提供的Qbittorrent容器
-    zh-Hant: 由 LinuxServer.io 提供的 qBittorrent 容器
-    ja: LinuxServer.io が提供する qBittorrent コンテナ
-    ko: LinuxServer.io에서 제공하는 qBittorrent 컨테이너
-    ru: Контейнер qBittorrent от LinuxServer.io
-    ms: Bekas qBittorrent yang disediakan oleh LinuxServer.io
-    pt-br: Contêiner qBittorrent fornecido pela LinuxServer.io
+    en: qBittorrent download client
+    zh: qBittorrent 下载客户端
+    zh-Hant: qBittorrent 下載客戶端
+    ja: qBittorrent ダウンロードクライアント
+    ko: qBittorrent 다운로드 클라이언트
+    ru: Клиент загрузки qBittorrent
+    ms: Klien muat turun qBittorrent
+    pt-br: Cliente de downloads qBittorrent

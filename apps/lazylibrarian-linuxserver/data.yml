@@ -1,0 +1,30 @@
+name: LazyLibrarian
+tags:
+- Media
+title: LazyLibrarian 图书馆管理
+description: LazyLibrarian 图书馆管理
+additionalProperties:
+  key: lazylibrarian-linuxserver
+  name: LazyLibrarian
+  tags:
+  - Media
+  shortDescZh: LazyLibrarian 图书馆管理
+  shortDescEn: Book library manager maintained by LinuxServer.io
+  description:
+    en: Book library manager maintained by LinuxServer.io
+    zh: LazyLibrarian 图书馆管理
+    zh-Hant: LazyLibrarian 圖書館管理
+    ja: LinuxServer.io が保守する書籍ライブラリ管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 도서 라이브러리 관리자
+    ru: Менеджер книжной библиотеки, поддерживаемый LinuxServer.io
+    ms: Pengurus perpustakaan buku yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de biblioteca de livros mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://lazylibrarian.gitlab.io/
+  github: https://github.com/linuxserver/docker-lazylibrarian
+  document: https://docs.linuxserver.io/images/docker-lazylibrarian/
+  architectures:
+  - amd64
+  - arm64

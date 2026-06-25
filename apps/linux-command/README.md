@@ -1,16 +1,27 @@
-<p align="center">
-  <a href="https://jaywcjlove.github.io/linux-command">
-    <img src="https://github.com/jaywcjlove/linux-command/raw/master/template/img/banner.svg?sanitize=true">
-  </a>
-  <h1>Linux Command</h1>
-</p>
+# Linux Command
 
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
-[![CI](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml)
-[![Web](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/)
-[![weibo](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
-[![NPM Download](https://img.shields.io/npm/dm/linux-command.svg?style=flat)](https://www.npmjs.com/package/linux-command)
-[![jsdelivr cdn](https://data.jsdelivr.com/v1/package/npm/linux-command/badge)](https://www.jsdelivr.com/package/npm/linux-command)
-[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command)
+## 应用简介
+Linux 命令大全搜索工具。
 
-当前仓库搜集了 580 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
+英文说明：Comprehensive Linux command search tool.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：DevTool。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.22.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40255 | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://git.io/linux>
+- 文档: <https://github.com/jaywcjlove/linux-command>

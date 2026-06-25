@@ -1,0 +1,30 @@
+name: Emby
+tags:
+- Media
+title: Emby 媒体服务器
+description: Emby 媒体服务器
+additionalProperties:
+  key: emby-linuxserver
+  name: Emby
+  tags:
+  - Media
+  shortDescZh: Emby 媒体服务器
+  shortDescEn: Media server maintained by LinuxServer.io
+  description:
+    en: Media server maintained by LinuxServer.io
+    zh: Emby 媒体服务器
+    zh-Hant: Emby 媒體伺服器
+    ja: LinuxServer.io が保守するメディアサーバー
+    ko: LinuxServer.io에서 유지 관리하는 미디어 서버
+    ru: Медиасервер, поддерживаемый LinuxServer.io
+    ms: Pelayan media yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de midia mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://emby.media/
+  github: https://github.com/linuxserver/docker-emby
+  document: https://docs.linuxserver.io/images/docker-emby/
+  architectures:
+  - amd64
+  - arm64

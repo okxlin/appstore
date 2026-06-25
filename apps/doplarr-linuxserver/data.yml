@@ -1,0 +1,30 @@
+name: Doplarr
+tags:
+- Tool
+title: Doplarr Discord 媒体请求机器人
+description: Doplarr Discord 媒体请求机器人
+additionalProperties:
+  key: doplarr-linuxserver
+  name: Doplarr
+  tags:
+  - Tool
+  shortDescZh: Doplarr Discord 媒体请求机器人
+  shortDescEn: Discord media request bot maintained by LinuxServer.io
+  description:
+    en: Discord media request bot maintained by LinuxServer.io
+    zh: Doplarr Discord 媒体请求机器人
+    zh-Hant: Doplarr Discord 媒體請求機器人
+    ja: LinuxServer.io が保守する Discord メディアリクエストボット
+    ko: LinuxServer.io에서 유지 관리하는 Discord 미디어 요청 봇
+    ru: Discord-бот для запросов медиа, поддерживаемый LinuxServer.io
+    ms: Bot permintaan media Discord yang diselenggara oleh LinuxServer.io
+    pt-br: Bot de solicitacao de midia para Discord mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/kiranshila/Doplarr
+  github: https://github.com/linuxserver/docker-doplarr
+  document: https://docs.linuxserver.io/images/docker-doplarr/
+  architectures:
+  - amd64
+  - arm64

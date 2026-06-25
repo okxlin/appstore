@@ -1,0 +1,30 @@
+name: Tautulli
+tags:
+- Media
+title: Tautulli Plex 监控工具
+description: Tautulli Plex 监控工具
+additionalProperties:
+  key: tautulli-linuxserver
+  name: Tautulli
+  tags:
+  - Media
+  shortDescZh: Tautulli Plex 监控工具
+  shortDescEn: Plex monitoring tool maintained by LinuxServer.io
+  description:
+    en: Plex monitoring tool maintained by LinuxServer.io
+    zh: Tautulli Plex 监控工具
+    zh-Hant: Tautulli Plex 監控工具
+    ja: LinuxServer.io が保守する Plex 監視ツール
+    ko: LinuxServer.io에서 유지 관리하는 Plex 모니터링 도구
+    ru: Инструмент мониторинга Plex, поддерживаемый LinuxServer.io
+    ms: Alat pemantauan Plex yang diselenggara oleh LinuxServer.io
+    pt-br: Ferramenta de monitoramento Plex mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://tautulli.com/
+  github: https://github.com/linuxserver/docker-tautulli
+  document: https://docs.linuxserver.io/images/docker-tautulli/
+  architectures:
+  - amd64
+  - arm64

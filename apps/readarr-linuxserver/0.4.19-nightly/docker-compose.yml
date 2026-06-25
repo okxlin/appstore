@@ -1,0 +1,22 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  readarr:
+    image: "linuxserver/readarr:0.4.19-nightly"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8787"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${BOOKS_PATH}:/books"
+      - "${DOWNLOADS_PATH}:/downloads"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    labels:
+      createdBy: "Apps"

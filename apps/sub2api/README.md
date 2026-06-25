@@ -1,69 +1,47 @@
 # Sub2API
 
-Sub2API 是一个面向订阅转换与统一接口访问场景的轻量服务，适合在 1Panel 中作为独立应用部署，为客户端或上游系统提供稳定的订阅处理入口。
-
 ## 应用简介
+提供 OpenAI 兼容接口的 AI 网关服务。
 
-该应用提供 Web 访问入口，并支持自动初始化、管理员账户设置、日志级别控制、JWT/TOTP 安全配置，以及基于 PostgreSQL 与 Redis 的持久化与缓存能力。当前 1Panel 适配版本采用“应用本体 + 商店依赖”的方式交付，便于直接复用面板内已有的数据库与缓存服务。
+英文说明：AI gateway service with OpenAI-compatible APIs.
 
-## 功能亮点
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.1.138`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 支持订阅转换与 API 化访问，方便统一接入与后续集成
-- 支持 PostgreSQL + Redis 组合依赖，适合长期运行
-- 支持管理员邮箱、管理员密码、JWT 密钥、TOTP 加密密钥等初始化参数
-- 支持日志级别与安全 URL 白名单开关，便于按环境调整
-- 支持数据目录挂载，方便备份、迁移与持久化管理
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_PORT | 数据库端口 | 5432 | 是 |
+| REDIS_PORT | Redis服务端口 | 6379 | 是 |
+| PANEL_APP_PORT_HTTP | Web 访问端口 | 8080 | 是 |
 
-## 持久化目录
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| APP_DATA_DIR_1 | 应用数据目录 | ./data | 是 |
 
-适配默认使用相对目录持久化应用数据：
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-- `./data` → `/app/data`
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | postgresql | 是 |
+| PANEL_DB_NAME | 数据库名 | sub2api | 是 |
+| PANEL_DB_USER | 数据库用户 | sub2api | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | - | 是 |
+| REDIS_HOST | Redis服务 | - | 是 |
+| PANEL_REDIS_ROOT_PASSWORD | Redis 密码 | - | 是 |
+| REDIS_DB | Redis 数据库 | 0 | 是 |
+| SERVER_MODE | 服务模式 | release | 是 |
+| RUN_MODE | 运行模式 | standard | 是 |
+| ADMIN_EMAIL | 管理员邮箱 | admin@sub2api.local | 是 |
 
-其中 `/app/data` 会保存应用运行数据、自动生成的 `config.yaml`、日志以及部分缓存内容。上游入口脚本会在启动时确保该目录可写。数据库和 Redis 的数据由对应的 1Panel 依赖应用自行管理。
-
-## 安装说明
-
-安装时需要在 1Panel 表单中补齐以下关键信息：
-
-- PostgreSQL 服务实例
-- Redis 服务实例
-- 管理员邮箱
-- 访问端口
-- 数据目录
-- 安全参数：`JWT_SECRET`、`TOTP_ENCRYPTION_KEY`、`ADMIN_PASSWORD`
-
-其中数据库与缓存服务由 1Panel 商店依赖注入：
-
-- PostgreSQL：用于应用数据持久化
-- Redis：用于缓存与运行时状态
-
-若面板中已经安装对应服务，直接在安装表单中选择实例与 Service 即可。
-
-## 默认配置
-
-- 访问端口：`8080`
-- 容器内部端口：`8080`
-- 默认数据目录：`./data`
-- 容器内数据目录：`/app/data`
-- 默认时区：`Asia/Shanghai`
-- 默认日志级别：`info`
-
-## 使用建议
-
-- 首次安装时补全管理员邮箱，建议同时设置管理员密码
-- 生产环境建议显式配置 `JWT_SECRET` 与 `TOTP_ENCRYPTION_KEY`
-- 若启用 URL 安全白名单，请提前确认业务访问范围
-- 如需代理更新源，可按需填写 `UPDATE_PROXY_URL`
-
-## 安装后检查
-
-1. 打开 `http://<服务器IP>:<访问端口>` 确认页面可访问。
-2. 检查数据库与 Redis 连接是否正常。
-3. 确认数据目录已正确挂载并具备写入权限。
-4. 若使用初始化管理员账户，确认可正常登录后台。
-
-## 反向代理说明
+## 使用说明
+### 反向代理说明
 
 如果你在 Nginx 后面反代 Sub2API，并且需要兼容 Codex CLI 等依赖下划线请求头的客户端，请在 Nginx 的 `http` 块中开启：
 
@@ -73,9 +51,5 @@ underscores_in_headers on;
 
 这是上游 README 明确提到的要求，否则某些带下划线的头部可能会被 Nginx 丢弃，影响会话粘性与部分 CLI 场景。
 
-## 备注
-
-- 本适配默认启用 `AUTO_SETUP=true`
-- 默认时区为 `Asia/Shanghai`
-- 生命周期脚本只会初始化应用自身的 `./data` 目录，不会创建数据库或 Redis 的本地目录，因为这两者由 1Panel 依赖应用托管
-- 如需更细的运行参数，可参考 `latest/.env.sample` 和上游文档继续扩展
+## 参考资料
+- 官网: <https://github.com/Wei-Shaw/sub2api>

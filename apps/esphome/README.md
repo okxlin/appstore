@@ -1,32 +1,41 @@
-# 使用说明
+# ESPHome
 
+## 应用简介
+简单强大的 ESP8266/ESP32 配置与固件编译工具。
+
+英文说明：ESPHome is a system to control your ESP8266/ESP32 by simple yet powerful configuration files.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 6052 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| ESPHOME_USERNAME | 控制台用户名 | admin | 是 |
+| ESPHOME_PASSWORD | 控制台密码 | - | 是 |
+
+## 使用说明
 - **默认访问地址**
   ESPHome Dashboard 默认运行在 6052 端口：
   ```
   IP:6052
   ```
-
-# 关于 ESPHome
-
-将 ESP32、ESP8266、BK72xx、RP2040 和其他支持的板子通过简单的 YAML 配置转变为强大的智能家居设备。
-
-### 主要特性：
-- **无需编程**：使用简单的 YAML 配置文件而不是复杂的 C++代码。
-- **无线更新**：通过OTA升级您的设备，无需物理访问。
-- **模块化设计**：支持数百种传感器、显示屏和其他组件。
-- **本地控制**：设备本地运行，无需依赖云服务。
-
-### 谁使用 ESPHome？
-  - **DIY 爱好者** - 创建定制传感器、开关和显示屏，满足特定需求
-  - **智能家居爱好者** - 用经济实惠的定制设备扩展他们的智能家居系统
-  - **专业集成商** - 为客户部署可靠、本地控制的智能设备
-  - **制造商** - 创建适用于 ESPHome 认证的产品，配备标准化固件
-
-### ESPHome 支持哪些微控制器？
-  - **Espressif ESP32 和 ESP8266** - 广泛支持 ESP32 和 ESP8266 微控制器，许多物联网项目的核心。
-  - **RP2040** - 支持树莓派的 RP2040 微控制器。
-  - **其他** - 支持 Nordic Semiconductor nRF52、Realtek RTL87xx 和 Becken BK72xx 芯片。
-  - **桌面** - 许多 ESPHome 组件可以在使用主机平台的情况下在桌面计算机上运行！
 
 ### 注意事项：
 1. **网络模式**：本应用使用 `host` 网络模式。ESPHome 官方文档说明，Device Builder 在 Docker 中需要 host 网络模式来显示设备在线状态。
@@ -36,3 +45,8 @@
 官方参考：
 - https://esphome.io/guides/getting_started_command_line/#bonus-esphome-device-builder
 - https://esphome.io/guides/getting_started_command_line/#first-uploading
+
+## 参考资料
+- 官网: <https://esphome.io/>
+- 文档: <https://esphome.io/guides/getting_started_command_line/>
+- 源码: <https://github.com/esphome/esphome>

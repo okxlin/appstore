@@ -1,0 +1,30 @@
+name: Baby Buddy
+tags:
+- Tool
+title: Baby Buddy 育儿记录
+description: Baby Buddy 育儿记录
+additionalProperties:
+  key: babybuddy-linuxserver
+  name: Baby Buddy
+  tags:
+  - Tool
+  shortDescZh: Baby Buddy 育儿记录
+  shortDescEn: Baby care tracker maintained by LinuxServer.io
+  description:
+    en: Baby care tracker maintained by LinuxServer.io
+    zh: Baby Buddy 育儿记录
+    zh-Hant: Baby Buddy 育兒記錄
+    ja: LinuxServer.io が保守する育児記録ツール
+    ko: LinuxServer.io에서 유지 관리하는 육아 기록 도구
+    ru: Трекер ухода за ребенком, поддерживаемый LinuxServer.io
+    ms: Penjejak penjagaan bayi yang diselenggara oleh LinuxServer.io
+    pt-br: Rastreador de cuidados do bebe mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://baby-buddy.net/
+  github: https://github.com/linuxserver/docker-babybuddy
+  document: https://docs.linuxserver.io/images/docker-babybuddy/
+  architectures:
+  - amd64
+  - arm64

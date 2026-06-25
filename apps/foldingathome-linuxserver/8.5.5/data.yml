@@ -1,0 +1,99 @@
+additionalProperties:
+  formFields:
+  - default: 7396
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: ACCOUNT_TOKEN
+    labelEn: Account token
+    labelZh: 账户令牌
+    label:
+      en: Account token
+      zh: 账户令牌
+      zh-Hant: 帳戶權杖
+      ja: アカウントトークン
+      ko: 계정 토큰
+      ru: Токен учетной записи
+      ms: Token akaun
+      pt-br: Token da conta
+    required: false
+    type: text
+  - default: 1panel-foldingathome
+    edit: true
+    envKey: MACHINE_NAME
+    labelEn: Machine name
+    labelZh: 机器名称
+    label:
+      en: Machine name
+      zh: 机器名称
+      zh-Hant: 機器名稱
+      ja: マシン名
+      ko: 머신 이름
+      ru: Имя машины
+      ms: Nama mesin
+      pt-br: Nome da maquina
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: CLI_ARGS
+    labelEn: CLI arguments
+    labelZh: 命令行参数
+    label:
+      en: CLI arguments
+      zh: 命令行参数
+      zh-Hant: 命令列參數
+      ja: CLI 引数
+      ko: CLI 인수
+      ru: Аргументы CLI
+      ms: Argumen CLI
+      pt-br: Argumentos CLI
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

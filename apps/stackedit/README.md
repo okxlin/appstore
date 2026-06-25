@@ -1,96 +1,32 @@
-# 使用说明
-
-- 注意 镜像高达 `6g` 
-
-# 原始相关
-***
-
 # StackEdit
 
-[![Build Status](https://img.shields.io/travis/benweet/stackedit.svg?style=flat)](https://travis-ci.org/benweet/stackedit) [![NPM version](https://img.shields.io/npm/v/stackedit.svg?style=flat)](https://www.npmjs.org/package/stackedit)
+## 应用简介
+浏览器里的全功能开源 Markdown 编辑器。
 
-> Full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.
+英文说明：In-browser Markdown editor.
 
-https://stackedit.io/
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`5.15.4`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-### Ecosystem
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40149 | 是 |
 
-- [Chrome app](https://chrome.google.com/webstore/detail/iiooodelglhkcpgbajoejffhijaclcdg)
-- NEW! Embed StackEdit in any website with [stackedit.js](https://github.com/benweet/stackedit.js)
-- NEW! [Chrome extension](https://chrome.google.com/webstore/detail/ajehldoplanpchfokmeempkekhnhmoha) that uses stackedit.js
-- [Community](https://community.stackedit.io/)
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-### Build
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-```bash
-# install dependencies
-npm install
+## 使用说明
+- 注意 镜像高达 `6g`
 
-# serve with hot reload at localhost:8080
-npm start
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-### Deploy with Helm
-
-StackEdit Helm chart allows easy StackEdit deployment to any Kubernetes cluster.
-You can use it to configure deployment with your existing ingress controller and cert-manager.
-
-```bash
-# Add the StackEdit Helm repository
-helm repo add stackedit https://benweet.github.io/stackedit-charts/
-
-# Update your local Helm chart repository cache
-helm repo update
-
-# Deploy StackEdit chart to your cluster
-helm install --name stackedit stackedit/stackedit \
-  --set dropboxAppKey=$DROPBOX_API_KEY \
-  --set dropboxAppKeyFull=$DROPBOX_FULL_ACCESS_API_KEY \
-  --set googleClientId=$GOOGLE_CLIENT_ID \
-  --set googleApiKey=$GOOGLE_API_KEY \
-  --set githubClientId=$GITHUB_CLIENT_ID \
-  --set githubClientSecret=$GITHUB_CLIENT_SECRET \
-  --set wordpressClientId=\"$WORDPRESS_CLIENT_ID\" \
-  --set wordpressSecret=$WORDPRESS_CLIENT_SECRET
-```
-
-Later, to upgrade StackEdit to the latest version:
-
-```bash
-helm repo update
-helm upgrade stackedit stackedit/stackedit
-```
-
-If you want to uninstall StackEdit:
-
-```bash
-helm delete --purge stackedit
-```
-
-If you want to use your existing ingress controller and cert-manager issuer:
-
-```bash
-# See https://docs.cert-manager.io/en/latest/tutorials/acme/quick-start/index.html
-helm install --name stackedit stackedit/stackedit \
-  --set dropboxAppKey=$DROPBOX_API_KEY \
-  --set dropboxAppKeyFull=$DROPBOX_FULL_ACCESS_API_KEY \
-  --set googleClientId=$GOOGLE_CLIENT_ID \
-  --set googleApiKey=$GOOGLE_API_KEY \
-  --set githubClientId=$GITHUB_CLIENT_ID \
-  --set githubClientSecret=$GITHUB_CLIENT_SECRET \
-  --set wordpressClientId=\"$WORDPRESS_CLIENT_ID\" \
-  --set wordpressSecret=$WORDPRESS_CLIENT_SECRET \
-  --set ingress.enabled=true \
-  --set ingress.annotations."kubernetes\.io/ingress\.class"=nginx \
-  --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-prod \
-  --set ingress.hosts[0].host=stackedit.example.com \
-  --set ingress.hosts[0].paths[0]=/ \
-  --set ingress.tls[0].secretName=stackedit-tls \
-  --set ingress.tls[0].hosts[0]=stackedit.example.com
-```
+## 参考资料
+- 官网: <https://stackedit.io>
+- 文档: <https://github.com/benweet/stackedit>

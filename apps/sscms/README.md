@@ -1,37 +1,43 @@
-# 使用说明
+# SSCMS 内容管理系统
 
-打开浏览器，访问地址 http://<IP地址或域名>/ss-admin/install，进入 SSCMS 系统安装界面
+## 应用简介
+开源免费、企业级、可商用的CMS内容管理系统。
 
-***
-# SSCMS
+英文说明：Open source free, enterprise-class, commercially available CMS content management system.
 
-<img src="https://sscms.com/docs/v7/logo.png" height="220" align="center">
-<br /><br />
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`7.4.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-SSCMS 基于 .NET Core，能够以最低的成本、最少的人力投入在最短的时间内架设一个功能齐全、性能优异、规模庞大并易于维护的网站平台。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40221 | 是 |
 
-## 版本
+## 数据持久化
+- `./data:/app/wwwroot`
 
-项目发布的正式版本存放在 `master` 分支
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-| 编译状态                                                                                                                                                                                     | 版本号                                                     | 发布日期                                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [![Build status](https://sscms.visualstudio.com/cms/_apis/build/status/siteserver.cms?branchName=master)](https://sscms.visualstudio.com/cms/_build/latest?definitionId=1&branchName=master) | ![Nuget version](https://img.shields.io/nuget/v/SSCMS.svg) | ![master last commit](https://img.shields.io/github/last-commit/siteserver/cms/master.svg) |
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_NAME | 数据库名 | sscms | 是 |
+| PANEL_DB_USER | 数据库用户 | sscms | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | sscms | 是 |
+| SSCMS_SECURITY_KEY | 通信密钥 (GUID 字符串) | e2a3d303-ac9b-41ff-9154-930710af0845 | 是 |
+| SSCMS_REDIS_CONNECTION_STRING | Redis 连接信息 (redis:6379,password=123456) | - | 否 |
 
-## 开发文档
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-[《SSCMS 使用指南》](https://sscms.com/docs/v7/getting-started/)
-
-[《SSCMS 系统更新》](https://sscms.com/docs/v7/updates/)
-
-[《SSCMS STL 语言》](https://sscms.com/docs/v7/stl/)
-
-[《SSCMS 插件开发》](https://sscms.com/docs/v7/plugin/)
-
-[《SSCMS 官方插件》](https://sscms.com/docs/v7/official/)
-
-[《SSCMS 命令行》](https://sscms.com/docs/v7/cli/)
-
-[《SSCMS REST API》](https://sscms.com/docs/v7/api/)
-
-[《SSCMS 数据结构》](https://sscms.com/docs/v7/model/)
+## 参考资料
+- 官网: <https://sscms.com>
+- 文档: <https://sscms.com/docs>
+- 源码: <https://github.com/siteserver/cms>

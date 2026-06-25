@@ -1,16 +1,36 @@
-# Nging V5 
+# Nging
 
-![Nging's logo](https://github.com/admpub/nging/blob/master/public/assets/backend/images/nging-gear.png?raw=true)
+## 应用简介
+Go 语言 Web 管理面板。
 
+英文说明：Go Language Web Management Panel.
 
-<img src="https://stats.eget.io/badge/UA-NGING-GIT.svg" style="vertical-align:middle" height="25" />
-<a href="https://gitpod.io/#https://github.com/admpub/nging" target="_blank"><img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="25" style="vertical-align:middle" /></a>
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-> 注意：这是Nging V5源代码，旧版V4.x、V3.x、V2.x、V1.x已经转移到 [v4分支](https://github.com/admpub/nging/tree/v4) [v3分支](https://github.com/admpub/nging/tree/v3) [v2分支](https://github.com/admpub/nging/tree/v2) [v1分支](https://github.com/admpub/nging/tree/v1)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40227 | 是 |
 
-    Nging支持MySQL和SQLite3数据库
+## 数据持久化
+- `./data/data/cache:/home/nging_linux_amd64/data/cache`
+- `./data/data/ftpdir:/home/nging_linux_amd64/data/ftpdir`
+- `./data/data/logs:/home/nging_linux_amd64/data/logs`
+- `./data/data/sm2:/home/nging_linux_amd64/data/sm2`
+- `./data/myconfig:/home/nging_linux_amd64/myconfig`
+- `./data/public:/home/nging_linux_amd64/public`
 
-Nging是一个网站服务程序，可以管理和配置 Caddy 和 Nginx 站点，并附带了实用的周边工具，例如：计划任务、MySQL管理、Redis管理、FTP管理、SSH管理、服务器管理等。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-请注意，本系统的源代码基于AGPL协议发布，不管您使用本系统的完整代码还是部分代码，都请遵循AGPL协议。  
-> 如果需要更宽松的商业授权协议，请联系我购买授权。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/admpub/nging>

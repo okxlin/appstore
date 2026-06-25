@@ -1,8 +1,27 @@
+# PHP Unofficial
 
-# 介绍
-这是个非1Panel官方制作的PHP容器。
+## 应用简介
+非官方 PHP-FPM 容器，用于在 1Panel/OpenResty 环境中为站点提供 PHP 运行环境。
 
-# 注意事项
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 可选版本：`7.4.33`、`7.4.33-alpine`、`8.1.17`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 9001 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| SITE_PATH | 网站目录文件路径 | /opt/1panel/apps/openresty/OpenResty/www | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+### 注意事项
 ~~在1Panel V1.0.5及以下版本条件下，需要对官方OpenResty镜像和OpenResty配置进行修改才能正常部署PHP网站。~~
 
 - 写在20230414：
@@ -62,68 +81,9 @@ fastcgi_param  PHP_ADMIN_VALUE "open_basedir=$document_root/:/tmp/:/proc/";
 ```
     # php服务端口例如 127.0.0.1:9000，按需修改
     location ~ [^/]\.php(/|$) {
-        fastcgi_pass 127.0.0.1:9000; 
-        include fastcgi-php.conf; 
-        include fastcgi_params; 
+        fastcgi_pass 127.0.0.1:9000;
+        include fastcgi-php.conf;
+        include fastcgi_params;
     }
 ```
 点击保存并重载即可或重启openresty容器。
-
-# 特性
-
-<details>
-<summary>启用拓展如下</summary>
- 
-> [PHP Modules]
->> - ~~rar~~
->> - bcmath
->> - Core
->> - ctype
->> - curl
->> - date
->> - dom
->> - exif
->> - fileinfo
->> - filter
->> - ftp
->> - gd
->> - gettext
->> - hash
->> - iconv
->> - imagick
->> - imap
->> - intl
->> - json
->> - libxml
->> - mbstring
->> - mcrypt
->> - memcached
->> - mysqli
->> - mysqlnd
->> - openssl
->> - pcre
->> - PDO
->> - pdo_mysql
->> - pdo_sqlite
->> - Phar
->> - posix
->> - readline
->> - redis
->> - Reflection
->> - session
->> - SimpleXML
->> - sodium
->> - SPL
->> - sqlite3
->> - standard
->> - tokenizer
->> - xml
->> - xmlreader
->> - xmlwriter
->> - xsl
->> - zip
->> - zlib
-
-> [Zend Modules]
-
-</details>

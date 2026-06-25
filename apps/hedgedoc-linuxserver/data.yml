@@ -1,0 +1,30 @@
+name: HedgeDoc
+tags:
+- Tool
+title: HedgeDoc 协作文档编辑器
+description: HedgeDoc 协作文档编辑器
+additionalProperties:
+  key: hedgedoc-linuxserver
+  name: HedgeDoc
+  tags:
+  - Tool
+  shortDescZh: HedgeDoc 协作文档编辑器
+  shortDescEn: Collaborative markdown editor maintained by LinuxServer.io
+  description:
+    en: Collaborative markdown editor maintained by LinuxServer.io
+    zh: HedgeDoc 协作文档编辑器
+    zh-Hant: HedgeDoc 協作文件編輯器
+    ja: LinuxServer.io が保守する共同 Markdown エディター
+    ko: LinuxServer.io에서 유지 관리하는 협업 Markdown 편집기
+    ru: Совместный Markdown-редактор, поддерживаемый LinuxServer.io
+    ms: Editor Markdown kolaboratif yang diselenggara oleh LinuxServer.io
+    pt-br: Editor Markdown colaborativo mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://hedgedoc.org/
+  github: https://github.com/linuxserver/docker-hedgedoc
+  document: https://docs.linuxserver.io/images/docker-hedgedoc/
+  architectures:
+  - amd64
+  - arm64

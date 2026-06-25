@@ -1,65 +1,35 @@
-[![Test Status](https://github.com/GopeedLab/gopeed/workflows/test/badge.svg)](https://github.com/GopeedLab/gopeed/actions?query=workflow%3Atest)
-[![Codecov](https://codecov.io/gh/GopeedLab/gopeed/branch/main/graph/badge.svg)](https://codecov.io/gh/GopeedLab/gopeed)
-[![Release](https://img.shields.io/github/release/GopeedLab/gopeed.svg)](https://github.com/GopeedLab/gopeed/releases)
-[![Download](https://img.shields.io/github/downloads/GopeedLab/gopeed/total.svg)](https://github.com/GopeedLab/gopeed/releases)
-[![Donate](https://img.shields.io/badge/%24-donate-ff69b4.svg)](https://github.com/GopeedLab/gopeed/blob/main/.donate/index.md#donate)
-[![Discord](https://img.shields.io/discord/1037992631881449472?label=Discord&logo=discord&style=social)](https://discord.gg/ZUJqJrwCGB)
+# Gopeed
 
-![](https://github.com/GopeedLab/gopeed/raw/main/_docs/img/banner.png)
+## 应用简介
+一款现代化的下载器。
 
+英文说明：High speed downloader that supports all platforms.
 
-## 介绍
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.9.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-Gopeed（全称 Go Speed），是一款由`Golang`+`Flutter`开发的高速下载器，支持（HTTP、BitTorrent、Magnet）协议下载，并且支持全平台使用。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40126 | 是 |
 
-访问 ✈ [官方网站](https://gopeed.com/zh-CN) | 📖 [开发文档](https://docs.gopeed.com/zh/)
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DOWNLOAD_PATH | 下载文件夹路径 | ./data/Downloads | 是 |
 
-## 安装
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-**已支持平台**
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- [x] windows
-- [x] macos
-- [x] linux
-- [x] android
-- [ ] ios
-- [x] web
-- [x] docker
-
-[前往下载](https://github.com/GopeedLab/gopeed/releases/latest)
-
-> 注：macos 版本运行如果提示损坏，请在终端执行 `xattr -d com.apple.quarantine /Applications/Gopeed.app` 命令
-
-### 命令行工具
-
-使用`go install`安装：
-
-```bash
-go install github.com/GopeedLab/gopeed/cmd/gopeed@latest
-```
-
-### Docker
-
-#### 直接运行
-
-```bash
-docker run -d -p 9999:9999 -v /path/to/download:/root/Downloads liwei2633/gopeed
-```
-
-#### 使用 Docker Compose
-
-```bash
-docker-compose up -d
-```
-
-#### 访问服务
-
-当 docker 容器运行时，可以通过 `http://localhost:9999` 访问 web 页面。
-
-## 打赏
-
-如果觉得项目对你有帮助，请考虑[打赏](https://github.com/GopeedLab/gopeed/blob/main/.donate/index.md#donate)以支持这个项目的发展，非常感谢！
-
-## 界面展示
-
-![](https://github.com/GopeedLab/gopeed/raw/main/_docs/img/ui-demo.png)
+## 参考资料
+- 官网: <https://gopeed.com>
+- 文档: <https://docs.gopeed.com>
+- 源码: <https://github.com/GopeedLab/gopeed>

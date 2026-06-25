@@ -1,0 +1,30 @@
+name: Lychee
+tags:
+- Media
+title: Lychee 相册管理
+description: Lychee 相册管理
+additionalProperties:
+  key: lychee-linuxserver
+  name: Lychee
+  tags:
+  - Media
+  shortDescZh: Lychee 相册管理
+  shortDescEn: Photo gallery manager maintained by LinuxServer.io
+  description:
+    en: Photo gallery manager maintained by LinuxServer.io
+    zh: Lychee 相册管理
+    zh-Hant: Lychee 相簿管理
+    ja: LinuxServer.io が保守するフォトギャラリー管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 사진 갤러리 관리자
+    ru: Менеджер фотогалереи, поддерживаемый LinuxServer.io
+    ms: Pengurus galeri foto yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de galeria de fotos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://lycheeorg.dev/
+  github: https://github.com/linuxserver/docker-lychee
+  document: https://docs.linuxserver.io/images/docker-lychee/
+  architectures:
+  - amd64
+  - arm64

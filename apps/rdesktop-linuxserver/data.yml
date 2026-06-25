@@ -1,0 +1,30 @@
+name: RDesktop
+tags:
+- Tool
+title: RDesktop 远程桌面环境
+description: RDesktop 远程桌面环境
+additionalProperties:
+  key: rdesktop-linuxserver
+  name: RDesktop
+  tags:
+  - Tool
+  shortDescZh: RDesktop 远程桌面环境
+  shortDescEn: RDP desktop environment maintained by LinuxServer.io
+  description:
+    en: RDP desktop environment maintained by LinuxServer.io
+    zh: RDesktop 远程桌面环境
+    zh-Hant: RDesktop 遠端桌面環境
+    ja: LinuxServer.io が保守する RDP デスクトップ環境
+    ko: LinuxServer.io에서 유지 관리하는 RDP 데스크톱 환경
+    ru: Среда рабочего стола RDP, поддерживаемая LinuxServer.io
+    ms: Persekitaran desktop RDP yang diselenggara oleh LinuxServer.io
+    pt-br: Ambiente de desktop RDP mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.linuxserver.io/
+  github: https://github.com/linuxserver/docker-rdesktop
+  document: https://docs.linuxserver.io/images/docker-rdesktop/
+  architectures:
+  - amd64
+  - arm64

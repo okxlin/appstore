@@ -1,46 +1,44 @@
-<p align="center"> 
-  <br/>  
-  <a href="https://opensource.org/license/agpl-v3"><img src="https://img.shields.io/badge/License-AGPL_v3-blue.svg?color=3F51B5&style=for-the-badge&label=License&logoColor=000000&labelColor=ececec" alt="License: AGPLv3"></a>
-  <a href="https://discord.immich.app">
-    <img src="https://img.shields.io/discord/979116623879368755.svg?label=Discord&logo=Discord&style=for-the-badge&logoColor=000000&labelColor=ececec" atl="Discord"/>
-  </a>
-  <br/>  
-  <br/>   
-</p>
+# Immich
 
-<p align="center">
-<img src="https://github.com/immich-app/immich/raw/main/design/immich-logo-stacked-light.svg" width="300" title="Login With Custom URL">
-</p>
-<h3 align="center">高性能的照片和视频自托管解决方案</h3>
-<p align="center">  
-</p>
-<br/>
-<br/>
-<p align="center">
+## 应用简介
+高性能的自托管照片和视频备份方案。
 
-  <a href="https://github.com/immich-app/immich/blob/main/README.md">English</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_ca_ES.md">Català</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_es_ES.md">Español</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_fr_FR.md">Français</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_it_IT.md">Italiano</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_ja_JP.md">日本語</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_ko_KR.md">한국어</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_de_DE.md">Deutsch</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_nl_NL.md">Nederlands</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_tr_TR.md">Türkçe</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_ru_RU.md">Русский</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_pt_BR.md">Português Brasileiro</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_sv_SE.md">Svenska</a>
-  <a href="https://github.com/immich-app/immich/blob/main/readme_i18n/README_ar_JO.md">العربية</a>
-  
-</p>
+英文说明：High performance self-hosted photo and video backup solution.
 
-## 免责声明
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64。
+- 可选版本：`release`、`1.122.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- ⚠️ 本项目正在 **非常活跃** 地开发中。
-- ⚠️ 可能存在 bug 或者随时有重大变更。
-- ⚠️ **不要把本软件作为您存储照片或视频的唯一方式。**
-- ⚠️ 为了您宝贵的照片与视频，请始终遵守 [3-2-1](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/) 备份方案！
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40194 | 是 |
 
-> [!NOTE]
-> 完整的项目文档以及安装教程请参见：https://immich.app/。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| UPLOAD_LOCATION | 上传用文件夹路径 | ./data/upload | 是 |
+| CACHE_PATH | 缓存文件夹路径 | ./data/cache | 是 |
+| DB_PATH | 数据库文件夹路径 | ./data/data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_NAME | 数据库名 | immich | 是 |
+| PANEL_DB_USER | Postgres 数据库用户 | postgres | 是 |
+| PANEL_DB_USER_PASSWORD | Postgres 数据库用户密码 | immich | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://immich.app>
+- 文档: <https://immich.app/docs>
+- 源码: <https://github.com/immich-app/immich>

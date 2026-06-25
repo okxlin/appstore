@@ -1,0 +1,29 @@
+name: Citron
+tags:
+- Game
+title: Citron Switch 模拟器桌面
+description: Citron Switch 模拟器桌面
+additionalProperties:
+  key: citron-linuxserver
+  name: Citron
+  tags:
+  - Game
+  shortDescZh: Citron Switch 模拟器桌面
+  shortDescEn: Switch emulator desktop maintained by LinuxServer.io
+  description:
+    en: Switch emulator desktop maintained by LinuxServer.io
+    zh: Citron Switch 模拟器桌面
+    zh-Hant: Citron Switch 模擬器桌面
+    ja: LinuxServer.io が保守する Switch エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Switch 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора Switch, поддерживаемый LinuxServer.io
+    ms: Desktop emulator Switch yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador Switch mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://citron-emu.org/
+  github: https://github.com/linuxserver/docker-citron
+  document: https://docs.linuxserver.io/deprecated_images/docker-citron/
+  architectures:
+  - amd64

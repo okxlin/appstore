@@ -1,0 +1,29 @@
+name: IntelliJ IDEA
+tags:
+- Development
+title: IntelliJ IDEA Java IDE 桌面
+description: IntelliJ IDEA Java IDE 桌面
+additionalProperties:
+  key: intellij-idea-linuxserver
+  name: IntelliJ IDEA
+  tags:
+  - Development
+  shortDescZh: IntelliJ IDEA Java IDE 桌面
+  shortDescEn: Java IDE desktop maintained by LinuxServer.io
+  description:
+    en: Java IDE desktop maintained by LinuxServer.io
+    zh: IntelliJ IDEA Java IDE 桌面
+    zh-Hant: IntelliJ IDEA Java IDE 桌面
+    ja: LinuxServer.io が保守する Java IDE デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Java IDE 데스크톱
+    ru: Рабочий стол Java IDE, поддерживаемый LinuxServer.io
+    ms: Desktop IDE Java yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de IDE Java mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.jetbrains.com/idea/
+  github: https://github.com/linuxserver/docker-intellij-idea
+  document: https://docs.linuxserver.io/images/docker-intellij-idea/
+  architectures:
+  - amd64

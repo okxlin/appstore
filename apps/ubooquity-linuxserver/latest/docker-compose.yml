@@ -1,0 +1,25 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  ubooquity:
+    image: "linuxserver/ubooquity:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:2202"
+      - "${PANEL_APP_PORT_ADMIN}:2203"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${BOOKS_PATH}:/books"
+      - "${COMICS_PATH}:/comics"
+      - "${FILES_PATH}:/files"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - MAXMEM=${MAXMEM:-}
+    labels:
+      createdBy: "Apps"

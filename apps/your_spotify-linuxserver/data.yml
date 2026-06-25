@@ -1,0 +1,30 @@
+name: Your Spotify
+tags:
+- Tool
+title: Your Spotify 听歌统计面板
+description: Your Spotify 听歌统计面板
+additionalProperties:
+  key: your_spotify-linuxserver
+  name: Your Spotify
+  tags:
+  - Tool
+  shortDescZh: Your Spotify 听歌统计面板
+  shortDescEn: Spotify listening statistics dashboard maintained by LinuxServer.io
+  description:
+    en: Spotify listening statistics dashboard maintained by LinuxServer.io
+    zh: Your Spotify 听歌统计面板
+    zh-Hant: Your Spotify 聽歌統計面板
+    ja: LinuxServer.io が保守する Spotify 再生統計ダッシュボード
+    ko: LinuxServer.io에서 유지 관리하는 Spotify 청취 통계 대시보드
+    ru: Панель статистики прослушивания Spotify, поддерживаемая LinuxServer.io
+    ms: Papan statistik pendengaran Spotify yang diselenggara oleh LinuxServer.io
+    pt-br: Painel de estatisticas de escuta do Spotify mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/Yooooomi/your_spotify
+  github: https://github.com/linuxserver/docker-your_spotify
+  document: https://docs.linuxserver.io/images/docker-your_spotify/
+  architectures:
+  - amd64
+  - arm64

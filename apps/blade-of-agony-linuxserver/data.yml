@@ -1,0 +1,29 @@
+name: Blade of Agony
+tags:
+- Game
+title: Blade of Agony 游戏桌面
+description: Blade of Agony 游戏桌面
+additionalProperties:
+  key: blade-of-agony-linuxserver
+  name: Blade of Agony
+  tags:
+  - Game
+  shortDescZh: Blade of Agony 游戏桌面
+  shortDescEn: Wolfenstein-inspired game desktop maintained by LinuxServer.io
+  description:
+    en: Wolfenstein-inspired game desktop maintained by LinuxServer.io
+    zh: Blade of Agony 游戏桌面
+    zh-Hant: Blade of Agony 遊戲桌面
+    ja: LinuxServer.io が保守する Wolfenstein 風ゲームデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Wolfenstein풍 게임 데스크톱
+    ru: Рабочий стол игры в духе Wolfenstein, поддерживаемый LinuxServer.io
+    ms: Desktop permainan berilhamkan Wolfenstein yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de jogo inspirado em Wolfenstein mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://boa.realm667.com/
+  github: https://github.com/linuxserver/docker-blade-of-agony
+  document: https://docs.linuxserver.io/images/docker-blade-of-agony/
+  architectures:
+  - amd64

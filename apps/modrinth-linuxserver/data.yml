@@ -1,0 +1,29 @@
+name: Modrinth
+tags:
+- Game
+title: Modrinth 模组启动器桌面
+description: Modrinth 模组启动器桌面
+additionalProperties:
+  key: modrinth-linuxserver
+  name: Modrinth
+  tags:
+  - Game
+  shortDescZh: Modrinth 模组启动器桌面
+  shortDescEn: Mod launcher desktop maintained by LinuxServer.io
+  description:
+    en: Mod launcher desktop maintained by LinuxServer.io
+    zh: Modrinth 模组启动器桌面
+    zh-Hant: Modrinth 模組啟動器桌面
+    ja: LinuxServer.io が保守する Mod ランチャーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 모드 런처 데스크톱
+    ru: Рабочий стол лаунчера модов, поддерживаемый LinuxServer.io
+    ms: Desktop pelancar mod yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de inicializador de mods mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://modrinth.com/
+  github: https://github.com/linuxserver/docker-modrinth
+  document: https://docs.linuxserver.io/images/docker-modrinth/
+  architectures:
+  - amd64

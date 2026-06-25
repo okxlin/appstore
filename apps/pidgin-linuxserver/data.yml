@@ -1,0 +1,30 @@
+name: Pidgin
+tags:
+- Tool
+title: Pidgin 即时通讯桌面
+description: Pidgin 即时通讯桌面
+additionalProperties:
+  key: pidgin-linuxserver
+  name: Pidgin
+  tags:
+  - Tool
+  shortDescZh: Pidgin 即时通讯桌面
+  shortDescEn: Instant messaging desktop maintained by LinuxServer.io
+  description:
+    en: Instant messaging desktop maintained by LinuxServer.io
+    zh: Pidgin 即时通讯桌面
+    zh-Hant: Pidgin 即時通訊桌面
+    ja: LinuxServer.io が保守するインスタントメッセージングデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 인스턴트 메시징 데스크톱
+    ru: Рабочий стол мгновенных сообщений, поддерживаемый LinuxServer.io
+    ms: Desktop pemesejan segera yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de mensagens instantaneas mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.pidgin.im/
+  github: https://github.com/linuxserver/docker-pidgin
+  document: https://docs.linuxserver.io/images/docker-pidgin/
+  architectures:
+  - amd64
+  - arm64

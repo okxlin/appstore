@@ -1,0 +1,83 @@
+additionalProperties:
+  formFields:
+  - default: 2222
+    edit: true
+    envKey: PANEL_APP_PORT_SSH
+    labelEn: SSH Port
+    labelZh: SSH 端口
+    label:
+      en: SSH Port
+      zh: SSH 端口
+      zh-Hant: SSH 連接埠
+      ja: SSH ポート
+      ko: SSH 포트
+      ru: Порт SSH
+      ms: Port SSH
+      pt-br: Porta SSH
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: linuxserver.io
+    edit: true
+    envKey: USER_NAME
+    labelEn: SSH user name
+    labelZh: SSH 用户名
+    label:
+      en: SSH user name
+      zh: SSH 用户名
+      zh-Hant: SSH 使用者名稱
+      ja: SSH ユーザー名
+      ko: SSH 사용자 이름
+      ru: Имя пользователя SSH
+      ms: Nama pengguna SSH
+      pt-br: Nome de usuario SSH
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: PUBLIC_KEY
+    labelEn: SSH public key
+    labelZh: SSH 公钥
+    label:
+      en: SSH public key
+      zh: SSH 公钥
+      zh-Hant: SSH 公鑰
+      ja: SSH 公開鍵
+      ko: SSH 공개 키
+      ru: Открытый ключ SSH
+      ms: Kunci awam SSH
+      pt-br: Chave publica SSH
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

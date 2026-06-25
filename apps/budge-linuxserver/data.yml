@@ -1,0 +1,30 @@
+name: Budge
+tags:
+- Tool
+title: Budge 信封预算管理
+description: Budge 信封预算管理
+additionalProperties:
+  key: budge-linuxserver
+  name: Budge
+  tags:
+  - Tool
+  shortDescZh: Budge 信封预算管理
+  shortDescEn: Envelope budgeting app maintained by LinuxServer.io
+  description:
+    en: Envelope budgeting app maintained by LinuxServer.io
+    zh: Budge 信封预算管理
+    zh-Hant: Budge 信封預算管理
+    ja: LinuxServer.io が保守する封筒式予算管理アプリ
+    ko: LinuxServer.io에서 유지 관리하는 봉투식 예산 관리 앱
+    ru: Приложение конвертного бюджетирования, поддерживаемое LinuxServer.io
+    ms: Aplikasi belanjawan sampul yang diselenggara oleh LinuxServer.io
+    pt-br: Aplicativo de orcamento por envelopes mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/linuxserver/budge
+  github: https://github.com/linuxserver/docker-budge
+  document: https://docs.linuxserver.io/images/docker-budge/
+  architectures:
+  - amd64
+  - arm64

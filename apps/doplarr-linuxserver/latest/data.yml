@@ -1,0 +1,235 @@
+additionalProperties:
+  formFields:
+  - default: replace-with-discord-bot-token
+    edit: true
+    envKey: DISCORD_TOKEN
+    labelEn: Discord bot token
+    labelZh: Discord 机器人令牌
+    label:
+      en: Discord bot token
+      zh: Discord 机器人令牌
+      zh-Hant: Discord 機器人權杖
+      ja: Discord ボットトークン
+      ko: Discord 봇 토큰
+      ru: Токен бота Discord
+      ms: Token bot Discord
+      pt-br: Token do bot Discord
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: replace-with-overseerr-api-key
+    edit: true
+    envKey: OVERSEERR_API
+    labelEn: Overseerr API key
+    labelZh: Overseerr API 密钥
+    label:
+      en: Overseerr API key
+      zh: Overseerr API 密钥
+      zh-Hant: Overseerr API 金鑰
+      ja: Overseerr API キー
+      ko: Overseerr API 키
+      ru: Ключ API Overseerr
+      ms: Kunci API Overseerr
+      pt-br: Chave de API do Overseerr
+    required: false
+    type: password
+  - default: http://localhost:5055
+    edit: true
+    envKey: OVERSEERR_URL
+    labelEn: Overseerr URL
+    labelZh: Overseerr 地址
+    label:
+      en: Overseerr URL
+      zh: Overseerr 地址
+      zh-Hant: Overseerr 位址
+      ja: Overseerr URL
+      ko: Overseerr URL
+      ru: URL Overseerr
+      ms: URL Overseerr
+      pt-br: URL do Overseerr
+    required: false
+    type: text
+    rule: paramExtUrl
+  - default: ""
+    edit: true
+    envKey: RADARR_API
+    labelEn: Radarr API key
+    labelZh: Radarr API 密钥
+    label:
+      en: Radarr API key
+      zh: Radarr API 密钥
+      zh-Hant: Radarr API 金鑰
+      ja: Radarr API キー
+      ko: Radarr API 키
+      ru: Ключ API Radarr
+      ms: Kunci API Radarr
+      pt-br: Chave de API do Radarr
+    required: false
+    type: password
+  - default: http://localhost:7878
+    edit: true
+    envKey: RADARR_URL
+    labelEn: Radarr URL
+    labelZh: Radarr 地址
+    label:
+      en: Radarr URL
+      zh: Radarr 地址
+      zh-Hant: Radarr 位址
+      ja: Radarr URL
+      ko: Radarr URL
+      ru: URL Radarr
+      ms: URL Radarr
+      pt-br: URL do Radarr
+    required: false
+    type: text
+    rule: paramExtUrl
+  - default: ""
+    edit: true
+    envKey: SONARR_API
+    labelEn: Sonarr API key
+    labelZh: Sonarr API 密钥
+    label:
+      en: Sonarr API key
+      zh: Sonarr API 密钥
+      zh-Hant: Sonarr API 金鑰
+      ja: Sonarr API キー
+      ko: Sonarr API 키
+      ru: Ключ API Sonarr
+      ms: Kunci API Sonarr
+      pt-br: Chave de API do Sonarr
+    required: false
+    type: password
+  - default: http://localhost:8989
+    edit: true
+    envKey: SONARR_URL
+    labelEn: Sonarr URL
+    labelZh: Sonarr 地址
+    label:
+      en: Sonarr URL
+      zh: Sonarr 地址
+      zh-Hant: Sonarr 位址
+      ja: Sonarr URL
+      ko: Sonarr URL
+      ru: URL Sonarr
+      ms: URL Sonarr
+      pt-br: URL do Sonarr
+    required: false
+    type: text
+    rule: paramExtUrl
+  - default: 25
+    edit: true
+    envKey: DISCORD_MAX_RESULTS
+    labelEn: Maximum search results
+    labelZh: 最大搜索结果数
+    label:
+      en: Maximum search results
+      zh: 最大搜索结果数
+      zh-Hant: 最大搜尋結果數
+      ja: 最大検索結果数
+      ko: 최대 검색 결과 수
+      ru: Максимум результатов поиска
+      ms: Keputusan carian maksimum
+      pt-br: Maximo de resultados de pesquisa
+    required: true
+    type: number
+  - default: :plain
+    edit: true
+    envKey: DISCORD_REQUESTED_MSG_STYLE
+    labelEn: Request message style
+    labelZh: 请求消息样式
+    label:
+      en: Request message style
+      zh: 请求消息样式
+      zh-Hant: 請求訊息樣式
+      ja: リクエストメッセージ形式
+      ko: 요청 메시지 스타일
+      ru: Стиль сообщения запроса
+      ms: Gaya mesej permintaan
+      pt-br: Estilo da mensagem de solicitacao
+    required: true
+    type: select
+    values:
+    - label: :plain
+      value: :plain
+    - label: :embed
+      value: :embed
+    - label: :none
+      value: :none
+  - default: "true"
+    edit: true
+    envKey: PARTIAL_SEASONS
+    labelEn: Allow partial seasons
+    labelZh: 允许部分季请求
+    label:
+      en: Allow partial seasons
+      zh: 允许部分季请求
+      zh-Hant: 允許部分季請求
+      ja: 一部シーズンのリクエストを許可
+      ko: 일부 시즌 요청 허용
+      ru: Разрешить запросы отдельных сезонов
+      ms: Benarkan permintaan musim separa
+      pt-br: Permitir solicitacoes de temporadas parciais
+    required: true
+    type: select
+    values:
+    - label: "true"
+      value: "true"
+    - label: "false"
+      value: "false"
+  - default: :info
+    edit: true
+    envKey: LOG_LEVEL
+    labelEn: Log level
+    labelZh: 日志级别
+    label:
+      en: Log level
+      zh: 日志级别
+      zh-Hant: 日誌層級
+      ja: ログレベル
+      ko: 로그 수준
+      ru: Уровень журнала
+      ms: Tahap log
+      pt-br: Nivel de log
+    required: true
+    type: select
+    values:
+    - label: :debug
+      value: :debug
+    - label: :info
+      value: :info
+    - label: :warn
+      value: :warn
+    - label: :error
+      value: :error
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

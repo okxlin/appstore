@@ -1,0 +1,30 @@
+name: BookStack
+tags:
+- Tool
+title: BookStack 文档知识库
+description: BookStack 文档知识库
+additionalProperties:
+  key: bookstack-linuxserver
+  name: BookStack
+  tags:
+  - Tool
+  shortDescZh: BookStack 文档知识库
+  shortDescEn: BookStack documentation wiki maintained by LinuxServer.io
+  description:
+    en: BookStack documentation wiki maintained by LinuxServer.io
+    zh: BookStack 文档知识库
+    zh-Hant: BookStack 文件知識庫
+    ja: LinuxServer.io が保守する BookStack ドキュメント Wiki
+    ko: LinuxServer.io에서 유지 관리하는 BookStack 문서 위키
+    ru: Документационная wiki BookStack, поддерживаемая LinuxServer.io
+    ms: Wiki dokumentasi BookStack yang diselenggara oleh LinuxServer.io
+    pt-br: Wiki de documentacao BookStack mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.bookstackapp.com/
+  github: https://github.com/linuxserver/docker-bookstack
+  document: https://docs.linuxserver.io/images/docker-bookstack/
+  architectures:
+  - amd64
+  - arm64

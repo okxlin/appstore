@@ -1,0 +1,30 @@
+name: COPS
+tags:
+- Media
+title: COPS 电子书服务器
+description: COPS 电子书服务器
+additionalProperties:
+  key: cops-linuxserver
+  name: COPS
+  tags:
+  - Media
+  shortDescZh: COPS 电子书服务器
+  shortDescEn: Ebook server maintained by LinuxServer.io
+  description:
+    en: Ebook server maintained by LinuxServer.io
+    zh: COPS 电子书服务器
+    zh-Hant: COPS 電子書伺服器
+    ja: LinuxServer.io が保守する電子書籍サーバー
+    ko: LinuxServer.io에서 유지 관리하는 전자책 서버
+    ru: Сервер электронных книг, поддерживаемый LinuxServer.io
+    ms: Pelayan ebook yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de ebooks mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/mikespub-org/seblucas-cops
+  github: https://github.com/linuxserver/docker-cops
+  document: https://docs.linuxserver.io/images/docker-cops/
+  architectures:
+  - amd64
+  - arm64

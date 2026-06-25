@@ -1,0 +1,30 @@
+name: PCSX2
+tags:
+- Game
+title: PCSX2 PlayStation 2 模拟器桌面
+description: PCSX2 PlayStation 2 模拟器桌面
+additionalProperties:
+  key: pcsx2-linuxserver
+  name: PCSX2
+  tags:
+  - Game
+  shortDescZh: PCSX2 PlayStation 2 模拟器桌面
+  shortDescEn: PlayStation 2 emulator desktop maintained by LinuxServer.io
+  description:
+    en: PlayStation 2 emulator desktop maintained by LinuxServer.io
+    zh: PCSX2 PlayStation 2 模拟器桌面
+    zh-Hant: PCSX2 PlayStation 2 模擬器桌面
+    ja: LinuxServer.io が保守する PlayStation 2 エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 PlayStation 2 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора PlayStation 2, поддерживаемый LinuxServer.io
+    ms: Desktop emulator PlayStation 2 yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador PlayStation 2 mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://pcsx2.net/
+  github: https://github.com/linuxserver/docker-pcsx2
+  document: https://docs.linuxserver.io/images/docker-pcsx2/
+  architectures:
+  - amd64
+  - arm64

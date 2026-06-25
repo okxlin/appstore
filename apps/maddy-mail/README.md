@@ -1,16 +1,49 @@
-# 使用说明
+# Maddy Mail Server
 
-## 1. 准备域名证书
+## 应用简介
+可组合的多合一邮件服务器。
+
+英文说明：Composable all-in-one mail server.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：邮件。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.9.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| SMTP_IN_PORT | SMTP 入站端口 | 25 | 是 |
+| IMAP4_PORT | IMAP4 端口 | 143 | 是 |
+| IMAP4_PORT2 | IMAP4 端口 | 993 | 是 |
+| SMTP_S_PORT | SMTP 提交端口 | 465 | 是 |
+| SMTP_S_PORT2 | SMTP 提交端口 | 587 | 是 |
+
+## 数据持久化
+- `maddydata:/data`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MAIL_HOSTNAME | 邮箱 MX 主机名 | mail.example.com | 是 |
+| MAIL_DOMAIN | 邮箱域名 | example.com | 是 |
+
+## 使用说明
+### 1. 准备域名证书
 使用`acme.sh`、`certbot`、手动上传等方式准备好域名证书，注意需要按需修改。
 
 证书对应域名为邮箱`MX`主机名如`mail.example.com `。
 
-## 2. 创建Docker存储卷
+### 2. 创建Docker存储卷
 ```
 docker volume create maddydata 
 ```
 
-## 3. 安装应用
+### 3. 安装应用
 
 应用商店安装应用，
 
@@ -18,8 +51,7 @@ docker volume create maddydata
 
 忽略错误，进行下一步操作。
 
-
-## 4. 域名证书存放到存储卷
+### 4. 域名证书存放到存储卷
 
 存储卷默认路径如下
 `/var/lib/docker/volumes/maddydata/_data/`
@@ -37,7 +69,7 @@ mkdir -p tls
 
 按要求上传完成证书文件后，容器会自动正常运行。
 
-## 5. 设置DKIM DNS解析
+### 5. 设置DKIM DNS解析
 ### 5.1 获取DKIM值
 
 当容器正常运行后
@@ -67,7 +99,7 @@ default._domainkey.example.org.    TXT   "v=DKIM1; k=ed25519; p=nAcUUozPlhc4VPhp
 例子如下：
 为 `default._domainkey.example.com` 添加`TXT`记录，值设置为`v=DKIM1; k=ed25519; p=nAcUUozPlhc4VPhp7hZl+owES7j7OlEv0laaDEDBAqg=`。
 
-## 6. 设置DNS解析
+### 6. 设置DNS解析
 
 - 注意按需修改
 
@@ -84,7 +116,7 @@ default._domainkey.example.org.    TXT   "v=DKIM1; k=ed25519; p=nAcUUozPlhc4VPhp
 | TXT | `_mta-sts.example.com` | `v=STSv1; id=1` |
 | TXT | `_smtp._tls.example.com` | `v=TLSRPTv1;rua=mailto:postmaster@example.com` |
 
-## 7. 创建发送账户
+### 7. 创建发送账户
 
 面板`容器`界面，连接容器终端，执行以下命令
 
@@ -97,30 +129,6 @@ maddy imap-acct create postmaster@example.com
 ```
 结束
 
-# 原始相关
-
-Maddy Mail Server
-=====================
-> Composable all-in-one mail server.
-
-Maddy Mail Server implements all functionality required to run a e-mail
-server. It can send messages via SMTP (works as MTA), accept messages via SMTP
-(works as MX) and store messages while providing access to them via IMAP.
-In addition to that it implements auxiliary protocols that are mandatory
-to keep email reasonably secure (DKIM, SPF, DMARC, DANE, MTA-STS).
-
-It replaces Postfix, Dovecot, OpenDKIM, OpenSPF, OpenDMARC and more with one
-daemon with uniform configuration and minimal maintenance cost.
-
-**Note:** IMAP storage is "beta". If you are looking for stable and
-feature-packed implementation you may want to use Dovecot instead. maddy still
-can handle message delivery business.
-
-[![CI status](https://img.shields.io/github/workflow/status/foxcpp/maddy/Testing%20and%20release%20preparation?style=flat-square)](https://github.com/foxcpp/maddy/actions/workflows/cicd.yml)
-[![Issues tracker](https://img.shields.io/github/issues/foxcpp/maddy)](https://github.com/foxcpp/maddy)
-
-* [Setup tutorial](https://maddy.email/tutorials/setting-up/)
-* [Documentation](https://maddy.email/)
-
-* [IRC channel](https://webchat.oftc.net/?channels=maddy&uio=MT11bmRlZmluZWQb1)
-* [Mailing list](https://lists.sr.ht/~foxcpp/maddy)
+## 参考资料
+- 官网: <https://maddy.email>
+- 源码: <https://github.com/foxcpp/maddy>

@@ -1,78 +1,41 @@
 # code-server
 
-[!["GitHub Discussions"](https://img.shields.io/badge/%20GitHub-%20Discussions-gray.svg?longCache=true&logo=github&colorB=purple)](https://github.com/coder/code-server/discussions) [!["Join us on Slack"](https://img.shields.io/badge/join-us%20on%20slack-gray.svg?longCache=true&logo=slack&colorB=brightgreen)](https://coder.com/community) [![Twitter Follow](https://img.shields.io/twitter/follow/CoderHQ?label=%40CoderHQ&style=social)](https://twitter.com/coderhq) [![codecov](https://codecov.io/gh/coder/code-server/branch/main/graph/badge.svg?token=5iM9farjnC)](https://codecov.io/gh/coder/code-server) [![See latest](https://img.shields.io/static/v1?label=Docs&message=see%20latest&color=blue)](https://coder.com/docs/code-server/latest)
+## 应用简介
+在任何地方的任何计算机上运行 VS Code 并在浏览器中访问它。
 
-Run [VS Code](https://github.com/Microsoft/vscode) on any machine anywhere and
-access it in the browser.
+英文说明：Run VS Code on any machine anywhere and access it in the browser.
 
-![Screenshot](https://raw.githubusercontent.com/coder/code-server/main/docs/assets/screenshot.png)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：DevTool。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`4.125.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Highlights
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40031 | 是 |
 
-- Code on any device with a consistent development environment
-- Use cloud servers to speed up tests, compilations, downloads, and more
-- Preserve battery life when you're on the go; all intensive tasks run on your
-  server
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-## Requirements
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-See [requirements](https://coder.com/docs/code-server/latest/requirements) for minimum specs, as well as instructions
-on how to set up a Google VM on which you can install code-server.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| WEB_PASSWORD | 网页访问密码 | code | 是 |
+| SUDO_PASSWORD | sudo密码 | code | 是 |
 
-**TL;DR:** Linux machine with WebSockets enabled, 1 GB RAM, and 2 vCPUs
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Getting started
-
-There are four ways to get started:
-
-1. Using the [install
-   script](https://github.com/coder/code-server/blob/main/install.sh), which
-   automates most of the process. The script uses the system package manager if
-   possible.
-2. Manually [installing
-   code-server](https://coder.com/docs/code-server/latest/install)
-3. Deploy code-server to your team with [coder/coder](https://cdr.co/coder-github)
-4. Using our one-click buttons and guides to [deploy code-server to a cloud
-   provider](https://github.com/coder/deploy-code-server) ⚡
-
-If you use the install script, you can preview what occurs during the install
-process:
-
-```bash
-curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
-```
-
-To install, run:
-
-```bash
-curl -fsSL https://code-server.dev/install.sh | sh
-```
-
-When done, the install script prints out instructions for running and starting
-code-server.
-
-> **Note**
-> To manage code-server for a team on your infrastructure, see: [coder/coder](https://cdr.co/coder-github)
-
-We also have an in-depth [setup and
-configuration](https://coder.com/docs/code-server/latest/guide) guide.
-
-## Questions?
-
-See answers to [frequently asked
-questions](https://coder.com/docs/code-server/latest/FAQ).
-
-## Want to help?
-
-See [Contributing](https://coder.com/docs/code-server/latest/CONTRIBUTING) for
-details.
-
-## Hiring
-
-Interested in [working at Coder](https://coder.com/careers)? Check out [our open
-positions](https://coder.com/careers#openings)!
-
-## For Organizations
-
-Want remote development for your organization or enterprise? Visit [our
-website](https://coder.com) to learn more about Coder.
+## 参考资料
+- 官网: <https://coder.com/>
+- 文档: <https://coder.com/docs/code-server/latest>
+- 源码: <https://github.com/coder/code-server>

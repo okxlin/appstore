@@ -1,73 +1,42 @@
 # h5ai
 
-[![license][license-img]][github] [![web][web-img]][web] [![github][github-img]][github]
+## 应用简介
+用于Apache httpd，lighttpd和nginx的HTTP Web服务器索引。
 
-A modern HTTP web server index for Apache httpd, lighttpd, and nginx.
+英文说明：HTTP web server index for Apache httpd, lighttpd and nginx.
 
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.25.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Important
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40048 | 是 |
 
-* Do **not** install any files from the `src` folder, they need to be
-  preprocessed to work correctly!
-* Find a preprocessed package and detailed install instructions on the
-  [project page][web].
-* For bug reports and feature requests please use [issues][github-issues].
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 分享的数据文件夹路径 | ./data/share | 是 |
+| CONFIG_PATH | 配置文件所在路径 | ./data/config | 是 |
 
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## Build
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| AUTH_ENABLE | 身份验证(开启:true，关闭:false) | true | 是 |
+| USER | 用户名 | h5ai | 否 |
+| PASSWORD | 用户密码 | h5ai | 否 |
 
-There are installation ready packages for the latest [releases][release] and
-[dev builds][develop]. But to build **h5ai** yourself either `git clone` or
-download the repository. From within the root folder run the following
-commands to find a fresh zipball in folder `build` (tested on linux only,
-requires [`node 10.0+`][node] to be installed, might work on other
-configurations).
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-~~~sh
-> npm install
-> npm run build
-~~~
-
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2020 Lars Jung (https://larsjung.de)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-
-## References
-
-**h5ai** profits from other projects, all of them licensed under the MIT license
-too. Exceptions are some [Material Design icons][material-design-icons] (CC BY 4.0).
-
-
-[web]: https://larsjung.de/h5ai/
-[github]: https://github.com/lrsjng/h5ai
-[github-issues]: https://github.com/lrsjng/h5ai/issues
-[release]: https://release.larsjung.de/h5ai/
-[develop]: https://release.larsjung.de/h5ai/develop/
-[node]: https://nodejs.org
-[material-design-icons]: https://github.com/google/material-design-icons
-
-[license-img]: https://img.shields.io/badge/license-MIT-a0a060.svg?style=flat-square
-[web-img]: https://img.shields.io/badge/web-larsjung.de/h5ai-a0a060.svg?style=flat-square
-[github-img]: https://img.shields.io/badge/github-lrsjng/h5ai-a0a060.svg?style=flat-square
+## 参考资料
+- 官网: <https://hub.docker.com/r/bin20088/h5ai>
+- 文档: <https://github.com/lrsjng/h5ai>

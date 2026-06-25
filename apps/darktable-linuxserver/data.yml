@@ -1,0 +1,30 @@
+name: darktable
+tags:
+- Media
+title: darktable 摄影工作流桌面
+description: darktable 摄影工作流桌面
+additionalProperties:
+  key: darktable-linuxserver
+  name: darktable
+  tags:
+  - Media
+  shortDescZh: darktable 摄影工作流桌面
+  shortDescEn: Photography workflow desktop maintained by LinuxServer.io
+  description:
+    en: Photography workflow desktop maintained by LinuxServer.io
+    zh: darktable 摄影工作流桌面
+    zh-Hant: darktable 攝影工作流程桌面
+    ja: LinuxServer.io が保守する写真ワークフローデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 사진 워크플로 데스크톱
+    ru: Рабочий стол фотографического workflow, поддерживаемый LinuxServer.io
+    ms: Desktop aliran kerja fotografi yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de fluxo de trabalho fotografico mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.darktable.org/
+  github: https://github.com/linuxserver/docker-darktable
+  document: https://docs.linuxserver.io/images/docker-darktable/
+  architectures:
+  - amd64
+  - arm64

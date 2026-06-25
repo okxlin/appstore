@@ -1,0 +1,169 @@
+additionalProperties:
+  formFields:
+  - default: 8443
+    edit: true
+    envKey: PANEL_APP_PORT_HTTPS
+    labelEn: HTTPS Port
+    labelZh: HTTPS 端口
+    label:
+      en: HTTPS Port
+      zh: HTTPS 端口
+      zh-Hant: HTTPS 連接埠
+      ja: HTTPS ポート
+      ko: HTTPS 포트
+      ru: HTTPS-порт
+      ms: Port HTTPS
+      pt-br: Porta HTTPS
+    required: true
+    type: number
+    rule: paramPort
+  - default: 3478
+    edit: true
+    envKey: PANEL_APP_PORT_STUN
+    labelEn: STUN Port
+    labelZh: STUN 端口
+    label:
+      en: STUN Port
+      zh: STUN 端口
+      zh-Hant: STUN 連接埠
+      ja: STUN ポート
+      ko: STUN 포트
+      ru: Порт STUN
+      ms: Port STUN
+      pt-br: Porta STUN
+    required: true
+    type: number
+    rule: paramPort
+  - default: 10001
+    edit: true
+    envKey: PANEL_APP_PORT_DISCOVERY
+    labelEn: Discovery Port
+    labelZh: 发现端口
+    label:
+      en: Discovery Port
+      zh: 发现端口
+      zh-Hant: 探索連接埠
+      ja: 検出ポート
+      ko: 검색 포트
+      ru: Порт обнаружения
+      ms: Port penemuan
+      pt-br: Porta de descoberta
+    required: true
+    type: number
+    rule: paramPort
+  - default: 8080
+    edit: true
+    envKey: PANEL_APP_PORT_INFORM
+    labelEn: Inform Port
+    labelZh: Inform 端口
+    label:
+      en: Inform Port
+      zh: Inform 端口
+      zh-Hant: Inform 連接埠
+      ja: Inform ポート
+      ko: Inform 포트
+      ru: Порт Inform
+      ms: Port Inform
+      pt-br: Porta Inform
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: unifi-change-me
+    edit: true
+    envKey: MONGO_PASS
+    labelEn: Mongo password
+    labelZh: Mongo 密码
+    label:
+      en: Mongo password
+      zh: Mongo 密码
+      zh-Hant: Mongo 密碼
+      ja: Mongo パスワード
+      ko: Mongo 비밀번호
+      ru: Пароль Mongo
+      ms: Kata laluan Mongo
+      pt-br: Senha do Mongo
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ./data/mongo
+    edit: true
+    envKey: MONGO_DATA_PATH
+    labelEn: Mongo data path
+    labelZh: Mongo 数据目录
+    label:
+      en: Mongo data path
+      zh: Mongo 数据目录
+      zh-Hant: Mongo 資料目錄
+      ja: Mongo データディレクトリ
+      ko: Mongo 데이터 디렉터리
+      ru: Каталог данных Mongo
+      ms: Laluan data Mongo
+      pt-br: Caminho de dados do Mongo
+    required: true
+    type: text
+  - default: 1024
+    edit: true
+    envKey: MEM_LIMIT
+    labelEn: Memory limit MB
+    labelZh: 内存限制 MB
+    label:
+      en: Memory limit MB
+      zh: 内存限制 MB
+      zh-Hant: 記憶體限制 MB
+      ja: メモリ上限 MB
+      ko: 메모리 제한 MB
+      ru: Лимит памяти, МБ
+      ms: Had memori MB
+      pt-br: Limite de memoria MB
+    required: true
+    type: number
+    rule: paramCommon
+  - default: 1024
+    edit: true
+    envKey: MEM_STARTUP
+    labelEn: Startup memory MB
+    labelZh: 启动内存 MB
+    label:
+      en: Startup memory MB
+      zh: 启动内存 MB
+      zh-Hant: 啟動記憶體 MB
+      ja: 起動メモリ MB
+      ko: 시작 메모리 MB
+      ru: Стартовая память, МБ
+      ms: Memori permulaan MB
+      pt-br: Memoria inicial MB
+    required: true
+    type: number
+    rule: paramCommon
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

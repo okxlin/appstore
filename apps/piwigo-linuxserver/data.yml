@@ -1,0 +1,30 @@
+name: Piwigo
+tags:
+- Media
+title: Piwigo 相册管理
+description: Piwigo 相册管理
+additionalProperties:
+  key: piwigo-linuxserver
+  name: Piwigo
+  tags:
+  - Media
+  shortDescZh: Piwigo 相册管理
+  shortDescEn: Photo gallery manager maintained by LinuxServer.io
+  description:
+    en: Photo gallery manager maintained by LinuxServer.io
+    zh: Piwigo 相册管理
+    zh-Hant: Piwigo 相簿管理
+    ja: LinuxServer.io が保守するフォトギャラリー管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 사진 갤러리 관리자
+    ru: Менеджер фотогалерей, поддерживаемый LinuxServer.io
+    ms: Pengurus galeri foto yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de galeria de fotos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://piwigo.org/
+  github: https://github.com/linuxserver/docker-piwigo
+  document: https://docs.linuxserver.io/images/docker-piwigo/
+  architectures:
+  - amd64
+  - arm64

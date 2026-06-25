@@ -1,0 +1,30 @@
+name: Chromium
+tags:
+- Tool
+title: Chromium 浏览器桌面
+description: Chromium 浏览器桌面
+additionalProperties:
+  key: chromium-linuxserver
+  name: Chromium
+  tags:
+  - Tool
+  shortDescZh: Chromium 浏览器桌面
+  shortDescEn: Browser desktop maintained by LinuxServer.io
+  description:
+    en: Browser desktop maintained by LinuxServer.io
+    zh: Chromium 浏览器桌面
+    zh-Hant: Chromium 瀏覽器桌面
+    ja: LinuxServer.io が保守するブラウザーデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 브라우저 데스크톱
+    ru: Рабочий стол браузера, поддерживаемый LinuxServer.io
+    ms: Desktop pelayar yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de navegador mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.chromium.org/chromium-projects/
+  github: https://github.com/linuxserver/docker-chromium
+  document: https://docs.linuxserver.io/images/docker-chromium/
+  architectures:
+  - amd64
+  - arm64

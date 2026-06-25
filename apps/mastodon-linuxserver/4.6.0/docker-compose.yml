@@ -1,0 +1,71 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  mastodon:
+    image: "linuxserver/mastodon:4.6.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTPS}:443"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - LOCAL_DOMAIN=${LOCAL_DOMAIN}
+      - REDIS_HOST=mastodon-redis
+      - REDIS_PORT=6379
+      - DB_HOST=mastodon-db
+      - DB_USER=mastodon
+      - DB_NAME=mastodon
+      - DB_PASS=${DB_PASSWORD}
+      - DB_PORT=5432
+      - ES_ENABLED=false
+      - ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=${ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY}
+      - ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=${ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY}
+      - ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=${ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - OTP_SECRET=${OTP_SECRET}
+      - VAPID_PRIVATE_KEY=${VAPID_PRIVATE_KEY}
+      - VAPID_PUBLIC_KEY=${VAPID_PUBLIC_KEY}
+      - SMTP_SERVER=${SMTP_SERVER}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_LOGIN=${SMTP_LOGIN:-}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
+      - SMTP_FROM_ADDRESS=${SMTP_FROM_ADDRESS}
+      - S3_ENABLED=false
+      - WEB_DOMAIN=${WEB_DOMAIN:-}
+      - SIDEKIQ_THREADS=${SIDEKIQ_THREADS}
+      - DB_POOL=${DB_POOL}
+    depends_on:
+      - mastodon-db
+      - mastodon-redis
+    labels:
+      createdBy: "Apps"
+  mastodon-db:
+    image: "postgres:16-alpine"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DB_DATA_PATH}:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=mastodon
+      - POSTGRES_USER=mastodon
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    labels:
+      createdBy: "Apps"
+  mastodon-redis:
+    image: "redis:7-alpine"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${REDIS_DATA_PATH}:/data"
+    labels:
+      createdBy: "Apps"

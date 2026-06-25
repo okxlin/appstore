@@ -1,21 +1,38 @@
-概述
-========
+# Sunshine
 
-[](#overview)
+## 应用简介
+开源游戏串流服务。
 
-LizardByte 的完整文档托管在 [Read the Docs](https://sunshinestream.readthedocs.io/) 上。
+英文说明：Open-source game streaming service.
 
-关于
------
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[](#about)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTPS | 端口 | 47990 | 是 |
+| PANEL_APP_PORT_HTTP2 | 端口 2 | 48010 | 是 |
+| PANEL_APP_PORT_TCP | TCP 端口范围 | 47984 | 是 |
+| PANEL_APP_PORT_UDP | UDP 端口范围 | 47998 | 是 |
 
-Sunshine 是一个自托管的游戏流媒体主机，用于 Moonlight。提供低延迟的云游戏服务器功能，支持 AMD、Intel 和 Nvidia GPU 的硬件编码。也支持软件编码。你可以从各种设备上的任何 Moonlight 客户端连接到 Sunshine。提供了一个 Web 界面，允许你从你最喜欢的 Web 浏览器中进行配置和客户端配对。可以从本地服务器或任何移动设备进行配对。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
 
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-System Requirements
--------------------
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-[](#system-requirements)
-
-内存推荐`4GB`及以上。
+## 参考资料
+- 官网: <http://app.lizardbyte.dev/Sunshine>
+- 文档: <https://sunshinestream.readthedocs.io>
+- 源码: <https://github.com/LizardByte/Sunshine>

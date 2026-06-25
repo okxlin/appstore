@@ -1,0 +1,30 @@
+name: WebCord
+tags:
+- Tool
+title: WebCord Discord 客户端桌面
+description: WebCord Discord 客户端桌面
+additionalProperties:
+  key: webcord-linuxserver
+  name: WebCord
+  tags:
+  - Tool
+  shortDescZh: WebCord Discord 客户端桌面
+  shortDescEn: Discord client desktop maintained by LinuxServer.io
+  description:
+    en: Discord client desktop maintained by LinuxServer.io
+    zh: WebCord Discord 客户端桌面
+    zh-Hant: WebCord Discord 用戶端桌面
+    ja: LinuxServer.io が保守する Discord クライアントデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Discord 클라이언트 데스크톱
+    ru: Рабочий стол клиента Discord, поддерживаемый LinuxServer.io
+    ms: Desktop klien Discord yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de cliente Discord mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/SpacingBat3/WebCord
+  github: https://github.com/linuxserver/docker-webcord
+  document: https://docs.linuxserver.io/images/docker-webcord/
+  architectures:
+  - amd64
+  - arm64

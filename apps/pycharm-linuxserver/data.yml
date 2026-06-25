@@ -1,0 +1,29 @@
+name: PyCharm
+tags:
+- Development
+title: PyCharm Python IDE 桌面
+description: PyCharm Python IDE 桌面
+additionalProperties:
+  key: pycharm-linuxserver
+  name: PyCharm
+  tags:
+  - Development
+  shortDescZh: PyCharm Python IDE 桌面
+  shortDescEn: Python IDE desktop maintained by LinuxServer.io
+  description:
+    en: Python IDE desktop maintained by LinuxServer.io
+    zh: PyCharm Python IDE 桌面
+    zh-Hant: PyCharm Python IDE 桌面
+    ja: LinuxServer.io が保守する Python IDE デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Python IDE 데스크톱
+    ru: Рабочий стол Python IDE, поддерживаемый LinuxServer.io
+    ms: Desktop IDE Python yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de IDE Python mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.jetbrains.com/pycharm/
+  github: https://github.com/linuxserver/docker-pycharm
+  document: https://docs.linuxserver.io/images/docker-pycharm/
+  architectures:
+  - amd64

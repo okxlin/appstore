@@ -1,0 +1,75 @@
+additionalProperties:
+  formFields:
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: /var/log
+    edit: true
+    envKey: HOST_LOG_PATH
+    labelEn: Host log path
+    labelZh: 主机日志路径
+    label:
+      en: Host log path
+      zh: 主机日志路径
+      zh-Hant: 主機日誌路徑
+      ja: ホストログパス
+      ko: 호스트 로그 경로
+      ru: Путь журналов хоста
+      ms: Laluan log hos
+      pt-br: Caminho de logs do host
+    required: true
+    type: text
+  - default: "-vv"
+    edit: true
+    envKey: VERBOSITY
+    labelEn: Log verbosity
+    labelZh: 日志详细级别
+    label:
+      en: Log verbosity
+      zh: 日志详细级别
+      zh-Hant: 日誌詳細層級
+      ja: ログ詳細レベル
+      ko: 로그 상세 수준
+      ru: Подробность журнала
+      ms: Tahap keterperincian log
+      pt-br: Nivel de detalhamento do log
+    required: true
+    type: select
+    values:
+    - label: "-v"
+      value: "-v"
+    - label: "-vv"
+      value: "-vv"
+    - label: "-vvv"
+      value: "-vvv"
+    - label: "-vvvv"
+      value: "-vvvv"
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

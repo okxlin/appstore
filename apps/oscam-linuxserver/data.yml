@@ -1,0 +1,30 @@
+name: OSCam
+tags:
+- Media
+title: OSCam 条件接收服务
+description: OSCam 条件接收服务
+additionalProperties:
+  key: oscam-linuxserver
+  name: OSCam
+  tags:
+  - Media
+  shortDescZh: OSCam 条件接收服务
+  shortDescEn: Conditional access service maintained by LinuxServer.io
+  description:
+    en: Conditional access service maintained by LinuxServer.io
+    zh: OSCam 条件接收服务
+    zh-Hant: OSCam 條件接收服務
+    ja: LinuxServer.io が保守する条件付きアクセスサービス
+    ko: LinuxServer.io에서 유지 관리하는 조건부 액세스 서비스
+    ru: Сервис условного доступа, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan akses bersyarat yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de acesso condicional mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://git.streamboard.tv/common/oscam
+  github: https://github.com/linuxserver/docker-oscam
+  document: https://docs.linuxserver.io/images/docker-oscam/
+  architectures:
+  - amd64
+  - arm64

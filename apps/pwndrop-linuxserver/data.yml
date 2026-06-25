@@ -1,0 +1,30 @@
+name: Pwndrop
+tags:
+- Storage
+title: Pwndrop 文件投递服务
+description: Pwndrop 文件投递服务
+additionalProperties:
+  key: pwndrop-linuxserver
+  name: Pwndrop
+  tags:
+  - Storage
+  shortDescZh: Pwndrop 文件投递服务
+  shortDescEn: File delivery service maintained by LinuxServer.io
+  description:
+    en: File delivery service maintained by LinuxServer.io
+    zh: Pwndrop 文件投递服务
+    zh-Hant: Pwndrop 檔案投遞服務
+    ja: LinuxServer.io が保守するファイル配信サービス
+    ko: LinuxServer.io에서 유지 관리하는 파일 전달 서비스
+    ru: Сервис доставки файлов, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan penghantaran fail yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de entrega de arquivos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/kgretzky/pwndrop
+  github: https://github.com/linuxserver/docker-pwndrop
+  document: https://docs.linuxserver.io/images/docker-pwndrop/
+  architectures:
+  - amd64
+  - arm64

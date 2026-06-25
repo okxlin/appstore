@@ -1,0 +1,29 @@
+name: WineGUI
+tags:
+- Tool
+title: WineGUI Wine 管理桌面
+description: WineGUI Wine 管理桌面
+additionalProperties:
+  key: winegui-linuxserver
+  name: WineGUI
+  tags:
+  - Tool
+  shortDescZh: WineGUI Wine 管理桌面
+  shortDescEn: Wine manager desktop maintained by LinuxServer.io
+  description:
+    en: Wine manager desktop maintained by LinuxServer.io
+    zh: WineGUI Wine 管理桌面
+    zh-Hant: WineGUI Wine 管理桌面
+    ja: LinuxServer.io が保守する Wine 管理デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 Wine 관리자 데스크톱
+    ru: Рабочий стол менеджера Wine, поддерживаемый LinuxServer.io
+    ms: Desktop pengurus Wine yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de gerenciador Wine mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://gitlab.melroy.org/melroy/winegui
+  github: https://github.com/linuxserver/docker-winegui
+  document: https://docs.linuxserver.io/images/docker-winegui/
+  architectures:
+  - amd64

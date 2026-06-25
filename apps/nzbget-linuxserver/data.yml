@@ -1,0 +1,30 @@
+name: NZBGet
+tags:
+- Media
+title: Usenet 下载器
+description: Usenet 下载器
+additionalProperties:
+  key: nzbget-linuxserver
+  name: NZBGet
+  tags:
+  - Media
+  shortDescZh: Usenet 下载器
+  shortDescEn: Usenet downloader maintained by LinuxServer.io
+  description:
+    en: Usenet downloader maintained by LinuxServer.io
+    zh: Usenet 下载器
+    zh-Hant: Usenet 下載器
+    ja: LinuxServer.io が保守する Usenet ダウンローダー
+    ko: LinuxServer.io에서 유지 관리하는 Usenet 다운로더
+    ru: Загрузчик Usenet, поддерживаемый LinuxServer.io
+    ms: Pemuat turun Usenet yang diselenggara oleh LinuxServer.io
+    pt-br: Baixador Usenet mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://nzbget.com
+  github: https://github.com/linuxserver/docker-nzbget
+  document: https://docs.linuxserver.io/images/docker-nzbget/
+  architectures:
+  - amd64
+  - arm64

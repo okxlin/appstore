@@ -1,0 +1,22 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  webstation:
+    image: "linuxserver/webstation:5700aa7d-ls22"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTPS}:3001"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+    shm_size: "1gb"
+    labels:
+      createdBy: "Apps"

@@ -1,0 +1,30 @@
+name: Healthchecks
+tags:
+- DevOps
+title: Healthchecks 定时任务监控
+description: Healthchecks 定时任务监控
+additionalProperties:
+  key: healthchecks-linuxserver
+  name: Healthchecks
+  tags:
+  - DevOps
+  shortDescZh: Healthchecks 定时任务监控
+  shortDescEn: Cron job monitor maintained by LinuxServer.io
+  description:
+    en: Cron job monitor maintained by LinuxServer.io
+    zh: Healthchecks 定时任务监控
+    zh-Hant: Healthchecks 排程任務監控
+    ja: LinuxServer.io が保守する Cron ジョブ監視ツール
+    ko: LinuxServer.io에서 유지 관리하는 크론 작업 모니터
+    ru: Монитор cron-задач, поддерживаемый LinuxServer.io
+    ms: Pemantau tugas cron yang diselenggara oleh LinuxServer.io
+    pt-br: Monitor de tarefas cron mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://healthchecks.io/
+  github: https://github.com/linuxserver/docker-healthchecks
+  document: https://docs.linuxserver.io/images/docker-healthchecks/
+  architectures:
+  - amd64
+  - arm64

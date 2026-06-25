@@ -1,9 +1,33 @@
 # MediaWiki
 
-**MediaWiki** 是一个免费、开源的 Wiki 软件包，由 PHP 编写。它是 Wikipedia 及其他 Wikimedia 项目的基础平台，每月有数亿人使用。MediaWiki 支持超过 350 种语言，凭借其可靠性和强大的功能集，拥有庞大而活跃的第三方用户和开发者社区。
+## 应用简介
+开源百科引擎。
+
+英文说明：Open-source wiki engine.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.45.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40315 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MEDIAWIKI_IMAGES_PATH | MediaWiki 图片路径 | ./data/images | 是 |
+| MEDIAWIKI_DATA_PATH | MediaWiki 数据路径 | ./data/data | 是 |
+| INTERNAL_DATA_PATH | 容器内部数据路径 | /var/www/data | 是 |
+| LOCAL_SETTINGS_PATH | LocalSettings.php 路径 (【必要】编辑 compose.yml 关闭映射可重新生成配置文件) | ./data/LocalSettings.php | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 使用说明
-
 - 1. 数据库连接信息及更多的设置通过`LocalSettings.php`文件进行设置，
 
 - 2. 通过取消`LocalSettings.php`文件的映射来重新初始化，并获取配置文件。**【必要】**
@@ -23,3 +47,8 @@
       # 删除以下行前的#号表示启用
       #- ${LOCAL_SETTINGS_PATH}:/var/www/html/LocalSettings.php  # 映射到容器内的配置文件
 ```
+
+## 参考资料
+- 官网: <https://www.mediawiki.org>
+- 文档: <https://www.mediawiki.org/wiki/Manual:Installation_guide>
+- 源码: <https://github.com/wikimedia/mediawiki>

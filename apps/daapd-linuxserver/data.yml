@@ -1,0 +1,30 @@
+name: DAAPD
+tags:
+- Media
+title: DAAPD/OwnTone 媒体服务器
+description: DAAPD/OwnTone 媒体服务器
+additionalProperties:
+  key: daapd-linuxserver
+  name: DAAPD
+  tags:
+  - Media
+  shortDescZh: DAAPD/OwnTone 媒体服务器
+  shortDescEn: DAAPD and OwnTone media server maintained by LinuxServer.io
+  description:
+    en: DAAPD and OwnTone media server maintained by LinuxServer.io
+    zh: DAAPD/OwnTone 媒体服务器
+    zh-Hant: DAAPD/OwnTone 媒體伺服器
+    ja: LinuxServer.io が保守する DAAPD/OwnTone メディアサーバー
+    ko: LinuxServer.io에서 유지 관리하는 DAAPD/OwnTone 미디어 서버
+    ru: Медиасервер DAAPD/OwnTone, поддерживаемый LinuxServer.io
+    ms: Pelayan media DAAPD/OwnTone yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de midia DAAPD/OwnTone mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://owntone.github.io/owntone-server/
+  github: https://github.com/linuxserver/docker-daapd
+  document: https://docs.linuxserver.io/images/docker-daapd/
+  architectures:
+  - amd64
+  - arm64

@@ -1,15 +1,34 @@
 # CookieCloud
 
-[中文](https://github.com/easychen/CookieCloud/blob/master/README_cn.md) | [English](https://github.com/easychen/CookieCloud/blob/master/README.md)
+## 应用简介
+一个和自架服务器同步 Cookie 的小工具。
 
-![](https://github.com/easychen/CookieCloud/raw/master/extension/assets/icon.png)
+英文说明：A small tool for syncing cookies with your self-hosted server.
 
-CookieCloud是一个和自架服务器同步Cookie的小工具，可以将浏览器的Cookie及Local storage同步到手机和云端，它内置端对端加密，可设定同步时间间隔。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2023.01.20.16.39`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40243 | 是 |
 
-## 官方教程
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+| API_ROOT | API 目录 | - | 否 |
 
-![](images/20230121141854.png)  
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-1. 视频教程：[B站](https://www.bilibili.com/video/BV1fR4y1a7zb) | [Youtube](https://youtu.be/3oeSiGHXeQw) 求关注求订阅🥺
-1. 图文教程：[掘金](https://juejin.cn/post/7190963442017108027)
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/easychen/CookieCloud>

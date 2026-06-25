@@ -1,0 +1,30 @@
+name: Kimai
+tags:
+- CRM
+title: Kimai 时间跟踪系统
+description: Kimai 时间跟踪系统
+additionalProperties:
+  key: kimai-linuxserver
+  name: Kimai
+  tags:
+  - CRM
+  shortDescZh: Kimai 时间跟踪系统
+  shortDescEn: Time tracking system maintained by LinuxServer.io
+  description:
+    en: Time tracking system maintained by LinuxServer.io
+    zh: Kimai 时间跟踪系统
+    zh-Hant: Kimai 時間追蹤系統
+    ja: LinuxServer.io が保守する時間追跡システム
+    ko: LinuxServer.io에서 유지 관리하는 시간 추적 시스템
+    ru: Система учета времени Kimai, поддерживаемая LinuxServer.io
+    ms: Sistem penjejakan masa Kimai yang diselenggara oleh LinuxServer.io
+    pt-br: Sistema de controle de tempo Kimai mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.kimai.org/
+  github: https://github.com/linuxserver/docker-kimai
+  document: https://docs.linuxserver.io/images/docker-kimai/
+  architectures:
+  - amd64
+  - arm64

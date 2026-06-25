@@ -1,70 +1,35 @@
-# CloudBeaver Community
+# CloudBeaver
 
-<img src="https://github.com/dbeaver/cloudbeaver/wiki/images/cloudbeaver-logo.png" width="250"/>
+## 应用简介
+云数据库管理器。
 
-Cloud Database Manager - Community Edition.  
-CloudBeaver is a web server which provides rich web interface. Server itself is a Java application, web part is written on TypeScript and React.  
-It is free to use and open-source (licensed under [Apache 2](https://github.com/dbeaver/cloudbeaver/blob/devel/LICENSE) license).  
-See out [WIKI](https://github.com/dbeaver/cloudbeaver/wiki) for more details.  
+英文说明：Cloud Database Manager.
 
-![](https://github.com/dbeaver/cloudbeaver/wiki/images/demo_screenshot_1.png)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`26.1.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Run in Docker
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP端口 | 40083 | 是 |
 
-- [Official Docker repository](https://hub.docker.com/r/dbeaver/cloudbeaver)
-- [Running instructions](https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container)
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-## Demo server
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-You can see live demo of CloudBeaver here: https://demo.cloudbeaver.io  
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-[Database access instructions](https://github.com/dbeaver/cloudbeaver/wiki/Demo-Server)
-
-## Changelog
-
-### CloudBeaver 23.1.3 - 2023-07-24
-
-- Users can simultaneously edit resources, allowing them to work together;
-- We have improved the UX in the search bar - users can delete a query or request by clicking on the cross icon;
-- The search request considers file names and exclude the .sql file extension for now;
-- Different bug fixes and enhancements have been made.
-
-### CloudBeaver 23.1.2 - 2023-07-10
-
-- We have improved the SQL Editor functionality by adding support for displaying tables with nested arrays of objects;
-- The ability to compress files during export allows for faster download speeds, particularly for larger files;
-- New Settings panel displays the product configuration settings such as Minimum fetch size, Maximum fetch size, and Default fetch size from the Data Editor;
-- Different bug fixes and enhancements have been made.
-
-### CloudBeaver 23.1.1 - 2023-06-26
-
-- Connections are consistently displayed now when they are pre-configured into the workspace in the Global Configuration json file.
-- Different bug fixes and enhancements have been made.
-
-### CloudBeaver 23.1.0 - 2023-06-05
-
-Changes since 23.0.0
-
-- Data viewer:
-  - New grouping panel menu was added in the Data Viewer. This panel extracts unique values from the database column for count. Users can drag and drop the column to the grouping panel and get the results immediately. Sorting, filtering and exporting of the results are available on the Grouping panel. 
-- SQL Editor:
-  - We improved the performance of the SQL-editor - as a result, handling scripts with up to 10 000 lines does not present any challenges;
-  - In the SQL-editor, pressing Tab/Space followed by Enter now causes the cursor to move to a new line;
-  - In the SQL editor, when the cursor goes back on the query, the previous hints are displayed;
-  - Error when running SQL with semicolon has been fixed.
-- Connections:
-  - If there is an error in saving the data, the tab for the chosen connection dialog will stay open to allow corrections;
-  - The URL-configuration for PostgreSQL now correctly displays only a single database.
-- Driver management:
-  - The CE version now offers the updated sqlite-jdbc driver, version 3.41.2;
-  - CloudBeaver has the option to connect to H2 database version 2;
-  - The internal CloudBeaver database is upgraded to the newest H2 version 2 to avoid vulnerability issues. The database will be safely upgraded automatically for the servers with default configurations. You can perform this upgrade manually if you have a custom configuration for this database in your infrastructure.
-- Connections:
-  - Option to increase the maximum size of text files displayed in the value panel (using the sqlTextPreviewMaxLength parameter) has been added;
-  - Support for custom logging configuration has been added. An external configuration file can be used instead of the default configuration.
-
-
-### Old CloudBeaver releases
-
-You can find information about earlier releases on the CloudBeaver wiki https://github.com/dbeaver/cloudbeaver/wiki/Releases.
-
+## 参考资料
+- 官网: <https://dbeaver.com/>
+- 文档: <https://dbeaver.com/docs/cloudbeaver/>
+- 源码: <https://github.com/dbeaver/cloudbeaver>

@@ -1,0 +1,30 @@
+name: Readarr
+tags:
+- Media
+title: Readarr 电子书媒体管理
+description: Readarr 电子书媒体管理
+additionalProperties:
+  key: readarr-linuxserver
+  name: Readarr
+  tags:
+  - Media
+  shortDescZh: Readarr 电子书媒体管理
+  shortDescEn: Ebook collection manager maintained by LinuxServer.io
+  description:
+    en: Ebook collection manager maintained by LinuxServer.io
+    zh: Readarr 电子书媒体管理
+    zh-Hant: Readarr 電子書媒體管理
+    ja: LinuxServer.io が保守する電子書籍コレクション管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 전자책 컬렉션 관리자
+    ru: Менеджер коллекции электронных книг, поддерживаемый LinuxServer.io
+    ms: Pengurus koleksi ebook yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de colecao de ebooks mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://readarr.com/
+  github: https://github.com/linuxserver/docker-readarr
+  document: https://docs.linuxserver.io/deprecated_images/docker-readarr/
+  architectures:
+  - amd64
+  - arm64

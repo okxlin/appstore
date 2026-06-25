@@ -1,0 +1,30 @@
+name: netboot.xyz
+tags:
+- Tool
+title: netboot.xyz 网络启动服务
+description: netboot.xyz 网络启动服务
+additionalProperties:
+  key: netbootxyz-linuxserver
+  name: netboot.xyz
+  tags:
+  - Tool
+  shortDescZh: netboot.xyz 网络启动服务
+  shortDescEn: Network boot service maintained by LinuxServer.io
+  description:
+    en: Network boot service maintained by LinuxServer.io
+    zh: netboot.xyz 网络启动服务
+    zh-Hant: netboot.xyz 網路啟動服務
+    ja: LinuxServer.io が保守するネットワークブートサービス
+    ko: LinuxServer.io에서 유지 관리하는 네트워크 부팅 서비스
+    ru: Сервис сетевой загрузки, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan but rangkaian yang diselenggara oleh LinuxServer.io
+    pt-br: Servico de boot por rede mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://netboot.xyz/
+  github: https://github.com/linuxserver/docker-netbootxyz
+  document: https://docs.linuxserver.io/images/docker-netbootxyz/
+  architectures:
+  - amd64
+  - arm64

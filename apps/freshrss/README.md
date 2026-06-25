@@ -1,18 +1,43 @@
 # FreshRSS
 
-FreshRSS 是一个自托管的 RSS 聚合器。
+## 应用简介
+自托管的 RSS 和 Atom 订阅源聚合器。
 
-它轻量、易用、强大且可定制。支持多用户使用，并具备匿名阅读模式和自定义标签功能。提供 API 用于（移动）客户端，还支持 [命令行接口](https://github.com/FreshRSS/FreshRSS/blob/edge/cli/README.md)。
+英文说明：A self-hosted RSS and Atom feed aggregator.
 
-通过 [WebSub](https://freshrss.github.io/FreshRSS/en/users/WebSub.html) 标准，FreshRSS 能够从兼容的来源（如 [Friendica](https://friendi.ca)、[WordPress](https://wordpress.org/plugins/pubsubhubbub/)、Blogger、Medium 等）接收即时推送通知。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm、arm64。
+- 可选版本：`latest`、`1.29.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-FreshRSS 原生支持基于 [XPath](https://www.w3.org/TR/xpath-10/) 的 [Web 抓取](https://freshrss.github.io/FreshRSS/en/users/11_website_scraping.html)，适用于没有提供 RSS / Atom 订阅的网站。同时支持 JSON 文档解析。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40293 | 是 |
 
-FreshRSS 还提供了通过 HTML、RSS 和 OPML [重新分享文章的功能](https://freshrss.github.io/FreshRSS/en/users/user_queries.html)。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data/data | 是 |
+| EXTENSIONS_PATH | 扩展路径 | ./data/extensions | 是 |
 
-支持多种 [登录方法](https://freshrss.github.io/FreshRSS/en/admins/09_AccessControl.html)：Web 表单（包含匿名选项）、HTTP 身份验证（兼容代理委托）、OpenID Connect。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-此外，FreshRSS 还支持 [扩展](https://github.com/FreshRSS/FreshRSS#extensions) 以便进行更多调整。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| CRON_MIN | 定时任务分钟 | 2,32 | 是 |
+| FRESHRSS_ENV | 环境 | development | 是 |
 
-- 官方网站: <https://freshrss.org>
-- 演示: <https://demo.freshrss.org>
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://freshrss.org>
+- 文档: <https://freshrss.github.io/FreshRSS>
+- 源码: <https://github.com/FreshRSS/FreshRSS>

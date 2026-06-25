@@ -1,32 +1,34 @@
+# Dashy
 
-<h1 align="center">Dashy</h1>
-<p align="center">
-  <i>Dashy helps you organize your self-hosted services by making them accessible from a single place</i>
-   <br/>
-  <img width="120" src="https://i.ibb.co/yhbt6CY/dashy.png" />
-  <br/>
-  <b><a href="https://github.com/Lissy93/dashy/blob/master/docs/showcase.md">User Showcase</a></b> | <b><a href="https://demo.dashy.to">Live Demo</a></b> | <b><a href="https://github.com/Lissy93/dashy/blob/master/docs/quick-start.md">Getting Started</a></b> | <b><a href="https://dashy.to/docs">Documentation</a></b> | <b><a href="https://github.com/Lissy93/dashy">GitHub</a></b>
-</p>
+## 应用简介
+专为您打造的可自行托管的个人仪表板。
 
-## Features 🌈
-- 📃 Support for multiple pages
-- 🚦 Real-time status monitoring for each of your apps/links
-- 📊 Use widgets to display info and dynamic content from self-hosted services
-- 🔎 Instant search by name, domain, or tags + customizable hotkeys & keyboard shortcuts
-- 🎨 Many built-in color themes, with UI color editor and support for custom CSS
-- 🧸 Many icon options - Font-Awesome, homelab icons, auto-fetching Favicon, images, emojis, etc.
-- 💂 Optional authentication with multi-user access, configurable privileges, and SSO support
-- 🌎 Multi-language support, with 10+ human-translated languages, and more on the way
-- ☁ Optional, encrypted, free off-site cloud backup and restore feature available
-- 💼 A workspace view, for easily switching between multiple apps simultaneously
-- 🛩️ A minimal view, for use as a fast-loading browser Startpage
-- 🖱️ Choose app launch methods: new tab, same tab, clipboard, pop-up modal, or open in workspace view
-- 📏 Customizable layout, sizes, text, component visibility, sort order, behavior, etc.
-- 🖼️ Options for a full-screen background image, custom nav-bar links, HTML footer, title, etc.
-- 🚀 Easy to setup with Docker, or on bare metal, or with 1-Click cloud deployment
-- ⚙️ Easy single-file YAML-based configuration, and option to configure app through the UI
-- ✨ Under active development with improvements and new features added regularly 
-- 🤏 Small bundle size, fully responsive UI, and PWA for basic offline access
-- 🆓 100% free and open-source
-- 🔐 Strong focus on privacy
-- 🌈 And loads more...
+英文说明：A self-hostable personal dashboard built for you.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.3.9`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40209 | 是 |
+
+## 数据持久化
+- `./data/user-data/conf.yml:/app/user-data/conf.yml`
+- `./data/item-icons:/app/user-data/item-icons`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://dashy.to>
+- 文档: <https://dashy.to/docs>
+- 源码: <https://github.com/Lissy93/dashy>

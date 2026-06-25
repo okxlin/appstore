@@ -1,0 +1,30 @@
+name: Snipe-IT
+tags:
+- Tool
+title: Snipe-IT 资产管理系统
+description: Snipe-IT 资产管理系统
+additionalProperties:
+  key: snipe-it-linuxserver
+  name: Snipe-IT
+  tags:
+  - Tool
+  shortDescZh: Snipe-IT 资产管理系统
+  shortDescEn: Asset management system maintained by LinuxServer.io
+  description:
+    en: Asset management system maintained by LinuxServer.io
+    zh: Snipe-IT 资产管理系统
+    zh-Hant: Snipe-IT 資產管理系統
+    ja: LinuxServer.io が保守する資産管理システム
+    ko: LinuxServer.io에서 유지 관리하는 자산 관리 시스템
+    ru: Система управления активами, поддерживаемая LinuxServer.io
+    ms: Sistem pengurusan aset yang diselenggara oleh LinuxServer.io
+    pt-br: Sistema de gerenciamento de ativos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/grokability/snipe-it
+  github: https://github.com/linuxserver/docker-snipe-it
+  document: https://docs.linuxserver.io/deprecated_images/docker-snipe-it/
+  architectures:
+  - amd64
+  - arm64

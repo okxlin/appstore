@@ -1,0 +1,380 @@
+additionalProperties:
+  formFields:
+  - default: 80
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 443
+    edit: true
+    envKey: PANEL_APP_PORT_HTTPS
+    labelEn: HTTPS Port
+    labelZh: HTTPS 端口
+    label:
+      en: HTTPS Port
+      zh: HTTPS 端口
+      zh-Hant: HTTPS 連接埠
+      ja: HTTPS ポート
+      ko: HTTPS 포트
+      ru: HTTPS-порт
+      ms: Port HTTPS
+      pt-br: Porta HTTPS
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: example.com
+    edit: true
+    envKey: LOCAL_DOMAIN
+    labelEn: Local domain
+    labelZh: 实例域名
+    label:
+      en: Local domain
+      zh: 实例域名
+      zh-Hant: 實例網域
+      ja: ローカルドメイン
+      ko: 로컬 도메인
+      ru: Локальный домен
+      ms: Domain setempat
+      pt-br: Dominio local
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: WEB_DOMAIN
+    labelEn: Web domain
+    labelZh: Web 域名
+    label:
+      en: Web domain
+      zh: Web 域名
+      zh-Hant: Web 網域
+      ja: Web ドメイン
+      ko: Web 도메인
+      ru: Web-домен
+      ms: Domain web
+      pt-br: Dominio web
+    required: false
+    type: text
+  - default: mastodon-change-me
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: fGWkJDBwyRYhILyO7akZGLSSz0gAjPpo
+    edit: true
+    envKey: ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: Z8BE3tc3XnmUr0MbRexRiPN7vcP52VX0
+    edit: true
+    envKey: ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: 3hRwOaLRCikUCsxd19cUcO5EgXCN6ig1
+    edit: true
+    envKey: ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ae3ab77b9a041a4d760126dba8c4e24a33bdfcec7fdbadf3d973baf92017ee0d0b988d62c040aca882ee8030ea22adb04d9c26a9541c918a434029840c8719b0
+    edit: true
+    envKey: SECRET_KEY_BASE
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: b3d6069b87df718c733a1b17a9adcbd7705b76ba0b48dd3f3ce58870dd52bed0d32d947a43a4eadac4230d508e11df0cee6f59ed85e40670134a52545f1131ac
+    edit: true
+    envKey: OTP_SECRET
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: 1eF670mQsgs_-W_eb06ZZ46apD4qVDYNvFWu9eGWc7E=
+    edit: true
+    envKey: VAPID_PRIVATE_KEY
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: BOOqXKvCVA9tb8Bas05sdez6fGavnA5SrDJe88s7FMeIu7txiQ5sOqOZqKIpTSS_xmm5Wkd_MKHqj2UCQIwl9_8=
+    edit: true
+    envKey: VAPID_PUBLIC_KEY
+    labelEn: Secret value
+    labelZh: 密钥值
+    label:
+      en: Secret value
+      zh: 密钥值
+      zh-Hant: 金鑰值
+      ja: シークレット値
+      ko: 시크릿 값
+      ru: Секретное значение
+      ms: Nilai rahsia
+      pt-br: Valor secreto
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: mail.example.com
+    edit: true
+    envKey: SMTP_SERVER
+    labelEn: SMTP server
+    labelZh: SMTP 服务器
+    label:
+      en: SMTP server
+      zh: SMTP 服务器
+      zh-Hant: SMTP 伺服器
+      ja: SMTP サーバー
+      ko: SMTP 서버
+      ru: SMTP-сервер
+      ms: Pelayan SMTP
+      pt-br: Servidor SMTP
+    required: true
+    type: text
+  - default: 25
+    edit: true
+    envKey: SMTP_PORT
+    labelEn: SMTP port
+    labelZh: SMTP 端口
+    label:
+      en: SMTP port
+      zh: SMTP 端口
+      zh-Hant: SMTP 連接埠
+      ja: SMTP ポート
+      ko: SMTP 포트
+      ru: Порт SMTP
+      ms: Port SMTP
+      pt-br: Porta SMTP
+    required: true
+    type: number
+  - default: ''
+    edit: true
+    envKey: SMTP_LOGIN
+    labelEn: SMTP login
+    labelZh: SMTP 登录名
+    label:
+      en: SMTP login
+      zh: SMTP 登录名
+      zh-Hant: SMTP 登入名
+      ja: SMTP ログイン
+      ko: SMTP 로그인
+      ru: Логин SMTP
+      ms: Log masuk SMTP
+      pt-br: Login SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: SMTP_PASSWORD
+    labelEn: SMTP password
+    labelZh: SMTP 密码
+    label:
+      en: SMTP password
+      zh: SMTP 密码
+      zh-Hant: SMTP 密碼
+      ja: SMTP パスワード
+      ko: SMTP 비밀번호
+      ru: Пароль SMTP
+      ms: Kata laluan SMTP
+      pt-br: Senha SMTP
+    required: false
+    type: password
+  - default: notifications@example.com
+    edit: true
+    envKey: SMTP_FROM_ADDRESS
+    labelEn: SMTP from address
+    labelZh: SMTP 发件地址
+    label:
+      en: SMTP from address
+      zh: SMTP 发件地址
+      zh-Hant: SMTP 寄件地址
+      ja: SMTP 送信元アドレス
+      ko: SMTP 발신 주소
+      ru: SMTP адрес отправителя
+      ms: Alamat pengirim SMTP
+      pt-br: Endereco remetente SMTP
+    required: true
+    type: text
+  - default: 5
+    edit: true
+    envKey: SIDEKIQ_THREADS
+    labelEn: Sidekiq threads
+    labelZh: Sidekiq 线程数
+    label:
+      en: Sidekiq threads
+      zh: Sidekiq 线程数
+      zh-Hant: Sidekiq 執行緒數
+      ja: Sidekiq スレッド数
+      ko: Sidekiq 스레드 수
+      ru: Потоки Sidekiq
+      ms: Benang Sidekiq
+      pt-br: Threads Sidekiq
+    required: true
+    type: number
+  - default: 5
+    edit: true
+    envKey: DB_POOL
+    labelEn: Database pool size
+    labelZh: 数据库连接池大小
+    label:
+      en: Database pool size
+      zh: 数据库连接池大小
+      zh-Hant: 資料庫連線池大小
+      ja: データベースプールサイズ
+      ko: 데이터베이스 풀 크기
+      ru: Размер пула базы данных
+      ms: Saiz kolam pangkalan data
+      pt-br: Tamanho do pool do banco
+    required: true
+    type: number
+  - default: ./data/db
+    edit: true
+    envKey: DB_DATA_PATH
+    labelEn: Database data path
+    labelZh: 数据库数据目录
+    label:
+      en: Database data path
+      zh: 数据库数据目录
+      zh-Hant: 資料庫資料目錄
+      ja: データベースデータディレクトリ
+      ko: 데이터베이스 데이터 디렉터リ
+      ru: Каталог данных базы
+      ms: Laluan data pangkalan data
+      pt-br: Caminho de dados do banco
+    required: true
+    type: text
+  - default: ./data/redis
+    edit: true
+    envKey: REDIS_DATA_PATH
+    labelEn: Redis data path
+    labelZh: Redis 数据目录
+    label:
+      en: Redis data path
+      zh: Redis 数据目录
+      zh-Hant: Redis 資料目錄
+      ja: Redis データディレクトリ
+      ko: Redis 데이터 디렉터리
+      ru: Каталог данных Redis
+      ms: Laluan data Redis
+      pt-br: Caminho de dados Redis
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

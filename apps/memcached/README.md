@@ -1,54 +1,33 @@
 # Memcached
 
-Memcached is a high performance multithreaded event-based key/value cache
-store intended to be used in a distributed system.
+## 应用简介
+Memcached 是一套分布式的高速缓存系统。
 
-See: https://memcached.org/about
+英文说明：Memcached is a distributed caching system.
 
-A fun story explaining usage: https://memcached.org/tutorial
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.6.19`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-If you're having trouble, try the wiki: https://memcached.org/wiki
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 11211 | 是 |
 
-If you're trying to troubleshoot odd behavior or timeouts, see:
-https://memcached.org/timeouts
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MEM_CACHED | 内存最大占用量(MB) | 64 | 是 |
 
-https://memcached.org/ is a good resource in general. Please use the mailing
-list to ask questions, github issues aren't seen by everyone!
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Dependencies
-
-* libevent - https://www.monkey.org/~provos/libevent/ (libevent-dev)
-* libseccomp (optional, experimental, linux) - enables process restrictions for
-  better security. Tested only on x86-64 architectures.
-* openssl (optional) - enables TLS support. need relatively up to date
-  version. pkg-config is needed to find openssl dependencies (such as -lz).
-
-## Environment
-
-Be warned that the -k (mlockall) option to memcached might be
-dangerous when using a large cache. Just make sure the memcached machines
-don't swap.  memcached does non-blocking network I/O, but not disk.  (it
-should never go to disk, or you've lost the whole point of it)
-
-## Build status
-
-See https://build.memcached.org/ for multi-platform regression testing status.
-
-## Bug reports
-
-Feel free to use the issue tracker on github.
-
-**If you are reporting a security bug** please contact a maintainer privately.
-We follow responsible disclosure: we handle reports privately, prepare a
-patch, allow notifications to vendor lists. Then we push a fix release and your
-bug can be posted publicly with credit in our release notes and commit
-history.
-
-## Website
-
-* https://www.memcached.org
-
-## Contributing
-
-See https://github.com/memcached/memcached/wiki/DevelopmentRepos
-
+## 参考资料
+- 官网: <https://memcached.org/>
+- 文档: <https://github.com/memcached/memcached/wiki>
+- 源码: <https://github.com/memcached/memcached>

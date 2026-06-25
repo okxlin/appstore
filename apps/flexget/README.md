@@ -1,63 +1,40 @@
 # FlexGet
 
-[![image](https://github.com/Flexget/Flexget/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/Flexget/Flexget/actions/workflows/main.yml?query=branch%3Adevelop)
+## 应用简介
+多用途自动化工具。
 
-[![image](https://img.shields.io/pypi/v/Flexget.svg)](https://pypi.python.org/pypi/Flexget)
+英文说明：A multi-purpose automation tool.
 
-[![image](https://img.shields.io/discord/536690097056120833?label=discord)](https://discord.gg/W6CQrJx)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`3.19.25`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[![image](http://isitmaintained.com/badge/resolution/Flexget/Flexget.svg)](http://isitmaintained.com/project/Flexget/Flexget)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40112 | 是 |
 
-[FlexGet](https://flexget.com) is a multipurpose automation tool for
-content like torrents, nzbs, podcasts, comics, series, movies, etc. It
-can use different kinds of sources like RSS-feeds, html pages, csv
-files, search engines and there are even plugins for sites that do not
-provide any kind of useful feeds.
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data/data | 是 |
 
-# Example
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Flexget uses a [YAML](http://www.yaml.org/) based configuration file.
-The following example will look in the RSS feed in the link, will match
-any item that match the series names and download it:
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| WEB_PASSWORD | 网页访问密码 | flexget | 是 |
 
-    tasks:
-      tv:
-        rss: http://example.com/torrents.xml
-        series:
-        - some series
-        - another series
-        download: /tvshows
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-There are numerous plugins that allow utilizing FlexGet in interesting
-ways and more are being added continuously.
-
-FlexGet is extremely useful in conjunction with applications which have
-watch directory support or provide interface for external utilities like
-FlexGet. To get a sense of the many things that can be done with FlexGet
-you can take a look in our [cookbook](https://flexget.com/Cookbook).
-
-**ChangeLog:** <https://flexget.com/ChangeLog>
-
-**Help:** <https://github.com/Flexget/Flexget/discussions>
-
-**Chat:** <https://flexget.com/Chat>
-
-**Bugs:** <https://github.com/Flexget/Flexget/issues>
-
-## Install
-
-FlexGet is installable via pip with the command:
-
-    pip install flexget
-
-For more detailed instructions see the [installation
-guide](https://flexget.com/Install).
-
-## How to use GIT checkout
-
-Refer to [development
-guide](https://flexget.readthedocs.io/en/latest/develop/index.html#how-do-i-get-started).
-
-If you don\'t want to use virtualenv there\'s `flexget_vanilla.py` file
-which can be used to run FlexGet without virtualenv, note that you will
-need to install all required dependencies yourself.
+## 参考资料
+- 官网: <https://flexget.com>
+- 源码: <https://github.com/Flexget/Flexget>

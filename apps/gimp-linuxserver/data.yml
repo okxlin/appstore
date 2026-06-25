@@ -1,0 +1,30 @@
+name: GIMP
+tags:
+- Media
+title: GIMP 图像编辑桌面
+description: GIMP 图像编辑桌面
+additionalProperties:
+  key: gimp-linuxserver
+  name: GIMP
+  tags:
+  - Media
+  shortDescZh: GIMP 图像编辑桌面
+  shortDescEn: Image editor desktop maintained by LinuxServer.io
+  description:
+    en: Image editor desktop maintained by LinuxServer.io
+    zh: GIMP 图像编辑桌面
+    zh-Hant: GIMP 影像編輯桌面
+    ja: LinuxServer.io が保守する画像編集デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 이미지 편집 데스크톱
+    ru: Рабочий стол редактора изображений, поддерживаемый LinuxServer.io
+    ms: Desktop penyunting imej yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de edicao de imagens mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.gimp.org/
+  github: https://github.com/linuxserver/docker-gimp
+  document: https://docs.linuxserver.io/images/docker-gimp/
+  architectures:
+  - amd64
+  - arm64

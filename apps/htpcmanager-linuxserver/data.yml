@@ -1,0 +1,30 @@
+name: HTPC Manager
+tags:
+- Media
+title: HTPC Manager 家庭媒体控制台
+description: HTPC Manager 家庭媒体控制台
+additionalProperties:
+  key: htpcmanager-linuxserver
+  name: HTPC Manager
+  tags:
+  - Media
+  shortDescZh: HTPC Manager 家庭媒体控制台
+  shortDescEn: HTPC dashboard maintained by LinuxServer.io
+  description:
+    en: HTPC dashboard maintained by LinuxServer.io
+    zh: HTPC Manager 家庭媒体控制台
+    zh-Hant: HTPC Manager 家庭媒體控制台
+    ja: LinuxServer.io が保守する HTPC ダッシュボード
+    ko: LinuxServer.io에서 유지 관리하는 HTPC 대시보드
+    ru: Панель HTPC, поддерживаемая LinuxServer.io
+    ms: Papan pemuka HTPC yang diselenggara oleh LinuxServer.io
+    pt-br: Painel HTPC mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/HTPC-Manager/HTPC-Manager
+  github: https://github.com/linuxserver/docker-htpcmanager
+  document: https://docs.linuxserver.io/images/docker-htpcmanager/
+  architectures:
+  - amd64
+  - arm64

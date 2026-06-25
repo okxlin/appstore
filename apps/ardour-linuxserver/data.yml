@@ -1,0 +1,30 @@
+name: Ardour
+tags:
+- Media
+title: Ardour 数字音频工作站桌面
+description: Ardour 数字音频工作站桌面
+additionalProperties:
+  key: ardour-linuxserver
+  name: Ardour
+  tags:
+  - Media
+  shortDescZh: Ardour 数字音频工作站桌面
+  shortDescEn: Digital audio workstation desktop maintained by LinuxServer.io
+  description:
+    en: Digital audio workstation desktop maintained by LinuxServer.io
+    zh: Ardour 数字音频工作站桌面
+    zh-Hant: Ardour 數位音訊工作站桌面
+    ja: LinuxServer.io が保守するデジタル音楽制作デスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 디지털 오디오 워크스테이션 데스크톱
+    ru: Рабочий стол цифровой звуковой станции, поддерживаемый LinuxServer.io
+    ms: Desktop stesen kerja audio digital yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de estacao de audio digital mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://ardour.org/
+  github: https://github.com/linuxserver/docker-ardour
+  document: https://docs.linuxserver.io/images/docker-ardour/
+  architectures:
+  - amd64
+  - arm64

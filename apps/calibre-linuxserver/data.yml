@@ -1,0 +1,30 @@
+name: Calibre
+tags:
+- Media
+title: Calibre 电子书桌面服务
+description: Calibre 电子书桌面服务
+additionalProperties:
+  key: calibre-linuxserver
+  name: Calibre
+  tags:
+  - Media
+  shortDescZh: Calibre 电子书桌面服务
+  shortDescEn: Ebook desktop service maintained by LinuxServer.io
+  description:
+    en: Ebook desktop service maintained by LinuxServer.io
+    zh: Calibre 电子书桌面服务
+    zh-Hant: Calibre 電子書桌面服務
+    ja: LinuxServer.io が保守する電子書籍デスクトップサービス
+    ko: LinuxServer.io에서 유지 관리하는 전자책 데스크톱 서비스
+    ru: Настольный сервис электронных книг, поддерживаемый LinuxServer.io
+    ms: Perkhidmatan desktop ebook yang diselenggara oleh LinuxServer.io
+    pt-br: Servico desktop de ebooks mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://calibre-ebook.com/
+  github: https://github.com/linuxserver/docker-calibre
+  document: https://docs.linuxserver.io/images/docker-calibre/
+  architectures:
+  - amd64
+  - arm64

@@ -1,0 +1,134 @@
+additionalProperties:
+  formFields:
+  - default: 80
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 443
+    edit: true
+    envKey: PANEL_APP_PORT_HTTPS
+    labelEn: HTTPS Port
+    labelZh: HTTPS 端口
+    label:
+      en: HTTPS Port
+      zh: HTTPS 端口
+      zh-Hant: HTTPS 連接埠
+      ja: HTTPS ポート
+      ko: HTTPS 포트
+      ru: HTTPS-порт
+      ms: Port HTTPS
+      pt-br: Porta HTTPS
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: monica-change-me
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: http://localhost
+    edit: true
+    envKey: APP_URL
+    labelEn: App URL
+    labelZh: 应用访问 URL
+    label:
+      en: App URL
+      zh: 应用访问 URL
+      zh-Hant: 應用存取 URL
+      ja: アプリ URL
+      ko: 앱 URL
+      ru: URL приложения
+      ms: URL aplikasi
+      pt-br: URL do aplicativo
+    required: true
+    type: text
+    rule: paramExtUrl
+  - default: ''
+    edit: true
+    envKey: TRUSTED_PROXIES
+    labelEn: Trusted proxies
+    labelZh: 可信代理
+    label:
+      en: Trusted proxies
+      zh: 可信代理
+      zh-Hant: 可信代理
+      ja: 信頼済みプロキシ
+      ko: 신뢰할 수 있는 프록시
+      ru: Доверенные прокси
+      ms: Proksi dipercayai
+      pt-br: Proxies confiaveis
+    required: false
+    type: text
+  - default: ./data/db
+    edit: true
+    envKey: DB_DATA_PATH
+    labelEn: Database data path
+    labelZh: 数据库数据目录
+    label:
+      en: Database data path
+      zh: 数据库数据目录
+      zh-Hant: 資料庫資料目錄
+      ja: データベースデータディレクトリ
+      ko: 데이터베이스 데이터 디렉터리
+      ru: Каталог данных базы
+      ms: Laluan data pangkalan data
+      pt-br: Caminho de dados do banco
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

@@ -1,0 +1,30 @@
+name: Grocy
+tags:
+- Tool
+title: Grocy 家庭库存管理
+description: Grocy 家庭库存管理
+additionalProperties:
+  key: grocy-linuxserver
+  name: Grocy
+  tags:
+  - Tool
+  shortDescZh: Grocy 家庭库存管理
+  shortDescEn: Home inventory manager maintained by LinuxServer.io
+  description:
+    en: Home inventory manager maintained by LinuxServer.io
+    zh: Grocy 家庭库存管理
+    zh-Hant: Grocy 家庭庫存管理
+    ja: LinuxServer.io が保守する家庭在庫管理ツール
+    ko: LinuxServer.io에서 유지 관리하는 가정 재고 관리자
+    ru: Домашний учет запасов, поддерживаемый LinuxServer.io
+    ms: Pengurus inventori rumah yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de estoque domestico mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://grocy.info/
+  github: https://github.com/linuxserver/docker-grocy
+  document: https://docs.linuxserver.io/images/docker-grocy/
+  architectures:
+  - amd64
+  - arm64

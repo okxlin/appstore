@@ -1,0 +1,30 @@
+name: EmulatorJS
+tags:
+- Game
+title: EmulatorJS 游戏模拟器前端
+description: EmulatorJS 游戏模拟器前端
+additionalProperties:
+  key: emulatorjs-linuxserver
+  name: EmulatorJS
+  tags:
+  - Game
+  shortDescZh: EmulatorJS 游戏模拟器前端
+  shortDescEn: Game emulator frontend maintained by LinuxServer.io
+  description:
+    en: Game emulator frontend maintained by LinuxServer.io
+    zh: EmulatorJS 游戏模拟器前端
+    zh-Hant: EmulatorJS 遊戲模擬器前端
+    ja: LinuxServer.io が保守するゲームエミュレーターフロントエンド
+    ko: LinuxServer.io에서 유지 관리하는 게임 에뮬레이터 프론트엔드
+    ru: Фронтенд игровых эмуляторов, поддерживаемый LinuxServer.io
+    ms: Frontend emulator permainan yang diselenggara oleh LinuxServer.io
+    pt-br: Frontend de emulador de jogos mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://emulatorjs.org/
+  github: https://github.com/linuxserver/docker-emulatorjs
+  document: https://docs.linuxserver.io/images/docker-emulatorjs/
+  architectures:
+  - amd64
+  - arm64

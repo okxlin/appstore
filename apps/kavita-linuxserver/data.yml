@@ -1,0 +1,30 @@
+name: Kavita
+tags:
+- Media
+title: Kavita 漫画和电子书库
+description: Kavita 漫画和电子书库
+additionalProperties:
+  key: kavita-linuxserver
+  name: Kavita
+  tags:
+  - Media
+  shortDescZh: Kavita 漫画和电子书库
+  shortDescEn: Reading server maintained by LinuxServer.io
+  description:
+    en: Reading server maintained by LinuxServer.io
+    zh: Kavita 漫画和电子书库
+    zh-Hant: Kavita 漫畫和電子書庫
+    ja: LinuxServer.io が保守する読書サーバー
+    ko: LinuxServer.io에서 유지 관리하는 독서 서버
+    ru: Сервер чтения, поддерживаемый LinuxServer.io
+    ms: Pelayan bacaan yang diselenggara oleh LinuxServer.io
+    pt-br: Servidor de leitura mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.kavitareader.com/
+  github: https://github.com/linuxserver/docker-kavita
+  document: https://docs.linuxserver.io/images/docker-kavita/
+  architectures:
+  - amd64
+  - arm64

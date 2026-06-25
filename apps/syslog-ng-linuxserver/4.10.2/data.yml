@@ -1,0 +1,101 @@
+additionalProperties:
+  formFields:
+  - default: 514
+    edit: true
+    envKey: PANEL_APP_PORT_SYSLOG_UDP
+    labelEn: Syslog UDP Port
+    labelZh: Syslog UDP 端口
+    label:
+      en: Syslog UDP Port
+      zh: Syslog UDP 端口
+      zh-Hant: Syslog UDP 連接埠
+      ja: Syslog UDP ポート
+      ko: Syslog UDP 포트
+      ru: UDP-порт Syslog
+      ms: Port UDP Syslog
+      pt-br: Porta UDP do Syslog
+    required: true
+    type: number
+    rule: paramPort
+  - default: 601
+    edit: true
+    envKey: PANEL_APP_PORT_SYSLOG_TCP
+    labelEn: Syslog TCP Port
+    labelZh: Syslog TCP 端口
+    label:
+      en: Syslog TCP Port
+      zh: Syslog TCP 端口
+      zh-Hant: Syslog TCP 連接埠
+      ja: Syslog TCP ポート
+      ko: Syslog TCP 포트
+      ru: TCP-порт Syslog
+      ms: Port TCP Syslog
+      pt-br: Porta TCP do Syslog
+    required: true
+    type: number
+    rule: paramPort
+  - default: 6514
+    edit: true
+    envKey: PANEL_APP_PORT_SYSLOG_TLS
+    labelEn: Syslog TLS Port
+    labelZh: Syslog TLS 端口
+    label:
+      en: Syslog TLS Port
+      zh: Syslog TLS 端口
+      zh-Hant: Syslog TLS 連接埠
+      ja: Syslog TLS ポート
+      ko: Syslog TLS 포트
+      ru: TLS-порт Syslog
+      ms: Port TLS Syslog
+      pt-br: Porta TLS do Syslog
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/log
+    edit: true
+    envKey: LOG_PATH
+    labelEn: Log folder path
+    labelZh: 日志目录
+    label:
+      en: Log folder path
+      zh: 日志目录
+      zh-Hant: 日誌目錄
+      ja: ログディレクトリ
+      ko: 로그 디렉터리
+      ru: Каталог журналов
+      ms: Laluan log
+      pt-br: Caminho de logs
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

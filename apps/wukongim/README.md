@@ -1,18 +1,42 @@
-# 什么是悟空 IM
+# WuKongIM
 
-高性能通用即时通讯服务，支持聊天应用，消息推送，物联网通讯，音视频信令，直播弹幕，客服系统，AI 通讯，即时社区等场景。
+## 应用简介
+让信息传递更简单。
 
-## 特性
+英文说明：Make messaging easier.
 
-悟空 IM 具备以下特性：
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`1.2`、`2.0.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 0⃣️ **零依赖**：没有依赖任何第三方组件，部署简单，一条命令即可启动
-- 📚 **完全自研**：自研消息数据库，消息分区永久存储，自研二进制协议，支持自定义协议
-- 🔐 **安全**：消息通道和消息内容全程加密，防中间人攻击和窜改消息内容。
-- 🚀 **性能强劲**：性能强劲，MAC 笔记本单机测试 16w 多/秒的消息(包含存储)吞吐量，频道支持万人同时订阅。
-- 🧱 **扩展性强**：采用频道设计理念，目前支持群组频道，点对点频道，后续可以根据自己业务自定义频道可实现机器人频道，客服频道等等。
-- 🔗 **兼容性强**：同时无差别支持 tcp，websocket。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_WK_API | 悟空 IM api 端口 | 5001 | 是 |
+| PANEL_APP_PORT_WK_TCP | 悟空 IM TCP 端口 | 5100 | 是 |
+| PANEL_APP_PORT_WK_WS | 悟空 IM WS 端口 | 5200 | 是 |
+| PANEL_APP_PORT_HTTP | 悟空 IM 监控端口 | 5300 | 是 |
+| PANEL_APP_PORT_WK_DEMO_SERVER | 悟空 IM demo 端口 | 5172 | 是 |
 
-## 问题反馈
+## 数据持久化
+- `./wukongim:/root/wukongim`
+- `WK_DATASOURCE_ADDR=http://tangsengdaodaoserver:8090/v1/datasource`
 
-如果在使用过程中发现任何问题、或者有改善建议，欢迎在 GitHub Issues 进行反馈：https://github.com/WuKongIM/WuKongIM/issues
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| EXTERNAL_IP | 外部访问 IP | - | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://githubim.com>
+- 源码: <https://github.com/TangSengDaoDao/TangSengDaoDaoServer>

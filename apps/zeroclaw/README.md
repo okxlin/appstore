@@ -1,27 +1,39 @@
-## 项目简介
+# ZeroClaw
 
-ZeroClaw 是一个高性能、低资源占用、可组合的自主智能体运行时。ZeroClaw 是面向智能代理工作流的**运行时操作系统** — 它抽象了模型、工具、记忆和执行层，使代理可以一次构建、随处运行。
+## 应用简介
+一个高性能、低资源占用、可组合的自主智能体运行时。
 
-- Rust 原生实现，单二进制部署，跨 ARM / x86 / RISC-V。
-- Trait 驱动架构，`Provider` / `Channel` / `Tool` / `Memory` 可替换。
-- 安全默认值优先：配对鉴权、显式 allowlist、沙箱与作用域约束。
+英文说明：A high-performance, low-resource, composable autonomous agent runtime.
 
-## 安装后如何访问
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.8.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-安装完成后访问：
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 42617 | 是 |
+| ZEROCLAW_GATEWAY_PORT | 网关端口（容器内） | 42617 | 是 |
 
-- `http://<服务器IP>:<PANEL_APP_PORT_HTTP>`
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| ZEROCLAW_ALLOW_PUBLIC_BIND | 允许容器内公网绑定（Docker） | true | 是 |
+| API_KEY | 模型服务商 API Key | - | 否 |
+| PROVIDER | 服务商 | - | 否 |
+| ZEROCLAW_MODEL | 模型（可选） | - | 否 |
 
-**访问码通过容器日志获取**
-
-## 数据存储（named volume）
-
-本应用主数据存放在 Docker **named volume**：`zeroclaw-data`（容器内挂载到 `/zeroclaw-data`）。
-
-- 卸载脚本会执行 `docker-compose down --volumes`，将同时删除该数据卷；如需保留数据，请先备份或避免删除 volume。
-
-## 配置说明（简要）
+## 使用说明
+### 配置说明（简要）
 
 - `API_KEY`：LLM 提供方 API Key
 - `PROVIDER`：LLM 提供方
 - `ZEROCLAW_MODEL`：可选模型覆盖
+
+## 参考资料
+- 官网: <https://zeroclawlabs.ai>
+- 文档: <https://www.zeroclawlabs.ai/docs>
+- 源码: <https://github.com/zeroclaw-labs/zeroclaw>

@@ -1,0 +1,30 @@
+name: Monica
+tags:
+- CRM
+title: Monica 个人关系管理系统
+description: Monica 个人关系管理系统
+additionalProperties:
+  key: monica-linuxserver
+  name: Monica
+  tags:
+  - CRM
+  shortDescZh: Monica 个人关系管理系统
+  shortDescEn: Personal relationship manager maintained by LinuxServer.io
+  description:
+    en: Personal relationship manager maintained by LinuxServer.io
+    zh: Monica 个人关系管理系统
+    zh-Hant: Monica 個人關係管理系統
+    ja: LinuxServer.io が保守する個人関係管理システム
+    ko: LinuxServer.io에서 유지 관리하는 개인 관계 관리 시스템
+    ru: Система управления личными отношениями, поддерживаемая LinuxServer.io
+    ms: Pengurus hubungan peribadi yang diselenggara oleh LinuxServer.io
+    pt-br: Gerenciador de relacionamentos pessoais mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/monicahq/monica
+  github: https://github.com/linuxserver/docker-monica
+  document: https://docs.linuxserver.io/images/docker-monica/
+  architectures:
+  - amd64
+  - arm64

@@ -1,5 +1,44 @@
 # Docker-OSX
 
-在 Docker 中运行 Mac OS X，几乎拥有原生性能！支持 X11 转发！iMessage 安全研究！iPhone USB 可用！在 Docker 容器中运行 macOS！
+## 应用简介
+在 Docker 中运行 macOS。
 
-使用 Linux 和 Windows 在 macOS 上进行安全研究！
+英文说明：Run macOS in Docker.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`latest-online`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_SSH | SSH 端口 | 40287 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| IMAGE_FILE | 系统镜像文件路径 | - | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DISPLAY | 显示 | :0.0 | 是 |
+| RESTART_POLICY | 重启策略 | unless-stopped | 是 |
+| DISK_SIZE | 磁盘大小 | 50G | 是 |
+| RAM_SIZE | 内存大小 | 4 | 是 |
+| CPU_CORES | CPU 核心数 | 2 | 是 |
+| USERNAME | 登录用户名 | docker | 是 |
+| PASSWORD | 登录密码 | password | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/sickcodes/Docker-OSX>

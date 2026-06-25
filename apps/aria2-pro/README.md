@@ -1,121 +1,42 @@
-**English** | [中文](https://p3terx.com/archives/docker-aria2-pro.html)
+# Aria2-Pro
 
-# Aria2 Pro Docker
+## 应用简介
+更好用的 Aria2 Docker 容器镜像。
 
-[![LICENSE](https://img.shields.io/github/license/P3TERX/Aria2-Pro-Docker?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Aria2-Pro-Docker/blob/master/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Aria2-Pro-Docker.svg?style=flat-square&label=Stars&logo=github)](https://github.com/P3TERX/Aria2-Pro-Docker/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/P3TERX/Aria2-Pro-Docker.svg?style=flat-square&label=Forks&logo=github)](https://github.com/P3TERX/Aria2-Pro-Docker/fork)
-[![Docker Stars](https://img.shields.io/docker/stars/p3terx/aria2-pro.svg?style=flat-square&label=Stars&logo=docker)](https://hub.docker.com/r/p3terx/aria2-pro)
-[![Docker Pulls](https://img.shields.io/docker/pulls/p3terx/aria2-pro.svg?style=flat-square&label=Pulls&logo=docker&color=orange)](https://hub.docker.com/r/p3terx/aria2-pro)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/P3TERX/Aria2-Pro-Docker/Docker%20images%20build%20test?label=Actions&logo=github&style=flat-square)
+英文说明：A better-performing Aria2 Docker container image.
 
-A perfect Aria2 Docker image. Out of the box, just add download tasks and don't need to think about anything else.
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Features
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| RPC_PORT_VALUE | RPC端口 | 6800 | 是 |
+| PANEL_APP_PORT_HTTP | 监听端口 | 6888 | 是 |
 
-* Supported platforms: `amd64`, `i386`, `arm64`, `arm/v7`, `arm/v6`
-* Full Function: `Async DNS`, `BitTorrent`, `Firefox3 Cookie`, `GZip`, `HTTPS`, `Message Digest`, `Metalink`, `XML-RPC`, `SFTP`
-* `max-connection-per-server` unlimited.
-* retry on slow speed (`lowest-speed-limit`) and connection close
-* High BT download rate and speed
-* Get BitTorrent tracker automatically
-* Download error automatically delete files
-* Download cancel automatically delete files
-* Automatically clear `.aria2` suffix files
-* Automatically clear `.torrent` suffix files
-* No lost task progress, no repeated downloads
-* And more powerful features
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件所在路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 下载文件夹路径 | ./data/downloads | 是 |
 
-## Usage
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-### Docker CLI
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TOKEN | RPC密钥 | aria2 | 是 |
+| TRACKER_URL | TRACKER链接 | https://trackerslist.com/all_aria2.txt | 是 |
 
-- No matter what architecture platform is used, just use the following command to start the container ( Just need to replace the `<TOKEN>` field ):
-```
-docker run -d \
-    --name aria2-pro \
-    --restart unless-stopped \
-    --log-opt max-size=1m \
-    -e PUID=$UID \
-    -e PGID=$GID \
-    -e UMASK_SET=022 \
-    -e RPC_SECRET=<TOKEN> \
-    -e RPC_PORT=6800 \
-    -p 6800:6800 \
-    -e LISTEN_PORT=6888 \
-    -p 6888:6888 \
-    -p 6888:6888/udp \
-    -v $PWD/aria2-config:/config \
-    -v $PWD/aria2-downloads:/downloads \
-    p3terx/aria2-pro
-```
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Then you need a WebUI for control, such as [AriaNg](https://github.com/mayswind/AriaNg). [This link](http://ariang.mayswind.net/latest) is provided by the developer and can be used directly. Or use Docker to deploy it yourself:
-```
-docker run -d \
-    --name ariang \
-    --log-opt max-size=1m \
-    --restart unless-stopped \
-    -p 6880:6880 \
-    p3terx/ariang
-```
-
-> **TIPS:** It is important for the firewall to open ports.
-
-### Docker Compose
-
-- Download [Compose file](https://github.com/P3TERX/Aria2-Pro-Docker/blob/master/docker-compose.yml)
-```
-wget git.io/aria2-pro.yml
-```
-
-- Edit Compose file
-```
-vim aria2-pro.yml
-```
-
-- Compose up
-```
-docker-compose -f aria2-pro.yml up -d
-```
-
-### Other
-
-- [Docker templates for UNRAID](https://github.com/P3TERX/unraid-docker-templates)
-- [Docker Tutorial for Synology DSM (Chinese)](https://p3terx.com/archives/synology-nas-docker-advanced-tutorial-deploy-aria2-pro.html)
-
-## Parameters
-
-| Parameter                        | Function                                                                                                                                                                  |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-e PUID=$UID`<br>`-e PGID=$GID` | Bind UID and GID to the container, which means you can use a non-root user to manage downloaded files.                                                                    |
-| `-e UMASK_SET=022`               | For umask setting of Aria2, optional , default if left unset is `022`                                                                                                     |
-| `-e RPC_SECRET=<TOKEN>`          | Set RPC secret authorization token. Default: `P3TERX`                                                                                                                     |
-| `-e RPC_PORT=6800`               | Set RPC listen port.                                                                                                                                                      |
-| `-p 6800:6800`                   | bind RPC listen port.                                                                                                                                                     |
-| `-e LISTEN_PORT=6888`            | Set TCP/UDP port number for BitTorrent/DHT listen.                                                                                                                        |
-| `-p 6888:6888`                   | Bind BT listen port (TCP).                                                                                                                                                |
-| `-p 6888:6888/udp`               | Bind DHT lisen port (UDP).                                                                                                                                                |
-| `-v <PATH>:/config`              | Contains all relevant configuration files.                                                                                                                                |
-| `-v <PATH>:/downloads`           | Location of downloads on disk.                                                                                                                                            |
-| `-e DISK_CACHE=<SIZE>`           | Set up disk cache. SIZE can include `K` or `M` (1K = 1024, 1M = 1024K), e.g `64M`.                                                                                        |
-| `-e IPV6_MODE=<BOOLEAN>`         | Whether to enable IPv6 support for Aria2. Optional: `true` or `false`. Set the options `disable-ipv6=false` and `enable-dht6=true` in the configuration file(aria2.conf). |
-| `-e UPDATE_TRACKERS=<BOOLEAN>`   | Whether to update BT Trackers List automatically. Optional: `true` or `flase`, default if left unset is `true`                                                            |
-| `-e CUSTOM_TRACKER_URL=<URL>`    | Custom BT Trackers List URL. If not set, it will be get from https://trackerslist.com/all_aria2.txt.                                                                      |
-| `-e TZ=Asia/Shanghai`            | Specify a timezone to use e.g. `Asia/Shanghai`                                                                                                                            |
-
-## Advanced
-
-I am working hard on my English, so this part may be explained in detail later. If you can read Chinese, read the details in [my blog](https://p3terx.com/archives/docker-aria2-pro.html).
-
-## Credits
-
-* [aria2](https://github.com/aria2/aria2)
-* [P3TERX/aria2.conf](https://github.com/P3TERX/aria2.conf)
-* [P3TERX/Aria2-Pro-Core](https://github.com/P3TERX/Aria2-Pro-Core)
-* [just-containers/s6-overlay](https://github.com/just-containers/s6-overlay)
-* [XIU2/TrackersListCollection](https://github.com/XIU2/TrackersListCollection)
-
-## License
-
-[MIT](https://github.com/P3TERX/Aria2-Pro-Docker/blob/master/LICENSE) © P3TERX
+## 参考资料
+- 官网: <https://github.com/P3TERX/Aria2-Pro-Docker>
+- 文档: <https://p3terx.com/archives/docker-aria2-pro.html>

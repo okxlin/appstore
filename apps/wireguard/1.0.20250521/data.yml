@@ -50,7 +50,7 @@ additionalProperties:
       type: text
     - default: "51820"
       edit: true
-      envKey: SERVERPORT
+      envKey: PANEL_APP_PORT_UDP
       labelEn: Wireguard port
       labelZh: Wireguard 端口
       label:
@@ -183,7 +183,7 @@ additionalProperties:
         - label: "false"
           value: "false"
     - default: "./config"
-      disabled: true
+      edit: true
       envKey: CONFIG_PATH
       labelEn: Config Path
       labelZh: 配置路径

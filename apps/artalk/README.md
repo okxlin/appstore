@@ -1,5 +1,31 @@
-# 使用说明
-## Artalk 设置账号密码
+# Artalk
+
+## 应用简介
+一款简洁的自托管评论系统。
+
+英文说明：A concise self hosted comment system.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.9.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40159 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+### Artalk 设置账号密码
 
 以下两种方式相同。
 
@@ -23,60 +49,7 @@ docker exec -it 1Panel-localartalk-tYWg artalk admin
 artalk admin
 ```
 
-# 原始相关
-<p align="center">
-<img src="https://user-images.githubusercontent.com/22412567/171680920-6e74b77c-c565-487b-bff1-4f94976ecbe7.png" alt="Artalk" width="100%">
-</p>
-
-# Artalk
-
-[![](https://img.shields.io/npm/v/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk)
-[![](https://img.shields.io/npm/dt/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk)
-[![](https://badgen.net/bundlephobia/minzip/artalk?style=flat-square)](https://bundlephobia.com/package/artalk)
-[![Docker Pulls](https://img.shields.io/docker/pulls/artalk/artalk-go?style=flat-square)](https://hub.docker.com/r/artalk/artalk-go)
-[![CircleCI](https://circleci.com/gh/ArtalkJS/Artalk/tree/master.svg?style=svg)](https://circleci.com/gh/ArtalkJS/Artalk/tree/master)
-
-> 🌌 Golang 自托管评论系统
-
-[English](https://github.com/ArtalkJS/Artalk/blob/master/README.en.md) / [官方文档](https://artalk.js.org) / [最新版本](https://github.com/ArtalkJS/Artalk/releases)
-
----
-
-- 🍃 轻量 (~30kB)
-- 👨‍👧‍👦 安全 (自托管)
-- 🐳 易上手 (防脱发)
-- 🍱 Golang 后端 (快速 / 跨平台)
-- 🌊 Vanilla × TypeScript × Vite (纯天然 / 无依赖)
-
-## 特性
-
-- 侧 边 栏 ：支持多站点集中化管理
-- 通知中心：红点的标记 / 提及列表
-- 身份验证：徽标自定义 / 密码验证
-- 评论审核：反垃圾检测 / 频率限制
-- 表情符号：插入表情包 / 快速导入
-- 邮件提醒：模版自定义 / 多管理员
-- 站点隔离：管理员分配 / 多个站点
-- 页面管理：标题可显示 / 快速跳转
-- 图片上传：上传到本地 / 多种图床
-- 多元推送：支持 钉钉 飞书 TG
-- 无限层级：可切换为平铺模式
-- 评论投票：赞同还是反对评论
-- 评论排序：按热度或时间排序
-- 评论置顶：重要消息置顶显示
-- 只看作者：仅显示作者的评论
-- 说说模式：仅自己可发布评论
-- 异步处理：发送评论无需等待
-- 滚动加载：评论内容分页处置
-- 自动保存：用户输入防丢功能
-- 自动填充：用户链接自动填充
-- 实时预览：评论内容实时预览
-- 夜间模式：防止眼部疾病伤害
-- 评论折叠：这个不打算给你康
-- 数据备份：防止评论数据丢失
-- 数据迁移：快速切换评论系统
-- Markdown：默认支持 MD 语法
-- 支持 Latex：提供集成 Katex 插件
-- 使用 [Vite](https://github.com/vitejs/vite)：属于开发者的极致体验
-
-更多内容请查看：[“**介绍文档**”](https://artalk.js.org/guide/intro.html)
+## 参考资料
+- 官网: <https://artalk.js.org>
+- 文档: <https://artalk.js.org/guide/intro.html>
+- 源码: <https://github.com/ArtalkJS/Artalk>

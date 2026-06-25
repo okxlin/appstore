@@ -1,0 +1,36 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  your_spotify:
+    image: "linuxserver/your_spotify:1.20.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    depends_on:
+      - your-spotify-mongo
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTPS}:443"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - APP_URL=${APP_URL}
+      - SPOTIFY_PUBLIC=${SPOTIFY_PUBLIC}
+      - SPOTIFY_SECRET=${SPOTIFY_SECRET}
+      - SPOTIFY_API_DELAY_MS=${SPOTIFY_API_DELAY_MS}
+      - CORS=${CORS}
+      - MONGO_ENDPOINT=mongodb://your-spotify-mongo:27017/your_spotify
+    labels:
+      createdBy: "Apps"
+  your-spotify-mongo:
+    image: "mongo:8.0"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${MONGO_DATA_PATH}:/data/db"
+    labels:
+      createdBy: "Apps"

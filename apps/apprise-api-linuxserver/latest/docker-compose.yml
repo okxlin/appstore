@@ -1,0 +1,22 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  apprise-api:
+    image: "linuxserver/apprise-api:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${ATTACHMENTS_PATH}:/attachments"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - APPRISE_ATTACH_SIZE=${APPRISE_ATTACH_SIZE}
+    labels:
+      createdBy: "Apps"
