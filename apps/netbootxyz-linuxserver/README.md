@@ -32,6 +32,7 @@ netboot.xyz 网络启动服务。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | MENU_VERSION | 菜单版本 | 1.9.9 | 否 |
+| PORT_RANGE | TFTP 数据端口范围 | 30000:30010 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

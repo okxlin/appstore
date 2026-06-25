@@ -99,6 +99,22 @@ additionalProperties:
       pt-br: Versao do menu
     required: false
     type: text
+  - default: 30000:30010
+    edit: true
+    envKey: PORT_RANGE
+    labelEn: TFTP data port range
+    labelZh: TFTP 数据端口范围
+    label:
+      en: TFTP data port range
+      zh: TFTP 数据端口范围
+      zh-Hant: TFTP 資料連接埠範圍
+      ja: TFTP データポート範囲
+      ko: TFTP 데이터 포트 범위
+      ru: Диапазон портов данных TFTP
+      ms: Julat port data TFTP
+      pt-br: Intervalo de portas de dados TFTP
+    required: false
+    type: text
   - default: /
     edit: true
     envKey: SUBFOLDER
