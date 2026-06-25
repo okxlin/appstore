@@ -25,6 +25,7 @@ if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "ALLOWED_HOSTS" ""
   ensure_env_default "APPRISE_ENABLED" "False"
   ensure_env_default "CSRF_TRUSTED_ORIGINS" ""
+  ensure_env_default "INTEGRATIONS_ALLOW_PRIVATE_IPS" "False"
   ensure_env_default "HEALTHCHECKS_DEBUG" "True"
   ensure_env_default "PING_EMAIL_DOMAIN" ""
   ensure_env_default "RP_ID" ""

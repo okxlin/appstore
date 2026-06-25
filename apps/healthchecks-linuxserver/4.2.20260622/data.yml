@@ -134,6 +134,21 @@ additionalProperties:
     type: text
   - default: "False"
     edit: true
+    envKey: INTEGRATIONS_ALLOW_PRIVATE_IPS
+    labelEn: Allow private IP integrations
+    labelZh: 允许集成访问私有 IP
+    label:
+      en: Allow private IP integrations
+      zh: 允许集成访问私有 IP
+    required: false
+    type: select
+    values:
+      - label: "False"
+        value: "False"
+      - label: "True"
+        value: "True"
+  - default: "False"
+    edit: true
     envKey: HEALTHCHECKS_DEBUG
     labelEn: Debug mode
     labelZh: 调试模式
