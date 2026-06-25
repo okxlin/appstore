@@ -66,6 +66,64 @@ additionalProperties:
       pt-br: Dominio de acesso
     required: true
     type: text
+  - default: "true"
+    edit: true
+    envKey: CMD_URL_ADDPORT
+    labelEn: Add port to URL
+    labelZh: URL 添加端口
+    label:
+      en: Add port to URL
+      zh: URL 添加端口
+      zh-Hant: URL 加入連接埠
+      ja: URL にポートを追加
+      ko: URL에 포트 추가
+      ru: Добавлять порт в URL
+      ms: Tambah port pada URL
+      pt-br: Adicionar porta a URL
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: "false"
+    edit: true
+    envKey: CMD_PROTOCOL_USESSL
+    labelEn: Use HTTPS protocol
+    labelZh: 使用 HTTPS 协议
+    label:
+      en: Use HTTPS protocol
+      zh: 使用 HTTPS 协议
+      zh-Hant: 使用 HTTPS 通訊協定
+      ja: HTTPS プロトコルを使用
+      ko: HTTPS 프로토콜 사용
+      ru: Использовать протокол HTTPS
+      ms: Gunakan protokol HTTPS
+      pt-br: Usar protocolo HTTPS
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: "['localhost']"
+    edit: true
+    envKey: CMD_ALLOW_ORIGIN
+    labelEn: Allowed origins
+    labelZh: 允许的来源
+    label:
+      en: Allowed origins
+      zh: 允许的来源
+      zh-Hant: 允許的來源
+      ja: 許可されたオリジン
+      ko: 허용된 출처
+      ru: Разрешенные источники
+      ms: Asal dibenarkan
+      pt-br: Origens permitidas
+    required: false
+    type: text
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH

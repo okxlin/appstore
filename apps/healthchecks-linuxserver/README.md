@@ -34,6 +34,7 @@ Healthchecks 定时任务监控。
 | ALLOWED_HOSTS | 允许的主机名 | - | 否 |
 | APPRISE_ENABLED | 启用 Apprise | False | 否 |
 | CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
+| HEALTHCHECKS_DEBUG | 调试模式 | False | 否 |
 | PING_EMAIL_DOMAIN | Ping 邮件域名 | - | 否 |
 | RP_ID | WebAuthn RP ID | - | 否 |
 | SITE_LOGO_URL | 站点 Logo URL | - | 否 |

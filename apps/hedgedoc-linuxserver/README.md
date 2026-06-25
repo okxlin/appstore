@@ -30,6 +30,9 @@ HedgeDoc 协作文档编辑器。
 | --- | --- | --- | --- |
 | DB_PASSWORD | 数据库密码 | hedgedoc-change-me | 是 |
 | CMD_DOMAIN | 访问域名 | localhost | 是 |
+| CMD_URL_ADDPORT | URL 添加端口 | true | 否 |
+| CMD_PROTOCOL_USESSL | 使用 HTTPS 协议 | false | 否 |
+| CMD_ALLOW_ORIGIN | 允许的来源 | ['localhost'] | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

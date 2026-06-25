@@ -31,6 +31,7 @@ Snipe-IT 资产管理系统。
 | --- | --- | --- | --- |
 | APP_KEY | 应用密钥 | base64:K4tN8COBEIginakyKQ4SGfoAskVW1leA/A0qSEDucFQ= | 是 |
 | APP_URL | 应用访问 URL | http://localhost:8080 | 是 |
+| APP_FORCE_TLS | 强制 TLS | false | 否 |
 | DB_PASSWORD | 数据库密码 | snipeit-change-me | 是 |
 | APP_LOCALE | 应用语言 | - | 否 |
 | MAIL_HOST | SMTP 主机 | - | 否 |

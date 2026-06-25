@@ -33,6 +33,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: /pwndrop
+    edit: true
+    envKey: SECRET_PATH
+    labelEn: Secret path
+    labelZh: 管理访问路径
+    label:
+      en: Secret path
+      zh: 管理访问路径
+      zh-Hant: 管理存取路徑
+      ja: 管理アクセスパス
+      ko: 관리 접근 경로
+      ru: Путь доступа администратора
+      ms: Laluan akses pentadbir
+      pt-br: Caminho de acesso admin
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

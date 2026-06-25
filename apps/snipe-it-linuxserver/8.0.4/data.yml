@@ -67,6 +67,27 @@ additionalProperties:
     required: true
     type: text
     rule: paramExtUrl
+  - default: "false"
+    edit: true
+    envKey: APP_FORCE_TLS
+    labelEn: Force TLS
+    labelZh: 强制 TLS
+    label:
+      en: Force TLS
+      zh: 强制 TLS
+      zh-Hant: 強制 TLS
+      ja: TLS を強制
+      ko: TLS 강제
+      ru: Принудительный TLS
+      ms: Paksa TLS
+      pt-br: Forcar TLS
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
   - default: snipeit-change-me
     edit: true
     envKey: DB_PASSWORD

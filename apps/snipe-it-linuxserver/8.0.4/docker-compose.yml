@@ -25,7 +25,7 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - APP_DEBUG=false
       - APP_ENV=production
-      - APP_FORCE_TLS=false
+      - APP_FORCE_TLS=${APP_FORCE_TLS}
       - APP_LOCALE=${APP_LOCALE:-}
       - MAIL_PORT_587_TCP_ADDR=${MAIL_HOST:-}
       - MAIL_PORT_587_TCP_PORT=${MAIL_PORT:-}

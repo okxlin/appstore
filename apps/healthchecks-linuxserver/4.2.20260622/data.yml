@@ -134,6 +134,27 @@ additionalProperties:
     type: text
   - default: "False"
     edit: true
+    envKey: HEALTHCHECKS_DEBUG
+    labelEn: Debug mode
+    labelZh: 调试模式
+    label:
+      en: Debug mode
+      zh: 调试模式
+      zh-Hant: 偵錯模式
+      ja: デバッグモード
+      ko: 디버그 모드
+      ru: Режим отладки
+      ms: Mod nyahpepijat
+      pt-br: Modo de depuracao
+    required: false
+    type: select
+    values:
+      - label: "False"
+        value: "False"
+      - label: "True"
+        value: "True"
+  - default: "False"
+    edit: true
     envKey: APPRISE_ENABLED
     labelEn: Enable Apprise
     labelZh: 启用 Apprise

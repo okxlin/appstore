@@ -22,10 +22,10 @@ services:
       - DB_PASS=${DB_PASSWORD}
       - DB_NAME=hedgedoc
       - CMD_DOMAIN=${CMD_DOMAIN}
-      - CMD_URL_ADDPORT=true
-      - CMD_PROTOCOL_USESSL=false
+      - CMD_URL_ADDPORT=${CMD_URL_ADDPORT}
+      - CMD_PROTOCOL_USESSL=${CMD_PROTOCOL_USESSL}
       - CMD_PORT=3000
-      - CMD_ALLOW_ORIGIN=['localhost']
+      - CMD_ALLOW_ORIGIN=${CMD_ALLOW_ORIGIN}
       - CMD_DB_DIALECT=mariadb
     depends_on:
       - hedgedoc-db

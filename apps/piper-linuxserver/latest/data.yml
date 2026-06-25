@@ -49,6 +49,27 @@ additionalProperties:
       pt-br: Voz do Piper
     required: true
     type: text
+  - default: ""
+    edit: true
+    envKey: LOCAL_ONLY
+    labelEn: Local only mode
+    labelZh: 仅本地模型
+    label:
+      en: Local only mode
+      zh: 仅本地模型
+      zh-Hant: 僅本機模型
+      ja: ローカル専用モード
+      ko: 로컬 전용 모드
+      ru: Локальный режим
+      ms: Mod tempatan sahaja
+      pt-br: Modo somente local
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: ""
+      - label: "true"
+        value: "true"
   - default: "1.0"
     edit: true
     envKey: PIPER_LENGTH
@@ -113,6 +134,27 @@ additionalProperties:
       pt-br: Numero do locutor
     required: false
     type: text
+  - default: ""
+    edit: true
+    envKey: NO_STREAMING
+    labelEn: Disable streaming
+    labelZh: 禁用流式音频
+    label:
+      en: Disable streaming
+      zh: 禁用流式音频
+      zh-Hant: 停用串流音訊
+      ja: ストリーミングを無効化
+      ko: 스트리밍 비활성화
+      ru: Отключить потоковую передачу
+      ms: Nyahdaya penstriman
+      pt-br: Desativar streaming
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: ""
+      - label: "true"
+        value: "true"
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

@@ -22,10 +22,12 @@ ensure_env_default() {
 }
 
 if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_default "LOCAL_ONLY" ""
   ensure_env_default "PIPER_LENGTH" "1.0"
   ensure_env_default "PIPER_NOISE" "0.667"
   ensure_env_default "PIPER_NOISEW" "0.333"
   ensure_env_default "PIPER_SPEAKER" "0"
+  ensure_env_default "NO_STREAMING" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi
