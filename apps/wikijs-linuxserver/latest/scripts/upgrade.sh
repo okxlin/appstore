@@ -23,6 +23,11 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "DB_TYPE" "sqlite"
+  ensure_env_default "DB_HOST" ""
+  ensure_env_default "DB_PORT" ""
+  ensure_env_default "DB_NAME" ""
+  ensure_env_default "DB_USER" ""
+  ensure_env_default "DB_PASS" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

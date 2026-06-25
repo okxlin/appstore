@@ -23,6 +23,11 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "DB_CONNECTION" "sqlite"
+  ensure_env_default "DB_HOST" ""
+  ensure_env_default "DB_PORT" ""
+  ensure_env_default "DB_DATABASE" ""
+  ensure_env_default "DB_USERNAME" ""
+  ensure_env_default "DB_PASSWORD" ""
   ensure_env_default "PRUNE_RESULTS_OLDER_THAN" "0"
   ensure_env_default "DISPLAY_TIMEZONE" "Asia/Shanghai"
 else

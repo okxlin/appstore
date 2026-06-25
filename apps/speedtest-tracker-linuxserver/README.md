@@ -30,6 +30,11 @@ Speedtest Tracker 网速监测。
 | APP_KEY | 应用密钥 | base64:dGVzdGluZy1saW51eHNlcnZlci1hcHBzLTEyMzQ1Njc= | 是 |
 | APP_URL | 应用访问 URL | - | 否 |
 | DB_CONNECTION | 数据库连接 | sqlite | 是 |
+| DB_HOST | 数据库主机 | - | 否 |
+| DB_PORT | 数据库端口 | - | 否 |
+| DB_DATABASE | 数据库名称 | - | 否 |
+| DB_USERNAME | 数据库用户名 | - | 否 |
+| DB_PASSWORD | 数据库密码 | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | DISPLAY_TIMEZONE | 显示时区 | Asia/Shanghai | 否 |
 | SPEEDTEST_SCHEDULE | 测速计划 | 0 */6 * * * | 否 |

@@ -68,6 +68,88 @@ additionalProperties:
     values:
       - label: sqlite
         value: sqlite
+      - label: postgres
+        value: postgres
+  - default: ''
+    edit: true
+    envKey: DB_HOST
+    labelEn: PostgreSQL host
+    labelZh: PostgreSQL 主机
+    label:
+      en: PostgreSQL host
+      zh: PostgreSQL 主机
+      zh-Hant: PostgreSQL 主機
+      ja: PostgreSQL ホスト
+      ko: PostgreSQL 호스트
+      ru: Хост PostgreSQL
+      ms: Hos PostgreSQL
+      pt-br: Host PostgreSQL
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PORT
+    labelEn: PostgreSQL port
+    labelZh: PostgreSQL 端口
+    label:
+      en: PostgreSQL port
+      zh: PostgreSQL 端口
+      zh-Hant: PostgreSQL 連接埠
+      ja: PostgreSQL ポート
+      ko: PostgreSQL 포트
+      ru: Порт PostgreSQL
+      ms: Port PostgreSQL
+      pt-br: Porta PostgreSQL
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_NAME
+    labelEn: PostgreSQL database
+    labelZh: PostgreSQL 数据库
+    label:
+      en: PostgreSQL database
+      zh: PostgreSQL 数据库
+      zh-Hant: PostgreSQL 資料庫
+      ja: PostgreSQL データベース
+      ko: PostgreSQL 데이터베이스
+      ru: База данных PostgreSQL
+      ms: Pangkalan data PostgreSQL
+      pt-br: Banco de dados PostgreSQL
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_USER
+    labelEn: PostgreSQL username
+    labelZh: PostgreSQL 用户名
+    label:
+      en: PostgreSQL username
+      zh: PostgreSQL 用户名
+      zh-Hant: PostgreSQL 使用者名稱
+      ja: PostgreSQL ユーザー名
+      ko: PostgreSQL 사용자 이름
+      ru: Пользователь PostgreSQL
+      ms: Nama pengguna PostgreSQL
+      pt-br: Usuario PostgreSQL
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PASS
+    labelEn: PostgreSQL password
+    labelZh: PostgreSQL 密码
+    label:
+      en: PostgreSQL password
+      zh: PostgreSQL 密码
+      zh-Hant: PostgreSQL 密碼
+      ja: PostgreSQL パスワード
+      ko: PostgreSQL 비밀번호
+      ru: Пароль PostgreSQL
+      ms: Kata laluan PostgreSQL
+      pt-br: Senha PostgreSQL
+    required: false
+    type: password
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
