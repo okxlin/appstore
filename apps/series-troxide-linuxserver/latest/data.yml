@@ -66,3 +66,38 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+
+  - default: admin
+    edit: true
+    envKey: CUSTOM_USER
+    labelEn: Basic Auth Username
+    labelZh: 访问用户名（Basic Auth）
+    label:
+      en: Basic Auth Username
+      zh: 访问用户名（Basic Auth）
+      zh-Hant: 存取使用者名稱（Basic Auth）
+      ja: ベーシック認証ユーザー名
+      ko: 기본 인증 사용자명
+      ru: Имя пользователя (Basic Auth)
+      ms: Nama pengguna (Basic Auth)
+      pt-br: Usuario Basic Auth
+    required: true
+    type: text
+  - default: linuxserver-change-me
+    edit: true
+    envKey: PASSWORD
+    labelEn: Basic Auth Password
+    labelZh: 访问密码（Basic Auth）
+    label:
+      en: Basic Auth Password
+      zh: 访问密码（Basic Auth）
+      zh-Hant: 存取密碼（Basic Auth）
+      ja: ベーシック認証パスワード
+      ko: 기본 인증 비밀번호
+      ru: Пароль (Basic Auth)
+      ms: Kata laluan Basic Auth
+      pt-br: Senha Basic Auth
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password

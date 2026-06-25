@@ -29,8 +29,12 @@ MySQL Workbench 数据库桌面。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
+| PASSWORD | Basic Auth 密码 | 随机生成 | 是 |
+| LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
+- 浏览器/桌面类 LinuxServer 镜像已启用 Basic Auth，请使用 CUSTOM_USER 和 PASSWORD 登录。
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
 - 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。

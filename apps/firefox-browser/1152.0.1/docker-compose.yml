@@ -15,6 +15,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
+      - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
     shm_size: ${MEM_USE}

@@ -18,5 +18,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
+      - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

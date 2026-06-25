@@ -24,8 +24,10 @@ Joplin（浏览器版）。
 | CUSTOM_USER | 访问用户名（Basic Auth） | admin | 是 |
 | PASSWORD | 访问密码（Basic Auth） | - | 是 |
 | SHM_SIZE | 共享内存大小（shm） | 1gb | 是 |
+| LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
+- 浏览器/桌面类 LinuxServer 镜像已启用 Basic Auth，请使用 CUSTOM_USER 和 PASSWORD 登录。
 ### 密码访问（Basic Auth）
 
 该镜像支持通过环境变量启用 **Basic HTTP Auth**：

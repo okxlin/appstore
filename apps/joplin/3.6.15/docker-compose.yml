@@ -11,6 +11,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
     volumes:
