@@ -138,6 +138,22 @@ additionalProperties:
       pt-br: Titulo da pagina do navegador
     required: false
     type: text
+  - default: Selkies
+    edit: true
+    envKey: SELKIES_UI_TITLE
+    labelEn: Sidebar title
+    labelZh: 侧边栏标题
+    label:
+      en: Sidebar title
+      zh: 侧边栏标题
+      zh-Hant: 側邊欄標題
+      ja: サイドバータイトル
+      ko: 사이드바 제목
+      ru: Заголовок боковой панели
+      ms: Tajuk bar sisi
+      pt-br: Titulo da barra lateral
+    required: false
+    type: text
   - default: selkies-dashboard
     edit: true
     envKey: DASHBOARD
