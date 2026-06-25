@@ -1,0 +1,246 @@
+additionalProperties:
+  formFields:
+  - default: 8080
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: base64:K4tN8COBEIginakyKQ4SGfoAskVW1leA/A0qSEDucFQ=
+    edit: true
+    envKey: APP_KEY
+    labelEn: Application key
+    labelZh: 应用密钥
+    label:
+      en: Application key
+      zh: 应用密钥
+      zh-Hant: 應用金鑰
+      ja: アプリケーションキー
+      ko: 애플리케이션 키
+      ru: Ключ приложения
+      ms: Kunci aplikasi
+      pt-br: Chave do aplicativo
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: http://localhost:8080
+    edit: true
+    envKey: APP_URL
+    labelEn: App URL
+    labelZh: 应用访问 URL
+    label:
+      en: App URL
+      zh: 应用访问 URL
+      zh-Hant: 應用存取 URL
+      ja: アプリ URL
+      ko: 앱 URL
+      ru: URL приложения
+      ms: URL aplikasi
+      pt-br: URL do aplicativo
+    required: true
+    type: text
+    rule: paramExtUrl
+  - default: snipeit-change-me
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ''
+    edit: true
+    envKey: APP_LOCALE
+    labelEn: App locale
+    labelZh: 应用语言
+    label:
+      en: App locale
+      zh: 应用语言
+      zh-Hant: 應用語言
+      ja: アプリ言語
+      ko: 앱 언어
+      ru: Язык приложения
+      ms: Bahasa aplikasi
+      pt-br: Idioma do aplicativo
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_HOST
+    labelEn: SMTP host
+    labelZh: SMTP 主机
+    label:
+      en: SMTP host
+      zh: SMTP 主机
+      zh-Hant: SMTP 主機
+      ja: SMTP ホスト
+      ko: SMTP 호스트
+      ru: SMTP-хост
+      ms: Hos SMTP
+      pt-br: Host SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_PORT
+    labelEn: SMTP port
+    labelZh: SMTP 端口
+    label:
+      en: SMTP port
+      zh: SMTP 端口
+      zh-Hant: SMTP 連接埠
+      ja: SMTP ポート
+      ko: SMTP 포트
+      ru: Порт SMTP
+      ms: Port SMTP
+      pt-br: Porta SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_FROM
+    labelEn: Mail from address
+    labelZh: 邮件发件地址
+    label:
+      en: Mail from address
+      zh: 邮件发件地址
+      zh-Hant: 郵件寄件地址
+      ja: メール送信元
+      ko: 메일 발신 주소
+      ru: Адрес отправителя
+      ms: Alamat pengirim mel
+      pt-br: Endereco remetente
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_FROM_NAME
+    labelEn: Mail from name
+    labelZh: 邮件发件名称
+    label:
+      en: Mail from name
+      zh: 邮件发件名称
+      zh-Hant: 郵件寄件名稱
+      ja: メール送信者名
+      ko: 메일 발신 이름
+      ru: Имя отправителя
+      ms: Nama pengirim mel
+      pt-br: Nome do remetente
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_ENCRYPTION
+    labelEn: Mail encryption
+    labelZh: 邮件加密方式
+    label:
+      en: Mail encryption
+      zh: 邮件加密方式
+      zh-Hant: 郵件加密方式
+      ja: メール暗号化
+      ko: 메일 암호화
+      ru: Шифрование почты
+      ms: Penyulitan mel
+      pt-br: Criptografia de email
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_USERNAME
+    labelEn: SMTP username
+    labelZh: SMTP 用户名
+    label:
+      en: SMTP username
+      zh: SMTP 用户名
+      zh-Hant: SMTP 使用者名稱
+      ja: SMTP ユーザー名
+      ko: SMTP 사용자 이름
+      ru: Имя пользователя SMTP
+      ms: Nama pengguna SMTP
+      pt-br: Usuario SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MAIL_PASSWORD
+    labelEn: SMTP password
+    labelZh: SMTP 密码
+    label:
+      en: SMTP password
+      zh: SMTP 密码
+      zh-Hant: SMTP 密碼
+      ja: SMTP パスワード
+      ko: SMTP 비밀번호
+      ru: Пароль SMTP
+      ms: Kata laluan SMTP
+      pt-br: Senha SMTP
+    required: false
+    type: password
+  - default: ./data/db
+    edit: true
+    envKey: DB_DATA_PATH
+    labelEn: Database data path
+    labelZh: 数据库数据目录
+    label:
+      en: Database data path
+      zh: 数据库数据目录
+      zh-Hant: 資料庫資料目錄
+      ja: データベースデータディレクトリ
+      ko: 데이터베이스 데이터 디렉터리
+      ru: Каталог данных базы
+      ms: Laluan data pangkalan data
+      pt-br: Caminho de dados do banco
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

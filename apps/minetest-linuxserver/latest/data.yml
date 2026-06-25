@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+  - default: 30000
+    edit: true
+    envKey: PANEL_APP_PORT_GAME_UDP
+    labelEn: Game UDP Port
+    labelZh: 游戏 UDP 端口
+    label:
+      en: Game UDP Port
+      zh: 游戏 UDP 端口
+      zh-Hant: 遊戲 UDP 連接埠
+      ja: ゲーム UDP ポート
+      ko: 게임 UDP 포트
+      ru: UDP-порт игры
+      ms: Port UDP permainan
+      pt-br: Porta UDP do jogo
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/minetest
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: --gameid devtest
+    edit: true
+    envKey: CLI_ARGS
+    labelEn: CLI arguments
+    labelZh: 启动参数
+    label:
+      en: CLI arguments
+      zh: 启动参数
+      zh-Hant: 啟動參數
+      ja: 起動引数
+      ko: 시작 인수
+      ru: Аргументы запуска
+      ms: Argumen CLI
+      pt-br: Argumentos de CLI
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

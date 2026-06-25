@@ -1,0 +1,23 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  pylon:
+    image: "linuxserver/pylon:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3131"
+    volumes:
+      - "${CODE_PATH}:/code"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - GITURL=${GITURL:-}
+      - PYUSER=${PYUSER:-}
+      - PYPASS=${PYPASS:-}
+    labels:
+      createdBy: "Apps"

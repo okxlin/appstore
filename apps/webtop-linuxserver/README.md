@@ -9,7 +9,7 @@ Webtop 浏览器桌面环境。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`ubuntu-lxqt`、`ubuntu-lxqt-62e68289-ls13`。
+- 可选版本：`latest`、`ubuntu-lxqt-62e68289-ls13`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口

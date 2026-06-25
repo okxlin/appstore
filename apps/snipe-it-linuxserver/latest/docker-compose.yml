@@ -1,0 +1,54 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  snipe-it:
+    image: "linuxserver/snipe-it:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - APP_KEY=${APP_KEY}
+      - APP_URL=${APP_URL}
+      - MYSQL_PORT_3306_TCP_ADDR=snipe-it-db
+      - MYSQL_PORT_3306_TCP_PORT=3306
+      - MYSQL_DATABASE=snipeit
+      - MYSQL_USER=snipeit
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - APP_DEBUG=false
+      - APP_ENV=production
+      - APP_FORCE_TLS=false
+      - APP_LOCALE=${APP_LOCALE:-}
+      - MAIL_PORT_587_TCP_ADDR=${MAIL_HOST:-}
+      - MAIL_PORT_587_TCP_PORT=${MAIL_PORT:-}
+      - MAIL_ENV_FROM_ADDR=${MAIL_FROM:-}
+      - MAIL_ENV_FROM_NAME=${MAIL_FROM_NAME:-}
+      - MAIL_ENV_ENCRYPTION=${MAIL_ENCRYPTION:-}
+      - MAIL_ENV_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_ENV_PASSWORD=${MAIL_PASSWORD:-}
+    depends_on:
+      - snipe-it-db
+    labels:
+      createdBy: "Apps"
+  snipe-it-db:
+    image: "mariadb:11.4"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DB_DATA_PATH}:/var/lib/mysql"
+    environment:
+      - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
+      - MARIADB_DATABASE=snipeit
+      - MARIADB_USER=snipeit
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+    labels:
+      createdBy: "Apps"
