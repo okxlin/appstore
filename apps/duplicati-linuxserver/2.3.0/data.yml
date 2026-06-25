@@ -1,0 +1,135 @@
+additionalProperties:
+  formFields:
+  - default: 8200
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/backups
+    edit: true
+    envKey: BACKUPS_PATH
+    labelEn: Local backups folder path
+    labelZh: 本地备份目录路径
+    label:
+      en: Local backups folder path
+      zh: 本地备份目录路径
+      zh-Hant: 本機備份資料夾路徑
+      ja: ローカルバックアップフォルダーのパス
+      ko: 로컬 백업 폴더 경로
+      ru: Путь к папке локальных резервных копий
+      ms: Laluan folder sandaran setempat
+      pt-br: Caminho da pasta de backups locais
+    required: true
+    type: text
+  - default: ./data/source
+    edit: true
+    envKey: SOURCE_PATH
+    labelEn: Default source folder path
+    labelZh: 默认备份源目录路径
+    label:
+      en: Default source folder path
+      zh: 默认备份源目录路径
+      zh-Hant: 預設備份來源資料夾路徑
+      ja: 既定バックアップ元フォルダーのパス
+      ko: 기본 백업 원본 폴더 경로
+      ru: Путь к папке источника резервного копирования
+      ms: Laluan folder sumber sandaran lalai
+      pt-br: Caminho da pasta de origem padrao
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
+  - default: Duplicati2026Key
+    edit: true
+    envKey: SETTINGS_ENCRYPTION_KEY
+    labelEn: Settings encryption key
+    labelZh: 设置数据库加密密钥
+    label:
+      en: Settings encryption key
+      zh: 设置数据库加密密钥
+      zh-Hant: 設定資料庫加密金鑰
+      ja: 設定データベース暗号化キー
+      ko: 설정 데이터베이스 암호화 키
+      ru: Ключ шифрования базы данных настроек
+      ms: Kunci penyulitan pangkalan data tetapan
+      pt-br: Chave de criptografia do banco de configuracoes
+    required: true
+    rule: paramCommon
+    type: password
+  - default: linuxserver-change-me
+    edit: true
+    envKey: DUPLICATI_WEBSERVICE_PASSWORD
+    labelEn: Web UI password
+    labelZh: Web UI 密码
+    label:
+      en: Web UI password
+      zh: Web UI 密码
+      zh-Hant: Web UI 密碼
+      ja: Web UI パスワード
+      ko: Web UI 비밀번호
+      ru: Пароль Web UI
+      ms: Kata laluan Web UI
+      pt-br: Senha da Web UI
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ""
+    edit: true
+    envKey: CLI_ARGS
+    labelEn: Extra CLI arguments
+    labelZh: 额外启动参数
+    label:
+      en: Extra CLI arguments
+      zh: 额外启动参数
+      zh-Hant: 額外啟動參數
+      ja: 追加 CLI 引数
+      ko: 추가 CLI 인수
+      ru: Дополнительные аргументы CLI
+      ms: Argumen CLI tambahan
+      pt-br: Argumentos CLI extras
+    required: false
+    type: text
+

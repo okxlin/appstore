@@ -1,0 +1,31 @@
+name: Duplicati
+tags:
+- Tool
+title: Duplicati 备份工具
+description: Duplicati 备份工具
+additionalProperties:
+  key: duplicati-linuxserver
+  name: Duplicati
+  tags:
+  - Tool
+  shortDescZh: Duplicati 备份工具
+  shortDescEn: Encrypted backup tool maintained by LinuxServer.io
+  description:
+    en: Encrypted backup tool maintained by LinuxServer.io
+    zh: Duplicati 备份工具
+    zh-Hant: Duplicati 備份工具
+    ja: LinuxServer.io が保守する暗号化バックアップツール
+    ko: LinuxServer.io에서 유지 관리하는 암호화 백업 도구
+    ru: Инструмент зашифрованного резервного копирования, поддерживаемый LinuxServer.io
+    ms: Alat sandaran tersulit yang diselenggara oleh LinuxServer.io
+    pt-br: Ferramenta de backup criptografado mantida pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.duplicati.com/
+  github: https://github.com/linuxserver/docker-duplicati
+  document: https://docs.linuxserver.io/images/docker-duplicati/
+  architectures:
+  - amd64
+  - arm64
+
