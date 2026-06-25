@@ -1,0 +1,30 @@
+name: ONLYOFFICE Desktop Editors
+tags:
+- Tool
+title: ONLYOFFICE 桌面编辑器
+description: ONLYOFFICE 桌面编辑器
+additionalProperties:
+  key: onlyoffice-linuxserver
+  name: ONLYOFFICE Desktop Editors
+  tags:
+  - Tool
+  shortDescZh: ONLYOFFICE 桌面编辑器
+  shortDescEn: ONLYOFFICE desktop editors maintained by LinuxServer.io
+  description:
+    en: ONLYOFFICE desktop editors maintained by LinuxServer.io
+    zh: ONLYOFFICE 桌面编辑器
+    zh-Hant: ONLYOFFICE 桌面編輯器
+    ja: LinuxServer.io が保守する ONLYOFFICE デスクトップエディター
+    ko: LinuxServer.io에서 유지 관리하는 ONLYOFFICE 데스크톱 편집기
+    ru: Настольные редакторы ONLYOFFICE, поддерживаемые LinuxServer.io
+    ms: Editor desktop ONLYOFFICE yang diselenggara oleh LinuxServer.io
+    pt-br: Editores desktop ONLYOFFICE mantidos pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.onlyoffice.com/
+  github: https://github.com/linuxserver/docker-onlyoffice
+  document: https://docs.linuxserver.io/images/docker-onlyoffice/
+  architectures:
+  - amd64
+
