@@ -32,6 +32,9 @@
 | HTTP_PWD | 访问密码 | Password | 是 |
 | MEM_USE | 共享内存占用(1gb) | 512m | 是 |
 | FIREFOX_CLI | 启动 URL 或 CLI 参数 | https://www.linuxserver.io/ | 否 |
+| TITLE | 浏览器页面标题 | Firefox | 否 |
+| SELKIES_UI_TITLE | 侧边栏标题 | Selkies | 否 |
+| DASHBOARD | 仪表盘界面，可选 selkies-dashboard、selkies-dashboard-zinc、selkies-dashboard-wish | selkies-dashboard | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明

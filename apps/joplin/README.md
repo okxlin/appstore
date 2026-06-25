@@ -24,6 +24,9 @@ Joplin（浏览器版）。
 | CUSTOM_USER | 访问用户名（Basic Auth） | admin | 是 |
 | PASSWORD | 访问密码（Basic Auth） | - | 是 |
 | SHM_SIZE | 共享内存大小（shm） | 1gb | 是 |
+| TITLE | 浏览器页面标题 | Joplin | 否 |
+| SELKIES_UI_TITLE | 侧边栏标题 | Selkies | 否 |
+| DASHBOARD | 仪表盘界面，可选 selkies-dashboard、selkies-dashboard-zinc、selkies-dashboard-wish | selkies-dashboard | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
