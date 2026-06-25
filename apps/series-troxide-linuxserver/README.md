@@ -31,6 +31,7 @@ Series Troxide 剧集追踪桌面。
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |
+| TITLE | 浏览器页面标题 | Series Troxide | 否 |
 
 ## 使用说明
 - 浏览器/桌面类 LinuxServer 镜像已启用 Basic Auth，请使用 CUSTOM_USER 和 PASSWORD 登录。

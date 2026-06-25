@@ -21,6 +21,7 @@ services:
       - CLI_ARGS=${CLI_ARGS:-}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Calibre}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

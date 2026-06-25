@@ -20,6 +20,7 @@ services:
       - VLC_CLI=${VLC_CLI:---no-qt-minimal-view}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-VLC}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

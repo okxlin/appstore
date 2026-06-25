@@ -101,6 +101,22 @@ additionalProperties:
     required: true
     rule: paramComplexity
     type: password
+  - default: KeePassXC
+    edit: true
+    envKey: TITLE
+    labelEn: Browser page title
+    labelZh: 浏览器页面标题
+    label:
+      en: Browser page title
+      zh: 浏览器页面标题
+      zh-Hant: 瀏覽器頁面標題
+      ja: ブラウザーのページタイトル
+      ko: 브라우저 페이지 제목
+      ru: Заголовок страницы браузера
+      ms: Tajuk halaman pelayar
+      pt-br: Titulo da pagina do navegador
+    required: false
+    type: text
   - default: zh_CN.UTF-8
     edit: true
     envKey: LC_ALL

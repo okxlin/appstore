@@ -20,6 +20,7 @@ services:
       - LOCAL_NET=${LOCAL_NET:-192.168.0.0/16}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Mullvad Browser}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

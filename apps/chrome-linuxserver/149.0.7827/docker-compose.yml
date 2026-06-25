@@ -20,6 +20,7 @@ services:
       - CHROME_CLI=${CHROME_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Chrome}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

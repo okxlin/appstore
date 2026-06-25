@@ -20,6 +20,7 @@ services:
       - HELIUM_CLI=${HELIUM_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Helium}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

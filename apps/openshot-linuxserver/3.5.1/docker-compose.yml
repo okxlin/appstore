@@ -19,6 +19,7 @@ services:
       - TZ=${TIME_ZONE}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-OpenShot}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

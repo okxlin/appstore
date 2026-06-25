@@ -20,6 +20,7 @@ services:
       - VIVALDI_CLI=${VIVALDI_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Vivaldi}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

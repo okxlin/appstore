@@ -20,6 +20,7 @@ services:
       - FIREFOX_CLI=${FIREFOX_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Firefox}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

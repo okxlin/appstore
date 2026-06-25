@@ -20,6 +20,7 @@ services:
       - DARK_MODE=${DARK_MODE:-true}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Bambu Studio}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

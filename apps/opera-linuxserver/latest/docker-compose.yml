@@ -20,6 +20,7 @@ services:
       - OPERA_CLI=${OPERA_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Opera}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"
