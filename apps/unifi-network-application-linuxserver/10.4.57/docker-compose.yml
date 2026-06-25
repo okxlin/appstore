@@ -38,7 +38,7 @@ services:
       - 1panel-network
     volumes:
       - "${MONGO_DATA_PATH}:/data/db"
-      - "./data/mongo-init/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro"
+      - "${MONGO_INIT_PATH}/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh:ro"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}

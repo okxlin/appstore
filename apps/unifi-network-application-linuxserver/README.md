@@ -25,6 +25,7 @@ UniFi Network 网络控制器。
 | --- | --- | --- | --- |
 | CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 | MONGO_DATA_PATH | Mongo 数据目录 | ./data/mongo | 是 |
+| MONGO_INIT_PATH | Mongo 初始化脚本目录 | ./data/mongo-init | 是 |
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 

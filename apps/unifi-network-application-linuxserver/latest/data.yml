@@ -117,6 +117,22 @@ additionalProperties:
       pt-br: Caminho de dados do Mongo
     required: true
     type: text
+  - default: ./data/mongo-init
+    edit: true
+    envKey: MONGO_INIT_PATH
+    labelEn: Mongo init script path
+    labelZh: Mongo 初始化脚本目录
+    label:
+      en: Mongo init script path
+      zh: Mongo 初始化脚本目录
+      zh-Hant: Mongo 初始化指令碼目錄
+      ja: Mongo 初期化スクリプトディレクトリ
+      ko: Mongo 초기화 스크립트 디렉터리
+      ru: Каталог скрипта инициализации Mongo
+      ms: Laluan skrip permulaan Mongo
+      pt-br: Caminho do script de inicializacao do Mongo
+    required: true
+    type: text
   - default: 1024
     edit: true
     envKey: MEM_LIMIT
