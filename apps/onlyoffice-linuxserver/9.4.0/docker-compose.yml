@@ -23,4 +23,3 @@ services:
     shm_size: ${SHM_SIZE}
     labels:
       createdBy: "Apps"
-

@@ -27,4 +27,3 @@ additionalProperties:
   document: https://docs.linuxserver.io/images/docker-onlyoffice/
   architectures:
   - amd64
-

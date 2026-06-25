@@ -104,4 +104,3 @@ additionalProperties:
       pt-br: Token de acesso IPInfo
     required: false
     type: password
-

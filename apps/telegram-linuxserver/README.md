@@ -62,4 +62,3 @@ Telegram 桌面客户端。
 - 官网: <https://telegram.org/>
 - 文档: <https://docs.linuxserver.io/images/docker-telegram/>
 - 源码: <https://github.com/linuxserver/docker-telegram>
-

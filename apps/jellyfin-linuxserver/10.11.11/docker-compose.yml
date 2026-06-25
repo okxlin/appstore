@@ -21,4 +21,3 @@ services:
       - JELLYFIN_PublishedServerUrl=${PUBLISHED_SERVER_URL:-}
     labels:
       createdBy: "Apps"
-

@@ -132,4 +132,3 @@ additionalProperties:
       pt-br: Argumentos CLI extras
     required: false
     type: text
-

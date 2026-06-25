@@ -58,4 +58,3 @@ LibreSpeed 测速服务。
 - 官网: <https://librespeed.org/>
 - 文档: <https://docs.linuxserver.io/images/docker-librespeed/>
 - 源码: <https://github.com/linuxserver/docker-librespeed>
-

@@ -58,4 +58,3 @@ Jellyfin 媒体服务器。
 - 官网: <https://jellyfin.org/>
 - 文档: <https://docs.linuxserver.io/images/docker-jellyfin/>
 - 源码: <https://github.com/linuxserver/docker-jellyfin>
-

@@ -97,4 +97,3 @@ additionalProperties:
       pt-br: URL publica do servidor
     required: false
     type: text
-

@@ -62,4 +62,3 @@ Obsidian 笔记桌面。
 - 官网: <https://obsidian.md/>
 - 文档: <https://docs.linuxserver.io/images/docker-obsidian/>
 - 源码: <https://github.com/linuxserver/docker-obsidian>
-

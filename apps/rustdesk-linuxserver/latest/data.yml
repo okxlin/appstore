@@ -132,4 +132,3 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
-

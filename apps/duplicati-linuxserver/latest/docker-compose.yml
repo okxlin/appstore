@@ -23,4 +23,3 @@ services:
       - DUPLICATI__WEBSERVICE_PASSWORD=${DUPLICATI_WEBSERVICE_PASSWORD}
     labels:
       createdBy: "Apps"
-

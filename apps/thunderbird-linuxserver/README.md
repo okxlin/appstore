@@ -62,4 +62,3 @@ Thunderbird 邮件客户端。
 - 官网: <https://www.thunderbird.net/>
 - 文档: <https://docs.linuxserver.io/images/docker-thunderbird/>
 - 源码: <https://github.com/linuxserver/docker-thunderbird>
-
