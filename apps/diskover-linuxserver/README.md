@@ -31,6 +31,7 @@ Diskover 文件系统索引与搜索。
 | --- | --- | --- | --- |
 | ES_HOST | Elasticsearch 主机 | diskover-elasticsearch | 是 |
 | ES_PORT | Elasticsearch 端口 | 9200 | 是 |
+| ES_JAVA_OPTS | Elasticsearch JVM 参数 | -Xms1g -Xmx1g | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

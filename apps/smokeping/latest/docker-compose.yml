@@ -13,7 +13,7 @@ services:
       - TZ=${TIME_ZONE}
       - MASTER_URL=${MASTER_URL}
       - SHARED_SECRET=${SHARED_SECRET}
-      - CACHE_DIR=/tmp
+      - CACHE_DIR=${CACHE_DIR}
     volumes:
       - ${DATA_PATH}/config:/config
       - ${DATA_PATH}/data:/data

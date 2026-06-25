@@ -97,6 +97,22 @@ additionalProperties:
       pt-br: Porta do Elasticsearch
     required: true
     type: number
+  - default: -Xms1g -Xmx1g
+    edit: true
+    envKey: ES_JAVA_OPTS
+    labelEn: Elasticsearch JVM options
+    labelZh: Elasticsearch JVM 参数
+    label:
+      en: Elasticsearch JVM options
+      zh: Elasticsearch JVM 参数
+      zh-Hant: Elasticsearch JVM 參數
+      ja: Elasticsearch JVM オプション
+      ko: Elasticsearch JVM 옵션
+      ru: Параметры JVM Elasticsearch
+      ms: Pilihan JVM Elasticsearch
+      pt-br: Opcoes JVM do Elasticsearch
+    required: true
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
