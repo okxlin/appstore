@@ -65,6 +65,27 @@ additionalProperties:
       pt-br: Caminho de livros
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: DOCKER_MODS
+    labelEn: LinuxServer mods
+    labelZh: LinuxServer Mods
+    label:
+      en: LinuxServer mods
+      zh: LinuxServer Mods
+      zh-Hant: LinuxServer Mods
+      ja: LinuxServer Mods
+      ko: LinuxServer Mods
+      ru: Моды LinuxServer
+      ms: Mod LinuxServer
+      pt-br: Mods LinuxServer
+    required: false
+    type: select
+    values:
+    - label: disabled
+      value: ""
+    - label: Calibre and FFmpeg
+      value: linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
