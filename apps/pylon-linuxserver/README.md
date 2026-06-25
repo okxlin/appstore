@@ -9,7 +9,7 @@ Pylon Web IDE。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：运维。
 - 支持架构：amd64、arm64。
-- 可选版本：`2.10.0`。
+- 可选版本：`latest`、`2.10.0`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口

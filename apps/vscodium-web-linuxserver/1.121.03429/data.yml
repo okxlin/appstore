@@ -33,6 +33,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: ""
+    edit: true
+    envKey: CODE_ARGS
+    labelEn: VSCodium CLI arguments
+    labelZh: VSCodium 命令行参数
+    label:
+      en: VSCodium CLI arguments
+      zh: VSCodium 命令行参数
+      zh-Hant: VSCodium 命令列參數
+      ja: VSCodium CLI 引数
+      ko: VSCodium CLI 인수
+      ru: Аргументы CLI VSCodium
+      ms: Argumen CLI VSCodium
+      pt-br: Argumentos CLI do VSCodium
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -49,3 +65,22 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+
+  - default: linuxserver-change-me
+    edit: true
+    envKey: CONNECTION_TOKEN
+    labelEn: Web UI access token
+    labelZh: Web UI 访问令牌
+    label:
+      en: Web UI access token
+      zh: Web UI 访问令牌
+      zh-Hant: Web UI 存取權杖
+      ja: Web UI アクセストークン
+      ko: Web UI 액세스 토큰
+      ru: Токен доступа Web UI
+      ms: Token akses Web UI
+      pt-br: Token de acesso Web UI
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password

@@ -17,6 +17,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
     shm_size: "1gb"
     labels:
       createdBy: "Apps"

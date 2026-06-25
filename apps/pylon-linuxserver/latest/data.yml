@@ -1,0 +1,99 @@
+additionalProperties:
+  formFields:
+  - default: 3131
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/code
+    edit: true
+    envKey: CODE_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: https://github.com/linuxserver/docker-pylon.git
+    edit: true
+    envKey: GITURL
+    labelEn: Git URL
+    labelZh: Git 地址
+    label:
+      en: Git URL
+      zh: Git 地址
+      zh-Hant: Git 位址
+      ja: Git URL
+      ko: Git URL
+      ru: URL Git
+      ms: URL Git
+      pt-br: URL Git
+    required: false
+    type: text
+  - default: myuser
+    edit: true
+    envKey: PYUSER
+    labelEn: Pylon user
+    labelZh: Pylon 用户
+    label:
+      en: Pylon user
+      zh: Pylon 用户
+      zh-Hant: Pylon 使用者
+      ja: Pylon ユーザー
+      ko: Pylon 사용자
+      ru: Пользователь Pylon
+      ms: Pengguna Pylon
+      pt-br: Usuario Pylon
+    required: false
+    type: text
+  - default: mypass
+    edit: true
+    envKey: PYPASS
+    labelEn: Pylon password
+    labelZh: Pylon 密码
+    label:
+      en: Pylon password
+      zh: Pylon 密码
+      zh-Hant: Pylon 密碼
+      ja: Pylon パスワード
+      ko: Pylon 비밀번호
+      ru: Пароль Pylon
+      ms: Kata laluan Pylon
+      pt-br: Senha Pylon
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

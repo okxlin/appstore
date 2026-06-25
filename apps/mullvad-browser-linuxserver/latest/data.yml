@@ -50,6 +50,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: 192.168.0.0/16
+    edit: true
+    envKey: LOCAL_NET
+    labelEn: Local network CIDR
+    labelZh: 本地网络 CIDR
+    label:
+      en: Local network CIDR
+      zh: 本地网络 CIDR
+      zh-Hant: 本機網路 CIDR
+      ja: ローカルネットワーク CIDR
+      ko: 로컬 네트워크 CIDR
+      ru: CIDR локальной сети
+      ms: CIDR rangkaian tempatan
+      pt-br: CIDR da rede local
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -65,4 +81,55 @@ additionalProperties:
       ms: Zon waktu
       pt-br: Fuso horário
     required: true
+    type: text
+
+  - default: admin
+    edit: true
+    envKey: CUSTOM_USER
+    labelEn: Basic Auth Username
+    labelZh: 访问用户名（Basic Auth）
+    label:
+      en: Basic Auth Username
+      zh: 访问用户名（Basic Auth）
+      zh-Hant: 存取使用者名稱（Basic Auth）
+      ja: ベーシック認証ユーザー名
+      ko: 기본 인증 사용자명
+      ru: Имя пользователя (Basic Auth)
+      ms: Nama pengguna (Basic Auth)
+      pt-br: Usuario Basic Auth
+    required: true
+    type: text
+  - default: linuxserver-change-me
+    edit: true
+    envKey: PASSWORD
+    labelEn: Basic Auth Password
+    labelZh: 访问密码（Basic Auth）
+    label:
+      en: Basic Auth Password
+      zh: 访问密码（Basic Auth）
+      zh-Hant: 存取密碼（Basic Auth）
+      ja: ベーシック認証パスワード
+      ko: 기본 인증 비밀번호
+      ru: Пароль (Basic Auth)
+      ms: Kata laluan Basic Auth
+      pt-br: Senha Basic Auth
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: zh_CN.UTF-8
+    edit: true
+    envKey: LC_ALL
+    labelEn: Desktop language locale
+    labelZh: 桌面语言区域
+    label:
+      en: Desktop language locale
+      zh: 桌面语言区域
+      zh-Hant: 桌面語言區域
+      ja: デスクトップ言語ロケール
+      ko: 데스크톱 언어 로케일
+      ru: Локаль языка рабочего стола
+      ms: Lokal bahasa desktop
+      pt-br: Localidade do idioma da area de trabalho
+    required: false
     type: text

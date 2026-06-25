@@ -49,3 +49,22 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+
+  - default: linuxserver-change-me
+    edit: true
+    envKey: CONNECTION_TOKEN
+    labelEn: Web UI access token
+    labelZh: Web UI 访问令牌
+    label:
+      en: Web UI access token
+      zh: Web UI 访问令牌
+      zh-Hant: Web UI 存取權杖
+      ja: Web UI アクセストークン
+      ko: Web UI 액세스 토큰
+      ru: Токен доступа Web UI
+      ms: Token akses Web UI
+      pt-br: Token de acesso Web UI
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password

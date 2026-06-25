@@ -50,6 +50,27 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: "true"
+    edit: true
+    envKey: DARK_MODE
+    labelEn: Dark mode
+    labelZh: 深色模式
+    label:
+      en: Dark mode
+      zh: 深色模式
+      zh-Hant: 深色模式
+      ja: ダークモード
+      ko: 다크 모드
+      ru: Темный режим
+      ms: Mod gelap
+      pt-br: Modo escuro
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -65,4 +86,55 @@ additionalProperties:
       ms: Zon waktu
       pt-br: Fuso horário
     required: true
+    type: text
+
+  - default: admin
+    edit: true
+    envKey: CUSTOM_USER
+    labelEn: Basic Auth Username
+    labelZh: 访问用户名（Basic Auth）
+    label:
+      en: Basic Auth Username
+      zh: 访问用户名（Basic Auth）
+      zh-Hant: 存取使用者名稱（Basic Auth）
+      ja: ベーシック認証ユーザー名
+      ko: 기본 인증 사용자명
+      ru: Имя пользователя (Basic Auth)
+      ms: Nama pengguna (Basic Auth)
+      pt-br: Usuario Basic Auth
+    required: true
+    type: text
+  - default: linuxserver-change-me
+    edit: true
+    envKey: PASSWORD
+    labelEn: Basic Auth Password
+    labelZh: 访问密码（Basic Auth）
+    label:
+      en: Basic Auth Password
+      zh: 访问密码（Basic Auth）
+      zh-Hant: 存取密碼（Basic Auth）
+      ja: ベーシック認証パスワード
+      ko: 기본 인증 비밀번호
+      ru: Пароль (Basic Auth)
+      ms: Kata laluan Basic Auth
+      pt-br: Senha Basic Auth
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: zh_CN.UTF-8
+    edit: true
+    envKey: LC_ALL
+    labelEn: Desktop language locale
+    labelZh: 桌面语言区域
+    label:
+      en: Desktop language locale
+      zh: 桌面语言区域
+      zh-Hant: 桌面語言區域
+      ja: デスクトップ言語ロケール
+      ko: 데스크톱 언어 로케일
+      ru: Локаль языка рабочего стола
+      ms: Lokal bahasa desktop
+      pt-br: Localidade do idioma da area de trabalho
+    required: false
     type: text

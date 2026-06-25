@@ -9,7 +9,7 @@
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`1151.0.4`、`1152.0.1`。
+- 可选版本：`latest`、`1152.0.1`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -31,6 +31,8 @@
 | HTTP_USER | 访问用户 | user | 是 |
 | HTTP_PWD | 访问密码 | Password | 是 |
 | MEM_USE | 共享内存占用(1gb) | 512m | 是 |
+| FIREFOX_CLI | 启动 URL 或 CLI 参数 | https://www.linuxserver.io/ | 否 |
+| LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

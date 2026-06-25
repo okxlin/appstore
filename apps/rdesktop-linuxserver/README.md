@@ -9,7 +9,7 @@ RDesktop 远程桌面环境。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`ubuntu-xfce`、`ubuntu-xfce-80684ffb-ls191`。
+- 可选版本：`ubuntu-xfce-80684ffb-ls191`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -28,6 +28,7 @@ RDesktop 远程桌面环境。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

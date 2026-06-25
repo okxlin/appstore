@@ -1,0 +1,50 @@
+additionalProperties:
+  formFields:
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: 5
+    edit: true
+    envKey: FEED_LIMIT
+    labelEn: Feed limit
+    labelZh: Feed 限制
+    label:
+      en: Feed limit
+      zh: Feed 限制
+      zh-Hant: Feed 限制
+      ja: Feed 上限
+      ko: Feed 제한
+      ru: Лимит лент
+      ms: Had feed
+      pt-br: Limite de feeds
+    required: false
+    type: number
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

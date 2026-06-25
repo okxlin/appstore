@@ -27,9 +27,12 @@ VSCodium Web 代码编辑器。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| CODE_ARGS | VSCodium CLI 参数 | 空 | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| CONNECTION_TOKEN | Web UI 访问令牌 | 随机生成 | 是 |
 
 ## 使用说明
+- Web UI 已启用访问令牌，请使用 CONNECTION_TOKEN 访问。
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
 - 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。

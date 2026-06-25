@@ -49,3 +49,20 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+
+  - default: zh_CN.UTF-8
+    edit: true
+    envKey: LC_ALL
+    labelEn: Desktop language locale
+    labelZh: 桌面语言区域
+    label:
+      en: Desktop language locale
+      zh: 桌面语言区域
+      zh-Hant: 桌面語言區域
+      ja: デスクトップ言語ロケール
+      ko: 데스크톱 언어 로케일
+      ru: Локаль языка рабочего стола
+      ms: Lokal bahasa desktop
+      pt-br: Localidade do idioma da area de trabalho
+    required: false
+    type: text

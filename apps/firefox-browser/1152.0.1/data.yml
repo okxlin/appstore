@@ -100,3 +100,36 @@ additionalProperties:
         pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
+
+    - default: https://www.linuxserver.io/
+      edit: true
+      envKey: FIREFOX_CLI
+      labelEn: Startup URL or CLI flags
+      labelZh: 启动 URL 或命令行参数
+      label:
+        en: Startup URL or CLI flags
+        zh: 启动 URL 或命令行参数
+        zh-Hant: 啟動 URL 或命令列參數
+        ja: 起動 URL または CLI フラグ
+        ko: 시작 URL 또는 CLI 플래그
+        ru: Стартовый URL или параметры CLI
+        ms: URL permulaan atau bendera CLI
+        pt-br: URL inicial ou flags CLI
+      required: false
+      type: text
+    - default: zh_CN.UTF-8
+      edit: true
+      envKey: LC_ALL
+      labelEn: Desktop language locale
+      labelZh: 桌面语言区域
+      label:
+        en: Desktop language locale
+        zh: 桌面语言区域
+        zh-Hant: 桌面語言區域
+        ja: デスクトップ言語ロケール
+        ko: 데스크톱 언어 로케일
+        ru: Локаль языка рабочего стола
+        ms: Lokal bahasa desktop
+        pt-br: Localidade do idioma da area de trabalho
+      required: false
+      type: text
