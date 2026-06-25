@@ -101,6 +101,107 @@ additionalProperties:
     required: true
     type: password
     rule: paramComplexity
+  - default: unifi
+    edit: true
+    envKey: MONGO_USER
+    labelEn: Mongo user
+    labelZh: Mongo 用户
+    label:
+      en: Mongo user
+      zh: Mongo 用户
+      zh-Hant: Mongo 使用者
+      ja: Mongo ユーザー
+      ko: Mongo 사용자
+      ru: Пользователь Mongo
+      ms: Pengguna Mongo
+      pt-br: Usuario Mongo
+    required: true
+    type: text
+  - default: unifi-db
+    edit: true
+    envKey: MONGO_HOST
+    labelEn: Mongo host
+    labelZh: Mongo 主机
+    label:
+      en: Mongo host
+      zh: Mongo 主机
+      zh-Hant: Mongo 主機
+      ja: Mongo ホスト
+      ko: Mongo 호스트
+      ru: Хост Mongo
+      ms: Hos Mongo
+      pt-br: Host Mongo
+    required: true
+    type: text
+  - default: 27017
+    edit: true
+    envKey: MONGO_PORT
+    labelEn: Mongo port
+    labelZh: Mongo 端口
+    label:
+      en: Mongo port
+      zh: Mongo 端口
+      zh-Hant: Mongo 連接埠
+      ja: Mongo ポート
+      ko: Mongo 포트
+      ru: Порт Mongo
+      ms: Port Mongo
+      pt-br: Porta Mongo
+    required: true
+    type: number
+  - default: unifi
+    edit: true
+    envKey: MONGO_DBNAME
+    labelEn: Mongo database
+    labelZh: Mongo 数据库
+    label:
+      en: Mongo database
+      zh: Mongo 数据库
+      zh-Hant: Mongo 資料庫
+      ja: Mongo データベース
+      ko: Mongo 데이터베이스
+      ru: База данных Mongo
+      ms: Pangkalan data Mongo
+      pt-br: Banco de dados Mongo
+    required: true
+    type: text
+  - default: admin
+    edit: true
+    envKey: MONGO_AUTHSOURCE
+    labelEn: Mongo auth source
+    labelZh: Mongo 认证库
+    label:
+      en: Mongo auth source
+      zh: Mongo 认证库
+      zh-Hant: Mongo 認證庫
+      ja: Mongo 認証ソース
+      ko: Mongo 인증 소스
+      ru: Источник авторизации Mongo
+      ms: Sumber pengesahan Mongo
+      pt-br: Fonte de autenticacao Mongo
+    required: true
+    type: text
+  - default: "false"
+    edit: true
+    envKey: MONGO_TLS
+    labelEn: Mongo TLS
+    labelZh: Mongo TLS
+    label:
+      en: Mongo TLS
+      zh: Mongo TLS
+      zh-Hant: Mongo TLS
+      ja: Mongo TLS
+      ko: Mongo TLS
+      ru: Mongo TLS
+      ms: Mongo TLS
+      pt-br: Mongo TLS
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: "false"
+      - label: "true"
+        value: "true"
   - default: ./data/mongo
     edit: true
     envKey: MONGO_DATA_PATH

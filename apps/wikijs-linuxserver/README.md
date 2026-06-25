@@ -28,6 +28,7 @@ Wiki.js 知识库 Wiki。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DB_TYPE | 数据库类型 | sqlite | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

@@ -116,6 +116,22 @@ additionalProperties:
       pt-br: Origens CORS
     required: true
     type: text
+  - default: mongodb://your-spotify-mongo:27017/your_spotify
+    edit: true
+    envKey: MONGO_ENDPOINT
+    labelEn: Mongo endpoint
+    labelZh: Mongo 连接地址
+    label:
+      en: Mongo endpoint
+      zh: Mongo 连接地址
+      zh-Hant: Mongo 連線位址
+      ja: Mongo エンドポイント
+      ko: Mongo 엔드포인트
+      ru: Конечная точка Mongo
+      ms: Titik akhir Mongo
+      pt-br: Endpoint Mongo
+    required: true
+    type: text
   - default: ./data/mongo
     edit: true
     envKey: MONGO_DATA_PATH

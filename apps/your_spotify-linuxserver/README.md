@@ -33,6 +33,7 @@ Your Spotify 听歌统计面板。
 | SPOTIFY_SECRET | Spotify 客户端密钥 | replace-with-client-secret | 是 |
 | SPOTIFY_API_DELAY_MS | Spotify API 延迟毫秒 | 2000 | 是 |
 | CORS | CORS 来源 | all | 是 |
+| MONGO_ENDPOINT | Mongo 连接地址 | mongodb://your-spotify-mongo:27017/your_spotify | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

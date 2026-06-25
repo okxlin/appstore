@@ -22,7 +22,7 @@ services:
       - SPOTIFY_SECRET=${SPOTIFY_SECRET}
       - SPOTIFY_API_DELAY_MS=${SPOTIFY_API_DELAY_MS}
       - CORS=${CORS}
-      - MONGO_ENDPOINT=mongodb://your-spotify-mongo:27017/your_spotify
+      - MONGO_ENDPOINT=${MONGO_ENDPOINT}
     labels:
       createdBy: "Apps"
   your-spotify-mongo:

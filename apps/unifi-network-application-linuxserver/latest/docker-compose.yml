@@ -21,12 +21,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - MONGO_USER=unifi
+      - MONGO_USER=${MONGO_USER}
       - MONGO_PASS=${MONGO_PASS}
-      - MONGO_HOST=unifi-db
-      - MONGO_PORT=27017
-      - MONGO_DBNAME=unifi
-      - MONGO_AUTHSOURCE=admin
+      - MONGO_HOST=${MONGO_HOST}
+      - MONGO_PORT=${MONGO_PORT}
+      - MONGO_DBNAME=${MONGO_DBNAME}
+      - MONGO_AUTHSOURCE=${MONGO_AUTHSOURCE}
+      - MONGO_TLS=${MONGO_TLS}
       - MEM_LIMIT=${MEM_LIMIT}
       - MEM_STARTUP=${MEM_STARTUP}
     labels:
@@ -42,9 +43,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
-      - MONGO_USER=unifi
+      - MONGO_USER=${MONGO_USER}
       - MONGO_PASS=${MONGO_PASS}
-      - MONGO_DBNAME=unifi
-      - MONGO_AUTHSOURCE=admin
+      - MONGO_DBNAME=${MONGO_DBNAME}
+      - MONGO_AUTHSOURCE=${MONGO_AUTHSOURCE}
     labels:
       createdBy: "Apps"

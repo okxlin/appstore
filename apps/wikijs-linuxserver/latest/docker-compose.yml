@@ -17,6 +17,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - DB_TYPE=sqlite
+      - DB_TYPE=${DB_TYPE}
     labels:
       createdBy: "Apps"

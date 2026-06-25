@@ -59,6 +59,12 @@ EOF
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "MONGO_INIT_PATH" "./data/mongo-init"
+  ensure_env_default "MONGO_USER" "unifi"
+  ensure_env_default "MONGO_HOST" "unifi-db"
+  ensure_env_default "MONGO_PORT" "27017"
+  ensure_env_default "MONGO_DBNAME" "unifi"
+  ensure_env_default "MONGO_AUTHSOURCE" "admin"
+  ensure_env_default "MONGO_TLS" "false"
 fi
 
 mongo_init_path="${MONGO_INIT_PATH:-$(read_env_value MONGO_INIT_PATH)}"

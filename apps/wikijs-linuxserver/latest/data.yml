@@ -49,6 +49,25 @@ additionalProperties:
       pt-br: Caminho de dados Wiki
     required: true
     type: text
+  - default: sqlite
+    edit: true
+    envKey: DB_TYPE
+    labelEn: Database type
+    labelZh: 数据库类型
+    label:
+      en: Database type
+      zh: 数据库类型
+      zh-Hant: 資料庫類型
+      ja: データベース種別
+      ko: 데이터베이스 유형
+      ru: Тип базы данных
+      ms: Jenis pangkalan data
+      pt-br: Tipo de banco de dados
+    required: true
+    type: select
+    values:
+      - label: sqlite
+        value: sqlite
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

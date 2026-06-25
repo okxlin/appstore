@@ -66,6 +66,25 @@ additionalProperties:
       pt-br: URL da aplicacao
     required: false
     type: text
+  - default: sqlite
+    edit: true
+    envKey: DB_CONNECTION
+    labelEn: Database connection
+    labelZh: 数据库连接
+    label:
+      en: Database connection
+      zh: 数据库连接
+      zh-Hant: 資料庫連線
+      ja: データベース接続
+      ko: 데이터베이스 연결
+      ru: Подключение к базе данных
+      ms: Sambungan pangkalan data
+      pt-br: Conexao do banco de dados
+    required: true
+    type: select
+    values:
+      - label: sqlite
+        value: sqlite
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
