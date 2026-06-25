@@ -15,7 +15,7 @@ services:
       - PASSWORD=${WEB_PASSWORD} 
       - SUDO_PASSWORD=${SUDO_PASSWORD} 
       - DEFAULT_WORKSPACE=/config/workspace
-    image: linuxserver/code-server:latest
+    image: "linuxserver/code-server:latest"
     labels:  
       createdBy: "Apps"
 

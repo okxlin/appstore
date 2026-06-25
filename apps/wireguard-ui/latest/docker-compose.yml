@@ -47,7 +47,7 @@ services:
       - PGID=1000
       - PEERS=1
       - SERVERPORT=${PANEL_APP_PORT_WIREGUARD}
-    image: linuxserver/wireguard:latest
+    image: "linuxserver/wireguard:latest"
     labels:  
       createdBy: "Apps"
 

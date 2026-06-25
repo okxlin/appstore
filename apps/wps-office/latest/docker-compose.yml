@@ -16,10 +16,13 @@ services:
       - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
+      - TITLE=${TITLE:-WPS Office}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
     shm_size: ${MEM_USE}
     #security_opt:
     #  - seccomp:unconfined #optional
-    image: linuxserver/wps-office:latest
+    image: "linuxserver/wps-office:latest"
     labels:  
       createdBy: "Apps"
 

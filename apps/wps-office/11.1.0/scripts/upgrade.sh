@@ -50,6 +50,9 @@ ensure_env_default() {
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "CUSTOM_USER" "admin" true
   ensure_env_default "PASSWORD" "$(generate_secret)" true
+  ensure_env_default "TITLE" "WPS Office" false
+  ensure_env_default "SELKIES_UI_TITLE" "Selkies" false
+  ensure_env_default "DASHBOARD" "selkies-dashboard" false
   ensure_env_default "LC_ALL" "zh_CN.UTF-8" false
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"

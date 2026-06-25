@@ -22,7 +22,7 @@ services:
       - WHITELIST= #optional
       - PEERPORT=${PEER_PORT_VALUE}
       - HOST_WHITELIST= #optional
-    image: linuxserver/transmission:latest
+    image: "linuxserver/transmission:latest"
     labels:  
       createdBy: "Apps"
 

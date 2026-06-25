@@ -6,7 +6,7 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
-    image: linuxserver/smokeping:2.9.0
+    image: "linuxserver/smokeping:2.9.0"
     environment:
       - PUID=1000
       - PGID=1000
