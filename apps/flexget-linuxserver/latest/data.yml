@@ -1,0 +1,111 @@
+additionalProperties:
+  formFields:
+  - default: 5050
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/downloads
+    edit: true
+    envKey: DOWNLOADS_PATH
+    labelEn: Downloads folder path
+    labelZh: 下载目录路径
+    label:
+      en: Downloads folder path
+      zh: 下载目录路径
+      zh-Hant: 下載資料夾路徑
+      ja: ダウンロードフォルダーのパス
+      ko: 다운로드 폴더 경로
+      ru: Путь к папке загрузок
+      ms: Laluan folder muat turun
+      pt-br: Caminho da pasta de downloads
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
+  - default: info
+    edit: true
+    envKey: FG_LOG_LEVEL
+    labelEn: Log level
+    labelZh: 日志级别
+    label:
+      en: Log level
+      zh: 日志级别
+      zh-Hant: 日誌層級
+      ja: ログレベル
+      ko: 로그 레벨
+      ru: Уровень журнала
+      ms: Tahap log
+      pt-br: Nivel de log
+    required: true
+    type: select
+    values:
+    - label: debug
+      value: debug
+    - label: info
+      value: info
+    - label: warning
+      value: warning
+    - label: error
+      value: error
+  - default: linuxserver-change-me
+    edit: true
+    envKey: FG_WEBUI_PASSWORD
+    labelEn: Web UI password
+    labelZh: Web UI 密码
+    label:
+      en: Web UI password
+      zh: Web UI 密码
+      zh-Hant: Web UI 密碼
+      ja: Web UI パスワード
+      ko: Web UI 비밀번호
+      ru: Пароль Web UI
+      ms: Kata laluan Web UI
+      pt-br: Senha da Web UI
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+
