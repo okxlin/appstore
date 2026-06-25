@@ -1,39 +1,47 @@
 # WireGuard
 
-## 产品介绍
+## 应用简介
+一种极其简单但快速且现代的 VPN。
 
-WireGuard 是一种简单、快速且现代化的 VPN。该应用使用 LinuxServer.io 维护的 `linuxserver/wireguard` 镜像，保留官方镜像的 `/config` 持久化目录、UDP 服务端口和 Peer 配置生成方式。
+英文说明：An extremely simple yet fast and modern VPN.
 
-## 主要功能
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具、安全。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.0.20250521`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 部署 WireGuard VPN 服务端
-- 自动生成服务端和 Peer 配置
-- 支持自定义服务端地址、Peer 数量、DNS、内网网段和 Allowed IPs
-- 持久化保存 WireGuard 配置文件
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_UDP | Wireguard 端口 | 51820 | 是 |
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置路径 | ./config | 是 |
 
-安装时请将“Host address”改为客户端可访问的公网 IP 或域名。安装完成后，客户端配置会生成在配置目录下的 `peer*` 子目录中，默认 UDP 端口为 `51820`。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 运行说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| SERVERURL | 本机地址 (必改项) | 172.17.0.1 | 是 |
+| PEERS | 客户端数量 | 1 | 是 |
+| PEERDNS | 客户端 DNS | 119.29.29.29,1.1.1.1 | 是 |
+| INTERNAL_SUBNET | 默认 Wireguard 网段子网 | 10.0.8.0 | 是 |
+| ALLOWEDIPS | Wireguard 允许的 IP 段 | 10.0.8.0/24 | 是 |
+| PERSISTENTKEEPALIVE_PEERS | Wireguard 保活间隔 | 25 | 是 |
+| LOG_CONFS | 日志配置 | true | 是 |
 
-该应用需要 `NET_ADMIN` 和 `SYS_MODULE` 能力，并挂载主机 `/lib/modules`，用于加载和管理 WireGuard 网络能力。请只在可信主机上部署，并确认防火墙已放行所设置的 UDP 端口。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-WireGuard is a simple, fast, and modern VPN. This package uses the LinuxServer.io `linuxserver/wireguard` image and keeps its official `/config` persistence path, UDP server port, and peer configuration workflow.
-
-## Features
-
-- Deploy a WireGuard VPN server
-- Generate server and peer configuration files
-- Configure server address, peer count, DNS, internal subnet, and allowed IPs
-- Persist WireGuard configuration files
-
-## Access
-
-Set "Host address" to the public IP address or domain name reachable by clients before installation. After installation, peer configuration files are created under `peer*` directories in the config path. The default UDP port is `51820`.
-
-## Runtime Notes
-
-This app requires `NET_ADMIN` and `SYS_MODULE` capabilities and mounts host `/lib/modules` so WireGuard networking can be managed by the container. Deploy it only on trusted hosts and allow the configured UDP port in the firewall.
+## 参考资料
+- 官网: <https://www.wireguard.com>
+- 文档: <https://docs.linuxserver.io/images/docker-wireguard/>
+- 源码: <https://github.com/linuxserver/docker-wireguard>

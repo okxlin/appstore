@@ -1,31 +1,40 @@
 # Prowlarr
-## 产品介绍
 
-Prowlarr 是面向 Sonarr、Radarr、Lidarr 等应用的索引器管理工具。本应用使用 LinuxServer.io 维护的 `linuxserver/prowlarr` 镜像。
+## 应用简介
+Prowlarr 索引器管理器。
 
-## 主要功能
+英文说明：Indexer manager maintained by LinuxServer.io.
 
-- 通过 Web UI 管理索引器和应用连接
-- 持久化保存配置和数据库
-- 使用 9696 端口提供 Web 管理界面
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2.4.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 9696 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成媒体服务、索引器或资料库配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Prowlarr is an indexer manager for applications such as Sonarr, Radarr, and Lidarr. This app uses the LinuxServer.io maintained `linuxserver/prowlarr` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage indexers and app connections from the Web UI
-- Persist configuration and database files
-- Expose the Web interface on port 9696
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-prowlarr/>
-- Project website: <https://prowlarr.com/>
+## 参考资料
+- 官网: <https://prowlarr.com/>
+- 文档: <https://docs.linuxserver.io/images/docker-prowlarr/>
+- 源码: <https://github.com/linuxserver/docker-prowlarr>

@@ -1,31 +1,42 @@
 # COPS
-## 产品介绍
 
-COPS 是一个轻量的 Calibre OPDS 和 HTML 电子书服务器，可通过浏览器访问书库。本应用使用 LinuxServer.io 维护的 `linuxserver/cops` 镜像。
+## 应用简介
+COPS 电子书服务器。
 
-## 主要功能
+英文说明：Ebook server maintained by LinuxServer.io.
 
-- 通过 Web UI 浏览 Calibre 电子书库
-- 提供 HTTP 和 HTTPS 访问端口
-- 持久化保存 COPS 配置和图书目录
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`4.5.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8080 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 8443 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或媒体目录配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| BOOKS_PATH | 图书目录 | ./data/books | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-COPS is a lightweight Calibre OPDS and HTML ebook server for browsing a library from a web browser. This app uses the LinuxServer.io maintained `linuxserver/cops` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Browse a Calibre ebook library from the Web UI
-- Expose HTTP and HTTPS access ports
-- Persist COPS configuration and books separately
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-cops/>
-- Project website: <https://github.com/mikespub-org/seblucas-cops>
+## 参考资料
+- 官网: <https://github.com/mikespub-org/seblucas-cops>
+- 文档: <https://docs.linuxserver.io/images/docker-cops/>
+- 源码: <https://github.com/linuxserver/docker-cops>

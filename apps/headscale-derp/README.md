@@ -1,28 +1,42 @@
-# Derper
+# Headscale-DERP
 
-[![docker workflow](https://github.com/fredliang44/derper-docker/actions/workflows/docker-image.yml/badge.svg)](https://hub.docker.com/r/fredliang/derper)
-[![docker pulls](https://img.shields.io/docker/pulls/fredliang/derper.svg?color=brightgreen)](https://hub.docker.com/r/fredliang/derper)
-[![platfrom](https://img.shields.io/badge/platform-amd64%20%7C%20arm64-brightgreen)](https://hub.docker.com/r/fredliang/derper/tags)
+## 应用简介
+Headscale 的中继服务。
 
-# Setup
+英文说明：Headscale relay service.
 
-> required: set env `DERP_DOMAIN` to your domain
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-```bash
-docker run -e DERP_DOMAIN=derper.your-domain.com -p 80:80 -p 443:443 -p 3478:3478/udp fredliang/derper
-```
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTPS | 端口 | 40184 | 是 |
+| PANEL_APP_PORT_STUN | STUN 服务端口 | 3478 | 是 |
 
-| env                 | required | description                                                            | default value     |
-| ------------------- | -------- | ---------------------------------------------------------------------- | ----------------- |
-| DERP_DOMAIN         | true     | derper server hostname                                                 | your-hostname.com |
-| DERP_CERT_DIR       | false    | directory to store LetsEncrypt certs(if addr's port is :443)           | /app/certs        |
-| DERP_CERT_MODE      | false    | mode for getting a cert. possible options: manual, letsencrypt         | letsencrypt       |
-| DERP_ADDR           | false    | listening server address                                               | :443              |
-| DERP_STUN           | false    | also run a STUN server                                                 | true              |
-| DERP_STUN_PORT      | false    | The UDP port on which to serve STUN.                                   | 3478              |
-| DERP_HTTP_PORT      | false    | The port on which to serve HTTP. Set to -1 to disable                  | 80                |
-| DERP_VERIFY_CLIENTS | false    | verify clients to this DERP server through a local tailscaled instance | false             |
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 (需要替换域名证书，证书文件名与服务器主机名相同) | ./data | 是 |
 
-# Usage
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Fully DERP setup offical documentation: https://tailscale.com/kb/1118/custom-derp-servers/
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DERP_DOMAIN | Derper服务器主机名 | derper.your-domain.com | 是 |
+| CLIENTS_VERIFY_SWITCH | 客户端验证(开启:true，关闭:false) | false | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://hub.docker.com/r/fredliang/derper>
+- 文档: <https://headscale.net>
+- 源码: <https://github.com/fredliang44/derper-docker>

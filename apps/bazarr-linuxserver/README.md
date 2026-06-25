@@ -1,31 +1,42 @@
 # Bazarr
-## 产品介绍
 
-Bazarr 是面向 Sonarr 和 Radarr 的字幕管理器，可自动搜索和管理影视字幕。本应用使用 LinuxServer.io 维护的 `linuxserver/bazarr` 镜像。
+## 应用简介
+Bazarr 字幕管理器。
 
-## 主要功能
+英文说明：Subtitle manager maintained by LinuxServer.io.
 
-- 通过 Web UI 管理字幕搜索和下载
-- 持久化保存配置、电影目录和剧集目录
-- 使用 6767 端口提供 Web 管理界面
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.5.6`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 6767 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或媒体目录配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| MOVIES_PATH | 电影目录 | ./data/movies | 是 |
+| TV_PATH | 剧集目录 | ./data/tv | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Bazarr is a subtitle manager for Sonarr and Radarr that can search and manage subtitles for movies and TV shows. This app uses the LinuxServer.io maintained `linuxserver/bazarr` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage subtitle search and downloads from the Web UI
-- Persist configuration, movie folders, and TV folders
-- Expose the Web interface on port 6767
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-bazarr/>
-- Project website: <https://www.bazarr.media/>
+## 参考资料
+- 官网: <https://www.bazarr.media/>
+- 文档: <https://docs.linuxserver.io/images/docker-bazarr/>
+- 源码: <https://github.com/linuxserver/docker-bazarr>

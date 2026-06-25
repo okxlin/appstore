@@ -1,31 +1,41 @@
 # Kavita
-## 产品介绍
 
-Kavita 是一个自托管阅读服务器，适合管理漫画、漫画书和电子书库。本应用使用 LinuxServer.io 维护的 `linuxserver/kavita` 镜像。
+## 应用简介
+Kavita 漫画和电子书库。
 
-## 主要功能
+英文说明：Reading server maintained by LinuxServer.io.
 
-- 通过 Web UI 管理漫画和电子书库
-- 持久化保存配置和媒体库目录
-- 使用 5000 端口提供 Web 管理界面
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.9.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 5000 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或媒体目录配置。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| LIBRARY_PATH | 媒体库目录 | ./data/library | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Kavita is a self-hosted reading server for managing manga, comics, and ebook libraries. This app uses the LinuxServer.io maintained `linuxserver/kavita` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage manga, comics, and ebooks from the Web UI
-- Persist configuration and library folders
-- Expose the Web interface on port 5000
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-kavita/>
-- Project website: <https://www.kavitareader.com/>
+## 参考资料
+- 官网: <https://www.kavitareader.com/>
+- 文档: <https://docs.linuxserver.io/images/docker-kavita/>
+- 源码: <https://github.com/linuxserver/docker-kavita>

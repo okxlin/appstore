@@ -1,26 +1,38 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/ellite/Wallos/raw/main/images/wallossolidwhite.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/ellite/Wallos/raw/main/images/wallossolid.png">
-  <img alt="Wallos" src="https://github.com/ellite/Wallos/raw/main/images/wallossolid.png">
-</picture>
+# Wallos
 
-Wallos: Open-Source Personal Subscription Tracker
+## 应用简介
+开源个人订阅跟踪器。
 
-## Introduction
+英文说明：Open-Source Personal Subscription Tracker.
 
-Wallos is a powerful, open-source, and self-hostable web application designed to empower you in managing your finances with ease. Say goodbye to complicated spreadsheets and expensive financial software – Wallos simplifies the process of tracking expenses and helps you gain better control over your financial life.
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.9.6`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Features
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40212 | 是 |
 
-- Subscription Management: Keep track of your recurring subscriptions and payments, ensuring you never miss a due date.
-- Category Management: Organize your expenses into customizable categories, enabling you to gain insights into your spending habits.
-- Multi-Currency support: Wallos supports multiple currencies, allowing you to manage your finances in the currency of your choice.
-- Currency Conversion: Integrates with the Fixer API so you can get exchange rates and see all your subscriptions on your main currency.
-- Data Privacy: As a self-hosted application, Wallos ensures that your financial data remains private and secure on your own server.
-- Customization: Tailor Wallos to your needs with customizable categories, currencies, themes and other display options.
-- Sorting Options: Allowing you to view your subscriptions from different perspectives.
-- Logo Search: Wallos can search the web for the logo of your subscriptions if you don't have them available for upload.
-- Mobile view: Wallos on the go.
-- Statistics: Another perspective into your spendings.
-- Notifications:  Get notified by email of an upcoming payment.
-- Multi Language support.
+## 数据持久化
+- `./data/db:/var/www/html/db`
+- `./data/logos:/var/www/html/images/uploads/logos`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://github.com/ellite/Wallos>
+- 文档: <https://github.com/ellite/Wallos/blob/main/README.md>

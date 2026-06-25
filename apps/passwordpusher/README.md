@@ -1,45 +1,36 @@
-<div align="center">
+# Password Pusher
 
-[![Password Pusher Front Page](https://pwpush.fra1.cdn.digitaloceanspaces.com/branding/logos/horizontal-logo-small.png)](https://pwpush.com/)
+## 应用简介
+一个通过网络传递密码的开源应用程序。
 
-__Simple & Secure Password Sharing with Auto-Expiration of Shared Items__
+英文说明：An opensource application to communicate passwords over the web.
 
-[![](https://badgen.net/twitter/follow/pwpush)](https://twitter.com/pwpush)
-![](https://badgen.net/github/stars/pglombardo/PasswordPusher)
-[![](https://badgen.net/uptime-robot/month/m789048867-17b5770ccd78208645662f1f)](https://stats.uptimerobot.com/6xJjNtPr93)
-[![](https://badgen.net/docker/pulls/pglombardo/pwpush-ephemeral)](https://hub.docker.com/repositories)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`release`、`2.7.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/pglombardo/PasswordPusher/ruby-tests.yml)](https://github.com/pglombardo/PasswordPusher/actions/workflows/ruby-tests.yml)
-[![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/pglombardo/pwpush-cli/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
-[![Semantic Versions](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--versions-e10079.svg)](https://github.com/pglombardo/pwpush-cli/releases)
-[![License](https://img.shields.io/github/license/pglombardo/PasswordPusher)](https://github.com/pglombardo/pwpush/blob/master/LICENSE)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40180 | 是 |
 
-</div>
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_NAME | 数据库名 | passwordpusher | 是 |
+| PANEL_DB_USER | 数据库用户 | passwordpusher | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | passwordpusher | 是 |
 
-------
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-Give your users the tools to be secure by default.
-
-Password Pusher is an opensource application to communicate passwords over the web. Links to passwords expire after a certain number of views and/or time has passed.
-
-Hosted at [pwpush.com](https://pwpush.com) but you can also easily run your own private instance with just a few steps.
-
-* __Easy-to-install:__ Host your own via Docker, a cloud service or just use [pwpush.com](https://pwpush.com)
-* __Opensource:__ No blackbox code.  Only trusted, tested and reviewed opensource code.
-* __Versatile:__ Push passwords, text, files or URLs that autoexpire and self delete.
-* __Audit logging:__ Track and control what you've shared and see who has viewed it.
-* __Encrypted storage:__ All sensitive data is stored encrypted and deleted entirely once expired.
-* __Host your own:__ Database backed or ephemeral, easily run your own instance isolated from the world.
-* __JSON API:__ Raw JSON API available for 3rd party tools or command line via `curl` or `wget`.
-* __Command line interface:__ Automate your password distribution with CLI tools or custom scripts.
-* __Logins__: Invite your colleagues and track what is pushed and who retrieved it.
-* __Internationalized:__ 28 language translations are bundled in.  Easily selectable via UI or URL
-* __Themes:__ [26 themes](https://github.com/pglombardo/PasswordPusher/blob/master/Themes.md) bundled in courtesy of Bootswatch.  Select with a simple environment variable.
-* __Unbranded delivery page:__ No logos, superfluous text or unrelated links to confuse end users.
-* __Customizable:__ Change text and default options via environment variables.
-* __Light & dark themes:__  Via CSS @media integration, the default site theme follows your local preferences.
-* __Rebrandable:__ Customize the site name, tagline and logo to fit your environment.
-* __Custom CSS:__ Bundle in your own custom CSS to add your own design.
-* __10 Years Old:__ Password Pusher has securely delivered millions and millions of passwords in its 10 year history.
-* __Actively Maintained:__ I happily work for the good karma of the great IT/Security community.
-* __Honest Software:__  Opensource written and maintained by [me](https://github.com/pglombardo) with the help of some great contributors.  No organizations, corporations or evil agendas.
+## 参考资料
+- 官网: <https://pwpush.com>
+- 文档: <https://github.com/pglombardo/PasswordPusher/wiki>
+- 源码: <https://github.com/pglombardo/PasswordPusher>

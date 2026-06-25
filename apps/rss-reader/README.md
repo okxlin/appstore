@@ -1,81 +1,34 @@
-# 简述
+# RSS Reader
 
-RSS将信息聚合，曾寻找过一些RSS客户端，但觉得都太过于复杂，会需要登陆、保存历史消息、
-使用缓存加快响应速度，但我想要看到的是，打开页面看到关注网站的即时消息即可（一般通过RSS订阅获取到的数据即是热点），
-看到有感兴趣的信息，可以跳转过去再详细的了解。
+## 应用简介
+一个极简的 RSS 在线浏览工具。
 
-2023年7月28日，进行了界面改版和升级
+英文说明：A minimalist RSS online browsing tool.
 
-![](https://github.com/srcrs/rss-reader/raw/main/demo.png)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-# 配置文件`重点`
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40099 | 是 |
 
-配置文件位于config.json，sources是RSS订阅链接，示例如下
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-```json
-{
-    "values": [
-        "https://www.zhihu.com/rss",
-        "https://tech.meituan.com/feed/",
-        "http://www.ruanyifeng.com/blog/atom.xml",
-        "https://feeds.appinn.com/appinns/",
-        "https://v2ex.com/feed/tab/tech.xml",
-        "https://www.cmooc.com/feed",
-        "http://www.sciencenet.cn/xml/blog.aspx?di=30",
-        "https://www.douban.com/feed/review/book",
-        "https://www.douban.com/feed/review/movie",
-        "https://www.geekpark.net/rss",
-        "http://www.ftchinese.com/rss/news",
-        "https://cn.nytimes.com/rss.html",
-        "https://hostloc.com/forum.php?mod=rss&fid=45&auth=389ec3vtQanmEuRoghE%2FpZPWnYCPmvwWgSa7RsfjbQ%2BJpA%2F6y6eHAx%2FKqtmPOg"
-    ]
-}
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-```
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-# 使用方式
-
-## Docker部署
-
-环境要求：Git、Docker、Docker-Compose
-
-克隆项目
-
-```bash
-git clone https://github.com/srcrs/rss-reader
-```
-
-进入rss-reader文件夹，运行项目
-
-```bash
-docker-compose up -d
-```
-
-部署成功后，通过ip+端口号访问
-
-# nginx反代
-
-```conf
-server {
-    listen 443 ssl;
-    server_name rss.lass.cc;
-    ssl_certificate  fullchain.cer;
-    ssl_certificate_key lass.cc.key;
-    location / {
-        proxy_pass  http://localhost:8080;
-    }
-    location /ws {
-        proxy_pass http://localhost:8080/ws;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection "Upgrade";
-        proxy_set_header Host $host;
-    }
-}
-
-server {
-    listen 80;
-    server_name rss.lass.cc;
-    rewrite ^(.*)$ https://$host$1 permanent;
-}
-```
+## 参考资料
+- 官网: <https://rss.lass.cc>
+- 文档: <https://github.com/srcrs/rss-reader>

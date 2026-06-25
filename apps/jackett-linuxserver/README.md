@@ -1,31 +1,43 @@
 # Jackett
-## 产品介绍
 
-Jackett 是面向 Sonarr、Radarr 等媒体管理工具的索引器代理。它将应用发出的搜索请求转换为各 Tracker 站点的查询请求，并把结果整理后返回给调用方。本应用使用 LinuxServer.io 维护的 `linuxserver/jackett` 镜像。
+## 应用简介
+Jackett 索引器代理。
 
-## 主要功能
+英文说明：Tracker indexer proxy maintained by LinuxServer.io.
 
-- 通过 Web UI 管理索引器、API Key 和连接配置
-- 对外暴露 9117 Web 服务端口，可被 Sonarr、Radarr 等工具调用
-- 持久化保存 Jackett 配置和 blackhole 下载目录
-- 支持配置时区、自动更新开关和额外运行参数
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.24.2116`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 9117 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Jackett Web UI。首次配置索引器后，可在页面中复制 API Key 并填入需要调用 Jackett 的媒体管理应用。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| DOWNLOAD_PATH | 黑洞下载目录 | ./data/downloads | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Jackett works as a tracker indexer proxy for media management apps such as Sonarr and Radarr. It translates application search requests into tracker-specific queries, parses responses, and returns normalized results. This app uses the LinuxServer.io maintained `linuxserver/jackett` image.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| AUTO_UPDATE | 自动更新 | true | 是 |
+| RUN_OPTS | 额外运行参数 | - | 否 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Manage indexers, API keys, and connection settings from the Web UI
-- Expose the 9117 Web service port for media management applications
-- Persist Jackett configuration and blackhole downloads separately
-- Configure the time zone, auto update flag, and optional runtime arguments
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-jackett/>
-- Jackett project: <https://github.com/Jackett/Jackett>
+## 参考资料
+- 官网: <https://github.com/Jackett/Jackett>
+- 文档: <https://docs.linuxserver.io/images/docker-jackett/>
+- 源码: <https://github.com/linuxserver/docker-jackett>

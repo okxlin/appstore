@@ -1,237 +1,30 @@
 # nginxWebUI
 
-### [README.md English version](https://github.com/cym1102/nginxWebUI/blob/master/README_EN.md)
-
-#### 介绍
-nginx网页配置工具
-
-QQ技术交流群1: 1106758598
-
-QQ技术交流群2: 560797506
-
-邮箱: cym1102@qq.com
-
-官网地址: http://www.nginxwebui.cn
-
-github: https://github.com/cym1102/nginxWebUI
-
-
-#### 功能说明
-
-nginxWebUI是一款图形化管理nginx配置得工具, 可以使用网页来快速配置nginx的各项功能, 包括http协议转发, tcp协议转发, 反向代理, 负载均衡, 静态html服务器, ssl证书自动申请、续签、配置等, 配置好后可一建生成nginx.conf文件, 同时可控制nginx使用此文件进行启动与重载, 完成对nginx的图形化控制闭环.
-
-nginxWebUI也可管理多个nginx服务器集群, 随时一键切换到对应服务器上进行nginx配置, 也可以一键将某台服务器配置同步到其他服务器, 方便集群管理.
-
-nginx本身功能复杂, nginxWebUI并不能涵盖nginx所有功能, 但能覆盖nginx日常90%的功能使用配置, 平台没有涵盖到的nginx配置项, 可以使用自定义参数模板, 在conf文件中生成配置独特的参数。
-
-部署此项目后, 配置nginx再也不用上网各种搜索配置代码, 再也不用手动申请和配置ssl证书, 只需要在本项目中进行增删改查就可方便的配置和启动nginx。
-
-```
-视频教程: https://www.bilibili.com/video/BV18A4y1D7GZ
-演示地址: http://test.nginxwebui.cn:7070
-用户名: admin
-密码: admin
-```
-
-
-#### 技术说明
-
-本项目是基于solon的web系统, 数据库使用h2, 因此服务器上不需要安装任何数据库
-
-本系统通过Let's encrypt申请证书, 使用acme.sh脚本进行自动化申请和续签, 开启续签的证书将在每天凌晨2点进行续签, 只有超过60天的证书才会进行续签. 只支持在linux下签发证书.
-
-添加tcp/ip转发配置支持时, 一些低版本的nginx可能需要重新编译，通过添加–with-stream参数指定安装stream模块才能使用, 但在ubuntu 18.04下, 官方软件库中的nginx已经带有stream模块, 不需要重新编译. 本系统如果配置了tcp转发项的话, 会自动引入ngx_stream_module.so的配置项, 如果没有开启则不引入, 最大限度优化ngnix配置文件. 
-
-#### jar安装说明
-以Ubuntu操作系统为例,
-
- **注意：本项目需要在root用户下运行系统命令，极容易被黑客利用，请一定修改密码为复杂密码**
-
-1.安装java运行环境和nginx
-
-Ubuntu:
-
-```
-apt update
-apt install openjdk-11-jdk
-apt install nginx
-```
-
-Centos:
-
-```
-yum install java-11-openjdk
-yum install nginx
-```
-
-Windows:
-
-```
-下载JDK安装包 https://www.oracle.com/java/technologies/downloads/
-下载nginx http://nginx.org/en/download.html
-配置JAVA运行环境 
-JAVA_HOME : JDK安装目录
-Path : JDK安装目录\bin
-重启电脑
-```
-
-
-2.下载最新版发行包jar
-
-```
-Linux: mkdir /home/nginxWebUI/ 
-       wget -O /home/nginxWebUI/nginxWebUI.jar http://file.nginxwebui.cn/nginxWebUI-3.6.5.jar
-
-Windows: 直接使用浏览器下载 http://file.nginxwebui.cn/nginxWebUI-3.6.5.jar 到 D:/home/nginxWebUI/nginxWebUI.jar
-```
-
-有新版本只需要修改路径中的版本即可
-
-3.启动程序
-
-```
-Linux: nohup java -jar -Dfile.encoding=UTF-8 /home/nginxWebUI/nginxWebUI.jar --server.port=8080 --project.home=/home/nginxWebUI/ > /dev/null &
-
-Windows: java -jar -Dfile.encoding=UTF-8 D:/home/nginxWebUI/nginxWebUI.jar --server.port=8080 --project.home=D:/home/nginxWebUI/
-```
-
-参数说明(都是非必填)
-
---server.port 占用端口, 默认以8080端口启动
-
---project.home 项目配置文件目录，存放数据库文件，证书文件，日志等, 默认为/home/nginxWebUI/
-
---spring.database.type=mysql 使用其他数据库，不填为使用本地h2数据库，可选mysql
-
---spring.datasource.url=jdbc:mysql://ip:port/nginxwebui 数据库url
-
---spring.datasource.username=root  数据库用户
-
---spring.datasource.password=pass  数据库密码
-
-注意Linux命令最后加一个&号, 表示项目后台运行
-
-#### docker安装说明
-
-本项目制作了docker镜像, 支持 x86_64/arm64/arm v7 平台，同时包含nginx和nginxWebUI在内, 一体化管理与运行nginx. 
-
-1.安装docker容器环境
-
-Ubuntu:
-
-```
-apt install docker.io
-```
-
-Centos:
-
-```
-yum install docker
-```
-
-2.拉取镜像: 
-
-```
-docker pull cym1102/nginxwebui:latest
-
-或
-
-docker pull registry.cn-hangzhou.aliyuncs.com/cym19871102/nginxwebui:latest
-```
-
-3.启动容器: 
-
-```
-docker run -itd \
-  -v /home/nginxWebUI:/home/nginxWebUI \
-  -e BOOT_OPTIONS="--server.port=8080" \
-  --privileged=true \
-  --net=host \
-  cym1102/nginxwebui:latest
-```
-
-注意: 
-
-1. 启动容器时请使用--net=host参数, 直接映射本机端口, 因为内部nginx可能使用任意一个端口, 所以必须映射本机所有端口. 
-
-2. 容器需要映射路径/home/nginxWebUI:/home/nginxWebUI, 此路径下存放项目所有数据文件, 包括数据库, nginx配置文件, 日志, 证书等, 升级镜像时, 此目录可保证项目数据不丢失. 请注意备份.
-
-3. -e BOOT_OPTIONS 参数可填充java启动参数, 可以靠此项参数修改端口号
-
---server.port 占用端口, 不填默认以8080端口启动
-
-4. 日志默认存放在/home/nginxWebUI/log/nginxWebUI.log
-
-另: 使用docker-compose时配置文件如下
-
-```
-version: "3.2"
-services:
-  nginxWebUi-server:
-    image: cym1102/nginxwebui:latest
-    volumes:
-      - type: bind
-        source: "/home/nginxWebUI"
-        target: "/home/nginxWebUI"
-    environment:
-      BOOT_OPTIONS: "--server.port=8080"
-    privileged: true
-    network_mode: "host"
-
-```
-
-
-#### 编译说明
-
-使用maven编译打包
-
-```
-mvn clean package
-```
-
-使用docker构建镜像
-
-```
-docker build -t nginxwebui:latest .
-```
-
-#### 添加开机启动
-
-
-1. 编辑service配置
-
-```
-vim /etc/systemd/system/nginxwebui.service
-```
-
-```
-[Unit]
-Description=NginxWebUI
-After=syslog.target
-After=network.target
- 
-[Service]
-Type=simple
-User=root
-Group=root
-WorkingDirectory=/home/nginxWebUI
-ExecStart=/usr/bin/java -jar -Dfile.encoding=UTF-8 /home/nginxWebUI/nginxWebUI.jar
-Restart=always
- 
-[Install]
-WantedBy=multi-user.target
-```
-
-之后执行
-
-```
-systemctl daemon-reload
-systemctl enable nginxwebui.service
-systemctl start nginxwebui.service
-```
-
-#### 使用说明
-
+## 应用简介
+Nginx 网页管理工具。
+
+英文说明：Nginx Web page configuration tool.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：服务器。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.4.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_CONSOLE | 控制台端口 | 40093 | 是 |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 80 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 443 | 是 |
+
+## 数据持久化
+- `./data:/home/nginxWebUI`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
 打开 http://xxx.xxx.xxx.xxx:8080 进入主页
 
 ![输入图片说明](http://www.nginxwebui.cn/img/login.jpeg "login.jpg")
@@ -280,14 +73,6 @@ systemctl start nginxwebui.service
 
 提供一键同步功能, 可以将某一台服务器的数据配置和证书文件同步到其他服务器中
 
-#### 接口开发
-
-本系统提供http接口调用, 打开 http://xxx.xxx.xxx.xxx:8080/doc.html 即可查看smart-doc接口页面.
-
-接口调用需要在http请求header中添加token, 其中token的获取需要先在管理员管理中, 打开用户的接口调用权限, 然后通过用户名密码调用获取token接口, 才能得到token 
-
-![输入图片说明](http://www.nginxwebui.cn/img/smart-doc.png "smart-doc.png")
-
 #### 找回密码
 
 如果忘记了登录密码或没有保存两步验证二维码，可按如下教程重置密码和关闭两步验证.
@@ -306,3 +91,7 @@ java -jar nginxWebUI.jar --project.home=/home/nginxWebUI/ --project.findPass=tru
 
 运行成功后即可重置并打印出全部用户名密码并关闭两步验证
 
+## 参考资料
+- 官网: <https://www.nginxwebui.cn>
+- 文档: <https://www.nginxwebui.cn/product.html>
+- 源码: <https://github.com/cym1102/nginxWebUI>

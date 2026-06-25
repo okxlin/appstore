@@ -1,35 +1,42 @@
 # OpenSSH Server
-## 产品介绍
 
-OpenSSH Server 使用 LinuxServer.io 维护的 `linuxserver/openssh-server` 镜像，提供 OpenSSH SSH 服务 能力。
+## 应用简介
+OpenSSH SSH 服务。
 
-## 主要功能
+英文说明：SSH service maintained by LinuxServer.io.
 
-- 提供 SSH 服务 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`10.2_p1-r0-ls228`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_SSH | SSH 端口 | 2222 | 是 |
 
-安装完成后，使用 SSH 客户端连接服务器地址和 SSH 端口；可在配置目录中维护 authorized_keys。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-OpenSSH Server uses the LinuxServer.io maintained `linuxserver/openssh-server` image for SSH service.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| USER_NAME | SSH 用户名 | linuxserver.io | 是 |
+| PUBLIC_KEY | SSH 公钥 | - | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide SSH service
-- Persist configuration and application data
-- Configure service ports from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, connect with an SSH client using the server address and SSH port; authorized_keys can be maintained in the config directory.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-openssh-server/>
-- Project website: <https://www.openssh.com/>
+## 参考资料
+- 官网: <https://www.openssh.com/>
+- 文档: <https://docs.linuxserver.io/images/docker-openssh-server/>
+- 源码: <https://github.com/linuxserver/docker-openssh-server>

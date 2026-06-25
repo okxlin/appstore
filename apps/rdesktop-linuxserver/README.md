@@ -1,43 +1,40 @@
 # RDesktop
-## 产品介绍
 
-RDesktop 使用 LinuxServer.io 维护的 `linuxserver/rdesktop` Ubuntu XFCE 镜像，提供可通过 RDP 访问的远程桌面环境。
+## 应用简介
+RDesktop 远程桌面环境。
 
-## 主要功能
+英文说明：RDP desktop environment maintained by LinuxServer.io.
 
-- 提供 RDP 远程桌面访问
-- 持久化保存用户配置和桌面数据
-- 使用安装表单配置 RDP 端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`ubuntu-xfce`、`ubuntu-xfce-80684ffb-ls191`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_RDP | RDP 端口 | 3389 | 是 |
 
-安装完成后，通过 RDP 客户端连接配置的 RDP 端口。本适配不启用 Docker socket、GPU 设备或 privileged 模式；仅保留 LinuxServer 官方 Ubuntu XFCE 文档中用于桌面应用兼容的 `seccomp:unconfined`。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## 运行说明
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-LinuxServer 已将旧的默认 rdesktop image 路径标记为 deprecated，并建议迁移到 Ubuntu-based tag。本适配使用 `ubuntu-xfce` 变体。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-RDesktop uses the LinuxServer.io maintained `linuxserver/rdesktop` Ubuntu XFCE image for an RDP-accessible desktop environment.
-
-## Features
-
-- Provide RDP remote desktop access
-- Persist user configuration and desktop data
-- Configure the RDP port and data path from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, connect with an RDP client to the configured RDP port. This adapter does not enable Docker socket, GPU devices, or privileged mode; it only keeps `seccomp:unconfined` from LinuxServer's Ubuntu XFCE documentation for desktop application compatibility.
-
-## Runtime Notes
-
-LinuxServer marks the old default rdesktop image path as deprecated and recommends Ubuntu-based tags. This package uses the `ubuntu-xfce` variant.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-rdesktop/>
-- Project website: <https://www.linuxserver.io/>
+## 参考资料
+- 官网: <https://www.linuxserver.io/>
+- 文档: <https://docs.linuxserver.io/images/docker-rdesktop/>
+- 源码: <https://github.com/linuxserver/docker-rdesktop>

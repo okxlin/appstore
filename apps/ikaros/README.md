@@ -1,48 +1,49 @@
-<p align="center">
-    <a href="#" target="_blank">
-        <img width="100" src="https://docs.ikaros.run/img/favicon.ico" alt="Ikaros logo" />
-    </a>
-</p>
+# Ikaros
 
+## 应用简介
+专注于 ACGMN 的内容管理系统 (CMS)。
 
-<p align="center">
-<br />
-<a href="https://app.codecov.io/github/ikaros-dev/ikaros"><img alt="code coverage" src="https://img.shields.io/codecov/c/github/ikaros-dev/ikaros/main?style=flat-square" /></a>
-<a href="https://github.com/ikaros-dev/ikaros/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/ikaros-dev/ikaros.svg?style=flat-square" /></a>
-<a href="https://github.com/ikaros-dev/ikaros/actions"><img alt="GitHub workflow build status" src="https://img.shields.io/github/actions/workflow/status/ikaros-dev/ikaros/ikaros-server-ci.yml?branch=main&style=flat-square" /></a>
-<br />
-<a href="https://github.com/ikaros-dev/ikaros/releases"><img alt="Github Releases" src="https://img.shields.io/github/v/release/ikaros-dev/ikaros?include_prereleases&style=flat-square" /></a>
-<a href="https://github.com/ikaros-dev/ikaros/stargazers"><img alt="GitHub Stargazers" src="https://img.shields.io/github/stars/ikaros-dev/ikaros.svg?style=flat-square&label=Stars&logo=github" /></a>
-<a href="https://github.com/ikaros-dev/ikaros/issues"><img src="https://img.shields.io/github/issues/ikaros-dev/ikaros?color=blue&style=flat-square"/></a>
-<a href="https://hub.docker.com/r/ikarosrun/ikaros"><img alt="Docker pulls" src="https://img.shields.io/docker/pulls/ikarosrun/ikaros?style=flat-square" /></a>
-</p>
+英文说明：Dedicated to ACGMN's Content Management System (CMS).
 
-<p align="center"><b>Ikaros</b> [Ίκαρος]，专注于ACGMN的内容管理系统(CMS)。</p>
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`1.1.13`、`dev`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-<p align="center">ACGMN全拼是：Anime(动画) + Comic(漫画) + Game(游戏) + Music(音乐) + Novel(小说)</p>
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40301 | 是 |
 
-# 特性
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
 
-- 统一资源管理: 所有的资源由统一的平台进行管理，再也不用东一个西一个了
-- 元数据支持: 您是否看着全是罗马音的一堆资源不明所以，ikaros 支持资源元数据
-- 快捷的搜索: 即使您有几十万资源，一样可以提供毫秒级的搜索响应
-- 插件支持: ikaros 本体只提供最为基础的功能，其它附加功能由插件提供
-- 客户端支持: 各个主流平台的客户端，包括不限于 Windows, 安卓
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-# demo
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | postgresql | 是 |
+| PANEL_DB_NAME | 数据库名 | ikaros | 是 |
+| PANEL_DB_USER | 数据库用户 | ikaros | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | ikaros | 是 |
+| IKAROS_EXTERNAL_URL | 外部访问地址 | http://localhost:40301 | 是 |
+| SERVER_LOG_LEVEL | 核心Server包日志级别 | INFO | 否 |
+| PLUGIN_LOG_LEVEL | 插件包日志级别 | INFO | 否 |
+| IKAROS_ADMIN_USERNAME | 管理员用户名 | tomoki | 是 |
+| IKAROS_ADMIN_PASSWORD | 管理员密码 | tomoki | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-<https://demo.ikaros.run/console/>
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-用户名: demo
-密码: demo
-
-
-## 视频
-
-- 功能预览视频: <https://www.bilibili.com/video/BV1Uw411B7o6/>
-- 安装视频：<https://www.bilibili.com/video/BV1zr4y1R7aQ/>
-- 最新日志介绍：<https://www.bilibili.com/video/BV1Sw411n73j/>
-
-# 文档
-
-更多内容请看：<https://docs.ikaros.run/>
+## 参考资料
+- 官网: <https://ikaros.run>
+- 文档: <https://docs.ikaros.run>
+- 源码: <https://github.com/ikaros-dev/ikaros>

@@ -1,31 +1,33 @@
 # SyncLounge
-## 产品介绍
 
-SyncLounge 是一个 Plex 同步观看服务，可让多个用户在浏览器中同步播放进度。本应用使用 LinuxServer.io 维护的 `linuxserver/synclounge` 镜像。
+## 应用简介
+SyncLounge Plex 同步观看。
 
-## 主要功能
+英文说明：Plex watch party service maintained by LinuxServer.io.
 
-- 通过 Web UI 创建和加入同步观看房间
-- 使用 8088 端口提供 Web 应用和服务端
-- 可选限制允许访问的 Plex 用户
-- 无需额外数据库服务
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`5.2.35`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8088 | 是 |
 
-安装完成后，通过 1Panel 应用入口或 `http://服务器地址:HTTP端口` 访问 Web 界面。首次启动后请按应用页面提示完成初始化、账号或媒体目录配置。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| AUTH_LIST | 允许的 Plex 用户 | - | 否 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-SyncLounge is a Plex watch party service that keeps playback synchronized between users in the browser. This app uses the LinuxServer.io maintained `linuxserver/synclounge` image.
-
-## Features
-
-- Create and join synchronized watch rooms from the Web UI
-- Expose the web app and server on port 8088
-- Optionally restrict allowed Plex users
-- Run without an external database service
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-synclounge/>
-- Project website: <https://synclounge.tv/>
+## 参考资料
+- 官网: <https://synclounge.tv/>
+- 文档: <https://docs.linuxserver.io/images/docker-synclounge/>
+- 源码: <https://github.com/linuxserver/docker-synclounge>

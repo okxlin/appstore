@@ -1,43 +1,41 @@
 # Socket Proxy
-## 产品介绍
 
-Socket Proxy 使用 LinuxServer.io 维护的 `linuxserver/socket-proxy` 镜像，提供带访问规则的 Docker API 代理。
+## 应用简介
+Socket Proxy Docker API 访问代理。
 
-## 主要功能
+英文说明：Docker API access proxy maintained by LinuxServer.io.
 
-- 通过 TCP 代理 Docker socket API
-- 默认仅启用 `_ping`、`version` 和 `events`
-- 默认禁止 POST 请求，并关闭容器、镜像、网络和卷等 API 分组
-- 以只读 Docker socket、只读容器文件系统和 `/run` tmpfs 运行
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：安全。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`3.4.0`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DOCKER_SOCK_PATH | Docker Socket 路径 | /var/run/docker.sock | 是 |
+| VOLUMES | 卷接口 | 0 | 是 |
 
-本适配不向宿主机暴露端口。需要使用该代理的应用应连接到同一个 `1panel-network`，并将 Docker endpoint 指向 `tcp://socket-proxy:2375`。请勿把该服务暴露到公网；它应按 Docker socket 同等级别保护。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 运行说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| LOG_LEVEL | 日志级别 | info | 是 |
+| CONTAINERS | 容器接口 | 0 | 是 |
+| IMAGES | 镜像接口 | 0 | 是 |
+| NETWORKS | 网络接口 | 0 | 是 |
+| POST | 允许 POST API | 0 | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-该应用需要挂载宿主机 Docker socket，默认使用只读挂载 `/var/run/docker.sock:/var/run/docker.sock:ro`。只有在明确理解风险后，才开启更多 API 分组或允许 POST 请求。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-Socket Proxy uses the LinuxServer.io maintained `linuxserver/socket-proxy` image to provide a rule-based Docker API proxy.
-
-## Features
-
-- Proxy Docker socket API over TCP
-- Enable only `_ping`, `version`, and `events` by default
-- Disable POST requests and container, image, network, and volume API groups by default
-- Run with a read-only Docker socket, read-only container filesystem, and `/run` tmpfs
-
-## Access
-
-This package does not expose a host port. Applications that use the proxy should join the same `1panel-network` and point their Docker endpoint to `tcp://socket-proxy:2375`. Do not expose this service to the public Internet; protect it like the Docker socket itself.
-
-## Runtime Notes
-
-This app mounts the host Docker socket and defaults to the read-only mount `/var/run/docker.sock:/var/run/docker.sock:ro`. Enable more API groups or POST requests only after understanding the risk.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-socket-proxy/>
-- Project website: <https://www.linuxserver.io/>
+## 参考资料
+- 官网: <https://www.linuxserver.io/>
+- 文档: <https://docs.linuxserver.io/images/docker-socket-proxy/>
+- 源码: <https://github.com/linuxserver/docker-socket-proxy>

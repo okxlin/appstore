@@ -1,79 +1,26 @@
 # Docker Autoheal
 
-Monitor and restart unhealthy docker containers. 
-This functionality was proposed to be included with the addition of `HEALTHCHECK`, however didn't make the cut.
-This container is a stand-in till there is native support for `--exit-on-unhealthy` https://github.com/docker/docker/pull/22719.
+## 应用简介
+监视和重启不正常的 docker 容器。
 
-## Supported tags and Dockerfile links
-- [`latest` (*Dockerfile*)](https://github.com/willfarrell/docker-autoheal/blob/main/Dockerfile) - Built daily
-- [`1.1.0` (*Dockerfile*)](https://github.com/willfarrell/docker-autoheal/blob/1.1.0/Dockerfile)
-- [`v0.7.0` (*Dockerfile*)](https://github.com/willfarrell/docker-autoheal/blob/v0.7.0/Dockerfile)
+英文说明：Monitor and restart unhealthy docker containers.
 
-![](https://img.shields.io/docker/pulls/willfarrell/autoheal "Total docker pulls") [![](https://images.microbadger.com/badges/image/willfarrell/autoheal.svg)](http://microbadger.com/images/willfarrell/autoheal "Docker layer breakdown")
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.2.0`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## How to use
-### UNIX socket passthrough
-```bash
-docker run -d \
-    --name autoheal \
-    --restart=always \
-    -e AUTOHEAL_CONTAINER_LABEL=all \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    willfarrell/autoheal
-```
-### TCP socket
-```bash
-docker run -d \
-    --name autoheal \
-    --restart=always \
-    -e AUTOHEAL_CONTAINER_LABEL=all \
-    -e DOCKER_SOCK=tcp://HOST:PORT \
-    -v /path/to/certs/:/certs/:ro \
-    willfarrell/autoheal
-```
-a) Apply the label `autoheal=true` to your container to have it watched.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| ENV1 | 环境参数 | AUTOHEAL_CONTAINER_LABEL=all | 是 |
 
-b) Set ENV `AUTOHEAL_CONTAINER_LABEL=all` to watch all running containers. 
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-c) Set ENV `AUTOHEAL_CONTAINER_LABEL` to existing label name that has the value `true`.
-
-Note: You must apply `HEALTHCHECK` to your docker images first. See https://docs.docker.com/engine/reference/builder/#healthcheck for details.
-See https://docs.docker.com/engine/security/https/ for how to configure TCP with mTLS
-
-The certificates, and keys need these names:
-* ca.pem
-* client-cert.pem
-* client-key.pem
-
-### Change Timezone
-If you need the timezone to match the local machine, you can map the `/etc/localtime` into the container.
-```
-docker run ... -v /etc/localtime:/etc/localtime:ro
-```
-
-
-## ENV Defaults
-```
-AUTOHEAL_CONTAINER_LABEL=autoheal
-AUTOHEAL_INTERVAL=5   # check every 5 seconds
-AUTOHEAL_START_PERIOD=0   # wait 0 seconds before first health check
-AUTOHEAL_DEFAULT_STOP_TIMEOUT=10   # Docker waits max 10 seconds (the Docker default) for a container to stop before killing during restarts (container overridable via label, see below)
-DOCKER_SOCK=/var/run/docker.sock   # Unix socket for curl requests to Docker API
-CURL_TIMEOUT=30     # --max-time seconds for curl requests to Docker API
-WEBHOOK_URL=""    # post message to the webhook if a container was restarted (or restart failed)
-```
-
-### Optional Container Labels
-```
-autoheal.stop.timeout=20        # Per containers override for stop timeout seconds during restart
-```
-
-## Testing
-```bash
-docker build -t autoheal .
-
-docker run -d \
-    -e AUTOHEAL_CONTAINER_LABEL=all \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    autoheal                                                                        
-```
+## 参考资料
+- 官网: <https://github.com/willfarrell/docker-autoheal>

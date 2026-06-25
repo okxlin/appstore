@@ -1,59 +1,46 @@
 # sub2clash
 
-将订阅链接转换为 Clash、Clash.Meta 配置  
-[预览](https://www.nite07.com/sub)
+## 应用简介
+将节点和订阅转换为 clash(meta) 配置。
 
-## 特性
+英文说明：Converting nodes and subscriptions to clash(meta) configuration.
 
--   开箱即用的规则、策略组配置
--   自动根据节点名称按国家划分策略组
--   支持多订阅合并
--   支持添加自定义 Rule Provider、Rule
--   支持多种协议
-    -   Shadowsocks
-    -   ShadowsocksR
-    -   Vmess
-    -   Vless （Clash.Meta）
-    -   Trojan
-    -   Hysteria （Clash.Meta）
-    -   Hysteria2 （Clash.Meta）
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.1.0-alpha.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 使用
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40223 | 是 |
 
-### 运行
+## 数据持久化
+- `./data/logs:/app/logs`
+- `./data/templates:/app/templates`
+- `./data/data:/app/data`
 
--   [docker compose](./docker-compose.yml)
--   运行[二进制文件](https://github.com/nitezs/sub2clash/releases/latest)
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-### 配置
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| META_TEMPLATE | 默认 meta 模板文件名 | template_meta.yaml | 是 |
+| PROXY_TEMPLATE | 默认 clash 模板文件名 | template_clash.yaml | 是 |
+| CLASH_TEMPLATE | 默认 clash 模板文件名 | template_clash.yaml | 是 |
+| REQUEST_RETRY_TIMES | Get 请求重试次数 | 3 | 是 |
+| REQUEST_MAX_FILE_SIZE | Get 请求订阅文件最大大小（byte） | 1048576 | 是 |
+| CACHE_EXPIRE | 订阅缓存时间（秒） | 300 | 是 |
+| LOG_LEVEL | 日志等级 | info | 是 |
+| SHORT_LINK_LENGTH | 短链长度 | 6 | 是 |
 
-可以通过编辑 .env 文件来修改默认配置，docker 直接添加环境变量
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-| 变量名                | 说明                                           | 默认值                |
-| --------------------- | ---------------------------------------------- | --------------------- |
-| PORT                  | 端口                                           | `8011`                |
-| META_TEMPLATE         | 默认 meta 模板文件名                           | `template_meta.yaml`  |
-| CLASH_TEMPLATE        | 默认 clash 模板文件名                          | `template_clash.yaml` |
-| REQUEST_RETRY_TIMES   | Get 请求重试次数                               | `3`                   |
-| REQUEST_MAX_FILE_SIZE | Get 请求订阅文件最大大小（byte）               | `1048576`             |
-| CACHE_EXPIRE          | 订阅缓存时间（秒）                             | `300`                 |
-| LOG_LEVEL             | 日志等级，可选值 `debug`,`info`,`warn`,`error` | `info`                |
-| SHORT_LINK_LENGTH     | 短链长度                                       | `6`                   |
-
-### API
-
-[API 文档](./API.md)
-
-### 模板
-
-可以通过变量自定义模板中的策略组代理节点  
-具体参考下方默认模板
-
--   `<all>` 为添加所有节点
--   `<countries>` 为添加所有国家策略组
--   `<地区二位字母代码>` 为添加指定地区所有节点，例如 `<hk>` 将添加所有香港节点
-
-#### 默认模板
-
--   [Clash](./templates/template_clash.yaml)
--   [Clash.Meta](./templates/template_meta.yaml)
+## 参考资料
+- 官网: <https://www.nite07.com/sub>
+- 文档: <https://github.com/nitezs/sub2clash>

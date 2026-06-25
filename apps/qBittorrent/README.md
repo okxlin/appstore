@@ -1,73 +1,37 @@
+# qBittorrent
 
-# 本应用介绍
+## 应用简介
+qBittorrent 是一个跨平台的开源 BitTorrent 客户端。
 
-基于镜像
-> - https://hub.docker.com/r/jarylc/qbittorrent
+英文说明：qBittorrent is a cross-platform open source BitTorrent client.
 
-- 数据目录："./data"
-- 默认账号：admin
-- 密码：adminadmin
-- 开启中文，默认为PT下载做的设置，但未优化参数。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.3.5`、`4.5.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-> 原项目相关
->> - https://www.qbittorrent.org/
->> - https://github.com/qbittorrent/qBittorrent
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 网页端口 | 40155 | 是 |
+| PEER_PORT_VALUE | BT端口 | 40150 | 是 |
 
-# 原项目介绍
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CACHE_PATH | 缓存文件夹路径 | ./data/.cache | 是 |
+| DOWNLOAD_PATH | 下载文件夹路径 | ./data/downloads | 是 |
 
-- qBittorrent是一个跨平台的开源、自由的BitTorrent客户端，其图形用户界面是通过Qt所写，后端使用libtorrent。
-- 由贝尔福- 蒙贝利亚尔理工大学的克里斯托夫·迪梅，在2006年3月开始开发。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-qBittorrent - A BitTorrent client in Qt
-------------------------------------------
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-[![AppVeyor Status](https://ci.appveyor.com/api/projects/status/github/qbittorrent/qBittorrent?branch=master&svg=true)](https://ci.appveyor.com/project/qbittorrent/qBittorrent)
-[![GitHub Actions CI Status](https://github.com/qbittorrent/qBittorrent/workflows/GitHub%20Actions%20CI/badge.svg)](https://github.com/qbittorrent/qBittorrent/actions)
-[![Coverity Status](https://scan.coverity.com/projects/5494/badge.svg)](https://scan.coverity.com/projects/5494)
-********************************
-### Description:
-qBittorrent is a bittorrent client programmed in C++ / Qt that uses
-libtorrent (sometimes called libtorrent-rasterbar) by Arvid Norberg.
-
-It aims to be a good alternative to all other bittorrent clients
-out there. qBittorrent is fast, stable and provides unicode
-support as well as many features.
-
-The free [IP to Country Lite database](https://db-ip.com/db/download/ip-to-country-lite) by [DB-IP](https://db-ip.com/) is used for resolving the countries of peers. The database is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
-
-### Installation:
-For installation, follow the instructions from INSTALL file, but simple:
-
-```
-./configure
-make && make install
-qbittorrent
-```
-
-will install and execute qBittorrent hopefully without any problem.
-
-### Public key:
-Starting from v3.3.4 all source tarballs and binaries are signed.<br />
-The key currently used is 4096R/[5B7CC9A2](https://pgp.mit.edu/pks/lookup?op=get&search=0x6E4A2D025B7CC9A2) with fingerprint `D8F3DA77AAC6741053599C136E4A2D025B7CC9A2`.<br />
-You can also download it from [here](https://github.com/qbittorrent/qBittorrent/raw/master/5B7CC9A2.asc).<br />
-**PREVIOUSLY** the following key was used to sign the v3.3.4 source tarballs and v3.3.4 Windows installer **only**: 4096R/[520EC6F6](https://pgp.mit.edu/pks/lookup?op=get&search=0xA1ACCAE4520EC6F6) with fingerprint `F4A5FD201B117B1C2AB590E2A1ACCAE4520EC6F6`.<br />
-
-### Misc:
-For more information please visit:
-https://www.qbittorrent.org
-
-or our wiki here:
-http://wiki.qbittorrent.org
-
-Use the forum for troubleshooting before reporting bugs:
-http://forum.qbittorrent.org
-
-Please report any bug (or feature request) to:
-http://bugs.qbittorrent.org
-
-Official IRC channel:
-[#qbittorrent on irc.libera.chat](ircs://irc.libera.chat:6697/qbittorrent)
-
-------------------------------------------
-sledgehammer999 \<sledgehammer999@qbittorrent.org\>
-
+## 参考资料
+- 官网: <https://www.qbittorrent.org/>
+- 文档: <http://wiki.qbittorrent.org/>
+- 源码: <https://github.com/qbittorrent/qBittorrent>

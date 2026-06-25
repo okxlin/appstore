@@ -1,14 +1,33 @@
 # MiGPT GUI
 
-为 [MiGPT](https://github.com/idootop/mi-gpt/) 提供图形化操作界面。
+## 应用简介
+安全、快速的给你的小爱音箱接入人工智能。
 
-特点：
+英文说明：Securely and Quickly Access Artificial Intelligence for Xiaomi Speaker.
 
-- 使用图形化界面的方式编辑配置并控制（比如启动 / 停止 / 重置）MiGPT
-- 内置 [MiGPT TTS](https://github.com/idootop/mi-gpt-tts)，所以无需你自己额外部署
-- 提供在公网运行所需的安全功能：
-    - 提供登录认证功能，你可以设置账号密码，确保只有你自己能够控制你的 MiGPT
-    - 内置的 MiGPT TTS 始终启用了[秘密路径](https://github.com/idootop/mi-gpt-tts/blob/main/docs/mi-gpt.md#2-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)，且会自动下发给 MiGPT，对你是无感知的，你也不需要知道这个概念
-    - 可以修改运行的端口号，避免被精准扫描
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.12.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-具体使用方式见 [https://migptgui.com](https://migptgui.com/)。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40305 | 是 |
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| LOGIN_USER | 用户名 | admin | 是 |
+| LOGIN_PASSWORD | 密码 | password | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://migptgui.com>
+- 源码: <https://github.com/lmk123/migpt-cli>

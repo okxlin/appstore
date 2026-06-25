@@ -1,13 +1,50 @@
-# Chevereto: 终极图片和视频分享软件
+# Chevereto
 
-Chevereto 是一款强大且自托管的媒体分享平台，注重灵活性和控制力。它使您能够在自己的服务器上建立和管理一个媒体分享网站，完全掌控您的托管环境和政策。通过使用 Chevereto，您可以避免平台限制和停机风险，确保您的网站完全按照您的需求运行。
+## 应用简介
+一个图像托管平台。
 
-### 主要特点：
-- **自托管**：完全控制您的媒体平台，无需依赖第三方服务。
-- **灵活性**：支持图片、视频和其他媒体类型的上传和分享。
-- **无平台限制**：避免平台封禁或限制内容的风险。
-- **高性能**：优化的媒体处理和传输，保证流畅的用户体验。
-- **可定制性**：提供多种主题和插件，轻松定制您的站点功能。
-- **安全性**：支持多种安全功能，保护用户数据和内容的隐私。
+英文说明：An image hosting platform.
 
-Chevereto 适合需要完全控制内容和托管环境的用户，尤其是对资源和平台限制敏感的场景。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`4.5.4`、`server-latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40328 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CHEVERETO_IMAGES_PATH | 图片路径 | ./data/images | 是 |
+| CHEVERETO_HOSTNAME_PATH | 主机名路径 | / | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_NAME | 数据库名 | chevereto | 是 |
+| PANEL_DB_USER | 数据库用户 | chevereto | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | chevereto | 是 |
+| CHEVERETO_MAX_POST_SIZE | 最大 POST 大小 | 2G | 是 |
+| CHEVERETO_MAX_UPLOAD_SIZE | 最大上传大小 | 2G | 是 |
+| CHEVERETO_SERVICING | 服务模式 | docker | 是 |
+| CHEVERETO_HOSTNAME | 主机名 | hostname.com | 是 |
+| CHEVERETO_HEADER_CLIENT_IP | 客户端 IP 标头 | X-Real-IP | 是 |
+| ENCRYPTION_KEY | 加密密钥 | - | 否 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://chevereto.com>
+- 文档: <https://chevereto.com/docs>
+- 源码: <https://github.com/chevereto/chevereto>

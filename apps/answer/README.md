@@ -1,39 +1,35 @@
-<a href="https://answer.dev">
-    <img alt="logo" src="https://github.com/answerdev/answer/raw/main/docs/img/logo.svg" height="99px">
-</a>
+# Answer
 
-# Answer - 构建问答社区
+## 应用简介
+一款适合任何团队的问答平台软件。
 
-一款问答形式的知识社区开源软件，你可以使用它快速建立你的问答社区，用于产品技术支持、客户支持、用户交流等。
+英文说明：A Q&A platform software for teams at any scales.
 
-了解更多关于该项目的内容，请访问 [answer.dev](https://answer.dev).
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.2.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[![LICENSE](https://img.shields.io/github/license/answerdev/answer)](https://github.com/answerdev/answer/blob/main/LICENSE)
-[![Language](https://img.shields.io/badge/language-go-blue.svg)](https://golang.org/)
-[![Language](https://img.shields.io/badge/language-react-blue.svg)](https://reactjs.org/)
-[![Go Report Card](https://goreportcard.com/badge/github.com/answerdev/answer)](https://goreportcard.com/report/github.com/answerdev/answer)
-[![Discord](https://img.shields.io/badge/discord-chat-5865f2?logo=discord&logoColor=f5f5f5)](https://discord.gg/Jm7Y4cbUej)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40065 | 是 |
 
-## 截图
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-![screenshot](https://github.com/answerdev/answer/raw/main/docs/img/screenshot.png)
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 快速开始
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-### 使用 docker 快速搭建
-
-```bash
-docker run -d -p 9080:80 -v answer-data:/data --name answer answerdev/answer:latest
-```
-
-其他安装配置细节请参考 [Installation](https://answer.dev/docs/installation)
-
-## 贡献
-
-我们随时欢迎你的贡献!
-
-参考 [CONTRIBUTING](https://answer.dev/docs/development/contributing/) 开始贡献。
-
-## License
-
-[Apache License 2.0](https://github.com/answerdev/answer/blob/main/LICENSE)
+## 参考资料
+- 官网: <https://answer.dev/>
+- 文档: <https://answer.dev/zh-CN/docs>
+- 源码: <https://github.com/answerdev/answer>

@@ -1,17 +1,32 @@
-# v2rayA [![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/v2rayA/v2raya)](https://hub.docker.com/r/mzz2017/v2raya) [![Travis (.org)](https://img.shields.io/travis/v2rayA/v2rayA?label=travis-ci%20build)](https://travis-ci.org/v2rayA/v2rayA)
+# v2rayA
 
-[**English**](https://github.com/v2rayA/v2rayA/blob/feat_v5/README.md)&nbsp;&nbsp;&nbsp;[**简体中文**](https://github.com/v2rayA/v2rayA/blob/feat_v5/README_zh.md)
+## 应用简介
+支持全局透明代理的 Project V 的 Linux 客户端。
 
-v2rayA 是一个支持全局透明代理的 V2Ray Linux 客户端，同时兼容SS、SSR、Trojan(trojan-go)、[PingTunnel](https://github.com/esrrhs/pingtunnel)协议。 [[SSR支持清单]](https://github.com/v2rayA/dist/shadowsocksR/blob/master/README.md#ss-encrypting-algorithm)
+英文说明：A web GUI client of Project V.
 
-v2rayA 致力于提供最简单的操作，满足绝大部分需求。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.2.7`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-得益于Web客户端的优势，你不仅可以将其用于本地计算机，还可以轻松地将它部署在路由器或NAS上。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 网页端口 | 40052 | 是 |
+| PLUGIN_PORT | 内部插件端口 | 32346 | 是 |
 
-项目地址：https://github.com/v2rayA/v2rayA
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 使用方法
+## 使用说明
+### 使用方法
 
 v2rayA主要提供了下述使用方法：
 
@@ -21,30 +36,7 @@ v2rayA主要提供了下述使用方法：
 
 详见 [**v2rayA - Docs**](https://v2raya.org/docs/prologue/introduction/)
 
-
-## 界面截图
-
-<img src="https://i.loli.net/2020/04/19/kp2oedPiSzVwgHJ.png" border="0">
-
-
-## 注意
-
-1. 程序不会将任何用户数据保存在云端，所有用户数据存放在用户本地配置文件中。
-
-2. **不要将本项目用于不合法用途。**
-
-## 感谢
-
-[hq450/fancyss](https://github.com/hq450/fancyss)
-
-[ToutyRater/v2ray-guide](https://github.com/ToutyRater/v2ray-guide/blob/master/routing/sitedata.md)
-
-[nadoo/glider](https://github.com/nadoo/glider)
-
-[Loyalsoldier/v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
-
-[zfl9/ss-tproxy](https://github.com/zfl9/ss-tproxy/blob/master/ss-tproxy)
-
-## 协议
-
-[![License: AGPL v3-only](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+## 参考资料
+- 官网: <https://v2raya.org>
+- 文档: <https://v2raya.org/docs/prologue/introduction/>
+- 源码: <https://github.com/v2rayA/v2rayA>

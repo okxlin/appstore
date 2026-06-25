@@ -1,31 +1,43 @@
 # DB Browser for SQLite
 
-## 产品介绍
+## 应用简介
+一款高质量、可视化、开源的 SQLite 文件管理工具。
 
-DB Browser for SQLite 是一个可视化 SQLite 数据库管理工具，可用于创建、设计、浏览、编辑和导出 SQLite 数据库文件。
+英文说明：A high-quality, visual, open-source SQLite file management tool.
 
-## 主要功能
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：DevTool。
+- 支持架构：amd64。
+- 可选版本：`latest`、`3.13.1`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 通过图形界面创建和编辑 SQLite 数据库
-- 管理表、索引、记录和 SQL 查询
-- 支持 CSV、SQL dump 等导入导出流程
-- LinuxServer 版本通过浏览器访问桌面界面，并支持配置目录持久化
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40210 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 40211 | 是 |
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-安装完成后，通过应用配置的 HTTP 端口访问 DB Browser for SQLite 桌面界面。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## Introduction
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| HTTP_USER | HTTP 用户 | user | 是 |
+| HTTP_PWD | HTTP 密码 | sqlitebrowser | 是 |
 
-DB Browser for SQLite is a visual SQLite database management tool for creating, designing, browsing, editing, and exporting SQLite database files.
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Features
-
-- Create and edit SQLite databases from a graphical interface
-- Manage tables, indexes, records, and SQL queries
-- Import and export CSV files, SQL dumps, and database content
-- LinuxServer versions expose the desktop interface in a browser with persistent config storage
-
-## Access
-
-After installation, open DB Browser for SQLite from the configured HTTP port.
+## 参考资料
+- 官网: <https://sqlitebrowser.org/>
+- 文档: <https://github.com/sqlitebrowser/sqlitebrowser/wiki>
+- 源码: <https://github.com/sqlitebrowser/sqlitebrowser>

@@ -1,33 +1,41 @@
 # Piper
-## 产品介绍
 
-Piper 使用 LinuxServer.io 维护的 `linuxserver/piper` 镜像，提供 Piper 文本转语音 Wyoming 服务。
+## 应用简介
+Piper 文本转语音 Wyoming 服务。
 
-## 主要功能
+英文说明：Text to speech Wyoming service maintained by LinuxServer.io.
 
-- 提供 Home Assistant 等客户端可连接的 Wyoming 文本转语音服务
-- 持久化保存配置和业务数据
-- 使用 10200 端口提供 Wyoming 协议服务
-- 支持配置默认 Piper 语音模型
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：AI。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`2.2.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_WYOMING | Wyoming 端口 | 10200 | 是 |
 
-安装完成后，在 Home Assistant Wyoming 集成或兼容客户端中填写服务器地址和 Wyoming 端口。默认语音模型为 `en_US-lessac-medium`，可在安装参数中调整。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Piper uses the LinuxServer.io maintained `linuxserver/piper` image for a Piper text-to-speech Wyoming service.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PIPER_VOICE | Piper 语音 | en_US-lessac-medium | 是 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide a Wyoming text-to-speech service for Home Assistant and compatible clients
-- Persist configuration and application data
-- Expose the Wyoming protocol service on port 10200
-- Configure the default Piper voice model
-- Configure the container time zone
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-piper/>
-- Project website: <https://github.com/rhasspy/piper>
+## 参考资料
+- 官网: <https://github.com/rhasspy/piper>
+- 文档: <https://docs.linuxserver.io/images/docker-piper/>
+- 源码: <https://github.com/linuxserver/docker-piper>

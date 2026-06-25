@@ -1,14 +1,32 @@
-# MT Photos AI 识别相关任务独立部署项目
+# MT Photos AI
 
-- 基于 PaddleOCR 实现的文本识别（OCR）接口
-- 基于 Chinese-CLIP（OpenAI CLIP 模型的中文版本）实现的图片、文本提取特征接口
+## 应用简介
+MT Photos AI 相关的独立服务。
 
-## 版本说明
+英文说明：MT Photos AI-related standalone services.
 
-- `latest` / `1.2.1`：官方镜像，默认不强制绑定 GPU，适合普通 CPU 环境安装。
-- `latest-onnx`：官方 ONNX 镜像，不强制绑定 GPU。
-- `latest-cuda`：官方镜像的 CUDA/GPU 配置版本，宿主机需要已安装 NVIDIA 驱动、NVIDIA Container Toolkit，并且 Docker/Compose 能正常申请 GPU。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体、AI。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.2.1`、`latest-cuda`、`latest-onnx`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 安全提示
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40335 | 是 |
 
-当前官方镜像基于 Ubuntu 22.04/OpenVINO 运行环境。维护测试中使用 Trivy 对 `mtphotos/mt-photos-ai:1.2.1` 扫描到 Critical/High 级别依赖风险，主要来自基础系统包、Python 图像/模型处理依赖和 `linux-libc-dev`。建议仅在可信内网中使用，并关注上游镜像更新。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| API_AUTH_KEY | API 授权密钥 | mt_photos_ai_extra_secret | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://mtmt.tech>
+- 源码: <https://github.com/MT-Photos/mt-photos-ai>

@@ -1,16 +1,43 @@
-<h1 align="center">Windows<br />
-<div align="center">
-<a href="https://github.com/dockur/windows"><img src="https://github.com/dockur/windows/raw/master/.github/logo.png" title="Logo" style="max-width:100%;" width="128" /></a>
-</div>
-<div align="center">
+# Windows
 
+## 应用简介
+在 Docker 容器内运行 Windows。
 
-</div></h1>
+英文说明：Windows inside a Docker container.
 
-在 Docker 容器内运行 Windows 。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`5.16`、`latest-online`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40286 | 是 |
+| RDP_PORT | RDP 远程端口 | 3389 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data/storage | 是 |
+| IMAGE_ISO_FILE | Windows ISO 文件路径 | - | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MANUAL | 手动安装 | Y | 是 |
+| DISK_SIZE | 磁盘大小 | 30GB | 是 |
+| RAM_SIZE | 内存大小 | 4GB | 是 |
+| CPU_CORES | CPU 核心数 | 2 | 是 |
+| USERNAME | 登录用户名 (非匹配的系统镜像则此设置无效) | docker | 是 |
+| PASSWORD | 登录密码 (非匹配的系统镜像则此设置无效) | password | 是 |
+| RESTART_POLICY | 重启策略 | always | 是 |
 
 ## 使用说明
-
 要验证您的系统是否支持 KVM，请运行以下命令：
 
 ```
@@ -46,3 +73,5 @@ sudo kvm-ok
   | `tiny11`  | Tiny 11                  | 3.8 GB   |
   | `tiny10`  | Tiny 10                  | 3.6 GB   |
 
+## 参考资料
+- 官网: <https://github.com/dockur/windows>

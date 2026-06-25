@@ -1,54 +1,43 @@
-[![](https://img.shields.io/liberapay/receives/Remmina.svg?logo=liberapay)](https://liberapay.com/Remmina/donate)
-[![](https://img.shields.io/liberapay/patrons/remmina.svg?logo=liberapay)](https://liberapay.com/Remmina/donate)
-[![](https://opencollective.com/remmina/tiers/badge.svg)](https://opencollective.com/remmina)
-[![Build Status](https://gitlab.com/Remmina/Remmina/badges/master/pipeline.svg)](https://gitlab.com/Remmina/Remmina/pipelines)
-[![Translation status](https://hosted.weblate.org/widgets/remmina/-/remmina/svg-badge.svg)](https://hosted.weblate.org/engage/remmina/?utm_source=widget)
-[![remmina](https://snapcraft.io//remmina/badge.svg)](https://snapcraft.io/remmina)
+# Remmina
 
-## Remmina remote desktop client
+## 应用简介
+远程桌面客户端。
 
-*Use other desktops remotely, from a tiny screen or large monitors.*
+英文说明：Remote desktop client.
 
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`1.4.43`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-* RDP, VNC, SPICE, X2Go, SSH, WWW (HTTP protocol) and EXEC network protocols are supported.
-* Written in GTK, with a port to Qt underway.
-* Released as "remmina" (the main program) and "remmina-plugins".
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP端口 | 40132 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS端口 | 40133 | 是 |
 
-### Installation
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-[How to install Remmina](https://remmina.org/how-to-install-remmina/),
-editable on [the wiki](https://gitlab.com/Remmina/Remmina/-/wikis/home).
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-### Configuration
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| HTTP_USER | HTTP 用户 | user | 是 |
+| HTTP_PWD | HTTP 密码 | remmina | 是 |
 
-Set up everything from the graphical interface, or from $HOME/.config/remmina
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-### Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new merge request
-
-There are [other ways](https://gitlab.com/Remmina/Remmina/-/blob/master/CONTRIBUTING.md) to contribute too, get in contact on IRC (#remmina on libera.chat), or on [Matrix](https://riot.im/app/#/group/+remmina:matrix.org).
-
-### Donations
-
-This is the website [donation page](https://remmina.org/wp/donations/).
-[THANKS](https://gitlab.com/Remmina/Remmina/-/blob/master/THANKS.md) is a list of supporters.
-
-### Authors
-
-Maintained by [Hiroyuki Tanaka](https://gitlab.com/myheroyuki), [Antenore Gatta](https://gitlab.com/antenore), [Giovanni Panozzo](https://gitlab.com/giox069) and [Allan Nordhøy](https://gitlab.com/kingu).
-Add yourself in [AUTHORS](https://gitlab.com/Remmina/Remmina/-/blob/master/AUTHORS) if you have contributed.
-
-### Resources
-
- * [Website](https://www.remmina.org/)
- * IRC room on libera.chat, in the #remmina channel, you can also use a [web client](https://web.libera.chat/?nick=remminer|?#remmina).
-
-### License
-
-Copylefted libre software, licensed [GPLv2+](https://gitlab.com/Remmina/Remmina/blob/master/COPYING). \
-Initially developed by [Vic Lee](https://github.com/llyzs).
+## 参考资料
+- 官网: <https://remmina.org>
+- 文档: <https://gitlab.com/Remmina/Remmina/-/wikis/home>
+- 源码: <https://gitlab.com/Remmina/Remmina>

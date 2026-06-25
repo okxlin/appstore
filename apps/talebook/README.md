@@ -1,63 +1,34 @@
-[![GitHub License](https://img.shields.io/github/license/talebook/talebook?style=flat-square)](https://github.com/talebook/talebook/blob/master/LICENSE)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/w/talebook/talebook?logo=github&style=flat-square&label=commits)]()
-[![Tests](https://github.com/talebook/talebook/actions/workflows/ci.yml/badge.svg)](https://github.com/talebook/talebook/actions/workflows/ci.yml)
-[![Docker Build](https://github.com/talebook/talebook/actions/workflows/build.yml/badge.svg)](https://github.com/talebook/talebook/actions/workflows/build.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/talebook/calibre-webserver.svg)](https://hub.docker.com/r/talebook/talebook)
+# Tale Book
 
+## 应用简介
+一个简洁但强大的私人书籍管理系统。
 
-Tale Book: My Calibre WebServer
-====================
-A better online books library management website built on Calibre + Vue
+英文说明：A better online books library management website.
 
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`26.05.19`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-简单好用的个人图书管理系统
-===================
-**友情提醒：中国境内网站，个人是不允许进行在线出版的，维护公开的书籍网站是违法违规的行为！建议仅作为个人使用！**
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40128 | 是 |
 
-这是一个基于Calibre的简单的个人图书管理系统，支持**在线阅读**。主要特点是：
-* 美观的界面：由于Calibre自带的网页太丑太难用，于是基于Vue，独立编写了新的界面，支持PC访问和手机浏览；
-* 支持多用户：为了网友们更方便使用，开发了多用户功能，支持~~豆瓣~~（已废弃）、QQ、微博、Github等社交网站的登录；
-* 支持在线阅读：借助[Readium.js](https://github.com/readium/readium-js-viewer) 库，支持了网页在线阅读电子书；
-* 支持批量扫描导入书籍；
-* 支持邮件推送：可方便推送到Kindle；
-* 支持OPDS：可使用[KyBooks](http://kybook-reader.com/)等APP方便地读书；
-* 支持一键安装，网页版初始化配置，轻松启动网站；
-* 优化大书库时文件存放路径，可以按字母分类、或者文件名保持中文；
-* 支持快捷更新书籍信息：支持从百度百科、豆瓣搜索并导入书籍基础信息；
-* 支持私人模式：需要输入访问码，才能进入网站，便于小圈子分享网站；
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-本项目曾用名：calibre-webserver
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-Docker ![Docker Pulls](https://img.shields.io/docker/pulls/talebook/calibre-webserver.svg)
-===================
-部署比较简单，建议采用docker，镜像地址：[dockerhub](https://hub.docker.com/r/talebook/talebook)
-
-推荐使用`docker-compose`，下载仓库中的配置文件[docker-compose.yml](docker-compose.yml)，然后执行命令启动即可。
-`docker-compose -f docker-compose.yml  up -d`
-若希望修改挂载的目录或端口，请修改docker-compose.yml文件。
-
-如果使用原生docker，那么执行命令：
-`docker run -d --name talebook -p <本机端口>:80 -v <本机data目录>:/data talebook/talebook`
-
-例如
-`docker run -d --name talebook -p 8080:80 -v /localdata:/data talebook/talebook`
-
-
-视频简介（感谢@Pan06da的制作）
-===================
-[![](https://bb-embed.zjffun.com/embed?v=BV1AT411S7c3)](https://player.bilibili.com/player.html?aid=482258810&bvid=BV1AT411S7c3&cid=1018595245&page=1)
-
-
-常见问题
-===================
-常见问题请参阅[使用指南](https://github.com/talebook/talebook/blob/master/document/README.zh_CN.md)
-
-手动安装请参考[开发者指南](https://github.com/talebook/talebook/blob/master/document/Development.zh_CN.md)
-
-NAS安装指南：请参考网友们的帖子：[帖子1](https://post.smzdm.com/p/a992p6e0/)，[帖子2](https://post.smzdm.com/p/a3d7ox0k/), [帖子3](https://odcn.top/2019/02/26/2734/)
-
-**如果觉得本项目很棒，欢迎前往[爱发电](https://afdian.net/@talebook)，赞助作者，持续优化，为爱充电！**
-
-项目演示截图如下：
-![](https://github.com/talebook/talebook/raw/master/document/screenshot.png)
+## 参考资料
+- 官网: <https://www.talebook.org>
+- 文档: <https://github.com/talebook/talebook>

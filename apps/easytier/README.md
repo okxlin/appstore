@@ -1,7 +1,33 @@
 # EasyTier
 
-## 使用说明
+## 应用简介
+一个简单、安全、去中心化的内网穿透 VPN 组网方案。
 
+英文说明：A simple, safe and decentralized VPN networking solution.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`2.6.4`、`config-latest`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| PRIVILEGED_MODE | 特权模式开关 | true | 是 |
+| HOSTNAME | 主机名 | easytier | 是 |
+| COMMAND | 命令 (按需修改) | -i --network-name --network-secret -e tcp://:11010 -l  | 是 |
+
+## 使用说明
 相关信息可通过容器日志与配置文件获取，注意参考官方文档来使用。
 ***
 [简体中文](https://github.com/EasyTier/EasyTier/blob/main/README_CN.md) | [English](https://github.com/EasyTier/EasyTier/blob/main/README.md)
@@ -10,18 +36,6 @@
 
 一个简单、安全、去中心化的内网穿透 VPN 组网方案，使用 Rust 语言和 Tokio 框架实现。
 
-
-## 特点
-
-- **去中心化**：无需依赖中心化服务，节点平等且独立。
-- **安全**：支持利用 WireGuard 加密通信，也支持 AES-GCM 加密保护中转流量。
-- **高性能**：全链路零拷贝，性能与主流组网软件相当。
-- **跨平台**：支持 MacOS/Linux/Windows/Android，未来将支持 IOS。可执行文件静态链接，部署简单。
-- **无公网 IP 组网**：支持利用共享的公网节点组网，可参考 [配置指南](https://github.com/EasyTier/EasyTier/blob/main/README_CN.md#%E6%97%A0%E5%85%AC%E7%BD%91IP%E7%BB%84%E7%BD%91)
-- **NAT 穿透**：支持基于 UDP 的 NAT 穿透，即使在复杂的网络环境下也能建立稳定的连接。
-- **子网代理（点对网）**：节点可以将可访问的网段作为代理暴露给 VPN 子网，允许其他节点通过该节点访问这些子网。
-- **智能路由**：根据流量智能选择链路，减少延迟，提高吞吐量。
-- **TCP 支持**：在 UDP 受限的情况下，通过并发 TCP 链接提供可靠的数据传输，优化性能。
-- **高可用性**：支持多路径和在检测到高丢包率或网络错误时切换到健康路径。
-- **IPV6 支持**：支持利用 IPV6 组网。
-- **多协议类型**: 支持使用 WebSocket、QUIC 等协议进行节点间通信。
+## 参考资料
+- 官网: <https://www.easytier.top>
+- 源码: <https://github.com/EasyTier/EasyTier>

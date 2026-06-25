@@ -1,88 +1,45 @@
 # Tailscale
 
-https://tailscale.com
+## 应用简介
+使用 WireGuard 和 2FA 的最简单、最安全的方式。
 
-Private WireGuard® networks made easy
+英文说明：The easiest, most secure way to use WireGuard and 2FA.
 
-## Overview
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`1.98`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-This repository contains the majority of Tailscale's open source code.
-Notably, it includes the `tailscaled` daemon and
-the `tailscale` CLI tool. The `tailscaled` daemon runs on Linux, Windows,
-[macOS](https://tailscale.com/kb/1065/macos-variants/), and to varying degrees
-on FreeBSD and OpenBSD. The Tailscale iOS and Android apps use this repo's
-code, but this repo doesn't contain the mobile GUI code.
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TS_SOCKET | Tailscale Socket 路径 | /var/run/tailscale/tailscaled.sock | 否 |
+| TS_STATE_DIR | Tailscale 状态目录 | /var/lib/tailscale | 否 |
 
-Other [Tailscale repos](https://github.com/orgs/tailscale/repositories) of note:
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-* the Android app is at https://github.com/tailscale/tailscale-android
-* the Synology package is at https://github.com/tailscale/tailscale-synology
-* the QNAP package is at https://github.com/tailscale/tailscale-qpkg
-* the Chocolatey packaging is at https://github.com/tailscale/tailscale-chocolatey
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TS_AUTHKEY | Tailscale 认证密钥 | tskey-auth-ab1CDE2CNTRL-0123456789abcdef | 是 |
+| TS_ROUTES | 广播子网路由 | 192.168.1.0/24,10.0.0.0/16 | 是 |
+| TS_ACCEPT_DNS | 是否接受 DNS 配置 (true/false) | false | 否 |
+| TS_AUTH_ONCE | 尝试仅登录一次 (true/false) | false | 否 |
+| TS_DEST_IP | 目标 IP | - | 否 |
+| TS_KUBE_SECRET | Kubernetes 密钥名称 | tailscale | 否 |
+| TS_HOSTNAME | 节点主机名 | my-tailscale-node | 否 |
+| TS_OUTBOUND_HTTP_PROXY_LISTEN | HTTP代理地址和端口 (127.0.0.1:1081) | - | 否 |
+| TS_SOCKS5_SERVER | SOCKS5代理地址和端口 (127.0.0.1:1080) | - | 否 |
+| TS_USERSPACE | 启用用户空间网络 (true/false) | true | 否 |
 
-For background on which parts of Tailscale are open source and why,
-see [https://tailscale.com/opensource/](https://tailscale.com/opensource/).
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Using
-
-We serve packages for a variety of distros and platforms at
-[https://pkgs.tailscale.com](https://pkgs.tailscale.com/).
-
-## Other clients
-
-The [macOS, iOS, and Windows clients](https://tailscale.com/download)
-use the code in this repository but additionally include small GUI
-wrappers. The GUI wrappers on non-open source platforms are themselves
-not open source.
-
-## Building
-
-We always require the latest Go release, currently Go 1.21. (While we build
-releases with our [Go fork](https://github.com/tailscale/go/), its use is not
-required.)
-
-```
-go install tailscale.com/cmd/tailscale{,d}
-```
-
-If you're packaging Tailscale for distribution, use `build_dist.sh`
-instead, to burn commit IDs and version info into the binaries:
-
-```
-./build_dist.sh tailscale.com/cmd/tailscale
-./build_dist.sh tailscale.com/cmd/tailscaled
-```
-
-If your distro has conventions that preclude the use of
-`build_dist.sh`, please do the equivalent of what it does in your
-distro's way, so that bug reports contain useful version information.
-
-## Bugs
-
-Please file any issues about this code or the hosted service on
-[the issue tracker](https://github.com/tailscale/tailscale/issues).
-
-## Contributing
-
-PRs welcome! But please file bugs. Commit messages should [reference
-bugs](https://docs.github.com/en/github/writing-on-github/autolinked-references-and-urls).
-
-We require [Developer Certificate of
-Origin](https://en.wikipedia.org/wiki/Developer_Certificate_of_Origin)
-`Signed-off-by` lines in commits.
-
-See `git log` for our commit message style. It's basically the same as
-[Go's style](https://github.com/golang/go/wiki/CommitMessage).
-
-## About Us
-
-[Tailscale](https://tailscale.com/) is primarily developed by the
-people at https://github.com/orgs/tailscale/people. For other contributors,
-see:
-
-* https://github.com/tailscale/tailscale/graphs/contributors
-* https://github.com/tailscale/tailscale-android/graphs/contributors
-
-## Legal
-
-WireGuard is a registered trademark of Jason A. Donenfeld.
+## 参考资料
+- 官网: <https://tailscale.com>
+- 文档: <https://tailscale.com/kb/1017/install>
+- 源码: <https://github.com/tailscale/tailscale>

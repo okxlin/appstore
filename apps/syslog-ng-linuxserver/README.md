@@ -1,35 +1,43 @@
 # syslog-ng
-## 产品介绍
 
-syslog-ng 使用 LinuxServer.io 维护的 `linuxserver/syslog-ng` 镜像，提供 syslog-ng 日志收集服务 能力。
+## 应用简介
+syslog-ng 日志收集服务。
 
-## 主要功能
+英文说明：Syslog collection service maintained by LinuxServer.io.
 
-- 提供 Syslog 日志收集 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：运维。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`4.10.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_SYSLOG_UDP | Syslog UDP 端口 | 514 | 是 |
+| PANEL_APP_PORT_SYSLOG_TCP | Syslog TCP 端口 | 601 | 是 |
+| PANEL_APP_PORT_SYSLOG_TLS | Syslog TLS 端口 | 6514 | 是 |
 
-安装完成后，将客户端日志发送到配置的 Syslog UDP/TCP/TLS 端口；该应用没有 Web 界面。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| LOG_PATH | 日志目录 | ./data/log | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-syslog-ng uses the LinuxServer.io maintained `linuxserver/syslog-ng` image for Syslog collection.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide Syslog collection
-- Persist configuration and application data
-- Configure service ports from the install form when the image exposes ports
-- Configure the container time zone
-
-## Access
-
-After installation, send client logs to the configured Syslog UDP/TCP/TLS ports; this app does not provide a web interface.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-syslog-ng/>
-- Project website: <https://www.syslog-ng.com/>
+## 参考资料
+- 官网: <https://www.syslog-ng.com/>
+- 文档: <https://docs.linuxserver.io/images/docker-syslog-ng/>
+- 源码: <https://github.com/linuxserver/docker-syslog-ng>

@@ -1,49 +1,24 @@
-<div align="left">
+# Koodo Reader
 
-简体中文 | [Português](https://github.com/troyeguo/koodo-reader/blob/master/README_pt.md) | [English](https://github.com/troyeguo/koodo-reader/blob/master/README.md)
+## 应用简介
+一个跨平台的电子书阅读器。
 
-</div>
+英文说明：A cross-platform ebook reader.
 
-<div align="center">
-  <img src="https://i.loli.net/2021/07/30/ZKNMmz54Q3uqlrW.png" width="96px" height="96px"/>
-</div>
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-<h1 align="center">
-  Koodo Reader
-</h1>
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40146 | 是 |
 
-<h3 align="center">
-  一个跨平台的电子书阅读器
-</h3>
-
-<div align="center">
-
-[下载客户端](https://koodo.960960.xyz/zh) | [在线预览](https://reader.960960.xyz) | [开发计划](https://troyeguo.notion.site/215baeda57804fd29dbb0e91d1e6a021?v=360c00183d944b598668f34c255edfd7) | [帮助文档](https://troyeguo.notion.site/Koodo-Reader-0c9c7ccdc5104a54825dfc72f1c84bea)
-
-</div>
-
-
-## 特色
-
-- 支持阅读格式：
-  - EPUB (**.epub**)
-  - 扫描文档 (**.pdf**)
-  - Kindle (**.azw3**, **.mobi**, **.azw**)
-  - 纯文本 (**.txt**)
-  - 漫画 (**.cbr**, **.cbz**, **.cbt**, **.cb7**)
-  - 富文本 (**.md**, **.docx**)
-  - FB2 (**.fb2**)
-  - 超文本 (**.html**, **.xml**, **.xhtml**, **.mhtml**, **.htm**, **.htm**)
-- 支持 **Windows**，**macOS**，**Linux** 和 **网页版**
-- 备份数据到 **Dropbox** 和 **Webdav**
-- 自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步
-- 双页模式，单页模式，滚动模式
-- 听书功能，翻译功能，触控屏支持，批量导入图书
-- 支持目录，书签，笔记，高亮，书架，标签
-- 自定义字体，字体大小，行间距，段落间距，阅读背景色，文字颜色，屏幕亮度，文字下划线、斜体、文字阴影、字体粗细
-- 黑夜模式和主题色设置
-
-## 使用方法
+## 使用说明
+### 使用方法
 
 - 桌面端：
   - 稳定版 (推荐下载)：[官网](https://koodo.960960.xyz/zh)（感谢 [@Stille](https://www.ioiox.com/donate.html) 提供下载加速服务）
@@ -81,56 +56,7 @@ flatpak install flathub io.github.troyeguo.koodo-reader
 flatpak run io.github.troyeguo.koodo-reader
 ```
 
-<a href="https://flathub.org/apps/details/io.github.troyeguo.koodo-reader"><img height="50" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.png"/></a>
-
-## 预览
-
-<div align="center">
-  <img src="https://i.loli.net/2021/08/08/I37WPYFJcC1jltn.png" >
-  <img src="https://i.loli.net/2021/08/08/G7WvUQFTrEpSCKg.png" >
-</div>
-
-## 截图
-
-<div align="center">
-  <b>列表模式</b>
-  <img src="https://i.loli.net/2021/08/08/JyNHfThMs184Um2.png" >
-  <b>封面模式</b>
-  <img src="https://i.loli.net/2021/08/08/76zkDEAobd4qsmR.png" >
-  <b>阅读菜单</b>
-  <img src="https://i.loli.net/2021/08/08/LeEN9gnOvFmfVWA.png" >
-  <b>备份和恢复</b>
-  <img src="https://i.loli.net/2021/08/08/aRIAiYT2dGJQhC1.png" >
-  <b>黑夜模式和主题色</b>
-  <img src="https://i.loli.net/2021/08/08/ynqUNpX93xZefdw.png" >
-  <b>笔记管理</b>
-  <img src="https://i.loli.net/2021/08/09/sARQBoefvGklHwC.png" >
-</div>
-
-## 运行源码
-
-请确保您电脑已配置好 yarn，git 的运行环境。
-
-1. 将项目源码下载到本地
-
-   ```
-   git clone https://github.com/troyeguo/koodo-reader.git
-   ```
-
-2. cd 到项目文件夹，运行以下代码进入客户端模式
-
-   ```
-   yarn
-   yarn dev
-   ```
-
-3. 运行以下代码进入网页模式
-
-   ```
-   yarn
-   yarn start
-   ```
-
-## 贡献翻译
-
-您可以通过 Koodo Reader 的[在线翻译工具](https://poeditor.com/join/project?hash=fk4qbQTlsk)，完善现有翻译，也可以添加新的语言。
+## 参考资料
+- 官网: <https://koodo.960960.xyz>
+- 文档: <https://troyeguo.notion.site/Koodo-Reader-0c9c7ccdc5104a54825dfc72f1c84bea>
+- 源码: <https://github.com/troyeguo/koodo-reader>

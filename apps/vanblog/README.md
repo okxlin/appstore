@@ -1,20 +1,47 @@
-<p align="center">
-	<img src="https://github.com/Mereithhh/vanblog/raw/master/img/logo.svg" style="width: 200px"></img>
-</p>
-<p align="center">
-	<strong>VanBlog是一款简洁、实用、优雅的个人博客系统，支持全自动按需申请HTTPS证书、黑暗模式、移动端自适应和评论功能。它内置了流量统计和图床，并集成了评论系统。此外，VanBlog还具有无限的可扩展性，提供完备的后台管理面板，支持黑暗模式、移动端、一键上传剪贴板图片到图床，并带有强大的编辑器。</strong>
-</p>
-<p align="center">
-  <img src="https://img.shields.io/github/v/release/mereithhh/van-blog?display_name=tag" />
-  <img src="https://img.shields.io/docker/pulls/mereith/van-blog" />
-  <img src="https://img.shields.io/github/stars/mereithhh/van-blog" />
-  <img src="https://img.shields.io/bitbucket/issues/mereithhh/van-blog" />
-  <img src="https://github.com/mereithhh/van-blog/workflows/release/badge.svg" />
-  <img src="https://img.shields.io/badge/license-GPL%20v3-yellow.svg" />
-</p>
-<p align="center">
-	<strong>项目主页: </strong>  <a target="_blank" href='https://vanblog.mereith.com'>vanblog.mereith.com</a>
-</p>
-<p align="center">
-	<strong>Demo(后台账号密码均为 demo): </strong>  <a target="_blank" href='https://blog-demo.mereith.com'>blog-demo.mereith.com</a>
-</p>
+# VanBlog
+
+## 应用简介
+一款简洁实用优雅的个人博客系统。
+
+英文说明：A simple, practical and elegant personal blog system.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：网站。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.54.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 40233 | 是 |
+| PANEL_APP_PORT_HTTPS | HTTPS 端口 | 40234 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| EMAIL | 用于自动申请 https 证书的邮箱 | - | 否 |
+| VAN_BLOG_CDN_URL | CDN 地址 | - | 否 |
+| VAN_BLOG_WALINE_DB | 内嵌评论系统的数据库名 | waline | 否 |
+| MONGO_HOST | 数据库服务 | - | 是 |
+| MONGO_DB | 数据库名 | vanblog | 是 |
+| PANEL_DB_ROOT_USER | 数据库用户名 | - | 是 |
+| PANEL_DB_ROOT_PASSWORD | 数据库密码 | - | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://vanblog.mereith.com>
+- 源码: <https://github.com/Mereithhh/vanblog>

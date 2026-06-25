@@ -1,3 +1,27 @@
-# Pic Smaller (图小小)
+# Pic Smaller
 
-**Pic Smaller** is a super easy-to-use online image compression tool. Its UI is intuitive and supports compression configuration. At the same time, because it is purely local compression without any server-side logic, it is completely safe.
+## 应用简介
+智能压缩 JPEG、PNG、WEBP、AVIF、SVG 和 GIF 图片。
+
+英文说明：Compress JPEG, PNG, WEBP, AVIF, SVG and GIF images intelligently.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具、媒体。
+- 支持架构：amd64。
+- 可选版本：`latest`、`20240517`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40253 | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://picsmaller.com>
+- 文档: <https://github.com/joye61/pic-smaller>

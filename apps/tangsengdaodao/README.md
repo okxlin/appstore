@@ -1,40 +1,55 @@
-# 什么是唐僧叨叨
+# TangSengDaoDao
 
-**唐僧叨叨**是一款`轻量级`，`高性能`，`重安全`专注于`私有化部署`的`开源`即时通讯系统。
+## 应用简介
+让企业轻松拥有自己的即时通讯。
 
-## 特性
+英文说明：Make it easy for businesses to have their own instant messaging.
 
-**唐僧叨叨**具备以下特性：
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`1.5`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 🆓 开源免费：服务端源码，APP源码，Web/PC端源码全部开源，Apache2.0开源协议（可商用），没人能拿捏你
-- 🔏 私有化部署：所有程序和数据都在自己的服务器上，不用担心数据泄露，不用担心数据被用于其他用途
-- 🆚 消息必达：采用 tcp + ack机制，保证消息必达，支持离线消息，支持消息漫游。
-- 🔐 内容安全：消息传输采用私有二进制加密协议、DH+流式加密，防止消息内容泄露
-- 💽 消息永久存储：消息支持永久存储，得益于WuKongIM的自研消息db，永久存储不影响性能，只浪费点磁盘空间
-- 📱 多设备消息同步：支持 1 个移动端、多个 Web/PC 端同时在线时，并且支持多端之间的消息实时同步。
-- 📟 全平台支持：iOS，Android，Windows，MAC，Ubuntu，Web
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TS_DB_REDIS_PORT | Redis 服务端口 | 6379 | 是 |
+| MINIO_PORT | minio 端口 | 9000 | 是 |
+| PANEL_APP_PORT_WK_TCP | 悟空 IM TCP 端口 | 5100 | 是 |
+| PANEL_APP_PORT_WK_WS | 悟空 IM WS 端口 | 5200 | 是 |
+| PANEL_APP_PORT_WK_WEB_SERVER | 悟空 IM 监控端口 | 5300 | 是 |
+| PANEL_APP_PORT_TS_APP_HTTP | 唐僧叨叨端口 | 8090 | 是 |
+| PANEL_APP_PORT_TS_APP_WEB | 唐僧叨叨 WEB 端口 | 82 | 是 |
+| PANEL_APP_PORT_HTTP | 唐僧叨叨管理后台端口 | 83 | 是 |
 
-## 为什么选择唐僧叨叨
+## 数据持久化
+- `./wukongim:/root/wukongim`
+- `WK_DATASOURCE_ADDR=http://tangsengdaodaoserver:8090/v1/datasource`
+- `./tsdd:/home/tsdddata`
 
-厂商 | Demo二开成本 | Web端同步 | 群人数 | 存储 | 开源 | 私有化部署
----|--- |--- |--- |---  |--- |---
-<label style="color:red">唐僧叨叨</label> | <label style="color:red">运营级Demo，换个皮就能直接上线运营</label> | <label style="color:red">所有操作实时同步 </label> | <label style="color:red">无限制</label>  | <label style="color:red">永久</label>(自研消息数据库加持) | <label style="color:red">是 </label> | <label style="color:red">支持 </label>
-网易云信  | Demo简单，很多功能都只是做演示 | 无法同步 | 小于5000  | 30天/免费版 1年/专业版 | 否 | 未知
-融云  | Demo简单，离运营级还有距离 | 消息同步，设置不能同步 | 3000 | 7天 | 否 | 未知
-环信  | Demo超简单，开发成运营级产品成本高 | app与web互踢  | 3000 | 7天（需联系商务） | 否 | 未知
-腾讯云IM | Demo简单，离运营级还有距离  | 大部分能实时同步 | 付费后最多扩展到6000人 | 30天/旗舰版 | 否 | 未知
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 唐僧叨叨的组成
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| EXTERNAL_IP | 外部访问 IP | - | 是 |
+| PANEL_DB_HOST | 数据库服务 | - | 是 |
+| PANEL_DB_NAME | 数据库名 | tsdd | 是 |
+| PANEL_DB_USER | 数据库用户 | tsdd | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | tsdd@123456 | 是 |
+| TS_DB_REDIS_HOST | 缓存服务 | - | 是 |
+| PANEL_REDIS_ROOT_PASSWORD | Redis 密码 | - | 是 |
+| MINIO_HOST | minio 对象存储服务 | - | 是 |
+| MINIO_ROOT_USER | minio 用户 | - | 是 |
+| MINIO_ROOT_PASSWORD | minio 用户密码 | - | 是 |
 
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-**客户端**
-
-主要是用户端使用 包括：[iOS](https://github.com/TangSengDaoDao/TangSengDaoDaoiOS)，[Android](https://github.com/TangSengDaoDao/TangSengDaoDaoAndroid)，[Web](https://github.com/TangSengDaoDao/TangSengDaoDaoWeb)，[PC](https://github.com/TangSengDaoDao/TangSengDaoDaoWeb)
-
-**服务端**
-
-给客户端调用的后端系统 包括：通讯端（[WuKongIM](https://github.com/WuKongIM/WuKongIM)），业务端([TangSengDaoDaoServer](https://github.com/TangSengDaoDao/TangSengDaoDaoServer))
-
-**管理端**
-
-[TangSengDaoDaoManager](https://github.com/TangSengDaoDao/TangSengDaoDaoManager)
+## 参考资料
+- 官网: <https://tsdaodao.com>
+- 源码: <https://github.com/TangSengDaoDao/TangSengDaoDaoServer>

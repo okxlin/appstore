@@ -1,52 +1,26 @@
-[![docker image build](https://github.com/wikihost-opensource/als/actions/workflows/docker-image.yml/badge.svg)](https://github.com/wikihost-opensource/als/actions/workflows/docker-image.yml)
+# ALS
 
-# ALS - Another Looking-glass Server
+## 应用简介
+Another Looking-glass Server，测速服务端。
 
-## Quick start
-```
-docker run -d --name looking-glass --restart always --network host wikihostinc/looking-glass-server
-```
+英文说明：Another Looking-glass Server,Speed measurement server.
 
-[DEMO](http://lg.hk1-bgp.hkg.50network.com/)
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## Host Requirements
- - Can run docker (yes, only docker is required)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 网页端口 | 20080 | 是 |
 
-## Image Environment Variables
-| Key                       | Example                                                                | Default                                                    | Description                                                                             |
-| ------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| LISTEN_IP                 | 127.0.0.1                                                              | (all ip)                                                   | which IP address will be listen use                                                     |
-| HTTP_PORT                 | 80                                                                     | 80                                                         | which HTTP port should use                                                              |
-| SPEEDTEST_FILE_LIST       | 100MB 1GB                                                              | 1MB 10MB 100MB 1GB                                         | size of static test files, separate with space                                          |
-| LOCATION                  | "this is location"                                                     | (from maxmind database, ip via PUBLIC_IPV4 or PUBLIC_IPV6) | location string                                                                         |
-| MAXMIND_KEY               | THE_KEY                                                                | (empty)                                                    | about more https://dev.maxmind.com/geoip/geolite2-free-geolocation-data                 |
-| PUBLIC_IPV4               | 1.1.1.1                                                                | (fetch from http://ifconfig.co)                            | The IPv4 address of the server                                                          |
-| PUBLIC_IPV6               | fe80::1                                                                | (fetch from http://ifconfig.co)                            | The IPv6 address of the server                                                          |
-| DISPLAY_TRAFFIC           | true                                                                   | true                                                       | Toggle the streaming traffic graph                                                      |
-| ENABLE_SPEEDTEST          | true                                                                   | true                                                       | Toggle the speedtest feature                                                            |
-| UTILITIES_PING            | true                                                                   | true                                                       | Toggle the ping feature                                                                 |
-| UTILITIES_SPEEDTESTDOTNET | true                                                                   | true                                                       | Toggle the speedtest.net feature                                                        |
-| UTILITIES_FAKESHELL       | true                                                                   | true                                                       | Toggle the HTML Shell feature                                                           |
-| UTILITIES_IPERF3          | true                                                                   | true                                                       | Toggle the iperf3 feature                                                               |
-| UTILITIES_IPERF3_PORT_MIN | 30000                                                                  | 30000                                                      | iperf3 listen port range - from                                                         |
-| UTILITIES_IPERF3_PORT_MAX | 31000                                                                  | 31000                                                      | iperf3 listen port range - to                                                           |
-| SPONSOR_MESSAGE           | "Test message" or "/tmp/als_readme.md" or "http://some_host/114514.md" | ''                                                         | Show server sponsor message (support markdown file, required mapping file to container) |
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-
-## Features
-- [x] HTML 5 Speed Test
-- [x] Ping - IPv4
-- [x] iPerf3 server
-- [x] Streaming traffic graph
-- [x] Speedtest.net Client
-- [x] Online shell box (limited commands)
-
-## Thanks to
-https://github.com/librespeed/speedtest
-
-## License
-
-Code is licensed under MIT Public License.
-
-* If you wish to support my efforts, keep the "Powered by LookingGlass" link intact.
-
+## 参考资料
+- 官网: <https://github.com/wikihost-opensource/als>

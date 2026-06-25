@@ -1,23 +1,28 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./.github/images/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./.github/images/banner-light.svg">
-    <img alt="Medama: Cookie-free privacy-focused website analytics." src="./.github/images/banner-light.svg">
-  </picture>
-  <br>
-  <a href="https://oss.medama.io/introduction">Website</a> |
-  <a href="https://oss.medama.io/deployment/installation">Installation</a> |
-  <a href="https://demo.medama.io">Demo</a> |
-  <a href="https://medama.io/discord">Discord</a>
-</p>
+# Medama
 
-## Overview
+## 应用简介
+自托管、注重隐私的网站分析。
 
-Medama Analytics 是一个开源项目，致力于提供可自托管的无 Cookie 网站分析。它拥有不到 1KB 的轻量级追踪器，旨在提供有用的分析数据，同时优先考虑用户隐私。
+英文说明：Self-hostable, privacy-focused website analytics.
 
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.6.2`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40282 | 是 |
+
+## 数据持久化
+- `medama-data:/app/data`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 使用说明
-
 - 账户密码
 ```
 username: admin
@@ -25,3 +30,7 @@ password: CHANGE_ME_ON_FIRST_LOGIN
 ```
 
 - 需要域名反向代理并开启`https`访问才能登录。
+
+## 参考资料
+- 官网: <https://oss.medama.io>
+- 源码: <https://github.com/medama-io/medama>

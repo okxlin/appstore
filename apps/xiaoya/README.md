@@ -1,5 +1,28 @@
-# 使用说明
+# 小雅 Alist (xiaoya)
 
+## 应用简介
+基于 Alist 的网盘聚合站。
+
+英文说明：Alist-based cloud disk aggregation station.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40160 | 是 |
+
+## 数据持久化
+- `"./data:/data`
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
 第一次安装会失败，需要手动获取所需配置。
 
 **参考指南配置文件**：https://xiaoyaliu.notion.site/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f
@@ -7,20 +30,8 @@
 然后编辑应用目录下`data`文件夹下的对应文件，重启容器即可
 
 ***
-# 原始相关
 
-数据内容请参考：https://alist.xiaoya.pro
-
-订阅我的tg频道获取最新消息： https://t.me/xiaoyaliu
-
-- webdav 账号密码
-```
-用户: guest 密码: guest_Api789
-```
-重启就会自动更新数据库及搜索索引文件
-
-```
-docker restart xiaoya
-```
-
-[详细的配置指南请点击打开](https://www.notion.so/xiaoyaliu/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f)
+## 参考资料
+- 官网: <http://alist.xiaoya.pro>
+- 文档: <https://www.notion.so/xiaoyaliu/xiaoya-docker-69404af849504fa5bcf9f2dd5ecaa75f>
+- 源码: <https://hub.docker.com/r/xiaoyaliu/alist>

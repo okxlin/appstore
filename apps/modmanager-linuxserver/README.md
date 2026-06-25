@@ -1,43 +1,37 @@
 # Modmanager
-## 产品介绍
 
-Modmanager 使用 LinuxServer.io 维护的 `linuxserver/modmanager` 镜像，提供 LinuxServer Docker Mods 缓存更新服务 能力。
+## 应用简介
+Docker Mods 缓存更新服务。
 
-## 主要功能
+英文说明：Docker Mods cache updater maintained by LinuxServer.io.
 
-- 提供 Docker Mods 缓存下载与定期更新 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`9ae6695d-ls51`。
+- 该应用未声明固定 Web 端口，请按服务类型和版本配置使用。
 
-## 访问说明
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MODCACHE_PATH | Mods 缓存路径 | ./data/modcache | 是 |
 
-Modmanager 没有 Web 界面。安装完成后，它会按 `DOCKER_MODS` 下载并维护 `/modcache` 缓存。
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-## 运行说明
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DOCKER_MODS | Docker Mods 列表 | linuxserver/mods:universal-git | 是 |
+| DOCKER_HOST | Docker Host 端点 | - | 否 |
+| DOCKER_MODS_EXTRA_HOSTS | 额外 Docker 主机 | - | 否 |
 
-本适配默认不挂载 Docker socket。需要自动发现其他容器时，建议通过受限的 Docker Socket Proxy 填写 `DOCKER_HOST`，而不是直接把 `/var/run/docker.sock` 挂入容器。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## Introduction
-
-Modmanager uses the LinuxServer.io maintained `linuxserver/modmanager` image for Docker Mods cache download and scheduled updates.
-
-## Features
-
-- Provide Docker Mods cache download and scheduled updates
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-Modmanager does not provide a web interface. After installation, it downloads and maintains `/modcache` according to `DOCKER_MODS`.
-
-## Runtime Notes
-
-This package does not mount the Docker socket by default. For Docker discovery, prefer a restricted Docker Socket Proxy endpoint in `DOCKER_HOST` instead of mounting `/var/run/docker.sock` directly.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-modmanager/>
-- Project website: <https://www.linuxserver.io/>
+## 参考资料
+- 官网: <https://www.linuxserver.io/>
+- 文档: <https://docs.linuxserver.io/images/docker-modmanager/>
+- 源码: <https://github.com/linuxserver/docker-modmanager>

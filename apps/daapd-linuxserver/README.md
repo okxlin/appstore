@@ -1,43 +1,41 @@
 # DAAPD
-## 产品介绍
 
-DAAPD 使用 LinuxServer.io 维护的 `linuxserver/daapd` 镜像，提供 DAAPD/OwnTone 媒体服务器 能力。
+## 应用简介
+DAAPD/OwnTone 媒体服务器。
 
-## 主要功能
+英文说明：DAAPD and OwnTone media server maintained by LinuxServer.io.
 
-- 提供 音乐库共享与 Web 管理 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：媒体。
+- 支持架构：amd64、arm64。
+- 可选版本：`28.10.20250118`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 3689 | 是 |
 
-安装完成后，通过 HTTP 端口访问 Web UI。默认账号为 admin，密码为 changeme。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| MUSIC_PATH | 音乐目录 | ./data/music | 是 |
 
-## 运行说明
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-LinuxServer 已将该镜像标记为 deprecated，并建议迁移到 OwnTone 官方容器。本适配保留 `28.10.20250118` numbered tag。该包使用 bridge 网络暴露 Web UI；局域网发现、AirPlay 等场景可能需要按官方文档改用 host network。
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Introduction
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-DAAPD uses the LinuxServer.io maintained `linuxserver/daapd` image for music library sharing and web management.
-
-## Features
-
-- Provide music library sharing and web management
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open the web UI from the HTTP port. The default username is admin and the password is changeme.
-
-## Runtime Notes
-
-LinuxServer marks this image as deprecated and recommends migrating to the official OwnTone container. This package keeps the `28.10.20250118` numbered tag. It uses bridge networking for the web UI; LAN discovery, AirPlay and similar use cases may require switching to host networking as described in the upstream documentation.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-daapd/>
-- Project website: <https://owntone.github.io/owntone-server/>
+## 参考资料
+- 官网: <https://owntone.github.io/owntone-server/>
+- 文档: <https://docs.linuxserver.io/images/docker-daapd/>
+- 源码: <https://github.com/linuxserver/docker-daapd>

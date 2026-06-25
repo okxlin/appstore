@@ -1,35 +1,41 @@
 # Minetest
-## 产品介绍
 
-Minetest 使用 LinuxServer.io 维护的 `linuxserver/minetest` 镜像，提供 Minetest 沙盒游戏服务器 能力。
+## 应用简介
+Minetest 沙盒游戏服务器。
 
-## 主要功能
+英文说明：Sandbox game server maintained by LinuxServer.io.
 
-- 提供 Minetest 游戏服务器 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：游戏。
+- 支持架构：amd64、arm64。
+- 可选版本：`5.10.0`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_GAME_UDP | 游戏 UDP 端口 | 30000 | 是 |
 
-安装完成后，使用 Minetest 客户端连接服务器地址和 UDP 游戏端口。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/minetest | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-Minetest uses the LinuxServer.io maintained `linuxserver/minetest` image for Minetest game server.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CLI_ARGS | 启动参数 | --gameid devtest | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide Minetest game server
-- Persist configuration and application data
-- Configure service ports from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, connect with a Minetest client using the server address and UDP game port.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-minetest/>
-- Project website: <https://www.minetest.net/>
+## 参考资料
+- 官网: <https://www.minetest.net/>
+- 文档: <https://docs.linuxserver.io/images/docker-minetest/>
+- 源码: <https://github.com/linuxserver/docker-minetest>

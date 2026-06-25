@@ -1,35 +1,48 @@
 # NetBox
-## 产品介绍
 
-NetBox 使用 LinuxServer.io 维护的 `linuxserver/netbox` 镜像，提供 NetBox IPAM 与机房资产管理 能力。
+## 应用简介
+NetBox IPAM 与机房资产管理。
 
-## 主要功能
+英文说明：IPAM and DCIM platform maintained by LinuxServer.io.
 
-- 提供 IP 地址管理与数据中心基础设施管理 能力
-- 持久化保存配置和业务数据
-- 使用安装表单配置服务端口和数据路径
-- 支持自定义时区
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：运维。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`4.6.3`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 访问说明
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | HTTP 端口 | 8000 | 是 |
 
-安装完成后，通过 HTTP 端口访问 NetBox；安装表单中的管理员邮箱和密码会用于初始化账号。
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
+| BASE_PATH | 基础路径 | - | 否 |
+| DB_DATA_PATH | 数据库数据目录 | ./data/db | 是 |
+| REDIS_DATA_PATH | Redis 数据目录 | ./data/redis | 是 |
 
-## Introduction
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-NetBox uses the LinuxServer.io maintained `linuxserver/netbox` image for IPAM and data center infrastructure management.
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| SUPERUSER_EMAIL | 管理员邮箱 | admin@example.com | 是 |
+| SUPERUSER_PASSWORD | 管理员密码 | netbox-change-me | 是 |
+| ALLOWED_HOST | 允许访问主机 | * | 是 |
+| DB_PASSWORD | 数据库密码 | netbox-change-me | 是 |
+| CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
+| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
-## Features
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-- Provide IPAM and data center infrastructure management
-- Persist configuration and application data
-- Configure service ports and data paths from the install form
-- Configure the container time zone
-
-## Access
-
-After installation, open NetBox from the HTTP port; the admin email and password fields initialize the first account.
-
-## Links
-
-- LinuxServer image documentation: <https://docs.linuxserver.io/images/docker-netbox/>
-- Project website: <https://github.com/netbox-community/netbox>
+## 参考资料
+- 官网: <https://github.com/netbox-community/netbox>
+- 文档: <https://docs.linuxserver.io/images/docker-netbox/>
+- 源码: <https://github.com/linuxserver/docker-netbox>

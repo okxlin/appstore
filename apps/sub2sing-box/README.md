@@ -1,63 +1,27 @@
 # sub2sing-box
 
-## cli
+## 应用简介
+将节点和订阅转换为 sing-box 配置。
 
-- convert: 转换
-- server: 启动 Web UI
-- version: 版本信息
+英文说明：Converting nodes and subscriptions to sing-box configuration.
 
-`sub2sing-box <command> -h` 查看帮助
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`、`0.0.11`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## api
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40220 | 是 |
 
-### GET /convert?data=xxx
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-data 为 base64 URL 编码的请求体，示例
-
-```
-{
-  "subscriptions": ["订阅地址1", "订阅地址2"],
-  "proxies": ["代理1", "代理2"],
-  "template": "模板路径",
-  "delete": "",
-  "rename": {"原文本": "新文本"},
-  "group": false,
-  "group-type": "selector",
-  "sort": "name",
-  "sort-type": "asc"
-}
-```
-
-## Template 占位符
-
-- `<all-proxy-tags>`: 插入所有节点标签
-  ```
-  {
-    "type": "selector",
-    "tag": "节点选择",
-    "outbounds": ["<all-proxy-tags>",   "direct"],
-    "interrupt_exist_connections": true
-  }
-  ```
-- `<all-country-tags>`: 插入所有国家标签
-  ```
-  {
-    "type": "selector",
-    "tag": "节点选择",
-    "outbounds": ["<all-country-tags>", "direct"],
-    "interrupt_exist_connections": true
-  }
-  ```
-- `<国家(地区)二字码>`: 插入国家(地区)所有节点标签，例如 `<tw>`
-  ```
-  {
-    "type": "selector",
-    "tag": "巴哈姆特",
-    "outbounds": ["<tw>", "direct"],
-    "interrupt_exist_connections": true
-  }
-  ```
-
-## Docker
-
-`docker run -p 8080:8080 nite07/sub2sing-box`
+## 参考资料
+- 官网: <https://singbox.nite07.com/>
+- 文档: <https://github.com/nitezs/sub2sing-box>

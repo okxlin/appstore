@@ -1,11 +1,24 @@
-⚠️需要网络能够访问telegraph
+# telegraph
 
-# 特点
-图片储存在telegraph
+## 应用简介
+基于 telegraph 的图床，图片大于 5MB 自动压缩。
 
-支持上传大于5MB的图片
+英文说明：Telegraph-based graph bed with automatic compression for images larger than 5MB.
 
-# 使用方法
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40224 | 是 |
+
+## 使用说明
+### 使用方法
 ### 服务器
 安装nginx+php
 下载源码，将文件上传到网站目录，访问域名即可！
@@ -36,6 +49,10 @@ location /file {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```    
-## Star History
+### Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=0-RTT/telegraph&type=Date)](https://star-history.com/#0-RTT/telegraph&Date)
+
+## 参考资料
+- 官网: <https://jiasu.in>
+- 文档: <https://github.com/0-RTT/telegraph>

@@ -1,55 +1,35 @@
 # DashMachine
 
-## 默认账号密码
+## 应用简介
+一个具有有趣功能的 Web 应用程序书签仪表板。
+
+英文说明：A web application bookmark dashboard, with fun features.
+
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40144 | 是 |
+
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
+
+升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+## 使用说明
+### 默认账号密码
 ```
 User: admin
 Password: admin
 ```
 
-## 安装
-
-### Docker
-```
-docker create \
-  --name=dashmachine \
-  -p 5000:5000 \
-  -v path/to/data:/dashmachine/dashmachine/user_data \
-  --restart unless-stopped \
-  rmountjoy/dashmachine:latest
-```
-To run in a subfolder, use a CONTEXT_PATH environment variable. For example, to run at localhost:5000/dash:
-```
-docker create \
-  --name=dashmachine \
-  -p 5000:5000 \
-  -e CONTEXT_PATH=/dash
-  -v path/to/data:/dashmachine/dashmachine/user_data \
-  --restart unless-stopped \
-  rmountjoy/dashmachine:latest
-```
-### Synology
-Check out this awesome guide: https://nashosted.com/manage-your-self-hosted-applications-using-dashmachine/
-### Python
-Instructions are for linux.
-```
-virtualenv --python=python3 DashMachineEnv
-cd DashMachineEnv && source bin/activate
-git clone https://github.com/rmountjoy92/DashMachine.git
-cd DashMachine && pip install -r requirements.txt
-python3 run.py
-```
-Then open a web browser and go to localhost:5000
-
-## FAQs
-1. application does not work in iframe
-see https://github.com/rmountjoy92/DashMachine/issues/6
-
-## 演示
-
-![screenshot](https://raw.githubusercontent.com/rmountjoy92/DashMachine/master/screenshot1.png)
-
-![screenshot](https://raw.githubusercontent.com/rmountjoy92/DashMachine/master/screenshot2.png)
-
-![screenshot](https://raw.githubusercontent.com/rmountjoy92/DashMachine/master/screenshot3.png)
-
-![screenshot](https://raw.githubusercontent.com/rmountjoy92/DashMachine/master/screenshot4.png)
+## 参考资料
+- 官网: <https://github.com/rmountjoy92/DashMachine>

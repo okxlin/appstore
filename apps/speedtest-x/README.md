@@ -1,77 +1,33 @@
-<img src='https://raw.githubusercontent.com/BadApple9/images/main/logo.png'></img>
+# Speedtest-X
 
-![GitHub Actions Build Status](https://img.shields.io/github/workflow/status/badapple9/speedtest-x/Build%20Docker%20Image) ![GitHub last commit](https://img.shields.io/github/last-commit/badapple9/speedtest-x) ![GitHub](https://img.shields.io/github/license/badapple9/speedtest-x)
+## 应用简介
+自托管的速度测试应用程序，提供出色的测试结果数据表。
 
-本仓库为 [LibreSpeed](https://github.com/librespeed/speedtest) 的延伸项目，LibreSpeed 是一个非常轻巧的网站测速工具。
+英文说明：A self-hosted speedtest appilication with an awesome test result datasheet.
 
-speedtest-x 使用文件数据库来保存来自不同用户的测速结果，方便您查看全国不同地域与运营商的测速效果。
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-[English docs](https://github.com/BadApple9/speedtest-x/blob/master/README.md)
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40190 | 是 |
 
-[加入交流 TG 群](https://t.me/xiaozhu5)
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| MAX_LOG_COUNT | 测速结果数量 | 100 | 是 |
+| IP_SERVICE | 使用的 IP 运营商解析服务 (ip.sb / ipinfo.io) | ipinfo.io | 是 |
+| SAME_IP_MULTI_LOGS | 是否允许同一 IP 记录多条测速结果 (true / false) | false | 是 |
 
-**❗ 注意**：基于网页测速的原理，程序会生成无用文件供测速者下载来计算真实下行带宽，一定程度上存在被恶意刷流量的风险，在对外分享你的测速页面后，请注意观察服务器流量使用情况，避免流量使用异常。
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-## 扩展细节
- - 用户测速会上传测速记录并保存至网站服务器
- - 不依赖 MySQL，使用文件数据库
- - IP 库改用 [ip.sb](https://ip.sb)，运营商记录更为精确
-
-## 部署与使用
-
-#### 常规部署 (环境要求：PHP 5.6+)
-
-1、下载本仓库并解压到网站目录，访问 `{域名}/index.html` 进行测速
-
-2、打开 `{域名}/results.html` 查看测速记录 
-
-> Tips：`backend/config.php` 中可定义一些自定义配置：
-> 
-> `MAX_LOG_COUNT = 100`：最大可保存多少条测速记录
->
-> `IP_SERVICE = 'ip.sb'`：使用的 IP 运营商解析服务(ip.sb 或 ipinfo.io)
->
-> `SAME_IP_MULTI_LOGS = false`：是否允许同一IP记录多条测速结果
-
-#### Docker 部署 (支持平台： amd64 / arm64)
-
-1、拉取 [Docker 镜像](https://hub.docker.com/r/badapple9/speedtest-x) `docker pull badapple9/speedtest-x`
-
-2、运行容器 `docker run -d -p 9001:80 -it badapple9/speedtest-x`   
-
-参数解释：
-> **-d**：以常驻进程模式启动
->
-> **9001**: 默认容器开放端口，可改为其他端口
->
-> 启动时可指定的环境变量：
->
-> **-e WEBPORT=80**: 容器内使用的端口
->
-> **-e MAX_LOG_COUNT=100**: 最大可保存多少条测速记录
->
-> **-e IP_SERVICE=ip.sb**: 使用的 IP 运营商解析服务(ip.sb 或 ipinfo.io)
->
-> **-e SAME_IP_MULTI_LOGS=false**: 是否允许同一IP记录多条测速结果
-
-> 如果想让 Docker 容器支持 ipv6，可编辑 `/etc/docker/daemon.json` ，加上以下内容：（如果不存在这个文件则直接创建）
-> ```
-> {
->   "ipv6": true,
->   "fixed-cidr-v6": "fd00::/80",
->   "experimental": true,
->   "ip6tables": true
-> }
-> ```
-
-3、访问 `{IP}:{端口}/index.html` 进行测速
-
-## 截图
-
-![index](https://raw.githubusercontent.com/BadApple9/images/main/indexdemo.png)
-![results](https://raw.githubusercontent.com/BadApple9/images/main/resultsdemo.png)
-
-## 鸣谢
- - [LibreSpeed](https://github.com/librespeed/speedtest)
- - [ip.sb](https://ip.sb)
- - [SleekDB](https://github.com/rakibtg/SleekDB)
+## 参考资料
+- 官网: <https://github.com/BadApple9/speedtest-x>

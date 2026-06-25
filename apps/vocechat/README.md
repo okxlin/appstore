@@ -1,77 +1,35 @@
-# Web Client of VoceChat
+# VoceChat
 
-<center>
-  <img src="https://voce.chat/apple-touch-icon.png" width="100" height="100">
-</center>
-<p>
-<center>
+## 应用简介
+一款支持独立部署的个人云社交媒体聊天服务。
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/privoce/vocechat-web/issues)
-![GitHub issues](https://img.shields.io/github/issues-raw/Privoce/vocechat-web) ![GitHub](https://img.shields.io/github/license/privoce/vocechat-web) ![GitHub top language](https://img.shields.io/github/languages/top/privoce/vocechat-web) ![Docker Pulls](https://img.shields.io/docker/pulls/privoce/vocechat-server)
+英文说明：a secure chat software that supports independent deployment.
 
-</center>
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：工具。
+- 支持架构：amd64、arm64。
+- 可选版本：`latest`、`0.5.20`、`0.5.20-arm64`、`latest-arm64`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-- 🎉 Powered by React & Redux Toolkit
-- ✅ Typescript
-- 📦 PWA
-- 📢 Notification
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40067 | 是 |
 
-## Host your server! Or use our test server
+## 数据持久化
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 
-- Host your own Voce server ([docker image](https://hub.docker.com/r/privoce/vocechat-server/tags)):
-  Run on x86_64 platform:
+升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-```bash
-docker run -d --restart=always \
-  -p 3000:3000 \
-  --name vocechat-server \
-  privoce/vocechat-server:latest
-```
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
-For more server hosting instructions, see our documentation: https://doc.voce.chat/
-
-## Preview
-
-- official site: https://voce.chat
-- live demo: https://privoce.voce.chat/
-- demo API Docs (Swagger): https://dev.voce.chat/api/swagger
-
-- design: https://www.figma.com/file/EHnNr53kNmDWgUT86It6CH/UI
-- text editor: https://plate.udecode.io/docs/installation
-- markdown editor: https://nhn.github.io/tui.editor/latest/
-- redux: [@reduxjs/toolkit](https://redux-toolkit.js.org/introduction/getting-started)
-- indexDB wrapper: https://github.com/localForage/localForage
-
-## Local Development
-
-- `git clone https://github.com/Privoce/vocechat-web vocechat-web`
-
-- `cd vocechat-web & yarn install`
-
-- `yarn start`
-
-- Open `localhost:3009`
-
-### Tools Recommended
-
-- [VS Code](https://code.visualstudio.com/) Editor Recommended
-- VS Code plugins:
-  - [dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): ESLint
-  - [esbenp.prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Prettier
-  - [dsznajder.es7-react-js-snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets): Extensions for React, React-Native and Redux in JS/TS with ES7+ syntax
-
-## License
-
-[GPL v3](https://github.com/Privoce/vocechat-web/blob/main/LICENSE)
-
-## Thanks all the contributors
-
-<a href="https://github.com/privoce/vocechat-web/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=privoce/vocechat-web" />
-</a>
-
-Discuss collaboration: han@privoce.com or https://bridger.chat/han
-  
-Telegram group: https://t.me/opencfdchannel VoceChat: https://voce.chat
-  
-Telegram channel: https://t.me/vocechat_group VoceChat Channel: https://privoce.voce.chat
+## 参考资料
+- 官网: <https://voce.chat>
+- 文档: <https://doc.voce.chat>
+- 源码: <https://github.com/Privoce/vocechat-web>

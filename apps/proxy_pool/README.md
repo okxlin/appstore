@@ -1,20 +1,35 @@
-# ProxyPool 爬虫代理IP池
+# ProxyPool
 
-[![Build Status](https://travis-ci.org/jhao104/proxy_pool.svg?branch=master)](https://travis-ci.org/jhao104/proxy_pool)
-[![](https://img.shields.io/badge/Powered%20by-@j_hao104-green.svg)](http://www.spiderpy.cn/blog/)
-[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/jhao104/proxy_pool/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/jhao104/proxy_pool.svg)](https://github.com/jhao104/proxy_pool/graphs/contributors)
-[![](https://img.shields.io/badge/language-Python-green.svg)](https://github.com/jhao104/proxy_pool)
+## 应用简介
+爬虫代理 IP 池。
 
-    ______                        ______             _
-    | ___ \_                      | ___ \           | |
-    | |_/ / \__ __   __  _ __   _ | |_/ /___   ___  | |
-    |  __/|  _// _ \ \ \/ /| | | ||  __// _ \ / _ \ | |
-    | |   | | | (_) | >  < \ |_| || |  | (_) | (_) || |___
-    \_|   |_|  \___/ /_/\_\ \__  |\_|   \___/ \___/ \_____\
-                           __ / /
-                          /___ /
+英文说明：Python ProxyPool for web spider.
 
-### ProxyPool
+## 部署说明
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 应用分类：DevTool。
+- 支持架构：amd64。
+- 可选版本：`latest`。
+- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-爬虫代理IP池项目,主要功能为定时采集网上发布的免费代理验证入库，定时验证入库的代理保证代理的可用性，提供API和CLI两种使用方式。同时你也可以扩展代理源以增加代理池IP的质量和数量。
+## 端口
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| PANEL_APP_PORT_HTTP | 端口 | 40264 | 是 |
+| REDIS_PORT | Redis 端口 | 6379 | 是 |
+
+## 配置项
+| 变量 | 说明 | 默认值 | 必填 |
+| --- | --- | --- | --- |
+| REDIS_HOST | Redis 主机 | - | 是 |
+| PANEL_REDIS_ROOT_PASSWORD | Redis 密码 | - | 否 |
+| REDIS_DB_NUMBER | Redis 数据库编号 | 7 | 是 |
+
+## 使用说明
+- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
+- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 参考资料
+- 官网: <https://proxy-pool.readthedocs.io>
+- 源码: <https://github.com/jhao104/proxy_pool>
