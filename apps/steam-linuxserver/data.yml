@@ -1,0 +1,29 @@
+name: Steam
+tags:
+- Game
+title: Steam 桌面客户端
+description: Steam 桌面客户端
+additionalProperties:
+  key: steam-linuxserver
+  name: Steam
+  tags:
+  - Game
+  shortDescZh: Steam 桌面客户端
+  shortDescEn: Steam desktop client maintained by LinuxServer.io
+  description:
+    en: Steam desktop client maintained by LinuxServer.io
+    zh: Steam 桌面客户端
+    zh-Hant: Steam 桌面用戶端
+    ja: LinuxServer.io が保守する Steam デスクトップクライアント
+    ko: LinuxServer.io에서 유지 관리하는 Steam 데스크톱 클라이언트
+    ru: Настольный клиент Steam, поддерживаемый LinuxServer.io
+    ms: Klien desktop Steam yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente desktop Steam mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://store.steampowered.com/
+  github: https://github.com/linuxserver/docker-steam
+  document: https://docs.linuxserver.io/images/docker-steam/
+  architectures:
+  - amd64
