@@ -17,8 +17,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - ES_HOST=diskover-elasticsearch
-      - ES_PORT=9200
+      - ES_HOST=${ES_HOST}
+      - ES_PORT=${ES_PORT}
     mem_limit: 4096m
     depends_on:
       - diskover-elasticsearch

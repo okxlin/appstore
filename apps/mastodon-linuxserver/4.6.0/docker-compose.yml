@@ -18,13 +18,13 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - LOCAL_DOMAIN=${LOCAL_DOMAIN}
-      - REDIS_HOST=mastodon-redis
-      - REDIS_PORT=6379
-      - DB_HOST=mastodon-db
-      - DB_USER=mastodon
-      - DB_NAME=mastodon
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_NAME=${DB_NAME}
       - DB_PASS=${DB_PASSWORD}
-      - DB_PORT=5432
+      - DB_PORT=${DB_PORT}
       - ES_ENABLED=false
       - ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=${ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY}
       - ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=${ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY}
@@ -56,8 +56,8 @@ services:
     volumes:
       - "${DB_DATA_PATH}:/var/lib/postgresql/data"
     environment:
-      - POSTGRES_DB=mastodon
-      - POSTGRES_USER=mastodon
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

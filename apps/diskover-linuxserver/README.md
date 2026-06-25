@@ -29,6 +29,8 @@ Diskover 文件系统索引与搜索。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| ES_HOST | Elasticsearch 主机 | diskover-elasticsearch | 是 |
+| ES_PORT | Elasticsearch 端口 | 9200 | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

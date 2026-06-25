@@ -33,7 +33,17 @@ NetBox IPAM 与机房资产管理。
 | SUPERUSER_EMAIL | 管理员邮箱 | admin@example.com | 是 |
 | SUPERUSER_PASSWORD | 管理员密码 | netbox-change-me | 是 |
 | ALLOWED_HOST | 允许访问主机 | * | 是 |
+| DB_HOST | 数据库主机 | netbox-db | 是 |
+| DB_PORT | 数据库端口 | 5432 | 是 |
+| DB_USER | 数据库用户名 | netbox | 是 |
+| DB_NAME | 数据库名称 | netbox | 是 |
 | DB_PASSWORD | 数据库密码 | netbox-change-me | 是 |
+| REDIS_HOST | Redis 主机 | netbox-redis | 是 |
+| REDIS_PORT | Redis 端口 | 6379 | 是 |
+| REDIS_USERNAME | Redis 用户名 | - | 否 |
+| REDIS_PASSWORD | Redis 密码 | - | 否 |
+| REDIS_DB_TASK | Redis 任务数据库 | 0 | 是 |
+| REDIS_DB_CACHE | Redis 缓存数据库 | 1 | 是 |
 | CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
