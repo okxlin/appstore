@@ -29,6 +29,9 @@
 | --- | --- | --- | --- |
 | WEB_PASSWORD | 网页访问密码 | code | 是 |
 | SUDO_PASSWORD | sudo密码 | code | 是 |
+| PROXY_DOMAIN | 反向代理子域名 | - | 否 |
+| DEFAULT_WORKSPACE | 默认工作目录 | /config/workspace | 否 |
+| PWA_APPNAME | PWA 应用名称 | code-server | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
