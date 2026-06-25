@@ -23,6 +23,7 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "BASE_URL" ""
+  ensure_env_default "PLAYWRIGHT_DRIVER_URL" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

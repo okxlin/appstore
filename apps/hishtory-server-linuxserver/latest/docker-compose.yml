@@ -17,5 +17,6 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - HISHTORY_SQLITE_DB=${HISHTORY_SQLITE_DB}
+      - HISHTORY_POSTGRES_DB=${HISHTORY_POSTGRES_DB:-}
     labels:
       createdBy: "Apps"

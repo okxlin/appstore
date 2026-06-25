@@ -17,5 +17,6 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - BASE_URL=${BASE_URL:-}
+      - PLAYWRIGHT_DRIVER_URL=${PLAYWRIGHT_DRIVER_URL:-}
     labels:
       createdBy: "Apps"

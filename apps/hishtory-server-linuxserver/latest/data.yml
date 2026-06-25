@@ -49,6 +49,22 @@ additionalProperties:
       pt-br: Caminho do banco SQLite
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: HISHTORY_POSTGRES_DB
+    labelEn: PostgreSQL connection URI
+    labelZh: PostgreSQL 连接 URI
+    label:
+      en: PostgreSQL connection URI
+      zh: PostgreSQL 连接 URI
+      zh-Hant: PostgreSQL 連線 URI
+      ja: PostgreSQL 接続 URI
+      ko: PostgreSQL 연결 URI
+      ru: URI подключения PostgreSQL
+      ms: URI sambungan PostgreSQL
+      pt-br: URI de conexao PostgreSQL
+    required: false
+    type: password
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

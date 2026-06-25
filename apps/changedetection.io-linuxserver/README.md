@@ -29,6 +29,7 @@ ChangeDetection.io 网页变更监控。
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | BASE_URL | 反向代理后使用的完整访问 URL（含协议） | - | 否 |
+| PLAYWRIGHT_DRIVER_URL | Playwright 驱动 URL | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

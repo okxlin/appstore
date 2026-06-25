@@ -23,6 +23,7 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "HISHTORY_SQLITE_DB" "/config/hishtory.db"
+  ensure_env_default "HISHTORY_POSTGRES_DB" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

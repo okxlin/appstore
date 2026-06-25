@@ -66,3 +66,20 @@ additionalProperties:
     required: false
     rule: paramExtUrl
     type: text
+  - default: ''
+    edit: true
+    envKey: PLAYWRIGHT_DRIVER_URL
+    labelEn: Playwright driver URL
+    labelZh: Playwright 驱动 URL
+    label:
+      en: Playwright driver URL
+      zh: Playwright 驱动 URL
+      zh-Hant: Playwright 驅動 URL
+      ja: Playwright ドライバー URL
+      ko: Playwright 드라이버 URL
+      ru: URL драйвера Playwright
+      ms: URL pemacu Playwright
+      pt-br: URL do driver Playwright
+    required: false
+    rule: paramExtUrl
+    type: text
