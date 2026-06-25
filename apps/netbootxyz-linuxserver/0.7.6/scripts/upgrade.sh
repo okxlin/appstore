@@ -23,6 +23,8 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "PORT_RANGE" "30000:30010"
+  ensure_env_default "NGINX_PORT" "80"
+  ensure_env_default "WEB_APP_PORT" "3000"
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

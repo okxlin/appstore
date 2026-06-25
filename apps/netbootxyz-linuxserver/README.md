@@ -33,6 +33,8 @@ netboot.xyz 网络启动服务。
 | --- | --- | --- | --- |
 | MENU_VERSION | 菜单版本 | 1.9.9 | 否 |
 | PORT_RANGE | TFTP 数据端口范围 | 30000:30010 | 否 |
+| NGINX_PORT | 资源内部端口 | 80 | 是 |
+| WEB_APP_PORT | Web 应用内部端口 | 3000 | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

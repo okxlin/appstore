@@ -16,6 +16,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - HISHTORY_SQLITE_DB=/config/hishtory.db
+      - HISHTORY_SQLITE_DB=${HISHTORY_SQLITE_DB}
     labels:
       createdBy: "Apps"
