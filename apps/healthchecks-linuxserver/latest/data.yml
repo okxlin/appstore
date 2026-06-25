@@ -100,6 +100,107 @@ additionalProperties:
       pt-br: Nome do site
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: ALLOWED_HOSTS
+    labelEn: Allowed hosts
+    labelZh: 允许的主机名
+    label:
+      en: Allowed hosts
+      zh: 允许的主机名
+      zh-Hant: 允許的主機名稱
+      ja: 許可されたホスト
+      ko: 허용된 호스트
+      ru: Разрешенные имена хостов
+      ms: Hos dibenarkan
+      pt-br: Hosts permitidos
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: CSRF_TRUSTED_ORIGINS
+    labelEn: CSRF trusted origins
+    labelZh: CSRF 可信来源
+    label:
+      en: CSRF trusted origins
+      zh: CSRF 可信来源
+      zh-Hant: CSRF 可信來源
+      ja: CSRF 信頼済みオリジン
+      ko: CSRF 신뢰 출처
+      ru: Доверенные источники CSRF
+      ms: Asal dipercayai CSRF
+      pt-br: Origens CSRF confiaveis
+    required: false
+    type: text
+  - default: "False"
+    edit: true
+    envKey: APPRISE_ENABLED
+    labelEn: Enable Apprise
+    labelZh: 启用 Apprise
+    label:
+      en: Enable Apprise
+      zh: 启用 Apprise
+      zh-Hant: 啟用 Apprise
+      ja: Apprise を有効化
+      ko: Apprise 활성화
+      ru: Включить Apprise
+      ms: Dayakan Apprise
+      pt-br: Ativar Apprise
+    required: false
+    type: select
+    values:
+      - label: "True"
+        value: "True"
+      - label: "False"
+        value: "False"
+  - default: ''
+    edit: true
+    envKey: PING_EMAIL_DOMAIN
+    labelEn: Ping email domain
+    labelZh: Ping 邮件域名
+    label:
+      en: Ping email domain
+      zh: Ping 邮件域名
+      zh-Hant: Ping 郵件網域
+      ja: Ping メールドメイン
+      ko: Ping 이메일 도메인
+      ru: Домен email-ping
+      ms: Domain e-mel ping
+      pt-br: Dominio de email ping
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: RP_ID
+    labelEn: WebAuthn RP ID
+    labelZh: WebAuthn RP ID
+    label:
+      en: WebAuthn RP ID
+      zh: WebAuthn RP ID
+      zh-Hant: WebAuthn RP ID
+      ja: WebAuthn RP ID
+      ko: WebAuthn RP ID
+      ru: WebAuthn RP ID
+      ms: WebAuthn RP ID
+      pt-br: WebAuthn RP ID
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: SITE_LOGO_URL
+    labelEn: Site logo URL
+    labelZh: 站点 Logo URL
+    label:
+      en: Site logo URL
+      zh: 站点 Logo URL
+      zh-Hant: 站台 Logo URL
+      ja: サイトロゴ URL
+      ko: 사이트 로고 URL
+      ru: URL логотипа сайта
+      ms: URL logo tapak
+      pt-br: URL do logo do site
+    required: false
+    type: text
   - default: admin@example.com
     edit: true
     envKey: SUPERUSER_EMAIL

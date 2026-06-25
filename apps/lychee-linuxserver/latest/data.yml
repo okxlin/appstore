@@ -114,6 +114,38 @@ additionalProperties:
       pt-br: Proxies confiaveis
     required: false
     type: text
+  - default: sqlite
+    edit: true
+    envKey: DB_CONNECTION
+    labelEn: Database connection
+    labelZh: 数据库连接类型
+    label:
+      en: Database connection
+      zh: 数据库连接类型
+      zh-Hant: 資料庫連線類型
+      ja: データベース接続種別
+      ko: 데이터베이스 연결 유형
+      ru: Тип подключения базы данных
+      ms: Jenis sambungan pangkalan data
+      pt-br: Tipo de conexao do banco
+    required: true
+    type: text
+  - default: /config/lychee.sqlite
+    edit: true
+    envKey: DB_DATABASE
+    labelEn: Database name or path
+    labelZh: 数据库名称或路径
+    label:
+      en: Database name or path
+      zh: 数据库名称或路径
+      zh-Hant: 資料庫名稱或路徑
+      ja: データベース名またはパス
+      ko: 데이터베이스 이름 또는 경로
+      ru: Имя или путь базы данных
+      ms: Nama atau laluan pangkalan data
+      pt-br: Nome ou caminho do banco
+    required: true
+    type: text
   - default: ''
     edit: true
     envKey: DB_HOST

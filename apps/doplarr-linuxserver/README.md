@@ -29,6 +29,12 @@ Doplarr Discord 媒体请求机器人。
 | RADARR_URL | Radarr 地址 | http://localhost:7878 | 否 |
 | SONARR_API | Sonarr API 密钥 | - | 否 |
 | SONARR_URL | Sonarr 地址 | http://localhost:8989 | 否 |
+| SONARR_QUALITY_PROFILE | Sonarr 质量配置 | - | 否 |
+| RADARR_QUALITY_PROFILE | Radarr 质量配置 | - | 否 |
+| SONARR_ROOTFOLDER | Sonarr 根目录 | - | 否 |
+| RADARR_ROOTFOLDER | Radarr 根目录 | - | 否 |
+| SONARR_LANGUAGE_PROFILE | Sonarr 语言配置 | - | 否 |
+| OVERSEERR_DEFAULT_ID | Overseerr 默认用户 ID | - | 否 |
 | DISCORD_MAX_RESULTS | 最大搜索结果数 | 25 | 是 |
 | DISCORD_REQUESTED_MSG_STYLE | 请求消息样式 | :plain | 是 |
 | PARTIAL_SEASONS | 允许部分季请求 | true | 是 |

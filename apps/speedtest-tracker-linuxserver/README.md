@@ -30,6 +30,7 @@ Speedtest Tracker 网速监测。
 | APP_KEY | 应用密钥 | base64:dGVzdGluZy1saW51eHNlcnZlci1hcHBzLTEyMzQ1Njc= | 是 |
 | APP_URL | 应用访问 URL | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| DISPLAY_TIMEZONE | 显示时区 | Asia/Shanghai | 否 |
 | SPEEDTEST_SCHEDULE | 测速计划 | 0 */6 * * * | 否 |
 | SPEEDTEST_SERVERS | 测速服务器 ID | - | 否 |
 | PRUNE_RESULTS_OLDER_THAN | 测速结果保留天数，0 表示不清理 | 0 | 否 |

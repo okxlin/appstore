@@ -31,6 +31,12 @@ Healthchecks 定时任务监控。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | SECRET_KEY | 密钥 | - | 是 |
+| ALLOWED_HOSTS | 允许的主机名 | - | 否 |
+| APPRISE_ENABLED | 启用 Apprise | False | 否 |
+| CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
+| PING_EMAIL_DOMAIN | Ping 邮件域名 | - | 否 |
+| RP_ID | WebAuthn RP ID | - | 否 |
+| SITE_LOGO_URL | 站点 Logo URL | - | 否 |
 | SUPERUSER_EMAIL | 管理员邮箱 | admin@example.com | 是 |
 | SUPERUSER_PASSWORD | 管理员密码 | - | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |

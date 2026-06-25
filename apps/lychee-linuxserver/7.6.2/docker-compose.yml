@@ -17,12 +17,12 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - DB_CONNECTION=sqlite
+      - DB_CONNECTION=${DB_CONNECTION}
       - DB_HOST=${DB_HOST:-}
       - DB_PORT=${DB_PORT:-}
       - DB_USERNAME=${DB_USERNAME:-}
       - DB_PASSWORD=${DB_PASSWORD:-}
-      - DB_DATABASE=/config/lychee.sqlite
+      - DB_DATABASE=${DB_DATABASE}
       - APP_NAME=${APP_NAME:-Lychee}
       - APP_URL=${APP_URL:-}
       - TRUSTED_PROXIES=${TRUSTED_PROXIES:-}

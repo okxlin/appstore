@@ -33,6 +33,8 @@ Lychee 相册管理。
 | APP_NAME | 相册名称 | Lychee | 否 |
 | APP_URL | 对外访问 URL | - | 否 |
 | TRUSTED_PROXIES | 反向代理 IP 或网段，公网环境不要填写 * | - | 否 |
+| DB_CONNECTION | 数据库连接类型 | sqlite | 是 |
+| DB_DATABASE | 数据库名称或路径 | /config/lychee.sqlite | 是 |
 | DB_HOST | 数据库主机 | - | 否 |
 | DB_USERNAME | 数据库用户名 | - | 否 |
 | DB_PASSWORD | 数据库密码 | - | 否 |

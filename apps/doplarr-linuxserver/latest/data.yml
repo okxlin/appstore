@@ -116,6 +116,102 @@ additionalProperties:
     required: false
     type: text
     rule: paramExtUrl
+  - default: ""
+    edit: true
+    envKey: SONARR_QUALITY_PROFILE
+    labelEn: Sonarr quality profile
+    labelZh: Sonarr 质量配置
+    label:
+      en: Sonarr quality profile
+      zh: Sonarr 质量配置
+      zh-Hant: Sonarr 品質設定檔
+      ja: Sonarr 品質プロファイル
+      ko: Sonarr 품질 프로필
+      ru: Профиль качества Sonarr
+      ms: Profil kualiti Sonarr
+      pt-br: Perfil de qualidade Sonarr
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: RADARR_QUALITY_PROFILE
+    labelEn: Radarr quality profile
+    labelZh: Radarr 质量配置
+    label:
+      en: Radarr quality profile
+      zh: Radarr 质量配置
+      zh-Hant: Radarr 品質設定檔
+      ja: Radarr 品質プロファイル
+      ko: Radarr 품질 프로필
+      ru: Профиль качества Radarr
+      ms: Profil kualiti Radarr
+      pt-br: Perfil de qualidade Radarr
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: SONARR_ROOTFOLDER
+    labelEn: Sonarr root folder
+    labelZh: Sonarr 根目录
+    label:
+      en: Sonarr root folder
+      zh: Sonarr 根目录
+      zh-Hant: Sonarr 根目錄
+      ja: Sonarr ルートフォルダー
+      ko: Sonarr 루트 폴더
+      ru: Корневая папка Sonarr
+      ms: Folder akar Sonarr
+      pt-br: Pasta raiz Sonarr
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: RADARR_ROOTFOLDER
+    labelEn: Radarr root folder
+    labelZh: Radarr 根目录
+    label:
+      en: Radarr root folder
+      zh: Radarr 根目录
+      zh-Hant: Radarr 根目錄
+      ja: Radarr ルートフォルダー
+      ko: Radarr 루트 폴더
+      ru: Корневая папка Radarr
+      ms: Folder akar Radarr
+      pt-br: Pasta raiz Radarr
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: SONARR_LANGUAGE_PROFILE
+    labelEn: Sonarr language profile
+    labelZh: Sonarr 语言配置
+    label:
+      en: Sonarr language profile
+      zh: Sonarr 语言配置
+      zh-Hant: Sonarr 語言設定檔
+      ja: Sonarr 言語プロファイル
+      ko: Sonarr 언어 프로필
+      ru: Языковой профиль Sonarr
+      ms: Profil bahasa Sonarr
+      pt-br: Perfil de idioma Sonarr
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: OVERSEERR_DEFAULT_ID
+    labelEn: Overseerr default user ID
+    labelZh: Overseerr 默认用户 ID
+    label:
+      en: Overseerr default user ID
+      zh: Overseerr 默认用户 ID
+      zh-Hant: Overseerr 預設使用者 ID
+      ja: Overseerr 既定ユーザー ID
+      ko: Overseerr 기본 사용자 ID
+      ru: ID пользователя Overseerr по умолчанию
+      ms: ID pengguna lalai Overseerr
+      pt-br: ID de usuario padrao Overseerr
+    required: false
+    type: text
   - default: 25
     edit: true
     envKey: DISCORD_MAX_RESULTS

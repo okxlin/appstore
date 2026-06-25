@@ -23,6 +23,7 @@ ensure_env_default() {
 
 if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "PRUNE_RESULTS_OLDER_THAN" "0"
+  ensure_env_default "DISPLAY_TIMEZONE" "Asia/Shanghai"
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

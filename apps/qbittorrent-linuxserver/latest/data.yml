@@ -34,23 +34,6 @@ additionalProperties:
       ru: Порт прослушивания BT-загрузок
       ms: Port pendengar muat turun BT
       pt-br: Porta de escuta de download BT
-  - default: 6881
-    edit: true
-    envKey: PANEL_APP_PORT_BT_DOWNLOAD_DHT_LISTENER
-    labelEn: BT download DHT listener port (UDP)
-    labelZh: BT下载DHT监听端口(UDP)
-    required: true
-    rule: paramPort
-    type: number
-    label:
-      en: BT download DHT listener port (UDP)
-      zh: BT下载DHT监听端口(UDP)
-      zh-Hant: BT 下載 DHT 監聽連接埠 (UDP)
-      ja: BT ダウンロード DHT 待受ポート (UDP)
-      ko: BT 다운로드 DHT 수신 포트 (UDP)
-      ru: Порт прослушивания DHT для BT-загрузок (UDP)
-      ms: Port pendengar DHT muat turun BT (UDP)
-      pt-br: Porta de escuta DHT de download BT (UDP)
   - default: ./data/config
     edit: true
     envKey: CONFIG_PATH

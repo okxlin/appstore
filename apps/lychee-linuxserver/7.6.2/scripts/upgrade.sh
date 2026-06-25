@@ -25,6 +25,8 @@ if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "APP_NAME" "Lychee"
   ensure_env_default "APP_URL" ""
   ensure_env_default "TRUSTED_PROXIES" ""
+  ensure_env_default "DB_CONNECTION" "sqlite"
+  ensure_env_default "DB_DATABASE" "/config/lychee.sqlite"
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi
