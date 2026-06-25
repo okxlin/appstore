@@ -50,3 +50,24 @@ additionalProperties:
         pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
+    - default: "false"
+      edit: true
+      envKey: ALLOW_INTERNAL_REQUESTS
+      labelEn: Allow internal requests
+      labelZh: 允许请求内网地址
+      label:
+        en: Allow internal requests
+        zh: 允许请求内网地址
+        zh-Hant: 允許請求內網位址
+        ja: 内部アドレスへのリクエストを許可
+        ko: 내부 주소 요청 허용
+        ru: Разрешить запросы к внутренним адресам
+        ms: Benarkan permintaan alamat dalaman
+        pt-br: Permitir requisicoes a enderecos internos
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"

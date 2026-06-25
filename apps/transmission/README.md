@@ -21,6 +21,7 @@
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件夹路径 | ./data/config | 是 |
 | WATCH_PATH | 监视种子文件的文件夹 | ./data/watch | 是 |
 | DOWNLOAD_PATH | 下载文件夹路径 | ./data/downloads | 是 |
 
@@ -31,6 +32,9 @@
 | --- | --- | --- | --- |
 | WEBUI_USER | 网页用户 | - | 否 |
 | WEBUI_PWD | 网页密码 | - | 否 |
+| TRANSMISSION_WEB_HOME | 替代 Web UI 路径 | - | 否 |
+| WHITELIST | RPC IP 白名单 | - | 否 |
+| HOST_WHITELIST | RPC 主机名白名单 | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

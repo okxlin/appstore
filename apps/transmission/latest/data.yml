@@ -50,6 +50,22 @@ additionalProperties:
         pt-br: 'Pasta monitorada para arquivos torrent'
       required: true
       type: text
+    - default: ./data/config
+      edit: true
+      envKey: CONFIG_PATH
+      labelEn: Config folder path
+      labelZh: 配置文件夹路径
+      label:
+        en: Config folder path
+        zh: 配置文件夹路径
+        zh-Hant: 設定資料夾路徑
+        ja: 設定フォルダパス
+        ko: 설정 폴더 경로
+        ru: Путь к папке конфигурации
+        ms: Laluan folder konfigurasi
+        pt-br: Caminho da pasta de configuracao
+      required: true
+      type: text
     - default: ./data/downloads
       edit: true
       envKey: DOWNLOAD_PATH
@@ -100,3 +116,51 @@ additionalProperties:
       required: false
       rule: paramComplexity
       type: password
+    - default: ""
+      edit: true
+      envKey: TRANSMISSION_WEB_HOME
+      labelEn: Alternative Web UI path
+      labelZh: 替代 Web UI 路径
+      label:
+        en: Alternative Web UI path
+        zh: 替代 Web UI 路径
+        zh-Hant: 替代 Web UI 路徑
+        ja: 代替 Web UI パス
+        ko: 대체 Web UI 경로
+        ru: Путь альтернативного Web UI
+        ms: Laluan Web UI alternatif
+        pt-br: Caminho alternativo do Web UI
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: WHITELIST
+      labelEn: RPC IP whitelist
+      labelZh: RPC IP 白名单
+      label:
+        en: RPC IP whitelist
+        zh: RPC IP 白名单
+        zh-Hant: RPC IP 白名單
+        ja: RPC IP ホワイトリスト
+        ko: RPC IP 허용 목록
+        ru: Белый список IP для RPC
+        ms: Senarai putih IP RPC
+        pt-br: Lista de IPs permitidos para RPC
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: HOST_WHITELIST
+      labelEn: RPC host whitelist
+      labelZh: RPC 主机名白名单
+      label:
+        en: RPC host whitelist
+        zh: RPC 主机名白名单
+        zh-Hant: RPC 主機名白名單
+        ja: RPC ホスト名ホワイトリスト
+        ko: RPC 호스트 허용 목록
+        ru: Белый список имен хостов RPC
+        ms: Senarai putih hos RPC
+        pt-br: Lista de hosts permitidos para RPC
+      required: false
+      type: text
