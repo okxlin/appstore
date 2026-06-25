@@ -29,6 +29,10 @@ Monica 个人关系管理系统。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DB_HOST | 数据库主机 | monica-db | 是 |
+| DB_PORT | 数据库端口 | 3306 | 是 |
+| DB_USERNAME | 数据库用户名 | monica | 是 |
+| DB_DATABASE | 数据库名称 | monica | 是 |
 | DB_PASSWORD | 数据库密码 | monica-change-me | 是 |
 | APP_URL | 应用访问 URL | http://localhost | 是 |
 | TRUSTED_PROXIES | 可信代理 | - | 否 |

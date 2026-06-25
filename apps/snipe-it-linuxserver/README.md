@@ -32,6 +32,10 @@ Snipe-IT 资产管理系统。
 | APP_KEY | 应用密钥 | base64:K4tN8COBEIginakyKQ4SGfoAskVW1leA/A0qSEDucFQ= | 是 |
 | APP_URL | 应用访问 URL | http://localhost:8080 | 是 |
 | APP_FORCE_TLS | 强制 TLS | false | 否 |
+| MYSQL_PORT_3306_TCP_ADDR | 数据库主机 | snipe-it-db | 是 |
+| MYSQL_PORT_3306_TCP_PORT | 数据库端口 | 3306 | 是 |
+| MYSQL_DATABASE | 数据库名称 | snipeit | 是 |
+| MYSQL_USER | 数据库用户名 | snipeit | 是 |
 | DB_PASSWORD | 数据库密码 | snipeit-change-me | 是 |
 | APP_LOCALE | 应用语言 | - | 否 |
 | MAIL_HOST | SMTP 主机 | - | 否 |

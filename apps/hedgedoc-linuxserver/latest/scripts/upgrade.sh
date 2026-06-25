@@ -22,9 +22,15 @@ ensure_env_default() {
 }
 
 if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_default "DB_HOST" "hedgedoc-db"
+  ensure_env_default "DB_PORT" "3306"
+  ensure_env_default "DB_USER" "hedgedoc"
+  ensure_env_default "DB_NAME" "hedgedoc"
   ensure_env_default "CMD_URL_ADDPORT" "true"
   ensure_env_default "CMD_PROTOCOL_USESSL" "false"
+  ensure_env_default "CMD_PORT" "3000"
   ensure_env_default "CMD_ALLOW_ORIGIN" "['localhost']"
+  ensure_env_default "CMD_DB_DIALECT" "mariadb"
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

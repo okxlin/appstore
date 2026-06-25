@@ -18,10 +18,10 @@ services:
       - TZ=${TIME_ZONE}
       - APP_KEY=${APP_KEY}
       - APP_URL=${APP_URL}
-      - MYSQL_PORT_3306_TCP_ADDR=snipe-it-db
-      - MYSQL_PORT_3306_TCP_PORT=3306
-      - MYSQL_DATABASE=snipeit
-      - MYSQL_USER=snipeit
+      - MYSQL_PORT_3306_TCP_ADDR=${MYSQL_PORT_3306_TCP_ADDR}
+      - MYSQL_PORT_3306_TCP_PORT=${MYSQL_PORT_3306_TCP_PORT}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - APP_DEBUG=false
       - APP_ENV=production
@@ -47,8 +47,8 @@ services:
       - "${DB_DATA_PATH}:/var/lib/mysql"
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
-      - MARIADB_DATABASE=snipeit
-      - MARIADB_USER=snipeit
+      - MARIADB_DATABASE=${MYSQL_DATABASE}
+      - MARIADB_USER=${MYSQL_USER}
       - MARIADB_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

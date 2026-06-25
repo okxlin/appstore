@@ -22,6 +22,10 @@ ensure_env_default() {
 }
 
 if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_default "MYSQL_PORT_3306_TCP_ADDR" "snipe-it-db"
+  ensure_env_default "MYSQL_PORT_3306_TCP_PORT" "3306"
+  ensure_env_default "MYSQL_DATABASE" "snipeit"
+  ensure_env_default "MYSQL_USER" "snipeit"
   ensure_env_default "APP_FORCE_TLS" "false"
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"

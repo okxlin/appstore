@@ -33,6 +33,70 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: hedgedoc-db
+    edit: true
+    envKey: DB_HOST
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco
+    required: true
+    type: text
+  - default: 3306
+    edit: true
+    envKey: DB_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco
+    required: true
+    type: number
+  - default: hedgedoc
+    edit: true
+    envKey: DB_USER
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Имя пользователя базы
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco
+    required: true
+    type: text
+  - default: hedgedoc
+    edit: true
+    envKey: DB_NAME
+    labelEn: Database name
+    labelZh: 数据库名称
+    label:
+      en: Database name
+      zh: 数据库名称
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco
+    required: true
+    type: text
   - default: hedgedoc-change-me
     edit: true
     envKey: DB_PASSWORD
@@ -108,6 +172,22 @@ additionalProperties:
         value: "true"
       - label: "false"
         value: "false"
+  - default: 3000
+    edit: true
+    envKey: CMD_PORT
+    labelEn: Internal application port
+    labelZh: 应用内部端口
+    label:
+      en: Internal application port
+      zh: 应用内部端口
+      zh-Hant: 應用程式內部連接埠
+      ja: アプリケーション内部ポート
+      ko: 애플리케이션 내부 포트
+      ru: Внутренний порт приложения
+      ms: Port dalaman aplikasi
+      pt-br: Porta interna do aplicativo
+    required: true
+    type: number
   - default: "['localhost']"
     edit: true
     envKey: CMD_ALLOW_ORIGIN
@@ -124,6 +204,25 @@ additionalProperties:
       pt-br: Origens permitidas
     required: false
     type: text
+  - default: mariadb
+    edit: true
+    envKey: CMD_DB_DIALECT
+    labelEn: Database dialect
+    labelZh: 数据库类型
+    label:
+      en: Database dialect
+      zh: 数据库类型
+      zh-Hant: 資料庫類型
+      ja: データベース種別
+      ko: 데이터베이스 유형
+      ru: Тип базы данных
+      ms: Jenis pangkalan data
+      pt-br: Tipo do banco
+    required: true
+    type: select
+    values:
+      - label: mariadb
+        value: mariadb
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH

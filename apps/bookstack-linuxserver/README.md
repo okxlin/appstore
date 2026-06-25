@@ -30,6 +30,10 @@ BookStack 文档知识库。
 | --- | --- | --- | --- |
 | APP_URL | 应用访问 URL | http://localhost:6875 | 是 |
 | APP_KEY | 应用密钥 | base64:j1wQ2YbRrQ3j0tG5h6v8cYpV1gW9mN4uQ2xZ7aE3sT8= | 是 |
+| DB_HOST | 数据库主机 | bookstack-db | 是 |
+| DB_PORT | 数据库端口 | 3306 | 是 |
+| DB_USERNAME | 数据库用户名 | bookstack | 是 |
+| DB_DATABASE | 数据库名称 | bookstack | 是 |
 | DB_PASSWORD | 数据库密码 | bookstack-change-me | 是 |
 | QUEUE_CONNECTION | 异步队列连接 |  | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |

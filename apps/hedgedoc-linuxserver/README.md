@@ -28,11 +28,17 @@ HedgeDoc 协作文档编辑器。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DB_HOST | 数据库主机 | hedgedoc-db | 是 |
+| DB_PORT | 数据库端口 | 3306 | 是 |
+| DB_USER | 数据库用户名 | hedgedoc | 是 |
+| DB_NAME | 数据库名称 | hedgedoc | 是 |
 | DB_PASSWORD | 数据库密码 | hedgedoc-change-me | 是 |
 | CMD_DOMAIN | 访问域名 | localhost | 是 |
 | CMD_URL_ADDPORT | URL 添加端口 | true | 否 |
 | CMD_PROTOCOL_USESSL | 使用 HTTPS 协议 | false | 否 |
+| CMD_PORT | 应用内部端口 | 3000 | 是 |
 | CMD_ALLOW_ORIGIN | 允许的来源 | ['localhost'] | 否 |
+| CMD_DB_DIALECT | 数据库类型 | mariadb | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明
