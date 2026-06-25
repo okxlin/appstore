@@ -1,0 +1,31 @@
+name: RustDesk
+tags:
+- Tool
+title: RustDesk 远程桌面客户端
+description: RustDesk 远程桌面客户端
+additionalProperties:
+  key: rustdesk-linuxserver
+  name: RustDesk
+  tags:
+  - Tool
+  shortDescZh: RustDesk 远程桌面客户端
+  shortDescEn: RustDesk desktop client maintained by LinuxServer.io
+  description:
+    en: RustDesk desktop client maintained by LinuxServer.io
+    zh: RustDesk 远程桌面客户端
+    zh-Hant: RustDesk 遠端桌面用戶端
+    ja: LinuxServer.io が保守する RustDesk デスクトップクライアント
+    ko: LinuxServer.io에서 유지 관리하는 RustDesk 데스크톱 클라이언트
+    ru: Настольный клиент RustDesk, поддерживаемый LinuxServer.io
+    ms: Klien desktop RustDesk yang diselenggara oleh LinuxServer.io
+    pt-br: Cliente desktop RustDesk mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://rustdesk.com/
+  github: https://github.com/linuxserver/docker-rustdesk
+  document: https://docs.linuxserver.io/images/docker-rustdesk/
+  architectures:
+  - amd64
+  - arm64
+
