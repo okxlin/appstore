@@ -31,5 +31,6 @@ services:
       - DISCORD__REQUESTED_MSG_STYLE=${DISCORD_REQUESTED_MSG_STYLE}
       - PARTIAL_SEASONS=${PARTIAL_SEASONS}
       - LOG_LEVEL=${LOG_LEVEL}
+      - JAVA_OPTS=${JAVA_OPTS:-}
     labels:
       createdBy: "Apps"

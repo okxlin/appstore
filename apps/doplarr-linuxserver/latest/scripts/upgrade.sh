@@ -28,6 +28,7 @@ if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "RADARR_ROOTFOLDER" ""
   ensure_env_default "SONARR_LANGUAGE_PROFILE" ""
   ensure_env_default "OVERSEERR_DEFAULT_ID" ""
+  ensure_env_default "JAVA_OPTS" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

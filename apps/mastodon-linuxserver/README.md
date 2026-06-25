@@ -33,6 +33,7 @@ Mastodon ActivityPub 社交网络服务。
 | --- | --- | --- | --- |
 | LOCAL_DOMAIN | 实例域名 | example.com | 是 |
 | WEB_DOMAIN | Web 域名 | - | 否 |
+| MASTODON_PROMETHEUS_EXPORTER_ENABLED | Prometheus 导出器 | false | 否 |
 | DB_PASSWORD | 数据库密码 | mastodon-change-me | 是 |
 | ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY | 密钥值 | fGWkJDBwyRYhILyO7akZGLSSz0gAjPpo | 是 |
 | ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY | 密钥值 | Z8BE3tc3XnmUr0MbRexRiPN7vcP52VX0 | 是 |

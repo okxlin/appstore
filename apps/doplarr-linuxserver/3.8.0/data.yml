@@ -297,6 +297,22 @@ additionalProperties:
       value: :warn
     - label: :error
       value: :error
+  - default: ""
+    edit: true
+    envKey: JAVA_OPTS
+    labelEn: Java options
+    labelZh: Java 参数
+    label:
+      en: Java options
+      zh: Java 参数
+      zh-Hant: Java 參數
+      ja: Java オプション
+      ko: Java 옵션
+      ru: Параметры Java
+      ms: Pilihan Java
+      pt-br: Opcoes Java
+    required: false
+    type: text
   - default: ./data/config
     edit: true
     envKey: CONFIG_PATH

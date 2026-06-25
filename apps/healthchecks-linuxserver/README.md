@@ -38,6 +38,12 @@ Healthchecks 定时任务监控。
 | PING_EMAIL_DOMAIN | Ping 邮件域名 | - | 否 |
 | RP_ID | WebAuthn RP ID | - | 否 |
 | SITE_LOGO_URL | 站点 Logo URL | - | 否 |
+| DEFAULT_FROM_EMAIL | 默认发件邮箱 | - | 否 |
+| EMAIL_HOST | SMTP 主机 | - | 否 |
+| EMAIL_PORT | SMTP 端口 | - | 否 |
+| EMAIL_HOST_USER | SMTP 用户 | - | 否 |
+| EMAIL_HOST_PASSWORD | SMTP 密码 | - | 否 |
+| EMAIL_USE_TLS | SMTP TLS | - | 否 |
 | SUPERUSER_EMAIL | 管理员邮箱 | admin@example.com | 是 |
 | SUPERUSER_PASSWORD | 管理员密码 | - | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |

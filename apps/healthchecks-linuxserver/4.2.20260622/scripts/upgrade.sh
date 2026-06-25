@@ -29,6 +29,12 @@ if [[ -f "$ENV_FILE" ]]; then
   ensure_env_default "PING_EMAIL_DOMAIN" ""
   ensure_env_default "RP_ID" ""
   ensure_env_default "SITE_LOGO_URL" ""
+  ensure_env_default "DEFAULT_FROM_EMAIL" ""
+  ensure_env_default "EMAIL_HOST" ""
+  ensure_env_default "EMAIL_PORT" ""
+  ensure_env_default "EMAIL_HOST_USER" ""
+  ensure_env_default "EMAIL_HOST_PASSWORD" ""
+  ensure_env_default "EMAIL_USE_TLS" ""
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi

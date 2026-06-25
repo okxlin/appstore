@@ -222,6 +222,109 @@ additionalProperties:
       pt-br: URL do logo do site
     required: false
     type: text
+  - default: ''
+    edit: true
+    envKey: DEFAULT_FROM_EMAIL
+    labelEn: Default from email
+    labelZh: 默认发件邮箱
+    label:
+      en: Default from email
+      zh: 默认发件邮箱
+      zh-Hant: 預設寄件信箱
+      ja: デフォルト送信元メール
+      ko: 기본 발신 이메일
+      ru: Email отправителя по умолчанию
+      ms: E-mel penghantar lalai
+      pt-br: Email remetente padrao
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: EMAIL_HOST
+    labelEn: SMTP host
+    labelZh: SMTP 主机
+    label:
+      en: SMTP host
+      zh: SMTP 主机
+      zh-Hant: SMTP 主機
+      ja: SMTP ホスト
+      ko: SMTP 호스트
+      ru: SMTP-хост
+      ms: Hos SMTP
+      pt-br: Host SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: EMAIL_PORT
+    labelEn: SMTP port
+    labelZh: SMTP 端口
+    label:
+      en: SMTP port
+      zh: SMTP 端口
+      zh-Hant: SMTP 連接埠
+      ja: SMTP ポート
+      ko: SMTP 포트
+      ru: Порт SMTP
+      ms: Port SMTP
+      pt-br: Porta SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: EMAIL_HOST_USER
+    labelEn: SMTP user
+    labelZh: SMTP 用户
+    label:
+      en: SMTP user
+      zh: SMTP 用户
+      zh-Hant: SMTP 使用者
+      ja: SMTP ユーザー
+      ko: SMTP 사용자
+      ru: Пользователь SMTP
+      ms: Pengguna SMTP
+      pt-br: Usuario SMTP
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: EMAIL_HOST_PASSWORD
+    labelEn: SMTP password
+    labelZh: SMTP 密码
+    label:
+      en: SMTP password
+      zh: SMTP 密码
+      zh-Hant: SMTP 密碼
+      ja: SMTP パスワード
+      ko: SMTP 비밀번호
+      ru: Пароль SMTP
+      ms: Kata laluan SMTP
+      pt-br: Senha SMTP
+    required: false
+    type: password
+  - default: ''
+    edit: true
+    envKey: EMAIL_USE_TLS
+    labelEn: SMTP TLS
+    labelZh: SMTP TLS
+    label:
+      en: SMTP TLS
+      zh: SMTP TLS
+      zh-Hant: SMTP TLS
+      ja: SMTP TLS
+      ko: SMTP TLS
+      ru: SMTP TLS
+      ms: SMTP TLS
+      pt-br: SMTP TLS
+    required: false
+    type: select
+    values:
+      - label: disabled
+        value: ''
+      - label: "True"
+        value: "True"
+      - label: "False"
+        value: "False"
   - default: admin@example.com
     edit: true
     envKey: SUPERUSER_EMAIL

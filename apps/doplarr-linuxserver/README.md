@@ -38,6 +38,8 @@ Doplarr Discord 媒体请求机器人。
 | DISCORD_MAX_RESULTS | 最大搜索结果数 | 25 | 是 |
 | DISCORD_REQUESTED_MSG_STYLE | 请求消息样式 | :plain | 是 |
 | PARTIAL_SEASONS | 允许部分季请求 | true | 是 |
+| LOG_LEVEL | 日志级别 | :info | 是 |
+| JAVA_OPTS | Java 参数 | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

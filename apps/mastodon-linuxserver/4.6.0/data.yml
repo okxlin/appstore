@@ -82,6 +82,27 @@ additionalProperties:
       pt-br: Dominio web
     required: false
     type: text
+  - default: "false"
+    edit: true
+    envKey: MASTODON_PROMETHEUS_EXPORTER_ENABLED
+    labelEn: Prometheus exporter
+    labelZh: Prometheus 导出器
+    label:
+      en: Prometheus exporter
+      zh: Prometheus 导出器
+      zh-Hant: Prometheus 匯出器
+      ja: Prometheus エクスポーター
+      ko: Prometheus exporter
+      ru: Экспортер Prometheus
+      ms: Pengeksport Prometheus
+      pt-br: Exportador Prometheus
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: "false"
+      - label: "true"
+        value: "true"
   - default: mastodon-change-me
     edit: true
     envKey: DB_PASSWORD
