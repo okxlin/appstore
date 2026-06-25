@@ -20,6 +20,7 @@ services:
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
       - TITLE=${TITLE:-Blade of Agony}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

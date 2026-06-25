@@ -20,6 +20,7 @@ services:
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
       - TITLE=${TITLE:-Kali Linux}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
       - LC_ALL=${LC_ALL}
     shm_size: "1gb"
     labels:

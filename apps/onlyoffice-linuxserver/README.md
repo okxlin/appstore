@@ -51,6 +51,7 @@ ONLYOFFICE 桌面编辑器。
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |
 | TITLE | 浏览器页面标题 | ONLYOFFICE Desktop Editors | 否 |
+| DASHBOARD | Selkies 仪表盘界面 | selkies-dashboard | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 | SHM_SIZE | 共享内存大小 | 1gb | 是 |
 

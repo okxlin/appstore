@@ -20,6 +20,7 @@ services:
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
       - TITLE=${TITLE:-Chromium}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
       - LC_ALL=${LC_ALL}
       - CHROME_CLI=${CHROME_CLI:-https://www.linuxserver.io/}
     shm_size: "1gb"
