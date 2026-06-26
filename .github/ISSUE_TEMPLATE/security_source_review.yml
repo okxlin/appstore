@@ -1,0 +1,54 @@
+name: 安全 / 来源可信度问题 / Security or Source Trust
+description: 反馈 CVE、可疑镜像、危险权限、来源不可信或供应链风险 / Report CVEs, suspicious images, dangerous permissions, untrusted sources, or supply-chain risk.
+title: "[Security / 安全] "
+labels: ["type/security", "status/blocked-security", "triage/needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请不要在公开 issue 中粘贴 token、密码、私有地址、完整 exploit 或生产环境日志 / Do not paste tokens, passwords, private addresses, full exploits, or production logs in a public issue. 涉及敏感漏洞或凭据泄露时，请改用 GitHub Security Advisory / Use GitHub Security Advisory for sensitive vulnerabilities or credential leaks.
+  - type: input
+    id: app-key
+    attributes:
+      label: 受影响 app key 或镜像 / Affected app key or image
+      placeholder: app-key / image:tag
+    validations:
+      required: true
+  - type: dropdown
+    id: security-type
+    attributes:
+      label: 问题类型 / Issue type
+      multiple: true
+      options:
+        - CVE / 漏洞
+        - 可疑镜像来源 / Suspicious image source
+        - privileged
+        - host network
+        - Docker socket
+        - GPU / /dev/dri 权限
+        - 泄露敏感信息 / Sensitive data leak
+        - 其他 / Other
+    validations:
+      required: true
+  - type: textarea
+    id: public-evidence
+    attributes:
+      label: 可公开证据 / Public evidence
+      description: 只贴可公开链接、CVE 编号、镜像来源说明或脱敏片段 / Only include public links, CVE IDs, image source notes, or sanitized snippets.
+      placeholder: CVE-xxxx-xxxx / 官方公告 / 镜像仓库链接
+    validations:
+      required: true
+  - type: textarea
+    id: maintainer-action
+    attributes:
+      label: 建议维护动作 / Suggested maintainer action
+      placeholder: 暂停适配 / 替换镜像 / 增加 README 风险说明 / 关闭需求 / pause adaptation / replace image / add README warning / close request
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 提交前确认 / Confirmation
+      options:
+        - label: 我没有在公开 issue 中提交敏感凭据、私有日志或完整 exploit / I did not submit sensitive credentials, private logs, or full exploit details in this public issue.
+          required: true

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 安全敏感问题 / Sensitive security report
+    url: https://github.com/okxlin/appstore/security/advisories/new
+    about: 请不要在公开 issue 中提交 token、密码、私有日志、完整 exploit 或生产环境敏感信息 / Do not submit tokens, passwords, private logs, full exploits, or production-sensitive data in a public issue.

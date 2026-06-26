@@ -1,0 +1,49 @@
+name: 问题反馈：元数据/本地应用识别 / Metadata Bug
+description: 反馈 data.yml、docker-compose.yml、表单变量、图标、README、i18n 或本地应用识别问题 / Report data.yml, docker-compose.yml, form/env, icon, README, i18n, or local-app recognition issues.
+title: "[Metadata Bug / 元数据问题] "
+labels: ["type/bug", "area/metadata", "status/needs-info", "triage/needs-review"]
+body:
+  - type: input
+    id: app-key
+    attributes:
+      label: 受影响 app key / Affected app key
+      placeholder: alist
+    validations:
+      required: true
+  - type: dropdown
+    id: target
+    attributes:
+      label: 涉及文件或字段 / Affected file or field
+      multiple: true
+      options:
+        - data.yml
+        - docker-compose.yml
+        - formFields / env
+        - logo.png
+        - README
+        - i18n
+        - 本地应用识别 / Local app recognition
+        - 其他 / Other
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 当前错误现象或实际内容 / Current wrong content or symptom
+      description: 粘贴相关片段即可，不需要运行日志，除非它也导致安装/运行失败 / Paste the relevant snippet only. Runtime logs are not needed unless this also causes install/runtime failure.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果或建议修正方向 / Expected result or suggested correction
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明 / Additional context
+      description: 如果该问题也导致安装/运行失败，请说明失败阶段并附脱敏日志 / If this also causes install/runtime failure, include the failing stage and sanitized logs.
+    validations:
+      required: false

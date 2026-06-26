@@ -1,0 +1,121 @@
+name: 应用适配需求 / App Request
+description: 申请为 okxlin/appstore 新增或适配一个 1Panel v2 应用 / Request a new or adapted 1Panel v2 app for okxlin/appstore.
+title: "[App Request / 应用适配] "
+labels: ["type/request", "area/app-adaptation", "status/needs-info", "triage/needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请尽量提供官方来源和可复现 Docker 信息 / Please provide official source and reproducible Docker details. 信息完整后，维护者会先交给 1panel-app-adapter 适配，再用 1panel-test-targets 做 1Panel v2 部署测试 / Once complete, the maintainer will hand it to 1panel-app-adapter, then use 1panel-test-targets for 1Panel v2 deployment testing.
+  - type: input
+    id: app-name
+    attributes:
+      label: 应用名称 / App name
+      description: 填写应用官方名称 / Enter the official app name.
+      placeholder: Vaultwarden
+    validations:
+      required: true
+  - type: input
+    id: app-key
+    attributes:
+      label: 建议 app key / Suggested app key
+      description: 可选。建议使用小写字母、数字和连字符 / Optional. Use lowercase letters, numbers, and hyphens.
+      placeholder: vaultwarden
+    validations:
+      required: false
+  - type: textarea
+    id: official-source
+    attributes:
+      label: 官方来源 / Official source
+      description: 官方网站、官方仓库、官方文档。请不要只贴第三方教程 / Official website, repository, or documentation. Do not submit only third-party tutorials.
+      placeholder: |
+        官方网站 / Official website:
+        官方仓库 / Official repository:
+        官方文档 / Official documentation:
+    validations:
+      required: true
+  - type: textarea
+    id: docker-source
+    attributes:
+      label: Docker 来源 / Docker source
+      description: 官方 Docker 镜像、官方 compose 文档或官方 compose 文件链接 / Official Docker image, compose docs, or compose file link.
+      placeholder: |
+        官方 Docker 镜像 / Official Docker image:
+        官方 docker-compose.yml / compose 文档 / Official compose docs:
+        目标版本或 release channel / Target version or release channel:
+    validations:
+      required: true
+  - type: input
+    id: ports
+    attributes:
+      label: 默认端口 / Default ports
+      placeholder: 80, 443, 8080
+    validations:
+      required: true
+  - type: textarea
+    id: volumes
+    attributes:
+      label: 数据目录 / volumes / Data directories / volumes
+      placeholder: /data, /config, ./data:/data
+    validations:
+      required: true
+  - type: dropdown
+    id: dependencies
+    attributes:
+      label: 依赖服务 / Dependencies
+      multiple: true
+      options:
+        - 无 / None
+        - MySQL
+        - PostgreSQL
+        - MariaDB
+        - Redis
+        - MinIO
+        - 其他 / Other
+    validations:
+      required: true
+  - type: dropdown
+    id: permissions
+    attributes:
+      label: 特殊权限 / Special permissions
+      multiple: true
+      options:
+        - 无 / None
+        - host network
+        - privileged
+        - Docker socket
+        - GPU / NVIDIA
+        - /dev/dri
+        - 其他 / Other
+    validations:
+      required: true
+  - type: dropdown
+    id: architectures
+    attributes:
+      label: 支持架构 / Supported architectures
+      multiple: true
+      options:
+        - amd64
+        - arm64
+        - arm/v7
+        - 不确定 / Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: test-notes
+    attributes:
+      label: 1Panel 测试信息 / 1Panel test notes
+      description: 如果已经手动部署过，请填写版本、环境、结果和注意事项 / If you have already deployed it manually, include version, environment, result, and notes.
+      placeholder: |
+        1Panel 版本 / 1Panel version:
+        是否手动部署成功 / Manual deployment succeeded:
+        失败日志或注意事项 / Failure logs or notes:
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 提交前确认 / Confirmation
+      options:
+        - label: 我已尽量提供官方来源和 Docker 来源，且未提交密码、token 或私有日志 / I provided the best available official and Docker sources, and I did not submit passwords, tokens, or private logs.
+          required: true
