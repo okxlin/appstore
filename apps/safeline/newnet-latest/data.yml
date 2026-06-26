@@ -50,7 +50,7 @@ additionalProperties:
         pt-br: 'Pasta de armazenamento de dados'
       required: true
       type: text
-    - default: 169.254.0
+    - default: 192.168.255
       edit: true
       envKey: SUBNET_PREFIX
       labelEn: New docker network subnet prefix
