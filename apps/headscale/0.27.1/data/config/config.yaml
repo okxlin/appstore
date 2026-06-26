@@ -19,6 +19,7 @@ derp:
     region_id: 999
     region_code: headscale
     region_name: Headscale Embedded DERP
+    verify_clients: true
     stun_listen_addr: 0.0.0.0:3478
     private_key_path: /var/lib/headscale/derp_server_private.key
     automatically_add_embedded_derp_region: true
@@ -55,8 +56,6 @@ policy:
   path: ""
 
 dns:
-  magic_dns: true
-  base_domain: example.com
   override_local_dns: false
   nameservers:
     global:
@@ -65,6 +64,8 @@ dns:
     split: {}
   search_domains: []
   extra_records: []
+  magic_dns: true
+  base_domain: example.com
 
 unix_socket: /var/run/headscale/headscale.sock
 unix_socket_permission: "0770"

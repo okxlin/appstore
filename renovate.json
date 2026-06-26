@@ -321,6 +321,46 @@
       "allowedVersions": "/^2.5.*/"
     },
     {
+      "description": "Keep Zabbix Server 6.4 historical tracks on 6.4 Alpine images",
+      "matchFileNames": [
+        "apps/zabbix-server/6.4.*/*.yml"
+      ],
+      "matchPackageNames": [
+        "zabbix/zabbix-server-mysql",
+        "zabbix/zabbix-web-nginx-mysql",
+        "zabbix/zabbix-java-gateway",
+        "zabbix/zabbix-snmptraps",
+        "zabbix/zabbix-server-pgsql",
+        "zabbix/zabbix-web-nginx-pgsql"
+      ],
+      "allowedVersions": "/^alpine-6\\.4\\..*/"
+    },
+    {
+      "description": "Keep Zabbix Server 7.4 tracks on 7.4 Alpine images",
+      "matchFileNames": [
+        "apps/zabbix-server/7.4.*/*.yml"
+      ],
+      "matchPackageNames": [
+        "zabbix/zabbix-server-mysql",
+        "zabbix/zabbix-web-nginx-mysql",
+        "zabbix/zabbix-java-gateway",
+        "zabbix/zabbix-snmptraps",
+        "zabbix/zabbix-server-pgsql",
+        "zabbix/zabbix-web-nginx-pgsql"
+      ],
+      "allowedVersions": "/^alpine-7\\.4\\..*/"
+    },
+    {
+      "description": "Keep bundled Zabbix MySQL on the 8.0 line",
+      "matchFileNames": [
+        "apps/zabbix-server/*&mysql/*.yml"
+      ],
+      "matchPackageNames": [
+        "mysql"
+      ],
+      "allowedVersions": "/^8\\.0\\..*/"
+    },
+    {
       "description": "Require dashboard approval for multi-service multi-image compose apps",
       "matchFileNames": [
         "apps/safeline/**/docker-compose.yml",

@@ -9,8 +9,8 @@
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64。
-- 可选版本：`latest`、`6.4.13`、`6.4.13&mysql`、`6.4.13-postgres`、`latest&mysql`、`latest-postgres`。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+- 可选版本：`latest`、`7.4.11`、`7.4.11&mysql`、`7.4.11-postgres`、`6.4.13`、`6.4.13&mysql`、`6.4.13-postgres`、`latest&mysql`、`latest-postgres`。
+- 安装后按应用表单中的端口访问 Web UI 或对应服务。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
@@ -35,7 +35,7 @@ password:zabbix
 
 ### 注意事项
 
-**注意：默认版本是Zabbix-MySQL版本的，Zabbix 6.X的需求环境MySQL8**
+**注意：默认版本是 Zabbix-MySQL 版本。Zabbix 7.4 要求 MySQL/Percona 8.0.30+ 或 PostgreSQL 13+。**
 
 **`postgresql`的版本，资源占用会小很多。**
 
@@ -45,6 +45,9 @@ password:zabbix
 
 - 带`&mysql`版本，会安装符合`Zabbix`格式要求的数据库版本
 - 不带`&mysql`的版本，默认调用面板安装的数据库
+- 官方文档说明 Zabbix 7.4.x 支持从 6.4.x 直接升级；旧的 6.4.13 版本目录保留用于老用户升级和回溯。
+- 从 6.4.x 升级到 7.4.11 前必须备份数据库；首次启动 7.4.11 时 Zabbix Server 会自动执行数据库升级，实例较大时可能耗时较久，请等待日志出现 `database upgrade fully completed` 后再判定完成。
+- 使用外部数据库的版本请先确认数据库满足 Zabbix 7.4 要求；`7.4.11&mysql` 自带 `mysql:8.0.36`，并在 `conf/my.cnf` 中保留 `log_bin_trust_function_creators=1`。
 
 ## 参考资料
 - 官网: <https://www.zabbix.com/>
