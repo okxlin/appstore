@@ -59,7 +59,9 @@ services:
     - ${SAFELINE_DIR}/resources/sock:/app/sock
     environment:
     - TCD_MGT_API=https://${SUBNET_PREFIX}.234:1443/api/open/publish/server
+    - TCD_SNSERVER=${SUBNET_PREFIX}.235:8000
     - SNSERVER_ADDR=${SUBNET_PREFIX}.235:8000
+    - CHAOS_ADDR=${SUBNET_PREFIX}.240
     ulimits:
       nofile: 131072
     network_mode: host
@@ -78,6 +80,7 @@ services:
       - ${SAFELINE_DIR}/resources/luigi:/app/data
     environment:
       - MGT_IP=${SUBNET_PREFIX}.234
+      - LUIGI_PG=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-pg/safeline-ce?sslmode=disable
     logging:
       options:
         max-size: "100m"
@@ -134,6 +137,8 @@ services:
       options:
         max-size: "100m"
         max-file: "5"
+    environment:
+      - DB_ADDR=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-pg/safeline-ce?sslmode=disable
     volumes:
       - ${SAFELINE_DIR}/resources/sock:/app/sock
       - ${SAFELINE_DIR}/resources/chaos:/app/chaos
