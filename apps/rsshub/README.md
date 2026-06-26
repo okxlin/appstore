@@ -1,5 +1,36 @@
 # RSSHub
 
+## 产品介绍
+RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可将多种网站和服务内容转换为 RSS 订阅源。
+
+本应用依赖 1Panel 中已安装的 Redis 服务。`latest` 版本使用独立 Browserless 服务提供浏览器能力，`chromium-bundled` 版本使用内置 Chromium 的 RSSHub 镜像。
+
+## 主要功能
+- 从网站、社交媒体、新闻源等生成标准 RSS。
+- 使用 Redis 缓存 RSSHub 数据。
+- 提供 `latest` 与 `chromium-bundled` 两个部署变体。
+- 支持通过 1Panel 的端口外部访问开关控制 Web 端口绑定范围。
+
+## 访问说明
+安装完成后，通过应用表单中的 HTTP 端口访问：
+
+```text
+http://<服务器 IP>:<HTTP 端口>
+```
+
+如关闭 1Panel 的端口外部访问开关，Web 端口将绑定到 `127.0.0.1`，可配合反向代理或本机访问使用。
+
+## Introduction
+RSSHub is an open-source RSS generator that converts content from many websites and services into RSS feeds.
+
+This app requires an existing Redis service in 1Panel. The `latest` variant uses a separate Browserless service, while `chromium-bundled` uses the RSSHub image with Chromium included.
+
+## Features
+- Generate RSS feeds from websites, social media, news sources, and other services.
+- Use Redis as the RSSHub cache backend.
+- Provide `latest` and `chromium-bundled` deployment variants.
+- Respect the 1Panel external port access toggle for the Web port binding.
+
 ## 应用简介
 一个开源、简单易用、易于扩展的 RSS 生成器。
 
@@ -10,7 +41,7 @@
 - 应用分类：工具。
 - 支持架构：amd64。
 - 可选版本：`latest`、`chromium-bundled`。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+- 安装后按应用表单中的 HTTP 端口访问 Web UI。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |

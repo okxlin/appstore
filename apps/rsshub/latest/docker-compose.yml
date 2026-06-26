@@ -5,7 +5,7 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:1200"
+      - "${HOST_IP}:${PANEL_APP_PORT_HTTP}:1200"
     environment:
       - "NODE_ENV=production"
       - "CACHE_TYPE=redis"
@@ -22,6 +22,7 @@ services:
     restart: always
     networks:
       - 1panel-network
+    ports: []
     ulimits:
       core:
         hard: 0

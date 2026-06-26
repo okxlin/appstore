@@ -17,6 +17,23 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: "127.0.0.1"
+      disabled: true
+      edit: true
+      envKey: HOST_IP
+      labelEn: Bind address managed by 1Panel
+      labelZh: 1Panel 管理的监听地址
+      label:
+        en: 'Bind address managed by 1Panel'
+        zh: '1Panel 管理的监听地址'
+        zh-Hant: '1Panel 管理的監聽位址'
+        ja: '1Panel が管理する待受アドレス'
+        ko: '1Panel 관리 바인드 주소'
+        ru: 'Адрес привязки, управляемый 1Panel'
+        ms: 'Alamat ikat diurus oleh 1Panel'
+        pt-br: 'Endereço de escuta gerenciado pelo 1Panel'
+      required: true
+      type: text
     - default: ""
       edit: true
       envKey: REDIS_HOST
