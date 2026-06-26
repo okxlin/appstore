@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   brave:
-    image: "linuxserver/brave:1.91.175"
+    image: "linuxserver/brave:1.91.178"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
