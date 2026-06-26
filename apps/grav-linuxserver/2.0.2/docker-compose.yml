@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   grav:
-    image: "linuxserver/grav:2.0.1"
+    image: "linuxserver/grav:2.0.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
