@@ -34,6 +34,22 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
+      required: true
+      type: text
     - default: "admin"
       edit: true
       envKey: WEBUI_USER
@@ -68,3 +84,244 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: "wireguard-ui-session-secret"
+      edit: true
+      envKey: SESSION_SECRET
+      labelEn: Session secret
+      labelZh: 会话密钥
+      label:
+        en: 'Session secret'
+        zh: '会话密钥'
+        zh-Hant: '會話密鑰'
+        ja: 'セッションシークレット'
+        ko: '세션 시크릿'
+        ru: 'Секрет сессии'
+        ms: 'Rahsia sesi'
+        pt-br: 'Segredo de sessao'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 90
+      edit: true
+      envKey: SESSION_MAX_DURATION
+      labelEn: Session max duration days
+      labelZh: 会话最长保留天数
+      label:
+        en: 'Session max duration days'
+        zh: '会话最长保留天数'
+        zh-Hant: '工作階段最長保留天數'
+        ja: 'セッション最大保持日数'
+        ko: '세션 최대 유지 일수'
+        ru: 'Максимальный срок сессии в днях'
+        ms: 'Tempoh maksimum sesi dalam hari'
+        pt-br: 'Duracao maxima da sessao em dias'
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: BASE_PATH
+      labelEn: Reverse proxy base path
+      labelZh: 反向代理子路径
+      label:
+        en: 'Reverse proxy base path'
+        zh: '反向代理子路径'
+        zh-Hant: '反向代理子路徑'
+        ja: 'リバースプロキシのベースパス'
+        ko: '리버스 프록시 기본 경로'
+        ru: 'Базовый путь обратного прокси'
+        ms: 'Laluan asas proksi songsang'
+        pt-br: 'Caminho base do proxy reverso'
+      required: false
+      type: text
+    - default: "INFO"
+      edit: true
+      envKey: WGUI_LOG_LEVEL
+      labelEn: Log level
+      labelZh: 日志等级
+      label:
+        en: 'Log level'
+        zh: '日志等级'
+        zh-Hant: '日誌等級'
+        ja: 'ログレベル'
+        ko: '로그 레벨'
+        ru: 'Уровень журнала'
+        ms: 'Tahap log'
+        pt-br: 'Nivel de log'
+      required: false
+      type: select
+      values:
+        - label: "DEBUG"
+          value: "DEBUG"
+        - label: "INFO"
+          value: "INFO"
+        - label: "WARN"
+          value: "WARN"
+        - label: "ERROR"
+          value: "ERROR"
+        - label: "OFF"
+          value: "OFF"
+    - default: "10.252.1.0/24"
+      edit: true
+      envKey: WGUI_SERVER_INTERFACE_ADDRESSES
+      labelEn: Server interface addresses
+      labelZh: 服务端接口地址
+      label:
+        en: 'Server interface addresses'
+        zh: '服务端接口地址'
+        zh-Hant: '伺服器介面位址'
+        ja: 'サーバーインターフェイスアドレス'
+        ko: '서버 인터페이스 주소'
+        ru: 'Адреса интерфейса сервера'
+        ms: 'Alamat antara muka pelayan'
+        pt-br: 'Enderecos da interface do servidor'
+      required: true
+      type: text
+    - default: "1.1.1.1"
+      edit: true
+      envKey: WGUI_DNS
+      labelEn: Default DNS servers
+      labelZh: 默认 DNS 服务器
+      label:
+        en: 'Default DNS servers'
+        zh: '默认 DNS 服务器'
+        zh-Hant: '預設 DNS 伺服器'
+        ja: 'デフォルト DNS サーバー'
+        ko: '기본 DNS 서버'
+        ru: 'DNS-серверы по умолчанию'
+        ms: 'Pelayan DNS lalai'
+        pt-br: 'Servidores DNS padrao'
+      required: true
+      type: text
+    - default: 1450
+      edit: true
+      envKey: WGUI_MTU
+      labelEn: Default MTU
+      labelZh: 默认 MTU
+      label:
+        en: 'Default MTU'
+        zh: '默认 MTU'
+        zh-Hant: '預設 MTU'
+        ja: 'デフォルト MTU'
+        ko: '기본 MTU'
+        ru: 'MTU по умолчанию'
+        ms: 'MTU lalai'
+        pt-br: 'MTU padrao'
+      required: true
+      type: number
+    - default: 15
+      edit: true
+      envKey: WGUI_PERSISTENT_KEEPALIVE
+      labelEn: Persistent keepalive
+      labelZh: 持久保活
+      label:
+        en: 'Persistent keepalive'
+        zh: '持久保活'
+        zh-Hant: '持久保活'
+        ja: 'Persistent keepalive'
+        ko: 'Persistent keepalive'
+        ru: 'Постоянный keepalive'
+        ms: 'Persistent keepalive'
+        pt-br: 'Persistent keepalive'
+      required: true
+      type: number
+    - default: "0.0.0.0/0"
+      edit: true
+      envKey: WGUI_DEFAULT_CLIENT_ALLOWED_IPS
+      labelEn: Default client allowed IPs
+      labelZh: 默认客户端 Allowed IPs
+      label:
+        en: 'Default client allowed IPs'
+        zh: '默认客户端 Allowed IPs'
+        zh-Hant: '預設用戶端 Allowed IPs'
+        ja: 'デフォルトクライアント Allowed IPs'
+        ko: '기본 클라이언트 Allowed IPs'
+        ru: 'Allowed IPs клиента по умолчанию'
+        ms: 'Allowed IPs klien lalai'
+        pt-br: 'Allowed IPs padrao do cliente'
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: WGUI_DEFAULT_CLIENT_USE_SERVER_DNS
+      labelEn: Clients use server DNS
+      labelZh: 客户端使用服务端 DNS
+      label:
+        en: 'Clients use server DNS'
+        zh: '客户端使用服务端 DNS'
+        zh-Hant: '用戶端使用伺服器 DNS'
+        ja: 'クライアントがサーバー DNS を使用'
+        ko: '클라이언트가 서버 DNS 사용'
+        ru: 'Клиенты используют DNS сервера'
+        ms: 'Klien guna DNS pelayan'
+        pt-br: 'Clientes usam DNS do servidor'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: WGUI_DEFAULT_CLIENT_ENABLE_AFTER_CREATION
+      labelEn: Enable clients after creation
+      labelZh: 创建后启用客户端
+      label:
+        en: 'Enable clients after creation'
+        zh: '创建后启用客户端'
+        zh-Hant: '建立後啟用用戶端'
+        ja: '作成後にクライアントを有効化'
+        ko: '생성 후 클라이언트 활성화'
+        ru: 'Включать клиентов после создания'
+        ms: 'Dayakan klien selepas dicipta'
+        pt-br: 'Ativar clientes apos criacao'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: WGUI_MANAGE_START
+      labelEn: Manage WireGuard on start
+      labelZh: 启停时管理 WireGuard
+      label:
+        en: 'Manage WireGuard on start'
+        zh: '启停时管理 WireGuard'
+        zh-Hant: '啟停時管理 WireGuard'
+        ja: '起動時に WireGuard を管理'
+        ko: '시작 시 WireGuard 관리'
+        ru: 'Управлять WireGuard при запуске'
+        ms: 'Urus WireGuard semasa mula'
+        pt-br: 'Gerenciar WireGuard ao iniciar'
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: WGUI_MANAGE_RESTART
+      labelEn: Restart WireGuard after changes
+      labelZh: 配置变更后重启 WireGuard
+      label:
+        en: 'Restart WireGuard after changes'
+        zh: '配置变更后重启 WireGuard'
+        zh-Hant: '配置變更後重啟 WireGuard'
+        ja: '変更後に WireGuard を再起動'
+        ko: '변경 후 WireGuard 재시작'
+        ru: 'Перезапускать WireGuard после изменений'
+        ms: 'Mulakan semula WireGuard selepas perubahan'
+        pt-br: 'Reiniciar WireGuard apos alteracoes'
+      required: false
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"

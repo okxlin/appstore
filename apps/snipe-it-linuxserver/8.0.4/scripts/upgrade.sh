@@ -1,2 +1,32 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+ENV_FILE="${ENV_FILE:-./.env}"
+
+ensure_env_default() {
+  local key="$1"
+  local value="$2"
+
+  if [[ ! -f "$ENV_FILE" ]]; then
+    echo "$ENV_FILE not found; skipped $key migration"
+    return
+  fi
+
+  if grep -qE "^${key}=" "$ENV_FILE"; then
+    echo "$key already exists"
+    return
+  fi
+
+  printf '%s=%s\n' "$key" "$value" >> "$ENV_FILE"
+  echo "Added $key"
+}
+
+if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_default "MYSQL_PORT_3306_TCP_ADDR" "snipe-it-db"
+  ensure_env_default "MYSQL_PORT_3306_TCP_PORT" "3306"
+  ensure_env_default "MYSQL_DATABASE" "snipeit"
+  ensure_env_default "MYSQL_USER" "snipeit"
+  ensure_env_default "APP_FORCE_TLS" "false"
+else
+  echo "$ENV_FILE not found; skipped LinuxServer environment migration"
+fi

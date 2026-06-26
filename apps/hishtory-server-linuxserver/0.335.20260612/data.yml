@@ -33,6 +33,38 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: /config/hishtory.db
+    edit: true
+    envKey: HISHTORY_SQLITE_DB
+    labelEn: SQLite database path
+    labelZh: SQLite 数据库路径
+    label:
+      en: SQLite database path
+      zh: SQLite 数据库路径
+      zh-Hant: SQLite 資料庫路徑
+      ja: SQLite データベースパス
+      ko: SQLite 데이터베이스 경로
+      ru: Путь к базе данных SQLite
+      ms: Laluan pangkalan data SQLite
+      pt-br: Caminho do banco SQLite
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: HISHTORY_POSTGRES_DB
+    labelEn: PostgreSQL connection URI
+    labelZh: PostgreSQL 连接 URI
+    label:
+      en: PostgreSQL connection URI
+      zh: PostgreSQL 连接 URI
+      zh-Hant: PostgreSQL 連線 URI
+      ja: PostgreSQL 接続 URI
+      ko: PostgreSQL 연결 URI
+      ru: URI подключения PostgreSQL
+      ms: URI sambungan PostgreSQL
+      pt-br: URI de conexao PostgreSQL
+    required: false
+    type: password
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

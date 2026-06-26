@@ -14,6 +14,9 @@ services:
       - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Joplin}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
     volumes:
       - "joplin-config:/config"
     shm_size: ${SHM_SIZE}

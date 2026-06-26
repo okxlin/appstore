@@ -19,6 +19,9 @@ services:
       - TZ=${TIME_ZONE}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-xemu}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

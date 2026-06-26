@@ -1,6 +1,6 @@
 services:
   resilio-sync:
-    image: linuxserver/resilio-sync:latest
+    image: "linuxserver/resilio-sync:latest"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:

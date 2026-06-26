@@ -9,7 +9,7 @@ Snipe-IT 资产管理系统。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`8.0.4`。
+- 可选版本：`8.0.4`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -31,6 +31,11 @@ Snipe-IT 资产管理系统。
 | --- | --- | --- | --- |
 | APP_KEY | 应用密钥 | base64:K4tN8COBEIginakyKQ4SGfoAskVW1leA/A0qSEDucFQ= | 是 |
 | APP_URL | 应用访问 URL | http://localhost:8080 | 是 |
+| APP_FORCE_TLS | 强制 TLS | false | 否 |
+| MYSQL_PORT_3306_TCP_ADDR | 数据库主机 | snipe-it-db | 是 |
+| MYSQL_PORT_3306_TCP_PORT | 数据库端口 | 3306 | 是 |
+| MYSQL_DATABASE | 数据库名称 | snipeit | 是 |
+| MYSQL_USER | 数据库用户名 | snipeit | 是 |
 | DB_PASSWORD | 数据库密码 | snipeit-change-me | 是 |
 | APP_LOCALE | 应用语言 | - | 否 |
 | MAIL_HOST | SMTP 主机 | - | 否 |

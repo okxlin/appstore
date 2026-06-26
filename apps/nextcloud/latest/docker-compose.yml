@@ -13,7 +13,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-    image: linuxserver/nextcloud:latest
+    image: "linuxserver/nextcloud:latest"
     labels:  
       createdBy: "Apps"
 

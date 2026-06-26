@@ -1,0 +1,31 @@
+name: Raneto
+tags:
+- Website
+title: Raneto 知识库
+description: Raneto 知识库
+additionalProperties:
+  key: raneto-linuxserver
+  name: Raneto
+  tags:
+  - Website
+  shortDescZh: Raneto 知识库
+  shortDescEn: Knowledge base maintained by LinuxServer.io
+  description:
+    en: Knowledge base maintained by LinuxServer.io
+    zh: Raneto 知识库
+    zh-Hant: Raneto 知識庫
+    ja: LinuxServer.io が保守するナレッジベース
+    ko: LinuxServer.io에서 유지 관리하는 지식 베이스
+    ru: База знаний, поддерживаемая LinuxServer.io
+    ms: Pangkalan pengetahuan yang diselenggara oleh LinuxServer.io
+    pt-br: Base de conhecimento mantida pela LinuxServer.io
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://raneto.com/
+  github: https://github.com/linuxserver/docker-raneto
+  document: https://docs.linuxserver.io/images/docker-raneto/
+  architectures:
+  - amd64
+  - arm64
+  - armv7

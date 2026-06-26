@@ -14,36 +14,36 @@ services:
     volumes:
       - "${DOCKER_SOCK_PATH}:/var/run/docker.sock:ro"
     environment:
-      - ALLOW_START=0
-      - ALLOW_STOP=0
-      - ALLOW_RESTARTS=0
-      - ALLOW_PAUSE=0
-      - ALLOW_UNPAUSE=0
-      - AUTH=0
-      - BUILD=0
-      - COMMIT=0
-      - CONFIGS=0
+      - ALLOW_START=${ALLOW_START}
+      - ALLOW_STOP=${ALLOW_STOP}
+      - ALLOW_RESTARTS=${ALLOW_RESTARTS}
+      - ALLOW_PAUSE=${ALLOW_PAUSE}
+      - ALLOW_UNPAUSE=${ALLOW_UNPAUSE}
+      - AUTH=${AUTH}
+      - BUILD=${BUILD}
+      - COMMIT=${COMMIT}
+      - CONFIGS=${CONFIGS}
       - CONTAINERS=${CONTAINERS}
-      - DISABLE_IPV6=0
-      - DISTRIBUTION=0
-      - EVENTS=1
-      - EXEC=0
+      - DISABLE_IPV6=${DISABLE_IPV6}
+      - DISTRIBUTION=${DISTRIBUTION}
+      - EVENTS=${EVENTS}
+      - EXEC=${EXEC}
       - IMAGES=${IMAGES}
-      - INFO=0
+      - INFO=${INFO}
       - LOG_LEVEL=${LOG_LEVEL}
       - NETWORKS=${NETWORKS}
-      - NODES=0
-      - PING=1
-      - PLUGINS=0
+      - NODES=${NODES}
+      - PING=${PING}
+      - PLUGINS=${PLUGINS}
       - POST=${POST}
-      - SECRETS=0
-      - SERVICES=0
-      - SESSION=0
-      - SWARM=0
-      - SYSTEM=0
-      - TASKS=0
+      - SECRETS=${SECRETS}
+      - SERVICES=${SERVICES}
+      - SESSION=${SESSION}
+      - SWARM=${SWARM}
+      - SYSTEM=${SYSTEM}
+      - TASKS=${TASKS}
       - TZ=${TIME_ZONE}
-      - VERSION=1
+      - VERSION=${VERSION}
       - VOLUMES=${VOLUMES}
     labels:
       createdBy: "Apps"

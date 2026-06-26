@@ -101,6 +101,62 @@ additionalProperties:
       rule: paramComplexity
       type: password
 
+    - default: LibreOffice
+      edit: true
+      envKey: TITLE
+      labelEn: Browser page title
+      labelZh: 浏览器页面标题
+      label:
+        en: Browser page title
+        zh: 浏览器页面标题
+        zh-Hant: 瀏覽器頁面標題
+        ja: ブラウザーのページタイトル
+        ko: 브라우저 페이지 제목
+        ru: Заголовок страницы браузера
+        ms: Tajuk halaman pelayar
+        pt-br: Titulo da pagina do navegador
+      required: false
+      type: text
+    - default: Selkies
+      edit: true
+      envKey: SELKIES_UI_TITLE
+      labelEn: Sidebar title
+      labelZh: 侧边栏标题
+      label:
+        en: Sidebar title
+        zh: 侧边栏标题
+        zh-Hant: 側邊欄標題
+        ja: サイドバータイトル
+        ko: 사이드바 제목
+        ru: Заголовок боковой панели
+        ms: Tajuk bar sisi
+        pt-br: Titulo da barra lateral
+      required: false
+      type: text
+    - default: selkies-dashboard
+      edit: true
+      envKey: DASHBOARD
+      labelEn: Dashboard UI
+      labelZh: 仪表盘界面
+      label:
+        en: Dashboard UI
+        zh: 仪表盘界面
+        zh-Hant: 儀表板介面
+        ja: ダッシュボード UI
+        ko: 대시보드 UI
+        ru: Интерфейс панели
+        ms: UI papan pemuka
+        pt-br: Interface do painel
+      required: false
+      type: select
+      values:
+        - label: selkies-dashboard
+          value: selkies-dashboard
+        - label: selkies-dashboard-zinc
+          value: selkies-dashboard-zinc
+        - label: selkies-dashboard-wish
+          value: selkies-dashboard-wish
+
     - default: zh_CN.UTF-8
       edit: true
       envKey: LC_ALL

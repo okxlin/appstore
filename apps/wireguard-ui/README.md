@@ -19,17 +19,31 @@ Wireguard 网络界面。
 | PANEL_APP_PORT_WIREGUARD | Wireguard 端口 | 51820 | 是 |
 
 ## 数据持久化
-- `./data/db:/app/db`
-- `./data/config:/etc/wireguard`
-- `./data/config:/config`
+- `${DATA_PATH}/db:/app/db`
+- `${DATA_PATH}/config:/etc/wireguard`
+- `${DATA_PATH}/config:/config`
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DATA_PATH | 数据文件夹路径 | ./data | 是 |
 | WEBUI_USER | 网页用户 | admin | 是 |
 | WEBUI_PWD | 网页密码 | password | 是 |
+| SESSION_SECRET | 会话密钥 | 随机值 | 是 |
+| SESSION_MAX_DURATION | 会话最长保留天数 | 90 | 是 |
+| BASE_PATH | 反向代理子路径 | 空 | 否 |
+| WGUI_LOG_LEVEL | 日志等级 | INFO | 否 |
+| WGUI_SERVER_INTERFACE_ADDRESSES | 服务端接口地址 | 10.252.1.0/24 | 是 |
+| WGUI_DNS | 默认 DNS 服务器 | 1.1.1.1 | 是 |
+| WGUI_MTU | 默认 MTU | 1450 | 是 |
+| WGUI_PERSISTENT_KEEPALIVE | 持久保活 | 15 | 是 |
+| WGUI_DEFAULT_CLIENT_ALLOWED_IPS | 默认客户端 Allowed IPs | 0.0.0.0/0 | 是 |
+| WGUI_DEFAULT_CLIENT_USE_SERVER_DNS | 客户端使用服务端 DNS | true | 是 |
+| WGUI_DEFAULT_CLIENT_ENABLE_AFTER_CREATION | 创建后启用客户端 | true | 是 |
+| WGUI_MANAGE_START | 容器启动/停止时管理 WireGuard | false | 否 |
+| WGUI_MANAGE_RESTART | 应用配置后自动重启 WireGuard | true | 否 |
 
 ## 使用说明
 新版本的镜像假如遇到网页登录存在问题，或许可以尝试重启应用再登录。

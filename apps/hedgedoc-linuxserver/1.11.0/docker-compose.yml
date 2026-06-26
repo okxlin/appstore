@@ -9,24 +9,24 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTP}:${CMD_PORT}"
     volumes:
       - "${CONFIG_PATH}:/config"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - DB_HOST=hedgedoc-db
-      - DB_PORT=3306
-      - DB_USER=hedgedoc
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASSWORD}
-      - DB_NAME=hedgedoc
+      - DB_NAME=${DB_NAME}
       - CMD_DOMAIN=${CMD_DOMAIN}
-      - CMD_URL_ADDPORT=true
-      - CMD_PROTOCOL_USESSL=false
-      - CMD_PORT=3000
-      - CMD_ALLOW_ORIGIN=['localhost']
-      - CMD_DB_DIALECT=mariadb
+      - CMD_URL_ADDPORT=${CMD_URL_ADDPORT}
+      - CMD_PROTOCOL_USESSL=${CMD_PROTOCOL_USESSL}
+      - CMD_PORT=${CMD_PORT}
+      - CMD_ALLOW_ORIGIN=${CMD_ALLOW_ORIGIN}
+      - CMD_DB_DIALECT=${CMD_DB_DIALECT}
     depends_on:
       - hedgedoc-db
     labels:
@@ -40,8 +40,8 @@ services:
       - "${DB_DATA_PATH}:/var/lib/mysql"
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
-      - MARIADB_DATABASE=hedgedoc
-      - MARIADB_USER=hedgedoc
+      - MARIADB_DATABASE=${DB_NAME}
+      - MARIADB_USER=${DB_USER}
       - MARIADB_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

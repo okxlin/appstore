@@ -19,5 +19,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - LOG_TO_STDOUT=${LOG_TO_STDOUT:-false}
     labels:
       createdBy: "Apps"

@@ -9,17 +9,17 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8080"
-      - "${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}:6881"
-      - "${PANEL_APP_PORT_BT_DOWNLOAD_DHT_LISTENER}:6881/udp"
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+      - "${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}:${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}"
+      - "${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}:${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}/udp"
     volumes:
       - "${CONFIG_PATH}:/config"
       - "${DOWNLOAD_PATH}:/downloads"
     environment:
       - PUID=1000
       - PGID=1000
-      - WEBUI_PORT=8080
-      - TORRENTING_PORT=6881
+      - WEBUI_PORT=${PANEL_APP_PORT_HTTP}
+      - TORRENTING_PORT=${PANEL_APP_PORT_BT_DOWNLOAD_LISTENER}
       - TZ=${TIME_ZONE}
     labels:
       createdBy: "Apps"

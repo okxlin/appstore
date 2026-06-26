@@ -30,6 +30,7 @@ TVHeadend 电视流媒体服务。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| RUN_OPTS | 传递给 TVHeadend 的额外启动参数 | - | 否 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

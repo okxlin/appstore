@@ -67,6 +67,91 @@ additionalProperties:
     required: true
     type: text
     rule: paramExtUrl
+  - default: "false"
+    edit: true
+    envKey: APP_FORCE_TLS
+    labelEn: Force TLS
+    labelZh: 强制 TLS
+    label:
+      en: Force TLS
+      zh: 强制 TLS
+      zh-Hant: 強制 TLS
+      ja: TLS を強制
+      ko: TLS 강제
+      ru: Принудительный TLS
+      ms: Paksa TLS
+      pt-br: Forcar TLS
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: snipe-it-db
+    edit: true
+    envKey: MYSQL_PORT_3306_TCP_ADDR
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco
+    required: true
+    type: text
+  - default: 3306
+    edit: true
+    envKey: MYSQL_PORT_3306_TCP_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco
+    required: true
+    type: number
+  - default: snipeit
+    edit: true
+    envKey: MYSQL_DATABASE
+    labelEn: Database name
+    labelZh: 数据库名称
+    label:
+      en: Database name
+      zh: 数据库名称
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco
+    required: true
+    type: text
+  - default: snipeit
+    edit: true
+    envKey: MYSQL_USER
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Имя пользователя базы
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco
+    required: true
+    type: text
   - default: snipeit-change-me
     edit: true
     envKey: DB_PASSWORD

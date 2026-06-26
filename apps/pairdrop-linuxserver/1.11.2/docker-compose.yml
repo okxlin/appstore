@@ -14,5 +14,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - RATE_LIMIT=${RATE_LIMIT:-false}
+      - WS_FALLBACK=${WS_FALLBACK:-false}
+      - RTC_CONFIG=${RTC_CONFIG:-}
     labels:
       createdBy: "Apps"

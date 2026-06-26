@@ -1,0 +1,29 @@
+name: shadPS4
+tags:
+- Game
+title: shadPS4 PlayStation 4 模拟器桌面
+description: shadPS4 PlayStation 4 模拟器桌面
+additionalProperties:
+  key: shadps4-linuxserver
+  name: shadPS4
+  tags:
+  - Game
+  shortDescZh: shadPS4 PlayStation 4 模拟器桌面
+  shortDescEn: PlayStation 4 emulator desktop maintained by LinuxServer.io
+  description:
+    en: PlayStation 4 emulator desktop maintained by LinuxServer.io
+    zh: shadPS4 PlayStation 4 模拟器桌面
+    zh-Hant: shadPS4 PlayStation 4 模擬器桌面
+    ja: LinuxServer.io が保守する PlayStation 4 エミュレーターデスクトップ
+    ko: LinuxServer.io에서 유지 관리하는 PlayStation 4 에뮬레이터 데스크톱
+    ru: Рабочий стол эмулятора PlayStation 4, поддерживаемый LinuxServer.io
+    ms: Desktop emulator PlayStation 4 yang diselenggara oleh LinuxServer.io
+    pt-br: Desktop de emulador PlayStation 4 mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://shadps4.net/
+  github: https://github.com/linuxserver/docker-shadps4
+  document: https://docs.linuxserver.io/images/docker-shadps4/
+  architectures:
+  - amd64

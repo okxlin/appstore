@@ -30,6 +30,7 @@
 | MASTER_URL | 外部访问地址 | http://:40213/smokeping/ | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | SHARED_SECRET | 主共享密钥 (从属模式) | - | 否 |
+| CACHE_DIR | 缓存目录 (从属模式) | /tmp | 是 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

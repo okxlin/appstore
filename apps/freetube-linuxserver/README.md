@@ -9,7 +9,7 @@ FreeTube 视频客户端桌面。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：媒体。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`215975145-ls67`。
+- 可选版本：`215975145-ls67`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -31,6 +31,7 @@ FreeTube 视频客户端桌面。
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |
+| TITLE | 浏览器页面标题 | FreeTube | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明

@@ -29,6 +29,7 @@ LazyLibrarian 图书馆管理。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DOCKER_MODS | LinuxServer Mods | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

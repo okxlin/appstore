@@ -20,6 +20,9 @@ services:
       - VIVALDI_CLI=${VIVALDI_CLI:-https://www.linuxserver.io/}
       - CUSTOM_USER=${CUSTOM_USER}
       - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Vivaldi}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
       - LC_ALL=${LC_ALL}
     labels:
       createdBy: "Apps"

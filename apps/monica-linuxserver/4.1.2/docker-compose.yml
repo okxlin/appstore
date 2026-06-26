@@ -17,15 +17,15 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - DB_HOST=monica-db
-      - DB_PORT=3306
-      - DB_USERNAME=monica
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=monica
+      - DB_DATABASE=${DB_DATABASE}
       - APP_URL=${APP_URL}
       - TRUSTED_PROXIES=${TRUSTED_PROXIES:-}
-      - APP_ENV=local
-      - APP_DISABLE_SIGNUP=false
+      - APP_ENV=${APP_ENV:-local}
+      - APP_DISABLE_SIGNUP=${APP_DISABLE_SIGNUP:-true}
     depends_on:
       - monica-db
     labels:
@@ -39,8 +39,8 @@ services:
       - "${DB_DATA_PATH}:/var/lib/mysql"
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
-      - MARIADB_DATABASE=monica
-      - MARIADB_USER=monica
+      - MARIADB_DATABASE=${DB_DATABASE}
+      - MARIADB_USER=${DB_USERNAME}
       - MARIADB_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

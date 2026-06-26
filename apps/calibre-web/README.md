@@ -20,6 +20,7 @@
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| CONFIG_PATH | 配置文件夹路径 | ./data/config | 是 |
 | DATA_PATH | 书本文件夹路径 | ./data/books | 是 |
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
@@ -28,6 +29,8 @@
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+| DOCKER_MODS | Docker Mods | linuxserver/mods:universal-calibre | 否 |
+| OAUTHLIB_RELAX_TOKEN_SCOPE | 放宽 OAuth token scope 检查 | 1 | 否 |
 
 ## 使用说明
 - 默认账户密码

@@ -66,6 +66,109 @@ additionalProperties:
       pt-br: URL da aplicacao
     required: false
     type: text
+  - default: sqlite
+    edit: true
+    envKey: DB_CONNECTION
+    labelEn: Database connection
+    labelZh: 数据库连接
+    label:
+      en: Database connection
+      zh: 数据库连接
+      zh-Hant: 資料庫連線
+      ja: データベース接続
+      ko: 데이터베이스 연결
+      ru: Подключение к базе данных
+      ms: Sambungan pangkalan data
+      pt-br: Conexao do banco de dados
+    required: true
+    type: select
+    values:
+      - label: sqlite
+        value: sqlite
+      - label: mysql
+        value: mysql
+      - label: pgsql
+        value: pgsql
+  - default: ''
+    edit: true
+    envKey: DB_HOST
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_DATABASE
+    labelEn: Database name
+    labelZh: 数据库名称
+    label:
+      en: Database name
+      zh: 数据库名称
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_USERNAME
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Пользователь базы данных
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco de dados
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: false
+    type: password
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -81,6 +184,22 @@ additionalProperties:
       ms: Zon waktu
       pt-br: Fuso horário
     required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: DISPLAY_TIMEZONE
+    labelEn: Display time zone
+    labelZh: 显示时区
+    label:
+      en: Display time zone
+      zh: 显示时区
+      zh-Hant: 顯示時區
+      ja: 表示タイムゾーン
+      ko: 표시 시간대
+      ru: Часовой пояс отображения
+      ms: Zon waktu paparan
+      pt-br: Fuso horario de exibicao
+    required: false
     type: text
   - default: 0 */6 * * *
     edit: true
@@ -114,3 +233,19 @@ additionalProperties:
       pt-br: IDs de servidores de teste
     required: false
     type: text
+  - default: 0
+    edit: true
+    envKey: PRUNE_RESULTS_OLDER_THAN
+    labelEn: Result retention days
+    labelZh: 结果保留天数
+    label:
+      en: Result retention days
+      zh: 结果保留天数
+      zh-Hant: 結果保留天數
+      ja: 結果保持日数
+      ko: 결과 보관 일수
+      ru: Дней хранения результатов
+      ms: Hari simpan hasil
+      pt-br: Dias de retencao dos resultados
+    required: false
+    type: number

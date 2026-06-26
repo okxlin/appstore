@@ -19,7 +19,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TIMEZONE}
-      - VERSION=docker
+      - VERSION=${VERSION}
       - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - ${LIBRARY_PATH}:/config

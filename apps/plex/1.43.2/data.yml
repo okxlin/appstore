@@ -169,6 +169,29 @@ additionalProperties:
         pt-br: 'Fuso horário'
       required: true
       type: text
+    - default: "docker"
+      edit: true
+      envKey: VERSION
+      labelEn: Plex version source
+      labelZh: Plex 版本来源
+      label:
+        en: 'Plex version source'
+        zh: 'Plex 版本来源'
+        zh-Hant: 'Plex 版本來源'
+        ja: 'Plex バージョンソース'
+        ko: 'Plex 버전 소스'
+        ru: 'Источник версии Plex'
+        ms: 'Sumber versi Plex'
+        pt-br: 'Fonte da versao do Plex'
+      required: true
+      type: select
+      values:
+        - label: "docker"
+          value: "docker"
+        - label: "latest"
+          value: "latest"
+        - label: "public"
+          value: "public"
     - default: ""
       edit: true
       envKey: PLEX_CLAIM

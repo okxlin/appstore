@@ -25,6 +25,7 @@ UniFi Network 网络控制器。
 | --- | --- | --- | --- |
 | CONFIG_PATH | 配置文件路径 | ./data/config | 是 |
 | MONGO_DATA_PATH | Mongo 数据目录 | ./data/mongo | 是 |
+| MONGO_INIT_PATH | Mongo 初始化脚本目录 | ./data/mongo-init | 是 |
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
@@ -32,6 +33,12 @@ UniFi Network 网络控制器。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | MONGO_PASS | Mongo 密码 | unifi-change-me | 是 |
+| MONGO_USER | Mongo 用户 | unifi | 是 |
+| MONGO_HOST | Mongo 主机 | unifi-db | 是 |
+| MONGO_PORT | Mongo 端口 | 27017 | 是 |
+| MONGO_DBNAME | Mongo 数据库 | unifi | 是 |
+| MONGO_AUTHSOURCE | Mongo 认证库 | admin | 是 |
+| MONGO_TLS | Mongo TLS | false | 否 |
 | MEM_LIMIT | 内存限制 MB | 1024 | 是 |
 | MEM_STARTUP | 启动内存 MB | 1024 | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |

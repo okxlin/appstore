@@ -148,6 +148,366 @@ additionalProperties:
       value: "0"
     - label: "1"
       value: "1"
+  - default: "0"
+    edit: true
+    envKey: ALLOW_START
+    labelEn: Allow container start
+    labelZh: 允许启动容器
+    label:
+      en: Allow container start
+      zh: 允许启动容器
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: ALLOW_STOP
+    labelEn: Allow container stop
+    labelZh: 允许停止容器
+    label:
+      en: Allow container stop
+      zh: 允许停止容器
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: ALLOW_RESTARTS
+    labelEn: Allow container restart/kill
+    labelZh: 允许重启或终止容器
+    label:
+      en: Allow container restart/kill
+      zh: 允许重启或终止容器
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: ALLOW_PAUSE
+    labelEn: Allow container pause
+    labelZh: 允许暂停容器
+    label:
+      en: Allow container pause
+      zh: 允许暂停容器
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: ALLOW_UNPAUSE
+    labelEn: Allow container unpause
+    labelZh: 允许取消暂停容器
+    label:
+      en: Allow container unpause
+      zh: 允许取消暂停容器
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: AUTH
+    labelEn: Auth endpoint
+    labelZh: Auth 接口
+    label:
+      en: Auth endpoint
+      zh: Auth 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: BUILD
+    labelEn: Build endpoint
+    labelZh: Build 接口
+    label:
+      en: Build endpoint
+      zh: Build 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: COMMIT
+    labelEn: Commit endpoint
+    labelZh: Commit 接口
+    label:
+      en: Commit endpoint
+      zh: Commit 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: CONFIGS
+    labelEn: Configs endpoint
+    labelZh: Configs 接口
+    label:
+      en: Configs endpoint
+      zh: Configs 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: DISABLE_IPV6
+    labelEn: Disable IPv6 binding
+    labelZh: 禁用 IPv6 绑定
+    label:
+      en: Disable IPv6 binding
+      zh: 禁用 IPv6 绑定
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: DISTRIBUTION
+    labelEn: Distribution endpoint
+    labelZh: Distribution 接口
+    label:
+      en: Distribution endpoint
+      zh: Distribution 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "1"
+    edit: true
+    envKey: EVENTS
+    labelEn: Events endpoint
+    labelZh: Events 接口
+    label:
+      en: Events endpoint
+      zh: Events 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: EXEC
+    labelEn: Exec endpoint
+    labelZh: Exec 接口
+    label:
+      en: Exec endpoint
+      zh: Exec 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: INFO
+    labelEn: Info endpoint
+    labelZh: Info 接口
+    label:
+      en: Info endpoint
+      zh: Info 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: NODES
+    labelEn: Nodes endpoint
+    labelZh: Nodes 接口
+    label:
+      en: Nodes endpoint
+      zh: Nodes 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "1"
+    edit: true
+    envKey: PING
+    labelEn: Ping endpoint
+    labelZh: Ping 接口
+    label:
+      en: Ping endpoint
+      zh: Ping 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: PLUGINS
+    labelEn: Plugins endpoint
+    labelZh: Plugins 接口
+    label:
+      en: Plugins endpoint
+      zh: Plugins 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: SECRETS
+    labelEn: Secrets endpoint
+    labelZh: Secrets 接口
+    label:
+      en: Secrets endpoint
+      zh: Secrets 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: SERVICES
+    labelEn: Services endpoint
+    labelZh: Services 接口
+    label:
+      en: Services endpoint
+      zh: Services 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: SESSION
+    labelEn: Session endpoint
+    labelZh: Session 接口
+    label:
+      en: Session endpoint
+      zh: Session 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: SWARM
+    labelEn: Swarm endpoint
+    labelZh: Swarm 接口
+    label:
+      en: Swarm endpoint
+      zh: Swarm 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: SYSTEM
+    labelEn: System endpoint
+    labelZh: System 接口
+    label:
+      en: System endpoint
+      zh: System 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "0"
+    edit: true
+    envKey: TASKS
+    labelEn: Tasks endpoint
+    labelZh: Tasks 接口
+    label:
+      en: Tasks endpoint
+      zh: Tasks 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
+  - default: "1"
+    edit: true
+    envKey: VERSION
+    labelEn: Version endpoint
+    labelZh: Version 接口
+    label:
+      en: Version endpoint
+      zh: Version 接口
+    required: true
+    type: select
+    values:
+    - label: "0"
+      value: "0"
+    - label: "1"
+      value: "1"
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

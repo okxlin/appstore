@@ -65,6 +65,54 @@ additionalProperties:
       pt-br: Caminho de dados Elasticsearch
     required: true
     type: text
+  - default: diskover-elasticsearch
+    edit: true
+    envKey: ES_HOST
+    labelEn: Elasticsearch host
+    labelZh: Elasticsearch 主机
+    label:
+      en: Elasticsearch host
+      zh: Elasticsearch 主机
+      zh-Hant: Elasticsearch 主機
+      ja: Elasticsearch ホスト
+      ko: Elasticsearch 호스트
+      ru: Хост Elasticsearch
+      ms: Hos Elasticsearch
+      pt-br: Host do Elasticsearch
+    required: true
+    type: text
+  - default: 9200
+    edit: true
+    envKey: ES_PORT
+    labelEn: Elasticsearch port
+    labelZh: Elasticsearch 端口
+    label:
+      en: Elasticsearch port
+      zh: Elasticsearch 端口
+      zh-Hant: Elasticsearch 連接埠
+      ja: Elasticsearch ポート
+      ko: Elasticsearch 포트
+      ru: Порт Elasticsearch
+      ms: Port Elasticsearch
+      pt-br: Porta do Elasticsearch
+    required: true
+    type: number
+  - default: -Xms1g -Xmx1g
+    edit: true
+    envKey: ES_JAVA_OPTS
+    labelEn: Elasticsearch JVM options
+    labelZh: Elasticsearch JVM 参数
+    label:
+      en: Elasticsearch JVM options
+      zh: Elasticsearch JVM 参数
+      zh-Hant: Elasticsearch JVM 參數
+      ja: Elasticsearch JVM オプション
+      ko: Elasticsearch JVM 옵션
+      ru: Параметры JVM Elasticsearch
+      ms: Pilihan JVM Elasticsearch
+      pt-br: Opcoes JVM do Elasticsearch
+    required: true
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

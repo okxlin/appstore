@@ -50,6 +50,22 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: ''
+    edit: true
+    envKey: RUN_OPTS
+    labelEn: Extra run options
+    labelZh: 额外启动参数
+    label:
+      en: Extra run options
+      zh: 额外启动参数
+      zh-Hant: 額外啟動參數
+      ja: 追加起動オプション
+      ko: 추가 실행 옵션
+      ru: Дополнительные параметры запуска
+      ms: Pilihan mula tambahan
+      pt-br: Opcoes extras de inicializacao
+    required: false
+    type: text
   - default: ./data/recordings
     edit: true
     envKey: RECORDINGS_PATH

@@ -50,6 +50,43 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: "false"
+    edit: true
+    envKey: NGINX_AUTORELOAD
+    labelEn: Auto reload configs
+    labelZh: 自动重载配置
+    label:
+      en: Auto reload configs
+      zh: 自动重载配置
+      zh-Hant: 自動重新載入設定
+      ja: 設定の自動再読み込み
+      ko: 설정 자동 다시 불러오기
+      ru: Автоперезагрузка конфигурации
+      ms: Muat semula konfigurasi automatik
+      pt-br: Recarregar configuracoes automaticamente
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
+  - default: ''
+    edit: true
+    envKey: NGINX_AUTORELOAD_WATCHLIST
+    labelEn: Auto reload watch paths
+    labelZh: 自动重载监听路径
+    label:
+      en: Auto reload watch paths
+      zh: 自动重载监听路径
+      zh-Hant: 自動重新載入監看路徑
+      ja: 自動再読み込み監視パス
+      ko: 자동 다시 불러오기 감시 경로
+      ru: Пути наблюдения автоперезагрузки
+      ms: Laluan pantauan muat semula
+      pt-br: Caminhos monitorados para recarregar
+    required: false
+    type: text
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

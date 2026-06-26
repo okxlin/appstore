@@ -16,7 +16,10 @@ services:
       - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
-    image: linuxserver/sqlitebrowser:latest
+      - TITLE=${TITLE:-DB Browser for SQLite}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
+    image: "linuxserver/sqlitebrowser:latest"
     security_opt:
       - seccomp:unconfined
     labels:  

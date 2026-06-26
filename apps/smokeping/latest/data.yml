@@ -82,3 +82,19 @@ additionalProperties:
         pt-br: 'Segredo compartilhado do mestre (modo escravo)'
       required: false
       type: text
+    - default: /tmp
+      edit: true
+      envKey: CACHE_DIR
+      labelEn: Cache directory (slave mode)
+      labelZh: 缓存目录 (从属模式)
+      label:
+        en: 'Cache directory (slave mode)'
+        zh: '缓存目录 (从属模式)'
+        zh-Hant: '快取目錄 (從屬模式)'
+        ja: 'キャッシュディレクトリ (スレーブモード)'
+        ko: '캐시 디렉터리(슬레이브 모드)'
+        ru: 'Каталог кэша (режим ведомого)'
+        ms: 'Direktori cache (mod hamba)'
+        pt-br: 'Diretório de cache (modo escravo)'
+      required: true
+      type: text

@@ -16,9 +16,12 @@ services:
       - LC_ALL=${LC_ALL}
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
+      - TITLE=${TITLE:-LibreOffice}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
     #security_opt:
     #  - seccomp:unconfined #optional
-    image: linuxserver/libreoffice:latest
+    image: "linuxserver/libreoffice:latest"
     labels:  
       createdBy: "Apps"
 

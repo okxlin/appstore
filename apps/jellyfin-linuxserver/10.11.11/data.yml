@@ -1,0 +1,99 @@
+additionalProperties:
+  formFields:
+  - default: 8096
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ./data/tvshows
+    edit: true
+    envKey: TVSHOWS_PATH
+    labelEn: TV shows folder path
+    labelZh: 电视剧媒体目录路径
+    label:
+      en: TV shows folder path
+      zh: 电视剧媒体目录路径
+      zh-Hant: 電視劇媒體資料夾路徑
+      ja: テレビ番組フォルダーのパス
+      ko: TV 프로그램 폴더 경로
+      ru: Путь к папке сериалов
+      ms: Laluan folder rancangan TV
+      pt-br: Caminho da pasta de series
+    required: true
+    type: text
+  - default: ./data/movies
+    edit: true
+    envKey: MOVIES_PATH
+    labelEn: Movies folder path
+    labelZh: 电影媒体目录路径
+    label:
+      en: Movies folder path
+      zh: 电影媒体目录路径
+      zh-Hant: 電影媒體資料夾路徑
+      ja: 映画フォルダーのパス
+      ko: 영화 폴더 경로
+      ru: Путь к папке фильмов
+      ms: Laluan folder filem
+      pt-br: Caminho da pasta de filmes
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
+  - default: ""
+    edit: true
+    envKey: PUBLISHED_SERVER_URL
+    labelEn: Published server URL
+    labelZh: 对外服务地址
+    label:
+      en: Published server URL
+      zh: 对外服务地址
+      zh-Hant: 對外服務位址
+      ja: 公開サーバー URL
+      ko: 공개 서버 URL
+      ru: Публичный URL сервера
+      ms: URL pelayan diterbitkan
+      pt-br: URL publica do servidor
+    required: false
+    type: text

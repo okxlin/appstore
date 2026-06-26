@@ -33,6 +33,22 @@ additionalProperties:
         pt-br: 'Caminho de dados'
       required: true
       type: text
+    - default: ./data/config
+      edit: true
+      envKey: CONFIG_PATH
+      labelEn: Config folder path
+      labelZh: 配置文件夹路径
+      label:
+        en: Config folder path
+        zh: 配置文件夹路径
+        zh-Hant: 設定資料夾路徑
+        ja: 設定フォルダパス
+        ko: 설정 폴더 경로
+        ru: Путь к папке конфигурации
+        ms: Laluan folder konfigurasi
+        pt-br: Caminho da pasta de configuracao
+      required: true
+      type: text
     - default: Asia/Shanghai
       edit: true
       envKey: TIME_ZONE
@@ -48,4 +64,36 @@ additionalProperties:
         ms: 'Zon masa'
         pt-br: 'Fuso horário'
       required: true
+      type: text
+    - default: linuxserver/mods:universal-calibre
+      edit: true
+      envKey: DOCKER_MODS
+      labelEn: Docker Mods
+      labelZh: Docker Mods
+      label:
+        en: Docker Mods
+        zh: Docker Mods
+        zh-Hant: Docker Mods
+        ja: Docker Mods
+        ko: Docker Mods
+        ru: Docker Mods
+        ms: Docker Mods
+        pt-br: Docker Mods
+      required: false
+      type: text
+    - default: "1"
+      edit: true
+      envKey: OAUTHLIB_RELAX_TOKEN_SCOPE
+      labelEn: Relax OAuth token scope
+      labelZh: 放宽 OAuth token scope 检查
+      label:
+        en: Relax OAuth token scope
+        zh: 放宽 OAuth token scope 检查
+        zh-Hant: 放寬 OAuth token scope 檢查
+        ja: OAuth token scope チェックを緩和
+        ko: OAuth token scope 검사 완화
+        ru: Ослабить проверку OAuth token scope
+        ms: Longgarkan semakan OAuth token scope
+        pt-br: Relaxar verificacao do escopo do token OAuth
+      required: false
       type: text

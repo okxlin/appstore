@@ -49,3 +49,41 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: "1"
+    edit: true
+    envKey: PMA_ARBITRARY
+    labelEn: Allow arbitrary server
+    labelZh: 允许任意服务器
+    label:
+      en: Allow arbitrary server
+      zh: 允许任意服务器
+      zh-Hant: 允許任意伺服器
+      ja: 任意のサーバー接続を許可
+      ko: 임의 서버 연결 허용
+      ru: Разрешить произвольный сервер
+      ms: Benarkan pelayan sebarang
+      pt-br: Permitir servidor arbitrario
+    required: false
+    type: select
+    values:
+      - label: "1"
+        value: "1"
+      - label: "0"
+        value: "0"
+  - default: ''
+    edit: true
+    envKey: PMA_ABSOLUTE_URI
+    labelEn: Public access URL
+    labelZh: 公开访问 URL
+    label:
+      en: Public access URL
+      zh: 公开访问 URL
+      zh-Hant: 公開存取 URL
+      ja: 公開アクセス URL
+      ko: 공개 접속 URL
+      ru: Публичный URL доступа
+      ms: URL akses awam
+      pt-br: URL publico de acesso
+    required: false
+    rule: paramExtUrl
+    type: text

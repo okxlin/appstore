@@ -17,7 +17,6 @@ qBittorrent 下载客户端。
 | --- | --- | --- | --- |
 | PANEL_APP_PORT_HTTP | HTTP 端口 | 8080 | 是 |
 | PANEL_APP_PORT_BT_DOWNLOAD_LISTENER | BT下载监听端口 | 6881 | 是 |
-| PANEL_APP_PORT_BT_DOWNLOAD_DHT_LISTENER | BT下载DHT监听端口(UDP) | 6881 | 是 |
 
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |

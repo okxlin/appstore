@@ -99,6 +99,22 @@ additionalProperties:
       pt-br: Versao do menu
     required: false
     type: text
+  - default: 30000:30010
+    edit: true
+    envKey: PORT_RANGE
+    labelEn: TFTP data port range
+    labelZh: TFTP 数据端口范围
+    label:
+      en: TFTP data port range
+      zh: TFTP 数据端口范围
+      zh-Hant: TFTP 資料連接埠範圍
+      ja: TFTP データポート範囲
+      ko: TFTP 데이터 포트 범위
+      ru: Диапазон портов данных TFTP
+      ms: Julat port data TFTP
+      pt-br: Intervalo de portas de dados TFTP
+    required: false
+    type: text
   - default: /
     edit: true
     envKey: SUBFOLDER
@@ -115,6 +131,38 @@ additionalProperties:
       pt-br: Subpasta
     required: false
     type: text
+  - default: 80
+    edit: true
+    envKey: NGINX_PORT
+    labelEn: Assets internal port
+    labelZh: 资源内部端口
+    label:
+      en: Assets internal port
+      zh: 资源内部端口
+      zh-Hant: 資源內部連接埠
+      ja: アセット内部ポート
+      ko: 자산 내부 포트
+      ru: Внутренний порт ресурсов
+      ms: Port dalaman aset
+      pt-br: Porta interna de assets
+    required: true
+    type: number
+  - default: 3000
+    edit: true
+    envKey: WEB_APP_PORT
+    labelEn: Web app internal port
+    labelZh: Web 应用内部端口
+    label:
+      en: Web app internal port
+      zh: Web 应用内部端口
+      zh-Hant: Web 應用內部連接埠
+      ja: Web アプリ内部ポート
+      ko: Web 앱 내부 포트
+      ru: Внутренний порт веб-приложения
+      ms: Port dalaman aplikasi web
+      pt-br: Porta interna do app web
+    required: true
+    type: number
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE

@@ -18,11 +18,12 @@ services:
       - TZ=${TIME_ZONE}
       - APP_URL=${APP_URL}
       - APP_KEY=${APP_KEY}
-      - DB_HOST=bookstack-db
-      - DB_PORT=3306
-      - DB_USERNAME=bookstack
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=bookstack
+      - DB_DATABASE=${DB_DATABASE}
+      - QUEUE_CONNECTION=${QUEUE_CONNECTION:-}
     depends_on:
       - bookstack-db
     labels:
@@ -36,8 +37,8 @@ services:
       - "${DB_DATA_PATH}:/var/lib/mysql"
     environment:
       - MARIADB_ROOT_PASSWORD=${DB_PASSWORD}
-      - MARIADB_DATABASE=bookstack
-      - MARIADB_USER=bookstack
+      - MARIADB_DATABASE=${DB_DATABASE}
+      - MARIADB_USER=${DB_USERNAME}
       - MARIADB_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

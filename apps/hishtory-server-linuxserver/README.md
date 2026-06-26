@@ -27,6 +27,8 @@ hiSHtory Shell 历史同步服务。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| HISHTORY_SQLITE_DB | SQLite 数据库路径 | /config/hishtory.db | 是 |
+| HISHTORY_POSTGRES_DB | PostgreSQL 连接 URI | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

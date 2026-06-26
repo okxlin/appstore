@@ -9,9 +9,9 @@ services:
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTP}:${WEB_APP_PORT}"
       - "${PANEL_APP_PORT_TFTP}:69/udp"
-      - "${PANEL_APP_PORT_ASSETS}:80"
+      - "${PANEL_APP_PORT_ASSETS}:${NGINX_PORT}"
     volumes:
       - "${CONFIG_PATH}:/config"
       - "${ASSETS_PATH}:/assets"
@@ -20,8 +20,9 @@ services:
       - PGID=1000
       - TZ=${TIME_ZONE}
       - MENU_VERSION=${MENU_VERSION}
+      - PORT_RANGE=${PORT_RANGE:-30000:30010}
       - SUBFOLDER=${SUBFOLDER}
-      - NGINX_PORT=80
-      - WEB_APP_PORT=3000
+      - NGINX_PORT=${NGINX_PORT}
+      - WEB_APP_PORT=${WEB_APP_PORT}
     labels:
       createdBy: "Apps"

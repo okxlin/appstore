@@ -1,0 +1,28 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  thunderbird:
+    image: "linuxserver/thunderbird:1140.12.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_HTTPS}:3001"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - CUSTOM_USER=${CUSTOM_USER}
+      - PASSWORD=${PASSWORD}
+      - TITLE=${TITLE:-Thunderbird}
+      - SELKIES_UI_TITLE=${SELKIES_UI_TITLE:-Selkies}
+      - DASHBOARD=${DASHBOARD:-selkies-dashboard}
+      - LC_ALL=${LC_ALL:-zh_CN.UTF-8}
+    shm_size: ${SHM_SIZE}
+    labels:
+      createdBy: "Apps"

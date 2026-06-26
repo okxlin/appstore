@@ -65,6 +65,82 @@ additionalProperties:
       pt-br: Chave publica SSH
     required: false
     type: text
+  - default: ''
+    edit: true
+    envKey: PUBLIC_KEY_URL
+    labelEn: SSH public key URL
+    labelZh: SSH 公钥 URL
+    label:
+      en: SSH public key URL
+      zh: SSH 公钥 URL
+      zh-Hant: SSH 公鑰 URL
+      ja: SSH 公開鍵 URL
+      ko: SSH 공개 키 URL
+      ru: URL открытого ключа SSH
+      ms: URL kunci awam SSH
+      pt-br: URL da chave publica SSH
+    required: false
+    rule: paramExtUrl
+    type: text
+  - default: "false"
+    edit: true
+    envKey: PASSWORD_ACCESS
+    labelEn: Password SSH access
+    labelZh: 允许 SSH 密码登录
+    label:
+      en: Password SSH access
+      zh: 允许 SSH 密码登录
+      zh-Hant: 允許 SSH 密碼登入
+      ja: SSH パスワードログインを許可
+      ko: SSH 비밀번호 로그인 허용
+      ru: Разрешить вход SSH по паролю
+      ms: Benarkan akses SSH kata laluan
+      pt-br: Permitir acesso SSH por senha
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: "false"
+      - label: "true"
+        value: "true"
+  - default: "false"
+    edit: true
+    envKey: SUDO_ACCESS
+    labelEn: Sudo access
+    labelZh: 允许 sudo
+    label:
+      en: Sudo access
+      zh: 允许 sudo
+      zh-Hant: 允許 sudo
+      ja: sudo を許可
+      ko: sudo 허용
+      ru: Разрешить sudo
+      ms: Benarkan sudo
+      pt-br: Permitir sudo
+    required: false
+    type: select
+    values:
+      - label: "false"
+        value: "false"
+      - label: "true"
+        value: "true"
+  - default: ''
+    edit: true
+    envKey: USER_PASSWORD
+    labelEn: SSH/sudo password
+    labelZh: SSH/sudo 密码
+    label:
+      en: SSH/sudo password
+      zh: SSH/sudo 密码
+      zh-Hant: SSH/sudo 密碼
+      ja: SSH/sudo パスワード
+      ko: SSH/sudo 비밀번호
+      ru: Пароль SSH/sudo
+      ms: Kata laluan SSH/sudo
+      pt-br: Senha SSH/sudo
+    required: false
+    rule: paramComplexity
+    type: password
   - default: Asia/Shanghai
     edit: true
     envKey: TIME_ZONE
@@ -81,3 +157,24 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: "false"
+    edit: true
+    envKey: LOG_STDOUT
+    labelEn: Log to stdout
+    labelZh: 日志输出到标准输出
+    label:
+      en: Log to stdout
+      zh: 日志输出到标准输出
+      zh-Hant: 日誌輸出到標準輸出
+      ja: ログを標準出力へ出力
+      ko: 로그를 표준 출력으로 출력
+      ru: Выводить журналы в stdout
+      ms: Log ke stdout
+      pt-br: Enviar logs para stdout
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"

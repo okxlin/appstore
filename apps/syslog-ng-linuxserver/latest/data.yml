@@ -67,6 +67,27 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
+  - default: "false"
+    edit: true
+    envKey: LOG_TO_STDOUT
+    labelEn: Log to stdout
+    labelZh: 日志输出到标准输出
+    label:
+      en: Log to stdout
+      zh: 日志输出到标准输出
+      zh-Hant: 日誌輸出到標準輸出
+      ja: ログを標準出力へ出力
+      ko: 로그를 표준 출력으로 출력
+      ru: Выводить журналы в stdout
+      ms: Log ke stdout
+      pt-br: Enviar logs para stdout
+    required: false
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"
   - default: ./data/log
     edit: true
     envKey: LOG_PATH

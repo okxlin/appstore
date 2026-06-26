@@ -99,3 +99,19 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
+  - default: 127.0.0.1/32
+    edit: true
+    envKey: TRUSTED_PROXIES
+    labelEn: Trusted proxies
+    labelZh: 可信代理
+    label:
+      en: Trusted proxies
+      zh: 可信代理
+      zh-Hant: 可信代理
+      ja: 信頼済みプロキシ
+      ko: 신뢰할 수 있는 프록시
+      ru: Доверенные прокси
+      ms: Proksi dipercayai
+      pt-br: Proxies confiaveis
+    required: false
+    type: text

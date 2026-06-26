@@ -7,15 +7,15 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:8083"
     volumes:
-      - "./data/config:/config"
+      - "${CONFIG_PATH:-./data/config}:/config"
       - "${DATA_PATH}:/books"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
-      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
-      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
-    image: linuxserver/calibre-web:latest
+      - DOCKER_MODS=${DOCKER_MODS:-linuxserver/mods:universal-calibre}
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=${OAUTHLIB_RELAX_TOKEN_SCOPE:-1}
+    image: "linuxserver/calibre-web:latest"
     labels:  
       createdBy: "Apps"
 

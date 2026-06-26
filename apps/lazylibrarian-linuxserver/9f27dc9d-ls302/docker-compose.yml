@@ -17,6 +17,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - DOCKER_MODS=${DOCKER_MODS:-}
       - TZ=${TIME_ZONE}
     labels:
       createdBy: "Apps"

@@ -1,0 +1,30 @@
+name: Obsidian
+tags:
+- Tool
+title: Obsidian 笔记桌面
+description: Obsidian 笔记桌面
+additionalProperties:
+  key: obsidian-linuxserver
+  name: Obsidian
+  tags:
+  - Tool
+  shortDescZh: Obsidian 笔记桌面
+  shortDescEn: Obsidian desktop app maintained by LinuxServer.io
+  description:
+    en: Obsidian desktop app maintained by LinuxServer.io
+    zh: Obsidian 笔记桌面
+    zh-Hant: Obsidian 筆記桌面
+    ja: LinuxServer.io が保守する Obsidian デスクトップアプリ
+    ko: LinuxServer.io에서 유지 관리하는 Obsidian 데스크톱 앱
+    ru: Настольное приложение Obsidian, поддерживаемое LinuxServer.io
+    ms: Aplikasi desktop Obsidian yang diselenggara oleh LinuxServer.io
+    pt-br: Aplicativo desktop Obsidian mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://obsidian.md/
+  github: https://github.com/linuxserver/docker-obsidian
+  document: https://docs.linuxserver.io/images/docker-obsidian/
+  architectures:
+  - amd64
+  - arm64

@@ -82,6 +82,70 @@ additionalProperties:
       pt-br: Host permitido
     required: true
     type: text
+  - default: netbox-db
+    edit: true
+    envKey: DB_HOST
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco
+    required: true
+    type: text
+  - default: 5432
+    edit: true
+    envKey: DB_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco
+    required: true
+    type: number
+  - default: netbox
+    edit: true
+    envKey: DB_USER
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Имя пользователя базы
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco
+    required: true
+    type: text
+  - default: netbox
+    edit: true
+    envKey: DB_NAME
+    labelEn: Database name
+    labelZh: 数据库名称
+    label:
+      en: Database name
+      zh: 数据库名称
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco
+    required: true
+    type: text
   - default: netbox-change-me
     edit: true
     envKey: DB_PASSWORD
@@ -99,6 +163,102 @@ additionalProperties:
     required: true
     type: password
     rule: paramComplexity
+  - default: netbox-redis
+    edit: true
+    envKey: REDIS_HOST
+    labelEn: Redis host
+    labelZh: Redis 主机
+    label:
+      en: Redis host
+      zh: Redis 主机
+      zh-Hant: Redis 主機
+      ja: Redis ホスト
+      ko: Redis 호스트
+      ru: Хост Redis
+      ms: Hos Redis
+      pt-br: Host do Redis
+    required: true
+    type: text
+  - default: 6379
+    edit: true
+    envKey: REDIS_PORT
+    labelEn: Redis port
+    labelZh: Redis 端口
+    label:
+      en: Redis port
+      zh: Redis 端口
+      zh-Hant: Redis 連接埠
+      ja: Redis ポート
+      ko: Redis 포트
+      ru: Порт Redis
+      ms: Port Redis
+      pt-br: Porta do Redis
+    required: true
+    type: number
+  - default: ''
+    edit: true
+    envKey: REDIS_USERNAME
+    labelEn: Redis username
+    labelZh: Redis 用户名
+    label:
+      en: Redis username
+      zh: Redis 用户名
+      zh-Hant: Redis 使用者名稱
+      ja: Redis ユーザー名
+      ko: Redis 사용자 이름
+      ru: Имя пользователя Redis
+      ms: Nama pengguna Redis
+      pt-br: Usuario do Redis
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: REDIS_PASSWORD
+    labelEn: Redis password
+    labelZh: Redis 密码
+    label:
+      en: Redis password
+      zh: Redis 密码
+      zh-Hant: Redis 密碼
+      ja: Redis パスワード
+      ko: Redis 비밀번호
+      ru: Пароль Redis
+      ms: Kata laluan Redis
+      pt-br: Senha do Redis
+    required: false
+    type: password
+  - default: 0
+    edit: true
+    envKey: REDIS_DB_TASK
+    labelEn: Redis task database
+    labelZh: Redis 任务数据库
+    label:
+      en: Redis task database
+      zh: Redis 任务数据库
+      zh-Hant: Redis 任務資料庫
+      ja: Redis タスクデータベース
+      ko: Redis 작업 데이터베이스
+      ru: База Redis для задач
+      ms: Pangkalan data tugas Redis
+      pt-br: Banco Redis de tarefas
+    required: true
+    type: number
+  - default: 1
+    edit: true
+    envKey: REDIS_DB_CACHE
+    labelEn: Redis cache database
+    labelZh: Redis 缓存数据库
+    label:
+      en: Redis cache database
+      zh: Redis 缓存数据库
+      zh-Hant: Redis 快取資料庫
+      ja: Redis キャッシュデータベース
+      ko: Redis 캐시 데이터베ース
+      ru: База Redis для кэша
+      ms: Pangkalan data cache Redis
+      pt-br: Banco Redis de cache
+    required: true
+    type: number
   - default: ''
     edit: true
     envKey: BASE_PATH

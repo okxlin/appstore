@@ -1,0 +1,189 @@
+additionalProperties:
+  formFields:
+  - default: 3000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: 3001
+    edit: true
+    envKey: PANEL_APP_PORT_HTTPS
+    labelEn: HTTPS Port
+    labelZh: HTTPS 端口
+    label:
+      en: HTTPS Port
+      zh: HTTPS 端口
+      zh-Hant: HTTPS 連接埠
+      ja: HTTPS ポート
+      ko: HTTPS 포트
+      ru: HTTPS-порт
+      ms: Port HTTPS
+      pt-br: Porta HTTPS
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: admin
+    edit: true
+    envKey: CUSTOM_USER
+    labelEn: Basic Auth Username
+    labelZh: 访问用户名（Basic Auth）
+    label:
+      en: Basic Auth Username
+      zh: 访问用户名（Basic Auth）
+      zh-Hant: 存取使用者名稱（Basic Auth）
+      ja: ベーシック認証ユーザー名
+      ko: 기본 인증 사용자명
+      ru: Имя пользователя (Basic Auth)
+      ms: Nama pengguna Basic Auth
+      pt-br: Usuario Basic Auth
+    required: true
+    type: text
+  - default: linuxserver-change-me
+    edit: true
+    envKey: PASSWORD
+    labelEn: Basic Auth Password
+    labelZh: 访问密码（Basic Auth）
+    label:
+      en: Basic Auth Password
+      zh: 访问密码（Basic Auth）
+      zh-Hant: 存取密碼（Basic Auth）
+      ja: ベーシック認証パスワード
+      ko: 기본 인증 비밀번호
+      ru: Пароль Basic Auth
+      ms: Kata laluan Basic Auth
+      pt-br: Senha Basic Auth
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ONLYOFFICE Desktop Editors
+    edit: true
+    envKey: TITLE
+    labelEn: Browser page title
+    labelZh: 浏览器页面标题
+    label:
+      en: Browser page title
+      zh: 浏览器页面标题
+      zh-Hant: 瀏覽器頁面標題
+      ja: ブラウザーのページタイトル
+      ko: 브라우저 페이지 제목
+      ru: Заголовок страницы браузера
+      ms: Tajuk halaman pelayar
+      pt-br: Titulo da pagina do navegador
+    required: false
+    type: text
+  - default: Selkies
+    edit: true
+    envKey: SELKIES_UI_TITLE
+    labelEn: Sidebar title
+    labelZh: 侧边栏标题
+    label:
+      en: Sidebar title
+      zh: 侧边栏标题
+      zh-Hant: 側邊欄標題
+      ja: サイドバータイトル
+      ko: 사이드바 제목
+      ru: Заголовок боковой панели
+      ms: Tajuk bar sisi
+      pt-br: Titulo da barra lateral
+    required: false
+    type: text
+  - default: selkies-dashboard
+    edit: true
+    envKey: DASHBOARD
+    labelEn: Dashboard UI
+    labelZh: 仪表盘界面
+    label:
+      en: Dashboard UI
+      zh: 仪表盘界面
+      zh-Hant: 儀表板介面
+      ja: ダッシュボード UI
+      ko: 대시보드 UI
+      ru: Интерфейс панели
+      ms: UI papan pemuka
+      pt-br: Interface do painel
+    required: false
+    type: select
+    values:
+      - label: selkies-dashboard
+        value: selkies-dashboard
+      - label: selkies-dashboard-zinc
+        value: selkies-dashboard-zinc
+      - label: selkies-dashboard-wish
+        value: selkies-dashboard-wish
+  - default: zh_CN.UTF-8
+    edit: true
+    envKey: LC_ALL
+    labelEn: Desktop language locale
+    labelZh: 桌面语言区域
+    label:
+      en: Desktop language locale
+      zh: 桌面语言区域
+      zh-Hant: 桌面語言區域
+      ja: デスクトップ言語ロケール
+      ko: 데스크톱 언어 로케일
+      ru: Локаль языка рабочего стола
+      ms: Lokal bahasa desktop
+      pt-br: Localidade do idioma da area de trabalho
+    required: false
+    type: text
+  - default: 1gb
+    edit: true
+    envKey: SHM_SIZE
+    labelEn: Shared memory size
+    labelZh: 共享内存大小
+    label:
+      en: Shared memory size
+      zh: 共享内存大小
+      zh-Hant: 共享記憶體大小
+      ja: 共有メモリサイズ
+      ko: 공유 메모리 크기
+      ru: Размер общей памяти
+      ms: Saiz memori kongsi
+      pt-br: Tamanho da memoria compartilhada
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

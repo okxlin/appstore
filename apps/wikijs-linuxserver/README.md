@@ -28,6 +28,12 @@ Wiki.js 知识库 Wiki。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| DB_TYPE | 数据库类型 | sqlite | 是 |
+| DB_HOST | PostgreSQL 主机 | - | 否 |
+| DB_PORT | PostgreSQL 端口 | - | 否 |
+| DB_NAME | PostgreSQL 数据库 | - | 否 |
+| DB_USER | PostgreSQL 用户名 | - | 否 |
+| DB_PASS | PostgreSQL 密码 | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明

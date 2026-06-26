@@ -67,3 +67,51 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: ""
+      edit: true
+      envKey: PROXY_DOMAIN
+      labelEn: Reverse proxy domain
+      labelZh: 反向代理子域名
+      label:
+        en: Reverse proxy domain
+        zh: 反向代理子域名
+        zh-Hant: 反向代理子網域
+        ja: リバースプロキシドメイン
+        ko: 리버스 프록시 도메인
+        ru: Домен обратного прокси
+        ms: Domain proksi songsang
+        pt-br: Dominio de proxy reverso
+      required: false
+      type: text
+    - default: /config/workspace
+      edit: true
+      envKey: DEFAULT_WORKSPACE
+      labelEn: Default workspace
+      labelZh: 默认工作目录
+      label:
+        en: Default workspace
+        zh: 默认工作目录
+        zh-Hant: 預設工作目錄
+        ja: デフォルトワークスペース
+        ko: 기본 작업 공간
+        ru: Рабочая область по умолчанию
+        ms: Ruang kerja lalai
+        pt-br: Espaco de trabalho padrao
+      required: false
+      type: text
+    - default: code-server
+      edit: true
+      envKey: PWA_APPNAME
+      labelEn: PWA app name
+      labelZh: PWA 应用名称
+      label:
+        en: PWA app name
+        zh: PWA 应用名称
+        zh-Hant: PWA 應用名稱
+        ja: PWA アプリ名
+        ko: PWA 앱 이름
+        ru: Имя приложения PWA
+        ms: Nama aplikasi PWA
+        pt-br: Nome do app PWA
+      required: false
+      type: text

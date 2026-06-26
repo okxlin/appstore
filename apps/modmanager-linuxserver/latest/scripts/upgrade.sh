@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
-mkdir -p ./data/modcache
-chown -R 1000:1000 ./data 2>/dev/null || true
+
+paths=(
+  "${MODCACHE_PATH:-./data/modcache}"
+)
+
+mkdir -p "${paths[@]}"
+for path in "${paths[@]}"; do
+  case "$path" in
+    ./*|../*) chown -R 1000:1000 "$path" 2>/dev/null || true ;;
+  esac
+done

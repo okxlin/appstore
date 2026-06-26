@@ -19,17 +19,17 @@ services:
       - SUPERUSER_EMAIL=${SUPERUSER_EMAIL}
       - SUPERUSER_PASSWORD=${SUPERUSER_PASSWORD}
       - ALLOWED_HOST=${ALLOWED_HOST}
-      - DB_NAME=netbox
-      - DB_USER=netbox
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_HOST=netbox-db
-      - DB_PORT=5432
-      - REDIS_HOST=netbox-redis
-      - REDIS_PORT=6379
-      - REDIS_USERNAME=
-      - REDIS_PASSWORD=
-      - REDIS_DB_TASK=0
-      - REDIS_DB_CACHE=1
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_USERNAME=${REDIS_USERNAME:-}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_DB_TASK=${REDIS_DB_TASK}
+      - REDIS_DB_CACHE=${REDIS_DB_CACHE}
       - BASE_PATH=${BASE_PATH:-}
       - CSRF_TRUSTED_ORIGINS=${CSRF_TRUSTED_ORIGINS:-}
     depends_on:
@@ -45,8 +45,8 @@ services:
     volumes:
       - "${DB_DATA_PATH}:/var/lib/postgresql/data"
     environment:
-      - POSTGRES_DB=netbox
-      - POSTGRES_USER=netbox
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     labels:
       createdBy: "Apps"

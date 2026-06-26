@@ -31,6 +31,20 @@ Healthchecks 定时任务监控。
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | SECRET_KEY | 密钥 | - | 是 |
+| ALLOWED_HOSTS | 允许的主机名 | - | 否 |
+| APPRISE_ENABLED | 启用 Apprise | False | 否 |
+| CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
+| INTEGRATIONS_ALLOW_PRIVATE_IPS | 允许集成访问私有 IP | False | 否 |
+| HEALTHCHECKS_DEBUG | 调试模式 | False | 否 |
+| PING_EMAIL_DOMAIN | Ping 邮件域名 | - | 否 |
+| RP_ID | WebAuthn RP ID | - | 否 |
+| SITE_LOGO_URL | 站点 Logo URL | - | 否 |
+| DEFAULT_FROM_EMAIL | 默认发件邮箱 | - | 否 |
+| EMAIL_HOST | SMTP 主机 | - | 否 |
+| EMAIL_PORT | SMTP 端口 | - | 否 |
+| EMAIL_HOST_USER | SMTP 用户 | - | 否 |
+| EMAIL_HOST_PASSWORD | SMTP 密码 | - | 否 |
+| EMAIL_USE_TLS | SMTP TLS | - | 否 |
 | SUPERUSER_EMAIL | 管理员邮箱 | admin@example.com | 是 |
 | SUPERUSER_PASSWORD | 管理员密码 | - | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |

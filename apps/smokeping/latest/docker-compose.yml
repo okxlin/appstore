@@ -6,14 +6,14 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
-    image: linuxserver/smokeping:latest
+    image: "linuxserver/smokeping:latest"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
       - MASTER_URL=${MASTER_URL}
       - SHARED_SECRET=${SHARED_SECRET}
-      - CACHE_DIR=/tmp
+      - CACHE_DIR=${CACHE_DIR}
     volumes:
       - ${DATA_PATH}/config:/config
       - ${DATA_PATH}/data:/data

@@ -1,0 +1,31 @@
+name: FreshRSS
+tags:
+- Tool
+title: FreshRSS RSS 阅读器
+description: FreshRSS RSS 阅读器
+additionalProperties:
+  key: freshrss-linuxserver
+  name: FreshRSS
+  tags:
+  - Tool
+  shortDescZh: FreshRSS RSS 阅读器
+  shortDescEn: RSS reader maintained by LinuxServer.io
+  description:
+    en: RSS reader maintained by LinuxServer.io
+    zh: FreshRSS RSS 阅读器
+    zh-Hant: FreshRSS RSS 閱讀器
+    ja: LinuxServer.io が保守する RSS リーダー
+    ko: LinuxServer.io에서 유지 관리하는 RSS 리더
+    ru: RSS-ридер, поддерживаемый LinuxServer.io
+    ms: Pembaca RSS yang diselenggara oleh LinuxServer.io
+    pt-br: Leitor RSS mantido pela LinuxServer.io
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://freshrss.org/
+  github: https://github.com/linuxserver/docker-freshrss
+  document: https://docs.linuxserver.io/images/docker-freshrss/
+  architectures:
+  - amd64
+  - arm64
+  - armv7
