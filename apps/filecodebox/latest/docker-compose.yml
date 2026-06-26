@@ -8,10 +8,10 @@ services:
       - "${PANEL_APP_PORT_HTTP}:12345"
     volumes:
       - "${DATA_PATH}:/app/data"
-    image: lanol/filecodebox:beta
-    labels:  
+    image: "lanol/filecodebox:latest"
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
