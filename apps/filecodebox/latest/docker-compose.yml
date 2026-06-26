@@ -9,9 +9,9 @@ services:
     volumes:
       - "${DATA_PATH}:/app/data"
     image: "lanol/filecodebox:latest"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
