@@ -3,34 +3,34 @@ additionalProperties:
     - default: 40058
       edit: true
       envKey: PANEL_APP_PORT_HTTP
-      labelEn: Port
-      labelZh: 端口
+      labelEn: Web UI Port
+      labelZh: Web UI 端口
       label:
-        en: 'Port'
-        zh: '端口'
-        zh-Hant: '埠'
-        ja: 'ポート'
-        ko: '포트'
-        ru: 'Порт'
-        ms: 'Port'
-        pt-br: 'Porta'
+        en: 'Web UI Port'
+        zh: 'Web UI 端口'
+        zh-Hant: 'Web UI 埠'
+        ja: 'Web UI ポート'
+        ko: 'Web UI 포트'
+        ru: 'Порт Web UI'
+        ms: 'Port Web UI'
+        pt-br: 'Porta da Web UI'
       required: true
       rule: paramPort
       type: number
     - default: 40059
       edit: true
       envKey: PANEL_APP_PORT_SSH
-      labelEn: SSH Port
-      labelZh: SSH端口
+      labelEn: SSH proxy port
+      labelZh: SSH 代理端口
       label:
-        en: 'SSH Port'
-        zh: 'SSH 端口'
-        zh-Hant: 'SSH 埠'
-        ja: 'SSH ポート'
-        ko: 'SSH 포트'
-        ru: 'Порт SSH'
-        ms: 'Port SSH'
-        pt-br: 'Porta SSH'
+        en: 'SSH proxy port'
+        zh: 'SSH 代理端口'
+        zh-Hant: 'SSH 代理埠'
+        ja: 'SSH プロキシポート'
+        ko: 'SSH 프록시 포트'
+        ru: 'Порт SSH-прокси'
+        ms: 'Port proksi SSH'
+        pt-br: 'Porta do proxy SSH'
       required: false
       rule: paramPort
       type: number
@@ -50,35 +50,57 @@ additionalProperties:
         pt-br: 'Caminho da pasta de dados'
       required: true
       type: text
-    - default: "false"
+    - default: next_terminal
       edit: true
-      envKey: SSHD_SWITCH
-      labelEn: Enable SSH (true or false)
-      labelZh: 启用SSH(true/false)
+      envKey: PANEL_DB_NAME
+      labelEn: Database name
+      labelZh: 数据库名
       label:
-        en: 'Enable SSH (true or false)'
-        zh: '启用SSH(true/false)'
-        zh-Hant: '啟用 SSH（true/false）'
-        ja: 'SSH を有効化（true/false）'
-        ko: 'SSH 사용 (true/false)'
-        ru: 'Включить SSH (true/false)'
-        ms: 'Dayakan SSH (true/false)'
-        pt-br: 'Habilitar SSH (true/false)'
+        en: 'Database name'
+        zh: '数据库名'
+        zh-Hant: '資料庫名'
+        ja: 'データベース名'
+        ko: '데이터베이스 이름'
+        ru: 'Имя базы данных'
+        ms: 'Nama pangkalan data'
+        pt-br: 'Nome do banco de dados'
+      random: true
       required: true
+      rule: paramCommon
       type: text
-    - default: ./ssh/id_rsa
+    - default: next_terminal
       edit: true
-      envKey: SSH_KEY_PATH
-      labelEn: SSH key file(/root/.ssh/id_rsa)
-      labelZh: SSH 私钥文件(/root/.ssh/id_rsa)
+      envKey: PANEL_DB_USER
+      labelEn: Database user
+      labelZh: 数据库用户
       label:
-        en: 'SSH key file (/root/.ssh/id_rsa)'
-        zh: 'SSH 私钥文件(/root/.ssh/id_rsa)'
-        zh-Hant: 'SSH 私鑰檔案(/root/.ssh/id_rsa)'
-        ja: 'SSH キーファイル(/root/.ssh/id_rsa)'
-        ko: 'SSH 키 파일(/root/.ssh/id_rsa)'
-        ru: 'Файл ключа SSH (/root/.ssh/id_rsa)'
-        ms: 'Fail kunci SSH (/root/.ssh/id_rsa)'
-        pt-br: 'Arquivo de chave SSH (/root/.ssh/id_rsa)'
+        en: 'Database user'
+        zh: '数据库用户'
+        zh-Hant: '資料庫用戶'
+        ja: 'データベースユーザー'
+        ko: '데이터베이스 사용자'
+        ru: 'Пользователь базы данных'
+        ms: 'Pengguna pangkalan data'
+        pt-br: 'Usuário do banco de dados'
+      random: true
       required: true
+      rule: paramCommon
       type: text
+    - default: next_terminal
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database password
+      labelZh: 数据库用户密码
+      label:
+        en: 'Database password'
+        zh: '数据库用户密码'
+        zh-Hant: '資料庫用戶密碼'
+        ja: 'データベースユーザーパスワード'
+        ko: '데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных'
+        ms: 'Kata laluan pengguna pangkalan data'
+        pt-br: 'Senha do usuário do banco de dados'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

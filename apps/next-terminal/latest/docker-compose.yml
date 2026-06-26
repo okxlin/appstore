@@ -7,7 +7,27 @@ services:
     volumes:
       - "${DATA_PATH}:/usr/local/next-terminal/data"
     image: dushixiang/guacd:latest
-    labels:  
+    labels:
+      createdBy: "Apps"
+
+  nt-postgresql:
+    container_name: ${CONTAINER_NAME}-postgresql
+    restart: always
+    networks:
+      - 1panel-network
+    environment:
+      - POSTGRES_DB=${PANEL_DB_NAME:-next_terminal}
+      - POSTGRES_USER=${PANEL_DB_USER:-next_terminal}
+      - POSTGRES_PASSWORD=${PANEL_DB_USER_PASSWORD:-next_terminal}
+    volumes:
+      - "${DATA_PATH}/postgresql:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PANEL_DB_USER:-next_terminal} -d ${PANEL_DB_NAME:-next_terminal}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    image: postgres:16.4
+    labels:
       createdBy: "Apps"
 
   next-terminal:
@@ -17,20 +37,21 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:8088"
-      - "${PANEL_APP_PORT_SSH}:8089"
+      - "${PANEL_APP_PORT_SSH}:2022"
     volumes:
       - "${DATA_PATH}:/usr/local/next-terminal/data"
-      - "/etc/localtime:/etc/localtime"
-      - "${SSH_KEY_PATH}:/root/.ssh/id_rsa"
-    environment:
-      DB: sqlite
-      GUACD_HOSTNAME: nt-guacd
-      GUACD_PORT: 4822
-      SSHD_ENABLE: ${SSHD_SWITCH}
+      - "${DATA_PATH}/logs:/usr/local/next-terminal/logs"
+      - "${DATA_PATH}/config.yaml:/etc/next-terminal/config.yaml:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    depends_on:
+      nt-postgresql:
+        condition: service_healthy
+      nt-guacd:
+        condition: service_started
     image: dushixiang/next-terminal:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
