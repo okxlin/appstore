@@ -46,6 +46,8 @@ password:zabbix
 - 带`&mysql`版本，会安装符合`Zabbix`格式要求的数据库版本
 - 不带`&mysql`的版本，默认调用面板安装的数据库
 - 官方文档说明 Zabbix 7.4.x 支持从 6.4.x 直接升级；旧的 6.4.13 版本目录保留用于老用户升级和回溯。
+- 从 6.4.x 升级到 7.4.11 前必须备份数据库；首次启动 7.4.11 时 Zabbix Server 会自动执行数据库升级，实例较大时可能耗时较久，请等待日志出现 `database upgrade fully completed` 后再判定完成。
+- 使用外部数据库的版本请先确认数据库满足 Zabbix 7.4 要求；`7.4.11&mysql` 自带 `mysql:8.0.36`，并在 `conf/my.cnf` 中保留 `log_bin_trust_function_creators=1`。
 
 ## 参考资料
 - 官网: <https://www.zabbix.com/>

@@ -9,7 +9,7 @@ Tailscale 控制服务器的开源自托管实现。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64。
-- 可选版本：`0.23.0-alpha3`、`0.26.1`。
+- 可选版本：`0.23.0-alpha3`、`0.26.1`、`0.27.1`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -18,10 +18,16 @@ Tailscale 控制服务器的开源自托管实现。
 | PANEL_APP_PORT_HTTP | 端口 (对应内部 8080) | 40183 | 是 |
 
 ## 数据持久化
-- `"./data/config:/etc/headscale`
-- `"./data/data:/var/lib/headscale`
+- `./data/config:/etc/headscale`
+- `./data/data:/var/lib/headscale`
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+升级到 `0.27.1` 前请特别注意：
+
+- Headscale `0.27.x` 会执行 SQLite 数据库结构迁移；升级前请备份 `./data/data/db.sqlite`、`./data/data/db.sqlite-wal`、`./data/data/db.sqlite-shm`（如存在）以及 `./data/config`。
+- `0.27.1` 最低支持的 Tailscale 客户端版本为 `v1.64.0`，旧客户端需要先升级。
+- 版本目录内的 `scripts/upgrade.sh` 会自动备份并迁移旧版 `config.yaml`；如手动改过 Postgres、DNS、ACL 等配置，升级后请核对 `database`、`dns`、`policy` 配置块。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
