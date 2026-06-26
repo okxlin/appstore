@@ -43,6 +43,12 @@ MixSpace is an open-source self-hosted backend for personal blogs. The current `
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
+## 升级说明
+- 升级脚本会为旧 `.env` 补充缺失的 `PG_PASSWORD`、`JWT_SECRET`、`SUBNET_PREFIX`，并创建 PostgreSQL/Redis 持久化目录。
+- 升级脚本会把自动生成的 `PG_PASSWORD`、`JWT_SECRET` 缓存在 `./data/.mixspace_pg_password`、`./data/.mixspace_jwt_secret`，避免后续升级重复生成导致旧数据不可用。
+- 旧版 MongoDB 数据目录 `./data/db` 会被保留，但不会自动迁移到 PostgreSQL。
+- 从旧 MongoDB 拓扑升级前，请先完整备份应用目录，并按 MixSpace 上游文档评估数据迁移方案。
+
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
