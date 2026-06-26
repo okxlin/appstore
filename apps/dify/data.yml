@@ -1,0 +1,31 @@
+name: Dify
+tags:
+  - AI
+title: 开源 LLM 应用开发平台
+description: 开源 LLM 应用开发平台
+additionalProperties:
+  key: dify
+  name: Dify
+  tags:
+    - AI
+  shortDescZh: 开源 LLM 应用开发平台
+  shortDescEn: Open-source LLM app development platform
+  description:
+    en: Open-source LLM app development platform
+    zh: 开源 LLM 应用开发平台
+    zh-Hant: 開源 LLM 應用開發平台
+    ja: オープンソースのLLMアプリ開発プラットフォーム
+    ko: 오픈 소스 LLM 앱 개발 플랫폼
+    ru: Платформа с открытым исходным кодом для разработки LLM-приложений
+    ms: Platform pembangunan aplikasi LLM sumber terbuka
+    pt-br: Plataforma open-source para desenvolvimento de aplicativos LLM
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://dify.ai
+  github: https://github.com/langgenius/dify
+  document: https://docs.dify.ai
+  architectures:
+    - amd64
+    - arm64
