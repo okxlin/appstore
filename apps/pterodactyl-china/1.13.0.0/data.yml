@@ -53,6 +53,25 @@ additionalProperties:
       values:
         - label: "MySQL"
           value: mysql
+        - label: "MariaDB"
+          value: mariadb
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: 'Database Port'
+        zh: '数据库端口'
+        zh-Hant: '資料庫連接埠'
+        ja: 'データベースポート'
+        ko: '데이터베이스 포트'
+        ru: 'Порт базы данных'
+        ms: 'Port pangkalan data'
+        pt-br: 'Porta do banco de dados'
+      required: true
+      rule: paramPort
+      type: number
     - default: pterodactyl
       envKey: PANEL_DB_NAME
       labelEn: Database
@@ -302,6 +321,22 @@ additionalProperties:
         pt-br: 'Nome de usuário do e-mail'
       required: false
       type: text
+    - default: ''
+      edit: true
+      envKey: MAIL_PASSWORD
+      labelEn: Mail Password
+      labelZh: 邮件密码
+      label:
+        en: 'Mail Password'
+        zh: '邮件密码'
+        zh-Hant: '郵件密碼'
+        ja: 'メールパスワード'
+        ko: '메일 비밀번호'
+        ru: 'Пароль почты'
+        ms: 'Kata laluan e-mel'
+        pt-br: 'Senha do e-mail'
+      required: false
+      type: password
     - default: "true"
       edit: true
       envKey: MAIL_ENCRYPTION

@@ -12,7 +12,7 @@ services:
     environment:
       - USER_UID=${USER_UID}
       - USER_GID=${USER_GID}
-      - DB_CONNECTION=${PANEL_DB_TYPE}
+      - DB_CONNECTION=mysql
       - DB_HOST=${PANEL_DB_HOST}
       - DB_PORT=${PANEL_DB_PORT}
       - DB_DATABASE=${PANEL_DB_NAME}
@@ -35,7 +35,7 @@ services:
       - QUEUE_DRIVER=${QUEUE_DRIVER}
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
-      - RECAPTCHA_ENABLED=${RECAPTCHA_ENABLED}
+      - RECAPTCHA_ENABLED=${PANEL_RECAPTCHA_ENABLED}
     restart: always
     networks:
       - 1panel-network
