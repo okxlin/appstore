@@ -20,11 +20,11 @@ additionalProperties:
   shortDescZh: 一个简单好用安全的开源交互审计系统，支持RDP、SSH、VNC、Telnet、Kubernetes协议
   shortDescEn: A simple, easy-to-use and secure open source interactive audit system that supports RDP, SSH, VNC, Telnet, and Kubernetes protocols
   type: tool
-  crossVersionUpdate: true
+  crossVersionUpdate: false
   limit: 0
   recommend: 0
   website: https://next-terminal.typesafe.cn/
   github: https://github.com/dushixiang/next-terminal
-  document: https://next-terminal.typesafe.cn/docs/
+  document: https://docs.next-terminal.typesafe.cn/
   architectures:
     - amd64
