@@ -1,58 +1,88 @@
 services:
   mixspace:
     container_name: ${CONTAINER_NAME}
-    image: innei/mx-server:13
-    command: bash ./docker-run.sh
+    image: "innei/mx-server:13"
     environment:
       - TZ=${TIME_ZONE}
       - NODE_ENV=production
+      - PORT=2333
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
       - JWT_SECRET=${JWT_SECRET}
       - ENCRYPT_KEY=${ENCRYPT_KEY}
       - ENCRYPT_ENABLE=${ENCRYPT_ENABLE}
+      - PG_HOST=mixspace-postgres
+      - PG_PORT=5432
+      - PG_USER=mx
+      - PG_PASSWORD=${PG_PASSWORD}
+      - PG_DATABASE=mx_core
+      - SNOWFLAKE_WORKER_ID=1
+      - REDIS_HOST=mixspace-redis
+      - REDIS_PORT=6379
     volumes:
       - ./data/mx-space:/root/.mx-space
     ports:
-      - '${PANEL_APP_PORT_HTTP}:2333'
+      - "${PANEL_APP_PORT_HTTP}:2333"
     networks:
+      - 1panel-network
       - mixspace-network
     restart: always
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'http://127.0.0.1:2333/api/v2/ping']
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:2333/api/v3/health"]
       interval: 1m30s
       timeout: 30s
       retries: 5
       start_period: 30s
     depends_on:
-      - mongo
-      - redis
-    links:
-      - mongo
-      - redis
-    labels:  
-      createdBy: "Apps" 
+      mixspace-postgres:
+        condition: service_healthy
+      mixspace-redis:
+        condition: service_started
+    labels:
+      createdBy: "Apps"
 
-  mongo:
-    container_name: ${CONTAINER_NAME}-mongo
-    image: mongo
+  mixspace-postgres:
+    container_name: ${CONTAINER_NAME}-postgres
+    image: "postgres:16-alpine"
+    environment:
+      - POSTGRES_USER=mx
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_DB=mx_core
     volumes:
-      - ./data/db:/data/db
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mx -d mx_core"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
     networks:
       - mixspace-network
     restart: always
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"
 
-  redis:
-    image: redis
+  mixspace-redis:
+    image: "redis:8-alpine"
     container_name: ${CONTAINER_NAME}-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      start_period: 20s
+      interval: 30s
+      retries: 5
+      timeout: 3s
     networks:
       - mixspace-network
     restart: always
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"
 
 networks:
+  1panel-network:
+    external: true
+
   mixspace-network:
     driver: bridge
     ipam:
