@@ -8,7 +8,7 @@ services:
       - "${PANEL_APP_PORT_HTTP}:12345"
     volumes:
       - "${DATA_PATH}:/app/data"
-    image: lanol/filecodebox:beta
+    image: "lanol/filecodebox:latest"
     labels:  
       createdBy: "Apps"
 
