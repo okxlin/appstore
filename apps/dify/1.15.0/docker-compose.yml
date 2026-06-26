@@ -1,0 +1,420 @@
+services:
+  init_permissions:
+    image: "busybox:latest"
+    container_name: ${CONTAINER_NAME}-init
+    labels:
+      createdBy: "Apps"
+    command:
+      - sh
+      - -c
+      - |
+        if [ -f /app/api/storage/.init_permissions ]; then
+          echo "Permissions already initialized. Exiting."
+          exit 0
+        fi
+        echo "Initializing permissions for /app/api/storage"
+        chown -R 1001:1001 /app/api/storage && touch /app/api/storage/.init_permissions
+        echo "Permissions initialized. Exiting."
+    volumes:
+      - ${APP_DATA_DIR}/app/storage:/app/api/storage
+    restart: "no"
+
+  api:
+    image: "langgenius/dify-api:1.15.0"
+    container_name: ${CONTAINER_NAME}-api
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: &dify-env
+      - path: ./.env.sample
+        required: true
+      - path: ${CUSTOM_ENV_FILE}
+        required: false
+      - path: ./.env
+        required: false
+    environment:
+      - MODE=api
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - INNER_API_KEY_FOR_PLUGIN=${PLUGIN_DIFY_INNER_API_KEY}
+      - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
+      - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
+      - PLUGIN_REMOTE_INSTALL_HOST=localhost
+      - PLUGIN_REMOTE_INSTALL_PORT=5003
+      - PLUGIN_MAX_PACKAGE_SIZE=52428800
+      - PLUGIN_DAEMON_TIMEOUT=600.0
+      - SENTRY_DSN=
+      - SENTRY_TRACES_SAMPLE_RATE=1.0
+      - SENTRY_PROFILES_SAMPLE_RATE=1.0
+    depends_on:
+      init_permissions:
+        condition: service_completed_successfully
+    volumes:
+      - ${APP_DATA_DIR}/app/storage:/app/api/storage
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:5001/health
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    networks:
+      - ssrf_proxy_network
+      - default
+      - 1panel-network
+
+  api_websocket:
+    image: "langgenius/dify-api:1.15.0"
+    container_name: ${CONTAINER_NAME}-websocket
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - MODE=api
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - MIGRATION_ENABLED=false
+      - SERVER_WORKER_AMOUNT=1
+      - SERVER_WORKER_CLASS=geventwebsocket.gunicorn.workers.GeventWebSocketWorker
+      - SERVER_WORKER_CONNECTIONS=1000
+      - GUNICORN_TIMEOUT=360
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - ssrf_proxy_network
+      - default
+      - 1panel-network
+
+  worker:
+    image: "langgenius/dify-api:1.15.0"
+    container_name: ${CONTAINER_NAME}-worker
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - MODE=worker
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - MIGRATION_ENABLED=false
+      - INNER_API_KEY_FOR_PLUGIN=${PLUGIN_DIFY_INNER_API_KEY}
+      - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
+      - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
+      - PLUGIN_MAX_PACKAGE_SIZE=52428800
+      - SENTRY_DSN=
+      - SENTRY_TRACES_SAMPLE_RATE=1.0
+      - SENTRY_PROFILES_SAMPLE_RATE=1.0
+    depends_on:
+      init_permissions:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    volumes:
+      - ${APP_DATA_DIR}/app/storage:/app/api/storage
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - celery -A celery_healthcheck.celery inspect ping
+      interval: 30s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
+      disable: true
+    networks:
+      - ssrf_proxy_network
+      - default
+      - 1panel-network
+
+  worker_beat:
+    image: "langgenius/dify-api:1.15.0"
+    container_name: ${CONTAINER_NAME}-worker-beat
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - MODE=beat
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - MIGRATION_ENABLED=false
+      - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
+      - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
+    depends_on:
+      init_permissions:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    networks:
+      - ssrf_proxy_network
+      - default
+      - 1panel-network
+
+  web:
+    image: "langgenius/dify-web:1.15.0"
+    container_name: ${CONTAINER_NAME}-web
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - CONSOLE_API_URL=
+      - SERVER_CONSOLE_API_URL=http://api:5001
+      - APP_API_URL=
+      - AMPLITUDE_API_KEY=
+      - NEXT_PUBLIC_COOKIE_DOMAIN=
+      - NEXT_PUBLIC_SOCKET_URL=ws://localhost
+      - SENTRY_DSN=
+      - NEXT_TELEMETRY_DISABLED=0
+      - EXPERIMENTAL_ENABLE_VINEXT=false
+      - TEXT_GENERATION_TIMEOUT_MS=60000
+      - CSP_WHITELIST=
+      - ALLOW_EMBED=false
+      - ALLOW_UNSAFE_DATA_SCHEME=false
+      - MARKETPLACE_API_URL=https://marketplace.dify.ai
+      - MARKETPLACE_URL=https://marketplace.dify.ai
+      - TOP_K_MAX_VALUE=10
+      - INDEXING_MAX_SEGMENTATION_TOKENS_LENGTH=4000
+      - LOOP_NODE_MAX_COUNT=100
+      - MAX_TOOLS_NUM=10
+      - MAX_PARALLEL_LIMIT=10
+      - MAX_ITERATIONS_NUM=99
+      - MAX_TREE_DEPTH=50
+      - ENABLE_WEBSITE_JINAREADER=true
+      - ENABLE_WEBSITE_FIRECRAWL=true
+      - ENABLE_WEBSITE_WATERCRAWL=true
+    networks:
+      - default
+
+  sandbox:
+    image: "langgenius/dify-sandbox:0.2.15"
+    container_name: ${CONTAINER_NAME}-sandbox
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - API_KEY=${SANDBOX_API_KEY}
+      - GIN_MODE=release
+      - WORKER_TIMEOUT=15
+      - ENABLE_NETWORK=true
+      - HTTP_PROXY=http://ssrf_proxy:3128
+      - HTTPS_PROXY=http://ssrf_proxy:3128
+      - SANDBOX_PORT=8194
+      - PIP_MIRROR_URL=
+    volumes:
+      - ${APP_DATA_DIR}/sandbox/dependencies:/dependencies
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:8194/health
+    networks:
+      - ssrf_proxy_network
+
+  plugin_daemon:
+    image: "langgenius/dify-plugin-daemon:0.6.3-local"
+    container_name: ${CONTAINER_NAME}-plugin-daemon
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - DB_SSL_MODE=disable
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - SERVER_PORT=5002
+      - SERVER_KEY=${PLUGIN_DAEMON_KEY}
+      - MAX_PLUGIN_PACKAGE_SIZE=52428800
+      - PPROF_ENABLED=false
+      - DIFY_INNER_API_URL=http://api:5001
+      - DIFY_INNER_API_KEY=${PLUGIN_DIFY_INNER_API_KEY}
+      - PLUGIN_REMOTE_INSTALLING_HOST=0.0.0.0
+      - PLUGIN_REMOTE_INSTALLING_PORT=5003
+      - PLUGIN_WORKING_PATH=/app/storage/cwd
+      - FORCE_VERIFYING_SIGNATURE=true
+      - PYTHON_ENV_INIT_TIMEOUT=120
+      - PLUGIN_MAX_EXECUTION_TIMEOUT=600
+      - PLUGIN_STDIO_BUFFER_SIZE=1024
+      - PLUGIN_STDIO_MAX_BUFFER_SIZE=5242880
+      - PIP_MIRROR_URL=
+      - PLUGIN_STORAGE_TYPE=local
+      - PLUGIN_STORAGE_LOCAL_ROOT=/app/storage
+      - PLUGIN_INSTALLED_PATH=plugin
+      - PLUGIN_PACKAGE_CACHE_PATH=plugin_packages
+      - PLUGIN_MEDIA_CACHE_PATH=assets
+      - PLUGIN_STORAGE_OSS_BUCKET=
+      - S3_USE_AWS_MANAGED_IAM=false
+      - S3_USE_AWS=false
+      - S3_ENDPOINT=
+      - S3_USE_PATH_STYLE=false
+      - AWS_ACCESS_KEY=
+      - AWS_SECRET_KEY=
+      - AWS_REGION=
+      - AZURE_BLOB_STORAGE_CONNECTION_STRING=
+      - AZURE_BLOB_STORAGE_CONTAINER_NAME=
+      - TENCENT_COS_SECRET_KEY=
+      - TENCENT_COS_SECRET_ID=
+      - TENCENT_COS_REGION=
+      - ALIYUN_OSS_REGION=
+      - ALIYUN_OSS_ENDPOINT=
+      - ALIYUN_OSS_ACCESS_KEY_ID=
+      - ALIYUN_OSS_ACCESS_KEY_SECRET=
+      - ALIYUN_OSS_AUTH_VERSION=v4
+      - ALIYUN_OSS_PATH=
+      - VOLCENGINE_TOS_ENDPOINT=
+      - VOLCENGINE_TOS_ACCESS_KEY=
+      - VOLCENGINE_TOS_SECRET_KEY=
+      - VOLCENGINE_TOS_REGION=
+      - SENTRY_ENABLED=false
+      - SENTRY_DSN=
+    volumes:
+      - ${APP_DATA_DIR}/plugin_daemon:/app/storage
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - ssrf_proxy_network
+      - default
+      - 1panel-network
+
+  ssrf_proxy:
+    image: "ubuntu/squid:latest"
+    container_name: ${CONTAINER_NAME}-ssrf-proxy
+    labels:
+      createdBy: "Apps"
+    restart: always
+    volumes:
+      - ./ssrf_proxy/squid.conf.template:/etc/squid/squid.conf.template
+      - ./ssrf_proxy/docker-entrypoint.sh:/docker-entrypoint-mount.sh
+    entrypoint:
+      - sh
+      - -c
+      - cp /docker-entrypoint-mount.sh /docker-entrypoint.sh && sed -i 's/\r$$//' /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh && /docker-entrypoint.sh
+    environment:
+      - HTTP_PORT=3128
+      - COREDUMP_DIR=/var/spool/squid
+      - SSRF_PROXY_ALLOW_PRIVATE_IPS=
+      - SSRF_PROXY_ALLOW_PRIVATE_DOMAINS=
+    networks:
+      - ssrf_proxy_network
+      - default
+
+  nginx:
+    image: "nginx:latest"
+    container_name: ${CONTAINER_NAME}
+    labels:
+      createdBy: "Apps"
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf.template:/etc/nginx/nginx.conf.template
+      - ./nginx/proxy.conf.template:/etc/nginx/proxy.conf.template
+      - ./nginx/https.conf.template:/etc/nginx/https.conf.template
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/docker-entrypoint.sh:/docker-entrypoint-mount.sh
+      - ${APP_DATA_DIR}/nginx/ssl:/etc/ssl
+      - ${APP_DATA_DIR}/certbot/conf/live:/etc/letsencrypt/live
+      - ${APP_DATA_DIR}/certbot/conf:/etc/letsencrypt
+      - ${APP_DATA_DIR}/certbot/www:/var/www/html
+    entrypoint:
+      - sh
+      - -c
+      - cp /docker-entrypoint-mount.sh /docker-entrypoint.sh && sed -i 's/\r$$//' /docker-entrypoint.sh && chmod +x /docker-entrypoint.sh && /docker-entrypoint.sh
+    environment:
+      - NGINX_SERVER_NAME=_
+      - NGINX_HTTPS_ENABLED=false
+      - NGINX_SSL_PORT=443
+      - NGINX_PORT=80
+      - NGINX_SSL_CERT_FILENAME=dify.crt
+      - NGINX_SSL_CERT_KEY_FILENAME=dify.key
+      - NGINX_SSL_PROTOCOLS=TLSv1.2 TLSv1.3
+      - NGINX_WORKER_PROCESSES=auto
+      - NGINX_CLIENT_MAX_BODY_SIZE=100M
+      - NGINX_KEEPALIVE_TIMEOUT=65
+      - NGINX_PROXY_READ_TIMEOUT=3600s
+      - NGINX_PROXY_SEND_TIMEOUT=3600s
+      - NGINX_ENABLE_CERTBOT_CHALLENGE=false
+      - NGINX_SOCKET_IO_UPSTREAM=api_websocket:5001
+      - CERTBOT_DOMAIN=
+    depends_on:
+      - api
+      - api_websocket
+      - web
+      - plugin_daemon
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    networks:
+      - default
+      - 1panel-network
+
+  weaviate:
+    image: "semitechnologies/weaviate:1.27.0"
+    container_name: ${CONTAINER_NAME}-weaviate
+    labels:
+      createdBy: "Apps"
+    restart: always
+    volumes:
+      - ${APP_DATA_DIR}/weaviate:/var/lib/weaviate
+    environment:
+      - PERSISTENCE_DATA_PATH=/var/lib/weaviate
+      - QUERY_DEFAULTS_LIMIT=25
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=false
+      - DEFAULT_VECTORIZER_MODULE=none
+      - CLUSTER_HOSTNAME=node1
+      - AUTHENTICATION_APIKEY_ENABLED=true
+      - AUTHENTICATION_APIKEY_ALLOWED_KEYS=WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
+      - AUTHENTICATION_APIKEY_USERS=hello@dify.ai
+      - AUTHORIZATION_ADMINLIST_ENABLED=true
+      - AUTHORIZATION_ADMINLIST_USERS=hello@dify.ai
+      - DISABLE_TELEMETRY=false
+      - ENABLE_TOKENIZER_GSE=false
+      - ENABLE_TOKENIZER_KAGOME_JA=false
+      - ENABLE_TOKENIZER_KAGOME_KR=false
+    networks:
+      - default
+
+networks:
+  1panel-network:
+    external: true
+  ssrf_proxy_network:
+    internal: true

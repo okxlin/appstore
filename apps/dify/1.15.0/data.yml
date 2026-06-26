@@ -1,0 +1,335 @@
+additionalProperties:
+  formFields:
+    - default: 40288
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: INIT_PASSWORD
+      labelEn: Initial Admin Password
+      labelZh: 初始化管理员密码
+      label:
+        en: Initial Admin Password
+        zh: 初始化管理员密码
+        zh-Hant: 初始化管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Начальный пароль администратора
+        ms: Kata laluan pentadbir awal
+        pt-br: Senha inicial do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Service (15 recommended)
+        labelZh: PostgreSQL 服务（建议 15）
+        label:
+          en: PostgreSQL Service (15 recommended)
+          zh: PostgreSQL 服务（建议 15）
+          zh-Hant: PostgreSQL 服務（建議 15）
+          ja: PostgreSQL サービス
+          ko: PostgreSQL 서비스
+          ru: Сервис PostgreSQL
+          ms: Perkhidmatan PostgreSQL
+          pt-br: Serviço PostgreSQL
+        required: true
+        type: service
+      default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database
+      labelZh: 数据库服务
+      label:
+        en: Database
+        zh: 数据库服务
+        zh-Hant: 資料庫服務
+        ja: データベース
+        ko: 데이터베이스
+        ru: База данных
+        ms: Pangkalan Data
+        pt-br: Banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+    - default: dify
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: dify
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫用戶
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        zh: 数据库用户密码
+        zh-Hant: 資料庫用戶密碼
+        ja: データベースユーザーパスワード
+        ko: 데이터베이스 사용자 비밀번호
+        ru: Пароль пользователя базы данных
+        ms: Kata laluan pengguna pangkalan data
+        pt-br: Senha do usuário do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis 服务
+      label:
+        en: Redis Service
+        zh: Redis 服务
+        zh-Hant: Redis 服務
+        ja: Redis サービス
+        ko: Redis 서비스
+        ru: Сервис Redis
+        ms: Perkhidmatan Redis
+        pt-br: Serviço Redis
+      required: true
+      type: service
+    - default: 6379
+      edit: true
+      envKey: REDIS_PORT
+      labelEn: Redis Port
+      labelZh: Redis 端口
+      label:
+        en: Redis Port
+        zh: Redis 端口
+        zh-Hant: Redis 連接埠
+        ja: Redis ポート
+        ko: Redis 포트
+        ru: Порт Redis
+        ms: Port Redis
+        pt-br: Porta Redis
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Redis Password
+      labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密碼
+        ja: Redis パスワード
+        ko: Redis 비밀번호
+        ru: Пароль Redis
+        ms: Kata laluan Redis
+        pt-br: Senha do Redis
+      required: true
+      type: password
+    - default: 0
+      edit: true
+      envKey: REDIS_DB
+      labelEn: Redis Database
+      labelZh: Redis 数据库
+      label:
+        en: Redis Database
+        zh: Redis 数据库
+        zh-Hant: Redis 資料庫
+        ja: Redis データベース
+        ko: Redis 데이터베이스
+        ru: База данных Redis
+        ms: Pangkalan data Redis
+        pt-br: Banco de dados Redis
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: SANDBOX_API_KEY
+      labelEn: Sandbox API Key
+      labelZh: Sandbox API 密钥
+      label:
+        en: Sandbox API Key
+        zh: Sandbox API 密钥
+        zh-Hant: Sandbox API 金鑰
+        ja: Sandbox APIキー
+        ko: Sandbox API 키
+        ru: API-ключ Sandbox
+        ms: Kunci API Sandbox
+        pt-br: Chave da API do Sandbox
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: PLUGIN_DAEMON_KEY
+      labelEn: Plugin Daemon Key
+      labelZh: Plugin Daemon 密钥
+      label:
+        en: Plugin Daemon Key
+        zh: Plugin Daemon 密钥
+        zh-Hant: Plugin Daemon 金鑰
+        ja: Plugin Daemon キー
+        ko: Plugin Daemon 키
+        ru: Ключ Plugin Daemon
+        ms: Kunci Plugin Daemon
+        pt-br: Chave do Plugin Daemon
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: PLUGIN_DIFY_INNER_API_KEY
+      labelEn: Plugin Inner API Key
+      labelZh: Plugin 内部 API 密钥
+      label:
+        en: Plugin Inner API Key
+        zh: Plugin 内部 API 密钥
+        zh-Hant: Plugin 內部 API 金鑰
+        ja: Plugin 内部APIキー
+        ko: Plugin 내부 API 키
+        ru: Внутренний API-ключ Plugin
+        ms: Kunci API dalaman Plugin
+        pt-br: Chave interna da API do Plugin
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: INFO
+      edit: true
+      envKey: LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень логирования
+        ms: Tahap log
+        pt-br: Nivel de log
+      required: true
+      type: select
+      values:
+        - label: INFO
+          value: INFO
+        - label: DEBUG
+          value: DEBUG
+        - label: WARNING
+          value: WARNING
+        - label: ERROR
+          value: ERROR
+    - default: ./data/custom.env
+      edit: true
+      envKey: CUSTOM_ENV_FILE
+      labelEn: Custom Env File
+      labelZh: 自定义环境变量文件
+      label:
+        en: Custom Env File
+        zh: 自定义环境变量文件
+        zh-Hant: 自訂環境變數文件
+        ja: カスタム環境変数ファイル
+        ko: 사용자 지정 환경 변수 파일
+        ru: Пользовательский файл переменных окружения
+        ms: Fail env tersuai
+        pt-br: Arquivo env personalizado
+      required: false
+      type: text
