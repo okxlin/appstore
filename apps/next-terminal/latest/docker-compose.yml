@@ -16,13 +16,13 @@ services:
     networks:
       - 1panel-network
     environment:
-      - POSTGRES_DB=${PANEL_DB_NAME}
-      - POSTGRES_USER=${PANEL_DB_USER}
-      - POSTGRES_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - POSTGRES_DB=${PANEL_DB_NAME:-next_terminal}
+      - POSTGRES_USER=${PANEL_DB_USER:-next_terminal}
+      - POSTGRES_PASSWORD=${PANEL_DB_USER_PASSWORD:-next_terminal}
     volumes:
       - "${DATA_PATH}/postgresql:/var/lib/postgresql/data"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${PANEL_DB_USER} -d ${PANEL_DB_NAME}"]
+      test: ["CMD-SHELL", "pg_isready -U ${PANEL_DB_USER:-next_terminal} -d ${PANEL_DB_NAME:-next_terminal}"]
       interval: 10s
       timeout: 5s
       retries: 5

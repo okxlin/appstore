@@ -40,6 +40,29 @@ yaml_escape() {
   printf '%s\n' "$value"
 }
 
+random_password() {
+  if command -v openssl >/dev/null 2>&1; then
+    openssl rand -hex 16
+  else
+    LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 32 || true
+  fi
+}
+
+ensure_env_value() {
+  local key="$1"
+  local value="$2"
+
+  if [[ -f "$ENV_FILE" ]] && ! grep -q "^${key}=" "$ENV_FILE"; then
+    printf '\n%s="%s"\n' "$key" "$value" >> "$ENV_FILE"
+  fi
+}
+
+if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_value PANEL_DB_NAME next_terminal
+  ensure_env_value PANEL_DB_USER next_terminal
+  ensure_env_value PANEL_DB_USER_PASSWORD "$(random_password)"
+fi
+
 DATA_DIR="$(resolve_app_path "$(get_env_value DATA_PATH ./data)")"
 CONFIG_FILE="${DATA_DIR}/config.yaml"
 LOG_DIR="${DATA_DIR}/logs"
