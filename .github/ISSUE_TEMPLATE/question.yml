@@ -1,0 +1,28 @@
+name: 使用咨询 / Question
+description: 询问仓库使用、应用安装方式或不确定是否为缺陷的问题 / Ask about repository usage, app installation, or unclear issues that may not be defects.
+title: "[Question / 咨询] "
+labels: ["type/question", "status/needs-info", "triage/needs-review"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 你的问题 / Your question
+      description: 请说明你想做什么、已经尝试过什么、卡在哪里 / Explain what you want to do, what you tried, and where you got stuck.
+      placeholder: 我想... / I want to...
+    validations:
+      required: true
+  - type: input
+    id: related-app
+    attributes:
+      label: 相关 app key / Related app key
+      description: 如果和某个应用有关，请填写 / Fill this in if the question is related to a specific app.
+      placeholder: alist
+    validations:
+      required: false
+  - type: textarea
+    id: context
+    attributes:
+      label: 补充上下文 / Additional context
+      description: 如果你认为这是应用包缺陷，请补充 1Panel 版本、失败阶段、复现步骤和脱敏日志 / If you think this is an app package defect, include 1Panel version, failure stage, reproduction steps, and sanitized logs.
+    validations:
+      required: false

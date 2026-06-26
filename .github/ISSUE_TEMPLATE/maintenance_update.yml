@@ -1,0 +1,55 @@
+name: 维护更新 / Maintenance Update
+description: 请求版本更新、镜像更新、依赖更新、替换、下架或清理 / Request version, image, dependency, replacement, removal, or cleanup maintenance.
+title: "[Maintenance / 维护更新] "
+labels: ["type/maintenance", "area/app-adaptation", "status/needs-info", "triage/needs-review"]
+body:
+  - type: input
+    id: app-key
+    attributes:
+      label: 受影响 app key / Affected app key
+      placeholder: alist
+    validations:
+      required: true
+  - type: dropdown
+    id: update-type
+    attributes:
+      label: 维护类型 / Maintenance type
+      options:
+        - 版本更新 / Version update
+        - 镜像更新 / Image update
+        - 依赖更新 / Dependency update
+        - 配置清理 / Config cleanup
+        - 替换应用 / App replacement
+        - 下架/删除 / Removal
+        - 其他 / Other
+    validations:
+      required: true
+  - type: input
+    id: current-version
+    attributes:
+      label: 当前版本 / 镜像 / Current version or image
+    validations:
+      required: false
+  - type: input
+    id: target-version
+    attributes:
+      label: 目标版本 / 镜像 / Target version or image
+    validations:
+      required: true
+  - type: textarea
+    id: official-release
+    attributes:
+      label: 官方 release / changelog / 镜像来源 / Official release, changelog, or image source
+      placeholder: |
+        官方 release / Official release:
+        官方镜像 / Official image:
+        升级说明 / Upgrade notes:
+    validations:
+      required: true
+  - type: textarea
+    id: migration-notes
+    attributes:
+      label: 迁移或兼容性说明 / Migration or compatibility notes
+      description: 包括数据迁移、环境变量变化、依赖服务变化、破坏性变更 / Include data migration, env changes, dependency changes, and breaking changes.
+    validations:
+      required: false

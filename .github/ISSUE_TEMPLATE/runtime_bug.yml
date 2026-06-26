@@ -1,0 +1,96 @@
+name: 问题反馈：安装/运行 / Runtime Bug
+description: 反馈安装、启动、访问、重启、卸载、同步或更新失败 / Report install, start, access, restart, uninstall, sync, or update failures.
+title: "[Runtime Bug / 运行问题] "
+labels: ["type/bug", "area/runtime-test", "status/needs-info", "triage/needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先移除 token、密码、真实域名、私有地址等敏感内容 / Remove tokens, passwords, real domains, private addresses, and other sensitive data first. 维护者会尽量用 1Panel v2 测试目标复现 / Maintainers will try to reproduce with a 1Panel v2 test target.
+  - type: input
+    id: app-key
+    attributes:
+      label: 受影响 app key / Affected app key
+      placeholder: alist
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: 应用版本 / App version
+      placeholder: latest / 3.44.0
+    validations:
+      required: true
+  - type: input
+    id: panel-version
+    attributes:
+      label: 1Panel 版本 / 1Panel version
+      placeholder: v2.x.x
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 系统和架构 / OS and architecture
+      placeholder: Ubuntu 22.04 amd64 / Debian arm64
+    validations:
+      required: true
+  - type: dropdown
+    id: failure-stage
+    attributes:
+      label: 失败阶段 / Failure stage
+      options:
+        - 安装 / Install
+        - 启动 / Start
+        - 访问 / Access
+        - 重启 / Restart
+        - 卸载 / Uninstall
+        - 更新 / Update
+        - 本地应用同步 / Local app sync
+        - 其他 / Other
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: 复现步骤 / Reproduction steps
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果 / Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果 / Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 脱敏错误日志 / Sanitized error logs
+      description: 请删除密码、token、真实域名、私有地址 / Remove passwords, tokens, real domains, and private addresses.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: install-params
+    attributes:
+      label: 安装参数 / Install parameters
+      description: 填写会影响运行的端口、路径、依赖服务选择等 / Include ports, paths, dependency selections, and other values that affect runtime.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 提交前确认 / Confirmation
+      options:
+        - label: 我已移除敏感信息，并提供了可复现步骤 / I removed sensitive data and provided reproducible steps.
+          required: true
