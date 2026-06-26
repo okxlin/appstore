@@ -33,7 +33,7 @@ additionalProperties:
         pt-br: 'Domínios permitidos (múltiplos separados por ",")'
       required: true
       type: text
-    - default: Np2qgqtiUayA857a
+    - default: MxJwtSecret2026ChangeThisValue01
       edit: true
       envKey: JWT_SECRET
       labelEn: JWT key (16 to 32 characters)
@@ -47,6 +47,24 @@ additionalProperties:
         ru: 'Ключ JWT (16–32 символа)'
         ms: 'Kunci JWT (16 hingga 32 aksara)'
         pt-br: 'Chave JWT (16 a 32 caracteres)'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: MxPostgres2026
+      edit: true
+      envKey: PG_PASSWORD
+      labelEn: PostgreSQL password
+      labelZh: PostgreSQL 密码
+      label:
+        en: 'PostgreSQL password'
+        zh: 'PostgreSQL 密码'
+        zh-Hant: 'PostgreSQL 密碼'
+        ja: 'PostgreSQL パスワード'
+        ko: 'PostgreSQL 비밀번호'
+        ru: 'Пароль PostgreSQL'
+        ms: 'Kata laluan PostgreSQL'
+        pt-br: 'Senha do PostgreSQL'
       random: true
       required: true
       rule: paramComplexity
@@ -99,7 +117,7 @@ additionalProperties:
         pt-br: 'Fuso horário'
       required: true
       type: text
-    - default: 172.19.0
+    - default: 10.250.0
       edit: true
       envKey: SUBNET_PREFIX
       labelEn: New docker network subnet prefix
