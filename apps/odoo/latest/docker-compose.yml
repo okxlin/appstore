@@ -16,12 +16,12 @@ services:
       - -c
     command:
       - |
-        cat > /tmp/odoo.conf <<EOF
-        [options]
-        addons_path = /mnt/extra-addons
-        data_dir = /var/lib/odoo
-        admin_passwd = ${ODOO_MASTER_PASSWORD}
-        EOF
+        {
+          printf '%s\n' '[options]'
+          printf '%s\n' 'addons_path = /mnt/extra-addons'
+          printf '%s\n' 'data_dir = /var/lib/odoo'
+          printf 'admin_passwd = %s\n' "$${ODOO_MASTER_PASSWORD}"
+        } > /tmp/odoo.conf
         exec /entrypoint.sh odoo server -c /tmp/odoo.conf
     environment:
       - TZ=${TZ}
@@ -29,6 +29,7 @@ services:
       - PORT=5432
       - USER=odoo
       - PASSWORD=${POSTGRES_PASSWORD}
+      - ODOO_MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
     volumes:
       - "${APP_DATA_DIR}/odoo-data:/var/lib/odoo"
       - "${APP_DATA_DIR}/addons:/mnt/extra-addons"
