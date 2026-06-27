@@ -1,0 +1,115 @@
+additionalProperties:
+  formFields:
+    - default: 15080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: '["localhost","127.0.0.1"]'
+      edit: true
+      envKey: DOMAINS
+      labelEn: Allowed Domains
+      labelZh: 允许访问域名
+      label:
+        en: Allowed Domains
+        zh: 允许访问域名
+        zh-Hant: 允許存取網域
+        ja: 許可ドメイン
+        ko: 허용 도메인
+        ru: Разрешенные домены
+        ms: Domain dibenarkan
+        pt-br: Domínios permitidos
+      required: true
+      type: text
+    - default: 4
+      edit: true
+      envKey: WORKERS
+      labelEn: Worker Processes
+      labelZh: Worker 进程数
+      label:
+        en: Worker Processes
+        zh: Worker 进程数
+        zh-Hant: Worker 程序數
+        ja: ワーカープロセス数
+        ko: Worker 프로세스 수
+        ru: Количество worker-процессов
+        ms: Bilangan proses worker
+        pt-br: Processos worker
+      required: true
+      type: number
+    - default: 4
+      edit: true
+      envKey: THREADS
+      labelEn: Worker Threads
+      labelZh: Worker 线程数
+      label:
+        en: Worker Threads
+        zh: Worker 线程数
+        zh-Hant: Worker 執行緒數
+        ja: ワーカースレッド数
+        ko: Worker 스레드 수
+        ru: Количество потоков worker
+        ms: Bilangan thread worker
+        pt-br: Threads worker
+      required: true
+      type: number
+    - default: 600
+      edit: true
+      envKey: TIMEOUT
+      labelEn: Request Timeout
+      labelZh: 请求超时时间
+      label:
+        en: Request Timeout
+        zh: 请求超时时间
+        zh-Hant: 請求逾時時間
+        ja: リクエストタイムアウト
+        ko: 요청 제한 시간
+        ru: Таймаут запроса
+        ms: Tamat masa permintaan
+        pt-br: Tempo limite da requisição
+      required: true
+      type: number
