@@ -1,0 +1,88 @@
+additionalProperties:
+  formFields:
+    - default: 15032
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: DUFS_ALLOW_ALL
+      labelEn: Allow Write Operations
+      labelZh: 允许写入操作
+      label:
+        en: Allow Write Operations
+        zh: 允许写入操作
+        zh-Hant: 允許寫入操作
+        ja: 書き込み操作を許可
+        ko: 쓰기 작업 허용
+        ru: Разрешить операции записи
+        ms: Benarkan operasi tulis
+        pt-br: Permitir operacoes de escrita
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "@/"
+      edit: true
+      envKey: DUFS_AUTH
+      labelEn: Auth Rules
+      labelZh: 认证规则
+      label:
+        en: Auth Rules
+        zh: 认证规则
+        zh-Hant: 認證規則
+        ja: 認証ルール
+        ko: 인증 규칙
+        ru: Правила аутентификации
+        ms: Peraturan pengesahan
+        pt-br: Regras de autenticacao
+      required: true
+      type: text

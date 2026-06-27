@@ -1,0 +1,21 @@
+services:
+  readeck:
+    image: "codeberg.org/readeck/readeck:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - TZ=${TZ}
+      - READECK_SERVER_HOST=0.0.0.0
+      - READECK_SERVER_PORT=8000
+    volumes:
+      - "${APP_DATA_DIR}:/readeck"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

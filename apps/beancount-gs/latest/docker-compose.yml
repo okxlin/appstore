@@ -1,0 +1,23 @@
+services:
+  beancount-gs:
+    image: "xdbin/beancount-gs:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/data/beancount"
+      - "${APP_DATA_DIR}/icons:/app/public/icons"
+      - "${APP_DATA_DIR}/config:/app/config"
+      - "${APP_DATA_DIR}/bak:/app/bak"
+      - "${APP_DATA_DIR}/logs:/app/logs"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,30 @@
+name: Readeck
+tags:
+- Tool
+title: 用于保存和长期阅读网页内容的自托管稍后阅读应用
+description: 用于保存和长期阅读网页内容的自托管稍后阅读应用
+additionalProperties:
+  key: readeck
+  name: Readeck
+  tags:
+  - Tool
+  shortDescZh: 用于保存和长期阅读网页内容的自托管稍后阅读应用
+  shortDescEn: A self-hosted read-it-later app for saving web content
+  description:
+    en: A self-hosted read-it-later app for saving web content
+    zh: 用于保存和长期阅读网页内容的自托管稍后阅读应用
+    zh-Hant: 用於儲存並長期閱讀網頁內容的自託管稍後閱讀應用
+    ja: Web コンテンツを保存して後で読むためのセルフホストアプリ
+    ko: 웹 콘텐츠를 저장하고 나중에 읽기 위한 자체 호스팅 앱
+    ru: Самостоятельно размещаемое приложение для сохранения веб-страниц и чтения позже
+    ms: Aplikasi baca kemudian kendiri untuk menyimpan kandungan web
+    pt-br: Aplicativo auto-hospedado para salvar conteúdo da web e ler depois
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://readeck.org/en/
+  github: https://codeberg.org/readeck/readeck
+  document: https://readeck.org/en/docs/deploy
+  architectures:
+  - amd64
+  - arm64

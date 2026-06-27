@@ -1,0 +1,25 @@
+services:
+  mockserver:
+    image: "mockserver/mockserver:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:1080"
+    command:
+      - "-logLevel"
+      - "${MOCKSERVER_LOG_LEVEL}"
+      - "-serverPort"
+      - "1080"
+    environment:
+      - TZ=${TZ}
+      - MOCKSERVER_INITIALIZATION_JSON_PATH=/config/mockserverInitialization.json
+    volumes:
+      - "./config/mockserverInitialization.json:/config/mockserverInitialization.json:ro"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

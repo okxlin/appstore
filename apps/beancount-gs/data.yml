@@ -1,0 +1,30 @@
+name: beancount-gs
+tags:
+- Tool
+title: 基于 beancount 的个人记账 API 和 Web 管理界面
+description: 基于 beancount 的个人记账 API 和 Web 管理界面
+additionalProperties:
+  key: beancount-gs
+  name: beancount-gs
+  tags:
+  - Tool
+  shortDescZh: 基于 beancount 的个人记账 API 和 Web 管理界面
+  shortDescEn: A personal accounting API and web interface based on beancount
+  description:
+    en: A personal accounting API and web interface based on beancount
+    zh: 基于 beancount 的个人记账 API 和 Web 管理界面
+    zh-Hant: 基於 beancount 的個人記帳 API 和 Web 管理介面
+    ja: beancount をベースにした個人会計 API と Web 管理画面
+    ko: beancount 기반 개인 회계 API 및 웹 관리 인터페이스
+    ru: API и веб-интерфейс для личного учета на базе beancount
+    ms: API perakaunan peribadi dan antara muka web berasaskan beancount
+    pt-br: API de contabilidade pessoal e interface web baseada no beancount
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/BaoXuebin/beancount-gs
+  github: https://github.com/BaoXuebin/beancount-gs
+  document: https://github.com/BaoXuebin/beancount-gs#docker
+  architectures:
+  - amd64
+  - arm64
