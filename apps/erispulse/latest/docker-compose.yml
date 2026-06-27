@@ -2,21 +2,26 @@ services:
   erispulse:
     image: erispulse/erispulse:latest
     container_name: ${CONTAINER_NAME}
-    restart: unless-stopped
+    restart: on-failure:5
     networks:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:8000"
     volumes:
       - ${DATA_PATH}:/app/config
+      - packages:/usr/local/lib/python3.13/site-packages
     environment:
       - TZ=${TIME_ZONE}
       - ERISPULSE_DASHBOARD_TOKEN=${ERISPULSE_DASHBOARD_TOKEN}
-      - ERISPULSE_CHANNEL=${ERISPULSE_CHANNEL_SELECT}
-      - ERISPULSE_UPDATE_ON_START=${ERISPULSE_UPDATE_ON_START}
+      - ERISPULSE_LANG=${ERISPULSE_LANG}
     labels:
       createdBy: "Apps"
 
 networks:
   1panel-network:
     external: true
+
+volumes:
+  packages:
+    # 绑定容器名，保证多实例各自独立
+    name: ${CONTAINER_NAME}-packages
