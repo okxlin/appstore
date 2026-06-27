@@ -2,6 +2,7 @@ services:
   odoo:
     image: "odoo:19.0"
     container_name: ${CONTAINER_NAME}
+    user: root
     restart: always
     depends_on:
       odoo-db:
@@ -16,13 +17,22 @@ services:
       - -c
     command:
       - |
+        set -e
+        install -d -o odoo -g odoo -m 775 /var/lib/odoo /var/lib/odoo/sessions /mnt/extra-addons
+        if [ ! -f /var/lib/odoo/.1panel-permissions-ok ] || [ "$(stat -c '%u:%g' /var/lib/odoo)" != "100:101" ]; then
+          chown -R odoo:odoo /var/lib/odoo /mnt/extra-addons
+          touch /var/lib/odoo/.1panel-permissions-ok
+          chown odoo:odoo /var/lib/odoo/.1panel-permissions-ok
+        fi
         {
           printf '%s\n' '[options]'
           printf '%s\n' 'addons_path = /mnt/extra-addons'
           printf '%s\n' 'data_dir = /var/lib/odoo'
           printf 'admin_passwd = %s\n' "$${ODOO_MASTER_PASSWORD}"
-        } > /tmp/odoo.conf
-        exec /entrypoint.sh odoo server -c /tmp/odoo.conf
+        } > /var/lib/odoo/odoo.conf
+        chown odoo:odoo /var/lib/odoo/odoo.conf
+        chmod 600 /var/lib/odoo/odoo.conf
+        exec setpriv --reuid=odoo --regid=odoo --init-groups /entrypoint.sh odoo server -c /var/lib/odoo/odoo.conf
     environment:
       - TZ=${TZ}
       - HOST=odoo-db
