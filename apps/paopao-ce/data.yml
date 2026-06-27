@@ -1,0 +1,29 @@
+name: PaoPao-ce
+tags:
+  - Website
+title: 开源微社区平台
+description: 开源微社区平台
+additionalProperties:
+  key: paopao-ce
+  name: PaoPao-ce
+  tags:
+    - Website
+  shortDescZh: 开源微社区平台
+  shortDescEn: Open source micro-community platform
+  description:
+    en: A self-hosted micro-community platform built with Go and Vue, with embedded web UI, local storage and search support.
+    zh: 基于 Go 和 Vue 的自托管微社区平台，内置 Web 前端、本地存储和搜索能力。
+    zh-Hant: 基於 Go 和 Vue 的自託管微社群平台，內建 Web 前端、本地儲存和搜尋能力。
+    ja: Go と Vue で構築されたセルフホスト向けマイクロコミュニティ平台で、組み込み Web UI、ローカルストレージ、検索を備えています。
+    ko: Go와 Vue로 구축된 셀프 호스팅 마이크로 커뮤니티 플랫폼으로 내장 Web UI, 로컬 스토리지 및 검색을 제공합니다.
+    ru: Самостоятельно размещаемая микросоциальная платформа на Go и Vue со встроенным Web UI, локальным хранилищем и поиском.
+    ms: Platform mikro-komuniti hos sendiri berasaskan Go dan Vue dengan Web UI terbina, storan tempatan dan carian.
+    pt-br: Plataforma de microcomunidade auto-hospedada em Go e Vue, com Web UI embutida, armazenamento local e busca.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://github.com/rocboss/paopao-ce
+  github: https://github.com/rocboss/paopao-ce
+  document: https://github.com/rocboss/paopao-ce/blob/v0.6.0-alpha.2/docker-compose.yaml
+  architectures:
+    - amd64
