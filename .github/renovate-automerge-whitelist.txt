@@ -323,3 +323,16 @@ webgrabplus-linuxserver
 wikijs-linuxserver
 xbackbone-linuxserver
 znc-linuxserver
+# Apps with official GitHub compose/deployment fields unchanged since 2025-06-27 and no high-risk compose flags.
+alist
+aria2-pro
+chatnio
+filecodebox
+gowebdav
+myip
+navidrome
+reubah
+sublink
+twikoo
+vps-stock-monitor
+web-check
