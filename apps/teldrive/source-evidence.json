@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/tgdrive/teldrive",
+  "dockerDocs": "https://github.com/tgdrive/teldrive-docs/blob/main/docs/getting-started/usage.md#running-with-docker",
+  "composeFile": "https://github.com/tgdrive/teldrive/blob/main/docker/compose/teldrive.yml",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2251",
+    "Official docs require PostgreSQL and show the ghcr.io/tgdrive/teldrive image.",
+    "The upstream compose directory provides teldrive.yml and postgres.yml examples."
+  ]
+}
