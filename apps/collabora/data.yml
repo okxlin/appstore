@@ -1,0 +1,30 @@
+name: Collabora
+tags:
+  - Tool
+title: 可与 Nextcloud 等 WOPI 应用集成的在线文档套件
+description: 可与 Nextcloud 等 WOPI 应用集成的在线文档套件
+additionalProperties:
+  key: collabora
+  name: Collabora
+  tags:
+    - Tool
+  shortDescZh: 可与 Nextcloud 等 WOPI 应用集成的在线文档套件
+  shortDescEn: Online office suite for WOPI integrations such as Nextcloud
+  description:
+    en: Online office suite for WOPI integrations such as Nextcloud
+    zh: 可与 Nextcloud 等 WOPI 应用集成的在线文档套件
+    zh-Hant: 可與 Nextcloud 等 WOPI 應用整合的線上文件套件
+    ja: Nextcloud などの WOPI アプリと連携できるオンラインオフィススイート
+    ko: Nextcloud 같은 WOPI 앱과 연동되는 온라인 오피스 제품군
+    ru: Онлайн-офис для интеграций WOPI, включая Nextcloud
+    ms: Suite pejabat dalam talian untuk integrasi WOPI seperti Nextcloud
+    pt-br: Suite de escritorio online para integracoes WOPI, como Nextcloud
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.collaboraonline.com/code/
+  github: https://github.com/CollaboraOnline/online
+  document: https://sdk.collaboraonline.com/docs/installation/CODE_Docker_image.html
+  architectures:
+    - amd64
+    - arm64

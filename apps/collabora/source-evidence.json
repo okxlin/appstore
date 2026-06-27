@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/CollaboraOnline/online",
+  "dockerDocs": "https://sdk.collaboraonline.com/docs/installation/CODE_Docker_image.html",
+  "composeFile": "https://sdk.collaboraonline.com/docs/installation/CODE_Docker_image.html",
+  "imageRegistry": "https://hub.docker.com/r/collabora/code",
+  "logo": "https://sdk.collaboraonline.com/_static/collabora.svg",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1607",
+    "Official CODE Docker docs publish the collabora/code image and show port 9980.",
+    "Official docs describe aliasgroup1, username, password, dictionaries, server_name, and extra_params as Docker environment variables.",
+    "The default extra_params disables container-internal SSL for 1Panel HTTP probing and reverse-proxy TLS termination.",
+    "The public-demo aliasgroup1=https://.*:443 is not used as the default; users should set a concrete WOPI host for production."
+  ]
+}

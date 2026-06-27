@@ -1,0 +1,117 @@
+additionalProperties:
+  formFields:
+    - default: 9980
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: ADMIN_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama pengguna pentadbir
+        pt-br: Usuario administrador
+      required: true
+      type: text
+    - default: collabora_admin_password
+      edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: WOPI_ALIAS_GROUP
+      labelEn: WOPI Alias Group
+      labelZh: WOPI 允许主机
+      label:
+        en: WOPI Alias Group
+        zh: WOPI 允许主机
+        zh-Hant: WOPI 允許主機
+        ja: WOPI 許可ホスト
+        ko: WOPI 허용 호스트
+        ru: Разрешенные хосты WOPI
+        ms: Hos WOPI yang dibenarkan
+        pt-br: Hosts WOPI permitidos
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SERVER_NAME
+      labelEn: Server Name
+      labelZh: 服务访问域名
+      label:
+        en: Server Name
+        zh: 服务访问域名
+        zh-Hant: 服務存取網域
+        ja: サーバー名
+        ko: 서버 이름
+        ru: Имя сервера
+        ms: Nama pelayan
+        pt-br: Nome do servidor
+      required: false
+      type: text
+    - default: de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru
+      edit: true
+      envKey: DICTIONARIES
+      labelEn: Dictionaries
+      labelZh: 拼写词典
+      label:
+        en: Dictionaries
+        zh: 拼写词典
+        zh-Hant: 拼字詞典
+        ja: 辞書
+        ko: 맞춤법 사전
+        ru: Словари
+        ms: Kamus ejaan
+        pt-br: Dicionarios
+      required: true
+      type: text
+    - default: "--o:ssl.enable=false --o:ssl.termination=true"
+      edit: true
+      envKey: EXTRA_PARAMS
+      labelEn: Extra Parameters
+      labelZh: 额外启动参数
+      label:
+        en: Extra Parameters
+        zh: 额外启动参数
+        zh-Hant: 額外啟動參數
+        ja: 追加起動パラメータ
+        ko: 추가 시작 매개변수
+        ru: Дополнительные параметры запуска
+        ms: Parameter tambahan
+        pt-br: Parametros extras
+      required: true
+      type: text
