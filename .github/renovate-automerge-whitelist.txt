@@ -1,14 +1,11 @@
 upsnap
-pwpush
 code-server
 zeroclaw
 next-terminal
 dpanel
 wallos
 chatgpt-on-wechat
-music_tag_web
 audiobookshelf
-clouddrive2
 cloudbeaver
 dbgate
 frigate
@@ -256,13 +253,11 @@ changedetection.io-linuxserver
 cops-linuxserver
 davos-linuxserver
 ddclient-linuxserver
-diskover-linuxserver
 dokuwiki-linuxserver
 doplarr-linuxserver
 duckdns-linuxserver
 duplicati-linuxserver
 emby-linuxserver
-fail2ban-linuxserver
 flexget-linuxserver
 foldingathome-linuxserver
 freshrss-linuxserver
@@ -311,7 +306,6 @@ rsnapshot-linuxserver
 sabnzbd-linuxserver
 series-troxide-linuxserver
 sickgear-linuxserver
-socket-proxy-linuxserver
 synclounge-linuxserver
 syslog-ng-linuxserver
 tautulli-linuxserver
