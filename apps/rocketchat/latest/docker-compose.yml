@@ -1,0 +1,142 @@
+services:
+  rocketchat:
+    image: "registry.rocket.chat/rocketchat/rocket.chat:8.0.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      nats:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - rocketchat-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    entrypoint: sh
+    command:
+      - -c
+      - |
+        protocol=$(echo $$MONGO_URL | awk -F'://' '{print $$1}')
+        if [ "$$protocol" = "mongodb+srv" ]; then
+          echo "MongoDB is using SRV protocol, starting Rocket.Chat without local TCP wait"
+          exec node main.js
+        fi
+        host_port=$(echo $$MONGO_URL | awk -F/ '{print $$3}')
+        if echo $$host_port | grep -q @; then
+          host_port=$(echo $$host_port | awk -F@ '{print $$2}')
+        fi
+        host=$(echo $$host_port | awk -F: '{print $$1}')
+        port=$(echo $$host_port | awk -F: '{print $$2}')
+        if [ -z "$$port" ]; then
+          port=27017
+        fi
+        echo "Waiting for MongoDB ($$host:$$port) before starting Rocket.Chat"
+        for i in $(seq 1 60); do
+          if nc -z $$host $$port >/dev/null 2>&1; then
+            exec node main.js
+          fi
+          sleep 5
+        done
+        echo "MongoDB did not become reachable in time"
+        exit 1
+    environment:
+      - TZ=${TZ}
+      - ROOT_URL=${ROOT_URL}
+      - PORT=3000
+      - DEPLOY_METHOD=docker
+      - DEPLOY_PLATFORM=compose
+      - REG_TOKEN=${REG_TOKEN}
+      - MONGO_URL=mongodb://mongodb:27017/rocketchat?replicaSet=rs0
+      - TRANSPORTER=monolith+nats://nats:4222
+      - INSTANCE_IP=
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_NAME=${ADMIN_NAME}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASS=${ADMIN_PASS}
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z -w 10 127.0.0.1 3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 90s
+    labels:
+      createdBy: "Apps"
+
+  mongodb:
+    image: "docker.io/mongodb/mongodb-community-server:8.2-ubi8"
+    container_name: ${CONTAINER_NAME}-mongodb
+    user: root
+    restart: always
+    networks:
+      - rocketchat-network
+    volumes:
+      - "${APP_DATA_DIR}/mongodb:/data/db"
+    entrypoint:
+      - sh
+      - -ec
+      - |
+        install -d -o mongod -g mongod -m 755 /data/db
+        if [ "$(stat -c '%u:%g' /data/db)" != "1000:1000" ]; then
+          chown -R mongod:mongod /data/db
+        fi
+        su -s /bin/sh mongod -c 'exec mongod --replSet rs0 --bind_ip_all' &
+        pid=$$!
+        until mongosh 'mongodb://127.0.0.1:27017/?directConnection=true' --quiet --eval 'db.adminCommand("ping")' >/dev/null 2>&1; do
+          sleep 2
+        done
+        cat >/tmp/rs-init.js <<JS
+        const replSetName = 'rs0';
+        const advertisedHost = 'mongodb';
+        const port = '27017';
+        try {
+          const status = rs.status();
+          print('Replica set already initialized: ' + status.set);
+        } catch (error) {
+          const message = String(error && (error.message || error));
+          if (message.includes('no replset config') || message.includes('NotYetInitialized')) {
+            print('Initiating replica set ' + replSetName + ' at ' + advertisedHost + ':' + port);
+            rs.initiate({_id: replSetName, members: [{_id: 0, host: advertisedHost + ':' + port}]});
+          } else {
+            throw error;
+          }
+        }
+        JS
+        mongosh 'mongodb://127.0.0.1:27017/?directConnection=true' --quiet /tmp/rs-init.js
+        for i in $(seq 1 60); do
+          if mongosh 'mongodb://127.0.0.1:27017/?directConnection=true' --quiet --eval 'try { quit(rs.status().ok === 1 ? 0 : 1) } catch (error) { quit(1) }' >/dev/null 2>&1; then
+            break
+          fi
+          sleep 2
+        done
+        wait "$$pid"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh 'mongodb://127.0.0.1:27017/?directConnection=true' --quiet --eval 'try { quit(rs.status().ok === 1 ? 0 : 1) } catch (error) { quit(1) }'"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+  nats:
+    image: "docker.io/nats:2.11-alpine"
+    container_name: ${CONTAINER_NAME}-nats
+    restart: always
+    command: --http_port 8222
+    networks:
+      - rocketchat-network
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z -w 10 127.0.0.1 4222"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  rocketchat-network:
+    driver: bridge
