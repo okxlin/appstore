@@ -1,0 +1,30 @@
+name: Teldrive
+tags:
+  - Storage
+title: Telegram 文件管理与挂载工具
+description: Telegram 文件管理与挂载工具
+additionalProperties:
+  key: teldrive
+  name: Teldrive
+  tags:
+    - Storage
+  shortDescZh: Telegram 文件管理与挂载工具
+  shortDescEn: Telegram file management and mounting tool
+  description:
+    en: A self-hosted tool for organizing Telegram files and exposing them through a web interface and Rclone-compatible workflows.
+    zh: 用于整理 Telegram 文件，并通过网页界面和 Rclone 兼容流程管理文件的自托管工具。
+    zh-Hant: 用於整理 Telegram 檔案，並透過網頁介面和 Rclone 相容流程管理檔案的自託管工具。
+    ja: Telegram ファイルを整理し、Web インターフェースと Rclone 互換のワークフローで管理できるセルフホスト型ツールです。
+    ko: Telegram 파일을 정리하고 웹 인터페이스와 Rclone 호환 워크플로로 관리할 수 있는 셀프 호스팅 도구입니다.
+    ru: Самостоятельно размещаемый инструмент для организации файлов Telegram и управления ими через веб-интерфейс и совместимые с Rclone процессы.
+    ms: Alat hos sendiri untuk menyusun fail Telegram dan menguruskannya melalui antara muka web serta aliran kerja serasi Rclone.
+    pt-br: Ferramenta auto-hospedada para organizar arquivos do Telegram e gerenciá-los por uma interface web e fluxos compativeis com Rclone.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://teldrive-docs.pages.dev/
+  github: https://github.com/tgdrive/teldrive
+  document: https://teldrive-docs.pages.dev/docs/getting-started/usage
+  architectures:
+    - amd64
+    - arm64

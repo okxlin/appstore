@@ -1,0 +1,53 @@
+services:
+  teldrive:
+    image: "ghcr.io/tgdrive/teldrive:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      teldrive-db:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - teldrive-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    command:
+      - run
+      - "--db-data-source=postgres://teldrive:${POSTGRES_PASSWORD}@teldrive-db:5432/postgres"
+      - "--jwt-secret=${JWT_SECRET}"
+      - "--jwt-allowed-users=${ALLOWED_USERS}"
+      - "--tg-uploads-encryption-key=${UPLOADS_ENCRYPTION_KEY}"
+      - "--tg-ntp=${TG_NTP}"
+      - "--server-port=8080"
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}/storage.db:/storage.db"
+    labels:
+      createdBy: "Apps"
+
+  teldrive-db:
+    image: "ghcr.io/tgdrive/postgres:17-alpine"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - teldrive-network
+    environment:
+      - POSTGRES_USER=teldrive
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=postgres
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teldrive -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  teldrive-network:
+    driver: bridge

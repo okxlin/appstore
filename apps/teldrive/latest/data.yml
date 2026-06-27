@@ -1,0 +1,142 @@
+additionalProperties:
+  formFields:
+    - default: 18080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: teldrive_password
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL Password
+      labelZh: PostgreSQL 密码
+      label:
+        en: PostgreSQL Password
+        zh: PostgreSQL 密码
+        zh-Hant: PostgreSQL 密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: teldrive_jwt_secret
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT Secret
+      labelZh: JWT 密钥
+      label:
+        en: JWT Secret
+        zh: JWT 密钥
+        zh-Hant: JWT 金鑰
+        ja: JWT シークレット
+        ko: JWT 비밀키
+        ru: Секрет JWT
+        ms: Rahsia JWT
+        pt-br: Segredo JWT
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: teldrive_uploads_key
+      edit: true
+      envKey: UPLOADS_ENCRYPTION_KEY
+      labelEn: Upload Encryption Key
+      labelZh: 上传加密密钥
+      label:
+        en: Upload Encryption Key
+        zh: 上传加密密钥
+        zh-Hant: 上傳加密金鑰
+        ja: アップロード暗号化キー
+        ko: 업로드 암호화 키
+        ru: Ключ шифрования загрузок
+        ms: Kunci penyulitan muat naik
+        pt-br: Chave de criptografia de uploads
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: ALLOWED_USERS
+      labelEn: Allowed Telegram Users
+      labelZh: 允许的 Telegram 用户
+      label:
+        en: Allowed Telegram Users
+        zh: 允许的 Telegram 用户
+        zh-Hant: 允許的 Telegram 使用者
+        ja: 許可する Telegram ユーザー
+        ko: 허용된 Telegram 사용자
+        ru: Разрешенные пользователи Telegram
+        ms: Pengguna Telegram yang dibenarkan
+        pt-br: Usuarios Telegram permitidos
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: TG_NTP
+      labelEn: Enable Telegram NTP
+      labelZh: 启用 Telegram NTP
+      label:
+        en: Enable Telegram NTP
+        zh: 启用 Telegram NTP
+        zh-Hant: 啟用 Telegram NTP
+        ja: Telegram NTP を有効化
+        ko: Telegram NTP 활성화
+        ru: Включить Telegram NTP
+        ms: Dayakan Telegram NTP
+        pt-br: Ativar Telegram NTP
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
