@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: 15077
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - edit: true
+      envKey: AUTH_KEY
+      labelEn: Admin Key
+      labelZh: 管理密钥
+      label:
+        en: Admin Key
+        zh: 管理密钥
+        zh-Hant: 管理金鑰
+        ja: 管理キー
+        ko: 관리자 키
+        ru: Ключ администратора
+        ms: Kunci pentadbir
+        pt-br: Chave de administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - edit: true
+      envKey: ENCRYPTION_KEY
+      labelEn: Data Encryption Key
+      labelZh: 数据加密密钥
+      label:
+        en: Data Encryption Key
+        zh: 数据加密密钥
+        zh-Hant: 資料加密金鑰
+        ja: データ暗号化キー
+        ko: 데이터 암호화 키
+        ru: Ключ шифрования данных
+        ms: Kunci penyulitan data
+        pt-br: Chave de criptografia dos dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
