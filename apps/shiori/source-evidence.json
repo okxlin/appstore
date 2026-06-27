@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/go-shiori/shiori",
+  "dockerDocs": "https://github.com/go-shiori/shiori/blob/master/docs/Installation.md",
+  "composeFile": "https://github.com/go-shiori/shiori/blob/master/docs/Installation.md"
+}

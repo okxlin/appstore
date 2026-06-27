@@ -1,0 +1,19 @@
+services:
+  databasus:
+    image: "databasus/databasus:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4005"
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/databasus-data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

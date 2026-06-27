@@ -1,0 +1,30 @@
+name: Databasus
+tags:
+- DevOps
+title: 面向数据库备份、恢复校验和保留策略的自托管工具
+description: 面向数据库备份、恢复校验和保留策略的自托管工具
+additionalProperties:
+  key: databasus
+  name: Databasus
+  tags:
+  - DevOps
+  shortDescZh: 面向数据库备份、恢复校验和保留策略的自托管工具
+  shortDescEn: A self-hosted tool for database backups, restore verification and retention
+  description:
+    en: A self-hosted tool for database backups, restore verification and retention
+    zh: 面向数据库备份、恢复校验和保留策略的自托管工具
+    zh-Hant: 面向資料庫備份、還原驗證和保留策略的自託管工具
+    ja: データベースのバックアップ、復元検証、保持管理のためのセルフホスト型ツール
+    ko: 데이터베이스 백업, 복원 검증 및 보존 정책을 위한 자체 호스팅 도구
+    ru: Самостоятельный инструмент для резервного копирования БД, проверки восстановления и хранения
+    ms: Alat kendiri untuk sandaran pangkalan data, pengesahan pemulihan dan pengekalan
+    pt-br: Ferramenta auto-hospedada para backups de bancos, verificacao de restauracao e retencao
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://databasus.com/
+  github: https://github.com/databasus/databasus
+  document: https://github.com/databasus/databasus#option-2-simple-docker-run
+  architectures:
+  - amd64
+  - arm64
