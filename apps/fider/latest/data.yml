@@ -1,0 +1,240 @@
+additionalProperties:
+  formFields:
+    - default: 15081
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 18025
+      edit: true
+      envKey: PANEL_APP_PORT_MAILHOG
+      labelEn: MailHog UI Port
+      labelZh: MailHog UI 端口
+      label:
+        en: MailHog UI Port
+        zh: MailHog UI 端口
+        zh-Hant: MailHog UI 埠
+        ja: MailHog UI ポート
+        ko: MailHog UI 포트
+        ru: Порт UI MailHog
+        ms: Port UI MailHog
+        pt-br: Porta UI do MailHog
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: http://localhost:15081
+      edit: true
+      envKey: BASE_URL
+      labelEn: Public Base URL
+      labelZh: 公共访问地址
+      label:
+        en: Public Base URL
+        zh: 公共访问地址
+        zh-Hant: 公共存取位址
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base publica
+      required: true
+      type: text
+    - edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL Password
+      labelZh: PostgreSQL 密码
+      label:
+        en: PostgreSQL Password
+        zh: PostgreSQL 密码
+        zh-Hant: PostgreSQL 密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT Secret
+      labelZh: JWT 密钥
+      label:
+        en: JWT Secret
+        zh: JWT 密钥
+        zh-Hant: JWT 密鑰
+        ja: JWT シークレット
+        ko: JWT 시크릿
+        ru: Секрет JWT
+        ms: Rahsia JWT
+        pt-br: Segredo JWT
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: noreply@example.com
+      edit: true
+      envKey: EMAIL_NOREPLY
+      labelEn: No-reply Email
+      labelZh: 发信邮箱
+      label:
+        en: No-reply Email
+        zh: 发信邮箱
+        zh-Hant: 發信信箱
+        ja: 送信元メール
+        ko: 발신 이메일
+        ru: Адрес отправителя
+        ms: E-mel penghantar
+        pt-br: Email remetente
+      required: true
+      type: text
+    - default: fider-mailhog
+      edit: true
+      envKey: EMAIL_SMTP_HOST
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP-хост
+        ms: Hos SMTP
+        pt-br: Host SMTP
+      required: true
+      type: text
+    - default: 1025
+      edit: true
+      envKey: EMAIL_SMTP_PORT
+      labelEn: SMTP Port
+      labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 埠
+        ja: SMTP ポート
+        ko: SMTP 포트
+        ru: SMTP-порт
+        ms: Port SMTP
+        pt-br: Porta SMTP
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: EMAIL_SMTP_USERNAME
+      labelEn: SMTP Username
+      labelZh: SMTP 用户名
+      label:
+        en: SMTP Username
+        zh: SMTP 用户名
+        zh-Hant: SMTP 使用者名稱
+        ja: SMTP ユーザー名
+        ko: SMTP 사용자 이름
+        ru: Имя пользователя SMTP
+        ms: Nama pengguna SMTP
+        pt-br: Usuario SMTP
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: EMAIL_SMTP_PASSWORD
+      labelEn: SMTP Password
+      labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密碼
+        ja: SMTP パスワード
+        ko: SMTP 비밀번호
+        ru: Пароль SMTP
+        ms: Kata laluan SMTP
+        pt-br: Senha SMTP
+      required: false
+      type: password
+    - default: "false"
+      edit: true
+      envKey: EMAIL_SMTP_ENABLE_STARTTLS
+      labelEn: SMTP STARTTLS
+      labelZh: SMTP STARTTLS
+      label:
+        en: SMTP STARTTLS
+        zh: SMTP STARTTLS
+        zh-Hant: SMTP STARTTLS
+        ja: SMTP STARTTLS
+        ko: SMTP STARTTLS
+        ru: SMTP STARTTLS
+        ms: SMTP STARTTLS
+        pt-br: SMTP STARTTLS
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "false"
+      edit: true
+      envKey: EMAIL_SMTP_ENABLE_IMPLICIT_TLS
+      labelEn: SMTP Implicit TLS
+      labelZh: SMTP 隐式 TLS
+      label:
+        en: SMTP Implicit TLS
+        zh: SMTP 隐式 TLS
+        zh-Hant: SMTP 隱式 TLS
+        ja: SMTP 暗黙 TLS
+        ko: SMTP 암시적 TLS
+        ru: SMTP implicit TLS
+        ms: SMTP TLS tersirat
+        pt-br: SMTP TLS implicito
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"

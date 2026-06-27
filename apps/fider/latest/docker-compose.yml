@@ -1,0 +1,68 @@
+services:
+  fider:
+    image: "getfider/fider:stable"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      fider-db:
+        condition: service_healthy
+      fider-mailhog:
+        condition: service_started
+    networks:
+      - 1panel-network
+      - fider-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - TZ=${TZ}
+      - BASE_URL=${BASE_URL}
+      - DATABASE_URL=postgres://fider:${POSTGRES_PASSWORD}@fider-db:5432/fider?sslmode=disable
+      - JWT_SECRET=${JWT_SECRET}
+      - EMAIL_NOREPLY=${EMAIL_NOREPLY}
+      - EMAIL_SMTP_HOST=${EMAIL_SMTP_HOST}
+      - EMAIL_SMTP_PORT=${EMAIL_SMTP_PORT}
+      - EMAIL_SMTP_USERNAME=${EMAIL_SMTP_USERNAME}
+      - EMAIL_SMTP_PASSWORD=${EMAIL_SMTP_PASSWORD}
+      - EMAIL_SMTP_ENABLE_STARTTLS=${EMAIL_SMTP_ENABLE_STARTTLS}
+      - EMAIL_SMTP_ENABLE_IMPLICIT_TLS=${EMAIL_SMTP_ENABLE_IMPLICIT_TLS}
+      - LOG_SQL=false
+      - LOG_CONSOLE=true
+    labels:
+      createdBy: "Apps"
+
+  fider-db:
+    image: "postgres:17"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - fider-network
+    environment:
+      - POSTGRES_DB=fider
+      - POSTGRES_USER=fider
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fider -d fider"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  fider-mailhog:
+    image: "mailhog/mailhog:latest"
+    container_name: ${CONTAINER_NAME}-mailhog
+    restart: always
+    networks:
+      - fider-network
+    ports:
+      - "${PANEL_APP_PORT_MAILHOG}:8025"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  fider-network:
+    driver: bridge

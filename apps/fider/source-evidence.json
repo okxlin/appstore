@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/getfider/fider",
+  "dockerDocs": "https://fider.io/hosting-instance",
+  "composeFile": "https://fider.io/hosting-instance",
+  "dockerfile": "https://github.com/getfider/fider/blob/main/Dockerfile",
+  "envConfig": "https://github.com/getfider/fider/blob/main/app/pkg/env/env.go",
+  "exampleEnv": "https://github.com/getfider/fider/blob/main/.example.env"
+}
