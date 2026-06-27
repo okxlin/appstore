@@ -253,11 +253,13 @@ changedetection.io-linuxserver
 cops-linuxserver
 davos-linuxserver
 ddclient-linuxserver
+diskover-linuxserver
 dokuwiki-linuxserver
 doplarr-linuxserver
 duckdns-linuxserver
 duplicati-linuxserver
 emby-linuxserver
+fail2ban-linuxserver
 flexget-linuxserver
 foldingathome-linuxserver
 freshrss-linuxserver
@@ -306,6 +308,7 @@ rsnapshot-linuxserver
 sabnzbd-linuxserver
 series-troxide-linuxserver
 sickgear-linuxserver
+socket-proxy-linuxserver
 synclounge-linuxserver
 syslog-ng-linuxserver
 tautulli-linuxserver
