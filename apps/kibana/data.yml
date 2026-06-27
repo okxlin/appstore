@@ -1,0 +1,31 @@
+name: Kibana
+tags:
+  - Tool
+title: Elastic Stack 的数据可视化和探索工具
+description: Elastic Stack 的数据可视化和探索工具
+additionalProperties:
+  key: kibana
+  name: Kibana
+  tags:
+    - Tool
+  shortDescZh: Elastic Stack 的数据可视化和探索工具
+  shortDescEn: Data visualization and exploration tool for Elastic Stack
+  description:
+    en: Data visualization and exploration interface for Elasticsearch and the Elastic Stack.
+    zh: 用于 Elasticsearch 和 Elastic Stack 的数据可视化、探索和管理界面。
+    zh-Hant: 用於 Elasticsearch 和 Elastic Stack 的資料視覺化、探索與管理介面。
+    ja: Elasticsearch と Elastic Stack 向けのデータ可視化、探索、管理インターフェースです。
+    ko: Elasticsearch 및 Elastic Stack을 위한 데이터 시각화, 탐색, 관리 인터페이스입니다.
+    ru: Интерфейс визуализации, исследования и управления данными для Elasticsearch и Elastic Stack.
+    ms: Antara muka visualisasi, penerokaan dan pengurusan data untuk Elasticsearch dan Elastic Stack.
+    pt-br: Interface de visualizacao, exploracao e gerenciamento de dados para Elasticsearch e Elastic Stack.
+  type: tool
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://www.elastic.co/kibana
+  github: https://github.com/elastic/kibana
+  document: https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-kibana-with-docker
+  architectures:
+    - amd64
+    - arm64

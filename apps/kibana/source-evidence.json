@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/elastic/kibana",
+  "dockerDocs": "https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-kibana-with-docker",
+  "composeFile": "https://github.com/elastic/elasticsearch/blob/main/docs/reference/setup/install/docker/docker-compose.yml",
+  "elasticsearchRepository": "https://github.com/elastic/elasticsearch",
+  "elasticsearchDockerDocs": "https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-docker-basic",
+  "kibanaDockerfile": "https://github.com/elastic/dockerfiles/tree/v9.4.2/kibana",
+  "logo": "https://www.elastic.co/static-res/images/elastic-logo-200.png",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2780",
+    "Elastic documentation states Kibana and Elasticsearch must use the same Elastic Stack version.",
+    "The app pins both images to 9.4.2 and disables crossVersionUpdate to avoid accidental cross-major upgrades.",
+    "Elasticsearch is internal-only by default; Kibana is the only exposed service."
+  ]
+}
