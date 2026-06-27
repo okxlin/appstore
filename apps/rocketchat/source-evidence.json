@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/RocketChat/Rocket.Chat",
+  "dockerDocs": "https://docs.rocket.chat/docs/deploy-with-docker-docker-compose",
+  "composeFile": "https://github.com/RocketChat/rocketchat-compose",
+  "adminAccount": "https://docs.rocket.chat/docs/admin-account-creation",
+  "updateGuide": "https://docs.rocket.chat/docs/guidelines-for-updating-rocketchat",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1870",
+    "Official deployment docs recommend the rocketchat-compose repository and a fixed Rocket.Chat release for production instead of a floating latest tag.",
+    "The appstore adaptation keeps the official core topology: Rocket.Chat 8.0.1, MongoDB 8.2 single-node replica set, and NATS 2.11.",
+    "Traefik, Prometheus, Grafana, log collectors and exporters from the full upstream stack are omitted to reduce privileges and exposed services in the appstore package.",
+    "One-shot MongoDB permission and replica-set init containers are folded into init.sh and the long-running MongoDB service because 1Panel treats completed app containers as unhealthy.",
+    "MongoDB bind-mount ownership is repaired inside the MongoDB container before starting mongod as the image's mongod user, avoiding host/container UID mapping assumptions.",
+    "Rocket.Chat 8.0.1 parses INITIAL_USER as JSON in server/startup/initialData.js; this app uses ADMIN_PASS and ADMIN_* variables for initial admin creation instead of setting INITIAL_USER=yes.",
+    "crossVersionUpdate is disabled because Rocket.Chat upgrades require release-note review, MongoDB compatibility checks, backups and sequential version upgrades."
+  ]
+}

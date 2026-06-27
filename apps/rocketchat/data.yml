@@ -1,0 +1,30 @@
+name: Rocket.Chat
+tags:
+  - 实用工具
+title: 开源团队通信协作平台
+description: 开源团队通信协作平台
+additionalProperties:
+  key: rocketchat
+  name: Rocket.Chat
+  tags:
+    - Tool
+  shortDescZh: 开源团队通信协作平台
+  shortDescEn: Open source team communication platform
+  description:
+    en: An open source team communication platform for messaging, channels and workspace collaboration.
+    zh: 面向消息、频道和团队协作的开源通信平台。
+    zh-Hant: 面向訊息、頻道和團隊協作的開源通訊平台。
+    ja: メッセージ、チャンネル、ワークスペース協業向けのオープンソースチーム通信プラットフォームです。
+    ko: 메시지, 채널 및 워크스페이스 협업을 위한 오픈소스 팀 커뮤니케이션 플랫폼입니다.
+    ru: Открытая платформа командного общения для сообщений, каналов и совместной работы.
+    ms: Platform komunikasi pasukan sumber terbuka untuk mesej, saluran dan kerjasama ruang kerja.
+    pt-br: Plataforma open source de comunicação em equipe para mensagens, canais e colaboração.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://www.rocket.chat/
+  github: https://github.com/RocketChat/Rocket.Chat
+  document: https://docs.rocket.chat/docs/deploy-with-docker-docker-compose
+  architectures:
+    - amd64
+    - arm64
