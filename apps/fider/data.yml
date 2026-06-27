@@ -1,0 +1,30 @@
+name: Fider
+tags:
+  - CRM
+title: 开源用户反馈、投票和路线图平台
+description: 开源用户反馈、投票和路线图平台
+additionalProperties:
+  key: fider
+  name: Fider
+  tags:
+    - CRM
+  shortDescZh: 开源用户反馈、投票和路线图平台
+  shortDescEn: Open source user feedback, voting and roadmap platform
+  description:
+    en: Open source platform for collecting user feedback, voting on ideas and sharing product roadmaps.
+    zh: 用于收集用户反馈、需求投票和展示产品路线图的开源平台。
+    zh-Hant: 用於收集使用者回饋、需求投票和展示產品路線圖的開源平台。
+    ja: ユーザーフィードバックの収集、アイデア投票、製品ロードマップ共有のためのオープンソースプラットフォームです。
+    ko: 사용자 피드백 수집, 아이디어 투표, 제품 로드맵 공유를 위한 오픈소스 플랫폼입니다.
+    ru: Открытая платформа для сбора отзывов пользователей, голосования за идеи и публикации дорожных карт продукта.
+    ms: Platform sumber terbuka untuk mengumpul maklum balas pengguna, undian idea dan peta hala tuju produk.
+    pt-br: Plataforma open source para coletar feedback de usuarios, votar em ideias e compartilhar roadmaps de produto.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://fider.io
+  github: https://github.com/getfider/fider
+  document: https://fider.io/hosting-instance
+  architectures:
+    - amd64
