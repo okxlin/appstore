@@ -1,0 +1,129 @@
+services:
+  chatwoot:
+    image: "chatwoot/chatwoot:v4.15.1-ce"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      chatwoot-postgres:
+        condition: service_healthy
+      chatwoot-redis:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - chatwoot-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    entrypoint: docker/entrypoints/rails.sh
+    command:
+      - sh
+      - -lc
+      - bundle exec rails db:chatwoot_prepare && exec bundle exec rails s -p 3000 -b 0.0.0.0
+    environment:
+      - TZ=${TZ}
+      - NODE_ENV=production
+      - RAILS_ENV=production
+      - INSTALLATION_ENV=docker
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - ENABLE_ACCOUNT_SIGNUP=${ENABLE_ACCOUNT_SIGNUP}
+      - FORCE_SSL=false
+      - RAILS_LOG_TO_STDOUT=true
+      - LOG_LEVEL=info
+      - ACTIVE_STORAGE_SERVICE=local
+      - POSTGRES_HOST=chatwoot-postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=chatwoot
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - REDIS_URL=redis://chatwoot-redis:6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/storage:/app/storage"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -T 5 -O /dev/null http://127.0.0.1:3000/api"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+  chatwoot-sidekiq:
+    image: "chatwoot/chatwoot:v4.15.1-ce"
+    container_name: ${CONTAINER_NAME}-sidekiq
+    restart: always
+    depends_on:
+      chatwoot:
+        condition: service_healthy
+    networks:
+      - chatwoot-network
+    entrypoint: docker/entrypoints/rails.sh
+    command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
+    environment:
+      - TZ=${TZ}
+      - NODE_ENV=production
+      - RAILS_ENV=production
+      - INSTALLATION_ENV=docker
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - ENABLE_ACCOUNT_SIGNUP=${ENABLE_ACCOUNT_SIGNUP}
+      - FORCE_SSL=false
+      - RAILS_LOG_TO_STDOUT=true
+      - LOG_LEVEL=info
+      - ACTIVE_STORAGE_SERVICE=local
+      - POSTGRES_HOST=chatwoot-postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=chatwoot
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - REDIS_URL=redis://chatwoot-redis:6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/storage:/app/storage"
+    labels:
+      createdBy: "Apps"
+
+  chatwoot-postgres:
+    image: "pgvector/pgvector:pg16"
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: always
+    networks:
+      - chatwoot-network
+    environment:
+      - POSTGRES_DB=chatwoot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d chatwoot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  chatwoot-redis:
+    image: "redis:7-alpine"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - chatwoot-network
+    command: ["sh", "-c", "redis-server --requirepass \"$$REDIS_PASSWORD\" --appendonly yes"]
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$${REDIS_PASSWORD}\" ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  chatwoot-network:
+    driver: bridge
