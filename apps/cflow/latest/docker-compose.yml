@@ -1,0 +1,24 @@
+services:
+  cflow:
+    image: "vespa314/cflow:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5230"
+    environment:
+      - TZ=${TZ}
+      - MEMOS_MODE=prod
+      - MEMOS_PORT=5230
+    volumes:
+      - "${APP_DATA_DIR}:/var/opt/memos"
+    command:
+      - "--mode"
+      - "prod"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
