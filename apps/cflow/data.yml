@@ -1,0 +1,29 @@
+name: CFlow
+tags:
+  - Tool
+title: 基于 Memos 魔改的个人知识流工具
+description: 基于 Memos 魔改的个人知识流工具
+additionalProperties:
+  key: cflow
+  name: CFlow
+  tags:
+    - Tool
+  shortDescZh: 基于 Memos 魔改的个人知识流工具
+  shortDescEn: A personal knowledge-flow tool based on a modified Memos
+  description:
+    en: A personal knowledge-flow tool based on a modified Memos
+    zh: 基于 Memos 魔改的个人知识流工具
+    zh-Hant: 基於 Memos 魔改的個人知識流工具
+    ja: Memos を改造した個人向け知識フローツール
+    ko: Memos를 수정한 개인 지식 흐름 도구
+    ru: Персональный инструмент потока знаний на основе модифицированного Memos
+    ms: Alat aliran pengetahuan peribadi berasaskan Memos yang diubah suai
+    pt-br: Ferramenta pessoal de fluxo de conhecimento baseada em uma versao modificada do Memos
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/Vespa314/cflow
+  github: https://github.com/Vespa314/cflow
+  document: https://github.com/Vespa314/cflow#dockerhub
+  architectures:
+    - amd64
