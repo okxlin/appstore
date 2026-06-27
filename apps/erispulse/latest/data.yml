@@ -93,6 +93,7 @@ additionalProperties:
       default: ""
       edit: true
       random: true
+      rule: "paramComplexity"
 
     - type: "select"
       labelZh: "界面语言"
