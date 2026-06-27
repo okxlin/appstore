@@ -1,0 +1,11 @@
+[
+  {
+    "httpRequest": {
+      "path": "/"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "MockServer is running\n"
+    }
+  }
+]

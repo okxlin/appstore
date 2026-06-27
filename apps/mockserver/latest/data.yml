@@ -1,0 +1,62 @@
+additionalProperties:
+  formFields:
+    - default: 41080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: INFO
+      edit: true
+      envKey: MOCKSERVER_LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 레벨
+        ru: Уровень журнала
+        ms: Tahap log
+        pt-br: Nivel de log
+      required: true
+      type: select
+      values:
+        - label: INFO
+          value: INFO
+        - label: WARN
+          value: WARN
+        - label: ERROR
+          value: ERROR
+        - label: DEBUG
+          value: DEBUG
+        - label: TRACE
+          value: TRACE

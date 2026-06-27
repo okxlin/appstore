@@ -1,0 +1,5 @@
+{
+  "repository": "https://codeberg.org/readeck/readeck",
+  "dockerDocs": "https://codeberg.org/readeck/readeck/src/branch/main/README.md#container",
+  "composeFile": "https://codeberg.org/readeck/readeck/src/branch/main/README.md#container"
+}

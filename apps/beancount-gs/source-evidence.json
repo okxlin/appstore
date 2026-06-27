@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/BaoXuebin/beancount-gs",
+  "dockerDocs": "https://github.com/BaoXuebin/beancount-gs#docker",
+  "composeFile": "https://github.com/BaoXuebin/beancount-gs/blob/main/docker-compose.yml"
+}

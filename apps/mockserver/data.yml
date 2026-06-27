@@ -1,0 +1,30 @@
+name: MockServer
+tags:
+- Tool
+title: 用于模拟、检查和代理 HTTP(S) 请求的测试服务器
+description: 用于模拟、检查和代理 HTTP(S) 请求的测试服务器
+additionalProperties:
+  key: mockserver
+  name: MockServer
+  tags:
+  - Tool
+  shortDescZh: 用于模拟、检查和代理 HTTP(S) 请求的测试服务器
+  shortDescEn: A test server for mocking, inspecting and proxying HTTP(S) requests
+  description:
+    en: A test server for mocking, inspecting and proxying HTTP(S) requests
+    zh: 用于模拟、检查和代理 HTTP(S) 请求的测试服务器
+    zh-Hant: 用於模擬、檢查和代理 HTTP(S) 請求的測試伺服器
+    ja: HTTP(S) リクエストのモック、検査、プロキシに使えるテストサーバー
+    ko: HTTP(S) 요청을 모킹, 검사 및 프록시하기 위한 테스트 서버
+    ru: Тестовый сервер для имитации, проверки и проксирования HTTP(S)-запросов
+    ms: Pelayan ujian untuk mengejek, memeriksa dan memproksi permintaan HTTP(S)
+    pt-br: Servidor de teste para simular, inspecionar e fazer proxy de requisições HTTP(S)
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.mock-server.com
+  github: https://github.com/mock-server/mockserver
+  document: https://www.mock-server.com/where/docker.html
+  architectures:
+  - amd64
+  - arm64

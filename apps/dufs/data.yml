@@ -1,0 +1,31 @@
+name: Dufs
+tags:
+- Tool
+title: 支持上传、搜索、访问控制和 WebDAV 的轻量文件服务器
+description: 支持上传、搜索、访问控制和 WebDAV 的轻量文件服务器
+additionalProperties:
+  key: dufs
+  name: Dufs
+  tags:
+  - Tool
+  shortDescZh: 支持上传、搜索、访问控制和 WebDAV 的轻量文件服务器
+  shortDescEn: A lightweight file server with upload, search, access control and WebDAV support
+  description:
+    en: A lightweight file server with upload, search, access control and WebDAV support
+    zh: 支持上传、搜索、访问控制和 WebDAV 的轻量文件服务器
+    zh-Hant: 支援上傳、搜尋、存取控制和 WebDAV 的輕量檔案伺服器
+    ja: アップロード、検索、アクセス制御、WebDAV に対応した軽量ファイルサーバー
+    ko: 업로드, 검색, 접근 제어 및 WebDAV를 지원하는 경량 파일 서버
+    ru: Легкий файловый сервер с загрузкой, поиском, контролем доступа и поддержкой WebDAV
+    ms: Pelayan fail ringan dengan sokongan muat naik, carian, kawalan akses dan WebDAV
+    pt-br: Servidor de arquivos leve com upload, pesquisa, controle de acesso e suporte a WebDAV
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/sigoden/dufs
+  github: https://github.com/sigoden/dufs
+  document: https://github.com/sigoden/dufs
+  architectures:
+  - amd64
+  - arm64
+  - armv7
