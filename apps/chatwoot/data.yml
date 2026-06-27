@@ -1,0 +1,30 @@
+name: Chatwoot
+tags:
+  - CRM
+title: 开源全渠道客户支持平台
+description: 开源全渠道客户支持平台
+additionalProperties:
+  key: chatwoot
+  name: Chatwoot
+  tags:
+    - CRM
+  shortDescZh: 开源全渠道客户支持平台
+  shortDescEn: Open source omnichannel customer support platform
+  description:
+    en: An open source omnichannel customer support platform for live chat, email, inboxes and helpdesk workflows.
+    zh: 面向在线客服、邮件、收件箱和工单流程的开源全渠道客户支持平台。
+    zh-Hant: 面向線上客服、郵件、收件匣和工單流程的開源全通路客戶支援平台。
+    ja: ライブチャット、メール、受信トレイ、ヘルプデスク業務向けのオープンソース全チャネル顧客サポート平台です。
+    ko: 라이브 채팅, 이메일, 받은 편지함 및 헬프데스크 워크플로를 위한 오픈소스 옴니채널 고객 지원 플랫폼입니다.
+    ru: Открытая омниканальная платформа поддержки клиентов для онлайн-чата, почты, входящих обращений и helpdesk-процессов.
+    ms: Platform sokongan pelanggan omnichannel sumber terbuka untuk sembang langsung, e-mel, peti masuk dan aliran kerja meja bantuan.
+    pt-br: Plataforma omnichannel open source de suporte ao cliente para chat ao vivo, email, caixas de entrada e fluxos de helpdesk.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://www.chatwoot.com/
+  github: https://github.com/chatwoot/chatwoot
+  document: https://developers.chatwoot.com/self-hosted/deployment/docker
+  architectures:
+    - amd64
+    - arm64

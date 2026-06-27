@@ -1,0 +1,143 @@
+additionalProperties:
+  formFields:
+    - default: 18086
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: http://1.2.3.4:18086
+      edit: true
+      envKey: FRONTEND_URL
+      labelEn: Public URL
+      labelZh: 公开访问地址
+      label:
+        en: Public URL
+        zh: 公开访问地址
+        zh-Hant: 公開存取位址
+        ja: 公開アクセス URL
+        ko: 공개 접속 주소
+        ru: Публичный URL
+        ms: URL awam
+        pt-br: URL publico
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: chatwoot_secret_key_base
+      edit: true
+      envKey: SECRET_KEY_BASE
+      labelEn: Secret Key Base
+      labelZh: Rails 签名密钥
+      label:
+        en: Secret Key Base
+        zh: Rails 签名密钥
+        zh-Hant: Rails 簽章金鑰
+        ja: Rails 署名キー
+        ko: Rails 서명 키
+        ru: Ключ подписи Rails
+        ms: Kunci tandatangan Rails
+        pt-br: Chave de assinatura Rails
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: chatwoot_postgres_password
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL Password
+      labelZh: PostgreSQL 密码
+      label:
+        en: PostgreSQL Password
+        zh: PostgreSQL 密码
+        zh-Hant: PostgreSQL 密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: chatwoot_redis_password
+      edit: true
+      envKey: REDIS_PASSWORD
+      labelEn: Redis Password
+      labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密碼
+        ja: Redis パスワード
+        ko: Redis 비밀번호
+        ru: Пароль Redis
+        ms: Kata laluan Redis
+        pt-br: Senha do Redis
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: ENABLE_ACCOUNT_SIGNUP
+      labelEn: Enable Account Signup
+      labelZh: 允许账号注册
+      label:
+        en: Enable Account Signup
+        zh: 允许账号注册
+        zh-Hant: 允許帳號註冊
+        ja: アカウント登録を許可
+        ko: 계정 가입 허용
+        ru: Разрешить регистрацию аккаунтов
+        ms: Benarkan pendaftaran akaun
+        pt-br: Permitir cadastro de contas
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
