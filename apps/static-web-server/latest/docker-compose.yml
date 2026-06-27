@@ -1,0 +1,23 @@
+services:
+  static-web-server:
+    image: "joseluisq/static-web-server:2-alpine"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - TZ=${TZ}
+      - SERVER_ROOT=/var/public
+      - SERVER_LOG_LEVEL=${SERVER_LOG_LEVEL}
+      - SERVER_DIRECTORY_LISTING=${SERVER_DIRECTORY_LISTING}
+      - SERVER_HEALTH=true
+    volumes:
+      - "${APP_DATA_DIR}:/var/public:ro"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,31 @@
+name: Loki
+tags:
+- DevOps
+title: 用于聚合、存储和查询日志的 Grafana 日志系统
+description: 用于聚合、存储和查询日志的 Grafana 日志系统
+additionalProperties:
+  key: loki
+  name: Loki
+  tags:
+  - DevOps
+  shortDescZh: 用于聚合、存储和查询日志的 Grafana 日志系统
+  shortDescEn: A Grafana log aggregation system for storing and querying logs
+  description:
+    en: A Grafana log aggregation system for storing and querying logs
+    zh: 用于聚合、存储和查询日志的 Grafana 日志系统
+    zh-Hant: 用於彙整、儲存和查詢日誌的 Grafana 日誌系統
+    ja: ログの集約、保存、検索に使う Grafana のログシステム
+    ko: 로그를 수집, 저장, 조회하는 Grafana 로그 시스템
+    ru: Система логов Grafana для агрегации, хранения и запросов
+    ms: Sistem log Grafana untuk mengumpul, menyimpan dan menanya log
+    pt-br: Sistema de logs Grafana para agregar, armazenar e consultar logs
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://grafana.com/oss/loki/
+  github: https://github.com/grafana/loki
+  document: https://grafana.com/docs/loki/latest/setup/install/docker/
+  architectures:
+  - amd64
+  - arm64
+  - armv7

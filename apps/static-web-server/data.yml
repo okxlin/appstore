@@ -1,0 +1,32 @@
+name: Static Web Server
+tags:
+- Server
+title: 高性能静态文件 Web 服务器
+description: 高性能静态文件 Web 服务器
+additionalProperties:
+  key: static-web-server
+  name: Static Web Server
+  tags:
+  - Server
+  shortDescZh: 高性能静态文件 Web 服务器
+  shortDescEn: A high-performance web server for static files
+  description:
+    en: A high-performance web server for static files
+    zh: 高性能静态文件 Web 服务器
+    zh-Hant: 高效能靜態檔案 Web 伺服器
+    ja: 静的ファイル向けの高性能 Web サーバー
+    ko: 정적 파일을 위한 고성능 웹 서버
+    ru: Высокопроизводительный веб-сервер для статических файлов
+    ms: Pelayan web berprestasi tinggi untuk fail statik
+    pt-br: Servidor web de alto desempenho para arquivos estaticos
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://static-web-server.net/
+  github: https://github.com/static-web-server/static-web-server
+  document: https://static-web-server.net/
+  architectures:
+  - amd64
+  - arm64
+  - armv6
+  - armv7

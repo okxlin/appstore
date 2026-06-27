@@ -1,0 +1,22 @@
+services:
+  komari:
+    image: "ghcr.io/komari-monitor/komari:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:25774"
+    environment:
+      - TZ=${TZ}
+      - KOMARI_LISTEN=0.0.0.0:25774
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

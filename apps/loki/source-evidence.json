@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/grafana/loki",
+  "dockerDocs": "https://grafana.com/docs/loki/latest/setup/install/docker/",
+  "composeFile": "https://github.com/grafana/loki/blob/v3.6.0/examples/getting-started/docker-compose.yaml"
+}
