@@ -1,0 +1,112 @@
+services:
+  misskey:
+    image: "misskey/misskey:2026.6.0"
+    container_name: ${CONTAINER_NAME}
+    user: root
+    restart: always
+    depends_on:
+      misskey-db:
+        condition: service_healthy
+      misskey-redis:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - misskey-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    entrypoint:
+      - /bin/bash
+      - -c
+    command:
+      - |
+        set -e
+        install -d -o misskey -g misskey -m 755 /misskey/.config /misskey/files
+        node <<'NODE'
+        const fs = require('fs');
+        const required = (name) => {
+          const value = process.env[name];
+          if (!value) {
+            throw new Error(name + ' is required');
+          }
+          return value;
+        };
+        const quoted = (value) => JSON.stringify(value);
+        const config = [
+          'url: ' + quoted(required('MISSKEY_URL')),
+          'port: 3000',
+          'setupPassword: ' + quoted(required('MISSKEY_SETUP_PASSWORD')),
+          'db:',
+          '  host: misskey-db',
+          '  port: 5432',
+          '  db: misskey',
+          '  user: misskey',
+          '  pass: ' + quoted(required('POSTGRES_PASSWORD')),
+          'dbReplications: false',
+          'redis:',
+          '  host: misskey-redis',
+          '  port: 6379',
+          'fulltextSearch:',
+          '  provider: sqlLike',
+          "id: 'aidx'",
+          'proxyBypassHosts:',
+          '  - api.deepl.com',
+          '  - api-free.deepl.com',
+          ''
+        ].join('\n');
+        fs.writeFileSync('/misskey/.config/default.yml', config, { mode: 0o600 });
+        NODE
+        chown -R misskey:misskey /misskey/.config /misskey/files
+        export HOME=/misskey USER=misskey LOGNAME=misskey
+        exec setpriv --reuid=misskey --regid=misskey --init-groups /usr/bin/tini -- pnpm run migrateandstart
+    environment:
+      - TZ=${TZ}
+      - MISSKEY_URL=${MISSKEY_URL}
+      - MISSKEY_SETUP_PASSWORD=${MISSKEY_SETUP_PASSWORD}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/config:/misskey/.config"
+      - "${APP_DATA_DIR}/files:/misskey/files"
+    labels:
+      createdBy: "Apps"
+
+  misskey-db:
+    image: "postgres:18-alpine"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - misskey-network
+    environment:
+      - POSTGRES_DB=misskey
+      - POSTGRES_USER=misskey
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U misskey -d misskey"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  misskey-redis:
+    image: "redis:7-alpine"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - misskey-network
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  misskey-network:
+    driver: bridge

@@ -1,0 +1,20 @@
+{
+  "website": "https://misskey-hub.net/",
+  "repository": "https://github.com/misskey-dev/misskey",
+  "dockerDocs": "https://github.com/misskey-dev/misskey/blob/develop/compose_example.yml",
+  "composeFile": "https://github.com/misskey-dev/misskey/blob/develop/compose_example.yml",
+  "dockerConfig": "https://github.com/misskey-dev/misskey/blob/develop/.config/docker_example.yml",
+  "imageRegistry": "https://hub.docker.com/r/misskey/misskey",
+  "release": "https://github.com/misskey-dev/misskey/releases/tag/2026.6.0",
+  "dockerfile": "https://github.com/misskey-dev/misskey/blob/develop/Dockerfile",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1018",
+    "The original issue groups Mastodon-family projects. Mastodon already exists in appstore, GoToSocial was added separately, and this package covers the Misskey part.",
+    "Official compose example uses Misskey, PostgreSQL and Redis. Optional mCaptcha and Meilisearch services are omitted for a lower-risk default install.",
+    "PostgreSQL 18 images require mounting /var/lib/postgresql instead of /var/lib/postgresql/data so that major-version-specific data directories work correctly.",
+    "The packaged image is pinned to misskey/misskey:2026.6.0, the latest stable release at adaptation time, instead of using the moving latest tag.",
+    "Docker manifest metadata for misskey/misskey:2026.6.0 shows linux/amd64 and linux/arm64.",
+    "Misskey's example configuration warns that the final URL should not be changed after the instance has started; README calls this out for 1Panel users.",
+    "This app is intentionally not added to the Renovate automerge whitelist because Misskey has database migrations and fediverse URL identity constraints."
+  ]
+}
