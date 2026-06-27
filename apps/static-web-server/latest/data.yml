@@ -1,0 +1,99 @@
+additionalProperties:
+  formFields:
+    - default: 8787
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Public Directory
+      labelZh: 静态文件目录
+      label:
+        en: Public Directory
+        zh: 静态文件目录
+        zh-Hant: 靜態檔案目錄
+        ja: 公開ディレクトリ
+        ko: 공개 디렉터리
+        ru: Каталог статических файлов
+        ms: Direktori awam
+        pt-br: Diretorio publico
+      required: true
+      type: text
+    - default: info
+      edit: true
+      envKey: SERVER_LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 레벨
+        ru: Уровень журнала
+        ms: Tahap log
+        pt-br: Nivel de log
+      required: true
+      type: select
+      values:
+        - label: error
+          value: error
+        - label: warn
+          value: warn
+        - label: info
+          value: info
+        - label: debug
+          value: debug
+        - label: trace
+          value: trace
+    - default: "false"
+      edit: true
+      envKey: SERVER_DIRECTORY_LISTING
+      labelEn: Directory Listing
+      labelZh: 目录列表
+      label:
+        en: Directory Listing
+        zh: 目录列表
+        zh-Hant: 目錄列表
+        ja: ディレクトリ一覧
+        ko: 디렉터리 목록
+        ru: Список каталогов
+        ms: Senarai direktori
+        pt-br: Listagem de diretorios
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"

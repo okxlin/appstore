@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/static-web-server/static-web-server/tree/2.x",
+  "dockerDocs": "https://github.com/static-web-server/docs/blob/master/src/v2/features/docker.md",
+  "composeFile": "https://github.com/static-web-server/docs/blob/master/src/v2/features/docker.md"
+}

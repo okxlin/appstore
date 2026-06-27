@@ -1,0 +1,84 @@
+additionalProperties:
+  formFields:
+    - default: 25774
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: admin
+      edit: true
+      envKey: ADMIN_USERNAME
+      labelEn: Initial Admin Username
+      labelZh: 初始管理员用户名
+      label:
+        en: Initial Admin Username
+        zh: 初始管理员用户名
+        zh-Hant: 初始管理員使用者名稱
+        ja: 初期管理者ユーザー名
+        ko: 초기 관리자 사용자 이름
+        ru: Имя начального администратора
+        ms: Nama pengguna pentadbir awal
+        pt-br: Usuario administrador inicial
+      required: true
+      type: text
+    - edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Initial Admin Password
+      labelZh: 初始管理员密码
+      label:
+        en: Initial Admin Password
+        zh: 初始管理员密码
+        zh-Hant: 初始管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Пароль начального администратора
+        ms: Kata laluan pentadbir awal
+        pt-br: Senha do administrador inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

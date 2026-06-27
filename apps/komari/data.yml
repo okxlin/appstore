@@ -1,0 +1,30 @@
+name: Komari
+tags:
+- DevOps
+title: 轻量自托管服务器监控面板
+description: 轻量自托管服务器监控面板
+additionalProperties:
+  key: komari
+  name: Komari
+  tags:
+  - DevOps
+  shortDescZh: 轻量自托管服务器监控面板
+  shortDescEn: A lightweight self-hosted server monitoring dashboard
+  description:
+    en: A lightweight self-hosted server monitoring dashboard
+    zh: 轻量自托管服务器监控面板
+    zh-Hant: 輕量自託管伺服器監控面板
+    ja: 軽量なセルフホスト型サーバー監視ダッシュボード
+    ko: 가벼운 자체 호스팅 서버 모니터링 대시보드
+    ru: Легкая самостоятельная панель мониторинга серверов
+    ms: Papan pemuka pemantauan pelayan kendiri yang ringan
+    pt-br: Painel leve auto-hospedado para monitoramento de servidores
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/komari-monitor/komari
+  github: https://github.com/komari-monitor/komari
+  document: https://github.com/komari-monitor/komari#docker-deployment
+  architectures:
+  - amd64
+  - arm64
