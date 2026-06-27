@@ -1,0 +1,31 @@
+name: Shiori
+tags:
+- Tool
+title: 简洁的自托管书签和网页归档管理器
+description: 简洁的自托管书签和网页归档管理器
+additionalProperties:
+  key: shiori
+  name: Shiori
+  tags:
+  - Tool
+  shortDescZh: 简洁的自托管书签和网页归档管理器
+  shortDescEn: A simple self-hosted bookmark and web archive manager
+  description:
+    en: A simple self-hosted bookmark and web archive manager
+    zh: 简洁的自托管书签和网页归档管理器
+    zh-Hant: 簡潔的自託管書籤和網頁封存管理器
+    ja: シンプルなセルフホスト型ブックマークと Web アーカイブ管理ツール
+    ko: 간단한 자체 호스팅 북마크 및 웹 아카이브 관리자
+    ru: Простой самостоятельный менеджер закладок и веб-архивов
+    ms: Pengurus penanda buku dan arkib web kendiri yang ringkas
+    pt-br: Gerenciador simples auto-hospedado de favoritos e arquivos web
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/go-shiori/shiori
+  github: https://github.com/go-shiori/shiori
+  document: https://github.com/go-shiori/shiori/blob/master/docs/Installation.md
+  architectures:
+  - amd64
+  - arm64
+  - armv7

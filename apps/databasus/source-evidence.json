@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/databasus/databasus",
+  "dockerDocs": "https://github.com/databasus/databasus#option-2-simple-docker-run",
+  "composeFile": "https://github.com/databasus/databasus#option-3-docker-compose-setup"
+}
