@@ -1,0 +1,24 @@
+services:
+  feishin:
+    image: "ghcr.io/jeffvli/feishin:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9180"
+    environment:
+      - TZ=${TZ}
+      - ANALYTICS_DISABLED=${ANALYTICS_DISABLED}
+      - SERVER_NAME=${SERVER_NAME}
+      - SERVER_TYPE=${SERVER_TYPE}
+      - SERVER_URL=${SERVER_URL}
+      - SERVER_LOCK=${SERVER_LOCK}
+      - REMOTE_URL=${REMOTE_URL}
+      - LEGACY_AUTHENTICATION=${LEGACY_AUTHENTICATION}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

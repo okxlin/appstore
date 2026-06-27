@@ -1,0 +1,171 @@
+additionalProperties:
+  formFields:
+    - default: 15078
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: ANALYTICS_DISABLED
+      labelEn: Disable Analytics
+      labelZh: 禁用统计分析
+      label:
+        en: Disable Analytics
+        zh: 禁用统计分析
+        zh-Hant: 停用統計分析
+        ja: 分析を無効化
+        ko: 분석 비활성화
+        ru: Отключить аналитику
+        ms: Lumpuhkan analitik
+        pt-br: Desativar analiticos
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ""
+      edit: true
+      envKey: SERVER_NAME
+      labelEn: Server Name
+      labelZh: 服务器名称
+      label:
+        en: Server Name
+        zh: 服务器名称
+        zh-Hant: 伺服器名稱
+        ja: サーバー名
+        ko: 서버 이름
+        ru: Имя сервера
+        ms: Nama pelayan
+        pt-br: Nome do servidor
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SERVER_TYPE
+      labelEn: Server Type
+      labelZh: 服务器类型
+      label:
+        en: Server Type
+        zh: 服务器类型
+        zh-Hant: 伺服器類型
+        ja: サーバー種別
+        ko: 서버 유형
+        ru: Тип сервера
+        ms: Jenis pelayan
+        pt-br: Tipo de servidor
+      required: false
+      type: select
+      values:
+        - label: ""
+          value: ""
+        - label: jellyfin
+          value: jellyfin
+        - label: navidrome
+          value: navidrome
+        - label: subsonic
+          value: subsonic
+    - default: ""
+      edit: true
+      envKey: SERVER_URL
+      labelEn: Server URL
+      labelZh: 服务器 URL
+      label:
+        en: Server URL
+        zh: 服务器 URL
+        zh-Hant: 伺服器 URL
+        ja: サーバー URL
+        ko: 서버 URL
+        ru: URL сервера
+        ms: URL pelayan
+        pt-br: URL do servidor
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: SERVER_LOCK
+      labelEn: Lock Server Settings
+      labelZh: 锁定服务器设置
+      label:
+        en: Lock Server Settings
+        zh: 锁定服务器设置
+        zh-Hant: 鎖定伺服器設定
+        ja: サーバー設定をロック
+        ko: 서버 설정 잠금
+        ru: Заблокировать настройки сервера
+        ms: Kunci tetapan pelayan
+        pt-br: Bloquear configuracoes do servidor
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      edit: true
+      envKey: REMOTE_URL
+      labelEn: Public Server URL
+      labelZh: 公网服务器 URL
+      label:
+        en: Public Server URL
+        zh: 公网服务器 URL
+        zh-Hant: 公網伺服器 URL
+        ja: 公開サーバー URL
+        ko: 공개 서버 URL
+        ru: Публичный URL сервера
+        ms: URL pelayan awam
+        pt-br: URL publico do servidor
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: LEGACY_AUTHENTICATION
+      labelEn: Legacy Authentication
+      labelZh: 传统认证
+      label:
+        en: Legacy Authentication
+        zh: 传统认证
+        zh-Hant: 傳統認證
+        ja: レガシー認証
+        ko: 레거시 인증
+        ru: Устаревшая аутентификация
+        ms: Pengesahan legasi
+        pt-br: Autenticacao legada
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"

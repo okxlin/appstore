@@ -1,0 +1,30 @@
+name: Feishin
+tags:
+  - Media
+title: 现代化自托管音乐服务器 Web 播放器
+description: 现代化自托管音乐服务器 Web 播放器
+additionalProperties:
+  key: feishin
+  name: Feishin
+  tags:
+    - Media
+  shortDescZh: 现代化自托管音乐服务器 Web 播放器
+  shortDescEn: A modern web player for self-hosted music servers
+  description:
+    en: "A modern web music player for Navidrome, Jellyfin and OpenSubsonic-compatible servers."
+    zh: "面向 Navidrome、Jellyfin 和 OpenSubsonic 兼容服务器的现代化 Web 音乐播放器。"
+    zh-Hant: "面向 Navidrome、Jellyfin 和 OpenSubsonic 相容伺服器的現代化 Web 音樂播放器。"
+    ja: "Navidrome、Jellyfin、OpenSubsonic 互換サーバー向けのモダンな Web 音楽プレーヤーです。"
+    ko: "Navidrome, Jellyfin 및 OpenSubsonic 호환 서버를 위한 최신 웹 음악 플레이어입니다."
+    ru: "Современный веб-плеер для музыкальных серверов Navidrome, Jellyfin и совместимых с OpenSubsonic."
+    ms: "Pemain muzik web moden untuk pelayan Navidrome, Jellyfin dan serasi OpenSubsonic."
+    pt-br: "Player web moderno para servidores de musica Navidrome, Jellyfin e compativeis com OpenSubsonic."
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://feishin.vercel.app
+  github: https://github.com/jeffvli/feishin
+  document: https://github.com/jeffvli/feishin#web-and-docker
+  architectures:
+    - amd64
+    - arm64

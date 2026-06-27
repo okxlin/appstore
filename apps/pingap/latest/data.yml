@@ -1,0 +1,101 @@
+additionalProperties:
+  formFields:
+    - default: 15079
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 15443
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: HTTPS Port
+      labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 埠
+        ja: HTTPS ポート
+        ko: HTTPS 포트
+        ru: HTTPS-порт
+        ms: Port HTTPS
+        pt-br: Porta HTTPS
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: pingap
+      edit: true
+      envKey: PINGAP_ADMIN_USER
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama pengguna pentadbir
+        pt-br: Usuario administrador
+      required: true
+      type: text
+    - edit: true
+      envKey: PINGAP_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
