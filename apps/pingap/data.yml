@@ -1,0 +1,30 @@
+name: Pingap
+tags:
+  - Tool
+title: 基于 Pingora 的高性能反向代理和应用网关
+description: 基于 Pingora 的高性能反向代理和应用网关
+additionalProperties:
+  key: pingap
+  name: Pingap
+  tags:
+    - Tool
+  shortDescZh: 基于 Pingora 的高性能反向代理和应用网关
+  shortDescEn: A high-performance reverse proxy and application gateway powered by Pingora
+  description:
+    en: "A high-performance reverse proxy and application gateway powered by Cloudflare Pingora, with hot reload and a web admin interface."
+    zh: "基于 Cloudflare Pingora 的高性能反向代理和应用网关，支持热更新和 Web 管理界面。"
+    zh-Hant: "基於 Cloudflare Pingora 的高效能反向代理和應用閘道，支援熱更新和 Web 管理介面。"
+    ja: "Cloudflare Pingora を利用した高性能リバースプロキシ兼アプリケーションゲートウェイです。ホットリロードと Web 管理画面に対応します。"
+    ko: "Cloudflare Pingora 기반의 고성능 리버스 프록시 및 애플리케이션 게이트웨이로, 핫 리로드와 웹 관리 UI를 지원합니다."
+    ru: "Высокопроизводительный обратный прокси и шлюз приложений на Cloudflare Pingora с горячей перезагрузкой и веб-панелью управления."
+    ms: "Proksi songsang dan gerbang aplikasi berprestasi tinggi berasaskan Cloudflare Pingora dengan muat semula panas dan UI pentadbiran web."
+    pt-br: "Proxy reverso e gateway de aplicacao de alto desempenho baseado no Cloudflare Pingora, com hot reload e interface web de administracao."
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://pingap.io
+  github: https://github.com/vicanso/pingap
+  document: https://pingap.io/pingap-en/docs/getting_started
+  architectures:
+    - amd64
+    - arm64

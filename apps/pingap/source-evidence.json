@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/vicanso/pingap",
+  "dockerDocs": "https://github.com/vicanso/pingap#getting-started",
+  "composeFile": "https://github.com/vicanso/pingap#getting-started"
+}

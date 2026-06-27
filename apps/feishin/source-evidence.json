@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/jeffvli/feishin",
+  "dockerDocs": "https://github.com/jeffvli/feishin#web-and-docker",
+  "composeFile": "https://github.com/jeffvli/feishin#docker-compose"
+}
