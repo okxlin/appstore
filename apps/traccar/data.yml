@@ -1,0 +1,30 @@
+name: Traccar
+tags:
+  - Website
+title: 开源 GPS 跟踪系统
+description: 开源 GPS 跟踪系统
+additionalProperties:
+  key: traccar
+  name: Traccar
+  tags:
+    - Website
+  shortDescZh: 开源 GPS 跟踪系统
+  shortDescEn: Open source GPS tracking system
+  description:
+    en: Open source GPS tracking system
+    zh: 开源 GPS 跟踪系统
+    zh-Hant: 開源 GPS 追蹤系統
+    ja: オープンソースの GPS 追跡システム
+    ko: 오픈 소스 GPS 추적 시스템
+    ru: Открытая система GPS-трекинга
+    ms: Sistem penjejakan GPS sumber terbuka
+    pt-br: Sistema aberto de rastreamento GPS
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.traccar.org/
+  github: https://github.com/traccar/traccar
+  document: https://www.traccar.org/docker/
+  architectures:
+    - amd64
+    - arm64

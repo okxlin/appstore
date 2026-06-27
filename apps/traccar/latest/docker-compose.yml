@@ -1,0 +1,62 @@
+services:
+  traccar:
+    image: "traccar/traccar:6.14.5"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      traccar-db:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - traccar-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8082"
+      - "${PANEL_APP_PORT_DEVICE}:5055/tcp"
+      - "${PANEL_APP_PORT_DEVICE}:5055/udp"
+    environment:
+      - TZ=${TZ}
+      - CONFIG_USE_ENVIRONMENT_VARIABLES=true
+      - DATABASE_DRIVER=com.mysql.cj.jdbc.Driver
+      - DATABASE_URL=jdbc:mysql://traccar-db:3306/traccar?zeroDateTimeBehavior=round&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&allowMultiQueries=true&autoReconnect=true&useUnicode=yes&characterEncoding=UTF-8&sessionVariables=sql_mode=''
+      - DATABASE_USER=traccar
+      - DATABASE_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/logs:/opt/traccar/logs"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8082/api/health"]
+      interval: 2m
+      timeout: 5s
+      start_period: 1m
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+  traccar-db:
+    image: "mysql:8.4"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - traccar-network
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=traccar
+      - MYSQL_USER=traccar
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/mysql:/var/lib/mysql"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u traccar -p\"$${MYSQL_PASSWORD}\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  traccar-network:
+    driver: bridge
