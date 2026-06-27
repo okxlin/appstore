@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/odoo/docker",
+  "dockerDocs": "https://github.com/docker-library/docs/blob/master/odoo/README.md",
+  "composeFile": "https://github.com/docker-library/docs/blob/master/odoo/README.md#docker-compose-examples",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1535",
+    "Docker Official Image documentation requires PostgreSQL and documents HOST/PORT/USER/PASSWORD environment variables plus custom configuration via odoo.conf.",
+    "Image tag is pinned to odoo:19.0 in the latest app directory to avoid accidental cross-major upgrades."
+  ]
+}
