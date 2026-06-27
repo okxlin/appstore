@@ -1,0 +1,30 @@
+name: Odoo
+tags:
+  - CRM
+title: 开源企业应用套件
+description: 开源企业应用套件
+additionalProperties:
+  key: odoo
+  name: Odoo
+  tags:
+    - CRM
+  shortDescZh: 开源企业应用套件
+  shortDescEn: Open source business application suite
+  description:
+    en: An open source suite of business applications covering CRM, sales, inventory, accounting, websites and more.
+    zh: 覆盖 CRM、销售、库存、会计、网站等业务场景的开源企业应用套件。
+    zh-Hant: 覆蓋 CRM、銷售、庫存、會計、網站等業務場景的開源企業應用套件。
+    ja: CRM、販売、在庫、会計、Web サイトなどをカバーするオープンソースの業務アプリケーションスイートです。
+    ko: CRM, 판매, 재고, 회계, 웹사이트 등을 포괄하는 오픈소스 비즈니스 애플리케이션 제품군입니다.
+    ru: Открытый набор бизнес-приложений для CRM, продаж, склада, учета, сайтов и других задач.
+    ms: Set aplikasi perniagaan sumber terbuka untuk CRM, jualan, inventori, perakaunan, laman web dan banyak lagi.
+    pt-br: Suite open source de aplicativos empresariais para CRM, vendas, estoque, contabilidade, sites e mais.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://www.odoo.com/
+  github: https://github.com/odoo/odoo
+  document: https://github.com/docker-library/docs/blob/master/odoo/README.md
+  architectures:
+    - amd64
+    - arm64
