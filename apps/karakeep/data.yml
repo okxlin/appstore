@@ -1,0 +1,30 @@
+name: Karakeep
+tags:
+  - Tool
+title: 自托管书签、笔记和网页归档工具
+description: 自托管书签、笔记和网页归档工具
+additionalProperties:
+  key: karakeep
+  name: Karakeep
+  tags:
+    - Tool
+  shortDescZh: 自托管书签、笔记和网页归档工具
+  shortDescEn: Self-hosted bookmark, note, and web archive app
+  description:
+    en: Self-hosted bookmark, note, and web archive app
+    zh: 自托管书签、笔记和网页归档工具
+    zh-Hant: 自託管書籤、筆記與網頁封存工具
+    ja: ブックマーク、メモ、Web アーカイブを保存するセルフホストアプリ
+    ko: 북마크, 메모, 웹 아카이브를 보관하는 자체 호스팅 앱
+    ru: Самостоятельно размещаемое приложение для закладок, заметок и веб-архива
+    ms: Aplikasi hos sendiri untuk penanda buku, nota dan arkib web
+    pt-br: Aplicativo auto-hospedado para favoritos, notas e arquivamento da web
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://karakeep.app/
+  github: https://github.com/karakeep-app/karakeep
+  document: https://docs.karakeep.app/installation/docker
+  architectures:
+    - amd64
+    - arm64
