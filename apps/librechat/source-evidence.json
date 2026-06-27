@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/danny-avila/LibreChat",
+  "dockerDocs": "https://www.librechat.ai/docs/installation/docker",
+  "composeFile": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/docker-compose.yml",
+  "deployComposeFile": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/deploy-compose.yml",
+  "envExample": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/.env.example",
+  "configExample": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/librechat.example.yaml",
+  "imageTags": [
+    "registry.librechat.ai/danny-avila/librechat-dev:latest",
+    "registry.librechat.ai/clickhouse/librechat-admin-panel:latest",
+    "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest",
+    "mongo:8.0.20",
+    "getmeili/meilisearch:v1.35.1",
+    "pgvector/pgvector:0.8.0-pg15-trixie"
+  ],
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1080",
+    "Official Docker Compose includes LibreChat API/Web, Admin Panel, MongoDB, Meilisearch, pgvector and RAG API services.",
+    "The adaptation keeps the official internal service topology and exposes only the LibreChat Web and Admin Panel ports.",
+    "Application secrets are derived inside the containers from one 1Panel random secret so JWT, credential encryption and admin session secrets meet length requirements without exposing extra fields.",
+    "Meilisearch explicitly sets MEILI_DB_PATH=/meili_data so the upstream volume mount is actually used for persistent index data.",
+    "This app is intentionally not added to the Renovate automerge whitelist because the official LibreChat images use moving latest tags and the stack includes database, search and vector-store services."
+  ]
+}

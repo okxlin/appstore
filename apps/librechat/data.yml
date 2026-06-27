@@ -1,0 +1,30 @@
+name: LibreChat
+tags:
+  - AI
+title: 开源多用户 AI 聊天平台
+description: 开源多用户 AI 聊天平台
+additionalProperties:
+  key: librechat
+  name: LibreChat
+  tags:
+    - AI
+  shortDescZh: 开源多用户 AI 聊天平台
+  shortDescEn: Open source multi-user AI chat platform
+  description:
+    en: An open source multi-user AI chat platform with agents, provider integrations, search and self-hosted deployment.
+    zh: 支持智能体、模型供应商集成、搜索和自托管部署的开源多用户 AI 聊天平台。
+    zh-Hant: 支援智慧體、模型供應商整合、搜尋和自託管部署的開源多使用者 AI 聊天平台。
+    ja: エージェント、モデルプロバイダー連携、検索、セルフホスト運用に対応したオープンソースのマルチユーザー AI チャットプラットフォームです。
+    ko: 에이전트, 모델 공급자 통합, 검색 및 자체 호스팅 배포를 지원하는 오픈소스 다중 사용자 AI 채팅 플랫폼입니다.
+    ru: Открытая многопользовательская AI-чат-платформа с агентами, интеграциями провайдеров, поиском и самостоятельным размещением.
+    ms: Platform sembang AI berbilang pengguna sumber terbuka dengan ejen, integrasi penyedia model, carian dan pemasangan kendiri.
+    pt-br: Plataforma open source de chat de IA multiusuario com agentes, integrações de provedores, busca e implantação self-hosted.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://librechat.ai/
+  github: https://github.com/danny-avila/LibreChat
+  document: https://www.librechat.ai/docs/installation/docker
+  architectures:
+    - amd64
+    - arm64
