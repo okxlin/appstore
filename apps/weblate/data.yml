@@ -1,0 +1,30 @@
+name: Weblate
+tags:
+  - DevOps
+title: 自托管连续本地化平台
+description: 自托管连续本地化平台
+additionalProperties:
+  key: weblate
+  name: Weblate
+  tags:
+    - DevOps
+  shortDescZh: 自托管连续本地化平台
+  shortDescEn: Self-hosted continuous localization platform
+  description:
+    en: A libre web-based continuous localization platform for translating software projects and documentation.
+    zh: 用于翻译软件项目和文档的自由开源网页连续本地化平台。
+    zh-Hant: 用於翻譯軟體專案和文件的自由開源網頁連續本地化平台。
+    ja: ソフトウェアプロジェクトとドキュメントを翻訳するための自由な Web ベース継続的ローカライゼーション基盤です。
+    ko: 소프트웨어 프로젝트와 문서를 번역하기 위한 자유 오픈소스 웹 기반 지속적 현지화 플랫폼입니다.
+    ru: Свободная веб-платформа непрерывной локализации для перевода программных проектов и документации.
+    ms: Platform penyetempatan berterusan berasaskan web sumber terbuka untuk menterjemah projek perisian dan dokumentasi.
+    pt-br: Plataforma web livre de localizacao continua para traduzir projetos de software e documentacao.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://weblate.org/
+  github: https://github.com/WeblateOrg/weblate
+  document: https://docs.weblate.org/en/latest/admin/install/docker.html
+  architectures:
+    - amd64
+    - arm64

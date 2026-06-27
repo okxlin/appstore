@@ -1,0 +1,93 @@
+services:
+  cache:
+    image: "valkey/valkey:9.1.0"
+    container_name: ${CONTAINER_NAME}-cache
+    restart: always
+    read_only: true
+    command: ["valkey-server", "--save", "60", "1", "--loglevel", "warning"]
+    networks:
+      - weblate-network
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  database:
+    image: "postgres:18-alpine"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - weblate-network
+    environment:
+      - POSTGRES_USER=weblate
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=weblate
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weblate -d weblate"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  weblate:
+    image: "weblate/weblate:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    depends_on:
+      cache:
+        condition: service_healthy
+      database:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - weblate-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - TZ=${TZ}
+      - WEBLATE_DEBUG=0
+      - WEBLATE_LOGLEVEL=INFO
+      - WEBLATE_SITE_TITLE=${WEBLATE_SITE_TITLE}
+      - WEBLATE_SITE_DOMAIN=${WEBLATE_SITE_DOMAIN}
+      - WEBLATE_ADMIN_NAME=${WEBLATE_ADMIN_NAME}
+      - WEBLATE_ADMIN_EMAIL=${WEBLATE_ADMIN_EMAIL}
+      - WEBLATE_ADMIN_PASSWORD=${WEBLATE_ADMIN_PASSWORD}
+      - WEBLATE_SERVER_EMAIL=${WEBLATE_SERVER_EMAIL}
+      - WEBLATE_DEFAULT_FROM_EMAIL=${WEBLATE_DEFAULT_FROM_EMAIL}
+      - WEBLATE_ALLOWED_HOSTS=${WEBLATE_ALLOWED_HOSTS}
+      - WEBLATE_REGISTRATION_OPEN=${WEBLATE_REGISTRATION_OPEN}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=weblate
+      - POSTGRES_DB=weblate
+      - POSTGRES_HOST=database
+      - POSTGRES_PORT=5432
+      - POSTGRES_DATABASE=weblate
+      - REDIS_HOST=cache
+      - REDIS_PORT=6379
+      - WEBLATE_EMAIL_HOST=${WEBLATE_EMAIL_HOST}
+      - WEBLATE_EMAIL_HOST_USER=${WEBLATE_EMAIL_HOST_USER}
+      - WEBLATE_EMAIL_HOST_PASSWORD=${WEBLATE_EMAIL_HOST_PASSWORD}
+      - CLIENT_MAX_BODY_SIZE=1000M
+    volumes:
+      - "${APP_DATA_DIR}/weblate-data:/app/data"
+      - "${APP_DATA_DIR}/weblate-cache:/app/cache"
+    tmpfs:
+      - /run
+      - /tmp
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  weblate-network:
+    driver: bridge
