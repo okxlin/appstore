@@ -1,0 +1,30 @@
+services:
+  gotosocial:
+    image: "docker.io/superseriousbusiness/gotosocial:0.21.3"
+    container_name: ${CONTAINER_NAME}
+    user: "1000:1000"
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - TZ=${TZ}
+      - GTS_HOST=${GTS_HOST}
+      - GTS_PROTOCOL=${GTS_PROTOCOL}
+      - GTS_BIND_ADDRESS=0.0.0.0
+      - GTS_PORT=8080
+      - GTS_DB_TYPE=sqlite
+      - GTS_DB_ADDRESS=/gotosocial/storage/sqlite.db
+      - GTS_LETSENCRYPT_ENABLED=false
+      - GTS_TRUSTED_PROXIES=${GTS_TRUSTED_PROXIES}
+      - GTS_WAZERO_COMPILATION_CACHE=/gotosocial/.cache
+    volumes:
+      - "${APP_DATA_DIR}/storage:/gotosocial/storage"
+      - "${APP_DATA_DIR}/cache:/gotosocial/.cache"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

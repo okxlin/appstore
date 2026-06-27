@@ -1,0 +1,30 @@
+name: GoToSocial
+tags:
+  - Website
+title: 轻量 ActivityPub 社交网络服务
+description: 轻量 ActivityPub 社交网络服务
+additionalProperties:
+  key: gotosocial
+  name: GoToSocial
+  tags:
+    - Website
+  shortDescZh: 轻量 ActivityPub 社交网络服务
+  shortDescEn: A lightweight ActivityPub social network server
+  description:
+    en: A lightweight ActivityPub social network server
+    zh: 轻量 ActivityPub 社交网络服务
+    zh-Hant: 輕量 ActivityPub 社交網路服務
+    ja: 軽量な ActivityPub ソーシャルネットワークサーバー
+    ko: 가벼운 ActivityPub 소셜 네트워크 서버
+    ru: Легкий сервер социальной сети ActivityPub
+    ms: Pelayan rangkaian sosial ActivityPub yang ringan
+    pt-br: Servidor leve de rede social ActivityPub
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://gotosocial.org/
+  github: https://codeberg.org/superseriousbusiness/gotosocial
+  document: https://docs.gotosocial.org/en/latest/getting_started/installation/container/
+  architectures:
+    - amd64
+    - arm64
