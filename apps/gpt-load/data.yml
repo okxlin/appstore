@@ -1,0 +1,30 @@
+name: GPT-Load
+tags:
+  - AI
+title: 多渠道 AI API 透明代理与密钥轮询服务
+description: 多渠道 AI API 透明代理与密钥轮询服务
+additionalProperties:
+  key: gpt-load
+  name: GPT-Load
+  tags:
+    - AI
+  shortDescZh: 多渠道 AI API 透明代理与密钥轮询服务
+  shortDescEn: Multi-channel AI API proxy with intelligent key rotation
+  description:
+    en: "A multi-channel AI API transparent proxy with key pool management, load balancing, health monitoring and separate management/proxy authentication."
+    zh: "多渠道 AI API 透明代理，支持密钥池管理、负载均衡、健康监控，以及管理端和代理端分离鉴权。"
+    zh-Hant: "多渠道 AI API 透明代理，支援金鑰池管理、負載均衡、健康監控，以及管理端和代理端分離鑑權。"
+    ja: "キープール管理、負荷分散、ヘルス監視、管理/API プロキシ認証分離に対応した AI API 透明プロキシです。"
+    ko: "키 풀 관리, 부하 분산, 상태 모니터링, 관리/프록시 인증 분리를 지원하는 다중 채널 AI API 투명 프록시입니다."
+    ru: "Прозрачный прокси для нескольких AI API с пулом ключей, балансировкой, мониторингом и раздельной аутентификацией управления и прокси."
+    ms: "Proksi telus AI API berbilang saluran dengan pengurusan kumpulan kunci, pengimbangan beban, pemantauan kesihatan dan pengesahan pengurusan/proksi berasingan."
+    pt-br: "Proxy transparente multi-canal para APIs de IA com pool de chaves, balanceamento, monitoramento e autenticação separada para gestão e proxy."
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.gpt-load.com
+  github: https://github.com/tbphp/gpt-load
+  document: https://www.gpt-load.com/docs?lang=en
+  architectures:
+    - amd64
+    - arm64

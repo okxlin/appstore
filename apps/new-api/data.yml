@@ -1,0 +1,30 @@
+name: New API
+tags:
+  - AI
+title: 下一代 LLM 网关与 AI 资产管理系统
+description: 下一代 LLM 网关与 AI 资产管理系统
+additionalProperties:
+  key: new-api
+  name: New API
+  tags:
+    - AI
+  shortDescZh: 下一代 LLM 网关与 AI 资产管理系统
+  shortDescEn: Next-generation LLM gateway and AI asset management system
+  description:
+    en: "Next-generation LLM gateway and AI asset management system for managing authorized model providers, users, tokens, routing, usage and billing."
+    zh: "下一代 LLM 网关与 AI 资产管理系统，用于管理已授权的模型服务商、用户、令牌、路由、用量统计和计费。"
+    zh-Hant: "下一代 LLM 閘道與 AI 資產管理系統，用於管理已授權的模型服務商、使用者、權杖、路由、用量統計和計費。"
+    ja: "認可済みモデルプロバイダー、ユーザー、トークン、ルーティング、利用量、課金を管理する次世代 LLM ゲートウェイです。"
+    ko: "승인된 모델 제공자, 사용자, 토큰, 라우팅, 사용량 및 과금을 관리하는 차세대 LLM 게이트웨이입니다."
+    ru: "LLM-шлюз нового поколения для управления авторизованными провайдерами моделей, пользователями, токенами, маршрутизацией, учетом и биллингом."
+    ms: "Gerbang LLM generasi baharu untuk mengurus penyedia model yang dibenarkan, pengguna, token, penghalaan, penggunaan dan pengebilan."
+    pt-br: "Gateway LLM de nova geração para gerenciar provedores de modelos autorizados, usuários, tokens, roteamento, uso e cobrança."
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.newapi.ai
+  github: https://github.com/QuantumNous/new-api
+  document: https://docs.newapi.pro/en/docs/installation
+  architectures:
+    - amd64
+    - arm64
