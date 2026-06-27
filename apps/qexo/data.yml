@@ -1,0 +1,31 @@
+name: Qexo
+tags:
+  - Website
+title: 快速、强大、美观的在线静态博客编辑器
+description: 快速、强大、美观的在线静态博客编辑器
+additionalProperties:
+  key: qexo
+  name: Qexo
+  tags:
+    - Website
+  shortDescZh: 快速、强大、美观的在线静态博客编辑器
+  shortDescEn: A fast, powerful and beautiful online static blog editor
+  description:
+    en: A fast, powerful and beautiful online editor for static blogs.
+    zh: 快速、强大、美观的在线静态博客编辑器。
+    zh-Hant: 快速、強大、美觀的線上靜態部落格編輯器。
+    ja: 静的ブログ向けの高速で強力、見た目も美しいオンラインエディターです。
+    ko: 정적 블로그를 위한 빠르고 강력하며 아름다운 온라인 편집기입니다.
+    ru: Быстрый, мощный и красивый онлайн-редактор для статических блогов.
+    ms: Editor dalam talian yang pantas, berkuasa dan cantik untuk blog statik.
+    pt-br: Editor online rapido, poderoso e bonito para blogs estaticos.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://oplog.cn/qexo/
+  github: https://github.com/Qexo/Qexo
+  document: https://oplog.cn/qexo/
+  architectures:
+    - amd64
+    - arm64
