@@ -1,0 +1,268 @@
+additionalProperties:
+  formFields:
+    - default: 18081
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: Weblate
+      edit: true
+      envKey: WEBLATE_SITE_TITLE
+      labelEn: Site Title
+      labelZh: 站点标题
+      label:
+        en: Site Title
+        zh: 站点标题
+        zh-Hant: 站點標題
+        ja: サイトタイトル
+        ko: 사이트 제목
+        ru: Заголовок сайта
+        ms: Tajuk tapak
+        pt-br: Titulo do site
+      required: true
+      type: text
+    - default: localhost
+      edit: true
+      envKey: WEBLATE_SITE_DOMAIN
+      labelEn: Site Domain
+      labelZh: 站点域名
+      label:
+        en: Site Domain
+        zh: 站点域名
+        zh-Hant: 站點網域
+        ja: サイトドメイン
+        ko: 사이트 도메인
+        ru: Домен сайта
+        ms: Domain tapak
+        pt-br: Dominio do site
+      required: true
+      type: text
+    - default: "*"
+      edit: true
+      envKey: WEBLATE_ALLOWED_HOSTS
+      labelEn: Allowed Hosts
+      labelZh: 允许的主机名
+      label:
+        en: Allowed Hosts
+        zh: 允许的主机名
+        zh-Hant: 允許的主機名稱
+        ja: 許可するホスト名
+        ko: 허용된 호스트 이름
+        ru: Разрешенные имена хостов
+        ms: Nama hos yang dibenarkan
+        pt-br: Hosts permitidos
+      required: true
+      type: text
+    - default: Weblate Admin
+      edit: true
+      envKey: WEBLATE_ADMIN_NAME
+      labelEn: Admin Name
+      labelZh: 管理员名称
+      label:
+        en: Admin Name
+        zh: 管理员名称
+        zh-Hant: 管理員名稱
+        ja: 管理者名
+        ko: 관리자 이름
+        ru: Имя администратора
+        ms: Nama pentadbir
+        pt-br: Nome do administrador
+      required: true
+      type: text
+    - default: weblate@example.com
+      edit: true
+      envKey: WEBLATE_ADMIN_EMAIL
+      labelEn: Admin Email
+      labelZh: 管理员邮箱
+      label:
+        en: Admin Email
+        zh: 管理员邮箱
+        zh-Hant: 管理員信箱
+        ja: 管理者メール
+        ko: 관리자 이메일
+        ru: Email администратора
+        ms: E-mel pentadbir
+        pt-br: Email do administrador
+      required: true
+      type: text
+    - default: weblate_admin_password
+      edit: true
+      envKey: WEBLATE_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: weblate@example.com
+      edit: true
+      envKey: WEBLATE_SERVER_EMAIL
+      labelEn: Server Email
+      labelZh: 服务邮箱
+      label:
+        en: Server Email
+        zh: 服务邮箱
+        zh-Hant: 服務信箱
+        ja: サーバーメール
+        ko: 서버 이메일
+        ru: Email сервера
+        ms: E-mel pelayan
+        pt-br: Email do servidor
+      required: true
+      type: text
+    - default: weblate@example.com
+      edit: true
+      envKey: WEBLATE_DEFAULT_FROM_EMAIL
+      labelEn: Default From Email
+      labelZh: 默认发件邮箱
+      label:
+        en: Default From Email
+        zh: 默认发件邮箱
+        zh-Hant: 預設寄件信箱
+        ja: 既定の送信元メール
+        ko: 기본 발신 이메일
+        ru: Email отправителя по умолчанию
+        ms: E-mel penghantar lalai
+        pt-br: Email remetente padrao
+      required: true
+      type: text
+    - default: "1"
+      edit: true
+      envKey: WEBLATE_REGISTRATION_OPEN
+      labelEn: Open Registration
+      labelZh: 开放注册
+      label:
+        en: Open Registration
+        zh: 开放注册
+        zh-Hant: 開放註冊
+        ja: 登録を開放
+        ko: 회원가입 허용
+        ru: Открытая регистрация
+        ms: Buka pendaftaran
+        pt-br: Abrir registro
+      required: true
+      type: select
+      values:
+        - label: "1"
+          value: "1"
+        - label: "0"
+          value: "0"
+    - default: weblate_db_password
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL Password
+      labelZh: PostgreSQL 密码
+      label:
+        en: PostgreSQL Password
+        zh: PostgreSQL 密码
+        zh-Hant: PostgreSQL 密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 127.0.0.1
+      edit: true
+      envKey: WEBLATE_EMAIL_HOST
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP сервер
+        ms: Hos SMTP
+        pt-br: Host SMTP
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: WEBLATE_EMAIL_HOST_USER
+      labelEn: SMTP User
+      labelZh: SMTP 用户
+      label:
+        en: SMTP User
+        zh: SMTP 用户
+        zh-Hant: SMTP 使用者
+        ja: SMTP ユーザー
+        ko: SMTP 사용자
+        ru: Пользователь SMTP
+        ms: Pengguna SMTP
+        pt-br: Usuario SMTP
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: WEBLATE_EMAIL_HOST_PASSWORD
+      labelEn: SMTP Password
+      labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密碼
+        ja: SMTP パスワード
+        ko: SMTP 비밀번호
+        ru: Пароль SMTP
+        ms: Kata laluan SMTP
+        pt-br: Senha SMTP
+      required: false
+      type: password
