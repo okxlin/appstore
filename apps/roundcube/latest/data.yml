@@ -1,0 +1,167 @@
+additionalProperties:
+  formFields:
+    - default: 18090
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Web-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: ssl://mail.example.com
+      edit: true
+      envKey: ROUNDCUBEMAIL_DEFAULT_HOST
+      labelEn: IMAP Host
+      labelZh: IMAP 主机
+      label:
+        en: IMAP Host
+        zh: IMAP 主机
+        zh-Hant: IMAP 主機
+        ja: IMAP ホスト
+        ko: IMAP 호스트
+        ru: IMAP-хост
+        ms: Hos IMAP
+        pt-br: Host IMAP
+      required: true
+      type: text
+    - default: 993
+      edit: true
+      envKey: ROUNDCUBEMAIL_DEFAULT_PORT
+      labelEn: IMAP Port
+      labelZh: IMAP 端口
+      label:
+        en: IMAP Port
+        zh: IMAP 端口
+        zh-Hant: IMAP 埠
+        ja: IMAP ポート
+        ko: IMAP 포트
+        ru: IMAP-порт
+        ms: Port IMAP
+        pt-br: Porta IMAP
+      required: true
+      rule: paramPort
+      type: number
+    - default: tls://mail.example.com
+      edit: true
+      envKey: ROUNDCUBEMAIL_SMTP_SERVER
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP-хост
+        ms: Hos SMTP
+        pt-br: Host SMTP
+      required: true
+      type: text
+    - default: 587
+      edit: true
+      envKey: ROUNDCUBEMAIL_SMTP_PORT
+      labelEn: SMTP Port
+      labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 埠
+        ja: SMTP ポート
+        ko: SMTP 포트
+        ru: SMTP-порт
+        ms: Port SMTP
+        pt-br: Porta SMTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: ROUNDCUBEMAIL_USERNAME_DOMAIN
+      labelEn: Login Domain
+      labelZh: 登录域名
+      label:
+        en: Login Domain
+        zh: 登录域名
+        zh-Hant: 登入網域
+        ja: ログインドメイン
+        ko: 로그인 도메인
+        ru: Домен входа
+        ms: Domain log masuk
+        pt-br: Dominio de login
+      required: false
+      type: text
+    - default: /
+      edit: true
+      envKey: ROUNDCUBEMAIL_REQUEST_PATH
+      labelEn: Request Path
+      labelZh: 请求路径
+      label:
+        en: Request Path
+        zh: 请求路径
+        zh-Hant: 請求路徑
+        ja: リクエストパス
+        ko: 요청 경로
+        ru: Путь запроса
+        ms: Laluan permintaan
+        pt-br: Caminho de requisicao
+      required: true
+      type: text
+    - default: archive,zipdownload
+      edit: true
+      envKey: ROUNDCUBEMAIL_PLUGINS
+      labelEn: Built-in Plugins
+      labelZh: 内置插件
+      label:
+        en: Built-in Plugins
+        zh: 内置插件
+        zh-Hant: 內建外掛
+        ja: 組み込みプラグイン
+        ko: 기본 제공 플러그인
+        ru: Встроенные плагины
+        ms: Pemalam terbina dalam
+        pt-br: Plugins integrados
+      required: true
+      type: text
+    - default: roundcube_des_key_change
+      edit: true
+      envKey: ROUNDCUBEMAIL_DES_KEY
+      labelEn: Encryption Key
+      labelZh: 加密密钥
+      label:
+        en: Encryption Key
+        zh: 加密密钥
+        zh-Hant: 加密金鑰
+        ja: 暗号化キー
+        ko: 암호화 키
+        ru: Ключ шифрования
+        ms: Kunci penyulitan
+        pt-br: Chave de criptografia
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

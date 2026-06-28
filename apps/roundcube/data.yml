@@ -1,0 +1,31 @@
+name: Roundcube
+tags:
+  - 邮件服务
+title: 现代 Webmail 客户端
+description: 现代 Webmail 客户端
+additionalProperties:
+  key: roundcube
+  name: Roundcube
+  tags:
+    - Email
+  shortDescZh: 现代 Webmail 客户端
+  shortDescEn: Modern Webmail client
+  description:
+    en: A browser-based IMAP Webmail client for existing mail servers.
+    zh: 面向已有邮件服务器的浏览器 IMAP Webmail 客户端。
+    zh-Hant: 面向既有郵件伺服器的瀏覽器 IMAP Webmail 用戶端。
+    ja: 既存のメールサーバー向けのブラウザベース IMAP Webmail クライアントです。
+    ko: 기존 메일 서버용 브라우저 기반 IMAP Webmail 클라이언트입니다.
+    ru: Браузерный IMAP Webmail-клиент для существующих почтовых серверов.
+    ms: Klien Webmail IMAP berasaskan pelayar untuk pelayan mel sedia ada.
+    pt-br: Cliente Webmail IMAP baseado em navegador para servidores de e-mail existentes.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://roundcube.net/
+  github: https://github.com/roundcube/roundcubemail
+  document: https://github.com/roundcube/roundcubemail-docker
+  architectures:
+    - amd64
+    - arm64

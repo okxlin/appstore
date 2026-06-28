@@ -1,0 +1,37 @@
+services:
+  roundcube:
+    image: "roundcube/roundcubemail:1.7.1-apache-nonroot"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - ROUNDCUBEMAIL_DB_TYPE=sqlite
+      - ROUNDCUBEMAIL_DB_DIR=/var/roundcube/db
+      - ROUNDCUBEMAIL_DB_NAME=roundcube
+      - ROUNDCUBEMAIL_DEFAULT_HOST=${ROUNDCUBEMAIL_DEFAULT_HOST}
+      - ROUNDCUBEMAIL_DEFAULT_PORT=${ROUNDCUBEMAIL_DEFAULT_PORT}
+      - ROUNDCUBEMAIL_SMTP_SERVER=${ROUNDCUBEMAIL_SMTP_SERVER}
+      - ROUNDCUBEMAIL_SMTP_PORT=${ROUNDCUBEMAIL_SMTP_PORT}
+      - ROUNDCUBEMAIL_USERNAME_DOMAIN=${ROUNDCUBEMAIL_USERNAME_DOMAIN}
+      - ROUNDCUBEMAIL_REQUEST_PATH=${ROUNDCUBEMAIL_REQUEST_PATH}
+      - ROUNDCUBEMAIL_PLUGINS=${ROUNDCUBEMAIL_PLUGINS}
+      - ROUNDCUBEMAIL_SKIN=elastic
+      - ROUNDCUBEMAIL_DES_KEY=${ROUNDCUBEMAIL_DES_KEY}
+    volumes:
+      - "${APP_DATA_DIR}/db:/var/roundcube/db"
+      - "${APP_DATA_DIR}/config:/var/roundcube/config:ro"
+      - "${APP_DATA_DIR}/enigma:/var/roundcube/enigma"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8000/ >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
