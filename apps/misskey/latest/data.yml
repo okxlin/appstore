@@ -1,0 +1,101 @@
+additionalProperties:
+  formFields:
+    - default: 18091
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: http://localhost:18091/
+      edit: true
+      envKey: MISSKEY_URL
+      labelEn: Public Base URL
+      labelZh: 公共访问地址
+      label:
+        en: Public Base URL
+        zh: 公共访问地址
+        zh-Hant: 公共存取位址
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base publica
+      required: true
+      type: text
+    - edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL Password
+      labelZh: PostgreSQL 密码
+      label:
+        en: PostgreSQL Password
+        zh: PostgreSQL 密码
+        zh-Hant: PostgreSQL 密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - edit: true
+      envKey: MISSKEY_SETUP_PASSWORD
+      labelEn: Initial Setup Password
+      labelZh: 初始设置密码
+      label:
+        en: Initial Setup Password
+        zh: 初始设置密码
+        zh-Hant: 初始設定密碼
+        ja: 初期設定パスワード
+        ko: 초기 설정 비밀번호
+        ru: Пароль первоначальной настройки
+        ms: Kata laluan persediaan awal
+        pt-br: Senha de configuracao inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
