@@ -1,0 +1,38 @@
+services:
+  harness:
+    image: "harness/harness:3.3.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+      - "${PANEL_APP_PORT_SSH}:3022"
+    environment:
+      - GITNESS_PRINCIPAL_ADMIN_EMAIL=${ADMIN_EMAIL}
+      - GITNESS_PRINCIPAL_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GITNESS_URL_BASE=${PUBLIC_URL}
+      - GITNESS_URL_GIT_SSH=ssh://${SSH_PUBLIC_HOST}:${PANEL_APP_PORT_SSH}
+      - GITNESS_HTTP_HOST=0.0.0.0
+      - GITNESS_SSH_ENABLE=true
+      - GITNESS_SSH_HOST=0.0.0.0
+      - GITNESS_SSH_PORT=3022
+      - GITNESS_GITSPACE_ENABLE=false
+      - GITNESS_METRIC_ENABLED=false
+      - GITNESS_WEBHOOK_ALLOW_LOOPBACK=false
+      - GITNESS_WEBHOOK_ALLOW_PRIVATE_NETWORK=false
+      - GITNESS_REGISTRY_HTTP_SECRET=${REGISTRY_HTTP_SECRET}
+    volumes:
+      - "${APP_DATA_DIR}/data:/data"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:3000/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

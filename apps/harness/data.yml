@@ -1,0 +1,31 @@
+name: Harness Open Source
+tags:
+  - DevOps
+title: 开源代码托管与 DevOps 平台
+description: 开源代码托管与 DevOps 平台
+additionalProperties:
+  key: harness
+  name: Harness Open Source
+  tags:
+    - DevOps
+  shortDescZh: 开源代码托管与 DevOps 平台
+  shortDescEn: Open source code hosting and DevOps platform
+  description:
+    en: Open source developer platform with code hosting, pipelines, developer environments and artifact registries.
+    zh: 提供代码托管、流水线、开发环境和制品仓库能力的开源开发者平台。
+    zh-Hant: 提供程式碼託管、流水線、開發環境和製品倉庫能力的開源開發者平台。
+    ja: コードホスティング、パイプライン、開発環境、アーティファクトレジストリを備えたオープンソース開発者プラットフォームです。
+    ko: 코드 호스팅, 파이프라인, 개발 환경, 아티팩트 레지스트리를 제공하는 오픈소스 개발자 플랫폼입니다.
+    ru: Открытая платформа для разработчиков с хостингом кода, пайплайнами, средами разработки и реестрами артефактов.
+    ms: Platform pembangun sumber terbuka dengan pengehosan kod, saluran paip, persekitaran pembangun dan daftar artifak.
+    pt-br: Plataforma open source para desenvolvedores com hospedagem de codigo, pipelines, ambientes de desenvolvimento e registros de artefatos.
+  type: tool
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://www.harness.io/open-source
+  github: https://github.com/harness/harness
+  document: https://developer.harness.io/docs/open-source
+  architectures:
+    - amd64
+    - arm64
