@@ -1,0 +1,106 @@
+additionalProperties:
+  formFields:
+    - default: 18083
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: Overleaf
+      edit: true
+      envKey: OVERLEAF_APP_NAME
+      labelEn: Site Name
+      labelZh: 站点名称
+      label:
+        en: Site Name
+        zh: 站点名称
+        zh-Hant: 站點名稱
+        ja: サイト名
+        ko: 사이트 이름
+        ru: Название сайта
+        ms: Nama laman
+        pt-br: Nome do site
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: EMAIL_CONFIRMATION_DISABLED
+      labelEn: Disable Email Confirmation
+      labelZh: 禁用邮件确认
+      label:
+        en: Disable Email Confirmation
+        zh: 禁用邮件确认
+        zh-Hant: 停用郵件確認
+        ja: メール確認を無効化
+        ko: 이메일 확인 비활성화
+        ru: Отключить подтверждение почты
+        ms: Lumpuhkan pengesahan e-mel
+        pt-br: Desativar confirmacao por e-mail
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: overleaf_invite_token_secret
+      edit: true
+      envKey: OVERLEAF_INVITE_TOKEN_SECRET
+      labelEn: Invite Token Secret
+      labelZh: 邀请令牌密钥
+      label:
+        en: Invite Token Secret
+        zh: 邀请令牌密钥
+        zh-Hant: 邀請權杖密鑰
+        ja: 招待トークンシークレット
+        ko: 초대 토큰 비밀값
+        ru: Секрет токена приглашения
+        ms: Rahsia token jemputan
+        pt-br: Segredo do token de convite
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

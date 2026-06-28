@@ -1,0 +1,74 @@
+services:
+  sharelatex:
+    image: "sharelatex/sharelatex:6.2.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      overleaf-mongo:
+        condition: service_healthy
+      overleaf-redis:
+        condition: service_started
+    networks:
+      - 1panel-network
+      - overleaf-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - TZ=${TZ}
+      - GIT_BRIDGE_ENABLED=false
+      - GIT_BRIDGE_HOST=git-bridge
+      - GIT_BRIDGE_PORT=8000
+      - REDIS_HOST=overleaf-redis
+      - REDIS_PORT=6379
+      - OVERLEAF_REDIS_HOST=overleaf-redis
+      - MONGO_URL=mongodb://overleaf-mongo/sharelatex
+      - OVERLEAF_MONGO_URL=mongodb://overleaf-mongo/sharelatex
+      - V1_HISTORY_URL=http://sharelatex:3100/api
+      - OVERLEAF_APP_NAME=${OVERLEAF_APP_NAME}
+      - ENABLED_LINKED_FILE_TYPES=project_file,project_output_file
+      - ENABLE_CONVERSIONS=true
+      - EMAIL_CONFIRMATION_DISABLED=${EMAIL_CONFIRMATION_DISABLED}
+      - OVERLEAF_INVITE_TOKEN_SECRET=${OVERLEAF_INVITE_TOKEN_SECRET}
+      - EXTERNAL_AUTH=none
+    volumes:
+      - "${APP_DATA_DIR}/overleaf:/var/lib/overleaf"
+    labels:
+      createdBy: "Apps"
+
+  overleaf-mongo:
+    image: "mongo:8.0"
+    container_name: ${CONTAINER_NAME}-mongo
+    restart: always
+    command: --replSet overleaf
+    networks:
+      - overleaf-network
+    volumes:
+      - "${APP_DATA_DIR}/mongo:/data/db"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - |
+          mongosh --quiet --eval 'try { rs.status().ok } catch (e) { rs.initiate({_id: "overleaf", members: [{ _id: 0, host: "overleaf-mongo:27017" }]}).ok }' >/dev/null && mongosh --quiet --eval 'db.hello().isWritablePrimary' | grep -q true
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+  overleaf-redis:
+    image: "redis:7.4"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    command: redis-server --appendonly yes
+    networks:
+      - overleaf-network
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  overleaf-network:
+    driver: bridge
