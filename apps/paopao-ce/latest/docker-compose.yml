@@ -1,0 +1,211 @@
+services:
+  paopao-ce:
+    image: "bitbus/paopao-ce:v0.6.0-alpha.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      paopao-ce-db:
+        condition: service_healthy
+      paopao-ce-redis:
+        condition: service_healthy
+      paopao-ce-meili:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - paopao-ce-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8008"
+    entrypoint:
+      - /bin/sh
+      - -c
+    command:
+      - |
+        set -e
+        yaml_quote() {
+          value="$$1"
+          printf '"'
+          printf '%s' "$$value" | sed 's/\\/\\\\/g; s/"/\\"/g'
+          printf '"'
+        }
+        mkdir -p /app/paopao-ce/custom/data/paopao-ce/oss /app/paopao-ce/custom/data/paopao-ce/logs
+        if [ ! -f /app/paopao-ce/custom/config.yaml ]; then
+          MYSQL_PASSWORD_FALLBACK="$${MYSQL_PASSWORD}"
+          if [ -z "$$MYSQL_PASSWORD_FALLBACK" ]; then
+            MYSQL_PASSWORD_FALLBACK="paopao"
+          fi
+          JWT_SECRET_FALLBACK="$${JWT_SECRET}"
+          if [ -z "$$JWT_SECRET_FALLBACK" ]; then
+            JWT_SECRET_FALLBACK="18a6413dc4fe394c66345ebe501b2f26"
+          fi
+          MEILI_MASTER_KEY_FALLBACK="$${MEILI_MASTER_KEY}"
+          if [ -z "$$MEILI_MASTER_KEY_FALLBACK" ]; then
+            MEILI_MASTER_KEY_FALLBACK="paopao-meilisearch"
+          fi
+          PUBLIC_DOMAIN_FALLBACK="$${PUBLIC_DOMAIN}"
+          if [ -z "$$PUBLIC_DOMAIN_FALLBACK" ]; then
+            PANEL_APP_PORT_HTTP_FALLBACK="$${PANEL_APP_PORT_HTTP}"
+            if [ -z "$$PANEL_APP_PORT_HTTP_FALLBACK" ]; then
+              PANEL_APP_PORT_HTTP_FALLBACK="8008"
+            fi
+            PUBLIC_DOMAIN_FALLBACK="127.0.0.1:$$PANEL_APP_PORT_HTTP_FALLBACK"
+          fi
+          MYSQL_PASSWORD_VALUE="$$(yaml_quote "$$MYSQL_PASSWORD_FALLBACK")"
+          JWT_SECRET_VALUE="$$(yaml_quote "$$JWT_SECRET_FALLBACK")"
+          MEILI_MASTER_KEY_VALUE="$$(yaml_quote "$$MEILI_MASTER_KEY_FALLBACK")"
+          PUBLIC_DOMAIN_VALUE="$$(yaml_quote "$$PUBLIC_DOMAIN_FALLBACK")"
+          cat > /app/paopao-ce/custom/config.yaml <<EOF
+        App:
+          RunMode: release
+
+        Features:
+          Default: ["Web", "Frontend:EmbedWeb", "Meili", "LocalOSS", "MySQL", "BigCacheIndex", "LoggerFile"]
+
+        WebServer:
+          RunMode: release
+          HttpIp: 0.0.0.0
+          HttpPort: 8008
+          ReadTimeout: 60
+          WriteTimeout: 60
+
+        Logger:
+          Level: info
+
+        LoggerFile:
+          SavePath: custom/data/paopao-ce/logs
+          FileName: app
+          FileExt: .log
+
+        Database:
+          LogLevel: error
+          TablePrefix: p_
+
+        MySQL:
+          Username: paopao
+          Password: $$MYSQL_PASSWORD_VALUE
+          Host: paopao-ce-db:3306
+          DBName: paopao
+          Charset: utf8mb4
+          ParseTime: true
+          MaxIdleConns: 10
+          MaxOpenConns: 30
+
+        Redis:
+          InitAddress:
+            - paopao-ce-redis:6379
+          Username:
+          Password:
+          SelectDB: 0
+          ConnWriteTimeout: 60
+
+        JWT:
+          Secret: $$JWT_SECRET_VALUE
+          Issuer: paopao-api
+          Expire: 86400
+
+        Meili:
+          Host: paopao-ce-meili:7700
+          Index: paopao-data
+          ApiKey: $$MEILI_MASTER_KEY_VALUE
+          Secure: false
+
+        LocalOSS:
+          SavePath: custom/data/paopao-ce/oss
+          Secure: false
+          Bucket: paopao
+          Domain: $$PUBLIC_DOMAIN_VALUE
+
+        WebProfile:
+          AllowUserRegister: true
+          AllowTweetAttachment: true
+          AllowTweetVideo: true
+          DefaultTweetMaxLength: 2000
+          DefaultTweetVisibility: public
+        EOF
+        fi
+        cp /app/paopao-ce/custom/config.yaml /app/paopao-ce/config.yaml
+        exec /app/paopao-ce/paopao serve
+    environment:
+      - TZ=${TZ}
+      - PANEL_APP_PORT_HTTP=${PANEL_APP_PORT_HTTP}
+      - PUBLIC_DOMAIN=${PUBLIC_DOMAIN}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - JWT_SECRET=${JWT_SECRET}
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+    volumes:
+      - "${APP_DATA_DIR}/custom:/app/paopao-ce/custom"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8008/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 1m
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+  paopao-ce-db:
+    image: "mysql:8.0"
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    networks:
+      - paopao-ce-network
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=paopao
+      - MYSQL_USER=paopao
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/initdb:/docker-entrypoint-initdb.d:ro"
+      - "${APP_DATA_DIR}/mysql:/var/lib/mysql"
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u paopao -p\"$${MYSQL_PASSWORD}\" --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    labels:
+      createdBy: "Apps"
+
+  paopao-ce-redis:
+    image: "redis/redis-stack:7.2.0-v6"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - paopao-ce-network
+    environment:
+      - REDISEARCH_ARGS=MAXSEARCHRESULTS 5
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    labels:
+      createdBy: "Apps"
+
+  paopao-ce-meili:
+    image: "getmeili/meilisearch:v1.7"
+    container_name: ${CONTAINER_NAME}-meili
+    restart: always
+    networks:
+      - paopao-ce-network
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+      - MEILI_DB_PATH=/meili_data
+    volumes:
+      - "${APP_DATA_DIR}/meili:/meili_data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:7700/health >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  paopao-ce-network:
+    driver: bridge
