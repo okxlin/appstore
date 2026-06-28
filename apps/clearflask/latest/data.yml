@@ -1,0 +1,316 @@
+additionalProperties:
+  formFields:
+    - default: 18087
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 18028
+      edit: true
+      envKey: PANEL_APP_PORT_MAILPIT
+      labelEn: Mailpit UI Port
+      labelZh: Mailpit UI 端口
+      label:
+        en: Mailpit UI Port
+        zh: Mailpit UI 端口
+        zh-Hant: Mailpit UI 埠
+        ja: Mailpit UI ポート
+        ko: Mailpit UI 포트
+        ru: Порт UI Mailpit
+        ms: Port UI Mailpit
+        pt-br: Porta UI do Mailpit
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: localhost
+      edit: true
+      envKey: CLEARFLASK_DOMAIN
+      labelEn: Public Domain
+      labelZh: 公共域名
+      label:
+        en: Public Domain
+        zh: 公共域名
+        zh-Hant: 公共網域
+        ja: 公開ドメイン
+        ko: 공개 도메인
+        ru: Публичный домен
+        ms: Domain awam
+        pt-br: Dominio publico
+      required: true
+      type: text
+    - default: ^admin@localhost$
+      edit: true
+      envKey: CLEARFLASK_SUPER_ADMIN_EMAIL_REGEX
+      labelEn: Admin Email Regex
+      labelZh: 管理员邮箱正则
+      label:
+        en: Admin Email Regex
+        zh: 管理员邮箱正则
+        zh-Hant: 管理員信箱正規式
+        ja: 管理者メール正規表現
+        ko: 관리자 이메일 정규식
+        ru: Regex почты администратора
+        ms: Regex e-mel pentadbir
+        pt-br: Regex do email admin
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: CLEARFLASK_SIGNUP_ENABLED
+      labelEn: Enable Signup
+      labelZh: 允许注册
+      label:
+        en: Enable Signup
+        zh: 允许注册
+        zh-Hant: 允許註冊
+        ja: 登録を許可
+        ko: 가입 허용
+        ru: Разрешить регистрацию
+        ms: Benarkan pendaftaran
+        pt-br: Permitir cadastro
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: CLEARFLASK_AUTH_COOKIE_SECURE
+      labelEn: Secure Cookies
+      labelZh: 安全 Cookie
+      label:
+        en: Secure Cookies
+        zh: 安全 Cookie
+        zh-Hant: 安全 Cookie
+        ja: Secure Cookie
+        ko: 보안 Cookie
+        ru: Secure Cookie
+        ms: Cookie selamat
+        pt-br: Cookie seguro
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: clearflask_mysql_password
+      edit: true
+      envKey: MYSQL_ROOT_PASSWORD
+      labelEn: MariaDB Password
+      labelZh: MariaDB 密码
+      label:
+        en: MariaDB Password
+        zh: MariaDB 密码
+        zh-Hant: MariaDB 密碼
+        ja: MariaDB パスワード
+        ko: MariaDB 비밀번호
+        ru: Пароль MariaDB
+        ms: Kata laluan MariaDB
+        pt-br: Senha do MariaDB
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: smtp
+      edit: true
+      envKey: EMAIL_SERVICE
+      labelEn: Email Provider
+      labelZh: 邮件服务
+      label:
+        en: Email Provider
+        zh: 邮件服务
+        zh-Hant: 郵件服務
+        ja: メールサービス
+        ko: 이메일 서비스
+        ru: Почтовый сервис
+        ms: Perkhidmatan e-mel
+        pt-br: Servico de email
+      required: true
+      type: select
+      values:
+        - label: smtp
+          value: smtp
+        - label: ses
+          value: ses
+    - default: SMTP
+      edit: true
+      envKey: SMTP_STRATEGY
+      labelEn: SMTP Strategy
+      labelZh: SMTP 策略
+      label:
+        en: SMTP Strategy
+        zh: SMTP 策略
+        zh-Hant: SMTP 策略
+        ja: SMTP 方式
+        ko: SMTP 방식
+        ru: Стратегия SMTP
+        ms: Strategi SMTP
+        pt-br: Estrategia SMTP
+      required: true
+      type: select
+      values:
+        - label: SMTP
+          value: SMTP
+        - label: SMTP_TLS
+          value: SMTP_TLS
+        - label: SMTPS
+          value: SMTPS
+    - default: clearflask-mailpit
+      edit: true
+      envKey: SMTP_HOST
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP-хост
+        ms: Hos SMTP
+        pt-br: Host SMTP
+      required: true
+      type: text
+    - default: 1025
+      edit: true
+      envKey: SMTP_PORT
+      labelEn: SMTP Port
+      labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 埠
+        ja: SMTP ポート
+        ko: SMTP 포트
+        ru: SMTP-порт
+        ms: Port SMTP
+        pt-br: Porta SMTP
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: SMTP_USER
+      labelEn: SMTP Username
+      labelZh: SMTP 用户名
+      label:
+        en: SMTP Username
+        zh: SMTP 用户名
+        zh-Hant: SMTP 使用者名稱
+        ja: SMTP ユーザー名
+        ko: SMTP 사용자 이름
+        ru: Имя пользователя SMTP
+        ms: Nama pengguna SMTP
+        pt-br: Usuario SMTP
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SMTP_PASSWORD
+      labelEn: SMTP Password
+      labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密碼
+        ja: SMTP パスワード
+        ko: SMTP 비밀번호
+        ru: Пароль SMTP
+        ms: Kata laluan SMTP
+        pt-br: Senha SMTP
+      required: false
+      type: password
+    - default: ClearFlask
+      edit: true
+      envKey: SMTP_DISPLAY_NAME
+      labelEn: Sender Name
+      labelZh: 发件名称
+      label:
+        en: Sender Name
+        zh: 发件名称
+        zh-Hant: 寄件名稱
+        ja: 送信者名
+        ko: 발신자 이름
+        ru: Имя отправителя
+        ms: Nama pengirim
+        pt-br: Nome do remetente
+      required: true
+      type: text
+    - default: noreply
+      edit: true
+      envKey: SMTP_FROM_LOCAL_PART
+      labelEn: Sender Local Part
+      labelZh: 发件邮箱前缀
+      label:
+        en: Sender Local Part
+        zh: 发件邮箱前缀
+        zh-Hant: 寄件信箱前綴
+        ja: 送信元ローカル部
+        ko: 발신자 로컬 파트
+        ru: Локальная часть адреса
+        ms: Bahagian lokal pengirim
+        pt-br: Parte local do remetente
+      required: true
+      type: text
+    - default: localhost
+      edit: true
+      envKey: SMTP_FROM_DOMAIN_OVERRIDE
+      labelEn: Sender Domain
+      labelZh: 发件邮箱域名
+      label:
+        en: Sender Domain
+        zh: 发件邮箱域名
+        zh-Hant: 寄件信箱網域
+        ja: 送信元ドメイン
+        ko: 발신자 도메인
+        ru: Домен отправителя
+        ms: Domain pengirim
+        pt-br: Dominio do remetente
+      required: true
+      type: text

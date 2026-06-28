@@ -1,0 +1,31 @@
+name: ClearFlask
+tags:
+  - CRM
+title: 开源用户反馈、投票和路线图平台
+description: 开源用户反馈、投票和路线图平台
+additionalProperties:
+  key: clearflask
+  name: ClearFlask
+  tags:
+    - CRM
+  shortDescZh: 开源用户反馈、投票和路线图平台
+  shortDescEn: Open source feedback, voting and roadmap platform
+  description:
+    en: Open source feedback management platform for collecting ideas, voting on requests and publishing roadmaps.
+    zh: 用于收集用户反馈、需求投票和发布路线图的开源反馈管理平台。
+    zh-Hant: 用於收集使用者回饋、需求投票和發佈路線圖的開源回饋管理平台。
+    ja: アイデア収集、要望投票、ロードマップ公開のためのオープンソースフィードバック管理プラットフォームです。
+    ko: 아이디어 수집, 요청 투표, 로드맵 공개를 위한 오픈소스 피드백 관리 플랫폼입니다.
+    ru: Открытая платформа для сбора отзывов, голосования за запросы и публикации дорожных карт.
+    ms: Platform pengurusan maklum balas sumber terbuka untuk idea, undian permintaan dan peta hala tuju.
+    pt-br: Plataforma open source para feedback, votacao de ideias e publicacao de roadmaps.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://clearflask.com/
+  github: https://github.com/clearflask/clearflask
+  document: https://github.com/clearflask/clearflask#self-hosting
+  architectures:
+    - amd64
+    - arm64
