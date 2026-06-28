@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/squid-cache/squid",
+  "dockerDocs": "https://hub.docker.com/r/ubuntu/squid",
+  "composeFile": "https://hub.docker.com/r/ubuntu/squid",
+  "notes": [
+    "Docker Hub describes ubuntu/squid as a Squid caching proxy with long-term versions maintained by Canonical.",
+    "The ubuntu/squid:6.6-24.04_beta tag publishes linux/amd64 and linux/arm64 manifests.",
+    "The app keeps the Canonical image entrypoint and default Squid ACLs, only changing http_port to 0.0.0.0:3128 so Docker IPv4 port publishing works reliably."
+  ]
+}

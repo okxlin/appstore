@@ -1,0 +1,31 @@
+name: Squid
+tags:
+- Tool
+title: Squid 缓存代理服务
+description: Squid 缓存代理服务
+additionalProperties:
+  key: squid
+  name: Squid
+  tags:
+  - Tool
+  shortDescZh: Squid 缓存代理服务
+  shortDescEn: Squid caching proxy service
+  description:
+    en: A Squid caching proxy service based on the Canonical-maintained Ubuntu image.
+    zh: 基于 Canonical 维护的 Ubuntu 镜像运行 Squid 缓存代理服务。
+    zh-Hant: 基於 Canonical 維護的 Ubuntu 映像執行 Squid 快取代理服務。
+    ja: Canonical が保守する Ubuntu イメージを使用した Squid キャッシュプロキシサービス。
+    ko: Canonical이 유지 관리하는 Ubuntu 이미지를 기반으로 한 Squid 캐싱 프록시 서비스입니다.
+    ru: Сервис кэширующего прокси Squid на основе образа Ubuntu, поддерживаемого Canonical.
+    ms: Perkhidmatan proksi cache Squid berdasarkan imej Ubuntu yang diselenggara oleh Canonical.
+    pt-br: Servico de proxy de cache Squid baseado na imagem Ubuntu mantida pela Canonical.
+  type: tool
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://www.squid-cache.org/
+  github: https://github.com/squid-cache/squid
+  document: https://www.squid-cache.org/Doc/
+  architectures:
+  - amd64
+  - arm64
