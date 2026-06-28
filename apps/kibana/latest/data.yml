@@ -1,0 +1,122 @@
+additionalProperties:
+  formFields:
+    - default: 15601
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: http://localhost:15601
+      edit: true
+      envKey: KIBANA_PUBLIC_BASE_URL
+      labelEn: Public Base URL
+      labelZh: 公共访问地址
+      label:
+        en: Public Base URL
+        zh: 公共访问地址
+        zh-Hant: 公共存取位址
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base publica
+      required: true
+      type: text
+    - default: zh-CN
+      edit: true
+      envKey: KIBANA_I18N_LOCALE
+      labelEn: Interface Locale
+      labelZh: 界面语言
+      label:
+        en: Interface Locale
+        zh: 界面语言
+        zh-Hant: 介面語言
+        ja: インターフェース言語
+        ko: 인터페이스 언어
+        ru: Язык интерфейса
+        ms: Bahasa antara muka
+        pt-br: Idioma da interface
+      required: true
+      type: select
+      values:
+        - label: zh-CN
+          value: zh-CN
+        - label: en
+          value: en
+    - default: -Xms512m -Xmx512m
+      edit: true
+      envKey: ES_JAVA_OPTS
+      labelEn: Elasticsearch JVM Options
+      labelZh: Elasticsearch JVM 参数
+      label:
+        en: Elasticsearch JVM Options
+        zh: Elasticsearch JVM 参数
+        zh-Hant: Elasticsearch JVM 參數
+        ja: Elasticsearch JVM オプション
+        ko: Elasticsearch JVM 옵션
+        ru: Параметры JVM Elasticsearch
+        ms: Pilihan JVM Elasticsearch
+        pt-br: Opcoes JVM do Elasticsearch
+      required: true
+      type: text
+    - edit: true
+      envKey: ELASTIC_PASSWORD
+      labelEn: Elastic User Password
+      labelZh: Elastic 用户密码
+      label:
+        en: Elastic User Password
+        zh: Elastic 用户密码
+        zh-Hant: Elastic 使用者密碼
+        ja: Elastic ユーザーパスワード
+        ko: Elastic 사용자 비밀번호
+        ru: Пароль пользователя Elastic
+        ms: Kata laluan pengguna Elastic
+        pt-br: Senha do usuario Elastic
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - edit: true
+      envKey: KIBANA_SYSTEM_PASSWORD
+      labelEn: Kibana System Password
+      labelZh: Kibana 系统用户密码
+      label:
+        en: Kibana System Password
+        zh: Kibana 系统用户密码
+        zh-Hant: Kibana 系統使用者密碼
+        ja: Kibana システムユーザーパスワード
+        ko: Kibana 시스템 비밀번호
+        ru: Пароль системного пользователя Kibana
+        ms: Kata laluan sistem Kibana
+        pt-br: Senha do usuario de sistema Kibana
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

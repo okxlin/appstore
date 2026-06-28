@@ -1,0 +1,96 @@
+services:
+  kibana:
+    image: "docker.elastic.co/kibana/kibana:9.4.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      kibana-elasticsearch:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - kibana-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5601"
+    entrypoint:
+      - /bin/bash
+      - -c
+    command:
+      - |
+        set -euo pipefail
+        until curl -fsS -u "elastic:$${ELASTIC_PASSWORD}" "http://kibana-elasticsearch:9200/_cluster/health?wait_for_status=yellow&timeout=5s" >/dev/null; do
+          sleep 5
+        done
+        python3 -c 'import json, os; print(json.dumps({"password": os.environ["KIBANA_SYSTEM_PASSWORD"]}))' > /tmp/kibana-system-password.json
+        curl -fsS -u "elastic:$${ELASTIC_PASSWORD}" \
+          -H "Content-Type: application/json" \
+          -X POST "http://kibana-elasticsearch:9200/_security/user/kibana_system/_password" \
+          --data-binary @/tmp/kibana-system-password.json >/dev/null
+        rm -f /tmp/kibana-system-password.json
+        exec /usr/local/bin/kibana-docker
+    environment:
+      - TZ=${TZ}
+      - SERVER_NAME=kibana
+      - SERVER_PUBLICBASEURL=${KIBANA_PUBLIC_BASE_URL}
+      - I18N_LOCALE=${KIBANA_I18N_LOCALE}
+      - ELASTICSEARCH_HOSTS=http://kibana-elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=kibana_system
+      - ELASTICSEARCH_PASSWORD=${KIBANA_SYSTEM_PASSWORD}
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - KIBANA_SYSTEM_PASSWORD=${KIBANA_SYSTEM_PASSWORD}
+      - XPACK_SECURITY_ENCRYPTIONKEY=${ELASTIC_PASSWORD}-kibana-security-encryption-key
+      - XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY=${ELASTIC_PASSWORD}-kibana-saved-objects-key
+      - XPACK_REPORTING_ENCRYPTIONKEY=${ELASTIC_PASSWORD}-kibana-reporting-encryption-key
+    volumes:
+      - "kibana-data:/usr/share/kibana/data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -I http://localhost:5601 | grep -Eq 'HTTP/[0-9.]+ (200|302)'"]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+    labels:
+      createdBy: "Apps"
+
+  kibana-elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:9.4.2"
+    container_name: ${CONTAINER_NAME}-elasticsearch
+    restart: always
+    networks:
+      - kibana-network
+    environment:
+      - TZ=${TZ}
+      - node.name=kibana-elasticsearch
+      - cluster.name=kibana-single-node
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+      - ES_JAVA_OPTS=${ES_JAVA_OPTS}
+      - xpack.security.enabled=true
+      - xpack.security.autoconfiguration.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - xpack.ml.enabled=false
+      - xpack.license.self_generated.type=basic
+      - bootstrap.memory_lock=false
+      - cluster.routing.allocation.disk.watermark.low=95%
+      - cluster.routing.allocation.disk.watermark.high=98%
+      - cluster.routing.allocation.disk.watermark.flood_stage=99%
+    volumes:
+      - "kibana-elasticsearch-data:/usr/share/elasticsearch/data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -u elastic:$${ELASTIC_PASSWORD} 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s' >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  kibana-network:
+    driver: bridge
+
+volumes:
+  kibana-data:
+    name: ${CONTAINER_NAME}-data
+  kibana-elasticsearch-data:
+    name: ${CONTAINER_NAME}-elasticsearch-data
