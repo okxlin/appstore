@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   intellij-idea:
-    image: "linuxserver/intellij-idea:42026.1.2"
+    image: "linuxserver/intellij-idea:42026.1.20260505"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
