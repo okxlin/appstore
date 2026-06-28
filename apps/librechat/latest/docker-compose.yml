@@ -1,15 +1,15 @@
 services:
-  api:
-    image: "registry.librechat.ai/danny-avila/librechat-dev:latest"
+  librechat-api:
+    image: "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:adef403efc0a88379179a302344d1d68dcba54007aacea67db80be8e36d8a9da"
     container_name: ${CONTAINER_NAME}
     user: root
     restart: always
     depends_on:
-      mongodb:
+      librechat-mongodb:
         condition: service_healthy
-      meilisearch:
+      librechat-meilisearch:
         condition: service_healthy
-      rag-api:
+      librechat-rag-api:
         condition: service_healthy
     networks:
       - 1panel-network
@@ -35,13 +35,13 @@ services:
       - HOST=0.0.0.0
       - PORT=3080
       - NODE_ENV=production
-      - MONGO_URI=mongodb://mongodb:27017/LibreChat
-      - MEILI_HOST=http://meilisearch:7700
+      - MONGO_URI=mongodb://librechat-mongodb:27017/LibreChat
+      - MEILI_HOST=http://librechat-meilisearch:7700
       - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
       - MEILI_NO_ANALYTICS=true
       - SEARCH=true
       - RAG_PORT=8000
-      - RAG_API_URL=http://rag-api:8000
+      - RAG_API_URL=http://librechat-rag-api:8000
       - DOMAIN_CLIENT=${DOMAIN_CLIENT}
       - DOMAIN_SERVER=${DOMAIN_SERVER}
       - ADMIN_PANEL_URL=${ADMIN_PANEL_URL}
@@ -65,10 +65,10 @@ services:
       - PROXY=
       - HTTP_PROXY=
       - HTTPS_PROXY=
-      - NO_PROXY=localhost,127.0.0.1,::1,mongodb,meilisearch,rag-api,vectordb,host.docker.internal
+      - NO_PROXY=localhost,127.0.0.1,::1,librechat-mongodb,librechat-meilisearch,librechat-rag-api,librechat-vectordb,host.docker.internal
       - http_proxy=
       - https_proxy=
-      - no_proxy=localhost,127.0.0.1,::1,mongodb,meilisearch,rag-api,vectordb,host.docker.internal
+      - no_proxy=localhost,127.0.0.1,::1,librechat-mongodb,librechat-meilisearch,librechat-rag-api,librechat-vectordb,host.docker.internal
     volumes:
       - "${APP_DATA_DIR}/images:/app/client/public/images"
       - "${APP_DATA_DIR}/uploads:/app/uploads"
@@ -83,12 +83,12 @@ services:
     labels:
       createdBy: "Apps"
 
-  admin-panel:
-    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest"
+  librechat-admin:
+    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:9a78851f84f448eab780ac658c4d17db51974c240492affc789a72d61e35f678"
     container_name: ${CONTAINER_NAME}-admin
     restart: always
     depends_on:
-      api:
+      librechat-api:
         condition: service_healthy
     networks:
       - 1panel-network
@@ -105,7 +105,7 @@ services:
     environment:
       - TZ=${TZ}
       - PORT=3000
-      - API_SERVER_URL=http://api:3080
+      - API_SERVER_URL=http://librechat-api:3080
       - VITE_API_BASE_URL=${DOMAIN_CLIENT}
       - SESSION_COOKIE_SECURE=false
       - LIBRECHAT_APP_SECRET=${LIBRECHAT_APP_SECRET}
@@ -118,7 +118,7 @@ services:
     labels:
       createdBy: "Apps"
 
-  mongodb:
+  librechat-mongodb:
     image: "mongo:8.0.20"
     container_name: ${CONTAINER_NAME}-mongodb
     restart: always
@@ -136,14 +136,14 @@ services:
     labels:
       createdBy: "Apps"
 
-  meilisearch:
+  librechat-meilisearch:
     image: "getmeili/meilisearch:v1.35.1"
     container_name: ${CONTAINER_NAME}-meilisearch
     restart: always
     networks:
       - librechat-network
     environment:
-      - MEILI_HOST=http://meilisearch:7700
+      - MEILI_HOST=http://librechat-meilisearch:7700
       - MEILI_NO_ANALYTICS=true
       - MEILI_DB_PATH=/meili_data
       - MEILI_ENV=production
@@ -159,7 +159,7 @@ services:
     labels:
       createdBy: "Apps"
 
-  vectordb:
+  librechat-vectordb:
     image: "pgvector/pgvector:0.8.0-pg15-trixie"
     container_name: ${CONTAINER_NAME}-vectordb
     restart: always
@@ -180,17 +180,17 @@ services:
     labels:
       createdBy: "Apps"
 
-  rag-api:
-    image: "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest"
+  librechat-rag-api:
+    image: "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest@sha256:c0ad82657b556c1e16dcfca85d045788f67caa223e25e70eb687f4d16b41dedc"
     container_name: ${CONTAINER_NAME}-rag-api
     restart: always
     depends_on:
-      vectordb:
+      librechat-vectordb:
         condition: service_healthy
     networks:
       - librechat-network
     environment:
-      - DB_HOST=vectordb
+      - DB_HOST=librechat-vectordb
       - DB_PORT=5432
       - POSTGRES_DB=librechat_rag
       - POSTGRES_USER=librechat
