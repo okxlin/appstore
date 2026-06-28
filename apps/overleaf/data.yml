@@ -1,0 +1,29 @@
+name: Overleaf
+tags:
+  - Tool
+title: 在线 LaTeX 协作编辑器
+description: 在线 LaTeX 协作编辑器
+additionalProperties:
+  key: overleaf
+  name: Overleaf
+  tags:
+    - Tool
+  shortDescZh: 在线 LaTeX 协作编辑器
+  shortDescEn: Online LaTeX collaboration editor
+  description:
+    en: A self-hosted Overleaf Community Edition service for collaborative LaTeX editing.
+    zh: 用于协作编写 LaTeX 文档的 Overleaf Community Edition 自托管服务。
+    zh-Hant: 用於協作編寫 LaTeX 文件的 Overleaf Community Edition 自架服務。
+    ja: LaTeX 文書を共同編集するためのセルフホスト型 Overleaf Community Edition サービスです。
+    ko: LaTeX 문서를 공동 편집하기 위한 자체 호스팅 Overleaf Community Edition 서비스입니다.
+    ru: Самостоятельно размещаемый сервис Overleaf Community Edition для совместного редактирования LaTeX.
+    ms: Perkhidmatan Overleaf Community Edition kendiri untuk penyuntingan LaTeX secara kolaboratif.
+    pt-br: Servico auto-hospedado do Overleaf Community Edition para edicao colaborativa de LaTeX.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  website: https://www.overleaf.com/
+  github: https://github.com/overleaf/overleaf
+  document: https://github.com/overleaf/toolkit/blob/master/doc/quick-start-guide.md
+  architectures:
+    - amd64
