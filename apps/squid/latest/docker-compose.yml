@@ -1,0 +1,36 @@
+services:
+  squid:
+    image: "ubuntu/squid:6.6-24.04_beta"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3128"
+    entrypoint:
+      - /bin/bash
+      - -c
+    command:
+      - |
+        set -e
+        install -d -o proxy -g proxy -m 755 /var/log/squid /var/spool/squid
+        chown -R proxy:proxy /var/log/squid /var/spool/squid
+        sed -ri 's/^http_port[[:space:]]+3128/http_port 0.0.0.0:3128/' /etc/squid/squid.conf
+        exec /usr/local/bin/entrypoint.sh -f /etc/squid/squid.conf -NYC
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}/logs:/var/log/squid"
+      - "${APP_DATA_DIR}/cache:/var/spool/squid"
+    healthcheck:
+      test: ["CMD-SHELL", "test -s /run/squid.pid && kill -0 $$(cat /run/squid.pid)"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
