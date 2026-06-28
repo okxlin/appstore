@@ -1,0 +1,215 @@
+services:
+  librechat-api:
+    image: "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:adef403efc0a88379179a302344d1d68dcba54007aacea67db80be8e36d8a9da"
+    container_name: ${CONTAINER_NAME}
+    user: root
+    restart: always
+    depends_on:
+      librechat-mongodb:
+        condition: service_healthy
+      librechat-meilisearch:
+        condition: service_healthy
+      librechat-rag-api:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - librechat-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3080"
+    entrypoint: sh
+    command:
+      - -lc
+      - |
+        set -e
+        install -d -o node -g node -m 775 /app/client/public/images /app/uploads /app/logs /app/skill
+        if [ "$$(stat -c '%u:%g' /app/logs)" != "1000:1000" ] || [ "$$(stat -c '%u:%g' /app/uploads)" != "1000:1000" ]; then
+          chown -R node:node /app/client/public/images /app/uploads /app/logs /app/skill
+        fi
+        export JWT_SECRET="$$(printf '%s' "$${LIBRECHAT_APP_SECRET}:jwt" | sha256sum | awk '{print $$1}')"
+        export JWT_REFRESH_SECRET="$$(printf '%s' "$${LIBRECHAT_APP_SECRET}:refresh" | sha256sum | awk '{print $$1}')"
+        export CREDS_KEY="$$(printf '%s' "$${LIBRECHAT_APP_SECRET}:creds-key" | sha256sum | awk '{print $$1}')"
+        export CREDS_IV="$$(printf '%s' "$${LIBRECHAT_APP_SECRET}:creds-iv" | sha256sum | awk '{print $$1}' | cut -c1-32)"
+        exec su node -s /bin/sh -c 'exec docker-entrypoint.sh npm run backend'
+    environment:
+      - TZ=${TZ}
+      - HOST=0.0.0.0
+      - PORT=3080
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://librechat-mongodb:27017/LibreChat
+      - MEILI_HOST=http://librechat-meilisearch:7700
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+      - MEILI_NO_ANALYTICS=true
+      - SEARCH=true
+      - RAG_PORT=8000
+      - RAG_API_URL=http://librechat-rag-api:8000
+      - DOMAIN_CLIENT=${DOMAIN_CLIENT}
+      - DOMAIN_SERVER=${DOMAIN_SERVER}
+      - ADMIN_PANEL_URL=${ADMIN_PANEL_URL}
+      - NO_INDEX=true
+      - TRUST_PROXY=1
+      - CONSOLE_JSON=false
+      - DEBUG_LOGGING=false
+      - DEBUG_CONSOLE=false
+      - LOG_TO_FILE=true
+      - ALLOW_EMAIL_LOGIN=true
+      - ALLOW_REGISTRATION=${ALLOW_REGISTRATION}
+      - ALLOW_SOCIAL_LOGIN=false
+      - ALLOW_SOCIAL_REGISTRATION=false
+      - ALLOW_PASSWORD_RESET=false
+      - ALLOW_UNVERIFIED_EMAIL_LOGIN=true
+      - OPENAI_API_KEY=user_provided
+      - ANTHROPIC_API_KEY=user_provided
+      - GOOGLE_KEY=user_provided
+      - ASSISTANTS_API_KEY=user_provided
+      - LIBRECHAT_APP_SECRET=${LIBRECHAT_APP_SECRET}
+      - PROXY=
+      - HTTP_PROXY=
+      - HTTPS_PROXY=
+      - NO_PROXY=localhost,127.0.0.1,::1,librechat-mongodb,librechat-meilisearch,librechat-rag-api,librechat-vectordb,host.docker.internal
+      - http_proxy=
+      - https_proxy=
+      - no_proxy=localhost,127.0.0.1,::1,librechat-mongodb,librechat-meilisearch,librechat-rag-api,librechat-vectordb,host.docker.internal
+    volumes:
+      - "${APP_DATA_DIR}/images:/app/client/public/images"
+      - "${APP_DATA_DIR}/uploads:/app/uploads"
+      - "${APP_DATA_DIR}/logs:/app/logs"
+      - "${APP_DATA_DIR}/skill:/app/skill"
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z -w 10 127.0.0.1 3080"]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+    labels:
+      createdBy: "Apps"
+
+  librechat-admin:
+    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:9a78851f84f448eab780ac658c4d17db51974c240492affc789a72d61e35f678"
+    container_name: ${CONTAINER_NAME}-admin
+    restart: always
+    depends_on:
+      librechat-api:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - librechat-network
+    ports:
+      - "${PANEL_APP_PORT_ADMIN}:3000"
+    entrypoint: sh
+    command:
+      - -lc
+      - |
+        set -e
+        export SESSION_SECRET="$$(printf '%s' "$${LIBRECHAT_APP_SECRET}:admin-session" | sha256sum | awk '{print $$1}')"
+        exec docker-entrypoint.sh bun run start
+    environment:
+      - TZ=${TZ}
+      - PORT=3000
+      - API_SERVER_URL=http://librechat-api:3080
+      - VITE_API_BASE_URL=${DOMAIN_CLIENT}
+      - SESSION_COOKIE_SECURE=false
+      - LIBRECHAT_APP_SECRET=${LIBRECHAT_APP_SECRET}
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z -w 10 127.0.0.1 3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+  librechat-mongodb:
+    image: "mongo:8.0.20"
+    container_name: ${CONTAINER_NAME}-mongodb
+    restart: always
+    command: mongod --noauth
+    networks:
+      - librechat-network
+    volumes:
+      - "${APP_DATA_DIR}/mongodb:/data/db"
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval 'db.adminCommand(\"ping\").ok' | grep 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+  librechat-meilisearch:
+    image: "getmeili/meilisearch:v1.35.1"
+    container_name: ${CONTAINER_NAME}-meilisearch
+    restart: always
+    networks:
+      - librechat-network
+    environment:
+      - MEILI_HOST=http://librechat-meilisearch:7700
+      - MEILI_NO_ANALYTICS=true
+      - MEILI_DB_PATH=/meili_data
+      - MEILI_ENV=production
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
+    volumes:
+      - "${APP_DATA_DIR}/meilisearch:/meili_data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:7700/health >/dev/null"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+  librechat-vectordb:
+    image: "pgvector/pgvector:0.8.0-pg15-trixie"
+    container_name: ${CONTAINER_NAME}-vectordb
+    restart: always
+    networks:
+      - librechat-network
+    environment:
+      - POSTGRES_DB=librechat_rag
+      - POSTGRES_USER=librechat
+      - POSTGRES_PASSWORD=${VECTOR_DB_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/pgvector:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U librechat -d librechat_rag"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+  librechat-rag-api:
+    image: "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest@sha256:c0ad82657b556c1e16dcfca85d045788f67caa223e25e70eb687f4d16b41dedc"
+    container_name: ${CONTAINER_NAME}-rag-api
+    restart: always
+    depends_on:
+      librechat-vectordb:
+        condition: service_healthy
+    networks:
+      - librechat-network
+    environment:
+      - DB_HOST=librechat-vectordb
+      - DB_PORT=5432
+      - POSTGRES_DB=librechat_rag
+      - POSTGRES_USER=librechat
+      - POSTGRES_PASSWORD=${VECTOR_DB_PASSWORD}
+      - VECTOR_DB_TYPE=pgvector
+      - RAG_HOST=0.0.0.0
+      - RAG_PORT=8000
+      - OPENAI_API_KEY=user_provided
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5).read()\""]
+      interval: 30s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  librechat-network:
+    driver: bridge

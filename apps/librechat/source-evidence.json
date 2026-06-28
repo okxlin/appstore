@@ -1,0 +1,25 @@
+{
+  "repository": "https://github.com/danny-avila/LibreChat",
+  "dockerDocs": "https://www.librechat.ai/docs/installation/docker",
+  "composeFile": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/docker-compose.yml",
+  "deployComposeFile": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/deploy-compose.yml",
+  "envExample": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/.env.example",
+  "configExample": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/librechat.example.yaml",
+  "imageTags": [
+    "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:adef403efc0a88379179a302344d1d68dcba54007aacea67db80be8e36d8a9da",
+    "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:9a78851f84f448eab780ac658c4d17db51974c240492affc789a72d61e35f678",
+    "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest@sha256:c0ad82657b556c1e16dcfca85d045788f67caa223e25e70eb687f4d16b41dedc",
+    "mongo:8.0.20",
+    "getmeili/meilisearch:v1.35.1",
+    "pgvector/pgvector:0.8.0-pg15-trixie"
+  ],
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/1080",
+    "Official Docker Compose includes LibreChat API/Web, Admin Panel, MongoDB, Meilisearch, pgvector and RAG API services.",
+    "The adaptation keeps the official internal service topology and exposes only the LibreChat Web and Admin Panel ports.",
+    "Internal service names are app-prefixed to avoid Docker DNS collisions when API/Admin services also join 1panel-network.",
+    "Application secrets are derived inside the containers from one 1Panel random secret so JWT, credential encryption and admin session secrets meet length requirements without exposing extra fields.",
+    "Meilisearch explicitly sets MEILI_DB_PATH=/meili_data so the upstream volume mount is actually used for persistent index data.",
+    "Official LibreChat registry images are sourced from moving latest tags, so this package pins the inspected multi-arch index digests and is intentionally not added to the Renovate automerge whitelist."
+  ]
+}

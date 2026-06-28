@@ -1,0 +1,194 @@
+additionalProperties:
+  formFields:
+    - default: 18088
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 18089
+      edit: true
+      envKey: PANEL_APP_PORT_ADMIN
+      labelEn: Admin Panel Port
+      labelZh: 管理面板端口
+      label:
+        en: Admin Panel Port
+        zh: 管理面板端口
+        zh-Hant: 管理面板埠
+        ja: 管理パネルポート
+        ko: 관리자 패널 포트
+        ru: Порт панели администратора
+        ms: Port panel pentadbir
+        pt-br: Porta do painel administrativo
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://127.0.0.1:18088
+      edit: true
+      envKey: DOMAIN_CLIENT
+      labelEn: Public Web URL
+      labelZh: 公开 Web 地址
+      label:
+        en: Public Web URL
+        zh: 公开 Web 地址
+        zh-Hant: 公開 Web 位址
+        ja: 公開 Web URL
+        ko: 공개 Web URL
+        ru: Публичный Web URL
+        ms: URL Web awam
+        pt-br: URL Web publico
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: http://127.0.0.1:18088
+      edit: true
+      envKey: DOMAIN_SERVER
+      labelEn: Public API URL
+      labelZh: 公开 API 地址
+      label:
+        en: Public API URL
+        zh: 公开 API 地址
+        zh-Hant: 公開 API 位址
+        ja: 公開 API URL
+        ko: 공개 API URL
+        ru: Публичный API URL
+        ms: URL API awam
+        pt-br: URL API publico
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: http://127.0.0.1:18089
+      edit: true
+      envKey: ADMIN_PANEL_URL
+      labelEn: Admin Panel URL
+      labelZh: 管理面板地址
+      label:
+        en: Admin Panel URL
+        zh: 管理面板地址
+        zh-Hant: 管理面板位址
+        ja: 管理パネル URL
+        ko: 관리자 패널 URL
+        ru: URL панели администратора
+        ms: URL panel pentadbir
+        pt-br: URL do painel administrativo
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: librechat_app_secret
+      edit: true
+      envKey: LIBRECHAT_APP_SECRET
+      labelEn: Application Secret
+      labelZh: 应用密钥
+      label:
+        en: Application Secret
+        zh: 应用密钥
+        zh-Hant: 應用程式密鑰
+        ja: アプリケーションシークレット
+        ko: 애플리케이션 비밀값
+        ru: Секрет приложения
+        ms: Rahsia aplikasi
+        pt-br: Segredo do aplicativo
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: librechat_meili_master_key
+      edit: true
+      envKey: MEILI_MASTER_KEY
+      labelEn: Meilisearch Master Key
+      labelZh: Meilisearch 主密钥
+      label:
+        en: Meilisearch Master Key
+        zh: Meilisearch 主密钥
+        zh-Hant: Meilisearch 主密鑰
+        ja: Meilisearch マスターキー
+        ko: Meilisearch 마스터 키
+        ru: Главный ключ Meilisearch
+        ms: Kunci induk Meilisearch
+        pt-br: Chave mestra do Meilisearch
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: librechat_vector_password
+      edit: true
+      envKey: VECTOR_DB_PASSWORD
+      labelEn: Vector Database Password
+      labelZh: 向量数据库密码
+      label:
+        en: Vector Database Password
+        zh: 向量数据库密码
+        zh-Hant: 向量資料庫密碼
+        ja: ベクターデータベースパスワード
+        ko: 벡터 데이터베이스 비밀번호
+        ru: Пароль векторной базы данных
+        ms: Kata laluan pangkalan data vektor
+        pt-br: Senha do banco vetorial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: ALLOW_REGISTRATION
+      labelEn: Allow Registration
+      labelZh: 允许注册
+      label:
+        en: Allow Registration
+        zh: 允许注册
+        zh-Hant: 允許註冊
+        ja: 登録を許可
+        ko: 가입 허용
+        ru: Разрешить регистрацию
+        ms: Benarkan pendaftaran
+        pt-br: Permitir registro
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
