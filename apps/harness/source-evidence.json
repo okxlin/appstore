@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/harness/harness",
+  "dockerDocs": "https://github.com/harness/harness#running-harness-locally",
+  "composeFile": "https://github.com/harness/harness#running-harness-locally",
+  "configSource": "https://github.com/harness/harness/blob/main/types/config.go",
+  "imageRegistry": "https://hub.docker.com/r/harness/harness/tags?name=3.3.0",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2204",
+    "The requested harness/gitness repository now redirects to harness/harness; upstream documents Harness Open Source as the next generation of Drone/Gitness.",
+    "Official README documents harness/harness Docker image, HTTP port 3000, SSH port 3022 and /data persistence.",
+    "GITNESS_SSH_HOST is kept as 0.0.0.0 for container listening; GITNESS_URL_GIT_SSH is used for the public SSH clone URL.",
+    "This adaptation does not mount /var/run/docker.sock by default and sets GITNESS_GITSPACE_ENABLE=false to avoid exposing host Docker control in a one-click appstore install.",
+    "The image is pinned to harness/harness:3.3.0 because the Docker Hub latest tag currently points to that stable release while unstable tags track active development.",
+    "Docker Hub tag metadata for harness/harness:3.3.0 shows linux/amd64 and linux/arm64."
+  ]
+}

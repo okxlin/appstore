@@ -1,0 +1,135 @@
+additionalProperties:
+  formFields:
+    - default: 13080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 13022
+      edit: true
+      envKey: PANEL_APP_PORT_SSH
+      labelEn: SSH Port
+      labelZh: SSH 端口
+      label:
+        en: SSH Port
+        zh: SSH 端口
+        zh-Hant: SSH 埠
+        ja: SSH ポート
+        ko: SSH 포트
+        ru: SSH-порт
+        ms: Port SSH
+        pt-br: Porta SSH
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://localhost:13080
+      edit: true
+      envKey: PUBLIC_URL
+      labelEn: Public Base URL
+      labelZh: 公共访问地址
+      label:
+        en: Public Base URL
+        zh: 公共访问地址
+        zh-Hant: 公共存取位址
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base publica
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: localhost
+      edit: true
+      envKey: SSH_PUBLIC_HOST
+      labelEn: SSH Public Host
+      labelZh: SSH 公共主机
+      label:
+        en: SSH Public Host
+        zh: SSH 公共主机
+        zh-Hant: SSH 公共主機
+        ja: SSH 公開ホスト
+        ko: SSH 공개 호스트
+        ru: Публичный SSH-хост
+        ms: Hos awam SSH
+        pt-br: Host publico SSH
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: admin@example.com
+      edit: true
+      envKey: ADMIN_EMAIL
+      labelEn: Admin Email
+      labelZh: 管理员邮箱
+      label:
+        en: Admin Email
+        zh: 管理员邮箱
+        zh-Hant: 管理員信箱
+        ja: 管理者メール
+        ko: 관리자 이메일
+        ru: Email администратора
+        ms: E-mel pentadbir
+        pt-br: Email do administrador
+      required: true
+      type: text
+    - edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - edit: true
+      envKey: REGISTRY_HTTP_SECRET
+      labelEn: Registry HTTP Secret
+      labelZh: 制品仓库 HTTP 密钥
+      label:
+        en: Registry HTTP Secret
+        zh: 制品仓库 HTTP 密钥
+        zh-Hant: 製品倉庫 HTTP 密鑰
+        ja: レジストリ HTTP シークレット
+        ko: 레지스트리 HTTP 시크릿
+        ru: HTTP-секрет реестра
+        ms: Rahsia HTTP pendaftaran
+        pt-br: Segredo HTTP do registro
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
