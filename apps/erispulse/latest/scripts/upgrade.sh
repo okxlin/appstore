@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
+if [ -n "${BASH_VERSION:-}" ]; then
+    set -euo pipefail
+else
+    set -eu
+fi
 exit 0
