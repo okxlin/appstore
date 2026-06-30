@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   kdenlive:
-    image: "linuxserver/kdenlive:26.04.2"
+    image: "linuxserver/kdenlive:423.08.5"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
