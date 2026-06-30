@@ -1,7 +1,7 @@
 services:
   wavelog:
     container_name: ${CONTAINER_NAME}
-    image: ghcr.io/wavelog/wavelog:2.5.1
+    image: ghcr.io/wavelog/wavelog:3.0.0
     environment:
       - CI_ENV=docker
       - TZ=${TZ:-Asia/Shanghai}
