@@ -186,7 +186,7 @@ services:
       createdBy: "Apps"
 
   paopao-ce-meili:
-    image: "getmeili/meilisearch:v1.7"
+    image: "getmeili/meilisearch:v1.48"
     container_name: ${CONTAINER_NAME}-meili
     restart: always
     networks:

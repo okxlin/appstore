@@ -43,7 +43,7 @@ services:
       createdBy: "Apps"
 
   karakeep-meilisearch:
-    image: "getmeili/meilisearch:v1.41.0"
+    image: "getmeili/meilisearch:v1.48.3"
     container_name: ${CONTAINER_NAME}-meilisearch
     restart: always
     networks:

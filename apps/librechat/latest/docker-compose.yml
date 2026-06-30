@@ -137,7 +137,7 @@ services:
       createdBy: "Apps"
 
   librechat-meilisearch:
-    image: "getmeili/meilisearch:v1.35.1"
+    image: "getmeili/meilisearch:v1.48.3"
     container_name: ${CONTAINER_NAME}-meilisearch
     restart: always
     networks:
