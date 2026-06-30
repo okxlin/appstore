@@ -34,7 +34,25 @@ additionalProperties:
         pt-br: 'Serviço de Banco de Dados'
       required: true
       type: service
+    - default: "5432"
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port Number
+      labelZh: 数据库端口号
+      label:
+        en: 'Database Port Number'
+        zh: '数据库端口号'
+        zh-Hant: '資料庫埠號'
+        ja: 'データベースポート番号'
+        ko: '데이터베이스 포트 번호'
+        ru: 'Номер порта базы данных'
+        ms: 'Nombor port pangkalan data'
+        pt-br: 'Número da porta do banco de dados'
+      required: true
+      rule: paramPort
+      type: number
     - default: tianji
+      edit: true
       envKey: PANEL_DB_NAME
       labelEn: Database Name
       labelZh: 数据库名
@@ -52,6 +70,7 @@ additionalProperties:
       rule: paramCommon
       type: text
     - default: tianji
+      edit: true
       envKey: PANEL_DB_USER
       labelEn: Database User
       labelZh: 数据库用户
@@ -69,6 +88,7 @@ additionalProperties:
       rule: paramCommon
       type: text
     - default: tianji
+      edit: true
       envKey: PANEL_DB_USER_PASSWORD
       labelEn: Database Password
       labelZh: 数据库用户密码
@@ -104,6 +124,7 @@ additionalProperties:
       rule: paramComplexity
       type: text
     - default: "true"
+      edit: true
       envKey: ALLOW_OPENAPI
       labelEn: Allow OpenAPI
       labelZh: 是否开启OpenAPI
@@ -124,6 +145,7 @@ additionalProperties:
         - label: "false"
           value: "false"
     - default: "false"
+      edit: true
       envKey: ALLOW_REGISTER
       labelEn: Allow Register
       labelZh: 是否允许注册
