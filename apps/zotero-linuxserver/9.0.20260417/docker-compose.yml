@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   zotero:
-    image: "linuxserver/zotero:9.0.4"
+    image: "linuxserver/zotero:9.0.20260417"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
