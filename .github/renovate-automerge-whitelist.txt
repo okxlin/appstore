@@ -333,3 +333,26 @@ sublink
 twikoo
 vps-stock-monitor
 web-check
+# Single-service Renovate image-only updates. The workflow still blocks compose structure changes.
+opera-linuxserver
+netbootxyz-linuxserver
+kdenlive-linuxserver
+boinc-linuxserver
+shotcut-linuxserver
+modrinth-linuxserver
+faster-whisper-linuxserver
+calibre-linuxserver
+bambustudio-linuxserver
+gotosocial
+dbx
+zotero-linuxserver
+zen-linuxserver
+rawtherapee-linuxserver
+qdirstat-linuxserver
+pycharm-linuxserver
+orcaslicer-linuxserver
+mullvad-browser-linuxserver
+melonds-linuxserver
+librewolf-linuxserver
+healthchecks-linuxserver
+flycast-linuxserver
