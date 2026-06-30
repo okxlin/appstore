@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   netbox:
-    image: "linuxserver/netbox:4.6.3"
+    image: "linuxserver/netbox:4.6.4"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
