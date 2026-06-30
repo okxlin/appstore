@@ -160,7 +160,7 @@ services:
       createdBy: "Apps"
 
   librechat-vectordb:
-    image: "pgvector/pgvector:0.8.0-pg15-trixie"
+    image: "pgvector/pgvector:0.8.3-pg15-trixie"
     container_name: ${CONTAINER_NAME}-vectordb
     restart: always
     networks:
