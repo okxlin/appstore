@@ -1,6 +1,6 @@
 services:
   clearflask-connect:
-    image: "ghcr.io/clearflask/clearflask-connect:2.3.1"
+    image: "ghcr.io/clearflask/clearflask-connect:2.4.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
