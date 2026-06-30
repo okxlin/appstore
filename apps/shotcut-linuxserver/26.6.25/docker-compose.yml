@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   shotcut:
-    image: "linuxserver/shotcut:26.4.30"
+    image: "linuxserver/shotcut:26.6.25"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
