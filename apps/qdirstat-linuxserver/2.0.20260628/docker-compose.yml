@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   qdirstat:
-    image: "linuxserver/qdirstat:2.0.20260621"
+    image: "linuxserver/qdirstat:2.0.20260628"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
