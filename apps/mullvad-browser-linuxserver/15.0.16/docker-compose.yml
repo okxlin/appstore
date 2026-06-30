@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   mullvad-browser:
-    image: "linuxserver/mullvad-browser:15.0.16"
+    image: "linuxserver/mullvad-browser:15.0.20251116"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
