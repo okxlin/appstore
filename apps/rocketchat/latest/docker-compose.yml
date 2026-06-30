@@ -120,7 +120,7 @@ services:
       createdBy: "Apps"
 
   nats:
-    image: "docker.io/nats:2.11-alpine"
+    image: "docker.io/nats:2.14-alpine"
     container_name: ${CONTAINER_NAME}-nats
     restart: always
     command: --http_port 8222
