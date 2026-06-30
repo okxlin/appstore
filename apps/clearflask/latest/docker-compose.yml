@@ -62,7 +62,7 @@ services:
       createdBy: "Apps"
 
   clearflask-server:
-    image: "ghcr.io/clearflask/clearflask-server:2.3.1"
+    image: "ghcr.io/clearflask/clearflask-server:2.4.0"
     container_name: ${CONTAINER_NAME}-server
     restart: always
     depends_on:
