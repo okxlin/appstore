@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   boinc:
-    image: "linuxserver/boinc:8.2.8"
+    image: "linuxserver/boinc:18.04.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
