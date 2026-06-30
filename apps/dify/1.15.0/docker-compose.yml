@@ -388,7 +388,7 @@ services:
       - 1panel-network
 
   weaviate:
-    image: "semitechnologies/weaviate:1.27.0"
+    image: "semitechnologies/weaviate:1.38.2"
     container_name: ${CONTAINER_NAME}-weaviate
     labels:
       createdBy: "Apps"
