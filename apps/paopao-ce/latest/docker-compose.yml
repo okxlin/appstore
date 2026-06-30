@@ -168,7 +168,7 @@ services:
       createdBy: "Apps"
 
   paopao-ce-redis:
-    image: "redis/redis-stack:7.2.0-v6"
+    image: "redis/redis-stack:7.4.0-v6"
     container_name: ${CONTAINER_NAME}-redis
     restart: always
     networks:
