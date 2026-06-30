@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   xbackbone:
-    image: "linuxserver/xbackbone:3.8.1"
+    image: "linuxserver/xbackbone:3.8.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
