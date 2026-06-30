@@ -7,6 +7,9 @@
     "githubaction@githubaction.com"
   ],
   "rebaseWhen": "never",
+  "prHourlyLimit": 30,
+  "prConcurrentLimit": 80,
+  "branchConcurrentLimit": 120,
   "ignorePaths": [
     "apps/mysql-cluster/**",
     "apps/redis-cluster/**",
