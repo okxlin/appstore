@@ -27,7 +27,7 @@ services:
       createdBy: "Apps"
 
   teldrive-db:
-    image: "ghcr.io/tgdrive/postgres:17-alpine"
+    image: "ghcr.io/tgdrive/postgres:18-alpine"
     container_name: ${CONTAINER_NAME}-db
     restart: always
     networks:
