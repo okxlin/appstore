@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   nzbhydra2:
-    image: "linuxserver/nzbhydra2:8.8.4"
+    image: "linuxserver/nzbhydra2:8.8.5"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
