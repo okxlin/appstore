@@ -4,4 +4,12 @@ if [ -n "${BASH_VERSION:-}" ]; then
 else
     set -eu
 fi
-docker compose down --volumes 2>/dev/null || echo "[ErisPulse] Failed to clean up containers/volumes. Manual check may be required."
+
+if docker compose version >/dev/null 2>&1; then
+    docker compose down --volumes
+elif command -v docker-compose >/dev/null 2>&1; then
+    docker-compose down --volumes
+else
+    echo "[ErisPulse] Docker Compose is not available. Manual cleanup may be required." >&2
+    exit 1
+fi
