@@ -64,7 +64,7 @@ services:
       createdBy: "Apps"
 
   mongodb:
-    image: "docker.io/mongodb/mongodb-community-server:8.2-ubi8"
+    image: "docker.io/mongodb/mongodb-community-server:8.3-ubi8"
     container_name: ${CONTAINER_NAME}-mongodb
     user: root
     restart: always
