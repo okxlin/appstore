@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   netbootxyz:
-    image: "linuxserver/netbootxyz:0.7.6"
+    image: "linuxserver/netbootxyz:2.0.53"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
