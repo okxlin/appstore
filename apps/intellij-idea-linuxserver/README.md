@@ -1,16 +1,31 @@
 # IntelliJ IDEA
 
-## 应用简介
-IntelliJ IDEA Java IDE 桌面。
+## 产品介绍
+IntelliJ IDEA 是 JetBrains 提供的 Java IDE。本应用使用 LinuxServer.io 镜像，在浏览器中运行带 Web 桌面的 IntelliJ IDEA。
 
-英文说明：Java IDE desktop maintained by LinuxServer.io.
+## 主要功能
+- 通过浏览器访问 IntelliJ IDEA 桌面环境
+- 使用 LinuxServer.io Selkies Web 桌面栈
+- 支持 Basic Auth 保护访问入口
+- 持久化 `/config` 目录保存 IDE 配置和用户数据
+
+## 访问说明
+安装后通过 `http://<服务器 IP>:3000` 或 `https://<服务器 IP>:3001` 访问，实际端口以安装表单中的 `PANEL_APP_PORT_HTTP` 和 `PANEL_APP_PORT_HTTPS` 为准。登录账号密码使用安装表单中的 `CUSTOM_USER` 和 `PASSWORD`。
+
+## Introduction
+IntelliJ IDEA is a Java IDE by JetBrains. This app uses the LinuxServer.io image to run IntelliJ IDEA as a web-accessible desktop.
+
+## Features
+- Access the IntelliJ IDEA desktop from a browser
+- Use the LinuxServer.io Selkies web desktop stack
+- Protect the entry point with Basic Auth
+- Persist the `/config` directory for IDE settings and user data
 
 ## 部署说明
-- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 本应用使用镜像 `linuxserver/intellij-idea`。
 - 应用分类：Development。
 - 支持架构：amd64。
-- 可选版本：`latest`、`42026.1.2`。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+- 可选版本：`latest`、`42026.1.20260505`。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
@@ -32,13 +47,13 @@ IntelliJ IDEA Java IDE 桌面。
 | CUSTOM_USER | Basic Auth 用户名 | admin | 是 |
 | PASSWORD | Basic Auth 密码 | 随机生成 | 是 |
 | TITLE | 浏览器页面标题 | IntelliJ IDEA | 否 |
+| SELKIES_UI_TITLE | Selkies 侧边栏标题 | Selkies | 否 |
 | DASHBOARD | Selkies 仪表盘界面 | selkies-dashboard | 否 |
 | LC_ALL | 桌面语言区域，例如 zh_CN.UTF-8 | zh_CN.UTF-8 | 否 |
 
 ## 使用说明
 - 浏览器/桌面类 LinuxServer 镜像已启用 Basic Auth，请使用 CUSTOM_USER 和 PASSWORD 登录。
-- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次启动可能需要下载和初始化桌面环境，请等待容器日志显示服务就绪。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
