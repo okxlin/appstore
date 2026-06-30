@@ -119,7 +119,7 @@ services:
       createdBy: "Apps"
 
   librechat-mongodb:
-    image: "mongo:8.0.20"
+    image: "mongo:8.3.4"
     container_name: ${CONTAINER_NAME}-mongodb
     restart: always
     command: mongod --noauth
