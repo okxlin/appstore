@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   sqlitebrowser:
-    image: "linuxserver/sqlitebrowser:3.13.1"
+    image: "linuxserver/sqlitebrowser:18.04.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
