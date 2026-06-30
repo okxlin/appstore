@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   pycharm:
-    image: "linuxserver/pycharm:2026.1.2"
+    image: "linuxserver/pycharm:2026.1.20260501"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
