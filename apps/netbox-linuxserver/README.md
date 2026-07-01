@@ -1,15 +1,29 @@
 # NetBox
 
-## 应用简介
-NetBox IPAM 与机房资产管理。
+## 产品介绍
+NetBox 是一款用于 IP 地址管理（IPAM）与机房基础设施管理（DCIM）的开源平台，这里使用 LinuxServer.io 提供的容器镜像进行部署。
 
-英文说明：IPAM and DCIM platform maintained by LinuxServer.io.
+## 主要功能
+- 管理 IP 地址、VLAN、VRF、机柜与设备等基础设施数据
+- 依赖内置 PostgreSQL 与 Redis 组件完成数据存储和任务队列
+- 支持通过 Web UI 进行日常运维与资产管理
+
+## 访问说明
+安装完成后，通过 `http://<服务器 IP>:<PANEL_APP_PORT_HTTP>` 访问 Web UI，实际端口以安装表单或 1Panel 展示为准。
+
+## Introduction
+NetBox is an open source IPAM and DCIM platform, deployed here with the LinuxServer.io container image.
+
+## Features
+- Manage IP addresses, VLANs, VRFs, racks and device inventory
+- Bundle PostgreSQL and Redis sidecars for storage and background jobs
+- Provide a Web UI for day-to-day infrastructure operations
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：运维。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`4.6.3`。
+- 可选版本：`latest`、`4.6.4`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -46,6 +60,8 @@ NetBox IPAM 与机房资产管理。
 | REDIS_DB_CACHE | Redis 缓存数据库 | 1 | 是 |
 | CSRF_TRUSTED_ORIGINS | CSRF 可信来源 | - | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
+
+说明：如果为 `REDIS_PASSWORD` 设置了值，内置 Redis 会同步启用密码认证；留空则以内网无密码方式运行。
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。

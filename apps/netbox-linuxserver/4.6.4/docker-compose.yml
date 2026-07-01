@@ -52,10 +52,20 @@ services:
       createdBy: "Apps"
   netbox-redis:
     image: "redis:7-alpine"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        if [ -n "$${REDIS_PASSWORD:-}" ]; then
+          exec redis-server --requirepass "$${REDIS_PASSWORD}"
+        fi
+        exec redis-server
     restart: always
     networks:
       - 1panel-network
     volumes:
       - "${REDIS_DATA_PATH}:/data"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
     labels:
       createdBy: "Apps"
