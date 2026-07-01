@@ -165,38 +165,44 @@ jobs:
 
           if len(apps) != 1:
               fail(f"PR must affect exactly one app, got {', '.join(sorted(apps))}")
-          if len(compose_files) != 1:
-              fail(f"PR must change exactly one docker-compose.yml, got {len(compose_files)}")
+          if len(compose_files) < 1:
+              fail("PR must change at least one docker-compose.yml")
 
-          old_path, new_path = compose_files[0]
-          old_raw = git_show(base_sha, old_path)
-          new_raw = git_show(head_sha, new_path)
-          if not old_raw:
-              fail(f"cannot read base compose: {old_path}")
-          if not new_raw:
-              fail(f"cannot read head compose: {new_path}")
+          app_name = next(iter(apps))
+          checked = 0
 
-          old_data, old_services = compose(old_path, old_raw)
-          new_data, new_services = compose(new_path, new_raw)
+          for old_path, new_path in compose_files:
+              old_raw = git_show(base_sha, old_path)
+              new_raw = git_show(head_sha, new_path)
+              if not old_raw:
+                  fail(f"cannot read base compose: {old_path}")
+              if not new_raw:
+                  fail(f"cannot read head compose: {new_path}")
 
-          old_image = next(iter(old_services.values())).get("image")
-          new_image = next(iter(new_services.values())).get("image")
-          if not old_image or not new_image or old_image == new_image:
-              fail("compose service image must change")
+              old_data, old_services = compose(old_path, old_raw)
+              new_data, new_services = compose(new_path, new_raw)
 
-          old_data.pop("version", None)
-          new_data.pop("version", None)
-          for service in old_services.values():
-              if isinstance(service, dict):
-                  service.pop("image", None)
-          for service in new_services.values():
-              if isinstance(service, dict):
-                  service.pop("image", None)
+              old_image = next(iter(old_services.values())).get("image")
+              new_image = next(iter(new_services.values())).get("image")
+              if not old_image or not new_image or old_image == new_image:
+                  fail(f"compose service image must change: {new_path}")
 
-          if old_data != new_data:
-              fail("compose changed beyond service image tag")
+              old_data.pop("version", None)
+              new_data.pop("version", None)
+              for service in old_services.values():
+                  if isinstance(service, dict):
+                      service.pop("image", None)
+              for service in new_services.values():
+                  if isinstance(service, dict):
+                      service.pop("image", None)
 
-          print(f"single-service image-only update verified for {next(iter(apps))}: {old_image} -> {new_image}")
+              if old_data != new_data:
+                  fail(f"compose changed beyond service image tag: {new_path}")
+
+              print(f"verified {new_path}: {old_image} -> {new_image}")
+              checked += 1
+
+          print(f"single-service image-only update verified for {app_name} across {checked} compose file(s)")
           PY
 
           echo "allowed=true" >> "$GITHUB_OUTPUT"
