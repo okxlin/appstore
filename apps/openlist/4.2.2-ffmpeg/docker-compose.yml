@@ -1,6 +1,6 @@
 services:
   openlist:
-    image: "openlistteam/openlist:v4.2.2-ffmpeg"
+    image: "openlistteam/openlist:v4.2.3-ffmpeg"
     container_name: ${CONTAINER_NAME}
     restart: always
     user: "0:0"
