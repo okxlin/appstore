@@ -356,3 +356,6 @@ melonds-linuxserver
 librewolf-linuxserver
 healthchecks-linuxserver
 flycast-linuxserver
+chrome-linuxserver
+signal-linuxserver
+vscode-linuxserver
