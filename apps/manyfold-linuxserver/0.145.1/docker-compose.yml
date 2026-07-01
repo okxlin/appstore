@@ -1,6 +1,6 @@
 services:
   manyfold:
-    image: "linuxserver/manyfold:0.142.0"
+    image: "linuxserver/manyfold:0.145.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
