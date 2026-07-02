@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   signal:
-    image: "linuxserver/signal:8.16.0"
+    image: "linuxserver/signal:8.17.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
