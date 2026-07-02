@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   blade-of-agony:
-    image: "linuxserver/blade-of-agony:3.1.20260625"
+    image: "linuxserver/blade-of-agony:3.1.20260702"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
