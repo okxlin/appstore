@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   homeassistant:
-    image: "linuxserver/homeassistant:2026.6.4"
+    image: "linuxserver/homeassistant:2026.7.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
