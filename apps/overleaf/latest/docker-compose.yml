@@ -1,6 +1,6 @@
 services:
   sharelatex:
-    image: "sharelatex/sharelatex:6.2.0"
+    image: "sharelatex/sharelatex:6.2.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
