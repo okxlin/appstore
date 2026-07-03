@@ -374,6 +374,98 @@
       "allowedVersions": "/^17.*/"
     },
     {
+      "description": "Disable sidecar-only Renovate updates for ClearFlask multi-service tracks",
+      "matchFileNames": [
+        "apps/clearflask/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "axllent/mailpit",
+        "localstack/localstack",
+        "mariadb"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Dify multi-service tracks",
+      "matchFileNames": [
+        "apps/dify/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "busybox",
+        "nginx",
+        "semitechnologies/weaviate",
+        "ubuntu/squid"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Diskover multi-service tracks",
+      "matchFileNames": [
+        "apps/diskover-linuxserver/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "alpine",
+        "docker.elastic.co/elasticsearch/elasticsearch"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Karakeep multi-service tracks",
+      "matchFileNames": [
+        "apps/karakeep/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "gcr.io/zenika-hub/alpine-chrome",
+        "getmeili/meilisearch"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for LibreChat multi-service tracks",
+      "matchFileNames": [
+        "apps/librechat/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "getmeili/meilisearch",
+        "mongo",
+        "pgvector/pgvector"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Paopao CE multi-service tracks",
+      "matchFileNames": [
+        "apps/paopao-ce/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "getmeili/meilisearch",
+        "mysql",
+        "redis/redis-stack"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Rocket.Chat multi-service tracks",
+      "matchFileNames": [
+        "apps/rocketchat/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.io/mongodb/mongodb-community-server",
+        "docker.io/nats"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Teldrive multi-service tracks",
+      "matchFileNames": [
+        "apps/teldrive/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/tgdrive/postgres"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Require dashboard approval for major updates of stateful Docker sidecars",
       "matchDatasources": [
         "docker"
