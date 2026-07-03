@@ -1,0 +1,35 @@
+{
+  "clearflask": [
+    "clearflask-connect",
+    "clearflask-server"
+  ],
+  "dify": [
+    "api",
+    "api_websocket",
+    "worker",
+    "worker_beat",
+    "web",
+    "sandbox",
+    "plugin_daemon"
+  ],
+  "diskover-linuxserver": [
+    "diskover"
+  ],
+  "karakeep": [
+    "karakeep"
+  ],
+  "librechat": [
+    "librechat-api",
+    "librechat-admin",
+    "librechat-rag-api"
+  ],
+  "paopao-ce": [
+    "paopao-ce"
+  ],
+  "rocketchat": [
+    "rocketchat"
+  ],
+  "teldrive": [
+    "teldrive"
+  ]
+}

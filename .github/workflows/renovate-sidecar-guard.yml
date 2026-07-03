@@ -1,0 +1,83 @@
+name: Guard Renovate sidecar-only updates
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - localApps
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Existing Renovate PR number to evaluate
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  guard:
+    if: >
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.state == 'open' &&
+        (
+          github.event.pull_request.user.login == 'app/renovate' ||
+          github.event.pull_request.user.login == 'renovate[bot]'
+        )
+      ) || (
+        github.event_name == 'workflow_dispatch'
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+
+      - name: Ensure PyYAML is available
+        run: |
+          python3 - <<'PY'
+          import importlib.util
+          import subprocess
+          import sys
+
+          if importlib.util.find_spec("yaml") is None:
+              subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "pyyaml"])
+          PY
+
+      - name: Evaluate Renovate PR against primary-service policy
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 .github/scripts/renovate_sidecar_guard.py \
+            --repo "${{ github.repository }}" \
+            --pr "${{ github.event.pull_request.number || inputs.pr_number }}" \
+            --policy-file .github/renovate-primary-services.json \
+            > /tmp/renovate-sidecar-guard.json
+
+          cat /tmp/renovate-sidecar-guard.json
+          echo "decision=$(jq -r '.decision' /tmp/renovate-sidecar-guard.json)" >> "$GITHUB_OUTPUT"
+          {
+            echo 'reason<<EOF'
+            jq -r '.reason' /tmp/renovate-sidecar-guard.json
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Comment and close sidecar-only PR
+        if: steps.guard.outputs.decision == 'close'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pr_number="${{ github.event.pull_request.number || inputs.pr_number }}"
+          reason="${{ steps.guard.outputs.reason }}"
+
+          gh pr comment "$pr_number" \
+            --repo "${{ github.repository }}" \
+            --body "Closing this Renovate PR automatically because it updates only auxiliary service image tags in a multi-service app and does not include any configured primary service image update.\n\nReason: ${reason}\n\nIf we decide to move this sidecar version intentionally, we can reopen or submit a maintainer PR with tested upgrade evidence."
+
+          gh pr close "$pr_number" \
+            --repo "${{ github.repository }}"
