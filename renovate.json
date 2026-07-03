@@ -364,6 +364,40 @@
       "allowedVersions": "/^8\\.0\\..*/"
     },
     {
+      "description": "Keep bundled Teldrive PostgreSQL on the 17.x line until the 18.x upgrade path is validated",
+      "matchFileNames": [
+        "apps/teldrive/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/tgdrive/postgres"
+      ],
+      "allowedVersions": "/^17.*/"
+    },
+    {
+      "description": "Require dashboard approval for major updates of stateful Docker sidecars",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "matchPackageNames": [
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana",
+        "docker.io/mongodb/mongodb-community-server",
+        "docker.io/nats",
+        "getmeili/meilisearch",
+        "ghcr.io/tgdrive/postgres",
+        "localstack/localstack",
+        "mariadb",
+        "mongo",
+        "pgvector/pgvector",
+        "redis/redis-stack",
+        "semitechnologies/weaviate"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
       "description": "Require dashboard approval for multi-service multi-image compose apps",
       "matchFileNames": [
         "apps/safeline/**/docker-compose.yml",
