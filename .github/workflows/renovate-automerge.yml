@@ -42,7 +42,7 @@ jobs:
       - name: Verify changed files stay within whitelist
         id: whitelist
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
@@ -87,7 +87,7 @@ jobs:
         id: shape
         if: steps.whitelist.outputs.allowed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
@@ -97,8 +97,6 @@ jobs:
           export BASE_SHA HEAD_SHA
 
           git fetch --no-tags --depth=1 origin "$BASE_SHA" "$HEAD_SHA"
-          gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate --jq '.[]' > /tmp/renovate-pr-files.jsonl
-
           python3 - <<'PY'
           import importlib.util
           import subprocess
@@ -108,8 +106,8 @@ jobs:
               subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "pyyaml"])
           PY
 
-          python3 <<'PY'
-          import json
+          set +e
+          python3 <<'PY' 2> /tmp/renovate-shape.stderr
           import os
           import re
           import subprocess
@@ -119,98 +117,146 @@ jobs:
           base_sha = os.environ["BASE_SHA"]
           head_sha = os.environ["HEAD_SHA"]
 
-          with open("/tmp/renovate-pr-files.jsonl", encoding="utf-8") as fh:
-              files = [json.loads(line) for line in fh if line.strip()]
+          class GateReject(Exception):
+              pass
 
-          def fail(message):
-              print(message, file=sys.stderr)
-              sys.exit(1)
+          def reject(message):
+              raise GateReject(message)
 
-          def git_show(ref, path):
-              proc = subprocess.run(
-                  ["git", "show", f"{ref}:{path}"],
+          def run_git(*args):
+              return subprocess.run(
+                  ["git", *args],
                   check=False,
                   text=True,
                   stdout=subprocess.PIPE,
-                  stderr=subprocess.DEVNULL,
+                  stderr=subprocess.PIPE,
               )
-              return proc.stdout if proc.returncode == 0 else ""
+
+          def git_show_first(ref, candidates):
+              for path in candidates:
+                  if not path:
+                      continue
+                  proc = run_git("show", f"{ref}:{path}")
+                  if proc.returncode == 0:
+                      return path, proc.stdout
+              return None, ""
 
           def compose(path, content):
               data = yaml.safe_load(content) or {}
               if not isinstance(data, dict):
-                  fail(f"invalid compose YAML: {path}")
+                  reject(f"invalid compose YAML: {path}")
               services = data.get("services")
               if not isinstance(services, dict) or len(services) != 1:
-                  fail(f"compose must contain exactly one service: {path}")
+                  reject(f"compose must contain exactly one service: {path}")
               return data, services
 
-          apps = set()
-          compose_files = []
+          try:
+              diff_proc = run_git(
+                  "diff",
+                  "--name-status",
+                  "--find-renames",
+                  base_sha,
+                  head_sha,
+                  "--",
+                  "apps",
+              )
+              if diff_proc.returncode != 0:
+                  print(diff_proc.stderr, file=sys.stderr, end="")
+                  sys.exit(diff_proc.returncode)
 
-          for file_info in files:
-              filename = file_info["filename"]
-              previous = file_info.get("previous_filename")
+              apps = set()
+              compose_files = []
 
-              for path in [filename, previous]:
-                  if not path:
+              for raw_line in diff_proc.stdout.splitlines():
+                  if not raw_line.strip():
                       continue
-                  match = re.match(r"^apps/([^/]+)/", path)
-                  if not match:
-                      fail(f"changed file outside apps/: {path}")
-                  apps.add(match.group(1))
+                  parts = raw_line.split("\t")
+                  status = parts[0]
+                  if status.startswith(("R", "C")):
+                      if len(parts) < 3:
+                          reject(f"invalid rename diff entry: {raw_line}")
+                      old_path, new_path = parts[1], parts[2]
+                  else:
+                      if len(parts) < 2:
+                          reject(f"invalid diff entry: {raw_line}")
+                      old_path = new_path = parts[1]
 
-              if filename.endswith("/docker-compose.yml") or (previous and previous.endswith("/docker-compose.yml")):
-                  compose_files.append((previous or filename, filename))
+                  for path in [old_path, new_path]:
+                      match = re.match(r"^apps/([^/]+)/", path)
+                      if not match:
+                          reject(f"changed file outside apps/: {path}")
+                      apps.add(match.group(1))
 
-          if len(apps) != 1:
-              fail(f"PR must affect exactly one app, got {', '.join(sorted(apps))}")
-          if len(compose_files) < 1:
-              fail("PR must change at least one docker-compose.yml")
+                  if old_path.endswith("/docker-compose.yml") or new_path.endswith("/docker-compose.yml"):
+                      compose_files.append((old_path, new_path))
 
-          app_name = next(iter(apps))
-          checked = 0
+              if len(apps) != 1:
+                  reject(f"PR must affect exactly one app, got {', '.join(sorted(apps))}")
+              if len(compose_files) < 1:
+                  reject("PR must change at least one docker-compose.yml")
 
-          for old_path, new_path in compose_files:
-              old_raw = git_show(base_sha, old_path)
-              new_raw = git_show(head_sha, new_path)
-              if not old_raw:
-                  fail(f"cannot read base compose: {old_path}")
-              if not new_raw:
-                  fail(f"cannot read head compose: {new_path}")
+              app_name = next(iter(apps))
+              checked = 0
 
-              old_data, old_services = compose(old_path, old_raw)
-              new_data, new_services = compose(new_path, new_raw)
+              for old_path, new_path in compose_files:
+                  old_resolved_path, old_raw = git_show_first(base_sha, [old_path, new_path])
+                  new_resolved_path, new_raw = git_show_first(head_sha, [new_path, old_path])
+                  if not old_raw:
+                      reject(f"cannot read base compose: {old_path}")
+                  if not new_raw:
+                      reject(f"cannot read head compose: {new_path}")
 
-              old_image = next(iter(old_services.values())).get("image")
-              new_image = next(iter(new_services.values())).get("image")
-              if not old_image or not new_image or old_image == new_image:
-                  fail(f"compose service image must change: {new_path}")
+                  old_data, old_services = compose(old_resolved_path, old_raw)
+                  new_data, new_services = compose(new_resolved_path, new_raw)
 
-              old_data.pop("version", None)
-              new_data.pop("version", None)
-              for service in old_services.values():
-                  if isinstance(service, dict):
-                      service.pop("image", None)
-              for service in new_services.values():
-                  if isinstance(service, dict):
-                      service.pop("image", None)
+                  old_image = next(iter(old_services.values())).get("image")
+                  new_image = next(iter(new_services.values())).get("image")
+                  if not old_image or not new_image or old_image == new_image:
+                      reject(f"compose service image must change: {new_resolved_path}")
 
-              if old_data != new_data:
-                  fail(f"compose changed beyond service image tag: {new_path}")
+                  old_data.pop("version", None)
+                  new_data.pop("version", None)
+                  for service in old_services.values():
+                      if isinstance(service, dict):
+                          service.pop("image", None)
+                  for service in new_services.values():
+                      if isinstance(service, dict):
+                          service.pop("image", None)
 
-              print(f"verified {new_path}: {old_image} -> {new_image}")
-              checked += 1
+                  if old_data != new_data:
+                      reject(f"compose changed beyond service image tag: {new_resolved_path}")
 
-          print(f"single-service image-only update verified for {app_name} across {checked} compose file(s)")
+                  print(f"verified {new_resolved_path}: {old_image} -> {new_image}")
+                  checked += 1
+
+              print(f"single-service image-only update verified for {app_name} across {checked} compose file(s)")
+          except GateReject as exc:
+              print(str(exc), file=sys.stderr)
+              sys.exit(42)
           PY
+          shape_exit=$?
+          set -e
 
-          echo "allowed=true" >> "$GITHUB_OUTPUT"
+          if [ "$shape_exit" -eq 0 ]; then
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+          elif [ "$shape_exit" -eq 42 ]; then
+            cat /tmp/renovate-shape.stderr
+            {
+              echo 'reason<<EOF'
+              cat /tmp/renovate-shape.stderr
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
+            echo "allowed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            cat /tmp/renovate-shape.stderr >&2 || true
+            exit "$shape_exit"
+          fi
 
       - name: Add marker label for eligible PR
         if: steps.whitelist.outputs.allowed == 'true' && steps.shape.outputs.allowed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           gh pr edit "$PR_NUMBER" \
@@ -221,7 +267,7 @@ jobs:
         id: marker
         if: steps.whitelist.outputs.allowed == 'true' && steps.shape.outputs.allowed == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
@@ -258,7 +304,7 @@ jobs:
       - name: Merge PR
         if: steps.whitelist.outputs.allowed == 'true' && steps.shape.outputs.allowed == 'true' && steps.marker.outputs.found == 'true'
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"

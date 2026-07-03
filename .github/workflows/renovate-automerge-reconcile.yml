@@ -24,7 +24,7 @@ jobs:
       - name: Find eligible Renovate PRs missing automerge label
         id: scan
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
           mapfile -t apps < <(sed '/^\s*#/d;/^\s*$/d' .github/renovate-automerge-whitelist.txt)
@@ -112,7 +112,7 @@ jobs:
       - name: Dispatch automerge workflow for eligible PRs
         if: steps.scan.outputs.pr_numbers != ''
         env:
-          GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+          GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
           while IFS= read -r pr_number; do
