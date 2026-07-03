@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   thunderbird:
-    image: "linuxserver/thunderbird:1140.12.0"
+    image: "linuxserver/thunderbird:1140.12.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
