@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   hishtory-server:
-    image: "linuxserver/hishtory-server:0.335.20260626"
+    image: "linuxserver/hishtory-server:0.335.20260703"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
