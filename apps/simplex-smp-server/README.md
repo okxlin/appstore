@@ -16,9 +16,9 @@ SimpleX SMP Server 是官方推荐的自托管 SimpleX 中继服务，提供 SMP
 http://服务器IP:信息页端口
 ```
 
-信息页端口用于查看服务器说明页；SimpleX 客户端实际连接请使用 `ADDR` 对应的公网域名或 IP 与 SMP 端口。
+信息页端口用于查看服务器说明页；SimpleX 客户端实际连接请使用 `ADDR` 对应的公网域名或公网 IP 与 SMP 端口。
 
-`ADDR` 默认值为 `127.0.0.1`，仅用于本地初始化与测试。正式使用前请改成你的公网域名或公网 IP。
+安装时必须填写 `ADDR`，请直接填写你的公网域名或公网 IP。
 
 ## 数据持久化
 - `APP_CONFIG_DIR`：持久化 `/etc/opt/simplex`，保存证书、指纹与 `smp-server.ini`
@@ -32,6 +32,7 @@ SimpleX SMP Server is the official self-hosted relay server for SimpleX. This ad
 - Embedded HTTP server information page
 - Auto-generated certificates, fingerprint, and `smp-server.ini`
 - Optional password for creating new queues
+- `ADDR` must be set to your public domain or public IP during installation
 
 ## 版本说明
 固定版本使用官方镜像 `simplexchat/smp-server:v6.5.2`，`latest` 当前同样基于 6.5.x 发布线。

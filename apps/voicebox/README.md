@@ -34,11 +34,19 @@ Voicebox is a local-first AI voice studio with web UI, REST API, voice cloning, 
 - OpenAPI docs at `/docs` and health endpoint at `/health`
 
 ## 版本说明
-官方 GHCR 当前公开提供 `latest`、`dev`、`latest-cuda` 与 `dev-cuda` 标签，未发布可直接拉取的数字版稳定标签。本适配使用官方 `latest` 镜像。
+官方 GHCR 当前公开提供 `latest`、`dev`、`latest-cuda` 与 `dev-cuda` 标签，未发布可直接拉取的数字版稳定标签。
+
+本适配提供：
+- `latest`：官方 CPU 通用镜像
+- `latest-cuda`：官方 NVIDIA CUDA 镜像
+
+`latest-cuda` 需要宿主机已安装 NVIDIA Container Toolkit，并且当前官方镜像仅发布 `linux/amd64`。
 
 ## 参考资料
 - 官网: <https://voicebox.sh>
 - 文档: <https://docs.voicebox.sh/>
 - 源码: <https://github.com/jamiepine/voicebox>
 - Compose: <https://github.com/jamiepine/voicebox/blob/main/docker-compose.yml>
+- Docker 文档: <https://github.com/jamiepine/voicebox/blob/main/docs/content/docs/overview/docker.mdx>
+- GPU 文档: <https://github.com/jamiepine/voicebox/blob/main/docs/content/docs/overview/gpu-acceleration.mdx>
 - GHCR: <https://ghcr.io/jamiepine/voicebox>
