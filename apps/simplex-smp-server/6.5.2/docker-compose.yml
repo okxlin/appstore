@@ -1,6 +1,6 @@
 services:
   simplex-smp-server:
-    image: "simplexchat/smp-server:v6.5.2"
+    image: "simplexchat/smp-server:v7.0.0"
     container_name: ${CONTAINER_NAME}
     environment:
       - ADDR=${ADDR}
