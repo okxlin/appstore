@@ -1,0 +1,31 @@
+name: TREK
+tags:
+  - Tool
+title: 旅行计划与协作地图应用
+description: 旅行计划与协作地图应用
+additionalProperties:
+  key: trek
+  name: TREK
+  tags:
+    - Tool
+  shortDescZh: 旅行计划与协作地图应用
+  shortDescEn: Travel planning and collaborative map app
+  description:
+    en: Travel planning and collaborative map app.
+    zh: 旅行计划与协作地图应用。
+    zh-Hant: 旅行計畫與協作地圖應用。
+    ja: 旅行計画と共同編集マップのアプリ。
+    ko: 여행 계획과 협업 지도를 위한 앱입니다.
+    ru: Приложение для планирования путешествий и совместной работы с картами.
+    ms: Aplikasi perancangan perjalanan dan peta kolaboratif.
+    pt-br: Aplicativo de planejamento de viagens e mapa colaborativo.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/mauriceboe/TREK
+  github: https://github.com/mauriceboe/TREK
+  document: https://github.com/mauriceboe/TREK/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64

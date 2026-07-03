@@ -1,0 +1,31 @@
+name: Voicebox
+tags:
+  - Tool
+title: 本地 AI 语音工作室
+description: 本地 AI 语音工作室
+additionalProperties:
+  key: voicebox
+  name: Voicebox
+  tags:
+    - Tool
+  shortDescZh: 本地 AI 语音工作室
+  shortDescEn: Local AI voice studio
+  description:
+    en: Local AI voice studio for voice cloning, speech generation, and transcription.
+    zh: 本地 AI 语音工作室，提供语音克隆、语音生成与转录能力。
+    zh-Hant: 本地 AI 語音工作室，提供語音複製、語音生成與轉錄能力。
+    ja: 音声クローニング、音声生成、文字起こしを行うローカル AI 音声スタジオです。
+    ko: 음성 복제, 음성 생성, 전사를 제공하는 로컬 AI 음성 스튜디오입니다.
+    ru: Локальная AI-студия для клонирования голоса, синтеза речи и транскрипции.
+    ms: Studio suara AI tempatan untuk klon suara, penjanaan pertuturan dan transkripsi.
+    pt-br: Estudio local de voz com IA para clonagem de voz, geracao de fala e transcricao.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://voicebox.sh
+  github: https://github.com/jamiepine/voicebox
+  document: https://docs.voicebox.sh/
+  architectures:
+    - amd64
+    - arm64

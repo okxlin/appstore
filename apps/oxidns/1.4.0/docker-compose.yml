@@ -1,0 +1,25 @@
+services:
+  oxidns:
+    image: "ghcr.io/svenshi/oxidns:1.4.0"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9199"
+      - "${PANEL_APP_PORT_DNS_TCP}:53/tcp"
+      - "${PANEL_APP_PORT_DNS_UDP}:53/udp"
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${APP_CONFIG_DIR}/config.yaml:/etc/oxidns/config.yaml"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -qO- http://127.0.0.1:9199/api/healthz || exit 1
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

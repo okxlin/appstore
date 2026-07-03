@@ -1,0 +1,31 @@
+name: OxiDNS
+tags:
+  - Tool
+title: 高性能 DNS 策略编排引擎
+description: 高性能 DNS 策略编排引擎
+additionalProperties:
+  key: oxidns
+  name: OxiDNS
+  tags:
+    - Tool
+  shortDescZh: 高性能 DNS 策略编排引擎
+  shortDescEn: High-performance DNS policy orchestration engine
+  description:
+    en: High-performance DNS policy orchestration engine.
+    zh: 高性能 DNS 策略编排引擎。
+    zh-Hant: 高效能 DNS 策略編排引擎。
+    ja: 高性能な DNS ポリシーオーケストレーションエンジン。
+    ko: 고성능 DNS 정책 오케스트레이션 엔진입니다.
+    ru: Высокопроизводительный движок оркестрации DNS-политик.
+    ms: Enjin orkestrasi dasar DNS berprestasi tinggi.
+    pt-br: Mecanismo de orquestração de políticas DNS de alto desempenho.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://oxidns.org/
+  github: https://github.com/svenshi/oxidns
+  document: https://oxidns.org/quickstart
+  architectures:
+    - amd64
+    - arm64

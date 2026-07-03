@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/jamiepine/voicebox",
+  "dockerDocs": "https://github.com/jamiepine/voicebox#download",
+  "composeFile": "https://github.com/jamiepine/voicebox/blob/main/docker-compose.yml",
+  "image": "ghcr.io/jamiepine/voicebox:latest"
+}

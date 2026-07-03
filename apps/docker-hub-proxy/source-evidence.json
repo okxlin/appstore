@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/xingfeng7788/docker-hub-proxy",
+  "dockerDocs": "https://hub.docker.com/r/qq510023514/docker-hub",
+  "composeFile": "https://github.com/xingfeng7788/docker-hub-proxy/blob/main/docker-compose.yml",
+  "envExample": "https://github.com/xingfeng7788/docker-hub-proxy/blob/main/.env.example",
+  "image": "qq510023514/docker-hub:latest",
+  "fixedImage": "qq510023514/docker-hub:v3.0.1"
+}

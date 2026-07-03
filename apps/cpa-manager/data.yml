@@ -1,0 +1,31 @@
+name: CPA Manager
+tags:
+  - Tool
+title: Cli-Proxy-API 用量监控与管理面板
+description: Cli-Proxy-API 用量监控与管理面板
+additionalProperties:
+  key: cpa-manager
+  name: CPA Manager
+  tags:
+    - Tool
+  shortDescZh: Cli-Proxy-API 用量监控与管理面板
+  shortDescEn: Cli-Proxy-API usage monitoring and management panel
+  description:
+    en: Cli-Proxy-API usage monitoring and management panel.
+    zh: Cli-Proxy-API 用量监控与管理面板。
+    zh-Hant: Cli-Proxy-API 用量監控與管理面板。
+    ja: Cli-Proxy-API の使用量監視および管理パネル。
+    ko: Cli-Proxy-API용 사용량 모니터링 및 관리 패널입니다.
+    ru: Панель мониторинга и управления использованием Cli-Proxy-API.
+    ms: Panel pemantauan penggunaan dan pengurusan untuk Cli-Proxy-API.
+    pt-br: Painel de monitoramento e gerenciamento de uso do Cli-Proxy-API.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/seakee/CPA-Manager
+  github: https://github.com/seakee/CPA-Manager
+  document: https://github.com/seakee/CPA-Manager/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,31 @@
+name: KSpeeder
+tags:
+  - Tool
+title: Docker 与多源网络加速服务
+description: Docker 与多源网络加速服务
+additionalProperties:
+  key: kspeeder
+  name: KSpeeder
+  tags:
+    - Tool
+  shortDescZh: Docker 与多源网络加速服务
+  shortDescEn: Docker and multi-source network acceleration service
+  description:
+    en: Docker and multi-source network acceleration service.
+    zh: Docker 与多源网络加速服务。
+    zh-Hant: Docker 與多來源網路加速服務。
+    ja: Docker と多元ネットワークの高速化サービス。
+    ko: Docker 및 다중 소스 네트워크 가속 서비스입니다.
+    ru: Сервис ускорения Docker и сетевых источников.
+    ms: Perkhidmatan pecutan Docker dan rangkaian pelbagai sumber.
+    pt-br: Servico de aceleracao para Docker e multiplas fontes de rede.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/kspeeder/docker_kspeeder
+  github: https://github.com/kspeeder/docker_kspeeder
+  document: https://github.com/kspeeder/docker_kspeeder/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64

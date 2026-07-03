@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/LibreTranslate/LibreTranslate",
+  "dockerDocs": "https://docs.libretranslate.com/",
+  "composeFile": "https://raw.githubusercontent.com/LibreTranslate/LibreTranslate/main/docker-compose.yml"
+}

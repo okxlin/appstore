@@ -1,0 +1,100 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Info Page Port
+      labelZh: 信息页端口
+      label:
+        en: Info Page Port
+        zh: 信息页端口
+        zh-Hant: 資訊頁埠
+        ja: 情報ページポート
+        ko: 정보 페이지 포트
+        ru: Порт страницы информации
+        ms: Port Halaman Maklumat
+        pt-br: Porta da Pagina de Informacoes
+      required: true
+      rule: paramPort
+      type: number
+    - default: 5223
+      edit: true
+      envKey: PANEL_APP_PORT_SMP
+      labelEn: SMP Port
+      labelZh: SMP 端口
+      label:
+        en: SMP Port
+        zh: SMP 端口
+        zh-Hant: SMP 埠
+        ja: SMP ポート
+        ko: SMP 포트
+        ru: SMP-порт
+        ms: Port SMP
+        pt-br: Porta SMP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/config
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Config Directory
+      labelZh: 配置目录
+      label:
+        en: Config Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori Konfigurasi
+        pt-br: Diretório de Configuração
+      required: true
+      type: text
+    - default: ./data/state
+      edit: true
+      envKey: APP_STATE_DIR
+      labelEn: State Directory
+      labelZh: 状态目录
+      label:
+        en: State Directory
+        zh: 状态目录
+        zh-Hant: 狀態目錄
+        ja: 状態ディレクトリ
+        ko: 상태 디렉터리
+        ru: Каталог состояния
+        ms: Direktori Keadaan
+        pt-br: Diretório de Estado
+      required: true
+      type: text
+    - default: 127.0.0.1
+      edit: true
+      envKey: ADDR
+      labelEn: Server Domain or IP
+      labelZh: 服务器域名或 IP
+      label:
+        en: Server Domain or IP
+        zh: 服务器域名或 IP
+        zh-Hant: 伺服器網域或 IP
+        ja: サーバードメインまたは IP
+        ko: 서버 도메인 또는 IP
+        ru: Домен или IP сервера
+        ms: Domain atau IP Pelayan
+        pt-br: Dominio ou IP do Servidor
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: PASS
+      labelEn: Create Queue Password
+      labelZh: 队列创建密码
+      label:
+        en: Create Queue Password
+        zh: 队列创建密码
+        zh-Hant: 佇列建立密碼
+        ja: キュー作成パスワード
+        ko: 큐 생성 비밀번호
+        ru: Пароль создания очередей
+        ms: Kata Laluan Penciptaan Barisan
+        pt-br: Senha para Criacao de Filas
+      required: false
+      type: text

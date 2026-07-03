@@ -1,0 +1,29 @@
+services:
+  voicebox:
+    image: "ghcr.io/jamiepine/voicebox:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL}
+      - NUMBA_CACHE_DIR=/tmp/numba_cache
+      - VOICEBOX_MODELS_DIR=/app/models
+      - VOICEBOX_CORS_ORIGINS=${VOICEBOX_CORS_ORIGINS}
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+      - "${APP_MODELS_DIR}:/app/models"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/health", timeout=10)
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

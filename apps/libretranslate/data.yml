@@ -1,0 +1,31 @@
+name: LibreTranslate
+tags:
+  - Tool
+title: 开源自托管机器翻译 API
+description: 开源自托管机器翻译 API
+additionalProperties:
+  key: libretranslate
+  name: LibreTranslate
+  tags:
+    - Tool
+  shortDescZh: 开源自托管机器翻译 API
+  shortDescEn: Open-source self-hosted machine translation API
+  description:
+    en: Open-source self-hosted machine translation API.
+    zh: 开源自托管机器翻译 API。
+    zh-Hant: 開源自託管機器翻譯 API。
+    ja: オープンソースのセルフホスト機械翻訳 API。
+    ko: 오픈소스 셀프호스팅 기계 번역 API입니다.
+    ru: Самостоятельно размещаемый API машинного перевода с открытым исходным кодом.
+    ms: API terjemahan mesin hos kendiri sumber terbuka.
+    pt-br: API de tradução automática open source auto-hospedada.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://libretranslate.com/
+  github: https://github.com/LibreTranslate/LibreTranslate
+  document: https://docs.libretranslate.com/
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/kspeeder/docker_kspeeder",
+  "dockerDocs": "https://hub.docker.com/r/linkease/kspeeder",
+  "composeFile": "https://github.com/kspeeder/docker_kspeeder/blob/main/docker-compose.yml",
+  "image": "linkease/kspeeder:latest",
+  "fixedImage": "linkease/kspeeder:0.7.10"
+}

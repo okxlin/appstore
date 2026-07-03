@@ -1,0 +1,31 @@
+name: Docker Hub Proxy
+tags:
+  - Tool
+title: Docker Hub 镜像代理与加速服务
+description: Docker Hub 镜像代理与加速服务
+additionalProperties:
+  key: docker-hub-proxy
+  name: Docker Hub Proxy
+  tags:
+    - Tool
+  shortDescZh: Docker Hub 镜像代理与加速服务
+  shortDescEn: Docker Hub image proxy and acceleration service
+  description:
+    en: Docker Hub image proxy and acceleration service.
+    zh: Docker Hub 镜像代理与加速服务。
+    zh-Hant: Docker Hub 映像代理與加速服務。
+    ja: Docker Hub イメージのプロキシおよび高速化サービス。
+    ko: Docker Hub 이미지 프록시 및 가속 서비스입니다.
+    ru: Сервис проксирования и ускорения образов Docker Hub.
+    ms: Perkhidmatan proksi dan pecutan imej Docker Hub.
+    pt-br: Servico de proxy e aceleracao de imagens do Docker Hub.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/xingfeng7788/docker-hub-proxy
+  github: https://github.com/xingfeng7788/docker-hub-proxy
+  document: https://github.com/xingfeng7788/docker-hub-proxy/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64
