@@ -1,0 +1,31 @@
+services:
+  kspeeder:
+    image: "linkease/kspeeder:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5003"
+      - "${PANEL_APP_PORT_TLS}:5443"
+    environment:
+      - TZ=${TZ}
+      - KSPEEDER_PORT=5443
+      - KSPEEDER_ADMIN_PORT=5003
+      - KSPEEDER_CONFIG=/kspeeder-config
+      - KSPEEDER_DATA=/kspeeder-data
+      - KS_USER_NODES_CONFIG=/kspeeder-config/nodes.yaml
+      - KSPEEDER_PROXY_AUTH=${KSPEEDER_PROXY_AUTH}
+    volumes:
+      - "${APP_DATA_DIR}:/kspeeder-data"
+      - "${APP_CONFIG_DIR}:/kspeeder-config"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -qO- http://127.0.0.1:5003/ || exit 1
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,31 @@
+name: SimpleX SMP Server
+tags:
+  - Tool
+title: SimpleX 自托管 SMP 中继服务
+description: SimpleX 自托管 SMP 中继服务
+additionalProperties:
+  key: simplex-smp-server
+  name: SimpleX SMP Server
+  tags:
+    - Tool
+  shortDescZh: SimpleX 自托管 SMP 中继服务
+  shortDescEn: Self-hosted SimpleX SMP relay server
+  description:
+    en: Self-hosted SimpleX SMP relay server with an embedded server information page.
+    zh: SimpleX 自托管 SMP 中继服务，附带嵌入式服务器信息页。
+    zh-Hant: SimpleX 自託管 SMP 中繼服務，附帶內建伺服器資訊頁。
+    ja: 組み込みサーバー情報ページ付きの SimpleX 自己ホスト SMP リレーサーバーです。
+    ko: 내장 서버 정보 페이지를 제공하는 SimpleX 자체 호스팅 SMP 릴레이 서버입니다.
+    ru: Самостоятельно размещаемый SMP-релейный сервер SimpleX со встроенной информационной страницей.
+    ms: Pelayan geganti SMP SimpleX yang dihoskan sendiri dengan halaman maklumat pelayan terbina dalam.
+    pt-br: Servidor de relay SMP do SimpleX com auto-hospedagem e pagina integrada de informacoes do servidor.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://simplex.chat/
+  github: https://github.com/simplex-chat/simplex-chat
+  document: https://github.com/simplex-chat/simplex-chat/blob/stable/docs/SERVER.md
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,32 @@
+services:
+  docker-hub-proxy:
+    image: "qq510023514/docker-hub:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - PROXY_TIMEOUT=${PROXY_TIMEOUT}
+      - ADMIN_USER=${ADMIN_USER}
+      - ADMIN_PASS=${ADMIN_PASS}
+      - IP_WHITELIST=${IP_WHITELIST}
+      - IMAGE_WHITELIST_REGEX=${IMAGE_WHITELIST_REGEX}
+      - IMAGE_BLACKLIST_REGEX=${IMAGE_BLACKLIST_REGEX}
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/", timeout=10)
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

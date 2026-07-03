@@ -1,0 +1,31 @@
+name: CPA Manager Plus
+tags:
+  - Tool
+title: Cli-Proxy-API 增强管理与观测面板
+description: Cli-Proxy-API 增强管理与观测面板
+additionalProperties:
+  key: cpa-manager-plus
+  name: CPA Manager Plus
+  tags:
+    - Tool
+  shortDescZh: Cli-Proxy-API 增强管理与观测面板
+  shortDescEn: Enhanced Cli-Proxy-API management and observability panel
+  description:
+    en: Enhanced Cli-Proxy-API management and observability panel.
+    zh: Cli-Proxy-API 增强管理与观测面板。
+    zh-Hant: Cli-Proxy-API 增強管理與觀測面板。
+    ja: Cli-Proxy-API の拡張管理および可観測性パネル。
+    ko: Cli-Proxy-API용 고급 관리 및 관측 패널입니다.
+    ru: Расширенная панель управления и наблюдаемости для Cli-Proxy-API.
+    ms: Panel pengurusan dan pemerhatian dipertingkat untuk Cli-Proxy-API.
+    pt-br: Painel avançado de gerenciamento e observabilidade para Cli-Proxy-API.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/seakee/CPA-Manager-Plus
+  github: https://github.com/seakee/CPA-Manager-Plus
+  document: https://github.com/seakee/CPA-Manager-Plus/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64

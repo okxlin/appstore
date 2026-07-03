@@ -1,0 +1,33 @@
+services:
+  cpa-manager:
+    image: "seakee/cpa-manager:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:18317"
+    environment:
+      - HTTP_ADDR=0.0.0.0:18317
+      - USAGE_DB_PATH=/data/usage.sqlite
+      - USAGE_COLLECTOR_MODE=${USAGE_COLLECTOR_MODE}
+      - USAGE_RESP_QUEUE=usage
+      - USAGE_RESP_POP_SIDE=right
+      - USAGE_BATCH_SIZE=100
+      - USAGE_POLL_INTERVAL_MS=500
+      - USAGE_QUERY_LIMIT=50000
+      - USAGE_CORS_ORIGINS=${USAGE_CORS_ORIGINS}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -qO-
+        - http://127.0.0.1:18317/health
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

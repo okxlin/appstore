@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/mauriceboe/TREK",
+  "dockerDocs": "https://hub.docker.com/r/mauriceboe/trek",
+  "composeFile": "https://raw.githubusercontent.com/mauriceboe/TREK/main/docker-compose.yml"
+}

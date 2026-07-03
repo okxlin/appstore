@@ -1,0 +1,83 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/app
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: ./data/models
+      edit: true
+      envKey: APP_MODELS_DIR
+      labelEn: Models Directory
+      labelZh: 模型目录
+      label:
+        en: Models Directory
+        zh: 模型目录
+        zh-Hant: 模型目錄
+        ja: モデルディレクトリ
+        ko: 모델 디렉터리
+        ru: Каталог моделей
+        ms: Direktori Model
+        pt-br: Diretório de Modelos
+      required: true
+      type: text
+    - default: info
+      edit: true
+      envKey: LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌等級
+        ja: ログレベル
+        ko: 로그 레벨
+        ru: Уровень логов
+        ms: Tahap Log
+        pt-br: Nivel de Log
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: VOICEBOX_CORS_ORIGINS
+      labelEn: CORS Origins
+      labelZh: CORS 来源
+      label:
+        en: CORS Origins
+        zh: CORS 来源
+        zh-Hant: CORS 來源
+        ja: CORS オリジン
+        ko: CORS 출처
+        ru: Источники CORS
+        ms: Asal CORS
+        pt-br: Origens CORS
+      required: false
+      type: text
