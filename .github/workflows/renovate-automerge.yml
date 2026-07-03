@@ -97,6 +97,7 @@ jobs:
           export BASE_SHA HEAD_SHA
 
           git fetch --no-tags --depth=1 origin "$BASE_SHA" "$HEAD_SHA"
+          gh api "repos/$REPO/pulls/$PR_NUMBER/files" --paginate > /tmp/renovate-pr-files.json
           python3 - <<'PY'
           import importlib.util
           import subprocess
@@ -108,6 +109,7 @@ jobs:
 
           set +e
           python3 <<'PY' 2> /tmp/renovate-shape.stderr
+          import json
           import os
           import re
           import subprocess
@@ -151,44 +153,26 @@ jobs:
               return data, services
 
           try:
-              diff_proc = run_git(
-                  "diff",
-                  "--name-status",
-                  "--find-renames",
-                  base_sha,
-                  head_sha,
-                  "--",
-                  "apps",
-              )
-              if diff_proc.returncode != 0:
-                  print(diff_proc.stderr, file=sys.stderr, end="")
-                  sys.exit(diff_proc.returncode)
+              with open("/tmp/renovate-pr-files.json", encoding="utf-8") as fh:
+                  files = json.load(fh)
 
               apps = set()
               compose_files = []
 
-              for raw_line in diff_proc.stdout.splitlines():
-                  if not raw_line.strip():
-                      continue
-                  parts = raw_line.split("\t")
-                  status = parts[0]
-                  if status.startswith(("R", "C")):
-                      if len(parts) < 3:
-                          reject(f"invalid rename diff entry: {raw_line}")
-                      old_path, new_path = parts[1], parts[2]
-                  else:
-                      if len(parts) < 2:
-                          reject(f"invalid diff entry: {raw_line}")
-                      old_path = new_path = parts[1]
+              for file_info in files:
+                  filename = file_info["filename"]
+                  previous = file_info.get("previous_filename")
 
-                  for path in [old_path, new_path]:
+                  for path in [filename, previous]:
+                      if not path:
+                          continue
                       match = re.match(r"^apps/([^/]+)/", path)
                       if not match:
                           reject(f"changed file outside apps/: {path}")
                       apps.add(match.group(1))
 
-                  if old_path.endswith("/docker-compose.yml") or new_path.endswith("/docker-compose.yml"):
-                      compose_files.append((old_path, new_path))
+                  if filename.endswith("/docker-compose.yml") or (previous and previous.endswith("/docker-compose.yml")):
+                      compose_files.append((previous or filename, filename))
 
               if len(apps) != 1:
                   reject(f"PR must affect exactly one app, got {', '.join(sorted(apps))}")

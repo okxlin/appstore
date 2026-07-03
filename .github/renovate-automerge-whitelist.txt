@@ -343,8 +343,11 @@ modrinth-linuxserver
 faster-whisper-linuxserver
 calibre-linuxserver
 bambustudio-linuxserver
+blade-of-agony-linuxserver
+brave-linuxserver
 gotosocial
 dbx
+msedge-linuxserver
 zotero-linuxserver
 zen-linuxserver
 rawtherapee-linuxserver
@@ -358,4 +361,6 @@ healthchecks-linuxserver
 flycast-linuxserver
 chrome-linuxserver
 signal-linuxserver
+thunderbird-linuxserver
+ting-reader
 vscode-linuxserver
