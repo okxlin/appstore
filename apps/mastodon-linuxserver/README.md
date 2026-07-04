@@ -31,7 +31,7 @@ Mastodon ActivityPub 社交网络服务。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| LOCAL_DOMAIN | 实例域名 | example.com | 是 |
+| LOCAL_DOMAIN | 实例域名 | - | 是 |
 | WEB_DOMAIN | Web 域名 | - | 否 |
 | MASTODON_PROMETHEUS_EXPORTER_ENABLED | Prometheus 导出器 | false | 否 |
 | DB_HOST | 数据库主机 | mastodon-db | 是 |
@@ -40,18 +40,19 @@ Mastodon ActivityPub 社交网络服务。
 | DB_NAME | 数据库名称 | mastodon | 是 |
 | REDIS_HOST | Redis 主机 | mastodon-redis | 是 |
 | REDIS_PORT | Redis 端口 | 6379 | 是 |
-| DB_PASSWORD | 数据库密码 | mastodon-change-me | 是 |
-| ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY | 密钥值 | fGWkJDBwyRYhILyO7akZGLSSz0gAjPpo | 是 |
-| ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY | 密钥值 | Z8BE3tc3XnmUr0MbRexRiPN7vcP52VX0 | 是 |
-| ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT | 密钥值 | 3hRwOaLRCikUCsxd19cUcO5EgXCN6ig1 | 是 |
-| SECRET_KEY_BASE | 密钥值 | ae3ab77b9a041a4d760126dba8c4e24a33bdfcec7fdbadf3d973baf92017ee0d0b988d62c040aca882ee8030ea22adb04d9c26a9541c918a434029840c8719b0 | 是 |
-| OTP_SECRET | 密钥值 | b3d6069b87df718c733a1b17a9adcbd7705b76ba0b48dd3f3ce58870dd52bed0d32d947a43a4eadac4230d508e11df0cee6f59ed85e40670134a52545f1131ac | 是 |
-| VAPID_PRIVATE_KEY | 密钥值 | 1eF670mQsgs_-W_eb06ZZ46apD4qVDYNvFWu9eGWc7E= | 是 |
-| VAPID_PUBLIC_KEY | 密钥值 | BOOqXKvCVA9tb8Bas05sdez6fGavnA5SrDJe88s7FMeIu7txiQ5sOqOZqKIpTSS_xmm5Wkd_MKHqj2UCQIwl9_8= | 是 |
+| DB_PASSWORD | 数据库密码 | 安装时自动生成 | 是 |
+| ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY | 密钥值 | 安装时自动生成 | 是 |
+| ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY | 密钥值 | 安装时自动生成 | 是 |
+| ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT | 密钥值 | 安装时自动生成 | 是 |
+| SECRET_KEY_BASE | 密钥值 | 安装时自动生成 | 是 |
+| OTP_SECRET | 密钥值 | 安装时自动生成 | 是 |
+| VAPID_PRIVATE_KEY | 密钥值 | 安装时自动生成 | 是 |
+| VAPID_PUBLIC_KEY | 密钥值 | 安装时自动生成 | 是 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次安装时请填写 `LOCAL_DOMAIN`、SMTP、数据库/Redis 与数据目录等参数；密钥类字段可留空由脚本按上游格式自动生成。
+- 对外访问时，请确保反向代理、DNS 与 `LOCAL_DOMAIN` 保持一致，否则首页可能返回 403 或跳转异常。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料

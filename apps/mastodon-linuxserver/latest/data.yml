@@ -50,7 +50,7 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
-  - default: example.com
+  - default: ''
     edit: true
     envKey: LOCAL_DOMAIN
     labelEn: Local domain
@@ -199,7 +199,7 @@ additionalProperties:
       pt-br: Porta do Redis
     required: true
     type: number
-  - default: mastodon-change-me
+  - default: ''
     edit: true
     envKey: DB_PASSWORD
     labelEn: Database password
@@ -214,9 +214,10 @@ additionalProperties:
       ms: Kata laluan pangkalan data
       pt-br: Senha do banco de dados
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: fGWkJDBwyRYhILyO7akZGLSSz0gAjPpo
+  - default: ''
     edit: true
     envKey: ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY
     labelEn: Secret value
@@ -231,9 +232,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: Z8BE3tc3XnmUr0MbRexRiPN7vcP52VX0
+  - default: ''
     edit: true
     envKey: ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY
     labelEn: Secret value
@@ -248,9 +250,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: 3hRwOaLRCikUCsxd19cUcO5EgXCN6ig1
+  - default: ''
     edit: true
     envKey: ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT
     labelEn: Secret value
@@ -265,9 +268,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: ae3ab77b9a041a4d760126dba8c4e24a33bdfcec7fdbadf3d973baf92017ee0d0b988d62c040aca882ee8030ea22adb04d9c26a9541c918a434029840c8719b0
+  - default: ''
     edit: true
     envKey: SECRET_KEY_BASE
     labelEn: Secret value
@@ -282,9 +286,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: b3d6069b87df718c733a1b17a9adcbd7705b76ba0b48dd3f3ce58870dd52bed0d32d947a43a4eadac4230d508e11df0cee6f59ed85e40670134a52545f1131ac
+  - default: ''
     edit: true
     envKey: OTP_SECRET
     labelEn: Secret value
@@ -299,9 +304,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: 1eF670mQsgs_-W_eb06ZZ46apD4qVDYNvFWu9eGWc7E=
+  - default: ''
     edit: true
     envKey: VAPID_PRIVATE_KEY
     labelEn: Secret value
@@ -316,9 +322,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: BOOqXKvCVA9tb8Bas05sdez6fGavnA5SrDJe88s7FMeIu7txiQ5sOqOZqKIpTSS_xmm5Wkd_MKHqj2UCQIwl9_8=
+  - default: ''
     edit: true
     envKey: VAPID_PUBLIC_KEY
     labelEn: Secret value
@@ -333,9 +340,10 @@ additionalProperties:
       ms: Nilai rahsia
       pt-br: Valor secreto
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: mail.example.com
+  - default: ''
     edit: true
     envKey: SMTP_SERVER
     labelEn: SMTP server
@@ -399,7 +407,7 @@ additionalProperties:
       pt-br: Senha SMTP
     required: false
     type: password
-  - default: notifications@example.com
+  - default: ''
     edit: true
     envKey: SMTP_FROM_ADDRESS
     labelEn: SMTP from address

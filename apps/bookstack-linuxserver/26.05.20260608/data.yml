@@ -33,7 +33,7 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
-  - default: http://localhost:6875
+  - default: ''
     edit: true
     envKey: APP_URL
     labelEn: Application URL
@@ -49,7 +49,7 @@ additionalProperties:
       pt-br: URL do aplicativo
     required: true
     type: text
-  - default: base64:j1wQ2YbRrQ3j0tG5h6v8cYpV1gW9mN4uQ2xZ7aE3sT8=
+  - default: ''
     edit: true
     envKey: APP_KEY
     labelEn: Application key
@@ -64,6 +64,7 @@ additionalProperties:
       ms: Kunci aplikasi
       pt-br: Chave do aplicativo
     required: true
+    random: true
     type: password
     rule: paramComplexity
   - default: bookstack-db
@@ -130,7 +131,7 @@ additionalProperties:
       pt-br: Nome do banco
     required: true
     type: text
-  - default: bookstack-change-me
+  - default: ''
     edit: true
     envKey: DB_PASSWORD
     labelEn: Database password
@@ -145,6 +146,7 @@ additionalProperties:
       ms: Kata laluan pangkalan data
       pt-br: Senha do banco de dados
     required: true
+    random: true
     type: password
     rule: paramComplexity
   - default: ''

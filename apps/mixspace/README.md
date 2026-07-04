@@ -37,24 +37,25 @@ MixSpace is an open-source self-hosted backend for personal blogs. The current `
 | PANEL_APP_PORT_HTTP | 端口 | 40203 | 是 |
 
 ## 数据持久化
-- `./data/mx-space:/root/.mx-space`
-- `./data/postgres:/var/lib/postgresql/data`
-- `./data/redis:/data`
+- `${DATA_PATH}/mx-space:/root/.mx-space`
+- `${DATA_PATH}/postgres:/var/lib/postgresql/data`
+- `${DATA_PATH}/redis:/data`
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
 ## 升级说明
-- 升级脚本会为旧 `.env` 补充缺失的 `PG_PASSWORD`、`JWT_SECRET`、`SUBNET_PREFIX`，并创建 PostgreSQL/Redis 持久化目录。
-- 升级脚本会把自动生成的 `PG_PASSWORD`、`JWT_SECRET` 缓存在 `./data/.mixspace_pg_password`、`./data/.mixspace_jwt_secret`，避免后续升级重复生成导致旧数据不可用。
-- 旧版 MongoDB 数据目录 `./data/db` 会被保留，但不会自动迁移到 PostgreSQL。
+- 升级脚本会为旧 `.env` 补充缺失的 `DATA_PATH`、`PG_PASSWORD`、`JWT_SECRET`、`SUBNET_PREFIX`，并创建 PostgreSQL/Redis 持久化目录。
+- 升级脚本会把自动生成的 `PG_PASSWORD`、`JWT_SECRET` 缓存在 `${DATA_PATH}/.mixspace_pg_password`、`${DATA_PATH}/.mixspace_jwt_secret`，避免后续升级重复生成导致旧数据不可用。
+- 旧版 MongoDB 数据目录 `${DATA_PATH}/db` 会被保留，但不会自动迁移到 PostgreSQL。
 - 从旧 MongoDB 拓扑升级前，请先完整备份应用目录，并按 MixSpace 上游文档评估数据迁移方案。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| ALLOWED_ORIGINS | 被允许的域名 (多个使用英文逗号分割) | example.com | 是 |
-| JWT_SECRET | JWT 密钥 (16 到 32 位字符) | MxJwtSecret2026ChangeThisValue01 | 是 |
-| PG_PASSWORD | PostgreSQL 密码 | MxPostgres2026 | 是 |
+| DATA_PATH | 数据根目录 | ./data | 是 |
+| ALLOWED_ORIGINS | 被允许的域名 (多个使用英文逗号分割) | - | 是 |
+| JWT_SECRET | JWT 密钥 (16 到 32 位字符) | 安装时自动生成 | 是 |
+| PG_PASSWORD | PostgreSQL 密码 | 安装时自动生成 | 是 |
 | ENCRYPT_KEY | 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取) | - | 否 |
 | ENCRYPT_ENABLE | 是否开启加密 (true或false,开启则需要填写加密密钥) | false | 是 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
@@ -62,7 +63,8 @@ MixSpace is an open-source self-hosted backend for personal blogs. The current `
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次安装时请填写 `ALLOWED_ORIGINS`、数据库参数和持久化目录；如需公网访问，请按上游说明单独部署前端并指向当前 API。
+- 如果修改了 `DATA_PATH`、数据库目录或上传目录，请在升级前确认这些路径已完成备份。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料

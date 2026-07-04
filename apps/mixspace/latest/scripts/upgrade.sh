@@ -2,8 +2,6 @@
 set -euo pipefail
 
 ENV_FILE="${ENV_FILE:-./.env}"
-PG_PASSWORD_CACHE="${PG_PASSWORD_CACHE:-./data/.mixspace_pg_password}"
-JWT_SECRET_CACHE="${JWT_SECRET_CACHE:-./data/.mixspace_jwt_secret}"
 
 generate_secret() {
   if [[ -r /dev/urandom ]]; then
@@ -71,6 +69,11 @@ read_env_value() {
   printf '%s\n' "$current"
 }
 
+DATA_PATH="${DATA_PATH:-$(read_env_value DATA_PATH || true)}"
+DATA_PATH="${DATA_PATH:-./data}"
+PG_PASSWORD_CACHE="${PG_PASSWORD_CACHE:-${DATA_PATH}/.mixspace_pg_password}"
+JWT_SECRET_CACHE="${JWT_SECRET_CACHE:-${DATA_PATH}/.mixspace_jwt_secret}"
+
 write_secret_cache() {
   local cache_file="$1"
   local value="$2"
@@ -109,9 +112,10 @@ ensure_cached_secret() {
   ensure_env_default "$key" "$value" true
 }
 
-mkdir -p ./data/mx-space ./data/postgres ./data/redis
+mkdir -p "${DATA_PATH}/mx-space" "${DATA_PATH}/postgres" "${DATA_PATH}/redis"
 
 if [[ -f "$ENV_FILE" ]]; then
+  ensure_env_default "DATA_PATH" "./data" true
   ensure_cached_secret "PG_PASSWORD" "$PG_PASSWORD_CACHE"
   ensure_cached_secret "JWT_SECRET" "$JWT_SECRET_CACHE"
   ensure_env_default "SUBNET_PREFIX" "10.250.0" true
@@ -119,6 +123,6 @@ else
   echo "$ENV_FILE not found; skipped MixSpace environment migration"
 fi
 
-if [[ -d ./data/db ]]; then
-  echo "Found legacy MongoDB data at ./data/db. It is preserved, but this script does not migrate MongoDB data to PostgreSQL."
+if [[ -d "${DATA_PATH}/db" ]]; then
+  echo "Found legacy MongoDB data at ${DATA_PATH}/db. It is preserved, but this script does not migrate MongoDB data to PostgreSQL."
 fi

@@ -17,7 +17,23 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
-    - default: example.com
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data root path
+      labelZh: 数据根目录
+      label:
+        en: 'Data root path'
+        zh: '数据根目录'
+        zh-Hant: '資料根目錄'
+        ja: 'データルートパス'
+        ko: '데이터 루트 경로'
+        ru: 'Корневой каталог данных'
+        ms: 'Laluan akar data'
+        pt-br: 'Caminho raiz de dados'
+      required: true
+      type: text
+    - default: ''
       edit: true
       envKey: ALLOWED_ORIGINS
       labelEn: Allowed domain (multiple delimited with ",")
@@ -33,7 +49,7 @@ additionalProperties:
         pt-br: 'Domínios permitidos (múltiplos separados por ",")'
       required: true
       type: text
-    - default: MxJwtSecret2026ChangeThisValue01
+    - default: ''
       edit: true
       envKey: JWT_SECRET
       labelEn: JWT key (16 to 32 characters)
@@ -51,7 +67,7 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
-    - default: MxPostgres2026
+    - default: ''
       edit: true
       envKey: PG_PASSWORD
       labelEn: PostgreSQL password
