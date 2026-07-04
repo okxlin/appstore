@@ -1,0 +1,110 @@
+additionalProperties:
+  formFields:
+    - default: 1080
+      envKey: PANEL_APP_PORT_SOCKS5
+      labelEn: SOCKS5 Port
+      labelZh: SOCKS5 端口
+      required: true
+      rule: paramPort
+      type: number
+      edit: true
+    - default: 8080
+      envKey: PANEL_APP_PORT_HTTP_PROXY
+      labelEn: HTTP Proxy Port
+      labelZh: HTTP 代理端口
+      required: true
+      rule: paramPort
+      type: number
+      edit: true
+    - default: 1080
+      envKey: BIND_PORT
+      labelEn: Internal Bind Port
+      labelZh: 容器内部绑定端口
+      required: true
+      rule: paramPort
+      type: number
+      edit: true
+    - default: 0
+      envKey: ROTATE_INTERVAL_MINUTES
+      labelEn: Rotate Interval Minutes
+      labelZh: 轮换间隔（分钟）
+      required: true
+      type: number
+      edit: true
+    - default: https://cloudflare.com/cdn-cgi/trace
+      envKey: TEST_URL
+      labelEn: Probe URL
+      labelZh: 探测 URL
+      required: true
+      type: text
+      edit: true
+    - default: ""
+      envKey: SOCKS_USER
+      labelEn: SOCKS Username
+      labelZh: SOCKS 用户名
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: SOCKS_PASS
+      labelEn: SOCKS Password
+      labelZh: SOCKS 密码
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: ENDPOINT_IP
+      labelEn: WARP Endpoint
+      labelZh: WARP 终结点
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: GH_PROXY
+      labelEn: wgcf Download Proxy
+      labelZh: wgcf 下载代理
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: GITHUB_TOKEN
+      labelEn: GitHub Token
+      labelZh: GitHub Token
+      required: false
+      type: text
+      edit: true
+    - default: 100.64.0.0/10
+      envKey: TAILSCALE_CIDR
+      labelEn: Tailscale Return Route CIDR
+      labelZh: Tailscale 回程路由 CIDR
+      required: true
+      type: text
+      edit: true
+    - default: 1280
+      envKey: MTU
+      labelEn: WireGuard MTU
+      labelZh: WireGuard MTU
+      required: true
+      type: number
+      edit: true
+    - default: ""
+      envKey: WARP_WGCF_CONF
+      labelEn: WireGuard Config Content
+      labelZh: WireGuard 配置内容
+      required: false
+      type: text
+      edit: true
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      required: true
+      type: text
+      edit: true
+    - default: ./data
+      envKey: APP_DATA_DIR_1
+      labelEn: WireGuard Data Directory
+      labelZh: WireGuard 数据目录
+      required: true
+      type: text
+      edit: true
