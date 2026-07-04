@@ -10,6 +10,7 @@ on:
         default: ''
 jobs:
   update-app-version:
+    if: github.event_name == 'workflow_dispatch' || github.actor == 'renovate[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,7 +26,7 @@ jobs:
       - name: Get list of updated files by the last commit in this branch separated by space
         id: updated-files
         run: |
-          echo "::set-output name=files::$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tr '\n' ' ')"
+          echo "files=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: Run renovate-app-version.sh on updated files
         run: |
@@ -33,20 +34,30 @@ jobs:
 
           for file in "${files[@]}"; do
             if [[ $file == *"docker-compose.yml"* ]]; then
-              app_name=$(echo $file | cut -d'/' -f 2)
-              old_version=$(echo $file | cut -d'/' -f 3)
+              app_name=$(echo "$file" | cut -d'/' -f 2)
+              old_version=$(echo "$file" | cut -d'/' -f 3)
               chmod +x .github/workflows/renovate-app-version.sh
-              .github/workflows/renovate-app-version.sh $app_name $old_version
+              .github/workflows/renovate-app-version.sh "$app_name" "$old_version"
             fi
           done
 
       - name: Commit & Push Changes
         run: |
           IFS=' ' read -ra files <<< "${{ steps.updated-files.outputs.files }}"
+          declare -A apps=()
 
           for file in "${files[@]}"; do
             if [[ $file == *"docker-compose.yml"* ]]; then
-              app_name=$(echo $file | cut -d'/' -f 2)
-              git add "apps/$app_name/*" && git commit -m "Update app version [skip ci]" --no-verify && git push || true
+              app_name=$(echo "$file" | cut -d'/' -f 2)
+              apps["$app_name"]=1
             fi
+          done
+
+          for app_name in "${!apps[@]}"; do
+            git add "apps/$app_name"
+            if git diff --cached --quiet; then
+              continue
+            fi
+            git commit -m "Update app version [skip ci]" --no-verify
+            git push
           done
