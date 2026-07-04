@@ -19,7 +19,7 @@ services:
       - REDIS_HOST=mixspace-redis
       - REDIS_PORT=6379
     volumes:
-      - ./data/mx-space:/root/.mx-space
+      - ${DATA_PATH}/mx-space:/root/.mx-space
     ports:
       - "${PANEL_APP_PORT_HTTP}:2333"
     networks:
@@ -48,7 +48,7 @@ services:
       - POSTGRES_PASSWORD=${PG_PASSWORD}
       - POSTGRES_DB=mx_core
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - ${DATA_PATH}/postgres:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U mx -d mx_core"]
       interval: 30s
@@ -66,7 +66,7 @@ services:
     container_name: ${CONTAINER_NAME}-redis
     command: ["redis-server", "--appendonly", "yes"]
     volumes:
-      - ./data/redis:/data
+      - ${DATA_PATH}/redis:/data
     healthcheck:
       test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
       start_period: 20s

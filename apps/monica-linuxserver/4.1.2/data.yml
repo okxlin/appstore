@@ -114,7 +114,7 @@ additionalProperties:
       pt-br: Nome do banco
     required: true
     type: text
-  - default: monica-change-me
+  - default: ''
     edit: true
     envKey: DB_PASSWORD
     labelEn: Database password
@@ -129,9 +129,10 @@ additionalProperties:
       ms: Kata laluan pangkalan data
       pt-br: Senha do banco de dados
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: http://localhost
+  - default: ''
     edit: true
     envKey: APP_URL
     labelEn: App URL

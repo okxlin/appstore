@@ -33,7 +33,7 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
-  - default: base64:dGVzdGluZy1saW51eHNlcnZlci1hcHBzLTEyMzQ1Njc=
+  - default: ''
     edit: true
     envKey: APP_KEY
     labelEn: Application key
@@ -48,6 +48,7 @@ additionalProperties:
       ms: Kunci aplikasi
       pt-br: Chave da aplicacao
     required: true
+    random: true
     type: password
     rule: paramCommon
   - default: ''

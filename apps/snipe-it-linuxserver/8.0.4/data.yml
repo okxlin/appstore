@@ -33,7 +33,7 @@ additionalProperties:
       pt-br: Caminho da pasta de configuração
     required: true
     type: text
-  - default: base64:K4tN8COBEIginakyKQ4SGfoAskVW1leA/A0qSEDucFQ=
+  - default: ''
     edit: true
     envKey: APP_KEY
     labelEn: Application key
@@ -48,9 +48,10 @@ additionalProperties:
       ms: Kunci aplikasi
       pt-br: Chave do aplicativo
     required: true
+    random: true
     type: password
     rule: paramComplexity
-  - default: http://localhost:8080
+  - default: ''
     edit: true
     envKey: APP_URL
     labelEn: App URL
@@ -152,7 +153,7 @@ additionalProperties:
       pt-br: Usuario do banco
     required: true
     type: text
-  - default: snipeit-change-me
+  - default: ''
     edit: true
     envKey: DB_PASSWORD
     labelEn: Database password
@@ -167,6 +168,7 @@ additionalProperties:
       ms: Kata laluan pangkalan data
       pt-br: Senha do banco de dados
     required: true
+    random: true
     type: password
     rule: paramComplexity
   - default: ''

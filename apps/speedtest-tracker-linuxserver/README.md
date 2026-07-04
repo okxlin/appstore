@@ -27,7 +27,7 @@ Speedtest Tracker 网速监测。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| APP_KEY | 应用密钥 | base64:dGVzdGluZy1saW51eHNlcnZlci1hcHBzLTEyMzQ1Njc= | 是 |
+| APP_KEY | 应用密钥 | 安装时自动生成 | 是 |
 | APP_URL | 应用访问 URL | - | 否 |
 | DB_CONNECTION | 数据库连接 | sqlite | 是 |
 | DB_HOST | 数据库主机 | - | 否 |
@@ -43,7 +43,8 @@ Speedtest Tracker 网速监测。
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 默认使用 SQLite 时，只需确认 `APP_KEY`、时区和数据目录；如切换到 MySQL/PostgreSQL，再补充对应数据库连接参数。
+- 首次访问如果跳转到 `getting-started` 页面，按页面提示创建初始账户并完成测速计划设置即可。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料

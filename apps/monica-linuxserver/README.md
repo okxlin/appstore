@@ -33,8 +33,8 @@ Monica 个人关系管理系统。
 | DB_PORT | 数据库端口 | 3306 | 是 |
 | DB_USERNAME | 数据库用户名 | monica | 是 |
 | DB_DATABASE | 数据库名称 | monica | 是 |
-| DB_PASSWORD | 数据库密码 | monica-change-me | 是 |
-| APP_URL | 应用访问 URL | http://localhost | 是 |
+| DB_PASSWORD | 数据库密码 | 安装时自动生成 | 是 |
+| APP_URL | 应用访问 URL | - | 是 |
 | TRUSTED_PROXIES | 可信代理 | - | 否 |
 | APP_ENV | 应用运行环境 | local | 否 |
 | APP_DISABLE_SIGNUP | 禁用新用户注册 | true | 否 |
@@ -42,7 +42,8 @@ Monica 个人关系管理系统。
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次安装时请填写 `APP_URL`、数据库参数和数据目录；数据库密码可留空由脚本自动生成。
+- 首次访问通常会跳转到注册页面，用于创建初始账户；这属于 Monica 的正常首启流程。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料

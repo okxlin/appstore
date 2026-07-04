@@ -28,19 +28,20 @@ BookStack 文档知识库。
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| APP_URL | 应用访问 URL | http://localhost:6875 | 是 |
-| APP_KEY | 应用密钥 | base64:j1wQ2YbRrQ3j0tG5h6v8cYpV1gW9mN4uQ2xZ7aE3sT8= | 是 |
+| APP_URL | 应用访问 URL | - | 是 |
+| APP_KEY | 应用密钥 | 安装时自动生成 | 是 |
 | DB_HOST | 数据库主机 | bookstack-db | 是 |
 | DB_PORT | 数据库端口 | 3306 | 是 |
 | DB_USERNAME | 数据库用户名 | bookstack | 是 |
 | DB_DATABASE | 数据库名称 | bookstack | 是 |
-| DB_PASSWORD | 数据库密码 | bookstack-change-me | 是 |
+| DB_PASSWORD | 数据库密码 | 安装时自动生成 | 是 |
 | QUEUE_CONNECTION | 异步队列连接 |  | 否 |
 | TIME_ZONE | 时区 | Asia/Shanghai | 是 |
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次安装时请填写 `APP_URL`、数据库参数和数据目录；应用密钥、数据库密码可留空由脚本自动生成。
+- 首次访问通常会进入登录页面，可继续按 BookStack 的默认流程创建或使用现有管理员账号。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
