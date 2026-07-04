@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   socket-proxy:
-    image: "linuxserver/socket-proxy:3.4.1"
+    image: "linuxserver/socket-proxy:3.4.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     read_only: true
