@@ -1,75 +1,104 @@
 additionalProperties:
   formFields:
-    - default: 40044
-      edit: true
-      envKey: PANEL_APP_PORT_HTTP
-      labelEn: SSH Port
-      labelZh: SSH 端口
-      label:
-        en: 'SSH Port'
-        zh: '面板内SSH端口'
-        zh-Hant: '面板內 SSH 埠'
-        ja: 'SSH ポート'
-        ko: 'SSH 포트'
-        ru: 'Порт SSH'
-        ms: 'Port SSH'
-        pt-br: 'Porta SSH'
-      required: true
-      rule: paramPort
-      type: number
-    - default: 50000-50010
-      edit: true
-      envKey: EXTERNAL_PORT
-      labelEn: External port
-      labelZh: 外部端口
-      required: true
-      type: text
-    - default: 50000-50010
-      edit: true
-      envKey: INTERNAL_PORT
-      labelEn: Internal port
-      labelZh: 内部端口
-      required: true
-      type: text
-    - default: ./data/data
-      edit: true
-      envKey: EXTERNAL_DATA1
-      labelEn: External folder path 1
-      labelZh: 外部文件夹路径1
-      required: true
-      type: text
-    - default: /data
-      edit: true
-      envKey: INTERNAL_DATA1
-      labelEn: Internal folder path 1
-      labelZh: 内部文件夹路径1
-      required: true
-      type: text
-    - default: ./data/www
-      edit: true
-      envKey: EXTERNAL_DATA2
-      labelEn: External folder path 2
-      labelZh: 外部文件夹路径2
-      required: true
-      type: text
-    - default: /www
-      edit: true
-      envKey: INTERNAL_DATA2
-      labelEn: Internal folder path 2
-      labelZh: 内部文件夹路径2
-      required: true
-      type: text
-    - default: ""
-      edit: true
-      envKey: SSH_KEY
-      labelEn: SSH public key
-      labelZh: SSH 公钥
-      required: false
-      type: text
-    - default: "lxc1"
-      edit: true
-      envKey: LXC_HOSTNAME
-      labelEn: LXC hostname
-      labelZh: LXC主机名
-      required: true
-      type: text
+  - default: 40044
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: SSH Port
+    labelZh: SSH 端口
+    label:
+      en: SSH Port
+      zh: SSH 端口
+      zh-Hant: SSH 埠
+      ja: SSH ポート
+      ko: SSH 포트
+      ru: Порт SSH
+      ms: Port SSH
+      pt-br: Porta SSH
+    required: true
+    rule: paramPort
+    type: number
+  - default: ./data/data
+    edit: true
+    envKey: DATA_PATH
+    labelEn: LXC data path
+    labelZh: LXC 数据目录
+    required: true
+    type: text
+  - default: ./data/shared
+    edit: true
+    envKey: SHARED_PATH
+    labelEn: Shared host path
+    labelZh: 共享宿主目录
+    required: true
+    type: text
+  - default: /vol/shared
+    edit: true
+    envKey: SHARED_TARGET
+    labelEn: Shared mount target in LXC
+    labelZh: LXC 内共享挂载路径
+    required: true
+    type: text
+  - default: alpine
+    edit: true
+    envKey: DISTRIBUTION
+    labelEn: Initial distribution
+    labelZh: 初始发行版
+    required: true
+    type: select
+    values:
+      - label: alpine
+        value: alpine
+      - label: archlinux
+        value: archlinux
+  - default: latest-stable
+    edit: true
+    envKey: ALPINE_VERSION
+    labelEn: Alpine version
+    labelZh: Alpine 版本
+    required: true
+    type: text
+  - default: ""
+    edit: true
+    envKey: ALPINE_EXTRA_PACKAGES
+    labelEn: Alpine extra packages
+    labelZh: Alpine 额外软件包
+    required: false
+    type: text
+  - default: ""
+    edit: true
+    envKey: SSH_KEY
+    labelEn: Initial SSH public key
+    labelZh: 初始 SSH 公钥
+    required: false
+    type: text
+  - default: lxc1
+    edit: true
+    envKey: LXC_HOSTNAME
+    labelEn: LXC hostname
+    labelZh: LXC 主机名
+    required: true
+    type: text
+  - default: "false"
+    edit: true
+    envKey: USE_LXCFS
+    labelEn: Enable LXCFS
+    labelZh: 启用 LXCFS
+    required: true
+    type: select
+    values:
+      - label: "false"
+        value: "false"
+      - label: "true"
+        value: "true"
+  - default: "true"
+    edit: true
+    envKey: COPY_RESOLV_CONF
+    labelEn: Copy resolv.conf
+    labelZh: 复制 resolv.conf
+    required: true
+    type: select
+    values:
+      - label: "true"
+        value: "true"
+      - label: "false"
+        value: "false"

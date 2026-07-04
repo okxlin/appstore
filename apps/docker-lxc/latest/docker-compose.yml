@@ -1,26 +1,40 @@
 services:
   lxc:
     container_name: ${CONTAINER_NAME}
-    deploy:
-        resources:
-            limits:
-                cpus: ${CPUS}
-                memory: ${MEMORY_LIMIT}
     restart: always
+    stdin_open: true
+    tty: true
+    pid: host
+    cgroup: host
     networks:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:22"
-      - "${EXTERNAL_PORT}:${INTERNAL_PORT}"
     volumes:
-      - "${EXTERNAL_DATA1}:${INTERNAL_DATA1}"
-      - "${EXTERNAL_DATA2}:${INTERNAL_DATA2}"
+      - "${DATA_PATH}:/data"
+      - "${SHARED_PATH}:${SHARED_TARGET}"
+      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
     environment:
-      - DISTRIBUTION=alpine
-      - INITIAL_SSH_KEY=${SSH_KEY}
+      - DISTRIBUTION=${DISTRIBUTION}
+      - ALPINE_VERSION=${ALPINE_VERSION}
+      - ALPINE_EXTRA_PACKAGES=${ALPINE_EXTRA_PACKAGES}
+      - USE_LXCFS=${USE_LXCFS}
+      - COPY_RESOLV_CONF=${COPY_RESOLV_CONF}
+      - SSH_KEY=${SSH_KEY}
     hostname: ${LXC_HOSTNAME}
     privileged: true
     image: micwy/lxc:latest
+    command:
+      - /bin/bash
+      - -lc
+      - |
+        if [ -n "$$SSH_KEY" ]; then
+          export INITIAL_SSH_KEY="$$SSH_KEY"
+        else
+          unset INITIAL_SSH_KEY
+        fi
+        unset SSH_KEY
+        exec /usr/bin/python3 /scripts/launch.py
     labels:  
       createdBy: "Apps"
 

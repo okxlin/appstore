@@ -1,0 +1,30 @@
+name: Docker LXC
+tags:
+  - 工具
+title: 在 Docker 中运行带持久化根文件系统的 LXC 容器
+description: 在 Docker 中运行带持久化根文件系统的 LXC 容器
+additionalProperties:
+  key: docker-lxc
+  name: Docker LXC
+  tags:
+    - Tool
+  shortDescZh: 在 Docker 中运行带持久化根文件系统的 LXC 容器
+  shortDescEn: Run an LXC system container with a persistent root filesystem inside Docker
+  description:
+    en: Run an LXC system container with a persistent root filesystem inside Docker
+    zh: 在 Docker 中运行带持久化根文件系统的 LXC 容器
+    zh-Hant: 在 Docker 中執行帶持久化根檔案系統的 LXC 容器
+    ja: Docker 内で永続 rootfs を持つ LXC システムコンテナを実行
+    ko: Docker 안에서 영속 rootfs 를 가진 LXC 시스템 컨테이너 실행
+    ru: Запуск системного контейнера LXC с постоянной корневой ФС внутри Docker
+    ms: Jalankan kontena sistem LXC dengan rootfs berterusan di dalam Docker
+    pt-br: Execute um contêiner de sistema LXC com rootfs persistente dentro do Docker
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://hub.docker.com/r/micwy/lxc
+  github: https://github.com/micw/docker-lxc
+  document: https://github.com/micw/docker-lxc#readme
+  architectures:
+    - amd64
