@@ -1,0 +1,32 @@
+name: MicroWARP
+tags:
+  - 工具
+title: 轻量级 Cloudflare WARP SOCKS5 代理，附带 HTTP 与定时轮换变体
+type: 工具
+description: 轻量级 Cloudflare WARP SOCKS5 代理，附带 HTTP 与定时轮换变体
+additionalProperties:
+  key: microwarp
+  name: MicroWARP
+  tags:
+    - Tool
+  shortDescZh: 轻量级 Cloudflare WARP SOCKS5 代理，附带 HTTP 与定时轮换变体
+  shortDescEn: Lightweight Cloudflare WARP SOCKS5 proxy with official, HTTP, and rotator variants
+  description:
+    en: Lightweight Cloudflare WARP SOCKS5 proxy with official, HTTP, and rotator variants
+    zh: 轻量级 Cloudflare WARP SOCKS5 代理，附带 HTTP 与定时轮换变体
+    zh-Hant: 輕量級 Cloudflare WARP SOCKS5 代理，附帶 HTTP 與定時輪換變體
+    ja: 公式版、HTTP 変種、定期ローテーション変種を備えた軽量 Cloudflare WARP SOCKS5 プロキシ
+    ko: 공식판, HTTP 변형, 주기적 로테이터 변형을 함께 제공하는 경량 Cloudflare WARP SOCKS5 프록시
+    ru: Легковесный SOCKS5-прокси Cloudflare WARP с официальным, HTTP- и rotator-вариантами
+    ms: Proksi SOCKS5 Cloudflare WARP ringan dengan varian rasmi, HTTP dan rotator
+    pt-br: Proxy SOCKS5 leve do Cloudflare WARP com variantes oficial, HTTP e rotator
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/ccbkkb/MicroWARP
+  github: https://github.com/ccbkkb/MicroWARP
+  document: https://github.com/ccbkkb/MicroWARP#readme
+  architectures:
+    - amd64
+    - arm64
