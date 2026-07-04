@@ -1,0 +1,361 @@
+#!/bin/bash
+
+export MC="-j$(nproc)"
+ERROR_CODE=0
+
+echo
+echo "============================================"
+echo "PHP version               : ${PHP_VERSION}"
+echo "Install extensions        : $1"
+echo "============================================"
+echo
+
+
+installExtensionFromTgz()
+{
+    tgzName=$1
+    result=""
+    extensionName="${tgzName%%-*}"
+    shift 1
+    result=$@
+    mkdir /tmp/data/${tgzName}
+    tar -zxvf /tmp/data/${tgzName}.tgz -C /tmp/data/${tgzName} --strip-components=1
+    ( cd /tmp/data/${tgzName} && phpize && ./configure ${result} && make ${MC} && make install )
+
+    docker-php-ext-enable ${extensionName}
+}
+
+isPhpVersionGreaterOrEqual() {
+    local PHP_MAJOR_VERSION=$(php -r "echo PHP_MAJOR_VERSION;")
+    local PHP_MINOR_VERSION=$(php -r "echo PHP_MINOR_VERSION;")
+
+    if [ "$PHP_MAJOR_VERSION" -gt "$1" ] || [ "$PHP_MAJOR_VERSION" -eq "$1" ] && [ "$PHP_MINOR_VERSION" -ge "$2" ]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+is_extension_installed() {
+    local extension=$1
+    local module_name=$2
+    local extension_dir=
+    if [ -z "$module_name" ]; then
+        module_name=$extension
+    fi
+    if php -m | grep -q "^$extension$"; then
+        echo "------ $extension is already installed ------"
+        return 0
+    fi
+    extension_dir="$(php -d display_errors=stderr -r 'echo ini_get("extension_dir");')"
+    if [ -f "${extension_dir}/${module_name}.so" ]; then
+        docker-php-ext-enable "$module_name" >/dev/null 2>&1 || true
+        if php -m | grep -q "^$extension$"; then
+            echo "------ $extension was enabled from existing module ------"
+            return 0
+        fi
+    fi
+    return 1
+}
+
+install_php_extensions() {
+     local extension=$1
+     install-php-extensions $extension
+     if is_extension_installed "$extension" "$extension"; then
+        echo "------ install-php-extensions $extension succeeded ------"
+        return 0
+     fi
+    
+     echo "------ install-php-extensions $extension failed ------"
+     ERROR_CODE=1
+     return 1
+}
+
+pecl_install() {
+    local extension=$1
+    printf "\n" | pecl install $extension
+    docker-php-ext-enable $extension
+    if is_extension_installed "$extension" "$extension"; then
+       echo "------ pecl install $extension succeeded ------"
+       return 0
+    fi
+    echo "------ pecl install $extension failed ------"
+    ERROR_CODE=1
+    return 1
+}
+
+docker_php_ext_install() {
+   local extension=$1
+   local check_name=$2
+   if [ -z "$check_name" ]; then
+       check_name=$extension
+   fi
+   docker-php-ext-install  $extension
+   if is_extension_installed "$check_name" "$extension"; then
+      echo "------ docker-php-ext-install install $extension succeeded ------"
+      return 0
+   fi
+   echo "------ docker-php-ext-install install $extension failed------"
+    ERROR_CODE=1
+    return 1
+}
+
+install_extension_default() {
+    local extension=$1
+    printf "\n" | pecl install $extension
+    if [ $? -eq 0 ]; then
+       docker-php-ext-enable $extension
+       echo "------ pecl install $extension succeeded ------"
+    else
+       echo "------ pecl install $extension failed use docker-php-ext-install------"
+       docker-php-ext-install ${MC} $extension
+       if [ $? -eq 0 ]; then
+         echo "------ docker-php-ext-install install $extension succeeded ------"
+       else
+         echo "------ docker-php-ext-install install $extension failed use install-php-extensions------"
+         install-php-extensions $extension
+         if [ $? -eq 0 ]; then
+           echo "------ install-php-extensions $extension succeeded ------"
+         else
+           echo "------ install-php-extensions $extension failed ------"
+           ERROR_CODE=1
+         fi
+       fi
+    fi
+}
+
+
+install_msg() {
+    if [ $? -eq 0 ]; then
+        echo "------ install $1 succeeded ------"
+    else
+        echo "------ install $1 failed ------"
+        ERROR_CODE=1
+    fi
+}
+
+install_memcache() {
+   printf "\n"  | pecl install memcache
+   install_msg memcache
+   docker-php-ext-enable memcache
+}
+
+install_pdo_pgsql() {
+    apt-get update && apt-get install -y libpq-dev 
+    install_msg pdo_pgsql
+    docker-php-ext-install  pdo_pgsql
+}
+
+install_pdo_mysql() {
+    docker-php-ext-install pdo_mysql
+    install_msg pdo_mysql
+}
+
+install_yaf() {
+    pecl install yaf
+    install_msg yaf
+    docker-php-ext-enable yaf
+}
+
+install_gd() {
+    apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+    cat > /usr/bin/freetype-config <<'EOF'
+#!/bin/sh
+pkg-config "$@" freetype2
+EOF
+    chmod +x /usr/bin/freetype-config
+
+    docker-php-ext-configure gd \
+        --with-freetype-dir=/usr/include/ \
+        --with-jpeg-dir=/usr/include/ \
+        --with-png-dir=/usr/include/
+    docker-php-ext-install gd
+}
+
+install_intl() {
+    apt-get update && apt-get install -y libicu-dev pkg-config
+
+    cat > /usr/local/bin/icu-config <<'EOF'
+#!/bin/sh
+case "$1" in
+    --version) pkg-config --modversion icu-i18n ;;
+    --prefix) echo /usr ;;
+    --cppflags|--cppflags-searchpath|--cflags) pkg-config --cflags icu-i18n ;;
+    --ldflags*) pkg-config --libs icu-i18n icu-io ;;
+    *) pkg-config --libs icu-i18n ;;
+esac
+EOF
+    chmod +x /usr/local/bin/icu-config
+
+    export CXXFLAGS="${CXXFLAGS:+$CXXFLAGS }-DU_USING_ICU_NAMESPACE=1"
+    docker_php_ext_install intl
+}
+
+
+install_extension() {
+    local extension=$1
+    if [ -z "$extension" ]; then
+        return
+    fi
+    if is_extension_installed "$extension"; then
+        return
+    fi
+    
+    echo "------ install extension: $extension ------"
+    
+    if [ "$extension" = "gd" ]; then
+        install_gd
+    elif [ "$extension" = "memcache" ]; then
+        install_memcache   
+    elif [ "$extension" = "yaf" ]; then
+        install_yaf   
+    elif [ "$extension" = "pdo_pgsql" ]; then
+        install_pdo_pgsql  
+    elif [ "$extension" = "pdo_mysql" ]; then
+        install_pdo_mysql
+    elif [ "$extension" = "yaml" ]; then
+        apt-get install -y libyaml-dev
+        pecl_install yaml
+    elif [ "$extension" = "mongodb" ]; then
+        apt-get install -y  libssl-dev
+        pecl_install mongodb
+    elif [ "$extension" = "mcrypt" ]; then
+        install_php_extensions mcrypt
+    elif [ "$extension" = "ssh2" ]; then
+        apt-get install -y libssh2-1-dev libssh2-1
+        pecl_install ssh2
+    elif [ "$extension" = "rdkafka" ]; then
+        apt-get install -y librdkafka-dev
+        pecl_install rdkafka 
+    elif [ "$extension" = "varnish" ]; then
+        apt-get install -y  libvarnishapi-dev
+        pecl_install varnish
+    elif [ "$extension" = "bcmath" ]; then
+        docker_php_ext_install bcmath
+    elif [ "$extension" = "pcntl" ]; then
+        docker_php_ext_install pcntl
+    elif [ "$extension" = "shmop" ]; then
+        docker_php_ext_install shmop  
+    elif [ "$extension" = "gettext" ]; then
+        docker_php_ext_install gettext
+    elif [ "$extension" = "sockets" ]; then
+        docker_php_ext_install sockets
+    elif [ "$extension" = "sysvsem" ]; then
+        docker_php_ext_install sysvsem
+    elif [ "$extension" = "sysvmsg" ]; then
+        docker_php_ext_install sysvmsg
+    elif [ "$extension" = "opcache" ]; then
+        docker_php_ext_install opcache "Zend OPcache"
+    elif [ "$extension" = "mysqli" ]; then
+        install_php_extensions mysqli
+    elif [ "$extension" = "sysvshm" ]; then
+        docker_php_ext_install sysvshm
+    elif [ "$extension" = "calendar" ]; then
+        docker_php_ext_install calendar                                   
+    elif [ "$extension" = "sodium" ]; then
+        apt-get install -y  libsodium-dev
+        docker_php_ext_install sodium
+    elif [ "$extension" = "zip" ]; then
+        apt-get update && apt-get install -y  libzip-dev zip
+        docker_php_ext_install zip    
+    elif [ "$extension" = "memcached" ]; then
+        install_php_extensions memcached 
+    elif [ "$extension" = "redis" ]; then
+        installExtensionFromTgz redis-2.2.8
+    elif [ "$extension" = "xdebug" ]; then
+        install_php_extensions xdebug
+    elif [ "$extension" = "imap" ]; then
+        install_php_extensions imap
+    elif [ "$extension" = "intl" ]; then
+        install_intl
+    elif [ "$extension" = "swoole" ]; then
+        installExtensionFromTgz swoole-2.0.11
+    elif [ "$extension" = "pgsql" ]; then
+        install_php_extensions pgsql
+    elif [ "$extension" = "curl" ]; then
+        install_php_extensions curl
+    elif [ "$extension" = "sg11" ]; then
+        install_php_extensions sourceguardian "SourceGuardian"
+    elif [ "$extension" = "snmp" ]; then
+        install_php_extensions snmp
+    elif [ "$extension" = "mbstring" ]; then
+        install_php_extensions mbstring
+    elif [ "$extension" = "pdo_firebird" ]; then
+        install_php_extensions pdo_firebird
+    elif [ "$extension" = "pdo_dblib" ]; then
+        install_php_extensions pdo_dblib
+    elif [ "$extension" = "pdo_oci" ]; then
+        install_php_extensions pdo_oci
+    elif [ "$extension" = "pdo_odbc" ]; then
+        install_php_extensions pdo_odbc
+    elif [ "$extension" = "oci8" ]; then
+        install_php_extensions oci8
+    elif [ "$extension" = "odbc" ]; then
+        install_php_extensions odbc
+    elif [ "$extension" = "soap" ]; then
+        install_php_extensions soap
+    elif [ "$extension" = "xsl" ]; then
+        install_php_extensions xsl
+    elif [ "$extension" = "xmlrpc" ]; then
+        install_php_extensions xmlrpc
+    elif [ "$extension" = "readline" ]; then
+        install_php_extensions readline
+    elif [ "$extension" = "snmp" ]; then
+        install_php_extensions snmp
+    elif [ "$extension" = "tidy" ]; then
+        install_php_extensions tidy
+    elif [ "$extension" = "gmp" ]; then
+        install_php_extensions gmp
+    elif [ "$extension" = "ldap" ]; then
+        install_php_extensions ldap
+    elif [ "$extension" = "imagick" ]; then
+        install_php_extensions imagick
+    elif [ "$extension" = "amqp" ]; then
+        install_php_extensions amqp
+    elif [ "$extension" = "zookeeper" ]; then
+        install_php_extensions zookeeper
+    elif [ "$extension" = "ionCube" ]; then
+        install_php_extensions ioncube_loader "ionCube Loader"
+    elif [ "$extension" = "pdo_sqlsrv" ]; then  
+        install_php_extensions pdo_sqlsrv
+    elif [ "$extension" = "sqlsrv" ]; then  
+        install_php_extensions sqlsrv
+    elif [ "$extension" = "enchant" ]; then  
+        install_php_extensions enchant
+    elif [ "$extension" = "pspell" ]; then  
+        install_php_extensions pspell    
+    elif [ "$extension" = "bz2" ]; then  
+        install_php_extensions bz2
+    elif [ "$extension" = "smbclient" ]; then  
+        install_php_extensions smbclient
+    elif [ "$extension" = "event" ]; then  
+        install_php_extensions event
+    elif [ "$extension" = "zmq" ]; then
+        install_php_extensions zmq             
+    else 
+        install_extension_default $extension
+    fi 
+}
+
+extension=$1
+
+if [[ $extension == *,* ]]; then
+    echo "${extension}" | tr ',' '\n' | while read -r extension; do
+        install_extension $extension
+    done
+else
+    install_extension $extension
+    if [ $ERROR_CODE -ne 0 ]; then
+        exit $ERROR_CODE
+    fi
+fi
+
+docker-php-source delete 
+
+exit 0

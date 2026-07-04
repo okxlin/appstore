@@ -1,0 +1,144 @@
+additionalProperties:
+    formFields:
+        - type: select
+          multiple: true
+          labelZh: 默认扩展
+          label:
+            en: Extensions
+            zh: 默认扩展
+            es-es: Extensiones
+            fa: 'افزونه ها'
+            zh-Hant: 擴充套件
+            ja: 拡張機能
+            ko: 확장 기능
+            ms: Sambungan
+            pt-br: Extensões
+            ru: Расширения
+            tr: Uzantılar
+          labelEn: Extensions
+          allowCreate: true
+          default: []
+          values:
+            - label: opcache
+              value: opcache
+            - label: memcached
+              value: memcached
+            - label: memcache
+              value: memcache
+            - label: redis
+              value: redis
+            - label: mcrypt
+              value: mcrypt
+            - label: xdebug
+              value: xdebug
+            - label: imap
+              value: imap
+            - label: exif
+              value: exif
+            - label: intl
+              value: intl
+            - label: swoole
+              value: swoole
+            - label: yaf
+              value: yaf
+            - label: pgsql
+              value: pgsql
+            - label: pdo_pgsql
+              value: pdo_pgsql
+            - label: snmp
+              value: snmp
+            - label: ldap
+              value: ldap
+            - label: pspell
+              value: pspell
+            - label: bz2
+              value: bz2
+            - label: sysvshm
+              value: sysvshm
+            - label: calendar
+              value: calendar
+            - label: gmp
+              value: gmp
+            - label: sysvmsg
+              value: sysvmsg
+            - label: igbinary
+              value: igbinary
+            - label: mysqli
+              value: mysqli
+            - label: pdo_mysql
+              value: pdo_mysql
+            - label: mbstring
+              value: mbstring
+            - label: gd
+              value: gd
+            - label: ioncube_loader
+              value: ioncube_loader
+            - label: curl
+              value: curl
+            - label: sg11
+              value: sg11
+            - label: imagick
+              value: imagick
+          envKey: PHP_EXTENSIONS
+        - default: 5.6.40
+          envKey: PHP_VERSION
+          labelEn: PHP Version
+          labelZh: PHP 版本
+          label:
+            en: PHP Version
+            zh: PHP 版本
+            es-es: Versión de PHP
+            fa: 'نسخه PHP'
+            zh-Hant: PHP 版本
+            ja: PHP バージョン
+            ko: PHP 버전
+            ms: Versi PHP
+            pt-br: Versão do PHP
+            ru: Версия PHP
+            tr: PHP sürümü
+          required: true
+          type: select
+          values:
+            - label: "5.6.40"
+              value: "5.6.40"
+        - default: https://mirrors.tuna.tsinghua.edu.cn
+          envKey: CONTAINER_PACKAGE_URL
+          labelEn: Package Source
+          labelZh: 扩展源
+          label:
+            en: Package Source
+            zh: 扩展源
+            es-es: Origen del paquete
+            fa: 'منبع بسته'
+            zh-Hant: 套件來源
+            ja: パッケージソース
+            ko: 패키지 소스
+            ms: Sumber pakej
+            pt-br: Fonte do pacote
+            ru: Источник пакета
+            tr: Paket kaynağı
+          required: true
+          type: select
+          values:
+            - label: "https://mirrors.tuna.tsinghua.edu.cn"
+              value: "https://mirrors.tuna.tsinghua.edu.cn"
+        - default: 9000
+          envKey: PANEL_APP_PORT_HTTP
+          labelEn: PHP-FPM Port
+          labelZh: PHP-FPM 端口
+          label:
+            en: PHP-FPM Port
+            zh: PHP-FPM 端口
+            es-es: PHP-FPM Puerto
+            fa: 'پورت PHP-FPM'
+            zh-Hant: PHP-FPM 埠
+            ja: PHP-FPM ポート
+            ko: PHP-FPM 포트
+            ms: Port PHP-FPM
+            pt-br: Porta PHP-FPM
+            ru: Порт PHP-FPM
+            tr: PHP-FPM Bağlantı Noktası
+          required: true
+          rule: paramPort
+          type: number
+        
