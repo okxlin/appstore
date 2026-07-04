@@ -14,7 +14,6 @@ services:
       - SOCKS_PASS=${SOCKS_PASS:-}
       - ENDPOINT_IP=${ENDPOINT_IP:-}
       - GH_PROXY=${GH_PROXY:-}
-      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
       - TAILSCALE_CIDR=${TAILSCALE_CIDR:-100.64.0.0/10}
       - MTU=${MTU}
       - WARP_WGCF_CONF=${WARP_WGCF_CONF:-}

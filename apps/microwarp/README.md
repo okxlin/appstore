@@ -36,7 +36,7 @@
 - `APP_DATA_DIR_1`：WireGuard 持久化目录，保存 `wg0.conf` 与 `wgcf` 注册信息
 - `SOCKS_USER` / `SOCKS_PASS`：启用 SOCKS5 认证
 - `ENDPOINT_IP`：手动覆盖 WARP Endpoint
-- `GH_PROXY` / `GITHUB_TOKEN`：辅助 `wgcf` 下载与 GitHub API 调用
+- `GH_PROXY`：辅助 `wgcf` 下载
 - `TAILSCALE_CIDR`：Tailscale 回程路由 CIDR，默认 `100.64.0.0/10`
 - `MTU`：WireGuard MTU，默认 `1280`
 - `WARP_WGCF_CONF`：可选完整 WireGuard 配置内容；也可直接将 `wg0.conf` 放入持久化目录
@@ -47,5 +47,6 @@
 - 默认使用外部网络 `1panel-network`
 - 首次启动会自动注册 WARP 设备并生成 `/etc/wireguard/wg0.conf`
 - 建议保留 `APP_DATA_DIR_1` 持久化目录，避免每次重启都重新注册
+- 官方镜像内部支持通过 GitHub token 缓解 `wgcf` 版本查询的 API 限流，但本应用默认不在 1Panel 表单中暴露该参数，优先保持默认安装简洁稳定
 - 如果设置了 `WARP_WGCF_CONF`，`rotator-*` 版本会自动关闭定时轮换，因为该配置已固定出口身份
 - `rotator-*` 版本的轮换逻辑是完整重建 WARP 身份，而不是调用上游并不存在的 rotate API
