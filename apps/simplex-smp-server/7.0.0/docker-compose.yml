@@ -5,55 +5,7 @@ services:
     environment:
       - ADDR=${ADDR}
       - PASS=${PASS}
-    entrypoint:
-      - /bin/sh
-      - -lc
-      - |
-        set -e
-        confd=/etc/opt/simplex
-        if [ ! -f "$$confd/smp-server.ini" ]; then
-          case "$${ADDR}" in
-            '')
-              printf 'Please specify $ADDR environment variable.\n'
-              exit 1
-              ;;
-            *[a-zA-Z]*)
-              case "$${ADDR}" in
-                *:*)
-                  set -- --ip "$${ADDR}"
-                  ;;
-                *.*)
-                  ADDR_BASE="$(printf '%s' "$${ADDR}" | awk -F. '{print $$(NF-1)"."$$NF}')"
-                  set -- --fqdn "$${ADDR}" --own-domains="$$ADDR_BASE"
-                  ;;
-                *)
-                  printf 'Incorrect $ADDR environment variable. Please specify a domain or IP.\n'
-                  exit 1
-                  ;;
-              esac
-              ;;
-            *)
-              set -- --ip "$${ADDR}"
-              ;;
-          esac
-          if [ -n "$${PASS}" ]; then
-            set -- "$@" --password "$${PASS}"
-          else
-            set -- "$@" --no-password
-          fi
-          smp-server init --yes --store-log --daily-stats --source-code "$@" >/dev/null
-          sed -i \
-            -e 's|^# http = 8000|http = 8000|' \
-            -e 's|^https = 443|#https = 443|' \
-            -e 's|^cert = /etc/opt/simplex/web.crt|#cert = /etc/opt/simplex/web.crt|' \
-            -e 's|^key = /etc/opt/simplex/web.key|#key = /etc/opt/simplex/web.key|' \
-            -e 's|^port = .*|port = 5223|' \
-            "$$confd/smp-server.ini"
-        fi
-        DOCKER=true /usr/local/bin/simplex-servers-stopscript smp-server
-        exec smp-server start +RTS -N -RTS
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8000"
       - "${PANEL_APP_PORT_SMP}:5223"
     volumes:
       - "${APP_CONFIG_DIR}:/etc/opt/simplex"
@@ -62,7 +14,7 @@ services:
       test:
         - CMD-SHELL
         - >-
-          bash -lc 'exec 3<>/dev/tcp/127.0.0.1/8000; printf "GET / HTTP/1.0\r\nHost: 127.0.0.1\r\n\r\n" >&3; head -n 1 <&3 | grep "200 OK" >/dev/null'
+          bash -lc 'exec 3<>/dev/tcp/127.0.0.1/5223; exec 3>&-; exec 3<&-'
     labels:
       createdBy: Apps
     networks:

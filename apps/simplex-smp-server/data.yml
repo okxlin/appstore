@@ -11,14 +11,14 @@ additionalProperties:
   shortDescZh: SimpleX 自托管 SMP 中继服务
   shortDescEn: Self-hosted SimpleX SMP relay server
   description:
-    en: Self-hosted SimpleX SMP relay server with an embedded server information page.
-    zh: SimpleX 自托管 SMP 中继服务，附带嵌入式服务器信息页。
-    zh-Hant: SimpleX 自託管 SMP 中繼服務，附帶內建伺服器資訊頁。
-    ja: 組み込みサーバー情報ページ付きの SimpleX 自己ホスト SMP リレーサーバーです。
-    ko: 내장 서버 정보 페이지를 제공하는 SimpleX 자체 호스팅 SMP 릴레이 서버입니다.
-    ru: Самостоятельно размещаемый SMP-релейный сервер SimpleX со встроенной информационной страницей.
-    ms: Pelayan geganti SMP SimpleX yang dihoskan sendiri dengan halaman maklumat pelayan terbina dalam.
-    pt-br: Servidor de relay SMP do SimpleX com auto-hospedagem e pagina integrada de informacoes do servidor.
+    en: Self-hosted SimpleX SMP relay server with auto-generated certificates and configuration.
+    zh: SimpleX 自托管 SMP 中继服务，自动生成证书与配置。
+    zh-Hant: SimpleX 自託管 SMP 中繼服務，自動產生憑證與設定。
+    ja: 証明書と設定を自動生成する SimpleX 自己ホスト SMP リレーサーバーです。
+    ko: 인증서와 구성을 자동 생성하는 SimpleX 자체 호스팅 SMP 릴레이 서버입니다.
+    ru: Самостоятельно размещаемый SMP-релейный сервер SimpleX с автоматическим созданием сертификатов и конфигурации.
+    ms: Pelayan geganti SMP SimpleX yang dihoskan sendiri dengan penjanaan sijil dan konfigurasi secara automatik.
+    pt-br: Servidor de relay SMP do SimpleX com auto-hospedagem e geracao automatica de certificados e configuracao.
   type: tool
   crossVersionUpdate: true
   limit: 0
