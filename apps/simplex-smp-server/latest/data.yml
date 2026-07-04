@@ -1,22 +1,5 @@
 additionalProperties:
   formFields:
-    - default: 8000
-      edit: true
-      envKey: PANEL_APP_PORT_HTTP
-      labelEn: Info Page Port
-      labelZh: 信息页端口
-      label:
-        en: Info Page Port
-        zh: 信息页端口
-        zh-Hant: 資訊頁埠
-        ja: 情報ページポート
-        ko: 정보 페이지 포트
-        ru: Порт страницы информации
-        ms: Port Halaman Maklumat
-        pt-br: Porta da Pagina de Informacoes
-      required: true
-      rule: paramPort
-      type: number
     - default: 5223
       edit: true
       envKey: PANEL_APP_PORT_SMP
