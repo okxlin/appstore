@@ -87,6 +87,7 @@ atvloadly
 rembg
 cashbook
 autobangumi
+azahar-linuxserver
 pterodactyl-china
 beszel
 beszel-agent
