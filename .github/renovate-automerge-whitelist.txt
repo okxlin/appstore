@@ -1,3 +1,11 @@
+# Renovate automerge whitelist for localApps.
+# Admission policy:
+# - Prefer single-service apps whose compose shape has stayed stable across recent store versions.
+# - Require recent Renovate/app-version updates to be image-only in practice; avoid apps that recently needed maintainer runtime/package repair.
+# - Multi-service apps stay out by default; use renovate-primary-services.json plus tested maintainer review instead.
+# - Host network / privileged / device-heavy apps need stronger manual review before being added.
+# See .github/renovate-automerge-whitelist-policy.md and
+# .github/scripts/renovate_whitelist_audit.py for the maintainer workflow.
 upsnap
 code-server
 zeroclaw
