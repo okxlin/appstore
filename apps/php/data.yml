@@ -1,0 +1,38 @@
+name: PHP
+tags:
+  - 运行环境
+title: PHP-FPM 运行环境
+description: 用于 1Panel 网站的 PHP-FPM 运行环境
+additionalProperties:
+  key: php
+  name: PHP
+  tags:
+    - Runtime
+  shortDescZh: 1Panel 网站 PHP-FPM 运行环境
+  shortDescEn: PHP-FPM runtime for 1Panel websites
+  description:
+    en: PHP-FPM runtime for 1Panel websites
+    zh: 用于 1Panel 网站的 PHP-FPM 运行环境
+    es-es: Entorno PHP-FPM para sitios web de 1Panel
+    fa: 'محیط اجرای PHP-FPM برای وب‌سایت‌های 1Panel'
+    zh-Hant: 用於 1Panel 網站的 PHP-FPM 執行環境
+    ja: 1Panel Web サイト向け PHP-FPM 実行環境
+    ko: 1Panel 웹사이트용 PHP-FPM 실행 환경
+    ms: Persekitaran masa jalan PHP-FPM untuk laman web 1Panel
+    pt-br: Ambiente PHP-FPM para sites do 1Panel
+    ru: Среда выполнения PHP-FPM для веб-сайтов 1Panel
+    tr: 1Panel web siteleri icin PHP-FPM calisma ortami
+  type: php
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 1000
+  website: https://www.php.net/
+  github: https://github.com/php/php-src
+  document: https://www.php.net/docs.php
+  version: 2.0
+  architectures:
+    - amd64
+    - arm64
+    - arm/v7
+    - s390x
+    - ppc64le
