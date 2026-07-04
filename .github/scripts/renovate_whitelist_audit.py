@@ -116,13 +116,12 @@ def audit_app(repo_root: Path, app: str) -> dict:
     if result["special_flags"]:
         result["notes"].append("special runtime/network privileges present")
     if result["nontrivial_upgrade"]:
-        result["notes"].append("non-trivial upgrade migration present")
+        result["notes"].append("non-trivial upgrade migration present (advisory)")
 
     result["eligible_by_heuristic"] = (
         result["max_services"] == 1
         and result["compose_shape_stable"] is True
         and not result["special_flags"]
-        and not result["nontrivial_upgrade"]
     )
     if result["eligible_by_heuristic"]:
         result["notes"].append("single-service stable candidate")
