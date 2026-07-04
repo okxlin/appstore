@@ -19,7 +19,7 @@ Add an app to `.github/renovate-automerge-whitelist.txt` only when all of the fo
 - Single-service apps first.
 - Stable upstream deployment pattern first.
 - No special runtime privileges first.
-- Trivial `upgrade.sh` first.
+- Trivial `upgrade.sh` first, but do not reject a legacy stable app only because `upgrade.sh` is non-empty.
 
 ## Manual caution flags
 
@@ -29,7 +29,7 @@ These do not always block admission, but they should slow us down:
 - `network_mode: host`
 - `runtime: nvidia`
 - `devices`, `cap_add`, `pid: host`, `ipc: host`
-- Non-trivial `scripts/upgrade.sh`
+- Non-trivial `scripts/upgrade.sh` is advisory only; by itself it does not block a stable single-service app
 - Frequent maintainer follow-up commits after Renovate bumps
 
 ## Multi-service apps
@@ -61,3 +61,5 @@ python3 .github/scripts/renovate_whitelist_audit.py \
 ```
 
 The helper is heuristic only. It audits current store packaging, not upstream release intent, so a human still needs to confirm that the upstream compose/deployment pattern is stable enough for automerge.
+
+In particular, the helper reports non-trivial `upgrade.sh` as a caution signal, not a hard failure. For older stable apps, a non-empty upgrade script often reflects migration history rather than ongoing automerge risk.
