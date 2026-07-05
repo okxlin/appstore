@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+    - default: 13080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon masa
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data/media
+      edit: true
+      envKey: MEDIA_PATH
+      labelEn: Media Directory
+      labelZh: 媒体目录
+      label:
+        en: Media Directory
+        zh: 媒体目录
+        zh-Hant: 媒體目錄
+        ja: メディアディレクトリ
+        ko: 미디어 디렉터리
+        ru: Каталог медиа
+        ms: Direktori media
+        pt-br: Diretorio de midia
+      required: true
+      type: text
+    - default: ./data/state
+      edit: true
+      envKey: STATE_PATH
+      labelEn: State Directory
+      labelZh: 状态目录
+      label:
+        en: State Directory
+        zh: 状态目录
+        zh-Hant: 狀態目錄
+        ja: 状態ディレクトリ
+        ko: 상태 디렉터리
+        ru: Каталог состояния
+        ms: Direktori status
+        pt-br: Diretorio de estado
+      required: true
+      type: text

@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/nascab/nascab-releases",
+  "dockerDocs": "https://www.nascab.cn/docker.html",
+  "composeFile": "https://www.nascab.cn/docker.html"
+}

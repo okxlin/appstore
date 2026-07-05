@@ -1,0 +1,33 @@
+name: NasCab
+tags:
+  - 存储
+  - 工具
+title: 轻量自托管文件、照片、电影、音乐与图书管理平台
+description: 轻量自托管文件、照片、电影、音乐与图书管理平台
+additionalProperties:
+  key: nascab
+  name: NasCab
+  tags:
+    - Storage
+    - Tool
+  shortDescZh: 轻量自托管文件、照片、电影、音乐与图书管理平台
+  shortDescEn: Lightweight self-hosted platform for managing files, photos, movies, music, and books
+  description:
+    en: Lightweight self-hosted platform for managing files, photos, movies, music, and books.
+    zh: 轻量自托管文件、照片、电影、音乐与图书管理平台。
+    zh-Hant: 輕量自託管檔案、照片、電影、音樂與圖書管理平台。
+    ja: ファイル、写真、映画、音楽、書籍を管理できる軽量なセルフホスト型プラットフォームです。
+    ko: 파일, 사진, 영화, 음악, 도서를 관리할 수 있는 경량 셀프호스팅 플랫폼입니다.
+    ru: Легкая self-hosted платформа для управления файлами, фотографиями, фильмами, музыкой и книгами.
+    ms: Platform kendiri ringan untuk mengurus fail, foto, filem, muzik dan buku.
+    pt-br: Plataforma leve auto-hospedada para gerenciar arquivos, fotos, filmes, musicas e livros.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.nascab.cn/
+  github: https://github.com/nascab/nascab-releases
+  document: https://www.nascab.cn/docker.html
+  architectures:
+    - amd64
+    - arm64
