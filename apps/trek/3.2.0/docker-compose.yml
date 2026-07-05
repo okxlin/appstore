@@ -1,6 +1,6 @@
 services:
   trek:
-    image: "mauriceboe/trek:3.1.4"
+    image: "mauriceboe/trek:3.2.0"
     container_name: ${CONTAINER_NAME}
     read_only: true
     security_opt:
