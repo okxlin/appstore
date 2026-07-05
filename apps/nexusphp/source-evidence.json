@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/xiaomlove/nexusphp",
+  "dockerDocs": "https://doc.nexusphp.org/installation_docker.html",
+  "composeFile": "https://github.com/xiaomlove/nexusphp/blob/php8/docker-compose.yml",
+  "imageRepository": "https://hub.docker.com/r/xiaomlove/nexusphp",
+  "release": "https://github.com/xiaomlove/nexusphp/releases/tag/v1.10.2",
+  "onePanelDocs": "https://doc.nexusphp.org/installation_1panel.html",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2901",
+    "The official php8 branch is active and the latest upstream release is v1.10.2.",
+    "The owner-maintained Docker Hub image xiaomlove/nexusphp only publishes a latest tag and currently only exposes an amd64 manifest.",
+    "Upstream image startup downloads the latest or TAG-selected NexusPHP release and runs composer install on boot; this adaptation replaces that behavior with a fixed release bootstrap to avoid accidental upgrades when the container is recreated.",
+    "The image embeds MySQL, Redis, Nginx, PHP-FPM, cron, and supervisor in one container, so this package cannot reuse 1Panel appstore MySQL or Redis runtimes."
+  ]
+}

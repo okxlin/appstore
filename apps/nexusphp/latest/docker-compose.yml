@@ -1,0 +1,39 @@
+services:
+  nexusphp:
+    image: "${APP_IMAGE}"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    entrypoint:
+      - /bin/bash
+      - /opt/nexusphp-scripts/nexusphp-entrypoint.sh
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - TZ=${TZ}
+      - DOMAIN=${DOMAIN}
+      - APP_RELEASE_VERSION=${APP_RELEASE_VERSION}
+    volumes:
+      - "${APP_DATA_DIR}/app:/nexusphp"
+      - "nexusphp-mysql:/var/lib/mysql"
+      - "nexusphp-redis:/var/lib/redis"
+      - "${APP_DATA_DIR}/logs:/tmp/nexus"
+      - "${APP_DATA_DIR}/backup:/tmp/nexusphp_backup"
+      - "./scripts:/opt/nexusphp-scripts:ro"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 180s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+
+volumes:
+  nexusphp-mysql:
+  nexusphp-redis:

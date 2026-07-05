@@ -1,0 +1,30 @@
+name: NexusPHP
+tags:
+  - Website
+title: 基于 NexusPHP 和 Laravel 的私有 PT 站点建站平台
+description: 基于 NexusPHP 和 Laravel 的私有 PT 站点建站平台
+additionalProperties:
+  key: nexusphp
+  name: NexusPHP
+  tags:
+    - Website
+  shortDescZh: 基于 NexusPHP 和 Laravel 的私有 PT 站点建站平台
+  shortDescEn: Private tracker site platform based on NexusPHP and Laravel
+  description:
+    en: Private tracker site platform based on NexusPHP and Laravel.
+    zh: 基于 NexusPHP 和 Laravel 的私有 PT 站点建站平台。
+    zh-Hant: 基於 NexusPHP 和 Laravel 的私有 PT 站點建站平台。
+    ja: NexusPHP と Laravel をベースにしたプライベートトラッカーサイト構築プラットフォームです。
+    ko: NexusPHP 와 Laravel 기반의 프라이빗 트래커 사이트 구축 플랫폼입니다.
+    ru: Платформа для приватного трекер-сайта на базе NexusPHP и Laravel.
+    ms: Platform laman private tracker berasaskan NexusPHP dan Laravel.
+    pt-br: Plataforma de site private tracker baseada em NexusPHP e Laravel.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://nexusphp.org/
+  github: https://github.com/xiaomlove/nexusphp
+  document: https://doc.nexusphp.org/installation_docker.html
+  architectures:
+    - amd64
