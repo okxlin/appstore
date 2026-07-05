@@ -93,7 +93,18 @@ patch_env_example() {
   sed -i "s|^TIMEZONE=.*|TIMEZONE=${TZ:-PRC}|" "${ROOT_PATH}/.env.example"
 }
 
+ensure_cron_jobs() {
+  local schedule_job="* * * * * www-data cd ${ROOT_PATH} && php artisan schedule:run >> ${LOG_DIR}/nexus_schedule.log"
+  local cleanup_job="* * * * * www-data cd ${ROOT_PATH} && php include/cleanup_cli.php >> ${LOG_DIR}/nexus_cleanup.log"
+  local prune_logs_job="0 3 * * * www-data find ${LOG_DIR} -mtime +3 |xargs rm -rf"
+
+  grep -Fqx "$schedule_job" /etc/crontab || echo "$schedule_job" >> /etc/crontab
+  grep -Fqx "$cleanup_job" /etc/crontab || echo "$cleanup_job" >> /etc/crontab
+  grep -Fqx "$prune_logs_job" /etc/crontab || echo "$prune_logs_job" >> /etc/crontab
+}
+
 start_runtime() {
+  ensure_cron_jobs
   run_service redis-server
   run_service php8.2-fpm
   run_service nginx
