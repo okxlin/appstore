@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   syslog-ng:
-    image: "linuxserver/syslog-ng:4.10.2"
+    image: "linuxserver/syslog-ng:4.11.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
