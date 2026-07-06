@@ -1,6 +1,6 @@
 services:
   roundcube:
-    image: "roundcube/roundcubemail:1.7.1-apache-nonroot"
+    image: "roundcube/roundcubemail:1.7.2-apache-nonroot"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
