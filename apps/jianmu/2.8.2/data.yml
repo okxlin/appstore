@@ -34,21 +34,43 @@ additionalProperties:
       required: true
       type: text
     - default: mysql
-      edit: true
-      envKey: PANEL_DB_HOST
-      labelEn: Database Host or App Name
-      labelZh: 数据库主机或应用名
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
       label:
-        en: Database Host or App Name
-        zh: 数据库主机或应用名
-        zh-Hant: 數據庫主機或應用名
-        ja: データベースホストまたはアプリ名
-        ko: 데이터베이스 호스트 또는 앱 이름
-        ru: Хост базы данных или имя приложения
-        ms: Hos pangkalan data atau nama aplikasi
-        pt-br: Host do banco de dados ou nome do aplicativo
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 數據庫服務
+        ja: データベースサービス
+        ko: 데이터베이스 서비스
+        ru: Сервис базы данных
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
       required: true
-      type: text
+      type: apps
+      values:
+        - label: "MySQL"
+          value: mysql
+        - label: "LocalMySQL"
+          value: localmysql
+        - label: "MariaDB"
+          value: mariadb
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: Database Service
+        labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 數據庫服務
+          ja: データベースサービス
+          ko: 데이터베이스 서비스
+          ru: Сервис базы данных
+          ms: Perkhidmatan Pangkalan Data
+          pt-br: Serviço de Banco de Dados
+        required: true
+        type: service
     - default: 3306
       edit: true
       envKey: PANEL_DB_PORT
