@@ -36,7 +36,7 @@ services:
       createdBy: "Apps"
 
   overleaf-mongo:
-    image: "mongo:8.0"
+    image: "mongo:8.3"
     container_name: ${CONTAINER_NAME}-mongo
     restart: always
     command: --replSet overleaf
