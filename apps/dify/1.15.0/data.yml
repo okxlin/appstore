@@ -51,6 +51,22 @@ additionalProperties:
       type: text
     - default: ""
       edit: true
+      envKey: PUBLIC_BASE_URL
+      labelEn: Public Base URL
+      labelZh: 公网基础 URL
+      label:
+        en: Public Base URL
+        zh: 公网基础 URL
+        zh-Hant: 公網基礎 URL
+        ja: 公開ベースURL
+        ko: 공용 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base pública
+      required: false
+      type: text
+    - default: ""
+      edit: true
       envKey: INIT_PASSWORD
       labelEn: Initial Admin Password
       labelZh: 初始化管理员密码
@@ -67,6 +83,27 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: "false"
+      edit: true
+      envKey: ENABLE_COLLABORATION_MODE
+      labelEn: Collaboration Mode
+      labelZh: 协作模式
+      label:
+        en: Collaboration Mode
+        zh: 协作模式
+        zh-Hant: 協作模式
+        ja: コラボレーションモード
+        ko: 협업 모드
+        ru: Режим совместной работы
+        ms: Mod kolaborasi
+        pt-br: Modo de colaboração
+      required: true
+      type: select
+      values:
+        - label: Disabled
+          value: "false"
+        - label: Enabled
+          value: "true"
     - child:
         default: ""
         envKey: PANEL_DB_HOST
@@ -288,6 +325,24 @@ additionalProperties:
         ru: Внутренний API-ключ Plugin
         ms: Kunci API dalaman Plugin
         pt-br: Chave interna da API do Plugin
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: WEAVIATE_API_KEY
+      labelEn: Weaviate API Key
+      labelZh: Weaviate API 密钥
+      label:
+        en: Weaviate API Key
+        zh: Weaviate API 密钥
+        zh-Hant: Weaviate API 金鑰
+        ja: Weaviate APIキー
+        ko: Weaviate API 키
+        ru: API-ключ Weaviate
+        ms: Kunci API Weaviate
+        pt-br: Chave da API do Weaviate
       random: true
       required: true
       rule: paramComplexity

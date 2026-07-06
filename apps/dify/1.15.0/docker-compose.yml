@@ -26,7 +26,7 @@ services:
       createdBy: "Apps"
     restart: always
     env_file: &dify-env
-      - path: ./.env.sample
+      - path: ./dify.env
         required: true
       - path: ${CUSTOM_ENV_FILE}
         required: false
@@ -46,10 +46,7 @@ services:
       - INNER_API_KEY_FOR_PLUGIN=${PLUGIN_DIFY_INNER_API_KEY}
       - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
       - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
-      - PLUGIN_REMOTE_INSTALL_HOST=localhost
       - PLUGIN_REMOTE_INSTALL_PORT=5003
-      - PLUGIN_MAX_PACKAGE_SIZE=52428800
-      - PLUGIN_DAEMON_TIMEOUT=600.0
       - SENTRY_DSN=
       - SENTRY_TRACES_SAMPLE_RATE=1.0
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
@@ -194,27 +191,9 @@ services:
       - SERVER_CONSOLE_API_URL=http://api:5001
       - APP_API_URL=
       - AMPLITUDE_API_KEY=
-      - NEXT_PUBLIC_COOKIE_DOMAIN=
-      - NEXT_PUBLIC_SOCKET_URL=ws://localhost
       - SENTRY_DSN=
-      - NEXT_TELEMETRY_DISABLED=0
-      - EXPERIMENTAL_ENABLE_VINEXT=false
-      - TEXT_GENERATION_TIMEOUT_MS=60000
-      - CSP_WHITELIST=
-      - ALLOW_EMBED=false
-      - ALLOW_UNSAFE_DATA_SCHEME=false
       - MARKETPLACE_API_URL=https://marketplace.dify.ai
       - MARKETPLACE_URL=https://marketplace.dify.ai
-      - TOP_K_MAX_VALUE=10
-      - INDEXING_MAX_SEGMENTATION_TOKENS_LENGTH=4000
-      - LOOP_NODE_MAX_COUNT=100
-      - MAX_TOOLS_NUM=10
-      - MAX_PARALLEL_LIMIT=10
-      - MAX_ITERATIONS_NUM=99
-      - MAX_TREE_DEPTH=50
-      - ENABLE_WEBSITE_JINAREADER=true
-      - ENABLE_WEBSITE_FIRECRAWL=true
-      - ENABLE_WEBSITE_WATERCRAWL=true
     networks:
       - default
 
@@ -402,10 +381,10 @@ services:
       - DEFAULT_VECTORIZER_MODULE=none
       - CLUSTER_HOSTNAME=node1
       - AUTHENTICATION_APIKEY_ENABLED=true
-      - AUTHENTICATION_APIKEY_ALLOWED_KEYS=WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
-      - AUTHENTICATION_APIKEY_USERS=hello@dify.ai
+      - AUTHENTICATION_APIKEY_ALLOWED_KEYS=${WEAVIATE_API_KEY}
+      - AUTHENTICATION_APIKEY_USERS=dify@local
       - AUTHORIZATION_ADMINLIST_ENABLED=true
-      - AUTHORIZATION_ADMINLIST_USERS=hello@dify.ai
+      - AUTHORIZATION_ADMINLIST_USERS=dify@local
       - DISABLE_TELEMETRY=false
       - ENABLE_TOKENIZER_GSE=false
       - ENABLE_TOKENIZER_KAGOME_JA=false
