@@ -212,6 +212,7 @@ qbittorrent-vnc
 qiandao
 rathole
 resilio-sync
+roundcube
 rss-reader
 rss-to-telegram-bot
 samba
@@ -314,6 +315,7 @@ pyload-ng-linuxserver
 qbittorrent-linuxserver
 raneto-linuxserver
 rsnapshot-linuxserver
+rustdesk-linuxserver
 sabnzbd-linuxserver
 series-troxide-linuxserver
 sickgear-linuxserver
