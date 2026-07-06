@@ -44,7 +44,7 @@ services:
       createdBy: "Apps"
 
   nginx:
-    image: "nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+    image: "nginx:1.31-alpine@sha256:54f2a904c251d5a34adf545a72d32515a15e08418dae0266e23be2e18c66fefa"
     container_name: ${CONTAINER_NAME}-nginx
     restart: always
     depends_on:

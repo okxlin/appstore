@@ -35,7 +35,7 @@ services:
       createdBy: "Apps"
 
   jianmu-worker:
-    image: "docker.jianmuhub.com/jianmu/jianmu-worker-docker:v1.0.13@sha256:44e57f3263569ae1ab177a7c1053d04e518482b2ba658c6001db9ee96e523529"
+    image: "docker.jianmuhub.com/jianmu/jianmu-worker-docker:v1.0.14@sha256:bcb45def4af7133b0c5b7a49fa36158c6d8a71e8fbcb1806b179e7b954f7b5af"
     container_name: ${CONTAINER_NAME}-worker
     restart: always
     depends_on:
