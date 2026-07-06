@@ -1,0 +1,31 @@
+name: Jianmu
+tags:
+  - DevOps
+title: 开源 DevOps 无代码 / 低代码工作流平台
+description: 开源 DevOps 无代码 / 低代码工作流平台
+additionalProperties:
+  key: jianmu
+  name: Jianmu
+  tags:
+    - DevOps
+  shortDescZh: 开源 DevOps 无代码 / 低代码工作流平台
+  shortDescEn: Open source no-code and low-code DevOps workflow platform
+  description:
+    en: Open source no-code and low-code DevOps workflow platform.
+    zh: 开源 DevOps 无代码 / 低代码工作流平台。
+    zh-Hant: 開源 DevOps 無代碼 / 低代碼工作流平台。
+    ja: オープンソースの DevOps ノーコード / ローコード ワークフロープラットフォームです。
+    ko: 오픈소스 DevOps 노코드 및 로우코드 워크플로 플랫폼입니다.
+    ru: Открытая no-code / low-code платформа DevOps-воркфлоу.
+    ms: Platform aliran kerja DevOps no-code dan low-code sumber terbuka.
+    pt-br: Plataforma open source de fluxo de trabalho DevOps no-code e low-code.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://jianmu.dev
+  github: https://github.com/jianmu-dev/jianmu
+  document: https://docs.jianmu.dev
+  architectures:
+    - amd64
+    - arm64

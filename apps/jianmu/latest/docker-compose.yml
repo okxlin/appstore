@@ -1,0 +1,86 @@
+services:
+  jianmu-server:
+    image: "docker.jianmuhub.com/jianmu/jianmu-server:v2.8.2@sha256:b835c4117c268c3417dc985ef57c0253de84033f904bacf9ee0ad25088699a3c"
+    container_name: ${CONTAINER_NAME}-server
+    restart: always
+    entrypoint:
+      - /usr/bin/bash
+      - -lc
+      - exec wait-for-it.sh "${PANEL_DB_HOST}:${PANEL_DB_PORT}" -t 0 -- java -Duser.timezone="${TZ}" -jar /home/jianmu/jianmu-server.jar
+    environment:
+      - TZ=${TZ}
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:mysql://${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=${PANEL_DB_USER}
+      - SPRING_DATASOURCE_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - JIANMU_WORKER_SECRET=${JIANMU_WORKER_SECRET}
+      - JIANMU_API_ADMINPASSWD=${JIANMU_API_ADMINPASSWD}
+      - JIANMU_API_JWTSECRET=${JIANMU_API_JWTSECRET}
+    volumes:
+      - "${APP_DATA_DIR}/server-data:/home/jianmu/data"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://127.0.0.1:8081/v3/api-docs >/dev/null || curl -fsS http://127.0.0.1:8081/auth/login >/dev/null
+      interval: 20s
+      timeout: 10s
+      retries: 15
+      start_period: 120s
+    networks:
+      1panel-network:
+      jianmu-network:
+        aliases:
+          - ci-server
+    labels:
+      createdBy: "Apps"
+
+  jianmu-worker:
+    image: "docker.jianmuhub.com/jianmu/jianmu-worker-docker:v1.0.13@sha256:44e57f3263569ae1ab177a7c1053d04e518482b2ba658c6001db9ee96e523529"
+    container_name: ${CONTAINER_NAME}-worker
+    restart: always
+    depends_on:
+      jianmu-server:
+        condition: service_healthy
+    environment:
+      - TZ=${TZ}
+      - JIANMU_SRV_ADDRESS=http://jianmu-server:8081
+      - JIANMU_SRV_SECRET=${JIANMU_WORKER_SECRET}
+      - JIANMU_WORKER_ID=${JIANMU_WORKER_ID}
+      - JIANMU_WORKER_CAPACITY=${JIANMU_WORKER_CAPACITY}
+    volumes:
+      - "${DOCKER_SOCK_PATH}:/var/run/docker.sock"
+    networks:
+      - jianmu-network
+    labels:
+      createdBy: "Apps"
+
+  jianmu-web:
+    image: "docker.jianmuhub.com/jianmu/jianmu-ui:v2.8.2@sha256:cde848330e4105923d05c23ea1608f4c1ba686b3679348ff413b55d26317536b"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      jianmu-server:
+        condition: service_healthy
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - TZ=${TZ}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q -O /dev/null http://127.0.0.1/
+      interval: 20s
+      timeout: 10s
+      retries: 12
+      start_period: 30s
+    networks:
+      - 1panel-network
+      - jianmu-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  jianmu-network:
+    driver: bridge
