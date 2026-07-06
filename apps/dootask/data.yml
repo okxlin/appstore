@@ -1,0 +1,32 @@
+name: DooTask
+tags:
+  - 项目管理
+title: 开源团队协作与任务管理平台
+description: 开源团队协作与任务管理平台
+additionalProperties:
+  key: dootask
+  name: DooTask
+  tags:
+    - Project
+    - Collaboration
+  shortDescZh: 开源团队协作与任务管理平台
+  shortDescEn: Open source team collaboration and task management platform
+  description:
+    en: Open source team collaboration and task management platform.
+    zh: 开源团队协作与任务管理平台。
+    zh-Hant: 開源團隊協作與任務管理平台。
+    ja: オープンソースのチームコラボレーションおよびタスク管理プラットフォームです。
+    ko: 오픈 소스 팀 협업 및 작업 관리 플랫폼입니다.
+    ru: Платформа с открытым исходным кодом для командной работы и управления задачами.
+    ms: Platform kerjasama pasukan dan pengurusan tugas sumber terbuka.
+    pt-br: Plataforma de colaboracao em equipe e gerenciamento de tarefas de codigo aberto.
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 0
+  website: https://www.dootask.com/
+  github: https://github.com/kuaifan/dootask
+  document: https://github.com/kuaifan/dootask/blob/pro/README.md
+  architectures:
+    - amd64
+    - arm64

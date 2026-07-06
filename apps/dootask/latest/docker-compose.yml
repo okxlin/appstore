@@ -1,0 +1,74 @@
+services:
+  dootask:
+    image: "kuaifan/php:swoole-8.4@sha256:4f69395d5b8a72256338aa6042a6caaaf598bb5cc0b4ab30a84ef9cc4c5e61e2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    entrypoint:
+      - /bin/bash
+      - /opt/dootask-scripts/dootask-entrypoint.sh
+    environment:
+      - PANEL_APP_PORT_HTTP=${PANEL_APP_PORT_HTTP}
+      - TIMEZONE=${TIMEZONE}
+      - PANEL_DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - PANEL_DB_NAME=${PANEL_DB_NAME}
+      - PANEL_DB_USER=${PANEL_DB_USER}
+      - PANEL_DB_USER_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_PREFIX=${DB_PREFIX}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - PANEL_REDIS_ROOT_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_DB=${REDIS_DB}
+      - DOOTASK_ADMIN_EMAIL=${DOOTASK_ADMIN_EMAIL}
+      - DOOTASK_ADMIN_PASSWORD=${DOOTASK_ADMIN_PASSWORD}
+      - DOOTASK_ADMIN_NICKNAME=${DOOTASK_ADMIN_NICKNAME}
+    volumes:
+      - "${APP_DATA_DIR}/app:/var/www"
+      - "${APP_DATA_DIR}/logs/supervisor:/var/log/supervisor"
+      - "./scripts:/opt/dootask-scripts:ro"
+      - "./scripts/dootask-supervisor-php.conf:/etc/supervisor/conf.d/dootask-php.conf:ro"
+      - "./scripts/dootask-supervisor-license.conf:/etc/supervisor/conf.d/dootask-license.conf:ro"
+      - "./scripts/dootask-supervisor-cron.conf:/etc/supervisor/conf.d/dootask-cron.conf:ro"
+      - "./scripts/dootask-php.ini:/usr/local/etc/php/php.ini:ro"
+    working_dir: /var/www
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:20000/health | grep -q '^ok$'"]
+      interval: 20s
+      timeout: 10s
+      retries: 12
+      start_period: 180s
+    networks:
+      - 1panel-network
+      - dootask-network
+    labels:
+      createdBy: "Apps"
+
+  nginx:
+    image: "nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+    container_name: ${CONTAINER_NAME}-nginx
+    restart: always
+    depends_on:
+      dootask:
+        condition: service_healthy
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${APP_DATA_DIR}/app:/var/www:ro"
+      - "./scripts/dootask-nginx.conf:/etc/nginx/conf.d/default.conf:ro"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1/health | grep -q '^ok$'"]
+      interval: 20s
+      timeout: 10s
+      retries: 12
+      start_period: 60s
+    networks:
+      - 1panel-network
+      - dootask-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  dootask-network:
+    driver: bridge

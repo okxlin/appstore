@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/kuaifan/dootask",
+  "dockerDocs": "https://github.com/kuaifan/dootask/blob/pro/README.md#deploy-project",
+  "composeFile": "https://github.com/kuaifan/dootask/blob/v1.8.64/docker-compose.yml",
+  "release": "https://github.com/kuaifan/dootask/releases/tag/v1.8.64",
+  "website": "https://www.dootask.com/",
+  "imageRepository": "https://hub.docker.com/r/kuaifan/php",
+  "vendorAsset": "https://github.com/kuaifan/dootask/releases/download/v1.8.64/vendor.tar.gz",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2744",
+    "Verified on 2026-07-06 that the latest upstream release is v1.8.64, published on 2026-07-02.",
+    "The official upstream compose bundles php, nginx, redis, mariadb, and an optional appstore sidecar.",
+    "This adaptation keeps the official php plus nginx topology, targets an externally reachable MySQL service through 1Panel-style service linkage, and removes the non-essential privileged appstore sidecar plus Docker socket mount.",
+    "The package bootstraps a fixed upstream source tarball and the release vendor.tar.gz asset into APP_DATA_DIR on first start so container recreation does not silently upgrade users.",
+    "Because upstream v1.8.64 ships a few historical migrations that are incompatible with modern MySQL 8 strict mode, the entrypoint applies an idempotent local compatibility patch before running the official migration flow."
+  ]
+}
