@@ -369,6 +369,7 @@ librewolf-linuxserver
 healthchecks-linuxserver
 flycast-linuxserver
 chrome-linuxserver
+darktable-linuxserver
 ungoogled-chromium-linuxserver
 signal-linuxserver
 thunderbird-linuxserver
