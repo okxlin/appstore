@@ -5,6 +5,8 @@
   "notes": [
     "Issue request: https://github.com/okxlin/appstore/issues/2251",
     "Official docs require PostgreSQL and show the ghcr.io/tgdrive/teldrive image.",
-    "The upstream compose directory provides teldrive.yml and postgres.yml examples."
+    "The upstream compose directory provides teldrive.yml and postgres.yml examples.",
+    "A real 1Panel linkage audit against the store PostgreSQL runtime failed because Teldrive's migration 20240711163538_search.sql requires the pgroonga extension, which is not available in the current stock postgresql runtime.",
+    "A separate disposable-panel smoke proved that a local MySQL runtime app can install and run as localmysql, but /apps/services/mysql still returns null and no reusable row is written into the databases table. Based on the shared local-database registration path in current 1Panel source, this is evidence that a local PostgreSQL runtime variant is not yet a safe dependency-binding replacement for Teldrive."
   ]
 }

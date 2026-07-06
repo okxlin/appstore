@@ -34,7 +34,7 @@ Teldrive is a self-hosted tool for organizing Telegram files through a web inter
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| APP_DATA_DIR | Teldrive 数据目录，包含 PostgreSQL 数据和本地 storage.db 文件 | ./data | 是 |
+| APP_DATA_DIR | Teldrive 数据目录，包含 PostgreSQL 数据和本地 `storage.db` 文件 | ./data | 是 |
 
 升级或迁移前，请先在 1Panel 中备份上述数据目录。
 
@@ -52,6 +52,8 @@ Teldrive is a self-hosted tool for organizing Telegram files through a web inter
 - 首次访问后需要使用 Telegram 账号登录，并在界面设置中同步频道和默认频道。
 - 如登录停留在登录页，请检查服务器时间同步；也可以在安装参数中启用 `TG_NTP`。
 - `ALLOWED_USERS` 用于限制可登录的 Telegram 用户名，不需要填写 `@`。
+- 已对“复用 1Panel 商店 PostgreSQL runtime”做过真实联动复核，但 Teldrive 当前数据库迁移依赖 `pgroonga` 扩展；标准 `postgresql` 运行时不提供该扩展，启动时会在 `20240711163538_search.sql` 迁移阶段失败。
+- 也额外验证了“补 local app 数据库 runtime 再联动”的路径：一次独立 `localmysql` smoke 中，本地数据库 app 虽然能成功安装并运行，但 `/apps/services/mysql` 返回空，`databases` 资源表也没有生成可复用记录。结合当前 1Panel local app 同步会把数据库 app key 变成 `local...`、而数据库资源登记仍走未加前缀常量的实现路径，这里可以合理推断 local PostgreSQL runtime 目前也不能直接作为 Teldrive 的可选数据库服务。因此当前继续保留上游自带的 `ghcr.io/tgdrive/postgres:17-alpine` 拓扑，而不是切换到商店或 local app PostgreSQL。
 
 ## 参考资料
 - 官网: <https://teldrive-docs.pages.dev/>
