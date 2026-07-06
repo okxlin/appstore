@@ -160,19 +160,20 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: REDIS_HOST
-      labelEn: Redis Host
-      labelZh: Redis 主机
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis 服务
       label:
-        en: Redis Host
-        zh: Redis 主机
-        zh-Hant: Redis 主機
-        ja: Redis ホスト
-        ko: Redis 호스트
-        ru: Хост Redis
-        ms: Hos Redis
-        pt-br: Host do Redis
+        en: Redis Service
+        zh: Redis 服务
+        zh-Hant: Redis 服務
+        ja: Redis サービス
+        ko: Redis 서비스
+        ru: Сервис Redis
+        ms: Perkhidmatan Redis
+        pt-br: Serviço Redis
       required: true
-      type: text
+      type: service
     - default: 6379
       edit: true
       envKey: REDIS_PORT
