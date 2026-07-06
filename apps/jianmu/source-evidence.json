@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/jianmu-dev/jianmu",
+  "dockerDocs": "https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/README.md",
+  "composeFile": "https://gitee.com/jianmu-dev/jianmu-deploy/raw/master/docker-compose.yml",
+  "notes": [
+    "Issue request: https://github.com/okxlin/appstore/issues/2163",
+    "Official source repository jianmu-dev/jianmu was still active on 2026-04-14 and documents MySQL 8+ as the required runtime.",
+    "Official deploy compose uses docker.jianmuhub.com/jianmu/jianmu-ui:v2.8.2, jianmu-server:v2.8.2, jianmu-worker-docker:v1.0.13, and a bundled MySQL 8.0.31 container.",
+    "This adaptation intentionally removes the bundled MySQL service and prefers an external or 1Panel-managed MySQL runtime to match current packaging policy.",
+    "Official deploy examples ship fixed weak defaults including admin/123456 and worker-secret; this package randomizes or form-exposes the admin password, JWT secret, and worker secret.",
+    "The Docker worker requires a writable Docker socket mount. Official README mentions custom socket path or Docker TCP for some Ubuntu hosts; this package only enables the socket-path variant by default.",
+    "Disposable-panel evidence on 2026-07-06 showed the current 1Panel localmysql runtime path can install and run but does not create a reusable databases-table record, so this package now includes an app-side managed-MySQL bootstrap fallback for localmysql and other 1Panel-managed MySQL installs identified by app install name, service name, or container name.",
+    "Verified official image digests during adaptation: jianmu-ui:v2.8.2@sha256:cde848330e4105923d05c23ea1608f4c1ba686b3679348ff413b55d26317536b, jianmu-server:v2.8.2@sha256:b835c4117c268c3417dc985ef57c0253de84033f904bacf9ee0ad25088699a3c, jianmu-worker-docker:v1.0.13@sha256:44e57f3263569ae1ab177a7c1053d04e518482b2ba658c6001db9ee96e523529."
+  ]
+}

@@ -1,0 +1,241 @@
+additionalProperties:
+  formFields:
+    - default: 18080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Web-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: mysql
+      edit: true
+      envKey: PANEL_DB_HOST
+      labelEn: Database Host or App Name
+      labelZh: 数据库主机或应用名
+      label:
+        en: Database Host or App Name
+        zh: 数据库主机或应用名
+        zh-Hant: 數據庫主機或應用名
+        ja: データベースホストまたはアプリ名
+        ko: 데이터베이스 호스트 또는 앱 이름
+        ru: Хост базы данных или имя приложения
+        ms: Hos pangkalan data atau nama aplikasi
+        pt-br: Host do banco de dados ou nome do aplicativo
+      required: true
+      type: text
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 數據庫埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: jianmu
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 數據庫名
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: jianmu
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 數據庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuario do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 數據庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: JIANMU_API_ADMINPASSWD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: JIANMU_API_JWTSECRET
+      labelEn: API JWT Secret
+      labelZh: API JWT 密钥
+      label:
+        en: API JWT Secret
+        zh: API JWT 密钥
+        zh-Hant: API JWT 金鑰
+        ja: API JWT シークレット
+        ko: API JWT 비밀키
+        ru: Секрет API JWT
+        ms: Rahsia API JWT
+        pt-br: Segredo JWT da API
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: JIANMU_WORKER_SECRET
+      labelEn: Worker Secret
+      labelZh: Worker 密钥
+      label:
+        en: Worker Secret
+        zh: Worker 密钥
+        zh-Hant: Worker 金鑰
+        ja: Worker シークレット
+        ko: Worker 비밀키
+        ru: Секрет worker
+        ms: Rahsia worker
+        pt-br: Segredo do worker
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: worker1
+      edit: true
+      envKey: JIANMU_WORKER_ID
+      labelEn: Worker ID
+      labelZh: Worker 标识
+      label:
+        en: Worker ID
+        zh: Worker 标识
+        zh-Hant: Worker 標識
+        ja: Worker ID
+        ko: Worker ID
+        ru: ID worker
+        ms: ID worker
+        pt-br: ID do worker
+      required: true
+      rule: paramCommon
+      type: text
+    - default: 5
+      edit: true
+      envKey: JIANMU_WORKER_CAPACITY
+      labelEn: Worker Capacity
+      labelZh: Worker 并发数
+      label:
+        en: Worker Capacity
+        zh: Worker 并发数
+        zh-Hant: Worker 並發數
+        ja: Worker 同時実行数
+        ko: Worker 동시 실행 수
+        ru: Параллелизм worker
+        ms: Kapasiti worker
+        pt-br: Capacidade do worker
+      required: true
+      type: number
+    - default: /var/run/docker.sock
+      edit: true
+      envKey: DOCKER_SOCK_PATH
+      labelEn: Docker Socket Path
+      labelZh: Docker 套接字路径
+      label:
+        en: Docker Socket Path
+        zh: Docker 套接字路径
+        zh-Hant: Docker 套接字路徑
+        ja: Docker ソケットパス
+        ko: Docker 소켓 경로
+        ru: Путь к сокету Docker
+        ms: Laluan Soket Docker
+        pt-br: Caminho do Socket Docker
+      required: true
+      type: text
