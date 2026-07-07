@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   mstream:
-    image: "linuxserver/mstream:6.16.1"
+    image: "linuxserver/mstream:6.17.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
