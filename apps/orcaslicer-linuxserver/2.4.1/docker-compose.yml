@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   orcaslicer:
-    image: "linuxserver/orcaslicer:2.4.1"
+    image: "linuxserver/orcaslicer:2.4.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
