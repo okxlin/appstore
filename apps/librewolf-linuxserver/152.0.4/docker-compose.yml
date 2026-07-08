@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   librewolf:
-    image: "linuxserver/librewolf:152.0.4"
+    image: "linuxserver/librewolf:152.0.5"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
