@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   nginx:
-    image: "linuxserver/nginx:1.28.3"
+    image: "linuxserver/nginx:1.30.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
