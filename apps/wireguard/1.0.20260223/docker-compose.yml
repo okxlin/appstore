@@ -1,6 +1,6 @@
 services:
   wireguard:
-    image: "linuxserver/wireguard:1.0.20250521"
+    image: "linuxserver/wireguard:1.0.20260223"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
