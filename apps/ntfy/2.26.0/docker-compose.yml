@@ -1,6 +1,6 @@
 services:
   ntfy:
-    image: "binwiederhier/ntfy:v2.25.0"
+    image: "binwiederhier/ntfy:v2.26.0"
     container_name: ${CONTAINER_NAME}
     command:
       - serve
