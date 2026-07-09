@@ -14,7 +14,7 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       - ALLOW_INTERNAL_REQUESTS=${ALLOW_INTERNAL_REQUESTS:-false}
-    image: "linuxserver/heimdall:2.7.6"
+    image: "linuxserver/heimdall:2.8.0"
     labels:  
       createdBy: "Apps"
 
