@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   kimai:
-    image: "linuxserver/kimai:2.61.0"
+    image: "linuxserver/kimai:2.62.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
