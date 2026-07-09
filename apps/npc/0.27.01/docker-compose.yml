@@ -1,6 +1,6 @@
 services:
   npc:
-    image: yisier1/npc:v0.27.01
+    image: yisier1/npc:v0.26.35
     restart: always
     network_mode: "host"
     command: -server=${NPS_SERVER_ADDR} -vkey=${NPS_VKEY} -tls_enable=${TLS_ENABLE_SWITCH}

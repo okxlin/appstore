@@ -1,6 +1,6 @@
 services:
   nps:
-    image: yisier1/nps:v0.27.01
+    image: yisier1/nps:v0.26.35
     container_name: ${CONTAINER_NAME}
     restart: always
     volumes:

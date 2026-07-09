@@ -515,6 +515,21 @@
         "apps/alist/3.44.0/*.yml"
       ],
       "enabled": false
+    },
+    {
+      "description": "Keep NPS/NPC on the actively maintained 0.26 image line; upstream v0.27.01 is an older build",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "apps/nps/**/docker-compose.yml",
+        "apps/npc/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "yisier1/nps",
+        "yisier1/npc"
+      ],
+      "allowedVersions": "/^v0\\.26\\..*/"
     }
   ],
   "prCreation": "immediate"
