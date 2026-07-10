@@ -1,0 +1,224 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: romm
+      edit: true
+      envKey: DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名称
+      label:
+        en: Database Name
+        zh: 数据库名称
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do Banco de Dados
+      required: true
+      rule: paramCommon
+      type: text
+    - default: romm-user
+      edit: true
+      envKey: DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuário do Banco de Dados
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: DB_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata Laluan Pangkalan Data
+        pt-br: Senha do Banco de Dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: DB_ROOT_PASSWORD
+      labelEn: Database Root Password
+      labelZh: 数据库 Root 密码
+      label:
+        en: Database Root Password
+        zh: 数据库 Root 密码
+        zh-Hant: 資料庫 Root 密碼
+        ja: データベース Root パスワード
+        ko: 데이터베이스 Root 비밀번호
+        ru: Пароль root базы данных
+        ms: Kata Laluan Root Pangkalan Data
+        pt-br: Senha Root do Banco de Dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: ROMM_AUTH_SECRET_KEY
+      labelEn: Authentication Secret
+      labelZh: 身份验证密钥
+      label:
+        en: Authentication Secret
+        zh: 身份验证密钥
+        zh-Hant: 身分驗證密鑰
+        ja: 認証シークレット
+        ko: 인증 비밀 키
+        ru: Секрет аутентификации
+        ms: Rahsia Pengesahan
+        pt-br: Segredo de Autenticação
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: HASHEOUS_API_ENABLED
+      labelEn: Enable Hasheous
+      labelZh: 启用 Hasheous
+      label:
+        en: Enable Hasheous
+        zh: 启用 Hasheous
+        zh-Hant: 啟用 Hasheous
+        ja: Hasheous を有効化
+        ko: Hasheous 활성화
+        ru: Включить Hasheous
+        ms: Dayakan Hasheous
+        pt-br: Ativar Hasheous
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ""
+      edit: true
+      envKey: SCREENSCRAPER_USER
+      labelEn: ScreenScraper Username
+      labelZh: ScreenScraper 用户名
+      label:
+        en: ScreenScraper Username
+        zh: ScreenScraper 用户名
+        zh-Hant: ScreenScraper 使用者名稱
+        ja: ScreenScraper ユーザー名
+        ko: ScreenScraper 사용자 이름
+        ru: Имя пользователя ScreenScraper
+        ms: Nama Pengguna ScreenScraper
+        pt-br: Usuário do ScreenScraper
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SCREENSCRAPER_PASSWORD
+      labelEn: ScreenScraper Password
+      labelZh: ScreenScraper 密码
+      label:
+        en: ScreenScraper Password
+        zh: ScreenScraper 密码
+        zh-Hant: ScreenScraper 密碼
+        ja: ScreenScraper パスワード
+        ko: ScreenScraper 비밀번호
+        ru: Пароль ScreenScraper
+        ms: Kata Laluan ScreenScraper
+        pt-br: Senha do ScreenScraper
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: RETROACHIEVEMENTS_API_KEY
+      labelEn: RetroAchievements API Key
+      labelZh: RetroAchievements API 密钥
+      label:
+        en: RetroAchievements API Key
+        zh: RetroAchievements API 密钥
+        zh-Hant: RetroAchievements API 密鑰
+        ja: RetroAchievements API キー
+        ko: RetroAchievements API 키
+        ru: API-ключ RetroAchievements
+        ms: Kunci API RetroAchievements
+        pt-br: Chave de API do RetroAchievements
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: STEAMGRIDDB_API_KEY
+      labelEn: SteamGridDB API Key
+      labelZh: SteamGridDB API 密钥
+      label:
+        en: SteamGridDB API Key
+        zh: SteamGridDB API 密钥
+        zh-Hant: SteamGridDB API 密鑰
+        ja: SteamGridDB API キー
+        ko: SteamGridDB API 키
+        ru: API-ключ SteamGridDB
+        ms: Kunci API SteamGridDB
+        pt-br: Chave de API do SteamGridDB
+      required: false
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horário
+      required: true
+      type: text
