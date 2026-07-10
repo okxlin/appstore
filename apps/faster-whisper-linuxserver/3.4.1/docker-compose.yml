@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   faster-whisper:
-    image: "linuxserver/faster-whisper:3.4.1"
+    image: "linuxserver/faster-whisper:3.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
