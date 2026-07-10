@@ -8,7 +8,7 @@ additionalProperties:
         label:
           en: Database Service
           zh: 数据库服务
-          zh-hant: 資料庫服務
+          zh-Hant: 資料庫服務
           ja: データベースサービス
           ko: 데이터베이스 서비스
           ru: Служба базы данных
@@ -23,7 +23,7 @@ additionalProperties:
       label:
         en: Database
         zh: 数据库服务
-        zh-hant: 資料庫服務
+        zh-Hant: 資料庫服務
         ja: データベース
         ko: 데이터베이스
         ru: База данных
@@ -42,7 +42,7 @@ additionalProperties:
       label:
         en: Database Name
         zh: 数据库名
-        zh-hant: 資料庫名稱
+        zh-Hant: 資料庫名稱
         ja: データベース名
         ko: 데이터베이스 이름
         ru: Имя базы данных
@@ -60,7 +60,7 @@ additionalProperties:
       label:
         en: Database User
         zh: 数据库用户
-        zh-hant: 資料庫使用者
+        zh-Hant: 資料庫使用者
         ja: データベースユーザー
         ko: 데이터베이스 사용자
         ru: Пользователь базы данных
@@ -78,7 +78,7 @@ additionalProperties:
       label:
         en: Database Port
         zh: 数据库端口
-        zh-hant: 資料庫連接埠
+        zh-Hant: 資料庫連接埠
         ja: データベースポート
         ko: 데이터베이스 포트
         ru: Порт базы данных
@@ -95,7 +95,7 @@ additionalProperties:
       label:
         en: Database Password
         zh: 数据库用户密码
-        zh-hant: 資料庫使用者密碼
+        zh-Hant: 資料庫使用者密碼
         ja: データベースパスワード
         ko: 데이터베이스 비밀번호
         ru: Пароль базы данных
@@ -114,7 +114,7 @@ additionalProperties:
       label:
         en: Redis Service
         zh: Redis服务
-        zh-hant: Redis 服務
+        zh-Hant: Redis 服務
         ja: Redis サービス
         ko: Redis 서비스
         ru: Служба Redis
@@ -130,7 +130,7 @@ additionalProperties:
       label:
         en: Redis Service Port
         zh: Redis服务端口
-        zh-hant: Redis 服務連接埠
+        zh-Hant: Redis 服務連接埠
         ja: Redis サービスポート
         ko: Redis 서비스 포트
         ru: Порт службы Redis
@@ -147,7 +147,7 @@ additionalProperties:
       label:
         en: Redis Password
         zh: Redis 密码
-        zh-hant: Redis 密碼
+        zh-Hant: Redis 密碼
         ja: Redis パスワード
         ko: Redis 비밀번호
         ru: Пароль Redis
@@ -164,7 +164,7 @@ additionalProperties:
       label:
         en: Redis Database
         zh: Redis 数据库
-        zh-hant: Redis 資料庫
+        zh-Hant: Redis 資料庫
         ja: Redis データベース
         ko: Redis 데이터베이스
         ru: База данных Redis
@@ -180,7 +180,7 @@ additionalProperties:
       label:
         en: Web Port
         zh: Web 访问端口
-        zh-hant: Web 訪問埠
+        zh-Hant: Web 訪問埠
         ja: Webポート
         ko: 웹 포트
         ru: Веб-порт
@@ -197,7 +197,7 @@ additionalProperties:
       label:
         en: Timezone
         zh: 时区
-        zh-hant: 時區
+        zh-Hant: 時區
         ja: タイムゾーン
         ko: 시간대
         ru: Часовой пояс
@@ -213,7 +213,7 @@ additionalProperties:
       label:
         en: Server Mode
         zh: 服务模式
-        zh-hant: 服務模式
+        zh-Hant: 服務模式
         ja: サーバーモード
         ko: 서버 모드
         ru: Режим сервера
@@ -234,7 +234,7 @@ additionalProperties:
       label:
         en: Run Mode
         zh: 运行模式
-        zh-hant: 運行模式
+        zh-Hant: 運行模式
         ja: 実行モード
         ko: 실행 모드
         ru: Режим работы
@@ -255,7 +255,7 @@ additionalProperties:
       label:
         en: Admin Email
         zh: 管理员邮箱
-        zh-hant: 管理員郵箱
+        zh-Hant: 管理員郵箱
         ja: 管理者メール
         ko: 관리자 이메일
         ru: Email администратора
@@ -271,7 +271,7 @@ additionalProperties:
       label:
         en: Admin Password
         zh: 管理员密码
-        zh-hant: 管理員密碼
+        zh-Hant: 管理員密碼
         ja: 管理者パスワード
         ko: 관리자 비밀번호
         ru: Пароль администратора
@@ -284,36 +284,34 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: JWT_SECRET
-      labelEn: JWT Secret
-      labelZh: JWT 密钥
+      labelEn: JWT Secret (blank to auto-generate)
+      labelZh: JWT 密钥（留空自动生成）
       label:
-        en: JWT Secret
-        zh: JWT 密钥
-        zh-hant: JWT 金鑰
-        ja: JWT シークレット
-        ko: JWT 시크릿
-        ru: JWT-секрет
-        ms: Rahsia JWT
-        pt-br: Segredo JWT
-      random: true
-      required: true
+        en: JWT Secret (blank to auto-generate)
+        zh: JWT 密钥（留空自动生成）
+        zh-Hant: JWT 金鑰（留空自動產生）
+        ja: JWT シークレット（空欄で自動生成）
+        ko: JWT 시크릿(비워 두면 자동 생성)
+        ru: JWT-секрет (пусто = создать автоматически)
+        ms: Rahsia JWT (kosong untuk jana automatik)
+        pt-br: Segredo JWT (vazio para gerar automaticamente)
+      required: false
       type: password
     - default: ""
       edit: true
       envKey: TOTP_ENCRYPTION_KEY
-      labelEn: TOTP Encryption Key
-      labelZh: TOTP 加密密钥
+      labelEn: TOTP Encryption Key (blank to auto-generate)
+      labelZh: TOTP 加密密钥（留空自动生成）
       label:
-        en: TOTP Encryption Key
-        zh: TOTP 加密密钥
-        zh-hant: TOTP 加密金鑰
-        ja: TOTP 暗号化キー
-        ko: TOTP 암호화 키
-        ru: Ключ шифрования TOTP
-        ms: Kunci penyulitan TOTP
-        pt-br: Chave de criptografia TOTP
-      random: true
-      required: true
+        en: TOTP Encryption Key (blank to auto-generate)
+        zh: TOTP 加密密钥（留空自动生成）
+        zh-Hant: TOTP 加密金鑰（留空自動產生）
+        ja: TOTP 暗号化キー（空欄で自動生成）
+        ko: TOTP 암호화 키(비워 두면 자동 생성)
+        ru: Ключ TOTP (пусто = создать автоматически)
+        ms: Kunci TOTP (kosong untuk jana automatik)
+        pt-br: Chave TOTP (vazia para gerar automaticamente)
+      required: false
       type: password
     - default: ""
       edit: true
@@ -323,7 +321,7 @@ additionalProperties:
       label:
         en: Update Proxy URL
         zh: 更新代理地址
-        zh-hant: 更新代理地址
+        zh-Hant: 更新代理地址
         ja: 更新プロキシ URL
         ko: 업데이트 프록시 URL
         ru: URL прокси для обновлений
@@ -340,7 +338,7 @@ additionalProperties:
       label:
         en: App Data Directory
         zh: 应用数据目录
-        zh-hant: 應用資料目錄
+        zh-Hant: 應用資料目錄
         ja: アプリデータディレクトリ
         ko: 앱 데이터 디렉터리
         ru: Каталог данных приложения
