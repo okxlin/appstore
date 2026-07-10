@@ -1,0 +1,70 @@
+services:
+  romm:
+    image: "rommapp/romm:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - ROMM_DB_DRIVER=mariadb
+      - DB_HOST=romm-db
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWD=${DB_PASSWORD}
+      - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY}
+      - SCREENSCRAPER_USER=${SCREENSCRAPER_USER}
+      - SCREENSCRAPER_PASSWORD=${SCREENSCRAPER_PASSWORD}
+      - RETROACHIEVEMENTS_API_KEY=${RETROACHIEVEMENTS_API_KEY}
+      - STEAMGRIDDB_API_KEY=${STEAMGRIDDB_API_KEY}
+      - HASHEOUS_API_ENABLED=${HASHEOUS_API_ENABLED}
+    volumes:
+      - "${APP_DATA_DIR}/romm:/romm"
+      - "${APP_DATA_DIR}/redis:/redis-data"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    depends_on:
+      romm-db:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://127.0.0.1:8080/api/heartbeat >/dev/null
+      start_period: 120s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  romm-db:
+    image: "mariadb:11"
+    container_name: ${CONTAINER_NAME}-db
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${DB_NAME}
+      - MARIADB_USER=${DB_USER}
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/mariadb:/var/lib/mysql"
+    healthcheck:
+      test:
+        - CMD
+        - healthcheck.sh
+        - --connect
+        - --innodb_initialized
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

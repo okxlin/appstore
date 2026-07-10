@@ -1,0 +1,33 @@
+name: RomM
+tags:
+  - 多媒体
+  - 休闲游戏
+title: 自托管的复古游戏库管理与浏览器游玩平台
+description: 自托管的复古游戏库管理与浏览器游玩平台
+additionalProperties:
+  key: romm
+  name: RomM
+  tags:
+    - Media
+    - Game
+  shortDescZh: 自托管的复古游戏库管理与浏览器游玩平台
+  shortDescEn: Self-hosted retro game library manager with browser-based play
+  description:
+    en: Manage, enrich, browse, and play a self-hosted retro game library from the browser.
+    zh: 在浏览器中管理、补充元数据、浏览并游玩自托管的复古游戏库。
+    zh-Hant: 在瀏覽器中管理、補充中繼資料、瀏覽並遊玩自託管的復古遊戲庫。
+    ja: セルフホストしたレトロゲームライブラリをブラウザーで管理し、メタデータを追加して閲覧・プレイできます。
+    ko: 자체 호스팅 레트로 게임 라이브러리를 브라우저에서 관리하고 메타데이터를 보강하며 탐색하고 플레이합니다.
+    ru: Управляйте собственной библиотекой ретро-игр, дополняйте метаданные, просматривайте и запускайте игры в браузере.
+    ms: Urus, lengkapkan metadata, layari dan mainkan pustaka permainan retro hos kendiri melalui pelayar.
+    pt-br: Gerencie, enriqueça os metadados, navegue e jogue uma biblioteca de jogos retrô auto-hospedada pelo navegador.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://romm.app/
+  github: https://github.com/rommapp/romm
+  document: https://docs.romm.app/latest/
+  architectures:
+    - amd64
+    - arm64

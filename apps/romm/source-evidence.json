@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/rommapp/romm",
+  "dockerDocs": "https://docs.romm.app/latest/getting-started/quick-start/",
+  "composeFile": "https://raw.githubusercontent.com/rommapp/romm/master/examples/docker-compose.example.yml",
+  "databaseDocs": "https://docs.romm.app/latest/install/databases/",
+  "image": "https://hub.docker.com/r/rommapp/romm",
+  "logoSource": "https://github.com/rommapp/romm/blob/master/frontend/assets/logos/romm_logo_ps2_square.png",
+  "license": "AGPL-3.0-only"
+}
