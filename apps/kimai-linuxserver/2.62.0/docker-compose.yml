@@ -17,7 +17,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - APP_SECRET=${APP_SECRET}
       - DATABASE_URL=mysql://kimai:${DB_PASSWORD}@kimai-db:3306/kimai?charset=utf8mb4&serverVersion=11.4.2-MariaDB
+      - TRUSTED_HOSTS=${TRUSTED_HOSTS}
       - TRUSTED_PROXIES=${TRUSTED_PROXIES}
     depends_on:
       - kimai-db
