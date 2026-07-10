@@ -1,0 +1,43 @@
+services:
+  pdfmathtranslate:
+    image: "awwaawwa/pdfmathtranslate-next:2.9.0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7860"
+    environment:
+      - TZ=${TZ}
+      - WEB_USERNAME=${WEB_USERNAME}
+      - WEB_PASSWORD=${WEB_PASSWORD}
+      - HF_ENDPOINT=${HF_ENDPOINT}
+      - GRADIO_ANALYTICS_ENABLED=false
+    volumes:
+      - "${APP_CONFIG_DIR}:/root/.config/pdf2zh"
+      - "${APP_CACHE_DIR}:/root/.cache/pdf2zh_next"
+      - "${APP_OUTPUT_DIR}:/app/pdf2zh_files"
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        umask 077
+        mkdir -p /root/.config/pdf2zh /root/.cache/pdf2zh_next /app/pdf2zh_files
+        chmod 700 /root/.config/pdf2zh /root/.cache/pdf2zh_next
+        chmod 755 /app/pdf2zh_files
+        printf '%s,%s\n' "$${WEB_USERNAME}" "$${WEB_PASSWORD}" > /root/.config/pdf2zh/auth.txt
+        exec pdf2zh --gui --auth-file /root/.config/pdf2zh/auth.txt
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - python -c 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:7860/", timeout=5)'
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
