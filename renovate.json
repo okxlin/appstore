@@ -466,6 +466,35 @@
       "enabled": false
     },
     {
+      "description": "Keep Immich 1.132.3 as the pgvecto.rs to VectorChord migration bridge",
+      "matchFileNames": [
+        "apps/immich/1.132.3/docker-compose.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Group Immich server and machine-learning images",
+      "matchFileNames": [
+        "apps/immich/3.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/immich-app/immich-server",
+        "ghcr.io/immich-app/immich-machine-learning"
+      ],
+      "groupName": "Immich application images"
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Immich multi-service tracks",
+      "matchFileNames": [
+        "apps/immich/3.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.io/valkey/valkey",
+        "ghcr.io/immich-app/postgres"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Require dashboard approval for major updates of stateful Docker sidecars",
       "matchDatasources": [
         "docker"
