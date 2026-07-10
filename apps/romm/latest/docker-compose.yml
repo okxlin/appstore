@@ -5,11 +5,12 @@ services:
     restart: unless-stopped
     environment:
       - TZ=${TZ}
-      - ROMM_DB_DRIVER=mariadb
-      - DB_HOST=romm-db
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASSWD=${DB_PASSWORD}
+      - ROMM_DB_DRIVER=${PANEL_DB_TYPE}
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${PANEL_DB_PORT}
+      - DB_NAME=${PANEL_DB_NAME}
+      - DB_USER=${PANEL_DB_USER}
+      - DB_PASSWD=${PANEL_DB_USER_PASSWORD}
       - ROMM_AUTH_SECRET_KEY=${ROMM_AUTH_SECRET_KEY}
       - SCREENSCRAPER_USER=${SCREENSCRAPER_USER}
       - SCREENSCRAPER_PASSWORD=${SCREENSCRAPER_PASSWORD}
@@ -21,10 +22,6 @@ services:
       - "${APP_DATA_DIR}/redis:/redis-data"
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
-    depends_on:
-      romm-db:
-        condition: service_healthy
-        restart: true
     healthcheck:
       test:
         - CMD-SHELL
@@ -32,33 +29,6 @@ services:
       start_period: 120s
       interval: 30s
       timeout: 10s
-      retries: 5
-    labels:
-      createdBy: "Apps"
-    networks:
-      - 1panel-network
-
-  romm-db:
-    image: "mariadb:11"
-    container_name: ${CONTAINER_NAME}-db
-    restart: unless-stopped
-    environment:
-      - TZ=${TZ}
-      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
-      - MARIADB_DATABASE=${DB_NAME}
-      - MARIADB_USER=${DB_USER}
-      - MARIADB_PASSWORD=${DB_PASSWORD}
-    volumes:
-      - "${APP_DATA_DIR}/mariadb:/var/lib/mysql"
-    healthcheck:
-      test:
-        - CMD
-        - healthcheck.sh
-        - --connect
-        - --innodb_initialized
-      start_period: 30s
-      interval: 10s
-      timeout: 5s
       retries: 5
     labels:
       createdBy: "Apps"

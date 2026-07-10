@@ -25,8 +25,7 @@ mkdir -p \
   "$DATA_DIR/romm/assets" \
   "$DATA_DIR/romm/config" \
   "$DATA_DIR/romm/resources" \
-  "$DATA_DIR/redis" \
-  "$DATA_DIR/mariadb"
+  "$DATA_DIR/redis"
 
 chmod 755 \
   "$DATA_DIR/romm" \
@@ -36,4 +35,3 @@ chmod 755 \
   "$DATA_DIR/romm/config" \
   "$DATA_DIR/romm/resources" \
   "$DATA_DIR/redis"
-chmod 700 "$DATA_DIR/mariadb"
