@@ -25,7 +25,6 @@ additionalProperties:
   recommend: 0
   website: https://immich.app
   github: https://github.com/immich-app/immich
-  document: https://immich.app/docs
+  document: https://docs.immich.app
   architectures:
     - amd64
-
