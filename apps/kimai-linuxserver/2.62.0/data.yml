@@ -67,6 +67,24 @@ additionalProperties:
     required: true
     type: password
     rule: paramComplexity
+  - default: ''
+    edit: true
+    envKey: APP_SECRET
+    labelEn: Application secret
+    labelZh: 应用密钥
+    label:
+      en: Application secret
+      zh: 应用密钥
+      zh-Hant: 應用程式密鑰
+      ja: アプリケーションシークレット
+      ko: 애플리케이션 비밀값
+      ru: Секрет приложения
+      ms: Rahsia aplikasi
+      pt-br: Segredo do aplicativo
+    random: true
+    required: true
+    type: password
+    rule: paramComplexity
   - default: ./data/db
     edit: true
     envKey: DB_DATA_PATH
@@ -97,6 +115,22 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+    required: true
+    type: text
+  - default: .*
+    edit: true
+    envKey: TRUSTED_HOSTS
+    labelEn: Trusted hosts regex
+    labelZh: 可信主机正则
+    label:
+      en: Trusted hosts regex
+      zh: 可信主机正则
+      zh-Hant: 可信主機正規表示式
+      ja: 信頼するホストの正規表現
+      ko: 신뢰할 호스트 정규식
+      ru: Регулярное выражение доверенных хостов
+      ms: Ungkapan biasa hos dipercayai
+      pt-br: Expressao regular de hosts confiaveis
     required: true
     type: text
   - default: 127.0.0.1/32
