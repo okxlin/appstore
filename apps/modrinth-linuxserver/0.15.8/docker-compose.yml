@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   modrinth:
-    image: "linuxserver/modrinth:0.15.8"
+    image: "linuxserver/modrinth:0.15.10"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
