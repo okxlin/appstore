@@ -33,9 +33,54 @@ additionalProperties:
         pt-br: Diretório de Dados
       required: true
       type: text
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: Database Service
+        labelZh: 数据库服务
+        label:
+          en: Database Service
+          zh: 数据库服务
+          zh-Hant: 資料庫服務
+          ja: データベースサービス
+          ko: 데이터베이스 서비스
+          ru: Сервис базы данных
+          ms: Perkhidmatan Pangkalan Data
+          pt-br: Serviço de Banco de Dados
+        required: true
+        type: service
+      default: mariadb
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Type
+      labelZh: 数据库类型
+      label:
+        en: Database Type
+        zh: 数据库类型
+        zh-Hant: 資料庫類型
+        ja: データベース種類
+        ko: 데이터베이스 유형
+        ru: Тип базы данных
+        ms: Jenis Pangkalan Data
+        pt-br: Tipo de Banco de Dados
+      params:
+        - envKey: PANEL_DB_PORT
+          key: mariadb
+          type: param
+          value: "3306"
+        - envKey: PANEL_DB_PORT
+          key: postgresql
+          type: param
+          value: "5432"
+      required: true
+      type: apps
+      values:
+        - label: MariaDB
+          value: mariadb
+        - label: PostgreSQL
+          value: postgresql
     - default: romm
       edit: true
-      envKey: DB_NAME
+      envKey: PANEL_DB_NAME
       labelEn: Database Name
       labelZh: 数据库名称
       label:
@@ -47,12 +92,13 @@ additionalProperties:
         ru: Имя базы данных
         ms: Nama Pangkalan Data
         pt-br: Nome do Banco de Dados
+      random: true
       required: true
       rule: paramCommon
       type: text
     - default: romm-user
       edit: true
-      envKey: DB_USER
+      envKey: PANEL_DB_USER
       labelEn: Database User
       labelZh: 数据库用户
       label:
@@ -64,12 +110,13 @@ additionalProperties:
         ru: Пользователь базы данных
         ms: Pengguna Pangkalan Data
         pt-br: Usuário do Banco de Dados
+      random: true
       required: true
       rule: paramCommon
       type: text
     - default: ""
       edit: true
-      envKey: DB_PASSWORD
+      envKey: PANEL_DB_USER_PASSWORD
       labelEn: Database Password
       labelZh: 数据库密码
       label:
@@ -81,24 +128,6 @@ additionalProperties:
         ru: Пароль базы данных
         ms: Kata Laluan Pangkalan Data
         pt-br: Senha do Banco de Dados
-      random: true
-      required: true
-      rule: paramComplexity
-      type: password
-    - default: ""
-      edit: true
-      envKey: DB_ROOT_PASSWORD
-      labelEn: Database Root Password
-      labelZh: 数据库 Root 密码
-      label:
-        en: Database Root Password
-        zh: 数据库 Root 密码
-        zh-Hant: 資料庫 Root 密碼
-        ja: データベース Root パスワード
-        ko: 데이터베이스 Root 비밀번호
-        ru: Пароль root базы данных
-        ms: Kata Laluan Root Pangkalan Data
-        pt-br: Senha Root do Banco de Dados
       random: true
       required: true
       rule: paramComplexity
