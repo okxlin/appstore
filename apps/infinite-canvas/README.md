@@ -28,11 +28,11 @@ http://服务器IP:端口?apiKey={key}&baseUrl={address}
 当前主应用镜像只启动 Next.js。画布、素材、生成记录和 AI API Key 默认保存在浏览器本地；第三方提示词由 Next.js 路由拉取后缓存在运行实例内存里，不需要额外挂载数据目录。
 
 ## 安全提示
-维护侧已对当前 `latest` / `0.4.0` 对应的上游镜像 `ghcr.io/basketikun/infinite-canvas:v0.4.0` 做过 Trivy 扫描，报告为 `Critical=3`、`High=17`、`Total=178`。其中 Critical 主要来自 Debian 基础层 `perl-base`、`zlib1g`，当前没有可直接应用的上游修复版本。
+维护侧最近一次对当前打包镜像的 Trivy 扫描发现 `Critical=2`、`High=35`。Critical 项来自 Alpine OpenSSL 包，漏洞描述主要涉及 32 位系统；本应用声明的架构为 amd64 和 arm64，但基础镜像仍应升级到包含修复的 OpenSSL 版本。
 
-在 `--ignore-unfixed` 视角下，Critical 会消失，但仍有 `High=9`，主要集中在 `next 16.2.3`、`picomatch 4.0.3`、`sigstore 3.1.0`，需要上游更新依赖并重新构建镜像后才能消除。
+本次扫描中的 Critical 和 High 项均已有修复版本，主要涉及 OpenSSL、c-ares、libexpat 等基础包，需要上游重新构建镜像后才能消除。
 
-因此当前版本更适合部署在可信内网或受控环境中，并应尽快跟进上游镜像更新。若对暴露面更敏感，建议在网关或反向代理层额外限制访问来源。
+当前应用不使用特权模式、host network 或 Docker Socket，但仍建议部署在可信内网或受控环境中，并通过网关或反向代理限制访问来源。
 
 ## Introduction
 Infinite Canvas is an open-source infinite canvas for AI creation. It supports text-to-image, image-to-image, reference image editing, text chat, audio generation, and video generation workflows.
@@ -45,11 +45,11 @@ Infinite Canvas is an open-source infinite canvas for AI creation. It supports t
 - Browser-local storage for canvases, assets, generation history, and AI API keys
 
 ## Security Note
-The current upstream image used by `latest` and `0.4.0` was scanned with Trivy and the report contains `Critical=3`, `High=17`, and `Total=178` findings. The Critical items are mainly in the Debian base layer (`perl-base`, `zlib1g`) and currently have no upstream fixed package available.
+The latest maintainer Trivy scan of the packaged image reports `Critical=2` and `High=35`. The Critical entries come from Alpine OpenSSL packages and primarily describe a 32-bit platform scenario. This app targets amd64 and arm64, but the base image should still be rebuilt with fixed OpenSSL packages.
 
-With `--ignore-unfixed`, the Critical findings drop out, but `High=9` remains, mainly in `next 16.2.3`, `picomatch 4.0.3`, and `sigstore 3.1.0`. Those require an upstream dependency refresh and image rebuild.
+All Critical and High findings in this scan have fixed versions available. They mainly affect OpenSSL, c-ares, libexpat, and other base packages that require an upstream image rebuild.
 
-Deploy this app in a trusted network or otherwise controlled environment, and update promptly when the upstream image is refreshed.
+The app does not request privileged mode, host networking, or the Docker socket. Even so, deploy it in a trusted or otherwise controlled environment and restrict access through a gateway or reverse proxy where appropriate.
 
 ## 参考资料
 - 源码: <https://github.com/basketikun/infinite-canvas>
