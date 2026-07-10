@@ -1,0 +1,31 @@
+name: PDFMathTranslate
+tags:
+  - AI
+title: 保留排版的科研 PDF 翻译与双语对照工具
+description: 保留排版的科研 PDF 翻译与双语对照工具
+additionalProperties:
+  key: pdfmathtranslate
+  name: PDFMathTranslate
+  tags:
+    - AI
+  shortDescZh: 保留排版的科研 PDF 翻译与双语对照工具
+  shortDescEn: Scientific PDF translation with layout preservation and bilingual output
+  description:
+    en: Translate scientific PDF documents while preserving layouts and generating monolingual or bilingual output.
+    zh: 翻译科研 PDF 文档，同时保留原始排版并生成单语或双语结果。
+    zh-Hant: 翻譯科研 PDF 文件，同時保留原始排版並產生單語或雙語結果。
+    ja: 科学技術 PDF のレイアウトを維持しながら翻訳し、単言語または対訳形式で出力します。
+    ko: 과학 PDF 문서의 원본 레이아웃을 유지하면서 번역하고 단일 언어 또는 이중 언어 결과를 생성합니다.
+    ru: Переводит научные PDF-документы с сохранением макета и создает одноязычные или двуязычные результаты.
+    ms: Menterjemah dokumen PDF saintifik sambil mengekalkan susun atur dan menghasilkan output satu atau dwibahasa.
+    pt-br: Traduz documentos PDF científicos preservando o layout e gerando resultados monolíngues ou bilíngues.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://pdf2zh.com/
+  github: https://github.com/PDFMathTranslate/PDFMathTranslate-next
+  document: https://pdf2zh-next.com/
+  architectures:
+    - amd64
+    - arm64

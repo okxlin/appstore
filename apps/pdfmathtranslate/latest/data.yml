@@ -1,0 +1,135 @@
+additionalProperties:
+  formFields:
+    - default: 40391
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: WEB_USERNAME
+      labelEn: Web Username
+      labelZh: Web 用户名
+      label:
+        en: Web Username
+        zh: Web 用户名
+        zh-Hant: Web 使用者名稱
+        ja: Web ユーザー名
+        ko: Web 사용자 이름
+        ru: Имя пользователя Web
+        ms: Nama Pengguna Web
+        pt-br: Usuário Web
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: WEB_PASSWORD
+      labelEn: Web Password
+      labelZh: Web 密码
+      label:
+        en: Web Password
+        zh: Web 密码
+        zh-Hant: Web 密碼
+        ja: Web パスワード
+        ko: Web 비밀번호
+        ru: Пароль Web
+        ms: Kata Laluan Web
+        pt-br: Senha Web
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: https://huggingface.co
+      edit: true
+      envKey: HF_ENDPOINT
+      labelEn: Hugging Face Endpoint
+      labelZh: Hugging Face 地址
+      label:
+        en: Hugging Face Endpoint
+        zh: Hugging Face 地址
+        zh-Hant: Hugging Face 位址
+        ja: Hugging Face エンドポイント
+        ko: Hugging Face 엔드포인트
+        ru: Адрес Hugging Face
+        ms: Titik Akhir Hugging Face
+        pt-br: Endpoint do Hugging Face
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horário
+      required: true
+      type: text
+    - default: ./data/config
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Configuration Directory
+      labelZh: 配置目录
+      label:
+        en: Configuration Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori Konfigurasi
+        pt-br: Diretório de Configuração
+      required: true
+      type: text
+    - default: ./data/cache
+      edit: true
+      envKey: APP_CACHE_DIR
+      labelEn: Translation Cache Directory
+      labelZh: 翻译缓存目录
+      label:
+        en: Translation Cache Directory
+        zh: 翻译缓存目录
+        zh-Hant: 翻譯快取目錄
+        ja: 翻訳キャッシュディレクトリ
+        ko: 번역 캐시 디렉터리
+        ru: Каталог кэша переводов
+        ms: Direktori Cache Terjemahan
+        pt-br: Diretório de Cache de Tradução
+      required: true
+      type: text
+    - default: ./data/files
+      edit: true
+      envKey: APP_OUTPUT_DIR
+      labelEn: Output Directory
+      labelZh: 输出目录
+      label:
+        en: Output Directory
+        zh: 输出目录
+        zh-Hant: 輸出目錄
+        ja: 出力ディレクトリ
+        ko: 출력 디렉터리
+        ru: Каталог результатов
+        ms: Direktori Output
+        pt-br: Diretório de Saída
+      required: true
+      type: text
