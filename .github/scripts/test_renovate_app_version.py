@@ -121,6 +121,40 @@ class RenovateAppVersionTests(unittest.TestCase):
 
         self.assertIn("docker-cmd-file: .github/scripts/renovate-entrypoint.sh", workflow)
 
+    def test_self_hosted_renovate_requires_docker_hub_credentials(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+
+        self.assertIn("configurationFile: .github/renovate-global.js", workflow)
+        self.assertIn("RENOVATE_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}", workflow)
+        self.assertIn("RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}", workflow)
+
+    def test_global_config_fails_fast_without_docker_hub_credentials(self):
+        config = REPO_ROOT / ".github" / "renovate-global.js"
+        env = os.environ.copy()
+        env.pop("RENOVATE_DOCKERHUB_USERNAME", None)
+        env.pop("RENOVATE_DOCKERHUB_TOKEN", None)
+
+        result = subprocess.run(["node", "-e", f"require({json.dumps(str(config))})"], text=True, capture_output=True, env=env, check=False)
+
+        self.assertNotEqual(0, result.returncode)
+        self.assertIn("DOCKERHUB_USERNAME and DOCKERHUB_TOKEN", result.stderr)
+
+    def test_global_config_authenticates_docker_hub(self):
+        config = REPO_ROOT / ".github" / "renovate-global.js"
+        env = os.environ.copy()
+        env["RENOVATE_DOCKERHUB_USERNAME"] = "renovate-user"
+        env["RENOVATE_DOCKERHUB_TOKEN"] = "test-token"
+        expression = f"const c=require({json.dumps(str(config))}); console.log(JSON.stringify(c.hostRules[0]))"
+
+        result = subprocess.run(["node", "-e", expression], text=True, capture_output=True, env=env, check=False)
+        host_rule = json.loads(result.stdout)
+
+        self.assertEqual(0, result.returncode)
+        self.assertEqual("docker", host_rule["hostType"])
+        self.assertEqual("docker.io", host_rule["matchHost"])
+        self.assertEqual("renovate-user", host_rule["username"])
+        self.assertEqual("test-token", host_rule["password"])
+
     def test_semantic_entrypoint_blocks_external_host_abort(self):
         entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
         with tempfile.TemporaryDirectory(prefix="renovate-entrypoint-test-") as tmp:
