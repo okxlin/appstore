@@ -65,7 +65,7 @@ services:
       - 1panel-network
 
   frontend:
-    image: "bqlpfy/vite-frontend:1.4.3"
+    image: "bqlpfy/vite-frontend:v3.1.2"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     ports:
