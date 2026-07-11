@@ -1,0 +1,37 @@
+services:
+  forwardx:
+    image: "ghcr.io/poouo/forwardx:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      FORWARDX_PUBLIC_PORT: ${PANEL_APP_PORT_HTTP}
+      FORWARDX_PORT_MANAGEMENT: docker
+      DATABASE_CONFIG_PATH: /data/database.json
+      SQLITE_PATH: /data/forwardx.db
+      MYSQL_CONFIG_PATH: /data/mysql.json
+      JWT_SECRET: ${JWT_SECRET}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_BOT_POLLING: ${TELEGRAM_BOT_POLLING}
+      TZ: ${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:3000/ >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

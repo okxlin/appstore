@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/poouo/Forwardx",
+  "dockerDocs": "https://github.com/poouo/Forwardx#手动-docker-compose",
+  "composeFile": "https://github.com/poouo/Forwardx/blob/main/docker-compose.yml",
+  "commit": "ba1cea713970dc595201bc6fac5f27d7647ae847",
+  "versions": [
+    "latest",
+    "v2.3.229"
+  ],
+  "images": [
+    "ghcr.io/poouo/forwardx:latest",
+    "ghcr.io/poouo/forwardx:v2.3.229"
+  ],
+  "architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "notes": "The package follows the official single-container Compose deployment and defaults to the application's built-in SQLite first-run setup."
+}
