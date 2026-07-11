@@ -169,6 +169,21 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertEqual("renovate-user", host_rule["username"])
         self.assertEqual("test-token", host_rule["password"])
 
+    def test_self_hosted_renovate_branches_are_recognized_by_workflows(self):
+        workflows = REPO_ROOT / ".github" / "workflows"
+        app_version = (workflows / "renovate-app-version.yml").read_text(encoding="utf-8")
+        sidecar_guard = (workflows / "renovate-sidecar-guard.yml").read_text(encoding="utf-8")
+        automerge = (workflows / "renovate-automerge.yml").read_text(encoding="utf-8")
+        reconcile = (workflows / "renovate-automerge-reconcile.yml").read_text(encoding="utf-8")
+        labeling = (workflows / "label-third-party-prs.yml").read_text(encoding="utf-8")
+
+        self.assertIn("startsWith(github.ref_name, 'renovate/')", app_version)
+        for workflow in (sidecar_guard, automerge, labeling):
+            self.assertIn("github.event.pull_request.head.repo.full_name == github.repository", workflow)
+            self.assertIn("startsWith(github.event.pull_request.head.ref, 'renovate/')", workflow)
+        self.assertIn("headRefName,headRepositoryOwner,isCrossRepository", reconcile)
+        self.assertIn('.headRefName | startswith("renovate/")', reconcile)
+
     def test_semantic_entrypoint_blocks_external_host_abort(self):
         entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
         with tempfile.TemporaryDirectory(prefix="renovate-entrypoint-test-") as tmp:

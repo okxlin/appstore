@@ -24,7 +24,11 @@ jobs:
         github.event.pull_request.state == 'open' &&
         (
           github.event.pull_request.user.login == 'app/renovate' ||
-          github.event.pull_request.user.login == 'renovate[bot]'
+          github.event.pull_request.user.login == 'renovate[bot]' ||
+          (
+            github.event.pull_request.head.repo.full_name == github.repository &&
+            startsWith(github.event.pull_request.head.ref, 'renovate/')
+          )
         )
       ) || (
         github.event_name == 'workflow_dispatch'

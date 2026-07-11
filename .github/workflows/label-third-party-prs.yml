@@ -11,7 +11,13 @@ permissions:
 
 jobs:
   add-pending-label:
-    if: github.event.pull_request.user.login != 'app/renovate' && github.event.pull_request.user.login != 'renovate[bot]'
+    if: >
+      github.event.pull_request.user.login != 'app/renovate' &&
+      github.event.pull_request.user.login != 'renovate[bot]' &&
+      !(
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        startsWith(github.event.pull_request.head.ref, 'renovate/')
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Add pending label to third-party PRs
