@@ -3,14 +3,15 @@ name: Renovate
 on:
   schedule:
     - cron: "0 0 * * *"
-  push:
-    branches:
-      - localApps
   workflow_dispatch:
     inputs:
       manual-trigger:
         description: 'Manually trigger Renovate'
         default: ''
+
+concurrency:
+  group: renovate-full-scan
+  cancel-in-progress: true
 
 jobs:
   renovate:

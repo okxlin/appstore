@@ -116,6 +116,18 @@ class RenovateAppVersionTests(unittest.TestCase):
 
         self.assertIn("RENOVATE_REPOSITORIES: ${{ github.repository }}", workflow)
 
+    def test_full_renovate_scan_is_scheduled_or_manual_only(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+
+        self.assertNotIn("  push:\n", workflow)
+        self.assertIn('    - cron: "0 0 * * *"', workflow)
+        self.assertIn("  workflow_dispatch:", workflow)
+
+    def test_full_renovate_scan_does_not_overlap(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+
+        self.assertIn("concurrency:\n  group: renovate-full-scan\n  cancel-in-progress: true", workflow)
+
     def test_self_hosted_renovate_uses_semantic_entrypoint(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
