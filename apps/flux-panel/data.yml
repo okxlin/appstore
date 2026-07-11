@@ -1,0 +1,33 @@
+name: Flux Panel
+tags:
+  - 网络工具
+  - 面板
+title: 基于 GOST 的多节点流量转发管理面板
+description: 基于 GOST 的多节点流量转发管理面板
+additionalProperties:
+  key: flux-panel
+  name: Flux Panel
+  tags:
+    - Network
+    - Tool
+  shortDescZh: 基于 GOST 的多节点流量转发管理面板
+  shortDescEn: Multi-node traffic forwarding management panel based on GOST
+  description:
+    en: Manage TCP and UDP forwarding, tunnels, quotas, speed limits, and traffic accounting across multiple GOST nodes.
+    zh: 管理多个 GOST 节点的 TCP/UDP 转发、隧道、配额、限速和流量计费。
+    zh-Hant: 管理多個 GOST 節點的 TCP/UDP 轉發、隧道、配額、限速和流量計費。
+    ja: 複数の GOST ノードにわたる TCP/UDP 転送、トンネル、クォータ、速度制限、トラフィック課金を管理します。
+    ko: 여러 GOST 노드의 TCP/UDP 포워딩, 터널, 할당량, 속도 제한 및 트래픽 과금을 관리합니다.
+    ru: Управляйте TCP/UDP-переадресацией, туннелями, квотами, ограничением скорости и учетом трафика на узлах GOST.
+    ms: Urus pemajuan TCP/UDP, terowong, kuota, had kelajuan dan perakaunan trafik merentasi nod GOST.
+    pt-br: Gerencie encaminhamento TCP/UDP, túneis, cotas, limites de velocidade e contabilização de tráfego em nós GOST.
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://github.com/bqlpfy/flux-panel
+  github: https://github.com/bqlpfy/flux-panel
+  document: https://github.com/bqlpfy/flux-panel#docker-compose部署
+  architectures:
+    - amd64
+    - arm64
