@@ -1,0 +1,36 @@
+services:
+  easy-vdl:
+    image: "qq918652593/easy-vdl:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - EASY_VDL_PORT=80
+      - EASY_VDL_ADMIN_USERNAME=${EASY_VDL_ADMIN_USERNAME}
+      - EASY_VDL_ADMIN_PASSWORD=${EASY_VDL_ADMIN_PASSWORD}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - "${DOWNLOAD_DIR}:/app/downloads"
+      - "${LOG_DIR}:/app/logs"
+      - "${DATABASE_DIR}:/app/database"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_CALLBACK}:8001"
+    healthcheck:
+      test:
+        - CMD
+        - /bin/bash
+        - /app/healthcheck.sh
+      start_period: 60s
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

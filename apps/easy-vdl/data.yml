@@ -1,0 +1,32 @@
+name: Easy-VDL
+tags:
+  - 多媒体
+  - 下载
+title: 支持多平台下载、订阅、直播录制和媒体管理的可视化平台
+description: 支持多平台下载、订阅、直播录制和媒体管理的可视化平台
+additionalProperties:
+  key: easy-vdl
+  name: Easy-VDL
+  tags:
+    - Media
+    - Tool
+  shortDescZh: 支持多平台下载、订阅、直播录制和媒体管理的可视化平台
+  shortDescEn: Visual platform for multi-site downloads, subscriptions, live recording, and media management
+  description:
+    en: Download and subscribe to multi-site videos, record live streams, and organize media through a self-hosted WebUI.
+    zh: 通过自托管 WebUI 下载和订阅多平台视频、录制直播并整理媒体内容。
+    zh-Hant: 透過自託管 WebUI 下載和訂閱多平台影片、錄製直播並整理媒體內容。
+    ja: セルフホストWebUIで複数サイトの動画をダウンロード・購読し、ライブ配信を録画してメディアを整理します。
+    ko: 자체 호스팅 WebUI에서 여러 사이트의 동영상을 다운로드하고 구독하며 라이브 방송을 녹화하고 미디어를 관리합니다.
+    ru: Загружайте видео с разных платформ, подписывайтесь на каналы, записывайте трансляции и управляйте медиатекой через собственный WebUI.
+    ms: Muat turun dan langgan video pelbagai platform, rakam siaran langsung dan urus media melalui WebUI hos kendiri.
+    pt-br: Baixe e acompanhe vídeos de várias plataformas, grave transmissões e organize mídia por uma WebUI auto-hospedada.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/wlaosj/easy-vdl
+  github: https://github.com/wlaosj/easy-vdl
+  document: https://github.com/wlaosj/easy-vdl
+  architectures:
+    - amd64

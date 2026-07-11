@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/wlaosj/easy-vdl",
+  "dockerDocs": "https://github.com/wlaosj/easy-vdl#%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8-docker-compose-%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2",
+  "composeFile": "https://github.com/wlaosj/easy-vdl#%E6%8E%A8%E8%8D%90%E4%BD%BF%E7%94%A8-docker-compose-%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2",
+  "imageRegistry": "https://hub.docker.com/r/qq918652593/easy-vdl",
+  "release": "https://github.com/wlaosj/easy-vdl/releases/tag/v1.2",
+  "notes": [
+    "The official latest image is linux/amd64 only; upstream publishes a separate moving arm64 tag and no fixed v1.2 image tag.",
+    "The official image embeds and initializes PostgreSQL under /app/database; this is an image-owned runtime rather than a replaceable Compose sidecar.",
+    "GPU devices and PERFMON are optional upstream accelerators and are intentionally omitted from the default CPU-compatible package."
+  ]
+}
