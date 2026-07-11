@@ -1,0 +1,31 @@
+services:
+  mdcz:
+    image: "ghcr.io/shotheadman/mdcz:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+      - MDCZ_ADMIN_PASSWORD=${MDCZ_ADMIN_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${MEDIA_DIR}:/media"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3838"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3838/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))
+      start_period: 20s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
