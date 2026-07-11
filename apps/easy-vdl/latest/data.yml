@@ -1,0 +1,86 @@
+additionalProperties:
+  formFields:
+    - default: 888
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label: {en: Web Port, zh: Web 端口, zh-Hant: Web 連接埠, ja: Web ポート, ko: Web 포트, ru: Веб-порт, ms: Port Web, pt-br: Porta Web}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8001
+      edit: true
+      envKey: PANEL_APP_PORT_CALLBACK
+      labelEn: WeCom Callback Port
+      labelZh: 企业微信回调端口
+      label: {en: WeCom Callback Port, zh: 企业微信回调端口, zh-Hant: 企業微信回呼連接埠, ja: WeCom コールバックポート, ko: WeCom 콜백 포트, ru: Порт обратного вызова WeCom, ms: Port Panggil Balik WeCom, pt-br: Porta de Retorno WeCom}
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: EASY_VDL_ADMIN_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label: {en: Admin Username, zh: 管理员用户名, zh-Hant: 管理員使用者名稱, ja: 管理者ユーザー名, ko: 관리자 사용자 이름, ru: Имя администратора, ms: Nama Pengguna Pentadbir, pt-br: Usuário Administrador}
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: EASY_VDL_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label: {en: Admin Password, zh: 管理员密码, zh-Hant: 管理員密碼, ja: 管理者パスワード, ko: 관리자 비밀번호, ru: Пароль администратора, ms: Kata Laluan Pentadbir, pt-br: Senha do Administrador}
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 1000
+      edit: true
+      envKey: PUID
+      labelEn: Runtime UID
+      labelZh: 运行用户 UID
+      label: {en: Runtime UID, zh: 运行用户 UID, zh-Hant: 執行使用者 UID, ja: 実行ユーザー UID, ko: 실행 사용자 UID, ru: UID пользователя, ms: UID Pengguna, pt-br: UID do Usuário}
+      required: true
+      type: number
+    - default: 100
+      edit: true
+      envKey: PGID
+      labelEn: Runtime GID
+      labelZh: 运行用户 GID
+      label: {en: Runtime GID, zh: 运行用户 GID, zh-Hant: 執行使用者 GID, ja: 実行ユーザー GID, ko: 실행 사용자 GID, ru: GID пользователя, ms: GID Pengguna, pt-br: GID do Usuário}
+      required: true
+      type: number
+    - default: ./data/downloads
+      edit: true
+      envKey: DOWNLOAD_DIR
+      labelEn: Download Directory
+      labelZh: 下载目录
+      label: {en: Download Directory, zh: 下载目录, zh-Hant: 下載目錄, ja: ダウンロードディレクトリ, ko: 다운로드 디렉터리, ru: Каталог загрузок, ms: Direktori Muat Turun, pt-br: Diretório de Downloads}
+      required: true
+      type: text
+    - default: ./data/logs
+      edit: true
+      envKey: LOG_DIR
+      labelEn: Log Directory
+      labelZh: 日志目录
+      label: {en: Log Directory, zh: 日志目录, zh-Hant: 日誌目錄, ja: ログディレクトリ, ko: 로그 디렉터리, ru: Каталог журналов, ms: Direktori Log, pt-br: Diretório de Logs}
+      required: true
+      type: text
+    - default: ./data/database
+      edit: true
+      envKey: DATABASE_DIR
+      labelEn: Database Directory
+      labelZh: 数据库目录
+      label: {en: Database Directory, zh: 数据库目录, zh-Hant: 資料庫目錄, ja: データベースディレクトリ, ko: 데이터베이스 디렉터리, ru: Каталог базы данных, ms: Direktori Pangkalan Data, pt-br: Diretório do Banco de Dados}
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label: {en: Timezone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Waktu, pt-br: Fuso Horário}
+      required: true
+      type: text
