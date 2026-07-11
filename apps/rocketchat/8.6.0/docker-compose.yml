@@ -1,6 +1,6 @@
 services:
   rocketchat:
-    image: "registry.rocket.chat/rocketchat/rocket.chat:8.6.0"
+    image: "registry.rocket.chat/rocketchat/rocket.chat:8.6.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
