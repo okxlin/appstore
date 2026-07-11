@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# This script renames a version directory to match the image tag from its compose file.
+# This script renames a version directory to match the changed primary service image tag.
 
 app_name=${1:?missing app name}
 old_version=${2:?missing source version}
+docker_compose_file=${3:?missing docker-compose path}
+base_ref=${4:?missing base ref}
 source_dir="apps/$app_name/$old_version"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+policy_file="$script_dir/../renovate-primary-services.json"
+selector="$script_dir/../scripts/renovate_app_version.py"
 
 case "$old_version" in
   latest|stable)
@@ -19,32 +24,22 @@ if [[ ! -d "$source_dir" ]]; then
   exit 0
 fi
 
-# Find all docker-compose files under apps/$app_name/$old_version (there should be only one).
-docker_compose_files=$(find "$source_dir" -name docker-compose.yml)
+trimmed_version=$(python3 "$selector" \
+  --app "$app_name" \
+  --old-version "$old_version" \
+  --compose "$docker_compose_file" \
+  --base-ref "$base_ref" \
+  --policy-file "$policy_file")
 
-for docker_compose_file in $docker_compose_files; do
-  # Assume the app version comes from the first service image.
-  first_service=$(yq '.services | keys | .[0]' "$docker_compose_file")
-  image=$(yq ".services.${first_service}.image" "$docker_compose_file")
+if [[ -z "$trimmed_version" || "$trimmed_version" == "$old_version" ]]; then
+  echo "skip: $source_dir already matches the selected primary image tag"
+  exit 0
+fi
 
-  # Only apply changes if the format is <image>:<version>.
-  if [[ "$image" != *":"* ]]; then
-    continue
-  fi
+target_dir="apps/$app_name/$trimmed_version"
+if [[ -e "$target_dir" ]]; then
+  echo "target already exists: $target_dir" >&2
+  exit 1
+fi
 
-  version=$(cut -d ":" -f2- <<< "$image")
-  trimmed_version=${version/#"v"}
-
-  if [[ -z "$trimmed_version" || "$trimmed_version" == "$old_version" ]]; then
-    echo "skip: $source_dir already matches image tag $version"
-    continue
-  fi
-
-  target_dir="apps/$app_name/$trimmed_version"
-  if [[ -e "$target_dir" ]]; then
-    echo "target already exists: $target_dir" >&2
-    exit 1
-  fi
-
-  mv "$source_dir" "$target_dir"
-done
+mv "$source_dir" "$target_dir"
