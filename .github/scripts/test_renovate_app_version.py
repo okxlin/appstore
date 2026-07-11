@@ -108,6 +108,11 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertTrue(matching)
         self.assertTrue(any(rule.get("enabled") is False for rule in matching))
 
+    def test_self_hosted_renovate_targets_this_repository(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+
+        self.assertIn("RENOVATE_REPOSITORIES: ${{ github.repository }}", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
