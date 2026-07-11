@@ -32,7 +32,7 @@ services:
       createdBy: "Apps"
 
   traccar-db:
-    image: "mysql:8.4"
+    image: "mysql:9.7"
     container_name: ${CONTAINER_NAME}-db
     restart: always
     networks:
