@@ -26,7 +26,7 @@ services:
     labels:
       createdBy: "Apps"
   your-spotify-mongo:
-    image: "mongo:8.0"
+    image: "mongo:8.3"
     restart: always
     networks:
       - 1panel-network
