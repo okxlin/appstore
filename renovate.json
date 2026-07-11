@@ -374,6 +374,70 @@
       "allowedVersions": "/^17.*/"
     },
     {
+      "description": "Keep historical application tracks immutable",
+      "matchFileNames": [
+        "apps/geekbench/4/**",
+        "apps/geekbench/5/**",
+        "apps/headscale/0.23.0-alpha3/**",
+        "apps/headscale/0.26.1/**",
+        "apps/mysql/5.5.62/**"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Group Kibana and Elasticsearch application images",
+      "matchFileNames": [
+        "apps/kibana/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana"
+      ],
+      "groupName": "Kibana application images"
+    },
+    {
+      "description": "Group ClearFlask application images",
+      "matchFileNames": [
+        "apps/clearflask/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/clearflask/clearflask-connect",
+        "ghcr.io/clearflask/clearflask-server"
+      ],
+      "groupName": "ClearFlask application images"
+    },
+    {
+      "description": "Disable bundled database-only updates for LinuxServer multi-service apps",
+      "matchFileNames": [
+        "apps/*-linuxserver/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mariadb",
+        "mongo"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable bundled MongoDB-only updates for Overleaf",
+      "matchFileNames": [
+        "apps/overleaf/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mongo"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable bundled MySQL-only updates for Traccar",
+      "matchFileNames": [
+        "apps/traccar/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mysql"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Keep Flux Panel on upstream stable 1.4.3 while the project is paused",
       "matchFileNames": [
         "apps/flux-panel/**/docker-compose.yml"
