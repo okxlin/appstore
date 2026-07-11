@@ -18,7 +18,7 @@ services:
       - net.ipv4.ip_forward=1
       - net.ipv6.conf.all.forwarding=1
     command: ['serve']
-    image: headscale/headscale:v0.26.1
+    image: headscale/headscale:v0.29.2
     labels:  
       createdBy: "Apps"
 
