@@ -1,6 +1,9 @@
 import importlib.util
 import json
+import os
 import pathlib
+import subprocess
+import tempfile
 import unittest
 
 
@@ -112,6 +115,56 @@ class RenovateAppVersionTests(unittest.TestCase):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
         self.assertIn("RENOVATE_REPOSITORIES: ${{ github.repository }}", workflow)
+
+    def test_self_hosted_renovate_uses_semantic_entrypoint(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+
+        self.assertIn("docker-cmd-file: .github/scripts/renovate-entrypoint.sh", workflow)
+
+    def test_semantic_entrypoint_blocks_external_host_abort(self):
+        entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
+        with tempfile.TemporaryDirectory(prefix="renovate-entrypoint-test-") as tmp:
+            fake_renovate = pathlib.Path(tmp) / "renovate"
+            fake_renovate.write_text(
+                "#!/usr/bin/env bash\n"
+                "echo 'INFO: External host error causing abort - skipping'\n"
+                "echo '\"result\": \"external-host-error\"'\n",
+                encoding="utf-8",
+            )
+            fake_renovate.chmod(0o755)
+            env = os.environ.copy()
+            env["PATH"] = f"{tmp}:{env['PATH']}"
+
+            result = subprocess.run(["bash", str(entrypoint)], text=True, capture_output=True, env=env, check=False)
+
+        self.assertNotEqual(0, result.returncode)
+        self.assertIn("Renovate aborted because an external host failed", result.stderr)
+
+    def test_semantic_entrypoint_preserves_clean_success(self):
+        entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
+        with tempfile.TemporaryDirectory(prefix="renovate-entrypoint-test-") as tmp:
+            fake_renovate = pathlib.Path(tmp) / "renovate"
+            fake_renovate.write_text("#!/usr/bin/env bash\necho 'Repository finished'\n", encoding="utf-8")
+            fake_renovate.chmod(0o755)
+            env = os.environ.copy()
+            env["PATH"] = f"{tmp}:{env['PATH']}"
+
+            result = subprocess.run(["bash", str(entrypoint)], text=True, capture_output=True, env=env, check=False)
+
+        self.assertEqual(0, result.returncode)
+
+    def test_semantic_entrypoint_preserves_renovate_failure(self):
+        entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
+        with tempfile.TemporaryDirectory(prefix="renovate-entrypoint-test-") as tmp:
+            fake_renovate = pathlib.Path(tmp) / "renovate"
+            fake_renovate.write_text("#!/usr/bin/env bash\necho 'ordinary failure'\nexit 23\n", encoding="utf-8")
+            fake_renovate.chmod(0o755)
+            env = os.environ.copy()
+            env["PATH"] = f"{tmp}:{env['PATH']}"
+
+            result = subprocess.run(["bash", str(entrypoint)], text=True, capture_output=True, env=env, check=False)
+
+        self.assertEqual(23, result.returncode)
 
 
 if __name__ == "__main__":
