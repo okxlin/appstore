@@ -37,7 +37,7 @@ services:
       - 1panel-network
 
   backend:
-    image: "bqlpfy/springboot-backend:1.4.3"
+    image: "bqlpfy/springboot-backend:v3.1.2"
     container_name: ${CONTAINER_NAME}-backend
     restart: unless-stopped
     environment:
