@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/dokku/dokku",
+  "dockerDocs": "https://dokku.com/docs/getting-started/install/docker/",
+  "composeFile": "https://github.com/dokku/dokku/blob/master/docs/getting-started/install/docker.md",
+  "imageRegistry": "https://hub.docker.com/r/dokku/dokku",
+  "imageTag": "https://hub.docker.com/r/dokku/dokku/tags?name=0.38.23",
+  "notes": [
+    "The official latest and 0.38.23 images publish linux/amd64 and linux/arm64 manifests.",
+    "Docker socket access is an upstream-required core capability and is preserved with explicit host-control risk documentation.",
+    "DOKKU_HOST_ROOT and DOKKU_LIB_HOST_ROOT are derived from the required absolute APP_DATA_DIR so child-container mounts resolve on the host."
+  ]
+}
