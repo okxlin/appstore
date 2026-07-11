@@ -1,0 +1,30 @@
+services:
+  xiaomi-album-syncer:
+    image: "coolfan1024/xiaomi-album-syncer:0.16.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${DOWNLOAD_DIR}:/app/download"
+      - "${DATABASE_DIR}:/app/db"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    healthcheck:
+      test:
+        - CMD
+        - bash
+        - -c
+        - exec 3<>/dev/tcp/127.0.0.1/8080
+      start_period: 30s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
