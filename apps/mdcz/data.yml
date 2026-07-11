@@ -1,0 +1,33 @@
+name: MDCz
+tags:
+  - 多媒体
+  - 工具
+title: 高效现代的影片元数据刮削与管理工具
+description: 高效现代的影片元数据刮削与管理工具
+additionalProperties:
+  key: mdcz
+  name: MDCz
+  tags:
+    - Media
+    - Tool
+  shortDescZh: 高效现代的影片元数据刮削与管理工具
+  shortDescEn: Modern video metadata scraper and library management tool
+  description:
+    en: Scrape metadata, generate NFO files, and organize local video libraries through a self-hosted WebUI.
+    zh: 通过自托管 WebUI 刮削元数据、生成 NFO 文件并整理本地影片库。
+    zh-Hant: 透過自託管 WebUI 擷取中繼資料、產生 NFO 檔案並整理本機影片庫。
+    ja: セルフホスト WebUI でメタデータを取得し、NFO ファイルを生成してローカル動画ライブラリを整理します。
+    ko: 자체 호스팅 WebUI에서 메타데이터를 수집하고 NFO 파일을 생성하며 로컬 비디오 라이브러리를 정리합니다.
+    ru: Получайте метаданные, создавайте файлы NFO и упорядочивайте локальную видеотеку через собственный WebUI.
+    ms: Kikis metadata, jana fail NFO dan susun pustaka video tempatan melalui WebUI hos kendiri.
+    pt-br: Extraia metadados, gere arquivos NFO e organize bibliotecas de vídeo locais por uma WebUI auto-hospedada.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/ShotHeadman/mdcz
+  github: https://github.com/ShotHeadman/mdcz
+  document: https://github.com/ShotHeadman/mdcz/blob/main/apps/server/README.md
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/ShotHeadman/mdcz",
+  "dockerDocs": "https://github.com/ShotHeadman/mdcz/blob/main/apps/server/README.md",
+  "composeFile": "https://github.com/ShotHeadman/mdcz/blob/main/README.md#快速开始",
+  "imageRegistry": "https://github.com/ShotHeadman/mdcz/pkgs/container/mdcz",
+  "release": "https://github.com/ShotHeadman/mdcz/releases/tag/v0.10.0",
+  "notes": [
+    "The official Docker image publishes linux/amd64 and linux/arm64 manifests.",
+    "The image runs as the non-root node user and persists application state under /data.",
+    "The upstream setup API requires an absolute mounted media path; this adaptation exposes MEDIA_DIR at /media for the core scan and organization workflow.",
+    "Media access is read-write because MDCz generates metadata and can move or rename files according to user settings."
+  ]
+}
