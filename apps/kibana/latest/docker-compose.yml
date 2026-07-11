@@ -1,6 +1,6 @@
 services:
   kibana:
-    image: "docker.elastic.co/kibana/kibana:9.4.2"
+    image: "docker.elastic.co/kibana/kibana:9.4.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
