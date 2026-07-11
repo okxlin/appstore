@@ -1,6 +1,6 @@
 services:
   geekbench:
-    image: "davidsarkany/geekbench:4"
+    image: "davidsarkany/geekbench:6"
     container_name: ${CONTAINER_NAME}
     restart: "no"
     stdin_open: true
