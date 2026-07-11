@@ -111,6 +111,54 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertTrue(matching)
         self.assertTrue(any(rule.get("enabled") is False for rule in matching))
 
+    def test_multi_service_application_images_are_grouped(self):
+        config = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        groups = {rule.get("groupName"): set(rule.get("matchPackageNames", [])) for rule in config.get("packageRules", []) if rule.get("groupName")}
+
+        self.assertEqual(
+            {
+                "docker.elastic.co/elasticsearch/elasticsearch",
+                "docker.elastic.co/kibana/kibana",
+            },
+            groups["Kibana application images"],
+        )
+        self.assertEqual(
+            {
+                "ghcr.io/clearflask/clearflask-connect",
+                "ghcr.io/clearflask/clearflask-server",
+            },
+            groups["ClearFlask application images"],
+        )
+
+    def test_historical_tracks_and_known_sidecars_are_not_renovated(self):
+        config = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        disabled = [rule for rule in config.get("packageRules", []) if rule.get("enabled") is False]
+
+        disabled_paths = {path for rule in disabled for path in rule.get("matchFileNames", [])}
+        self.assertTrue(
+            {
+                "apps/geekbench/4/**",
+                "apps/geekbench/5/**",
+                "apps/headscale/0.23.0-alpha3/**",
+                "apps/headscale/0.26.1/**",
+                "apps/mysql/5.5.62/**",
+            }.issubset(disabled_paths)
+        )
+        self.assertTrue(
+            any(
+                "apps/*-linuxserver/**/docker-compose.yml" in rule.get("matchFileNames", [])
+                and {"mariadb", "mongo"}.issubset(set(rule.get("matchPackageNames", [])))
+                for rule in disabled
+            )
+        )
+        self.assertTrue(
+            any(
+                "apps/traccar/**/docker-compose.yml" in rule.get("matchFileNames", [])
+                and "mysql" in rule.get("matchPackageNames", [])
+                for rule in disabled
+            )
+        )
+
     def test_self_hosted_renovate_targets_this_repository(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
