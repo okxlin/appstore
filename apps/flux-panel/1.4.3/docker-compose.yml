@@ -1,0 +1,89 @@
+services:
+  mysql:
+    image: "mysql:5.7"
+    container_name: ${CONTAINER_NAME}-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      TZ: ${TZ}
+      INIT_SQL_GZIP_BASE64: H4sICH5GUmoCA2dvc3Quc3FsAOVZ227bNhi+91NwvXHSyY7k2DkiQNRYXY3ZcmorA7JhkBWJToTKkiDROexyKLBuQIEBbbGtCFZ0wIBctNsudlH0gL1M7exurzBSUmxJ1sGO5ybAHAOx+P38+PM/kRRzOWAemLUTVumoOmjerYJyt2NmcjlwCC1bNXRQyhfyNGk4QMi01xYWjo6O8rhP50QiffI6RAsYJhLvX73pn77+5+1ToBmypB0YNiLN54+f9R983//h1/7pMwIW6EIpR6/kmCIoMGulAv4Ssf7pw953z3s/nZ1/+6B/+oJIlvLL+SKd04x9IrB9ZxsMMYzkFxczmSYnEL3FWr3MgQ1wg6+L7I5QFz9jqzucWOfFz7lG/cZ6pimwDQEIDZZvsltCpc6vO12R2oHiV4YOSd+PaXqNprFwJrNw86MizdAMIEKb9WpZ3LrDNnBPriHiJnGrWuF4YWNzM6oZ3FxYT2VocM2dqtAcofDa4zjq1SpL1Me/eJ5zZkIoIppHGXi2xjVBF7VXOntFB/Y813/yR//hb73Xj4hlW/vYcS2CECh3yc8F9d/Pz86f3j9/86j/833QahvWkWQpLvtWg2MFDgjsrSo3hMBcBoCWin+oOppj6HnA17HqO9UqRYCuDS0xGdWlDmyBQ8mSDyQLy4SF0nDU1XWoxQ+i6qJpWCgGNbooBJe52yx26VDEgh0DQVFSFKuFc0XfR/AYBVlsZEkI7p/E6DngzLbVtpH11ELQaksyDBmgQEfpgCfR1oyjFthT94mihUh2OjuY0/jSsgWx7opIciuyh+sqUxlDykYS6tqxjjgeRfzqZOYBx39S4bmNiq4b5VsDjKQczogNLxfWZxDquqHAqDh32lOCPC1CbYhtjJIkVHMYWV4X65BkjpnUi8StiE0eo5YDQz1Oa2/JCA0wEnlkIUl2m5uFmj2GlG3I98aRmzImRyYRF5dXGXG2CbHumtpRUVTg+eFp449QxfRNq54enjbE/8JhWCfVRqpsu9U1ymkhkalWx9gS7jrGQJImpsioU3rtKs3tRl6UlT1kyqzAS3a7rcoiXrlVowUUKKsdScOCFBNVmZg8fbFwi2RRSNxwJNdtsj4nUxCJZA50YsK4um8ZyJANzd89aka4ZGd9gRad/rKJa5CNoO7tf1L2N1+srX3pknaVy/acbGf0IbYvV5kGpEZEJYHTPkZ9SdxAHClJsGVoCTEKj80UcyYXpxluaYmkaEEbohQN9W4nZnbXckFzouPdi97LH3GMvH/1EoeJexb0h0mFb3L47FzhhfogSkiIUN4T5fqdGvqX8jmT8txGDR1E+cxPjRqXcs1IhWxGhaxDDWwwD5zTfjMzx1Ag67yXEIlmWfy0KK+UZAXuSQpk5BIjt5eKsrTaXpTpVYVZKShYhqZAYRn/lZhlmnwosEo+DoC/zOCZWS6urDLFlaWSI8Usl/DZGjcWC6UCfpyfVbaK8SuXH55qb5C2bXN3j354JCLjY//652167bmOpfxQRVCUDb2t7kcFhx+eaG9TGKnch5LWTRT4b3Z8CfVoZK6BshScqlednElRF8pTnpKhamGazq6A1Iq21j3OOnldYorLq0uLOM3nA3p9feY54M9fem+fZEb84jQHX3OxVYFrhF9yYYux5TLYblRqbGMXfMrtukr7RgsQDl4mBNjc1gmpwqfEAGMAnJQ44jQTJA8LTDiArwoGeC/aJ6QbLHABMrf1ElRinHoBcELicNAHiANgHDHlITt85e4O5wBess+5/4dD907Per+/7X3zGitA0u/dX+ePz5yX6RUeF5Yaxwu+iHdhLBeUGC/4a/Vy5fZudD0CQUIq9LzBrKeqkJwuMx58kgSbtSqXSMkZq5SexDNWIDntP8Dg4xaKGasySWmZUpWteq1WEdZDt2rRF2pxV22jt1kx12mxN20RDJGXaXHXbE7/fwHzBdHhMR0AAA==
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        printf '%s' "$$INIT_SQL_GZIP_BASE64" | base64 -d | gzip -d > /docker-entrypoint-initdb.d/gost.sql
+        exec /usr/local/bin/docker-entrypoint.sh mysqld "$$@"
+      - --
+    volumes:
+      - "${APP_DATA_DIR}/mysql:/var/lib/mysql"
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --max_connections=1000
+      - --innodb_buffer_pool_size=256M
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  backend:
+    image: "bqlpfy/springboot-backend:1.4.3"
+    container_name: ${CONTAINER_NAME}-backend
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      LOG_DIR: /app/logs
+      JAVA_OPTS: -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.timezone=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}/logs:/app/logs"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:6365/flow/test || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  frontend:
+    image: "bqlpfy/vite-frontend:1.4.3"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
