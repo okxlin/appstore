@@ -1,0 +1,39 @@
+services:
+  langflow:
+    image: "langflowai/langflow:1.10.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - LANGFLOW_CONFIG_DIR=/app/langflow
+      - LANGFLOW_SAVE_DB_IN_CONFIG_DIR=true
+      - LANGFLOW_DATABASE_URL=sqlite:////app/langflow/langflow.db
+      - LANGFLOW_AUTO_LOGIN=${LANGFLOW_AUTO_LOGIN}
+      - LANGFLOW_SUPERUSER=${LANGFLOW_SUPERUSER}
+      - LANGFLOW_SUPERUSER_PASSWORD=${LANGFLOW_SUPERUSER_PASSWORD}
+      - LANGFLOW_LOG_LEVEL=${LANGFLOW_LOG_LEVEL}
+      - LANGFLOW_WORKERS=1
+      - MEM0_DIR=/app/langflow/.mem0
+      - COMPOSIO_CACHE_DIR=/app/langflow/.composio
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/app/langflow"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7860"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://127.0.0.1:7860/health_check', timeout=10)
+      start_period: 90s
+      interval: 30s
+      timeout: 15s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

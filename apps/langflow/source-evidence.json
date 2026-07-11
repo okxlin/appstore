@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/langflow-ai/langflow",
+  "dockerDocs": "https://docs.langflow.org/deployment-docker",
+  "composeFile": "https://github.com/langflow-ai/langflow/blob/main/docs/docs/Deployment/deployment-docker.mdx",
+  "imageRegistry": "https://hub.docker.com/r/langflowai/langflow",
+  "release": "https://github.com/langflow-ai/langflow/releases/tag/v1.10.2",
+  "notes": [
+    "The official image publishes linux/amd64 and linux/arm64 manifests and runs as UID 1000.",
+    "The official quickstart supports a single-container SQLite deployment; this package persists it under /app/langflow.",
+    "PostgreSQL is an upstream-supported alternative, but no database sidecar is bundled because the tested SQLite mode is complete and directly installable."
+  ]
+}

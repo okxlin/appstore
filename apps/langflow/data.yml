@@ -1,0 +1,33 @@
+name: Langflow
+tags:
+  - AI
+  - 开发工具
+title: 用于构建和部署 AI 智能体与工作流的可视化平台
+description: 用于构建和部署 AI 智能体与工作流的可视化平台
+additionalProperties:
+  key: langflow
+  name: Langflow
+  tags:
+    - AI
+    - Tool
+  shortDescZh: 用于构建和部署 AI 智能体与工作流的可视化平台
+  shortDescEn: Visual platform for building and deploying AI agents and workflows
+  description:
+    en: Build, test, and deploy AI agents and workflows through a visual editor with API and MCP endpoints.
+    zh: 通过可视化编辑器构建、测试和部署 AI 智能体与工作流，并提供 API 和 MCP 端点。
+    zh-Hant: 透過視覺化編輯器建置、測試和部署 AI 智慧代理與工作流程，並提供 API 和 MCP 端點。
+    ja: ビジュアルエディターでAIエージェントとワークフローを構築、テスト、デプロイし、APIとMCPエンドポイントを提供します。
+    ko: 시각적 편집기에서 AI 에이전트와 워크플로를 구축, 테스트 및 배포하고 API와 MCP 엔드포인트를 제공합니다.
+    ru: Создавайте, тестируйте и развертывайте ИИ-агентов и рабочие процессы в визуальном редакторе с API и MCP.
+    ms: Bina, uji dan gunakan ejen AI serta aliran kerja melalui editor visual dengan titik akhir API dan MCP.
+    pt-br: Crie, teste e implante agentes e fluxos de IA em um editor visual com endpoints de API e MCP.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.langflow.org
+  github: https://github.com/langflow-ai/langflow
+  document: https://docs.langflow.org/deployment-docker
+  architectures:
+    - amd64
+    - arm64
