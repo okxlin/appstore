@@ -127,6 +127,8 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("configurationFile: .github/renovate-global.js", workflow)
         self.assertIn("RENOVATE_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}", workflow)
         self.assertIn("RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}", workflow)
+        self.assertIn("name: Check Docker Hub credentials", workflow)
+        self.assertIn("Configure DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets", workflow)
 
     def test_global_config_fails_fast_without_docker_hub_credentials(self):
         config = REPO_ROOT / ".github" / "renovate-global.js"
