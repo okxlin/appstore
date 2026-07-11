@@ -22,3 +22,5 @@ jobs:
         uses: renovatebot/github-action@b50d2ba2bd928235abdcc14d06dfafc217f1c565 # v46.1.18
         with:
           token: ${{ secrets.GITHUBTOKEN }}
+        env:
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
