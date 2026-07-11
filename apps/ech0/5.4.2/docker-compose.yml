@@ -1,0 +1,28 @@
+services:
+  ech0:
+    image: "sn0wl1n/ech0:v5.4.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:6277"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q --spider http://127.0.0.1:6277/ || exit 1
+      start_period: 15s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,32 @@
+name: Ech0
+tags:
+  - 网站
+  - 博客
+title: 轻量、开源、自托管的个人想法发布平台
+description: 轻量、开源、自托管的个人想法发布平台
+additionalProperties:
+  key: ech0
+  name: Ech0
+  tags:
+    - Website
+  shortDescZh: 轻量、开源、自托管的个人想法发布平台
+  shortDescEn: Lightweight self-hosted platform for publishing personal ideas
+  description:
+    en: Publish short personal ideas, images, and links through a lightweight self-hosted platform.
+    zh: 通过轻量的自托管平台发布个人想法、图片和链接。
+    zh-Hant: 透過輕量的自託管平台發布個人想法、圖片和連結。
+    ja: 軽量なセルフホスト型プラットフォームで個人のアイデア、画像、リンクを公開します。
+    ko: 가벼운 자체 호스팅 플랫폼에서 개인적인 생각, 이미지 및 링크를 게시합니다.
+    ru: Публикуйте личные заметки, изображения и ссылки на легкой самостоятельно размещаемой платформе.
+    ms: Terbitkan idea peribadi, imej dan pautan melalui platform hos kendiri yang ringan.
+    pt-br: Publique ideias pessoais, imagens e links em uma plataforma leve e auto-hospedada.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://ech0.app
+  github: https://github.com/lin-snow/Ech0
+  document: https://github.com/lin-snow/Ech0/blob/main/DEPLOYMENT.md
+  architectures:
+    - amd64
+    - arm64
