@@ -1,0 +1,33 @@
+name: Dokku
+tags:
+  - DevOps
+  - PaaS
+title: 基于 Docker 的单机应用部署与生命周期管理平台
+description: 基于 Docker 的单机应用部署与生命周期管理平台
+additionalProperties:
+  key: dokku
+  name: Dokku
+  tags:
+    - DevOps
+    - Server
+  shortDescZh: 基于 Docker 的单机应用部署与生命周期管理平台
+  shortDescEn: Docker-powered platform for building, deploying, and managing applications on one server
+  description:
+    en: Build, deploy, and manage applications on a single server through Git pushes, Docker, buildpacks, and plugins.
+    zh: 通过 Git 推送、Docker、Buildpack 和插件在单台服务器上构建、部署和管理应用。
+    zh-Hant: 透過 Git 推送、Docker、Buildpack 和外掛在單台伺服器上建置、部署和管理應用程式。
+    ja: Gitプッシュ、Docker、Buildpack、プラグインを使用して単一サーバー上のアプリケーションを構築・デプロイ・管理します。
+    ko: Git 푸시, Docker, 빌드팩 및 플러그인을 통해 단일 서버에서 애플리케이션을 빌드, 배포 및 관리합니다.
+    ru: Создавайте, развертывайте и управляйте приложениями на одном сервере с помощью Git, Docker, buildpack и плагинов.
+    ms: Bina, gunakan dan urus aplikasi pada satu pelayan melalui Git, Docker, buildpack dan pemalam.
+    pt-br: Crie, implante e gerencie aplicações em um único servidor com Git, Docker, buildpacks e plugins.
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://dokku.com
+  github: https://github.com/dokku/dokku
+  document: https://dokku.com/docs/getting-started/install/docker/
+  architectures:
+    - amd64
+    - arm64

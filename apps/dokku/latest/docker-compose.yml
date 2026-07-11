@@ -1,0 +1,20 @@
+services:
+  dokku:
+    image: "dokku/dokku:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    network_mode: bridge
+    environment:
+      - DOKKU_HOSTNAME=${DOKKU_HOSTNAME}
+      - DOKKU_HOST_ROOT=${APP_DATA_DIR}/home/dokku
+      - DOKKU_LIB_HOST_ROOT=${APP_DATA_DIR}/var/lib/dokku
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/mnt/dokku"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "${PANEL_APP_PORT_SSH}:22"
+      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTPS}:443"
+    labels:
+      createdBy: "Apps"

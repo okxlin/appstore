@@ -1,0 +1,53 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Application HTTP Port
+      labelZh: 应用 HTTP 端口
+      label: {en: Application HTTP Port, zh: 应用 HTTP 端口, zh-Hant: 應用程式 HTTP 連接埠, ja: アプリ HTTP ポート, ko: 애플리케이션 HTTP 포트, ru: HTTP-порт приложений, ms: Port HTTP Aplikasi, pt-br: Porta HTTP das Aplicações}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8443
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: Application HTTPS Port
+      labelZh: 应用 HTTPS 端口
+      label: {en: Application HTTPS Port, zh: 应用 HTTPS 端口, zh-Hant: 應用程式 HTTPS 連接埠, ja: アプリ HTTPS ポート, ko: 애플리케이션 HTTPS 포트, ru: HTTPS-порт приложений, ms: Port HTTPS Aplikasi, pt-br: Porta HTTPS das Aplicações}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 3022
+      edit: true
+      envKey: PANEL_APP_PORT_SSH
+      labelEn: Git SSH Port
+      labelZh: Git SSH 端口
+      label: {en: Git SSH Port, zh: Git SSH 端口, zh-Hant: Git SSH 連接埠, ja: Git SSH ポート, ko: Git SSH 포트, ru: Порт Git SSH, ms: Port Git SSH, pt-br: Porta Git SSH}
+      required: true
+      rule: paramPort
+      type: number
+    - default: dokku.me
+      edit: true
+      envKey: DOKKU_HOSTNAME
+      labelEn: Global Hostname
+      labelZh: 全局域名
+      label: {en: Global Hostname, zh: 全局域名, zh-Hant: 全域主機名稱, ja: グローバルホスト名, ko: 전역 호스트 이름, ru: Глобальное имя хоста, ms: Nama Hos Global, pt-br: Nome de Host Global}
+      required: true
+      type: text
+    - default: /var/lib/dokku
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label: {en: Data Directory, zh: 数据目录, zh-Hant: 資料目錄, ja: データディレクトリ, ko: 데이터 디렉터리, ru: Каталог данных, ms: Direktori Data, pt-br: Diretório de Dados}
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label: {en: Timezone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Waktu, pt-br: Fuso Horário}
+      required: true
+      type: text
