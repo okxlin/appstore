@@ -1,0 +1,34 @@
+services:
+  quark-auto-save:
+    image: "cp0204/quark-auto-save:v0.8.7"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - WEBUI_USERNAME=${WEBUI_USERNAME}
+      - WEBUI_PASSWORD=${WEBUI_PASSWORD}
+      - TASK_TIMEOUT=${TASK_TIMEOUT}
+      - PLUGIN_FLAGS=${PLUGIN_FLAGS:-}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_CONFIG_DIR}:/app/config"
+      - "${MEDIA_DIR}:/media"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5005"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://127.0.0.1:5005/', timeout=5)
+      start_period: 15s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
