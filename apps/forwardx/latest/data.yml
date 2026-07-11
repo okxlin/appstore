@@ -1,0 +1,58 @@
+additionalProperties:
+  formFields:
+    - default: 9810
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label: {en: Web Port, zh: Web 端口, zh-Hant: Web 連接埠, ja: Web ポート, ko: Web 포트, ru: Веб-порт, ms: Port Web, pt-br: Porta Web}
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT Secret
+      labelZh: JWT 密钥
+      label: {en: JWT Secret, zh: JWT 密钥, zh-Hant: JWT 金鑰, ja: JWT シークレット, ko: JWT 비밀 키, ru: Секрет JWT, ms: Rahsia JWT, pt-br: Segredo JWT}
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label: {en: Data Directory, zh: 数据目录, zh-Hant: 資料目錄, ja: データディレクトリ, ko: 데이터 디렉터리, ru: Каталог данных, ms: Direktori Data, pt-br: Diretório de Dados}
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: TELEGRAM_BOT_TOKEN
+      labelEn: Telegram Bot Token
+      labelZh: Telegram 机器人 Token
+      label: {en: Telegram Bot Token, zh: Telegram 机器人 Token, zh-Hant: Telegram 機器人 Token, ja: Telegram Bot トークン, ko: Telegram 봇 토큰, ru: Токен Telegram-бота, ms: Token Bot Telegram, pt-br: Token do Bot do Telegram}
+      required: false
+      type: password
+    - default: "true"
+      edit: true
+      envKey: TELEGRAM_BOT_POLLING
+      labelEn: Telegram Long Polling
+      labelZh: Telegram 长轮询
+      label: {en: Telegram Long Polling, zh: Telegram 长轮询, zh-Hant: Telegram 長輪詢, ja: Telegram ロングポーリング, ko: Telegram 롱 폴링, ru: Длительный опрос Telegram, ms: Undian Panjang Telegram, pt-br: Long Polling do Telegram}
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label: {en: Timezone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Waktu, pt-br: Fuso Horário}
+      required: true
+      type: text

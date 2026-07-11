@@ -1,0 +1,33 @@
+name: ForwardX
+tags:
+  - 网络工具
+  - 面板
+title: 多主机端口转发、隧道与流量管理面板
+description: 多主机端口转发、隧道与流量管理面板
+additionalProperties:
+  key: forwardx
+  name: ForwardX
+  tags:
+    - Network
+    - Tool
+  shortDescZh: 多主机端口转发、隧道与流量管理面板
+  shortDescEn: Multi-host port forwarding, tunnel, and traffic management panel
+  description:
+    en: Manage forwarding rules, encrypted tunnels, link orchestration, user permissions, plans, and traffic across multiple Linux hosts.
+    zh: 统一管理多台 Linux 主机的转发规则、加密隧道、链路编排、用户权限、套餐和流量。
+    zh-Hant: 統一管理多台 Linux 主機的轉發規則、加密隧道、鏈路編排、使用者權限、方案和流量。
+    ja: 複数の Linux ホストの転送ルール、暗号化トンネル、リンク構成、ユーザー権限、プラン、トラフィックを一元管理します。
+    ko: 여러 Linux 호스트의 포워딩 규칙, 암호화 터널, 링크 구성, 사용자 권한, 요금제 및 트래픽을 통합 관리합니다.
+    ru: Управляйте правилами переадресации, зашифрованными туннелями, маршрутами, правами пользователей, тарифами и трафиком на нескольких Linux-хостах.
+    ms: Urus peraturan pemajuan, terowong disulitkan, orkestrasi pautan, kebenaran pengguna, pelan dan trafik merentasi hos Linux.
+    pt-br: Gerencie regras de encaminhamento, túneis criptografados, rotas, permissões, planos e tráfego em vários hosts Linux.
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://github.com/poouo/Forwardx
+  github: https://github.com/poouo/Forwardx
+  document: https://poouo.github.io/Forwardx/
+  architectures:
+    - amd64
+    - arm64
