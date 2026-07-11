@@ -26,7 +26,12 @@ jobs:
       - name: Get list of updated files by the last commit in this branch separated by space
         id: updated-files
         run: |
-          echo "files=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }} | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          base_ref="${{ github.event.before }}"
+          if [[ -z "$base_ref" || "$base_ref" =~ ^0+$ ]]; then
+            base_ref="HEAD^"
+          fi
+          echo "base_ref=$base_ref" >> "$GITHUB_OUTPUT"
+          echo "files=$(git diff --name-only "$base_ref" "${{ github.sha }}" | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
 
       - name: Run renovate-app-version.sh on updated files
         run: |
@@ -37,7 +42,11 @@ jobs:
               app_name=$(echo "$file" | cut -d'/' -f 2)
               old_version=$(echo "$file" | cut -d'/' -f 3)
               chmod +x .github/workflows/renovate-app-version.sh
-              .github/workflows/renovate-app-version.sh "$app_name" "$old_version"
+              .github/workflows/renovate-app-version.sh \
+                "$app_name" \
+                "$old_version" \
+                "$file" \
+                "${{ steps.updated-files.outputs.base_ref }}"
             fi
           done
 

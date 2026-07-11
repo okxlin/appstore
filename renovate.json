@@ -374,6 +374,13 @@
       "allowedVersions": "/^17.*/"
     },
     {
+      "description": "Keep Flux Panel on upstream stable 1.4.3 while the project is paused",
+      "matchFileNames": [
+        "apps/flux-panel/**/docker-compose.yml"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Disable sidecar-only Renovate updates for ClearFlask multi-service tracks",
       "matchFileNames": [
         "apps/clearflask/**/docker-compose.yml"
