@@ -39,7 +39,7 @@ services:
     labels:
       createdBy: "Apps"
   snipe-it-db:
-    image: "mariadb:11.4"
+    image: "mariadb:11.8"
     restart: always
     networks:
       - 1panel-network
