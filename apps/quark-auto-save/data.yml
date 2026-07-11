@@ -1,0 +1,34 @@
+name: Quark Auto Save
+tags:
+  - 工具
+  - 云存储
+title: 夸克网盘自动转存、整理与媒体库联动工具
+description: 夸克网盘自动转存、整理与媒体库联动工具
+additionalProperties:
+  key: quark-auto-save
+  name: Quark Auto Save
+  tags:
+    - Tool
+    - Storage
+  shortDescZh: 夸克网盘自动转存、整理与媒体库联动工具
+  shortDescEn: Automate Quark cloud-drive transfers, renaming, notifications, and media-library refreshes
+  description:
+    en: Automate Quark cloud-drive sign-in, transfers, renaming, notifications, and media-library refresh tasks.
+    zh: 自动完成夸克网盘签到、转存、重命名、通知和媒体库刷新任务。
+    zh-Hant: 自動完成夸克網盤簽到、轉存、重新命名、通知和媒體庫重新整理任務。
+    ja: Quarkクラウドドライブのサインイン、転送、名前変更、通知、メディアライブラリ更新を自動化します。
+    ko: Quark 클라우드 드라이브 로그인, 전송, 이름 변경, 알림 및 미디어 라이브러리 새로 고침을 자동화합니다.
+    ru: Автоматизирует вход, перенос, переименование, уведомления и обновление медиатеки Quark Cloud Drive.
+    ms: Automatikkan daftar masuk, pemindahan, penamaan semula, pemberitahuan dan muat semula pustaka media Quark Cloud Drive.
+    pt-br: Automatize login, transferências, renomeação, notificações e atualização da biblioteca de mídia do Quark Cloud Drive.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Cp0204/quark-auto-save
+  github: https://github.com/Cp0204/quark-auto-save
+  document: https://github.com/Cp0204/quark-auto-save/wiki
+  architectures:
+    - amd64
+    - arm
+    - arm64

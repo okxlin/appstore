@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/Cp0204/quark-auto-save",
+  "dockerDocs": "https://github.com/Cp0204/quark-auto-save#docker-%E9%83%A8%E7%BD%B2",
+  "composeFile": "https://github.com/Cp0204/quark-auto-save#docker-%E9%83%A8%E7%BD%B2",
+  "imageRegistry": "https://hub.docker.com/r/cp0204/quark-auto-save",
+  "release": "https://github.com/Cp0204/quark-auto-save/releases/tag/v0.8.7",
+  "notes": [
+    "The official image publishes linux/amd64, linux/arm, and linux/arm64 manifests.",
+    "The official Docker example persists /app/config and optionally mounts /media for media-related plugins.",
+    "WEBUI credentials, task timeout, plugin flags, and timezone are exposed through the 1Panel install form."
+  ]
+}

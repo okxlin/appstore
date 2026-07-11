@@ -1,0 +1,133 @@
+additionalProperties:
+  formFields:
+    - default: 5005
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: WEBUI_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理用户名
+      label:
+        en: Admin Username
+        zh: 管理用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama Pengguna Pentadbir
+        pt-br: Usuário Administrador
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: WEBUI_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理密码
+      label:
+        en: Admin Password
+        zh: 管理密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do Administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 1800
+      edit: true
+      envKey: TASK_TIMEOUT
+      labelEn: Task Timeout (seconds)
+      labelZh: 任务超时（秒）
+      label:
+        en: Task Timeout (seconds)
+        zh: 任务超时（秒）
+        zh-Hant: 任務逾時（秒）
+        ja: タスクのタイムアウト（秒）
+        ko: 작업 시간 제한(초)
+        ru: Тайм-аут задачи (секунды)
+        ms: Tamat Masa Tugas (saat)
+        pt-br: Tempo Limite da Tarefa (segundos)
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: PLUGIN_FLAGS
+      labelEn: Plugin Flags
+      labelZh: 插件标志
+      label:
+        en: Plugin Flags
+        zh: 插件标志
+        zh-Hant: 外掛標誌
+        ja: プラグインフラグ
+        ko: 플러그인 플래그
+        ru: Флаги плагинов
+        ms: Bendera Pemalam
+        pt-br: Opções de Plugins
+      required: false
+      type: text
+    - default: ./data/config
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Configuration Directory
+      labelZh: 配置目录
+      label:
+        en: Configuration Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori Konfigurasi
+        pt-br: Diretório de Configuração
+      required: true
+      type: text
+    - default: ./data/media
+      edit: true
+      envKey: MEDIA_DIR
+      labelEn: Media Directory
+      labelZh: 媒体目录
+      label:
+        en: Media Directory
+        zh: 媒体目录
+        zh-Hant: 媒體目錄
+        ja: メディアディレクトリ
+        ko: 미디어 디렉터리
+        ru: Каталог медиафайлов
+        ms: Direktori Media
+        pt-br: Diretório de Mídia
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horário
+      required: true
+      type: text
