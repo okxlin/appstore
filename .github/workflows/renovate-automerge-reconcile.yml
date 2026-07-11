@@ -36,9 +36,13 @@ jobs:
 
           mapfile -t pr_numbers < <(
             gh pr list --repo "$REPO" --state open --limit 100 \
-              --json number,author,labels,isDraft,baseRefName \
+              --json number,author,labels,isDraft,baseRefName,headRefName,headRepositoryOwner,isCrossRepository \
               --jq '.[]
-                | select(.author.login == "app/renovate" or .author.login == "renovate[bot]")
+                | select(
+                    .author.login == "app/renovate" or
+                    .author.login == "renovate[bot]" or
+                    ((.isCrossRepository | not) and (.headRefName | startswith("renovate/")))
+                  )
                 | select(.isDraft | not)
                 | select(.baseRefName == "localApps")
                 | select(([.labels[].name] | index("renovate-auto")) | not)
