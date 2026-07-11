@@ -1,0 +1,33 @@
+name: Xiaomi Album Syncer
+tags:
+  - 云存储
+  - 备份
+title: 将小米云相册和录音全量、增量或定时同步到本地
+description: 将小米云相册和录音全量、增量或定时同步到本地
+additionalProperties:
+  key: xiaomi-album-syncer
+  name: Xiaomi Album Syncer
+  tags:
+    - Storage
+    - Tool
+  shortDescZh: 将小米云相册和录音全量、增量或定时同步到本地
+  shortDescEn: Synchronize Xiaomi Cloud albums and recordings to local storage
+  description:
+    en: Download Xiaomi Cloud albums and recordings to local storage with full, incremental, and scheduled synchronization.
+    zh: 将小米云相册和录音通过全量、增量或定时任务下载到本地存储。
+    zh-Hant: 將小米雲端相簿和錄音透過完整、增量或排程任務下載到本機儲存空間。
+    ja: Xiaomi Cloudのアルバムと録音を完全、増分、またはスケジュール同期でローカルストレージへ保存します。
+    ko: Xiaomi Cloud 앨범과 녹음을 전체, 증분 또는 예약 동기화로 로컬 저장소에 다운로드합니다.
+    ru: Загружайте альбомы и записи Xiaomi Cloud в локальное хранилище с полной, инкрементальной или плановой синхронизацией.
+    ms: Muat turun album dan rakaman Xiaomi Cloud ke storan tempatan melalui penyegerakan penuh, bertambah atau berjadual.
+    pt-br: Baixe álbuns e gravações do Xiaomi Cloud para armazenamento local com sincronização completa, incremental ou agendada.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Coooolfan/XiaomiAlbumSyncer
+  github: https://github.com/Coooolfan/XiaomiAlbumSyncer
+  document: https://github.com/Coooolfan/XiaomiAlbumSyncer#%E4%BD%BF%E7%94%A8
+  architectures:
+    - amd64
+    - arm64
