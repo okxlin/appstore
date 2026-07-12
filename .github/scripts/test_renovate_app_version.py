@@ -8,6 +8,7 @@ import unittest
 
 
 SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_app_version.py")
+RETRY_SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_retry_gate.py")
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 DOCKER_CONFIG = REPO_ROOT / ".github" / "renovate-docker.json"
 
@@ -21,11 +22,83 @@ def load_module():
     return module
 
 
+def load_retry_module():
+    spec = importlib.util.spec_from_file_location("renovate_retry_gate", RETRY_SCRIPT_PATH)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load {RETRY_SCRIPT_PATH}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
 def compose(images):
     return {"services": {name: {"image": image} for name, image in images.items()}}
 
 
 class RenovateAppVersionTests(unittest.TestCase):
+    def test_retry_gate_retries_only_mature_docker_hub_429_failures(self):
+        module = load_retry_module()
+        now = module.parse_timestamp("2026-07-12T06:00:00Z")
+        runs = [
+            {
+                "databaseId": 10,
+                "status": "completed",
+                "conclusion": "failure",
+                "createdAt": "2026-07-12T04:50:00Z",
+                "updatedAt": "2026-07-12T05:00:00Z",
+            }
+        ]
+
+        decision = module.evaluate_retry(runs, "HTTP 429 Too Many Requests from index.docker.io", now)
+
+        self.assertEqual("retry", decision["decision"])
+
+    def test_retry_gate_rejects_non_rate_limit_failures_and_retry_storms(self):
+        module = load_retry_module()
+        now = module.parse_timestamp("2026-07-12T06:00:00Z")
+        base_run = {
+            "status": "completed",
+            "conclusion": "failure",
+            "createdAt": "2026-07-12T04:50:00Z",
+            "updatedAt": "2026-07-12T05:00:00Z",
+        }
+
+        non_429 = module.evaluate_retry(
+            [{"databaseId": 10, **base_run}], "ordinary configuration failure", now
+        )
+        too_soon = module.evaluate_retry(
+            [{"databaseId": 10, **base_run, "updatedAt": "2026-07-12T05:30:00Z"}],
+            "Docker Hub status code 429",
+            now,
+        )
+        too_many = module.evaluate_retry(
+            [
+                {"databaseId": index, **base_run, "createdAt": f"2026-07-12T0{index}:00:00Z"}
+                for index in range(1, 7)
+            ],
+            "registry-1.docker.io status code 429",
+            now,
+        )
+
+        self.assertEqual("skip", non_429["decision"])
+        self.assertEqual("wait", too_soon["decision"])
+        self.assertEqual("limit", too_many["decision"])
+
+    def test_retry_workflow_and_sidecar_branch_cleanup_are_guarded(self):
+        retry_workflow = (
+            REPO_ROOT / ".github" / "workflows" / "renovate-rate-limit-retry.yml"
+        ).read_text(encoding="utf-8")
+        sidecar_workflow = (
+            REPO_ROOT / ".github" / "workflows" / "renovate-sidecar-guard.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("17 * * * *", retry_workflow)
+        self.assertIn("actions: write", retry_workflow)
+        self.assertIn("renovate_retry_gate.py", retry_workflow)
+        self.assertIn("automatic retry after Docker Hub 429", retry_workflow)
+        self.assertIn('[[ "$head_repo" == "$REPO" ]]', sidecar_workflow)
+        self.assertIn('selfhosted-renovate/*|renovate/*', sidecar_workflow)
+        self.assertIn("git/refs/heads/$head_ref", sidecar_workflow)
     def test_image_tag_strips_digest_from_tagged_image(self):
         module = load_module()
 

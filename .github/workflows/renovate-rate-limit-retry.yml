@@ -1,0 +1,57 @@
+name: Retry Renovate after Docker Hub rate limit
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: renovate-rate-limit-retry
+  cancel-in-progress: true
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Inspect latest full Renovate run
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh run list --repo "$REPO" --workflow renovate.yml --limit 50 \
+            --json databaseId,status,conclusion,createdAt,updatedAt > /tmp/renovate-runs.json
+
+          latest_run_id=$(jq -r 'sort_by(.createdAt) | last | .databaseId // empty' /tmp/renovate-runs.json)
+          : > /tmp/renovate-latest.log
+          if [[ -n "$latest_run_id" ]]; then
+            gh api "repos/$REPO/actions/runs/$latest_run_id/jobs?per_page=100" \
+              --jq '.jobs[].id' | while read -r job_id; do
+                gh api "repos/$REPO/actions/jobs/$job_id/logs" >> /tmp/renovate-latest.log || true
+              done
+          fi
+
+          python3 .github/scripts/renovate_retry_gate.py \
+            --runs /tmp/renovate-runs.json \
+            --logs /tmp/renovate-latest.log > /tmp/renovate-retry.json
+          cat /tmp/renovate-retry.json
+          echo "decision=$(jq -r '.decision' /tmp/renovate-retry.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch full Renovate scan
+        if: steps.gate.outputs.decision == 'retry'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh workflow run renovate.yml \
+            --repo "$REPO" \
+            --ref localApps \
+            -f manual-trigger="automatic retry after Docker Hub 429"

@@ -35,6 +35,18 @@ For a growing app catalog, apply capacity improvements in this order:
 5. Group application images that must move together and keep multi-service updates under tested maintainer review.
 6. Persist the self-hosted cache with the SHA-pinned `actions/cache` step in `.github/workflows/renovate.yml`.
 
+## Docker Hub 429 retry policy
+
+`.github/workflows/renovate-rate-limit-retry.yml` checks the latest full Renovate run once per hour. It dispatches another full scan only when the latest run is a completed failure whose logs explicitly contain a registry `429`, the failure is at least 55 minutes old, and fewer than six full scans were started that UTC day. Successful, incomplete, unrelated, and young failures are not retried.
+
+The retry controller does not keep a runner sleeping during Docker Hub's cooldown. The newly dispatched run becomes the latest run immediately, so later checks stop until that run completes. The daily cap bounds repeated registry failures.
+
+## Multi-service update policy
+
+Renovate cannot natively express a dependency rule where an auxiliary image may update only when a separate primary image also updates. `.github/renovate-primary-services.json` therefore identifies primary services, while `.github/scripts/renovate_sidecar_guard.py` closes PRs that change only auxiliary images in a multi-service app. The guard also removes the closed PR's temporary branch only when it belongs to this repository and uses a known Renovate branch prefix; fork branches are never deleted.
+
+This is post-creation suppression, not a guarantee that Renovate never creates a temporary branch or PR. Continue disabling known auxiliary packages in `.github/renovate-docker.json` where a stable path/package rule is available. Single-service apps using the same image name are unaffected because those rules and the runtime guard are scoped by app path and Compose service count.
+
 The workflow stores Renovate's public package lookup cache and repository extraction cache under `/tmp/renovate-cache`. Private package caching remains disabled. Cache writes come only from the scheduled or manually dispatched trusted workflow.
 
 GitHub Actions cache entries are immutable, so each run uses a unique key and restores the newest compatible prefix. The configuration hash separates policy generations, while the broader fallback retains public package lookup data after policy changes. Monitor the reported directory size and repository cache inventory to avoid churn against GitHub's default cache quota.

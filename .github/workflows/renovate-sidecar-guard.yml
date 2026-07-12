@@ -13,7 +13,7 @@ on:
         type: string
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -88,3 +88,18 @@ jobs:
 
           gh pr close "$pr_number" \
             --repo "${{ github.repository }}"
+
+          REPO="${{ github.repository }}"
+          pr_head=$(gh api "repos/$REPO/pulls/$pr_number" \
+            --jq '[.head.repo.full_name, .head.ref] | @tsv')
+          IFS=$'\t' read -r head_repo head_ref <<< "$pr_head"
+
+          if [[ "$head_repo" == "$REPO" ]]; then
+            case "$head_ref" in
+              selfhosted-renovate/*|renovate/*)
+                if ! gh api --method DELETE "repos/$REPO/git/refs/heads/$head_ref"; then
+                  echo "::notice::Renovate branch was already removed or could not be deleted: $head_ref"
+                fi
+                ;;
+            esac
+          fi
