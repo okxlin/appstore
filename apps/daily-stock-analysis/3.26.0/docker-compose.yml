@@ -1,6 +1,6 @@
 services:
   daily-stock-analysis:
-    image: "zhulinsen/daily_stock_analysis:v3.25.0"
+    image: "zhulinsen/daily_stock_analysis:v3.26.0"
     container_name: "${CONTAINER_NAME}"
     labels:
       createdBy: "Apps"
