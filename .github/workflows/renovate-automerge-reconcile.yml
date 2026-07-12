@@ -41,7 +41,13 @@ jobs:
                 | select(
                     .author.login == "app/renovate" or
                     .author.login == "renovate[bot]" or
-                    ((.isCrossRepository | not) and (.headRefName | startswith("renovate/")))
+                    (
+                      (.isCrossRepository | not) and
+                      (
+                        (.headRefName | startswith("renovate/")) or
+                        (.headRefName | startswith("selfhosted-renovate/"))
+                      )
+                    )
                   )
                 | select(.isDraft | not)
                 | select(.baseRefName == "localApps")

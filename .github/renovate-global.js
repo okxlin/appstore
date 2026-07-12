@@ -1,5 +1,6 @@
 const username = process.env.RENOVATE_DOCKERHUB_USERNAME;
 const password = process.env.RENOVATE_DOCKERHUB_TOKEN;
+const dockerConfig = require("./renovate-docker.json");
 
 if (!username || !password) {
   throw new Error(
@@ -8,6 +9,13 @@ if (!username || !password) {
 }
 
 module.exports = {
+  ...dockerConfig,
+  // Keep the self-hosted controller independent from the hosted App's root config.
+  requireConfig: "ignored",
+  onboarding: false,
+  branchPrefix: "selfhosted-renovate/",
+  dependencyDashboard: true,
+  dependencyDashboardTitle: "Dependency Dashboard (Docker Images)",
   hostRules: [
     {
       hostType: "docker",

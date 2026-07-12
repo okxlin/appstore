@@ -9,6 +9,7 @@ import unittest
 
 SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_app_version.py")
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
+DOCKER_CONFIG = REPO_ROOT / ".github" / "renovate-docker.json"
 
 
 def load_module():
@@ -101,7 +102,7 @@ class RenovateAppVersionTests(unittest.TestCase):
             )
 
     def test_flux_panel_is_pinned_while_upstream_is_paused(self):
-        config = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
         matching = [
             rule
             for rule in config.get("packageRules", [])
@@ -112,7 +113,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertTrue(any(rule.get("enabled") is False for rule in matching))
 
     def test_multi_service_application_images_are_grouped(self):
-        config = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
         groups = {rule.get("groupName"): set(rule.get("matchPackageNames", [])) for rule in config.get("packageRules", []) if rule.get("groupName")}
 
         self.assertEqual(
@@ -131,7 +132,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         )
 
     def test_historical_tracks_and_known_sidecars_are_not_renovated(self):
-        config = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
         disabled = [rule for rule in config.get("packageRules", []) if rule.get("enabled") is False]
 
         disabled_paths = {path for rule in disabled for path in rule.get("matchFileNames", [])}
@@ -185,10 +186,63 @@ class RenovateAppVersionTests(unittest.TestCase):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
         self.assertIn("configurationFile: .github/renovate-global.js", workflow)
+        self.assertIn(
+            "docker-volumes: ${{ github.workspace }}/.github/renovate-docker.json:/github-action/renovate-docker.json:ro;/tmp:/tmp",
+            workflow,
+        )
         self.assertIn("RENOVATE_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}", workflow)
         self.assertIn("RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}", workflow)
         self.assertIn("name: Check Docker Hub credentials", workflow)
         self.assertIn("Configure DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets", workflow)
+
+    def test_self_hosted_renovate_uses_a_pinned_persistent_cache(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn(
+            "uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0",
+            workflow,
+        )
+        self.assertIn("path: /tmp/renovate-cache", workflow)
+        self.assertIn("${{ github.run_id }}", workflow)
+        self.assertIn("RENOVATE_CACHE_DIR: /tmp/renovate-cache", workflow)
+        self.assertIn("RENOVATE_REPOSITORY_CACHE: enabled", workflow)
+        self.assertIn("RENOVATE_CACHE_PRIVATE_PACKAGES: 'false'", workflow)
+        self.assertIn("chmod -R a+rwX /tmp/renovate-cache", workflow)
+        self.assertIn("du -sh /tmp/renovate-cache", workflow)
+
+    def test_hosted_and_self_hosted_renovate_have_disjoint_manager_scopes(self):
+        hosted = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
+        docker = json.loads(
+            (REPO_ROOT / ".github" / "renovate-docker.json").read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(["github-actions"], hosted["enabledManagers"])
+        self.assertEqual(["docker-compose"], docker["enabledManagers"])
+        self.assertTrue(
+            (REPO_ROOT / ".github" / "renovate-controller-policy.md").is_file()
+        )
+
+    def test_self_hosted_renovate_owns_a_separate_namespace(self):
+        config = REPO_ROOT / ".github" / "renovate-global.js"
+        env = os.environ.copy()
+        env["RENOVATE_DOCKERHUB_USERNAME"] = "renovate-user"
+        env["RENOVATE_DOCKERHUB_TOKEN"] = "test-token"
+        expression = f"const c=require({json.dumps(str(config))}); console.log(JSON.stringify(c))"
+
+        result = subprocess.run(
+            ["node", "-e", expression], text=True, capture_output=True, env=env, check=False
+        )
+        parsed = json.loads(result.stdout)
+
+        self.assertEqual(0, result.returncode)
+        self.assertEqual("ignored", parsed["requireConfig"])
+        self.assertEqual("selfhosted-renovate/", parsed["branchPrefix"])
+        self.assertEqual(
+            "Dependency Dashboard (Docker Images)", parsed["dependencyDashboardTitle"]
+        )
+        self.assertEqual(["docker-compose"], parsed["enabledManagers"])
 
     def test_global_config_fails_fast_without_docker_hub_credentials(self):
         config = REPO_ROOT / ".github" / "renovate-global.js"
@@ -225,12 +279,16 @@ class RenovateAppVersionTests(unittest.TestCase):
         reconcile = (workflows / "renovate-automerge-reconcile.yml").read_text(encoding="utf-8")
         labeling = (workflows / "label-third-party-prs.yml").read_text(encoding="utf-8")
 
-        self.assertIn("startsWith(github.ref_name, 'renovate/')", app_version)
+        self.assertIn("'selfhosted-renovate/*'", app_version)
+        self.assertIn("startsWith(github.ref_name, 'selfhosted-renovate/')", app_version)
         for workflow in (sidecar_guard, automerge, labeling):
             self.assertIn("github.event.pull_request.head.repo.full_name == github.repository", workflow)
-            self.assertIn("startsWith(github.event.pull_request.head.ref, 'renovate/')", workflow)
+            self.assertIn(
+                "startsWith(github.event.pull_request.head.ref, 'selfhosted-renovate/')",
+                workflow,
+            )
         self.assertIn("headRefName,headRepositoryOwner,isCrossRepository", reconcile)
-        self.assertIn('.headRefName | startswith("renovate/")', reconcile)
+        self.assertIn('.headRefName | startswith("selfhosted-renovate/")', reconcile)
 
     def test_semantic_entrypoint_blocks_external_host_abort(self):
         entrypoint = REPO_ROOT / ".github" / "scripts" / "renovate-entrypoint.sh"
