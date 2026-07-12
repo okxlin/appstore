@@ -11,6 +11,7 @@ SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_app_version.py")
 RETRY_SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_retry_gate.py")
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 DOCKER_CONFIG = REPO_ROOT / ".github" / "renovate-docker.json"
+HOSTED_CONFIG = REPO_ROOT / "renovate.json"
 
 
 def load_module():
@@ -36,6 +37,25 @@ def compose(images):
 
 
 class RenovateAppVersionTests(unittest.TestCase):
+    def test_mend_is_primary_for_actions_and_compose_updates(self):
+        config = json.loads(HOSTED_CONFIG.read_text(encoding="utf-8"))
+
+        self.assertEqual({"github-actions", "docker-compose"}, set(config["enabledManagers"]))
+        self.assertIn(
+            "github>okxlin/appstore//.github/renovate-docker.json",
+            config["extends"],
+        )
+
+    def test_self_hosted_compose_scan_is_semimonthly_read_only_audit(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn('cron: "23 3 1,15 * *"', workflow)
+        self.assertIn("RENOVATE_DRY_RUN: lookup", workflow)
+        self.assertIn("token: ${{ github.token }}", workflow)
+        self.assertNotIn("token: ${{ secrets.GITHUBTOKEN }}", workflow)
+
     def test_retry_gate_retries_only_mature_docker_hub_429_failures(self):
         module = load_retry_module()
         now = module.parse_timestamp("2026-07-12T06:00:00Z")
@@ -263,17 +283,17 @@ class RenovateAppVersionTests(unittest.TestCase):
 
         self.assertIn("RENOVATE_REPOSITORIES: ${{ github.repository }}", workflow)
 
-    def test_full_renovate_scan_is_scheduled_or_manual_only(self):
+    def test_compose_audit_is_semimonthly_or_manual_only(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
         self.assertNotIn("  push:\n", workflow)
-        self.assertIn('    - cron: "0 0 * * *"', workflow)
+        self.assertIn('    - cron: "23 3 1,15 * *"', workflow)
         self.assertIn("  workflow_dispatch:", workflow)
 
-    def test_full_renovate_scan_does_not_overlap(self):
+    def test_compose_audit_does_not_overlap(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
-        self.assertIn("concurrency:\n  group: renovate-full-scan\n  cancel-in-progress: true", workflow)
+        self.assertIn("concurrency:\n  group: renovate-compose-audit\n  cancel-in-progress: true", workflow)
         self.assertIn("permissions:\n  contents: read", workflow)
         self.assertIn("timeout-minutes: 90", workflow)
 
@@ -371,13 +391,13 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertNotIn("pull_request:\n", workflow)
         self.assertNotIn("pull_request_target:\n", workflow)
 
-    def test_hosted_and_self_hosted_renovate_have_disjoint_manager_scopes(self):
+    def test_hosted_renovate_owns_updates_while_self_hosted_is_compose_only(self):
         hosted = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
         docker = json.loads(
             (REPO_ROOT / ".github" / "renovate-docker.json").read_text(encoding="utf-8")
         )
 
-        self.assertEqual(["github-actions"], hosted["enabledManagers"])
+        self.assertEqual(["github-actions", "docker-compose"], hosted["enabledManagers"])
         self.assertEqual(["docker-compose"], docker["enabledManagers"])
         self.assertTrue(
             (REPO_ROOT / ".github" / "renovate-controller-policy.md").is_file()
