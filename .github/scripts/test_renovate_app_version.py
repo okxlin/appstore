@@ -26,6 +26,19 @@ def compose(images):
 
 
 class RenovateAppVersionTests(unittest.TestCase):
+    def test_image_tag_strips_digest_from_tagged_image(self):
+        module = load_module()
+
+        self.assertEqual(
+            "1.2.3",
+            module.image_tag("registry.example.com:5000/demo/app:v1.2.3@sha256:deadbeef"),
+        )
+
+    def test_image_tag_rejects_digest_only_image(self):
+        module = load_module()
+
+        self.assertEqual("", module.image_tag("example/demo@sha256:deadbeef"))
+
     def test_single_service_uses_the_changed_service_tag(self):
         module = load_module()
 
@@ -38,6 +51,18 @@ class RenovateAppVersionTests(unittest.TestCase):
 
         self.assertEqual("1.0.1", selection.version)
         self.assertEqual(["app"], selection.changed_services)
+
+    def test_single_service_uses_tag_without_digest_for_directory_version(self):
+        module = load_module()
+
+        selection = module.select_target_version(
+            "demo",
+            compose({"app": "example/demo:1.0.0@sha256:old"}),
+            compose({"app": "example/demo:1.0.1@sha256:new"}),
+            {},
+        )
+
+        self.assertEqual("1.0.1", selection.version)
 
     def test_multi_service_sidecar_only_change_does_not_rename(self):
         module = load_module()
@@ -176,6 +201,8 @@ class RenovateAppVersionTests(unittest.TestCase):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
         self.assertIn("concurrency:\n  group: renovate-full-scan\n  cancel-in-progress: true", workflow)
+        self.assertIn("permissions:\n  contents: read", workflow)
+        self.assertIn("timeout-minutes: 90", workflow)
 
     def test_self_hosted_renovate_uses_semantic_entrypoint(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
@@ -201,7 +228,11 @@ class RenovateAppVersionTests(unittest.TestCase):
         )
 
         self.assertIn(
-            "uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0",
+            "uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0",
+            workflow,
+        )
+        self.assertIn(
+            "uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0",
             workflow,
         )
         self.assertIn("path: /tmp/renovate-cache", workflow)
@@ -211,6 +242,9 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("RENOVATE_CACHE_PRIVATE_PACKAGES: 'false'", workflow)
         self.assertIn("chmod -R a+rwX /tmp/renovate-cache", workflow)
         self.assertIn("du -sh /tmp/renovate-cache", workflow)
+        self.assertIn("max_cache_bytes=536870912", workflow)
+        self.assertNotIn("pull_request:\n", workflow)
+        self.assertNotIn("pull_request_target:\n", workflow)
 
     def test_hosted_and_self_hosted_renovate_have_disjoint_manager_scopes(self):
         hosted = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
@@ -260,16 +294,20 @@ class RenovateAppVersionTests(unittest.TestCase):
         env = os.environ.copy()
         env["RENOVATE_DOCKERHUB_USERNAME"] = "renovate-user"
         env["RENOVATE_DOCKERHUB_TOKEN"] = "test-token"
-        expression = f"const c=require({json.dumps(str(config))}); console.log(JSON.stringify(c.hostRules[0]))"
+        expression = f"const c=require({json.dumps(str(config))}); console.log(JSON.stringify(c.hostRules))"
 
         result = subprocess.run(["node", "-e", expression], text=True, capture_output=True, env=env, check=False)
-        host_rule = json.loads(result.stdout)
+        host_rules = json.loads(result.stdout)
 
         self.assertEqual(0, result.returncode)
-        self.assertEqual("docker", host_rule["hostType"])
-        self.assertEqual("docker.io", host_rule["matchHost"])
-        self.assertEqual("renovate-user", host_rule["username"])
-        self.assertEqual("test-token", host_rule["password"])
+        self.assertEqual(
+            {"docker.io", "index.docker.io", "registry-1.docker.io"},
+            {rule["matchHost"] for rule in host_rules},
+        )
+        for host_rule in host_rules:
+            self.assertEqual("docker", host_rule["hostType"])
+            self.assertEqual("renovate-user", host_rule["username"])
+            self.assertEqual("test-token", host_rule["password"])
 
     def test_self_hosted_renovate_branches_are_recognized_by_workflows(self):
         workflows = REPO_ROOT / ".github" / "workflows"

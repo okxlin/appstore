@@ -31,8 +31,9 @@ def services(compose: dict[str, Any]) -> dict[str, dict[str, Any]]:
 
 def image_tag(image: object) -> str:
     value = str(image or "").strip()
-    if not value or "@" in value:
+    if not value:
         return ""
+    value = value.split("@", 1)[0].strip()
     slash = value.rfind("/")
     colon = value.rfind(":")
     if colon <= slash:

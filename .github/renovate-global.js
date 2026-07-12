@@ -1,6 +1,11 @@
 const username = process.env.RENOVATE_DOCKERHUB_USERNAME;
 const password = process.env.RENOVATE_DOCKERHUB_TOKEN;
 const dockerConfig = require("./renovate-docker.json");
+const dockerHubHosts = [
+  "docker.io",
+  "index.docker.io",
+  "registry-1.docker.io",
+];
 
 if (!username || !password) {
   throw new Error(
@@ -16,12 +21,10 @@ module.exports = {
   branchPrefix: "selfhosted-renovate/",
   dependencyDashboard: true,
   dependencyDashboardTitle: "Dependency Dashboard (Docker Images)",
-  hostRules: [
-    {
-      hostType: "docker",
-      matchHost: "docker.io",
-      username,
-      password,
-    },
-  ],
+  hostRules: dockerHubHosts.map((matchHost) => ({
+    hostType: "docker",
+    matchHost,
+    username,
+    password,
+  })),
 };
