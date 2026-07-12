@@ -61,4 +61,10 @@ After changing either controller:
 python3 .github/scripts/test_renovate_app_version.py
 ```
 
+Before a full scan, verify that Docker Hub accepts the configured repository secrets:
+
+```bash
+gh workflow run renovate-dockerhub-preflight.yml --ref localApps
+```
+
 Validate both JSON configurations with the Renovate version used by `.github/workflows/renovate.yml`, then run the self-hosted workflow manually. Confirm that its log lists only `docker-compose`, its branches start with `selfhosted-renovate/`, and the hosted App does not close them before retiring an older duplicate dashboard.
