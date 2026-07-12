@@ -1,7 +1,7 @@
 services:
   wukongim: # WuKongIM服务
     container_name: ${CONTAINER_NAME}-wukongim
-    image: "registry.cn-shanghai.aliyuncs.com/wukongim/wukongim:v2.0.5-20240925"
+    image: "wukongim/wukongim:v2.0.5-20240925"
     environment:
       - "WK_CLUSTER_NODEID=1001"
       - "WK_CLUSTER_SERVERADDR=${EXTERNAL_IP}:${PANEL_APP_PORT_COMM}" # 节点内部通信请求地址
@@ -29,7 +29,7 @@ services:
       createdBy: "Apps"
   wukongim-prometheus:  # 监控服务
     container_name: ${CONTAINER_NAME}-prometheus
-    image: "registry.cn-shanghai.aliyuncs.com/wukongim/prometheus:v2.53.1"
+    image: "prom/prometheus:v2.53.1"
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
