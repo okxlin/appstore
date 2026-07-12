@@ -33,6 +33,7 @@ jobs:
         with:
           configurationFile: .github/renovate-global.js
           docker-cmd-file: .github/scripts/renovate-entrypoint.sh
+          docker-volumes: ${{ github.workspace }}/.github/renovate-docker.json:/github-action/renovate-docker.json:ro;/tmp:/tmp
           token: ${{ secrets.GITHUBTOKEN }}
         env:
           RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}

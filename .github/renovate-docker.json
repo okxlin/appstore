@@ -1,0 +1,639 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "enabledManagers": [
+    "docker-compose"
+  ],
+  "gitIgnoredAuthors": [
+    "githubaction@githubaction.com"
+  ],
+  "rebaseWhen": "never",
+  "prHourlyLimit": 30,
+  "prConcurrentLimit": 80,
+  "branchConcurrentLimit": 120,
+  "ignorePaths": [
+    "apps/mysql-cluster/**",
+    "apps/redis-cluster/**",
+    "apps/postgresql-cluster/**",
+    "**/Dockerfile"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "docker-compose"
+      ],
+      "automerge": true
+    },
+    {
+      "matchFileNames": [
+        "apps/php-unofficial/7.4.*/*.yml"
+      ],
+      "allowedVersions": "/^7.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/php-unofficial/8.1.*/*.yml"
+      ],
+      "allowedVersions": "/^8.1.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/5.6.*/*.yml"
+      ],
+      "allowedVersions": "/^5.6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/5.7.*/*.yml"
+      ],
+      "allowedVersions": "/^5.7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/8.0.*/*.yml"
+      ],
+      "allowedVersions": "/^8.0.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mysql/8.4.*/*.yml"
+      ],
+      "allowedVersions": "/^8.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/6.*/*.yml"
+      ],
+      "allowedVersions": "/^6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/redis/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/10.6.*/*.yml"
+      ],
+      "allowedVersions": "/^10.6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/10.11.*/*.yml"
+      ],
+      "allowedVersions": "/^10.11.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/11.4.*/*.yml"
+      ],
+      "allowedVersions": "/^11.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mariadb/11.8.*/*.yml"
+      ],
+      "allowedVersions": "/^11.8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/12.*/*.yml"
+      ],
+      "allowedVersions": "/^12.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/13.*/*.yml"
+      ],
+      "allowedVersions": "/^13.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/14.*/*.yml"
+      ],
+      "allowedVersions": "/^14.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/15.*/*.yml"
+      ],
+      "allowedVersions": "/^15.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/16.*/*.yml"
+      ],
+      "allowedVersions": "/^16.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/17.*/*.yml"
+      ],
+      "allowedVersions": "/^17.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/postgresql/18.*/*.yml"
+      ],
+      "allowedVersions": "/^18.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/1.*/*.yml"
+      ],
+      "allowedVersions": "/^1.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/maxkb/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/elasticsearch/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/elasticsearch/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/9.*/*.yml"
+      ],
+      "allowedVersions": "/^9.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/tomcat/10.*/*.yml"
+      ],
+      "allowedVersions": "/^10.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/6.*/*.yml"
+      ],
+      "allowedVersions": "/^6.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/7.*/*.yml"
+      ],
+      "allowedVersions": "/^7.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mongodb/8.*/*.yml"
+      ],
+      "allowedVersions": "/^8.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/sonarqube/9.*/*.yml"
+      ],
+      "allowedVersions": "/^9.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/sonarqube/10.*/*.yml"
+      ],
+      "allowedVersions": "/^10.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2017-*/*.yml"
+      ],
+      "allowedVersions": "/^2017-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2019-*/*.yml"
+      ],
+      "allowedVersions": "/^2019-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2022-*/*.yml"
+      ],
+      "allowedVersions": "/^2022-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/mssql/2025-*/*.yml"
+      ],
+      "allowedVersions": "/^2025-*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/zitadel/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/zitadel/3.*/*.yml"
+      ],
+      "allowedVersions": "/^3.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/odoo/18.*/*.yml"
+      ],
+      "allowedVersions": "/^18.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/odoo/19.*/*.yml"
+      ],
+      "allowedVersions": "/^19.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/onedev/12.*/*.yml"
+      ],
+      "allowedVersions": "/^12.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/onedev/13.*/*.yml"
+      ],
+      "allowedVersions": "/^13.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/1.*/*.yml"
+      ],
+      "allowedVersions": "/^1.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/uptime-kuma/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami/2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/umami/3.*/*.yml"
+      ],
+      "allowedVersions": "/^3.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/n8n/2.2.*/*.yml"
+      ],
+      "allowedVersions": "/^2.2.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/n8n/2.3.*/*.yml"
+      ],
+      "allowedVersions": "/^2.3.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/n8n/2.4.*/*.yml"
+      ],
+      "allowedVersions": "/^2.4.*/"
+    },
+    {
+      "matchFileNames": [
+        "apps/n8n/2.5.*/*.yml"
+      ],
+      "allowedVersions": "/^2.5.*/"
+    },
+    {
+      "description": "Keep Zabbix Server 6.4 historical tracks on 6.4 Alpine images",
+      "matchFileNames": [
+        "apps/zabbix-server/6.4.*/*.yml"
+      ],
+      "matchPackageNames": [
+        "zabbix/zabbix-server-mysql",
+        "zabbix/zabbix-web-nginx-mysql",
+        "zabbix/zabbix-java-gateway",
+        "zabbix/zabbix-snmptraps",
+        "zabbix/zabbix-server-pgsql",
+        "zabbix/zabbix-web-nginx-pgsql"
+      ],
+      "allowedVersions": "/^alpine-6\\.4\\..*/"
+    },
+    {
+      "description": "Keep Zabbix Server 7.4 tracks on 7.4 Alpine images",
+      "matchFileNames": [
+        "apps/zabbix-server/7.4.*/*.yml"
+      ],
+      "matchPackageNames": [
+        "zabbix/zabbix-server-mysql",
+        "zabbix/zabbix-web-nginx-mysql",
+        "zabbix/zabbix-java-gateway",
+        "zabbix/zabbix-snmptraps",
+        "zabbix/zabbix-server-pgsql",
+        "zabbix/zabbix-web-nginx-pgsql"
+      ],
+      "allowedVersions": "/^alpine-7\\.4\\..*/"
+    },
+    {
+      "description": "Keep bundled Zabbix MySQL on the 8.0 line",
+      "matchFileNames": [
+        "apps/zabbix-server/*&mysql/*.yml"
+      ],
+      "matchPackageNames": [
+        "mysql"
+      ],
+      "allowedVersions": "/^8\\.0\\..*/"
+    },
+    {
+      "description": "Keep bundled Teldrive PostgreSQL on the 17.x line until the 18.x upgrade path is validated",
+      "matchFileNames": [
+        "apps/teldrive/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/tgdrive/postgres"
+      ],
+      "allowedVersions": "/^17.*/"
+    },
+    {
+      "description": "Keep historical application tracks immutable",
+      "matchFileNames": [
+        "apps/geekbench/4/**",
+        "apps/geekbench/5/**",
+        "apps/headscale/0.23.0-alpha3/**",
+        "apps/headscale/0.26.1/**",
+        "apps/mysql/5.5.62/**"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Group Kibana and Elasticsearch application images",
+      "matchFileNames": [
+        "apps/kibana/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana"
+      ],
+      "groupName": "Kibana application images"
+    },
+    {
+      "description": "Group ClearFlask application images",
+      "matchFileNames": [
+        "apps/clearflask/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/clearflask/clearflask-connect",
+        "ghcr.io/clearflask/clearflask-server"
+      ],
+      "groupName": "ClearFlask application images"
+    },
+    {
+      "description": "Disable bundled database-only updates for LinuxServer multi-service apps",
+      "matchFileNames": [
+        "apps/*-linuxserver/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mariadb",
+        "mongo"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable bundled MongoDB-only updates for Overleaf",
+      "matchFileNames": [
+        "apps/overleaf/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mongo"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable bundled MySQL-only updates for Traccar",
+      "matchFileNames": [
+        "apps/traccar/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "mysql"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Keep Flux Panel on upstream stable 1.4.3 while the project is paused",
+      "matchFileNames": [
+        "apps/flux-panel/**/docker-compose.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for ClearFlask multi-service tracks",
+      "matchFileNames": [
+        "apps/clearflask/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "axllent/mailpit",
+        "localstack/localstack",
+        "mariadb"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Dify multi-service tracks",
+      "matchFileNames": [
+        "apps/dify/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "busybox",
+        "nginx",
+        "semitechnologies/weaviate",
+        "ubuntu/squid"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Diskover multi-service tracks",
+      "matchFileNames": [
+        "apps/diskover-linuxserver/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "alpine",
+        "docker.elastic.co/elasticsearch/elasticsearch"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Karakeep multi-service tracks",
+      "matchFileNames": [
+        "apps/karakeep/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "gcr.io/zenika-hub/alpine-chrome",
+        "getmeili/meilisearch"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for LibreChat multi-service tracks",
+      "matchFileNames": [
+        "apps/librechat/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "getmeili/meilisearch",
+        "mongo",
+        "pgvector/pgvector"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Paopao CE multi-service tracks",
+      "matchFileNames": [
+        "apps/paopao-ce/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "getmeili/meilisearch",
+        "mysql",
+        "redis/redis-stack"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Rocket.Chat multi-service tracks",
+      "matchFileNames": [
+        "apps/rocketchat/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.io/mongodb/mongodb-community-server",
+        "docker.io/nats"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Teldrive multi-service tracks",
+      "matchFileNames": [
+        "apps/teldrive/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/tgdrive/postgres"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Keep Immich 1.132.3 as the pgvecto.rs to VectorChord migration bridge",
+      "matchFileNames": [
+        "apps/immich/1.132.3/docker-compose.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Group Immich server and machine-learning images",
+      "matchFileNames": [
+        "apps/immich/3.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/immich-app/immich-server",
+        "ghcr.io/immich-app/immich-machine-learning"
+      ],
+      "groupName": "Immich application images"
+    },
+    {
+      "description": "Disable sidecar-only Renovate updates for Immich multi-service tracks",
+      "matchFileNames": [
+        "apps/immich/3.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "docker.io/valkey/valkey",
+        "ghcr.io/immich-app/postgres"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Require dashboard approval for major updates of stateful Docker sidecars",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "matchPackageNames": [
+        "docker.elastic.co/elasticsearch/elasticsearch",
+        "docker.elastic.co/kibana/kibana",
+        "docker.io/mongodb/mongodb-community-server",
+        "docker.io/nats",
+        "getmeili/meilisearch",
+        "ghcr.io/tgdrive/postgres",
+        "localstack/localstack",
+        "mariadb",
+        "mongo",
+        "pgvector/pgvector",
+        "redis/redis-stack",
+        "semitechnologies/weaviate"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Require dashboard approval for multi-service multi-image compose apps",
+      "matchFileNames": [
+        "apps/safeline/**/docker-compose.yml",
+        "apps/aurora/**/docker-compose.yml",
+        "apps/immich/**/docker-compose.yml",
+        "apps/udyk-ce/**/docker-compose.yml",
+        "apps/zabbix-server/**/docker-compose.yml",
+        "apps/next-terminal/**/docker-compose.yml",
+        "apps/uuwaf/**/docker-compose.yml"
+      ],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Disable Renovate updates for reader 2.7.x",
+      "matchFileNames": [
+        "apps/reader/2.7.*/*.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Disable Renovate updates for alist 3.44.0",
+      "matchFileNames": [
+        "apps/alist/3.44.0/*.yml"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Keep NPS/NPC on the actively maintained 0.26 image line; upstream v0.27.01 is an older build",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "apps/nps/**/docker-compose.yml",
+        "apps/npc/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "yisier1/nps",
+        "yisier1/npc"
+      ],
+      "allowedVersions": "/^v0\\.26\\..*/"
+    }
+  ],
+  "prCreation": "immediate"
+}
