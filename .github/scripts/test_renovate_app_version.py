@@ -278,6 +278,15 @@ class RenovateAppVersionTests(unittest.TestCase):
             )
         )
 
+    def test_wukongim_uses_queryable_official_images(self):
+        compose_text = (
+            REPO_ROOT / "apps" / "wukongim" / "2.0.5" / "docker-compose.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("wukongim/wukongim:v2.0.5-20240925", compose_text)
+        self.assertIn("prom/prometheus:v2.53.1", compose_text)
+        self.assertNotIn("registry.cn-shanghai.aliyuncs.com/wukongim/", compose_text)
+
     def test_self_hosted_renovate_targets_this_repository(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
