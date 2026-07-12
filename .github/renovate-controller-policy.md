@@ -33,9 +33,11 @@ For a growing app catalog, apply capacity improvements in this order:
 3. Run the full Compose scan on a schedule or manually, with workflow concurrency preventing overlap.
 4. Suppress historical tracks and auxiliary-only updates in `.github/renovate-docker.json`.
 5. Group application images that must move together and keep multi-service updates under tested maintainer review.
-6. Add persistent repository/cache storage only when the GitHub Actions cache or an external cache backend is intentionally adopted and pinned.
+6. Persist the self-hosted cache with the SHA-pinned `actions/cache` step in `.github/workflows/renovate.yml`.
 
-Setting `repositoryCache: "enabled"` alone does not persist useful state between ephemeral GitHub-hosted runners. A cache action, Redis, or S3-backed cache requires a separate dependency and operational review before adoption.
+The workflow stores Renovate's public package lookup cache and repository extraction cache under `/tmp/renovate-cache`. Private package caching remains disabled. Cache writes come only from the scheduled or manually dispatched trusted workflow.
+
+GitHub Actions cache entries are immutable, so each run uses a unique key and restores the newest compatible prefix. The configuration hash separates policy generations, while the broader fallback retains public package lookup data after policy changes. Monitor the reported directory size and repository cache inventory to avoid churn against GitHub's default cache quota.
 
 ## Change checklist
 

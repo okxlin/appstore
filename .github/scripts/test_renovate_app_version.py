@@ -195,6 +195,23 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("name: Check Docker Hub credentials", workflow)
         self.assertIn("Configure DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets", workflow)
 
+    def test_self_hosted_renovate_uses_a_pinned_persistent_cache(self):
+        workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
+            encoding="utf-8"
+        )
+
+        self.assertIn(
+            "uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0",
+            workflow,
+        )
+        self.assertIn("path: /tmp/renovate-cache", workflow)
+        self.assertIn("${{ github.run_id }}", workflow)
+        self.assertIn("RENOVATE_CACHE_DIR: /tmp/renovate-cache", workflow)
+        self.assertIn("RENOVATE_REPOSITORY_CACHE: enabled", workflow)
+        self.assertIn("RENOVATE_CACHE_PRIVATE_PACKAGES: 'false'", workflow)
+        self.assertIn("chmod -R a+rwX /tmp/renovate-cache", workflow)
+        self.assertIn("du -sh /tmp/renovate-cache", workflow)
+
     def test_hosted_and_self_hosted_renovate_have_disjoint_manager_scopes(self):
         hosted = json.loads((REPO_ROOT / "renovate.json").read_text(encoding="utf-8"))
         docker = json.loads(
