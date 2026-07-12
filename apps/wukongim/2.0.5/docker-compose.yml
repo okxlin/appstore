@@ -29,7 +29,7 @@ services:
       createdBy: "Apps"
   wukongim-prometheus:  # 监控服务
     container_name: ${CONTAINER_NAME}-prometheus
-    image: "prom/prometheus:v2.53.1"
+    image: "prom/prometheus:v3.13.1"
     volumes:
       - "./prometheus.yml:/etc/prometheus/prometheus.yml"
     ports:
