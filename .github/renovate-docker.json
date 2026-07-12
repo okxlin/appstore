@@ -606,13 +606,6 @@
       "dependencyDashboardApproval": true
     },
     {
-      "description": "Disable Renovate updates for reader 2.7.x",
-      "matchFileNames": [
-        "apps/reader/2.7.*/*.yml"
-      ],
-      "enabled": false
-    },
-    {
       "description": "Disable Renovate updates for alist 3.44.0",
       "matchFileNames": [
         "apps/alist/3.44.0/*.yml"

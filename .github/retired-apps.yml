@@ -1,0 +1,42 @@
+# Applications removed from the active catalog remain recoverable through Git history.
+retiredApps:
+  - key: ais-ninja
+    lastVersions:
+      - 1.0.8
+      - latest
+    retiredOn: 2026-07-12
+    reason: The upstream project has been inactive since 2023 and jarvis2f/ais-ninja was removed from Docker Hub.
+    source: https://github.com/jarvis2f/ais-ninja
+    image: jarvis2f/ais-ninja
+    replacement: null
+
+  - key: nezha-agent
+    lastVersions:
+      - 1.1.4
+      - latest
+    retiredOn: 2026-07-12
+    reason: The third-party whoer/nezha-agent image was removed; the current official agent requires a fresh adaptation.
+    source: https://github.com/nezhahq/nezha
+    image: whoer/nezha-agent
+    replacement: Rebuild the app against the current official Nezha agent distribution.
+
+  - key: pandora
+    lastVersions:
+      - 1.3.5
+      - latest
+    retiredOn: 2026-07-12
+    reason: The source repository and pengzhile/pandora image are no longer available.
+    source: https://github.com/zhile-io/pandora
+    image: pengzhile/pandora
+    replacement: null
+
+  - key: reader
+    lastVersions:
+      - 2.7.4
+      - 3.2.14
+      - latest
+    retiredOn: 2026-07-12
+    reason: The upstream repository is archived and hectorqin/reader was removed from Docker Hub.
+    source: https://github.com/hectorqin/reader
+    image: hectorqin/reader
+    replacement: null
