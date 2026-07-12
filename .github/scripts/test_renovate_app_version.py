@@ -211,6 +211,12 @@ class RenovateAppVersionTests(unittest.TestCase):
 
     def test_self_hosted_renovate_requires_docker_hub_credentials(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
+        preflight = (
+            REPO_ROOT / ".github" / "workflows" / "renovate-dockerhub-preflight.yml"
+        ).read_text(encoding="utf-8")
+        checker = (
+            REPO_ROOT / ".github" / "scripts" / "check_dockerhub_credentials.mjs"
+        ).read_text(encoding="utf-8")
 
         self.assertIn("configurationFile: .github/renovate-global.js", workflow)
         self.assertIn(
@@ -220,7 +226,53 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("RENOVATE_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}", workflow)
         self.assertIn("RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}", workflow)
         self.assertIn("name: Check Docker Hub credentials", workflow)
-        self.assertIn("Configure DOCKERHUB_USERNAME and DOCKERHUB_TOKEN repository secrets", workflow)
+        self.assertIn("node .github/scripts/check_dockerhub_credentials.mjs", workflow)
+        self.assertIn("workflow_dispatch:", preflight)
+        self.assertIn("node .github/scripts/check_dockerhub_credentials.mjs", preflight)
+        self.assertIn("https://auth.docker.io/token", checker)
+        self.assertIn("https://registry-1.docker.io/v2/library/alpine/manifests/latest", checker)
+        self.assertNotIn("console.log(token", checker)
+        self.assertNotIn("console.log(password", checker)
+
+    def test_docker_hub_preflight_validates_auth_and_manifest_without_logging_token(self):
+        checker = REPO_ROOT / ".github" / "scripts" / "check_dockerhub_credentials.mjs"
+        expression = f"""
+          import {{ checkDockerHubCredentials }} from {json.dumps(checker.as_uri())};
+          const requests = [];
+          const responses = [
+            {{ ok: true, status: 200, json: async () => ({{ token: 'bearer-secret' }}) }},
+            {{
+              ok: true,
+              status: 200,
+              headers: new Headers({{
+                'ratelimit-limit': '200;w=21600',
+                'ratelimit-remaining': '199;w=21600',
+              }}),
+            }},
+          ];
+          const result = await checkDockerHubCredentials({{
+            username: 'test-user',
+            password: 'test-password',
+            fetchImpl: async (url, options) => {{
+              requests.push({{ url, authorization: options.headers.authorization }});
+              return responses.shift();
+            }},
+          }});
+          console.log(JSON.stringify({{ result, requests }}));
+        """
+
+        result = subprocess.run(
+            ["node", "--input-type=module", "-e", expression],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        payload = json.loads(result.stdout)
+
+        self.assertEqual(0, result.returncode)
+        self.assertEqual("199;w=21600", payload["result"]["remaining"])
+        self.assertTrue(payload["requests"][0]["authorization"].startswith("Basic "))
+        self.assertEqual("Bearer bearer-secret", payload["requests"][1]["authorization"])
 
     def test_self_hosted_renovate_uses_a_pinned_persistent_cache(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
