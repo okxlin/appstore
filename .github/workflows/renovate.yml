@@ -1,16 +1,16 @@
-name: Renovate
+name: Renovate Compose audit
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "23 3 1,15 * *"
   workflow_dispatch:
     inputs:
       manual-trigger:
-        description: 'Manually trigger Renovate'
+        description: 'Manually trigger the read-only Compose audit'
         default: ''
 
 concurrency:
-  group: renovate-full-scan
+  group: renovate-compose-audit
   cancel-in-progress: true
 
 permissions:
@@ -47,12 +47,13 @@ jobs:
           configurationFile: .github/renovate-global.js
           docker-cmd-file: .github/scripts/renovate-entrypoint.sh
           docker-volumes: ${{ github.workspace }}/.github/renovate-docker.json:/github-action/renovate-docker.json:ro;/tmp:/tmp
-          token: ${{ secrets.GITHUBTOKEN }}
+          token: ${{ github.token }}
         env:
           RENOVATE_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           RENOVATE_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           RENOVATE_CACHE_DIR: /tmp/renovate-cache
           RENOVATE_CACHE_PRIVATE_PACKAGES: 'false'
+          RENOVATE_DRY_RUN: lookup
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_REPOSITORY_CACHE: enabled
       - name: Report Renovate cache size

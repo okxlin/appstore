@@ -1,10 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    "github>okxlin/appstore//.github/renovate-docker.json"
   ],
   "enabledManagers": [
-    "github-actions"
+    "github-actions",
+    "docker-compose"
   ],
   "dependencyDashboardTitle": "Dependency Dashboard",
   "rebaseWhen": "never"
