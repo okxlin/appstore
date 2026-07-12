@@ -9,7 +9,6 @@
 upsnap
 code-server
 zeroclaw
-next-terminal
 dpanel
 wallos
 chatgpt-on-wechat
@@ -72,7 +71,6 @@ jellyfin
 vocechat
 lucky
 bitwarden
-woodpecker
 onlyoffice
 tailscale
 nezha-dashboard
@@ -253,13 +251,11 @@ apprise-api-linuxserver
 babybuddy-linuxserver
 bazarr-linuxserver
 beets-linuxserver
-bookstack-linuxserver
 budge-linuxserver
 changedetection.io-linuxserver
 cops-linuxserver
 davos-linuxserver
 ddclient-linuxserver
-diskover-linuxserver
 dokuwiki-linuxserver
 doplarr-linuxserver
 duckdns-linuxserver
@@ -272,14 +268,12 @@ freshrss-linuxserver
 grav-linuxserver
 grocy-linuxserver
 habridge-linuxserver
-hedgedoc-linuxserver
 hishtory-server-linuxserver
 homeassistant-linuxserver
 htpcmanager-linuxserver
 jackett-linuxserver
 jellyfin-linuxserver
 kavita-linuxserver
-kimai-linuxserver
 lazylibrarian-linuxserver
 ldap-auth-linuxserver
 librespeed-linuxserver
@@ -288,7 +282,6 @@ luanti-linuxserver
 lychee-linuxserver
 medusa-linuxserver
 modmanager-linuxserver
-monica-linuxserver
 mstream-linuxserver
 mylar3-linuxserver
 nginx-linuxserver
@@ -303,7 +296,6 @@ overseerr-linuxserver
 pairdrop-linuxserver
 phpmyadmin-linuxserver
 piwigo-linuxserver
-planka-linuxserver
 projectsend-linuxserver
 prowlarr-linuxserver
 pwndrop-linuxserver
@@ -322,7 +314,6 @@ tautulli-linuxserver
 thelounge-linuxserver
 tvheadend-linuxserver
 ubooquity-linuxserver
-unifi-network-application-linuxserver
 webgrabplus-linuxserver
 wikijs-linuxserver
 xbackbone-linuxserver

@@ -569,6 +569,16 @@
       "enabled": false
     },
     {
+      "description": "Disable sidecar-only Prometheus updates for the fixed WuKongIM 2.0.5 stack",
+      "matchFileNames": [
+        "apps/wukongim/2.0.5/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "prom/prometheus"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Require dashboard approval for major updates of stateful Docker sidecars",
       "matchDatasources": [
         "docker"

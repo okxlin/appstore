@@ -306,6 +306,43 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("prom/prometheus:v2.53.1", compose_text)
         self.assertNotIn("registry.cn-shanghai.aliyuncs.com/wukongim/", compose_text)
 
+    def test_wukongim_primary_service_and_sidecar_policy_are_explicit(self):
+        primary = json.loads(
+            (REPO_ROOT / ".github" / "renovate-primary-services.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
+
+        self.assertEqual(["wukongim"], primary["wukongim"])
+        self.assertTrue(
+            any(
+                rule.get("enabled") is False
+                and "apps/wukongim/2.0.5/docker-compose.yml"
+                in rule.get("matchFileNames", [])
+                and "prom/prometheus" in rule.get("matchPackageNames", [])
+                for rule in config["packageRules"]
+            )
+        )
+
+    def test_automerge_whitelist_contains_only_single_service_apps(self):
+        apps = [
+            line.strip()
+            for line in (
+                REPO_ROOT / ".github" / "renovate-automerge-whitelist.txt"
+            ).read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        ]
+        multi_service = []
+        for app in apps:
+            for compose_path in (REPO_ROOT / "apps" / app).glob("*/docker-compose.yml"):
+                compose_data = yaml.safe_load(compose_path.read_text(encoding="utf-8")) or {}
+                services = compose_data.get("services") or {}
+                if len(services) != 1:
+                    multi_service.append(f"{app}:{compose_path.parent.name}:{len(services)}")
+
+        self.assertEqual([], multi_service)
+
     def test_self_hosted_renovate_targets_this_repository(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(encoding="utf-8")
 
