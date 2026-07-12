@@ -39,6 +39,20 @@ The workflow stores Renovate's public package lookup cache and repository extrac
 
 GitHub Actions cache entries are immutable, so each run uses a unique key and restores the newest compatible prefix. The configuration hash separates policy generations, while the broader fallback retains public package lookup data after policy changes. Monitor the reported directory size and repository cache inventory to avoid churn against GitHub's default cache quota.
 
+Restore and save are separate steps. A failed registry scan may still save valid package cache entries for the next run, but the workflow refuses to save a cache larger than 512 MiB.
+
+## Cache security boundary
+
+- Treat cache contents as readable by contributors who can open pull requests. Never write credentials, tokens, generated environment files, or private registry responses under `/tmp/renovate-cache`.
+- Keep `RENOVATE_CACHE_PRIVATE_PACKAGES` set to `false`.
+- Keep cache writes limited to this scheduled/manual workflow; do not add `pull_request` or `pull_request_target` triggers.
+- Keep `actions/cache` pinned to a reviewed commit SHA.
+- Keep the workflow's default `GITHUB_TOKEN` read-only. Renovate writes through the dedicated `GITHUBTOKEN` secret.
+- Keep a bounded job timeout so a stalled registry cannot consume a runner indefinitely.
+- The restored directory contains Renovate data, not executable project scripts. Do not add cached paths to `PATH`, source files from them, or execute binaries restored from the cache.
+- A cache miss or corrupt entry must degrade to a fresh lookup. It must not bypass Renovate validation, sidecar guards, app-version checks, or maintainer review.
+- Keep Docker Hub credentials scoped to `docker.io`, `index.docker.io`, and `registry-1.docker.io`. Do not use a hostless Docker rule that would send them to unrelated registries.
+
 ## Change checklist
 
 After changing either controller:
