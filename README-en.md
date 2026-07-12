@@ -26,6 +26,7 @@ Docker app configurations adapted for the `1Panel` app store `2.0`. After import
   - [3. Acceptance of Disclaimer](#3-acceptance-of-disclaimer)
 - [1. Introduction](#1-introduction)
 - [2. Contributing Apps](#2-contributing-apps)
+- [Retired Apps](#retired-apps)
 - [3. Usage](#3-usage)
   - [3.1 GitHub Network Notes](#31-github-network-notes)
   - [3.2 Getting Apps via Git Command](#32-getting-apps-via-git-command)
@@ -63,6 +64,10 @@ This repository keeps app directories, metadata, form variables, and compose fil
 > Before submitting an app PR, third-party developers are encouraged to generate or validate the app package with [okxlin/1panel-app-adapter](https://github.com/okxlin/1panel-app-adapter). It checks the 1Panel v2 directory layout, `data.yml`, `docker-compose.yml`, environment variable closure, i18n labels, and common release issues.
 
 When opening a PR, include reproducible upstream sources, image sources, default ports, data directories, required dependencies, and test results. Commit only the final app directory to this repository; temporary test output and process files are not needed.
+
+## Retired Apps
+
+Apps that can no longer be installed and have no trustworthy replacement image are removed from the active catalog. Retirement reasons and last available versions are recorded in [`.github/retired-apps.yml`](.github/retired-apps.yml), while the complete app files remain recoverable from Git history.
 
 ## 3. Usage
 

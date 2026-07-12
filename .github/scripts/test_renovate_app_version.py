@@ -6,6 +6,8 @@ import subprocess
 import tempfile
 import unittest
 
+import yaml
+
 
 SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_app_version.py")
 RETRY_SCRIPT_PATH = pathlib.Path(__file__).with_name("renovate_retry_gate.py")
@@ -37,6 +39,23 @@ def compose(images):
 
 
 class RenovateAppVersionTests(unittest.TestCase):
+    def test_retired_apps_are_not_active_or_automerge_eligible(self):
+        registry = yaml.safe_load(
+            (REPO_ROOT / ".github" / "retired-apps.yml").read_text(encoding="utf-8")
+        )
+        retired = {item["key"] for item in registry["retiredApps"]}
+        whitelist = {
+            line.strip()
+            for line in (
+                REPO_ROOT / ".github" / "renovate-automerge-whitelist.txt"
+            ).read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.lstrip().startswith("#")
+        }
+
+        self.assertEqual({"ais-ninja", "nezha-agent", "pandora", "reader"}, retired)
+        self.assertTrue(all(not (REPO_ROOT / "apps" / key).exists() for key in retired))
+        self.assertTrue(retired.isdisjoint(whitelist))
+
     def test_mend_is_primary_for_actions_and_compose_updates(self):
         config = json.loads(HOSTED_CONFIG.read_text(encoding="utf-8"))
 
