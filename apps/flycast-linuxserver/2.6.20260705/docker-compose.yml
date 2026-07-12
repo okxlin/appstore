@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   flycast:
-    image: "linuxserver/flycast:2.6.20260705"
+    image: "linuxserver/flycast:2.6.20260712"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
