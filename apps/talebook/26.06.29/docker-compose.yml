@@ -8,7 +8,7 @@ services:
       - "${PANEL_APP_PORT_HTTP}:80"
     volumes:
       - "${DATA_PATH}:/data"
-    image: talebook/talebook:v26.06.29
+    image: talebook/talebook:v26.07.13
     labels:  
       createdBy: "Apps"
 
