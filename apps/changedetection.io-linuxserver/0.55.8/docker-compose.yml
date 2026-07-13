@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   changedetection-io:
-    image: "linuxserver/changedetection.io:0.55.7"
+    image: "linuxserver/changedetection.io:0.55.8"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
