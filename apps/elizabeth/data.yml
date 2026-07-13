@@ -1,0 +1,35 @@
+name: Elizabeth
+tags:
+  - Tool
+title: Elizabeth
+description: "基于 Rust 与 Next.js 构建的极简、安全实时文件与消息共享房间"
+additionalProperties:
+  key: elizabeth
+  name: Elizabeth
+  tags:
+    - Tool
+  shortDescZh: "极简、安全的实时文件与消息共享房间"
+  shortDescEn: "Minimal, secure real-time file and message sharing rooms"
+  description:
+    en: "Minimal, secure real-time file and message sharing rooms built with Rust and Next.js"
+    es-es: "Salas minimalistas y seguras para compartir archivos y mensajes en tiempo real, creadas con Rust y Next.js"
+    ja: "Rust と Next.js で構築された、シンプルで安全なリアルタイムのファイル・メッセージ共有ルーム"
+    ms: "Bilik perkongsian fail dan mesej masa nyata yang ringkas dan selamat, dibina dengan Rust dan Next.js"
+    pt-br: "Salas minimalistas e seguras para compartilhamento de arquivos e mensagens em tempo real, criadas com Rust e Next.js"
+    ru: "Минималистичные и безопасные комнаты для обмена файлами и сообщениями в реальном времени на Rust и Next.js"
+    ko: "Rust 와 Next.js 로 구축한 간결하고 안전한 실시간 파일 및 메시지 공유 공간"
+    zh-Hant: "以 Rust 與 Next.js 構建的極簡、安全即時檔案與訊息分享房間"
+    zh: "基于 Rust 与 Next.js 构建的极简、安全实时文件与消息共享房间"
+    tr: "Rust ve Next.js ile oluşturulmuş minimal, güvenli gerçek zamanlı dosya ve mesaj paylaşım odaları"
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  batchInstallSupport: true
+  architectures:
+    - amd64
+    - arm64
+  recommend: 0
+  website: https://github.com/YuniqueUnic/elizabeth
+  github: https://github.com/YuniqueUnic/elizabeth
+  document: https://github.com/YuniqueUnic/elizabeth/blob/v1.5.2/docs/DOCKER_QUICK_START.md
+  memoryRequired: 512

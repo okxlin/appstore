@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/YuniqueUnic/elizabeth",
+  "dockerDocs": "https://github.com/YuniqueUnic/elizabeth/blob/v1.5.2/docs/DOCKER_QUICK_START.md",
+  "composeFile": "https://github.com/YuniqueUnic/elizabeth/blob/v1.5.2/docker-compose.yml",
+  "imageRegistry": "https://hub.docker.com/r/yunique001/elizabeth",
+  "release": "https://github.com/YuniqueUnic/elizabeth/releases/tag/v1.5.2",
+  "notes": [
+    "Official multi-arch image yunique001/elizabeth:1.4.0 publishes linux/amd64 and linux/arm64.",
+    "SQLite state is persisted under /app/data; room uploads are persisted under /app/storage.",
+    "Container hardening matches the upstream compose: read_only, cap_drop ALL, no-new-privileges, and /tmp tmpfs.",
+    "JWT_SECRET uses a required random 1Panel password field instead of a weak fixed production secret."
+  ]
+}
