@@ -1,0 +1,30 @@
+services:
+  wakapi:
+    image: "n1try/wakapi:latest"
+    container_name: ${CONTAINER_NAME}
+    init: true
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - WAKAPI_DB_TYPE=sqlite3
+      - WAKAPI_DB_NAME=/data/wakapi.db
+      - WAKAPI_PASSWORD_SALT=${WAKAPI_PASSWORD_SALT}
+      - WAKAPI_INSECURE_COOKIES=${WAKAPI_INSECURE_COOKIES}
+      - WAKAPI_ALLOW_SIGNUP=${WAKAPI_ALLOW_SIGNUP}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    healthcheck:
+      test: ["CMD", "/app/healthcheck"]
+      interval: 60s
+      timeout: 3s
+      start_period: 120s
+      retries: 3
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
