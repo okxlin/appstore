@@ -1,0 +1,32 @@
+name: Vikunja
+tags:
+  - 项目管理
+title: 自托管的任务与项目管理应用
+description: 自托管的任务与项目管理应用
+additionalProperties:
+  key: vikunja
+  name: Vikunja
+  tags:
+    - Project
+    - Collaboration
+  shortDescZh: 自托管的任务与项目管理应用
+  shortDescEn: A self-hosted task and project management application
+  description:
+    en: A self-hosted task and project management application
+    zh: 自托管的任务与项目管理应用
+    zh-Hant: 自託管的任務與專案管理應用程式
+    ja: セルフホスト型のタスク・プロジェクト管理アプリケーション
+    ko: 자체 호스팅 작업 및 프로젝트 관리 애플리케이션
+    ru: Самостоятельно размещаемое приложение для управления задачами и проектами
+    ms: Aplikasi pengurusan tugas dan projek yang dihos sendiri
+    pt-br: Aplicativo auto-hospedado para gerenciamento de tarefas e projetos
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://vikunja.io/
+  github: https://github.com/go-vikunja/vikunja
+  document: https://vikunja.io/docs/installing/
+  architectures:
+    - amd64
+    - arm64
