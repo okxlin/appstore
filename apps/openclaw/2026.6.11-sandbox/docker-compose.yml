@@ -1,7 +1,7 @@
 services:
   openclaw:
     container_name: ${CONTAINER_NAME}
-    image: "ghcr.io/okxlin/openclaw-sandbox:v2026.6.11-sandbox"
+    image: "ghcr.io/okxlin/openclaw-sandbox:v2026.7.1-sandbox"
     restart: unless-stopped
     networks:
       - 1panel-network
