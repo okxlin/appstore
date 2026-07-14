@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   jackett:
-    image: "linuxserver/jackett:0.24.2213"
+    image: "linuxserver/jackett:0.24.2216"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
