@@ -1,0 +1,33 @@
+name: MosDNS-T
+tags:
+  - 网络工具
+  - DNS
+title: 带 WebUI 的 DNS 分流与规则管理增强版
+description: 带 WebUI 的 DNS 分流与规则管理增强版
+additionalProperties:
+  key: mosdns-t
+  name: MosDNS-T
+  tags:
+    - Network
+    - Tool
+  shortDescZh: 带 WebUI 的 DNS 分流与规则管理增强版
+  shortDescEn: Enhanced DNS routing and rule management with a WebUI
+  description:
+    en: Manage DNS routing, upstreams, rules, diagnostics, and dedicated routing groups through an enhanced WebUI.
+    zh: 通过增强 WebUI 管理 DNS 分流、上游、规则、查询诊断和专属分流组。
+    zh-Hant: 透過增強 WebUI 管理 DNS 分流、上游、規則、查詢診斷和專屬分流群組。
+    ja: 強化された WebUI で DNS ルーティング、アップストリーム、ルール、診断、専用ルーティンググループを管理します。
+    ko: 향상된 WebUI에서 DNS 분기, 업스트림, 규칙, 진단 및 전용 분기 그룹을 관리합니다.
+    ru: Управляйте DNS-маршрутизацией, вышестоящими серверами, правилами, диагностикой и отдельными группами через WebUI.
+    ms: Urus penghalaan DNS, huluan, peraturan, diagnostik dan kumpulan penghalaan khusus melalui WebUI.
+    pt-br: Gerencie roteamento DNS, upstreams, regras, diagnósticos e grupos dedicados por uma WebUI aprimorada.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/jasonxtt/mosdns
+  github: https://github.com/jasonxtt/mosdns
+  document: https://github.com/jasonxtt/mosdns/blob/docker/docs/docker_deployment_zh.md
+  architectures:
+    - amd64
+    - arm64

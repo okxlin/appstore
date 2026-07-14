@@ -1,0 +1,27 @@
+services:
+  mosdns-t:
+    image: "jasonxtt/mosdns-t:v0.7.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${PANEL_APP_PORT_DNS}:53/tcp"
+      - "${PANEL_APP_PORT_DNS}:53/udp"
+      - "${PANEL_APP_PORT_HTTP}:9099/tcp"
+    volumes:
+      - "${APP_DATA_DIR}:/cus/mosdns"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:9099/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

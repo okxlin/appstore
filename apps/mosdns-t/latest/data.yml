@@ -1,0 +1,28 @@
+additionalProperties:
+  formFields:
+    - default: 5353
+      edit: true
+      envKey: PANEL_APP_PORT_DNS
+      labelEn: DNS Port
+      labelZh: DNS 端口
+      label: {en: DNS Port, zh: DNS 端口, zh-Hant: DNS 連接埠, ja: DNS ポート, ko: DNS 포트, ru: Порт DNS, ms: Port DNS, pt-br: Porta DNS}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 9099
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: WebUI Port
+      labelZh: WebUI 端口
+      label: {en: WebUI Port, zh: WebUI 端口, zh-Hant: WebUI 連接埠, ja: WebUI ポート, ko: WebUI 포트, ru: Порт WebUI, ms: Port WebUI, pt-br: Porta WebUI}
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label: {en: Data Directory, zh: 数据目录, zh-Hant: 資料目錄, ja: データディレクトリ, ko: 데이터 디렉터리, ru: Каталог данных, ms: Direktori Data, pt-br: Diretório de Dados}
+      required: true
+      type: text
