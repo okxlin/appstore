@@ -1,0 +1,139 @@
+additionalProperties:
+  formFields:
+    - default: 9000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web and HTTP API Port
+      labelZh: Web 与 HTTP API 端口
+      label:
+        en: Web and HTTP API Port
+        zh: Web 与 HTTP API 端口
+        zh-Hant: Web 與 HTTP API 連接埠
+        ja: Web および HTTP API ポート
+        ko: Web 및 HTTP API 포트
+        ru: Порт Web и HTTP API
+        ms: Port Web dan API HTTP
+        pt-br: Porta Web e da API HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8812
+      edit: true
+      envKey: PANEL_APP_PORT_PG
+      labelEn: PGWire Port
+      labelZh: PGWire 端口
+      label:
+        en: PGWire Port
+        zh: PGWire 端口
+        zh-Hant: PGWire 連接埠
+        ja: PGWire ポート
+        ko: PGWire 포트
+        ru: Порт PGWire
+        ms: Port PGWire
+        pt-br: Porta PGWire
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: QUESTDB_HTTP_USER
+      labelEn: HTTP Username
+      labelZh: HTTP 用户名
+      label:
+        en: HTTP Username
+        zh: HTTP 用户名
+        zh-Hant: HTTP 使用者名稱
+        ja: HTTP ユーザー名
+        ko: HTTP 사용자 이름
+        ru: Имя пользователя HTTP
+        ms: Nama Pengguna HTTP
+        pt-br: Usuário HTTP
+      required: true
+      rule: paramCommon
+      type: text
+    - default: generate
+      edit: true
+      envKey: QUESTDB_HTTP_PASSWORD
+      labelEn: HTTP Password
+      labelZh: HTTP 密码
+      label:
+        en: HTTP Password
+        zh: HTTP 密码
+        zh-Hant: HTTP 密碼
+        ja: HTTP パスワード
+        ko: HTTP 비밀번호
+        ru: Пароль HTTP
+        ms: Kata Laluan HTTP
+        pt-br: Senha HTTP
+      required: true
+      type: password
+    - default: admin
+      edit: true
+      envKey: QUESTDB_PG_USER
+      labelEn: PGWire Username
+      labelZh: PGWire 用户名
+      label:
+        en: PGWire Username
+        zh: PGWire 用户名
+        zh-Hant: PGWire 使用者名稱
+        ja: PGWire ユーザー名
+        ko: PGWire 사용자 이름
+        ru: Имя пользователя PGWire
+        ms: Nama Pengguna PGWire
+        pt-br: Usuário PGWire
+      required: true
+      rule: paramCommon
+      type: text
+    - default: generate
+      edit: true
+      envKey: QUESTDB_PG_PASSWORD
+      labelEn: PGWire Password
+      labelZh: PGWire 密码
+      label:
+        en: PGWire Password
+        zh: PGWire 密码
+        zh-Hant: PGWire 密碼
+        ja: PGWire パスワード
+        ko: PGWire 비밀번호
+        ru: Пароль PGWire
+        ms: Kata Laluan PGWire
+        pt-br: Senha PGWire
+      required: true
+      type: password
+    - default: "false"
+      edit: true
+      envKey: QUESTDB_TELEMETRY_ENABLED
+      labelEn: Enable Anonymous Telemetry
+      labelZh: 启用匿名遥测
+      label:
+        en: Enable Anonymous Telemetry
+        zh: 启用匿名遥测
+        zh-Hant: 啟用匿名遙測
+        ja: 匿名テレメトリを有効化
+        ko: 익명 원격 측정 활성화
+        ru: Включить анонимную телеметрию
+        ms: Dayakan Telemetri Tanpa Nama
+        pt-br: Ativar telemetria anônima
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
