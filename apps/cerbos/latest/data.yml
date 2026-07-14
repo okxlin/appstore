@@ -1,0 +1,52 @@
+additionalProperties:
+  formFields:
+    - default: 3592
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP API Port
+      labelZh: HTTP API 端口
+      label:
+        en: HTTP API Port
+        zh: HTTP API 端口
+        zh-Hant: HTTP API 連接埠
+        ja: HTTP API ポート
+        ko: HTTP API 포트
+        ru: Порт HTTP API
+        ms: Port API HTTP
+        pt-br: Porta da API HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 3593
+      edit: true
+      envKey: PANEL_APP_PORT_GRPC
+      labelEn: gRPC API Port
+      labelZh: gRPC API 端口
+      label:
+        en: gRPC API Port
+        zh: gRPC API 端口
+        zh-Hant: gRPC API 連接埠
+        ja: gRPC API ポート
+        ko: gRPC API 포트
+        ru: Порт gRPC API
+        ms: Port API gRPC
+        pt-br: Porta da API gRPC
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
