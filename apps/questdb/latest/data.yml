@@ -51,7 +51,7 @@ additionalProperties:
       required: true
       rule: paramCommon
       type: text
-    - default: generate
+    - default: ""
       edit: true
       envKey: QUESTDB_HTTP_PASSWORD
       labelEn: HTTP Password
@@ -65,6 +65,7 @@ additionalProperties:
         ru: Пароль HTTP
         ms: Kata Laluan HTTP
         pt-br: Senha HTTP
+      random: true
       required: true
       type: password
     - default: admin
@@ -84,7 +85,7 @@ additionalProperties:
       required: true
       rule: paramCommon
       type: text
-    - default: generate
+    - default: ""
       edit: true
       envKey: QUESTDB_PG_PASSWORD
       labelEn: PGWire Password
@@ -98,6 +99,7 @@ additionalProperties:
         ru: Пароль PGWire
         ms: Kata Laluan PGWire
         pt-br: Senha PGWire
+      random: true
       required: true
       type: password
     - default: "false"

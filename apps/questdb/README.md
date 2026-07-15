@@ -23,7 +23,7 @@ QuestDB 是一个面向实时分析的开源时序数据库，提供高吞吐写
 ## 数据与安全
 
 - QuestDB 的完整数据根目录持久化到安装表单选择的数据目录，其中包含 `db`、`conf`、`public`、快照和检查点等运行数据。
-- 安装脚本会生成并持久化独立的 HTTP 与 PGWire 密码。数据目录中的 `.questdb_http_password` 和 `.questdb_pg_password` 用于防止 1Panel 升级回放安装参数时轮换密码，请与数据库一起备份。
+- HTTP 与 PGWire 密码由 1Panel 安装表单随机生成。安装脚本仅把面板值缓存到 `.questdb_http_password` 和 `.questdb_pg_password`，并在升级时恢复原值，避免 1Panel 回放安装参数造成凭据轮换。
 - 官方镜像入口以 root 启动，用于检查数据目录属主，然后以 UID/GID `10001:10001` 运行 QuestDB。首次挂载既有数据目录时，上游入口可能调整其已知数据子目录的属主；迁移前应先备份并核对权限。
 - Web Console 和协议端口本身不提供 HTTPS。对外访问时应使用 HTTPS 反向代理、限制端口来源，并按需配置网络层 TLS。
 - 默认关闭匿名遥测，可在安装表单中按需开启。
