@@ -1,0 +1,35 @@
+services:
+  directus:
+    image: "directus/directus:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8055"
+    environment:
+      - SECRET=${DIRECTUS_SECRET}
+      - DB_CLIENT=sqlite3
+      - DB_FILENAME=/directus/database/data.db
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - PUBLIC_URL=${PUBLIC_URL}
+      - WEBSOCKETS_ENABLED=true
+      - TELEMETRY=false
+      - PROJECT_OWNER_ENABLED=false
+    volumes:
+      - "${APP_DATA_DIR}/database:/directus/database"
+      - "${APP_DATA_DIR}/uploads:/directus/uploads"
+      - "${APP_DATA_DIR}/extensions:/directus/extensions"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8055/server/ping || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
