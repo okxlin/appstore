@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   bambustudio:
-    image: "linuxserver/bambustudio:02.08.00"
+    image: "linuxserver/bambustudio:02.08.01"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
