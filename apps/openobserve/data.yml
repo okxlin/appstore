@@ -1,0 +1,31 @@
+name: OpenObserve
+tags:
+  - 工具
+title: 面向日志、指标和链路的开源可观测性平台
+description: 面向日志、指标和链路的开源可观测性平台
+additionalProperties:
+  key: openobserve
+  name: OpenObserve
+  tags:
+    - Tool
+  shortDescZh: 面向日志、指标和链路的开源可观测性平台
+  shortDescEn: An open-source observability platform for logs, metrics, and traces
+  description:
+    en: An open-source observability platform for logs, metrics, and traces
+    zh: 面向日志、指标和链路的开源可观测性平台
+    zh-Hant: 面向日誌、指標與追蹤的開源可觀測性平台
+    ja: ログ、メトリクス、トレース向けのオープンソース可観測性プラットフォーム
+    ko: 로그, 메트릭 및 트레이스를 위한 오픈 소스 관측성 플랫폼
+    ru: Платформа наблюдаемости с открытым исходным кодом для логов, метрик и трассировок
+    ms: Platform kebolehlihatan sumber terbuka untuk log, metrik dan jejak
+    pt-br: Plataforma de observabilidade de código aberto para logs, métricas e rastreamentos
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://openobserve.ai/
+  github: https://github.com/openobserve/openobserve
+  document: https://openobserve.ai/docs/quickstart/
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,33 @@
+services:
+  openobserve:
+    image: "openobserve/openobserve:v0.91.1"
+    container_name: ${CONTAINER_NAME}
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 60s
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5080"
+      - "${PANEL_APP_PORT_GRPC}:5081"
+    environment:
+      - ZO_ROOT_USER_EMAIL=${OPENOBSERVE_ROOT_EMAIL}
+      - ZO_ROOT_USER_PASSWORD=${OPENOBSERVE_ROOT_PASSWORD}
+      - ZO_LOCAL_MODE=true
+      - ZO_DATA_DIR=/data
+      - ZO_TELEMETRY=${OPENOBSERVE_TELEMETRY}
+      - ZO_COOKIE_SECURE_ONLY=${OPENOBSERVE_COOKIE_SECURE_ONLY}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    healthcheck:
+      test: ["CMD", "/openobserve", "node", "status"]
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
