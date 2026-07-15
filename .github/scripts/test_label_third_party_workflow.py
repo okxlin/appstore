@@ -39,8 +39,10 @@ class LabelThirdPartyWorkflowTests(unittest.TestCase):
             step["env"],
         )
         self.assertIn("gh api --method POST", step["run"])
+        self.assertIn("--silent", step["run"])
         self.assertIn('repos/${GH_REPO}/issues/${PR_NUMBER}/labels', step["run"])
         self.assertIn("labels[]=pending", step["run"])
+        self.assertIn("echo 'labels: pending'", step["run"])
 
 
 if __name__ == "__main__":
