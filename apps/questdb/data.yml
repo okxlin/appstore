@@ -1,0 +1,31 @@
+name: QuestDB
+tags:
+  - 数据库
+title: 面向实时分析的高性能开源时序数据库
+description: 面向实时分析的高性能开源时序数据库
+additionalProperties:
+  key: questdb
+  name: QuestDB
+  tags:
+    - Database
+  shortDescZh: 面向实时分析的高性能开源时序数据库
+  shortDescEn: A high-performance open-source time-series database for real-time analytics
+  description:
+    en: A high-performance open-source time-series database for real-time analytics
+    zh: 面向实时分析的高性能开源时序数据库
+    zh-Hant: 面向即時分析的高效能開源時序資料庫
+    ja: リアルタイム分析向けの高性能オープンソース時系列データベース
+    ko: 실시간 분석을 위한 고성능 오픈 소스 시계열 데이터베이스
+    ru: Высокопроизводительная база данных временных рядов с открытым исходным кодом для аналитики в реальном времени
+    ms: Pangkalan data siri masa sumber terbuka berprestasi tinggi untuk analitik masa nyata
+    pt-br: Banco de dados de séries temporais de alto desempenho e código aberto para análises em tempo real
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://questdb.com/
+  github: https://github.com/questdb/questdb
+  document: https://questdb.com/docs/deployment/docker/
+  architectures:
+    - amd64
+    - arm64

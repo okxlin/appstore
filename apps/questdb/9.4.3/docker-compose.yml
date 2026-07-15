@@ -1,0 +1,34 @@
+services:
+  questdb:
+    image: "questdb/questdb:9.4.3"
+    container_name: ${CONTAINER_NAME}
+    init: true
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9000"
+      - "${PANEL_APP_PORT_PG}:8812"
+    environment:
+      - QDB_HTTP_USER=${QUESTDB_HTTP_USER}
+      - QDB_HTTP_PASSWORD=${QUESTDB_HTTP_PASSWORD}
+      - QDB_PG_USER=${QUESTDB_PG_USER}
+      - QDB_PG_PASSWORD=${QUESTDB_PG_PASSWORD}
+      - QDB_TELEMETRY_ENABLED=${QUESTDB_TELEMETRY_ENABLED}
+      - QDB_LINE_TCP_ENABLED=false
+      - QDB_HTTP_PESSIMISTIC_HEALTH_CHECK_ENABLED=true
+      - QDB_HTTP_HEALTH_CHECK_AUTHENTICATION_REQUIRED=false
+    volumes:
+      - "${APP_DATA_DIR}:/var/lib/questdb"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://127.0.0.1:9003/status >/dev/null"]
+      interval: 30s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
