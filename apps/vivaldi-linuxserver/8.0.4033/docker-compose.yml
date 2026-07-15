@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   vivaldi:
-    image: "linuxserver/vivaldi:8.0.4033"
+    image: "linuxserver/vivaldi:8.1.4087"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
