@@ -1,0 +1,109 @@
+additionalProperties:
+  formFields:
+    - default: 3456
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: generate
+      edit: true
+      envKey: VIKUNJA_SERVICE_SECRET
+      labelEn: Service Secret
+      labelZh: 服务密钥
+      label:
+        en: Service Secret
+        zh: 服务密钥
+        zh-Hant: 服務密鑰
+        ja: サービスシークレット
+        ko: 서비스 비밀 키
+        ru: Секрет службы
+        ms: Rahsia Perkhidmatan
+        pt-br: Segredo do Serviço
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: VIKUNJA_SERVICE_PUBLICURL
+      labelEn: Public URL
+      labelZh: 公开访问地址
+      label:
+        en: Public URL
+        zh: 公开访问地址
+        zh-Hant: 公開存取網址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL Awam
+        pt-br: URL Público
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: VIKUNJA_CORS_ENABLE
+      labelEn: Enable CORS
+      labelZh: 启用 CORS
+      label:
+        en: Enable CORS
+        zh: 启用 CORS
+        zh-Hant: 啟用 CORS
+        ja: CORS を有効化
+        ko: CORS 활성화
+        ru: Включить CORS
+        ms: Dayakan CORS
+        pt-br: Ativar CORS
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: VIKUNJA_SERVICE_ENABLEREGISTRATION
+      labelEn: Allow Registration
+      labelZh: 允许注册
+      label:
+        en: Allow Registration
+        zh: 允许注册
+        zh-Hant: 允許註冊
+        ja: ユーザー登録を許可
+        ko: 사용자 등록 허용
+        ru: Разрешить регистрацию
+        ms: Benarkan Pendaftaran
+        pt-br: Permitir Cadastro
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text

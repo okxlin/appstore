@@ -1,0 +1,33 @@
+services:
+  vikunja:
+    image: "vikunja/vikunja:latest"
+    container_name: ${CONTAINER_NAME}
+    init: true
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3456"
+    environment:
+      - VIKUNJA_DATABASE_TYPE=sqlite
+      - VIKUNJA_DATABASE_PATH=/db/vikunja.db
+      - VIKUNJA_FILES_BASEPATH=/app/vikunja/files
+      - VIKUNJA_SERVICE_SECRET=${VIKUNJA_SERVICE_SECRET}
+      - VIKUNJA_SERVICE_PUBLICURL=${VIKUNJA_SERVICE_PUBLICURL}
+      - VIKUNJA_CORS_ENABLE=${VIKUNJA_CORS_ENABLE}
+      - VIKUNJA_SERVICE_ENABLEREGISTRATION=${VIKUNJA_SERVICE_ENABLEREGISTRATION}
+    volumes:
+      - "${APP_DATA_DIR}/db:/db"
+      - "${APP_DATA_DIR}/files:/app/vikunja/files"
+    healthcheck:
+      test: ["CMD", "/app/vikunja/vikunja", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
