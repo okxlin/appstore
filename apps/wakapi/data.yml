@@ -1,0 +1,31 @@
+name: Wakapi
+tags:
+  - 开发工具
+title: 一个自托管的 WakaTime 兼容开发统计后端
+description: 一个自托管的 WakaTime 兼容开发统计后端
+additionalProperties:
+  key: wakapi
+  name: Wakapi
+  tags:
+    - DevTool
+  shortDescZh: 一个自托管的 WakaTime 兼容开发统计后端
+  shortDescEn: A self-hosted WakaTime-compatible backend for coding statistics
+  description:
+    en: A self-hosted WakaTime-compatible backend for coding statistics
+    zh: 一个自托管的 WakaTime 兼容开发统计后端
+    zh-Hant: 一個自託管、相容 WakaTime 的程式開發統計後端
+    ja: コーディング統計向けのセルフホスト型 WakaTime 互換バックエンド
+    ko: 코딩 통계를 위한 자체 호스팅 WakaTime 호환 백엔드
+    ru: Самостоятельно размещаемый WakaTime-совместимый сервер статистики программирования
+    ms: Backend serasi WakaTime yang dihos sendiri untuk statistik pengekodan
+    pt-br: Backend compatível com WakaTime e auto-hospedado para estatísticas de programação
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://wakapi.dev/
+  github: https://github.com/muety/wakapi
+  document: https://github.com/muety/wakapi
+  architectures:
+    - amd64
+    - arm64
