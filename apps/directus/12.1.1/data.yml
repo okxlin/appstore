@@ -1,0 +1,102 @@
+additionalProperties:
+  formFields:
+    - default: 8055
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin@example.com
+      edit: true
+      envKey: ADMIN_EMAIL
+      labelEn: Administrator Email
+      labelZh: 管理员邮箱
+      label:
+        en: Administrator Email
+        zh: 管理员邮箱
+        zh-Hant: 管理員電子郵件
+        ja: 管理者メールアドレス
+        ko: 관리자 이메일
+        ru: Электронная почта администратора
+        ms: E-mel Pentadbir
+        pt-br: E-mail do administrador
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do administrador
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: DIRECTUS_SECRET
+      labelEn: Instance Secret
+      labelZh: 实例密钥
+      label:
+        en: Instance Secret
+        zh: 实例密钥
+        zh-Hant: 執行個體密鑰
+        ja: インスタンスシークレット
+        ko: 인스턴스 비밀 키
+        ru: Секрет экземпляра
+        ms: Rahsia Instans
+        pt-br: Segredo da instância
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: /
+      edit: true
+      envKey: PUBLIC_URL
+      labelEn: Public URL
+      labelZh: 公共访问地址
+      label:
+        en: Public URL
+        zh: 公共访问地址
+        zh-Hant: 公開存取位址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL Awam
+        pt-br: URL pública
+      required: false
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text

@@ -1,0 +1,32 @@
+name: Directus
+tags:
+  - Tool
+title: 连接数据库并即时生成 API 与数据管理界面的无头数据平台
+description: 连接数据库并即时生成 API 与数据管理界面的无头数据平台
+additionalProperties:
+  key: directus
+  name: Directus
+  tags:
+    - Tool
+  shortDescZh: 连接数据库并即时生成 API 与数据管理界面的无头数据平台
+  shortDescEn: A headless data platform that connects to databases and instantly provides APIs and a data studio
+  description:
+    en: A headless data platform that connects to databases and instantly provides APIs and a data studio
+    zh: 连接数据库并即时生成 API 与数据管理界面的无头数据平台
+    zh-Hant: 連接資料庫並即時產生 API 與資料管理介面的無頭資料平台
+    ja: データベースに接続し、API とデータ管理画面を即座に提供するヘッドレスデータプラットフォーム
+    ko: 데이터베이스에 연결해 API와 데이터 관리 화면을 즉시 제공하는 헤드리스 데이터 플랫폼
+    ru: Headless-платформа данных, которая подключается к базам данных и сразу предоставляет API и интерфейс управления
+    ms: Platform data tanpa kepala yang bersambung ke pangkalan data serta menyediakan API dan studio data dengan segera
+    pt-br: Plataforma de dados headless que se conecta a bancos de dados e fornece APIs e um estúdio de dados instantaneamente
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 512
+  website: https://directus.io/
+  github: https://github.com/directus/directus
+  document: https://directus.io/docs/
+  architectures:
+    - amd64
+    - arm64
