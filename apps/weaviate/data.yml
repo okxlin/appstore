@@ -1,0 +1,31 @@
+name: Weaviate
+tags:
+  - AI
+title: 面向语义搜索与生成式应用的开源向量数据库
+description: 面向语义搜索与生成式应用的开源向量数据库
+additionalProperties:
+  key: weaviate
+  name: Weaviate
+  tags:
+    - AI
+  shortDescZh: 面向语义搜索与生成式应用的开源向量数据库
+  shortDescEn: An open-source vector database for semantic search and generative applications
+  description:
+    en: An open-source vector database for semantic search and generative applications
+    zh: 面向语义搜索与生成式应用的开源向量数据库
+    zh-Hant: 面向語義搜尋與生成式應用程式的開源向量資料庫
+    ja: セマンティック検索と生成 AI アプリケーション向けのオープンソースベクトルデータベース
+    ko: 의미 검색 및 생성형 애플리케이션을 위한 오픈 소스 벡터 데이터베이스
+    ru: Векторная база данных с открытым исходным кодом для семантического поиска и генеративных приложений
+    ms: Pangkalan data vektor sumber terbuka untuk carian semantik dan aplikasi generatif
+    pt-br: Banco de dados vetorial de código aberto para pesquisa semântica e aplicações generativas
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://weaviate.io/
+  github: https://github.com/weaviate/weaviate
+  document: https://docs.weaviate.io/weaviate/
+  architectures:
+    - amd64
+    - arm64
