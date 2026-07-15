@@ -1,0 +1,32 @@
+name: Memgraph
+tags:
+  - 数据库
+title: 面向实时分析与 AI 工作负载的高性能图数据库
+description: 面向实时分析与 AI 工作负载的高性能图数据库
+additionalProperties:
+  key: memgraph
+  name: Memgraph
+  tags:
+    - Database
+  shortDescZh: 面向实时分析与 AI 工作负载的高性能图数据库
+  shortDescEn: High-performance graph database for real-time analytics and AI workloads
+  description:
+    en: High-performance graph database for real-time analytics and AI workloads
+    zh: 面向实时分析与 AI 工作负载的高性能图数据库
+    zh-Hant: 面向即時分析與 AI 工作負載的高效能圖形資料庫
+    ja: リアルタイム分析と AI ワークロード向けの高性能グラフデータベース
+    ko: 실시간 분석 및 AI 워크로드를 위한 고성능 그래프 데이터베이스
+    ru: Высокопроизводительная графовая база данных для аналитики в реальном времени и задач ИИ
+    ms: Pangkalan data graf berprestasi tinggi untuk analitik masa nyata dan beban kerja AI
+    pt-br: Banco de dados de grafos de alto desempenho para análises em tempo real e cargas de IA
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 1024
+  website: https://memgraph.com/
+  github: https://github.com/memgraph/memgraph
+  document: https://memgraph.com/docs/
+  architectures:
+    - amd64
+    - arm64
