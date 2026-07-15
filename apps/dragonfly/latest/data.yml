@@ -1,0 +1,100 @@
+additionalProperties:
+  formFields:
+    - default: 6379
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Redis/HTTP Port
+      labelZh: Redis/HTTP 端口
+      label:
+        en: Redis/HTTP Port
+        zh: Redis/HTTP 端口
+        zh-Hant: Redis/HTTP 連接埠
+        ja: Redis/HTTP ポート
+        ko: Redis/HTTP 포트
+        ru: Порт Redis/HTTP
+        ms: Port Redis/HTTP
+        pt-br: Porta Redis/HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: DRAGONFLY_PASSWORD
+      labelEn: Password
+      labelZh: 访问密码
+      label:
+        en: Password
+        zh: 访问密码
+        zh-Hant: 存取密碼
+        ja: アクセスパスワード
+        ko: 액세스 비밀번호
+        ru: Пароль доступа
+        ms: Kata Laluan Akses
+        pt-br: Senha de Acesso
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 1gb
+      edit: true
+      envKey: DRAGONFLY_MAX_MEMORY
+      labelEn: Maximum Memory
+      labelZh: 最大内存
+      label:
+        en: Maximum Memory
+        zh: 最大内存
+        zh-Hant: 最大記憶體
+        ja: 最大メモリ
+        ko: 최대 메모리
+        ru: Максимальный объём памяти
+        ms: Memori Maksimum
+        pt-br: Memória Máxima
+      required: true
+      type: text
+    - default: 2
+      edit: true
+      envKey: DRAGONFLY_THREADS
+      labelEn: Worker Threads
+      labelZh: 工作线程数
+      label:
+        en: Worker Threads
+        zh: 工作线程数
+        zh-Hant: 工作執行緒數
+        ja: ワーカースレッド数
+        ko: 작업자 스레드 수
+        ru: Количество рабочих потоков
+        ms: Bilangan Jalur Pekerja
+        pt-br: Número de Threads de Trabalho
+      required: true
+      type: number
+    - default: "*/5 * * * *"
+      edit: true
+      envKey: DRAGONFLY_SNAPSHOT_CRON
+      labelEn: Snapshot Schedule
+      labelZh: 快照计划
+      label:
+        en: Snapshot Schedule
+        zh: 快照计划
+        zh-Hant: 快照排程
+        ja: スナップショットスケジュール
+        ko: 스냅샷 일정
+        ru: Расписание снимков
+        ms: Jadual Syot Kilat
+        pt-br: Agendamento de Snapshots
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text

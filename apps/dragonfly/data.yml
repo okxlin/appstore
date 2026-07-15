@@ -1,0 +1,32 @@
+name: Dragonfly
+tags:
+  - 数据库
+title: Redis 兼容的高性能内存数据存储
+description: Redis 兼容的高性能内存数据存储
+additionalProperties:
+  key: dragonfly
+  name: Dragonfly
+  tags:
+    - Database
+  shortDescZh: Redis 兼容的高性能内存数据存储
+  shortDescEn: High-performance Redis-compatible in-memory data store
+  description:
+    en: High-performance Redis-compatible in-memory data store for modern workloads
+    zh: 面向现代工作负载的高性能 Redis 兼容内存数据存储
+    zh-Hant: 面向現代工作負載的高效能 Redis 相容記憶體資料儲存
+    ja: 最新のワークロード向けの高性能な Redis 互換インメモリデータストア
+    ko: 최신 워크로드를 위한 고성능 Redis 호환 인메모리 데이터 저장소
+    ru: Высокопроизводительное совместимое с Redis хранилище данных в памяти
+    ms: Storan data dalam memori berprestasi tinggi yang serasi dengan Redis
+    pt-br: Armazenamento de dados em memória de alto desempenho compatível com Redis
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 1024
+  website: https://www.dragonflydb.io/
+  github: https://github.com/dragonflydb/dragonfly
+  document: https://www.dragonflydb.io/docs/
+  architectures:
+    - amd64
+    - arm64
