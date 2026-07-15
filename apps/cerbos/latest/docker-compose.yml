@@ -1,0 +1,26 @@
+services:
+  cerbos:
+    image: "cerbos/cerbos:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3592"
+      - "${PANEL_APP_PORT_GRPC}:3593"
+    environment:
+      - CERBOS_NO_TELEMETRY=1
+    volumes:
+      - "${APP_DATA_DIR}/policies:/policies"
+    healthcheck:
+      test: ["CMD", "/cerbos", "healthcheck"]
+      interval: 10s
+      timeout: 2s
+      start_period: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,31 @@
+name: Cerbos
+tags:
+  - 安全
+title: 面向应用的开源策略授权决策服务
+description: 面向应用的开源策略授权决策服务
+additionalProperties:
+  key: cerbos
+  name: Cerbos
+  tags:
+  - Security
+  shortDescZh: 面向应用的开源策略授权决策服务
+  shortDescEn: An open-source policy decision service for application authorization
+  description:
+    en: An open-source policy decision service for application authorization
+    zh: 面向应用的开源策略授权决策服务
+    zh-Hant: 面向應用程式的開源策略授權決策服務
+    ja: アプリケーション認可向けのオープンソースポリシー決定サービス
+    ko: 애플리케이션 권한 부여를 위한 오픈 소스 정책 결정 서비스
+    ru: Сервис принятия решений по политикам с открытым исходным кодом для авторизации приложений
+    ms: Perkhidmatan keputusan dasar sumber terbuka untuk kebenaran aplikasi
+    pt-br: Serviço de decisão de políticas de código aberto para autorização de aplicações
+  type: middleware
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://cerbos.dev/
+  github: https://github.com/cerbos/cerbos
+  document: https://docs.cerbos.dev/cerbos/latest/
+  architectures:
+  - amd64
+  - arm64
