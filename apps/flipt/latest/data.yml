@@ -1,0 +1,52 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 9000
+      edit: true
+      envKey: PANEL_APP_PORT_GRPC
+      labelEn: gRPC Port
+      labelZh: gRPC 端口
+      label:
+        en: gRPC Port
+        zh: gRPC 端口
+        zh-Hant: gRPC 連接埠
+        ja: gRPC ポート
+        ko: gRPC 포트
+        ru: Порт gRPC
+        ms: Port gRPC
+        pt-br: Porta gRPC
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
