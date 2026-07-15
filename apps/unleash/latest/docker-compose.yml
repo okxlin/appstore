@@ -1,0 +1,36 @@
+services:
+  unleash:
+    image: "unleashorg/unleash-server:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4242"
+    environment:
+      - DATABASE_HOST=${PANEL_DB_HOST}
+      - DATABASE_PORT=${PANEL_DB_PORT}
+      - DATABASE_NAME=${PANEL_DB_NAME}
+      - DATABASE_USERNAME=${PANEL_DB_USER}
+      - DATABASE_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DATABASE_SSL=false
+      - UNLEASH_DEFAULT_ADMIN_USERNAME=${UNLEASH_DEFAULT_ADMIN_USERNAME}
+      - UNLEASH_DEFAULT_ADMIN_PASSWORD=${UNLEASH_DEFAULT_ADMIN_PASSWORD}
+      - UNLEASH_SECRET=${UNLEASH_SECRET}
+      - UNLEASH_URL=${UNLEASH_URL}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - TZ=${TZ}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget --no-verbose --tries=1 --spider http://127.0.0.1:4242/ready || exit 1
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
