@@ -24,6 +24,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add pending label to third-party PRs
-        uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: pending
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh api --method POST \
+            "repos/${GH_REPO}/issues/${PR_NUMBER}/labels" \
+            -f 'labels[]=pending'
