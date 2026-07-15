@@ -1,0 +1,39 @@
+services:
+  memgraph:
+    image: "memgraph/memgraph:3.11.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_BOLT}:7687"
+      - "${PANEL_APP_PORT_MONITORING}:7444"
+      - "${PANEL_APP_PORT_HTTP}:9091"
+    environment:
+      - MEMGRAPH_USER=${MEMGRAPH_USER}
+      - MEMGRAPH_PASSWORD=${MEMGRAPH_PASSWORD}
+    command:
+      - "--telemetry-enabled=false"
+      - "--auth-password-permit-null=false"
+      - "--memory-limit=${MEMGRAPH_MEMORY_LIMIT}"
+      - "--bolt-num-workers=${MEMGRAPH_WORKERS}"
+      - "--storage-snapshot-thread-count=${MEMGRAPH_WORKERS}"
+      - "--storage-recovery-thread-count=${MEMGRAPH_WORKERS}"
+      - "--storage-snapshot-interval-sec=${MEMGRAPH_SNAPSHOT_INTERVAL}"
+      - "--metrics-format=OpenMetrics"
+    volumes:
+      - "${APP_DATA_DIR}/data:/var/lib/memgraph"
+      - "${APP_DATA_DIR}/logs:/var/log/memgraph"
+    stop_grace_period: 1m
+    healthcheck:
+      test: ["CMD-SHELL", "printf 'RETURN 1;\\n' | FLAGS_username=\"$$MEMGRAPH_USER\" FLAGS_password=\"$$MEMGRAPH_PASSWORD\" mgconsole --tryfromenv=username,password --host=127.0.0.1 --port=7687 >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 12
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
