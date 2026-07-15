@@ -14,7 +14,7 @@ Directus 是一个无头数据平台，可连接数据库并自动提供 REST、
 
 - 默认容器端口为 `8055`，安装表单可修改主机端口。
 - 安装时会使用表单中的管理员邮箱和强密码创建初始管理员；管理员密码由用户输入，并由 1Panel 复杂度规则校验。
-- `SECRET` 用于签名访问令牌。安装脚本会把不足 32 字符的面板随机值替换为 64 位十六进制密钥，并以 `0600` 权限持久化到数据目录下的 `.directus-secret`。升级和迁移时必须连同该文件保留同一个值，否则已有会话和令牌可能失效。
+- `SECRET` 用于签名访问令牌。该值由 1Panel 安装表单随机生成，安装脚本会缓存到数据目录下的 `.directus-secret`，并在升级时恢复原值。迁移时必须连同该文件保留同一个值，否则已有会话和令牌可能失效。
 - `PUBLIC_URL` 可留空，此时 Directus 使用默认相对地址 `/`。如需邮件链接、OAuth、SSO 或许可证激活，请填写实际可访问的绝对 URL，例如 `https://directus.example.com`。
 
 ## 部署拓扑
@@ -33,7 +33,7 @@ Directus 是一个无头数据平台，可连接数据库并自动提供 REST、
 - `extensions` → `/directus/extensions`
 - `.directus-secret` → 升级时用于恢复令牌签名密钥的隐藏文件
 
-容器以 UID/GID `1000:1000` 运行，安装脚本会为三个数据子目录设置对应所有者并收紧为 `0700`。升级前请备份完整数据目录（包括 `.directus-secret`），并阅读目标版本的 breaking changes。Directus 会在启动时自动执行数据库迁移；迁移完成前不要中断容器。生产环境建议使用固定版本，`latest` 仅适合明确接受浮动更新的场景。
+容器以 UID/GID `1000:1000` 运行，安装脚本只负责创建三个数据子目录并设置对应所有者。升级前请备份完整数据目录（包括 `.directus-secret`），并阅读目标版本的 breaking changes。Directus 会在启动时自动执行数据库迁移；迁移完成前不要中断容器。生产环境建议使用固定版本，`latest` 仅适合明确接受浮动更新的场景。
 
 ## 许可证与遥测
 
@@ -47,7 +47,7 @@ Directus 是一个无头数据平台，可连接数据库并自动提供 REST、
 
 Directus is a headless data platform that provides REST, GraphQL, and WebSocket APIs plus a data studio on top of a database. This package uses the official image in a single-service SQLite topology for single-node and small-to-medium self-hosted deployments.
 
-The package persists `/directus/database`, `/directus/uploads`, and `/directus/extensions`, creates the initial administrator from installation fields, persists a generated token-signing secret in `.directus-secret`, and probes `/server/ping`. Larger or horizontally scaled deployments should use an external PostgreSQL/MySQL/MariaDB service and Redis where required.
+The package persists `/directus/database`, `/directus/uploads`, and `/directus/extensions`, creates the initial administrator from installation fields, caches the panel-generated token-signing secret in `.directus-secret`, and probes `/server/ping`. Larger or horizontally scaled deployments should use an external PostgreSQL/MySQL/MariaDB service and Redis where required.
 
 Directus 12 is source-available under `MSCL-1.0-GPL`. Review the upstream license, including the Competing Use restriction and core-tier entitlements, before deployment.
 

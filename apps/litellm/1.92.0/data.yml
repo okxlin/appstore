@@ -158,19 +158,3 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
-    - default: ./data
-      edit: true
-      envKey: APP_DATA_DIR
-      labelEn: Secret Backup Directory
-      labelZh: 密钥备份目录
-      label:
-        en: Secret Backup Directory
-        zh: 密钥备份目录
-        zh-Hant: 金鑰備份目錄
-        ja: キーバックアップディレクトリ
-        ko: 키 백업 디렉터리
-        ru: Каталог резервных копий ключей
-        ms: Direktori Sandaran Kunci
-        pt-br: Diretório de backup das chaves
-      required: true
-      type: text
