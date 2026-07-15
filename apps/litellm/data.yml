@@ -1,0 +1,31 @@
+name: LiteLLM
+tags:
+  - AI
+title: 统一调用多种大模型的 AI 网关
+description: 统一调用多种大模型的 AI 网关
+additionalProperties:
+  key: litellm
+  name: LiteLLM
+  tags:
+    - AI
+  shortDescZh: 统一调用多种大模型的 AI 网关
+  shortDescEn: An AI gateway for unified access to multiple LLM providers
+  description:
+    en: An AI gateway for unified access to multiple LLM providers
+    zh: 统一调用多种大模型的 AI 网关
+    zh-Hant: 統一呼叫多種大型語言模型的 AI 閘道
+    ja: 複数の大規模言語モデルを統一的に利用する AI ゲートウェイ
+    ko: 여러 대규모 언어 모델을 통합 호출하는 AI 게이트웨이
+    ru: ИИ-шлюз для унифицированного доступа к различным большим языковым моделям
+    ms: Gerbang AI untuk akses bersepadu kepada pelbagai model bahasa besar
+    pt-br: Gateway de IA para acesso unificado a diversos modelos de linguagem
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.litellm.ai/
+  github: https://github.com/BerriAI/litellm
+  document: https://docs.litellm.ai/docs/proxy/docker_quick_start
+  memoryRequired: 2048
+  architectures:
+    - amd64
+    - arm64
