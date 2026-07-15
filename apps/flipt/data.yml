@@ -1,0 +1,32 @@
+name: Flipt
+tags:
+  - DevOps
+title: Git 原生的自托管功能开关管理平台
+description: Git 原生的自托管功能开关管理平台
+additionalProperties:
+  key: flipt
+  name: Flipt
+  tags:
+    - DevOps
+  shortDescZh: Git 原生的自托管功能开关管理平台
+  shortDescEn: Git-native, self-hosted feature flag management
+  description:
+    en: Git-native, self-hosted feature flag management for applications and services
+    zh: 面向应用与服务的 Git 原生自托管功能开关管理平台
+    zh-Hant: 面向應用程式與服務的 Git 原生自託管功能開關管理平台
+    ja: アプリケーションとサービス向けの Git ネイティブなセルフホスト型機能フラグ管理
+    ko: 애플리케이션과 서비스를 위한 Git 네이티브 자체 호스팅 기능 플래그 관리
+    ru: Git-ориентированное самостоятельное управление функциональными флагами для приложений и сервисов
+    ms: Pengurusan bendera ciri hos sendiri berasaskan Git untuk aplikasi dan perkhidmatan
+    pt-br: Gerenciamento de feature flags auto-hospedado e nativo de Git para aplicativos e serviços
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 256
+  website: https://www.flipt.io/
+  github: https://github.com/flipt-io/flipt
+  document: https://docs.flipt.io/v2/
+  architectures:
+    - amd64
+    - arm64

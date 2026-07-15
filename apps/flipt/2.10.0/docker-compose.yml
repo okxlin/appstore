@@ -1,0 +1,30 @@
+services:
+  flipt:
+    image: "docker.flipt.io/flipt/flipt:v2.10.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_PORT_GRPC}:9000"
+    environment:
+      - FLIPT_STORAGE_DEFAULT_BACKEND_TYPE=local
+      - FLIPT_STORAGE_DEFAULT_BACKEND_PATH=/var/opt/flipt/storage
+      - FLIPT_META_STATE_DIRECTORY=/var/opt/flipt/state
+      - FLIPT_META_CHECK_FOR_UPDATES=false
+      - FLIPT_META_TELEMETRY_ENABLED=false
+    volumes:
+      - "${APP_DATA_DIR}:/var/opt/flipt"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
