@@ -1,6 +1,6 @@
 services:
   forwardx:
-    image: "ghcr.io/poouo/forwardx:v2.3.236"
+    image: "ghcr.io/poouo/forwardx:v2.3.237"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     extra_hosts:
