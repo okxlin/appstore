@@ -1,6 +1,6 @@
 services:
   infinite-canvas:
-    image: "ghcr.io/basketikun/infinite-canvas:v0.8.0"
+    image: "ghcr.io/basketikun/infinite-canvas:v0.8.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
