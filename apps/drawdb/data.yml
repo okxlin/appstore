@@ -1,0 +1,32 @@
+name: drawDB
+tags:
+  - Tool
+title: 浏览器内的数据库关系图设计工具
+description: 浏览器内的数据库关系图设计工具
+additionalProperties:
+  key: drawdb
+  name: drawDB
+  tags:
+    - Tool
+  type: tool
+  website: https://drawdb.app/
+  document: https://github.com/drawdb-io/drawdb/blob/main/README.md
+  github: https://github.com/drawdb-io/drawdb
+  shortDescZh: 浏览器内的数据库关系图设计工具
+  shortDescEn: A browser-based database diagram editor
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 64
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: A browser-based database diagram editor with SQL import and export tools
+    zh: 浏览器内的数据库关系图设计工具，支持 SQL 导入与导出
+    zh-Hant: 瀏覽器內的資料庫關係圖設計工具，支援 SQL 匯入與匯出
+    ja: SQL のインポートとエクスポートに対応したブラウザ型データベース図エディター
+    ko: SQL 가져오기와 내보내기를 지원하는 브라우저 기반 데이터베이스 다이어그램 편집기
+    ru: Браузерный редактор схем баз данных с импортом и экспортом SQL
+    ms: Penyunting rajah pangkalan data berasaskan pelayar dengan import dan eksport SQL
+    pt-br: Editor de diagramas de banco de dados no navegador com importação e exportação de SQL
