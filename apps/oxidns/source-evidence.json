@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/svenshi/oxidns",
-  "dockerDocs": "https://oxidns.org/quickstart",
-  "composeFile": "https://github.com/svenshi/oxidns/blob/main/packaging/docker/Dockerfile.runtime"
-}

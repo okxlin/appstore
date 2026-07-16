@@ -1,8 +1,0 @@
-{
-  "repository": "https://github.com/Qexo/Qexo",
-  "dockerDocs": "https://hub.docker.com/r/abudulin/qexo",
-  "composeFile": "https://github.com/Qexo/Qexo/blob/master/Dockerfile",
-  "releaseWorkflow": "https://github.com/Qexo/Qexo/blob/master/.github/workflows/docker-image-release.yml",
-  "entrypoint": "https://github.com/Qexo/Qexo/blob/master/entrypoint.sh",
-  "defaultConfig": "https://github.com/Qexo/Qexo/blob/master/configs.example.py"
-}

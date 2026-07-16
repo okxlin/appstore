@@ -1,8 +1,0 @@
-{
-  "repository": "https://github.com/PDFMathTranslate/PDFMathTranslate-next",
-  "dockerDocs": "https://hub.docker.com/r/awwaawwa/pdfmathtranslate-next",
-  "composeFile": "https://raw.githubusercontent.com/PDFMathTranslate/PDFMathTranslate-next/main/docs/en/getting-started/INSTALLATION_docker.md",
-  "composeSourceType": "official-docker-run-docs",
-  "image": "awwaawwa/pdfmathtranslate-next:2.9.0",
-  "latestImage": "awwaawwa/pdfmathtranslate-next:latest"
-}

@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/okxlin/release-factory/tree/main/codex-claude-workstation-builder",
-  "dockerDocs": "https://github.com/okxlin/release-factory/tree/main/codex-claude-workstation-builder",
-  "composeFile": "https://github.com/okxlin/appstore/blob/localApps/apps/codex-claude-workstation/latest/docker-compose.yml"
-}

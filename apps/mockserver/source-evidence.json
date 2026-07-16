@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/mock-server/mockserver",
-  "dockerDocs": "https://www.mock-server.com/where/docker.html",
-  "composeFile": "https://github.com/mock-server/mockserver/blob/master/docker/README.md"
-}
