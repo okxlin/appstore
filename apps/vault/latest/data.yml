@@ -1,0 +1,46 @@
+additionalProperties:
+  formFields:
+    - default: 48200
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label: {en: Web Port, zh: Web 端口, zh-Hant: Web 連接埠, ja: Web ポート, ko: 웹 포트, ru: Веб-порт, ms: Port Web, pt-br: Porta Web}
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label: {en: Data Directory, zh: 数据目录, zh-Hant: 資料目錄, ja: データディレクトリ, ko: 데이터 디렉터리, ru: Каталог данных, ms: Direktori Data, pt-br: Diretório de Dados}
+      required: true
+      type: text
+    - default: info
+      edit: true
+      envKey: VAULT_LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label: {en: Log Level, zh: 日志级别, zh-Hant: 日誌等級, ja: ログレベル, ko: 로그 수준, ru: Уровень журналирования, ms: Tahap Log, pt-br: Nível de log}
+      required: true
+      type: select
+      values:
+        - label: trace
+          value: trace
+        - label: debug
+          value: debug
+        - label: info
+          value: info
+        - label: warn
+          value: warn
+        - label: error
+          value: error
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label: {en: Timezone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Waktu, pt-br: Fuso horário}
+      required: true
+      type: text

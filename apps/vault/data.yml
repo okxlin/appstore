@@ -1,0 +1,32 @@
+name: HashiCorp Vault
+tags:
+  - 安全
+title: 用于安全存储和控制访问机密信息的服务
+description: 用于安全存储和控制访问机密信息的服务
+additionalProperties:
+  key: vault
+  name: HashiCorp Vault
+  tags:
+    - Security
+  type: tool
+  website: https://www.hashicorp.com/en/products/vault
+  document: https://developer.hashicorp.com/vault/docs
+  github: https://github.com/hashicorp/vault
+  shortDescZh: 用于安全存储和控制访问机密信息的服务
+  shortDescEn: A service for securely storing and controlling access to secrets
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  memoryRequired: 1024
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: A service for securely storing and controlling access to secrets
+    zh: 用于安全存储和控制访问机密信息的服务
+    zh-Hant: 用於安全儲存及控制存取機密資訊的服務
+    ja: シークレットを安全に保存しアクセスを制御するサービス
+    ko: 비밀 정보를 안전하게 저장하고 접근을 제어하는 서비스
+    ru: Сервис для безопасного хранения секретов и управления доступом к ним
+    ms: Perkhidmatan untuk menyimpan rahsia dengan selamat dan mengawal akses kepadanya
+    pt-br: Serviço para armazenar segredos com segurança e controlar o acesso a eles

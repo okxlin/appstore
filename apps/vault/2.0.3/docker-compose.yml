@@ -1,0 +1,31 @@
+services:
+  vault:
+    image: "hashicorp/vault:2.0.3"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    command:
+      - server
+    environment:
+      - VAULT_ADDR=http://127.0.0.1:8200
+      - VAULT_LOG_LEVEL=${VAULT_LOG_LEVEL}
+      - TZ=${TZ}
+      - 'VAULT_LOCAL_CONFIG={"ui":true,"disable_mlock":true,"api_addr":"http://127.0.0.1:8200","cluster_addr":"https://127.0.0.1:8201","storage":{"raft":{"path":"/vault/file","node_id":"vault-1"}},"listener":[{"tcp":{"address":"0.0.0.0:8200","cluster_address":"0.0.0.0:8201","tls_disable":true}}]}'
+    volumes:
+      - "${APP_DATA_DIR}/file:/vault/file"
+      - "${APP_DATA_DIR}/logs:/vault/logs"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8200"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null 'http://127.0.0.1:8200/v1/sys/health?standbyok=true&sealedcode=200&uninitcode=200' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
