@@ -1,0 +1,401 @@
+additionalProperties:
+  formFields:
+    - default: 4000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Runtime
+      labelZh: 数据库 Runtime
+      label:
+        en: Database Runtime
+        zh: 数据库 Runtime
+        zh-Hant: 資料庫 Runtime
+        ja: データベース Runtime
+        ko: 데이터베이스 Runtime
+        ru: Среда базы данных
+        ms: Runtime Pangkalan Data
+        pt-br: Runtime de banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ''
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Service
+        labelZh: PostgreSQL 服务
+        label:
+          en: PostgreSQL Service
+          zh: PostgreSQL 服务
+          zh-Hant: PostgreSQL 服務
+          ja: PostgreSQL サービス
+          ko: PostgreSQL 서비스
+          ru: Сервис PostgreSQL
+          ms: Perkhidmatan PostgreSQL
+          pt-br: Serviço PostgreSQL
+        required: true
+        type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port Pangkalan Data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: keila
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: keila
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ''
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata Laluan Pangkalan Data
+        pt-br: Senha do banco de dados
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: root@localhost
+      edit: true
+      envKey: KEILA_USER
+      labelEn: Initial Administrator Email
+      labelZh: 初始管理员邮箱
+      label:
+        en: Initial Administrator Email
+        zh: 初始管理员邮箱
+        zh-Hant: 初始管理員電子郵件
+        ja: 初期管理者メールアドレス
+        ko: 초기 관리자 이메일
+        ru: Email начального администратора
+        ms: E-mel Pentadbir Awal
+        pt-br: E-mail do administrador inicial
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: KEILA_PASSWORD
+      labelEn: Initial Administrator Password (10+ characters)
+      labelZh: 初始管理员密码（至少 10 个字符）
+      label:
+        en: Initial Administrator Password (10+ characters)
+        zh: 初始管理员密码（至少 10 个字符）
+        zh-Hant: 初始管理員密碼（至少 10 個字元）
+        ja: 初期管理者パスワード（10 文字以上）
+        ko: 초기 관리자 비밀번호(10자 이상)
+        ru: Пароль начального администратора (не менее 10 символов)
+        ms: Kata Laluan Pentadbir Awal (10+ aksara)
+        pt-br: Senha do administrador inicial (10+ caracteres)
+      required: true
+      type: password
+    - default: ''
+      edit: true
+      envKey: SECRET_KEY_BASE
+      labelEn: Session Secret (64+ characters)
+      labelZh: 会话密钥（至少 64 个字符）
+      label:
+        en: Session Secret (64+ characters)
+        zh: 会话密钥（至少 64 个字符）
+        zh-Hant: 工作階段密鑰（至少 64 個字元）
+        ja: セッションシークレット（64 文字以上）
+        ko: 세션 비밀 키(64자 이상)
+        ru: Секрет сеанса (не менее 64 символов)
+        ms: Rahsia Sesi (64+ aksara)
+        pt-br: Segredo da sessão (64+ caracteres)
+      required: true
+      type: password
+    - default: ''
+      edit: true
+      envKey: URL_HOST
+      labelEn: Public Host (domain or IP)
+      labelZh: 公开访问主机（域名或 IP）
+      label:
+        en: Public Host (domain or IP)
+        zh: 公开访问主机（域名或 IP）
+        zh-Hant: 公開存取主機（網域或 IP）
+        ja: 公開ホスト（ドメインまたは IP）
+        ko: 공개 호스트(도메인 또는 IP)
+        ru: Публичный хост (домен или IP)
+        ms: Hos Awam (domain atau IP)
+        pt-br: Host público (domínio ou IP)
+      required: true
+      type: text
+    - default: http
+      edit: true
+      envKey: URL_SCHEMA
+      labelEn: Public URL Scheme
+      labelZh: 公开 URL 协议
+      label:
+        en: Public URL Scheme
+        zh: 公开 URL 协议
+        zh-Hant: 公開 URL 通訊協定
+        ja: 公開 URL スキーム
+        ko: 공개 URL 스키마
+        ru: Схема публичного URL
+        ms: Skema URL Awam
+        pt-br: Esquema da URL pública
+      required: true
+      type: select
+      values:
+        - label: http
+          value: http
+        - label: https
+          value: https
+    - default: 4000
+      edit: true
+      envKey: URL_PORT
+      labelEn: Public URL Port
+      labelZh: 公开 URL 端口
+      label:
+        en: Public URL Port
+        zh: 公开 URL 端口
+        zh-Hant: 公開 URL 連接埠
+        ja: 公開 URL ポート
+        ko: 공개 URL 포트
+        ru: Порт публичного URL
+        ms: Port URL Awam
+        pt-br: Porta da URL pública
+      required: true
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: MAILER_SMTP_HOST
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP-хост
+        ms: Hos SMTP
+        pt-br: Host SMTP
+      required: true
+      type: text
+    - default: 587
+      edit: true
+      envKey: MAILER_SMTP_PORT
+      labelEn: SMTP Port
+      labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 連接埠
+        ja: SMTP ポート
+        ko: SMTP 포트
+        ru: SMTP-порт
+        ms: Port SMTP
+        pt-br: Porta SMTP
+      required: true
+      type: number
+    - default: ''
+      edit: true
+      envKey: MAILER_SMTP_FROM_EMAIL
+      labelEn: SMTP From Email
+      labelZh: SMTP 发件邮箱
+      label:
+        en: SMTP From Email
+        zh: SMTP 发件邮箱
+        zh-Hant: SMTP 寄件者電子郵件
+        ja: SMTP 送信元メールアドレス
+        ko: SMTP 발신 이메일
+        ru: Email отправителя SMTP
+        ms: E-mel Pengirim SMTP
+        pt-br: E-mail do remetente SMTP
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: MAILER_SMTP_USER
+      labelEn: SMTP Username
+      labelZh: SMTP 用户名
+      label:
+        en: SMTP Username
+        zh: SMTP 用户名
+        zh-Hant: SMTP 使用者名稱
+        ja: SMTP ユーザー名
+        ko: SMTP 사용자 이름
+        ru: Имя пользователя SMTP
+        ms: Nama Pengguna SMTP
+        pt-br: Usuário SMTP
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: MAILER_SMTP_PASSWORD
+      labelEn: SMTP Password
+      labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密碼
+        ja: SMTP パスワード
+        ko: SMTP 비밀번호
+        ru: Пароль SMTP
+        ms: Kata Laluan SMTP
+        pt-br: Senha SMTP
+      required: true
+      type: password
+    - default: 'false'
+      edit: true
+      envKey: MAILER_ENABLE_SSL
+      labelEn: Enable SMTP SSL/TLS
+      labelZh: 启用 SMTP SSL/TLS
+      label:
+        en: Enable SMTP SSL/TLS
+        zh: 启用 SMTP SSL/TLS
+        zh-Hant: 啟用 SMTP SSL/TLS
+        ja: SMTP SSL/TLS を有効化
+        ko: SMTP SSL/TLS 활성화
+        ru: Включить SMTP SSL/TLS
+        ms: Dayakan SMTP SSL/TLS
+        pt-br: Ativar SMTP SSL/TLS
+      required: true
+      type: select
+      values:
+        - label: 'false'
+          value: 'false'
+        - label: 'true'
+          value: 'true'
+    - default: 'false'
+      edit: true
+      envKey: MAILER_ENABLE_STARTTLS
+      labelEn: Enable SMTP STARTTLS
+      labelZh: 启用 SMTP STARTTLS
+      label:
+        en: Enable SMTP STARTTLS
+        zh: 启用 SMTP STARTTLS
+        zh-Hant: 啟用 SMTP STARTTLS
+        ja: SMTP STARTTLS を有効化
+        ko: SMTP STARTTLS 활성화
+        ru: Включить SMTP STARTTLS
+        ms: Dayakan SMTP STARTTLS
+        pt-br: Ativar SMTP STARTTLS
+      required: true
+      type: select
+      values:
+        - label: 'false'
+          value: 'false'
+        - label: 'true'
+          value: 'true'
+    - default: info
+      edit: true
+      envKey: LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌層級
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журналирования
+        ms: Tahap Log
+        pt-br: Nível de log
+      required: true
+      type: select
+      values:
+        - label: debug
+          value: debug
+        - label: info
+          value: info
+        - label: error
+          value: error
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

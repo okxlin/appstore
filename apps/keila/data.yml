@@ -1,0 +1,30 @@
+name: Keila
+tags:
+  - Email
+title: 开源的自托管新闻简报与邮件营销平台
+description: 开源的自托管新闻简报与邮件营销平台
+additionalProperties:
+  key: keila
+  name: Keila
+  tags:
+    - Email
+  type: tool
+  website: https://www.keila.io/
+  document: https://www.keila.io/docs/installation
+  github: https://github.com/pentacent/keila
+  shortDescZh: 开源的自托管新闻简报与邮件营销平台
+  shortDescEn: An open-source self-hosted newsletter and email marketing platform
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  architectures:
+    - amd64
+  description:
+    en: An open-source self-hosted newsletter and email marketing platform
+    zh: 开源的自托管新闻简报与邮件营销平台
+    zh-Hant: 開源的自託管電子報與電子郵件行銷平台
+    ja: オープンソースのセルフホスト型ニュースレター・メールマーケティングプラットフォーム
+    ko: 오픈 소스 자체 호스팅 뉴스레터 및 이메일 마케팅 플랫폼
+    ru: Самостоятельно размещаемая платформа с открытым исходным кодом для рассылок и email-маркетинга
+    ms: Platform sumber terbuka yang dihos sendiri untuk surat berita dan pemasaran e-mel
+    pt-br: Plataforma de código aberto auto-hospedada para newsletters e marketing por e-mail

@@ -1,0 +1,44 @@
+services:
+  keila:
+    image: "pentacent/keila:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4000"
+    environment:
+      - DB_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+      - DB_ENABLE_SSL=false
+      - KEILA_USER=${KEILA_USER}
+      - KEILA_PASSWORD=${KEILA_PASSWORD}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - URL_HOST=${URL_HOST}
+      - URL_SCHEMA=${URL_SCHEMA}
+      - URL_PORT=${URL_PORT}
+      - USER_CONTENT_DIR=/opt/app/uploads
+      - MAILER_SMTP_HOST=${MAILER_SMTP_HOST}
+      - MAILER_SMTP_PORT=${MAILER_SMTP_PORT}
+      - MAILER_SMTP_FROM_EMAIL=${MAILER_SMTP_FROM_EMAIL}
+      - MAILER_SMTP_USER=${MAILER_SMTP_USER}
+      - MAILER_SMTP_PASSWORD=${MAILER_SMTP_PASSWORD}
+      - MAILER_ENABLE_SSL=${MAILER_ENABLE_SSL}
+      - MAILER_ENABLE_STARTTLS=${MAILER_ENABLE_STARTTLS}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}/uploads:/opt/app/uploads"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget --quiet --tries=1 --spider http://127.0.0.1:4000/auth/login || exit 1
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
