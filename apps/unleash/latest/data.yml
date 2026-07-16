@@ -1,0 +1,234 @@
+additionalProperties:
+  formFields:
+  - default: 4242
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    rule: paramPort
+    type: number
+  - default: postgresql
+    envKey: PANEL_DB_TYPE
+    labelEn: Database Runtime
+    labelZh: 数据库 Runtime
+    label:
+      en: Database Runtime
+      zh: 数据库 Runtime
+      zh-Hant: 資料庫 Runtime
+      ja: データベース Runtime
+      ko: 데이터베이스 Runtime
+      ru: Среда базы данных
+      ms: Runtime Pangkalan Data
+      pt-br: Runtime de banco de dados
+    required: true
+    type: apps
+    values:
+    - label: PostgreSQL
+      value: postgresql
+    child:
+      default: ''
+      envKey: PANEL_DB_HOST
+      labelEn: PostgreSQL Service
+      labelZh: PostgreSQL 服务
+      label:
+        en: PostgreSQL Service
+        zh: PostgreSQL 服务
+        zh-Hant: PostgreSQL 服務
+        ja: PostgreSQL サービス
+        ko: PostgreSQL 서비스
+        ru: Сервис PostgreSQL
+        ms: Perkhidmatan PostgreSQL
+        pt-br: Serviço PostgreSQL
+      required: true
+      type: service
+  - default: 5432
+    edit: true
+    envKey: PANEL_DB_PORT
+    labelEn: Database Port
+    labelZh: 数据库端口
+    label:
+      en: Database Port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco de dados
+    required: true
+    rule: paramPort
+    type: number
+  - default: unleash
+    edit: true
+    envKey: PANEL_DB_NAME
+    labelEn: Database Name
+    labelZh: 数据库名
+    label:
+      en: Database Name
+      zh: 数据库名
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco de dados
+    random: true
+    required: true
+    rule: paramCommon
+    type: text
+  - default: unleash
+    edit: true
+    envKey: PANEL_DB_USER
+    labelEn: Database User
+    labelZh: 数据库用户
+    label:
+      en: Database User
+      zh: 数据库用户
+      zh-Hant: 資料庫使用者
+      ja: データベースユーザー
+      ko: 데이터베이스 사용자
+      ru: Пользователь базы данных
+      ms: Pengguna pangkalan data
+      pt-br: Usuário do banco de dados
+    random: true
+    required: true
+    rule: paramCommon
+    type: text
+  - default: ''
+    edit: true
+    envKey: PANEL_DB_USER_PASSWORD
+    labelEn: Database Password
+    labelZh: 数据库密码
+    label:
+      en: Database Password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: admin
+    edit: true
+    envKey: UNLEASH_DEFAULT_ADMIN_USERNAME
+    labelEn: Initial Admin Username
+    labelZh: 初始管理员用户名
+    label:
+      en: Initial Admin Username
+      zh: 初始管理员用户名
+      zh-Hant: 初始管理員使用者名稱
+      ja: 初期管理者ユーザー名
+      ko: 초기 관리자 사용자 이름
+      ru: Имя начального администратора
+      ms: Nama pengguna pentadbir awal
+      pt-br: Usuário administrador inicial
+    required: true
+    rule: paramCommon
+    type: text
+  - default: ''
+    edit: true
+    envKey: UNLEASH_DEFAULT_ADMIN_PASSWORD
+    labelEn: Initial Admin Password
+    labelZh: 初始管理员密码
+    label:
+      en: Initial Admin Password
+      zh: 初始管理员密码
+      zh-Hant: 初始管理員密碼
+      ja: 初期管理者パスワード
+      ko: 초기 관리자 비밀번호
+      ru: Пароль начального администратора
+      ms: Kata laluan pentadbir awal
+      pt-br: Senha do administrador inicial
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ''
+    edit: true
+    envKey: UNLEASH_SECRET
+    labelEn: Session Secret
+    labelZh: 会话密钥
+    label:
+      en: Session Secret
+      zh: 会话密钥
+      zh-Hant: 工作階段密鑰
+      ja: セッションシークレット
+      ko: 세션 비밀 키
+      ru: Секрет сеанса
+      ms: Rahsia sesi
+      pt-br: Segredo da sessão
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ''
+    edit: true
+    envKey: UNLEASH_URL
+    labelEn: Public URL
+    labelZh: 公共访问 URL
+    label:
+      en: Public URL
+      zh: 公共访问 URL
+      zh-Hant: 公開存取 URL
+      ja: 公開 URL
+      ko: 공개 URL
+      ru: Публичный URL
+      ms: URL awam
+      pt-br: URL pública
+    required: false
+    rule: paramExtUrl
+    type: text
+  - default: warn
+    edit: true
+    envKey: LOG_LEVEL
+    labelEn: Log Level
+    labelZh: 日志级别
+    label:
+      en: Log Level
+      zh: 日志级别
+      zh-Hant: 日誌層級
+      ja: ログレベル
+      ko: 로그 수준
+      ru: Уровень журналирования
+      ms: Tahap log
+      pt-br: Nível de log
+    required: true
+    type: select
+    values:
+    - label: debug
+      value: debug
+    - label: info
+      value: info
+    - label: warn
+      value: warn
+    - label: error
+      value: error
+    - label: fatal
+      value: fatal
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

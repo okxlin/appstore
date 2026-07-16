@@ -1,0 +1,36 @@
+name: Unleash
+tags:
+- DevOps
+title: 开源功能开关与特性管理平台
+description: 开源功能开关与特性管理平台
+additionalProperties:
+  key: unleash
+  name: Unleash
+  tags:
+  - DevOps
+  type: tool
+  website: https://www.getunleash.io/
+  document: https://docs.getunleash.io/deploy/getting-started
+  github: https://github.com/Unleash/unleash
+  shortDescZh: 开源功能开关与特性管理平台
+  shortDescEn: An open-source feature management platform
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 512
+  architectures:
+  - amd64
+  - arm64
+  description:
+    en: An open-source feature management platform for controlled software releases
+      and experimentation
+    zh: 用于可控软件发布与实验的开源功能开关和特性管理平台
+    zh-Hant: 用於可控軟體發佈與實驗的開源功能開關和特性管理平台
+    ja: 制御されたソフトウェアリリースと実験のためのオープンソース機能管理基盤
+    ko: 제어된 소프트웨어 릴리스와 실험을 위한 오픈 소스 기능 관리 플랫폼
+    ru: Платформа управления функциями с открытым кодом для контролируемых выпусков
+      и экспериментов
+    ms: Platform pengurusan ciri sumber terbuka untuk keluaran perisian terkawal dan
+      eksperimen
+    pt-br: Plataforma de gerenciamento de recursos de código aberto para lançamentos
+      controlados e experimentos
