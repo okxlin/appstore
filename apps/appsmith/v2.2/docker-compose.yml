@@ -1,0 +1,21 @@
+services:
+  appsmith:
+    image: "appsmith/appsmith-ce:v2.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - APPSMITH_BASE_URL=${APPSMITH_BASE_URL}
+      - APPSMITH_DISABLE_TELEMETRY=${APPSMITH_DISABLE_TELEMETRY}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/appsmith-stacks"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

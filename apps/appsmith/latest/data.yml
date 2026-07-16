@@ -1,0 +1,48 @@
+additionalProperties:
+  formFields:
+    - default: 40940
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label: {en: Web Port, zh: Web 端口, zh-Hant: Web 連接埠, ja: Web ポート, ko: 웹 포트, ru: Веб-порт, ms: Port Web, pt-br: Porta Web}
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label: {en: Data Directory, zh: 数据目录, zh-Hant: 資料目錄, ja: データディレクトリ, ko: 데이터 디렉터리, ru: Каталог данных, ms: Direktori Data, pt-br: Diretório de Dados}
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: APPSMITH_BASE_URL
+      labelEn: Canonical Base URL
+      labelZh: 规范访问地址
+      label: {en: Canonical Base URL, zh: 规范访问地址, zh-Hant: 規範存取網址, ja: 正規ベース URL, ko: 정규 기본 URL, ru: Канонический базовый URL, ms: URL Asas Kanonik, pt-br: URL base canônica}
+      required: false
+      type: text
+    - default: "true"
+      edit: true
+      envKey: APPSMITH_DISABLE_TELEMETRY
+      labelEn: Disable Telemetry
+      labelZh: 禁用遥测
+      label: {en: Disable Telemetry, zh: 禁用遥测, zh-Hant: 停用遙測, ja: テレメトリを無効化, ko: 원격 측정 비활성화, ru: Отключить телеметрию, ms: Lumpuhkan Telemetri, pt-br: Desativar telemetria}
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label: {en: Timezone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Waktu, pt-br: Fuso horário}
+      required: true
+      type: text

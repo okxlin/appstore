@@ -1,0 +1,32 @@
+name: Appsmith
+tags:
+  - 开发工具
+title: 用于构建内部工具和业务应用的开源低代码平台
+description: 用于构建内部工具和业务应用的开源低代码平台
+additionalProperties:
+  key: appsmith
+  name: Appsmith
+  tags:
+    - DevTool
+  type: tool
+  website: https://www.appsmith.com/
+  document: https://docs.appsmith.com/getting-started/setup/installation-guides/docker
+  github: https://github.com/appsmithorg/appsmith
+  shortDescZh: 用于构建内部工具和业务应用的开源低代码平台
+  shortDescEn: Open-source low-code platform for building internal tools and business apps
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 8192
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: An open-source low-code platform for building internal tools and business applications with a visual editor and data-source integrations
+    zh: 通过可视化编辑器和数据源集成构建内部工具与业务应用的开源低代码平台
+    zh-Hant: 透過視覺化編輯器和資料來源整合建置內部工具與業務應用程式的開源低程式碼平台
+    ja: ビジュアルエディターとデータソース連携で社内ツールや業務アプリを構築するオープンソースのローコードプラットフォーム
+    ko: 시각적 편집기와 데이터 소스 연동으로 내부 도구와 비즈니스 앱을 구축하는 오픈 소스 로우코드 플랫폼
+    ru: Платформа с открытым исходным кодом для создания внутренних инструментов и бизнес-приложений с помощью визуального редактора и интеграций с источниками данных
+    ms: Platform kod rendah sumber terbuka untuk membina alat dalaman dan aplikasi perniagaan dengan editor visual serta integrasi sumber data
+    pt-br: Plataforma low-code de código aberto para criar ferramentas internas e aplicativos empresariais com editor visual e integrações de fontes de dados
