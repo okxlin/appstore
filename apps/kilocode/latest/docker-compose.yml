@@ -1,0 +1,40 @@
+services:
+  kilocode:
+    image: "ghcr.io/kilo-org/kilocode:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    working_dir: /workspace
+    command:
+      - serve
+      - --hostname
+      - 0.0.0.0
+      - --port
+      - "4096"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4096"
+    environment:
+      - HOME=/data
+      - KILO_SERVER_USERNAME=${KILO_SERVER_USERNAME}
+      - KILO_SERVER_PASSWORD=${KILO_SERVER_PASSWORD}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${APP_WORKSPACE_DIR}:/workspace"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          auth=$$(printf '%s:%s' "$$KILO_SERVER_USERNAME" "$$KILO_SERVER_PASSWORD" | base64 | tr -d '\n');
+          wget --header "Authorization: Basic $$auth" -qO- http://127.0.0.1:4096/global/health | grep -q '"healthy":true'
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

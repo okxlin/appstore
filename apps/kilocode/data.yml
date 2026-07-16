@@ -1,0 +1,31 @@
+name: Kilo Code
+tags:
+  - AI
+title: 开源的 AI 编程代理与远程开发服务器
+description: 开源的 AI 编程代理与远程开发服务器
+additionalProperties:
+  key: kilocode
+  name: Kilo Code
+  tags:
+    - AI
+  type: tool
+  website: https://kilo.ai
+  document: https://kilo.ai/docs/code-with-ai/platforms/cli-reference
+  github: https://github.com/Kilo-Org/kilocode
+  shortDescZh: 开源的 AI 编程代理与远程开发服务器
+  shortDescEn: An open-source AI coding agent and remote development server
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: An open-source AI coding agent and remote development server
+    zh: 开源的 AI 编程代理与远程开发服务器
+    zh-Hant: 開源的 AI 程式設計代理與遠端開發伺服器
+    ja: オープンソースの AI コーディングエージェント兼リモート開発サーバー
+    ko: 오픈 소스 AI 코딩 에이전트 및 원격 개발 서버
+    ru: Открытый ИИ-агент для программирования и сервер удалённой разработки
+    ms: Ejen pengekodan AI sumber terbuka dan pelayan pembangunan jauh
+    pt-br: Agente de programação com IA de código aberto e servidor de desenvolvimento remoto
