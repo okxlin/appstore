@@ -104,6 +104,61 @@ def git_show(ref: str, path: str) -> str:
     return result.stdout
 
 
+def git_rename_source(ref: str, path: str) -> str | None:
+    result = subprocess.run(
+        [
+            "git",
+            "diff",
+            "--find-renames",
+            "--name-status",
+            "-z",
+            "--diff-filter=R",
+            ref,
+            "HEAD",
+        ],
+        check=False,
+        text=True,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        detail = result.stderr.strip() or result.stdout.strip()
+        raise RuntimeError(detail or f"unable to compare {ref} with HEAD")
+
+    fields = result.stdout.split("\0")
+    if fields and fields[-1] == "":
+        fields.pop()
+    if len(fields) % 3 != 0:
+        raise RuntimeError("unable to parse renamed paths from git diff")
+
+    matches = [
+        source
+        for status, source, target in zip(fields[0::3], fields[1::3], fields[2::3])
+        if status.startswith("R") and target == path
+    ]
+    if len(matches) > 1:
+        raise RuntimeError(f"multiple rename sources found for {path}")
+    return matches[0] if matches else None
+
+
+def validate_historical_compose_path(app: str, raw_path: str) -> str:
+    path = PurePosixPath(raw_path)
+    expected_app_dir = PurePosixPath("apps") / app
+    if path.name != "docker-compose.yml" or path.parent.parent != expected_app_dir:
+        raise ValueError(f"historical compose path must be inside {expected_app_dir}/<version>")
+    return path.as_posix()
+
+
+def load_base_compose_text(base_ref: str, compose_path: str, app: str) -> str:
+    try:
+        return git_show(base_ref, compose_path)
+    except RuntimeError:
+        rename_source = git_rename_source(base_ref, compose_path)
+        if rename_source is None:
+            raise
+        historical_path = validate_historical_compose_path(app, rename_source)
+        return git_show(base_ref, historical_path)
+
+
 def validate_compose_path(app: str, old_version: str, raw_path: str) -> str:
     path = PurePosixPath(raw_path)
     expected_parent = PurePosixPath("apps") / app / old_version
@@ -123,7 +178,10 @@ def main() -> int:
 
     compose_path = validate_compose_path(args.app, args.old_version, args.compose)
     head_compose = load_yaml_text(Path(compose_path).read_text(encoding="utf-8"), "head compose")
-    base_compose = load_yaml_text(git_show(args.base_ref, compose_path), "base compose")
+    base_compose = load_yaml_text(
+        load_base_compose_text(args.base_ref, compose_path, args.app),
+        "base compose",
+    )
     policy_payload = json.loads(Path(args.policy_file).read_text(encoding="utf-8"))
     if not isinstance(policy_payload, dict):
         raise ValueError("primary service policy must decode to an object")
