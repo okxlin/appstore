@@ -1,0 +1,58 @@
+schema:
+  version: 1
+
+server:
+  listenAddr: :8080
+  rootDirectory: /data/
+  maxUploadSize: 104857600
+  allowedOrigins: []
+  jwtSecret: your-jwt-secret
+  jwtExpiration: 86400
+  openapi: false
+  debug: false
+
+password:
+  disabled: false
+  minLength: 8
+
+tha:
+  enabled: false
+  headerName: X-Username
+  trustedCIDRs:
+    - 127.0.0.1/32
+
+oidc:
+  enabled: false
+  usernameClaim: sub
+  scopes:
+    - openid
+    - profile
+    - email
+  loginLabel: ''
+
+passkey:
+  enabled: false
+  rpName: iSrvd
+  rpId: localhost
+  rpOrigins:
+    - http://localhost:8080
+  timeout: 60000
+
+docker:
+  host: unix:///var/run/docker.sock
+  containerRoot: __ISRVD_CONTAINER_ROOT__
+  registries: []
+
+monitor:
+  interval: __ISRVD_MONITOR_INTERVAL__
+
+marketplace:
+  url: __ISRVD_MARKETPLACE_URL__
+
+links: []
+
+members:
+  - username: __ISRVD_ADMIN_USERNAME__
+    password: __ISRVD_ADMIN_PASSWORD__
+    homeDirectory: /
+    founder: true

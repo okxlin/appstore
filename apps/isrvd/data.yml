@@ -1,0 +1,31 @@
+name: iSrvd
+tags:
+  - Tool
+title: 轻量级一体化服务器管理工具
+description: 轻量级一体化服务器管理工具
+additionalProperties:
+  key: isrvd
+  name: iSrvd
+  tags:
+    - Tool
+  shortDescZh: 轻量级一体化服务器管理工具
+  shortDescEn: Lightweight all-in-one server management tool
+  description:
+    en: Lightweight all-in-one server management tool.
+    zh: 轻量级一体化服务器管理工具。
+    zh-Hant: 輕量級一體化伺服器管理工具。
+    ja: 軽量なオールインワンサーバー管理ツールです。
+    ko: 경량 올인원 서버 관리 도구입니다.
+    ru: Легкий универсальный инструмент управления сервером.
+    ms: Alat pengurusan pelayan semua-dalam-satu yang ringan.
+    pt-br: Ferramenta leve e completa para gerenciamento de servidores.
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://github.com/rehiy/isrvd
+  github: https://github.com/rehiy/isrvd
+  document: https://github.com/rehiy/isrvd/blob/master/README.md
+  architectures:
+    - amd64
+    - arm64
