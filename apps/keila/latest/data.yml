@@ -156,17 +156,17 @@ additionalProperties:
     - default: ''
       edit: true
       envKey: SECRET_KEY_BASE
-      labelEn: Session Secret (64+ characters)
-      labelZh: 会话密钥（至少 64 个字符）
+      labelEn: Session Secret (64+ characters; shorter values are replaced)
+      labelZh: 会话密钥（至少 64 字符；不足会被替换）
       label:
-        en: Session Secret (64+ characters)
-        zh: 会话密钥（至少 64 个字符）
-        zh-Hant: 工作階段密鑰（至少 64 個字元）
-        ja: セッションシークレット（64 文字以上）
-        ko: 세션 비밀 키(64자 이상)
-        ru: Секрет сеанса (не менее 64 символов)
-        ms: Rahsia Sesi (64+ aksara)
-        pt-br: Segredo da sessão (64+ caracteres)
+        en: Session Secret (64+ characters; shorter values are replaced)
+        zh: 会话密钥（至少 64 字符；不足会被替换）
+        zh-Hant: 工作階段密鑰（至少 64 字元；不足會被替換）
+        ja: セッションシークレット（64文字以上、短い値は置換）
+        ko: 세션 비밀 키(64자 이상, 짧은 값은 교체됨)
+        ru: Секрет сеанса (64+ символа; короткие значения заменяются)
+        ms: Rahsia sesi (64+ aksara; nilai pendek akan diganti)
+        pt-br: Segredo da sessão (64+ caracteres; valores curtos são substituídos)
       required: true
       type: password
     - default: ''

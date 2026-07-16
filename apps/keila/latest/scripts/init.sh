@@ -61,6 +61,7 @@ ensure_secret_key_base() {
 
   secret_key_base="$(read_env_value SECRET_KEY_BASE)"
   if [[ ${#secret_key_base} -lt 64 ]]; then
+    printf '%s\n' "SECRET_KEY_BASE is shorter than 64 characters; replacing it with a generated 128-character hexadecimal secret." >&2
     secret_key_base="$(od -An -N64 -tx1 /dev/urandom | tr -d ' \n')"
     set_env_value SECRET_KEY_BASE "$secret_key_base"
   fi
