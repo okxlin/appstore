@@ -1,0 +1,30 @@
+services:
+  isrvd:
+    image: "rehiy/isrvd:slim@sha256:a9f67ea8226bcfc896a0ae690b8f7e7a8843c4fd43b627ab831f9cfafd3fafd9"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${ISRVD_DATA_ABS}:/data"
+      - "${ISRVD_DATA_ABS}:${ISRVD_DATA_ABS}"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --spider
+        - -q
+        - http://127.0.0.1:8080/
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 15s
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,129 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: ./data
+      disabled: true
+      edit: false
+      envKey: ISRVD_DATA_ABS
+      labelEn: Resolved Data Path
+      labelZh: 解析后的数据路径
+      label:
+        en: Resolved Data Path
+        zh: 解析后的数据路径
+        zh-Hant: 解析後的資料路徑
+        ja: 解決済みデータパス
+        ko: 확인된 데이터 경로
+        ru: Разрешенный путь к данным
+        ms: Laluan Data Diselesaikan
+        pt-br: Caminho de Dados Resolvido
+      required: false
+      type: text
+    - default: admin
+      edit: true
+      envKey: ISRVD_ADMIN_USERNAME
+      labelEn: Administrator Username
+      labelZh: 管理员用户名
+      label:
+        en: Administrator Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama Pengguna Pentadbir
+        pt-br: Nome de Usuário do Administrador
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ''
+      edit: true
+      envKey: ISRVD_ADMIN_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do Administrador
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: '0'
+      edit: true
+      envKey: ISRVD_MONITOR_INTERVAL
+      labelEn: Monitoring Interval
+      labelZh: 监控采集间隔
+      label:
+        en: Monitoring Interval
+        zh: 监控采集间隔
+        zh-Hant: 監控採集間隔
+        ja: 監視間隔
+        ko: 모니터링 간격
+        ru: Интервал мониторинга
+        ms: Selang Pemantauan
+        pt-br: Intervalo de Monitoramento
+      required: true
+      type: select
+      values:
+        - label: Disabled
+          value: '0'
+        - label: 5 seconds
+          value: '5'
+        - label: 15 seconds
+          value: '15'
+        - label: 30 seconds
+          value: '30'
+        - label: 60 seconds
+          value: '60'
+    - default: https://apps.rehi.org
+      edit: true
+      envKey: ISRVD_MARKETPLACE_URL
+      labelEn: Marketplace URL
+      labelZh: 应用市场地址
+      label:
+        en: Marketplace URL
+        zh: 应用市场地址
+        zh-Hant: 應用市場位址
+        ja: マーケットプレイス URL
+        ko: 마켓플레이스 URL
+        ru: URL магазина приложений
+        ms: URL Pasaran
+        pt-br: URL do Marketplace
+      required: false
+      type: text
