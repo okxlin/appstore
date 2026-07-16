@@ -32,6 +32,40 @@ read_env_value() {
   strip_matching_quotes "$value"
 }
 
+set_env_value() {
+  local key="$1"
+  local value="$2"
+  local temp_file
+
+  temp_file="$(mktemp "${ENV_FILE}.tmp.XXXXXX")"
+  awk -v key="$key" -v value="$value" '
+    BEGIN { updated = 0 }
+    $0 ~ ("^" key "=") {
+      if (!updated) {
+        print key "=" value
+        updated = 1
+      }
+      next
+    }
+    { print }
+    END {
+      if (!updated) print key "=" value
+    }
+  ' "$ENV_FILE" > "$temp_file"
+  chmod --reference="$ENV_FILE" "$temp_file"
+  mv -f -- "$temp_file" "$ENV_FILE"
+}
+
+ensure_secret_key_base() {
+  local secret_key_base
+
+  secret_key_base="$(read_env_value SECRET_KEY_BASE)"
+  if [[ ${#secret_key_base} -lt 64 ]]; then
+    secret_key_base="$(od -An -N64 -tx1 /dev/urandom | tr -d ' \n')"
+    set_env_value SECRET_KEY_BASE "$secret_key_base"
+  fi
+}
+
 path_is_dotenv_safe() {
   local value="$1"
 
@@ -40,6 +74,9 @@ path_is_dotenv_safe() {
     *) return 0 ;;
   esac
 }
+
+[[ -f "$ENV_FILE" ]] || fail "Environment file not found: ${ENV_FILE}"
+ensure_secret_key_base
 
 if [[ ${APP_DATA_DIR+x} ]]; then
   APP_DATA_DIR_RAW="$APP_DATA_DIR"
