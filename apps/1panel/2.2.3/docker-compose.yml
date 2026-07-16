@@ -5,9 +5,7 @@ services:
     network_mode: "host"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/docker/volumes:/var/lib/docker/volumes
       - ${DATA_PATH}:/opt
-      - /root:/root
     environment:
       - TZ=${TIME_ZONE}
       - PORT=${PANEL_APP_PORT_HTTP}
@@ -16,6 +14,6 @@ services:
       - ENTRANCE=${PANEL_ENTRANCE}
       - BASE_DIR=/opt
       - RESET=false
-    image: moelin/1panel:v1.10.34-lts
+    image: moelin/1panel:v2.2.3
     labels:
       createdBy: Apps

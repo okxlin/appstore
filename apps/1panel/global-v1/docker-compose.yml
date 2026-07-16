@@ -16,6 +16,6 @@ services:
       - ENTRANCE=${PANEL_ENTRANCE}
       - BASE_DIR=/opt
       - RESET=false
-    image: moelin/1panel:v1.10.34-lts
+    image: moelin/1panel:global-v1
     labels:
       createdBy: Apps

@@ -27,6 +27,59 @@
       "automerge": true
     },
     {
+      "description": "Keep the 1Panel V1 LTS package on the V1 LTS image line",
+      "matchFileNames": [
+        "apps/1panel/1.*-lts/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "moelin/1panel"
+      ],
+      "allowedVersions": "/^v1\\.10\\.\\d+-lts$/"
+    },
+    {
+      "description": "Keep the 1Panel V2 fixed package on the V2 image line",
+      "matchFileNames": [
+        "apps/1panel/2.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "moelin/1panel"
+      ],
+      "allowedVersions": "/^v2\\.\\d+\\.\\d+$/"
+    },
+    {
+      "description": "Keep the Global 1Panel V1 LTS package on the Global V1 LTS image line",
+      "matchFileNames": [
+        "apps/1panel/global-1.*-lts/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "moelin/1panel"
+      ],
+      "allowedVersions": "/^global-v1\\.10\\.\\d+-lts$/"
+    },
+    {
+      "description": "Keep the Global 1Panel V2 fixed package on the Global V2 image line",
+      "matchFileNames": [
+        "apps/1panel/global-2.*/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "moelin/1panel"
+      ],
+      "allowedVersions": "/^global-v2\\.\\d+\\.\\d+$/"
+    },
+    {
+      "description": "Keep floating 1Panel aliases as separate install-only versions",
+      "matchFileNames": [
+        "apps/1panel/v1/docker-compose.yml",
+        "apps/1panel/v2/docker-compose.yml",
+        "apps/1panel/global-v1/docker-compose.yml",
+        "apps/1panel/global-v2/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "moelin/1panel"
+      ],
+      "enabled": false
+    },
+    {
       "matchFileNames": [
         "apps/php-unofficial/7.4.*/*.yml"
       ],

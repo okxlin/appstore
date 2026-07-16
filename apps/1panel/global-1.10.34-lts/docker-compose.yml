@@ -10,6 +10,12 @@ services:
       - /root:/root
     environment:
       - TZ=${TIME_ZONE}
-    image: moelin/1panel:latest
-    labels:  
-      createdBy: "Apps"
+      - PORT=${PANEL_APP_PORT_HTTP}
+      - USERNAME=${PANEL_ADMIN_USERNAME}
+      - PASSWORD=${PANEL_ADMIN_PASSWORD}
+      - ENTRANCE=${PANEL_ENTRANCE}
+      - BASE_DIR=/opt
+      - RESET=false
+    image: moelin/1panel:global-v1.10.34-lts
+    labels:
+      createdBy: Apps
