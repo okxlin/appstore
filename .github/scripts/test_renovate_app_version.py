@@ -3,6 +3,7 @@ import json
 import os
 import pathlib
 import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -150,6 +151,160 @@ class RenovateAppVersionTests(unittest.TestCase):
         module = load_module()
 
         self.assertEqual("", module.image_tag("example/demo@sha256:deadbeef"))
+
+    def test_cli_reads_base_compose_from_rename_source(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-version-rename-") as tmp:
+            repo = pathlib.Path(tmp)
+            old_dir = repo / "apps" / "demo" / "1.0.0"
+            new_dir = repo / "apps" / "demo" / "1.0.1"
+            old_dir.mkdir(parents=True)
+            (old_dir / "docker-compose.yml").write_text(
+                yaml.safe_dump(compose({"demo": "example/demo:1.0.1"})),
+                encoding="utf-8",
+            )
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"],
+                cwd=repo,
+                check=True,
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Test User"],
+                cwd=repo,
+                check=True,
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "commit", "-qm", "add old version"],
+                cwd=repo,
+                check=True,
+            )
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+            subprocess.run(
+                ["git", "mv", str(old_dir.relative_to(repo)), str(new_dir.relative_to(repo))],
+                cwd=repo,
+                check=True,
+            )
+            subprocess.run(
+                ["git", "commit", "-qm", "rename version directory"],
+                cwd=repo,
+                check=True,
+            )
+
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT_PATH),
+                    "--app",
+                    "demo",
+                    "--old-version",
+                    "1.0.1",
+                    "--compose",
+                    str((new_dir / "docker-compose.yml").relative_to(repo)),
+                    "--base-ref",
+                    base_ref,
+                    "--policy-file",
+                    str(policy_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+        self.assertEqual(0, result.returncode, result.stderr)
+        self.assertEqual("", result.stdout)
+        self.assertIn("skip: no service image changed", result.stderr)
+
+    def test_cli_rejects_new_compose_without_base_or_rename(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-version-new-compose-") as tmp:
+            repo = pathlib.Path(tmp)
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"],
+                cwd=repo,
+                check=True,
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Test User"],
+                cwd=repo,
+                check=True,
+            )
+            subprocess.run(
+                ["git", "commit", "--allow-empty", "-qm", "empty base"],
+                cwd=repo,
+                check=True,
+            )
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+
+            compose_path = repo / "apps" / "demo" / "1.0.1" / "docker-compose.yml"
+            compose_path.parent.mkdir(parents=True)
+            compose_path.write_text(
+                yaml.safe_dump(compose({"demo": "example/demo:1.0.1"})),
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "commit", "-qm", "add new compose"],
+                cwd=repo,
+                check=True,
+            )
+
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(SCRIPT_PATH),
+                    "--app",
+                    "demo",
+                    "--old-version",
+                    "1.0.1",
+                    "--compose",
+                    str(compose_path.relative_to(repo)),
+                    "--base-ref",
+                    base_ref,
+                    "--policy-file",
+                    str(policy_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+        self.assertNotEqual(0, result.returncode)
+        self.assertIn("apps/demo/1.0.1/docker-compose.yml", result.stderr)
+
+    def test_historical_compose_path_must_stay_in_the_same_app(self):
+        module = load_module()
+
+        self.assertEqual(
+            "apps/demo/1.0.0/docker-compose.yml",
+            module.validate_historical_compose_path(
+                "demo", "apps/demo/1.0.0/docker-compose.yml"
+            ),
+        )
+        with self.assertRaisesRegex(ValueError, "must be inside apps/demo"):
+            module.validate_historical_compose_path(
+                "demo", "apps/other/1.0.0/docker-compose.yml"
+            )
 
     def test_single_service_uses_the_changed_service_tag(self):
         module = load_module()
