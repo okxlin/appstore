@@ -6,7 +6,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker/volumes:/var/lib/docker/volumes
-      - ${DATA_PATH}:/opt
+      - ${DATA_PATH}:${DATA_PATH}
       - /root:/root
     environment:
       - TZ=${TIME_ZONE}
@@ -14,7 +14,7 @@ services:
       - USERNAME=${PANEL_ADMIN_USERNAME}
       - PASSWORD=${PANEL_ADMIN_PASSWORD}
       - ENTRANCE=${PANEL_ENTRANCE}
-      - BASE_DIR=/opt
+      - BASE_DIR=${DATA_PATH}
       - RESET=false
     image: moelin/1panel:global-v1.10.34-lts
     labels:
