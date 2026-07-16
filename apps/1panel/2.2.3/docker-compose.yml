@@ -5,14 +5,14 @@ services:
     network_mode: "host"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${DATA_PATH}:/opt
+      - ${DATA_PATH}:${DATA_PATH}
     environment:
       - TZ=${TIME_ZONE}
       - PORT=${PANEL_APP_PORT_HTTP}
       - USERNAME=${PANEL_ADMIN_USERNAME}
       - PASSWORD=${PANEL_ADMIN_PASSWORD}
       - ENTRANCE=${PANEL_ENTRANCE}
-      - BASE_DIR=/opt
+      - BASE_DIR=${DATA_PATH}
       - RESET=false
     image: moelin/1panel:v2.2.3
     labels:

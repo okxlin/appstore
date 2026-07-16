@@ -17,7 +17,7 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
-    - default: ./data
+    - default: /opt/1panel-data
       edit: true
       envKey: DATA_PATH
       labelEn: Data Directory
