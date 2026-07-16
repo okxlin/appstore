@@ -526,6 +526,16 @@
       "enabled": false
     },
     {
+      "description": "Disable sidecar-only Renovate updates for DooTask multi-service tracks",
+      "matchFileNames": [
+        "apps/dootask/**/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "nginx"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Disable sidecar-only Renovate updates for Diskover multi-service tracks",
       "matchFileNames": [
         "apps/diskover-linuxserver/**/docker-compose.yml"

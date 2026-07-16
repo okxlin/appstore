@@ -3,6 +3,9 @@
     "clearflask-connect",
     "clearflask-server"
   ],
+  "dootask": [
+    "dootask"
+  ],
   "dify": [
     "api",
     "api_websocket",
