@@ -5,6 +5,6 @@ services:
     network_mode: "host"
     volumes:
       - "${DATA_PATH}:/root"
-    image: jeessy/ddns-go:v6.17.1
+    image: jeessy/ddns-go:v6.17.2
     labels:
       createdBy: "Apps"
