@@ -20,7 +20,7 @@ additionalProperties:
     ms: Panel pengurusan operasi dan pentadbiran pelayan Linux yang moden dan sumber terbuka.
     pt-br: Painel moderno e de código aberto para operação e gerenciamento de servidores Linux.
   type: tool
-  crossVersionUpdate: true
+  crossVersionUpdate: false
   limit: 1
   recommend: 0
   website: https://1panel.cn

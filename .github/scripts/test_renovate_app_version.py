@@ -404,6 +404,55 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertTrue(matching)
         self.assertTrue(any(rule.get("enabled") is False for rule in matching))
 
+    def test_1panel_v1_v2_tracks_are_kept_separate(self):
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
+        rules = config.get("packageRules", [])
+
+        def find_rule(path):
+            return next(
+                rule
+                for rule in rules
+                if path in rule.get("matchFileNames", [])
+                and "moelin/1panel" in rule.get("matchPackageNames", [])
+            )
+
+        self.assertEqual(
+            "/^v1\\.10\\.\\d+-lts$/",
+            find_rule("apps/1panel/1.*-lts/docker-compose.yml")["allowedVersions"],
+        )
+        self.assertEqual(
+            "/^v2\\.\\d+\\.\\d+$/",
+            find_rule("apps/1panel/2.*/docker-compose.yml")["allowedVersions"],
+        )
+        self.assertEqual(
+            "/^global-v1\\.10\\.\\d+-lts$/",
+            find_rule("apps/1panel/global-1.*-lts/docker-compose.yml")["allowedVersions"],
+        )
+        self.assertEqual(
+            "/^global-v2\\.\\d+\\.\\d+$/",
+            find_rule("apps/1panel/global-2.*/docker-compose.yml")["allowedVersions"],
+        )
+        for path in (
+            "apps/1panel/v1/docker-compose.yml",
+            "apps/1panel/v2/docker-compose.yml",
+            "apps/1panel/global-v1/docker-compose.yml",
+            "apps/1panel/global-v2/docker-compose.yml",
+        ):
+            self.assertFalse(find_rule(path)["enabled"])
+
+        app_dir = REPO_ROOT / "apps" / "1panel"
+        app_data = yaml.safe_load((app_dir / "data.yml").read_text(encoding="utf-8"))
+        self.assertFalse(app_data["additionalProperties"]["crossVersionUpdate"])
+        self.assertTrue((app_dir / "1.10.34-lts").is_dir())
+        self.assertTrue((app_dir / "2.2.3").is_dir())
+        self.assertTrue((app_dir / "v1").is_dir())
+        self.assertTrue((app_dir / "v2").is_dir())
+        self.assertTrue((app_dir / "global-1.10.34-lts").is_dir())
+        self.assertTrue((app_dir / "global-2.2.3").is_dir())
+        self.assertTrue((app_dir / "global-v1").is_dir())
+        self.assertTrue((app_dir / "global-v2").is_dir())
+        self.assertFalse((app_dir / "latest").exists())
+
     def test_multi_service_application_images_are_grouped(self):
         config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
         groups = {rule.get("groupName"): set(rule.get("matchPackageNames", [])) for rule in config.get("packageRules", []) if rule.get("groupName")}
