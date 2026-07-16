@@ -1,0 +1,34 @@
+name: Shlink
+tags:
+- Tool
+title: 自托管的开源短链接管理平台
+description: 自托管的开源短链接管理平台
+additionalProperties:
+  key: shlink
+  name: Shlink
+  tags:
+  - Tool
+  type: tool
+  website: https://shlink.io/
+  document: https://shlink.io/documentation/install-docker-image/
+  github: https://github.com/shlinkio/shlink
+  shortDescZh: 自托管的开源短链接管理平台
+  shortDescEn: A self-hosted open-source URL shortener
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 256
+  architectures:
+  - amd64
+  - arm64
+  description:
+    en: A self-hosted open-source URL shortener with REST APIs and visit analytics
+    zh: 自托管的开源短链接管理平台，提供 REST API 与访问统计
+    zh-Hant: 自託管的開源短連結管理平台，提供 REST API 與造訪統計
+    ja: REST API とアクセス分析を備えたセルフホスト型のオープンソース短縮 URL 管理基盤
+    ko: REST API와 방문 분석을 제공하는 자체 호스팅 오픈 소스 단축 URL 관리 플랫폼
+    ru: Самостоятельно размещаемый сервис коротких ссылок с открытым кодом, REST API
+      и аналитикой посещений
+    ms: Pemendek URL sumber terbuka hos sendiri dengan REST API dan analitik lawatan
+    pt-br: Encurtador de URLs de código aberto e auto-hospedado com APIs REST e análise
+      de visitas

@@ -1,0 +1,195 @@
+additionalProperties:
+  formFields:
+  - default: 8080
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    rule: paramPort
+    type: number
+  - default: postgresql
+    envKey: PANEL_DB_TYPE
+    labelEn: Database Runtime
+    labelZh: 数据库 Runtime
+    label:
+      en: Database Runtime
+      zh: 数据库 Runtime
+      zh-Hant: 資料庫 Runtime
+      ja: データベース Runtime
+      ko: 데이터베이스 Runtime
+      ru: Среда базы данных
+      ms: Runtime Pangkalan Data
+      pt-br: Runtime de banco de dados
+    required: true
+    type: apps
+    values:
+    - label: PostgreSQL
+      value: postgresql
+    child:
+      default: ''
+      envKey: PANEL_DB_HOST
+      labelEn: PostgreSQL Service
+      labelZh: PostgreSQL 服务
+      label:
+        en: PostgreSQL Service
+        zh: PostgreSQL 服务
+        zh-Hant: PostgreSQL 服務
+        ja: PostgreSQL サービス
+        ko: PostgreSQL 서비스
+        ru: Сервис PostgreSQL
+        ms: Perkhidmatan PostgreSQL
+        pt-br: Serviço PostgreSQL
+      required: true
+      type: service
+  - default: 5432
+    edit: true
+    envKey: PANEL_DB_PORT
+    labelEn: Database Port
+    labelZh: 数据库端口
+    label:
+      en: Database Port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port Pangkalan Data
+      pt-br: Porta do banco de dados
+    required: true
+    rule: paramPort
+    type: number
+  - default: shlink
+    edit: true
+    envKey: PANEL_DB_NAME
+    labelEn: Database Name
+    labelZh: 数据库名
+    label:
+      en: Database Name
+      zh: 数据库名
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama Pangkalan Data
+      pt-br: Nome do banco de dados
+    random: true
+    required: true
+    rule: paramCommon
+    type: text
+  - default: shlink
+    edit: true
+    envKey: PANEL_DB_USER
+    labelEn: Database User
+    labelZh: 数据库用户
+    label:
+      en: Database User
+      zh: 数据库用户
+      zh-Hant: 資料庫使用者
+      ja: データベースユーザー
+      ko: 데이터베이스 사용자 이름
+      ru: Пользователь базы данных
+      ms: Pengguna Pangkalan Data
+      pt-br: Usuário do banco de dados
+    random: true
+    required: true
+    rule: paramCommon
+    type: text
+  - default: ''
+    edit: true
+    envKey: PANEL_DB_USER_PASSWORD
+    labelEn: Database Password
+    labelZh: 数据库密码
+    label:
+      en: Database Password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata Laluan Pangkalan Data
+      pt-br: Senha do banco de dados
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: localhost:8080
+    edit: true
+    envKey: DEFAULT_DOMAIN
+    labelEn: Default Domain
+    labelZh: 默认短链接域名
+    label:
+      en: Default Domain
+      zh: 默认短链接域名
+      zh-Hant: 預設短連結網域
+      ja: デフォルト短縮ドメイン
+      ko: 기본 단축 링크 도메인
+      ru: Домен коротких ссылок
+      ms: Domain Pendek Lalai
+      pt-br: Domínio padrão dos links curtos
+    required: true
+    type: text
+  - default: 'false'
+    edit: true
+    envKey: IS_HTTPS_ENABLED
+    labelEn: HTTPS Enabled
+    labelZh: 启用 HTTPS
+    label:
+      en: HTTPS Enabled
+      zh: 启用 HTTPS
+      zh-Hant: 啟用 HTTPS
+      ja: HTTPS を有効化
+      ko: HTTPS 활성화
+      ru: Включить HTTPS
+      ms: Dayakan HTTPS
+      pt-br: Ativar HTTPS
+    required: true
+    type: select
+    values:
+    - label: 'false'
+      value: 'false'
+    - label: 'true'
+      value: 'true'
+  - default: ''
+    edit: true
+    envKey: INITIAL_API_KEY
+    labelEn: Initial API Key
+    labelZh: 初始 API 密钥
+    label:
+      en: Initial API Key
+      zh: 初始 API 密钥
+      zh-Hant: 初始 API 金鑰
+      ja: 初期 API キー
+      ko: 초기 API 키
+      ru: Начальный ключ API
+      ms: Kunci API Awal
+      pt-br: Chave de API inicial
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
