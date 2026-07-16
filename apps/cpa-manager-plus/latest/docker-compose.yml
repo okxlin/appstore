@@ -24,6 +24,9 @@ services:
         - wget
         - -qO-
         - http://127.0.0.1:18317/health
+      interval: 10s
+      timeout: 3s
+      retries: 3
     labels:
       createdBy: Apps
     networks:
