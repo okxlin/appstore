@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/rehiy/isrvd",
-  "dockerDocs": "https://hub.docker.com/r/rehiy/isrvd",
-  "composeFile": "https://github.com/rehiy/isrvd/blob/master/README.md#docker-compose"
-}

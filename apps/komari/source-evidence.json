@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/komari-monitor/komari",
-  "dockerDocs": "https://github.com/komari-monitor/komari#docker-deployment",
-  "composeFile": "https://github.com/komari-monitor/komari#docker-deployment"
-}

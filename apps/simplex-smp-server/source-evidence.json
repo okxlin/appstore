@@ -1,7 +1,0 @@
-{
-  "repository": "https://github.com/simplex-chat/simplex-chat",
-  "dockerDocs": "https://github.com/simplex-chat/simplex-chat/blob/stable/docs/SERVER.md",
-  "composeFile": "https://raw.githubusercontent.com/simplex-chat/simplexmq/stable/scripts/docker/docker-compose-smp-manual.yml",
-  "image": "simplexchat/smp-server:latest",
-  "fixedImage": "simplexchat/smp-server:v6.5.2"
-}

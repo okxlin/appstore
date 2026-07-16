@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/QuantumNous/new-api",
-  "dockerDocs": "https://github.com/QuantumNous/new-api#using-docker-commands",
-  "composeFile": "https://github.com/QuantumNous/new-api/blob/main/docker-compose.yml"
-}

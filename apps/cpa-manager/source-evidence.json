@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/seakee/CPA-Manager",
-  "dockerDocs": "https://hub.docker.com/r/seakee/cpa-manager",
-  "composeFile": "https://raw.githubusercontent.com/seakee/CPA-Manager/main/docker-compose.usage.yml"
-}

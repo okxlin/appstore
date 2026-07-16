@@ -1,8 +1,0 @@
-{
-  "repository": "https://github.com/jamiepine/voicebox",
-  "dockerDocs": "https://github.com/jamiepine/voicebox/blob/main/docs/content/docs/overview/docker.mdx",
-  "gpuDocs": "https://github.com/jamiepine/voicebox/blob/main/docs/content/docs/overview/gpu-acceleration.mdx",
-  "composeFile": "https://github.com/jamiepine/voicebox/blob/main/docker-compose.yml",
-  "image": "ghcr.io/jamiepine/voicebox:latest",
-  "cudaImage": "ghcr.io/jamiepine/voicebox:latest-cuda"
-}

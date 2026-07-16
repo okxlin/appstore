@@ -1,5 +1,0 @@
-{
-  "repository": "https://github.com/tbphp/gpt-load",
-  "dockerDocs": "https://github.com/tbphp/gpt-load#method-1-docker-quick-start",
-  "composeFile": "https://github.com/tbphp/gpt-load/blob/main/docker-compose.yml"
-}
