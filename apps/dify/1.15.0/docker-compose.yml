@@ -225,7 +225,7 @@ services:
       - ssrf_proxy_network
 
   plugin_daemon:
-    image: "langgenius/dify-plugin-daemon:0.6.3-local"
+    image: "langgenius/dify-plugin-daemon:0.6.4-local"
     container_name: ${CONTAINER_NAME}-plugin-daemon
     labels:
       createdBy: "Apps"
