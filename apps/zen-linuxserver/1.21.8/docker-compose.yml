@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   zen:
-    image: "linuxserver/zen:1.21.7"
+    image: "linuxserver/zen:1.21.8"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
