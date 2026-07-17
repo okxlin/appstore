@@ -180,7 +180,7 @@ services:
       - 1panel-network
 
   web:
-    image: "langgenius/dify-web:1.15.0"
+    image: "langgenius/dify-web:1.16.0"
     container_name: ${CONTAINER_NAME}-web
     labels:
       createdBy: "Apps"
