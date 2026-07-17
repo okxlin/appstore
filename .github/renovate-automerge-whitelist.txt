@@ -242,6 +242,7 @@ blender-linuxserver
 forwardx
 weaviate
 infinite-canvas
+openobserve
 wol-go-web
 xunlei
 yesplaymusic
