@@ -20,7 +20,7 @@ services:
     restart: "no"
 
   api:
-    image: "langgenius/dify-api:1.15.0"
+    image: "langgenius/dify-api:1.16.0"
     container_name: ${CONTAINER_NAME}-api
     labels:
       createdBy: "Apps"
@@ -71,7 +71,7 @@ services:
       - 1panel-network
 
   api_websocket:
-    image: "langgenius/dify-api:1.15.0"
+    image: "langgenius/dify-api:1.16.0"
     container_name: ${CONTAINER_NAME}-websocket
     labels:
       createdBy: "Apps"
@@ -102,7 +102,7 @@ services:
       - 1panel-network
 
   worker:
-    image: "langgenius/dify-api:1.15.0"
+    image: "langgenius/dify-api:1.16.0"
     container_name: ${CONTAINER_NAME}-worker
     labels:
       createdBy: "Apps"
@@ -149,7 +149,7 @@ services:
       - 1panel-network
 
   worker_beat:
-    image: "langgenius/dify-api:1.15.0"
+    image: "langgenius/dify-api:1.16.0"
     container_name: ${CONTAINER_NAME}-worker-beat
     labels:
       createdBy: "Apps"
