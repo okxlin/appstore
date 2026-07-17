@@ -238,6 +238,10 @@ webos
 wewe-rss
 windows
 wireguard
+blender-linuxserver
+forwardx
+weaviate
+infinite-canvas
 wol-go-web
 xunlei
 yesplaymusic
