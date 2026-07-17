@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   blender:
-    image: "linuxserver/blender:5.1.2"
+    image: "linuxserver/blender:5.2.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
