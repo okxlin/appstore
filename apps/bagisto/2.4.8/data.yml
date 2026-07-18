@@ -1,0 +1,196 @@
+additionalProperties:
+  formFields:
+    - default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: MySQL Service
+      labelZh: MySQL 服务
+      label:
+        en: MySQL Service
+        zh: MySQL 服务
+        zh-Hant: MySQL 服務
+        ja: MySQL サービス
+        ko: MySQL 서비스
+        ru: Сервис MySQL
+        ms: Perkhidmatan MySQL
+        pt-br: Servico MySQL
+      params:
+        - envKey: BAGISTO_DB_PORT
+          key: mysql
+          type: param
+          value: "3306"
+      required: true
+      type: apps
+      values:
+        - label: MySQL
+          value: mysql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: MySQL Service
+        labelZh: MySQL 服务
+        label:
+          en: MySQL Service
+          zh: MySQL 服务
+          zh-Hant: MySQL 服務
+          ja: MySQL サービス
+          ko: MySQL 서비스
+          ru: Сервис MySQL
+          ms: Perkhidmatan MySQL
+          pt-br: Servico MySQL
+        required: true
+        type: service
+    - default: bagisto
+      edit: false
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名称
+      label:
+        en: Database Name
+        zh: 数据库名称
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do Banco de Dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: bagisto
+      edit: false
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuario do Banco de Dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: false
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        zh: 数据库用户密码
+        zh-Hant: 資料庫使用者密碼
+        ja: データベースユーザーのパスワード
+        ko: 데이터베이스 사용자 비밀번호
+        ru: Пароль пользователя базы данных
+        ms: Kata Laluan Pengguna Pangkalan Data
+        pt-br: Senha do Usuario do Banco de Dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/storage
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Storage Path
+      labelZh: 存储路径
+      label:
+        en: Storage Path
+        zh: 存储路径
+        zh-Hant: 儲存路徑
+        ja: ストレージパス
+        ko: 스토리지 경로
+        ru: Путь хранилища
+        ms: Laluan Storan
+        pt-br: Caminho de Armazenamento
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: BAGISTO_TIMEZONE
+      labelEn: Application Timezone
+      labelZh: 应用时区
+      label:
+        en: Application Timezone
+        zh: 应用时区
+        zh-Hant: 應用程式時區
+        ja: アプリケーションのタイムゾーン
+        ko: 애플리케이션 시간대
+        ru: Часовой пояс приложения
+        ms: Zon Masa Aplikasi
+        pt-br: Fuso Horario do Aplicativo
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: BAGISTO_APP_KEY_SEED
+      labelEn: Application Key Seed
+      labelZh: 应用密钥种子
+      label:
+        en: Application Key Seed
+        zh: 应用密钥种子
+        zh-Hant: 應用程式金鑰種子
+        ja: アプリケーションキーシード
+        ko: 애플리케이션 키 시드
+        ru: Начальное значение ключа приложения
+        ms: Benih Kunci Aplikasi
+        pt-br: Semente da Chave do Aplicativo
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: admin@example.com
+      edit: true
+      envKey: BAGISTO_ADMIN_EMAIL
+      labelEn: Initial Administrator Email
+      labelZh: 初始管理员邮箱
+      label:
+        en: Initial Administrator Email
+        zh: 初始管理员邮箱
+        zh-Hant: 初始管理員電子郵件
+        ja: 初期管理者メールアドレス
+        ko: 초기 관리자 이메일
+        ru: Электронная почта начального администратора
+        ms: E-mel Pentadbir Awal
+        pt-br: E-mail do Administrador Inicial
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: BAGISTO_ADMIN_PASSWORD
+      labelEn: Initial Administrator Password
+      labelZh: 初始管理员密码
+      label:
+        en: Initial Administrator Password
+        zh: 初始管理员密码
+        zh-Hant: 初始管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Пароль начального администратора
+        ms: Kata Laluan Pentadbir Awal
+        pt-br: Senha do Administrador Inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

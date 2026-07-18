@@ -1,0 +1,63 @@
+services:
+  bagisto:
+    image: "webkul/bagisto:2.4.8"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${APP_DATA_DIR}:/var/www/bagisto/storage"
+    environment:
+      - DB_HOST=${PANEL_DB_HOST}
+      - DB_PORT=${BAGISTO_DB_PORT}
+      - DB_DATABASE=${PANEL_DB_NAME}
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - BAGISTO_TIMEZONE=${BAGISTO_TIMEZONE}
+      - BAGISTO_APP_KEY_SEED=${BAGISTO_APP_KEY_SEED}
+      - BAGISTO_ADMIN_EMAIL=${BAGISTO_ADMIN_EMAIL}
+      - BAGISTO_ADMIN_PASSWORD=${BAGISTO_ADMIN_PASSWORD}
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        # The upstream entrypoint interpolates APP_TIMEZONE into a slash-delimited sed command.
+        if [ -n "$${BAGISTO_TIMEZONE:-}" ]; then
+          export BAGISTO_TIMEZONE
+          php -r '$$path = "/var/www/bagisto/.env"; $$value = getenv("BAGISTO_TIMEZONE"); if ($$value === false || !preg_match("/^[A-Za-z0-9._+-]+(?:\\/[A-Za-z0-9._+-]+)*$$/D", $$value)) { fwrite(STDERR, "Invalid BAGISTO_TIMEZONE\\n"); exit(1); } $$content = file_get_contents($$path); if ($$content === false) { fwrite(STDERR, "Cannot read .env\\n"); exit(1); } $$updated = preg_replace_callback("/^APP_TIMEZONE=.*$$/m", static fn() => "APP_TIMEZONE=" . $$value, $$content, 1, $$count); if ($$updated === null || $$count !== 1 || file_put_contents($$path, $$updated) === false) { fwrite(STDERR, "Cannot update APP_TIMEZONE\\n"); exit(1); }'
+          unset BAGISTO_TIMEZONE
+        fi
+        exec /usr/local/bin/entrypoint.sh "$$@"
+      - --
+    command:
+      - /bin/sh
+      - -ec
+      - |
+        cd /var/www/bagisto
+        APP_KEY="base64:$$(printf '%s' "$$BAGISTO_APP_KEY_SEED" | openssl dgst -sha256 -binary | base64 -w 0)"
+        export APP_KEY
+        sed -i "s|^APP_KEY=.*|APP_KEY=$$APP_KEY|" .env
+        mkdir -p storage bootstrap/cache
+        chown -R www-data:www-data storage bootstrap/cache
+        php artisan optimize:clear --no-interaction
+        migration_state="$$(php artisan tinker --execute='echo \Illuminate\Support\Facades\Schema::hasTable("migrations") ? "ready" : "missing";' 2>/dev/null || true)"
+        if [ "$$migration_state" != "ready" ]; then
+          if ! php artisan bagisto:install --no-interaction >/tmp/bagisto-install.log 2>&1; then
+            echo "Bagisto initialization failed; inspect /tmp/bagisto-install.log" >&2
+            exit 1
+          fi
+          php artisan tinker --execute='$$updated = \Illuminate\Support\Facades\DB::table("admins")->where("email", "admin@example.com")->update(["email" => getenv("BAGISTO_ADMIN_EMAIL"), "password" => \Illuminate\Support\Facades\Hash::make(getenv("BAGISTO_ADMIN_PASSWORD"))]); if ($$updated !== 1) { throw new \RuntimeException("Bagisto default administrator was not created"); }'
+        fi
+        php artisan migrate --force --no-interaction
+        chown -R www-data:www-data storage bootstrap/cache
+        chmod -R ug+rwX storage bootstrap/cache
+        find storage bootstrap/cache -type d -exec chmod g+s {} +
+        exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

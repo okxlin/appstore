@@ -1,0 +1,30 @@
+name: Bagisto
+tags:
+  - Website
+title: Bagisto 开源电商平台
+description: Bagisto 开源电商平台
+additionalProperties:
+  key: bagisto
+  name: Bagisto
+  tags:
+    - Website
+  shortDescZh: Bagisto 开源电商平台
+  shortDescEn: Open-source e-commerce platform built on Laravel
+  description:
+    en: Bagisto is an open-source e-commerce platform built on Laravel.
+    zh: Bagisto 是基于 Laravel 的开源电商平台。
+    zh-Hant: Bagisto 是基於 Laravel 的開源電商平台。
+    ja: Bagisto は Laravel を基盤とするオープンソースのECプラットフォームです。
+    ko: Bagisto는 Laravel 기반의 오픈 소스 전자상거래 플랫폼입니다.
+    ru: Bagisto - это платформа электронной коммерции с открытым исходным кодом на Laravel.
+    ms: Bagisto ialah platform e-dagang sumber terbuka berasaskan Laravel.
+    pt-br: Bagisto e uma plataforma de comercio eletronico de codigo aberto baseada em Laravel.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://bagisto.com
+  github: https://github.com/bagisto/bagisto
+  document: https://github.com/bagisto/bagisto/tree/v2.4.8/docker/production
+  architectures:
+    - amd64
+    - arm64
