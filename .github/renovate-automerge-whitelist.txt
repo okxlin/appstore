@@ -369,3 +369,10 @@ signal-linuxserver
 thunderbird-linuxserver
 ting-reader
 vscode-linuxserver
+
+# Reviewed single-service Renovate candidates (2026-07-19).
+cpa-manager-plus
+ech0
+flipt
+helium-linuxserver
+wakapi
