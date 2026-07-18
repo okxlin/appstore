@@ -1,6 +1,6 @@
 services:
   gotify:
-    image: "gotify/server:2.9.1"
+    image: "gotify/server:3.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
