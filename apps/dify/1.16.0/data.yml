@@ -331,6 +331,42 @@ additionalProperties:
       type: password
     - default: ""
       edit: true
+      envKey: DIFY_AGENT_SHELLCTL_AUTH_TOKEN
+      labelEn: Agent Sandbox Auth Token
+      labelZh: Agent 沙箱认证令牌
+      label:
+        en: Agent Sandbox Auth Token
+        zh: Agent 沙箱认证令牌
+        zh-Hant: Agent 沙箱驗證權杖
+        ja: Agent サンドボックス認証トークン
+        ko: Agent 샌드박스 인증 토큰
+        ru: Токен доступа к песочнице Agent
+        ms: Token Pengesahan Kotak Pasir Agent
+        pt-br: Token de Autenticacao do Sandbox do Agent
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: DIFY_AGENT_SERVER_SECRET_KEY
+      labelEn: Agent Server Secret Key (32-byte Base64URL)
+      labelZh: Agent 服务端加密密钥（32 字节 Base64URL）
+      label:
+        en: Agent Server Secret Key (32-byte Base64URL)
+        zh: Agent 服务端加密密钥（32 字节 Base64URL）
+        zh-Hant: Agent 伺服器加密金鑰（32 位元組 Base64URL）
+        ja: Agent サーバー暗号化キー（32バイト Base64URL）
+        ko: Agent 서버 암호화 키(32바이트 Base64URL)
+        ru: Ключ сервера Agent (Base64URL, 32 байта)
+        ms: Kunci Rahsia Pelayan Agent (Base64URL 32 bait)
+        pt-br: Chave Secreta do Servidor Agent (Base64URL de 32 bytes)
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
       envKey: WEAVIATE_API_KEY
       labelEn: Weaviate API Key
       labelZh: Weaviate API 密钥
