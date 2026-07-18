@@ -24,6 +24,102 @@ get_env_value() {
   fi
 }
 
+set_env_value() {
+  local key="$1"
+  local value="$2"
+
+  touch "$ENV_FILE"
+  sed -i -E "/^${key}=/d" "$ENV_FILE"
+  printf '%s=%s\n' "$key" "$value" >>"$ENV_FILE"
+}
+
+generate_random_secret() {
+  if command -v openssl >/dev/null 2>&1; then
+    openssl rand -hex 32
+  else
+    od -An -N32 -tx1 /dev/urandom | tr -d ' \n'
+  fi
+}
+
+generate_agent_server_secret() {
+  local value
+
+  if command -v openssl >/dev/null 2>&1; then
+    value="$(openssl rand -base64 32)"
+  elif command -v base64 >/dev/null 2>&1; then
+    value="$(head -c 32 /dev/urandom | base64)"
+  else
+    echo "[dify:init] cannot generate DIFY_AGENT_SERVER_SECRET_KEY: openssl or base64 is required" >&2
+    return 1
+  fi
+
+  printf '%s' "$value" | tr '+/' '-_' | tr -d '=\n'
+}
+
+is_valid_agent_server_secret() {
+  local value="$1"
+  local normalized
+  local decoded_length
+
+  [[ "$value" =~ ^[A-Za-z0-9_-]+={0,2}$ ]] || return 1
+  normalized="${value//-/+}"
+  normalized="${normalized//_/\/}"
+  case $((${#normalized} % 4)) in
+    0) ;;
+    2) normalized="${normalized}==" ;;
+    3) normalized="${normalized}=" ;;
+    *) return 1 ;;
+  esac
+
+  if command -v base64 >/dev/null 2>&1; then
+    decoded_length="$(printf '%s' "$normalized" | base64 -d 2>/dev/null | wc -c | tr -d '[:space:]')" || return 1
+  elif command -v openssl >/dev/null 2>&1; then
+    decoded_length="$(printf '%s' "$normalized" | openssl base64 -d -A 2>/dev/null | wc -c | tr -d '[:space:]')" || return 1
+  else
+    return 1
+  fi
+
+  [[ "$decoded_length" == "32" ]]
+}
+
+ensure_env_secret() {
+  local key="$1"
+  local value
+
+  value="$(get_env_value "$key" "")"
+  if [[ -n "$value" ]]; then
+    return
+  fi
+
+  value="${!key:-}"
+  if [[ -z "$value" ]]; then
+    value="$(generate_random_secret)"
+  fi
+  set_env_value "$key" "$value"
+  echo "[dify:init] generated missing ${key}"
+}
+
+ensure_agent_server_secret() {
+  local value
+  local reason="missing"
+
+  value="$(get_env_value "DIFY_AGENT_SERVER_SECRET_KEY" "")"
+  if [[ -z "$value" ]]; then
+    value="${DIFY_AGENT_SERVER_SECRET_KEY:-}"
+  fi
+  if [[ -n "$value" ]] && is_valid_agent_server_secret "$value"; then
+    set_env_value "DIFY_AGENT_SERVER_SECRET_KEY" "$value"
+    return
+  fi
+  if [[ -n "$value" ]]; then
+    reason="invalid"
+  fi
+
+  value="$(generate_agent_server_secret)"
+  set_env_value "DIFY_AGENT_SERVER_SECRET_KEY" "$value"
+  echo "[dify:init] replaced ${reason} DIFY_AGENT_SERVER_SECRET_KEY with a generated 32-byte Base64URL key"
+}
+
 resolve_app_path() {
   local raw="$1"
   if [[ "$raw" = /* ]]; then
@@ -144,6 +240,9 @@ APP_DATA_DIR_RAW="${APP_DATA_DIR:-$(get_env_value "APP_DATA_DIR" "./data")}"
 CUSTOM_ENV_FILE_RAW="${CUSTOM_ENV_FILE:-$(get_env_value "CUSTOM_ENV_FILE" "./data/custom.env")}"
 PUBLIC_BASE_URL_RAW="${PUBLIC_BASE_URL:-$(get_env_value "PUBLIC_BASE_URL" "")}"
 ENABLE_COLLABORATION_MODE_RAW="${ENABLE_COLLABORATION_MODE:-$(get_env_value "ENABLE_COLLABORATION_MODE" "false")}"
+
+ensure_env_secret "DIFY_AGENT_SHELLCTL_AUTH_TOKEN"
+ensure_agent_server_secret
 
 APP_DATA_DIR_ABS="$(resolve_app_path "$APP_DATA_DIR_RAW")"
 CUSTOM_ENV_FILE_ABS="$(resolve_app_path "$CUSTOM_ENV_FILE_RAW")"

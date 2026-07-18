@@ -47,12 +47,18 @@ services:
       - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
       - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
       - PLUGIN_REMOTE_INSTALL_PORT=5003
+      - AGENT_BACKEND_BASE_URL=http://agent_backend:5050
+      - AGENT_BACKEND_STREAM_READ_TIMEOUT_SECONDS=30
+      - AGENT_BACKEND_STREAM_MAX_RECONNECTS=3
+      - AGENT_BACKEND_RUN_TIMEOUT_SECONDS=1200
       - SENTRY_DSN=
       - SENTRY_TRACES_SAMPLE_RATE=1.0
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
     depends_on:
       init_permissions:
         condition: service_completed_successfully
+      agent_backend:
+        condition: service_started
     volumes:
       - ${APP_DATA_DIR}/app/storage:/app/api/storage
     healthcheck:
@@ -124,6 +130,10 @@ services:
       - CELERY_BROKER_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/1
       - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
       - PLUGIN_MAX_PACKAGE_SIZE=52428800
+      - AGENT_BACKEND_BASE_URL=http://agent_backend:5050
+      - AGENT_BACKEND_STREAM_READ_TIMEOUT_SECONDS=30
+      - AGENT_BACKEND_STREAM_MAX_RECONNECTS=3
+      - AGENT_BACKEND_RUN_TIMEOUT_SECONDS=1200
       - SENTRY_DSN=
       - SENTRY_TRACES_SAMPLE_RATE=1.0
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
@@ -132,6 +142,8 @@ services:
         condition: service_completed_successfully
       api:
         condition: service_healthy
+      agent_backend:
+        condition: service_started
     volumes:
       - ${APP_DATA_DIR}/app/storage:/app/api/storage
     healthcheck:
@@ -180,7 +192,7 @@ services:
       - 1panel-network
 
   web:
-    image: "langgenius/dify-web:1.15.0"
+    image: "langgenius/dify-web:1.16.0"
     container_name: ${CONTAINER_NAME}-web
     labels:
       createdBy: "Apps"
@@ -194,6 +206,9 @@ services:
       - SENTRY_DSN=
       - MARKETPLACE_API_URL=https://marketplace.dify.ai
       - MARKETPLACE_URL=https://marketplace.dify.ai
+      - WORKFLOW_GENERATION_TIMEOUT_MS=180000
+      - NEXT_PUBLIC_ENABLE_AGENT_V2=true
+      - NEXT_PUBLIC_ENABLE_FEATURE_PREVIEW=true
     networks:
       - default
 
@@ -223,6 +238,56 @@ services:
         - http://localhost:8194/health
     networks:
       - ssrf_proxy_network
+
+  local_sandbox:
+    image: "langgenius/dify-agent-local-sandbox:1.16.0"
+    container_name: ${CONTAINER_NAME}-local-sandbox
+    labels:
+      createdBy: "Apps"
+    restart: always
+    environment:
+      - SHELLCTL_AUTH_TOKEN=${DIFY_AGENT_SHELLCTL_AUTH_TOKEN}
+      - SHELLCTL_ENABLE_PATH_ISOLATION=true
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+        - http://localhost:5004/healthz
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - default
+
+  agent_backend:
+    image: "langgenius/dify-agent-backend:1.16.0"
+    container_name: ${CONTAINER_NAME}-agent-backend
+    labels:
+      createdBy: "Apps"
+    restart: always
+    env_file: *dify-env
+    environment:
+      - DIFY_AGENT_REDIS_URL=redis://:${PANEL_REDIS_ROOT_PASSWORD}@${REDIS_HOST}:${REDIS_PORT}/2
+      - DIFY_AGENT_REDIS_PREFIX=dify-agent
+      - DIFY_AGENT_PLUGIN_DAEMON_URL=http://plugin_daemon:5002
+      - DIFY_AGENT_PLUGIN_DAEMON_API_KEY=${PLUGIN_DAEMON_KEY}
+      - DIFY_AGENT_INNER_API_URL=http://api:5001
+      - DIFY_AGENT_INNER_API_KEY=${PLUGIN_DIFY_INNER_API_KEY}
+      - DIFY_AGENT_SHELLCTL_ENTRYPOINT=http://local_sandbox:5004
+      - DIFY_AGENT_SHELLCTL_AUTH_TOKEN=${DIFY_AGENT_SHELLCTL_AUTH_TOKEN}
+      - DIFY_AGENT_STUB_API_BASE_URL=http://agent_backend:5050/agent-stub
+      - DIFY_AGENT_SERVER_SECRET_KEY=${DIFY_AGENT_SERVER_SECRET_KEY}
+      - DIFY_AGENT_SHUTDOWN_GRACE_SECONDS=30
+      - DIFY_AGENT_RUN_RETENTION_SECONDS=259200
+    depends_on:
+      plugin_daemon:
+        condition: service_started
+      local_sandbox:
+        condition: service_started
+    networks:
+      - default
 
   plugin_daemon:
     image: "langgenius/dify-plugin-daemon:0.6.3-local"
@@ -289,9 +354,6 @@ services:
       - SENTRY_DSN=
     volumes:
       - ${APP_DATA_DIR}/plugin_daemon:/app/storage
-    depends_on:
-      api:
-        condition: service_healthy
     networks:
       - ssrf_proxy_network
       - default
