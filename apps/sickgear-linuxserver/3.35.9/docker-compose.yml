@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   sickgear:
-    image: "linuxserver/sickgear:3.35.9"
+    image: "linuxserver/sickgear:3.35.10"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
