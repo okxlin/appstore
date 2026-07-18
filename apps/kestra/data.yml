@@ -1,0 +1,30 @@
+name: Kestra
+tags:
+  - 开发工具
+title: 开源工作流编排平台
+description: 开源工作流编排平台
+additionalProperties:
+  key: kestra
+  name: Kestra
+  tags:
+    - Tool
+  shortDescZh: 开源工作流编排平台
+  shortDescEn: Open-source workflow orchestration platform
+  description:
+    en: Open-source workflow orchestration platform
+    zh: 开源工作流编排平台
+    zh-Hant: 開源工作流程編排平台
+    ja: オープンソースのワークフローオーケストレーションプラットフォーム
+    ko: 오픈 소스 워크플로 오케스트레이션 플랫폼
+    ru: Платформа оркестрации рабочих процессов с открытым исходным кодом
+    ms: Platform orkestrasi aliran kerja sumber terbuka
+    pt-br: Plataforma de orquestração de fluxos de trabalho de código aberto
+  type: tool
+  crossVersionUpdate: false
+  limit: 1
+  website: https://kestra.io/
+  document: https://kestra.io/docs/
+  github: https://github.com/kestra-io/kestra
+  architectures:
+    - amd64
+    - arm64

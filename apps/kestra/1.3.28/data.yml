@@ -1,0 +1,175 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: postgresql
+      edit: true
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Runtime
+      labelZh: 数据库 Runtime
+      label:
+        en: Database Runtime
+        zh: 数据库 Runtime
+        zh-Hant: 資料庫 Runtime
+        ja: データベース Runtime
+        ko: 데이터베이스 Runtime
+        ru: Среда базы данных
+        ms: Runtime pangkalan data
+        pt-br: Runtime de banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ''
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Service
+        labelZh: PostgreSQL 服务
+        label:
+          en: PostgreSQL Service
+          zh: PostgreSQL 服务
+          zh-Hant: PostgreSQL 服務
+          ja: PostgreSQL サービス
+          ko: PostgreSQL 서비스
+          ru: Сервис PostgreSQL
+          ms: Perkhidmatan PostgreSQL
+          pt-br: Serviço PostgreSQL
+        required: true
+        type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: kestra
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: kestra
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ''
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: admin@kestra.local
+      edit: true
+      envKey: KESTRA_BASIC_AUTH_USERNAME
+      labelEn: Basic Auth Username
+      labelZh: Basic Auth 用户名
+      label:
+        en: Basic Auth Username
+        zh: Basic Auth 用户名
+        zh-Hant: Basic Auth 使用者名稱
+        ja: Basic Auth ユーザー名
+        ko: Basic Auth 사용자 이름
+        ru: Имя пользователя Basic Auth
+        ms: Nama pengguna Basic Auth
+        pt-br: Nome de usuário Basic Auth
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: KESTRA_BASIC_AUTH_PASSWORD
+      labelEn: Basic Auth Password
+      labelZh: Basic Auth 密码
+      label:
+        en: Basic Auth Password
+        zh: Basic Auth 密码
+        zh-Hant: Basic Auth 密碼
+        ja: Basic Auth パスワード
+        ko: Basic Auth 비밀번호
+        ru: Пароль Basic Auth
+        ms: Kata laluan Basic Auth
+        pt-br: Senha Basic Auth
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: /opt/1panel-data/kestra
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Path
+      labelZh: 数据目录
+      label:
+        en: Data Path
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データパス
+        ko: 데이터 경로
+        ru: Путь к данным
+        ms: Laluan data
+        pt-br: Caminho dos dados
+      required: true
+      type: text
