@@ -1,6 +1,6 @@
 services:
   chatwoot:
-    image: "chatwoot/chatwoot:v4.15.1-ce"
+    image: "chatwoot/chatwoot:v4.16.0-ce"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
@@ -49,7 +49,7 @@ services:
       createdBy: "Apps"
 
   chatwoot-sidekiq:
-    image: "chatwoot/chatwoot:v4.15.1-ce"
+    image: "chatwoot/chatwoot:v4.16.0-ce"
     container_name: ${CONTAINER_NAME}-sidekiq
     restart: always
     depends_on:
