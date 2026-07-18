@@ -1,6 +1,6 @@
 services:
   flipt:
-    image: "docker.flipt.io/flipt/flipt:v2.10.0"
+    image: "docker.flipt.io/flipt/flipt:v2.11.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
