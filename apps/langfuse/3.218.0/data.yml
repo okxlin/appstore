@@ -1,0 +1,385 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: 9090
+      edit: true
+      envKey: PANEL_MINIO_PORT_HTTP
+      labelEn: MinIO S3 Port
+      labelZh: MinIO S3 端口
+      label:
+        en: MinIO S3 Port
+        zh: MinIO S3 端口
+        zh-Hant: MinIO S3 連接埠
+        ja: MinIO S3 ポート
+        ko: MinIO S3 포트
+        ru: Порт MinIO S3
+        ms: Port MinIO S3
+        pt-br: Porta S3 do MinIO
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://localhost:3000
+      edit: true
+      envKey: NEXTAUTH_URL
+      labelEn: Public Langfuse URL
+      labelZh: Langfuse 公共访问 URL
+      label:
+        en: Public Langfuse URL
+        zh: Langfuse 公共访问 URL
+        zh-Hant: Langfuse 公開存取 URL
+        ja: Langfuse 公開 URL
+        ko: Langfuse 공개 URL
+        ru: Публичный URL Langfuse
+        ms: URL Awam Langfuse
+        pt-br: URL público do Langfuse
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: http://localhost:9090
+      edit: true
+      envKey: LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT
+      labelEn: Public MinIO S3 Endpoint
+      labelZh: MinIO S3 公共端点
+      label:
+        en: Public MinIO S3 Endpoint
+        zh: MinIO S3 公共端点
+        zh-Hant: MinIO S3 公開端點
+        ja: MinIO S3 公開エンドポイント
+        ko: MinIO S3 공개 엔드포인트
+        ru: Публичная конечная точка MinIO S3
+        ms: Titik Akhir Awam MinIO S3
+        pt-br: Endpoint público S3 do MinIO
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Runtime
+      labelZh: 数据库运行环境
+      label:
+        en: Database Runtime
+        zh: 数据库运行环境
+        zh-Hant: 資料庫執行環境
+        ja: データベース実行環境
+        ko: 데이터베이스 런타임
+        ru: Среда базы данных
+        ms: Runtime Pangkalan Data
+        pt-br: Runtime de banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Service
+        labelZh: PostgreSQL 服务
+        label:
+          en: PostgreSQL Service
+          zh: PostgreSQL 服务
+          zh-Hant: PostgreSQL 服務
+          ja: PostgreSQL サービス
+          ko: PostgreSQL 서비스
+          ru: Служба PostgreSQL
+          ms: Perkhidmatan PostgreSQL
+          pt-br: Serviço PostgreSQL
+        required: true
+        type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: PostgreSQL Port
+      labelZh: PostgreSQL 端口
+      label:
+        en: PostgreSQL Port
+        zh: PostgreSQL 端口
+        zh-Hant: PostgreSQL 連接埠
+        ja: PostgreSQL ポート
+        ko: PostgreSQL 포트
+        ru: Порт PostgreSQL
+        ms: Port PostgreSQL
+        pt-br: Porta PostgreSQL
+      required: true
+      type: number
+    - default: langfuse
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: langfuse
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: URL-safe Database Password
+      labelZh: URL 安全的数据库密码
+      label:
+        en: URL-safe Database Password
+        zh: URL 安全的数据库密码
+        zh-Hant: URL 安全的資料庫密碼
+        ja: URL セーフなデータベースパスワード
+        ko: URL 안전 데이터베이스 비밀번호
+        ru: URL-безопасный пароль базы данных
+        ms: Kata Laluan Pangkalan Data Selamat URL
+        pt-br: Senha de banco de dados segura para URL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis 服务
+      label:
+        en: Redis Service
+        zh: Redis 服务
+        zh-Hant: Redis 服務
+        ja: Redis サービス
+        ko: Redis 서비스
+        ru: Служба Redis
+        ms: Perkhidmatan Redis
+        pt-br: Serviço Redis
+      required: true
+      type: service
+    - default: 6379
+      edit: true
+      envKey: REDIS_PORT
+      labelEn: Redis Port
+      labelZh: Redis 端口
+      label:
+        en: Redis Port
+        zh: Redis 端口
+        zh-Hant: Redis 連接埠
+        ja: Redis ポート
+        ko: Redis 포트
+        ru: Порт Redis
+        ms: Port Redis
+        pt-br: Porta Redis
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Redis Password
+      labelZh: Redis 密码
+      label:
+        en: Redis Password
+        zh: Redis 密码
+        zh-Hant: Redis 密碼
+        ja: Redis パスワード
+        ko: Redis 비밀번호
+        ru: Пароль Redis
+        ms: Kata Laluan Redis
+        pt-br: Senha do Redis
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: NEXTAUTH_SECRET
+      labelEn: Session Secret
+      labelZh: 会话密钥
+      label:
+        en: Session Secret
+        zh: 会话密钥
+        zh-Hant: 工作階段密鑰
+        ja: セッションシークレット
+        ko: 세션 비밀 키
+        ru: Секрет сеанса
+        ms: Rahsia Sesi
+        pt-br: Segredo da sessão
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: SALT
+      labelEn: API Key Salt
+      labelZh: API 密钥盐值
+      label:
+        en: API Key Salt
+        zh: API 密钥盐值
+        zh-Hant: API 金鑰鹽值
+        ja: API キーソルト
+        ko: API 키 솔트
+        ru: Соль ключа API
+        ms: Garam Kunci API
+        pt-br: Salt da chave de API
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: ENCRYPTION_KEY
+      labelEn: Encryption Key
+      labelZh: 加密密钥
+      label:
+        en: Encryption Key
+        zh: 加密密钥
+        zh-Hant: 加密金鑰
+        ja: 暗号化キー
+        ko: 암호화 키
+        ru: Ключ шифрования
+        ms: Kunci Penyulitan
+        pt-br: Chave de criptografia
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: CLICKHOUSE_PASSWORD
+      labelEn: ClickHouse Password
+      labelZh: ClickHouse 密码
+      label:
+        en: ClickHouse Password
+        zh: ClickHouse 密码
+        zh-Hant: ClickHouse 密碼
+        ja: ClickHouse パスワード
+        ko: ClickHouse 비밀번호
+        ru: Пароль ClickHouse
+        ms: Kata Laluan ClickHouse
+        pt-br: Senha do ClickHouse
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: MINIO_ROOT_PASSWORD
+      labelEn: MinIO Root Password
+      labelZh: MinIO 根密码
+      label:
+        en: MinIO Root Password
+        zh: MinIO 根密码
+        zh-Hant: MinIO 根密碼
+        ja: MinIO ルートパスワード
+        ko: MinIO 루트 비밀번호
+        ru: Пароль root MinIO
+        ms: Kata Laluan Root MinIO
+        pt-br: Senha root do MinIO
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: admin@example.com
+      edit: true
+      envKey: LANGFUSE_INIT_USER_EMAIL
+      labelEn: Initial Administrator Email
+      labelZh: 初始管理员邮箱
+      label:
+        en: Initial Administrator Email
+        zh: 初始管理员邮箱
+        zh-Hant: 初始管理員電子郵件
+        ja: 初期管理者メールアドレス
+        ko: 초기 관리자 이메일
+        ru: Электронная почта начального администратора
+        ms: E-mel Pentadbir Awal
+        pt-br: E-mail do administrador inicial
+      required: true
+      rule: paramEmail
+      type: text
+    - default: ""
+      edit: true
+      envKey: LANGFUSE_INIT_USER_PASSWORD
+      labelEn: Initial Administrator Password
+      labelZh: 初始管理员密码
+      label:
+        en: Initial Administrator Password
+        zh: 初始管理员密码
+        zh-Hant: 初始管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Пароль начального администратора
+        ms: Kata Laluan Pentadbir Awal
+        pt-br: Senha do administrador inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: LANGFUSE_INIT_PUBLIC_KEY_SUFFIX
+      labelEn: Initial Public API Key Suffix
+      labelZh: 初始公共 API 密钥后缀
+      label:
+        en: Initial Public API Key Suffix
+        zh: 初始公共 API 密钥后缀
+        zh-Hant: 初始公開 API 金鑰後綴
+        ja: 初期公開 API キー接尾辞
+        ko: 초기 공개 API 키 접미사
+        ru: Суффикс начального публичного ключа API
+        ms: Akhiran Kunci API Awam Awal
+        pt-br: Sufixo da chave pública de API inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: LANGFUSE_INIT_SECRET_KEY_SUFFIX
+      labelEn: Initial Secret API Key Suffix
+      labelZh: 初始私有 API 密钥后缀
+      label:
+        en: Initial Secret API Key Suffix
+        zh: 初始私有 API 密钥后缀
+        zh-Hant: 初始私密 API 金鑰後綴
+        ja: 初期秘密 API キー接尾辞
+        ko: 초기 비밀 API 키 접미사
+        ru: Суффикс начального секретного ключа API
+        ms: Akhiran Kunci API Rahsia Awal
+        pt-br: Sufixo da chave secreta de API inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

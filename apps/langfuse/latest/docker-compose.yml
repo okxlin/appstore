@@ -1,0 +1,191 @@
+services:
+  langfuse-worker:
+    image: "docker.io/langfuse/langfuse-worker:3"
+    container_name: ${CONTAINER_NAME}-worker
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    environment:
+      - HOSTNAME=0.0.0.0
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - DATABASE_URL=postgresql://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+      - SALT=${SALT}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - TELEMETRY_ENABLED=false
+      - LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES=false
+      - CLICKHOUSE_MIGRATION_URL=clickhouse://clickhouse:9000
+      - CLICKHOUSE_URL=http://clickhouse:8123
+      - CLICKHOUSE_USER=clickhouse
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}
+      - CLICKHOUSE_CLUSTER_ENABLED=false
+      - LANGFUSE_S3_EVENT_UPLOAD_BUCKET=langfuse
+      - LANGFUSE_S3_EVENT_UPLOAD_REGION=auto
+      - LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID=minio
+      - LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD}
+      - LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT=http://minio:9000
+      - LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE=true
+      - LANGFUSE_S3_EVENT_UPLOAD_PREFIX=events/
+      - LANGFUSE_S3_EVENT_KEY_MAX_SEGMENT_BYTES=255
+      - LANGFUSE_S3_MEDIA_UPLOAD_BUCKET=langfuse
+      - LANGFUSE_S3_MEDIA_UPLOAD_REGION=auto
+      - LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID=minio
+      - LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD}
+      - LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT=${LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT}
+      - LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE=true
+      - LANGFUSE_S3_MEDIA_UPLOAD_PREFIX=media/
+      - LANGFUSE_S3_BATCH_EXPORT_ENABLED=false
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_AUTH=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_TLS_ENABLED=false
+      - TZ=UTC
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          node -e "fetch('http://127.0.0.1:3030/api/ready').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 120s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  langfuse-web:
+    image: "docker.io/langfuse/langfuse:3"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - HOSTNAME=0.0.0.0
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - DATABASE_URL=postgresql://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+      - SALT=${SALT}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - TELEMETRY_ENABLED=false
+      - LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES=false
+      - CLICKHOUSE_MIGRATION_URL=clickhouse://clickhouse:9000
+      - CLICKHOUSE_URL=http://clickhouse:8123
+      - CLICKHOUSE_USER=clickhouse
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}
+      - CLICKHOUSE_CLUSTER_ENABLED=false
+      - LANGFUSE_S3_EVENT_UPLOAD_BUCKET=langfuse
+      - LANGFUSE_S3_EVENT_UPLOAD_REGION=auto
+      - LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID=minio
+      - LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD}
+      - LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT=http://minio:9000
+      - LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE=true
+      - LANGFUSE_S3_EVENT_UPLOAD_PREFIX=events/
+      - LANGFUSE_S3_EVENT_KEY_MAX_SEGMENT_BYTES=255
+      - LANGFUSE_S3_MEDIA_UPLOAD_BUCKET=langfuse
+      - LANGFUSE_S3_MEDIA_UPLOAD_REGION=auto
+      - LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID=minio
+      - LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY=${MINIO_ROOT_PASSWORD}
+      - LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT=${LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT}
+      - LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE=true
+      - LANGFUSE_S3_MEDIA_UPLOAD_PREFIX=media/
+      - LANGFUSE_S3_BATCH_EXPORT_ENABLED=false
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_AUTH=${PANEL_REDIS_ROOT_PASSWORD}
+      - REDIS_TLS_ENABLED=false
+      - TZ=UTC
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - AUTH_DISABLE_SIGNUP=true
+      - LANGFUSE_INIT_ORG_ID=1panel-org
+      - LANGFUSE_INIT_ORG_NAME=1Panel Organization
+      - LANGFUSE_INIT_PROJECT_ID=1panel-project
+      - LANGFUSE_INIT_PROJECT_NAME=Default Project
+      - LANGFUSE_INIT_PROJECT_PUBLIC_KEY=pk-lf-${LANGFUSE_INIT_PUBLIC_KEY_SUFFIX}
+      - LANGFUSE_INIT_PROJECT_SECRET_KEY=sk-lf-${LANGFUSE_INIT_SECRET_KEY_SUFFIX}
+      - LANGFUSE_INIT_USER_EMAIL=${LANGFUSE_INIT_USER_EMAIL}
+      - LANGFUSE_INIT_USER_NAME=Administrator
+      - LANGFUSE_INIT_USER_PASSWORD=${LANGFUSE_INIT_USER_PASSWORD}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          node -e "fetch('http://127.0.0.1:3000/api/public/health?failIfDatabaseUnavailable=true').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 120s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  clickhouse:
+    image: "docker.io/clickhouse/clickhouse-server:25.8.28.1"
+    container_name: ${CONTAINER_NAME}-clickhouse
+    restart: unless-stopped
+    user: "101:101"
+    environment:
+      - CLICKHOUSE_DB=default
+      - CLICKHOUSE_USER=clickhouse
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}
+      - TZ=UTC
+    volumes:
+      - langfuse_clickhouse_data:/var/lib/clickhouse
+      - langfuse_clickhouse_logs:/var/log/clickhouse-server
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget --no-verbose --tries=1 --spider http://127.0.0.1:8123/ping || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+  minio:
+    image: "cgr.dev/chainguard/minio@sha256:8230f06574280781ea6ad45e27962db60175b18e4a43dd54c19012feb5438174"
+    container_name: ${CONTAINER_NAME}-minio
+    restart: unless-stopped
+    entrypoint: sh
+    command: -c 'mkdir -p /data/langfuse && exec minio server --address ":9000" --console-address ":9001" /data'
+    environment:
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+      - TZ=UTC
+    ports:
+      - "${PANEL_MINIO_PORT_HTTP}:9000"
+    volumes:
+      - langfuse_minio_data:/data
+    healthcheck:
+      test:
+        - CMD
+        - mc
+        - ready
+        - local
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 5s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+volumes:
+  langfuse_clickhouse_data:
+  langfuse_clickhouse_logs:
+  langfuse_minio_data:
+
+networks:
+  1panel-network:
+    external: true
