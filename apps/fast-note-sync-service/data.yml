@@ -1,0 +1,32 @@
+name: Fast Note Sync Service
+tags:
+  - Tool
+title: 高性能低延迟的 Obsidian 笔记同步服务
+description: 高性能低延迟的 Obsidian 笔记同步服务
+additionalProperties:
+  key: fast-note-sync-service
+  name: Fast Note Sync Service
+  tags:
+    - Tool
+  shortDescZh: 高性能低延迟的 Obsidian 笔记同步服务
+  shortDescEn: High-performance, low-latency Obsidian note synchronization service
+  description:
+    en: High-performance, low-latency Obsidian note synchronization service
+    zh: 高性能低延迟的 Obsidian 笔记同步服务
+    zh-Hant: 高效能低延遲的 Obsidian 筆記同步服務
+    ja: 高性能・低遅延のObsidianノート同期サービス
+    ko: 고성능 저지연 Obsidian 노트 동기화 서비스
+    ru: Высокопроизводительный сервис синхронизации заметок Obsidian с низкой задержкой
+    ms: Perkhidmatan penyegerakan nota Obsidian berprestasi tinggi dan kependaman rendah
+    pt-br: Serviço de sincronização de notas Obsidian de alto desempenho e baixa latência
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/haierkeys/fast-note-sync-service
+  github: https://github.com/haierkeys/fast-note-sync-service
+  document: https://github.com/haierkeys/fast-note-sync-service/blob/master/docs/README.zh-CN.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
