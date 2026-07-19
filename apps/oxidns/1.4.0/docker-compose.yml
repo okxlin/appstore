@@ -1,6 +1,6 @@
 services:
   oxidns:
-    image: "ghcr.io/svenshi/oxidns:1.4.0"
+    image: "ghcr.io/svenshi/oxidns:v1.5.0"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:9199"
