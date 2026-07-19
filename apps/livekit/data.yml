@@ -1,0 +1,30 @@
+name: LiveKit
+tags:
+- Middleware
+title: LiveKit 实时音视频服务器
+description: LiveKit 实时音视频服务器
+additionalProperties:
+  key: livekit
+  name: LiveKit
+  tags:
+  - Middleware
+  shortDescZh: LiveKit 实时音视频服务器
+  shortDescEn: LiveKit real-time audio and video server
+  description:
+    en: LiveKit is a real-time WebRTC server for audio, video, and data.
+    zh: LiveKit 是用于音频、视频和数据的实时 WebRTC 服务器。
+    zh-Hant: LiveKit 是用於音訊、視訊和資料的即時 WebRTC 伺服器。
+    ja: LiveKit は音声、映像、データ向けのリアルタイム WebRTC サーバーです。
+    ko: LiveKit은 오디오, 비디오 및 데이터를 위한 실시간 WebRTC 서버입니다.
+    ru: LiveKit - это сервер WebRTC реального времени для аудио, видео и данных.
+    ms: LiveKit ialah pelayan WebRTC masa nyata untuk audio, video dan data.
+    pt-br: LiveKit e um servidor WebRTC em tempo real para audio, video e dados.
+  type: middleware
+  crossVersionUpdate: true
+  limit: 0
+  website: https://livekit.io
+  github: https://github.com/livekit/livekit
+  document: https://docs.livekit.io/home/self-hosting/deployment/
+  architectures:
+  - amd64
+  - arm64

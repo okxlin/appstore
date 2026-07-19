@@ -1,0 +1,31 @@
+services:
+  livekit:
+    image: "livekit/livekit-server:latest"
+    container_name: ${CONTAINER_NAME}
+    command:
+      - --config-body
+      - |
+        port: 7880
+        rtc:
+          tcp_port: 7881
+          udp_port: 7882
+          use_external_ip: ${LIVEKIT_USE_EXTERNAL_IP}
+      - --keys
+      - "${LIVEKIT_API_KEY}: ${LIVEKIT_API_SECRET}"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7880"
+      - "${PANEL_APP_PORT_RTC_TCP}:7881/tcp"
+      - "${PANEL_APP_PORT_RTC_UDP}:7882/udp"
+    environment:
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+      - LIVEKIT_USE_EXTERNAL_IP=${LIVEKIT_USE_EXTERNAL_IP}
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

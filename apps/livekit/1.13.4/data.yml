@@ -1,0 +1,108 @@
+additionalProperties:
+  formFields:
+    - default: 7880
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Signaling Port
+      labelZh: 信令端口
+      label:
+        en: Signaling Port
+        zh: 信令端口
+        zh-Hant: 信令連接埠
+        ja: シグナリングポート
+        ko: 시그널링 포트
+        ru: Порт сигнализации
+        ms: Port isyarat
+        pt-br: Porta de sinalizacao
+      required: true
+      rule: paramPort
+      type: number
+    - default: 7881
+      edit: true
+      envKey: PANEL_APP_PORT_RTC_TCP
+      labelEn: WebRTC TCP Port
+      labelZh: WebRTC TCP 端口
+      label:
+        en: WebRTC TCP Port
+        zh: WebRTC TCP 端口
+        zh-Hant: WebRTC TCP 連接埠
+        ja: WebRTC TCP ポート
+        ko: WebRTC TCP 포트
+        ru: TCP-порт WebRTC
+        ms: Port TCP WebRTC
+        pt-br: Porta TCP WebRTC
+      required: true
+      rule: paramPort
+      type: number
+    - default: 7882
+      edit: true
+      envKey: PANEL_APP_PORT_RTC_UDP
+      labelEn: WebRTC UDP Port
+      labelZh: WebRTC UDP 端口
+      label:
+        en: WebRTC UDP Port
+        zh: WebRTC UDP 端口
+        zh-Hant: WebRTC UDP 連接埠
+        ja: WebRTC UDP ポート
+        ko: WebRTC UDP 포트
+        ru: UDP-порт WebRTC
+        ms: Port UDP WebRTC
+        pt-br: Porta UDP WebRTC
+      required: true
+      rule: paramPort
+      type: number
+    - default: livekit_api_key
+      edit: true
+      envKey: LIVEKIT_API_KEY
+      labelEn: API Key
+      labelZh: API 密钥
+      label:
+        en: API Key
+        zh: API 密钥
+        zh-Hant: API 金鑰
+        ja: API キー
+        ko: API 키
+        ru: Ключ API
+        ms: Kunci API
+        pt-br: Chave de API
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: LIVEKIT_API_SECRET
+      labelEn: API Secret
+      labelZh: API 密钥密码
+      label:
+        en: API Secret
+        zh: API 密钥密码
+        zh-Hant: API 金鑰密碼
+        ja: API シークレット
+        ko: API 비밀 값
+        ru: Секрет API
+        ms: Rahsia API
+        pt-br: Segredo da API
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: LIVEKIT_USE_EXTERNAL_IP
+      labelEn: Discover Public IP
+      labelZh: 发现公网 IP
+      label:
+        en: Discover Public IP
+        zh: 发现公网 IP
+        zh-Hant: 探索公網 IP
+        ja: パブリック IP を検出
+        ko: 공용 IP 검색
+        ru: Определять публичный IP
+        ms: Kesan IP awam
+        pt-br: Detectar IP publico
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
