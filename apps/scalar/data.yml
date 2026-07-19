@@ -1,0 +1,30 @@
+name: Scalar API Reference
+tags:
+- Tool
+title: Scalar API 参考文档
+description: Scalar API 参考文档
+additionalProperties:
+  key: scalar
+  name: Scalar API Reference
+  tags:
+  - Tool
+  shortDescZh: Scalar API 参考文档
+  shortDescEn: Scalar API reference
+  description:
+    en: Serve interactive API reference documentation from OpenAPI specifications.
+    zh: 从 OpenAPI 规范提供交互式 API 参考文档。
+    zh-Hant: 從 OpenAPI 規範提供互動式 API 參考文件。
+    ja: OpenAPI 仕様から対話型 API リファレンスを提供します。
+    ko: OpenAPI 사양에서 대화형 API 참조 문서를 제공합니다.
+    ru: Предоставляет интерактивную справку API из спецификаций OpenAPI.
+    ms: Menyediakan rujukan API interaktif daripada spesifikasi OpenAPI.
+    pt-br: Disponibiliza referencia interativa de API a partir de especificacoes OpenAPI.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://scalar.com
+  github: https://github.com/scalar/scalar
+  document: https://scalar.com/products/api-references/integrations/docker
+  architectures:
+  - amd64
+  - arm64

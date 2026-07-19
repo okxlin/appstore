@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Scalar API Reference Example
+  version: 1.0.0
+  description: A small OpenAPI document included to verify a fresh Scalar installation.
+paths:
+  /health:
+    get:
+      operationId: getHealth
+      summary: Read the example health response
+      responses:
+        '200':
+          description: The example service is healthy.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - status
+                properties:
+                  status:
+                    type: string
+                    example: ok

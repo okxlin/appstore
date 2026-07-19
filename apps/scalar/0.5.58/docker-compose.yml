@@ -1,0 +1,17 @@
+services:
+  scalar:
+    image: "scalarapi/api-reference:0.5.58"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - ./data/docs:/docs:ro
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
