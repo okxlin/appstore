@@ -1,0 +1,52 @@
+additionalProperties:
+  formFields:
+    - default: 9200
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: HTTPS API Port
+      labelZh: HTTPS API 端口
+      label:
+        en: HTTPS API Port
+        zh: HTTPS API 端口
+        zh-Hant: HTTPS API 連接埠
+        ja: HTTPS API ポート
+        ko: HTTPS API 포트
+        ru: HTTPS API-порт
+        ms: Port API HTTPS
+        pt-br: Porta da API HTTPS
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: OPENSEARCH_INITIAL_ADMIN_PASSWORD
+      labelEn: Initial Admin Password
+      labelZh: 初始管理员密码
+      label:
+        en: Initial Admin Password
+        zh: 初始管理员密码
+        zh-Hant: 初始管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Начальный пароль администратора
+        ms: Kata Laluan Pentadbir Awal
+        pt-br: Senha Inicial do Administrador
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "-Xms512m -Xmx512m"
+      edit: true
+      envKey: OPENSEARCH_JAVA_OPTS
+      labelEn: JVM Options
+      labelZh: JVM 参数
+      label:
+        en: JVM Options
+        zh: JVM 参数
+        zh-Hant: JVM 參數
+        ja: JVM オプション
+        ko: JVM 옵션
+        ru: Параметры JVM
+        ms: Pilihan JVM
+        pt-br: Opcoes da JVM
+      required: true
+      type: text

@@ -1,0 +1,35 @@
+services:
+  opensearch:
+    image: "opensearchproject/opensearch:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:9200"
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - cluster.name=opensearch-cluster
+      - node.name=opensearch-node
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
+      - OPENSEARCH_JAVA_OPTS=${OPENSEARCH_JAVA_OPTS}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+volumes:
+  opensearch-data:
+    name: ${CONTAINER_NAME}-data
+
+networks:
+  1panel-network:
+    external: true

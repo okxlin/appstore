@@ -1,0 +1,32 @@
+name: OpenSearch
+tags:
+- Database
+title: 开源分布式搜索与分析引擎
+description: 开源分布式搜索与分析引擎
+additionalProperties:
+  key: opensearch
+  name: OpenSearch
+  tags:
+  - Database
+  shortDescZh: 开源分布式搜索与分析引擎
+  shortDescEn: Open-source distributed search and analytics engine
+  description:
+    en: Open-source distributed search and analytics engine.
+    zh: 开源分布式搜索与分析引擎。
+    zh-Hant: 開源分散式搜尋與分析引擎。
+    ja: オープンソースの分散検索および分析エンジン。
+    ko: 오픈 소스 분산 검색 및 분석 엔진입니다.
+    ru: Открытый распределенный движок поиска и аналитики.
+    ms: Enjin carian dan analitik teragih sumber terbuka.
+    pt-br: Mecanismo de busca e analise distribuida de codigo aberto.
+  type: middleware
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  memoryRequired: 4096
+  website: https://opensearch.org/
+  github: https://github.com/opensearch-project/OpenSearch
+  document: https://docs.opensearch.org/3.7/install-and-configure/install-opensearch/docker/
+  architectures:
+  - amd64
+  - arm64
