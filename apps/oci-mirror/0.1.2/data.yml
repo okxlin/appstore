@@ -5,7 +5,15 @@ additionalProperties:
       envKey: OCI_MIRROR_ROLE
       labelEn: Node Role
       labelZh: 节点角色
-      label: {en: Node Role, zh: 节点角色, zh-Hant: 節點角色, ja: ノードロール, ko: 노드 역할, ru: Роль узла, ms: Peranan Nod, pt-br: Função do Nó}
+      label:
+        en: Node Role
+        zh: 节点角色
+        zh-Hant: 節點角色
+        ja: ノードロール
+        ko: 노드 역할
+        ru: Роль узла
+        ms: Peranan Nod
+        pt-br: Função do Nó
       required: true
       type: select
       values:
@@ -13,12 +21,41 @@ additionalProperties:
           value: gateway
         - label: Egress
           value: egress
+    - default: mtls
+      edit: true
+      envKey: OCI_MIRROR_TRANSPORT_MODE
+      labelEn: Inter-node Transport Mode
+      labelZh: 节点间传输模式
+      label:
+        en: Inter-node Transport Mode
+        zh: 节点间传输模式
+        zh-Hant: 節點間傳輸模式
+        ja: ノード間トランスポートモード
+        ko: 노드 간 전송 모드
+        ru: Режим транспорта между узлами
+        ms: Mod Pengangkutan Antara Nod
+        pt-br: Modo de Transporte entre Nós
+      required: true
+      type: select
+      values:
+        - label: mTLS
+          value: mtls
+        - label: Private Network
+          value: private
     - default: 8443
       edit: true
       envKey: PANEL_APP_PORT_HTTP
       labelEn: Node Service Port
       labelZh: 节点服务端口
-      label: {en: Node Service Port, zh: 节点服务端口, zh-Hant: 節點服務連接埠, ja: ノードサービスポート, ko: 노드 서비스 포트, ru: Сервисный порт узла, ms: Port Perkhidmatan Nod, pt-br: Porta de Serviço do Nó}
+      label:
+        en: Node Service Port
+        zh: 节点服务端口
+        zh-Hant: 節點服務連接埠
+        ja: ノードサービスポート
+        ko: 노드 서비스 포트
+        ru: Сервисный порт узла
+        ms: Port Perkhidmatan Nod
+        pt-br: Porta de Serviço do Nó
       required: true
       rule: paramPort
       type: number
@@ -27,7 +64,15 @@ additionalProperties:
       envKey: OCI_MIRROR_GATEWAY_MANAGEMENT_IP
       labelEn: Gateway Management Listen IP
       labelZh: Gateway 管理监听 IP
-      label: {en: Gateway Management Listen IP, zh: Gateway 管理监听 IP, zh-Hant: Gateway 管理監聽 IP, ja: Gateway 管理リッスン IP, ko: Gateway 관리 수신 IP, ru: IP управления Gateway, ms: IP Dengar Pengurusan Gateway, pt-br: IP de Escuta de Gerenciamento do Gateway}
+      label:
+        en: Gateway Management Listen IP
+        zh: Gateway 管理监听 IP
+        zh-Hant: Gateway 管理監聽 IP
+        ja: Gateway 管理リッスン IP
+        ko: Gateway 관리 수신 IP
+        ru: IP управления Gateway
+        ms: IP Dengar Pengurusan Gateway
+        pt-br: IP de Escuta de Gerenciamento do Gateway
       required: false
       type: text
     - default: 19090
@@ -35,7 +80,15 @@ additionalProperties:
       envKey: PANEL_APP_PORT_MANAGEMENT
       labelEn: Gateway Management Port
       labelZh: Gateway 管理端口
-      label: {en: Gateway Management Port, zh: Gateway 管理端口, zh-Hant: Gateway 管理連接埠, ja: Gateway 管理ポート, ko: Gateway 관리 포트, ru: Порт управления Gateway, ms: Port Pengurusan Gateway, pt-br: Porta de Gerenciamento do Gateway}
+      label:
+        en: Gateway Management Port
+        zh: Gateway 管理端口
+        zh-Hant: Gateway 管理連接埠
+        ja: Gateway 管理ポート
+        ko: Gateway 관리 포트
+        ru: Порт управления Gateway
+        ms: Port Pengurusan Gateway
+        pt-br: Porta de Gerenciamento do Gateway
       required: false
       rule: paramPort
       type: number
@@ -44,132 +97,308 @@ additionalProperties:
       envKey: OCI_MIRROR_PUBLIC_HOST
       labelEn: Registry Host
       labelZh: Registry 主机名
-      label: {en: Registry Host, zh: Registry 主机名, zh-Hant: Registry 主機名稱, ja: Registry ホスト, ko: Registry 호스트, ru: Хост Registry, ms: Hos Registry, pt-br: Host do Registry}
+      label:
+        en: Registry Host
+        zh: Registry 主机名
+        zh-Hant: Registry 主機名稱
+        ja: Registry ホスト
+        ko: Registry 호스트
+        ru: Хост Registry
+        ms: Hos Registry
+        pt-br: Host do Registry
       required: false
       type: text
-    - default: ''
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_IP_ALLOWLIST
       labelEn: Additional Allowed Client IP/CIDR
       labelZh: 额外允许的客户端 IP/CIDR
-      label: {en: Additional Allowed Client IP/CIDR, zh: 额外允许的客户端 IP/CIDR, zh-Hant: 額外允許的用戶端 IP/CIDR, ja: 追加許可クライアント IP/CIDR, ko: 추가 허용 클라이언트 IP/CIDR, ru: Дополнительный разрешенный IP/CIDR, ms: IP/CIDR Klien Tambahan, pt-br: IP/CIDR Adicional Permitido}
+      label:
+        en: Additional Allowed Client IP/CIDR
+        zh: 额外允许的客户端 IP/CIDR
+        zh-Hant: 額外允許的用戶端 IP/CIDR
+        ja: 追加許可クライアント IP/CIDR
+        ko: 추가 허용 클라이언트 IP/CIDR
+        ru: Дополнительный разрешенный IP/CIDR
+        ms: IP/CIDR Klien Tambahan
+        pt-br: IP/CIDR Adicional Permitido
       required: false
       type: text
-    - default: ''
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_CHINA_CIDR_FILE
-      labelEn: Mainland China CIDR File
+      labelEn: Mainland China CIDR File (Optional)
       labelZh: 中国大陆 CIDR 文件
-      label: {en: Mainland China CIDR File, zh: 中国大陆 CIDR 文件, zh-Hant: 中國大陸 CIDR 檔案, ja: 中国本土 CIDR ファイル, ko: 중국 본토 CIDR 파일, ru: Файл CIDR материкового Китая, ms: Fail CIDR Tanah Besar China, pt-br: Arquivo CIDR da China Continental}
+      label:
+        en: Mainland China CIDR File (Optional)
+        zh: 中国大陆 CIDR 文件（可选，留空自动生成）
+        zh-Hant: 中國大陸 CIDR 檔案（可選，留空自動產生）
+        ja: 中国本土 CIDR ファイル（任意、空欄で自動生成）
+        ko: '중국 본토 CIDR 파일 (선택 사항, 비워 두면 자동 생성)'
+        ru: 'Файл CIDR материкового Китая (необязательно, пусто — создать автоматически)'
+        ms: 'Fail CIDR Tanah Besar China (Pilihan, kosong untuk jana automatik)'
+        pt-br: 'Arquivo CIDR da China Continental (Opcional, vazio para gerar automaticamente)'
       required: false
       type: text
-    - default: APNIC delegated statistics
+    - default: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
       edit: true
       envKey: OCI_MIRROR_CHINA_CIDR_SOURCE
       labelEn: CIDR Dataset Source
       labelZh: CIDR 数据集来源
-      label: {en: CIDR Dataset Source, zh: CIDR 数据集来源, zh-Hant: CIDR 資料集來源, ja: CIDR データセット出典, ko: CIDR 데이터셋 출처, ru: Источник набора CIDR, ms: Sumber Set Data CIDR, pt-br: Fonte do Conjunto CIDR}
+      label:
+        en: CIDR Dataset Source
+        zh: CIDR 数据集来源
+        zh-Hant: CIDR 資料集來源
+        ja: CIDR データセット出典
+        ko: CIDR 데이터셋 출처
+        ru: Источник набора CIDR
+        ms: Sumber Set Data CIDR
+        pt-br: Fonte do Conjunto CIDR
       required: false
       type: text
-    - default: ''
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_CHINA_CIDR_UPDATED
       labelEn: CIDR Dataset Date
       labelZh: CIDR 数据集日期
-      label: {en: CIDR Dataset Date, zh: CIDR 数据集日期, zh-Hant: CIDR 資料集日期, ja: CIDR データセット日付, ko: CIDR 데이터셋 날짜, ru: Дата набора CIDR, ms: Tarikh Set Data CIDR, pt-br: Data do Conjunto CIDR}
+      label:
+        en: CIDR Dataset Date
+        zh: CIDR 数据集日期
+        zh-Hant: CIDR 資料集日期
+        ja: CIDR データセット日付
+        ko: CIDR 데이터셋 날짜
+        ru: Дата набора CIDR
+        ms: Tarikh Set Data CIDR
+        pt-br: Data do Conjunto CIDR
       required: false
       type: text
-    - default: 'false'
+    - default: "true"
       edit: true
       envKey: OCI_MIRROR_TLS_ENABLED
       labelEn: Enable Gateway TLS
       labelZh: 启用 Gateway TLS
-      label: {en: Enable Gateway TLS, zh: 启用 Gateway TLS, zh-Hant: 啟用 Gateway TLS, ja: Gateway TLS を有効化, ko: Gateway TLS 활성화, ru: Включить TLS Gateway, ms: Dayakan TLS Gateway, pt-br: Ativar TLS do Gateway}
+      label:
+        en: Enable Gateway TLS
+        zh: 启用 Gateway TLS
+        zh-Hant: 啟用 Gateway TLS
+        ja: Gateway TLS を有効化
+        ko: Gateway TLS 활성화
+        ru: Включить TLS Gateway
+        ms: Dayakan TLS Gateway
+        pt-br: Ativar TLS do Gateway
       required: false
       type: select
       values:
-        - label: 'true'
-          value: 'true'
-        - label: 'false'
-          value: 'false'
-    - default: ''
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_TLS_DIR
       labelEn: Gateway TLS Source Directory
       labelZh: Gateway TLS 源目录
-      label: {en: Gateway TLS Source Directory, zh: Gateway TLS 源目录, zh-Hant: Gateway TLS 來源目錄, ja: Gateway TLS ソースディレクトリ, ko: Gateway TLS 원본 디렉터리, ru: Каталог исходных TLS-файлов Gateway, ms: Direktori Sumber TLS Gateway, pt-br: Diretório de Origem TLS do Gateway}
+      label:
+        en: Gateway TLS Source Directory
+        zh: Gateway TLS 源目录
+        zh-Hant: Gateway TLS 來源目錄
+        ja: Gateway TLS ソースディレクトリ
+        ko: Gateway TLS 원본 디렉터리
+        ru: Каталог исходных TLS-файлов Gateway
+        ms: Direktori Sumber TLS Gateway
+        pt-br: Diretório de Origem TLS do Gateway
       required: false
       type: text
     - default: ./data
       edit: true
-      envKey: APP_DATA_DIR
+      envKey: OCI_MIRROR_DATA_DIR
       labelEn: Gateway Cache and State Directory
       labelZh: Gateway 缓存与状态目录
-      label: {en: Gateway Cache and State Directory, zh: Gateway 缓存与状态目录, zh-Hant: Gateway 快取與狀態目錄, ja: Gateway キャッシュと状態ディレクトリ, ko: Gateway 캐시 및 상태 디렉터리, ru: Каталог кеша и состояния Gateway, ms: Direktori Cache dan Keadaan Gateway, pt-br: Diretório de Cache e Estado do Gateway}
+      label:
+        en: Gateway Cache and State Directory
+        zh: Gateway 缓存与状态目录
+        zh-Hant: Gateway 快取與狀態目錄
+        ja: Gateway キャッシュと状態ディレクトリ
+        ko: Gateway 캐시 및 상태 디렉터리
+        ru: Каталог кеша и состояния Gateway
+        ms: Direktori Cache dan Keadaan Gateway
+        pt-br: Diretório de Cache e Estado do Gateway
       required: true
       type: text
-    - default: ''
+    - default: ./pki
+      edit: true
+      envKey: OCI_MIRROR_PKI_DIR
+      labelEn: mTLS PKI Directory
+      labelZh: mTLS PKI 目录
+      label:
+        en: mTLS PKI Directory
+        zh: mTLS PKI 目录
+        zh-Hant: mTLS PKI 目錄
+        ja: mTLS PKI ディレクトリ
+        ko: mTLS PKI 디렉터리
+        ru: Каталог PKI mTLS
+        ms: Direktori PKI mTLS
+        pt-br: Diretório PKI mTLS
+      required: true
+      type: text
+    - default: gateway-1
+      edit: true
+      envKey: OCI_MIRROR_MTLS_GATEWAY_ID
+      labelEn: Gateway mTLS Identity ID
+      labelZh: Gateway mTLS 身份 ID
+      label:
+        en: Gateway mTLS Identity ID
+        zh: Gateway mTLS 身份 ID
+        zh-Hant: Gateway mTLS 身分 ID
+        ja: Gateway mTLS ID
+        ko: Gateway mTLS ID
+        ru: Идентификатор mTLS Gateway
+        ms: ID Identiti mTLS Gateway
+        pt-br: ID de Identidade mTLS do Gateway
+      required: true
+      type: text
+    - default: egress-a=egress.example.com
+      edit: true
+      envKey: OCI_MIRROR_MTLS_EGRESS_CERTS
+      labelEn: Egress mTLS Certificate Inventory
+      labelZh: Egress mTLS 证书清单
+      label:
+        en: Egress mTLS Certificate Inventory
+        zh: Egress mTLS 证书清单
+        zh-Hant: Egress mTLS 憑證清單
+        ja: Egress mTLS 証明書インベントリ
+        ko: Egress mTLS 인증서 목록
+        ru: Список сертификатов mTLS Egress
+        ms: Inventori Sijil mTLS Egress
+        pt-br: Inventário de Certificados mTLS do Egress
+      required: true
+      type: text
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_MANAGEMENT_TOKEN
       labelEn: Gateway Management Token
       labelZh: Gateway 管理 Token
-      label: {en: Gateway Management Token, zh: Gateway 管理 Token, zh-Hant: Gateway 管理 Token, ja: Gateway 管理 Token, ko: Gateway 관리 Token, ru: Токен управления Gateway, ms: Token Pengurusan Gateway, pt-br: Token de Gerenciamento do Gateway}
-      required: false
+      label:
+        en: Gateway Management Token
+        zh: Gateway 管理 Token
+        zh-Hant: Gateway 管理 Token
+        ja: Gateway 管理 Token
+        ko: Gateway 관리 Token
+        ru: Токен управления Gateway
+        ms: Token Pengurusan Gateway
+        pt-br: Token de Gerenciamento do Gateway
+      required: true
       type: password
     - default: egress-a
       edit: true
       envKey: OCI_MIRROR_EGRESS_NODE_ID
       labelEn: Egress Node ID
       labelZh: Egress 节点 ID
-      label: {en: Egress Node ID, zh: Egress 节点 ID, zh-Hant: Egress 節點 ID, ja: Egress ノード ID, ko: Egress 노드 ID, ru: ID узла Egress, ms: ID Nod Egress, pt-br: ID do Nó Egress}
+      label:
+        en: Egress Node ID
+        zh: Egress 节点 ID
+        zh-Hant: Egress 節點 ID
+        ja: Egress ノード ID
+        ko: Egress 노드 ID
+        ru: ID узла Egress
+        ms: ID Nod Egress
+        pt-br: ID do Nó Egress
       required: true
       type: text
-    - default: http://10.66.0.2:8443
+    - default: https://egress.example.com:8443
       edit: true
       envKey: OCI_MIRROR_EGRESS_PROXY_URL
-      labelEn: Egress Private Proxy URL
-      labelZh: Egress 私网代理 URL
-      label: {en: Egress Private Proxy URL, zh: Egress 私网代理 URL, zh-Hant: Egress 私網代理 URL, ja: Egress プライベートプロキシ URL, ko: Egress 사설 프록시 URL, ru: Приватный URL прокси Egress, ms: URL Proksi Peribadi Egress, pt-br: URL Privada do Proxy Egress}
+      labelEn: Egress Proxy URL (HTTPS for mTLS)
+      labelZh: Egress 代理 URL（mTLS 使用 HTTPS）
+      label:
+        en: Egress Proxy URL (HTTPS for mTLS)
+        zh: Egress 代理 URL（mTLS 使用 HTTPS）
+        zh-Hant: Egress 代理 URL（mTLS 使用 HTTPS）
+        ja: Egress プロキシ URL（mTLS は HTTPS）
+        ko: Egress 프록시 URL (mTLS는 HTTPS)
+        ru: URL прокси Egress (HTTPS для mTLS)
+        ms: URL Proksi Egress (HTTPS untuk mTLS)
+        pt-br: URL do Proxy Egress (HTTPS para mTLS)
       required: false
       type: text
-    - default: ''
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_SOURCE_IPV4
       labelEn: Egress Public Source IPv4
       labelZh: Egress 公网源 IPv4
-      label: {en: Egress Public Source IPv4, zh: Egress 公网源 IPv4, zh-Hant: Egress 公網來源 IPv4, ja: Egress グローバル送信元 IPv4, ko: Egress 공인 원본 IPv4, ru: Публичный исходящий IPv4 Egress, ms: IPv4 Sumber Awam Egress, pt-br: IPv4 Público de Origem do Egress}
+      label:
+        en: Egress Public Source IPv4
+        zh: Egress 公网源 IPv4
+        zh-Hant: Egress 公網來源 IPv4
+        ja: Egress グローバル送信元 IPv4
+        ko: Egress 공인 원본 IPv4
+        ru: Публичный исходящий IPv4 Egress
+        ms: IPv4 Sumber Awam Egress
+        pt-br: IPv4 Público de Origem do Egress
       required: false
       type: text
-    - default: 10.66.0.2
+    - default: 0.0.0.0
       edit: true
       envKey: OCI_MIRROR_EGRESS_LISTEN_IP
-      labelEn: Egress Private Listen IP
-      labelZh: Egress 私网监听 IP
-      label: {en: Egress Private Listen IP, zh: Egress 私网监听 IP, zh-Hant: Egress 私網監聽 IP, ja: Egress プライベートリッスン IP, ko: Egress 사설 수신 IP, ru: Приватный IP прослушивания Egress, ms: IP Dengar Peribadi Egress, pt-br: IP Privado de Escuta do Egress}
+      labelEn: Egress Listen IP
+      labelZh: Egress 监听 IP
+      label:
+        en: Egress Listen IP
+        zh: Egress 监听 IP
+        zh-Hant: Egress 監聽 IP
+        ja: Egress リッスン IP
+        ko: Egress 수신 IP
+        ru: IP прослушивания Egress
+        ms: IP Dengar Egress
+        pt-br: IP de Escuta do Egress
       required: false
       type: text
-    - default: http://10.66.0.1:19090
+    - default: https://mirror.example.com:8443
       edit: true
       envKey: OCI_MIRROR_GATEWAY_MANAGEMENT_URL
-      labelEn: Gateway Private Management URL
-      labelZh: Gateway 私网管理 URL
-      label: {en: Gateway Private Management URL, zh: Gateway 私网管理 URL, zh-Hant: Gateway 私網管理 URL, ja: Gateway プライベート管理 URL, ko: Gateway 사설 관리 URL, ru: Приватный URL управления Gateway, ms: URL Pengurusan Peribadi Gateway, pt-br: URL Privada de Gerenciamento do Gateway}
+      labelEn: Gateway Snapshot URL (HTTPS for mTLS)
+      labelZh: Gateway 快照 URL（mTLS 使用 HTTPS）
+      label:
+        en: Gateway Snapshot URL (HTTPS for mTLS)
+        zh: Gateway 快照 URL（mTLS 使用 HTTPS）
+        zh-Hant: Gateway 快照 URL（mTLS 使用 HTTPS）
+        ja: Gateway スナップショット URL（mTLS は HTTPS）
+        ko: Gateway 스냅샷 URL (mTLS는 HTTPS)
+        ru: URL снимка Gateway (HTTPS для mTLS)
+        ms: URL Syot Gateway (HTTPS untuk mTLS)
+        pt-br: URL do Snapshot do Gateway (HTTPS para mTLS)
       required: false
       type: text
-    - default: 10.66.0.1/32
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_GATEWAY_ALLOWED_PEER
-      labelEn: Allowed Gateway IP/CIDR
-      labelZh: 允许的 Gateway IP/CIDR
-      label: {en: Allowed Gateway IP/CIDR, zh: 允许的 Gateway IP/CIDR, zh-Hant: 允許的 Gateway IP/CIDR, ja: 許可する Gateway IP/CIDR, ko: 허용된 Gateway IP/CIDR, ru: Разрешённый IP/CIDR Gateway, ms: IP/CIDR Gateway Dibenarkan, pt-br: IP/CIDR Permitido do Gateway}
+      labelEn: Optional Gateway IP/CIDR Filter
+      labelZh: 可选的 Gateway IP/CIDR 限制
+      label:
+        en: Optional Gateway IP/CIDR Filter
+        zh: 可选的 Gateway IP/CIDR 限制
+        zh-Hant: 可選的 Gateway IP/CIDR 限制
+        ja: Gateway IP/CIDR フィルター（任意）
+        ko: 선택적 Gateway IP/CIDR 필터
+        ru: Необязательный фильтр IP/CIDR Gateway
+        ms: Penapis IP/CIDR Gateway Pilihan
+        pt-br: Filtro de IP/CIDR do Gateway Opcional
       required: false
       type: text
-    - default: ''
+    - default: ""
       edit: true
       envKey: OCI_MIRROR_EGRESS_TOKEN
       labelEn: Egress Node Token
       labelZh: Egress 节点 Token
-      label: {en: Egress Node Token, zh: Egress 节点 Token, zh-Hant: Egress 節點 Token, ja: Egress ノード Token, ko: Egress 노드 Token, ru: Токен узла Egress, ms: Token Nod Egress, pt-br: Token do Nó Egress}
+      label:
+        en: Egress Node Token
+        zh: Egress 节点 Token
+        zh-Hant: Egress 節點 Token
+        ja: Egress ノード Token
+        ko: Egress 노드 Token
+        ru: Токен узла Egress
+        ms: Token Nod Egress
+        pt-br: Token do Nó Egress
       required: true
       type: password
     - default: Asia/Shanghai
@@ -177,6 +406,14 @@ additionalProperties:
       envKey: TIME_ZONE
       labelEn: Time Zone
       labelZh: 时区
-      label: {en: Time Zone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Masa, pt-br: Fuso Horário}
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Masa
+        pt-br: Fuso Horário
       required: true
       type: text

@@ -83,6 +83,94 @@ valid_private_http_origin() {
   fi
 }
 
+valid_https_origin() {
+  local value=$1
+  local host
+  local port
+  if [[ "$value" =~ ^https://\[([0-9A-Fa-f:]+)\]:([0-9]+)$ ]]; then
+    host=${BASH_REMATCH[1]}
+    port=${BASH_REMATCH[2]}
+    [[ "$host" == *:* ]] || return 1
+  elif [[ "$value" =~ ^https://([^/:]+):([0-9]+)$ ]]; then
+    host=${BASH_REMATCH[1]}
+    port=${BASH_REMATCH[2]}
+    if ! valid_ipv4 "$host"; then
+      valid_dns_name "$host" || return 1
+    fi
+  else
+    return 1
+  fi
+  valid_port "$port"
+}
+
+origin_host() {
+  local value=$1
+  if [[ "$value" =~ ^https?://\[([0-9A-Fa-f:]+)\]:[0-9]+$ ]]; then
+    printf '%s' "${BASH_REMATCH[1]}"
+  elif [[ "$value" =~ ^https?://([^/:]+):[0-9]+$ ]]; then
+    printf '%s' "${BASH_REMATCH[1]}"
+  else
+    return 1
+  fi
+}
+
+certificate_host_for_node() {
+  local wanted=$1
+  local spec node host
+  IFS=',' read -r -a specs <<< "$2"
+  for spec in "${specs[@]}"; do
+    node=${spec%%=*}
+    host=${spec#*=}
+    if [[ "$node" == "$wanted" ]]; then
+      printf '%s' "$host"
+      return 0
+    fi
+  done
+  return 1
+}
+
+stage_runtime_pki() {
+  local source_dir=$1
+  local required_prefix=$2
+  local trust_mode=$3
+  local candidate
+  rm -rf -- "$ROOT_DIR/config/pki"
+  install -d -m 0750 "$ROOT_DIR/config/pki"
+  install -m 0644 "$source_dir/nodes-ca.crt" "$ROOT_DIR/config/pki/nodes-ca.crt"
+  if [[ "$trust_mode" == node ]]; then
+    install -m 0644 "$source_dir/trust-bundle.crt" "$ROOT_DIR/config/pki/trust-bundle.crt"
+  else
+    for candidate in \
+      /etc/ssl/certs/ca-certificates.crt \
+      /etc/pki/tls/certs/ca-bundle.crt \
+      /etc/ssl/ca-bundle.pem; do
+      if [[ -s "$candidate" ]]; then
+        install -m 0644 "$candidate" "$ROOT_DIR/config/pki/trust-bundle.crt"
+        break
+      fi
+    done
+    [[ -s "$ROOT_DIR/config/pki/trust-bundle.crt" ]] || die 'a system CA bundle is required for HTTPS upstream connections'
+  fi
+  install -m 0600 "$source_dir/$required_prefix.key" "$ROOT_DIR/config/pki/$required_prefix.key"
+  install -m 0644 "$source_dir/$required_prefix.crt" "$ROOT_DIR/config/pki/$required_prefix.crt"
+}
+
+stage_system_trust_bundle() {
+  local candidate
+  rm -rf -- "$ROOT_DIR/config/pki"
+  for candidate in \
+    /etc/ssl/certs/ca-certificates.crt \
+    /etc/pki/tls/certs/ca-bundle.crt \
+    /etc/ssl/ca-bundle.pem; do
+    if [[ -s "$candidate" ]]; then
+      install -d -m 0750 "$ROOT_DIR/config/pki"
+      install -m 0644 "$candidate" "$ROOT_DIR/config/pki/trust-bundle.crt"
+      return
+    fi
+  done
+  die 'a system CA bundle is required for HTTPS upstream connections'
+}
+
 safe_data_dir() {
   case "$1" in
     / | /bin | /boot | /dev | /etc | /home | /lib | /lib64 | /media | /mnt | /opt | /proc | /root | /run | /sbin | /srv | /sys | /tmp | /usr | /var | /var/lib | /workspace)
@@ -95,21 +183,35 @@ CIDR_SOURCE_PATTERN='^[A-Za-z0-9._:/ -]+$'
 
 ROLE="$(read_env OCI_MIRROR_ROLE)"
 ROLE="${ROLE,,}"
+TRANSPORT_MODE="$(read_env OCI_MIRROR_TRANSPORT_MODE)"
+TRANSPORT_MODE="${TRANSPORT_MODE,,}"
 SERVICE_PORT="$(read_env PANEL_APP_PORT_HTTP)"
 NODE_ID="$(read_env OCI_MIRROR_EGRESS_NODE_ID)"
 EGRESS_TOKEN="$(read_env OCI_MIRROR_EGRESS_TOKEN)"
-DATA_DIR_VALUE="$(read_env APP_DATA_DIR)"
-[[ -n "$DATA_DIR_VALUE" ]] || die 'APP_DATA_DIR must not be empty'
+DATA_DIR_VALUE="$(read_env OCI_MIRROR_DATA_DIR)"
+PKI_DIR_VALUE="$(read_env OCI_MIRROR_PKI_DIR)"
+PKI_DIR_VALUE="${PKI_DIR_VALUE:-./pki}"
+GATEWAY_ID="$(read_env OCI_MIRROR_MTLS_GATEWAY_ID)"
+GATEWAY_ID="${GATEWAY_ID:-gateway-1}"
+EGRESS_CERTS="$(read_env OCI_MIRROR_MTLS_EGRESS_CERTS)"
+EGRESS_CERTS="${EGRESS_CERTS:-egress-a=egress.example.com}"
+[[ -n "$DATA_DIR_VALUE" ]] || die 'OCI_MIRROR_DATA_DIR must not be empty'
 DATA_DIR="$(absolute_path "$DATA_DIR_VALUE")"
+PKI_DIR="$(absolute_path "$PKI_DIR_VALUE")"
 
 [[ "$ROLE" == gateway || "$ROLE" == egress ]] || die 'OCI_MIRROR_ROLE must be gateway or egress'
+[[ "$TRANSPORT_MODE" == private || "$TRANSPORT_MODE" == mtls ]] || die 'OCI_MIRROR_TRANSPORT_MODE must be private or mtls'
 valid_port "$SERVICE_PORT" || die 'PANEL_APP_PORT_HTTP must be a valid port for the selected node role'
 valid_node_id "$NODE_ID" || die 'OCI_MIRROR_EGRESS_NODE_ID must match ^[a-z][a-z0-9_-]{0,31}$'
 valid_bearer_token "$EGRESS_TOKEN" || die 'OCI_MIRROR_EGRESS_TOKEN must be a 32 to 4096 byte bearer token'
-safe_data_dir "$DATA_DIR" || die 'APP_DATA_DIR is too broad'
-[[ "$DATA_DIR" != "$ROOT_DIR" && "$DATA_DIR" != "$ROOT_DIR/config" && "$DATA_DIR" != "$ROOT_DIR/config/"* ]] || die 'APP_DATA_DIR must not point to the application or its config directory'
+safe_data_dir "$DATA_DIR" || die 'OCI_MIRROR_DATA_DIR is too broad'
+safe_data_dir "$PKI_DIR" || die 'OCI_MIRROR_PKI_DIR is too broad'
+[[ "$DATA_DIR" != "$ROOT_DIR" && "$DATA_DIR" != "$ROOT_DIR/config" && "$DATA_DIR" != "$ROOT_DIR/config/"* ]] || die 'OCI_MIRROR_DATA_DIR must not point to the application or its config directory'
+[[ "$PKI_DIR" != "$ROOT_DIR" && "$PKI_DIR" != "$ROOT_DIR/config" && "$PKI_DIR" != "$ROOT_DIR/config/"* ]] || die 'OCI_MIRROR_PKI_DIR must not point to the application or its config directory'
+valid_node_id "$GATEWAY_ID" || die 'OCI_MIRROR_MTLS_GATEWAY_ID must match ^[a-z][a-z0-9_-]{0,31}$'
 
 install -d -m 0750 "$ROOT_DIR/config" "$ROOT_DIR/config/tls" "$DATA_DIR"
+stage_system_trust_bundle
 
 if [[ "$ROLE" == gateway ]]; then
   MANAGEMENT_IP="$(read_env OCI_MIRROR_GATEWAY_MANAGEMENT_IP)"
@@ -122,7 +224,7 @@ if [[ "$ROLE" == gateway ]]; then
   CIDR_SOURCE="$(read_env OCI_MIRROR_CHINA_CIDR_SOURCE)"
   CIDR_UPDATED="$(read_env OCI_MIRROR_CHINA_CIDR_UPDATED)"
   TLS_ENABLED="$(read_env OCI_MIRROR_TLS_ENABLED)"
-  TLS_ENABLED="${TLS_ENABLED:-false}"
+  TLS_ENABLED="${TLS_ENABLED:-true}"
   TLS_ENABLED="${TLS_ENABLED,,}"
   TLS_DIR="$(read_env OCI_MIRROR_TLS_DIR)"
   MANAGEMENT_TOKEN="$(read_env OCI_MIRROR_MANAGEMENT_TOKEN)"
@@ -135,18 +237,52 @@ if [[ "$ROLE" == gateway ]]; then
       die 'OCI_MIRROR_PUBLIC_HOST must be a DNS hostname or IPv4 address'
     fi
   fi
-  valid_private_http_origin "$EGRESS_PROXY_URL" || die 'OCI_MIRROR_EGRESS_PROXY_URL must be an HTTP origin on a private IPv4 address or private DNS name with an explicit port'
+  if [[ "$TRANSPORT_MODE" == private ]]; then
+    valid_private_http_origin "$EGRESS_PROXY_URL" || die 'OCI_MIRROR_EGRESS_PROXY_URL must be an HTTP origin on a private IPv4 address or private DNS name with an explicit port'
+  else
+    valid_https_origin "$EGRESS_PROXY_URL" || die 'OCI_MIRROR_EGRESS_PROXY_URL must be an HTTPS origin with an explicit port for mTLS'
+  fi
   valid_ipv4 "$SOURCE_IPV4" || die 'OCI_MIRROR_SOURCE_IPV4 must be an IPv4 address assigned to the Egress host'
   valid_allowlist "$IP_ALLOWLIST" || die 'OCI_MIRROR_IP_ALLOWLIST must contain one IP address or CIDR'
-  [[ -n "$CIDR_FILE" ]] || die 'OCI_MIRROR_CHINA_CIDR_FILE is required for the Gateway role'
-  CIDR_FILE="$(absolute_path "$CIDR_FILE")"
-  [[ -f "$CIDR_FILE" ]] || die "CIDR file does not exist: $CIDR_FILE"
-  [[ -n "$CIDR_SOURCE" && -n "$CIDR_UPDATED" ]] || die 'CIDR source and update date are required for the Gateway role'
+  CIDR_FILE="$(absolute_path "${CIDR_FILE:-$DATA_DIR/china-mainland.cidr}")"
+  bash "$ROOT_DIR/scripts/generate-cidr.sh" --target "$CIDR_FILE"
+  [[ -s "$CIDR_FILE" ]] || die "CIDR file does not exist or is empty: $CIDR_FILE"
+  CIDR_SOURCE="${CIDR_SOURCE:-https://ftp.apnic.net/stats/apnic/delegated-apnic-latest}"
+  CIDR_UPDATED="${CIDR_UPDATED:-$(date -u -r "$CIDR_FILE" +%F)}"
   [[ "$CIDR_SOURCE" =~ $CIDR_SOURCE_PATTERN ]] || die 'OCI_MIRROR_CHINA_CIDR_SOURCE contains invalid characters'
   [[ "$CIDR_UPDATED" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || die 'OCI_MIRROR_CHINA_CIDR_UPDATED must use YYYY-MM-DD'
   [[ "$TLS_ENABLED" == true || "$TLS_ENABLED" == false ]] || die 'OCI_MIRROR_TLS_ENABLED must be true or false'
+  [[ "$TRANSPORT_MODE" != mtls || "$TLS_ENABLED" == true ]] || die 'mTLS transport requires Gateway TLS to be enabled'
   valid_bearer_token "$MANAGEMENT_TOKEN" || die 'OCI_MIRROR_MANAGEMENT_TOKEN must be a 32 to 4096 byte bearer token for the Gateway role'
   [[ "$MANAGEMENT_TOKEN" != "$EGRESS_TOKEN" ]] || die 'management and Egress tokens must be different'
+
+  if [[ "$TRANSPORT_MODE" == mtls ]]; then
+    GATEWAY_TRANSPORT_JSON=$(cat <<EOF
+{"mode":"mtls","ca_file":"/etc/oci-mirror/pki/nodes-ca.crt","cert_file":"/etc/oci-mirror/pki/gateway-client.crt","key_file":"/etc/oci-mirror/pki/gateway-client.key","peer_spiffe_id":"spiffe://oci-mirror/egress/${NODE_ID}"}
+EOF
+)
+    export OCI_MIRROR_PKI_DIR="$PKI_DIR"
+    export OCI_MIRROR_MTLS_GATEWAY_ID="$GATEWAY_ID"
+    export OCI_MIRROR_PUBLIC_HOST="$PUBLIC_HOST"
+    export OCI_MIRROR_MTLS_EGRESS_CERTS="$EGRESS_CERTS"
+    if [[ -n "$TLS_DIR" ]]; then
+      TLS_DIR="$(absolute_path "$TLS_DIR")"
+      if [[ "$TLS_DIR" == "$PKI_DIR/gateway" ]]; then
+        export OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER=true
+      else
+        export OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER=false
+      fi
+    else
+      TLS_DIR="$PKI_DIR/gateway"
+      export OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER=true
+    fi
+    bash "$ROOT_DIR/scripts/bootstrap-pki.sh"
+    cert_host="$(certificate_host_for_node "$NODE_ID" "$EGRESS_CERTS")" || die 'OCI_MIRROR_MTLS_EGRESS_CERTS must include the selected Egress node ID'
+    [[ "${cert_host,,}" == "$(origin_host "$EGRESS_PROXY_URL")" ]] || die 'selected Egress certificate SAN host must match the Egress proxy URL host'
+    stage_runtime_pki "$PKI_DIR/gateway" gateway-client system
+  else
+    GATEWAY_TRANSPORT_JSON='{"mode":"private"}'
+  fi
 
   ALLOWLIST_JSON='[]'
   if [[ -n "$IP_ALLOWLIST" ]]; then
@@ -166,7 +302,9 @@ if [[ "$ROLE" == gateway ]]; then
     rm -f -- "$ROOT_DIR/config/tls/server.crt" "$ROOT_DIR/config/tls/server.key"
   fi
 
-  install -m 0644 "$CIDR_FILE" "$ROOT_DIR/config/china-mainland.cidr"
+  if [[ "$(realpath -m -- "$CIDR_FILE")" != "$(realpath -m -- "$ROOT_DIR/config/china-mainland.cidr")" ]]; then
+    install -m 0644 "$CIDR_FILE" "$ROOT_DIR/config/china-mainland.cidr"
+  fi
   chown 65532:65532 "$DATA_DIR"
 
   cat > "$ROOT_DIR/config/runtime.json" <<EOF
@@ -189,7 +327,7 @@ ${TLS_JSON}
       "proxy_url": "${EGRESS_PROXY_URL}",
       "token_env": "OCI_MIRROR_EGRESS_TOKEN",
       "weight": 1,
-      "transport": {"mode": "private"},
+      "transport": ${GATEWAY_TRANSPORT_JSON},
       "pools": [{
         "id": "dockerhub",
         "policy": "sticky",
@@ -249,20 +387,44 @@ else
   GATEWAY_MANAGEMENT_URL="$(read_env OCI_MIRROR_GATEWAY_MANAGEMENT_URL)"
   GATEWAY_ALLOWED_PEER="$(read_env OCI_MIRROR_GATEWAY_ALLOWED_PEER)"
 
-  valid_private_or_loopback_ipv4 "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be a private or loopback IPv4 address assigned to this host'
-  valid_private_http_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTP origin on a private IPv4 address or private DNS name with an explicit port'
-  valid_ipv4_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4 address or CIDR'
+  if [[ "$TRANSPORT_MODE" == private ]]; then
+    valid_private_or_loopback_ipv4 "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be a private or loopback IPv4 address assigned to this host'
+    valid_private_http_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTP origin on a private IPv4 address or private DNS name with an explicit port'
+    valid_ipv4_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4 address or CIDR'
+  else
+    valid_ipv4 "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be an IPv4 listen address for mTLS'
+    valid_https_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTPS origin with an explicit port for mTLS'
+    if [[ -n "$GATEWAY_ALLOWED_PEER" ]]; then
+      valid_ipv4_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4 address or CIDR when provided'
+    fi
+    NODE_DIR="$PKI_DIR/egress/$NODE_ID"
+    [[ -s "$NODE_DIR/nodes-ca.crt" && -s "$NODE_DIR/trust-bundle.crt" && -s "$NODE_DIR/egress-node.key" && -s "$NODE_DIR/egress-node.crt" ]] || die 'Egress mTLS bundle is missing; generate it on Gateway and copy the selected egress directory to OCI_MIRROR_PKI_DIR'
+    stage_runtime_pki "$NODE_DIR" egress-node node
+  fi
 
   rm -f -- "$ROOT_DIR/config/china-mainland.cidr" "$ROOT_DIR/config/tls/server.crt" "$ROOT_DIR/config/tls/server.key"
+  if [[ "$TRANSPORT_MODE" == mtls ]]; then
+    GATEWAY_TRANSPORT_JSON=$(cat <<EOF
+{"mode":"mtls","ca_file":"/etc/oci-mirror/pki/nodes-ca.crt","cert_file":"/etc/oci-mirror/pki/egress-node.crt","key_file":"/etc/oci-mirror/pki/egress-node.key","peer_spiffe_id":"spiffe://oci-mirror/gateway/${GATEWAY_ID}"}
+EOF
+)
+    ALLOWED_PEERS_JSON='[]'
+    if [[ -n "$GATEWAY_ALLOWED_PEER" ]]; then
+      ALLOWED_PEERS_JSON="[\"$GATEWAY_ALLOWED_PEER\"]"
+    fi
+  else
+    GATEWAY_TRANSPORT_JSON='{"mode":"private"}'
+    ALLOWED_PEERS_JSON="[\"$GATEWAY_ALLOWED_PEER\"]"
+  fi
   cat > "$ROOT_DIR/config/runtime.json" <<EOF
 {
   "egress": {
     "node_id": "${NODE_ID}",
     "listen": "${EGRESS_LISTEN_IP}:${SERVICE_PORT}",
     "token_env": "OCI_MIRROR_EGRESS_TOKEN",
-    "allowed_peers": ["${GATEWAY_ALLOWED_PEER}"],
+    "allowed_peers": ${ALLOWED_PEERS_JSON},
     "snapshot_url": "${GATEWAY_MANAGEMENT_URL}/v1/egress/nodes/${NODE_ID}/snapshot",
-    "transport": {"mode": "private"},
+    "transport": ${GATEWAY_TRANSPORT_JSON},
     "snapshot_refresh_seconds": 60,
     "max_concurrent_tunnels": 128,
     "tunnel_idle_seconds": 120
