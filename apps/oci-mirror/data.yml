@@ -23,7 +23,7 @@ additionalProperties:
     pt-br: Espelho OCI somente leitura com pools de saída, política de acesso e cache persistente.
   type: tool
   crossVersionUpdate: true
-  limit: 1
+  limit: 0
   recommend: 0
   website: https://github.com/okxlin/oci-mirror
   github: https://github.com/okxlin/oci-mirror

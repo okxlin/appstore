@@ -31,9 +31,10 @@ services:
       - TZ=${TIME_ZONE}
       - OCI_MIRROR_MANAGEMENT_TOKEN=${OCI_MIRROR_MANAGEMENT_TOKEN}
       - OCI_MIRROR_EGRESS_TOKEN=${OCI_MIRROR_EGRESS_TOKEN}
+      - SSL_CERT_FILE=/etc/oci-mirror/pki/trust-bundle.crt
     volumes:
       - ./config:/etc/oci-mirror:ro
-      - ${APP_DATA_DIR}:/var/lib/oci-mirror
+      - ${OCI_MIRROR_DATA_DIR}:/var/lib/oci-mirror
     labels:
       createdBy: Apps
       oci-mirror.role: ${OCI_MIRROR_ROLE}
