@@ -1,7 +1,7 @@
 services:
-  gateway:
+  oci-mirror:
     image: "moelin/oci-mirror:0.1.2"
-    container_name: ${CONTAINER_NAME}-gateway
+    container_name: ${CONTAINER_NAME}
     network_mode: host
     init: true
     working_dir: /tmp
@@ -24,58 +24,18 @@ services:
         max-size: 10m
         max-file: '3'
     command:
-      - gateway
+      - ${OCI_MIRROR_ROLE}
       - --config
-      - /etc/oci-mirror/gateway.json
+      - /etc/oci-mirror/runtime.json
     environment:
       - TZ=${TIME_ZONE}
       - OCI_MIRROR_MANAGEMENT_TOKEN=${OCI_MIRROR_MANAGEMENT_TOKEN}
       - OCI_MIRROR_EGRESS_TOKEN=${OCI_MIRROR_EGRESS_TOKEN}
     volumes:
-      - ./config/gateway.json:/etc/oci-mirror/gateway.json:ro
-      - ./config/china-mainland.cidr:/etc/oci-mirror/china-mainland.cidr:ro
-      - ./config/tls:/etc/oci-mirror/tls:ro
+      - ./config:/etc/oci-mirror:ro
       - ${APP_DATA_DIR}:/var/lib/oci-mirror
     labels:
       createdBy: Apps
-      oci-mirror.public-port: ${PANEL_APP_PORT_HTTP}
+      oci-mirror.role: ${OCI_MIRROR_ROLE}
+      oci-mirror.service-port: ${PANEL_APP_PORT_HTTP}
       oci-mirror.management-port: ${PANEL_APP_PORT_MANAGEMENT}
-
-  egress:
-    image: "moelin/oci-mirror:0.1.2"
-    container_name: ${CONTAINER_NAME}-egress
-    network_mode: host
-    init: true
-    working_dir: /tmp
-    read_only: true
-    restart: unless-stopped
-    stop_grace_period: 30s
-    cap_drop:
-      - ALL
-    security_opt:
-      - no-new-privileges:true
-    ulimits:
-      nofile:
-        soft: 65536
-        hard: 65536
-    tmpfs:
-      - /tmp:size=16m,mode=1777
-    logging:
-      driver: json-file
-      options:
-        max-size: 10m
-        max-file: '3'
-    command:
-      - egress
-      - --config
-      - /etc/oci-mirror/egress.json
-    environment:
-      - TZ=${TIME_ZONE}
-      - OCI_MIRROR_EGRESS_TOKEN=${OCI_MIRROR_EGRESS_TOKEN}
-    volumes:
-      - ./config/egress.json:/etc/oci-mirror/egress.json:ro
-    depends_on:
-      - gateway
-    labels:
-      createdBy: Apps
-      oci-mirror.egress-port: ${PANEL_APP_PORT_EGRESS}
