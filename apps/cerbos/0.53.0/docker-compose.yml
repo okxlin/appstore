@@ -1,6 +1,6 @@
 services:
   cerbos:
-    image: "cerbos/cerbos:0.53.0"
+    image: "cerbos/cerbos:0.54.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
