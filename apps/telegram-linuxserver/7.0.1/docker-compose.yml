@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   telegram:
-    image: "linuxserver/telegram:7.0.1"
+    image: "linuxserver/telegram:7.0.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
