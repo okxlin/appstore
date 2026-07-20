@@ -1,0 +1,27 @@
+services:
+  kutt:
+    image: "kutt/kutt:v3.2.6"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    environment:
+      - PORT=3000
+      - DEFAULT_DOMAIN=${DEFAULT_DOMAIN}
+      - JWT_SECRET=${JWT_SECRET}
+      - DB_CLIENT=better-sqlite3
+      - DB_FILENAME=/var/lib/kutt/data.sqlite
+      - TRUST_PROXY=${TRUST_PROXY}
+      - DISALLOW_REGISTRATION=${DISALLOW_REGISTRATION}
+      - DISALLOW_ANONYMOUS_LINKS=${DISALLOW_ANONYMOUS_LINKS}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    volumes:
+      - "${APP_DATA_DIR}:/var/lib/kutt"
+      - "${APP_CUSTOM_DIR}:/kutt/custom"
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,32 @@
+name: Kutt
+tags:
+  - Website
+title: Kutt 自托管短链接服务
+description: Kutt 自托管短链接服务
+additionalProperties:
+  key: kutt
+  name: Kutt
+  tags:
+    - Website
+  type: website
+  website: https://kutt.it/
+  document: https://github.com/thedevs-network/kutt/blob/main/README.md
+  github: https://github.com/thedevs-network/kutt
+  shortDescZh: Kutt 自托管短链接服务
+  shortDescEn: A self-hosted URL shortener
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 128
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: A self-hosted URL shortener for creating and managing short links
+    zh: 自托管短链接服务，用于创建和管理短链接
+    zh-Hant: 自行託管的短網址服務，用於建立和管理短網址
+    ja: 短縮 URL を作成して管理できるセルフホスト型サービス
+    ko: 단축 링크를 만들고 관리하는 자체 호스팅 URL 단축 서비스
+    ru: Самостоятельно размещаемый сервис для создания и управления короткими ссылками
+    ms: Perkhidmatan pemendek URL dihos sendiri untuk mencipta dan mengurus pautan pendek
+    pt-br: Encurtador de URL auto-hospedado para criar e gerenciar links curtos

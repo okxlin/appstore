@@ -1,0 +1,148 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 連接埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: DEFAULT_DOMAIN
+      labelEn: Public domain
+      labelZh: 公开访问域名
+      label:
+        en: Public domain
+        zh: 公开访问域名
+        zh-Hant: 公開存取網域
+        ja: 公開ドメイン
+        ko: 공개 도메인
+        ru: Публичный домен
+        ms: Domain awam
+        pt-br: Dominio publico
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT secret
+      labelZh: JWT 密钥
+      label:
+        en: JWT secret
+        zh: JWT 密钥
+        zh-Hant: JWT 密鑰
+        ja: JWT シークレット
+        ko: JWT 비밀 키
+        ru: Секрет JWT
+        ms: Rahsia JWT
+        pt-br: Segredo JWT
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data directory
+      labelZh: 数据目录
+      label:
+        en: Data directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: ./data/custom
+      edit: true
+      envKey: APP_CUSTOM_DIR
+      labelEn: Customizations directory
+      labelZh: 自定义目录
+      label:
+        en: Customizations directory
+        zh: 自定义目录
+        zh-Hant: 自訂目錄
+        ja: カスタマイズディレクトリ
+        ko: 사용자 지정 디렉터리
+        ru: Каталог настроек
+        ms: Direktori penyesuaian
+        pt-br: Diretorio de personalizacoes
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: TRUST_PROXY
+      labelEn: Trust reverse proxy
+      labelZh: 信任反向代理
+      label:
+        en: Trust reverse proxy
+        zh: 信任反向代理
+        zh-Hant: 信任反向代理
+        ja: リバースプロキシを信頼
+        ko: 리버스 프록시 신뢰
+        ru: Доверять обратному прокси
+        ms: Percayai proksi songsang
+        pt-br: Confiar no proxy reverso
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: DISALLOW_REGISTRATION
+      labelEn: Disable registration
+      labelZh: 禁用注册
+      label:
+        en: Disable registration
+        zh: 禁用注册
+        zh-Hant: 停用註冊
+        ja: 登録を無効にする
+        ko: 회원 가입 비활성화
+        ru: Отключить регистрацию
+        ms: Lumpuhkan pendaftaran
+        pt-br: Desativar cadastro
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: DISALLOW_ANONYMOUS_LINKS
+      labelEn: Disable anonymous links
+      labelZh: 禁用匿名短链接
+      label:
+        en: Disable anonymous links
+        zh: 禁用匿名短链接
+        zh-Hant: 停用匿名短網址
+        ja: 匿名リンクを無効にする
+        ko: 익명 링크 비활성화
+        ru: Отключить анонимные ссылки
+        ms: Lumpuhkan pautan tanpa nama
+        pt-br: Desativar links anonimos
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
