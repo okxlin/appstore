@@ -33,7 +33,129 @@ valid_port() {
 }
 
 valid_ipv4() {
-  awk -F. 'NF != 4 { exit 1 } { for (i = 1; i <= 4; i++) if ($i !~ /^[0-9]+$/ || $i < 0 || $i > 255) exit 1 }' <<<"$1"
+  local value=$1
+  local octet
+  local -a octets
+  IFS=. read -r -a octets <<< "$value"
+  (( ${#octets[@]} == 4 )) || return 1
+  for octet in "${octets[@]}"; do
+    [[ "$octet" =~ ^(0|[1-9][0-9]{0,2})$ ]] || return 1
+    ((10#$octet <= 255)) || return 1
+  done
+}
+
+valid_ipv6_hextet_sequence() {
+  local sequence=$1
+  local hextet
+  local -a hextets
+
+  [[ -z "$sequence" ]] && return 0
+  [[ "$sequence" != :* && "$sequence" != *: && "$sequence" != *::* ]] || return 1
+  IFS=: read -r -a hextets <<< "$sequence"
+  for hextet in "${hextets[@]}"; do
+    [[ "$hextet" =~ ^[0-9A-Fa-f]{1,4}$ ]] || return 1
+  done
+}
+
+expand_ipv6_hextets() {
+  local value=$1
+  local left right explicit zero_count i hextet
+  local -a left_hextets=() right_hextets=() full_hextets=()
+
+  IPV6_EXPANDED_HEXTETS=()
+  if [[ "$value" == *::* ]]; then
+    [[ "${value#*::}" != *::* ]] || return 1
+    left=${value%%::*}
+    right=${value#*::}
+    valid_ipv6_hextet_sequence "$left" || return 1
+    valid_ipv6_hextet_sequence "$right" || return 1
+    if [[ -n "$left" ]]; then
+      IFS=: read -r -a left_hextets <<< "$left"
+    fi
+    if [[ -n "$right" ]]; then
+      IFS=: read -r -a right_hextets <<< "$right"
+    fi
+    explicit=$(( ${#left_hextets[@]} + ${#right_hextets[@]} ))
+    ((explicit < 8)) || return 1
+    zero_count=$((8 - explicit))
+    full_hextets=("${left_hextets[@]}")
+    for ((i = 0; i < zero_count; i++)); do
+      full_hextets+=(0)
+    done
+    full_hextets+=("${right_hextets[@]}")
+  else
+    [[ "$value" != :* && "$value" != *: ]] || return 1
+    valid_ipv6_hextet_sequence "$value" || return 1
+    IFS=: read -r -a full_hextets <<< "$value"
+    (( ${#full_hextets[@]} == 8 )) || return 1
+  fi
+
+  for hextet in "${full_hextets[@]}"; do
+    IPV6_EXPANDED_HEXTETS+=("${hextet,,}")
+  done
+}
+
+valid_ipv6() {
+  local value=$1
+  local hextet
+
+  [[ "$value" =~ ^[0-9A-Fa-f:]+$ ]] || return 1
+  expand_ipv6_hextets "$value" || return 1
+  if [[ "${IPV6_EXPANDED_HEXTETS[0]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[1]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[2]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[3]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[4]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[5]}" == ffff ]]; then
+    return 1
+  fi
+  for hextet in "${IPV6_EXPANDED_HEXTETS[@]}"; do
+    [[ "$hextet" =~ ^[0-9a-f]{1,4}$ ]] || return 1
+  done
+}
+
+json_string_array() {
+  local value
+  local separator=''
+  local result='['
+  for value in "$@"; do
+    result+="${separator}\"${value}\""
+    separator=','
+  done
+  printf '%s]' "$result"
+}
+
+parse_egress_source_addresses() {
+  local input=$1
+  local entry address
+  local -a entries=() ipv4_sources=() ipv6_sources=()
+  local -A seen=()
+
+  [[ -n "$input" ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must contain at least one IPv4 or IPv6 address'
+  [[ "$input" != *$'\n'* && "$input" != *$'\r'* ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must be a comma-separated single-line list'
+  [[ "$input" != *, ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must not contain an empty trailing item'
+  IFS=',' read -r -a entries <<< "$input"
+  (( ${#entries[@]} >= 1 && ${#entries[@]} <= 256 )) || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must contain 1 to 256 addresses'
+
+  for entry in "${entries[@]}"; do
+    address="${entry#"${entry%%[![:space:]]*}"}"
+    address="${address%"${address##*[![:space:]]}"}"
+    [[ -n "$address" ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must not contain empty items'
+    if valid_ipv4 "$address"; then
+      ipv4_sources+=("$address")
+    elif valid_ipv6 "$address"; then
+      ipv6_sources+=("$address")
+    else
+      die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains an invalid IPv4/IPv6 address: $address"
+    fi
+    if [[ -n ${seen["$address"]+x} ]]; then
+      die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains duplicate address: $address"
+    fi
+    seen["$address"]=1
+  done
+
+  EGRESS_IPV4_SOURCES_JSON="$(json_string_array "${ipv4_sources[@]}")"
+  EGRESS_IPV6_SOURCES_JSON="$(json_string_array "${ipv6_sources[@]}")"
 }
 
 valid_private_or_loopback_ipv4() {
@@ -203,7 +325,7 @@ PKI_DIR="$(absolute_path "$PKI_DIR_VALUE")"
 [[ "$TRANSPORT_MODE" == private || "$TRANSPORT_MODE" == mtls ]] || die 'OCI_MIRROR_TRANSPORT_MODE must be private or mtls'
 valid_port "$SERVICE_PORT" || die 'PANEL_APP_PORT_HTTP must be a valid port for the selected node role'
 valid_node_id "$NODE_ID" || die 'OCI_MIRROR_EGRESS_NODE_ID must match ^[a-z][a-z0-9_-]{0,31}$'
-valid_bearer_token "$EGRESS_TOKEN" || die 'OCI_MIRROR_EGRESS_TOKEN must be a 32 to 4096 byte bearer token'
+valid_bearer_token "$EGRESS_TOKEN" || die 'OCI_MIRROR_EGRESS_TOKEN must be 32 to 4096 bytes using A-Z, a-z, 0-9, . _ ~ + / -, with optional trailing = padding'
 safe_data_dir "$DATA_DIR" || die 'OCI_MIRROR_DATA_DIR is too broad'
 safe_data_dir "$PKI_DIR" || die 'OCI_MIRROR_PKI_DIR is too broad'
 [[ "$DATA_DIR" != "$ROOT_DIR" && "$DATA_DIR" != "$ROOT_DIR/config" && "$DATA_DIR" != "$ROOT_DIR/config/"* ]] || die 'OCI_MIRROR_DATA_DIR must not point to the application or its config directory'
@@ -218,7 +340,7 @@ if [[ "$ROLE" == gateway ]]; then
   MANAGEMENT_PORT="$(read_env PANEL_APP_PORT_MANAGEMENT)"
   PUBLIC_HOST="$(read_env OCI_MIRROR_PUBLIC_HOST)"
   EGRESS_PROXY_URL="$(read_env OCI_MIRROR_EGRESS_PROXY_URL)"
-  SOURCE_IPV4="$(read_env OCI_MIRROR_SOURCE_IPV4)"
+  SOURCE_ADDRESSES="$(read_env OCI_MIRROR_EGRESS_SOURCE_ADDRESSES)"
   IP_ALLOWLIST="$(read_env OCI_MIRROR_IP_ALLOWLIST)"
   CIDR_FILE="$(read_env OCI_MIRROR_CHINA_CIDR_FILE)"
   CIDR_SOURCE="$(read_env OCI_MIRROR_CHINA_CIDR_SOURCE)"
@@ -242,7 +364,7 @@ if [[ "$ROLE" == gateway ]]; then
   else
     valid_https_origin "$EGRESS_PROXY_URL" || die 'OCI_MIRROR_EGRESS_PROXY_URL must be an HTTPS origin with an explicit port for mTLS'
   fi
-  valid_ipv4 "$SOURCE_IPV4" || die 'OCI_MIRROR_SOURCE_IPV4 must be an IPv4 address assigned to the Egress host'
+  parse_egress_source_addresses "$SOURCE_ADDRESSES"
   valid_allowlist "$IP_ALLOWLIST" || die 'OCI_MIRROR_IP_ALLOWLIST must contain one IP address or CIDR'
   CIDR_FILE="$(absolute_path "${CIDR_FILE:-$DATA_DIR/china-mainland.cidr}")"
   bash "$ROOT_DIR/scripts/generate-cidr.sh" --target "$CIDR_FILE"
@@ -253,7 +375,7 @@ if [[ "$ROLE" == gateway ]]; then
   [[ "$CIDR_UPDATED" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || die 'OCI_MIRROR_CHINA_CIDR_UPDATED must use YYYY-MM-DD'
   [[ "$TLS_ENABLED" == true || "$TLS_ENABLED" == false ]] || die 'OCI_MIRROR_TLS_ENABLED must be true or false'
   [[ "$TRANSPORT_MODE" != mtls || "$TLS_ENABLED" == true ]] || die 'mTLS transport requires Gateway TLS to be enabled'
-  valid_bearer_token "$MANAGEMENT_TOKEN" || die 'OCI_MIRROR_MANAGEMENT_TOKEN must be a 32 to 4096 byte bearer token for the Gateway role'
+  valid_bearer_token "$MANAGEMENT_TOKEN" || die 'OCI_MIRROR_MANAGEMENT_TOKEN must be 32 to 4096 bytes using A-Z, a-z, 0-9, . _ ~ + / -, with optional trailing = padding for the Gateway role'
   [[ "$MANAGEMENT_TOKEN" != "$EGRESS_TOKEN" ]] || die 'management and Egress tokens must be different'
 
   if [[ "$TRANSPORT_MODE" == mtls ]]; then
@@ -331,8 +453,8 @@ ${TLS_JSON}
       "pools": [{
         "id": "dockerhub",
         "policy": "sticky",
-        "ipv4_sources": ["${SOURCE_IPV4}"],
-        "ipv6_sources": [],
+        "ipv4_sources": ${EGRESS_IPV4_SOURCES_JSON},
+        "ipv6_sources": ${EGRESS_IPV6_SOURCES_JSON},
         "cooldown_base_seconds": 60,
         "cooldown_max_seconds": 3600
       }]

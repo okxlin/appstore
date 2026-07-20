@@ -30,7 +30,90 @@ if [[ ! "$LEAF_DAYS" =~ ^[0-9]+$ ]] || ((10#$LEAF_DAYS < 30 || 10#$LEAF_DAYS > 8
 fi
 
 valid_ipv4() {
-  awk -F. 'NF != 4 { exit 1 } { for (i = 1; i <= 4; i++) if ($i !~ /^[0-9]+$/ || $i < 0 || $i > 255) exit 1 }' <<<"$1"
+  local value=$1
+  local octet
+  local -a octets
+  IFS=. read -r -a octets <<< "$value"
+  (( ${#octets[@]} == 4 )) || return 1
+  for octet in "${octets[@]}"; do
+    [[ "$octet" =~ ^(0|[1-9][0-9]{0,2})$ ]] || return 1
+    ((10#$octet <= 255)) || return 1
+  done
+}
+
+valid_ipv6_hextet_sequence() {
+  local sequence=$1
+  local hextet
+  local -a hextets
+
+  [[ -z "$sequence" ]] && return 0
+  [[ "$sequence" != :* && "$sequence" != *: && "$sequence" != *::* ]] || return 1
+  IFS=: read -r -a hextets <<< "$sequence"
+  for hextet in "${hextets[@]}"; do
+    [[ "$hextet" =~ ^[0-9A-Fa-f]{1,4}$ ]] || return 1
+  done
+}
+
+expand_ipv6_hextets() {
+  local value=$1
+  local left right explicit zero_count i hextet
+  local -a left_hextets=() right_hextets=() full_hextets=()
+
+  IPV6_EXPANDED_HEXTETS=()
+  if [[ "$value" == *::* ]]; then
+    [[ "${value#*::}" != *::* ]] || return 1
+    left=${value%%::*}
+    right=${value#*::}
+    valid_ipv6_hextet_sequence "$left" || return 1
+    valid_ipv6_hextet_sequence "$right" || return 1
+    if [[ -n "$left" ]]; then
+      IFS=: read -r -a left_hextets <<< "$left"
+    fi
+    if [[ -n "$right" ]]; then
+      IFS=: read -r -a right_hextets <<< "$right"
+    fi
+    explicit=$(( ${#left_hextets[@]} + ${#right_hextets[@]} ))
+    ((explicit < 8)) || return 1
+    zero_count=$((8 - explicit))
+    full_hextets=("${left_hextets[@]}")
+    for ((i = 0; i < zero_count; i++)); do
+      full_hextets+=(0)
+    done
+    full_hextets+=("${right_hextets[@]}")
+  else
+    [[ "$value" != :* && "$value" != *: ]] || return 1
+    valid_ipv6_hextet_sequence "$value" || return 1
+    IFS=: read -r -a full_hextets <<< "$value"
+    (( ${#full_hextets[@]} == 8 )) || return 1
+  fi
+
+  for hextet in "${full_hextets[@]}"; do
+    IPV6_EXPANDED_HEXTETS+=("${hextet,,}")
+  done
+}
+
+canonical_ipv6() {
+  local value=$1
+  local hextet normalized
+  local separator=''
+  local result=''
+
+  [[ "$value" =~ ^[0-9A-Fa-f:]+$ ]] || return 1
+  expand_ipv6_hextets "$value" || return 1
+  if [[ "${IPV6_EXPANDED_HEXTETS[0]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[1]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[2]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[3]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[4]}" =~ ^0+$ &&
+        "${IPV6_EXPANDED_HEXTETS[5]}" == ffff ]]; then
+    return 1
+  fi
+  for hextet in "${IPV6_EXPANDED_HEXTETS[@]}"; do
+    printf -v normalized '%X' "$((16#$hextet))"
+    result+="${separator}${normalized}"
+    separator=:
+  done
+  printf '%s' "$result"
 }
 
 san_kind() {
@@ -39,7 +122,7 @@ san_kind() {
     printf 'IP'
     return
   fi
-  if [[ "$value" =~ ^[0-9A-Fa-f:]+$ && "$value" == *:* ]]; then
+  if canonical_ipv6 "$value" >/dev/null; then
     printf 'IP'
     return
   fi
@@ -49,7 +132,11 @@ san_kind() {
 
 san_display() {
   if [[ "$1" == IP ]]; then
-    printf 'IP Address:%s' "$2"
+    if valid_ipv4 "$2"; then
+      printf 'IP Address:%s' "$2"
+    else
+      printf 'IP Address:%s' "$(canonical_ipv6 "$2")"
+    fi
   else
     printf 'DNS:%s' "$2"
   fi

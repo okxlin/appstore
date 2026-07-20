@@ -140,38 +140,6 @@ additionalProperties:
         pt-br: 'Arquivo CIDR da China Continental (Opcional, vazio para gerar automaticamente)'
       required: false
       type: text
-    - default: https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
-      edit: true
-      envKey: OCI_MIRROR_CHINA_CIDR_SOURCE
-      labelEn: CIDR Dataset Source
-      labelZh: CIDR 数据集来源
-      label:
-        en: CIDR Dataset Source
-        zh: CIDR 数据集来源
-        zh-Hant: CIDR 資料集來源
-        ja: CIDR データセット出典
-        ko: CIDR 데이터셋 출처
-        ru: Источник набора CIDR
-        ms: Sumber Set Data CIDR
-        pt-br: Fonte do Conjunto CIDR
-      required: false
-      type: text
-    - default: ""
-      edit: true
-      envKey: OCI_MIRROR_CHINA_CIDR_UPDATED
-      labelEn: CIDR Dataset Date
-      labelZh: CIDR 数据集日期
-      label:
-        en: CIDR Dataset Date
-        zh: CIDR 数据集日期
-        zh-Hant: CIDR 資料集日期
-        ja: CIDR データセット日付
-        ko: CIDR 데이터셋 날짜
-        ru: Дата набора CIDR
-        ms: Tarikh Set Data CIDR
-        pt-br: Data do Conjunto CIDR
-      required: false
-      type: text
     - default: "true"
       edit: true
       envKey: OCI_MIRROR_TLS_ENABLED
@@ -287,6 +255,15 @@ additionalProperties:
         ru: Токен управления Gateway
         ms: Token Pengurusan Gateway
         pt-br: Token de Gerenciamento do Gateway
+      description:
+        en: Use 32-4096 bytes containing only A-Z, a-z, 0-9, . _ ~ + / -, with optional = padding only at the end. It must differ from every Egress token.
+        zh: 使用 32-4096 字节，仅允许 A-Z、a-z、0-9、. _ ~ + / -，= 只能作为末尾填充。必须与所有 Egress Token 不同。
+        zh-Hant: 使用 32-4096 位元組，僅允許 A-Z、a-z、0-9、. _ ~ + / -，= 只能作為末尾填充。必須與所有 Egress Token 不同。
+        ja: 32～4096 バイトで、A-Z、a-z、0-9、. _ ~ + / - のみ使用できます。= は末尾のパディングにのみ使用でき、すべての Egress Token と異なる値が必要です。
+        ko: 32-4096바이트이며 A-Z, a-z, 0-9, . _ ~ + / -만 사용할 수 있습니다. =는 끝 패딩에만 사용할 수 있고 모든 Egress Token과 달라야 합니다.
+        ru: Длина 32-4096 байт; допустимы A-Z, a-z, 0-9, . _ ~ + / -, а = только в конце. Значение должно отличаться от всех токенов Egress.
+        ms: Gunakan 32-4096 bait yang hanya mengandungi A-Z, a-z, 0-9, . _ ~ + / -, dengan = hanya sebagai pelapik di hujung. Nilai mesti berbeza daripada semua token Egress.
+        pt-br: Use 32-4096 bytes contendo apenas A-Z, a-z, 0-9, . _ ~ + / -, com = somente como preenchimento no final. O valor deve ser diferente de todos os tokens Egress.
       required: true
       type: password
     - default: egress-a
@@ -323,19 +300,28 @@ additionalProperties:
       type: text
     - default: ""
       edit: true
-      envKey: OCI_MIRROR_SOURCE_IPV4
-      labelEn: Egress Public Source IPv4
-      labelZh: Egress 公网源 IPv4
+      envKey: OCI_MIRROR_EGRESS_SOURCE_ADDRESSES
+      labelEn: Egress Public Source Addresses
+      labelZh: Egress 公网源地址
       label:
-        en: Egress Public Source IPv4
-        zh: Egress 公网源 IPv4
-        zh-Hant: Egress 公網來源 IPv4
-        ja: Egress グローバル送信元 IPv4
-        ko: Egress 공인 원본 IPv4
-        ru: Публичный исходящий IPv4 Egress
-        ms: IPv4 Sumber Awam Egress
-        pt-br: IPv4 Público de Origem do Egress
-      required: false
+        en: Egress Public Source Addresses
+        zh: Egress 公网源地址
+        zh-Hant: Egress 公網來源位址
+        ja: Egress パブリック送信元アドレス
+        ko: Egress 공인 소스 주소
+        ru: Публичные исходящие адреса Egress
+        ms: Alamat Sumber Awam Egress
+        pt-br: Endereços Públicos de Origem do Egress
+      description:
+        en: Comma-separated concrete IPv4/IPv6 addresses assigned or routed to the Egress host; CIDR prefixes are not accepted. Up to 256 addresses are supported, and IPv6 rotation addresses must use distinct /64 networks.
+        zh: 填写已分配或路由到 Egress 主机的具体 IPv4/IPv6 地址，多个用逗号分隔，不接受 CIDR 前缀。最多 256 个，IPv6 轮换地址必须来自不同的 /64。
+        zh-Hant: 填寫已分配或路由到 Egress 主機的具體 IPv4/IPv6 位址，多個以逗號分隔，不接受 CIDR 前綴。最多 256 個，IPv6 輪換位址必須來自不同的 /64。
+        ja: Egress ホストに割り当てまたはルーティングされた具体的な IPv4/IPv6 アドレスをカンマ区切りで入力します。CIDR プレフィックスは使用できません。最大 256 個で、IPv6 ローテーション用アドレスは異なる /64 を使用する必要があります。
+        ko: Egress 호스트에 할당되었거나 라우팅된 구체적인 IPv4/IPv6 주소를 쉼표로 구분해 입력하세요. CIDR 접두사는 허용되지 않습니다. 최대 256개며 IPv6 순환 주소는 서로 다른 /64를 사용해야 합니다.
+        ru: Укажите через запятую конкретные IPv4/IPv6-адреса, назначенные или маршрутизируемые на узел Egress; CIDR-префиксы недопустимы. До 256 адресов; IPv6-адреса для ротации должны быть из разных /64.
+        ms: Masukkan alamat IPv4/IPv6 khusus yang diperuntukkan atau dihalakan ke hos Egress, dipisahkan dengan koma; awalan CIDR tidak diterima. Sehingga 256 alamat disokong dan alamat putaran IPv6 mesti menggunakan rangkaian /64 yang berbeza.
+        pt-br: Informe endereços IPv4/IPv6 concretos atribuídos ou roteados ao host Egress, separados por vírgulas; prefixos CIDR não são aceitos. São suportados até 256 endereços, e os endereços IPv6 de rotação devem usar redes /64 distintas.
+      required: true
       type: text
     - default: 0.0.0.0
       edit: true
@@ -399,6 +385,15 @@ additionalProperties:
         ru: Токен узла Egress
         ms: Token Nod Egress
         pt-br: Token do Nó Egress
+      description:
+        en: Use 32-4096 bytes containing only A-Z, a-z, 0-9, . _ ~ + / -, with optional = padding only at the end. It must differ from the management token and every other Egress token.
+        zh: 使用 32-4096 字节，仅允许 A-Z、a-z、0-9、. _ ~ + / -，= 只能作为末尾填充。必须与管理 Token 及其他 Egress Token 不同。
+        zh-Hant: 使用 32-4096 位元組，僅允許 A-Z、a-z、0-9、. _ ~ + / -，= 只能作為末尾填充。必須與管理 Token 及其他 Egress Token 不同。
+        ja: 32～4096 バイトで、A-Z、a-z、0-9、. _ ~ + / - のみ使用できます。= は末尾のパディングにのみ使用でき、管理 Token および他の Egress Token と異なる値が必要です。
+        ko: 32-4096바이트이며 A-Z, a-z, 0-9, . _ ~ + / -만 사용할 수 있습니다. =는 끝 패딩에만 사용할 수 있고 관리 Token 및 다른 Egress Token과 달라야 합니다.
+        ru: Длина 32-4096 байт; допустимы A-Z, a-z, 0-9, . _ ~ + / -, а = только в конце. Значение должно отличаться от токена управления и всех других токенов Egress.
+        ms: Gunakan 32-4096 bait yang hanya mengandungi A-Z, a-z, 0-9, . _ ~ + / -, dengan = hanya sebagai pelapik di hujung. Nilai mesti berbeza daripada token pengurusan dan semua token Egress lain.
+        pt-br: Use 32-4096 bytes contendo apenas A-Z, a-z, 0-9, . _ ~ + / -, com = somente como preenchimento no final. O valor deve ser diferente do token de gerenciamento e de todos os outros tokens Egress.
       required: true
       type: password
     - default: Asia/Shanghai
