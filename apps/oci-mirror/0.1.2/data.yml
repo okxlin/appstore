@@ -1,0 +1,132 @@
+additionalProperties:
+  formFields:
+    - default: 8443
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Public Gateway Port
+      labelZh: 公网 Gateway 端口
+      label: {en: Public Gateway Port, zh: 公网 Gateway 端口, zh-Hant: 公網 Gateway 連接埠, ja: 公開 Gateway ポート, ko: 공용 Gateway 포트, ru: Публичный порт Gateway, ms: Port Gateway Awam, pt-br: Porta Pública do Gateway}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 19090
+      edit: true
+      envKey: PANEL_APP_PORT_MANAGEMENT
+      labelEn: Local Management Port
+      labelZh: 本地管理端口
+      label: {en: Local Management Port, zh: 本地管理端口, zh-Hant: 本機管理連接埠, ja: ローカル管理ポート, ko: 로컬 관리 포트, ru: Локальный порт управления, ms: Port Pengurusan Setempat, pt-br: Porta de Gerenciamento Local}
+      required: true
+      rule: paramPort
+      type: number
+    - default: 19443
+      edit: true
+      envKey: PANEL_APP_PORT_EGRESS
+      labelEn: Local Egress Port
+      labelZh: 本地 Egress 端口
+      label: {en: Local Egress Port, zh: 本地 Egress 端口, zh-Hant: 本機 Egress 連接埠, ja: ローカル Egress ポート, ko: 로컬 Egress 포트, ru: Локальный порт Egress, ms: Port Egress Setempat, pt-br: Porta Egress Local}
+      required: true
+      rule: paramPort
+      type: number
+    - default: mirror.example.com
+      edit: true
+      envKey: OCI_MIRROR_PUBLIC_HOST
+      labelEn: Registry Host
+      labelZh: Registry 主机名
+      label: {en: Registry Host, zh: Registry 主机名, zh-Hant: Registry 主機名稱, ja: Registry ホスト, ko: Registry 호스트, ru: Хост Registry, ms: Hos Registry, pt-br: Host do Registry}
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_SOURCE_IPV4
+      labelEn: Egress Public IPv4
+      labelZh: 出口公网 IPv4
+      label: {en: Egress Public IPv4, zh: 出口公网 IPv4, zh-Hant: 出口公網 IPv4, ja: 送信元グローバル IPv4, ko: 송신 공인 IPv4, ru: Публичный исходящий IPv4, ms: IPv4 Awam Keluar, pt-br: IPv4 Público de Saída}
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_IP_ALLOWLIST
+      labelEn: Additional Allowed Client IP/CIDR
+      labelZh: 额外允许的客户端 IP/CIDR
+      label: {en: Additional Allowed Client IP/CIDR, zh: 额外允许的客户端 IP/CIDR, zh-Hant: 額外允許的用戶端 IP/CIDR, ja: 追加許可クライアント IP/CIDR, ko: 추가 허용 클라이언트 IP/CIDR, ru: Дополнительный разрешенный IP/CIDR, ms: IP/CIDR Klien Tambahan, pt-br: IP/CIDR Adicional Permitido}
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_CHINA_CIDR_FILE
+      labelEn: Mainland China CIDR File
+      labelZh: 中国大陆 CIDR 文件
+      label: {en: Mainland China CIDR File, zh: 中国大陆 CIDR 文件, zh-Hant: 中國大陸 CIDR 檔案, ja: 中国本土 CIDR ファイル, ko: 중국 본토 CIDR 파일, ru: Файл CIDR материкового Китая, ms: Fail CIDR Tanah Besar China, pt-br: Arquivo CIDR da China Continental}
+      required: true
+      type: text
+    - default: APNIC delegated statistics
+      edit: true
+      envKey: OCI_MIRROR_CHINA_CIDR_SOURCE
+      labelEn: CIDR Dataset Source
+      labelZh: CIDR 数据集来源
+      label: {en: CIDR Dataset Source, zh: CIDR 数据集来源, zh-Hant: CIDR 資料集來源, ja: CIDR データセット出典, ko: CIDR 데이터셋 출처, ru: Источник набора CIDR, ms: Sumber Set Data CIDR, pt-br: Fonte do Conjunto CIDR}
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_CHINA_CIDR_UPDATED
+      labelEn: CIDR Dataset Date
+      labelZh: CIDR 数据集日期
+      label: {en: CIDR Dataset Date, zh: CIDR 数据集日期, zh-Hant: CIDR 資料集日期, ja: CIDR データセット日付, ko: CIDR 데이터셋 날짜, ru: Дата набора CIDR, ms: Tarikh Set Data CIDR, pt-br: Data do Conjunto CIDR}
+      required: true
+      type: text
+    - default: 'false'
+      edit: true
+      envKey: OCI_MIRROR_TLS_ENABLED
+      labelEn: Enable Gateway TLS
+      labelZh: 启用 Gateway TLS
+      label: {en: Enable Gateway TLS, zh: 启用 Gateway TLS, zh-Hant: 啟用 Gateway TLS, ja: Gateway TLS を有効化, ko: Gateway TLS 활성화, ru: Включить TLS Gateway, ms: Dayakan TLS Gateway, pt-br: Ativar TLS do Gateway}
+      required: true
+      type: select
+      values:
+        - label: 'true'
+          value: 'true'
+        - label: 'false'
+          value: 'false'
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_TLS_DIR
+      labelEn: TLS Source Directory
+      labelZh: TLS 源目录
+      label: {en: TLS Source Directory, zh: TLS 源目录, zh-Hant: TLS 來源目錄, ja: TLS ソースディレクトリ, ko: TLS 원본 디렉터리, ru: Каталог исходных TLS-файлов, ms: Direktori Sumber TLS, pt-br: Diretório de Origem TLS}
+      required: false
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Cache and State Directory
+      labelZh: 缓存与状态目录
+      label: {en: Cache and State Directory, zh: 缓存与状态目录, zh-Hant: 快取與狀態目錄, ja: キャッシュと状態ディレクトリ, ko: 캐시 및 상태 디렉터리, ru: Каталог кеша и состояния, ms: Direktori Cache dan Keadaan, pt-br: Diretório de Cache e Estado}
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_MANAGEMENT_TOKEN
+      labelEn: Management Token
+      labelZh: 管理 Token
+      label: {en: Management Token, zh: 管理 Token, zh-Hant: 管理 Token, ja: 管理 Token, ko: 관리 Token, ru: Токен управления, ms: Token Pengurusan, pt-br: Token de Gerenciamento}
+      description: {en: Use a unique 32-4096 byte token containing letters, digits, . _ ~ + / - and optional trailing =., zh: 使用独立的 32-4096 字节 Token，仅可含字母、数字、. _ ~ + / -，末尾可有 =。, zh-Hant: 使用獨立的 32-4096 位元組 Token，僅可含字母、數字、. _ ~ + / -，結尾可有 =。, ja: 32-4096 バイトの一意な Token を使用し、英数字と . _ ~ + / -、末尾の = のみを含めます。, ko: 고유한 32-4096바이트 Token을 사용하며 영문자, 숫자, . _ ~ + / - 및 끝의 =만 허용됩니다., ru: Уникальный токен длиной 32-4096 байт; допустимы буквы, цифры, . _ ~ + / - и = только в конце., ms: Gunakan Token unik 32-4096 bait dengan huruf, digit, . _ ~ + / - dan = pilihan di hujung., pt-br: Use um Token exclusivo de 32-4096 bytes com letras, dígitos, . _ ~ + / - e = opcional no final.}
+      required: true
+      type: password
+    - default: ''
+      edit: true
+      envKey: OCI_MIRROR_EGRESS_TOKEN
+      labelEn: Egress Token
+      labelZh: Egress Token
+      label: {en: Egress Token, zh: Egress Token, zh-Hant: Egress Token, ja: Egress Token, ko: Egress Token, ru: Токен Egress, ms: Token Egress, pt-br: Token Egress}
+      description: {en: Use a different 32-4096 byte token containing letters, digits, . _ ~ + / - and optional trailing =., zh: 使用另一个独立的 32-4096 字节 Token，仅可含字母、数字、. _ ~ + / -，末尾可有 =。, zh-Hant: 使用另一個獨立的 32-4096 位元組 Token，僅可含字母、數字、. _ ~ + / -，結尾可有 =。, ja: 別の 32-4096 バイト Token を使用し、英数字と . _ ~ + / -、末尾の = のみを含めます。, ko: 별도의 32-4096바이트 Token을 사용하며 영문자, 숫자, . _ ~ + / - 및 끝의 =만 허용됩니다., ru: Другой уникальный токен длиной 32-4096 байт; допустимы буквы, цифры, . _ ~ + / - и = только в конце., ms: Gunakan Token lain 32-4096 bait dengan huruf, digit, . _ ~ + / - dan = pilihan di hujung., pt-br: Use outro Token exclusivo de 32-4096 bytes com letras, dígitos, . _ ~ + / - e = opcional no final.}
+      required: true
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      label: {en: Time Zone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon Masa, pt-br: Fuso Horário}
+      required: true
+      type: text
