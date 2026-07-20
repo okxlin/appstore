@@ -1,6 +1,6 @@
 services:
   gotosocial:
-    image: "docker.io/superseriousbusiness/gotosocial:0.22.0"
+    image: "docker.io/superseriousbusiness/gotosocial:0.22.1"
     container_name: ${CONTAINER_NAME}
     user: "1000:1000"
     restart: always
