@@ -1,0 +1,38 @@
+name: OCI Mirror
+tags:
+  - 网络工具
+  - 镜像服务
+title: 支持出口地址池、访问策略与持久化缓存的只读 OCI 镜像代理
+description: 支持出口地址池、访问策略与持久化缓存的只读 OCI 镜像代理
+additionalProperties:
+  key: oci-mirror
+  name: OCI Mirror
+  tags:
+    - Network
+    - Tool
+  shortDescZh: 支持出口地址池、访问策略与持久化缓存的只读 OCI 镜像代理
+  shortDescEn: Read-only OCI mirror with egress pools, access policy, and persistent cache
+  description:
+    en: Read-only OCI mirror with egress pools, access policy, and persistent cache.
+    zh: 支持出口地址池、访问策略与持久化缓存的只读 OCI 镜像代理。
+    zh-Hant: 支援出口位址池、存取策略與持久化快取的唯讀 OCI 映像代理。
+    ja: 送信元アドレスプール、アクセスポリシー、永続キャッシュを備えた読み取り専用 OCI ミラーです。
+    ko: 송신 주소 풀, 접근 정책 및 영구 캐시를 제공하는 읽기 전용 OCI 미러입니다.
+    ru: OCI-зеркало только для чтения с пулами исходящих адресов, политикой доступа и постоянным кешем.
+    ms: Cermin OCI baca sahaja dengan kumpulan alamat keluar, dasar akses dan cache berterusan.
+    pt-br: Espelho OCI somente leitura com pools de saída, política de acesso e cache persistente.
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://github.com/okxlin/oci-mirror
+  github: https://github.com/okxlin/oci-mirror
+  document: https://github.com/okxlin/oci-mirror/blob/main/docs/deployment.zh-CN.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - ppc64le
+    - s390x
+    - riscv64
+    - loong64
