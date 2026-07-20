@@ -1,0 +1,35 @@
+services:
+  leantime:
+    image: leantime/leantime:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - LEAN_DB_HOST=${PANEL_DB_HOST}
+      - LEAN_DB_PORT=${LEAN_DB_PORT:-3306}
+      - LEAN_DB_USER=${PANEL_DB_USER}
+      - LEAN_DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - LEAN_DB_DATABASE=${PANEL_DB_NAME}
+      - LEAN_SESSION_PASSWORD=${LEAN_SESSION_PASSWORD}
+      - LEAN_APP_URL=${LEAN_APP_URL}
+      - LEAN_DEFAULT_TIMEZONE=${LEAN_DEFAULT_TIMEZONE}
+      - LEAN_SESSION_SECURE=${LEAN_SESSION_SECURE}
+    volumes:
+      - "${LEAN_DATA_DIR}/public_userfiles:/var/www/html/public/userfiles"
+      - "${LEAN_DATA_DIR}/userfiles:/var/www/html/userfiles"
+      - "${LEAN_DATA_DIR}/plugins:/var/www/html/app/Plugins"
+      - "${LEAN_DATA_DIR}/logs:/var/www/html/storage/logs"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

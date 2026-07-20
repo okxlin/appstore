@@ -1,0 +1,33 @@
+name: Leantime
+tags:
+  - 项目管理
+title: Leantime 开源项目管理平台
+description: Leantime 开源项目管理平台
+additionalProperties:
+  key: leantime
+  name: Leantime
+  tags:
+    - Project
+    - Collaboration
+  shortDescZh: Leantime 开源项目管理平台
+  shortDescEn: An open-source project management platform
+  description:
+    en: An open-source project management platform for teams and startups
+    zh: 面向团队和初创公司的开源项目管理平台
+    zh-Hant: 適合團隊與新創公司的開源專案管理平台
+    ja: チームとスタートアップ向けのオープンソースプロジェクト管理プラットフォーム
+    ko: 팀과 스타트업을 위한 오픈 소스 프로젝트 관리 플랫폼
+    ru: Открытая платформа управления проектами для команд и стартапов
+    ms: Platform pengurusan projek sumber terbuka untuk pasukan dan syarikat permulaan
+    pt-br: Plataforma de gerenciamento de projetos de codigo aberto para equipes e startups
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 256
+  website: https://leantime.io/
+  github: https://github.com/Leantime/leantime
+  document: https://github.com/Leantime/docker-leantime
+  architectures:
+    - amd64
+    - arm64

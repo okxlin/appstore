@@ -1,0 +1,199 @@
+additionalProperties:
+  formFields:
+    - default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: MySQL Service
+      labelZh: MySQL 服务
+      label:
+        en: MySQL Service
+        zh: MySQL 服务
+        zh-Hant: MySQL 服務
+        ja: MySQL サービス
+        ko: MySQL 서비스
+        ru: Сервис MySQL
+        ms: Perkhidmatan MySQL
+        pt-br: Servico MySQL
+      params:
+        - envKey: LEAN_DB_PORT
+          key: mysql
+          type: param
+          value: "3306"
+      required: true
+      type: apps
+      values:
+        - label: MySQL
+          value: mysql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: MySQL Service
+        labelZh: MySQL 服务
+        label:
+          en: MySQL Service
+          zh: MySQL 服务
+          zh-Hant: MySQL 服務
+          ja: MySQL サービス
+          ko: MySQL 서비스
+          ru: Сервис MySQL
+          ms: Perkhidmatan MySQL
+          pt-br: Servico MySQL
+        required: true
+        type: service
+    - default: leantime
+      edit: false
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名称
+      label:
+        en: Database Name
+        zh: 数据库名称
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do Banco de Dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: leantime
+      edit: false
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuario do Banco de Dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: false
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        zh: 数据库用户密码
+        zh-Hant: 資料庫使用者密碼
+        ja: データベースユーザーのパスワード
+        ko: 데이터베이스 사용자 비밀번호
+        ru: Пароль пользователя базы данных
+        ms: Kata Laluan Pengguna Pangkalan Data
+        pt-br: Senha do Usuario do Banco de Dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: LEAN_SESSION_PASSWORD
+      labelEn: Session Password
+      labelZh: 会话密钥
+      label:
+        en: Session Password
+        zh: 会话密钥
+        zh-Hant: 工作階段密鑰
+        ja: セッションパスワード
+        ko: 세션 비밀번호
+        ru: Пароль сеанса
+        ms: Kata Laluan Sesi
+        pt-br: Senha da Sessao
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: LEAN_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de Dados
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: LEAN_APP_URL
+      labelEn: Public URL
+      labelZh: 公开访问地址
+      label:
+        en: Public URL
+        zh: 公开访问地址
+        zh-Hant: 公開網址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL Awam
+        pt-br: URL Publica
+      required: false
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: LEAN_DEFAULT_TIMEZONE
+      labelEn: Default Timezone
+      labelZh: 默认时区
+      label:
+        en: Default Timezone
+        zh: 默认时区
+        zh-Hant: 預設時區
+        ja: デフォルトタイムゾーン
+        ko: 기본 시간대
+        ru: Часовой пояс по умолчанию
+        ms: Zon Masa Lalai
+        pt-br: Fuso Horario Padrao
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: LEAN_SESSION_SECURE
+      labelEn: Secure Cookies
+      labelZh: 安全 Cookie
+      label:
+        en: Secure Cookies
+        zh: 安全 Cookie
+        zh-Hant: 安全 Cookie
+        ja: セキュア Cookie
+        ko: 보안 쿠키
+        ru: Защищенные cookie
+        ms: Kuki Selamat
+        pt-br: Cookies Seguros
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
