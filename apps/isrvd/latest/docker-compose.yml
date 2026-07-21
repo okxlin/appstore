@@ -2,6 +2,8 @@ services:
   isrvd:
     image: "rehiy/isrvd:slim"
     container_name: ${CONTAINER_NAME}
+    entrypoint:
+      - /data/conf/app-entrypoint.sh
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
