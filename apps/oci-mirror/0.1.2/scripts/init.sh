@@ -127,9 +127,9 @@ json_string_array() {
 
 parse_egress_source_addresses() {
   local input=$1
-  local entry address
+  local entry address canonical network_key
   local -a entries=() ipv4_sources=() ipv6_sources=()
-  local -A seen=()
+  local -A seen=() seen_ipv6_networks=()
 
   [[ -n "$input" ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must contain at least one IPv4 or IPv6 address'
   [[ "$input" != *$'\n'* && "$input" != *$'\r'* ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must be a comma-separated single-line list'
@@ -138,15 +138,27 @@ parse_egress_source_addresses() {
   (( ${#entries[@]} >= 1 && ${#entries[@]} <= 256 )) || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must contain 1 to 256 addresses'
 
   for entry in "${entries[@]}"; do
+    canonical=''
     address="${entry#"${entry%%[![:space:]]*}"}"
     address="${address%"${address##*[![:space:]]}"}"
     [[ -n "$address" ]] || die 'OCI_MIRROR_EGRESS_SOURCE_ADDRESSES must not contain empty items'
     if valid_ipv4 "$address"; then
+      valid_public_source_ipv4 "$address" || die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains a non-public IPv4 address: $address"
       ipv4_sources+=("$address")
     elif valid_ipv6 "$address"; then
-      ipv6_sources+=("$address")
+      valid_public_source_ipv6 "$address" || die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains a non-public IPv6 address: $address"
+      canonical="$(canonical_ipv6 "$address")"
+      IFS=: read -r -a IPV6_CANONICAL_HEXTETS <<<"$canonical"
+      network_key="${IPV6_CANONICAL_HEXTETS[0]}:${IPV6_CANONICAL_HEXTETS[1]}:${IPV6_CANONICAL_HEXTETS[2]}:${IPV6_CANONICAL_HEXTETS[3]}"
+      [[ -z ${seen_ipv6_networks["$network_key"]+x} ]] ||
+        die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains IPv6 addresses from the same /64: $address"
+      seen_ipv6_networks["$network_key"]=1
+      ipv6_sources+=("$canonical")
     else
       die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains an invalid IPv4/IPv6 address: $address"
+    fi
+    if [[ -n "$canonical" ]]; then
+      address="$canonical"
     fi
     if [[ -n ${seen["$address"]+x} ]]; then
       die "OCI_MIRROR_EGRESS_SOURCE_ADDRESSES contains duplicate address: $address"
@@ -163,21 +175,162 @@ valid_private_or_loopback_ipv4() {
   awk -F. '$1 == 10 || $1 == 127 || ($1 == 172 && $2 >= 16 && $2 <= 31) || ($1 == 192 && $2 == 168) { exit 0 } { exit 1 }' <<<"$1"
 }
 
+valid_private_or_loopback_ipv6() {
+  valid_ipv6 "$1" || return 1
+  local first second third fourth
+  first=$((16#${IPV6_EXPANDED_HEXTETS[0]}))
+  second=$((16#${IPV6_EXPANDED_HEXTETS[1]}))
+  third=$((16#${IPV6_EXPANDED_HEXTETS[2]}))
+  fourth=$((16#${IPV6_EXPANDED_HEXTETS[3]}))
+  if ((first == 0 && second == 0 && third == 0 && fourth == 0)); then
+    ((16#${IPV6_EXPANDED_HEXTETS[4]} == 0 &&
+      16#${IPV6_EXPANDED_HEXTETS[5]} == 0 &&
+      16#${IPV6_EXPANDED_HEXTETS[6]} == 0 &&
+      16#${IPV6_EXPANDED_HEXTETS[7]} == 1))
+    return
+  fi
+  ((first >= 0xfc00 && first <= 0xfdff))
+}
+
+valid_private_or_loopback_ip() {
+  valid_private_or_loopback_ipv4 "$1" || valid_private_or_loopback_ipv6 "$1"
+}
+
+valid_listen_ip() {
+  valid_ipv4 "$1" || valid_ipv6 "$1"
+}
+
+listen_address() {
+  if [[ "$1" == *:* ]]; then
+    printf '[%s]:%s' "$1" "$2"
+  else
+    printf '%s:%s' "$1" "$2"
+  fi
+}
+
+canonical_ipv6() {
+  local value=$1
+  local hextet normalized separator='' result=''
+  valid_ipv6 "$value" || return 1
+  for hextet in "${IPV6_EXPANDED_HEXTETS[@]}"; do
+    printf -v normalized '%x' "$((16#$hextet))"
+    result+="${separator}${normalized}"
+    separator=:
+  done
+  printf '%s' "$result"
+}
+
+canonical_host() {
+  local value=$1
+  if valid_ipv4 "$value"; then
+    printf '%s' "$value"
+  elif valid_ipv6 "$value"; then
+    canonical_ipv6 "$value"
+  else
+    printf '%s' "${value,,}"
+  fi
+}
+
+valid_public_source_ipv4() {
+  local value=$1
+  local first second third
+  valid_ipv4 "$value" || return 1
+  IFS=. read -r first second third _ <<<"$value"
+  if ((
+    (first == 192 && second == 0 && third == 2) ||
+    (first == 198 && second == 51 && third == 100) ||
+    (first == 203 && second == 0 && third == 113)
+  )); then
+    return 0
+  fi
+  ((first > 0 && first < 224)) || return 1
+  ((first != 10 && first != 127)) || return 1
+  ! ((first == 100 && second >= 64 && second <= 127)) || return 1
+  ! ((first == 169 && second == 254)) || return 1
+  ! ((first == 172 && second >= 16 && second <= 31)) || return 1
+  ! ((first == 192 && (second == 0 || second == 88 || second == 168))) || return 1
+  ! ((first == 198 && (second == 18 || second == 19))) || return 1
+}
+
+valid_public_source_ipv6() {
+  local value=$1
+  valid_ipv6 "$value" || return 1
+  local first second third fourth fifth sixth seventh eighth embedded_ipv4
+  first=$((16#${IPV6_EXPANDED_HEXTETS[0]}))
+  second=$((16#${IPV6_EXPANDED_HEXTETS[1]}))
+  third=$((16#${IPV6_EXPANDED_HEXTETS[2]}))
+  fourth=$((16#${IPV6_EXPANDED_HEXTETS[3]}))
+  fifth=$((16#${IPV6_EXPANDED_HEXTETS[4]}))
+  sixth=$((16#${IPV6_EXPANDED_HEXTETS[5]}))
+  seventh=$((16#${IPV6_EXPANDED_HEXTETS[6]}))
+  eighth=$((16#${IPV6_EXPANDED_HEXTETS[7]}))
+  if ((first == 0 && second == 0 && third == 0 && fourth == 0)); then
+    return 1
+  fi
+
+  if ((first == 0x64 && second == 0xff9b && third == 0 && fourth == 0 && fifth == 0 && sixth == 0)); then
+    printf -v embedded_ipv4 '%d.%d.%d.%d' \
+      "$((seventh >> 8))" "$((seventh & 255))" "$((eighth >> 8))" "$((eighth & 255))"
+    if [[ "$embedded_ipv4" == 192.0.2.* || "$embedded_ipv4" == 198.51.100.* || "$embedded_ipv4" == 203.0.113.* ]]; then
+      return 1
+    fi
+    valid_public_source_ipv4 "$embedded_ipv4"
+    return
+  fi
+
+  ((first == 0x64 && second == 0xff9b && third == 1)) && return 1
+  ((first == 0x100 && second == 0 && third == 0 && fourth == 0)) && return 1
+  ((first == 0x100 && second == 0 && third == 0 && fourth == 1)) && return 1
+  if ((first == 0x2001 && second <= 0x1ff)); then
+    if ((second == 1 && third == 0 && fourth == 0 && fifth == 0 && sixth == 0 && seventh == 0 && (eighth == 1 || eighth == 2 || eighth == 3))) ||
+      ((second == 3)) ||
+      ((second == 4 && third == 0x112)) ||
+      ((second >= 0x20 && second <= 0x2f)) ||
+      ((second >= 0x30 && second <= 0x3f)); then
+      return 0
+    fi
+    return 1
+  fi
+  ((first >= 0x3ff0 && first <= 0x3fff)) && return 1
+  ((first == 0x2002)) && return 1
+  ((first == 0x5f00)) && return 1
+  ((first >= 0xfc00 && first <= 0xfdff)) && return 1
+  ((first >= 0xfe80 && first <= 0xfebf)) && return 1
+  ((first >= 0xff00 && first <= 0xffff)) && return 1
+  return 0
+}
+
 valid_dns_name() {
   [[ "$1" =~ ^[A-Za-z0-9]([A-Za-z0-9.-]*[A-Za-z0-9])?$ && "$1" != *..* ]]
 }
 
-valid_ipv4_cidr() {
+valid_ip_cidr() {
   local address=${1%%/*}
   local prefix=32
   if [[ "$1" == */* ]]; then
     prefix=${1##*/}
   fi
-  valid_ipv4 "$address" && [[ "$prefix" =~ ^[0-9]+$ ]] && ((10#$prefix >= 0 && 10#$prefix <= 32))
+  if valid_ipv4 "$address"; then
+    [[ "$prefix" =~ ^[0-9]+$ ]] && ((10#$prefix >= 0 && 10#$prefix <= 32))
+  else
+    valid_ipv6 "$address" && [[ "$prefix" =~ ^[0-9]+$ ]] && ((10#$prefix >= 0 && 10#$prefix <= 128))
+  fi
 }
 
-valid_allowlist() {
-  [[ -z "$1" || "$1" =~ ^[A-Fa-f0-9.:/]+$ ]]
+parse_ip_allowlist() {
+  local input=$1 entry normalized
+  local -a entries=() values=()
+  [[ -z "$input" ]] && { ALLOWLIST_JSON='[]'; return; }
+  [[ "$input" != *$'\n'* && "$input" != *$'\r'* ]] || die 'OCI_MIRROR_IP_ALLOWLIST must be a comma-separated single-line list'
+  IFS=',' read -r -a entries <<<"$input"
+  (( ${#entries[@]} >= 1 && ${#entries[@]} <= 4096 )) || die 'OCI_MIRROR_IP_ALLOWLIST must contain 1 to 4096 entries'
+  for entry in "${entries[@]}"; do
+    normalized="${entry#"${entry%%[![:space:]]*}"}"
+    normalized="${normalized%"${normalized##*[![:space:]]}"}"
+    valid_ip_cidr "$normalized" || die "OCI_MIRROR_IP_ALLOWLIST contains an invalid IP/CIDR entry: $normalized"
+    values+=("$normalized")
+  done
+  ALLOWLIST_JSON="$(json_string_array "${values[@]}")"
 }
 
 valid_bearer_token() {
@@ -194,6 +347,12 @@ valid_private_http_origin() {
   local value=$1
   local host
   local port
+  if [[ "$value" =~ ^http://\[([0-9A-Fa-f:]+)\]:([0-9]+)$ ]]; then
+    host=${BASH_REMATCH[1]}
+    port=${BASH_REMATCH[2]}
+    valid_private_or_loopback_ipv6 "$host" && valid_port "$port"
+    return
+  fi
   [[ "$value" =~ ^http://([^/:]+):([0-9]+)$ ]] || return 1
   host=${BASH_REMATCH[1]}
   port=${BASH_REMATCH[2]}
@@ -212,7 +371,7 @@ valid_https_origin() {
   if [[ "$value" =~ ^https://\[([0-9A-Fa-f:]+)\]:([0-9]+)$ ]]; then
     host=${BASH_REMATCH[1]}
     port=${BASH_REMATCH[2]}
-    [[ "$host" == *:* ]] || return 1
+    valid_ipv6 "$host" || return 1
   elif [[ "$value" =~ ^https://([^/:]+):([0-9]+)$ ]]; then
     host=${BASH_REMATCH[1]}
     port=${BASH_REMATCH[2]}
@@ -256,41 +415,65 @@ stage_runtime_pki() {
   local required_prefix=$2
   local trust_mode=$3
   local candidate
-  rm -rf -- "$ROOT_DIR/config/pki"
-  install -d -m 0750 "$ROOT_DIR/config/pki"
-  install -m 0644 "$source_dir/nodes-ca.crt" "$ROOT_DIR/config/pki/nodes-ca.crt"
+  rm -rf -- "$CONFIG_STAGE/pki"
+  install -d -m 0750 "$CONFIG_STAGE/pki"
+  install -m 0644 "$source_dir/nodes-ca.crt" "$CONFIG_STAGE/pki/nodes-ca.crt"
   if [[ "$trust_mode" == node ]]; then
-    install -m 0644 "$source_dir/trust-bundle.crt" "$ROOT_DIR/config/pki/trust-bundle.crt"
+    install -m 0644 "$source_dir/trust-bundle.crt" "$CONFIG_STAGE/pki/trust-bundle.crt"
   else
     for candidate in \
       /etc/ssl/certs/ca-certificates.crt \
       /etc/pki/tls/certs/ca-bundle.crt \
       /etc/ssl/ca-bundle.pem; do
       if [[ -s "$candidate" ]]; then
-        install -m 0644 "$candidate" "$ROOT_DIR/config/pki/trust-bundle.crt"
+        install -m 0644 "$candidate" "$CONFIG_STAGE/pki/trust-bundle.crt"
         break
       fi
     done
-    [[ -s "$ROOT_DIR/config/pki/trust-bundle.crt" ]] || die 'a system CA bundle is required for HTTPS upstream connections'
+    [[ -s "$CONFIG_STAGE/pki/trust-bundle.crt" ]] || die 'a system CA bundle is required for HTTPS upstream connections'
   fi
-  install -m 0600 "$source_dir/$required_prefix.key" "$ROOT_DIR/config/pki/$required_prefix.key"
-  install -m 0644 "$source_dir/$required_prefix.crt" "$ROOT_DIR/config/pki/$required_prefix.crt"
+  install -m 0600 "$source_dir/$required_prefix.key" "$CONFIG_STAGE/pki/$required_prefix.key"
+  install -m 0644 "$source_dir/$required_prefix.crt" "$CONFIG_STAGE/pki/$required_prefix.crt"
 }
 
 stage_system_trust_bundle() {
   local candidate
-  rm -rf -- "$ROOT_DIR/config/pki"
+  rm -rf -- "$CONFIG_STAGE/pki"
   for candidate in \
     /etc/ssl/certs/ca-certificates.crt \
     /etc/pki/tls/certs/ca-bundle.crt \
     /etc/ssl/ca-bundle.pem; do
     if [[ -s "$candidate" ]]; then
-      install -d -m 0750 "$ROOT_DIR/config/pki"
-      install -m 0644 "$candidate" "$ROOT_DIR/config/pki/trust-bundle.crt"
+      install -d -m 0750 "$CONFIG_STAGE/pki"
+      install -m 0644 "$candidate" "$CONFIG_STAGE/pki/trust-bundle.crt"
       return
     fi
   done
   die 'a system CA bundle is required for HTTPS upstream connections'
+}
+
+publish_config() {
+  local backup_dir had_existing=false
+  backup_dir="$(mktemp -d "$ROOT_DIR/.oci-mirror-config-backup.XXXXXX")"
+  if [[ -e "$CONFIG_DIR" ]]; then
+    mv -- "$CONFIG_DIR" "$backup_dir/config"
+    had_existing=true
+  fi
+  if ! mv -- "$CONFIG_STAGE" "$CONFIG_DIR"; then
+    if [[ "$had_existing" == true ]]; then
+      mv -- "$backup_dir/config" "$CONFIG_DIR"
+    fi
+    rmdir -- "$backup_dir" 2>/dev/null || true
+    die 'failed to publish generated configuration'
+  fi
+  CONFIG_STAGE=
+  rm -rf -- "$backup_dir"
+}
+
+cleanup_config_stage() {
+  if [[ -n ${CONFIG_STAGE:-} && -d "$CONFIG_STAGE" ]]; then
+    rm -rf -- "$CONFIG_STAGE"
+  fi
 }
 
 safe_data_dir() {
@@ -302,6 +485,9 @@ safe_data_dir() {
 }
 
 CIDR_SOURCE_PATTERN='^[A-Za-z0-9._:/ -]+$'
+CONFIG_DIR="$ROOT_DIR/config"
+CONFIG_STAGE=
+trap cleanup_config_stage EXIT
 
 ROLE="$(read_env OCI_MIRROR_ROLE)"
 ROLE="${ROLE,,}"
@@ -330,13 +516,20 @@ safe_data_dir "$DATA_DIR" || die 'OCI_MIRROR_DATA_DIR is too broad'
 safe_data_dir "$PKI_DIR" || die 'OCI_MIRROR_PKI_DIR is too broad'
 [[ "$DATA_DIR" != "$ROOT_DIR" && "$DATA_DIR" != "$ROOT_DIR/config" && "$DATA_DIR" != "$ROOT_DIR/config/"* ]] || die 'OCI_MIRROR_DATA_DIR must not point to the application or its config directory'
 [[ "$PKI_DIR" != "$ROOT_DIR" && "$PKI_DIR" != "$ROOT_DIR/config" && "$PKI_DIR" != "$ROOT_DIR/config/"* ]] || die 'OCI_MIRROR_PKI_DIR must not point to the application or its config directory'
+[[ "$PKI_DIR" != "$DATA_DIR" && "$PKI_DIR" != "$DATA_DIR/"* ]] || die 'OCI_MIRROR_PKI_DIR must not be the data directory or one of its subdirectories'
+[[ "$DATA_DIR" != "$PKI_DIR" && "$DATA_DIR" != "$PKI_DIR/"* ]] || die 'OCI_MIRROR_DATA_DIR must not be the PKI directory or one of its subdirectories'
+[[ ! -L "$CONFIG_DIR" ]] || die 'the generated config directory must not be a symbolic link'
 valid_node_id "$GATEWAY_ID" || die 'OCI_MIRROR_MTLS_GATEWAY_ID must match ^[a-z][a-z0-9_-]{0,31}$'
 
-install -d -m 0750 "$ROOT_DIR/config" "$ROOT_DIR/config/tls" "$DATA_DIR"
+install -d -m 0750 "$DATA_DIR"
+CONFIG_STAGE="$(mktemp -d "$ROOT_DIR/.oci-mirror-config.XXXXXX")"
+install -d -m 0750 "$CONFIG_STAGE/tls"
 stage_system_trust_bundle
 
 if [[ "$ROLE" == gateway ]]; then
   MANAGEMENT_IP="$(read_env OCI_MIRROR_GATEWAY_MANAGEMENT_IP)"
+  GATEWAY_LISTEN_IP="$(read_env OCI_MIRROR_GATEWAY_LISTEN_IP)"
+  GATEWAY_LISTEN_IP="${GATEWAY_LISTEN_IP:-0.0.0.0}"
   MANAGEMENT_PORT="$(read_env PANEL_APP_PORT_MANAGEMENT)"
   PUBLIC_HOST="$(read_env OCI_MIRROR_PUBLIC_HOST)"
   EGRESS_PROXY_URL="$(read_env OCI_MIRROR_EGRESS_PROXY_URL)"
@@ -345,18 +538,22 @@ if [[ "$ROLE" == gateway ]]; then
   CIDR_FILE="$(read_env OCI_MIRROR_CHINA_CIDR_FILE)"
   CIDR_SOURCE="$(read_env OCI_MIRROR_CHINA_CIDR_SOURCE)"
   CIDR_UPDATED="$(read_env OCI_MIRROR_CHINA_CIDR_UPDATED)"
+  CIDR_REFRESH_DAYS="$(read_env OCI_MIRROR_CHINA_CIDR_REFRESH_DAYS)"
+  CIDR_REFRESH_DAYS="${CIDR_REFRESH_DAYS:-30}"
   TLS_ENABLED="$(read_env OCI_MIRROR_TLS_ENABLED)"
   TLS_ENABLED="${TLS_ENABLED:-true}"
   TLS_ENABLED="${TLS_ENABLED,,}"
   TLS_DIR="$(read_env OCI_MIRROR_TLS_DIR)"
+  MTLS_RENEW_BEFORE_DAYS="$(read_env OCI_MIRROR_MTLS_RENEW_BEFORE_DAYS)"
   MANAGEMENT_TOKEN="$(read_env OCI_MIRROR_MANAGEMENT_TOKEN)"
 
-  valid_private_or_loopback_ipv4 "$MANAGEMENT_IP" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_IP must be a private or loopback IPv4 address assigned to this host'
+  valid_listen_ip "$GATEWAY_LISTEN_IP" || die 'OCI_MIRROR_GATEWAY_LISTEN_IP must be an IPv4 or IPv6 address'
+  valid_private_or_loopback_ip "$MANAGEMENT_IP" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_IP must be a private or loopback IPv4/IPv6 address assigned to this host'
   valid_port "$MANAGEMENT_PORT" || die 'PANEL_APP_PORT_MANAGEMENT must be a valid port for the Gateway role'
   [[ "$SERVICE_PORT" != "$MANAGEMENT_PORT" ]] || die 'Gateway public and management ports must be different'
-  if ! valid_ipv4 "$PUBLIC_HOST"; then
+  if ! valid_ipv4 "$PUBLIC_HOST" && ! valid_ipv6 "$PUBLIC_HOST"; then
     if ! valid_dns_name "$PUBLIC_HOST" || [[ "$PUBLIC_HOST" != *.* ]]; then
-      die 'OCI_MIRROR_PUBLIC_HOST must be a DNS hostname or IPv4 address'
+      die 'OCI_MIRROR_PUBLIC_HOST must be a DNS hostname or IPv4/IPv6 address'
     fi
   fi
   if [[ "$TRANSPORT_MODE" == private ]]; then
@@ -365,9 +562,18 @@ if [[ "$ROLE" == gateway ]]; then
     valid_https_origin "$EGRESS_PROXY_URL" || die 'OCI_MIRROR_EGRESS_PROXY_URL must be an HTTPS origin with an explicit port for mTLS'
   fi
   parse_egress_source_addresses "$SOURCE_ADDRESSES"
-  valid_allowlist "$IP_ALLOWLIST" || die 'OCI_MIRROR_IP_ALLOWLIST must contain one IP address or CIDR'
-  CIDR_FILE="$(absolute_path "${CIDR_FILE:-$DATA_DIR/china-mainland.cidr}")"
-  bash "$ROOT_DIR/scripts/generate-cidr.sh" --target "$CIDR_FILE"
+  parse_ip_allowlist "$IP_ALLOWLIST"
+  if [[ ! "$CIDR_REFRESH_DAYS" =~ ^[0-9]+$ ]] ||
+    ((10#$CIDR_REFRESH_DAYS < 1 || 10#$CIDR_REFRESH_DAYS > 365)); then
+    die 'OCI_MIRROR_CHINA_CIDR_REFRESH_DAYS must be between 1 and 365'
+  fi
+  if [[ -n "$CIDR_FILE" ]]; then
+    CIDR_FILE="$(absolute_path "$CIDR_FILE")"
+    bash "$ROOT_DIR/scripts/generate-cidr.sh" --target "$CIDR_FILE"
+  else
+    CIDR_FILE="$DATA_DIR/china-mainland.cidr"
+    bash "$ROOT_DIR/scripts/generate-cidr.sh" --target "$CIDR_FILE" --refresh-after-days "$CIDR_REFRESH_DAYS"
+  fi
   [[ -s "$CIDR_FILE" ]] || die "CIDR file does not exist or is empty: $CIDR_FILE"
   CIDR_SOURCE="${CIDR_SOURCE:-https://ftp.apnic.net/stats/apnic/delegated-apnic-latest}"
   CIDR_UPDATED="${CIDR_UPDATED:-$(date -u -r "$CIDR_FILE" +%F)}"
@@ -377,18 +583,30 @@ if [[ "$ROLE" == gateway ]]; then
   [[ "$TRANSPORT_MODE" != mtls || "$TLS_ENABLED" == true ]] || die 'mTLS transport requires Gateway TLS to be enabled'
   valid_bearer_token "$MANAGEMENT_TOKEN" || die 'OCI_MIRROR_MANAGEMENT_TOKEN must be 32 to 4096 bytes using A-Z, a-z, 0-9, . _ ~ + / -, with optional trailing = padding for the Gateway role'
   [[ "$MANAGEMENT_TOKEN" != "$EGRESS_TOKEN" ]] || die 'management and Egress tokens must be different'
+  if [[ "$TLS_ENABLED" == true && -n "$TLS_DIR" ]]; then
+    TLS_DIR="$(absolute_path "$TLS_DIR")"
+    if [[ "$TLS_DIR" != "$PKI_DIR/gateway" ]]; then
+      [[ -f "$TLS_DIR/server.crt" && -f "$TLS_DIR/server.key" ]] || die 'TLS directory must contain server.crt and server.key'
+    fi
+  elif [[ "$TLS_ENABLED" == true && "$TRANSPORT_MODE" != mtls ]]; then
+    die 'OCI_MIRROR_TLS_DIR is required when Gateway TLS is enabled outside mTLS mode'
+  fi
 
   if [[ "$TRANSPORT_MODE" == mtls ]]; then
     GATEWAY_TRANSPORT_JSON=$(cat <<EOF
 {"mode":"mtls","ca_file":"/etc/oci-mirror/pki/nodes-ca.crt","cert_file":"/etc/oci-mirror/pki/gateway-client.crt","key_file":"/etc/oci-mirror/pki/gateway-client.key","peer_spiffe_id":"spiffe://oci-mirror/egress/${NODE_ID}"}
 EOF
 )
+    cert_host="$(certificate_host_for_node "$NODE_ID" "$EGRESS_CERTS")" || die 'OCI_MIRROR_MTLS_EGRESS_CERTS must include the selected Egress node ID'
+    [[ "$(canonical_host "$cert_host")" == "$(canonical_host "$(origin_host "$EGRESS_PROXY_URL")")" ]] || die 'selected Egress certificate SAN host must match the Egress proxy URL host'
     export OCI_MIRROR_PKI_DIR="$PKI_DIR"
     export OCI_MIRROR_MTLS_GATEWAY_ID="$GATEWAY_ID"
     export OCI_MIRROR_PUBLIC_HOST="$PUBLIC_HOST"
     export OCI_MIRROR_MTLS_EGRESS_CERTS="$EGRESS_CERTS"
+    if [[ -n "$MTLS_RENEW_BEFORE_DAYS" ]]; then
+      export OCI_MIRROR_MTLS_RENEW_BEFORE_DAYS="$MTLS_RENEW_BEFORE_DAYS"
+    fi
     if [[ -n "$TLS_DIR" ]]; then
-      TLS_DIR="$(absolute_path "$TLS_DIR")"
       if [[ "$TLS_DIR" == "$PKI_DIR/gateway" ]]; then
         export OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER=true
       else
@@ -399,44 +617,35 @@ EOF
       export OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER=true
     fi
     bash "$ROOT_DIR/scripts/bootstrap-pki.sh"
-    cert_host="$(certificate_host_for_node "$NODE_ID" "$EGRESS_CERTS")" || die 'OCI_MIRROR_MTLS_EGRESS_CERTS must include the selected Egress node ID'
-    [[ "${cert_host,,}" == "$(origin_host "$EGRESS_PROXY_URL")" ]] || die 'selected Egress certificate SAN host must match the Egress proxy URL host'
     stage_runtime_pki "$PKI_DIR/gateway" gateway-client system
   else
     GATEWAY_TRANSPORT_JSON='{"mode":"private"}'
   fi
 
-  ALLOWLIST_JSON='[]'
-  if [[ -n "$IP_ALLOWLIST" ]]; then
-    [[ "$IP_ALLOWLIST" != *'"'* && "$IP_ALLOWLIST" != *$'\n'* ]] || die 'OCI_MIRROR_IP_ALLOWLIST contains invalid characters'
-    ALLOWLIST_JSON="[\"$IP_ALLOWLIST\"]"
-  fi
-
   TLS_JSON=''
   if [[ "$TLS_ENABLED" == true ]]; then
     [[ -n "$TLS_DIR" ]] || die 'OCI_MIRROR_TLS_DIR is required when Gateway TLS is enabled'
-    TLS_DIR="$(absolute_path "$TLS_DIR")"
     [[ -f "$TLS_DIR/server.crt" && -f "$TLS_DIR/server.key" ]] || die 'TLS directory must contain server.crt and server.key'
-    install -m 0644 "$TLS_DIR/server.crt" "$ROOT_DIR/config/tls/server.crt"
-    install -m 0600 "$TLS_DIR/server.key" "$ROOT_DIR/config/tls/server.key"
+    install -m 0644 "$TLS_DIR/server.crt" "$CONFIG_STAGE/tls/server.crt"
+    install -m 0600 "$TLS_DIR/server.key" "$CONFIG_STAGE/tls/server.key"
     TLS_JSON=$'    "tls_cert_file": "/etc/oci-mirror/tls/server.crt",\n    "tls_key_file": "/etc/oci-mirror/tls/server.key",'
   else
-    rm -f -- "$ROOT_DIR/config/tls/server.crt" "$ROOT_DIR/config/tls/server.key"
+    rm -f -- "$CONFIG_STAGE/tls/server.crt" "$CONFIG_STAGE/tls/server.key"
   fi
 
-  if [[ "$(realpath -m -- "$CIDR_FILE")" != "$(realpath -m -- "$ROOT_DIR/config/china-mainland.cidr")" ]]; then
-    install -m 0644 "$CIDR_FILE" "$ROOT_DIR/config/china-mainland.cidr"
+  if [[ "$(realpath -m -- "$CIDR_FILE")" != "$(realpath -m -- "$CONFIG_STAGE/china-mainland.cidr")" ]]; then
+    install -m 0644 "$CIDR_FILE" "$CONFIG_STAGE/china-mainland.cidr"
   fi
   chown 65532:65532 "$DATA_DIR"
 
-  cat > "$ROOT_DIR/config/runtime.json" <<EOF
+  cat > "$CONFIG_STAGE/runtime.json" <<EOF
 {
   "gateway": {
-    "listen": "0.0.0.0:${SERVICE_PORT}",
+    "listen": "$(listen_address "$GATEWAY_LISTEN_IP" "$SERVICE_PORT")",
     "data_dir": "/var/lib/oci-mirror",
 ${TLS_JSON}
     "management": {
-      "listen": "${MANAGEMENT_IP}:${MANAGEMENT_PORT}",
+      "listen": "$(listen_address "$MANAGEMENT_IP" "$MANAGEMENT_PORT")",
       "token_env": "OCI_MIRROR_MANAGEMENT_TOKEN",
       "public_admin": false
     },
@@ -510,21 +719,21 @@ else
   GATEWAY_ALLOWED_PEER="$(read_env OCI_MIRROR_GATEWAY_ALLOWED_PEER)"
 
   if [[ "$TRANSPORT_MODE" == private ]]; then
-    valid_private_or_loopback_ipv4 "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be a private or loopback IPv4 address assigned to this host'
-    valid_private_http_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTP origin on a private IPv4 address or private DNS name with an explicit port'
-    valid_ipv4_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4 address or CIDR'
+    valid_private_or_loopback_ip "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be a private or loopback IPv4/IPv6 address assigned to this host'
+    valid_private_http_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTP origin on a private IP address or private DNS name with an explicit port'
+    valid_ip_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4/IPv6 address or CIDR'
   else
-    valid_ipv4 "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be an IPv4 listen address for mTLS'
+    valid_listen_ip "$EGRESS_LISTEN_IP" || die 'OCI_MIRROR_EGRESS_LISTEN_IP must be an IPv4 or IPv6 listen address for mTLS'
     valid_https_origin "$GATEWAY_MANAGEMENT_URL" || die 'OCI_MIRROR_GATEWAY_MANAGEMENT_URL must be an HTTPS origin with an explicit port for mTLS'
     if [[ -n "$GATEWAY_ALLOWED_PEER" ]]; then
-      valid_ipv4_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4 address or CIDR when provided'
+      valid_ip_cidr "$GATEWAY_ALLOWED_PEER" || die 'OCI_MIRROR_GATEWAY_ALLOWED_PEER must be one IPv4/IPv6 address or CIDR when provided'
     fi
     NODE_DIR="$PKI_DIR/egress/$NODE_ID"
     [[ -s "$NODE_DIR/nodes-ca.crt" && -s "$NODE_DIR/trust-bundle.crt" && -s "$NODE_DIR/egress-node.key" && -s "$NODE_DIR/egress-node.crt" ]] || die 'Egress mTLS bundle is missing; generate it on Gateway and copy the selected egress directory to OCI_MIRROR_PKI_DIR'
     stage_runtime_pki "$NODE_DIR" egress-node node
   fi
 
-  rm -f -- "$ROOT_DIR/config/china-mainland.cidr" "$ROOT_DIR/config/tls/server.crt" "$ROOT_DIR/config/tls/server.key"
+  rm -f -- "$CONFIG_STAGE/china-mainland.cidr" "$CONFIG_STAGE/tls/server.crt" "$CONFIG_STAGE/tls/server.key"
   if [[ "$TRANSPORT_MODE" == mtls ]]; then
     GATEWAY_TRANSPORT_JSON=$(cat <<EOF
 {"mode":"mtls","ca_file":"/etc/oci-mirror/pki/nodes-ca.crt","cert_file":"/etc/oci-mirror/pki/egress-node.crt","key_file":"/etc/oci-mirror/pki/egress-node.key","peer_spiffe_id":"spiffe://oci-mirror/gateway/${GATEWAY_ID}"}
@@ -538,11 +747,11 @@ EOF
     GATEWAY_TRANSPORT_JSON='{"mode":"private"}'
     ALLOWED_PEERS_JSON="[\"$GATEWAY_ALLOWED_PEER\"]"
   fi
-  cat > "$ROOT_DIR/config/runtime.json" <<EOF
+  cat > "$CONFIG_STAGE/runtime.json" <<EOF
 {
   "egress": {
     "node_id": "${NODE_ID}",
-    "listen": "${EGRESS_LISTEN_IP}:${SERVICE_PORT}",
+    "listen": "$(listen_address "$EGRESS_LISTEN_IP" "$SERVICE_PORT")",
     "token_env": "OCI_MIRROR_EGRESS_TOKEN",
     "allowed_peers": ${ALLOWED_PEERS_JSON},
     "snapshot_url": "${GATEWAY_MANAGEMENT_URL}/v1/egress/nodes/${NODE_ID}/snapshot",
@@ -555,5 +764,6 @@ EOF
 EOF
 fi
 
-chmod 0640 "$ROOT_DIR/config/runtime.json"
-chown -R 65532:65532 "$ROOT_DIR/config"
+chmod 0640 "$CONFIG_STAGE/runtime.json"
+chown -R 65532:65532 "$CONFIG_STAGE"
+publish_config

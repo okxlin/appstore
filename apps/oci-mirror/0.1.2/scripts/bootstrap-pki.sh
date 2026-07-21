@@ -8,6 +8,7 @@ PUBLIC_HOST=${OCI_MIRROR_PUBLIC_HOST:-}
 EGRESS_CERTS=${OCI_MIRROR_MTLS_EGRESS_CERTS:-}
 CA_DAYS=${OCI_MIRROR_MTLS_CA_DAYS:-3650}
 LEAF_DAYS=${OCI_MIRROR_MTLS_LEAF_DAYS:-397}
+RENEW_BEFORE_DAYS=${OCI_MIRROR_MTLS_RENEW_BEFORE_DAYS:-30}
 GENERATE_GATEWAY_SERVER=${OCI_MIRROR_MTLS_GENERATE_GATEWAY_SERVER:-true}
 
 die() {
@@ -28,6 +29,11 @@ fi
 if [[ ! "$LEAF_DAYS" =~ ^[0-9]+$ ]] || ((10#$LEAF_DAYS < 30 || 10#$LEAF_DAYS > 825)); then
   die 'OCI_MIRROR_MTLS_LEAF_DAYS must be between 30 and 825'
 fi
+if [[ ! "$RENEW_BEFORE_DAYS" =~ ^[0-9]+$ ]] ||
+  ((10#$RENEW_BEFORE_DAYS < 1 || 10#$RENEW_BEFORE_DAYS >= 10#$LEAF_DAYS)); then
+  die 'OCI_MIRROR_MTLS_RENEW_BEFORE_DAYS must be at least 1 and lower than OCI_MIRROR_MTLS_LEAF_DAYS'
+fi
+RENEW_BEFORE_SECONDS=$((10#$RENEW_BEFORE_DAYS * 86400))
 
 valid_ipv4() {
   local value=$1
@@ -223,7 +229,7 @@ verify_existing_leaf() {
   [[ "$actual_sans" == "$(normalized_san_set "$expected_sans")" ]] || die "existing certificate SAN does not match requested identity: $cert"
   local purpose
   for purpose in "$@"; do
-    openssl verify -CAfile "$CA_CERT" -purpose "$purpose" "$cert" >/dev/null || die "certificate verification failed for $purpose: $cert"
+    openssl verify -no_check_time -CAfile "$CA_CERT" -purpose "$purpose" "$cert" >/dev/null || die "certificate verification failed for $purpose: $cert"
   done
 }
 
@@ -239,7 +245,9 @@ ensure_leaf() {
   fi
   if [[ -e "$key" && -e "$cert" ]]; then
     verify_existing_leaf "$key" "$cert" "$expected_san" "$@"
-    return
+    if openssl x509 -checkend "$RENEW_BEFORE_SECONDS" -in "$cert" -noout >/dev/null; then
+      return
+    fi
   fi
   [[ -s "$CA_KEY" ]] || die "nodes-ca.key is required to issue missing certificate: $cert"
   if [[ ! -e "$key" ]]; then
@@ -259,6 +267,7 @@ ensure_leaf() {
     -CAserial "$CA_SERIAL" -CAcreateserial -out "$cert_tmp" -extfile "$ext_tmp"
   chmod 0644 "$cert_tmp"
   mv "$cert_tmp" "$cert"
+  rm -f -- "$csr_tmp" "$ext_tmp"
   trap - RETURN
   verify_existing_leaf "$key" "$cert" "$expected_san" "$@"
 }
