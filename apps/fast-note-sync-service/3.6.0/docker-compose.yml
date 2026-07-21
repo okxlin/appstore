@@ -1,6 +1,6 @@
 services:
   fast-note-sync-service:
-    image: "haierkeys/fast-note-sync-service:3.5.7"
+    image: "haierkeys/fast-note-sync-service:3.6.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
