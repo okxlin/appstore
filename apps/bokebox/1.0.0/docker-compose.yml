@@ -1,0 +1,23 @@
+services:
+  bokebox:
+    image: ghcr.io/vastsa/bokebox:1.0.0
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8787"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8787
+    volumes:
+      - ./data:/app/storage
+    # Upstream /api/health currently depends on an optional TTS provider and
+    # returns 500 before first-run configuration, while the web UI is usable.
+    healthcheck:
+      disable: true
+    labels:
+      createdBy: Apps
+networks:
+  1panel-network:
+    external: true
