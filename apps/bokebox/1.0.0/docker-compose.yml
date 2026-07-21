@@ -1,7 +1,7 @@
 services:
   bokebox:
     image: ghcr.io/vastsa/bokebox:1.0.0
-    container_name: "${CONTAINER_NAME}"
+    container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
@@ -12,16 +12,10 @@ services:
       PORT: 8787
     volumes:
       - ./data:/app/storage
+    # Upstream /api/health currently depends on an optional TTS provider and
+    # returns 500 before first-run configuration, while the web UI is usable.
     healthcheck:
-      test:
-        - CMD
-        - node
-        - "-e"
-        - "fetch('http://127.0.0.1:8787/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
-      interval: 30s
-      timeout: 5s
-      start_period: 20s
-      retries: 3
+      disable: true
     labels:
       createdBy: Apps
 networks:
