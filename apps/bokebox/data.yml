@@ -1,0 +1,35 @@
+name: BokeBox
+tags:
+  - AI
+  - Media
+title: "私人 AI 播客工作室"
+description: "私人 AI 播客工作室，将视频、链接与文稿转化为可收听的节目"
+additionalProperties:
+  key: bokebox
+  name: BokeBox
+  tags:
+    - AI
+    - Media
+  shortDescZh: "将多源内容转化为可收听的私人 AI 播客"
+  shortDescEn: "Turn multi-source content into private AI podcasts"
+  description:
+    en: "A private AI podcast studio that turns videos, links, and documents into listenable shows"
+    es-es: "Un estudio privado de podcasts con IA que convierte videos, enlaces y documentos en programas para escuchar"
+    ja: "動画、リンク、文書を聴ける番組に変換するプライベート AI ポッドキャストスタジオ"
+    ms: "Studio podcast AI peribadi yang menukar video, pautan dan dokumen menjadi rancangan yang boleh didengar"
+    pt-br: "Um estúdio privado de podcast com IA que transforma vídeos, links e documentos em programas para ouvir"
+    ru: "Личная студия ИИ-подкастов, превращающая видео, ссылки и документы в программы для прослушивания"
+    ko: "동영상, 링크, 문서를 들을 수 있는 프로그램으로 바꾸는 개인 AI 팟캐스트 스튜디오"
+    zh-Hant: "私人 AI 播客工作室，將影片、連結與文稿轉換為可收聽的節目"
+    zh: "私人 AI 播客工作室，将视频、链接与文稿转化为可收听的节目"
+    tr: "Video, bağlantı ve belgeleri dinlenebilir programlara dönüştüren kişisel bir yapay zeka podcast stüdyosu"
+  type: website
+  crossVersionUpdate: true
+  limit: 1
+  architectures:
+    - amd64
+    - arm64
+  recommend: 0
+  website: https://bokebox.aiuo.net
+  github: https://github.com/vastsa/BokeBox
+  document: "https://github.com/vastsa/BokeBox#readme"
