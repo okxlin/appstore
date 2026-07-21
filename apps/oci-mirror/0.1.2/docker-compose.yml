@@ -29,7 +29,7 @@ services:
       - /etc/oci-mirror/runtime.json
     environment:
       - TZ=${TIME_ZONE}
-      - OCI_MIRROR_MANAGEMENT_TOKEN=${OCI_MIRROR_MANAGEMENT_TOKEN}
+      - OCI_MIRROR_MANAGEMENT_TOKEN=${OCI_MIRROR_MANAGEMENT_TOKEN:-}
       - OCI_MIRROR_EGRESS_TOKEN=${OCI_MIRROR_EGRESS_TOKEN}
       - SSL_CERT_FILE=/etc/oci-mirror/pki/trust-bundle.crt
     volumes:

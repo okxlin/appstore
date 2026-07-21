@@ -4,6 +4,8 @@ set -euo pipefail
 SOURCE_URL=https://ftp.apnic.net/stats/apnic/delegated-apnic-latest
 SOURCE_FILE=
 TARGET=
+REFRESH_AFTER_DAYS=
+REPLACING=false
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -19,6 +21,10 @@ while [[ $# -gt 0 ]]; do
       TARGET=$2
       shift 2
       ;;
+    --refresh-after-days)
+      REFRESH_AFTER_DAYS=$2
+      shift 2
+      ;;
     *)
       printf 'OCI Mirror CIDR: unknown argument: %s\n' "$1" >&2
       exit 2
@@ -27,10 +33,25 @@ while [[ $# -gt 0 ]]; do
 done
 
 [[ -n "$TARGET" ]] || { printf 'OCI Mirror CIDR: --target is required\n' >&2; exit 2; }
+if [[ -n "$REFRESH_AFTER_DAYS" ]] &&
+  { [[ ! "$REFRESH_AFTER_DAYS" =~ ^[0-9]+$ ]] || ((10#$REFRESH_AFTER_DAYS < 1 || 10#$REFRESH_AFTER_DAYS > 365)); }; then
+  printf 'OCI Mirror CIDR: --refresh-after-days must be between 1 and 365\n' >&2
+  exit 2
+fi
 if [[ -e "$TARGET" ]]; then
   [[ -s "$TARGET" ]] || { printf 'OCI Mirror CIDR: existing target is empty: %s\n' "$TARGET" >&2; exit 1; }
-  printf 'OCI Mirror CIDR: preserving existing file: %s\n' "$TARGET"
-  exit 0
+  if [[ -z "$REFRESH_AFTER_DAYS" ]]; then
+    printf 'OCI Mirror CIDR: preserving existing file: %s\n' "$TARGET"
+    exit 0
+  fi
+  command -v stat >/dev/null 2>&1 || { printf 'OCI Mirror CIDR: stat is required for managed refresh\n' >&2; exit 1; }
+  target_mtime=$(stat -c %Y "$TARGET")
+  now=$(date +%s)
+  if ((now - target_mtime < 10#$REFRESH_AFTER_DAYS * 86400)); then
+    printf 'OCI Mirror CIDR: preserving current managed file: %s\n' "$TARGET"
+    exit 0
+  fi
+  REPLACING=true
 fi
 
 command -v awk >/dev/null 2>&1 || { printf 'OCI Mirror CIDR: awk is required\n' >&2; exit 1; }
@@ -48,6 +69,7 @@ if [[ -n "$SOURCE_FILE" ]]; then
 else
   command -v curl >/dev/null 2>&1 || { printf 'OCI Mirror CIDR: curl is required for automatic APNIC download\n' >&2; exit 1; }
   curl --fail --location --silent --show-error --proto '=https' --tlsv1.2 \
+    --connect-timeout 15 --max-time 120 --max-filesize 33554432 \
     --output "$SOURCE_TMP" "$SOURCE_URL"
 fi
 
@@ -121,7 +143,10 @@ file_size=$(wc -c < "$STAGED")
 ((file_size <= 16777216)) || { printf 'OCI Mirror CIDR: generated file exceeds 16 MiB\n' >&2; exit 1; }
 
 chmod 0644 "$STAGED"
-if ! ln "$STAGED" "$TARGET" 2>/dev/null; then
+if [[ "$REPLACING" == true ]]; then
+  mv -f -- "$STAGED" "$TARGET"
+  printf 'OCI Mirror CIDR: refreshed %s prefixes at %s\n' "$line_count" "$TARGET"
+elif ! ln "$STAGED" "$TARGET" 2>/dev/null; then
   [[ -s "$TARGET" ]] || { printf 'OCI Mirror CIDR: target appeared but is invalid: %s\n' "$TARGET" >&2; exit 1; }
   printf 'OCI Mirror CIDR: preserving concurrently created file: %s\n' "$TARGET"
 else

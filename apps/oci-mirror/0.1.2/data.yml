@@ -59,6 +59,22 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: 0.0.0.0
+      edit: true
+      envKey: OCI_MIRROR_GATEWAY_LISTEN_IP
+      labelEn: Gateway Public Listen IP
+      labelZh: Gateway 公网监听 IP
+      label:
+        en: Gateway Public Listen IP
+        zh: Gateway 公网监听 IP
+        zh-Hant: Gateway 公網監聽 IP
+        ja: Gateway 公開リッスン IP
+        ko: Gateway 공용 수신 IP
+        ru: Публичный IP прослушивания Gateway
+        ms: IP Dengar Awam Gateway
+        pt-br: IP de Escuta Público do Gateway
+      required: false
+      type: text
     - default: 127.0.0.1
       edit: true
       envKey: OCI_MIRROR_GATEWAY_MANAGEMENT_IP
@@ -111,17 +127,26 @@ additionalProperties:
     - default: ""
       edit: true
       envKey: OCI_MIRROR_IP_ALLOWLIST
-      labelEn: Additional Allowed Client IP/CIDR
-      labelZh: 额外允许的客户端 IP/CIDR
+      labelEn: Additional Allowed Client IPs/CIDRs
+      labelZh: 额外允许的客户端 IP/CIDR 列表
       label:
-        en: Additional Allowed Client IP/CIDR
-        zh: 额外允许的客户端 IP/CIDR
-        zh-Hant: 額外允許的用戶端 IP/CIDR
-        ja: 追加許可クライアント IP/CIDR
-        ko: 추가 허용 클라이언트 IP/CIDR
-        ru: Дополнительный разрешенный IP/CIDR
-        ms: IP/CIDR Klien Tambahan
-        pt-br: IP/CIDR Adicional Permitido
+        en: Additional Allowed Client IPs/CIDRs
+        zh: 额外允许的客户端 IP/CIDR 列表
+        zh-Hant: 額外允許的用戶端 IP/CIDR 清單
+        ja: 追加許可クライアント IP/CIDR リスト
+        ko: 추가 허용 클라이언트 IP/CIDR 목록
+        ru: Дополнительные разрешенные IP/CIDR
+        ms: Senarai IP/CIDR Klien Tambahan
+        pt-br: IPs/CIDRs Adicionais Permitidos
+      description:
+        en: Optional comma-separated IPv4/IPv6 addresses or CIDR prefixes.
+        zh: 可选，多个 IPv4/IPv6 地址或 CIDR 网段使用英文逗号分隔。
+        zh-Hant: 可選，多個 IPv4/IPv6 位址或 CIDR 網段以英文逗號分隔。
+        ja: 任意。複数の IPv4/IPv6 アドレスまたは CIDR をカンマで区切ります。
+        ko: 선택 사항이며 여러 IPv4/IPv6 주소 또는 CIDR을 쉼표로 구분합니다.
+        ru: Необязательно; IPv4/IPv6-адреса и CIDR указываются через запятую.
+        ms: Pilihan; pisahkan alamat IPv4/IPv6 atau CIDR dengan koma.
+        pt-br: Opcional; separe endereços IPv4/IPv6 ou CIDRs por vírgulas.
       required: false
       type: text
     - default: ""
@@ -140,6 +165,22 @@ additionalProperties:
         pt-br: 'Arquivo CIDR da China Continental (Opcional, vazio para gerar automaticamente)'
       required: false
       type: text
+    - default: 30
+      edit: true
+      envKey: OCI_MIRROR_CHINA_CIDR_REFRESH_DAYS
+      labelEn: Managed CIDR Refresh Interval (Days)
+      labelZh: 托管 CIDR 刷新间隔（天）
+      label:
+        en: Managed CIDR Refresh Interval (Days)
+        zh: 托管 CIDR 刷新间隔（天）
+        zh-Hant: 代管 CIDR 重新整理間隔（天）
+        ja: 管理 CIDR 更新間隔（日）
+        ko: 관리형 CIDR 새로 고침 간격(일)
+        ru: Интервал обновления управляемого CIDR (дни)
+        ms: Selang Muat Semula CIDR Terurus (Hari)
+        pt-br: Intervalo de Atualização do CIDR Gerenciado (Dias)
+      required: false
+      type: number
     - default: "true"
       edit: true
       envKey: OCI_MIRROR_TLS_ENABLED
@@ -256,15 +297,15 @@ additionalProperties:
         ms: Token Pengurusan Gateway
         pt-br: Token de Gerenciamento do Gateway
       description:
-        en: Use 32-4096 bytes containing only A-Z, a-z, 0-9, . _ ~ + / -, with optional = padding only at the end. It must differ from every Egress token.
-        zh: 使用 32-4096 字节，仅允许 A-Z、a-z、0-9、. _ ~ + / -，= 只能作为末尾填充。必须与所有 Egress Token 不同。
-        zh-Hant: 使用 32-4096 位元組，僅允許 A-Z、a-z、0-9、. _ ~ + / -，= 只能作為末尾填充。必須與所有 Egress Token 不同。
-        ja: 32～4096 バイトで、A-Z、a-z、0-9、. _ ~ + / - のみ使用できます。= は末尾のパディングにのみ使用でき、すべての Egress Token と異なる値が必要です。
-        ko: 32-4096바이트이며 A-Z, a-z, 0-9, . _ ~ + / -만 사용할 수 있습니다. =는 끝 패딩에만 사용할 수 있고 모든 Egress Token과 달라야 합니다.
-        ru: Длина 32-4096 байт; допустимы A-Z, a-z, 0-9, . _ ~ + / -, а = только в конце. Значение должно отличаться от всех токенов Egress.
-        ms: Gunakan 32-4096 bait yang hanya mengandungi A-Z, a-z, 0-9, . _ ~ + / -, dengan = hanya sebagai pelapik di hujung. Nilai mesti berbeza daripada semua token Egress.
-        pt-br: Use 32-4096 bytes contendo apenas A-Z, a-z, 0-9, . _ ~ + / -, com = somente como preenchimento no final. O valor deve ser diferente de todos os tokens Egress.
-      required: true
+        en: Required only for Gateway. Use 32-4096 bytes containing only A-Z, a-z, 0-9, . _ ~ + / -, with optional = padding only at the end. It must differ from every Egress token.
+        zh: 仅 Gateway 必填。使用 32-4096 字节，仅允许 A-Z、a-z、0-9、. _ ~ + / -，= 只能作为末尾填充。必须与所有 Egress Token 不同。
+        zh-Hant: 僅 Gateway 必填。使用 32-4096 位元組，僅允許 A-Z、a-z、0-9、. _ ~ + / -，= 只能作為末尾填充。必須與所有 Egress Token 不同。
+        ja: Gateway のみ必須です。32～4096 バイトで、A-Z、a-z、0-9、. _ ~ + / - のみ使用できます。= は末尾のパディングにのみ使用でき、すべての Egress Token と異なる値が必要です。
+        ko: Gateway에서만 필수입니다. 32-4096바이트이며 A-Z, a-z, 0-9, . _ ~ + / -만 사용할 수 있습니다. =는 끝 패딩에만 사용할 수 있고 모든 Egress Token과 달라야 합니다.
+        ru: Обязательно только для Gateway. Длина 32-4096 байт; допустимы A-Z, a-z, 0-9, . _ ~ + / -, а = только в конце. Значение должно отличаться от всех токенов Egress.
+        ms: Wajib untuk Gateway sahaja. Gunakan 32-4096 bait yang hanya mengandungi A-Z, a-z, 0-9, . _ ~ + / -, dengan = hanya sebagai pelapik di hujung. Nilai mesti berbeza daripada semua token Egress.
+        pt-br: Obrigatório somente para Gateway. Use 32-4096 bytes contendo apenas A-Z, a-z, 0-9, . _ ~ + / -, com = somente como preenchimento no final. O valor deve ser diferente de todos os tokens Egress.
+      required: false
       type: password
     - default: egress-a
       edit: true
@@ -313,15 +354,15 @@ additionalProperties:
         ms: Alamat Sumber Awam Egress
         pt-br: Endereços Públicos de Origem do Egress
       description:
-        en: Comma-separated concrete IPv4/IPv6 addresses assigned or routed to the Egress host; CIDR prefixes are not accepted. Up to 256 addresses are supported, and IPv6 rotation addresses must use distinct /64 networks.
-        zh: 填写已分配或路由到 Egress 主机的具体 IPv4/IPv6 地址，多个用逗号分隔，不接受 CIDR 前缀。最多 256 个，IPv6 轮换地址必须来自不同的 /64。
-        zh-Hant: 填寫已分配或路由到 Egress 主機的具體 IPv4/IPv6 位址，多個以逗號分隔，不接受 CIDR 前綴。最多 256 個，IPv6 輪換位址必須來自不同的 /64。
-        ja: Egress ホストに割り当てまたはルーティングされた具体的な IPv4/IPv6 アドレスをカンマ区切りで入力します。CIDR プレフィックスは使用できません。最大 256 個で、IPv6 ローテーション用アドレスは異なる /64 を使用する必要があります。
-        ko: Egress 호스트에 할당되었거나 라우팅된 구체적인 IPv4/IPv6 주소를 쉼표로 구분해 입력하세요. CIDR 접두사는 허용되지 않습니다. 최대 256개며 IPv6 순환 주소는 서로 다른 /64를 사용해야 합니다.
-        ru: Укажите через запятую конкретные IPv4/IPv6-адреса, назначенные или маршрутизируемые на узел Egress; CIDR-префиксы недопустимы. До 256 адресов; IPv6-адреса для ротации должны быть из разных /64.
-        ms: Masukkan alamat IPv4/IPv6 khusus yang diperuntukkan atau dihalakan ke hos Egress, dipisahkan dengan koma; awalan CIDR tidak diterima. Sehingga 256 alamat disokong dan alamat putaran IPv6 mesti menggunakan rangkaian /64 yang berbeza.
-        pt-br: Informe endereços IPv4/IPv6 concretos atribuídos ou roteados ao host Egress, separados por vírgulas; prefixos CIDR não são aceitos. São suportados até 256 endereços, e os endereços IPv6 de rotação devem usar redes /64 distintas.
-      required: true
+        en: Required only for Gateway. Enter comma-separated concrete public IPv4/IPv6 addresses assigned or routed to the Egress host; CIDR prefixes are not accepted. Up to 256 addresses are supported, and IPv6 rotation addresses must use distinct /64 networks.
+        zh: 仅 Gateway 必填。填写已分配或路由到 Egress 主机的具体公网 IPv4/IPv6 地址，多个用英文逗号分隔，不接受 CIDR 前缀。最多 256 个，IPv6 轮换地址必须来自不同的 /64。
+        zh-Hant: 僅 Gateway 必填。填寫已分配或路由到 Egress 主機的具體公網 IPv4/IPv6 位址，多個以英文逗號分隔，不接受 CIDR 前綴。最多 256 個，IPv6 輪換位址必須來自不同的 /64。
+        ja: Gateway のみ必須です。Egress ホストに割り当てまたはルーティングされた具体的な公開 IPv4/IPv6 アドレスをカンマ区切りで入力します。CIDR プレフィックスは使用できません。最大 256 個で、IPv6 ローテーション用アドレスは異なる /64 を使用する必要があります。
+        ko: Gateway에서만 필수입니다. Egress 호스트에 할당되었거나 라우팅된 구체적인 공인 IPv4/IPv6 주소를 쉼표로 구분해 입력하세요. CIDR 접두사는 허용되지 않습니다. 최대 256개며 IPv6 순환 주소는 서로 다른 /64를 사용해야 합니다.
+        ru: Обязательно только для Gateway. Укажите через запятую конкретные публичные IPv4/IPv6-адреса, назначенные или маршрутизируемые на узел Egress; CIDR-префиксы недопустимы. До 256 адресов; IPv6-адреса для ротации должны быть из разных /64.
+        ms: Wajib untuk Gateway sahaja. Masukkan alamat IPv4/IPv6 awam khusus yang diperuntukkan atau dihalakan ke hos Egress, dipisahkan dengan koma; awalan CIDR tidak diterima. Sehingga 256 alamat disokong dan alamat putaran IPv6 mesti menggunakan rangkaian /64 yang berbeza.
+        pt-br: Obrigatório somente para Gateway. Informe endereços IPv4/IPv6 públicos concretos atribuídos ou roteados ao host Egress, separados por vírgulas; prefixos CIDR não são aceitos. São suportados até 256 endereços, e os endereços IPv6 de rotação devem usar redes /64 distintas.
+      required: false
       type: text
     - default: 0.0.0.0
       edit: true
