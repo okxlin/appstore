@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   vscode:
-    image: "linuxserver/vscode:1.128.0"
+    image: "linuxserver/vscode:1.129.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
