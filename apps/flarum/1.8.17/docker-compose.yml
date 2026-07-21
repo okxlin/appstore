@@ -27,7 +27,7 @@ services:
       - DB_NOPREFIX=false
       - DB_TIMEOUT=60
       - FLARUM_BASE_URL=${FLARUM_EXTERNAL_URL}
-    image: crazymax/flarum:1.8.10
+    image: crazymax/flarum:1.8.17
     labels:
       createdBy: Apps
 networks:
