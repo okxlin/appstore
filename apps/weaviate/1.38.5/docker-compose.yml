@@ -1,6 +1,6 @@
 services:
   weaviate:
-    image: "semitechnologies/weaviate:1.38.5"
+    image: "semitechnologies/weaviate:1.38.6"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
