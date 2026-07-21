@@ -1,0 +1,37 @@
+services:
+  codex2api:
+    image: "ghcr.io/james-6-23/codex2api:latest@sha256:4b59f4929cab0f045afa72a90b20636073018845bbf390a41317ba931b378c0b"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - CODEX_PORT=8080
+      - CODEX_BIND=0.0.0.0
+      - ADMIN_SECRET=${ADMIN_SECRET}
+      - CODEX_ALLOW_ANONYMOUS=false
+      - DATABASE_DRIVER=sqlite
+      - CACHE_DRIVER=memory
+      - DATABASE_PATH=/data/codex2api.db
+      - IMAGE_ASSET_DIR=/data/images
+      - LOG_DIR=/app/logs
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}/data:/data"
+      - "${APP_DATA_DIR}/logs:/app/logs"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

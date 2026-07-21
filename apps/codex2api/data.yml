@@ -1,0 +1,35 @@
+name: Codex2API
+tags:
+  - AI
+  - Tool
+title: "提供 OpenAI 与 Anthropic 兼容接口的 Codex 账号池网关"
+description: "提供 OpenAI 与 Anthropic 兼容接口的 Codex 账号池网关"
+additionalProperties:
+  key: codex2api
+  name: Codex2API
+  tags:
+    - AI
+    - Tool
+  shortDescZh: "提供 OpenAI 与 Anthropic 兼容接口的 Codex 账号池网关"
+  shortDescEn: "Codex account-pool gateway with OpenAI and Anthropic compatible APIs"
+  description:
+    en: "An observable Codex account-pool gateway with OpenAI and Anthropic compatible APIs"
+    es-es: "Una puerta de enlace observable para grupos de cuentas Codex con API compatibles con OpenAI y Anthropic"
+    ja: "OpenAI および Anthropic 互換 API を備えた監視可能な Codex アカウントプールゲートウェイ"
+    ms: "Gerbang kumpulan akaun Codex yang boleh diperhatikan dengan API serasi OpenAI dan Anthropic"
+    pt-br: "Um gateway observável de contas Codex com APIs compatíveis com OpenAI e Anthropic"
+    ru: "Наблюдаемый шлюз пула учетных записей Codex с API, совместимыми с OpenAI и Anthropic"
+    ko: "OpenAI 및 Anthropic 호환 API를 제공하는 관측 가능한 Codex 계정 풀 게이트웨이"
+    zh-Hant: "提供 OpenAI 與 Anthropic 相容介面的可觀測 Codex 帳號池閘道"
+    zh: "提供 OpenAI 与 Anthropic 兼容接口的可观测 Codex 账号池网关"
+    tr: "OpenAI ve Anthropic uyumlu API'lere sahip gözlemlenebilir Codex hesap havuzu ağ geçidi"
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+    - amd64
+    - arm64
+  recommend: 0
+  website: https://github.com/james-6-23/codex2api
+  github: https://github.com/james-6-23/codex2api
+  document: https://github.com/james-6-23/codex2api/blob/main/docs/DEPLOYMENT.md

@@ -1,0 +1,77 @@
+additionalProperties:
+  formFields:
+    - default: 40167
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        es-es: Puerto web
+        ja: Web ポート
+        ms: Port Web
+        pt-br: Porta web
+        ru: Веб-порт
+        ko: 웹 포트
+        zh-Hant: Web 連接埠
+        zh: Web 端口
+        tr: Web Portu
+      required: true
+      rule: paramPort
+      type: number
+    - default: codex2api
+      edit: true
+      envKey: ADMIN_SECRET
+      labelEn: Admin Secret
+      labelZh: 管理密钥
+      label:
+        en: Admin Secret
+        es-es: Secreto de administrador
+        ja: 管理者シークレット
+        ms: Rahsia Pentadbir
+        pt-br: Segredo do administrador
+        ru: Секрет администратора
+        ko: 관리자 비밀 키
+        zh-Hant: 管理密鑰
+        zh: 管理密钥
+        tr: Yönetici Sırrı
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        es-es: Zona horaria
+        ja: タイムゾーン
+        ms: Zon waktu
+        pt-br: Fuso horário
+        ru: Часовой пояс
+        ko: 시간대
+        zh-Hant: 時區
+        zh: 时区
+        tr: Saat Dilimi
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        es-es: Directorio de datos
+        ja: データディレクトリ
+        ms: Direktori Data
+        pt-br: Diretório de dados
+        ru: Каталог данных
+        ko: 데이터 디렉터리
+        zh-Hant: 資料目錄
+        zh: 数据目录
+        tr: Veri Dizini
+      required: true
+      type: text
