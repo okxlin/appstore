@@ -1,6 +1,6 @@
 services:
   gotab-server:
-    image: "doxwant/gotab:2.0.1.10"
+    image: "doxwant/gotab:2.0.1.11"
     container_name: ${CONTAINER_NAME}
     ports:
       - ${PANEL_APP_PORT_HTTP}:8080
