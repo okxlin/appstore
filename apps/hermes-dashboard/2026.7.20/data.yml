@@ -1,6 +1,6 @@
 additionalProperties:
   formFields:
-    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；这里建议与 Hermes Agent 保持一致。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。"
+    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。公开绑定现在强制启用认证，`--insecure` 已不能绕过认证；请设置 Dashboard 用户名、强密码和会话签名密钥。旧版本升级时，脚本只会为缺失或空白的认证项生成随机值，不会覆盖已有配置；升级完成后请在应用参数中设置自己知道的密码。"
       disabled: true
       envKey: TIPS
       labelEn: Tips
@@ -115,19 +115,55 @@ additionalProperties:
       required: true
       rule: paramExtUrl
       type: text
-    - default: dashboard --host 0.0.0.0 --insecure
-      envKey: DASHBOARD_RUN_COMMAND
-      labelEn: Dashboard Run Command
-      labelZh: Dashboard 启动命令
+    - default: admin
+      envKey: DASHBOARD_USERNAME
+      labelEn: Dashboard Username
+      labelZh: Dashboard 用户名
       label:
-        en: Dashboard Run Command
-        zh: Dashboard 启动命令
-        zh-Hant: Dashboard 啟動命令
-        ja: Dashboard 起動コマンド
-        ko: Dashboard 실행 명령
-        ru: Команда запуска dashboard
-        ms: Perintah jalan dashboard
-        pt-br: Comando de execução do dashboard
+        en: Dashboard Username
+        zh: Dashboard 用户名
+        zh-Hant: Dashboard 使用者名稱
+        ja: Dashboard ユーザー名
+        ko: Dashboard 사용자 이름
+        ru: Имя пользователя dashboard
+        ms: Nama pengguna dashboard
+        pt-br: Usuário do dashboard
       edit: true
       required: true
       type: text
+    - default: ""
+      envKey: DASHBOARD_PASSWORD
+      labelEn: Dashboard Password
+      labelZh: Dashboard 密码
+      label:
+        en: Dashboard Password
+        zh: Dashboard 密码
+        zh-Hant: Dashboard 密碼
+        ja: Dashboard パスワード
+        ko: Dashboard 비밀번호
+        ru: Пароль dashboard
+        ms: Kata laluan dashboard
+        pt-br: Senha do dashboard
+      edit: true
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      envKey: DASHBOARD_SESSION_SECRET
+      labelEn: Dashboard Session Secret
+      labelZh: Dashboard 会话签名密钥
+      label:
+        en: Dashboard Session Secret
+        zh: Dashboard 会话签名密钥
+        zh-Hant: Dashboard 工作階段簽章密鑰
+        ja: Dashboard セッション署名シークレット
+        ko: Dashboard 세션 서명 비밀값
+        ru: Секрет подписи сессии dashboard
+        ms: Rahsia tandatangan sesi dashboard
+        pt-br: Segredo de assinatura da sessão do dashboard
+      edit: true
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password

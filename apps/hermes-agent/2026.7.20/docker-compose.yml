@@ -1,7 +1,7 @@
 services:
   hermes-agent:
     image: "nousresearch/hermes-agent:v2026.7.20"
-    container_name: "${CONTAINER_NAME}"
+    container_name: ${CONTAINER_NAME}
     command:
       - gateway
       - run
@@ -9,6 +9,10 @@ services:
       - TZ=${TZ}
       - HERMES_UID=${HERMES_UID:-10000}
       - HERMES_GID=${HERMES_GID:-10000}
+      - API_SERVER_ENABLED=true
+      - API_SERVER_HOST=0.0.0.0
+      - API_SERVER_KEY=${API_SERVER_KEY}
+      - API_SERVER_CORS_ORIGINS=${API_SERVER_CORS_ORIGINS:-*}
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
       - OPENAI_API_KEY=${OPENAI_API_KEY:-}
       - GOOGLE_API_KEY=${GOOGLE_API_KEY:-}

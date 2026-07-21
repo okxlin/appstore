@@ -1,6 +1,6 @@
 additionalProperties:
   formFields:
-    - default: "安装后容器会以 gateway run 常驻运行。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；若你有自定义用户，请在升级前先调整为自己的值。至少需要配置 1 个模型提供商 Key；若要直接接入 Telegram，再补 TELEGRAM_BOT_TOKEN。对于第三方 OpenAI-compatible 供应商，建议把 API Key 放到 /opt/data/.env 的 OPENAI_API_KEY 中，并手动在 /opt/data/config.yaml 里设置 model.default、provider: custom、base_url；不要把密钥直接写进 config.yaml。"
+    - default: "安装后容器会以 gateway run 常驻运行，并启用 8642 端口的 OpenAI-compatible API 与健康检查。API_SERVER_KEY 用于保护除公开健康检查外的 API，请保持随机且不要泄露；旧版本升级时脚本只会为缺失或空白值生成随机 Key，不覆盖已有配置。至少需要配置 1 个模型提供商 Key；若要直接接入 Telegram，再补 TELEGRAM_BOT_TOKEN。容器使用 HERMES_UID / HERMES_GID（默认 10000:10000）访问数据目录。"
       disabled: true
       envKey: TIPS
       labelEn: Tips
@@ -98,6 +98,40 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: ""
+      envKey: API_SERVER_KEY
+      labelEn: Gateway API Key
+      labelZh: 网关 API 密钥
+      label:
+        en: Gateway API Key
+        zh: 网关 API 密钥
+        zh-Hant: 閘道 API 金鑰
+        ja: Gateway API キー
+        ko: 게이트웨이 API 키
+        ru: API-ключ шлюза
+        ms: Kunci API gateway
+        pt-br: Chave da API do gateway
+      edit: true
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "*"
+      envKey: API_SERVER_CORS_ORIGINS
+      labelEn: Gateway CORS Origins
+      labelZh: 网关 CORS 来源
+      label:
+        en: Gateway CORS Origins
+        zh: 网关 CORS 来源
+        zh-Hant: 閘道 CORS 來源
+        ja: Gateway CORS オリジン
+        ko: 게이트웨이 CORS 출처
+        ru: Источники CORS шлюза
+        ms: Asal CORS gateway
+        pt-br: Origens CORS do gateway
+      edit: true
+      required: true
+      type: text
     - default: 172.18.0.240
       envKey: GATEWAY_STATIC_IP
       labelEn: Gateway Static IP
