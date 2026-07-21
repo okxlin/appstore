@@ -142,8 +142,6 @@ geekbench
 h5ai
 headscale
 heimdall
-hermes-agent
-hermes-dashboard
 hivision-id-photo
 home-assistant
 icat_lite
