@@ -4,6 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
 TEMPLATE_FILE="$ROOT_DIR/config/isrvd.yml.template"
+ENTRYPOINT_SOURCE="$ROOT_DIR/scripts/entrypoint.sh"
 
 read_env_value() {
   local key="$1"
@@ -62,8 +63,8 @@ if [[ -z "$ADMIN_USERNAME" || "$ADMIN_USERNAME" == *$'\n'* || "$ADMIN_USERNAME" 
   echo "ISRVD_ADMIN_USERNAME must be a single non-empty line" >&2
   exit 1
 fi
-if (( ${#ADMIN_PASSWORD} < 8 )); then
-  echo "ISRVD_ADMIN_PASSWORD must contain at least 8 characters" >&2
+if (( ${#ADMIN_PASSWORD} < 8 )) || [[ "$ADMIN_PASSWORD" == *$'\n'* || "$ADMIN_PASSWORD" == *$'\r'* || "$ADMIN_PASSWORD" == *$'\t'* ]]; then
+  echo "ISRVD_ADMIN_PASSWORD must contain at least 8 characters and must not contain tabs or line breaks" >&2
   exit 1
 fi
 case "$MONITOR_INTERVAL" in
@@ -73,7 +74,13 @@ esac
 
 CONF_DIR="$DATA_DIR/conf"
 CONF_FILE="$CONF_DIR/isrvd.yml"
+INITIAL_PASSWORD_FILE="$CONF_DIR/.initial-admin-password"
 mkdir -p "$CONF_DIR" "$DATA_DIR/container"
+if [[ ! -f "$ENTRYPOINT_SOURCE" ]]; then
+  echo "missing container entrypoint: $ENTRYPOINT_SOURCE" >&2
+  exit 1
+fi
+install -m 700 "$ENTRYPOINT_SOURCE" "$CONF_DIR/app-entrypoint.sh"
 
 ENV_TMP="$ENV_FILE.tmp.$$"
 trap 'rm -f -- "$ENV_TMP"' EXIT
@@ -88,7 +95,28 @@ chmod 600 "$ENV_TMP"
 mv "$ENV_TMP" "$ENV_FILE"
 trap - EXIT
 
+prepare_plaintext_password_migration() {
+  [[ -f "$CONF_FILE" ]] || return 0
+  [[ ! -s "$INITIAL_PASSWORD_FILE" ]] || return 0
+
+  local raw_password password
+  raw_password="$(sed -n 's/^    password: //p' "$CONF_FILE" | head -n 1)"
+  [[ -n "$raw_password" ]] || return 0
+  password="$raw_password"
+  case "$password" in
+    \'*\') password="${password#\'}"; password="${password%\'}"; password="${password//\'\'/\'}" ;;
+    \"*\") password="${password#\"}"; password="${password%\"}" ;;
+  esac
+  [[ "$password" != \$2* ]] || return 0
+
+  printf '%s' "$password" > "$INITIAL_PASSWORD_FILE"
+  chmod 600 "$INITIAL_PASSWORD_FILE"
+  sed -i '0,/^    password: .*$/s//    password: admin/' "$CONF_FILE"
+  sed -i '0,/^  listenAddr: .*$/s//  listenAddr: 127.0.0.1:8080/' "$CONF_FILE"
+}
+
 if [[ -f "$CONF_FILE" ]]; then
+  prepare_plaintext_password_migration
   exit 0
 fi
 if [[ ! -f "$TEMPLATE_FILE" ]]; then
@@ -97,7 +125,6 @@ if [[ ! -f "$TEMPLATE_FILE" ]]; then
 fi
 
 ADMIN_USERNAME_YAML="$(yaml_quote "$ADMIN_USERNAME")"
-ADMIN_PASSWORD_YAML="$(yaml_quote "$ADMIN_PASSWORD")"
 CONTAINER_ROOT_YAML="$(yaml_quote "$DATA_DIR/container")"
 MARKETPLACE_URL_YAML="$(yaml_quote "$MARKETPLACE_URL")"
 TMP_FILE="$CONF_FILE.tmp.$$"
@@ -109,7 +136,6 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     *'__ISRVD_MONITOR_INTERVAL__'*) line="${line/__ISRVD_MONITOR_INTERVAL__/$MONITOR_INTERVAL}" ;;
     *'__ISRVD_MARKETPLACE_URL__'*) line="${line/__ISRVD_MARKETPLACE_URL__/$MARKETPLACE_URL_YAML}" ;;
     *'__ISRVD_ADMIN_USERNAME__'*) line="${line/__ISRVD_ADMIN_USERNAME__/$ADMIN_USERNAME_YAML}" ;;
-    *'__ISRVD_ADMIN_PASSWORD__'*) line="${line/__ISRVD_ADMIN_PASSWORD__/$ADMIN_PASSWORD_YAML}" ;;
   esac
   printf '%s\n' "$line"
 done < "$TEMPLATE_FILE" > "$TMP_FILE"
@@ -117,3 +143,6 @@ done < "$TEMPLATE_FILE" > "$TMP_FILE"
 chmod 600 "$TMP_FILE"
 mv "$TMP_FILE" "$CONF_FILE"
 trap - EXIT
+
+printf '%s' "$ADMIN_PASSWORD" > "$INITIAL_PASSWORD_FILE"
+chmod 600 "$INITIAL_PASSWORD_FILE"

@@ -2,7 +2,7 @@ schema:
   version: 1
 
 server:
-  listenAddr: :8080
+  listenAddr: 127.0.0.1:8080
   rootDirectory: /data/
   maxUploadSize: 104857600
   allowedOrigins: []
@@ -53,6 +53,6 @@ links: []
 
 members:
   - username: __ISRVD_ADMIN_USERNAME__
-    password: __ISRVD_ADMIN_PASSWORD__
+    password: admin
     homeDirectory: /
     founder: true
