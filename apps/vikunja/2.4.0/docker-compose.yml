@@ -1,6 +1,6 @@
 services:
   vikunja:
-    image: "vikunja/vikunja:2.3.0"
+    image: "vikunja/vikunja:2.4.0"
     container_name: ${CONTAINER_NAME}
     init: true
     restart: unless-stopped
