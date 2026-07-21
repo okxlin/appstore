@@ -1,6 +1,6 @@
 services:
   mosdns-t:
-    image: "jasonxtt/mosdns-t:v0.7.0"
+    image: "jasonxtt/mosdns-t:v0.7.1"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     extra_hosts:
