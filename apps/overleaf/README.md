@@ -31,11 +31,16 @@ Overleaf Community Edition is a self-hosted collaborative LaTeX editor for writi
 
 ## 使用说明
 
-- 本应用使用官方 Overleaf Toolkit 当前默认的 Community Edition 镜像版本 `sharelatex/sharelatex:6.2.0`，并搭配 `mongo:8.0` 与 `redis:7.4`。
+- 本应用跟随官方 Overleaf Toolkit 的 Community Edition 版本，并搭配 `mongo:8.0` 与 `redis:7.4`；实际 Overleaf 镜像版本以当前数字版本目录中的 Compose 配置为准。
 - 内部 MongoDB 和 Redis 使用应用前缀服务名，避免主服务加入 `1panel-network` 时解析到其他应用的同名服务。
 - 首次启动会通过 MongoDB healthcheck 幂等执行 replica set 初始化，避免 Overleaf 连接到未初始化的 `RSGhost` 节点。
 - `OVERLEAF_INVITE_TOKEN_SECRET` 会在安装时随机生成，重装或迁移时应保持一致。
 - 跨版本升级可能涉及 Overleaf 镜像、MongoDB 数据和迁移脚本，请先备份数据目录并参考官方 Toolkit 升级说明。
+
+## 安全提示
+
+- 官方 Community Edition 镜像的构建内容可能包含 Cypress 等开发工具缓存，镜像扫描会报告其中的可修复高危或严重漏洞；这些工具不属于正常 Web 服务运行路径，但仍会扩大镜像内容和潜在攻击面。
+- Overleaf Community Edition 不提供用户级编译隔离。请仅向可信用户开放，限制公网访问，并及时跟进官方镜像和安全公告。
 
 ## 参数
 
