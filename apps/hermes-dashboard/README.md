@@ -1,44 +1,68 @@
 # Hermes Dashboard
 
-## 应用简介
-Hermes Dashboard 附属应用。
+## 产品介绍
 
-英文说明：Optional web dashboard for Hermes Agent.
+Hermes Dashboard 是 Hermes Agent 的可选 Web 管理界面，用于连接已有 Hermes gateway，并管理会话、配置和 Agent 功能。
+
+## 主要功能
+
+- 浏览器访问 Hermes Agent 的 Web Dashboard。
+- 连接已有 gateway 并复用同一份 Hermes 数据目录。
+- 使用上游原生 Basic Auth 保护非本机监听地址。
+- 持久化会话签名密钥，使登录状态可跨容器重启保持。
+
+## 访问说明
+
+- 请先部署 Hermes Agent，并将 `APP_DATA_DIR` 指向 Hermes Agent 的同一份数据目录。
+- `GATEWAY_HEALTH_URL` 应填写 Hermes gateway 的完整可访问地址。
+- 安装完成后，使用表单中设置的 Dashboard 用户名和密码登录。
+
+## Introduction
+
+Hermes Dashboard is the optional web interface for Hermes Agent. It connects to an existing gateway and provides browser access to sessions, configuration, and agent features.
+
+## Features
+
+- Browser-based Hermes Agent dashboard.
+- Shared data directory and gateway connection.
+- Upstream Basic Auth for non-loopback binds.
+- Stable session signing across container restarts.
 
 ## 部署说明
-- 本应用使用 Docker Compose 在 1Panel 中部署。
-- 应用分类：AI。
-- 支持架构：amd64、arm64。
-- 可选版本：`latest`、`2026.6.19`。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 端口
-| 变量 | 说明 | 默认值 | 必填 |
+- 本应用使用 Docker Compose 在 1Panel 中部署。
+- 支持 `amd64`、`arm64` 架构。
+- 提供滚动更新的 `latest` 和与主镜像标签一致的数字版本目录；实际版本以当前目录中的 Compose 配置为准。
+- Dashboard 固定使用 `dashboard --host 0.0.0.0 --no-open` 启动。新版上游已将 `--insecure` 设为无效选项，公开绑定必须配置认证 Provider。
+- 容器使用 `HERMES_UID` / `HERMES_GID` 访问共享数据目录，建议与 Hermes Agent 保持一致。
+
+## 参数
+
+| 参数 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | PANEL_APP_PORT_HTTP | Dashboard 端口 | 9119 | 是 |
-
-## 数据持久化
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| TIPS | 提示 | Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。容器默认不再以 root 身份运行，而是使用 HERMES_UID / HERMES_GID（默认 10000:10000）映射到宿主机数据目录。升级脚本会在旧 .env 缺失时自动补入这两个变量，并把 APP_DATA_DIR 现有目录权限迁移到对应 UID/GID；这里建议与 Hermes Agent 保持一致。默认命令就是不安全模式 `dashboard --host 0.0.0.0 --insecure`，会暴露 API keys 与配置。务必只在可信内网、临时调试，或已通过你自己的反向代理鉴权保护时使用。 | 是 |
-| APP_DATA_DIR | 数据目录 | /opt/1panel/apps/local/hermes-agent/hermes-agent/data | 是 |
-
-升级或迁移前，请在 1Panel 中备份上述数据目录。
-
-## 配置项
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
+| APP_DATA_DIR | Hermes Agent 数据目录 | /opt/1panel/apps/local/hermes-agent/hermes-agent/data | 是 |
 | HERMES_UID | Hermes 运行用户 UID | 10000 | 是 |
 | HERMES_GID | Hermes 运行用户 GID | 10000 | 是 |
 | GATEWAY_HEALTH_URL | 网关健康检查 URL | http://172.18.0.240:8642 | 是 |
-| DASHBOARD_RUN_COMMAND | Dashboard 启动命令 | dashboard --host 0.0.0.0 --insecure | 是 |
+| DASHBOARD_USERNAME | Dashboard 用户名 | admin | 是 |
+| DASHBOARD_PASSWORD | Dashboard 密码 | 随机生成 | 是 |
+| DASHBOARD_SESSION_SECRET | Dashboard 会话签名密钥 | 随机生成 | 是 |
 
-## 使用说明
-- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
-- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+## 升级说明
+
+- 从旧版本升级时，脚本只会为缺失或空白的认证变量生成随机值，不会覆盖已有配置。
+- 自动生成的升级密码不会打印到日志。升级完成后请在 1Panel 应用参数中设置自己知道的密码，再访问 Dashboard。
+- 已废弃的 `DASHBOARD_RUN_COMMAND` 可能仍保留在旧安装的 `.env` 中，但新 Compose 不再读取该变量，无需手动清理。
+
+## 安全提示
+
+- Dashboard 可以访问 Hermes 配置、API Key 和运行能力，请不要在无额外网络保护的情况下直接暴露到公网。
+- 密码由上游 Basic Auth 插件在内存中使用 scrypt 哈希校验；明文值由 1Panel 应用参数保存，不会写入 `config.yaml` 或启动日志。
+- 会话签名密钥应保持随机且稳定。修改它会使现有登录会话失效。
 
 ## 参考资料
+
 - 官网: <https://hermes-agent.nousresearch.com/docs/>
-- 文档: <https://hermes-agent.nousresearch.com/docs/user-guide/docker>
+- Docker 文档: <https://hermes-agent.nousresearch.com/docs/user-guide/docker>
 - 源码: <https://github.com/NousResearch/hermes-agent>
