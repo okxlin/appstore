@@ -20,13 +20,13 @@ Kibana is the data visualization, exploration and management interface for Elast
 - Manage common Elastic Stack resources from a web interface
 
 ## 部署说明
-- 本应用使用 Elastic 官方镜像 `docker.elastic.co/kibana/kibana:9.4.2` 和 `docker.elastic.co/elasticsearch/elasticsearch:9.4.2`。
+- 本应用使用 Elastic 官方 Kibana 和 Elasticsearch 镜像，两个服务保持相同版本。
 - 默认内置单节点 Elasticsearch，仅暴露 Kibana Web 端口；Elasticsearch 端口只在应用内部网络使用。
 - 默认启用 Elasticsearch 安全认证，Kibana 启动前会为 `kibana_system` 用户设置安装表单中的系统密码。
 - 单节点默认把 Elasticsearch 磁盘 flood-stage 水位线设为 99%，避免小盘环境首次启动时因剩余空间比例偏低导致安全索引被立即设为只读。
 - 应用分类：Tool。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`，当前固定 Elastic Stack 9.4.2，避免跨大版本自动升级。
+- 可选版本：`latest`；镜像更新会保持在当前兼容版本线内，并在合并前进行多服务升级测试。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
@@ -54,6 +54,7 @@ Kibana is the data visualization, exploration and management interface for Elast
 ## 使用说明
 - 首次访问时使用用户名 `elastic` 和安装表单中的 `ELASTIC_PASSWORD` 登录。
 - Kibana 内部加密密钥会根据安装时生成的 `ELASTIC_PASSWORD` 派生，避免 1Panel 默认随机字段长度不足导致启动失败；不要在已有数据的实例中随意修改 `ELASTIC_PASSWORD`。
+- Elastic 官方镜像及其基础系统、Node.js 或 Java 依赖可能包含镜像扫描器报告的已知 High 漏洞。请及时升级，仅向可信网络开放，并关注 Elastic 官方安全公告。
 - 生产使用前建议确认服务器内存、磁盘空间、备份策略和反向代理 HTTPS 配置。
 - 如果通过域名或反向代理访问，请同步更新 `KIBANA_PUBLIC_BASE_URL`。
 - Elasticsearch 数据目录保存索引和集群状态，删除或重建该目录会导致数据丢失。
