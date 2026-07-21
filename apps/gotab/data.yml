@@ -18,6 +18,7 @@ additionalProperties:
   limit: 0
   architectures:
   - amd64
+  - arm64
   description:
     en: GoTab is a personalized browser new tab page, start page, and personal home
       page.
