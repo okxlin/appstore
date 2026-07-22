@@ -1,0 +1,38 @@
+services:
+  iptv-api:
+    image: "guovern/iptv-api:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    tty: true
+    stdin_open: true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${APP_DATA_DIR}/config:/iptv-api/config"
+      - "${APP_DATA_DIR}/output:/iptv-api/output"
+    environment:
+      - PUBLIC_SCHEME=${PUBLIC_SCHEME}
+      - PUBLIC_DOMAIN=${PUBLIC_DOMAIN}
+      - PUBLIC_PORT=${PANEL_APP_PORT_HTTP}
+      - NGINX_HTTP_PORT=8080
+      - TIME_ZONE=${TIME_ZONE}
+      - OPEN_UPDATE=${OPEN_UPDATE}
+      - UPDATE_STARTUP=${UPDATE_STARTUP}
+      - UPDATE_INTERVAL=${UPDATE_INTERVAL}
+      - OPEN_RTMP=${OPEN_RTMP}
+      - CDN_URL=${CDN_URL}
+      - HTTP_PROXY=${HTTP_PROXY}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

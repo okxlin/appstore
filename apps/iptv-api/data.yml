@@ -1,0 +1,32 @@
+name: IPTV-API
+tags:
+  - 多媒体
+title: 自动聚合、验证并生成 IPTV 播放列表
+description: 自动聚合、验证并生成 IPTV 播放列表
+additionalProperties:
+  key: iptv-api
+  name: IPTV-API
+  tags:
+    - Media
+  shortDescZh: 自动聚合、验证并生成 IPTV 播放列表
+  shortDescEn: Automatically aggregate, validate, and generate IPTV playlists
+  description:
+    en: Automatically aggregate, validate, and generate IPTV playlists
+    zh: 自动聚合、验证并生成 IPTV 播放列表
+    zh-Hant: 自動彙整、驗證並產生 IPTV 播放清單
+    ja: IPTV プレイリストを自動で集約、検証、生成します
+    ko: IPTV 재생 목록을 자동으로 수집, 검증 및 생성합니다
+    ru: Автоматически собирает, проверяет и создает плейлисты IPTV
+    ms: Mengagregat, mengesahkan dan menjana senarai main IPTV secara automatik
+    pt-br: Agrega, valida e gera listas de reproducao IPTV automaticamente
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Guovin/iptv-api
+  github: https://github.com/Guovin/iptv-api
+  document: https://github.com/Guovin/iptv-api/blob/master/docs/tutorial.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
