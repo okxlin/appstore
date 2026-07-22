@@ -1,13 +1,44 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-paths=(
-  "${CONFIG_PATH:-./data/config}"
-)
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
 
-mkdir -p "${paths[@]}"
-for path in "${paths[@]}"; do
-  case "$path" in
-    ./*|../*) chown -R 1000:1000 "$path" 2>/dev/null || true ;;
+read_env_value() {
+  local key="$1"
+  [[ -f "$ENV_FILE" ]] || return 0
+  local value
+  value="$(sed -n "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
+  case "$value" in
+    \"*\") value="${value#\"}"; value="${value%\"}" ;;
+    \'*\') value="${value#\'}"; value="${value%\'}" ;;
   esac
-done
+  printf '%s\n' "$value"
+}
+
+configured_value() {
+  local key="$1"
+  local default_value="$2"
+  local value
+  value="${!key:-}"
+  if [[ -z "$value" ]]; then
+    value="$(read_env_value "$key")"
+  fi
+  printf '%s\n' "${value:-$default_value}"
+}
+
+resolve_app_path() {
+  local raw="$1"
+  if [[ "$raw" = /* ]]; then
+    printf '%s\n' "$raw"
+  else
+    printf '%s\n' "$ROOT_DIR/${raw#./}"
+  fi
+}
+
+config_path_value="$(configured_value CONFIG_PATH ./data/config)"
+config_path="$(resolve_app_path "$config_path_value")"
+mkdir -p -- "$config_path"
+case "$config_path_value" in
+  ./*|../*) chown -R 1000:1000 -- "$config_path" 2>/dev/null || true ;;
+esac

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ENV_FILE="${ENV_FILE:-./.env}"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
 
 generate_secret() {
   if [[ -r /dev/urandom ]]; then
@@ -32,8 +33,8 @@ ensure_env_default() {
     current="$(sed -n -E "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
     current="${current%\"}"
     current="${current#\"}"
-    current="${current%'}"
-    current="${current#'}"
+    current="${current%\'}"
+    current="${current#\'}"
     if [[ "$fill_empty" == "true" && -z "$current" ]]; then
       sed -i -E "s|^${key}=.*|${key}=${value}|" "$ENV_FILE"
       echo "Updated empty $key"
