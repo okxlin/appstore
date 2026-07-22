@@ -1,0 +1,68 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: Postgres database User Password
+      labelZh: Postgres数据库密码
+      label:
+        en: 'Postgres database User Password'
+        zh: 'Postgres数据库密码'
+        zh-Hant: 'Postgres 資料庫使用者密碼'
+        ja: 'Postgres データベースユーザーパスワード'
+        ko: 'Postgres 데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных Postgres'
+        ms: 'Kata laluan pengguna pangkalan data Postgres'
+        pt-br: 'Senha do usuário do banco de dados Postgres'
+      required: true
+      rule: paramCommon
+      type: password
+    - default: 40080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: SAFELINE_DIR
+      labelEn: Data storage folder
+      labelZh: 数据存放文件夹
+      label:
+        en: 'Data storage folder'
+        zh: '数据存放文件夹'
+        zh-Hant: '資料存放資料夾'
+        ja: 'データ保存フォルダー'
+        ko: '데이터 저장 폴더'
+        ru: 'Папка хранения данных'
+        ms: 'Folder storan data'
+        pt-br: 'Pasta de armazenamento de dados'
+      required: true
+      type: text
+    - default: 192.168.255
+      edit: true
+      envKey: SUBNET_PREFIX
+      labelEn: New docker network subnet prefix
+      labelZh: 新 docker 网络子网前缀
+      label:
+        en: 'New docker network subnet prefix'
+        zh: '新 docker 网络子网前缀'
+        zh-Hant: '新 docker 網路子網前綴'
+        ja: '新しい docker ネットワークのサブネット接頭辞'
+        ko: '새 docker 네트워크 서브넷 접두사'
+        ru: 'Префикс подсети новой сети Docker'
+        ms: 'Awalan subnet rangkaian Docker baharu'
+        pt-br: 'Prefixo da sub-rede da nova rede Docker'
+      required: true
+      type: text

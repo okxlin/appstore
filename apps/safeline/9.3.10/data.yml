@@ -1,0 +1,68 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: Postgres database User Password
+      labelZh: Postgres数据库密码
+      label:
+        en: 'Postgres database User Password'
+        zh: 'Postgres数据库密码'
+        zh-Hant: 'Postgres 資料庫使用者密碼'
+        ja: 'Postgres データベースユーザーパスワード'
+        ko: 'Postgres 데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных Postgres'
+        ms: 'Kata laluan pengguna pangkalan data Postgres'
+        pt-br: 'Senha do usuário do banco de dados Postgres'
+      required: true
+      rule: paramCommon
+      type: password
+    - default: 40080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: SAFELINE_DIR
+      labelEn: Data storage folder
+      labelZh: 数据存放文件夹
+      label:
+        en: 'Data storage folder'
+        zh: '数据存放文件夹'
+        zh-Hant: '資料存放資料夾'
+        ja: 'データ保存フォルダー'
+        ko: '데이터 저장 폴더'
+        ru: 'Папка хранения данных'
+        ms: 'Folder storan data'
+        pt-br: 'Pasta de armazenamento de dados'
+      required: true
+      type: text
+    - default: 172.18.0
+      edit: true
+      envKey: SUBNET_PREFIX
+      labelEn: 1panel-network subnet prefix (Check the docker network to get it)
+      labelZh: 1panel-network 子网前缀 (查看docker网络获取)
+      label:
+        en: '1panel-network subnet prefix (Check the docker network to get it)'
+        zh: '1panel-network 子网前缀 (查看docker网络获取)'
+        zh-Hant: '1panel-network 子網前綴（查看 docker 網路取得）'
+        ja: '1panel-network サブネット接頭辞（docker ネットワークで確認）'
+        ko: '1panel-network 서브넷 접두사(도커 네트워크에서 확인)'
+        ru: 'Префикс подсети 1panel-network (проверьте сеть Docker)'
+        ms: 'Awalan subnet 1panel-network (semak rangkaian Docker)'
+        pt-br: 'Prefixo da sub-rede 1panel-network (verifique a rede Docker)'
+      required: true
+      type: text

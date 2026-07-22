@@ -1,0 +1,150 @@
+services:
+  safeline-mgt:
+    container_name: ${CONTAINER_NAME}-mgt
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.234
+    image: chaitin/safeline-mgt:9.3.10
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${SAFELINE_DIR}/resources/mgt:/app/data
+    - ${SAFELINE_DIR}/logs/nginx:/app/log/nginx:z
+    - ${SAFELINE_DIR}/resources/sock:/app/sock
+    - /var/run:/app/run
+    ports:
+    - ${PANEL_APP_PORT_HTTP:-9443}:1443
+    healthcheck:
+      test: curl -k -f https://localhost:1443/api/open/health
+    environment:
+    - MGT_PG=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-pg/safeline-ce?sslmode=disable
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - safeline-pg
+      - safeline-fvm
+    labels:
+      createdBy: Apps
+
+  safeline-detector:
+    container_name: ${CONTAINER_NAME}-detector
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.235
+    image: chaitin/safeline-detector:9.3.10
+    volumes:
+    - ${SAFELINE_DIR}/resources/detector:/resources/detector
+    - ${SAFELINE_DIR}/logs/detector:/logs/detector
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - LOG_DIR=/logs/detector
+    labels:
+      createdBy: Apps
+
+  safeline-tengine:
+    container_name: ${CONTAINER_NAME}-tengine
+    restart: always
+    image: chaitin/safeline-tengine:9.3.10
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /etc/resolv.conf:/etc/resolv.conf:ro
+    - ${SAFELINE_DIR}/resources/nginx:/etc/nginx
+    - ${SAFELINE_DIR}/resources/detector:/resources/detector
+    - ${SAFELINE_DIR}/resources/chaos:/resources/chaos
+    - ${SAFELINE_DIR}/logs/nginx:/var/log/nginx:z
+    - ${SAFELINE_DIR}/resources/cache:/usr/local/nginx/cache
+    - ${SAFELINE_DIR}/resources/sock:/app/sock
+    environment:
+    - TCD_MGT_API=https://${SUBNET_PREFIX}.234:1443/api/open/publish/server
+    - TCD_SNSERVER=${SUBNET_PREFIX}.235:8000
+    - SNSERVER_ADDR=${SUBNET_PREFIX}.235:8000
+    - CHAOS_ADDR=${SUBNET_PREFIX}.240
+    ulimits:
+      nofile: 131072
+    network_mode: host
+    labels:
+      createdBy: Apps
+
+  safeline-luigi:
+    container_name: ${CONTAINER_NAME}-luigi
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.237
+    image: chaitin/safeline-luigi:9.3.10
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${SAFELINE_DIR}/resources/luigi:/app/data
+    environment:
+      - MGT_IP=${SUBNET_PREFIX}.234
+      - LUIGI_PG=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-pg/safeline-ce?sslmode=disable
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "5"
+    depends_on:
+      - safeline-detector
+      - safeline-mgt
+    labels:
+      createdBy: Apps
+
+  safeline-fvm:
+    container_name: ${CONTAINER_NAME}-fvm
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.238
+    image: chaitin/safeline-fvm:9.3.10
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "5"
+    labels:
+      createdBy: Apps
+
+  safeline-pg:
+    container_name: ${CONTAINER_NAME}-pg
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.232
+    image: postgres:15.8
+    volumes:
+    - ${SAFELINE_DIR}/resources/postgres/data:/var/lib/postgresql/data
+    - /etc/localtime:/etc/localtime:ro
+    environment:
+    - POSTGRES_USER=safeline-ce
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    command: [postgres, -c, max_connections=600]
+    healthcheck:
+      test: pg_isready -U safeline-ce -d safeline-ce
+    labels:
+      createdBy: Apps
+
+  safeline-chaos:
+    container_name: ${CONTAINER_NAME}-chaos
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET_PREFIX}.240
+    image: chaitin/safeline-chaos:9.3.10
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "5"
+    environment:
+      - DB_ADDR=postgres://safeline-ce:${POSTGRES_PASSWORD}@safeline-pg/safeline-ce?sslmode=disable
+    volumes:
+      - ${SAFELINE_DIR}/resources/sock:/app/sock
+      - ${SAFELINE_DIR}/resources/chaos:/app/chaos
+    labels:
+      createdBy: Apps
+
+networks:
+  1panel-network:
+    external: true
