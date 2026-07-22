@@ -1,0 +1,37 @@
+services:
+  diun:
+    image: "crazymax/diun:latest"
+    container_name: ${CONTAINER_NAME}
+    command: serve
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - TZ=${TZ}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - LOG_JSON=false
+      - DIUN_WATCH_WORKERS=${DIUN_WATCH_WORKERS}
+      - DIUN_WATCH_SCHEDULE=${DIUN_WATCH_SCHEDULE}
+      - DIUN_WATCH_JITTER=${DIUN_WATCH_JITTER}
+      - DIUN_PROVIDERS_DOCKER=true
+      - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=${DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT}
+      - DIUN_PROVIDERS_DOCKER_WATCHSTOPPED=${DIUN_PROVIDERS_DOCKER_WATCHSTOPPED}
+    healthcheck:
+      test:
+        - CMD
+        - diun
+        - healthcheck
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+      diun.enable: "true"
+
+networks:
+  1panel-network:
+    external: true

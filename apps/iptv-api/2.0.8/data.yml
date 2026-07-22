@@ -1,0 +1,199 @@
+additionalProperties:
+  formFields:
+    - default: 18080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web port
+      labelZh: Web 端口
+      label:
+        en: Web port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port web
+        pt-br: Porta web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data directory
+      labelZh: 数据目录
+      label:
+        en: Data directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: http
+      edit: true
+      envKey: PUBLIC_SCHEME
+      labelEn: Public scheme
+      labelZh: 公网协议
+      label:
+        en: Public scheme
+        zh: 公网协议
+        zh-Hant: 公網通訊協定
+        ja: 公開スキーム
+        ko: 공개 프로토콜
+        ru: Публичная схема
+        ms: Skema awam
+        pt-br: Esquema publico
+      required: true
+      type: select
+      values:
+        - label: http
+          value: http
+        - label: https
+          value: https
+    - default: 127.0.0.1
+      edit: true
+      envKey: PUBLIC_DOMAIN
+      labelEn: Public domain or IP
+      labelZh: 公网域名或 IP
+      label:
+        en: Public domain or IP
+        zh: 公网域名或 IP
+        zh-Hant: 公網網域或 IP
+        ja: 公開ドメインまたは IP
+        ko: 공개 도메인 또는 IP
+        ru: Публичный домен или IP
+        ms: Domain atau IP awam
+        pt-br: Dominio ou IP publico
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: OPEN_UPDATE
+      labelEn: Enable playlist updates
+      labelZh: 启用播放列表更新
+      label:
+        en: Enable playlist updates
+        zh: 启用播放列表更新
+        zh-Hant: 啟用播放清單更新
+        ja: プレイリスト更新を有効化
+        ko: 재생 목록 업데이트 활성화
+        ru: Включить обновления плейлиста
+        ms: Dayakan kemas kini senarai main
+        pt-br: Ativar atualizacoes da lista
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: UPDATE_STARTUP
+      labelEn: Update on startup
+      labelZh: 启动时更新
+      label:
+        en: Update on startup
+        zh: 启动时更新
+        zh-Hant: 啟動時更新
+        ja: 起動時に更新
+        ko: 시작할 때 업데이트
+        ru: Обновлять при запуске
+        ms: Kemas kini semasa permulaan
+        pt-br: Atualizar na inicializacao
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: 12
+      edit: true
+      envKey: UPDATE_INTERVAL
+      labelEn: Update interval in hours
+      labelZh: 更新间隔（小时）
+      label:
+        en: Update interval in hours
+        zh: 更新间隔（小时）
+        zh-Hant: 更新間隔（小時）
+        ja: 更新間隔（時間）
+        ko: 업데이트 간격(시간)
+        ru: Интервал обновления в часах
+        ms: Selang kemas kini dalam jam
+        pt-br: Intervalo de atualizacao em horas
+      required: true
+      type: number
+    - default: "true"
+      edit: true
+      envKey: OPEN_RTMP
+      labelEn: Enable stream relay
+      labelZh: 启用推流转发
+      label:
+        en: Enable stream relay
+        zh: 启用推流转发
+        zh-Hant: 啟用串流轉發
+        ja: ストリーム中継を有効化
+        ko: 스트림 릴레이 활성화
+        ru: Включить ретрансляцию потоков
+        ms: Dayakan geganti strim
+        pt-br: Ativar retransmissao de stream
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ""
+      edit: true
+      envKey: CDN_URL
+      labelEn: CDN proxy URL
+      labelZh: CDN 代理地址
+      label:
+        en: CDN proxy URL
+        zh: CDN 代理地址
+        zh-Hant: CDN 代理位址
+        ja: CDN プロキシ URL
+        ko: CDN 프록시 URL
+        ru: URL CDN-прокси
+        ms: URL proksi CDN
+        pt-br: URL do proxy CDN
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: HTTP_PROXY
+      labelEn: HTTP proxy URL
+      labelZh: HTTP 代理地址
+      label:
+        en: HTTP proxy URL
+        zh: HTTP 代理地址
+        zh-Hant: HTTP 代理位址
+        ja: HTTP プロキシ URL
+        ko: HTTP 프록시 URL
+        ru: URL HTTP-прокси
+        ms: URL proksi HTTP
+        pt-br: URL do proxy HTTP
+      required: false
+      type: text

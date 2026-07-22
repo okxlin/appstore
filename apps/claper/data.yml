@@ -1,0 +1,31 @@
+name: Claper
+tags:
+  - 协作工具
+title: 面向演示的互动反馈平台
+description: 面向演示的互动反馈平台
+additionalProperties:
+  key: claper
+  name: Claper
+  tags:
+    - Website
+  shortDescZh: 面向演示的互动反馈平台
+  shortDescEn: Interactive audience feedback for presentations
+  description:
+    en: Interactive audience feedback for presentations
+    zh: 面向演示的互动反馈平台
+    zh-Hant: 面向演示的互動回饋平台
+    ja: プレゼンテーション向けのインタラクティブなフィードバック基盤
+    ko: 프레젠테이션을 위한 대화형 청중 피드백 플랫폼
+    ru: Интерактивная обратная связь аудитории для презентаций
+    ms: Maklum balas khalayak interaktif untuk pembentangan
+    pt-br: Feedback interativo do público para apresentações
+  type: website
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://claper.co/
+  github: https://github.com/ClaperCo/Claper
+  document: https://docs.claper.co/
+  architectures:
+    - amd64
+    - arm64
