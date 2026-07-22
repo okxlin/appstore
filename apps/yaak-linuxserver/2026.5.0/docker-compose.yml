@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   yaak:
-    image: "linuxserver/yaak:2026.4.0"
+    image: "linuxserver/yaak:2026.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
