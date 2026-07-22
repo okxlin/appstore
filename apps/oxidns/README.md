@@ -21,6 +21,11 @@ DNS 服务默认监听 TCP / UDP 53 端口。安装后可直接编辑 `APP_CONFI
 ## 数据持久化
 - `APP_CONFIG_DIR`：持久化 `config.yaml`，用于自定义运行配置
 
+## 升级说明
+- 从 v1.5.0 升级到 v1.5.1 时可以继续使用现有 YAML 配置；升级脚本不会覆盖已有的 `APP_CONFIG_DIR/config.yaml`。
+- v1.5.1 移除了 matcher 的旧 `/enable`、`/disable` API 和 `enabled` 响应字段。依赖这些接口的客户端应改用 `POST /api/plugins/<matcher_tag>/mode` 和新的 `mode` 字段。
+- 替换镜像前可运行 `oxidns check -c <配置文件>` 检查配置，并备份 `APP_CONFIG_DIR`。
+
 ## Introduction
 OxiDNS is a high-performance DNS policy orchestration engine with forwarding, caching, rule matching, query recording, Prometheus metrics, and a built-in WebUI.
 
