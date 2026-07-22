@@ -1,0 +1,31 @@
+name: Douyin
+tags:
+  - 工具
+title: 抖音风格短视频前端
+description: 抖音风格短视频前端
+additionalProperties:
+  key: douyin
+  name: Douyin
+  tags:
+    - Tool
+  shortDescZh: 抖音风格短视频前端
+  shortDescEn: Douyin-style short-video frontend
+  description:
+    en: A Douyin-style short-video frontend
+    zh: 抖音风格短视频前端
+    zh-Hant: 抖音風格短影片前端
+    ja: Douyin 風のショート動画フロントエンド
+    ko: Douyin 스타일의 숏폼 동영상 프런트엔드
+    ru: Фронтенд коротких видео в стиле Douyin
+    ms: Antara muka video pendek bergaya Douyin
+    pt-br: Frontend de videos curtos no estilo Douyin
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/zyronon/douyin
+  github: https://github.com/zyronon/douyin
+  document: https://github.com/zyronon/douyin/blob/master/README.md#%E9%83%A8%E7%BD%B2%E5%88%B0-docker
+  architectures:
+    - amd64
+    - arm64

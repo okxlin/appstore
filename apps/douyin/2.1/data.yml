@@ -1,0 +1,19 @@
+additionalProperties:
+  formFields:
+    - default: 18081
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web port
+      labelZh: Web 端口
+      label:
+        en: Web port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port web
+        pt-br: Porta web
+      required: true
+      rule: paramPort
+      type: number
