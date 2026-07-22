@@ -1,6 +1,6 @@
 services:
   cache:
-    image: "valkey/valkey:9.1.0"
+    image: "valkey/valkey:9.1.1"
     container_name: ${CONTAINER_NAME}-cache
     restart: always
     read_only: true
