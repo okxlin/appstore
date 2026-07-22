@@ -1,0 +1,36 @@
+services:
+  claper:
+    image: "ghcr.io/claperco/claper:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:4000
+    volumes:
+      - claper-uploads:/app/uploads
+    environment:
+      - DATABASE_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
+      - BASE_URL=${BASE_URL}
+      - PORT=4000
+      - PRESENTATION_STORAGE=local
+      - PRESENTATION_STORAGE_DIR=/app/uploads
+      - ENABLE_ACCOUNT_CREATION=${ENABLE_ACCOUNT_CREATION}
+      - EMAIL_CONFIRMATION=${EMAIL_CONFIRMATION}
+      - MAIL_TRANSPORT=local
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:4000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+volumes:
+  claper-uploads:
+
+networks:
+  1panel-network:
+    external: true
