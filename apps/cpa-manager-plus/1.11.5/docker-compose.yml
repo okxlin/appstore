@@ -1,6 +1,6 @@
 services:
   cpa-manager-plus:
-    image: "seakee/cpa-manager-plus:v1.11.4"
+    image: "seakee/cpa-manager-plus:v1.11.5"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:18317"
