@@ -64,6 +64,10 @@ LibreChat is an open source multi-user AI chat platform with model provider inte
 - 模型供应商 Key、OAuth、SMTP、对象存储等高级配置请在应用内或后续自定义配置中维护，不建议在安装表单中暴露大量可选密钥。
 - 当前包不加入 Renovate 自动合并白名单：LibreChat 使用多个数据库/检索服务，官方主镜像来源仍是 moving tag，升级前需要查看上游变更、更新摘要并备份数据。
 
+## 安全提示
+- LibreChat 包含 Web/API、管理面板、数据库、检索和 RAG 等多个联网服务，上游镜像及依赖可能存在镜像扫描器报告的 High 或 Critical 漏洞；摘要固定只能锁定测试版本，不能消除已知漏洞。
+- 请及时更新应用并在升级前备份数据，仅向可信网络开放端口，关闭不需要的公开注册，并通过 HTTPS、反向代理和访问控制保护 Web 与管理入口。
+
 ## 参考资料
 - 官网: <https://librechat.ai/>
 - 项目仓库: <https://github.com/danny-avila/LibreChat>
