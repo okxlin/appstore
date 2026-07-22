@@ -1,0 +1,35 @@
+name: Diun
+tags:
+  - 实用工具
+title: 监视容器镜像并通知可用更新
+description: 监视容器镜像并通知可用更新
+additionalProperties:
+  key: diun
+  name: Diun
+  tags:
+    - Tool
+  shortDescZh: 监视容器镜像并通知可用更新
+  shortDescEn: Monitor container images and notify about available updates
+  description:
+    en: Monitor container images and notify about available updates
+    zh: 监视容器镜像并通知可用更新
+    zh-Hant: 監視容器映像並通知可用更新
+    ja: コンテナイメージを監視し、利用可能な更新を通知します
+    ko: 컨테이너 이미지를 감시하고 사용 가능한 업데이트를 알립니다
+    ru: Отслеживает образы контейнеров и уведомляет о доступных обновлениях
+    ms: Pantau imej bekas dan maklumkan kemas kini yang tersedia
+    pt-br: Monitora imagens de contêiner e notifica sobre atualizações disponíveis
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://crazymax.dev/diun/
+  github: https://github.com/crazy-max/diun
+  document: https://crazymax.dev/diun/
+  architectures:
+    - amd64
+    - arm64
+    - ppc64le
+    - 386
+    - armv6
+    - armv7
