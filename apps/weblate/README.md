@@ -58,6 +58,12 @@ Weblate is a libre web-based continuous localization platform for translating so
 - 对公网开放前，请把 `WEBLATE_SITE_DOMAIN`、`WEBLATE_ALLOWED_HOSTS`、SMTP 和反向代理设置调整为真实域名。
 - 官方文档说明若不设置 `WEBLATE_ADMIN_PASSWORD`，首次启动会在日志中生成随机密码；本应用改为安装表单显式填写，方便 1Panel 用户登录。
 
+## 升级说明
+- 升级前使用 `pg_dump` 备份 PostgreSQL 数据库，并在停止应用后备份 `APP_DATA_DIR`。不要把正在运行的数据库目录热复制当作数据库备份。
+- 更新 Valkey 前先触发并确认持久化保存完成，再备份 `APP_DATA_DIR/redis`；升级后确认缓存服务健康且 Weblate 可以正常登录。
+- 保持 `APP_DATA_DIR`、`POSTGRES_PASSWORD`、站点域名和管理员参数不变。当前升级脚本不会改写这些值，也不会删除持久化数据。
+- PostgreSQL 或 Valkey 跨大版本升级需要单独核对官方迁移说明和数据格式，不能按普通镜像补丁直接更新。
+
 ## 参考资料
 - 官网: <https://weblate.org/>
 - 项目仓库: <https://github.com/WeblateOrg/weblate>

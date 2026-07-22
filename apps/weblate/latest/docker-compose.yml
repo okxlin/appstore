@@ -1,12 +1,14 @@
 services:
   cache:
-    image: "valkey/valkey:9.1.0"
+    image: "valkey/valkey:9.1.1"
     container_name: ${CONTAINER_NAME}-cache
     restart: always
     read_only: true
     command: ["valkey-server", "--save", "60", "1", "--loglevel", "warning"]
     networks:
-      - weblate-network
+      weblate-network:
+        aliases:
+          - weblate-cache
     volumes:
       - "${APP_DATA_DIR}/redis:/data"
     healthcheck:
@@ -22,7 +24,9 @@ services:
     container_name: ${CONTAINER_NAME}-db
     restart: always
     networks:
-      - weblate-network
+      weblate-network:
+        aliases:
+          - weblate-database
     environment:
       - POSTGRES_USER=weblate
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -68,10 +72,10 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_USER=weblate
       - POSTGRES_DB=weblate
-      - POSTGRES_HOST=database
+      - POSTGRES_HOST=weblate-database
       - POSTGRES_PORT=5432
       - POSTGRES_DATABASE=weblate
-      - REDIS_HOST=cache
+      - REDIS_HOST=weblate-cache
       - REDIS_PORT=6379
       - WEBLATE_EMAIL_HOST=${WEBLATE_EMAIL_HOST}
       - WEBLATE_EMAIL_HOST_USER=${WEBLATE_EMAIL_HOST_USER}
