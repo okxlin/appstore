@@ -1,0 +1,30 @@
+name: FakeSSH
+tags:
+- Security
+title: 轻量级 SSH 蜜罐
+description: 轻量级 SSH 蜜罐
+additionalProperties:
+  key: fakessh
+  name: FakeSSH
+  tags:
+  - Security
+  shortDescZh: 轻量级 SSH 蜜罐
+  shortDescEn: Lightweight SSH honeypot
+  description:
+    en: FakeSSH is a lightweight SSH honeypot that logs connection attempts and basic interaction without providing a real shell.
+    zh: FakeSSH 是一款轻量级 SSH 蜜罐，用于记录连接尝试和基础交互，不提供真实 Shell。
+    zh-Hant: FakeSSH 是一款輕量級 SSH 蜜罐，用於記錄連線嘗試和基礎互動，不提供真實 Shell。
+    ja: FakeSSH は、接続試行と基本的なやり取りを記録し、実際のシェルを提供しない軽量な SSH ハニーポットです。
+    ko: FakeSSH는 연결 시도와 기본 상호 작용을 기록하고 실제 셸을 제공하지 않는 경량 SSH 허니팟입니다.
+    ru: FakeSSH — это легкий honeypot SSH, который регистрирует попытки подключения и базовое взаимодействие без предоставления реальной оболочки.
+    ms: FakeSSH ialah honeypot SSH ringan yang mencatat percubaan sambungan dan interaksi asas tanpa menyediakan shell sebenar.
+    pt-br: FakeSSH é um honeypot SSH leve que registra tentativas de conexão e interação básica sem fornecer um shell real.
+  type: security
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/fffaraz/fakessh
+  github: https://github.com/fffaraz/fakessh
+  document: https://github.com/fffaraz/fakessh
+  architectures:
+  - amd64
+  - arm64

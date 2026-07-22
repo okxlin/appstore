@@ -1,0 +1,68 @@
+additionalProperties:
+  formFields:
+    - default: 2222
+      edit: true
+      envKey: PANEL_APP_PORT_SSH
+      labelEn: SSH Honeypot Port
+      labelZh: SSH 蜜罐端口
+      label:
+        en: SSH Honeypot Port
+        zh: SSH 蜜罐端口
+        zh-Hant: SSH 蜜罐埠
+        ja: SSH ハニーポットポート
+        ko: SSH 허니팟 포트
+        ru: Порт SSH honeypot
+        ms: Port Honeypot SSH
+        pt-br: Porta do Honeypot SSH
+      required: true
+      rule: paramPort
+      type: number
+    - default: 2223
+      edit: true
+      envKey: PANEL_APP_PORT_TELNET
+      labelEn: Telnet Honeypot Port
+      labelZh: Telnet 蜜罐端口
+      label:
+        en: Telnet Honeypot Port
+        zh: Telnet 蜜罐端口
+        zh-Hant: Telnet 蜜罐埠
+        ja: Telnet ハニーポットポート
+        ko: Telnet 허니팟 포트
+        ru: Порт Telnet honeypot
+        ms: Port Honeypot Telnet
+        pt-br: Porta do Honeypot Telnet
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 數據目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

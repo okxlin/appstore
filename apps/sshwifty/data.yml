@@ -1,0 +1,31 @@
+name: SshWifty
+tags:
+  - Tool
+title: 浏览器端 SSH 与 Telnet 客户端
+description: 浏览器端 SSH 与 Telnet 客户端
+additionalProperties:
+  key: sshwifty
+  name: SshWifty
+  tags:
+    - Tool
+  shortDescZh: 浏览器端 SSH 与 Telnet 客户端
+  shortDescEn: Browser-based SSH and Telnet client
+  description:
+    en: A browser-based SSH and Telnet client that allows accessing SSH and Telnet services from the web browser.
+    zh: 一款基于浏览器的 SSH 与 Telnet 客户端，允许通过 Web 浏览器访问 SSH 和 Telnet 服务。
+    zh-Hant: 一款基於瀏覽器的 SSH 與 Telnet 客戶端，允許透過 Web 瀏覽器存取 SSH 和 Telnet 服務。
+    ja: Web ブラウザから SSH および Telnet サービスにアクセスできる、ブラウザベースの SSH/Telnet クライアント。
+    ko: 웹 브라우저에서 SSH 및 Telnet 서비스에 액세스할 수 있는 브라우저 기반 SSH/Telnet 클라이언트.
+    ru: SSH/Telnet-клиент на основе браузера, позволяющий получать доступ к службам SSH и Telnet из веб-браузера.
+    ms: Klien SSH dan Telnet berasaskan pelayar yang membolehkan akses kepada perkhidmatan SSH dan Telnet dari pelayar web.
+    pt-br: Cliente SSH e Telnet baseado em navegador que permite acessar serviços SSH e Telnet pelo navegador web.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/nirui/sshwifty
+  github: https://github.com/nirui/sshwifty
+  document: https://github.com/nirui/sshwifty
+  architectures:
+    - amd64
+    - arm64

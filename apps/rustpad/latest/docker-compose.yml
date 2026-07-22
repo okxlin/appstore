@@ -1,0 +1,23 @@
+services:
+  rustpad:
+    image: "ekzhang/rustpad:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3030"
+    environment:
+      - TZ=${TZ}
+      - PORT=3030
+      - EXPIRY_DAYS=${EXPIRY_DAYS}
+      - SQLITE_URI=file:/data/rustpad.db
+      - RUST_LOG=${RUST_LOG}
+    labels:
+      createdBy: Apps
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+
+networks:
+  1panel-network:
+    external: true

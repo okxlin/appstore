@@ -1,0 +1,30 @@
+name: Cowrie
+tags:
+- Security
+title: SSH/Telnet 蜜罐
+description: SSH/Telnet 蜜罐
+additionalProperties:
+  key: cowrie
+  name: Cowrie
+  tags:
+  - Security
+  shortDescZh: SSH/Telnet 蜜罐
+  shortDescEn: SSH/Telnet honeypot
+  description:
+    en: Cowrie is a medium-interaction SSH and Telnet honeypot designed to log brute-force attacks and shell interaction performed by attackers.
+    zh: Cowrie 是一个中交互 SSH/Telnet 蜜罐，用于记录攻击者的暴力破解和 Shell 交互行为。
+    zh-Hant: Cowrie 是一個中交互 SSH/Telnet 蜜罐，用於記錄攻擊者的暴力破解和 Shell 互動行為。
+    ja: Cowrie は、攻撃者のブルートフォース攻撃やシェル操作を記録するために設計された中間相互作用型の SSH/Telnet ハニーポットです。
+    ko: Cowrie는 공격자의 무차별 대입 공격 및 셸 상호 작용을 기록하도록 설계된 중간 상호작용 SSH/Telnet 허니팟입니다.
+    ru: Cowrie — это honeypot среднего уровня взаимодействия для SSH и Telnet, предназначенный для регистрации brute-force атак и действий злоумышленников в оболочке.
+    ms: Cowrie ialah honeypot SSH/Telnet interaksi sederhana yang direka untuk mencatat serangan brute-force dan interaksi shell oleh penyerang.
+    pt-br: Cowrie é um honeypot SSH/Telnet de interação média projetado para registrar ataques de força bruta e interação com shell por atacantes.
+  type: security
+  crossVersionUpdate: true
+  limit: 0
+  website: https://cowrie.org
+  github: https://github.com/cowrie/cowrie
+  document: https://docs.cowrie.org
+  architectures:
+  - amd64
+  - arm64

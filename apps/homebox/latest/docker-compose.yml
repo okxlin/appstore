@@ -1,0 +1,20 @@
+services:
+  homebox:
+    image: "ghcr.io/sysadminsmedia/homebox:latest-hardened"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7745"
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    environment:
+      - TZ=${TZ}
+      - HBOX_AUTH_API_KEY_PEPPER=${HBOX_AUTH_API_KEY_PEPPER}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

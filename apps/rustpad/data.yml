@@ -1,0 +1,30 @@
+name: Rustpad
+tags:
+- Tool
+title: 开源协作文本编辑器
+description: 开源协作文本编辑器
+additionalProperties:
+  key: rustpad
+  name: Rustpad
+  tags:
+  - Tool
+  shortDescZh: 开源协作文本编辑器
+  shortDescEn: Open-source collaborative text editor
+  description:
+    en: Rustpad is an efficient and minimal open-source collaborative text editor based on operational transformation, with real-time collaboration in the browser.
+    zh: Rustpad 是一款高效、极简的开源协作文本编辑器，基于操作转换算法，支持浏览器实时协作编辑。
+    zh-Hant: Rustpad 是一款高效、極簡的開源協作文字編輯器，基於操作轉換演算法，支援瀏覽器即時協作編輯。
+    ja: Rustpad は、操作変換アルゴリズムに基づいた効率的で最小限のオープンソース協作文本エディタで、ブラウザでのリアルタイム共同編集をサポートします。
+    ko: Rustpad는 운영 변환 알고리즘을 기반으로 한 효율적이고 최소한의 오픈소스 협업 텍스트 편집기로, 브라우저에서 실시간 협업 편집을 지원합니다.
+    ru: Rustpad — это эффективный и минималистичный открытый совместный текстовый редактор на основе алгоритма операционного преобразования с поддержкой совместной работы в браузере в реальном времени.
+    ms: Rustpad ialah penyunting teks kolaboratif sumber terbuka yang cekap dan minimum berdasarkan algoritma transformasi operasi, dengan sokongan kolaborasi masa nyata dalam pelayar.
+    pt-br: Rustpad é um editor de texto colaborativo de código aberto eficiente e minimalista baseado em transformação operacional, com colaboração em tempo real no navegador.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://rustpad.io
+  github: https://github.com/ekzhang/rustpad
+  document: https://github.com/ekzhang/rustpad
+  architectures:
+  - amd64
+  - arm64

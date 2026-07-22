@@ -1,0 +1,31 @@
+name: HomeBox
+tags:
+  - Tool
+title: 家庭物资与库存管理工具
+description: 家庭物资与库存管理工具
+additionalProperties:
+  key: homebox
+  name: HomeBox
+  tags:
+    - Tool
+  shortDescZh: 家庭物资与库存管理工具
+  shortDescEn: Home inventory and asset management tool
+  description:
+    en: A self-hosted inventory and organization system built for home users to track items, locations, and labels.
+    zh: 一款面向家庭用户的自托管物资与库存管理系统，支持记录物品、存放位置与标签。
+    zh-Hant: 一款面向家庭用戶的自託管物資與庫存管理系統，支援記錄物品、存放位置與標籤。
+    ja: 家庭ユーザー向けの自ホスト型在庫・資産管理システム。
+    ko: 가정 사용자를 위한 자체 호스팅 재고 및 자산 관리 시스템입니다.
+    ru: Самостоятельно размещаемая система инвентаризации и управления активами для домашних пользователей.
+    ms: Sistem inventori dan pengurusan aset swa-hosting untuk pengguna rumah.
+    pt-br: Sistema de inventário e gerenciamento de ativos auto-hospedado para usuários domésticos.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://homebox.software/
+  github: https://github.com/sysadminsmedia/homebox
+  document: https://homebox.software/en/
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,31 @@
+name: Grocy
+tags:
+  - Tool
+title: 家用 ERP 与物资管理系统
+description: 家用 ERP 与物资管理系统
+additionalProperties:
+  key: grocy
+  name: Grocy
+  tags:
+    - Tool
+  shortDescZh: 家用 ERP 与物资管理系统
+  shortDescEn: Home ERP and grocery management system
+  description:
+    en: A self-hosted home ERP system for managing groceries, household chores, and inventory.
+    zh: 一款自托管的家用 ERP 系统，用于管理食品、家务和库存物资。
+    zh-Hant: 一款自託管的家用 ERP 系統，用於管理食品、家務和庫存物資。
+    ja: 自宅ホスト型の家庭用 ERP システム。食料品、家事、在庫を管理。
+    ko: 식료품, 가사, 재고를 관리하는 자체 호스트형 가정용 ERP 시스템.
+    ru: Самостоятельно развёртываемая домашняя ERP-система для управления продуктами, делами и запасами.
+    ms: Sistem ERP rumah yang dihoskan sendiri untuk menguruskan barangan runcit, kerja rumah dan inventori.
+    pt-br: Sistema ERP doméstico autohospedado para gerenciar mantimentos, tarefas domésticas e inventário.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://grocy.info
+  github: https://github.com/grocy/grocy
+  document: https://github.com/grocy/grocy
+  architectures:
+    - amd64
+    - arm64
