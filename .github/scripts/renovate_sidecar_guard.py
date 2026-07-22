@@ -84,6 +84,26 @@ def extract_app(path: str) -> str | None:
     return match.group(1) if match else None
 
 
+def resolve_primary_services(
+    app: str,
+    configured: list[str],
+    base_data: dict,
+    head_data: dict,
+) -> list[str]:
+    if configured:
+        return configured
+
+    base_services = base_data.get("services")
+    head_services = head_data.get("services")
+    if not isinstance(base_services, dict) or not isinstance(head_services, dict):
+        return []
+    if max(len(base_services), len(head_services)) <= 1:
+        return []
+    if app in base_services and app in head_services:
+        return [app]
+    return []
+
+
 def compare_compose(
     app: str,
     path: str,
@@ -185,13 +205,19 @@ def main() -> int:
             )
             continue
 
+        primary_services = resolve_primary_services(
+            app,
+            policy.get(app, []),
+            base_data,
+            head_data,
+        )
         decisions.append(
             compare_compose(
                 app=app,
                 path=resolved_head_path,
                 base_data=base_data,
                 head_data=head_data,
-                primary_services=policy.get(app, []),
+                primary_services=primary_services,
             )
         )
 

@@ -55,6 +55,9 @@ jobs:
               subprocess.check_call([sys.executable, "-m", "pip", "install", "--user", "pyyaml"])
           PY
 
+      - name: Test sidecar guard policy logic
+        run: python3 .github/scripts/test_renovate_sidecar_guard.py
+
       - name: Evaluate Renovate PR against primary-service policy
         id: guard
         env:
