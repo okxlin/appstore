@@ -1,0 +1,79 @@
+services:
+  immich-server:
+    container_name: ${CONTAINER_NAME}-server
+    restart: always
+    networks:
+      - 1panel-network
+    image: ghcr.io/immich-app/immich-server:v3.0.3
+    volumes:
+      - ${UPLOAD_LOCATION}:/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_HOSTNAME=${CONTAINER_NAME}-postgres
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_DATABASE_NAME=${PANEL_DB_NAME}
+      - REDIS_HOSTNAME=${CONTAINER_NAME}-redis
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:2283
+    depends_on:
+      - immich-redis
+      - immich-database
+    healthcheck:
+      disable: false
+    labels:
+      createdBy: "Apps"
+
+  immich-machine-learning:
+    container_name: ${CONTAINER_NAME}-machine_learning
+    restart: always
+    networks:
+      - 1panel-network
+    image: ghcr.io/immich-app/immich-machine-learning:v3.0.3
+    volumes:
+      - ${CACHE_PATH}:/cache
+    environment:
+      - DB_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - DB_HOSTNAME=${CONTAINER_NAME}-postgres
+      - DB_USERNAME=${PANEL_DB_USER}
+      - DB_DATABASE_NAME=${PANEL_DB_NAME}
+      - REDIS_HOSTNAME=${CONTAINER_NAME}-redis
+    healthcheck:
+      disable: false
+    labels:
+      createdBy: "Apps"
+
+  immich-redis:
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - 1panel-network
+    image: "docker.io/valkey/valkey:9@sha256:4963247afc4cd33c7d3b2d2816b9f7f8eeebab148d29056c2ca4d7cbc966f2d9"
+    healthcheck:
+      test: redis-cli ping || exit 1
+    labels:
+      createdBy: "Apps"
+
+  immich-database:
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: always
+    networks:
+      - 1panel-network
+    image: "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0@sha256:bcf63357191b76a916ae5eb93464d65c07511da41e3bf7a8416db519b40b1c23"
+    environment:
+      - POSTGRES_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - POSTGRES_USER=${PANEL_DB_USER}
+      - POSTGRES_DB=${PANEL_DB_NAME}
+      - POSTGRES_INITDB_ARGS=--data-checksums
+      - DB_STORAGE_TYPE=${DB_STORAGE_TYPE:-SSD}
+    volumes:
+      - ${DB_PATH}:/var/lib/postgresql/data
+    shm_size: 128mb
+    healthcheck:
+      disable: false
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

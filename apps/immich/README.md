@@ -43,13 +43,15 @@ Immich is a high-performance open source photo and video management platform for
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
 
-从 `1.132.3` 升级到 `3.0.2` 前请特别注意：
+从 `1.132.3` 升级到 `3.x` 前请特别注意：
 
 - 必须先备份 `UPLOAD_LOCATION`，并通过 PostgreSQL 导出方式备份数据库；运行中的 `DB_PATH` 热拷贝不能作为可靠数据库备份。
 - 数据库镜像会从已弃用的 `pgvecto-rs` 切换到官方 VectorChord 兼容镜像。首次启动会执行扩展迁移和索引重建，大型图库可能需要较长时间。
 - 完成 VectorChord 迁移后不可降级到低于 `1.133.0` 的 Immich 版本。
 - v3 包含 API 等破坏性变更，依赖 Immich API 的第三方工具需要按官方 v3 migration guide 检查兼容性。
 - 移动客户端应在服务器升级前更新到与服务器主版本兼容的版本。
+
+从 `3.0.2` 升级到 `3.0.3` 不改变表单、持久化路径、Valkey 或 PostgreSQL 镜像。首次启动会自动执行数据库迁移；升级前仍需备份数据库和上传目录，并等待服务恢复健康后再执行其他操作。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
