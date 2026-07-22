@@ -28,7 +28,7 @@ Telegram 桌面客户端。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`6.9.3`。
+- 商店同时提供 `latest` 和固定版本目录；升级前请备份 `/config` 数据。
 - 安装后按应用表单中的端口访问 Web 桌面。
 
 ## 端口
@@ -59,6 +59,10 @@ Telegram 桌面客户端。
 - 浏览器/桌面类 LinuxServer 镜像默认无认证，本适配启用 Basic Auth，请使用 CUSTOM_USER 和 PASSWORD 登录。
 - 如需公网访问，请优先放在带强认证的反向代理之后。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+
+## 安全说明
+- 该完整桌面镜像包含浏览器、桌面环境和容器工具组件，镜像扫描可能报告与 Telegram 主程序无直接关系的 High 漏洞；固定版本标签不能消除这些上游依赖风险。
+- 本应用不需要 Docker Socket、`privileged` 或 host network。请及时升级镜像，仅向可信来源开放 Web 端口，并保留 Basic Auth 或更强的反向代理认证。
 
 ## 参考资料
 - 官网: <https://telegram.org/>
