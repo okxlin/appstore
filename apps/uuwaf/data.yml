@@ -24,7 +24,7 @@ additionalProperties:
   limit: 1
   recommend: 0
   website: https://waf.uusec.com/#/
-  github: https://github.com/Safe3/uuWAF
+  github: https://github.com/Safe3/uusec-waf
   document: https://waf.uusec.com/#/?id=main
   architectures:
     - amd64

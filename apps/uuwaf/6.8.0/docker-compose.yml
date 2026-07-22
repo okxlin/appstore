@@ -1,0 +1,96 @@
+services:
+  uuwaf:
+    image: uusec/nanqiang:v6.8.0
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    labels:
+      createdBy: Apps
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 102400
+        hard: 102400
+    networks:
+      - 1panel-network
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:80
+      - ${PANEL_APP_PORT_HTTPS}:443
+      - ${PANEL_APP_PORT_CONSOLE}:4443
+    volumes:
+      - wafshared:/uuwaf-legacy:ro
+      - waf_initdb:/uuwaf/initdb
+      - waf_config:/uuwaf/web/conf
+      - waf_accounts:/uuwaf/web/accounts
+      - waf_certificates:/uuwaf/web/certificates
+      - /etc/localtime:/etc/localtime:ro
+    command:
+      - /bin/bash
+      - -c
+      - |
+        set -euo pipefail
+        marker=/uuwaf/web/conf/.uuwaf-legacy-migrated-v6.8.0
+        if [[ ! -e "$$marker" ]]; then
+          for directory in conf accounts certificates; do
+            source_dir="/uuwaf-legacy/web/$$directory"
+            target_dir="/uuwaf/web/$$directory"
+            if [[ -d "$$source_dir" ]]; then
+              cp -a "$$source_dir"/. "$$target_dir"/
+            fi
+          done
+          touch "$$marker"
+        fi
+        exec /run.sh
+    environment:
+      - TZ=${TIME_ZONE}
+      - UUWAF_DB_DSN=root:${PANEL_DB_USER_PASSWORD}@tcp(${CONTAINER_NAME}-db:3306)/uuwaf?charset=utf8mb4&parseTime=true&loc=Local
+    depends_on:
+      wafdb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -kfsS https://127.0.0.1:4443/ >/dev/null || exit 1"]
+      start_period: 30s
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  wafdb:
+    image: percona/percona-server:5.7.44
+    container_name: ${CONTAINER_NAME}-db
+    restart: always
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    volumes:
+      - waf_initdb:/docker-entrypoint-initdb.d:ro
+      - wafdata:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=${TIME_ZONE}
+      - INIT_ROCKSDB
+      - MYSQL_MAX_CONNECTIONS=${MYSQL_MAX_CONNECTIONS}
+      - MYSQL_ROOT_PASSWORD=${PANEL_DB_USER_PASSWORD}
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      start_period: 3s
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  wafshared:
+    name: wafshared
+  wafdata:
+    name: wafdata
+  waf_initdb:
+    name: ${CONTAINER_NAME}-initdb
+  waf_config:
+    name: ${CONTAINER_NAME}-config
+  waf_accounts:
+    name: ${CONTAINER_NAME}-accounts
+  waf_certificates:
+    name: ${CONTAINER_NAME}-certificates
+
+networks:
+  1panel-network:
+    external: true
