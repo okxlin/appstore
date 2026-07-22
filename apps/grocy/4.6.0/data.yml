@@ -1,0 +1,83 @@
+additionalProperties:
+  formFields:
+    - default: 80
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: "1000"
+      edit: true
+      envKey: PUID
+      labelEn: User ID
+      labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 使用者 ID
+        ja: ユーザー ID
+        ko: 사용자 ID
+        ru: ID пользователя
+        ms: ID Pengguna
+        pt-br: ID do usuário
+      required: true
+      type: number
+    - default: "1000"
+      edit: true
+      envKey: PGID
+      labelEn: Group ID
+      labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 使用者群組 ID
+        ja: グループ ID
+        ko: 그룹 ID
+        ru: ID группы
+        ms: ID Kumpulan
+        pt-br: ID do grupo
+      required: true
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

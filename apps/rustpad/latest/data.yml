@@ -1,0 +1,94 @@
+additionalProperties:
+  formFields:
+    - default: 3030
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 數據目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: 1
+      edit: true
+      envKey: EXPIRY_DAYS
+      labelEn: Document Expiry Days
+      labelZh: 文档过期天数
+      label:
+        en: Document Expiry Days
+        zh: 文档过期天数
+        zh-Hant: 文檔過期天數
+        ja: ドキュメントの有効期限日数
+        ko: 문서 만료 일수
+        ru: Дни истечения срока документов
+        ms: Hari Tamat Dokumen
+        pt-br: Dias de Expiração do Documento
+      required: true
+      type: number
+    - default: "info"
+      edit: true
+      envKey: RUST_LOG
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журналирования
+        ms: Tahap Log
+        pt-br: Nível de Log
+      required: true
+      type: select
+      values:
+        - label: "error"
+          value: "error"
+        - label: "warn"
+          value: "warn"
+        - label: "info"
+          value: "info"
+        - label: "debug"
+          value: "debug"
+        - label: "trace"
+          value: "trace"
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

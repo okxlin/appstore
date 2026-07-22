@@ -1,0 +1,154 @@
+additionalProperties:
+  formFields:
+  - default: 8000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Port
+    labelZh: 端口
+    label:
+      en: Port
+      zh: 端口
+      zh-Hant: 埠
+      ja: ポート
+      ko: 포트
+      ru: Порт
+      ms: Port
+      pt-br: Porta
+    required: true
+    rule: paramPort
+    type: number
+  - default: ./data
+    edit: true
+    envKey: APP_DATA_DIR
+    labelEn: Data Directory
+    labelZh: 数据目录
+    label:
+      en: Data Directory
+      zh: 数据目录
+      zh-Hant: 資料目錄
+      ja: データディレクトリ
+      ko: 데이터 디렉터리
+      ru: Каталог данных
+      ms: Direktori data
+      pt-br: Diretório de dados
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: SECRET_TOKEN
+    labelEn: Secret Token
+    labelZh: 安全密钥
+    label:
+      en: Secret Token
+      zh: 安全密钥
+      zh-Hant: 安全金鑰
+      ja: シークレットトークン
+      ko: 비밀 토큰
+      ru: Секретный токен
+      ms: Token rahsia
+      pt-br: Token secreto
+    required: true
+    random: true
+    type: password
+  - default: ''
+    edit: true
+    envKey: ADMIN_PASSWORD
+    labelEn: Admin Password
+    labelZh: 管理员密码
+    label:
+      en: Admin Password
+      zh: 管理员密码
+      zh-Hant: 管理員密碼
+      ja: 管理者パスワード
+      ko: 관리자 비밀번호
+      ru: Пароль администратора
+      ms: Kata laluan pentadbir
+      pt-br: Senha de administrador
+    required: true
+    random: true
+    type: password
+  - default: 'false'
+    edit: true
+    envKey: ALLOW_REGISTRATION
+    labelEn: Allow Registration
+    labelZh: 允许注册
+    label:
+      en: Allow Registration
+      zh: 允许注册
+      zh-Hant: 允許註冊
+      ja: 登録を許可
+      ko: 등록 허용
+      ru: Разрешить регистрацию
+      ms: Benarkan pendaftaran
+      pt-br: Permitir registro
+    required: true
+    type: select
+    values:
+    - label: 'true'
+      value: 'true'
+    - label: 'false'
+      value: 'false'
+  - default: '4'
+    edit: true
+    envKey: INDENT
+    labelEn: JSON Indent
+    labelZh: JSON 缩进
+    label:
+      en: JSON Indent
+      zh: JSON 缩进
+      zh-Hant: JSON 縮排
+      ja: JSON インデント
+      ko: JSON 들여쓰기
+      ru: Отступ JSON
+      ms: Inden JSON
+      pt-br: Recuo JSON
+    required: false
+    type: number
+  - default: '40'
+    edit: true
+    envKey: LOGOUT_AFTER_DAYS
+    labelEn: Logout After Days
+    labelZh: 登录 Cookie 过期天数
+    label:
+      en: Logout After Days
+      zh: 登录 Cookie 过期天数
+      ja: ログアウトまでの日数
+      ko: 로그아웃까지 일수
+      ru: Дней до выхода
+      ms: Hari sebelum log keluar
+      pt-br: Dias até logout
+      zh-Hant: 登入 Cookie 過期天數
+    required: true
+    type: number
+  - default: ''
+    edit: true
+    envKey: BASE_PATH
+    labelEn: Base Path
+    labelZh: 基础路径
+    label:
+      en: Base Path
+      zh: 基础路径
+      zh-Hant: 基礎路徑
+      ja: ベースパス
+      ko: 기본 경로
+      ru: Базовый путь
+      ms: Laluan asas
+      pt-br: Caminho base
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

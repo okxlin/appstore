@@ -1,0 +1,22 @@
+services:
+  cowrie:
+    image: "cowrie/cowrie:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_SSH}:2222"
+      - "${PANEL_APP_PORT_TELNET}:2223"
+    environment:
+      - TZ=${TZ}
+      - COWRIE_TELNET_ENABLED=yes
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    volumes:
+      - "${APP_DATA_DIR}/etc:/cowrie/cowrie-git/etc"
+      - "${APP_DATA_DIR}:/cowrie/cowrie-git/var"
+
+networks:
+  1panel-network:
+    external: true

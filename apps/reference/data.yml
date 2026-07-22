@@ -1,0 +1,30 @@
+name: Reference
+tags:
+- Tool
+title: 开发者技术栈速查清单
+description: 开发者技术栈速查清单
+additionalProperties:
+  key: reference
+  name: Reference
+  tags:
+  - Tool
+  shortDescZh: 开发者技术栈速查清单
+  shortDescEn: Developer quick reference cheatsheets
+  description:
+    en: Reference is a collection of quick reference cheatsheets for developers, covering databases, front-end, back-end, APIs, and various tools.
+    zh: Reference 是一份为中文开发者整理的技术栈速查清单，涵盖数据库、前端、后端、API 及各类工具命令。
+    zh-Hant: Reference 是一份為中文開發者整理的技術棧速查清單，涵蓋資料庫、前端、後端、API 及各類工具命令。
+    ja: Reference は、データベース、フロントエンド、バックエンド、API、さまざまなツールを網羅した開発者向けのクイックリファレンスチートシート集です。
+    ko: Reference는 데이터베이스, 프론트엔드, 백엔드, API 및 다양한 도구를 다루는 개발자용 빠른 참조 치트시트 모음입니다.
+    ru: Reference — это набор шпаргалок для разработчиков, охватывающих базы данных, фронтенд, бэкенд, API и различные инструменты.
+    ms: Reference ialah koleksi helaian rujukan pantas untuk pembangun, merangkumi pangkalan data, bahagian hadapan, bahagian belakang, API dan pelbagai alat.
+    pt-br: Reference é uma coleção de folhas de referência rápida para desenvolvedores, cobrindo bancos de dados, front-end, back-end, APIs e várias ferramentas.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/jaywcjlove/reference
+  github: https://github.com/jaywcjlove/reference
+  document: https://github.com/jaywcjlove/reference
+  architectures:
+  - amd64
+  - arm64

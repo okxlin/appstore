@@ -1,0 +1,17 @@
+services:
+  reference:
+    image: "wcjiang/reference:1.48.0"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - TZ=${TZ}
+    labels:
+      createdBy: Apps
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

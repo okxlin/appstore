@@ -1,0 +1,31 @@
+name: Baby Buddy
+tags:
+  - Tool
+title: 婴幼儿吃喝拉撒记录与管理工具
+description: 婴幼儿吃喝拉撒记录与管理工具
+additionalProperties:
+  key: babybuddy
+  name: Baby Buddy
+  tags:
+    - Tool
+  shortDescZh: 婴幼儿吃喝拉撒记录与管理工具
+  shortDescEn: Baby care tracking and management tool
+  description:
+    en: A self-hosted baby care tracking application for feeding, sleep, diaper changes, and growth records.
+    zh: 一款自托管的婴幼儿护理记录应用，用于记录喂养、睡眠、换尿布和成长数据。
+    zh-Hant: 一款自託管的嬰幼兒護理記錄應用，用於記錄餵養、睡眠、換尿布和成長數據。
+    ja: 自宅ホスト型の乳幼児ケア記録アプリケーション。授乳、睡眠、おむつ交換、成長記録を管理。
+    ko: 수유, 수면, 기저귀 교체, 성장 기록을 위한 자체 호스트형 아기 관리 애플리케이션.
+    ru: 'Самостоятельно развёртываемое приложение для отслеживания ухода за ребёнком: кормление, сон, подгузники и рост.'
+    ms: Aplikasi penjagaan bayi yang dihoskan sendiri untuk merakam penyusuan, tidur, tukar lampin dan pertumbuhan.
+    pt-br: Aplicativo autohospedado para acompanhamento de cuidados com o bebê, incluindo alimentação, sono, fraldas e crescimento.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/babybuddy/babybuddy
+  github: https://github.com/babybuddy/babybuddy
+  document: https://docs.baby-buddy.net
+  architectures:
+    - amd64
+    - arm64

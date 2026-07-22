@@ -1,0 +1,25 @@
+services:
+  dailytxt:
+    image: "phitux/dailytxt:2.6.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    environment:
+      - TZ=${TZ}
+      - SECRET_TOKEN=${SECRET_TOKEN}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ALLOW_REGISTRATION=${ALLOW_REGISTRATION}
+      - INDENT=${INDENT}
+      - LOGOUT_AFTER_DAYS=${LOGOUT_AFTER_DAYS}
+      - BASE_PATH=${BASE_PATH}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

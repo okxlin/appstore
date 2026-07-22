@@ -1,0 +1,31 @@
+name: DailyTxT
+tags:
+  - Tool
+title: 一款加密的个人日记 Web 应用
+description: 一款加密的个人日记 Web 应用
+additionalProperties:
+  key: dailytxt
+  name: DailyTxT
+  tags:
+    - Tool
+  shortDescZh: 一款加密的个人日记 Web 应用
+  shortDescEn: An encrypted personal diary web application
+  description:
+    en: An encrypted diary/journal web application with markdown support, file uploads, tags, search, and map integration.
+    zh: 一款支持 Markdown、文件上传、标签、搜索和地图的加密日记 Web 应用。
+    zh-Hant: 一款支援 Markdown、檔案上傳、標籤、搜尋和地圖的加密日記 Web 應用。
+    ja: Markdown、ファイルアップロード、タグ、検索、地図をサポートする暗号化日記 Web アプリ。
+    ko: Markdown, 파일 업로드, 태그, 검색 및 지도를 지원하는 암호화된 일기 Web 애플리케이션.
+    ru: Зашифрованное веб-приложение для ведения дневника с поддержкой Markdown, загрузки файлов, тегов, поиска и карт.
+    ms: Aplikasi web diari peribadi yang disulitkan dengan sokongan Markdown, muat naik fail, tag, carian dan peta.
+    pt-br: Aplicativo web de diário pessoal criptografado com suporte a Markdown, upload de arquivos, tags, pesquisa e mapas.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://dailytxt.phitux.de
+  github: https://github.com/PhiTux/DailyTxT
+  document: https://github.com/PhiTux/DailyTxT
+  architectures:
+    - amd64
+    - arm64

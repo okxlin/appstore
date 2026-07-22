@@ -1,0 +1,17 @@
+services:
+  fakessh:
+    image: "ghcr.io/fffaraz/fakessh:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_SSH}:22"
+    environment:
+      - TZ=${TZ}
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
