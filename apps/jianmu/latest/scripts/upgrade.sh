@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ENV_FILE="${ENV_FILE:-./.env}"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
+ENV_FILE="${ENV_FILE:-${ROOT_DIR}/.env}"
 
 escape_sql_string() {
   local value="${1:-}"
@@ -95,7 +96,7 @@ migrate_db_port() {
 migrate_db_type
 migrate_db_port
 
-echo "Jianmu is currently pinned to the verified official image line ui/server v2.8.2 and worker v1.0.13."
+echo "Jianmu is currently pinned to the verified official image line ui/server v2.8.2 and worker v1.0.14."
 echo "Automatic in-place app upgrades are intentionally disabled for this package."
 echo "Back up APP_DATA_DIR, the MySQL-compatible database, and the configured Jianmu secrets before changing packaged versions or rotating credentials."
 exit 0

@@ -51,8 +51,6 @@ additionalProperties:
       values:
         - label: "MySQL"
           value: mysql
-        - label: "LocalMySQL"
-          value: localmysql
         - label: "MariaDB"
           value: mariadb
       child:

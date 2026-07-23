@@ -6,16 +6,28 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
-      #- "${PANEL_APP_PORT_HTTPS}:443"
     volumes:
       - "${DATA_PATH}:/shared"
     environment:
       - DB_HOST=${PANEL_DB_HOST}
       - DB_ROOT_PASSWD=${PANEL_DB_ROOT_PASSWORD}
+      - SEATABLE_MYSQL_DB_HOST=${PANEL_DB_HOST}
+      - SEATABLE_MYSQL_DB_PORT=${PANEL_DB_PORT:-3306}
+      - SEATABLE_MYSQL_DB_USER=${SEATABLE_MYSQL_DB_USER}
+      - SEATABLE_MYSQL_DB_PASSWORD=${SEATABLE_MYSQL_DB_PASSWORD}
+      - INIT_SEATABLE_MYSQL_ROOT_PASSWORD=${PANEL_DB_ROOT_PASSWORD}
+      - SEATABLE_MYSQL_DB_DTABLE_DB_NAME=${SEATABLE_MYSQL_DB_DTABLE_DB_NAME:-seatable_dtable_db}
+      - SEATABLE_MYSQL_DB_CCNET_DB_NAME=${SEATABLE_MYSQL_DB_CCNET_DB_NAME:-seatable_ccnet_db}
+      - SEATABLE_MYSQL_DB_SEAFILE_DB_NAME=${SEATABLE_MYSQL_DB_SEAFILE_DB_NAME:-seatable_seafile_db}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD:-}
+      - JWT_PRIVATE_KEY=${JWT_PRIVATE_KEY}
       - TIME_ZONE=${TIME_ZONE}
       - SEATABLE_SERVER_HOSTNAME=${SERVER_HOSTNAME}
+      - SEATABLE_SERVER_PROTOCOL=http
       - SEATABLE_SERVER_LETSENCRYPT=false
-    image: seatable/seatable-developer:latest
+    image: seatable/seatable-developer:6.1.0
     labels:  
       createdBy: "Apps"
 

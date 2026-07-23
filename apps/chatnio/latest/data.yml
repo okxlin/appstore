@@ -35,8 +35,6 @@ additionalProperties:
       values:
         - label: "MySQL"
           value: mysql
-        - label: "LocalMySQL"
-          value: localmysql
       child:
         default: ""
         envKey: PANEL_DB_HOST

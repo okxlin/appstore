@@ -1,7 +1,7 @@
 services:
   daily-stock-analysis:
     image: "zhulinsen/daily_stock_analysis:v3.27.0"
-    container_name: "${CONTAINER_NAME}"
+    container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
     ports:
@@ -14,7 +14,7 @@ services:
       - ${APP_DATA_DIR}/data:/app/data
       - ${APP_DATA_DIR}/logs:/app/logs
       - ${APP_DATA_DIR}/reports:/app/reports
-      - ./env.defaults:/app/.env:ro
+      - ${APP_DATA_DIR}/.env:/app/.env
     networks:
       - 1panel-network
     restart: unless-stopped

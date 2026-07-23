@@ -42,6 +42,23 @@ additionalProperties:
           value: mariadb
         - label: MySQL
           value: mysql
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        ja: データベースポート
+        ms: Port Pangkalan Data
+        pt-br: Porta de Banco de Dados
+        ru: Порт базы данных
+        ko: 데이터베이스 포트
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+      required: true
+      rule: paramPort
+      type: number
     - default: wavelog
       edit: true
       envKey: PANEL_DB_NAME
