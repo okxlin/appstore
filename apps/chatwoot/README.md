@@ -57,6 +57,14 @@ Chatwoot is an open source omnichannel customer support platform for live chat, 
 - 官方文档说明，升级 Chatwoot 镜像后需要再次运行 `rails db:chatwoot_prepare`；本应用会在 Web 容器启动前自动执行该步骤。
 - 如果未来从较老版本升级，官方建议按中间版本逐步升级，并阅读各版本 release notes。
 
+## 安全风险
+- Chatwoot 官方镜像包含 Rails、Node.js 和完整的基础系统运行环境，漏洞扫描器可能报告继承自这些组件的 High 或 Critical 漏洞；升级可以减少已知风险，但不代表镜像不存在漏洞。
+- 部署前请重新扫描目标镜像，持续跟踪上游安全更新，并避免将未配置 HTTPS 和访问控制的实例直接暴露到公网。
+
+## Security Risks
+- The official Chatwoot image includes Rails, Node.js, and a complete base-system runtime. Image scanners may report High or Critical vulnerabilities inherited from these components; upgrading can reduce known risk but does not make the image vulnerability-free.
+- Re-scan the target image before deployment, track upstream security updates, and do not expose an instance publicly without HTTPS and access controls.
+
 ## 参考资料
 - 官网: <https://www.chatwoot.com/>
 - 项目仓库: <https://github.com/chatwoot/chatwoot>
