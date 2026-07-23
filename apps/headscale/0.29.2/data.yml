@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+    - default: 40183
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port (Corresponding to internal 8080)
+      labelZh: 端口 (对应内部 8080)
+      label:
+        en: 'Port (Corresponding to internal 8080)'
+        zh: '端口 (对应内部 8080)'
+        zh-Hant: '埠（對應內部 8080）'
+        ja: 'ポート（内部 8080 に対応）'
+        ko: '포트(내부 8080에 대응)'
+        ru: 'Порт (соответствует внутреннему 8080)'
+        ms: 'Port (sepadan dengan dalaman 8080)'
+        pt-br: 'Porta (correspondente à interna 8080)'
+      required: true
+      rule: paramPort
+      type: number
+    - default: 172.18.0.241
+      edit: true
+      envKey: SUBNET
+      labelEn: 1panel-network Subnet IP (View the docker network to obtain the CIDR block)
+      labelZh: 1panel-network 子网 IP (查看docker网络获取网段)
+      label:
+        en: '1panel-network Subnet IP (View the docker network to obtain the CIDR block)'
+        zh: '1panel-network 子网 IP (查看docker网络获取网段)'
+        zh-Hant: '1panel-network 子網 IP（查看 docker 網路取得網段）'
+        ja: '1panel-network サブネット IP（docker ネットワークで CIDR ブロックを確認）'
+        ko: '1panel-network 서브넷 IP(도커 네트워크에서 CIDR 블록 확인)'
+        ru: 'IP подсети 1panel-network (посмотрите сеть Docker, чтобы получить блок CIDR)'
+        ms: 'IP subnet 1panel-network (lihat rangkaian docker untuk mendapatkan blok CIDR)'
+        pt-br: 'IP de sub-rede 1panel-network (veja a rede docker para obter o bloco CIDR)'
+      required: true
+      type: text

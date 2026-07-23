@@ -1,0 +1,78 @@
+---
+server_url: https://myheadscale.example.com:443 # Change to your public Headscale URL.
+listen_addr: 0.0.0.0:8080
+metrics_listen_addr: 0.0.0.0:9090
+grpc_listen_addr: 0.0.0.0:50443
+grpc_allow_insecure: false
+
+noise:
+  private_key_path: /var/lib/headscale/noise_private.key
+
+prefixes:
+  v4: 100.64.0.0/10
+  v6: fd7a:115c:a1e0::/48
+  allocation: sequential
+
+derp:
+  server:
+    enabled: false
+    region_id: 999
+    region_code: headscale
+    region_name: Headscale Embedded DERP
+    verify_clients: true
+    stun_listen_addr: 0.0.0.0:3478
+    private_key_path: /var/lib/headscale/derp_server_private.key
+    automatically_add_embedded_derp_region: true
+  urls:
+    - https://controlplane.tailscale.com/derpmap/default
+  paths: []
+  auto_update_enabled: true
+  update_frequency: 24h
+
+disable_check_updates: true
+
+node:
+  expiry: 0
+  ephemeral:
+    inactivity_timeout: 30m
+
+database:
+  type: sqlite
+  sqlite:
+    path: /var/lib/headscale/db.sqlite
+    write_ahead_log: true
+
+acme_url: https://acme-v02.api.letsencrypt.org/directory
+acme_email: ""
+tls_letsencrypt_hostname: ""
+tls_letsencrypt_cache_dir: /var/lib/headscale/cache
+tls_letsencrypt_challenge_type: HTTP-01
+tls_letsencrypt_listen: ":http"
+tls_cert_path: ""
+tls_key_path: ""
+
+log:
+  format: text
+  level: info
+
+policy:
+  mode: file
+  path: /etc/headscale/policy.hujson
+
+dns:
+  override_local_dns: false
+  nameservers:
+    global:
+      - 223.5.5.5
+      - 1.1.1.1
+    split: {}
+  search_domains: []
+  extra_records: []
+  magic_dns: true
+  base_domain: example.com
+
+unix_socket: /var/run/headscale/headscale.sock
+unix_socket_permission: "0770"
+
+logtail:
+  enabled: false

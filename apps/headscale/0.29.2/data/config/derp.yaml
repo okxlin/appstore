@@ -1,0 +1,33 @@
+# /etc/headscale/derp.yaml
+regions:
+  900:
+    regionid: 900
+    regioncode: thk
+    regionname: Tencent Hongkong
+    nodes:
+      - name: 900a
+        regionid: 900
+        hostname: xxxx
+        ipv4: xxxx #非必须
+        stunport: 3478
+        stunonly: false
+        derpport: 40184
+      - name: 900b
+        regionid: 900
+        hostname: xxxx
+        ipv4: xxxx
+        stunport: 3478
+        stunonly: false
+        derpport: 12345
+  901:
+    regionid: 901
+    regioncode: tsh
+    regionname: Tencent Shanghai
+    nodes:
+      - name: 901a
+        regionid: 901
+        hostname: xxxx
+        ipv4: xxxx
+        stunport: 3478
+        stunonly: false
+        derpport: 40184
