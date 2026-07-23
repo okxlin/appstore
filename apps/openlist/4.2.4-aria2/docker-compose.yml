@@ -1,6 +1,6 @@
 services:
   openlist:
-    image: "openlistteam/openlist:v4.2.3-aio"
+    image: "openlistteam/openlist:v4.2.4-aria2"
     container_name: ${CONTAINER_NAME}
     restart: always
     user: "0:0"
