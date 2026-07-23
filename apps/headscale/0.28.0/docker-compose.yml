@@ -1,0 +1,28 @@
+services:
+  headscale:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      1panel-network:
+        ipv4_address: ${SUBNET}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    read_only: true
+    tmpfs:
+      - /var/run/headscale
+    volumes:
+      - "./data/config:/etc/headscale:ro"
+      - "./data/data:/var/lib/headscale"
+    healthcheck:
+      test: ["CMD", "headscale", "health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: ['serve']
+    image: headscale/headscale:v0.28.0
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
