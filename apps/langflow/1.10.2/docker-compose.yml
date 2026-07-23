@@ -1,6 +1,6 @@
 services:
   langflow:
-    image: "langflowai/langflow:1.10.2"
+    image: "langflowai/langflow:1.11.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
