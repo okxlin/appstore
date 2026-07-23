@@ -1,0 +1,183 @@
+additionalProperties:
+  formFields:
+    - default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 資料庫服務
+        ja: データベースサービス
+        ko: 데이터베이스 서비스
+        ru: Сервис базы данных
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
+      required: true
+      type: apps
+      params:
+        - envKey: PANEL_DB_PORT
+          key: mysql
+          type: param
+          value: "3306"
+        - envKey: PANEL_DB_PORT
+          key: postgresql
+          type: param
+          value: "5432"
+      values:
+        - label: MySQL
+          value: mysql
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ''
+        envKey: PANEL_DB_HOST
+        labelEn: Database Service Instance
+        labelZh: 数据库服务实例
+        label:
+          en: Database Service Instance
+          zh: 数据库服务实例
+          zh-Hant: 資料庫服務實例
+          ja: データベースサービスインスタンス
+          ko: 데이터베이스 서비스 인스턴스
+          ru: Экземпляр сервиса базы данных
+          ms: Contoh perkhidmatan pangkalan data
+          pt-br: Instância do Serviço de Banco de Dados
+        required: true
+        type: service
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: fast_note_sync
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: fast_note_sync
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ''
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database User Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database User Password
+        zh: 数据库用户密码
+        zh-Hant: 資料庫使用者密碼
+        ja: データベースユーザーパスワード
+        ko: 데이터베이스 사용자 비밀번호
+        ru: Пароль пользователя базы данных
+        ms: Kata laluan pengguna pangkalan data
+        pt-br: Senha do usuário do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 9000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/storage
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Storage Data Directory
+      labelZh: 存储数据目录
+      label:
+        en: Storage Data Directory
+        zh: 存储数据目录
+        zh-Hant: 儲存資料目錄
+        ja: ストレージデータディレクトリ
+        ko: 저장 데이터 디렉터리
+        ru: Каталог данных хранилища
+        ms: Direktori data storan
+        pt-br: Diretório de dados de armazenamento
+      required: true
+      type: text
+    - default: ./data/config
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Configuration Directory
+      labelZh: 配置目录
+      label:
+        en: Configuration Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 구성 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori konfigurasi
+        pt-br: Diretório de configuração
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

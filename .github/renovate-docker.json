@@ -430,6 +430,16 @@
       "allowedVersions": "/^17.*/"
     },
     {
+      "description": "Keep Fast Note Sync database variants on manually tested releases",
+      "matchFileNames": [
+        "apps/fast-note-sync-service/*&database/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "haierkeys/fast-note-sync-service"
+      ],
+      "enabled": false
+    },
+    {
       "description": "Keep historical application tracks immutable",
       "matchFileNames": [
         "apps/geekbench/4/**",
