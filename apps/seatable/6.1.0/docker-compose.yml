@@ -27,7 +27,7 @@ services:
       - SEATABLE_SERVER_HOSTNAME=${SERVER_HOSTNAME}
       - SEATABLE_SERVER_PROTOCOL=http
       - SEATABLE_SERVER_LETSENCRYPT=false
-    image: seatable/seatable-developer:6.1.0
+    image: seatable/seatable-developer:6.2.0
     labels:  
       createdBy: "Apps"
 
