@@ -1,6 +1,6 @@
 services:
   cpa-usage-keeper:
-    image: ghcr.io/willxup/cpa-usage-keeper:v1.13.6
+    image: ghcr.io/willxup/cpa-usage-keeper:v1.13.7
     container_name: ${CONTAINER_NAME}
     ports:
     - ${PANEL_APP_PORT_HTTP}:8080
