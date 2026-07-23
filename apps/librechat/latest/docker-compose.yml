@@ -1,6 +1,6 @@
 services:
   librechat-api:
-    image: "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:31f4b8d8f397c36dcdd28a52466f1fd725fd9572af5194fb78c427c41d09b262"
+    image: "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:c174e6b040e0a3305bbdfc7e0a8a16633f30ef0e52573034053d2dfff9e70cc5"
     container_name: ${CONTAINER_NAME}
     user: root
     restart: always
