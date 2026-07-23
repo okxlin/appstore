@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   freecad:
-    image: "linuxserver/freecad:1.1.1"
+    image: "linuxserver/freecad:1.1.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
