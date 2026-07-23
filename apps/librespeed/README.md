@@ -35,6 +35,14 @@
 - 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
+## 安全风险
+- 本应用使用 LibreSpeed 官方镜像。该镜像包含完整的 Debian、PHP 和 Web 运行环境，漏洞扫描器可能报告继承自基础系统组件的 High 或 Critical 漏洞；升级可以减少已知漏洞，但不代表镜像不存在漏洞。
+- 部署前请重新扫描目标镜像，持续跟踪上游更新，并限制不必要的公网暴露。
+
+## Security Risks
+- This app uses the official LibreSpeed image. Its Debian, PHP, and web runtime may contain High or Critical vulnerabilities inherited from base-system packages; upgrading can reduce known findings but does not make the image vulnerability-free.
+- Re-scan the target image before deployment, track upstream releases, and avoid unnecessary public exposure.
+
 ## 参考资料
 - 官网: <https://librespeed.org/>
 - 文档: <https://github.com/librespeed/speedtest>
