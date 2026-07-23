@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   librespeed:
-    image: "linuxserver/librespeed:6.1.0"
+    image: "linuxserver/librespeed:6.2.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
