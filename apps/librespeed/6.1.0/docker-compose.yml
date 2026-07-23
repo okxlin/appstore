@@ -1,6 +1,6 @@
 services:
   librespeed:
-    image: "ghcr.io/librespeed/speedtest:6.1.0"
+    image: "ghcr.io/librespeed/speedtest:6.2.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
