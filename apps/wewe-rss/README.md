@@ -1,5 +1,31 @@
 # WeWe RSS
 
+## 产品介绍
+
+WeWe RSS 是用于生成微信公众号 RSS 订阅源的自托管服务。本仓库上游已归档，商店包继续保留用于现有部署，但不会加入自动更新白名单。
+
+## 主要功能
+
+- 登录并管理微信公众号订阅账号。
+- 生成和定时更新 RSS 订阅源。
+- MySQL 版本可通过 1Panel 数据库选择器复用现有 MySQL 应用。
+
+## 访问说明
+
+- 安装后通过表单配置的 HTTP 端口访问 Web 界面。
+- MySQL 版本要求目标数据库应用已安装、运行，并与本应用加入 `1panel-network`。
+- 上游项目已归档，部署前请评估维护与安全风险，并避免将服务直接暴露到不受信任的公网。
+
+## Introduction
+
+WeWe RSS is a self-hosted service that generates RSS feeds for WeChat official accounts. The upstream repository is archived, so this package is retained for existing deployments and is not eligible for automatic updates.
+
+## Features
+
+- Manage WeChat subscription accounts.
+- Generate and periodically refresh RSS feeds.
+- Reuse an existing MySQL app through the 1Panel database selector.
+
 ## 应用简介
 更优雅的微信公众号订阅方式。
 
@@ -28,6 +54,11 @@
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
+| PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_PORT | 数据库端口 | 3306 | 是 |
+| PANEL_DB_NAME | 数据库名 | wewe-rss | 是 |
+| PANEL_DB_USER | 数据库用户 | wewe-rss | 是 |
+| PANEL_DB_USER_PASSWORD | 数据库用户密码 | 随机生成 | 是 |
 | AUTH_CODE | 授权码 | password | 是 |
 | SERVER_ORIGIN_URL | 外部访问地址 | http://1.2.3.4:40332 | 是 |
 | FEED_MODE | 提取模式 | fulltext | 否 |

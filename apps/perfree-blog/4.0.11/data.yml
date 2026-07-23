@@ -23,8 +23,23 @@ additionalProperties:
       values:
         - label: "MySQL"
           value: mysql
-        - label: "LocalMySQL"
-          value: localmysql
+    - default: "3306"
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: 'Database Port'
+        zh: '数据库端口'
+        zh-Hant: '資料庫埠'
+        ja: 'データベースポート'
+        ko: '데이터베이스 포트'
+        ru: 'Порт базы данных'
+        ms: 'Port Pangkalan Data'
+        pt-br: 'Porta do Banco de Dados'
+      required: true
+      rule: paramPort
+      type: number
     - default: "perfree"
       envKey: PANEL_DB_NAME
       labelEn: Database

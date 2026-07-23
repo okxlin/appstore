@@ -36,6 +36,23 @@ additionalProperties:
           pt-br: 'Serviço de Banco de Dados'
         required: true
         type: service
+    - default: "3306"
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: 'Database Port'
+        zh: '数据库端口'
+        zh-Hant: '資料庫埠'
+        ja: 'データベースポート'
+        ko: '데이터베이스 포트'
+        ru: 'Порт базы данных'
+        ms: 'Port Pangkalan Data'
+        pt-br: 'Porta do Banco de Dados'
+      required: true
+      rule: paramPort
+      type: number
     - default: mysql_root_password
       envKey: PANEL_DB_ROOT_PASSWORD
       labelEn: Database root password
@@ -54,6 +71,57 @@ additionalProperties:
       required: true
       rule: paramComplexity
       type: password
+    - default: seafile_ccnet_db
+      disabled: true
+      edit: false
+      envKey: SEAFILE_MYSQL_DB_CCNET_DB_NAME
+      labelEn: CCNet database name
+      labelZh: CCNet 数据库名
+      label:
+        en: 'CCNet database name'
+        zh: 'CCNet 数据库名'
+        zh-Hant: 'CCNet 資料庫名稱'
+        ja: 'CCNet データベース名'
+        ko: 'CCNet 데이터베이스 이름'
+        ru: 'Имя базы данных CCNet'
+        ms: 'Nama pangkalan data CCNet'
+        pt-br: 'Nome do banco de dados CCNet'
+      required: true
+      type: text
+    - default: seafile_seafile_db
+      disabled: true
+      edit: false
+      envKey: SEAFILE_MYSQL_DB_SEAFILE_DB_NAME
+      labelEn: Seafile database name
+      labelZh: Seafile 数据库名
+      label:
+        en: 'Seafile database name'
+        zh: 'Seafile 数据库名'
+        zh-Hant: 'Seafile 資料庫名稱'
+        ja: 'Seafile データベース名'
+        ko: 'Seafile 데이터베이스 이름'
+        ru: 'Имя базы данных Seafile'
+        ms: 'Nama pangkalan data Seafile'
+        pt-br: 'Nome do banco de dados Seafile'
+      required: true
+      type: text
+    - default: seafile_seahub_db
+      disabled: true
+      edit: false
+      envKey: SEAFILE_MYSQL_DB_SEAHUB_DB_NAME
+      labelEn: Seahub database name
+      labelZh: Seahub 数据库名
+      label:
+        en: 'Seahub database name'
+        zh: 'Seahub 数据库名'
+        zh-Hant: 'Seahub 資料庫名稱'
+        ja: 'Seahub データベース名'
+        ko: 'Seahub 데이터베이스 이름'
+        ru: 'Имя базы данных Seahub'
+        ms: 'Nama pangkalan data Seahub'
+        pt-br: 'Nome do banco de dados Seahub'
+      required: true
+      type: text
     - default: admin@localhost.com
       edit: true
       envKey: ADMIN_EMAIL
@@ -137,42 +205,128 @@ additionalProperties:
         pt-br: 'Fuso horário'
       required: true
       type: text
-    - default: memcached
-      envKey: MEMCACHED_TYPE
-      labelEn: Memcached Service
-      labelZh: Memcached 服务
+    - default: redis
+      edit: true
+      envKey: CACHE_PROVIDER
+      labelEn: Cache Provider
+      labelZh: 缓存类型
       label:
-        en: 'Memcached Service'
-        zh: 'Memcached 服务'
-        zh-Hant: 'Memcached 服務'
-        ja: 'Memcached サービス'
-        ko: 'Memcached 서비스'
-        ru: 'Сервис Memcached'
-        ms: 'Perkhidmatan Memcached'
-        pt-br: 'Serviço Memcached'
+        en: 'Cache Provider'
+        zh: '缓存类型'
+        zh-Hant: '快取類型'
+        ja: 'キャッシュプロバイダー'
+        ko: '캐시 공급자'
+        ru: 'Провайдер кэша'
+        ms: 'Penyedia Cache'
+        pt-br: 'Provedor de Cache'
       required: true
-      type: apps
+      type: select
       values:
-        - label: "Memcached"
+        - label: "Redis"
+          value: redis
+        - label: "Memcached (legacy upgrades only)"
           value: memcached
-        - label: "LocalMemcached"
-          value: localmemcached
-      child:
-        default: ""
-        envKey: MEMCACHED_HOST
-        labelEn: Memcached Service
-        labelZh: Memcached 服务
-        label:
-          en: 'Memcached Service'
-          zh: 'Memcached 服务'
-          zh-Hant: 'Memcached 服務'
-          ja: 'Memcached サービス'
-          ko: 'Memcached 서비스'
-          ru: 'Сервис Memcached'
-          ms: 'Perkhidmatan Memcached'
-          pt-br: 'Serviço Memcached'
-        required: true
-        type: service
+    - default: ""
+      edit: true
+      envKey: REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis 服务
+      label:
+        en: 'Redis Service'
+        zh: 'Redis 服务'
+        zh-Hant: 'Redis 服務'
+        ja: 'Redis サービス'
+        ko: 'Redis 서비스'
+        ru: 'Сервис Redis'
+        ms: 'Perkhidmatan Redis'
+        pt-br: 'Serviço Redis'
+      required: true
+      type: service
+    - default: "6379"
+      edit: true
+      envKey: REDIS_PORT
+      labelEn: Redis Port
+      labelZh: Redis 端口
+      label:
+        en: 'Redis Port'
+        zh: 'Redis 端口'
+        zh-Hant: 'Redis 埠'
+        ja: 'Redis ポート'
+        ko: 'Redis 포트'
+        ru: 'Порт Redis'
+        ms: 'Port Redis'
+        pt-br: 'Porta Redis'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Redis Password
+      labelZh: Redis 密码
+      label:
+        en: 'Redis Password'
+        zh: 'Redis 密码'
+        zh-Hant: 'Redis 密碼'
+        ja: 'Redis パスワード'
+        ko: 'Redis 비밀번호'
+        ru: 'Пароль Redis'
+        ms: 'Kata Laluan Redis'
+        pt-br: 'Senha do Redis'
+      required: false
+      type: password
+    - default: memcached
+      edit: true
+      envKey: MEMCACHED_HOST
+      labelEn: Legacy Memcached Host
+      labelZh: 旧版 Memcached 主机
+      label:
+        en: 'Legacy Memcached Host'
+        zh: '旧版 Memcached 主机'
+        zh-Hant: '舊版 Memcached 主機'
+        ja: '旧版 Memcached ホスト'
+        ko: '레거시 Memcached 호스트'
+        ru: 'Узел устаревшего Memcached'
+        ms: 'Hos Memcached Legasi'
+        pt-br: 'Host Memcached Legado'
+      required: false
+      type: text
+    - default: "11211"
+      edit: true
+      envKey: MEMCACHED_PORT
+      labelEn: Legacy Memcached Port
+      labelZh: 旧版 Memcached 端口
+      label:
+        en: 'Legacy Memcached Port'
+        zh: '旧版 Memcached 端口'
+        zh-Hant: '舊版 Memcached 埠'
+        ja: '旧版 Memcached ポート'
+        ko: '레거시 Memcached 포트'
+        ru: 'Порт устаревшего Memcached'
+        ms: 'Port Memcached Legasi'
+        pt-br: 'Porta Memcached Legada'
+      required: false
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: JWT_PRIVATE_KEY
+      labelEn: JWT Private Key
+      labelZh: JWT 私钥
+      label:
+        en: 'JWT Private Key (at least 32 characters)'
+        zh: 'JWT 私钥（至少 32 个字符）'
+        zh-Hant: 'JWT 私鑰（至少 32 個字元）'
+        ja: 'JWT 秘密鍵（32 文字以上）'
+        ko: 'JWT 개인 키(32자 이상)'
+        ru: 'Закрытый ключ JWT (не менее 32 символов)'
+        ms: 'Kunci Peribadi JWT (sekurang-kurangnya 32 aksara)'
+        pt-br: 'Chave Privada JWT (pelo menos 32 caracteres)'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
     - default: localhost.com
       edit: true
       envKey: SERVER_HOSTNAME
@@ -189,17 +343,3 @@ additionalProperties:
         pt-br: 'Nome do host do servidor (domínio ou IP)'
       required: true
       type: text
-  #- default: 40130
-#  edit: true
-
-#  envKey: PANEL_APP_PORT_HTTPS
-
-#  labelEn: HTTPS Port
-
-#  labelZh: HTTPS 端口
-
-#  required: true
-
-#  rule: paramPort
-
-#  type: number

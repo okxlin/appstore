@@ -1,5 +1,31 @@
 # Chat Nio
 
+## 产品介绍
+
+Chat Nio 是面向多模型与多供应商的开源 AI 平台，提供统一聊天入口、模型路由、计费和管理能力。
+
+## 主要功能
+
+- 统一接入多种大语言模型和供应商。
+- 提供聊天、管理、用量统计和计费能力。
+- 通过 1Panel 服务选择器复用现有 MySQL 与 Redis 应用。
+
+## 访问说明
+
+- 安装后通过表单配置的 HTTP 端口访问 Web 界面。
+- 首次登录的默认管理员账号为 `root`，默认密码为 `chatnio123456`；请立即修改密码。
+- MySQL 与 Redis 必须已安装、运行，并与本应用加入 `1panel-network`。
+
+## Introduction
+
+Chat Nio is an open source AI platform that provides a unified chat experience, model routing, usage management, and billing across multiple model providers.
+
+## Features
+
+- Unified access to multiple LLMs and providers.
+- Chat, administration, usage reporting, and billing features.
+- Existing MySQL and Redis apps can be reused through 1Panel service selectors.
+
 ## 应用简介
 下一代 AI 一站式解决方案。
 

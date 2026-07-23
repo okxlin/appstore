@@ -1,5 +1,31 @@
 # PerfreeBlog
 
+## 产品介绍
+
+PerfreeBlog 是基于 Java 的开源博客与 CMS 建站平台，支持主题、插件和内容管理。
+
+## 主要功能
+
+- 博客文章与站点内容管理。
+- 主题和插件扩展。
+- 通过 1Panel 数据库选择器复用现有 MySQL 应用。
+
+## 访问说明
+
+- 安装后通过表单配置的 HTTP 端口访问 Web 界面。
+- 目标 MySQL 应用必须已安装、运行，并与本应用加入 `1panel-network`。
+- 首次启动会连接所选数据库并初始化应用数据，请先确认数据库名称、用户、密码和端口正确。
+
+## Introduction
+
+PerfreeBlog is an open source Java-based blog and CMS platform with content management, themes, and plugins.
+
+## Features
+
+- Blog posts and site content management.
+- Theme and plugin extensions.
+- Reuse an existing MySQL app through the 1Panel database selector.
+
 ## 应用简介
 开源的博客/CMS 建站工具。
 
@@ -28,6 +54,7 @@
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | PANEL_DB_TYPE | 数据库服务 | mysql | 是 |
+| PANEL_DB_PORT | 数据库端口 | 3306 | 是 |
 | PANEL_DB_NAME | 数据库名 | perfree | 是 |
 | PANEL_DB_USER | 数据库用户 | perfree | 是 |
 | PANEL_DB_USER_PASSWORD | 数据库用户密码 | perfree | 是 |

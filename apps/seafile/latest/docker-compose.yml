@@ -6,18 +6,43 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
-      #- "${PANEL_APP_PORT_HTTPS}:443"
     volumes:
       - "${DATA_PATH}:/shared"
     environment:
       - DB_HOST=${PANEL_DB_HOST}
       - DB_ROOT_PASSWD=${PANEL_DB_ROOT_PASSWORD}
+      - SEAFILE_MYSQL_DB_HOST=${PANEL_DB_HOST}
+      - SEAFILE_MYSQL_DB_PORT=${PANEL_DB_PORT:-3306}
+      - SEAFILE_MYSQL_DB_USER=root
+      - SEAFILE_MYSQL_DB_PASSWORD=${PANEL_DB_ROOT_PASSWORD}
+      - INIT_SEAFILE_MYSQL_ROOT_PASSWORD=${PANEL_DB_ROOT_PASSWORD}
+      - SEAFILE_MYSQL_DB_CCNET_DB_NAME=${SEAFILE_MYSQL_DB_CCNET_DB_NAME:-seafile_ccnet_db}
+      - SEAFILE_MYSQL_DB_SEAFILE_DB_NAME=${SEAFILE_MYSQL_DB_SEAFILE_DB_NAME:-seafile_seafile_db}
+      - SEAFILE_MYSQL_DB_SEAHUB_DB_NAME=${SEAFILE_MYSQL_DB_SEAHUB_DB_NAME:-seafile_seahub_db}
       - TIME_ZONE=${TIME_ZONE}
       - SEAFILE_ADMIN_EMAIL=${ADMIN_EMAIL}
       - SEAFILE_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - INIT_SEAFILE_ADMIN_EMAIL=${ADMIN_EMAIL}
+      - INIT_SEAFILE_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - SEAFILE_SERVER_LETSENCRYPT=false
       - SEAFILE_SERVER_HOSTNAME=${SERVER_HOSTNAME}
-    image: seafileltd/seafile-mc:latest
+      - SEAFILE_SERVER_PROTOCOL=http
+      - JWT_PRIVATE_KEY=${JWT_PRIVATE_KEY}
+      - CACHE_PROVIDER=${CACHE_PROVIDER:-redis}
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD:-}
+      - MEMCACHED_HOST=${MEMCACHED_HOST:-memcached}
+      - MEMCACHED_PORT=${MEMCACHED_PORT:-11211}
+    command:
+      - /bin/bash
+      - -c
+      - |
+        if test -d /opt/seafile/seafile-server-13.0.25/pro; then
+          mv /opt/seafile/seafile-server-13.0.25/pro /opt/seafile/seafile-server-13.0.25/pro.disabled
+        fi
+        exec /sbin/my_init -- /scripts/enterpoint.sh
+    image: seafileltd/seafile-mc:13.0.25
     labels:  
       createdBy: "Apps"
 
