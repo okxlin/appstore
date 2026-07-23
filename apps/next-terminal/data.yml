@@ -23,8 +23,9 @@ additionalProperties:
   crossVersionUpdate: false
   limit: 0
   recommend: 0
-  website: https://next-terminal.typesafe.cn/
-  github: https://github.com/dushixiang/next-terminal
-  document: https://docs.next-terminal.typesafe.cn/
+  website: https://www.next-terminal.com/
+  github: https://github.com/next-terminal/next-terminal
+  document: https://docs.next-terminal.com/
   architectures:
     - amd64
+    - arm64
