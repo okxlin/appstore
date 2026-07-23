@@ -1,6 +1,6 @@
 services:
   clouddrive:
-    image: "cloudnas/clouddrive2:1.0.12"
+    image: "cloudnas/clouddrive2:1.0.13"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
