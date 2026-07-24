@@ -19,7 +19,7 @@ services:
      timeout: 10s
      retries: 3
      start_period: 40s
-    image: lissy93/dashy:4.4.10
+    image: lissy93/dashy:4.4.12
     labels:  
       createdBy: "Apps"
 
