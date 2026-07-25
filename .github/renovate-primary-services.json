@@ -12,14 +12,16 @@
     "worker",
     "worker_beat",
     "web",
-    "sandbox",
-    "plugin_daemon"
+    "sandbox"
   ],
   "diskover-linuxserver": [
     "diskover"
   ],
   "karakeep": [
     "karakeep"
+  ],
+  "immich": [
+    "immich-server"
   ],
   "librechat": [
     "librechat-api",
@@ -32,8 +34,14 @@
   "rocketchat": [
     "rocketchat"
   ],
+  "safeline": [
+    "safeline-mgt"
+  ],
   "teldrive": [
     "teldrive"
+  ],
+  "uuwaf": [
+    "uuwaf"
   ],
   "weblate": [
     "weblate"
