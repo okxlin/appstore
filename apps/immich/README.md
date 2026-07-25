@@ -24,7 +24,7 @@ Immich is a high-performance open source photo and video management platform for
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
-- `1.122.3` 和 `release` 是为旧安装保留的社区镜像版本，使用 `altran1502/immich-*`，不是 Immich 官方镜像；新安装应优先选择使用 `ghcr.io/immich-app/*` 官方镜像的 `3.x` 固定版本。
+- `1.122.3` 和 `release` 使用 Immich 创始人 Alex Tran 的旧 Docker Hub 发布命名空间 `altran1502/immich-*`，不是普通社区重构镜像；当前官方 Compose 已使用 `ghcr.io/immich-app/*`，新安装应优先选择对应的 `3.x` 固定版本。
 - 应用分类：媒体。
 - 支持架构：amd64。
 - 可选版本以应用商店页面为准。
