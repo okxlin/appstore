@@ -9,7 +9,7 @@ FreeCAD 参数化 CAD 桌面。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`1.1.1`。
+- 商店同时提供 `latest` 和固定版本目录；升级前请备份配置数据。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
