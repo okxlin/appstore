@@ -1,6 +1,6 @@
 services:
   microwarp:
-    image: "ghcr.io/ccbkkb/microwarp:0.1.3"
+    image: "ghcr.io/ccbkkb/microwarp:latest"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -10,11 +10,8 @@ services:
       - TZ=${TZ}
       - BIND_ADDR=0.0.0.0
       - BIND_PORT=${BIND_PORT}
-      - ROTATE_INTERVAL_MINUTES=${ROTATE_INTERVAL_MINUTES:-0}
-      - ROTATE_MAX_ATTEMPTS=${ROTATE_MAX_ATTEMPTS:-5}
-      - ROTATE_RETRY_DELAY_SECONDS=${ROTATE_RETRY_DELAY_SECONDS:-5}
+      - ROTATE_INTERVAL_MINUTES=${ROTATE_INTERVAL_MINUTES}
       - TEST_URL=${TEST_URL}
-      - IP_CHECK_URL=${IP_CHECK_URL:-https://cloudflare.com/cdn-cgi/trace}
       - SOCKS_USER=${SOCKS_USER:-}
       - SOCKS_PASS=${SOCKS_PASS:-}
       - ENDPOINT_IP=${ENDPOINT_IP:-}

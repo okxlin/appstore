@@ -50,38 +50,6 @@ additionalProperties:
       required: true
       type: number
       edit: true
-    - default: 5
-      envKey: ROTATE_MAX_ATTEMPTS
-      labelEn: Rotation Attempts
-      labelZh: 轮换尝试次数
-      label:
-        en: Rotation Attempts
-        zh: 轮换尝试次数
-        zh-Hant: 輪換嘗試次數
-        ja: ローテーション試行回数
-        ko: 로테이션 시도 횟수
-        ru: Количество попыток ротации
-        ms: Bilangan percubaan putaran
-        pt-br: Número de tentativas de rotação
-      required: true
-      type: number
-      edit: true
-    - default: 5
-      envKey: ROTATE_RETRY_DELAY_SECONDS
-      labelEn: Rotation Retry Delay Seconds
-      labelZh: 轮换重试间隔（秒）
-      label:
-        en: Rotation Retry Delay Seconds
-        zh: 轮换重试间隔（秒）
-        zh-Hant: 輪換重試間隔（秒）
-        ja: ローテーション再試行間隔（秒）
-        ko: 로테이션 재시도 간격(초)
-        ru: Задержка между попытками ротации (секунды)
-        ms: Kelewatan percubaan semula putaran (saat)
-        pt-br: Atraso entre tentativas de rotação (segundos)
-      required: true
-      type: number
-      edit: true
     - default: https://cloudflare.com/cdn-cgi/trace
       envKey: TEST_URL
       labelEn: Probe URL
@@ -95,22 +63,6 @@ additionalProperties:
         ru: URL проверки
         ms: URL ujian
         pt-br: URL de verificação
-      required: true
-      type: text
-      edit: true
-    - default: https://cloudflare.com/cdn-cgi/trace
-      envKey: IP_CHECK_URL
-      labelEn: Egress IP Check URL
-      labelZh: 出口 IP 检查 URL
-      label:
-        en: Egress IP Check URL
-        zh: 出口 IP 检查 URL
-        zh-Hant: 出口 IP 檢查 URL
-        ja: 出口 IP 確認 URL
-        ko: 출구 IP 확인 URL
-        ru: URL проверки исходного IP
-        ms: URL semakan IP keluar
-        pt-br: URL de verificação do IP de saída
       required: true
       type: text
       edit: true
