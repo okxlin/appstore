@@ -1,0 +1,110 @@
+services:
+  traefik:
+    image: "traefik:v3.7.9"
+    container_name: ${CONTAINER_NAME}-traefik
+    restart: unless-stopped
+    command:
+      - --log.level=ERROR
+      - --api.dashboard=false
+      - --ping=true
+      - --entryPoints.http.address=:${PANEL_APP_PORT_HTTP}
+      - --entryPoints.http.http.redirections.entryPoint.to=https
+      - --entryPoints.http.http.redirections.entryPoint.scheme=https
+      - --entryPoints.https.address=:${PANEL_APP_PORT_HTTPS}
+      - --entryPoints.https.transport.respondingTimeouts.readTimeout=12h
+      - --entryPoints.https.transport.respondingTimeouts.writeTimeout=12h
+      - --entryPoints.https.transport.respondingTimeouts.idleTimeout=3m
+      - --providers.docker.endpoint=unix:///var/run/docker.sock
+      - --providers.docker.exposedByDefault=false
+      - --providers.docker.network=${CONTAINER_NAME}-network
+      - "--providers.docker.constraints=Label(`opencloud.instance`,`${CONTAINER_NAME}`)"
+      - --providers.file.directory=/etc/traefik/dynamic
+      - --providers.file.watch=true
+    networks:
+      opencloud-network:
+        aliases:
+          - ${OC_DOMAIN}
+      1panel-network:
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
+      - "${PANEL_APP_PORT_HTTPS}:${PANEL_APP_PORT_HTTPS}"
+    volumes:
+      - "${DOCKER_SOCKET_PATH}:/var/run/docker.sock:ro"
+      - "${APP_DATA_DIR}/traefik/dynamic:/etc/traefik/dynamic:ro"
+      - "${APP_DATA_DIR}/traefik/certs:/certs:ro"
+    healthcheck:
+      test:
+        - CMD
+        - traefik
+        - healthcheck
+        - --ping
+      interval: 15s
+      timeout: 5s
+      start_period: 15s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+  opencloud:
+    image: "opencloudeu/opencloud-rolling:7.3.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    depends_on:
+      traefik:
+        condition: service_healthy
+    entrypoint:
+      - /bin/sh
+    command:
+      - -c
+      - opencloud init || true; exec opencloud server
+    environment:
+      - OC_URL=https://${OC_DOMAIN}:${PANEL_APP_PORT_HTTPS}
+      - OC_LOG_LEVEL=info
+      - OC_LOG_COLOR=false
+      - OC_LOG_PRETTY=false
+      - OC_INSECURE=true
+      - OC_ADD_RUN_SERVICES=
+      - PROXY_TLS=false
+      - PROXY_HTTP_ADDR=0.0.0.0:9200
+      - PROXY_ENABLE_BASIC_AUTH=false
+      - PROXY_CSP_CONFIG_FILE_LOCATION=/etc/opencloud/csp.yaml
+      - IDM_CREATE_DEMO_USERS=false
+      - IDM_ADMIN_PASSWORD=${INITIAL_ADMIN_PASSWORD}
+      - OC_PASSWORD_POLICY_BANNED_PASSWORDS_LIST=banned-password-list.txt
+      - OC_SHARING_PUBLIC_SHARE_MUST_HAVE_PASSWORD=true
+      - OC_SHARING_PUBLIC_WRITEABLE_SHARE_MUST_HAVE_PASSWORD=false
+      - FRONTEND_CHECK_FOR_UPDATES=true
+      - TRAEFIK_PORT_HTTPS=:${PANEL_APP_PORT_HTTPS}
+      - TZ=${TZ}
+    networks:
+      - opencloud-network
+    volumes:
+      - "${APP_DATA_DIR}/config:/etc/opencloud"
+      - "${APP_DATA_DIR}/storage:/var/lib/opencloud"
+      - "${APP_DATA_DIR}/apps:/var/lib/opencloud/web/assets/apps"
+      - "./config/opencloud/csp.yaml:/etc/opencloud/csp.yaml:ro"
+      - "./config/opencloud/banned-password-list.txt:/etc/opencloud/banned-password-list.txt:ro"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl --fail --silent --show-error http://127.0.0.1:9200/status.php >/dev/null
+      interval: 30s
+      timeout: 10s
+      start_period: 120s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+      opencloud.instance: "${CONTAINER_NAME}"
+      traefik.enable: "true"
+      traefik.http.routers.opencloud.entrypoints: https
+      traefik.http.routers.opencloud.rule: Host(`${OC_DOMAIN}`)
+      traefik.http.routers.opencloud.service: opencloud
+      traefik.http.routers.opencloud.tls: "true"
+      traefik.http.services.opencloud.loadbalancer.server.port: "9200"
+
+networks:
+  opencloud-network:
+    name: ${CONTAINER_NAME}-network
+  1panel-network:
+    external: true
