@@ -1,0 +1,31 @@
+name: Copyparty
+tags:
+  - File
+title: 安全的文件共享服务
+description: 安全的文件共享服务
+additionalProperties:
+  key: copyparty
+  name: Copyparty
+  tags:
+    - File
+  shortDescZh: 安全的文件共享服务
+  shortDescEn: A versatile self-hosted file server
+  description:
+    en: A versatile self-hosted file server with browser uploads, file management, WebDAV, and media playback.
+    zh: 支持浏览器上传、文件管理、WebDAV 和媒体播放的多功能自托管文件服务器。
+    zh-Hant: 支援瀏覽器上傳、檔案管理、WebDAV 和媒體播放的多功能自託管檔案伺服器。
+    ja: ブラウザーアップロード、ファイル管理、WebDAV、メディア再生に対応した多機能なセルフホスト型ファイルサーバーです。
+    ko: 브라우저 업로드, 파일 관리, WebDAV 및 미디어 재생을 지원하는 다기능 자체 호스팅 파일 서버입니다.
+    ru: Многофункциональный самостоятельный файловый сервер с загрузкой через браузер, управлением файлами, WebDAV и воспроизведением медиа.
+    ms: Pelayan fail hos sendiri serba guna dengan muat naik pelayar, pengurusan fail, WebDAV dan main balik media.
+    pt-br: Um servidor de arquivos auto-hospedado versatil com upload pelo navegador, gerenciamento de arquivos, WebDAV e reproducao de midia.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/9001/copyparty
+  document: https://github.com/9001/copyparty#accounts-and-volumes
+  github: https://github.com/9001/copyparty
+  architectures:
+    - amd64
+    - arm64
