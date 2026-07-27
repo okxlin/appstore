@@ -1,0 +1,31 @@
+name: PicoClaw
+tags:
+  - AI
+title: 轻量级个人 AI 助手与多渠道网关
+description: 轻量级个人 AI 助手与多渠道网关
+additionalProperties:
+  key: picoclaw
+  name: PicoClaw
+  tags:
+    - AI
+  shortDescZh: 轻量级个人 AI 助手与多渠道网关
+  shortDescEn: Lightweight personal AI assistant and multi-channel gateway
+  description:
+    en: Lightweight personal AI assistant and multi-channel gateway
+    zh: 轻量级个人 AI 助手与多渠道网关
+    zh-Hant: 輕量級個人 AI 助理與多管道閘道
+    ja: 軽量な個人向け AI アシスタントとマルチチャネルゲートウェイ
+    ko: 경량 개인 AI 도우미 및 다중 채널 게이트웨이
+    ru: Легкий персональный ИИ-помощник и многоканальный шлюз
+    ms: Pembantu AI peribadi ringan dan get laluan berbilang saluran
+    pt-br: Assistente pessoal de IA leve e gateway multicanal
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://picoclaw.io/
+  github: https://github.com/sipeed/picoclaw
+  document: https://docs.picoclaw.io/
+  architectures:
+    - amd64
+    - arm64
+    - riscv64
