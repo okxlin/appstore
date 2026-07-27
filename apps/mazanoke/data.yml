@@ -1,0 +1,30 @@
+name: Mazanoke
+tags:
+  - Tools
+title: 浏览器本地图片优化工具
+description: 浏览器本地图片优化工具
+additionalProperties:
+  key: mazanoke
+  name: Mazanoke
+  tags:
+    - Tools
+  shortDescZh: 浏览器本地图片优化工具
+  shortDescEn: A browser-local image optimizer
+  description:
+    en: A browser-local image optimizer
+    zh: 浏览器本地图片优化工具
+    zh-Hant: 瀏覽器本機圖片最佳化工具
+    ja: ブラウザー内で動作する画像最適化ツール
+    ko: 브라우저에서 로컬로 실행되는 이미지 최적화 도구
+    ru: Локальный браузерный оптимизатор изображений
+    ms: Pengoptimum imej setempat dalam pelayar
+    pt-br: Otimizador de imagens local no navegador
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://mazanoke.com/
+  github: https://github.com/civilblur/mazanoke
+  document: https://github.com/civilblur/mazanoke#docker
+  architectures:
+    - amd64
+    - arm64
