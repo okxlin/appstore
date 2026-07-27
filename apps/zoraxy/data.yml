@@ -1,0 +1,30 @@
+name: Zoraxy
+tags:
+  - Network
+title: 反向代理与证书管理平台
+description: 反向代理与证书管理平台
+additionalProperties:
+  key: zoraxy
+  name: Zoraxy
+  tags:
+    - Network
+  shortDescZh: 反向代理与证书管理平台
+  shortDescEn: Reverse proxy and certificate management platform
+  description:
+    en: Reverse proxy and certificate management platform
+    zh: 反向代理与证书管理平台
+    zh-Hant: 反向代理與憑證管理平台
+    ja: リバースプロキシと証明書管理プラットフォーム
+    ko: 리버스 프록시 및 인증서 관리 플랫폼
+    ru: Платформа обратного прокси и управления сертификатами
+    ms: Platform proksi songsang dan pengurusan sijil
+    pt-br: Plataforma de proxy reverso e gerenciamento de certificados
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://zoraxy.aroz.org/
+  github: https://github.com/tobychui/zoraxy
+  document: https://github.com/tobychui/zoraxy/blob/v3.3.3/docker/README.md
+  architectures:
+    - amd64
+    - arm64
