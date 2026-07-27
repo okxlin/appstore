@@ -1,0 +1,9 @@
+Passky logo
+
+Source: https://github.com/Rabbit-Company/Passky-Server/blob/v8.1.8/server/src/website/images/logo.png
+Source commit: 10882e6a0a1fd6b946ad4dc7deb20c71d5eaf0cf
+Source SHA-256: 11d68448169594f03fa837fbf4abf38bd696cd731123d45796d7b238493243a9
+License: GNU General Public License v3.0 (GPL-3.0-only)
+License text: https://github.com/Rabbit-Company/Passky-Server/blob/v8.1.8/LICENSE
+
+The 512 x 512 store asset is a proportional resize of the official 2400 x 2400 PNG.

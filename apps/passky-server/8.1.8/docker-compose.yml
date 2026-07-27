@@ -1,0 +1,70 @@
+services:
+  passky-server:
+    image: "rabbitcompany/passky-server:8.1.8@sha256:e9bf7b9ecdf4904f1e3893b5968e98cbb61d4984bca1482081df2f59df05fca6"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    entrypoint:
+      - bash
+      - -ec
+      - >-
+        if grep -Fxq 'redis-server --daemonize yes' /etc/s6-overlay/scripts/redis; then
+        sed -i 's|^redis-server --daemonize yes$|redis-server --bind 127.0.0.1 ::1 --protected-mode yes --port 6379 --rename-command EVAL "" --rename-command EVALSHA "" --daemonize yes|' /etc/s6-overlay/scripts/redis;
+        else
+        grep -Fxq 'redis-server --bind 127.0.0.1 ::1 --protected-mode yes --port 6379 --rename-command EVAL "" --rename-command EVALSHA "" --daemonize yes' /etc/s6-overlay/scripts/redis;
+        fi;
+        exec /init
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      - SERVER_LOCATION=US
+      - SERVER_CORES=1
+      - ADMIN_USERNAME=${ADMIN_USERNAME}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - CF_TURNSTILE_SITE_KEY=1x00000000000000000000AA
+      - CF_TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+      - DATABASE_ENGINE=sqlite
+      - DATABASE_FILE=passky
+      - MYSQL_CACHE_MODE=0
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=
+      - REDIS_LOCAL_HOST=127.0.0.1
+      - REDIS_LOCAL_PORT=6379
+      - REDIS_LOCAL_PASSWORD=
+      - MAIL_ENABLED=false
+      - ACCOUNT_MAX=100
+      - ACCOUNT_MAX_PASSWORDS=1000
+      - ACCOUNT_PREMIUM=-1
+      - LIMITER_ENABLED=true
+      - PHP_DATE_TIMEZONE=${TIME_ZONE}
+      - TZ=${TIME_ZONE}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETUID
+      - SETGID
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,mode=1777
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          curl -fsS http://127.0.0.1/cron.php | grep -q '"status":"success"' &&
+          test "$(curl -fsS http://127.0.0.1/ping)" = pong
+      interval: 30s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/var/www/html/databases"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
