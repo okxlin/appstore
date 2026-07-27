@@ -1,0 +1,35 @@
+services:
+  downtify:
+    image: "ghcr.io/henriquesebastiao/downtify:2.9.1@sha256:4b03e99a179e9e501a5785d3a9ab74a5bac0d077d62ee1f676d4855b788cd341"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - DOWNTIFY_PORT=8000
+      - HOME=/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8000/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${APP_DOWNLOADS_DIR}:/downloads"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
