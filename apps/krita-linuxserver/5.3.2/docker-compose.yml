@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   krita:
-    image: "linuxserver/krita:5.3.2"
+    image: "linuxserver/krita:5.3.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
