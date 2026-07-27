@@ -1,0 +1,30 @@
+name: LeafWiki
+tags:
+  - Tool
+title: 基于目录组织的轻量级 Wiki
+description: 基于目录组织的轻量级 Wiki
+additionalProperties:
+  key: leafwiki
+  name: LeafWiki
+  tags:
+    - Tool
+  shortDescZh: 基于目录组织的轻量级 Wiki
+  shortDescEn: A lightweight, folder-oriented wiki
+  description:
+    en: A lightweight, folder-oriented wiki
+    zh: 基于目录组织的轻量级 Wiki
+    zh-Hant: 以目錄組織的輕量級 Wiki
+    ja: フォルダー指向の軽量 Wiki
+    ko: 폴더 중심의 경량 Wiki
+    ru: Легкая Wiki с организацией по папкам
+    ms: Wiki ringan berasaskan folder
+    pt-br: Wiki leve organizada por pastas
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://leafwiki.com/
+  github: https://github.com/perber/leafwiki
+  document: https://github.com/perber/leafwiki/blob/main/README.md
+  architectures:
+    - amd64
+    - arm64
