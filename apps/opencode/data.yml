@@ -1,0 +1,31 @@
+name: OpenCode
+tags:
+  - AI
+title: 自托管 AI 编程助手
+description: 自托管 AI 编程助手
+additionalProperties:
+  key: opencode
+  name: OpenCode
+  tags:
+    - AI
+  shortDescZh: 自托管 AI 编程助手
+  shortDescEn: A self-hosted AI coding agent
+  description:
+    en: A self-hosted AI coding agent.
+    zh: 自托管 AI 编程助手。
+    zh-Hant: 自託管 AI 程式設計助理。
+    ja: セルフホスト型 AI コーディングエージェントです。
+    ko: 자체 호스팅 AI 코딩 에이전트입니다.
+    ru: Самостоятельно размещаемый ИИ-агент для программирования.
+    ms: Ejen pengekodan AI yang dihoskan sendiri.
+    pt-br: Agente de programacao por IA auto-hospedado.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://opencode.ai/
+  document: https://opencode.ai/docs
+  github: https://github.com/anomalyco/opencode
+  architectures:
+    - amd64
+    - arm64
