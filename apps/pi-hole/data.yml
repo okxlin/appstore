@@ -1,0 +1,30 @@
+name: Pi-hole
+tags:
+  - Network
+title: 全网络广告与跟踪器拦截 DNS
+description: 全网络广告与跟踪器拦截 DNS
+additionalProperties:
+  key: pi-hole
+  name: Pi-hole
+  tags:
+    - Network
+  shortDescZh: 全网络广告与跟踪器拦截 DNS
+  shortDescEn: Network-wide ad and tracker blocking DNS
+  description:
+    en: Network-wide DNS filtering for ads, trackers, and unwanted domains
+    zh: 面向整个网络的广告、跟踪器和恶意域名 DNS 过滤服务
+    zh-Hant: 面向整個網路的廣告、追蹤器和惡意網域 DNS 過濾服務
+    ja: ネットワーク全体の広告、トラッカー、不要なドメインを遮断する DNS
+    ko: 네트워크 전체의 광고, 추적기 및 원치 않는 도메인을 차단하는 DNS
+    ru: DNS-фильтрация рекламы, трекеров и нежелательных доменов для всей сети
+    ms: Penapisan DNS seluruh rangkaian untuk iklan, penjejak dan domain tidak dikehendaki
+    pt-br: Filtragem DNS em toda a rede para anuncios, rastreadores e dominios indesejados
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://pi-hole.net/
+  github: https://github.com/pi-hole/docker-pi-hole
+  document: https://docs.pi-hole.net/docker/
+  architectures:
+    - amd64
+    - arm64

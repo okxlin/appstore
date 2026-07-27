@@ -1,0 +1,48 @@
+services:
+  pihole:
+    image: "pihole/pihole:2026.07.2@sha256:f7d1be836e3bc608b56d82fc9904f5a831cdfbc0dc9c6d58f94e4c985c70038b"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:80/tcp"
+      - "${DNS_BIND_ADDRESS}:${PANEL_APP_PORT_DNS}:53/tcp"
+      - "${DNS_BIND_ADDRESS}:${PANEL_APP_PORT_DNS}:53/udp"
+    environment:
+      - FTLCONF_webserver_api_password=${ADMIN_PASSWORD}
+      - FTLCONF_webserver_port=80
+      - FTLCONF_dns_listeningMode=ALL
+      - FTLCONF_dhcp_active=false
+      - FTLCONF_ntp_ipv4_active=false
+      - FTLCONF_ntp_ipv6_active=false
+      - TZ=${TZ}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - KILL
+      - NET_BIND_SERVICE
+      - SETFCAP
+      - SETGID
+      - SETPCAP
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pihole status >/dev/null 2>&1
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/etc/pihole"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

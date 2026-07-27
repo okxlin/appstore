@@ -1,0 +1,12 @@
+Pi-hole Vortex logo
+
+Source: https://github.com/pi-hole/graphics/blob/master/Vortex/Vortex.png
+Source commit: 44c8fb2bc41e4aad78da7033c19dc76307d3de9f
+Source SHA-256: 7a5c014c40a78072b1315b89fadb15d9fc88819adad93c102efc9e8d94a4f5bf
+License: MIT
+License text: https://github.com/pi-hole/graphics/blob/master/LICENSE
+
+Copyright (c) 2017 Pi-hole
+
+Pi-hole and its logo are trademarks of Pi-hole, LLC. This package is not
+sponsored, endorsed by, or affiliated with Pi-hole, LLC.
