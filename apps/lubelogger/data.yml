@@ -1,0 +1,30 @@
+name: LubeLogger
+tags:
+  - Tool
+title: 车辆维护、保养与油耗记录工具
+description: 车辆维护、保养与油耗记录工具
+additionalProperties:
+  key: lubelogger
+  name: LubeLogger
+  tags:
+    - Tool
+  shortDescZh: 车辆维护、保养与油耗记录工具
+  shortDescEn: Vehicle maintenance, service, and fuel mileage tracking
+  description:
+    en: Vehicle maintenance, service, and fuel mileage tracking
+    zh: 车辆维护、保养与油耗记录工具
+    zh-Hant: 車輛維護、保養與油耗記錄工具
+    ja: 車両の整備、サービス、燃費を記録するツール
+    ko: 차량 정비, 서비스 및 연비 기록 도구
+    ru: Учет обслуживания, ремонта и расхода топлива автомобилей
+    ms: Penjejakan penyelenggaraan, servis dan penggunaan bahan api kenderaan
+    pt-br: Controle de manutencao, servicos e consumo de veiculos
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://lubelogger.com/
+  github: https://github.com/hargata/lubelog
+  document: https://docs.lubelogger.com/
+  architectures:
+    - amd64
+    - arm64
