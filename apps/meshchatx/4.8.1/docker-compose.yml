@@ -1,0 +1,29 @@
+services:
+  meshchatx:
+    image: "ghcr.io/quad4-software/meshchatx:4.8.1@sha256:f0c6d70bcce25bfe67e3b66b978f098f5770daa94def353b632bd4c4814fb8ab"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    init: true
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:8000"
+    environment:
+      - MESHCHAT_AUTH=true
+    read_only: true
+    tmpfs:
+      - /tmp:noexec,nosuid,size=256m
+      - /home/meshchat:nosuid,size=64m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    volumes:
+      - "${APP_DATA_DIR}:/config"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

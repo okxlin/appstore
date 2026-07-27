@@ -1,0 +1,30 @@
+name: MeshChatX
+tags:
+  - Social
+title: Reticulum 网状通信客户端
+description: Reticulum 网状通信客户端
+additionalProperties:
+  key: meshchatx
+  name: MeshChatX
+  tags:
+    - Social
+  shortDescZh: Reticulum 网状通信客户端
+  shortDescEn: A Reticulum mesh communications client
+  description:
+    en: A Reticulum mesh communications client
+    zh: Reticulum 网状通信客户端
+    zh-Hant: Reticulum 網狀通訊用戶端
+    ja: Reticulum メッシュ通信クライアント
+    ko: Reticulum 메시 통신 클라이언트
+    ru: Клиент сетевой связи Reticulum
+    ms: Klien komunikasi mesh Reticulum
+    pt-br: Cliente de comunicacao em malha Reticulum
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://meshchatx.com/
+  github: https://github.com/Quad4-Software/MeshChatX
+  document: https://github.com/Quad4-Software/MeshChatX#docker
+  architectures:
+    - amd64
+    - arm64
