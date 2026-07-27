@@ -1,0 +1,30 @@
+name: VERT
+tags:
+  - Tools
+title: 浏览器文件转换工具，视频默认远程处理
+description: 浏览器文件转换工具，视频默认远程处理
+additionalProperties:
+  key: vert
+  name: VERT
+  tags:
+    - Tools
+  shortDescZh: 浏览器文件转换工具，视频默认远程处理
+  shortDescEn: Browser file converter with remote video processing by default
+  description:
+    en: Browser file converter with remote video processing by default
+    zh: 浏览器文件转换工具，视频默认由远程服务处理
+    zh-Hant: 瀏覽器檔案轉換工具，影片預設由遠端服務處理
+    ja: 動画をデフォルトでリモート処理するブラウザファイル変換ツール
+    ko: 기본적으로 동영상을 원격 처리하는 브라우저 파일 변환기
+    ru: Браузерный конвертер файлов с удаленной обработкой видео по умолчанию
+    ms: Penukar fail pelayar dengan pemprosesan video jauh secara lalai
+    pt-br: Conversor de arquivos no navegador com processamento remoto de vídeos por padrão
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://vert.sh/
+  github: https://github.com/VERT-sh/VERT
+  document: https://github.com/VERT-sh/VERT/blob/main/docs/VIDEO_CONVERSION.md
+  architectures:
+    - amd64
+    - arm64
