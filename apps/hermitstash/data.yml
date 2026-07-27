@@ -1,0 +1,30 @@
+name: HermitStash
+tags:
+  - Security
+title: 后量子加密文件分享服务
+description: 后量子加密文件分享服务
+additionalProperties:
+  key: hermitstash
+  name: HermitStash
+  tags:
+    - Security
+  shortDescZh: 后量子加密文件分享服务
+  shortDescEn: A post-quantum encrypted file sharing service
+  description:
+    en: A post-quantum encrypted file sharing service
+    zh: 后量子加密文件分享服务
+    zh-Hant: 後量子加密檔案分享服務
+    ja: 耐量子暗号化ファイル共有サービス
+    ko: 양자 내성 암호화 파일 공유 서비스
+    ru: Сервис обмена файлами с постквантовым шифрованием
+    ms: Perkhidmatan perkongsian fail disulitkan pasca-kuantum
+    pt-br: Serviço de compartilhamento de arquivos com criptografia pós-quântica
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://hermitstash.com/
+  github: https://github.com/dotCooCoo/hermitstash
+  document: https://github.com/dotCooCoo/hermitstash/blob/main/docker-compose.rootless.yml
+  architectures:
+    - amd64
+    - arm64
