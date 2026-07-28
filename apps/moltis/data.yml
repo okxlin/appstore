@@ -1,0 +1,33 @@
+name: Moltis
+tags:
+  - AI
+  - 工具
+title: 安全持久化的个人 AI 代理服务器
+description: 安全持久化的个人 AI 代理服务器
+additionalProperties:
+  key: moltis
+  name: Moltis
+  tags:
+    - AI
+    - Tool
+  shortDescZh: 安全持久化的个人 AI 代理服务器
+  shortDescEn: Secure persistent personal AI agent server
+  description:
+    en: A secure persistent personal AI agent server
+    zh: 安全持久化的个人 AI 代理服务器
+    zh-Hant: 安全且持久化的個人 AI 代理伺服器
+    ja: 安全で永続的なパーソナル AI エージェントサーバー
+    ko: 안전하고 지속 가능한 개인 AI 에이전트 서버
+    ru: Безопасный постоянный сервер персонального ИИ-агента
+    ms: Pelayan ejen AI peribadi yang selamat dan berterusan
+    pt-br: Servidor seguro e persistente de agente pessoal de IA
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://moltis.org/
+  github: https://github.com/moltis-org/moltis
+  document: https://docs.moltis.org/
+  architectures:
+    - amd64
+    - arm64

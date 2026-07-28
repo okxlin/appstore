@@ -1,0 +1,4 @@
+Source: https://github.com/moltis-org/moltis/blob/cf0658d97c15f169f27683fe3ea2aaa68ea4f39d/website/favicon-compact-512.png
+License: MIT
+License text: https://github.com/moltis-org/moltis/blob/cf0658d97c15f169f27683fe3ea2aaa68ea4f39d/LICENSE
+Copyright (c) 2025 Fabien Penso
