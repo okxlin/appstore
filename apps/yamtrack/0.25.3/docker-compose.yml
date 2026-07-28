@@ -1,0 +1,59 @@
+services:
+  yamtrack:
+    image: "ghcr.io/fuzzygrim/yamtrack:0.25.3@sha256:00acf008bca8171226063bc0f8f08ef7ffe24a10bcebf8676cce335ce312c307"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      yamtrack-redis:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+      - yamtrack-internal
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - TZ=${YAMTRACK_TIMEZONE}
+      - SECRET=${YAMTRACK_SECRET}
+      - REDIS_URL=redis://yamtrack-redis:6379
+      - REGISTRATION=${YAMTRACK_REGISTRATION}
+      - PUID=1000
+      - PGID=1000
+      - SOCIAL_PROVIDERS=
+      - SOCIALACCOUNT_ONLY=False
+    volumes:
+      - "${APP_DATA_DIR}/yamtrack:/yamtrack/db"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:8000/health/ || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+  yamtrack-redis:
+    image: "redis:8-alpine@sha256:8096655e437712b07503796fb64d81359256cfcff0ab29d95a7da72863786efb"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: unless-stopped
+    networks:
+      - yamtrack-internal
+    volumes:
+      - "${APP_DATA_DIR}/redis:/data"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  yamtrack-internal:
+    internal: true

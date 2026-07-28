@@ -1,0 +1,32 @@
+name: Yamtrack
+tags:
+  - 多媒体
+  - 工具
+title: 自托管的电影、电视、游戏、书籍和漫画追踪器
+description: 自托管的电影、电视、游戏、书籍和漫画追踪器
+additionalProperties:
+  key: yamtrack
+  name: Yamtrack
+  tags:
+    - Media
+    - Tool
+  shortDescZh: 自托管的电影、电视、游戏、书籍和漫画追踪器
+  shortDescEn: A self-hosted tracker for movies, TV, games, books, and comics
+  description:
+    en: A self-hosted media tracker for movies, television, anime, games, books, and comics
+    zh: 用于追踪电影、电视、动漫、游戏、书籍和漫画的自托管媒体应用
+    zh-Hant: 用於追蹤電影、電視、動漫、遊戲、書籍和漫畫的自託管媒體應用
+    ja: 映画、テレビ、アニメ、ゲーム、書籍、コミックを記録するセルフホスト型メディアトラッカー
+    ko: 영화, TV, 애니메이션, 게임, 도서 및 만화를 기록하는 자체 호스팅 미디어 추적기
+    ru: Самостоятельно размещаемый трекер фильмов, сериалов, аниме, игр, книг и комиксов
+    ms: Penjejak media hos kendiri untuk filem, televisyen, anime, permainan, buku dan komik
+    pt-br: Rastreador de midia auto-hospedado para filmes, televisao, anime, jogos, livros e quadrinhos
+  type: website
+  crossVersionUpdate: true
+  limit: 1
+  website: https://github.com/FuzzyGrim/Yamtrack
+  github: https://github.com/FuzzyGrim/Yamtrack
+  document: https://github.com/FuzzyGrim/Yamtrack/tree/dev/docs
+  architectures:
+    - amd64
+    - arm64
