@@ -1,0 +1,30 @@
+name: Wealthfolio
+tags:
+  - Finance
+title: 自托管投资组合跟踪器
+description: 自托管投资组合跟踪器
+additionalProperties:
+  key: wealthfolio
+  name: Wealthfolio
+  tags:
+    - Finance
+  shortDescZh: 自托管投资组合跟踪器
+  shortDescEn: Self-hosted investment portfolio tracker
+  description:
+    en: Self-hosted investment portfolio tracker
+    zh: 自托管投资组合跟踪器
+    zh-Hant: 自託管投資組合追蹤器
+    ja: セルフホスト型投資ポートフォリオトラッカー
+    ko: 자체 호스팅 투자 포트폴리오 추적기
+    ru: Самостоятельно размещаемый трекер инвестиционного портфеля
+    ms: Penjejak portfolio pelaburan hos kendiri
+    pt-br: Rastreador de carteira de investimentos auto-hospedado
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://wealthfolio.app/
+  github: https://github.com/wealthfolio/wealthfolio
+  document: https://github.com/wealthfolio/wealthfolio/blob/v3.6.2/docs/self-host/README.md
+  architectures:
+    - amd64
+    - arm64

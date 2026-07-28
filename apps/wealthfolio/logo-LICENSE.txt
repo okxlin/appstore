@@ -1,0 +1,9 @@
+Wealthfolio logo
+
+Source: https://github.com/wealthfolio/wealthfolio/blob/v3.6.2/apps/frontend/src/assets/logo-rounded.png
+Source commit: 633d3a1be7a87e40fbb2d5d335bd60ba4219718b
+Source SHA-256: 8174d16c90ade085534658d7a361e1835e4e9f084398430b60e86738472b05df
+License: GNU Affero General Public License v3.0 (AGPL-3.0-only)
+License text: https://github.com/wealthfolio/wealthfolio/blob/v3.6.2/LICENSE
+
+The store asset is a proportional 512 x 512 rendering of the official logo.
