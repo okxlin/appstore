@@ -1,0 +1,30 @@
+name: Downtify
+tags:
+  - Media
+title: 自托管音乐下载与管理工具
+description: 自托管音乐下载与管理工具
+additionalProperties:
+  key: downtify
+  name: Downtify
+  tags:
+    - Media
+  shortDescZh: 自托管音乐下载与管理工具
+  shortDescEn: A self-hosted music downloader and library manager
+  description:
+    en: A self-hosted music downloader and library manager
+    zh: 自托管音乐下载与管理工具
+    zh-Hant: 自託管音樂下載與管理工具
+    ja: セルフホスト型の音楽ダウンローダーとライブラリ管理ツール
+    ko: 자체 호스팅 음악 다운로드 및 라이브러리 관리 도구
+    ru: Самостоятельно размещаемый загрузчик и менеджер музыкальной библиотеки
+    ms: Pemuat turun dan pengurus pustaka muzik hos sendiri
+    pt-br: Baixador e gerenciador de biblioteca musical auto-hospedado
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/henriquesebastiao/downtify
+  github: https://github.com/henriquesebastiao/downtify
+  document: https://downtify.henriquesebastiao.com/getting-started/docker-compose/
+  architectures:
+    - amd64
+    - arm64
