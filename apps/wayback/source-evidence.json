@@ -1,0 +1,5 @@
+{
+  "repository": "https://github.com/wabarc/wayback/tree/v0.21.1",
+  "dockerDocs": "https://github.com/wabarc/wayback/blob/v0.21.1/README.md#dockerpodman",
+  "composeFile": "https://github.com/wabarc/wayback/blob/v0.21.1/docker-compose.yml"
+}
