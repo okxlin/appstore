@@ -1,0 +1,47 @@
+services:
+  picoclaw:
+    image: "docker.io/sipeed/picoclaw:v0.3.1-launcher@sha256:ed830c6cb71f59785062433159c45c2363465cd02046f8dd2822bd24a39510c2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:18800"
+      - "${PANEL_APP_PORT_GATEWAY}:18790"
+    environment:
+      - HOME=/data
+      - PICOCLAW_HOME=/data
+      - PICOCLAW_GATEWAY_HOST=0.0.0.0
+      - TZ=${TIME_ZONE}
+    entrypoint:
+      - sh
+      - -ec
+      - >-
+        chown 65534:65534 /data;
+        exec su -p -s /bin/sh nobody -c
+        'chmod 700 /data; exec picoclaw-launcher -console -public -no-browser'
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:18800/api/auth/status"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

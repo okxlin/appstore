@@ -1,0 +1,68 @@
+additionalProperties:
+  formFields:
+    - default: 18800
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Console Port
+      labelZh: Web 控制台端口
+      label:
+        en: Web Console Port
+        zh: Web 控制台端口
+        zh-Hant: Web 控制台連接埠
+        ja: Web コンソールポート
+        ko: Web 콘솔 포트
+        ru: Порт веб-консоли
+        ms: Port Konsol Web
+        pt-br: Porta do Console Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: 18790
+      edit: true
+      envKey: PANEL_APP_PORT_GATEWAY
+      labelEn: Gateway And Webhook Port
+      labelZh: 网关与 Webhook 端口
+      label:
+        en: Gateway And Webhook Port
+        zh: 网关与 Webhook 端口
+        zh-Hant: 閘道與 Webhook 連接埠
+        ja: ゲートウェイと Webhook ポート
+        ko: 게이트웨이 및 Webhook 포트
+        ru: Порт шлюза и вебхуков
+        ms: Port Get Laluan Dan Webhook
+        pt-br: Porta do Gateway e Webhook
+      required: true
+      rule: paramPort
+      type: number
+    - default: Etc/UTC
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Masa
+        pt-br: Fuso Horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de Dados
+      required: true
+      type: text
