@@ -1,0 +1,88 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: ./db-data
+      edit: true
+      envKey: DB_DATA_DIR
+      labelEn: Local Database Directory
+      labelZh: 本地数据库目录
+      label:
+        en: Local Database Directory
+        zh: 本地数据库目录
+        zh-Hant: 本機資料庫目錄
+        ja: ローカルデータベースディレクトリ
+        ko: 로컬 데이터베이스 디렉터리
+        ru: Каталог локальных баз данных
+        ms: Direktori pangkalan data setempat
+        pt-br: Diretorio de bancos de dados locais
+      required: true
+      type: text
+    - default: generate
+      edit: true
+      envKey: WHODB_ENCRYPTION_KEY
+      labelEn: Session Encryption Key
+      labelZh: 会话加密密钥
+      label:
+        en: Session Encryption Key
+        zh: 会话加密密钥
+        zh-Hant: 工作階段加密金鑰
+        ja: セッション暗号化キー
+        ko: 세션 암호화 키
+        ru: Ключ шифрования сеансов
+        ms: Kunci penyulitan sesi
+        pt-br: Chave de criptografia da sessao
+      required: true
+      type: password
+    - default: "false"
+      edit: true
+      envKey: WHODB_SECURE
+      labelEn: HTTPS Secure Cookie
+      labelZh: HTTPS 安全 Cookie
+      label:
+        en: HTTPS Secure Cookie
+        zh: HTTPS 安全 Cookie
+        zh-Hant: HTTPS 安全 Cookie
+        ja: HTTPS セキュア Cookie
+        ko: HTTPS 보안 쿠키
+        ru: Защищенные Cookie для HTTPS
+        ms: Cookie selamat HTTPS
+        pt-br: Cookie seguro HTTPS
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
