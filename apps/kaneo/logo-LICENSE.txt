@@ -1,0 +1,4 @@
+Source: https://github.com/usekaneo/kaneo/blob/v2.9.9/apps/site/public/logo-512.png
+License: MIT
+Copyright: Copyright (c) 2024 Andrej Acevski
+The source image is used without changing its design.

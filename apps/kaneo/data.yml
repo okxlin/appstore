@@ -1,0 +1,31 @@
+name: Kaneo
+tags:
+  - 项目管理
+title: 轻量级开源项目管理平台
+description: 轻量级开源项目管理平台
+additionalProperties:
+  key: kaneo
+  name: Kaneo
+  tags:
+    - Project Management
+  shortDescZh: 轻量级开源项目管理平台
+  shortDescEn: Lightweight open-source project management platform
+  description:
+    en: A lightweight open-source project management platform
+    zh: 一个轻量级开源项目管理平台
+    zh-Hant: 一個輕量級開源專案管理平台
+    ja: 軽量なオープンソースのプロジェクト管理プラットフォーム
+    ko: 가벼운 오픈 소스 프로젝트 관리 플랫폼
+    ru: Легкая платформа управления проектами с открытым исходным кодом
+    ms: Platform pengurusan projek sumber terbuka yang ringan
+    pt-br: Plataforma leve de gerenciamento de projetos de codigo aberto
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://kaneo.app/
+  github: https://github.com/usekaneo/kaneo
+  document: https://github.com/usekaneo/kaneo#self-hosting
+  architectures:
+    - amd64
+    - arm64

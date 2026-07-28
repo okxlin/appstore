@@ -1,0 +1,73 @@
+services:
+  kaneo-postgres:
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: unless-stopped
+    user: "70:70"
+    networks:
+      - kaneo-internal
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+      - /var/run/postgresql:uid=70,gid=70,mode=0755,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+  kaneo:
+    image: ghcr.io/usekaneo/kaneo:2.9.9@sha256:d83479f41d437d5c35656f811f345a50357588422fc8d504cfde002756da688e
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1001:1001"
+    depends_on:
+      kaneo-postgres:
+        condition: service_healthy
+    networks:
+      - kaneo-internal
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:5173"
+    environment:
+      KANEO_CLIENT_URL: ${KANEO_CLIENT_URL}
+      POSTGRES_HOST: kaneo-postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      AUTH_SECRET: ${AUTH_SECRET}
+      DISABLE_REGISTRATION: ${DISABLE_REGISTRATION}
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:5173/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  kaneo-internal:
+    internal: true
+  1panel-network:
+    external: true
