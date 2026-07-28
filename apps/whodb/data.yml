@@ -1,0 +1,30 @@
+name: WhoDB
+tags:
+- Database
+title: 轻量级多数据库管理工作台
+description: 轻量级多数据库管理工作台
+additionalProperties:
+  key: whodb
+  name: WhoDB
+  tags:
+  - Database
+  shortDescZh: 轻量级多数据库管理工作台
+  shortDescEn: A lightweight workspace for multiple databases
+  description:
+    en: A lightweight workspace for multiple databases
+    zh: 轻量级多数据库管理工作台
+    zh-Hant: 輕量級多資料庫管理工作台
+    ja: 複数データベース向けの軽量管理ワークスペース
+    ko: 여러 데이터베이스를 위한 가벼운 관리 작업 공간
+    ru: Легковесная рабочая среда для управления разными базами данных
+    ms: Ruang kerja ringan untuk mengurus pelbagai pangkalan data
+    pt-br: Espaco de trabalho leve para gerenciar varios bancos de dados
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  website: https://whodb.com/
+  github: https://github.com/clidey/whodb
+  document: https://docs.whodb.com/
+  architectures:
+  - amd64
+  - arm64

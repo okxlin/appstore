@@ -1,0 +1,22 @@
+services:
+  whodb:
+    image: clidey/whodb:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - WHODB_ENCRYPTION_KEY=${WHODB_ENCRYPTION_KEY}
+      - WHODB_SECURE=${WHODB_SECURE}
+      - WHODB_DATA_DIR=/data
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${DB_DATA_DIR}:/db"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
