@@ -444,7 +444,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         app_data = yaml.safe_load((app_dir / "data.yml").read_text(encoding="utf-8"))
         self.assertFalse(app_data["additionalProperties"]["crossVersionUpdate"])
         self.assertTrue((app_dir / "1.10.34-lts").is_dir())
-        self.assertTrue((app_dir / "2.2.3").is_dir())
+        self.assertTrue((app_dir / "2.2.4").is_dir())
         self.assertTrue((app_dir / "v1").is_dir())
         self.assertTrue((app_dir / "v2").is_dir())
         self.assertTrue((app_dir / "global-1.10.34-lts").is_dir())
