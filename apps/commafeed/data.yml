@@ -1,0 +1,30 @@
+name: CommaFeed
+tags:
+  - Tool
+title: 自托管 RSS 阅读器
+description: 自托管 RSS 阅读器
+additionalProperties:
+  key: commafeed
+  name: CommaFeed
+  tags:
+    - Tool
+  shortDescZh: 自托管 RSS 阅读器
+  shortDescEn: A self-hosted RSS reader
+  description:
+    en: A self-hosted RSS reader inspired by Google Reader
+    zh: 受 Google Reader 启发的自托管 RSS 阅读器
+    zh-Hant: 受 Google Reader 啟發的自託管 RSS 閱讀器
+    ja: Google Reader に着想を得たセルフホスト型 RSS リーダー
+    ko: Google Reader에서 영감을 받은 자체 호스팅 RSS 리더
+    ru: Самостоятельно размещаемая программа для чтения RSS в стиле Google Reader
+    ms: Pembaca RSS hos sendiri yang diinspirasikan oleh Google Reader
+    pt-br: Leitor RSS auto-hospedado inspirado no Google Reader
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  website: https://www.commafeed.com/
+  github: https://github.com/Athou/commafeed
+  document: https://athou.github.io/commafeed/documentation/
+  architectures:
+    - amd64
+    - arm64

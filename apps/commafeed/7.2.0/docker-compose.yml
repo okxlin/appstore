@@ -1,0 +1,21 @@
+services:
+  commafeed:
+    image: athou/commafeed:7.2.0-h2
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8082"
+    environment:
+      - QUARKUS_HTTP_AUTH_SESSION_ENCRYPTION_KEY=${COMMAFEED_SESSION_ENCRYPTION_KEY}
+      - COMMAFEED_USERS_ALLOW_REGISTRATIONS=false
+      - COMMAFEED_HTTP_CLIENT_BLOCK_LOCAL_ADDRESSES=true
+    volumes:
+      - "${APP_DATA_DIR}:/commafeed/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
