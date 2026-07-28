@@ -1,0 +1,30 @@
+name: JupyterLab
+tags:
+  - DevTool
+title: 交互式计算与数据科学开发环境
+description: 交互式计算与数据科学开发环境
+additionalProperties:
+  key: jupyterlab
+  name: JupyterLab
+  tags:
+    - DevTool
+  shortDescZh: 交互式计算与数据科学开发环境
+  shortDescEn: An interactive computing and data science environment
+  description:
+    en: An interactive computing and data science environment
+    zh: 交互式计算与数据科学开发环境
+    zh-Hant: 互動式運算與資料科學開發環境
+    ja: 対話型コンピューティングとデータサイエンスの開発環境
+    ko: 대화형 컴퓨팅 및 데이터 과학 개발 환경
+    ru: Интерактивная среда для вычислений и анализа данных
+    ms: Persekitaran pengkomputeran interaktif dan sains data
+    pt-br: Ambiente interativo de computação e ciência de dados
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://jupyterlab.readthedocs.io/en/latest/
+  github: https://github.com/jupyterlab/jupyterlab
+  document: https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html
+  architectures:
+    - amd64
+    - arm64
