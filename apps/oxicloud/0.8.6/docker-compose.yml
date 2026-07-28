@@ -1,0 +1,38 @@
+services:
+  oxicloud:
+    image: "diocrafts/oxicloud:0.8.6@sha256:f4cbc643a023e68c86ea2ddc8f3abd66e9128299abd6ddeb55b2ce43f1f4a031"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/usr/local/bin/oxicloud-package-entrypoint.sh"]
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8086"
+    environment:
+      - OXICLOUD_SERVER_HOST=0.0.0.0
+      - OXICLOUD_SERVER_PORT=8086
+      - OXICLOUD_BASE_URL=${OXICLOUD_BASE_URL}
+      - OXICLOUD_STORAGE_PATH=/app/storage
+      - PANEL_DB_HOST=${PANEL_DB_HOST}
+      - PANEL_DB_PORT=${PANEL_DB_PORT}
+      - PANEL_DB_NAME=${PANEL_DB_NAME}
+      - PANEL_DB_USER=${PANEL_DB_USER}
+      - PANEL_DB_USER_PASSWORD=${PANEL_DB_USER_PASSWORD}
+      - OXICLOUD_DISABLE_REGISTRATION=${OXICLOUD_DISABLE_REGISTRATION}
+      - MIMALLOC_PURGE_DELAY=0
+      - RUST_LOG=info,oxicloud::infrastructure::db=warn
+    volumes:
+      - "${APP_DATA_DIR}:/app/storage"
+      - "./scripts/container-entrypoint.sh:/usr/local/bin/oxicloud-package-entrypoint.sh:ro"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8086/ready >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

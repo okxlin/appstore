@@ -1,0 +1,33 @@
+name: OxiCloud
+tags:
+  - 云存储
+  - 文件管理
+title: 基于 Rust 的自托管云存储平台
+description: 基于 Rust 的自托管云存储平台
+additionalProperties:
+  key: oxicloud
+  name: OxiCloud
+  tags:
+    - Storage
+    - Tool
+  shortDescZh: 基于 Rust 的自托管云存储平台
+  shortDescEn: A self-hosted cloud storage platform built with Rust
+  description:
+    en: A self-hosted cloud storage platform built with Rust
+    zh: 基于 Rust 的自托管云存储平台
+    zh-Hant: 基於 Rust 的自託管雲端儲存平台
+    ja: Rust で構築されたセルフホスト型クラウドストレージ
+    ko: Rust로 구축된 셀프 호스팅 클라우드 스토리지 플랫폼
+    ru: Самостоятельно размещаемая платформа облачного хранения на Rust
+    ms: Platform storan awan hos sendiri yang dibina dengan Rust
+    pt-br: Plataforma de armazenamento em nuvem auto-hospedada criada com Rust
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://oxicloud.app/
+  github: https://github.com/AtalayaLabs/OxiCloud
+  document: https://atalayalabs.github.io/OxiCloud/
+  architectures:
+    - amd64
+    - arm64
