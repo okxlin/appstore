@@ -1,0 +1,38 @@
+services:
+  moltis:
+    image: "ghcr.io/moltis-org/moltis:latest@sha256:ead25050622f61bb3556ae57d17583e440d119dbe6847c8605116576a941d1ae"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1001"
+    command: ["--no-tls", "--bind", "0.0.0.0", "--port", "13131"]
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:13131"
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_OAUTH}:1455"
+    environment:
+      - MOLTIS_PASSWORD=${MOLTIS_PASSWORD}
+      - MOLTIS_TERMINAL_DISABLED=1
+      - TZ=${TIME_ZONE}
+    volumes:
+      - "${DATA_PATH}/config:/home/moltis/.config/moltis"
+      - "${DATA_PATH}/data:/home/moltis/.moltis"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,mode=1777,size=256m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:13131/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
