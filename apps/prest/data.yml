@@ -1,0 +1,30 @@
+name: PreST
+tags:
+  - 数据库
+title: 为 PostgreSQL 提供即时 REST API
+description: 为 PostgreSQL 提供即时 REST API
+additionalProperties:
+  description:
+    en: Instant REST API for PostgreSQL
+    zh: 为 PostgreSQL 提供即时 REST API
+    zh-Hant: 為 PostgreSQL 提供即時 REST API
+    ja: PostgreSQL 向けの即時 REST API
+    ko: PostgreSQL용 즉시 REST API
+    ru: Мгновенный REST API для PostgreSQL
+    ms: REST API segera untuk PostgreSQL
+    pt-br: API REST instantanea para PostgreSQL
+  key: prest
+  name: PreST
+  tags:
+    - Database
+  shortDescZh: 为 PostgreSQL 提供即时 REST API
+  shortDescEn: Instant REST API for PostgreSQL
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://prest.dev/
+  github: https://github.com/prest/prest
+  document: https://docs.prest.dev/
+  architectures:
+    - amd64

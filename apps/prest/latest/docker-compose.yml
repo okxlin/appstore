@@ -1,0 +1,49 @@
+services:
+  prest:
+    image: "prest/prest:v2.4.0@sha256:9fa76b223d77db7438f9426c96f5563ce16dc0f096a8b341fbe11c7f175b923e"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "65532:65532"
+    entrypoint: ["/bin/prestd"]
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - PREST_PG_HOST=${PANEL_DB_HOST}
+      - PREST_PG_PORT=${PANEL_DB_PORT}
+      - PREST_PG_DATABASE=${PANEL_DB_NAME}
+      - PREST_PG_USER=${PANEL_DB_USER}
+      - PREST_PG_PASS=${PANEL_DB_USER_PASSWORD}
+      - PREST_PG_SSL_MODE=${PREST_PG_SSL_MODE}
+      - PREST_JWT_KEY=${PREST_JWT_KEY}
+      - PREST_JWT_DEFAULT=true
+      - PREST_JWT_WHITELIST=^/_health$|^/_ready$
+      - PREST_DEBUG=false
+      - PREST_PG_CACHE=false
+      - PREST_CACHE_ENABLED=false
+      - PREST_EXPOSE_ENABLED=false
+      - PREST_OTEL_ENABLED=false
+      - PREST_QUERIES_LOCATION=/tmp/queries
+      - PREST_QUERIES_RESTRICT=false
+      - PREST_QUERIES_REGISTER_ENABLED=false
+      - PREST_BUILD_PLUGINS=0
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,mode=1700,uid=65532,gid=65532
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://127.0.0.1:3000/_ready"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
