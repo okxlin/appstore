@@ -1,0 +1,4 @@
+Source: https://github.com/szabodanika/microbin/blob/937a24b1d6f5d5908a2af4e1524a8267756d9cef/templates/assets/logo-square.png
+License: BSD-3-Clause
+License text: https://github.com/szabodanika/microbin/blob/937a24b1d6f5d5908a2af4e1524a8267756d9cef/LICENSE
+Copyright (c) 2022-2023, Daniel Szabo

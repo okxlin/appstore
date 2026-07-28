@@ -1,0 +1,31 @@
+name: MicroBin
+tags:
+  - 工具
+title: 轻量自托管的文本与文件分享服务
+description: 轻量自托管的文本与文件分享服务
+additionalProperties:
+  key: microbin
+  name: MicroBin
+  tags:
+    - Tool
+  shortDescZh: 轻量自托管的文本与文件分享服务
+  shortDescEn: Lightweight self-hosted text and file sharing service
+  description:
+    en: Lightweight self-hosted text and file sharing service
+    zh: 轻量自托管的文本与文件分享服务
+    zh-Hant: 輕量自架式文字與檔案分享服務
+    ja: 軽量なセルフホスト型テキスト・ファイル共有サービス
+    ko: 가벼운 셀프 호스팅 텍스트 및 파일 공유 서비스
+    ru: Легковесный сервис для самостоятельного обмена текстом и файлами
+    ms: Perkhidmatan perkongsian teks dan fail hos kendiri yang ringan
+    pt-br: Servico leve e auto-hospedado de compartilhamento de textos e arquivos
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://microbin.eu/
+  github: https://github.com/szabodanika/microbin
+  document: https://microbin.eu/documentation/
+  architectures:
+    - amd64
+    - arm64

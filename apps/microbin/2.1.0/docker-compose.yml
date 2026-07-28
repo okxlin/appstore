@@ -1,0 +1,46 @@
+services:
+  microbin:
+    image: danielszabo99/microbin:2.1.0@sha256:34fe4ac99b65cc633975ae72ca6fc84eab15f73a95b2e03b98312374063ee5d7
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "65534:65534"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - MICROBIN_BIND=0.0.0.0
+      - MICROBIN_PORT=8080
+      - MICROBIN_DATA_DIR=/app/microbin_data
+      - MICROBIN_ADMIN_USERNAME=${MICROBIN_ADMIN_USERNAME}
+      - MICROBIN_ADMIN_PASSWORD=${MICROBIN_ADMIN_PASSWORD}
+      - MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB=${MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB}
+      - MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB=${MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB}
+      - MICROBIN_PRIVATE=true
+      - MICROBIN_NO_LISTING=true
+      - MICROBIN_ENABLE_READONLY=true
+      - MICROBIN_QR=true
+      - MICROBIN_DISABLE_TELEMETRY=true
+      - MICROBIN_DISABLE_UPDATE_CHECKING=true
+      - MICROBIN_LIST_SERVER=false
+    volumes:
+      - "${APP_DATA_DIR}:/app/microbin_data"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "bash", "-c", "exec 3<>/dev/tcp/127.0.0.1/8080 && printf 'GET / HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n' >&3 && grep -q '200 OK' <&3"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
