@@ -1,0 +1,4 @@
+Source: https://github.com/asciinema/asciinema-server/blob/v20260626/priv/static/images/logo-red.svg
+License: Apache License 2.0
+Copyright: 2011 Marcin Kulik
+The logo is rendered from the official project SVG without design changes.

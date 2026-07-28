@@ -1,0 +1,82 @@
+services:
+  asciinema-server:
+    image: "ghcr.io/asciinema/asciinema-server:latest@sha256:0474b2186be46b23f5e16dbd4319727dbb68f27a303705fbe632821bf524b313"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      asciinema-postgres:
+        condition: service_healthy
+    user: "1000:0"
+    networks:
+      - 1panel-network
+      - asciinema-internal
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:4000"
+    environment:
+      - DATABASE_URL=postgresql://asciinema:${ASCIINEMA_POSTGRES_PASSWORD}@asciinema-postgres/asciinema
+      - SECRET_KEY_BASE=${ASCIINEMA_SECRET_KEY_BASE}
+      - URL_SCHEME=${ASCIINEMA_URL_SCHEME}
+      - URL_HOST=${ASCIINEMA_URL_HOST}
+      - URL_PORT=${ASCIINEMA_URL_PORT}
+      - TZ=${ASCIINEMA_TIMEZONE}
+      - BIND_ALL=1
+      - ADMIN_BIND_ALL=0
+      - ADMIN_PANEL_ON_MAIN_ENDPOINT=1
+      - SIGN_UP_DISABLED=${ASCIINEMA_SIGN_UP_DISABLED}
+      - UPLOAD_AUTH_REQUIRED=${ASCIINEMA_UPLOAD_AUTH_REQUIRED}
+      - DATA_DIR=/var/lib/asciinema
+      - CACHE_PATH=/var/cache/asciinema
+    read_only: true
+    tmpfs:
+      - /tmp:uid=1000,gid=0,mode=1770
+      - /var/cache/asciinema:uid=1000,gid=0,mode=0770
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - "${APP_DATA_DIR}/asciinema:/var/lib/asciinema"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:4000/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+  asciinema-postgres:
+    image: "postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193"
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: unless-stopped
+    user: "70:70"
+    networks:
+      - asciinema-internal
+    environment:
+      - POSTGRES_USER=asciinema
+      - POSTGRES_PASSWORD=${ASCIINEMA_POSTGRES_PASSWORD}
+      - POSTGRES_DB=asciinema
+    read_only: true
+    tmpfs:
+      - /run/postgresql:uid=70,gid=70,mode=0770
+      - /tmp:uid=70,gid=70,mode=1770
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U asciinema -d asciinema"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  asciinema-internal:
+    internal: true
