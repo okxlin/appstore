@@ -24,7 +24,7 @@ additionalProperties:
   limit: 0
   recommend: 0
   website: https://bentopdf.com/
-  document: https://github.com/alam00000/bentopdf/tree/v2.8.6/docs/self-hosting
+  document: https://github.com/alam00000/bentopdf/tree/v2.8.7/docs/self-hosting
   github: https://github.com/alam00000/bentopdf
   architectures:
     - amd64
