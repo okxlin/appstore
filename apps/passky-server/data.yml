@@ -1,0 +1,30 @@
+name: Passky Server
+tags:
+  - Security
+title: 零知识密码管理服务器
+description: 零知识密码管理服务器
+additionalProperties:
+  key: passky-server
+  name: Passky Server
+  tags:
+    - Security
+  shortDescZh: 零知识密码管理服务器
+  shortDescEn: Zero-knowledge password manager server
+  description:
+    en: Zero-knowledge password manager server
+    zh: 零知识密码管理服务器
+    zh-Hant: 零知識密碼管理伺服器
+    ja: ゼロ知識パスワード管理サーバー
+    ko: 영지식 비밀번호 관리 서버
+    ru: Сервер менеджера паролей с нулевым разглашением
+    ms: Pelayan pengurus kata laluan pengetahuan sifar
+    pt-br: Servidor de gerenciador de senhas de conhecimento zero
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://passky.org/
+  github: https://github.com/Rabbit-Company/Passky-Server
+  document: https://github.com/Rabbit-Company/Passky-Server/blob/v8.1.8/docs/installation/docker.md
+  architectures:
+    - amd64
+    - arm64
