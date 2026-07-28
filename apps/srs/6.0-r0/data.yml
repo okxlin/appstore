@@ -1,0 +1,119 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP streaming port
+      labelZh: HTTP 流媒体端口
+      label:
+        en: HTTP streaming port
+        zh: HTTP 流媒体端口
+        zh-Hant: HTTP 串流埠
+        ja: HTTP ストリーミングポート
+        ko: HTTP 스트리밍 포트
+        ru: Порт потокового HTTP
+        ms: Port penstriman HTTP
+        pt-br: Porta de streaming HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 1935
+      edit: true
+      envKey: PANEL_APP_PORT_RTMP
+      labelEn: RTMP port
+      labelZh: RTMP 端口
+      label:
+        en: RTMP port
+        zh: RTMP 端口
+        zh-Hant: RTMP 埠
+        ja: RTMP ポート
+        ko: RTMP 포트
+        ru: Порт RTMP
+        ms: Port RTMP
+        pt-br: Porta RTMP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 1985
+      edit: true
+      envKey: PANEL_APP_PORT_API
+      labelEn: HTTP API port
+      labelZh: HTTP API 端口
+      label:
+        en: HTTP API port
+        zh: HTTP API 端口
+        zh-Hant: HTTP API 埠
+        ja: HTTP API ポート
+        ko: HTTP API 포트
+        ru: Порт HTTP API
+        ms: Port API HTTP
+        pt-br: Porta da API HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 127.0.0.1
+      edit: true
+      envKey: SRS_API_BIND_ADDRESS
+      labelEn: HTTP API bind address
+      labelZh: HTTP API 绑定地址
+      label:
+        en: HTTP API bind address
+        zh: HTTP API 绑定地址
+        zh-Hant: HTTP API 綁定位址
+        ja: HTTP API バインドアドレス
+        ko: HTTP API 바인드 주소
+        ru: Адрес привязки HTTP API
+        ms: Alamat ikatan API HTTP
+        pt-br: Endereco de vinculacao da API HTTP
+      required: true
+      type: text
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_RTC
+      labelEn: WebRTC UDP port
+      labelZh: WebRTC UDP 端口
+      label:
+        en: WebRTC UDP port
+        zh: WebRTC UDP 端口
+        zh-Hant: WebRTC UDP 埠
+        ja: WebRTC UDP ポート
+        ko: WebRTC UDP 포트
+        ru: UDP-порт WebRTC
+        ms: Port UDP WebRTC
+        pt-br: Porta UDP do WebRTC
+      required: true
+      rule: paramPort
+      type: number
+    - default: 10080
+      edit: true
+      envKey: PANEL_APP_PORT_SRT
+      labelEn: SRT UDP port
+      labelZh: SRT UDP 端口
+      label:
+        en: SRT UDP port
+        zh: SRT UDP 端口
+        zh-Hant: SRT UDP 埠
+        ja: SRT UDP ポート
+        ko: SRT UDP 포트
+        ru: UDP-порт SRT
+        ms: Port UDP SRT
+        pt-br: Porta UDP do SRT
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: CANDIDATE
+      labelEn: WebRTC candidate
+      labelZh: WebRTC 候选地址
+      label:
+        en: WebRTC candidate
+        zh: WebRTC 候选地址
+        zh-Hant: WebRTC 候選位址
+        ja: WebRTC 候補アドレス
+        ko: WebRTC 후보 주소
+        ru: Адрес-кандидат WebRTC
+        ms: Alamat calon WebRTC
+        pt-br: Endereco candidato WebRTC
+      required: false
+      type: text

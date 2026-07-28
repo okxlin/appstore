@@ -1,0 +1,35 @@
+services:
+  srs:
+    image: "ossrs/srs:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_RTMP}:1935/tcp"
+      - "${SRS_API_BIND_ADDRESS}:${PANEL_APP_PORT_API}:1985/tcp"
+      - "${PANEL_APP_PORT_HTTP}:8080/tcp"
+      - "${PANEL_APP_PORT_RTC}:8000/udp"
+      - "${PANEL_APP_PORT_SRT}:10080/udp"
+    environment:
+      - "CANDIDATE=${CANDIDATE}"
+      - "SRS_SRT_SERVER_ENABLED=on"
+      - "SRS_VHOST_SRT_ENABLED=on"
+      - "SRS_VHOST_SRT_TO_RTMP=on"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          bash -c 'exec 3<>/dev/tcp/127.0.0.1/1985 &&
+          printf "GET /api/v1/versions HTTP/1.0\r\nHost: 127.0.0.1\r\nConnection: close\r\n\r\n" >&3 &&
+          grep -q "200 OK" <&3'
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
