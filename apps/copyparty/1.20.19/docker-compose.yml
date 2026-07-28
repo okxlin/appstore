@@ -1,6 +1,6 @@
 services:
   copyparty:
-    image: "ghcr.io/9001/copyparty-ac:1.20.18"
+    image: "ghcr.io/9001/copyparty-ac:1.20.19"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
