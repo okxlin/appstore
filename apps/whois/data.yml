@@ -1,0 +1,31 @@
+name: WhoIs
+tags:
+  - Tool
+title: WHOIS 与 RDAP 查询服务
+description: WHOIS 与 RDAP 查询服务
+additionalProperties:
+  key: whois
+  name: WhoIs
+  tags:
+    - Tool
+  shortDescZh: WHOIS 与 RDAP 查询服务
+  shortDescEn: WHOIS and RDAP lookup service
+  description:
+    en: A self-hosted WHOIS and RDAP lookup API for domains, IP addresses, and autonomous systems
+    zh: 面向域名、IP 地址和自治系统的自托管 WHOIS 与 RDAP 查询 API
+    zh-Hant: 面向網域、IP 位址和自治系統的自託管 WHOIS 與 RDAP 查詢 API
+    ja: ドメイン、IP アドレス、自律システム向けのセルフホスト型 WHOIS・RDAP 検索 API
+    ko: 도메인, IP 주소 및 자율 시스템을 위한 자체 호스팅 WHOIS 및 RDAP 조회 API
+    ru: Самостоятельно размещаемый API WHOIS и RDAP для доменов, IP-адресов и автономных систем
+    ms: API carian WHOIS dan RDAP hos kendiri untuk domain, alamat IP dan sistem autonomi
+    pt-br: API auto-hospedada de consulta WHOIS e RDAP para dominios, enderecos IP e sistemas autonomos
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://whois.ddnsip.cn/
+  github: https://github.com/KincaidYang/whois
+  document: https://github.com/KincaidYang/whois/blob/main/README_EN.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7

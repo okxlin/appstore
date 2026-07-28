@@ -1,0 +1,4 @@
+Source: Original icon created for the okxlin/appstore WhoIs package.
+License: CC0-1.0
+License text: https://creativecommons.org/publicdomain/zero/1.0/
+The source artwork is recorded in the batch evidence and rendered to the submitted PNG without design changes.
