@@ -1,0 +1,62 @@
+services:
+  server:
+    image: "ghcr.io/bisq-network/bisq2-api:2.1.11.1@sha256:af77443abc90114b0282d44a1fa5b5f3beeb608b6df76d8674f4366236856154"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    stop_grace_period: 1m
+    mem_limit: 2g
+    networks:
+      - 1panel-network
+    ports:
+      - "127.0.0.1:${PANEL_APP_PORT_HTTP}:8091"
+    environment:
+      - PAIRING_TTL_SECONDS=${PAIRING_TTL_SECONDS}
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETGID
+      - SETUID
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,size=256M
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          /bin/bash -c 'exec 3<>/dev/tcp/127.0.0.1/8090 &&
+          exec 4<>/dev/tcp/127.0.0.1/8091'
+      interval: 30s
+      timeout: 10s
+      start_period: 180s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    labels:
+      createdBy: "Apps"
+
+  web:
+    image: "ghcr.io/bisq-network/bisq2-api-web-ui:2.1.11.1@sha256:0295d45b6dafb3d9bf0d2e6ba74caeb42222e00eb30d9fa847a136a0f358aa23"
+    container_name: ${CONTAINER_NAME}-web
+    restart: unless-stopped
+    network_mode: "service:server"
+    depends_on:
+      - server
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,size=64M
+    volumes:
+      - "${APP_DATA_DIR}:/data:ro"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

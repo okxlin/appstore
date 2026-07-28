@@ -1,0 +1,30 @@
+name: Bisq 2 Node
+tags:
+  - Bitcoin
+title: 通过 Tor 运行自己的 Bisq 2 交易节点
+description: 通过 Tor 运行自己的 Bisq 2 交易节点
+additionalProperties:
+  key: bisq2-node
+  name: Bisq 2 Node
+  tags:
+    - Bitcoin
+  shortDescZh: 通过 Tor 运行自己的 Bisq 2 交易节点
+  shortDescEn: Run your own Bisq 2 trading node over Tor
+  description:
+    en: Self-hosted Bisq 2 node for private peer-to-peer Bitcoin trading with Bisq Connect
+    zh: 配合 Bisq Connect 使用的自托管 Bisq 2 点对点比特币交易节点
+    zh-Hant: 配合 Bisq Connect 使用的自託管 Bisq 2 點對點比特幣交易節點
+    ja: Bisq Connect向けのセルフホスト型Bisq 2ピアツーピアBitcoin取引ノード
+    ko: Bisq Connect용 자체 호스팅 Bisq 2 P2P 비트코인 거래 노드
+    ru: Собственный узел Bisq 2 для одноранговой торговли биткоином через Bisq Connect
+    ms: Nod Bisq 2 hos sendiri untuk dagangan Bitcoin rakan-ke-rakan dengan Bisq Connect
+    pt-br: No Bisq 2 auto-hospedado para negociacao de Bitcoin ponto a ponto com Bisq Connect
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://bisq.network/
+  github: https://github.com/bisq-network/bisq2
+  document: https://github.com/bisq-network/bisq2/tree/v2.1.11
+  architectures:
+    - amd64
+    - arm64
