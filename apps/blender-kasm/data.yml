@@ -1,0 +1,29 @@
+name: Blender (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Blender
+description: 可通过浏览器访问的 Blender 工作区
+additionalProperties:
+  key: blender-kasm
+  name: Blender (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Blender 工作区
+  shortDescEn: Browser-accessible Blender workspace
+  description:
+    en: Browser-accessible Blender workspace
+    zh: 可通过浏览器访问的 Blender 工作区
+    zh-Hant: 可透過瀏覽器存取的 Blender 工作區
+    ja: ブラウザーから利用できる Blender ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Blender 워크스페이스
+    ru: Рабочее пространство Blender с доступом через браузер
+    ms: Ruang kerja Blender yang boleh diakses melalui pelayar
+    pt-br: Ambiente Blender acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.blender.org/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-blender
+  document: https://hub.docker.com/r/kasmweb/blender
+  architectures:
+    - amd64

@@ -1,0 +1,10 @@
+Blender (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Blender" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: 3f0fc17240a2563d1e25e28a02eb69b95a29bb3cab5d74c4fd1fdd106e0cd28f
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
