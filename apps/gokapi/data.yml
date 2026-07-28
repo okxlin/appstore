@@ -1,0 +1,31 @@
+name: Gokapi
+tags:
+  - Tool
+title: 带自动过期和加密功能的文件分享服务
+description: 带自动过期和加密功能的文件分享服务
+additionalProperties:
+  key: gokapi
+  name: Gokapi
+  tags:
+    - Tool
+  shortDescZh: 带自动过期和加密功能的文件分享服务
+  shortDescEn: File sharing with automatic expiration and encryption
+  description:
+    en: A self-hosted file sharing service with automatic expiration and encryption
+    zh: 一个支持自动过期和加密的自托管文件分享服务
+    zh-Hant: 一個支援自動過期和加密的自託管檔案分享服務
+    ja: 自動期限切れと暗号化に対応するセルフホスト型ファイル共有サービス
+    ko: 자동 만료와 암호화를 지원하는 자체 호스팅 파일 공유 서비스
+    ru: Самостоятельно размещаемый сервис обмена файлами с автоудалением и шифрованием
+    ms: Perkhidmatan perkongsian fail hos kendiri dengan tamat tempoh automatik dan penyulitan
+    pt-br: Servico de compartilhamento de arquivos auto-hospedado com expiracao automatica e criptografia
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://gokapi.readthedocs.io/
+  github: https://github.com/Forceu/Gokapi
+  document: https://gokapi.readthedocs.io/en/latest/setup.html
+  architectures:
+    - amd64
+    - arm64
+    - armv7

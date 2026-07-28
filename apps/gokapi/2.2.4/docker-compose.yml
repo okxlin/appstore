@@ -1,0 +1,42 @@
+services:
+  gokapi:
+    image: f0rc3/gokapi:v2.2.4
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    user: "100:101"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:53842"
+    environment:
+      GOKAPI_PORT: "53842"
+      GOKAPI_CONFIG_DIR: /app/config
+      GOKAPI_DATA_DIR: /app/data
+      GOKAPI_MAX_FILESIZE: "10240"
+      GOKAPI_MAX_MEMORY_UPLOAD: "50"
+      GOKAPI_MAX_PARALLEL_UPLOADS: "3"
+      GOKAPI_MIN_FREE_SPACE: "400"
+      GOKAPI_DISABLE_DOCKER_TRUSTED_PROXY: "true"
+      GOKAPI_LOG_STDOUT: "true"
+    volumes:
+      - "${APP_DATA_DIR}/config:/app/config"
+      - "${APP_DATA_DIR}/files:/app/data"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent --show-error http://127.0.0.1:53842/ >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
