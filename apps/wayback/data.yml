@@ -1,0 +1,33 @@
+name: Wayback
+tags:
+  - 工具
+  - 网络工具
+title: 网页归档与回放工具
+description: 网页归档与回放工具
+additionalProperties:
+  key: wayback
+  name: Wayback
+  tags:
+    - Tool
+    - Network
+  shortDescZh: 网页归档与回放工具
+  shortDescEn: Web archiving and playback tool
+  description:
+    en: Web archiving and playback tool
+    zh: 网页归档与回放工具
+    zh-Hant: 網頁封存與回放工具
+    ja: Webアーカイブおよび再生ツール
+    ko: 웹 아카이빙 및 재생 도구
+    ru: Инструмент архивирования и воспроизведения веб-страниц
+    ms: Alat pengarkiban dan main balik web
+    pt-br: Ferramenta de arquivamento e reproducao da Web
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://wabarc.eu.org/
+  github: https://github.com/wabarc/wayback
+  document: https://docs.wabarc.eu.org/
+  architectures:
+    - amd64
+    - arm64

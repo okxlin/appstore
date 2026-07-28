@@ -1,0 +1,99 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 8964
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Folder Path
+      labelZh: 数据文件夹路径
+      label:
+        en: Data Folder Path
+        zh: 数据文件夹路径
+        zh-Hant: 資料夾路徑
+        ja: データフォルダのパス
+        ko: 데이터 폴더 경로
+        ru: Путь к папке данных
+        ms: Laluan folder data
+        pt-br: Caminho da pasta de dados
+      required: true
+      type: text
+    - default: 3
+      edit: true
+      envKey: WAYBACK_POOLING_SIZE
+      labelEn: Concurrent Jobs
+      labelZh: 并发任务数
+      label:
+        en: Concurrent Jobs
+        zh: 并发任务数
+        zh-Hant: 並行工作數
+        ja: 同時実行ジョブ数
+        ko: 동시 작업 수
+        ru: Параллельные задания
+        ms: Kerja serentak
+        pt-br: Tarefas simultaneas
+      required: true
+      type: number
+    - default: 300
+      edit: true
+      envKey: WAYBACK_TIMEOUT
+      labelEn: Archive Timeout Seconds
+      labelZh: 归档超时秒数
+      label:
+        en: Archive Timeout Seconds
+        zh: 归档超时秒数
+        zh-Hant: 封存逾時秒數
+        ja: アーカイブのタイムアウト秒数
+        ko: 아카이브 제한 시간(초)
+        ru: Тайм-аут архивации в секундах
+        ms: Tamat masa arkib dalam saat
+        pt-br: Tempo limite de arquivamento em segundos
+      required: true
+      type: number
+    - default: 512MB
+      edit: true
+      envKey: WAYBACK_MAX_MEDIA_SIZE
+      labelEn: Maximum Media Size
+      labelZh: 最大媒体大小
+      label:
+        en: Maximum Media Size
+        zh: 最大媒体大小
+        zh-Hant: 最大媒體大小
+        ja: 最大メディアサイズ
+        ko: 최대 미디어 크기
+        ru: Максимальный размер медиафайла
+        ms: Saiz media maksimum
+        pt-br: Tamanho maximo de midia
+      required: true
+      type: text
