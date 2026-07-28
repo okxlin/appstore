@@ -1,0 +1,10 @@
+Only Office (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Only Office" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: 3552f2f29df1f036ac08285c9a5037f2166a1ac060b8db8f10763a76b1305ff3
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
