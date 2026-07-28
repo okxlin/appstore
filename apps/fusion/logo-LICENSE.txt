@@ -1,0 +1,4 @@
+Source: https://github.com/0x2E/fusion/blob/7b61014b55b47af9065544f438d8298db746d59d/frontend/public/icon-512.png
+License: MIT
+License text: https://github.com/0x2E/fusion/blob/7b61014b55b47af9065544f438d8298db746d59d/LICENSE
+Copyright (c) 2024 Rook1e
