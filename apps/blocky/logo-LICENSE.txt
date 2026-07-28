@@ -1,0 +1,12 @@
+Asset: logo.png
+Source: https://github.com/0xERR0R/blocky/blob/v0.34.0/docs/blocky.svg
+Source revision: 91a8f4437e983c840874aec4aded47fd90bd6ddf
+Source SHA-256: c66ecf147f77716ed66be38a91502f7df5d6450226c8ab79e3c74e513db1db81
+Transformation: Rendered to a 180x180 transparent PNG without changing the artwork.
+
+Blocky is licensed under the Apache License 2.0:
+https://github.com/0xERR0R/blocky/blob/v0.34.0/LICENSE
+
+Copyright 2019-2026 0xERR0R and Blocky contributors.
+Licensed under the Apache License, Version 2.0.
+SPDX-License-Identifier: Apache-2.0

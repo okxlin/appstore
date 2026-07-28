@@ -1,0 +1,34 @@
+upstreams:
+  init:
+    strategy: fast
+  groups:
+    default:
+      - tcp-tls:1.1.1.1:853#one.one.one.one
+      - tcp-tls:9.9.9.9:853#dns.quad9.net
+
+blocking:
+  denylists:
+    ads:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+  loading:
+    strategy: fast
+    refreshPeriod: 4h
+    downloads:
+      timeout: 20s
+      attempts: 3
+      cooldown: 2s
+      cachePath: /app/cache
+
+rebindingProtection:
+  enable: true
+
+rateLimit:
+  enable: true
+  rate: 100
+  burst: 200
+
+ports:
+  dns: 53

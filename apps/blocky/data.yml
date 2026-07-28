@@ -1,0 +1,30 @@
+name: Blocky
+tags:
+  - Tool
+title: 快速轻量的 DNS 代理与广告拦截器
+description: 快速轻量的 DNS 代理与广告拦截器
+additionalProperties:
+  key: blocky
+  name: Blocky
+  tags:
+    - Tool
+  shortDescZh: 快速轻量的 DNS 代理与广告拦截器
+  shortDescEn: Fast and lightweight DNS proxy with ad blocking
+  description:
+    en: Fast and lightweight DNS proxy with ad blocking
+    zh: 快速轻量的 DNS 代理与广告拦截器
+    zh-Hant: 快速輕量的 DNS 代理與廣告攔截器
+    ja: 高速で軽量な広告ブロック対応 DNS プロキシ
+    ko: 광고 차단을 지원하는 빠르고 가벼운 DNS 프록시
+    ru: Быстрый и легковесный DNS-прокси с блокировкой рекламы
+    ms: Proksi DNS pantas dan ringan dengan sekatan iklan
+    pt-br: Proxy DNS rapido e leve com bloqueio de anuncios
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://0xerr0r.github.io/blocky/
+  github: https://github.com/0xERR0R/blocky
+  document: https://0xerr0r.github.io/blocky/latest/installation/
+  architectures:
+    - amd64
+    - arm64
