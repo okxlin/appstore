@@ -1,0 +1,31 @@
+name: Fusion
+tags:
+  - 新闻资讯
+title: 轻量级自托管 RSS 阅读器
+description: 轻量级自托管 RSS 阅读器
+additionalProperties:
+  key: fusion
+  name: Fusion
+  tags:
+    - News
+  shortDescZh: 轻量级自托管 RSS 阅读器
+  shortDescEn: Lightweight self-hosted RSS reader
+  description:
+    en: Lightweight self-hosted RSS reader
+    zh: 轻量级自托管 RSS 阅读器
+    zh-Hant: 輕量級自架式 RSS 閱讀器
+    ja: 軽量なセルフホスト型 RSS リーダー
+    ko: 가벼운 셀프 호스팅 RSS 리더
+    ru: Легковесная самостоятельно размещаемая программа для чтения RSS
+    ms: Pembaca RSS hos kendiri yang ringan
+    pt-br: Leitor RSS leve e auto-hospedado
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/0x2E/fusion
+  github: https://github.com/0x2E/fusion
+  document: https://github.com/0x2E/fusion/blob/v1.2.0/README.md
+  architectures:
+    - amd64
+    - arm64

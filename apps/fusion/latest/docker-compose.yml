@@ -1,0 +1,37 @@
+services:
+  fusion:
+    image: ghcr.io/0x2e/fusion:latest@sha256:4fa7eead46976f2090cfbb7e60f29946eccf0a5979c1fc168d7a9d89648a6a9b
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "100:101"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - FUSION_DB_PATH=/data/fusion.db
+      - FUSION_PASSWORD=${FUSION_PASSWORD}
+      - FUSION_PORT=8080
+      - FUSION_ALLOW_PRIVATE_FEEDS=false
+      - FUSION_LOG_FORMAT=json
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,mode=1777,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/api/oidc/enabled"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
