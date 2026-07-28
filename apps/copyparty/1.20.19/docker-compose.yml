@@ -1,0 +1,43 @@
+services:
+  copyparty:
+    image: "ghcr.io/9001/copyparty-ac:1.20.19"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    entrypoint:
+      - /bin/ash
+      - /z/cpp.sh
+    command:
+      - -p
+      - "3923"
+      - --usernames
+      - -a
+      - "${COPYPARTY_USERNAME}:${COPYPARTY_PASSWORD}"
+      - -v
+      - "/w::rwmda,${COPYPARTY_USERNAME}"
+      - --hist
+      - /cfg/hists
+      - -e2dsa
+      - -e2ts
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3923"
+    volumes:
+      - "${APP_DATA_DIR}/config:/cfg"
+      - "${APP_DATA_DIR}/files:/w"
+    environment:
+      - TZ=${TZ}
+    stop_grace_period: 15s
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q 127.0.0.1:3923/?reset=/._"]
+      interval: 1m
+      timeout: 2s
+      retries: 5
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
