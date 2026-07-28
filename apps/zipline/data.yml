@@ -1,0 +1,31 @@
+name: Zipline
+tags:
+  - 工具
+title: 自托管的文件分享与 URL 缩短平台
+description: 自托管的文件分享与 URL 缩短平台
+additionalProperties:
+  key: zipline
+  name: Zipline
+  tags:
+    - Tool
+  shortDescZh: 自托管的文件分享与 URL 缩短平台
+  shortDescEn: Self-hosted file sharing and URL shortening platform
+  description:
+    en: Self-hosted file sharing and URL shortening platform
+    zh: 自托管的文件分享与 URL 缩短平台
+    zh-Hant: 自架式檔案分享與網址縮短平台
+    ja: セルフホスト型のファイル共有・URL 短縮プラットフォーム
+    ko: 셀프 호스팅 파일 공유 및 URL 단축 플랫폼
+    ru: Самостоятельно размещаемая платформа обмена файлами и сокращения URL
+    ms: Platform perkongsian fail dan pemendekan URL hos kendiri
+    pt-br: Plataforma auto-hospedada de compartilhamento de arquivos e encurtamento de URLs
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://zipline.diced.sh/
+  github: https://github.com/diced/zipline
+  document: https://zipline.diced.sh/docs/get-started/docker
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,4 @@
+Source: https://github.com/diced/zipline/blob/v4.6.4/public/zipline_small.png
+License: MIT
+License text: https://github.com/diced/zipline/blob/v4.6.4/LICENSE
+Copyright (c) 2023 dicedtomato
