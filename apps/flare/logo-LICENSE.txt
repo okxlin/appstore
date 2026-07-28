@@ -1,0 +1,4 @@
+Source: https://github.com/soulteary/flare/blob/90e9965552d51310a9102bc7d1969a2a0350e23e/embed/assets/icons/favicon/apple-touch-icon.png
+License: AGPL-3.0-only
+License text: https://github.com/soulteary/flare/blob/90e9965552d51310a9102bc7d1969a2a0350e23e/LICENSE
+The submitted PNG is a normalized copy of the upstream icon.

@@ -1,0 +1,29 @@
+services:
+  flare:
+    image: "soulteary/flare:0.5.2"
+    container_name: ${CONTAINER_NAME}
+    command:
+      - flare
+      - --nologin=0
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5005"
+    volumes:
+      - "${APP_DATA_DIR}:/app"
+    environment:
+      - FLARE_USER=${FLARE_USER}
+      - FLARE_PASS=${FLARE_PASS}
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:5005/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+    restart: always
+
+networks:
+  1panel-network:
+    external: true
