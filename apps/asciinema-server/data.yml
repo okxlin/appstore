@@ -1,0 +1,30 @@
+name: asciinema server
+tags:
+  - Website
+title: 终端录制与直播托管平台
+description: 终端录制与直播托管平台
+additionalProperties:
+  key: asciinema-server
+  name: asciinema server
+  tags:
+    - Website
+  shortDescZh: 终端录制与直播托管平台
+  shortDescEn: Terminal recording and live streaming platform
+  description:
+    en: Terminal recording and live streaming platform
+    zh: 终端录制与直播托管平台
+    zh-Hant: 終端錄製與直播託管平台
+    ja: ターミナル録画とライブ配信のホスティング基盤
+    ko: 터미널 녹화 및 라이브 스트리밍 호스팅 플랫폼
+    ru: Платформа для размещения записей терминала и прямых трансляций
+    ms: Platform pengehosan rakaman terminal dan penstriman langsung
+    pt-br: Plataforma de hospedagem de gravacoes de terminal e transmissoes ao vivo
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://asciinema.org/
+  github: https://github.com/asciinema/asciinema-server
+  document: https://docs.asciinema.org/manual/server/self-hosting/
+  architectures:
+    - amd64
+    - arm64
