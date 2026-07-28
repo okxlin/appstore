@@ -1,0 +1,10 @@
+Signal (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Signal" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: a8a12dd0b50590077d90756eb20249bacf29c243379f1f156dcfa2afe964d893
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
