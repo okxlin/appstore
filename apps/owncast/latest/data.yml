@@ -1,0 +1,116 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Web Bind Address
+      labelZh: Web 绑定地址
+      label:
+        en: Web Bind Address
+        zh: Web 绑定地址
+        zh-Hant: Web 綁定位址
+        ja: Web バインドアドレス
+        ko: Web 바인드 주소
+        ru: Адрес привязки веб-интерфейса
+        ms: Alamat ikatan web
+        pt-br: Endereco de vinculacao web
+      required: true
+      type: text
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port web
+        pt-br: Porta web
+      required: true
+      rule: paramPort
+      type: number
+    - default: 0.0.0.0
+      edit: true
+      envKey: PANEL_APP_RTMP_BIND_ADDRESS
+      labelEn: RTMP Bind Address
+      labelZh: RTMP 绑定地址
+      label:
+        en: RTMP Bind Address
+        zh: RTMP 绑定地址
+        zh-Hant: RTMP 綁定位址
+        ja: RTMP バインドアドレス
+        ko: RTMP 바인드 주소
+        ru: Адрес привязки RTMP
+        ms: Alamat ikatan RTMP
+        pt-br: Endereco de vinculacao RTMP
+      required: true
+      type: text
+    - default: 1935
+      edit: true
+      envKey: PANEL_APP_PORT_RTMP
+      labelEn: RTMP Port
+      labelZh: RTMP 端口
+      label:
+        en: RTMP Port
+        zh: RTMP 端口
+        zh-Hant: RTMP 連接埠
+        ja: RTMP ポート
+        ko: RTMP 포트
+        ru: Порт RTMP
+        ms: Port RTMP
+        pt-br: Porta RTMP
+      required: true
+      rule: paramPort
+      type: number
+    - default: generate
+      edit: true
+      envKey: OWNCAST_ADMIN_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      required: true
+      type: password
+    - default: generate
+      edit: true
+      envKey: OWNCAST_STREAM_KEY
+      labelEn: Stream Key
+      labelZh: 推流密钥
+      label:
+        en: Stream Key
+        zh: 推流密钥
+        zh-Hant: 推流金鑰
+        ja: ストリームキー
+        ko: 스트림 키
+        ru: Ключ трансляции
+        ms: Kunci strim
+        pt-br: Chave de transmissao
+      required: true
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
