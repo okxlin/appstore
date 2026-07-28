@@ -40,7 +40,7 @@ MDCz 的核心功能会创建目录与 NFO/图片文件，并可能按照设置�
 
 ## 版本说明
 
-- `0.10.0`：固定的首个官方 WebUI 自托管版本。
+- `0.11.0`：固定的官方 WebUI 自托管版本。
 - `latest`：跟随官方最新发布镜像，升级前应阅读上游发布说明并备份数据。
 
 项目采用 GPL-3.0 许可证。
@@ -60,4 +60,4 @@ MDCz is a self-hosted video metadata scraper and library management tool. It pro
 
 - Project: https://github.com/ShotHeadman/mdcz
 - Server documentation: https://github.com/ShotHeadman/mdcz/blob/main/apps/server/README.md
-- Release: https://github.com/ShotHeadman/mdcz/releases/tag/v0.10.0
+- Release: https://github.com/ShotHeadman/mdcz/releases/tag/v0.11.0
