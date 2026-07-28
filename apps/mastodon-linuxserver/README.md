@@ -1,15 +1,21 @@
 # Mastodon
 
-## 应用简介
-Mastodon ActivityPub 社交网络服务。
+## 产品介绍
 
-英文说明：ActivityPub social network server maintained by LinuxServer.io.
+Mastodon 是由 LinuxServer.io 打包维护的 ActivityPub 社交网络服务，可用于部署独立的联邦社交实例。
 
-## 部署说明
+## 主要功能
+
+- 通过 ActivityPub 与其他 Mastodon 及兼容服务器组成联邦网络。
+- 提供时间线、媒体上传、通知、内容审核和管理功能。
+- 使用 PostgreSQL、Redis 和持久化配置目录保存实例数据。
+
+## 访问说明
+
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：网站。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`、`4.6.0`。
+- 可选版本：`latest`、`4.6.4`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -59,3 +65,13 @@ Mastodon ActivityPub 社交网络服务。
 - 官网: <https://joinmastodon.org/>
 - 文档: <https://docs.linuxserver.io/images/docker-mastodon/>
 - 源码: <https://github.com/linuxserver/docker-mastodon>
+
+## Introduction
+
+Mastodon is an ActivityPub social network server packaged and maintained by LinuxServer.io for running an independent federated social instance.
+
+## Features
+
+- Federate with Mastodon and other compatible ActivityPub servers.
+- Provide timelines, media uploads, notifications, moderation, and administration.
+- Persist instance data with PostgreSQL, Redis, and a dedicated configuration directory.
