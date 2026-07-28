@@ -17,6 +17,12 @@
   "diskover-linuxserver": [
     "diskover"
   ],
+  "flagsmith": [
+    "flagsmith"
+  ],
+  "kaneo": [
+    "kaneo"
+  ],
   "karakeep": [
     "karakeep"
   ],

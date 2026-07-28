@@ -529,6 +529,16 @@ class RenovateAppVersionTests(unittest.TestCase):
             )
         )
 
+    def test_multi_service_app_versions_follow_the_application_image(self):
+        primary = json.loads(
+            (REPO_ROOT / ".github" / "renovate-primary-services.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        self.assertEqual(["flagsmith"], primary["flagsmith"])
+        self.assertEqual(["kaneo"], primary["kaneo"])
+
     def test_automerge_whitelist_contains_only_single_service_apps(self):
         apps = [
             line.strip()
