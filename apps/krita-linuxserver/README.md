@@ -1,15 +1,20 @@
 # Krita
 
-## 应用简介
-Krita 数字绘画桌面。
+## 产品介绍
 
-英文说明：Digital painting desktop maintained by LinuxServer.io.
+Krita 是由 LinuxServer.io 打包维护的数字绘画桌面，可通过浏览器访问完整的图形界面。
 
-## 部署说明
+## 主要功能
+
+- 在浏览器中使用 Krita 进行数字绘画和图像编辑。
+- 通过 Basic Auth 保护远程桌面，并持久化用户配置。
+
+## 访问说明
+
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：媒体。
-- 支持架构：amd64、arm64。
-- 可选版本：`latest`、`5.3.2`。
+- 支持架构：amd64。
+- 可选版本：`latest`、`5.3.3`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -45,3 +50,12 @@ Krita 数字绘画桌面。
 - 官网: <https://krita.org/>
 - 文档: <https://docs.linuxserver.io/images/docker-krita/>
 - 源码: <https://github.com/linuxserver/docker-krita>
+
+## Introduction
+
+Krita is a digital painting desktop packaged and maintained by LinuxServer.io, with its graphical interface available in a browser.
+
+## Features
+
+- Use Krita for digital painting and image editing through the browser.
+- Protect the remote desktop with Basic Auth and persist user configuration.
