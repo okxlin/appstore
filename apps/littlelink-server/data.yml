@@ -1,0 +1,30 @@
+name: LittleLink Server
+tags:
+  - Website
+title: 可通过环境变量配置的自托管个人链接页面
+description: 可通过环境变量配置的自托管个人链接页面
+additionalProperties:
+  key: littlelink-server
+  name: LittleLink Server
+  tags:
+    - Website
+  shortDescZh: 可通过环境变量配置的自托管个人链接页面
+  shortDescEn: A self-hosted personal link page configured with environment variables
+  description:
+    en: A lightweight self-hosted page for sharing profile and social links
+    zh: 用于展示个人资料和社交链接的轻量级自托管页面
+    zh-Hant: 用於展示個人資料和社交連結的輕量級自託管頁面
+    ja: プロフィールやソーシャルリンクを共有する軽量なセルフホスト型ページ
+    ko: 프로필과 소셜 링크를 공유하는 경량 자체 호스팅 페이지
+    ru: Легкая самостоятельно размещаемая страница для профиля и социальных ссылок
+    ms: Halaman hos kendiri ringan untuk berkongsi profil dan pautan sosial
+    pt-br: Pagina leve e auto-hospedada para compartilhar perfil e links sociais
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/timothystewart6/littlelink-server
+  github: https://github.com/timothystewart6/littlelink-server
+  document: https://github.com/timothystewart6/littlelink-server#runtime-configuration
+  architectures:
+    - amd64
+    - arm64

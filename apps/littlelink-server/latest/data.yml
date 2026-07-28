@@ -1,0 +1,115 @@
+additionalProperties:
+  formFields:
+    - default: 40302
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: My Links
+      edit: true
+      envKey: NAME
+      labelEn: Profile Name
+      labelZh: 个人名称
+      label:
+        en: Profile Name
+        zh: 个人名称
+        zh-Hant: 個人名稱
+        ja: プロフィール名
+        ko: 프로필 이름
+        ru: Имя профиля
+        ms: Nama Profil
+        pt-br: Nome do perfil
+      required: true
+      type: text
+    - default: Find me online
+      edit: true
+      envKey: BIO
+      labelEn: Biography
+      labelZh: 个人简介
+      label:
+        en: Biography
+        zh: 个人简介
+        zh-Hant: 個人簡介
+        ja: 自己紹介
+        ko: 소개
+        ru: Описание профиля
+        ms: Biografi
+        pt-br: Biografia
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: AVATAR_URL
+      labelEn: Avatar URL
+      labelZh: 头像地址
+      label:
+        en: Avatar URL
+        zh: 头像地址
+        zh-Hant: 頭像網址
+        ja: アバター URL
+        ko: 아바타 URL
+        ru: URL аватара
+        ms: URL Avatar
+        pt-br: URL do avatar
+      required: false
+      type: text
+    - default: https://github.com/
+      edit: true
+      envKey: GITHUB
+      labelEn: GitHub URL
+      labelZh: GitHub 地址
+      label:
+        en: GitHub URL
+        zh: GitHub 地址
+        zh-Hant: GitHub 網址
+        ja: GitHub URL
+        ko: GitHub URL
+        ru: URL GitHub
+        ms: URL GitHub
+        pt-br: URL do GitHub
+      required: false
+      type: text
+    - default: hello@example.com
+      edit: true
+      envKey: EMAIL
+      labelEn: Email Address
+      labelZh: 邮箱地址
+      label:
+        en: Email Address
+        zh: 邮箱地址
+        zh-Hant: 電子郵件地址
+        ja: メールアドレス
+        ko: 이메일 주소
+        ru: Адрес электронной почты
+        ms: Alamat E-mel
+        pt-br: Endereco de e-mail
+      required: false
+      type: text
+    - default: Dark
+      edit: true
+      envKey: THEME
+      labelEn: Theme
+      labelZh: 主题
+      label:
+        en: Theme
+        zh: 主题
+        zh-Hant: 主題
+        ja: テーマ
+        ko: 테마
+        ru: Тема
+        ms: Tema
+        pt-br: Tema
+      required: true
+      type: text
