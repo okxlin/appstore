@@ -1,0 +1,79 @@
+services:
+  zipline-postgres:
+    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: unless-stopped
+    user: "70:70"
+    networks:
+      - zipline-internal
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - "${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=64m
+      - /var/run/postgresql:uid=70,gid=70,mode=0755,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+  zipline:
+    image: ghcr.io/diced/zipline:4.6.4@sha256:3e3a57520e0bdf614b74676c4fe0f14c430215b6f659133ce108edc54a167a8c
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    depends_on:
+      zipline-postgres:
+        condition: service_healthy
+    networks:
+      - zipline-internal
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - CORE_HOSTNAME=0.0.0.0
+      - CORE_PORT=3000
+      - CORE_SECRET=${CORE_SECRET}
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@zipline-postgres:5432/${POSTGRES_DB}
+      - DATASOURCE_TYPE=local
+      - DATASOURCE_LOCAL_DIRECTORY=/zipline/uploads
+      - CORE_TEMP_DIRECTORY=/tmp/zipline
+      - FILES_MAX_FILE_SIZE=${FILES_MAX_FILE_SIZE}
+      - FEATURES_HEALTHCHECK=true
+    volumes:
+      - "${APP_DATA_DIR}/uploads:/zipline/uploads"
+      - "${APP_DATA_DIR}/public:/zipline/public"
+      - "${APP_DATA_DIR}/themes:/zipline/themes"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=256m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3000/api/healthcheck"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 60s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  zipline-internal:
+    internal: true
+  1panel-network:
+    external: true
