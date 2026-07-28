@@ -1,0 +1,23 @@
+services:
+  stump:
+    image: aaronleopold/stump:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:10801"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - STUMP_CONFIG_DIR=/config
+    volumes:
+      - "${CONFIG_PATH}:/config"
+      - "${LIBRARY_PATH}:/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
