@@ -1,0 +1,10 @@
+Postman (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Postman" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: f9cf055a14e5050f83c24c9f73383ab2b6591d23fece502bbf8462f7a514ace5
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
