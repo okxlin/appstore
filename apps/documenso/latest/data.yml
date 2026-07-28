@@ -1,0 +1,379 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://127.0.0.1:3000
+      edit: true
+      envKey: NEXT_PUBLIC_WEBAPP_URL
+      labelEn: Public URL
+      labelZh: 公开访问地址
+      label:
+        en: Public URL
+        zh: 公开访问地址
+        zh-Hant: 公開存取網址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL awam
+        pt-br: URL publica
+      required: true
+      type: text
+    - default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Runtime
+      labelZh: 数据库运行环境
+      label:
+        en: Database Runtime
+        zh: 数据库运行环境
+        zh-Hant: 資料庫執行環境
+        ja: データベース実行環境
+        ko: 데이터베이스 런타임
+        ru: Среда базы данных
+        ms: Masa jalan pangkalan data
+        pt-br: Ambiente de banco de dados
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Service
+        labelZh: PostgreSQL 服务
+        label:
+          en: PostgreSQL Service
+          zh: PostgreSQL 服务
+          zh-Hant: PostgreSQL 服務
+          ja: PostgreSQL サービス
+          ko: PostgreSQL 서비스
+          ru: Сервис PostgreSQL
+          ms: Perkhidmatan PostgreSQL
+          pt-br: Servico PostgreSQL
+        required: true
+        type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port pangkalan data
+        pt-br: Porta do banco de dados
+      required: true
+      rule: paramPort
+      type: number
+    - default: documenso
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名称
+      label:
+        en: Database Name
+        zh: 数据库名称
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: documenso
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuario do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: change-me
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: smtp.example.com
+      edit: true
+      envKey: SMTP_HOST
+      labelEn: SMTP Host
+      labelZh: SMTP 主机
+      label:
+        en: SMTP Host
+        zh: SMTP 主机
+        zh-Hant: SMTP 主機
+        ja: SMTP ホスト
+        ko: SMTP 호스트
+        ru: SMTP-сервер
+        ms: Hos SMTP
+        pt-br: Servidor SMTP
+      required: true
+      type: text
+    - default: 587
+      edit: true
+      envKey: SMTP_PORT
+      labelEn: SMTP Port
+      labelZh: SMTP 端口
+      label:
+        en: SMTP Port
+        zh: SMTP 端口
+        zh-Hant: SMTP 連接埠
+        ja: SMTP ポート
+        ko: SMTP 포트
+        ru: SMTP-порт
+        ms: Port SMTP
+        pt-br: Porta SMTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: "false"
+      edit: true
+      envKey: SMTP_SECURE
+      labelEn: SMTP Implicit TLS
+      labelZh: SMTP 隐式 TLS
+      label:
+        en: SMTP Implicit TLS
+        zh: SMTP 隐式 TLS
+        zh-Hant: SMTP 隱式 TLS
+        ja: SMTP 暗黙 TLS
+        ko: SMTP 암시적 TLS
+        ru: Неявный TLS SMTP
+        ms: TLS tersirat SMTP
+        pt-br: TLS implicito SMTP
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      edit: true
+      envKey: SMTP_USERNAME
+      labelEn: SMTP Username
+      labelZh: SMTP 用户名
+      label:
+        en: SMTP Username
+        zh: SMTP 用户名
+        zh-Hant: SMTP 使用者名稱
+        ja: SMTP ユーザー名
+        ko: SMTP 사용자 이름
+        ru: Имя пользователя SMTP
+        ms: Nama pengguna SMTP
+        pt-br: Usuario SMTP
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SMTP_PASSWORD
+      labelEn: SMTP Password
+      labelZh: SMTP 密码
+      label:
+        en: SMTP Password
+        zh: SMTP 密码
+        zh-Hant: SMTP 密碼
+        ja: SMTP パスワード
+        ko: SMTP 비밀번호
+        ru: Пароль SMTP
+        ms: Kata laluan SMTP
+        pt-br: Senha SMTP
+      required: false
+      type: password
+    - default: Documenso
+      edit: true
+      envKey: SMTP_FROM_NAME
+      labelEn: Email Sender Name
+      labelZh: 邮件发件人名称
+      label:
+        en: Email Sender Name
+        zh: 邮件发件人名称
+        zh-Hant: 郵件寄件者名稱
+        ja: メール送信者名
+        ko: 이메일 발신자 이름
+        ru: Имя отправителя
+        ms: Nama penghantar e-mel
+        pt-br: Nome do remetente
+      required: true
+      type: text
+    - default: documenso@example.com
+      edit: true
+      envKey: SMTP_FROM_ADDRESS
+      labelEn: Email Sender Address
+      labelZh: 邮件发件人地址
+      label:
+        en: Email Sender Address
+        zh: 邮件发件人地址
+        zh-Hant: 郵件寄件者地址
+        ja: メール送信元アドレス
+        ko: 이메일 발신자 주소
+        ru: Адрес отправителя
+        ms: Alamat penghantar e-mel
+        pt-br: Endereco do remetente
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: DISABLE_SIGNUP
+      labelEn: Disable New Signups
+      labelZh: 禁止新用户注册
+      label:
+        en: Disable New Signups
+        zh: 禁止新用户注册
+        zh-Hant: 停用新使用者註冊
+        ja: 新規登録を無効化
+        ko: 신규 가입 비활성화
+        ru: Запретить новые регистрации
+        ms: Nyahdayakan pendaftaran baharu
+        pt-br: Desativar novos cadastros
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: generate
+      disabled: true
+      edit: true
+      envKey: NEXTAUTH_SECRET
+      labelEn: Authentication Secret
+      labelZh: 认证密钥
+      label:
+        en: Authentication Secret
+        zh: 认证密钥
+        zh-Hant: 驗證密鑰
+        ja: 認証シークレット
+        ko: 인증 비밀 키
+        ru: Секрет аутентификации
+        ms: Rahsia pengesahan
+        pt-br: Segredo de autenticacao
+      required: true
+      type: password
+    - default: generate
+      disabled: true
+      edit: true
+      envKey: NEXT_PRIVATE_ENCRYPTION_KEY
+      labelEn: Primary Encryption Key
+      labelZh: 主加密密钥
+      label:
+        en: Primary Encryption Key
+        zh: 主加密密钥
+        zh-Hant: 主要加密金鑰
+        ja: プライマリ暗号化キー
+        ko: 기본 암호화 키
+        ru: Основной ключ шифрования
+        ms: Kunci penyulitan utama
+        pt-br: Chave de criptografia primaria
+      required: true
+      type: password
+    - default: generate
+      disabled: true
+      edit: true
+      envKey: NEXT_PRIVATE_ENCRYPTION_SECONDARY_KEY
+      labelEn: Secondary Encryption Key
+      labelZh: 备用加密密钥
+      label:
+        en: Secondary Encryption Key
+        zh: 备用加密密钥
+        zh-Hant: 備用加密金鑰
+        ja: セカンダリ暗号化キー
+        ko: 보조 암호화 키
+        ru: Резервный ключ шифрования
+        ms: Kunci penyulitan sekunder
+        pt-br: Chave de criptografia secundaria
+      required: true
+      type: password
+    - default: generate
+      disabled: true
+      edit: true
+      envKey: SIGNING_PASSPHRASE
+      labelEn: Signing Certificate Passphrase
+      labelZh: 签名证书密码
+      label:
+        en: Signing Certificate Passphrase
+        zh: 签名证书密码
+        zh-Hant: 簽署憑證密碼
+        ja: 署名証明書パスフレーズ
+        ko: 서명 인증서 암호
+        ru: Пароль сертификата подписи
+        ms: Frasa laluan sijil tandatangan
+        pt-br: Senha do certificado de assinatura
+      required: true
+      type: password
+    - default: generate
+      disabled: true
+      edit: true
+      envKey: NEXT_PRIVATE_DATABASE_URL
+      labelEn: Generated Database URL
+      labelZh: 生成的数据库地址
+      label:
+        en: Generated Database URL
+        zh: 生成的数据库地址
+        zh-Hant: 產生的資料庫網址
+        ja: 生成されたデータベース URL
+        ko: 생성된 데이터베이스 URL
+        ru: Сформированный URL базы данных
+        ms: URL pangkalan data dijana
+        pt-br: URL de banco de dados gerada
+      required: true
+      type: password
