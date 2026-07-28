@@ -68,10 +68,13 @@ password_request=/tmp/owncast-admin-password.json
 stream_response=/tmp/owncast-stream-key-response.json
 password_response=/tmp/owncast-admin-password-response.json
 
+# Owncast's public factory credential is used only inside the network-isolated init service.
+default_authorization="$(printf '%s' 'admin:abc123' | base64 | tr -d '\n')"
+
 printf '{"value":[{"key":"%s","comment":"1Panel generated stream key"}]}' \
   "$OWNCAST_STREAM_KEY" > "$stream_request"
 wget --quiet -O "$stream_response" \
-  --header 'Authorization: Basic YWRtaW46YWJjMTIz' \
+  --header "Authorization: Basic $default_authorization" \
   --header 'Content-Type: application/json' \
   --post-file "$stream_request" \
   http://127.0.0.1:8080/api/admin/config/streamkeys
@@ -80,7 +83,7 @@ grep -Eq '"success"[[:space:]]*:[[:space:]]*true' "$stream_response" ||
 
 printf '{"value":"%s"}' "$OWNCAST_ADMIN_PASSWORD" > "$password_request"
 wget --quiet -O "$password_response" \
-  --header 'Authorization: Basic YWRtaW46YWJjMTIz' \
+  --header "Authorization: Basic $default_authorization" \
   --header 'Content-Type: application/json' \
   --post-file "$password_request" \
   http://127.0.0.1:8080/api/admin/config/adminpass
