@@ -1,0 +1,30 @@
+name: Vivaldi (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Vivaldi
+description: 可通过浏览器访问的 Vivaldi 工作区
+additionalProperties:
+  key: vivaldi-kasm
+  name: Vivaldi (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Vivaldi 工作区
+  shortDescEn: Browser-accessible Vivaldi workspace
+  description:
+    en: Browser-accessible Vivaldi workspace
+    zh: 可通过浏览器访问的 Vivaldi 工作区
+    zh-Hant: 可透過瀏覽器存取的 Vivaldi 工作區
+    ja: ブラウザーから利用できる Vivaldi ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Vivaldi 워크스페이스
+    ru: Рабочее пространство Vivaldi с доступом через браузер
+    ms: Ruang kerja Vivaldi yang boleh diakses melalui pelayar
+    pt-br: Ambiente Vivaldi acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://vivaldi.com/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-vivaldi
+  document: https://hub.docker.com/r/kasmweb/vivaldi
+  architectures:
+    - amd64
+    - arm64

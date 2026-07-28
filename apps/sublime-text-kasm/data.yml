@@ -1,0 +1,30 @@
+name: Sublime Text (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Sublime Text
+description: 可通过浏览器访问的 Sublime Text 工作区
+additionalProperties:
+  key: sublime-text-kasm
+  name: Sublime Text (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Sublime Text 工作区
+  shortDescEn: Browser-accessible Sublime Text workspace
+  description:
+    en: Browser-accessible Sublime Text workspace
+    zh: 可通过浏览器访问的 Sublime Text 工作区
+    zh-Hant: 可透過瀏覽器存取的 Sublime Text 工作區
+    ja: ブラウザーから利用できる Sublime Text ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Sublime Text 워크스페이스
+    ru: Рабочее пространство Sublime Text с доступом через браузер
+    ms: Ruang kerja Sublime Text yang boleh diakses melalui pelayar
+    pt-br: Ambiente Sublime Text acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.sublimetext.com/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-sublime-text
+  document: https://hub.docker.com/r/kasmweb/sublime-text
+  architectures:
+    - amd64
+    - arm64

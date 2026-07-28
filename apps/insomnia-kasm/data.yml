@@ -1,0 +1,29 @@
+name: Insomnia (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Insomnia
+description: 可通过浏览器访问的 Insomnia 工作区
+additionalProperties:
+  key: insomnia-kasm
+  name: Insomnia (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Insomnia 工作区
+  shortDescEn: Browser-accessible Insomnia workspace
+  description:
+    en: Browser-accessible Insomnia workspace
+    zh: 可通过浏览器访问的 Insomnia 工作区
+    zh-Hant: 可透過瀏覽器存取的 Insomnia 工作區
+    ja: ブラウザーから利用できる Insomnia ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Insomnia 워크스페이스
+    ru: Рабочее пространство Insomnia с доступом через браузер
+    ms: Ruang kerja Insomnia yang boleh diakses melalui pelayar
+    pt-br: Ambiente Insomnia acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://insomnia.rest/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-insomnia
+  document: https://hub.docker.com/r/kasmweb/insomnia
+  architectures:
+    - amd64

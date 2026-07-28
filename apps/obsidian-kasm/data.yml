@@ -1,0 +1,30 @@
+name: Obsidian (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Obsidian
+description: 可通过浏览器访问的 Obsidian 工作区
+additionalProperties:
+  key: obsidian-kasm
+  name: Obsidian (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Obsidian 工作区
+  shortDescEn: Browser-accessible Obsidian workspace
+  description:
+    en: Browser-accessible Obsidian workspace
+    zh: 可通过浏览器访问的 Obsidian 工作区
+    zh-Hant: 可透過瀏覽器存取的 Obsidian 工作區
+    ja: ブラウザーから利用できる Obsidian ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Obsidian 워크스페이스
+    ru: Рабочее пространство Obsidian с доступом через браузер
+    ms: Ruang kerja Obsidian yang boleh diakses melalui pelayar
+    pt-br: Ambiente Obsidian acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://obsidian.md/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-obsidian
+  document: https://hub.docker.com/r/kasmweb/obsidian
+  architectures:
+    - amd64
+    - arm64

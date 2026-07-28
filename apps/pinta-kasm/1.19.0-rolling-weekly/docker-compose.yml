@@ -1,0 +1,35 @@
+services:
+  pinta-kasm:
+    image: "kasmweb/pinta:1.19.0-rolling-weekly@sha256:0ad58675911c3f46fa52a7640492fd309e3f432f8bd5dc61dbc33ad56f0f93d9"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:6901"
+    environment:
+      - VNC_PW=${HTTP_PWD}
+    shm_size: ${SHM_SIZE}
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          curl --insecure --fail --silent --show-error
+          --user "kasm_user:$$VNC_PW"
+          https://127.0.0.1:6901/
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    volumes:
+      - "${APP_DATA_DIR}:/home/kasm-user"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,30 @@
+name: Firefox (Kasm)
+tags:
+  - 实用工具
+title: 浏览器版 Firefox
+description: 可通过浏览器访问的 Firefox 工作区
+additionalProperties:
+  key: firefox-kasm
+  name: Firefox (Kasm)
+  tags:
+    - Tool
+  shortDescZh: 可通过浏览器访问的 Firefox 工作区
+  shortDescEn: Browser-accessible Firefox workspace
+  description:
+    en: Browser-accessible Firefox workspace
+    zh: 可通过浏览器访问的 Firefox 工作区
+    zh-Hant: 可透過瀏覽器存取的 Firefox 工作區
+    ja: ブラウザーから利用できる Firefox ワークスペース
+    ko: 브라우저에서 사용할 수 있는 Firefox 워크스페이스
+    ru: Рабочее пространство Firefox с доступом через браузер
+    ms: Ruang kerja Firefox yang boleh diakses melalui pelayar
+    pt-br: Ambiente Firefox acessível pelo navegador
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.mozilla.org/firefox/
+  github: https://github.com/kasmtech/workspaces-images/blob/bafab6d531eefd5a5aa6f2c9088ebc8f02e12fae/dockerfile-kasm-firefox
+  document: https://hub.docker.com/r/kasmweb/firefox
+  architectures:
+    - amd64
+    - arm64

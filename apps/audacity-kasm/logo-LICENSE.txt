@@ -1,0 +1,10 @@
+Audacity (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Audacity" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: 421aae30931e2784f250efc4ea69e836315b5df79a065d7f2a52e3dea94ae6a7
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
