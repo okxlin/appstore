@@ -13,6 +13,9 @@ services:
     environment:
       - MOLTIS_PASSWORD=${MOLTIS_PASSWORD}
       - MOLTIS_TERMINAL_DISABLED=1
+      - MOLTIS_TOOLS__EXEC__SANDBOX__BACKEND=wasm
+      - MOLTIS_TOOLS__BROWSER__ENABLED=false
+      - 'MOLTIS_TOOLS__POLICY__DENY=["mcp_add","mcp_remove","mcp_restart","nodes_select"]'
       - TZ=${TIME_ZONE}
     volumes:
       - "${DATA_PATH}/config:/home/moltis/.config/moltis"

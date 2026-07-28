@@ -19,13 +19,13 @@ Under `DATA_PATH`, `config` stores `moltis.toml`, authentication, and certificat
 
 This package intentionally uses a stricter deployment profile than the upstream Docker example:
 
-- Command execution is fixed to the built-in WASM/WASI sandbox. No Docker or Podman socket is mounted.
-- Browser automation and the host web terminal are disabled.
-- The agent cannot add, remove, or restart MCP servers or select a remote execution node.
+- Highest-precedence environment overrides fix command execution to the built-in WASM/WASI sandbox. No Docker or Podman socket is mounted.
+- Environment hard locks disable browser automation and the host web terminal.
+- The MCP-mutation and remote-node deny list is also fixed by the environment, so the agent cannot override it.
 - The container root filesystem is read-only, runs as `1000:1001`, drops all Linux capabilities, and enables `no-new-privileges`.
 - WASM mode supports built-in commands and `.wasm` programs inside the sandbox, not an arbitrary host shell. This restriction is required by the package security gate.
 
-Do not manually enable the browser, host terminal, stdio MCP, SSH/node execution, or another sandbox backend. Those changes invalidate the audited boundary. Initialization and upgrade fail closed when an existing configuration no longer contains the required security settings.
+Do not manually enable the browser, host terminal, stdio MCP, SSH/node execution, or another sandbox backend. Those changes invalidate the audited boundary. Initialization and upgrade check canonical TOML controls, while the container environment remains the authoritative hard lock even when an existing file uses alternative valid TOML table syntax.
 
 ## Image Vulnerability Notice
 

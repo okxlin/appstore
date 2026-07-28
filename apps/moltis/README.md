@@ -26,13 +26,13 @@ Moltis 是使用 Rust 构建的持久化个人 AI 代理服务器，提供 Web �
 
 此应用包有意采用比上游默认 Docker 示例更严格的部署模式：
 
-- 命令执行固定使用内置 WASM/WASI 沙箱，不挂载 Docker 或 Podman socket。
-- 浏览器自动化和宿主 Web 终端被禁用。
-- agent 不能自行新增、移除或重启 MCP 服务，也不能选择远程节点执行。
+- 命令执行由最高优先级环境变量固定为内置 WASM/WASI 沙箱，不挂载 Docker 或 Podman socket。
+- 浏览器自动化和宿主 Web 终端由环境变量硬性禁用。
+- MCP 变更和远程节点选择的 deny 列表同样由环境变量固定，agent 不能自行绕过。
 - 容器根文件系统只读，以 `1000:1001` 运行，丢弃全部 Linux capabilities，并启用 `no-new-privileges`。
 - WASM 模式仅支持内置命令和沙箱内的 `.wasm` 程序，不提供任意宿主 Shell。这是本应用通过安全门禁的必要限制。
 
-不要手动启用浏览器、宿主终端、stdio MCP、SSH/节点执行或其他沙箱后端；这些操作会改变已审计边界。初始化和升级脚本会拒绝缺少必要安全设置的现有配置，而不会静默降级。
+不要手动启用浏览器、宿主终端、stdio MCP、SSH/节点执行或其他沙箱后端；这些操作会改变已审计边界。初始化和升级脚本会检查规范 TOML 表中的必要设置，而容器环境变量是最终的强制策略，即使现有配置使用 TOML 的其他合法表语法也不能覆盖它们。
 
 ## 镜像漏洞说明
 
@@ -78,9 +78,9 @@ Under `DATA_PATH`, `config` stores `moltis.toml`, authentication, and certificat
 
 ## Restricted Security Mode
 
-This package intentionally fixes command execution to the built-in WASM/WASI sandbox, disables browser automation and the host terminal, and does not mount a Docker or Podman socket. The agent cannot add, remove, or restart MCP servers or select a remote node. The container uses a read-only root filesystem, UID/GID `1000:1001`, no Linux capabilities, and `no-new-privileges`.
+This package uses highest-precedence environment overrides to fix command execution to the built-in WASM/WASI sandbox, disable browser automation and the host terminal, and deny MCP mutation and remote-node selection. It does not mount a Docker or Podman socket. The container uses a read-only root filesystem, UID/GID `1000:1001`, no Linux capabilities, and `no-new-privileges`.
 
-Do not enable the browser, host terminal, stdio MCP, SSH/node execution, or another sandbox backend. Initialization and upgrade fail closed when the existing configuration no longer contains the required controls.
+Do not enable the browser, host terminal, stdio MCP, SSH/node execution, or another sandbox backend. Initialization and upgrade check the canonical TOML controls, while the container environment remains the authoritative hard lock even when an existing file uses alternative valid TOML table syntax.
 
 ## Image Vulnerability Notice
 
