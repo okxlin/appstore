@@ -1,0 +1,31 @@
+name: Autobrr
+tags:
+  - Media
+title: 适用于种子和 Usenet 的下载自动化工具
+description: 适用于种子和 Usenet 的下载自动化工具
+additionalProperties:
+  key: autobrr
+  name: Autobrr
+  tags:
+    - Media
+  shortDescZh: 适用于种子和 Usenet 的下载自动化工具
+  shortDescEn: Download automation for torrents and Usenet
+  description:
+    en: An automation tool that watches indexer announcements and sends matching releases to download clients.
+    zh: 监控索引站公告并将符合条件的发布内容发送到下载客户端的自动化工具。
+    zh-Hant: 監控索引站公告並將符合條件的發布內容傳送到下載客戶端的自動化工具。
+    ja: インデクサーの告知を監視し、条件に合うリリースをダウンロードクライアントへ送信する自動化ツールです。
+    ko: 인덱서 공지를 감시하고 조건에 맞는 릴리스를 다운로드 클라이언트로 보내는 자동화 도구입니다.
+    ru: Инструмент автоматизации, который отслеживает анонсы индексаторов и передает подходящие релизы клиентам загрузки.
+    ms: Alat automasi yang memantau pengumuman pengindeks dan menghantar keluaran sepadan kepada klien muat turun.
+    pt-br: Ferramenta de automacao que monitora anuncios de indexadores e envia lancamentos correspondentes aos clientes de download.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://autobrr.com/
+  document: https://autobrr.com/installation/docker
+  github: https://github.com/autobrr/autobrr
+  architectures:
+    - amd64
+    - arm64

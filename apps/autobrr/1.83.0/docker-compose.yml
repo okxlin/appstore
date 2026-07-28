@@ -1,0 +1,20 @@
+services:
+  autobrr:
+    image: "ghcr.io/autobrr/autobrr:v1.83.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7474"
+    volumes:
+      - "${APP_DATA_DIR}:/config"
+    environment:
+      - TZ=${TZ}
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
