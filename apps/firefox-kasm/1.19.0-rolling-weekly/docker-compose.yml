@@ -1,0 +1,35 @@
+services:
+  firefox-kasm:
+    image: "kasmweb/firefox:1.19.0-rolling-weekly@sha256:a3da1b453539c2683311c56d92ca6d7429fdd5bbf42b1070c050d88320823f39"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTPS}:6901"
+    environment:
+      - VNC_PW=${HTTP_PWD}
+    shm_size: ${SHM_SIZE}
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          curl --insecure --fail --silent --show-error
+          --user "kasm_user:$$VNC_PW"
+          https://127.0.0.1:6901/
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 5
+    volumes:
+      - "${APP_DATA_DIR}:/home/kasm-user"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
