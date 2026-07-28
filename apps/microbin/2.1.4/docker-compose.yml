@@ -1,6 +1,6 @@
 services:
   microbin:
-    image: danielszabo99/microbin:2.1.0@sha256:34fe4ac99b65cc633975ae72ca6fc84eab15f73a95b2e03b98312374063ee5d7
+    image: danielszabo99/microbin:2.1.4@sha256:6660e5ccad0d764fa3c0032464ffb8f4b4f28c92a2eb9e39202b94cdc5b68909
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "65534:65534"
