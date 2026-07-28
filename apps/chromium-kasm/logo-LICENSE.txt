@@ -1,0 +1,10 @@
+Chromium (Kasm) typographic workspace icon
+
+Created in this repository on 2026-07-28 with ImageMagick using only geometric shapes and the text "Chromium" and "WEB WORKSPACE".
+Font: DejaVu Sans and DejaVu Sans Bold
+Font source: https://dejavu-fonts.github.io/
+Font license: Bitstream Vera font license; DejaVu changes are public domain
+Font license text: https://dejavu-fonts.github.io/License.html
+SHA-256: 13b1110a6aba7ea7199ac952a69c30c48da72242c454b9f8ca5ed230a5fa5a24
+
+The generated composition is original project artwork. Product names may be trademarks of their respective owners and are used only for identification.
