@@ -1,0 +1,31 @@
+services:
+  actual-budget:
+    image: "actualbudget/actual-server:latest@sha256:e18b7fbfec6157a368fad4146563f397502e9da70a120aeaeac63b4977405d1c"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1001:1001"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5006"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    healthcheck:
+      test: ["CMD-SHELL", "node scripts/health-check.js"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
