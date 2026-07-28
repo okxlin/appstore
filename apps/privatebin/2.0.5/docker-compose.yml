@@ -1,0 +1,27 @@
+services:
+  privatebin:
+    image: "privatebin/nginx-fpm-alpine:2.0.5@sha256:91e3adf17da1c9e2715cb57ff22940a6644252a5488d9819a64eebbaf64cc58a"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - TZ=${TZ}
+      - PHP_TZ=${TZ}
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:nodev,noexec,mode=1777
+      - /run:nodev,exec,mode=1777
+      - /var/lib/nginx/tmp:nodev,noexec,mode=1777
+    labels:
+      createdBy: "Apps"
+    volumes:
+      - "${APP_DATA_DIR}:/srv/data"
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,32 @@
+name: PrivateBin
+tags:
+  - Security
+title: 私密加密文本分享服务
+description: 私密加密文本分享服务
+additionalProperties:
+  key: privatebin
+  name: PrivateBin
+  tags:
+    - Security
+  shortDescZh: 私密加密文本分享服务
+  shortDescEn: A zero-knowledge encrypted paste service
+  description:
+    en: A zero-knowledge encrypted paste service
+    zh: 私密加密文本分享服务
+    zh-Hant: 私密加密文字分享服務
+    ja: ゼロ知識暗号化ペーストサービス
+    ko: 영지식 암호화 텍스트 공유 서비스
+    ru: Сервис зашифрованного обмена заметками с нулевым разглашением
+    ms: Perkhidmatan perkongsian teks tersulit tanpa pengetahuan
+    pt-br: Servico de compartilhamento de textos criptografados sem conhecimento
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://privatebin.info/
+  github: https://github.com/PrivateBin/PrivateBin
+  document: https://github.com/PrivateBin/docker-nginx-fpm-alpine#running-the-image
+  architectures:
+    - amd64
+    - arm64
+    - ppc64le
+    - s390x
