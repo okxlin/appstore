@@ -1,0 +1,30 @@
+name: Stump
+tags:
+- Media
+title: 漫画、漫画书与电子书服务器
+description: 漫画、漫画书与电子书服务器
+additionalProperties:
+  key: stump
+  name: Stump
+  tags:
+  - Media
+  shortDescZh: 漫画、漫画书与电子书服务器
+  shortDescEn: A free and open-source comics, manga, and digital book server
+  description:
+    en: A free and open-source comics, manga, and digital book server
+    zh: 免费开源的漫画、漫画书与电子书服务器
+    zh-Hant: 免費開源的漫畫、漫畫書與電子書伺服器
+    ja: 無料でオープンソースのコミック、漫画、電子書籍サーバー
+    ko: 무료 오픈 소스 만화 및 전자책 서버
+    ru: Бесплатный сервер комиксов, манги и электронных книг с открытым исходным кодом
+    ms: Pelayan komik, manga dan buku digital percuma serta sumber terbuka
+    pt-br: Servidor gratuito e de codigo aberto para quadrinhos, mangas e livros digitais
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  website: https://www.stumpapp.dev/
+  github: https://github.com/stumpapp/stump
+  document: https://www.stumpapp.dev/docs/getting-started/installation/docker
+  architectures:
+  - amd64
+  - arm64
