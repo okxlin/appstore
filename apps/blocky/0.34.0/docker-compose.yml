@@ -1,0 +1,30 @@
+services:
+  blocky:
+    image: "spx01/blocky:v0.34.0@sha256:595136fb127f4c952b621113e668c09acdcf15ac054d96ee6d4c51a76c35f5fd"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${DNS_BIND_ADDRESS}:${PANEL_APP_PORT_DNS}:53/tcp"
+      - "${DNS_BIND_ADDRESS}:${PANEL_APP_PORT_DNS}:53/udp"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "/app/blocky", "healthcheck"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 60s
+    volumes:
+      - "${APP_DATA_DIR}/config.yml:/app/config.yml:ro"
+      - "${APP_DATA_DIR}/cache:/app/cache"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
