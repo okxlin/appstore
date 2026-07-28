@@ -1,0 +1,9 @@
+Zoraxy logo
+
+Source: https://github.com/tobychui/zoraxy/blob/v3.3.3/docs/favicon.png
+Source commit: 9ed5fdc4399c0a4c74cf0824bb99a55edb3fa5ce
+Source SHA-256: 833096908aa92fd1447fa07021d5677c28783d005e08bad527c1fb60b963cb0d
+License: GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)
+License text: https://github.com/tobychui/zoraxy/blob/v3.3.3/LICENSE
+
+The store asset is the unchanged 512 x 512 upstream favicon.

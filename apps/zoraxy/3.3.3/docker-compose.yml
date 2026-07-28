@@ -1,0 +1,55 @@
+services:
+  zoraxy:
+    image: "zoraxydocker/zoraxy:v3.3.3@sha256:229fd5bff4a6605b2f261dd66da8dddcfb98688b01c4034c117ed125c0605c45"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "0:0"
+    working_dir: /opt/zoraxy/config
+    entrypoint:
+      - /bin/sh
+      - /opt/1panel/entrypoint.sh
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+      - "${PANEL_APP_PORT_PROXY_HTTP}:80"
+      - "${PANEL_APP_PORT_PROXY_HTTPS}:443"
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - KILL
+      - SETUID
+      - SETGID
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,size=64M
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - >-
+          import urllib.request;
+          raise SystemExit(0 if urllib.request.urlopen(
+          'http://127.0.0.1:8000/api/auth/userCount', timeout=5
+          ).read().strip() == b'1' else 1)
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${APP_DATA_DIR}/config:/opt/zoraxy/config"
+      - "./scripts/entrypoint.sh:/opt/1panel/entrypoint.sh:ro"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
