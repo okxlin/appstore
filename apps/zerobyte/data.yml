@@ -1,0 +1,30 @@
+name: Zerobyte
+tags:
+  - Tool
+title: 面向自托管用户的备份自动化工具
+description: 面向自托管用户的备份自动化工具
+additionalProperties:
+  key: zerobyte
+  name: Zerobyte
+  tags:
+    - Tool
+  shortDescZh: 面向自托管用户的备份自动化工具
+  shortDescEn: Backup automation for self-hosters
+  description:
+    en: Backup automation for self-hosters
+    zh: 面向自托管用户的备份自动化工具
+    zh-Hant: 面向自託管使用者的備份自動化工具
+    ja: セルフホスト向けのバックアップ自動化ツール
+    ko: 셀프 호스팅 사용자를 위한 백업 자동화 도구
+    ru: Автоматизация резервного копирования для самостоятельного хостинга
+    ms: Automasi sandaran untuk hos kendiri
+    pt-br: Automacao de backups para auto-hospedagem
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://zerobyte.dev/
+  github: https://github.com/nicotsx/zerobyte
+  document: https://github.com/nicotsx/zerobyte#readme
+  architectures:
+    - amd64
+    - arm64
