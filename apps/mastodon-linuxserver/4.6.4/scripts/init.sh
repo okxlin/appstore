@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ENV_FILE="${ENV_FILE:-./.env}"
-MASTODON_IMAGE="lscr.io/linuxserver/mastodon:4.6.2"
+MASTODON_IMAGE="lscr.io/linuxserver/mastodon:4.6.4"
 LEGACY_DB_PASSWORD="mastodon-change-me"
 LEGACY_ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY="fGWkJDBwyRYhILyO7akZGLSSz0gAjPpo"
 LEGACY_ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY="Z8BE3tc3XnmUr0MbRexRiPN7vcP52VX0"
