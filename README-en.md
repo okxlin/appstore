@@ -1,25 +1,29 @@
-[中文](https://github.com/okxlin/appstore/blob/localApps/README.md) | English
+<h1 align="center">1Panel Third-Party App Store</h1>
 
-# 1Panel Third-Party App Store
+<p align="center">
+  Docker app configurations adapted for the <code>1Panel</code> app store <code>2.0</code>. After import, apps can be installed from the 1Panel local app store or run directly with <code>docker-compose</code> from each app version directory.
+</p>
 
-Docker app configurations adapted for the `1Panel` app store `2.0`. After import, apps can be installed from the 1Panel local app store or run directly with `docker-compose` from each app version directory.
+<p align="center">
+  <img src="docs/afdian-logo.png" alt="Docker Apps project banner" width="640">
+</p>
+
+<p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-D9D9D9?style=flat-square" alt="阅读简体中文版"></a>
+  <a href="README-en.md"><img src="https://img.shields.io/badge/English-2875B6?style=flat-square" alt="English (current language)"></a>
+</p>
 
 ## Support
 
-[**Support via AFDIAN**](https://afdian.com/a/dockerapps)
+<p align="center">
+  <a href="https://afdian.com/a/dockerapps"><strong>Support this project on AFDIAN</strong></a><br><br>
+  <strong>WeChat Reward Code</strong><br>
+  <img src="docs/wechat-reward.webp" alt="WeChat reward code" width="200">
+</p>
 
-[![Support via AFDIAN](https://github.com/okxlin/appstore/raw/localApps/docs/afdian-logo.png)](https://afdian.com/a/dockerapps)
+<details>
+<summary><strong>Table of Contents</strong></summary>
 
-**WeChat Reward Code**
-
-<img src="docs/wechat-reward.webp" alt="WeChat reward code" width="240">
-
-***
-
-## Table of Contents
-
-- [Support](#support)
-- [Table of Contents](#table-of-contents)
 - [Disclaimer](#disclaimer)
   - [1. Image Container Adaptation](#1-image-container-adaptation)
   - [2. Compliance with Laws](#2-compliance-with-laws)
@@ -34,18 +38,22 @@ Docker app configurations adapted for the `1Panel` app store `2.0`. After import
 - [4. Remarks](#4-remarks)
 - [5. App Overview](#5-app-overview)
 
+</details>
 
 ***
 
 ## Disclaimer
 
 ### 1. Image Container Adaptation
+
 This project specifically adapts to the `1Panel` app store for original `docker` image container operations. We do not make any explicit or implicit warranties or statements regarding the validity of any original images, and we are not responsible for any effects caused by using applications from this repository. Users undertake the risks associated with using this project on their own.
 
 ### 2. Compliance with Laws
+
 When using this repository, users must comply with the laws and regulations of their respective countries and regions. Certain applications may be restricted by specific national laws, and users need to understand and comply with relevant legal requirements. This repository is not responsible for any consequences arising from the user's violation of laws and regulations.
 
 ### 3. Acceptance of Disclaimer
+
 By importing and using the applications in this repository, the user signifies that they have read, understood, and accepted all the terms and conditions of this disclaimer.
 
 Please note that this disclaimer applies only to the use of this repository and does not encompass other third-party applications or services. We are not responsible for the accuracy, completeness, reliability, or legality of third-party content linked to this repository.
@@ -53,10 +61,10 @@ Please note that this disclaimer applies only to the use of this repository and 
 Before using this repository, please ensure that you have read, understood, and accepted all the terms and conditions of this disclaimer.
 
 ***
-## 1. Introduction
-These are some configurations of docker applications adapted for the `1Panel` store version 2.0.
 
-This repository keeps app directories, metadata, form variables, and compose files recognizable by 1Panel so users can avoid repeated manual deployment work.
+## 1. Introduction
+
+This repository organizes app directories, metadata, form variables, and Docker Compose files according to the 1Panel v2 app specification. The goal is to make apps installable after import with less manual deployment and repeated configuration.
 
 ## 2. Contributing Apps
 
@@ -81,9 +89,9 @@ The examples below use official GitHub URLs. Replace them according to your prox
 
 ### 3.2 Getting Apps via Git Command
 
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run it in a terminal:
+Create a `Shell Script` scheduled task in 1Panel and run the following commands, or execute them directly in a terminal:
 
-```shell
+```bash
 git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
 
 cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
@@ -91,13 +99,13 @@ cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/res
 rm -rf /opt/1panel/resource/apps/local/appstore-localApps
 ```
 
-Then refresh the local applications in the app store.
+When the commands finish, refresh the local apps in the app store.
 
 ### 3.3 Getting Apps via Compressed Package
 
-In the `Shell Script` task type in the `1Panel` scheduled tasks, add and execute the following command, or run it in a terminal:
+Create a `Shell Script` scheduled task in 1Panel and run the following commands, or execute them directly in a terminal:
 
-```shell
+```bash
 wget -P /opt/1panel/resource/apps/local https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
 
 unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
@@ -109,19 +117,16 @@ rm -rf /opt/1panel/resource/apps/local/appstore-localApps
 rm -rf /opt/1panel/resource/apps/local/localApps.zip
 ```
 
-Then refresh the local applications in the app store.
+When the commands finish, refresh the local apps in the app store.
 
 ## 4. Remarks
 
-**If an application is not displayed in the local app list, it means it has not been fully adapted for operation in the app store panel.**
+> [!NOTE]
+> Apps that do not appear in the local app list have not been fully adapted for panel operations, but they can usually still be run from a terminal.
 
-**However, it can still be run directly in the terminal.**
+For example, to run `rustdesk`:
 
-> Most applications in this repository support running directly with `docker-compose up`
-
-Taking `rustdesk` as an example:
-
-```shell
+```bash
 # Enter the latest version directory of rustdesk
 cd /opt/1panel/resource/apps/local/rustdesk/versions/latest/
 
@@ -136,7 +141,6 @@ docker-compose up -d
 
 # View the necessary key for connecting
 cat ./data/hbbs/id_ed25519.pub
-
 ```
 
 ## 5. App Overview
