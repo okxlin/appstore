@@ -1,0 +1,31 @@
+name: miniserve
+tags:
+- Tool
+title: 轻量级只读文件服务器
+description: 轻量级只读文件服务器
+additionalProperties:
+  key: miniserve
+  name: miniserve
+  tags:
+  - Tool
+  shortDescZh: 轻量级只读文件服务器
+  shortDescEn: A lightweight read-only file server
+  description:
+    en: A lightweight read-only file server
+    zh: 轻量级只读文件服务器
+    zh-Hant: 輕量級唯讀檔案伺服器
+    ja: 軽量な読み取り専用ファイルサーバー
+    ko: 가벼운 읽기 전용 파일 서버
+    ru: Легковесный файловый сервер только для чтения
+    ms: Pelayan fail baca sahaja yang ringan
+    pt-br: Servidor de arquivos leve e somente leitura
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://miniserve.cli.rs/
+  github: https://github.com/svenstaro/miniserve
+  document: https://github.com/svenstaro/miniserve/blob/master/README.md
+  architectures:
+  - amd64
+  - arm64
+  - armv7
