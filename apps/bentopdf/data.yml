@@ -1,0 +1,31 @@
+name: BentoPDF
+tags:
+  - Tool
+title: 本地优先的 PDF 工具集
+description: 本地优先的 PDF 工具集
+additionalProperties:
+  key: bentopdf
+  name: BentoPDF
+  tags:
+    - Tool
+  shortDescZh: 本地优先的 PDF 工具集
+  shortDescEn: Privacy-first PDF tools that process files in your browser
+  description:
+    en: A privacy-first PDF toolkit that processes documents locally in your browser.
+    zh: 在浏览器本地处理文档的隐私优先 PDF 工具集。
+    zh-Hant: 在瀏覽器本機處理文件的隱私優先 PDF 工具集。
+    ja: ブラウザー内で文書をローカル処理する、プライバシー重視の PDF ツール集です。
+    ko: 브라우저에서 문서를 로컬로 처리하는 개인 정보 보호 중심 PDF 도구 모음입니다.
+    ru: Набор PDF-инструментов с приоритетом конфиденциальности, обрабатывающий документы локально в браузере.
+    ms: Set alatan PDF yang mengutamakan privasi dan memproses dokumen secara tempatan dalam pelayar anda.
+    pt-br: Um conjunto de ferramentas de PDF com foco em privacidade que processa documentos localmente no navegador.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://bentopdf.com/
+  document: https://github.com/alam00000/bentopdf/tree/v2.8.7/docs/self-hosting
+  github: https://github.com/alam00000/bentopdf
+  architectures:
+    - amd64
+    - arm64
