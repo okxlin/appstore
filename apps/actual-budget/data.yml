@@ -1,0 +1,31 @@
+name: Actual Budget
+tags:
+  - 财务
+title: 隐私优先的开源个人财务应用
+description: 隐私优先的开源个人财务应用
+additionalProperties:
+  key: actual-budget
+  name: Actual Budget
+  tags:
+    - Tool
+  shortDescZh: 隐私优先的开源个人财务应用
+  shortDescEn: Privacy-focused open-source personal finance app
+  description:
+    en: Privacy-focused open-source personal finance app
+    zh: 隐私优先的开源个人财务应用
+    zh-Hant: 隱私優先的開源個人理財應用程式
+    ja: プライバシー重視のオープンソース個人資産管理アプリ
+    ko: 개인정보 보호를 중시하는 오픈소스 개인 재무 앱
+    ru: Конфиденциальное приложение с открытым кодом для личных финансов
+    ms: Aplikasi kewangan peribadi sumber terbuka yang mengutamakan privasi
+    pt-br: Aplicativo de finanças pessoais de código aberto com foco em privacidade
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://actualbudget.org/
+  github: https://github.com/actualbudget/actual
+  document: https://actualbudget.org/docs/install/docker/
+  architectures:
+    - amd64
+    - arm64
