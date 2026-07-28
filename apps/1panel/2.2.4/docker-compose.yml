@@ -14,6 +14,6 @@ services:
       - ENTRANCE=${PANEL_ENTRANCE}
       - BASE_DIR=${DATA_PATH}
       - RESET=false
-    image: moelin/1panel:v2.2.3
+    image: moelin/1panel:v2.2.4
     labels:
       createdBy: Apps
