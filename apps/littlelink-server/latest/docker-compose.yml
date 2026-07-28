@@ -1,0 +1,40 @@
+services:
+  littlelink-server:
+    image: "ghcr.io/timothystewart6/littlelink-server:latest@sha256:b0921c1403331dcaf7ba93b7528f03d58ae8fc132b23297bd9cb46166f005aa0"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - NAME=${NAME}
+      - BIO=${BIO}
+      - AVATAR_URL=${AVATAR_URL}
+      - GITHUB=${GITHUB}
+      - EMAIL=${EMAIL}
+      - THEME=${THEME}
+      - BUTTON_ORDER=GITHUB,EMAIL
+      - META_TITLE=${NAME}
+      - META_DESCRIPTION=${BIO}
+      - META_INDEX_STATUS=noindex
+      - SKIP_HEALTH_CHECK_LOGS=true
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://127.0.0.1:3000/healthcheck || exit 1"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
