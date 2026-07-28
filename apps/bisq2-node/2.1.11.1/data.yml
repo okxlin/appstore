@@ -1,0 +1,51 @@
+additionalProperties:
+  formFields:
+    - default: 8390
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Local Management Port
+      labelZh: 本地管理端口
+      label:
+        en: Local Management Port
+        zh: 本地管理端口
+        zh-Hant: 本機管理連接埠
+        ja: ローカル管理ポート
+        ko: 로컬 관리 포트
+        ru: Локальный порт управления
+        ms: Port Pengurusan Tempatan
+        pt-br: Porta de Gerenciamento Local
+      required: true
+      rule: paramPort
+      type: number
+    - default: 86400
+      edit: true
+      envKey: PAIRING_TTL_SECONDS
+      labelEn: Pairing Code Lifetime (Seconds)
+      labelZh: 配对码有效期（秒）
+      label:
+        en: Pairing Code Lifetime (Seconds)
+        zh: 配对码有效期（秒）
+        zh-Hant: 配對碼有效期（秒）
+        ja: ペアリングコード有効期間（秒）
+        ko: 페어링 코드 유효 시간(초)
+        ru: Срок действия кода сопряжения (сек.)
+        ms: Tempoh Kod Gandingan (Saat)
+        pt-br: Validade do Codigo de Pareamento (Segundos)
+      required: true
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de Dados
+      required: true
+      type: text
