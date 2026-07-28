@@ -1,0 +1,33 @@
+name: Flagsmith
+tags:
+  - 开发工具
+  - 项目管理
+title: 开源功能标志和远程配置平台
+description: 开源功能标志和远程配置平台
+additionalProperties:
+  key: flagsmith
+  name: Flagsmith
+  tags:
+    - DevTool
+    - Tool
+  shortDescZh: 开源功能标志和远程配置平台
+  shortDescEn: Open-source feature flag and remote configuration platform
+  description:
+    en: Open-source feature flag and remote configuration platform
+    zh: 开源功能标志和远程配置平台
+    zh-Hant: 開源功能旗標與遠端設定平台
+    ja: オープンソースの機能フラグおよびリモート設定プラットフォーム
+    ko: 오픈 소스 기능 플래그 및 원격 구성 플랫폼
+    ru: Платформа с открытым исходным кодом для флагов функций и удаленной конфигурации
+    ms: Platform sumber terbuka untuk bendera ciri dan konfigurasi jauh
+    pt-br: Plataforma de codigo aberto para sinalizadores de recursos e configuracao remota
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.flagsmith.com/
+  github: https://github.com/Flagsmith/flagsmith
+  document: https://docs.flagsmith.com/deployment-self-hosting/hosting-guides/docker
+  architectures:
+    - amd64
+    - arm64
