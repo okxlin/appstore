@@ -262,7 +262,7 @@ services:
       - default
 
   agent_backend:
-    image: "langgenius/dify-agent-backend:1.16.0"
+    image: "langgenius/dify-agent-backend:1.16.1"
     container_name: ${CONTAINER_NAME}-agent-backend
     labels:
       createdBy: "Apps"
