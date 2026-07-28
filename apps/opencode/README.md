@@ -30,14 +30,14 @@ OpenCode 是一个自托管 AI 编程助手，可通过浏览器管理 AI 编程
 
 ## 版本
 
-- `1.18.4` 固定到上游 OpenCode `v1.18.4` 镜像。
+- `1.18.7` 固定到上游 OpenCode `v1.18.7` 镜像。
 - `latest` 跟随上游 OpenCode 的最新镜像。
 
 ## 参考资料
 
 - 上游仓库：<https://github.com/anomalyco/opencode>
 - 官方文档：<https://opencode.ai/docs>
-- 服务命令与认证实现：<https://github.com/anomalyco/opencode/blob/v1.18.4/packages/opencode/src/cli/cmd/serve.ts>
+- 服务命令与认证实现：<https://github.com/anomalyco/opencode/blob/v1.18.7/packages/opencode/src/cli/cmd/serve.ts>
 
 ## Introduction
 
@@ -69,11 +69,11 @@ OpenCode is a self-hosted AI coding agent that manages AI-assisted coding sessio
 
 ## Versions
 
-- `1.18.4` is pinned to the upstream OpenCode `v1.18.4` image.
+- `1.18.7` is pinned to the upstream OpenCode `v1.18.7` image.
 - `latest` follows the upstream OpenCode latest image.
 
 ## Sources
 
 - Upstream repository: <https://github.com/anomalyco/opencode>
 - Official documentation: <https://opencode.ai/docs>
-- Serve command and authentication: <https://github.com/anomalyco/opencode/blob/v1.18.4/packages/opencode/src/cli/cmd/serve.ts>
+- Serve command and authentication: <https://github.com/anomalyco/opencode/blob/v1.18.7/packages/opencode/src/cli/cmd/serve.ts>
