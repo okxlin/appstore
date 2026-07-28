@@ -79,7 +79,7 @@
 
 ## 3. 使用方式
 
-默认 `1Panel` 安装在 `/opt/` 路径下。如果你的 1Panel 安装目录不同，请按实际路径调整下面命令。
+下面的命令默认使用 `/opt` 作为 1Panel 安装根目录。执行前请按实际情况设置每段命令开头的 `PANEL_BASE_DIR`。
 
 ### 3.1 GitHub 网络说明
 
@@ -92,11 +92,38 @@ GitHub 代理镜像的可用性变化很快，本 README 不再维护固定加�
 在 1Panel 中新建类型为 `Shell 脚本` 的计划任务，粘贴并执行以下命令；也可以直接在终端执行：
 
 ```bash
-git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+set -euo pipefail
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+PANEL_BASE_DIR="/opt" # 按实际的 1Panel 安装根目录修改
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+case "$PANEL_BASE_DIR" in
+  /*) ;;
+  *)
+    echo "PANEL_BASE_DIR 必须是绝对路径" >&2
+    exit 1
+    ;;
+esac
+
+PANEL_BASE_DIR="$(realpath -m -- "$PANEL_BASE_DIR")"
+if [ "$PANEL_BASE_DIR" = "/" ]; then
+  echo "PANEL_BASE_DIR 不能是 /" >&2
+  exit 1
+fi
+
+LOCAL_APPS_DIR="$PANEL_BASE_DIR/1panel/resource/apps/local"
+IMPORT_DIR="$LOCAL_APPS_DIR/appstore-localApps"
+
+if [ ! -d "$LOCAL_APPS_DIR" ]; then
+  echo "本地应用目录不存在：$LOCAL_APPS_DIR" >&2
+  exit 1
+fi
+
+git clone -b localApps https://github.com/okxlin/appstore "$IMPORT_DIR"
+
+cp -a "$IMPORT_DIR/apps/." "$LOCAL_APPS_DIR/"
+
+find "$IMPORT_DIR" -xdev -mindepth 1 -delete
+rmdir "$IMPORT_DIR"
 ```
 
 执行完成后，在应用商店中刷新本地应用。
@@ -106,15 +133,43 @@ rm -rf /opt/1panel/resource/apps/local/appstore-localApps
 在 1Panel 中新建类型为 `Shell 脚本` 的计划任务，粘贴并执行以下命令；也可以直接在终端执行：
 
 ```bash
-wget -P /opt/1panel/resource/apps/local https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
+set -euo pipefail
 
-unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
+PANEL_BASE_DIR="/opt" # 按实际的 1Panel 安装根目录修改
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+case "$PANEL_BASE_DIR" in
+  /*) ;;
+  *)
+    echo "PANEL_BASE_DIR 必须是绝对路径" >&2
+    exit 1
+    ;;
+esac
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+PANEL_BASE_DIR="$(realpath -m -- "$PANEL_BASE_DIR")"
+if [ "$PANEL_BASE_DIR" = "/" ]; then
+  echo "PANEL_BASE_DIR 不能是 /" >&2
+  exit 1
+fi
 
-rm -rf /opt/1panel/resource/apps/local/localApps.zip
+LOCAL_APPS_DIR="$PANEL_BASE_DIR/1panel/resource/apps/local"
+IMPORT_DIR="$LOCAL_APPS_DIR/appstore-localApps"
+ARCHIVE_PATH="$LOCAL_APPS_DIR/localApps.zip"
+
+if [ ! -d "$LOCAL_APPS_DIR" ]; then
+  echo "本地应用目录不存在：$LOCAL_APPS_DIR" >&2
+  exit 1
+fi
+
+wget -O "$ARCHIVE_PATH" https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
+
+unzip -o "$ARCHIVE_PATH" -d "$LOCAL_APPS_DIR"
+
+cp -a "$IMPORT_DIR/apps/." "$LOCAL_APPS_DIR/"
+
+find "$IMPORT_DIR" -xdev -mindepth 1 -delete
+rmdir "$IMPORT_DIR"
+
+unlink "$ARCHIVE_PATH"
 ```
 
 执行完成后，在应用商店中刷新本地应用。
@@ -127,8 +182,10 @@ rm -rf /opt/1panel/resource/apps/local/localApps.zip
 以 `rustdesk` 为例：
 
 ```bash
+PANEL_BASE_DIR="/opt" # 按实际的 1Panel 安装根目录修改
+
 # 进入 rustdesk 的最新版本目录
-cd /opt/1panel/resource/apps/local/rustdesk/versions/latest/
+cd "$PANEL_BASE_DIR/1panel/resource/apps/local/rustdesk/versions/latest/" || exit 1
 
 # 复制 .env.sample 为 .env
 cp .env.sample .env

@@ -79,7 +79,7 @@ Apps that can no longer be installed and have no trustworthy replacement image a
 
 ## 3. Usage
 
-The default installation path of `1Panel` is `/opt/`, which can be modified as needed.
+The commands below use `/opt` as the default 1Panel installation base directory. Before running each command block, set `PANEL_BASE_DIR` to match your installation.
 
 ### 3.1 GitHub Network Notes
 
@@ -92,11 +92,38 @@ The examples below use official GitHub URLs. Replace them according to your prox
 Create a `Shell Script` scheduled task in 1Panel and run the following commands, or execute them directly in a terminal:
 
 ```bash
-git clone -b localApps https://github.com/okxlin/appstore /opt/1panel/resource/apps/local/appstore-localApps
+set -euo pipefail
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+PANEL_BASE_DIR="/opt" # Change this to your 1Panel installation base directory
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+case "$PANEL_BASE_DIR" in
+  /*) ;;
+  *)
+    echo "PANEL_BASE_DIR must be an absolute path" >&2
+    exit 1
+    ;;
+esac
+
+PANEL_BASE_DIR="$(realpath -m -- "$PANEL_BASE_DIR")"
+if [ "$PANEL_BASE_DIR" = "/" ]; then
+  echo "PANEL_BASE_DIR cannot be /" >&2
+  exit 1
+fi
+
+LOCAL_APPS_DIR="$PANEL_BASE_DIR/1panel/resource/apps/local"
+IMPORT_DIR="$LOCAL_APPS_DIR/appstore-localApps"
+
+if [ ! -d "$LOCAL_APPS_DIR" ]; then
+  echo "Local app directory does not exist: $LOCAL_APPS_DIR" >&2
+  exit 1
+fi
+
+git clone -b localApps https://github.com/okxlin/appstore "$IMPORT_DIR"
+
+cp -a "$IMPORT_DIR/apps/." "$LOCAL_APPS_DIR/"
+
+find "$IMPORT_DIR" -xdev -mindepth 1 -delete
+rmdir "$IMPORT_DIR"
 ```
 
 When the commands finish, refresh the local apps in the app store.
@@ -106,15 +133,43 @@ When the commands finish, refresh the local apps in the app store.
 Create a `Shell Script` scheduled task in 1Panel and run the following commands, or execute them directly in a terminal:
 
 ```bash
-wget -P /opt/1panel/resource/apps/local https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
+set -euo pipefail
 
-unzip -o -d /opt/1panel/resource/apps/local/ /opt/1panel/resource/apps/local/localApps.zip
+PANEL_BASE_DIR="/opt" # Change this to your 1Panel installation base directory
 
-cp -rf /opt/1panel/resource/apps/local/appstore-localApps/apps/* /opt/1panel/resource/apps/local/
+case "$PANEL_BASE_DIR" in
+  /*) ;;
+  *)
+    echo "PANEL_BASE_DIR must be an absolute path" >&2
+    exit 1
+    ;;
+esac
 
-rm -rf /opt/1panel/resource/apps/local/appstore-localApps
+PANEL_BASE_DIR="$(realpath -m -- "$PANEL_BASE_DIR")"
+if [ "$PANEL_BASE_DIR" = "/" ]; then
+  echo "PANEL_BASE_DIR cannot be /" >&2
+  exit 1
+fi
 
-rm -rf /opt/1panel/resource/apps/local/localApps.zip
+LOCAL_APPS_DIR="$PANEL_BASE_DIR/1panel/resource/apps/local"
+IMPORT_DIR="$LOCAL_APPS_DIR/appstore-localApps"
+ARCHIVE_PATH="$LOCAL_APPS_DIR/localApps.zip"
+
+if [ ! -d "$LOCAL_APPS_DIR" ]; then
+  echo "Local app directory does not exist: $LOCAL_APPS_DIR" >&2
+  exit 1
+fi
+
+wget -O "$ARCHIVE_PATH" https://github.com/okxlin/appstore/archive/refs/heads/localApps.zip
+
+unzip -o "$ARCHIVE_PATH" -d "$LOCAL_APPS_DIR"
+
+cp -a "$IMPORT_DIR/apps/." "$LOCAL_APPS_DIR/"
+
+find "$IMPORT_DIR" -xdev -mindepth 1 -delete
+rmdir "$IMPORT_DIR"
+
+unlink "$ARCHIVE_PATH"
 ```
 
 When the commands finish, refresh the local apps in the app store.
@@ -127,8 +182,10 @@ When the commands finish, refresh the local apps in the app store.
 For example, to run `rustdesk`:
 
 ```bash
+PANEL_BASE_DIR="/opt" # Change this to your 1Panel installation base directory
+
 # Enter the latest version directory of rustdesk
-cd /opt/1panel/resource/apps/local/rustdesk/versions/latest/
+cd "$PANEL_BASE_DIR/1panel/resource/apps/local/rustdesk/versions/latest/" || exit 1
 
 # Copy .env.sample as .env
 cp .env.sample .env
