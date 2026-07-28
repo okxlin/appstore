@@ -1,0 +1,30 @@
+name: GoDoxy
+tags:
+  - Tool
+title: 带有 WebUI 的轻量级反向代理
+description: 带有 WebUI 的轻量级反向代理
+additionalProperties:
+  key: godoxy
+  name: GoDoxy
+  tags:
+    - Tool
+  shortDescZh: 带有 WebUI 的轻量级反向代理
+  shortDescEn: Lightweight reverse proxy with a WebUI
+  description:
+    en: Lightweight reverse proxy with a WebUI
+    zh: 带有 WebUI 的轻量级反向代理
+    zh-Hant: 帶有 WebUI 的輕量級反向代理
+    ja: WebUI を備えた軽量リバースプロキシ
+    ko: WebUI를 갖춘 경량 리버스 프록시
+    ru: Легковесный обратный прокси с веб-интерфейсом
+    ms: Proksi songsang ringan dengan WebUI
+    pt-br: Proxy reverso leve com WebUI
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://docs.godoxy.dev/
+  github: https://github.com/yusing/godoxy
+  document: https://docs.godoxy.dev/Home.html
+  architectures:
+    - amd64
+    - arm64

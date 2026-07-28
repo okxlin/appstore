@@ -1,0 +1,71 @@
+services:
+  socket-proxy:
+    image: "ghcr.io/yusing/socket-proxy:latest@sha256:d2f20bd06728c9465a01725f1782f591c2cd5ade79027654fcf8b436a0fd0ca6"
+    container_name: ${CONTAINER_NAME}-socket-proxy
+    restart: unless-stopped
+    environment:
+      - CONTAINERS=1
+      - EVENTS=1
+      - INFO=1
+      - PING=1
+      - VERSION=1
+    networks:
+      - godoxy-internal
+    read_only: true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /run
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      createdBy: "Apps"
+
+  godoxy:
+    image: "ghcr.io/yusing/godoxy:v0.30.0@sha256:323e120506c51202e00fcc50408628cc3e57aa5a1c736eec9406aa264bf04933"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      socket-proxy:
+        condition: service_started
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+      - godoxy-internal
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:80/tcp"
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTPS}:443/tcp"
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTPS}:443/udp"
+    environment:
+      - DOCKER_HOST=tcp://socket-proxy:2375
+      - GODOXY_API_USER=${GODOXY_API_USER}
+      - GODOXY_API_PASSWORD=${GODOXY_API_PASSWORD}
+      - GODOXY_API_JWT_SECRET=${GODOXY_API_JWT_SECRET}
+      - GODOXY_API_JWT_SECURE=true
+      - GODOXY_FRONTEND_ALIASES=${GODOXY_WEBUI_HOST}
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - "${APP_DATA_DIR}/config:/app/config"
+      - "${APP_DATA_DIR}/logs:/app/logs"
+      - "${APP_DATA_DIR}/error_pages:/app/error_pages"
+      - "${APP_DATA_DIR}/runtime:/app/data"
+      - "${APP_DATA_DIR}/certs:/app/certs"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  godoxy-internal:
+    internal: true
