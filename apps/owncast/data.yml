@@ -1,0 +1,31 @@
+name: Owncast
+tags:
+  - 多媒体
+title: 自托管的直播视频与聊天服务器
+description: 自托管的直播视频与聊天服务器
+additionalProperties:
+  key: owncast
+  name: Owncast
+  tags:
+    - Media
+  shortDescZh: 自托管的直播视频与聊天服务器
+  shortDescEn: Self-hosted live video and chat server
+  description:
+    en: A self-hosted live video streaming and chat server
+    zh: 一个自托管的直播视频与聊天服务器
+    zh-Hant: 一個自託管的直播視訊與聊天伺服器
+    ja: セルフホスト型のライブ動画配信・チャットサーバー
+    ko: 자체 호스팅 라이브 비디오 스트리밍 및 채팅 서버
+    ru: Самостоятельно размещаемый сервер прямых видеотрансляций и чата
+    ms: Pelayan penstriman video langsung dan sembang hos kendiri
+    pt-br: Servidor auto-hospedado de transmissao de video ao vivo e chat
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://owncast.online/
+  github: https://github.com/owncast/owncast
+  document: https://owncast.online/docs/
+  architectures:
+    - amd64
+    - arm64

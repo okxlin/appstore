@@ -1,0 +1,65 @@
+services:
+  owncast-init:
+    image: owncast/owncast:latest
+    container_name: ${CONTAINER_NAME}-init
+    user: "101:101"
+    network_mode: none
+    entrypoint: ["/bin/sh"]
+    command: ["/opt/1panel/bootstrap.sh"]
+    environment:
+      OWNCAST_ADMIN_PASSWORD: ${OWNCAST_ADMIN_PASSWORD}
+      OWNCAST_STREAM_KEY: ${OWNCAST_STREAM_KEY}
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+      - "./scripts/bootstrap.sh:/opt/1panel/bootstrap.sh:ro"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/.1panel-bootstrap-ready"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+      start_period: 5s
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"
+
+  owncast:
+    image: owncast/owncast:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    user: "101:101"
+    depends_on:
+      owncast-init:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_RTMP_BIND_ADDRESS}:${PANEL_APP_PORT_RTMP}:1935"
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    read_only: true
+    tmpfs:
+      - /tmp:mode=1777,size=256m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://127.0.0.1:8080/api/status || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

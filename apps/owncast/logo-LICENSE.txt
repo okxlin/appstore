@@ -1,0 +1,4 @@
+Source: https://github.com/owncast/owncast/blob/v0.2.5/static/img/logo.png
+License: MIT
+Copyright: Copyright (c) 2020-2023 Gabe Kangas
+The source image is resized without changing its design.
