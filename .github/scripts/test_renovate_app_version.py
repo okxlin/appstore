@@ -538,6 +538,7 @@ class RenovateAppVersionTests(unittest.TestCase):
 
         self.assertEqual(["flagsmith"], primary["flagsmith"])
         self.assertEqual(["kaneo"], primary["kaneo"])
+        self.assertEqual(["manyfold"], primary["manyfold-linuxserver"])
         self.assertEqual(["netbox"], primary["netbox-linuxserver"])
         self.assertEqual(["zipline"], primary["zipline"])
 
