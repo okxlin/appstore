@@ -1,0 +1,33 @@
+name: SRS
+tags:
+  - Tool
+title: 高性能实时视频服务器
+description: 高性能实时视频服务器
+additionalProperties:
+  key: srs
+  name: SRS
+  tags:
+    - Tool
+  type: tool
+  website: https://ossrs.io/
+  document: https://ossrs.io/lts/en-us/docs/v6/doc/getting-started
+  github: https://github.com/ossrs/srs
+  shortDescZh: 高性能实时视频服务器
+  shortDescEn: A high-performance real-time video server
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 128
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+  description:
+    en: A high-performance real-time video server supporting RTMP, HTTP-FLV, HLS, and WebRTC
+    zh: 高性能实时视频服务器，支持 RTMP、HTTP-FLV、HLS 和 WebRTC
+    zh-Hant: 高效能即時視訊伺服器，支援 RTMP、HTTP-FLV、HLS 與 WebRTC
+    ja: RTMP、HTTP-FLV、HLS、WebRTC に対応する高性能リアルタイム動画サーバー
+    ko: RTMP, HTTP-FLV, HLS 및 WebRTC를 지원하는 고성능 실시간 비디오 서버
+    ru: Высокопроизводительный сервер видео в реальном времени с поддержкой RTMP, HTTP-FLV, HLS и WebRTC
+    ms: Pelayan video masa nyata berprestasi tinggi dengan sokongan RTMP, HTTP-FLV, HLS dan WebRTC
+    pt-br: Servidor de video em tempo real de alto desempenho com suporte a RTMP, HTTP-FLV, HLS e WebRTC
