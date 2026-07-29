@@ -34,6 +34,9 @@
     "librechat-admin",
     "librechat-rag-api"
   ],
+  "manyfold-linuxserver": [
+    "manyfold"
+  ],
   "netbox-linuxserver": [
     "netbox"
   ],
