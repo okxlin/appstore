@@ -1,6 +1,6 @@
 services:
   audacity-kasm:
-    image: "kasmweb/audacity:1.19.0-rolling-weekly@sha256:c0e36fa23b141fe1d5365f029f9c577b64fd628169cd3634c0086b23cf7b3591"
+    image: "kasmweb/audacity:1.19.0-rolling-weekly@sha256:f2707362ce735267332cc434c78d23d34090c5d7a97d03d5ea4ca053bc268bb1"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
