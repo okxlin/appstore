@@ -1,0 +1,30 @@
+name: Moodist
+tags:
+  - Tool
+title: 专注与放松的环境声音混音器
+description: 专注与放松的环境声音混音器
+additionalProperties:
+  key: moodist
+  name: Moodist
+  tags:
+    - Tool
+  shortDescZh: 专注与放松的环境声音混音器
+  shortDescEn: Ambient sound mixer for focus and calm
+  description:
+    en: Ambient sound mixer for focus, relaxation, and sleep
+    zh: 用于专注、放松和睡眠的环境声音混音器
+    zh-Hant: 用於專注、放鬆與睡眠的環境聲音混音器
+    ja: 集中、リラックス、睡眠のための環境音ミキサー
+    ko: 집중, 휴식, 수면을 위한 환경음 믹서
+    ru: Микшер фоновых звуков для концентрации, отдыха и сна
+    ms: Pengadun bunyi suasana untuk fokus, bersantai dan tidur
+    pt-br: Mixer de sons ambientes para foco, relaxamento e sono
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://moodist.mvze.net/
+  github: https://github.com/remvze/moodist
+  document: https://github.com/remvze/moodist#readme
+  architectures:
+    - amd64
+    - arm64
