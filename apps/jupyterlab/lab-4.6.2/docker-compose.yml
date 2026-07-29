@@ -1,6 +1,6 @@
 services:
   jupyterlab:
-    image: "quay.io/jupyter/base-notebook:lab-4.6.2@sha256:4d07369e1325dd155ee2710ca4f29b763f5562e2bbd2ccb0182b357c3c1b8526"
+    image: "quay.io/jupyter/base-notebook:lab-4.6.2@sha256:a8b2611c4c380dde6159f9963ee4f294373a0b214958987b7b469d312287c4ef"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:100"
