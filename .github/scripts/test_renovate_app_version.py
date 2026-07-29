@@ -510,6 +510,25 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("prom/prometheus:v2.53.1", compose_text)
         self.assertNotIn("registry.cn-shanghai.aliyuncs.com/wukongim/", compose_text)
 
+    def test_gotab_runs_from_directory_backed_persistence(self):
+        compose_paths = sorted(
+            (REPO_ROOT / "apps" / "gotab").glob("*/docker-compose.yml")
+        )
+
+        self.assertTrue(compose_paths)
+        for compose_path in compose_paths:
+            compose = yaml.safe_load(compose_path.read_text(encoding="utf-8"))
+            service = compose["services"]["gotab-server"]
+            self.assertEqual(["/bin/sh", "-ec"], service["entrypoint"][:2])
+            self.assertIn("exec ./gotab-server", service["entrypoint"][2])
+            self.assertIn("grep -Eq", service["entrypoint"][2])
+            self.assertIn("rmdir", service["entrypoint"][2])
+            self.assertIn("config.toml", service["entrypoint"][2])
+            self.assertIn("./data:/data", service["volumes"])
+            self.assertFalse(
+                any(str(volume).endswith(":/app/config.toml") for volume in service["volumes"])
+            )
+
     def test_wukongim_primary_service_and_sidecar_policy_are_explicit(self):
         primary = json.loads(
             (REPO_ROOT / ".github" / "renovate-primary-services.json").read_text(

@@ -2,12 +2,44 @@ services:
   gotab-server:
     image: "doxwant/gotab:2.0.3.2"
     container_name: ${CONTAINER_NAME}
+    entrypoint:
+      - /bin/sh
+      - -ec
+      - |
+        runtime_dir=/data
+        binary_tmp="$$(mktemp "$$runtime_dir/.gotab-server.XXXXXX")"
+        web_tmp="$$(mktemp -d "$$runtime_dir/.gotab-web.XXXXXX")"
+        cleanup() {
+          if [ -n "$$binary_tmp" ]; then
+            rm -f -- "$$binary_tmp"
+          fi
+          if [ -n "$$web_tmp" ]; then
+            rm -rf -- "$$web_tmp"
+          fi
+        }
+        trap cleanup EXIT HUP INT TERM
+        cp /app/gotab-server "$$binary_tmp"
+        chmod 0755 "$$binary_tmp"
+        cp -a /app/web/. "$$web_tmp/"
+        rm -rf -- "$$runtime_dir/web"
+        mv "$$web_tmp" "$$runtime_dir/web"
+        web_tmp=""
+        mv "$$binary_tmp" "$$runtime_dir/gotab-server"
+        binary_tmp=""
+        config_file="$$runtime_dir/config.toml"
+        if [ -d "$$config_file" ]; then
+          rmdir "$$config_file"
+        elif [ -f "$$config_file" ] &&
+          ! grep -Eq '^[[:space:]]*[A-Za-z0-9_.-]+[[:space:]]*=' "$$config_file"; then
+          rm -f -- "$$config_file"
+        fi
+        cd "$$runtime_dir"
+        trap - EXIT HUP INT TERM
+        exec ./gotab-server -port=8080
     ports:
       - ${PANEL_APP_PORT_HTTP}:8080
     volumes:
-      - ./data/uploads:/app/uploads
-      - ./data/sourceStore:/app/sourceStore
-      - ./data/config.toml:/app/config.toml
+      - ./data:/data
     environment:
       - SERVER_PORT=8080
       - TZ=${TIME_ZONE}
