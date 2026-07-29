@@ -1,0 +1,4 @@
+Source: https://github.com/drawdb-io/drawdb/blob/8f4fe7895224123f2465422fcaa2ee2337fd1e4c/src/assets/icon-dark.png
+License: AGPL-3.0-only
+License text: https://github.com/drawdb-io/drawdb/blob/8f4fe7895224123f2465422fcaa2ee2337fd1e4c/LICENSE
+The submitted PNG is a resized and optimized rendering of the upstream icon.
