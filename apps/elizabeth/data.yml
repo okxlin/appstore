@@ -31,5 +31,5 @@ additionalProperties:
   recommend: 0
   website: https://github.com/YuniqueUnic/elizabeth
   github: https://github.com/YuniqueUnic/elizabeth
-  document: https://github.com/YuniqueUnic/elizabeth/blob/v1.5.2/docs/DOCKER_QUICK_START.md
+  document: https://github.com/YuniqueUnic/elizabeth/blob/v1.5.3/docs/DOCKER_QUICK_START.md
   memoryRequired: 512
