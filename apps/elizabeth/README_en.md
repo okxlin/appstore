@@ -38,10 +38,5 @@ endpoint, and embedded web interface.
   deployments.
 - The container runs with `read_only`, `cap_drop: ALL`, `no-new-privileges`, and
   a `/tmp` tmpfs.
-- The image base may contain system-package CVEs for which the distribution has
-  not yet published fixes. The reported Critical findings are in `perl-base`;
-  the Rust service does not invoke Perl or extract archives, and one finding
-  applies only to 32-bit builds. Keep the image updated and limit unnecessary
-  external exposure.
 - For public access, terminate TLS with a reverse proxy and configure room
   passwords or permissions as needed.

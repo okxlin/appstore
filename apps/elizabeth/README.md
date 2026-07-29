@@ -30,7 +30,6 @@ Web 界面。
 
 - 安装表单会为 `JWT_SECRET` 生成随机后缀；公网部署前请确认密钥足够强。
 - 容器启用 `read_only`、`cap_drop: ALL`、`no-new-privileges` 与 `/tmp` tmpfs。
-- 当前镜像基础层可能包含尚无发行版修复的系统组件 CVE。维护审计确认已报告的 Critical 项位于 `perl-base`，Elizabeth 的 Rust 服务不调用 Perl 或解包归档文件，其中一项仅影响 32 位构建；仍建议及时更新镜像并限制不必要的外部访问。
 - 对公网开放时应通过 1Panel 反向代理启用 HTTPS，并按需要设置房间密码与权限。
 
 ## Introduction
@@ -71,10 +70,5 @@ endpoint, and embedded web interface.
   deployments.
 - The container runs with `read_only`, `cap_drop: ALL`, `no-new-privileges`, and
   a `/tmp` tmpfs.
-- The image base may contain system-package CVEs for which the distribution has
-  not yet published fixes. The reported Critical findings are in `perl-base`;
-  the Rust service does not invoke Perl or extract archives, and one finding
-  applies only to 32-bit builds. Keep the image updated and limit unnecessary
-  external exposure.
 - For public access, terminate TLS with a reverse proxy and configure room
   passwords or permissions as needed.
