@@ -75,6 +75,8 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("RENOVATE_DRY_RUN: lookup", workflow)
         self.assertIn("token: ${{ github.token }}", workflow)
         self.assertNotIn("token: ${{ secrets.GITHUBTOKEN }}", workflow)
+        self.assertIn("renovate-docker-v1-${{ runner.os }}-v44-", workflow)
+        self.assertNotIn("renovate-docker-v1-${{ runner.os }}-v43-", workflow)
 
     def test_retry_gate_retries_only_mature_docker_hub_429_failures(self):
         module = load_retry_module()

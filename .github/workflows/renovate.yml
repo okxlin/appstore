@@ -28,10 +28,10 @@ jobs:
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: /tmp/renovate-cache
-          key: renovate-docker-v1-${{ runner.os }}-v43-${{ hashFiles('.github/renovate-docker.json', '.github/renovate-global.js') }}-${{ github.run_id }}
+          key: renovate-docker-v1-${{ runner.os }}-v44-${{ hashFiles('.github/renovate-docker.json', '.github/renovate-global.js') }}-${{ github.run_id }}
           restore-keys: |
-            renovate-docker-v1-${{ runner.os }}-v43-${{ hashFiles('.github/renovate-docker.json', '.github/renovate-global.js') }}-
-            renovate-docker-v1-${{ runner.os }}-v43-
+            renovate-docker-v1-${{ runner.os }}-v44-${{ hashFiles('.github/renovate-docker.json', '.github/renovate-global.js') }}-
+            renovate-docker-v1-${{ runner.os }}-v44-
       - name: Prepare Renovate cache permissions
         run: |
           install -d -m 0777 /tmp/renovate-cache
