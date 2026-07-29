@@ -1,6 +1,6 @@
 services:
   bitwarden:
-    image: "vaultwarden/server:1.37.0-alpine"
+    image: "vaultwarden/server:1.37.1-alpine"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
