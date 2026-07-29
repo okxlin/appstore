@@ -1,0 +1,32 @@
+name: Flare
+tags:
+  - Tool
+title: 轻量、快速、可自托管的个人导航页与书签管理器
+description: 轻量、快速、可自托管的个人导航页与书签管理器
+additionalProperties:
+  key: flare
+  name: Flare
+  tags:
+    - Tool
+  shortDescZh: 轻量、快速、可自托管的个人导航页与书签管理器
+  shortDescEn: A lightweight, fast, self-hosted personal start page and bookmark manager
+  description:
+    en: A lightweight, fast, self-hosted personal start page and bookmark manager
+    zh: 轻量、快速、可自托管的个人导航页与书签管理器
+    zh-Hant: 輕量、快速、可自行託管的個人導航頁與書籤管理器
+    ja: 軽量で高速なセルフホスト型の個人スタートページとブックマーク管理ツール
+    ko: 가볍고 빠른 셀프 호스팅 개인 시작 페이지 및 북마크 관리자
+    ru: Лёгкая и быстрая самохостинговая стартовая страница и менеджер закладок
+    ms: Halaman mula peribadi dan pengurus penanda buku yang ringan, pantas dan dihos sendiri
+    pt-br: Página inicial pessoal e gerenciador de favoritos leve, rápido e auto-hospedado
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/soulteary/docker-flare
+  github: https://github.com/soulteary/flare
+  document: https://github.com/soulteary/docker-flare/blob/main/docs/advanced-startup.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
