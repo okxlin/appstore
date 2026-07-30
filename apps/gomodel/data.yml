@@ -1,0 +1,32 @@
+name: GoModel
+tags:
+  - AI
+title: 轻量级多模型 AI 网关
+description: 轻量级多模型 AI 网关
+additionalProperties:
+  key: gomodel
+  name: GoModel
+  tags:
+    - AI
+  shortDescZh: 轻量级多模型 AI 网关
+  shortDescEn: Lightweight multi-provider AI gateway
+  description:
+    en: A lightweight multi-provider AI gateway with an OpenAI-compatible API, usage tracking, and observability
+    zh: 提供 OpenAI 兼容 API、用量追踪和可观测能力的轻量级多模型 AI 网关
+    zh-Hant: 提供 OpenAI 相容 API、用量追蹤和可觀測能力的輕量級多模型 AI 閘道
+    ja: OpenAI 互換 API、使用量追跡、可観測性を備えた軽量なマルチプロバイダー AI ゲートウェイ
+    ko: OpenAI 호환 API, 사용량 추적 및 관측 기능을 제공하는 경량 다중 공급자 AI 게이트웨이
+    ru: Легковесный шлюз для нескольких поставщиков ИИ с OpenAI-совместимым API, учетом использования и наблюдаемостью
+    ms: Get laluan AI berbilang penyedia yang ringan dengan API serasi OpenAI, penjejakan penggunaan dan kebolehcerapan
+    pt-br: Gateway leve para varios provedores de IA com API compativel com OpenAI, rastreamento de uso e observabilidade
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://gomodel.enterpilot.io/
+  github: https://github.com/ENTERPILOT/GoModel
+  document: https://gomodel.enterpilot.io/docs/getting-started/quickstart
+  architectures:
+    - amd64
+    - arm64
+    - armv7

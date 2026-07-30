@@ -1,0 +1,53 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: GOMODEL_MASTER_KEY
+      labelEn: Master Key
+      labelZh: 主密钥
+      label:
+        en: Master Key
+        zh: 主密钥
+        zh-Hant: 主密鑰
+        ja: マスターキー
+        ko: 마스터 키
+        ru: Главный ключ
+        ms: Kunci Induk
+        pt-br: Chave mestra
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
