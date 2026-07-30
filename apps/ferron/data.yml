@@ -1,0 +1,32 @@
+name: Ferron
+tags:
+  - Server
+title: 快速、现代且易于配置的 Web 服务器
+description: 快速、现代且易于配置的 Web 服务器
+additionalProperties:
+  key: ferron
+  name: Ferron
+  tags:
+    - Server
+  shortDescZh: 快速、现代且易于配置的 Web 服务器
+  shortDescEn: A fast, modern, and easily configurable web server
+  description:
+    en: A fast, modern, and easily configurable web server
+    zh: 快速、现代且易于配置的 Web 服务器
+    zh-Hant: 快速、現代且易於設定的 Web 伺服器
+    ja: 高速でモダン、設定しやすい Web サーバー
+    ko: 빠르고 현대적이며 구성하기 쉬운 웹 서버
+    ru: Быстрый, современный и простой в настройке веб-сервер
+    ms: Pelayan web yang pantas, moden dan mudah dikonfigurasikan
+    pt-br: Servidor web rapido, moderno e facil de configurar
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://ferron.sh
+  github: https://github.com/ferronweb/ferron
+  document: https://ferron.sh/docs
+  architectures:
+    - amd64
+    - arm64
+    - armv7

@@ -1,0 +1,5 @@
+:80 {
+  root "/var/www/ferron"
+  log_stdout
+  error_log_stderr
+}
