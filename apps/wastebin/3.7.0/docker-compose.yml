@@ -1,0 +1,37 @@
+services:
+  wastebin:
+    image: "quxfoo/wastebin:3.7.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "10001:10001"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8088"
+    environment:
+      - WASTEBIN_ADDRESS_PORT=0.0.0.0:8088
+      - WASTEBIN_BASE_URL=${WASTEBIN_BASE_URL}
+      - WASTEBIN_DATABASE_PATH=/data/state.db
+      - WASTEBIN_HTTP_TIMEOUT=${WASTEBIN_HTTP_TIMEOUT}
+      - WASTEBIN_MAX_BODY_SIZE=${WASTEBIN_MAX_BODY_SIZE}
+      - WASTEBIN_PASSWORD_SALT=${WASTEBIN_PASSWORD_SALT}
+      - WASTEBIN_PASTE_EXPIRATIONS=${WASTEBIN_PASTE_EXPIRATIONS}
+      - WASTEBIN_SIGNING_KEY=${WASTEBIN_SIGNING_KEY}
+      - WASTEBIN_THEME=${WASTEBIN_THEME}
+      - WASTEBIN_TITLE=${WASTEBIN_TITLE}
+      - TMPDIR=/tmp
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=16m,uid=10001,gid=10001,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
