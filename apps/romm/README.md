@@ -28,6 +28,8 @@ RomM 是一个自托管的复古游戏库管理器。它可以扫描游戏文件
 
 1Panel 会在所选服务中创建独立的 RomM 数据库和用户，并将主机、端口、数据库名、用户名和密码注入容器。不要填写数据库服务的 root 或管理员账号作为 RomM 用户。
 
+从 `5.1.0` 开始，数据库迁移会创建触发器。1Panel 的默认 MariaDB 配置未启用 binary logging，无需额外处理。如果自行启用了 binary logging，请在升级前使用数据库管理员账号设置 `log_bin_trust_function_creators=1`，或向 RomM 数据库用户授予 `BINLOG ADMIN`（MariaDB 10.5+）或 `SUPER` 权限；不要将管理员凭据填入 RomM 安装表单。
+
 ## 数据持久化
 
 安装表单中的“数据目录”包含：
@@ -37,7 +39,7 @@ RomM 是一个自托管的复古游戏库管理器。它可以扫描游戏文件
 
 RomM 需要在部分目录之间创建硬链接，因此本适配将整个 `/romm` 挂载为同一个文件系统。游戏文件应放入 `romm/library/roms/` 下符合官方目录规范的位置。
 
-升级前建议备份整个数据目录，并通过 1Panel 单独备份所选数据库。卸载应用不会删除绑定目录中的用户数据。
+升级前建议备份整个数据目录，并通过 1Panel 单独备份所选数据库。卸载应用不会删除绑定目录中的用户数据。升级到 `5.1.0` 后，如果反向代理或 CDN 缓存了响应，请清除一次缓存，避免旧版 `index.html` 引用已删除的前端资源而出现空白页面。
 
 ## 元数据服务
 
@@ -57,7 +59,7 @@ RomM 需要在部分目录之间创建硬链接，因此本适配将整个 `/rom
 
 ## 版本说明
 
-- `4.9.2`：固定的最新稳定版本，适合需要可重复部署的用户。
+- `5.1.0`：固定的最新稳定版本，适合需要可重复部署的用户。
 - `latest`：跟随官方最新稳定镜像，升级前应阅读上游发布说明并备份数据。
 
 项目采用 AGPL-3.0 许可证。
@@ -73,6 +75,12 @@ RomM is a self-hosted retro game library manager. It scans and enriches game col
 - Use optional metadata providers including ScreenScraper, RetroAchievements, SteamGridDB, and Hasheous.
 - Select a 1Panel-managed MariaDB or PostgreSQL service during installation.
 - Keep application data and the built-in Valkey cache persistent across upgrades while backing up the selected database separately.
+
+## Upgrade notes
+
+RomM `5.1.0` migrations create database triggers. The default 1Panel MariaDB configuration has binary logging disabled and needs no extra privileges. If you enabled binary logging, use a database administrator account before upgrading to set `log_bin_trust_function_creators=1`, or grant the RomM database user `BINLOG ADMIN` (MariaDB 10.5+) or `SUPER`. Do not configure RomM itself with database administrator credentials.
+
+After upgrading to `5.1.0`, purge any reverse-proxy or CDN cache once. A stale cached `index.html` can reference frontend bundles that the new image no longer contains and result in a blank UI.
 
 ## Links
 
