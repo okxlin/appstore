@@ -1,0 +1,33 @@
+name: Resin
+tags:
+  - 网络工具
+  - 面板
+title: 高性能智能代理池网关
+description: 高性能智能代理池网关
+additionalProperties:
+  key: resin
+  name: Resin
+  tags:
+    - Network
+    - Tool
+  shortDescZh: 高性能智能代理池网关
+  shortDescEn: High-performance intelligent proxy pool gateway
+  description:
+    en: Turn large proxy subscriptions into a stable, intelligent, and observable gateway with sticky sessions.
+    zh: 将大量代理订阅整合为稳定、智能、可观测并支持会话保持的统一网关。
+    zh-Hant: 將大量代理訂閱整合為穩定、智慧、可觀測並支援工作階段保持的統一閘道。
+    ja: 大量のプロキシサブスクリプションを、セッション維持に対応した安定的でインテリジェントかつ観測可能な統合ゲートウェイに集約します。
+    ko: 대규모 프록시 구독을 세션 고정 기능을 갖춘 안정적이고 지능적이며 관찰 가능한 통합 게이트웨이로 구성합니다.
+    ru: Объединяйте множество подписок на прокси в стабильный, интеллектуальный и наблюдаемый шлюз с закреплением сеансов.
+    ms: Satukan langganan proksi berskala besar menjadi get laluan yang stabil, pintar dan boleh dipantau dengan sesi melekat.
+    pt-br: Reuna grandes assinaturas de proxy em um gateway estável, inteligente e observável com sessões persistentes.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Resinat/Resin
+  github: https://github.com/Resinat/Resin
+  document: https://github.com/Resinat/Resin/blob/v1.1.2/README.zh-CN.md
+  architectures:
+  - amd64
+  - arm64
