@@ -1,0 +1,92 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://tinyauth.localhost:3000
+      edit: true
+      envKey: TINYAUTH_APP_URL
+      labelEn: External URL
+      labelZh: 外部访问地址
+      label:
+        en: External URL
+        zh: 外部访问地址
+        zh-Hant: 外部存取網址
+        ja: 外部 URL
+        ko: 외부 URL
+        ru: Внешний URL
+        ms: URL Luaran
+        pt-br: URL externo
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: admin
+      edit: true
+      envKey: TINYAUTH_ADMIN_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama Pengguna Pentadbir
+        pt-br: Usuario administrador
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: TINYAUTH_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "false"
+      edit: true
+      envKey: TINYAUTH_SECURE_COOKIE
+      labelEn: Secure Cookies
+      labelZh: 安全 Cookie
+      label:
+        en: Secure Cookies
+        zh: 安全 Cookie
+        zh-Hant: 安全 Cookie
+        ja: Secure Cookie
+        ko: 보안 Cookie
+        ru: Secure Cookie
+        ms: Cookie Selamat
+        pt-br: Cookie seguro
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
