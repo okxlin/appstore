@@ -1,0 +1,27 @@
+services:
+  ferron:
+    image: "ferronserver/ferron:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "65534:65534"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:80"
+    volumes:
+      - "${APP_DATA_DIR}/config/ferron.kdl:/etc/ferron.kdl:ro"
+      - "${APP_DATA_DIR}/www:/var/www/ferron:ro"
+      - "${APP_DATA_DIR}/acme:/var/cache/ferron-acme"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=16m,uid=65534,gid=65534,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
