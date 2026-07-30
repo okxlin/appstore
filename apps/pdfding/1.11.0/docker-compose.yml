@@ -1,0 +1,32 @@
+services:
+  pdfding:
+    image: "mrmn/pdfding:v1.11.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    volumes:
+      - "./data/db:/home/nonroot/pdfding/db"
+      - "./data/media:/home/nonroot/pdfding/media"
+    environment:
+      - TZ=${TZ}
+      - SECRET_KEY=${PDFDING_SECRET_KEY}
+      - HOST_NAME=${PDFDING_HOST_NAME}
+      - CSRF_COOKIE_SECURE=${PDFDING_CSRF_COOKIE_SECURE}
+      - SESSION_COOKIE_SECURE=${PDFDING_SESSION_COOKIE_SECURE}
+      - DISABLE_USER_SIGNUP=${PDFDING_DISABLE_USER_SIGNUP}
+      - ACCOUNT_DEFAULT_HTTP_PROTOCOL=${PDFDING_ACCOUNT_PROTOCOL}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:8000/healthz >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 12
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
