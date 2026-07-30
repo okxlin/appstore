@@ -1,0 +1,30 @@
+name: imgproxy
+tags:
+  - Tool
+title: 高性能、安全的实时图片处理服务
+description: 高性能、安全的实时图片处理服务
+additionalProperties:
+  key: imgproxy
+  name: imgproxy
+  tags:
+    - Tool
+  shortDescZh: 高性能、安全的实时图片处理服务
+  shortDescEn: Fast and secure real-time image processing service
+  type: website
+  website: https://imgproxy.net
+  document: https://docs.imgproxy.net
+  github: https://github.com/imgproxy/imgproxy
+  architectures:
+    - amd64
+    - arm64
+  crossVersionUpdate: true
+  limit: 0
+  description:
+    en: Fast and secure real-time image processing service.
+    zh: 高性能、安全的实时图片处理服务。
+    zh-Hant: 高效能、安全的即時圖片處理服務。
+    ja: 高速かつ安全なリアルタイム画像処理サービスです。
+    ko: 빠르고 안전한 실시간 이미지 처리 서비스입니다.
+    ru: Быстрый и безопасный сервис обработки изображений в реальном времени.
+    ms: Perkhidmatan pemprosesan imej masa nyata yang pantas dan selamat.
+    pt-br: Serviço rápido e seguro de processamento de imagens em tempo real.
