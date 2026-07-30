@@ -1,0 +1,32 @@
+name: wol
+tags:
+  - 实用工具
+title: 带 Web 界面的 Wake-on-LAN 工具
+description: 带 Web 界面的 Wake-on-LAN 工具
+additionalProperties:
+  key: wol
+  name: wol
+  tags:
+    - Tool
+  shortDescZh: 带 Web 界面的 Wake-on-LAN 工具
+  shortDescEn: Wake-on-LAN tool with a web interface
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/Trugamr/wol
+  github: https://github.com/Trugamr/wol
+  document: https://github.com/Trugamr/wol/blob/v0.3.0/README.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+  description:
+    en: Send Wake-on-LAN magic packets from a CLI or web interface, with named machines and optional schedules.
+    zh: 通过命令行或 Web 界面发送 Wake-on-LAN 魔术包，并支持命名设备和可选定时任务。
+    zh-Hant: 透過命令列或 Web 介面傳送 Wake-on-LAN 魔術封包，並支援命名裝置和可選排程。
+    ja: CLI または Web インターフェースから Wake-on-LAN マジックパケットを送信し、名前付き端末と任意のスケジュールを管理できます。
+    ko: CLI 또는 웹 인터페이스에서 Wake-on-LAN 매직 패킷을 보내고 이름이 지정된 장치와 선택적 일정을 관리합니다.
+    ru: Отправка пакетов Wake-on-LAN из командной строки или веб-интерфейса с именованными устройствами и расписаниями.
+    ms: Hantar paket ajaib Wake-on-LAN melalui CLI atau antara muka web dengan mesin bernama dan jadual pilihan.
+    pt-br: Envie pacotes magicos Wake-on-LAN pela CLI ou interface web, com maquinas nomeadas e agendamentos opcionais.

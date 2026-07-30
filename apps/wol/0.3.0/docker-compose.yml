@@ -1,0 +1,25 @@
+services:
+  wol:
+    image: "ghcr.io/trugamr/wol:0.3.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "65532:65532"
+    command:
+      - serve
+    network_mode: host
+    environment:
+      - TZ=${TIME_ZONE}
+      - |
+        WOL_CONFIG=server:
+          listen: "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}"
+    volumes:
+      - "${APP_DATA_DIR}/config.yaml:/etc/wol/config.yaml:ro"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=8m,uid=65532,gid=65532,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
