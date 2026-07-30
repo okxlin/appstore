@@ -1,0 +1,34 @@
+name: SilverBullet
+tags:
+  - Website
+  - Tool
+title: 可编程的自托管个人知识库
+description: 可编程的自托管个人知识库
+additionalProperties:
+  key: silverbullet
+  name: SilverBullet
+  tags:
+    - Website
+    - Tool
+  shortDescZh: 可编程的自托管个人知识库
+  shortDescEn: Programmable self-hosted personal knowledge base
+  description:
+    en: A programmable, private, browser-based personal knowledge base built around Markdown pages.
+    zh: 以 Markdown 页面为核心的可编程、私有、浏览器端个人知识库。
+    zh-Hant: 以 Markdown 頁面為核心的可程式化、私有、瀏覽器端個人知識庫。
+    ja: Markdown ページを中心とした、プログラム可能でプライベートなブラウザベースの個人ナレッジベースです。
+    ko: Markdown 페이지를 중심으로 한 프로그래밍 가능한 비공개 브라우저 기반 개인 지식 베이스입니다.
+    ru: Программируемая приватная персональная база знаний в браузере, построенная вокруг страниц Markdown.
+    ms: Pangkalan pengetahuan peribadi berasaskan pelayar yang boleh diprogram dan dibina berasaskan halaman Markdown.
+    pt-br: Base de conhecimento pessoal, privada e programavel no navegador, baseada em paginas Markdown.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://silverbullet.md
+  github: https://github.com/silverbulletmd/silverbullet
+  document: https://silverbullet.md/Install/Docker
+  architectures:
+    - amd64
+    - arm64
+    - armv7
