@@ -1,6 +1,6 @@
 services:
   docker-mirror-monitor:
-    image: "moelin/docker-mirror-monitor:v1.1.1"
+    image: "moelin/docker-mirror-monitor:1.1.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
