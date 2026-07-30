@@ -1,0 +1,24 @@
+services:
+  bichon:
+    image: "rustmailer/bichon:1.6.2"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:15630"
+    environment:
+      - BICHON_ROOT_DIR=/data
+      - BICHON_ENCRYPT_PASSWORD=${BICHON_ENCRYPT_PASSWORD}
+      - BICHON_PUBLIC_URL=${BICHON_PUBLIC_URL}
+      - BICHON_LOG_LEVEL=${BICHON_LOG_LEVEL}
+      - BICHON_ANSI_LOGS=false
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

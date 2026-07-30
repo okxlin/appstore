@@ -1,0 +1,31 @@
+name: Bichon
+tags:
+  - Tool
+title: 自托管邮件归档与全文检索服务
+description: 自托管邮件归档与全文检索服务
+additionalProperties:
+  key: bichon
+  name: Bichon
+  tags:
+    - Tool
+  shortDescZh: 自托管邮件归档与全文检索服务
+  shortDescEn: A self-hosted email archiving and full-text search service
+  description:
+    en: A self-hosted email archiving and full-text search service
+    zh: 自托管邮件归档与全文检索服务
+    zh-Hant: 自託管郵件封存與全文檢索服務
+    ja: セルフホスト型のメールアーカイブおよび全文検索サービス
+    ko: 자체 호스팅 이메일 보관 및 전문 검색 서비스
+    ru: Самостоятельно размещаемый сервис архивации и полнотекстового поиска почты
+    ms: Perkhidmatan arkib dan carian teks penuh e-mel hos sendiri
+    pt-br: Servico auto-hospedado de arquivamento e busca textual de emails
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/rustmailer/bichon
+  github: https://github.com/rustmailer/bichon
+  document: https://github.com/rustmailer/bichon#quick-start
+  architectures:
+    - amd64
+    - arm64
