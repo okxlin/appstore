@@ -1,0 +1,32 @@
+services:
+  resin:
+    image: "ghcr.io/resinat/resin:1.1.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - RESIN_AUTH_VERSION=V1
+      - RESIN_ADMIN_TOKEN=${RESIN_ADMIN_TOKEN}
+      - RESIN_PROXY_TOKEN=${RESIN_PROXY_TOKEN}
+      - RESIN_LISTEN_ADDRESS=0.0.0.0
+      - RESIN_PORT=2260
+      - TZ=${TZ}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:2260"
+    volumes:
+      - "${APP_DATA_DIR}/cache:/var/cache/resin"
+      - "${APP_DATA_DIR}/state:/var/lib/resin"
+      - "${APP_DATA_DIR}/log:/var/log/resin"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:2260/healthz >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
