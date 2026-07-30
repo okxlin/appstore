@@ -1,0 +1,32 @@
+name: slskd
+tags:
+  - Tool
+title: 具有 Web 界面的现代 Soulseek 文件共享客户端
+description: 具有 Web 界面的现代 Soulseek 文件共享客户端
+additionalProperties:
+  key: slskd
+  name: slskd
+  tags:
+    - Tool
+  shortDescZh: 具有 Web 界面的现代 Soulseek 文件共享客户端
+  shortDescEn: A modern Soulseek file-sharing client with a web interface
+  description:
+    en: A modern client-server application for the Soulseek file-sharing network
+    zh: 面向 Soulseek 文件共享网络的现代客户端与服务端应用
+    zh-Hant: 面向 Soulseek 檔案共享網路的現代用戶端與伺服器應用
+    ja: Soulseek ファイル共有ネットワーク向けのモダンなクライアントサーバーアプリケーション
+    ko: Soulseek 파일 공유 네트워크를 위한 최신 클라이언트-서버 애플리케이션
+    ru: Современное клиент-серверное приложение для файлообменной сети Soulseek
+    ms: Aplikasi pelayan-klien moden untuk rangkaian perkongsian fail Soulseek
+    pt-br: Aplicativo cliente-servidor moderno para a rede de compartilhamento Soulseek
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://slskd.org/
+  github: https://github.com/slskd/slskd
+  document: https://github.com/slskd/slskd/tree/master/docs
+  architectures:
+    - amd64
+    - arm64
+    - armv7
