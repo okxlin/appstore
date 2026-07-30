@@ -1,0 +1,31 @@
+services:
+  centrifugo:
+    image: "centrifugo/centrifugo:v6.9.1"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    environment:
+      - CENTRIFUGO_CLIENT_TOKEN_HMAC_SECRET_KEY=${CENTRIFUGO_CLIENT_TOKEN_HMAC_SECRET_KEY}
+      - CENTRIFUGO_CLIENT_ALLOWED_ORIGINS=${CENTRIFUGO_CLIENT_ALLOWED_ORIGINS}
+      - CENTRIFUGO_CHANNEL_WITHOUT_NAMESPACE_ALLOW_SUBSCRIBE_FOR_CLIENT=${CENTRIFUGO_CHANNEL_WITHOUT_NAMESPACE_ALLOW_SUBSCRIBE_FOR_CLIENT}
+      - CENTRIFUGO_HTTP_API_KEY=${CENTRIFUGO_HTTP_API_KEY}
+      - CENTRIFUGO_ADMIN_ENABLED=${CENTRIFUGO_ADMIN_ENABLED}
+      - CENTRIFUGO_ADMIN_PASSWORD=${CENTRIFUGO_ADMIN_PASSWORD}
+      - CENTRIFUGO_ADMIN_SECRET=${CENTRIFUGO_ADMIN_SECRET}
+      - CENTRIFUGO_HEALTH_ENABLED=true
+      - CENTRIFUGO_LOG_LEVEL=${CENTRIFUGO_LOG_LEVEL}
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 10
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
