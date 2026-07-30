@@ -1,0 +1,31 @@
+name: PdfDing
+tags:
+- Tool
+title: PdfDing
+description: 自托管 PDF 管理、阅读与编辑工具
+additionalProperties:
+  key: pdfding
+  name: PdfDing
+  tags:
+    - Tool
+  shortDescZh: 自托管 PDF 管理、阅读与编辑工具
+  shortDescEn: A self-hosted PDF manager, viewer and editor
+  description:
+    en: A self-hosted PDF manager, viewer and editor
+    zh: 自托管 PDF 管理、阅读与编辑工具
+    zh-Hant: 自架 PDF 管理、閱讀與編輯工具
+    ja: セルフホスト型の PDF 管理、閲覧、編集ツール
+    ko: 자체 호스팅 PDF 관리, 보기 및 편집 도구
+    ru: Самостоятельно размещаемый менеджер, просмотрщик и редактор PDF
+    ms: Pengurus, pemapar dan penyunting PDF hos kendiri
+    pt-br: Gerenciador, visualizador e editor de PDF auto-hospedado
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://www.pdfding.com
+  github: https://github.com/mrmn2/PdfDing
+  document: https://docs.pdfding.com/getting_started/docker/
+  architectures:
+    - amd64
+    - arm64
