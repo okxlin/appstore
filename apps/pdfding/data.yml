@@ -1,7 +1,7 @@
 name: PdfDing
 tags:
 - Tool
-title: PdfDing
+title: 自托管 PDF 管理、阅读与编辑工具
 description: 自托管 PDF 管理、阅读与编辑工具
 additionalProperties:
   key: pdfding
