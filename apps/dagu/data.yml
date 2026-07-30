@@ -1,0 +1,32 @@
+name: Dagu
+tags:
+  - DevOps
+title: 本地优先的工作流编排引擎
+description: 本地优先的工作流编排引擎
+additionalProperties:
+  key: dagu
+  name: Dagu
+  tags:
+    - DevOps
+  shortDescZh: 本地优先的工作流编排引擎
+  shortDescEn: A local-first workflow orchestration engine
+  description:
+    en: A local-first workflow orchestration engine
+    zh: 本地优先的工作流编排引擎
+    zh-Hant: 本地優先的工作流程編排引擎
+    ja: ローカルファーストのワークフローオーケストレーションエンジン
+    ko: 로컬 우선 워크플로 오케스트레이션 엔진
+    ru: Локальный движок оркестрации рабочих процессов
+    ms: Enjin orkestrasi aliran kerja yang mengutamakan penggunaan setempat
+    pt-br: Mecanismo local de orquestracao de fluxos de trabalho
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://dagu.sh
+  github: https://github.com/dagucloud/dagu
+  document: https://github.com/dagucloud/dagu#readme
+  architectures:
+    - amd64
+    - arm64
+    - armv7
