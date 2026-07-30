@@ -1,0 +1,31 @@
+services:
+  trail:
+    image: "trailbase/trailbase:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4000"
+    environment:
+      - RUST_BACKTRACE=1
+    volumes:
+      - "${APP_DATA_DIR}:/app/traildepot"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl --fail http://localhost:4000/api/healthcheck || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
