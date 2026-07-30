@@ -84,7 +84,7 @@ services:
       createdBy: "Apps"
 
   librechat-admin:
-    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:9a78851f84f448eab780ac658c4d17db51974c240492affc789a72d61e35f678"
+    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:3958c838caa00a1a883b8d0b91e442acafe727c97d700c3ec4558cf7d7724f8e"
     container_name: ${CONTAINER_NAME}-admin
     restart: always
     depends_on:
