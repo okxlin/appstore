@@ -1,0 +1,39 @@
+services:
+  slskd:
+    image: "slskd/slskd:0.26.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5030"
+      - "${PANEL_APP_PORT_SOULSEEK}:${PANEL_APP_PORT_SOULSEEK}/tcp"
+    volumes:
+      - "./data:/app"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - SLSKD_HTTP_PORT=5030
+      - SLSKD_NO_HTTPS=true
+      - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_USERNAME=${SLSKD_WEB_USERNAME}
+      - SLSKD_PASSWORD=${SLSKD_WEB_PASSWORD}
+      - SLSKD_SLSK_USERNAME=${SLSKD_NETWORK_USERNAME}
+      - SLSKD_SLSK_PASSWORD=${SLSKD_NETWORK_PASSWORD}
+      - SLSKD_SLSK_LISTEN_PORT=${PANEL_APP_PORT_SOULSEEK}
+      - SLSKD_DOWNLOADS_DIR=/app/downloads
+      - SLSKD_INCOMPLETE_DIR=/app/incomplete
+      - SLSKD_SHARED_DIR=/app/shared
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:5030/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 15s
+      retries: 12
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
