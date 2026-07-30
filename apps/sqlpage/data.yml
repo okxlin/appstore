@@ -1,0 +1,32 @@
+name: SQLPage
+tags:
+  - 工具
+title: 完全由 SQL 驱动的动态网站构建器
+description: 完全由 SQL 驱动的动态网站构建器
+additionalProperties:
+  key: sqlpage
+  name: SQLPage
+  tags:
+    - Tool
+  shortDescZh: 完全由 SQL 驱动的动态网站构建器
+  shortDescEn: A dynamic website builder powered entirely by SQL
+  description:
+    en: A dynamic website builder powered entirely by SQL
+    zh: 完全由 SQL 驱动的动态网站构建器
+    zh-Hant: 完全由 SQL 驅動的動態網站建置工具
+    ja: SQL だけで動的な Web サイトを構築するツール
+    ko: SQL만으로 동적 웹사이트를 구축하는 도구
+    ru: Конструктор динамических сайтов, полностью управляемый SQL
+    ms: Pembina laman web dinamik yang dikuasakan sepenuhnya oleh SQL
+    pt-br: Construtor de sites dinamicos totalmente orientado por SQL
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://sql-page.com
+  github: https://github.com/sqlpage/SQLPage
+  document: https://sql-page.com/documentation.sql
+  architectures:
+    - amd64
+    - arm64
+    - armv7

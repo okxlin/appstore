@@ -1,0 +1,36 @@
+services:
+  sqlpage:
+    image: "lovasoa/sqlpage:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - SQLPAGE_WEB_ROOT=/var/www
+      - SQLPAGE_CONFIGURATION_DIRECTORY=/etc/sqlpage
+      - SQLPAGE_ENVIRONMENT=${SQLPAGE_ENVIRONMENT}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - SQLPAGE_COMPRESS_RESPONSES=${SQLPAGE_COMPRESS_RESPONSES}
+      - SQLPAGE_MAX_UPLOADED_FILE_SIZE=${SQLPAGE_MAX_UPLOADED_FILE_SIZE}
+      - SQLPAGE_ALLOW_EXEC=false
+      - SQLPAGE_MARKDOWN_ALLOW_DANGEROUS_HTML=false
+      - SQLPAGE_MARKDOWN_ALLOW_DANGEROUS_PROTOCOL=false
+    volumes:
+      - "${APP_DATA_DIR}:/var/www"
+      - "./config:/etc/sqlpage:ro"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=32m,uid=1000,gid=1000,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
