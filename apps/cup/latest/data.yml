@@ -1,0 +1,72 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Web Bind Address
+      labelZh: Web 绑定地址
+      label:
+        en: Web Bind Address
+        zh: Web 绑定地址
+        zh-Hant: Web 綁定位址
+        ja: Web バインドアドレス
+        ko: Web 바인드 주소
+        ru: Адрес привязки Web
+        ms: Alamat ikatan Web
+        pt-br: Endereco de vinculacao Web
+      required: true
+      type: text
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Порт Web
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: "0 */30 * * * *"
+      edit: true
+      envKey: CUP_REFRESH_INTERVAL
+      labelEn: Refresh Schedule
+      labelZh: 刷新计划
+      label:
+        en: Refresh Schedule
+        zh: 刷新计划
+        zh-Hant: 重新整理排程
+        ja: 更新スケジュール
+        ko: 새로 고침 일정
+        ru: Расписание обновления
+        ms: Jadual Muat Semula
+        pt-br: Agenda de atualizacao
+      required: true
+      type: text
+    - default: default
+      edit: true
+      envKey: CUP_THEME
+      labelEn: Theme
+      labelZh: 主题
+      label:
+        en: Theme
+        zh: 主题
+        zh-Hant: 主題
+        ja: テーマ
+        ko: 테마
+        ru: Тема
+        ms: Tema
+        pt-br: Tema
+      required: true
+      type: select
+      values:
+        - label: Default
+          value: default
+        - label: Blue
+          value: blue

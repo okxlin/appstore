@@ -1,0 +1,31 @@
+name: Cup
+tags:
+  - Tool
+title: 轻量级容器镜像更新检查器
+description: 轻量级容器镜像更新检查器
+additionalProperties:
+  key: cup
+  name: Cup
+  tags:
+    - Tool
+  shortDescZh: 轻量级容器镜像更新检查器
+  shortDescEn: Lightweight container image update checker
+  type: website
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://cup.sergi0g.dev
+  github: https://github.com/sergi0g/cup
+  document: https://cup.sergi0g.dev/docs
+  architectures:
+    - amd64
+    - arm64
+  description:
+    en: Discover locally used container images and check registries for available updates from a lightweight web dashboard.
+    zh: 自动发现本机正在使用的容器镜像，并通过轻量级 Web 面板检查镜像仓库中的可用更新。
+    zh-Hant: 自動探索本機正在使用的容器映像，並透過輕量級 Web 面板檢查映像倉庫中的可用更新。
+    ja: ローカルで使用中のコンテナイメージを検出し、軽量な Web ダッシュボードからレジストリの更新を確認します。
+    ko: 로컬에서 사용 중인 컨테이너 이미지를 검색하고 가벼운 웹 대시보드에서 레지스트리 업데이트를 확인합니다.
+    ru: Обнаруживает локально используемые образы контейнеров и проверяет доступные обновления в реестрах через легкую веб-панель.
+    ms: Kesan imej bekas yang digunakan secara setempat dan semak kemas kini dalam registri melalui papan pemuka web yang ringan.
+    pt-br: Descubra imagens de contêiner usadas localmente e verifique atualizações nos registros por um painel web leve.
