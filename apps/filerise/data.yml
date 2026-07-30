@@ -1,0 +1,30 @@
+name: FileRise
+tags:
+  - Tool
+title: 支持分享、WebDAV 和访问控制的自托管文件管理器
+description: 支持分享、WebDAV 和访问控制的自托管文件管理器
+additionalProperties:
+  key: filerise
+  name: FileRise
+  tags:
+    - Tool
+  shortDescZh: 支持分享、WebDAV 和访问控制的自托管文件管理器
+  shortDescEn: Self-hosted file manager with sharing, WebDAV, and access controls
+  description:
+    en: A self-hosted file manager and storage hub with sharing, WebDAV, search, and per-folder access controls.
+    zh: 一个支持文件分享、WebDAV、搜索和文件夹级访问控制的自托管文件管理器与存储中心。
+    zh-Hant: 一個支援檔案分享、WebDAV、搜尋和資料夾層級存取控制的自託管檔案管理器與儲存中心。
+    ja: ファイル共有、WebDAV、検索、フォルダー単位のアクセス制御に対応するセルフホスト型ファイル管理・ストレージハブです。
+    ko: 파일 공유, WebDAV, 검색 및 폴더별 접근 제어를 지원하는 자체 호스팅 파일 관리자와 스토리지 허브입니다.
+    ru: Самостоятельно размещаемый файловый менеджер и центр хранения с общим доступом, WebDAV, поиском и правами на уровне папок.
+    ms: Pengurus fail dan hab storan hos kendiri dengan perkongsian, WebDAV, carian dan kawalan akses setiap folder.
+    pt-br: Gerenciador de arquivos e central de armazenamento auto-hospedada com compartilhamento, WebDAV, pesquisa e controle de acesso por pasta.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://filerise.net/
+  github: https://github.com/error311/FileRise
+  document: https://github.com/error311/FileRise/wiki/Installation-Setup
+  architectures:
+    - amd64
+    - arm64
