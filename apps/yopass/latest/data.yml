@@ -1,0 +1,74 @@
+additionalProperties:
+  formFields:
+    - default: 1337
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 1h
+      edit: true
+      envKey: YOPASS_DEFAULT_EXPIRY
+      labelEn: Default Expiry
+      labelZh: 默认过期时间
+      label:
+        en: Default Expiry
+        zh: 默认过期时间
+        zh-Hant: 預設過期時間
+        ja: デフォルト有効期限
+        ko: 기본 만료 시간
+        ru: Срок действия по умолчанию
+        ms: Tempoh Luput Lalai
+        pt-br: Expiração Padrão
+      required: true
+      type: select
+      values:
+        - label: 1 hour
+          value: 1h
+        - label: 1 day
+          value: 1d
+        - label: 1 week
+          value: 1w
+    - default: 10000
+      edit: true
+      envKey: YOPASS_MAX_LENGTH
+      labelEn: Maximum Encrypted Length
+      labelZh: 最大密文长度
+      label:
+        en: Maximum Encrypted Length
+        zh: 最大密文长度
+        zh-Hant: 最大密文長度
+        ja: 暗号文の最大長
+        ko: 최대 암호문 길이
+        ru: Максимальная длина шифротекста
+        ms: Panjang Teks Sulit Maksimum
+        pt-br: Tamanho Máximo do Texto Criptografado
+      required: true
+      type: number
+    - default: 64
+      edit: true
+      envKey: MEMCACHED_MEMORY_MB
+      labelEn: Cache Memory (MB)
+      labelZh: 缓存内存 (MB)
+      label:
+        en: Cache Memory (MB)
+        zh: 缓存内存 (MB)
+        zh-Hant: 快取記憶體 (MB)
+        ja: キャッシュメモリ (MB)
+        ko: 캐시 메모리 (MB)
+        ru: Память кеша (МБ)
+        ms: Memori Cache (MB)
+        pt-br: Memória de Cache (MB)
+      required: true
+      type: number
