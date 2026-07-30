@@ -1,0 +1,31 @@
+name: Tinyauth
+tags:
+  - Security
+title: 轻量级身份认证与授权服务
+description: 轻量级身份认证与授权服务
+additionalProperties:
+  key: tinyauth
+  name: Tinyauth
+  tags:
+    - Security
+  shortDescZh: 轻量级身份认证与授权服务
+  shortDescEn: Lightweight authentication and authorization server
+  description:
+    en: A lightweight authentication and authorization server for reverse proxies and standalone applications
+    zh: 为反向代理和独立应用提供身份认证、OAuth、LDAP、OIDC 与访问控制
+    zh-Hant: 為反向代理和獨立應用提供身份驗證、OAuth、LDAP、OIDC 與存取控制
+    ja: リバースプロキシとスタンドアロンアプリ向けの軽量な認証・認可サーバー
+    ko: 리버스 프록시와 독립 실행형 앱을 위한 경량 인증 및 권한 부여 서버
+    ru: Легковесный сервер аутентификации и авторизации для обратных прокси и автономных приложений
+    ms: Pelayan pengesahan dan kebenaran ringan untuk proksi songsang dan aplikasi kendiri
+    pt-br: Servidor leve de autenticacao e autorizacao para proxies reversos e aplicativos independentes
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://tinyauth.app/
+  github: https://github.com/tinyauthapp/tinyauth
+  document: https://tinyauth.app/docs/getting-started/
+  architectures:
+    - amd64
+    - arm64
