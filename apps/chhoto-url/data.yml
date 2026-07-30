@@ -1,0 +1,33 @@
+name: Chhoto URL
+tags:
+  - Tool
+title: 轻量快速的自托管短链接服务
+description: 轻量快速的自托管短链接服务
+additionalProperties:
+  key: chhoto-url
+  name: Chhoto URL
+  tags:
+    - Tool
+  shortDescZh: 轻量快速的自托管短链接服务
+  shortDescEn: A lightweight, fast, self-hosted URL shortener
+  description:
+    en: A lightweight, fast, self-hosted URL shortener
+    zh: 轻量快速的自托管短链接服务
+    zh-Hant: 輕量快速的自託管短連結服務
+    ja: 軽量で高速なセルフホスト型短縮 URL サービス
+    ko: 가볍고 빠른 자체 호스팅 단축 URL 서비스
+    ru: Легкий и быстрый самостоятельно размещаемый сервис коротких ссылок
+    ms: Pemendek URL hos sendiri yang ringan dan pantas
+    pt-br: Encurtador de URLs leve, rapido e auto-hospedado
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/SinTan1729/chhoto-url
+  github: https://github.com/SinTan1729/chhoto-url
+  document: https://github.com/SinTan1729/chhoto-url/blob/main/docs/INSTALLATION.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - riscv64
