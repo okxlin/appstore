@@ -1,0 +1,32 @@
+services:
+  wiki-go:
+    image: "leomoonstudios/wiki-go:1.8.12"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080/tcp"
+    environment:
+      - TZ=Asia/Shanghai
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - "./data:/wiki/data"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8080/ >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 12
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
