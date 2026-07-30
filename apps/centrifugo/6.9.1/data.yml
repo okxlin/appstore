@@ -1,0 +1,176 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: CENTRIFUGO_CLIENT_ALLOWED_ORIGINS
+      labelEn: Allowed Browser Origins
+      labelZh: 允许的浏览器来源
+      label:
+        en: Allowed Browser Origins
+        zh: 允许的浏览器来源
+        zh-Hant: 允許的瀏覽器來源
+        ja: 許可するブラウザーオリジン
+        ko: 허용된 브라우저 출처
+        ru: Разрешенные источники браузера
+        ms: Asal Pelayar Dibenarkan
+        pt-br: Origens de Navegador Permitidas
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: CENTRIFUGO_CLIENT_TOKEN_HMAC_SECRET_KEY
+      labelEn: Connection Token HMAC Secret
+      labelZh: 连接令牌 HMAC 密钥
+      label:
+        en: Connection Token HMAC Secret
+        zh: 连接令牌 HMAC 密钥
+        zh-Hant: 連線權杖 HMAC 密鑰
+        ja: 接続トークン HMAC シークレット
+        ko: 연결 토큰 HMAC 비밀 키
+        ru: Секрет HMAC токена подключения
+        ms: Rahsia HMAC Token Sambungan
+        pt-br: Segredo HMAC do Token de Conexão
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: CENTRIFUGO_HTTP_API_KEY
+      labelEn: HTTP API Key
+      labelZh: HTTP API 密钥
+      label:
+        en: HTTP API Key
+        zh: HTTP API 密钥
+        zh-Hant: HTTP API 密鑰
+        ja: HTTP API キー
+        ko: HTTP API 키
+        ru: Ключ HTTP API
+        ms: Kunci API HTTP
+        pt-br: Chave da API HTTP
+      random: true
+      required: true
+      type: password
+    - default: "true"
+      edit: true
+      envKey: CENTRIFUGO_ADMIN_ENABLED
+      labelEn: Enable Admin UI
+      labelZh: 启用管理界面
+      label:
+        en: Enable Admin UI
+        zh: 启用管理界面
+        zh-Hant: 啟用管理介面
+        ja: 管理画面を有効化
+        ko: 관리 화면 활성화
+        ru: Включить панель администратора
+        ms: Dayakan Antara Muka Pentadbir
+        pt-br: Ativar Interface Administrativa
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ""
+      edit: true
+      envKey: CENTRIFUGO_ADMIN_PASSWORD
+      labelEn: Admin Password
+      labelZh: 管理密码
+      label:
+        en: Admin Password
+        zh: 管理密码
+        zh-Hant: 管理密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do Administrador
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: CENTRIFUGO_ADMIN_SECRET
+      labelEn: Admin Session Secret
+      labelZh: 管理会话密钥
+      label:
+        en: Admin Session Secret
+        zh: 管理会话密钥
+        zh-Hant: 管理工作階段密鑰
+        ja: 管理セッションシークレット
+        ko: 관리자 세션 비밀 키
+        ru: Секрет сеанса администратора
+        ms: Rahsia Sesi Pentadbir
+        pt-br: Segredo da Sessão Administrativa
+      random: true
+      required: true
+      type: password
+    - default: "true"
+      edit: true
+      envKey: CENTRIFUGO_CHANNEL_WITHOUT_NAMESPACE_ALLOW_SUBSCRIBE_FOR_CLIENT
+      labelEn: Allow Client Subscriptions
+      labelZh: 允许客户端订阅
+      label:
+        en: Allow Client Subscriptions
+        zh: 允许客户端订阅
+        zh-Hant: 允許用戶端訂閱
+        ja: クライアント購読を許可
+        ko: 클라이언트 구독 허용
+        ru: Разрешить подписки клиентов
+        ms: Benarkan Langganan Klien
+        pt-br: Permitir Assinaturas de Clientes
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: info
+      edit: true
+      envKey: CENTRIFUGO_LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌等級
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журналирования
+        ms: Tahap Log
+        pt-br: Nível de Log
+      required: true
+      type: select
+      values:
+        - label: trace
+          value: trace
+        - label: debug
+          value: debug
+        - label: info
+          value: info
+        - label: warn
+          value: warn
+        - label: error
+          value: error
+        - label: fatal
+          value: fatal
+        - label: none
+          value: none

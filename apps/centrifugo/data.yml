@@ -1,0 +1,32 @@
+name: Centrifugo
+tags:
+  - DevOps
+title: 面向应用的实时消息与发布订阅服务器
+description: 面向应用的实时消息与发布订阅服务器
+additionalProperties:
+  key: centrifugo
+  name: Centrifugo
+  tags:
+    - DevOps
+  shortDescZh: 面向应用的实时消息与发布订阅服务器
+  shortDescEn: Real-time messaging and publish-subscribe server for applications
+  description:
+    en: Real-time messaging and publish-subscribe server for applications
+    zh: 面向应用的实时消息与发布订阅服务器
+    zh-Hant: 面向應用程式的即時訊息與發佈訂閱伺服器
+    ja: アプリケーション向けのリアルタイムメッセージングと発行・購読サーバー
+    ko: 애플리케이션용 실시간 메시징 및 발행-구독 서버
+    ru: Сервер обмена сообщениями в реальном времени и публикации-подписки для приложений
+    ms: Pelayan pemesejan masa nyata dan terbit-langgan untuk aplikasi
+    pt-br: Servidor de mensagens em tempo real e publicação-assinatura para aplicativos
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  memoryRequired: 128
+  website: https://centrifugal.dev/
+  github: https://github.com/centrifugal/centrifugo
+  document: https://centrifugal.dev/docs/getting-started/introduction
+  architectures:
+    - amd64
+    - arm64
