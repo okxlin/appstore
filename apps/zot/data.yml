@@ -1,0 +1,30 @@
+name: Zot
+tags:
+  - Tool
+title: 轻量、安全且符合 OCI Distribution 规范的容器镜像仓库
+description: 轻量、安全且符合 OCI Distribution 规范的容器镜像仓库
+additionalProperties:
+  key: zot
+  name: Zot
+  tags:
+    - Tool
+  shortDescZh: 轻量、安全且符合 OCI Distribution 规范的容器镜像仓库
+  shortDescEn: Lightweight and secure OCI Distribution registry
+  description:
+    en: A lightweight, secure, and OCI Distribution-compliant container image registry.
+    zh: 一个轻量、安全且符合 OCI Distribution 规范的容器镜像仓库。
+    zh-Hant: 一個輕量、安全且符合 OCI Distribution 規範的容器映像倉庫。
+    ja: 軽量で安全な OCI Distribution 準拠のコンテナイメージレジストリです。
+    ko: 가볍고 안전하며 OCI Distribution 규격을 준수하는 컨테이너 이미지 레지스트리입니다.
+    ru: Легкий и безопасный реестр образов контейнеров, совместимый с OCI Distribution.
+    ms: Pendaftar imej bekas yang ringan, selamat dan mematuhi OCI Distribution.
+    pt-br: Registro de imagens de contêiner leve, seguro e compatível com OCI Distribution.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://zotregistry.dev
+  github: https://github.com/project-zot/zot
+  document: https://zotregistry.dev
+  architectures:
+    - amd64
+    - arm64

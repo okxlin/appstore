@@ -1,0 +1,31 @@
+services:
+  zot:
+    image: "ghcr.io/project-zot/zot:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    command:
+      - serve
+      - /etc/zot/config.json
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:5000"
+    environment:
+      TZ: "${TZ}"
+    volumes:
+      - ./config:/etc/zot:ro
+      - "${APP_DATA_DIR}:/var/lib/registry"
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
