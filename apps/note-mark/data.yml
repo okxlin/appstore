@@ -1,0 +1,33 @@
+name: Note Mark
+tags:
+  - Website
+  - Tool
+title: 轻量快速的自托管 Markdown 笔记应用
+description: 轻量快速的自托管 Markdown 笔记应用
+additionalProperties:
+  key: note-mark
+  name: Note Mark
+  tags:
+    - Website
+    - Tool
+  shortDescZh: 轻量快速的自托管 Markdown 笔记应用
+  shortDescEn: Lightweight and fast self-hosted Markdown notes
+  description:
+    en: A lightweight, fast, and responsive self-hosted Markdown notes application.
+    zh: 一款轻量、快速且响应式的自托管 Markdown 笔记应用。
+    zh-Hant: 一款輕量、快速且響應式的自架 Markdown 筆記應用程式。
+    ja: 軽量で高速、レスポンシブなセルフホスト型 Markdown ノートアプリです。
+    ko: 가볍고 빠르며 반응형인 자체 호스팅 Markdown 노트 애플리케이션입니다.
+    ru: Легкое, быстрое и адаптивное приложение для самостоятельного размещения заметок Markdown.
+    ms: Aplikasi nota Markdown hos kendiri yang ringan, pantas dan responsif.
+    pt-br: Aplicativo leve, rapido e responsivo de notas Markdown auto-hospedado.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://notemark.docs.enchantedcode.co.uk
+  github: https://github.com/enchant97/note-mark
+  document: https://notemark.docs.enchantedcode.co.uk/docs/setup/install/
+  architectures:
+    - amd64
+    - arm64
