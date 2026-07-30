@@ -1,0 +1,31 @@
+name: DataBunker
+tags:
+  - Security
+title: 面向隐私数据的加密存储与令牌化服务
+description: 面向隐私数据的加密存储与令牌化服务
+additionalProperties:
+  key: databunker
+  name: DataBunker
+  tags:
+    - Security
+  shortDescZh: 面向隐私数据的加密存储与令牌化服务
+  shortDescEn: An encrypted vault and tokenization service for privacy-sensitive data
+  description:
+    en: An encrypted vault and tokenization service for privacy-sensitive data
+    zh: 面向隐私数据的加密存储与令牌化服务
+    zh-Hant: 面向隱私資料的加密儲存與權杖化服務
+    ja: プライバシーに関わるデータ向けの暗号化保管・トークン化サービス
+    ko: 개인정보 보호 데이터용 암호화 저장 및 토큰화 서비스
+    ru: Сервис шифрованного хранения и токенизации конфиденциальных данных
+    ms: Perkhidmatan storan disulitkan dan tokenisasi untuk data sensitif privasi
+    pt-br: Servico de armazenamento criptografado e tokenizacao para dados confidenciais
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://databunker.org/
+  github: https://github.com/securitybunker/databunker
+  document: https://databunker.org/doc/
+  memoryRequired: 128
+  architectures:
+    - amd64
+    - arm64
