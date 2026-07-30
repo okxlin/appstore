@@ -1,0 +1,31 @@
+name: Wastebin
+tags:
+  - 工具
+title: 极简的自托管文本分享服务
+description: 极简的自托管文本分享服务
+additionalProperties:
+  key: wastebin
+  name: Wastebin
+  tags:
+    - Tool
+  shortDescZh: 极简的自托管文本分享服务
+  shortDescEn: A minimal self-hosted text sharing service
+  description:
+    en: A minimal self-hosted text sharing service
+    zh: 极简的自托管文本分享服务
+    zh-Hant: 極簡的自架式文字分享服務
+    ja: ミニマルなセルフホスト型テキスト共有サービス
+    ko: 간결한 셀프 호스팅 텍스트 공유 서비스
+    ru: Минималистичный сервис для самостоятельного обмена текстом
+    ms: Perkhidmatan perkongsian teks hos kendiri yang minimum
+    pt-br: Servico minimalista e auto-hospedado de compartilhamento de texto
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://bin.bloerg.net
+  github: https://github.com/matze/wastebin
+  document: https://github.com/matze/wastebin#readme
+  architectures:
+    - amd64
+    - arm64

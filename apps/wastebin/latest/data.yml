@@ -1,0 +1,197 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 8088
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://127.0.0.1:8088
+      edit: true
+      envKey: WASTEBIN_BASE_URL
+      labelEn: Public Base URL for QR Codes
+      labelZh: 二维码公开基础 URL
+      label:
+        en: Public Base URL for QR Codes
+        zh: 二维码公开基础 URL
+        zh-Hant: QR Code 公開基礎 URL
+        ja: QR コード用公開ベース URL
+        ko: QR 코드용 공개 기본 URL
+        ru: Публичный базовый URL для QR-кодов
+        ms: URL asas awam untuk kod QR
+        pt-br: URL base publica para codigos QR
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: Wastebin
+      edit: true
+      envKey: WASTEBIN_TITLE
+      labelEn: Site Title
+      labelZh: 站点标题
+      label:
+        en: Site Title
+        zh: 站点标题
+        zh-Hant: 網站標題
+        ja: サイトタイトル
+        ko: 사이트 제목
+        ru: Заголовок сайта
+        ms: Tajuk laman
+        pt-br: Titulo do site
+      required: true
+      type: text
+    - default: ayu
+      edit: true
+      envKey: WASTEBIN_THEME
+      labelEn: Theme
+      labelZh: 主题
+      label:
+        en: Theme
+        zh: 主题
+        zh-Hant: 主題
+        ja: テーマ
+        ko: 테마
+        ru: Тема
+        ms: Tema
+        pt-br: Tema
+      required: true
+      type: select
+      values:
+        - label: Ayu
+          value: ayu
+        - label: Base16 Ocean
+          value: base16ocean
+        - label: Catppuccin
+          value: catppuccin
+        - label: Coldark
+          value: coldark
+        - label: Gruvbox
+          value: gruvbox
+        - label: Monokai
+          value: monokai
+        - label: One Half
+          value: onehalf
+        - label: Solarized
+          value: solarized
+    - default: 1048576
+      edit: true
+      envKey: WASTEBIN_MAX_BODY_SIZE
+      labelEn: Maximum Request Body (bytes)
+      labelZh: 最大请求正文（字节）
+      label:
+        en: Maximum Request Body (bytes)
+        zh: 最大请求正文（字节）
+        zh-Hant: 最大請求內容（位元組）
+        ja: 最大リクエスト本文（バイト）
+        ko: 최대 요청 본문(바이트)
+        ru: Максимальный размер запроса (байт)
+        ms: Badan permintaan maksimum (bait)
+        pt-br: Corpo maximo da requisicao (bytes)
+      required: true
+      type: number
+    - default: 5
+      edit: true
+      envKey: WASTEBIN_HTTP_TIMEOUT
+      labelEn: HTTP Request Timeout (seconds)
+      labelZh: HTTP 请求超时（秒）
+      label:
+        en: HTTP Request Timeout (seconds)
+        zh: HTTP 请求超时（秒）
+        zh-Hant: HTTP 請求逾時（秒）
+        ja: HTTP リクエストタイムアウト（秒）
+        ko: HTTP 요청 시간 제한(초)
+        ru: Тайм-аут HTTP-запроса (секунды)
+        ms: Tamat masa permintaan HTTP (saat)
+        pt-br: Tempo limite da requisicao HTTP (segundos)
+      required: true
+      type: number
+    - default: 0=d,10m,1h,1d,1w,1M,1y
+      edit: true
+      envKey: WASTEBIN_PASTE_EXPIRATIONS
+      labelEn: Paste Expiration Choices
+      labelZh: 文本过期选项
+      label:
+        en: Paste Expiration Choices
+        zh: 文本过期选项
+        zh-Hant: 文字過期選項
+        ja: ペースト有効期限の選択肢
+        ko: 붙여넣기 만료 선택 항목
+        ru: Варианты срока хранения
+        ms: Pilihan tamat tempoh tampalan
+        pt-br: Opcoes de expiracao da colagem
+      required: true
+      type: text
+    - default: generate
+      edit: true
+      envKey: WASTEBIN_SIGNING_KEY
+      labelEn: Signing Key (64+ safe characters; shorter values are replaced)
+      labelZh: 签名密钥（至少 64 个安全字符；不足会被替换）
+      label:
+        en: Signing Key (64+ safe characters; shorter values are replaced)
+        zh: 签名密钥（至少 64 个安全字符；不足会被替换）
+        zh-Hant: 簽章密鑰（至少 64 個安全字元；不足會被取代）
+        ja: 署名キー（安全な64文字以上、短い値は置換）
+        ko: 서명 키(안전한 64자 이상, 짧은 값은 교체됨)
+        ru: Ключ подписи (64+ безопасных символа; короткое значение заменяется)
+        ms: Kunci tandatangan (64+ aksara selamat; nilai pendek akan diganti)
+        pt-br: Chave de assinatura (64+ caracteres seguros; valores curtos sao substituidos)
+      required: true
+      type: password
+    - default: generate
+      edit: true
+      envKey: WASTEBIN_PASSWORD_SALT
+      labelEn: Encryption Password Salt (32+ safe characters; shorter values are replaced)
+      labelZh: 加密密码盐（至少 32 个安全字符；不足会被替换）
+      label:
+        en: Encryption Password Salt (32+ safe characters; shorter values are replaced)
+        zh: 加密密码盐（至少 32 个安全字符；不足会被替换）
+        zh-Hant: 加密密碼鹽值（至少 32 個安全字元；不足會被取代）
+        ja: 暗号化パスワードソルト（安全な32文字以上、短い値は置換）
+        ko: 암호화 비밀번호 솔트(안전한 32자 이상, 짧은 값은 교체됨)
+        ru: Соль шифрования (32+ безопасных символа; короткое значение заменяется)
+        ms: Garam kata laluan penyulitan (32+ aksara selamat; nilai pendek akan diganti)
+        pt-br: Sal de senha de criptografia (32+ caracteres seguros; valores curtos sao substituidos)
+      required: true
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
