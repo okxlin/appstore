@@ -1,0 +1,43 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label: {en: Bind Address, zh: 绑定地址, zh-Hant: 綁定位址, ja: バインドアドレス, ko: 바인드 주소, ru: Адрес привязки, ms: Alamat ikatan, pt-br: Endereco de vinculacao}
+      required: true
+      type: text
+    - default: 5082
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label: {en: HTTP Port, zh: HTTP 端口, zh-Hant: HTTP 連接埠, ja: HTTP ポート, ko: HTTP 포트, ru: HTTP-порт, ms: Port HTTP, pt-br: Porta HTTP}
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: LMS_DATA_DIR
+      labelEn: LMS Data Directory
+      labelZh: LMS 数据目录
+      label: {en: LMS Data Directory, zh: LMS 数据目录, zh-Hant: LMS 資料目錄, ja: LMS データディレクトリ, ko: LMS 데이터 디렉터리, ru: Каталог данных LMS, ms: Direktori data LMS, pt-br: Diretorio de dados do LMS}
+      required: true
+      type: text
+    - default: ./music
+      edit: true
+      envKey: LMS_MUSIC_DIR
+      labelEn: Music Library Directory
+      labelZh: 音乐库目录
+      label: {en: Music Library Directory, zh: 音乐库目录, zh-Hant: 音樂庫目錄, ja: 音楽ライブラリディレクトリ, ko: 음악 라이브러리 디렉터리, ru: Каталог музыкальной библиотеки, ms: Direktori pustaka muzik, pt-br: Diretorio da biblioteca de musica}
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Time Zone
+      labelZh: 时区
+      label: {en: Time Zone, zh: 时区, zh-Hant: 時區, ja: タイムゾーン, ko: 시간대, ru: Часовой пояс, ms: Zon waktu, pt-br: Fuso horario}
+      required: true
+      type: text

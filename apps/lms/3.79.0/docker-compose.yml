@@ -1,0 +1,37 @@
+services:
+  lms:
+    image: "epoupon/lms:3.79.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "100:101"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:5082"
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - "${LMS_DATA_DIR}:/var/lms"
+      - "${LMS_MUSIC_DIR}:/music:ro"
+      - "./config:/usr/local/etc:ro"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=64m,uid=100,gid=101,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q -O /dev/null http://127.0.0.1:5082/ || exit 1
+      start_period: 20s
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

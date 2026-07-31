@@ -1,0 +1,32 @@
+name: LMS
+tags:
+  - 多媒体
+title: 轻量的自托管音乐服务器与流媒体播放器
+description: 轻量的自托管音乐服务器与流媒体播放器
+additionalProperties:
+  key: lms
+  name: LMS
+  tags:
+    - Media
+  shortDescZh: 轻量的自托管音乐服务器与流媒体播放器
+  shortDescEn: Lightweight self-hosted music server and streamer
+  description:
+    en: A lightweight self-hosted music server with a web player and Subsonic-compatible API.
+    zh: 一款提供 Web 播放器和 Subsonic 兼容 API 的轻量自托管音乐服务器。
+    zh-Hant: 一款提供 Web 播放器和 Subsonic 相容 API 的輕量自架音樂伺服器。
+    ja: Web プレーヤーと Subsonic 互換 API を備えた軽量なセルフホスト型音楽サーバーです。
+    ko: Web 플레이어와 Subsonic 호환 API를 제공하는 가벼운 자체 호스팅 음악 서버입니다.
+    ru: Легкий самостоятельно размещаемый музыкальный сервер с веб-плеером и API, совместимым с Subsonic.
+    ms: Pelayan muzik hos kendiri yang ringan dengan pemain web dan API serasi Subsonic.
+    pt-br: Servidor de musica auto-hospedado e leve, com player web e API compativel com Subsonic.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/epoupon/lms
+  github: https://github.com/epoupon/lms
+  document: https://github.com/epoupon/lms/blob/master/INSTALL.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
