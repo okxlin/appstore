@@ -1,0 +1,36 @@
+services:
+  nxv:
+    image: "ghcr.io/utensils/nxv:latest"
+    container_name: ${CONTAINER_NAME}
+    command:
+      - --db-path
+      - /data/index.db
+      - serve
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - nxv
+        - --db-path
+        - /data/index.db
+        - stats
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

@@ -1,0 +1,30 @@
+name: nxv
+tags:
+  - 实用工具
+title: 快速检索 Nix 软件包历史版本的索引服务
+description: 快速检索 Nix 软件包历史版本的索引服务
+additionalProperties:
+  key: nxv
+  name: nxv
+  tags:
+    - Tool
+  shortDescZh: 快速检索 Nix 软件包历史版本的索引服务
+  shortDescEn: Index service for quickly searching historical Nix package versions
+  description:
+    en: Index service for quickly searching historical Nix package versions
+    zh: 快速检索 Nix 软件包历史版本的索引服务
+    zh-Hant: 快速搜尋 Nix 軟體套件歷史版本的索引服務
+    ja: Nix パッケージの過去のバージョンを素早く検索するインデックスサービス
+    ko: Nix 패키지의 이전 버전을 빠르게 검색하는 인덱스 서비스
+    ru: Сервис индекса для быстрого поиска исторических версий пакетов Nix
+    ms: Perkhidmatan indeks untuk mencari versi sejarah pakej Nix dengan pantas
+    pt-br: Servico de indice para pesquisar rapidamente versoes historicas de pacotes Nix
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://utensils.io/nxv/
+  github: https://github.com/utensils/nxv
+  document: https://utensils.io/nxv/
+  architectures:
+    - amd64
