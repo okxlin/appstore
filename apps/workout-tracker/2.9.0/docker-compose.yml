@@ -1,0 +1,41 @@
+services:
+  workout-tracker:
+    image: "ghcr.io/jovandeginste/workout-tracker:2.9.0@sha256:60a12f51dcf1553ee322b92a689e96cfa541aee5b0961d4ff0e345f4a28107b3"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - TZ=${TZ}
+      - WT_JWT_ENCRYPTION_KEY=${WT_JWT_ENCRYPTION_KEY}
+      - WT_DATABASE_DRIVER=sqlite
+      - WT_DSN=/data/database.db
+      - WT_REGISTRATION_DISABLED=${WT_REGISTRATION_DISABLED}
+      - WT_SOCIALS_DISABLED=${WT_SOCIALS_DISABLED}
+      - WT_OFFLINE=${WT_OFFLINE}
+      - WT_WORKER_DELAY_SECONDS=60
+    volumes:
+      - "${APP_DATA_DIR}/data:/data"
+      - "${APP_DATA_DIR}/imports:/imports"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=32m,uid=1000,gid=1000,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "-sSLf", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

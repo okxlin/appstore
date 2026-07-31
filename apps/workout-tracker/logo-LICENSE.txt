@@ -1,0 +1,3 @@
+Source: https://github.com/jovandeginste/workout-tracker/blob/d72d10327582230c6e67c976e067a820eeadf68d/assets/logo.png
+License: MIT
+License text: https://github.com/jovandeginste/workout-tracker/blob/d72d10327582230c6e67c976e067a820eeadf68d/LICENSE
