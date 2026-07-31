@@ -1,0 +1,25 @@
+services:
+  shuthost:
+    image: "ghcr.io/9smtm6/shuthost/shuthost-coordinator:1.9.5@sha256:3346d259f9c1d51070dc64246b83ae690db333e762c60464d1ae03f5be7cab03"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    network_mode: host
+    command:
+      - shuthost_coordinator
+      - control-service
+      - --port
+      - ${PANEL_APP_PORT_HTTP}
+      - --bind
+      - ${SHUTHOST_BIND_ADDRESS}
+    environment:
+      - SHUTHOST_CONTROLLER_CONFIG_PATH=/config/config.toml
+    volumes:
+      - "${SHUTHOST_DATA_DIR}:/config"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:${PANEL_APP_PORT_HTTP}/login"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      createdBy: Apps

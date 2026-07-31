@@ -1,0 +1,9 @@
+ShutHost icon
+
+Source: https://github.com/9SMTM6/shuthost/blob/256bdfee6be0ffe4a3609978fa825f7118c91b05/frontend/src/generated/favicon.svg
+Source commit: 256bdfee6be0ffe4a3609978fa825f7118c91b05
+Source SHA-256: 3db9db20a8a1a006708b2efa61ac781598907075b08e04f8374a8aa2afc21f22
+License: GNU General Public License v2.0 (GPL-2.0-only)
+License text: https://github.com/9SMTM6/shuthost/blob/256bdfee6be0ffe4a3609978fa825f7118c91b05/LICENSE
+
+The store asset is a proportional raster rendering of the official project icon.
