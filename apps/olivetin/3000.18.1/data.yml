@@ -1,0 +1,35 @@
+additionalProperties:
+  formFields:
+    - default: 1337
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/config
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Configuration directory
+      labelZh: 配置目录
+      label:
+        en: Configuration directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 구성 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori konfigurasi
+        pt-br: Diretório de configuração
+      required: true
+      type: text

@@ -1,0 +1,28 @@
+services:
+  olivetin:
+    image: "jamesread/olivetin:3000.18.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    tmpfs:
+      - /tmp:size=128M
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:1337"
+    volumes:
+      - "${APP_CONFIG_DIR}:/config"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:1337/readyz"]
+      interval: 10s
+      timeout: 5s
+      retries: 9
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
