@@ -1,6 +1,6 @@
 services:
   dootask:
-    image: "kuaifan/php:swoole-8.4@sha256:4f69395d5b8a72256338aa6042a6caaaf598bb5cc0b4ab30a84ef9cc4c5e61e2"
+    image: "kuaifan/php:swoole-8.4"
     container_name: ${CONTAINER_NAME}
     restart: always
     entrypoint:
@@ -44,7 +44,7 @@ services:
       createdBy: "Apps"
 
   nginx:
-    image: "nginx:1.31-alpine@sha256:54f2a904c251d5a34adf545a72d32515a15e08418dae0266e23be2e18c66fefa"
+    image: "nginx:1.31-alpine"
     container_name: ${CONTAINER_NAME}-nginx
     restart: always
     depends_on:
