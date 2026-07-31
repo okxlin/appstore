@@ -1,0 +1,31 @@
+name: nforwardauth
+tags:
+  - 实用工具
+title: 为反向代理后的站点提供统一登录认证
+description: 为反向代理后的站点提供统一登录认证
+additionalProperties:
+  key: nforwardauth
+  name: nforwardauth
+  tags:
+    - Tool
+  shortDescZh: 为反向代理后的站点提供统一登录认证
+  shortDescEn: A lightweight forward-auth login service for reverse-proxied sites
+  description:
+    en: A lightweight forward-auth login service for reverse-proxied sites
+    zh: 为反向代理后的站点提供统一登录认证
+    zh-Hant: 為反向代理後的網站提供統一登入驗證
+    ja: リバースプロキシ配下のサイトに統一ログイン認証を提供
+    ko: 리버스 프록시 뒤의 사이트에 통합 로그인 인증 제공
+    ru: Единая служба входа для сайтов за обратным прокси
+    ms: Perkhidmatan log masuk berpusat untuk laman di belakang proksi songsang
+    pt-br: Login centralizado para sites atras de proxy reverso
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/nosduco/nforwardauth
+  github: https://github.com/nosduco/nforwardauth
+  document: https://github.com/nosduco/nforwardauth
+  architectures:
+    - amd64
+    - arm64

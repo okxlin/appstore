@@ -1,0 +1,36 @@
+services:
+  nforwardauth:
+    image: "nosduco/nforwardauth:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - AUTH_HOST=${AUTH_HOST}
+      - TOKEN_SECRET=${TOKEN_SECRET}
+      - COOKIE_SECURE=${COOKIE_SECURE}
+      - PASS_USER_HEADER=${PASS_USER_HEADER}
+      - PORT=3000
+    volumes:
+      - "${APP_DATA_DIR}/passwd:/passwd:ro"
+    read_only: true
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,size=16M
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:3000/login >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
