@@ -1,0 +1,31 @@
+name: Anubis
+tags:
+  - 安全
+title: 使用工作量证明保护 Web 服务
+description: 使用工作量证明保护 Web 服务
+additionalProperties:
+  key: anubis
+  name: Anubis
+  tags:
+    - Security
+  shortDescZh: 使用工作量证明保护 Web 服务
+  shortDescEn: Protect web services with proof-of-work challenges
+  description:
+    en: Protect web services from aggressive crawlers with proof-of-work challenges
+    zh: 通过工作量证明挑战保护 Web 服务免受高强度爬虫影响
+    zh-Hant: 透過工作量證明挑戰保護 Web 服務免受高強度爬蟲影響
+    ja: Proof-of-Work チャレンジで Web サービスを攻撃的なクローラーから保護
+    ko: 작업 증명 챌린지로 공격적인 크롤러로부터 웹 서비스를 보호
+    ru: Защита веб-сервисов от агрессивных сканеров с помощью Proof-of-Work
+    ms: Lindungi perkhidmatan web daripada perangkak agresif dengan bukti kerja
+    pt-br: Proteja servicos web contra rastreadores agressivos com prova de trabalho
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://anubis.techaro.lol/
+  github: https://github.com/TecharoHQ/anubis
+  document: https://anubis.techaro.lol/docs/admin/installation
+  architectures:
+    - amd64
+    - arm64

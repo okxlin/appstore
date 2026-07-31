@@ -1,0 +1,3 @@
+Source: https://github.com/TecharoHQ/anubis/blob/b1d52ba8b5bebcd40319a4ddb5d9c6c430219145/docs/static/img/android-chrome-512x512.png
+License: MIT
+License text: https://github.com/TecharoHQ/anubis/blob/v1.26.2/LICENSE
