@@ -1,6 +1,6 @@
 services:
   documenso:
-    image: "documenso/documenso:latest@sha256:945bd2c04306bd5d78def0c4ceafdffb6b0a106cd6a2543db5acda9a6424b2d9"
+    image: "documenso/documenso:latest"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     command:
