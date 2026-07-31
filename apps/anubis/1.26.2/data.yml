@@ -1,0 +1,178 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 8923
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: https://example.com
+      edit: true
+      envKey: ANUBIS_TARGET
+      labelEn: Protected Target URL
+      labelZh: 受保护目标 URL
+      label:
+        en: Protected Target URL
+        zh: 受保护目标 URL
+        zh-Hant: 受保護目標 URL
+        ja: 保護対象 URL
+        ko: 보호 대상 URL
+        ru: URL защищаемого сервиса
+        ms: URL sasaran dilindungi
+        pt-br: URL de destino protegido
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: ANUBIS_REDIRECT_DOMAINS
+      labelEn: Allowed Redirect Hosts
+      labelZh: 允许重定向主机
+      label:
+        en: Allowed Redirect Hosts
+        zh: 允许重定向主机
+        zh-Hant: 允許重新導向主機
+        ja: 許可するリダイレクトホスト
+        ko: 허용된 리디렉션 호스트
+        ru: Разрешенные хосты перенаправления
+        ms: Hos ubah hala dibenarkan
+        pt-br: Hosts de redirecionamento permitidos
+      required: true
+      type: text
+    - default: 4
+      edit: true
+      envKey: ANUBIS_DIFFICULTY
+      labelEn: Challenge Difficulty
+      labelZh: 挑战难度
+      label:
+        en: Challenge Difficulty
+        zh: 挑战难度
+        zh-Hant: 挑戰難度
+        ja: チャレンジ難易度
+        ko: 챌린지 난이도
+        ru: Сложность проверки
+        ms: Kesukaran cabaran
+        pt-br: Dificuldade do desafio
+      required: true
+      type: number
+    - default: "false"
+      edit: true
+      envKey: ANUBIS_USE_REMOTE_ADDRESS
+      labelEn: Use Direct Client Address
+      labelZh: 使用直连客户端地址
+      label:
+        en: Use Direct Client Address
+        zh: 使用直连客户端地址
+        zh-Hant: 使用直連客戶端位址
+        ja: 直接接続元アドレスを使用
+        ko: 직접 클라이언트 주소 사용
+        ru: Использовать прямой адрес клиента
+        ms: Gunakan alamat klien langsung
+        pt-br: Usar endereco direto do cliente
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: ANUBIS_SERVE_ROBOTS
+      labelEn: Serve Protective robots.txt
+      labelZh: 提供防护 robots.txt
+      label:
+        en: Serve Protective robots.txt
+        zh: 提供防护 robots.txt
+        zh-Hant: 提供防護 robots.txt
+        ja: 保護用 robots.txt を配信
+        ko: 보호용 robots.txt 제공
+        ru: Отдавать защитный robots.txt
+        ms: Sediakan robots.txt perlindungan
+        pt-br: Servir robots.txt de protecao
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: ANUBIS_COOKIE_SECURE
+      labelEn: HTTPS-only Challenge Cookie
+      labelZh: 仅 HTTPS 挑战 Cookie
+      label:
+        en: HTTPS-only Challenge Cookie
+        zh: 仅 HTTPS 挑战 Cookie
+        zh-Hant: 僅 HTTPS 挑戰 Cookie
+        ja: HTTPS 専用チャレンジ Cookie
+        ko: HTTPS 전용 챌린지 쿠키
+        ru: Cookie проверки только для HTTPS
+        ms: Kuki cabaran HTTPS sahaja
+        pt-br: Cookie de desafio somente HTTPS
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ""
+      edit: true
+      envKey: ANUBIS_WEBMASTER_EMAIL
+      labelEn: Webmaster Email (Optional)
+      labelZh: 管理员邮箱（可选）
+      label:
+        en: Webmaster Email (Optional)
+        zh: 管理员邮箱（可选）
+        zh-Hant: 管理員電子郵件（選填）
+        ja: 管理者メール（任意）
+        ko: 관리자 이메일(선택 사항)
+        ru: Email администратора (необязательно)
+        ms: E-mel pentadbir (pilihan)
+        pt-br: Email do administrador (opcional)
+      required: false
+      type: text
+    - default: generate
+      edit: false
+      envKey: ANUBIS_ED25519_PRIVATE_KEY_HEX
+      labelEn: Signing Key (Auto-generated)
+      labelZh: 签名密钥（自动生成）
+      label:
+        en: Signing Key (Auto-generated)
+        zh: 签名密钥（自动生成）
+        zh-Hant: 簽章密鑰（自動產生）
+        ja: 署名キー（自動生成）
+        ko: 서명 키(자동 생성)
+        ru: Ключ подписи (создается автоматически)
+        ms: Kunci tandatangan (dijana automatik)
+        pt-br: Chave de assinatura (gerada automaticamente)
+      required: true
+      type: password
