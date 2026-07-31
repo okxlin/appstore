@@ -1,0 +1,31 @@
+name: NORA
+tags:
+  - DevOps
+title: 轻量级自托管制品仓库，支持多种软件包与容器镜像格式
+description: 轻量级自托管制品仓库，支持多种软件包与容器镜像格式
+additionalProperties:
+  key: nora
+  name: NORA
+  description:
+    en: A lightweight self-hosted artifact registry supporting multiple package and container image formats
+    zh: 轻量级自托管制品仓库，支持多种软件包与容器镜像格式
+    zh-Hant: 輕量級自託管製品倉庫，支援多種軟體套件與容器映像格式
+    ja: 複数のパッケージ形式とコンテナイメージ形式に対応する軽量なセルフホスト型アーティファクトレジストリ
+    ko: 다양한 패키지 및 컨테이너 이미지 형식을 지원하는 경량 셀프 호스팅 아티팩트 레지스트리
+    ru: Легковесный самостоятельно размещаемый реестр артефактов с поддержкой различных форматов пакетов и образов контейнеров
+    ms: Pendaftaran artifak hos sendiri yang ringan dengan sokongan pelbagai format pakej dan imej kontena
+    pt-br: Registro de artefatos auto-hospedado e leve com suporte a varios formatos de pacotes e imagens de contêiner
+  tags:
+    - DevOps
+  shortDescZh: 轻量级自托管制品仓库，支持多种软件包与容器镜像格式
+  shortDescEn: A lightweight self-hosted artifact registry supporting multiple package and container image formats
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://getnora.dev
+  github: https://github.com/getnora-io/nora
+  document: https://getnora.dev
+  architectures:
+    - amd64
+    - arm64
