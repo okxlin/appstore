@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Web Bind Address
+      labelZh: Web 绑定地址
+      label:
+        en: Web Bind Address
+        zh: Web 绑定地址
+        zh-Hant: Web 綁定位址
+        ja: Web バインドアドレス
+        ko: Web 바인드 주소
+        ru: Адрес привязки Web
+        ms: Alamat ikatan Web
+        pt-br: Endereco de vinculacao Web
+      required: true
+      type: text
+    - default: 7777
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Порт Web
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon masa
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Application Data Directory
+      labelZh: 应用数据目录
+      label:
+        en: Application Data Directory
+        zh: 应用数据目录
+        zh-Hant: 應用程式資料目錄
+        ja: アプリケーションデータディレクトリ
+        ko: 애플리케이션 데이터 디렉터리
+        ru: Каталог данных приложения
+        ms: Direktori data aplikasi
+        pt-br: Diretorio de dados do aplicativo
+      required: true
+      type: text
