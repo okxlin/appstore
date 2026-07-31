@@ -1,0 +1,9 @@
+Snipo logo
+
+Source: https://github.com/MohamedElashri/snipo/blob/c5eab947cce8728c2a431d2ed3426d452d14c3bf/assets/logo/icon-256.png
+Source commit: c5eab947cce8728c2a431d2ed3426d452d14c3bf
+Source SHA-256: dae9ce2b27caa1c1dbbc27669773d8f9d229a41f5ce2550f08f77c52c7331edb
+License: GNU Affero General Public License v3.0 (AGPL-3.0-only)
+License text: https://github.com/MohamedElashri/snipo/blob/c5eab947cce8728c2a431d2ed3426d452d14c3bf/LICENSE
+
+The store asset is a proportional rendering of the official project icon.

@@ -1,0 +1,31 @@
+name: Snipo
+tags:
+  - 工具
+title: 轻量级单用户代码片段管理器
+description: 轻量级单用户代码片段管理器
+additionalProperties:
+  key: snipo
+  name: Snipo
+  tags:
+    - Tool
+  shortDescZh: 轻量级单用户代码片段管理器
+  shortDescEn: Lightweight single-user snippet manager
+  description:
+    en: Lightweight single-user snippet manager
+    zh: 轻量级单用户代码片段管理器
+    zh-Hant: 輕量級單一使用者程式碼片段管理器
+    ja: 軽量なシングルユーザー向けスニペット管理ツール
+    ko: 가벼운 단일 사용자 코드 조각 관리자
+    ru: Легковесный менеджер фрагментов кода для одного пользователя
+    ms: Pengurus cebisan kod ringan untuk seorang pengguna
+    pt-br: Gerenciador leve de trechos de codigo para um unico usuario
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/MohamedElashri/snipo
+  github: https://github.com/MohamedElashri/snipo
+  document: https://github.com/MohamedElashri/snipo/blob/main/docs/deployment.md
+  architectures:
+    - amd64
+    - arm64
