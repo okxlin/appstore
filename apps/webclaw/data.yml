@@ -1,0 +1,31 @@
+name: WebClaw
+tags:
+  - 实用工具
+title: 将网页提取为干净内容的自托管 API
+description: 将网页提取为干净内容的自托管 API
+additionalProperties:
+  key: webclaw
+  name: WebClaw
+  tags:
+    - Tool
+  shortDescZh: 将网页提取为干净内容的自托管 API
+  shortDescEn: A self-hosted API for extracting clean content from web pages
+  description:
+    en: A self-hosted REST API that extracts web pages as clean Markdown, text, HTML, or structured JSON.
+    zh: 将网页提取为干净 Markdown、文本、HTML 或结构化 JSON 的自托管 REST API。
+    zh-Hant: 將網頁擷取為乾淨 Markdown、文字、HTML 或結構化 JSON 的自託管 REST API。
+    ja: Web ページをクリーンな Markdown、テキスト、HTML、構造化 JSON に抽出するセルフホスト REST API です。
+    ko: 웹 페이지를 깔끔한 Markdown, 텍스트, HTML 또는 구조화된 JSON으로 추출하는 자체 호스팅 REST API입니다.
+    ru: Самостоятельно размещаемый REST API для извлечения веб-страниц в чистый Markdown, текст, HTML или структурированный JSON.
+    ms: API REST dihos sendiri untuk mengekstrak laman web sebagai Markdown, teks, HTML atau JSON berstruktur yang bersih.
+    pt-br: API REST auto-hospedada que extrai paginas web como Markdown, texto, HTML ou JSON estruturado e limpo.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://webclaw.io
+  github: https://github.com/0xMassi/webclaw
+  document: https://github.com/0xMassi/webclaw
+  architectures:
+    - amd64
+    - arm64

@@ -1,0 +1,7 @@
+Asset: logo.png
+Source: https://github.com/0xMassi/webclaw/blob/50a17d27e504e558372528a4e6530ff09aee3537/.github/banner.png
+Source SHA-256: 0658c42fc44438dfef3038627d347214198a58c39adf64c9b2ac7d36580665cb
+Copyright: WebClaw contributors
+License: GNU Affero General Public License v3.0 (AGPL-3.0)
+License source: https://github.com/0xMassi/webclaw/blob/50a17d27e504e558372528a4e6530ff09aee3537/LICENSE
+Modification: cropped the upstream banner to its mark, centered it on a square canvas, and resized it for the app catalog.

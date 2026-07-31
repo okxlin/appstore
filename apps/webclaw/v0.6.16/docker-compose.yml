@@ -1,0 +1,44 @@
+services:
+  webclaw:
+    image: "ghcr.io/0xmassi/webclaw:v0.6.16@sha256:ac410944110b14d536225d2fef67b35d8b6f7338d158b00a6b06646a6c8c0ab3"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    command:
+      - webclaw-server
+    user: "65534:65534"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nodev,noexec,nosuid,size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - WEBCLAW_HOST=0.0.0.0
+      - WEBCLAW_PORT=3000
+      - WEBCLAW_API_KEY=${WEBCLAW_API_KEY}
+      - WEBCLAW_CLOUD_API_KEY=${WEBCLAW_CLOUD_API_KEY}
+      - SERPER_API_KEY=${SERPER_API_KEY}
+    healthcheck:
+      test:
+        - CMD
+        - bash
+        - -c
+        - >-
+          exec 3<>/dev/tcp/127.0.0.1/3000 &&
+          printf 'GET /health HTTP/1.0\r\nHost: localhost\r\n\r\n' >&3 &&
+          grep -q '"status":"ok"' <&3
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      createdBy: Apps
+
+networks:
+  1panel-network:
+    external: true
