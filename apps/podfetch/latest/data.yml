@@ -1,0 +1,170 @@
+additionalProperties:
+  formFields:
+    - default: 0.0.0.0
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 40100
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 1000
+      edit: true
+      envKey: PUID
+      labelEn: User ID
+      labelZh: 用户 ID
+      label:
+        en: User ID
+        zh: 用户 ID
+        zh-Hant: 使用者 ID
+        ja: ユーザー ID
+        ko: 사용자 ID
+        ru: Идентификатор пользователя
+        ms: ID pengguna
+        pt-br: ID do usuario
+      required: true
+      type: number
+    - default: 1000
+      edit: true
+      envKey: PGID
+      labelEn: Group ID
+      labelZh: 用户组 ID
+      label:
+        en: Group ID
+        zh: 用户组 ID
+        zh-Hant: 使用者群組 ID
+        ja: グループ ID
+        ko: 그룹 ID
+        ru: Идентификатор группы
+        ms: ID kumpulan
+        pt-br: ID do grupo
+      required: true
+      type: number
+    - default: 60
+      edit: true
+      envKey: POLLING_INTERVAL
+      labelEn: Polling Interval
+      labelZh: 检查间隔
+      label:
+        en: Polling Interval
+        zh: 检查间隔
+        zh-Hant: 檢查間隔
+        ja: 確認間隔
+        ko: 확인 간격
+        ru: Интервал проверки
+        ms: Selang semakan
+        pt-br: Intervalo de verificacao
+      required: true
+      type: number
+    - default: "true"
+      edit: true
+      envKey: BASIC_AUTH
+      labelEn: Enable Basic Authentication
+      labelZh: 启用基本认证
+      label:
+        en: Enable Basic Authentication
+        zh: 启用基本认证
+        zh-Hant: 啟用基本驗證
+        ja: Basic 認証を有効化
+        ko: 기본 인증 사용
+        ru: Включить базовую аутентификацию
+        ms: Dayakan pengesahan asas
+        pt-br: Ativar autenticacao basica
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: admin
+      edit: true
+      envKey: PODFETCH_USERNAME
+      labelEn: Administrator Username
+      labelZh: 管理员用户名
+      label:
+        en: Administrator Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama pengguna pentadbir
+        pt-br: Nome do administrador
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: PODFETCH_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data/podcasts
+      edit: true
+      envKey: PODCASTS_DIR
+      labelEn: Podcast Directory
+      labelZh: 播客目录
+      label:
+        en: Podcast Directory
+        zh: 播客目录
+        zh-Hant: Podcast 目錄
+        ja: ポッドキャストディレクトリ
+        ko: 팟캐스트 디렉터리
+        ru: Каталог подкастов
+        ms: Direktori podcast
+        pt-br: Diretorio de podcasts
+      required: true
+      type: text
+    - default: ./data/db
+      edit: true
+      envKey: DATABASE_DIR
+      labelEn: Database Directory
+      labelZh: 数据库目录
+      label:
+        en: Database Directory
+        zh: 数据库目录
+        zh-Hant: 資料庫目錄
+        ja: データベースディレクトリ
+        ko: 데이터베이스 디렉터리
+        ru: Каталог базы данных
+        ms: Direktori pangkalan data
+        pt-br: Diretorio do banco de dados
+      required: true
+      type: text
