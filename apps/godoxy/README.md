@@ -50,7 +50,7 @@ Only containers explicitly carrying GoDoxy proxy labels are discovered by defaul
 
 ## Image Security Note
 
-The pinned v0.30.0 GoDoxy image reports three High findings in its bundled Moby client library. The affected daemon-side authorization, archive upload, and copy implementations are not used by the read-only socket policy. The pinned socket-proxy image reports one Go `os.Root` High; that binary contains no `os.Root` call site. These findings should be reassessed when either pinned image digest changes.
+The image snapshots retained by the fixed `0.30.1` package report three High findings in GoDoxy's bundled Moby client library and one Go `os.Root` High in the socket proxy. The affected daemon-side authorization, archive upload, and copy implementations are not used by the read-only socket policy, and the socket-proxy binary contains no `os.Root` call site. The `latest` package follows unpinned moving tags; reassess these findings whenever either tag resolves to a new image.
 
 ## Data
 

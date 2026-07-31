@@ -1,6 +1,6 @@
 services:
   socket-proxy:
-    image: "ghcr.io/yusing/socket-proxy:latest@sha256:d2f20bd06728c9465a01725f1782f591c2cd5ade79027654fcf8b436a0fd0ca6"
+    image: "ghcr.io/yusing/socket-proxy:latest"
     container_name: ${CONTAINER_NAME}-socket-proxy
     restart: unless-stopped
     environment:
@@ -25,7 +25,7 @@ services:
       createdBy: "Apps"
 
   godoxy:
-    image: "ghcr.io/yusing/godoxy:latest@sha256:7e6f0dd72c042c096fa375978ebdfb8251e9a519d91bd93c9fbc2973b5f29127"
+    image: "ghcr.io/yusing/godoxy:latest"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
