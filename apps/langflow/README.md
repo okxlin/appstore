@@ -27,7 +27,7 @@ Langflow 是用于构建和部署 AI 智能体与工作流的可视化平台，�
 ## 版本与升级
 
 - `1.10.3` 是 Langflow 官方发布的 1.10 安全修复版本，包含鉴权、路径隔离、SSRF、MCP 会话、API Key 比较和敏感追踪数据脱敏等修复。
-- `latest` 固定到已审计的 `1.10.3` 镜像，不跟随 Docker Hub 浮动标签。多架构 manifest digest 为 `sha256:ef7480ea98f5d05da9dd5756d1dd16f3a307570c2096c0f4915890eeaf08ded2`。
+- `latest` 目录使用 `langflowai/langflow:1.10.3`，不固定 digest，以便 Watchtower 等工具接收上游对该标签的重建；固定版本 `1.10.3` 仍保留已审计 digest。该标签不会自动跨到 `1.11` 系列。
 - 从 `1.10.2` 升级到 `1.10.3` 时，Langflow 会在启动阶段自动执行 SQLite 数据库迁移。升级前应停止写入并备份整个 `APP_DATA_DIR`，升级后确认登录、项目、工作流和历史数据正常。
 - 不提供 `1.11.0`。该版本官方 amd64 镜像要求 `x86-64-v3`，在不支持该指令集的 x86_64 主机上会以 `Fatal glibc error: CPU does not support x86-64-v3` 退出。上游提供兼容镜像或明确最低 CPU 要求后再评估 1.11 系列。
 

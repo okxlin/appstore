@@ -1,6 +1,6 @@
 services:
   langflow:
-    image: "langflowai/langflow:1.10.3@sha256:ef7480ea98f5d05da9dd5756d1dd16f3a307570c2096c0f4915890eeaf08ded2"
+    image: "langflowai/langflow:1.10.3"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
