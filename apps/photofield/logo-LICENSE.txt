@@ -1,0 +1,3 @@
+Source: https://github.com/SmilyOrg/photofield/blob/v0.24.1/ui/public/android-chrome-192x192.png
+License: MIT
+Copyright: Photofield contributors
