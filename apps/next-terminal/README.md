@@ -24,7 +24,7 @@ http://<服务器 IP>:<Web UI 端口>
 ## 部署拓扑
 - `3.5.2`、`latest`：Next Terminal + Guacd + 1Panel PostgreSQL 应用服务。
 - `3.1.1`：Next Terminal + Guacd + 应用包内置 PostgreSQL，仅作为历史兼容版本保留。
-- `latest` 当前固定到已审计的 `3.5.2` 镜像，不跟随未审计的浮动标签。
+- `latest` 使用 `v3.5.2` 与 Guacd `1.6.0` 标签但不固定 digest，允许 Watchtower 等工具接收同一标签的重建；固定版本 `3.5.2` 仍保留已审计 digest。
 - 支持架构：amd64、arm64。
 
 ## PostgreSQL 联动
@@ -50,10 +50,10 @@ http://<服务器 IP>:<Web UI 端口>
 
 ## 3.5.2 镜像来源
 - 官方容器安装文档使用 `dushixiang/next-terminal` 和 `dushixiang/guacd`，官方 Compose 同时使用 PostgreSQL 16.4。
-- `dushixiang/next-terminal:v3.5.2` 的多架构 manifest 固定为 `sha256:4e095f8a0309878e2966d3157af5667b6911b6890d5e4c4abfa5116e0209ca3e`。
+- 固定版本目录将 `dushixiang/next-terminal:v3.5.2` 的多架构 manifest 固定为 `sha256:4e095f8a0309878e2966d3157af5667b6911b6890d5e4c4abfa5116e0209ca3e`；`latest` 目录只使用版本标签。
 - 上游仓库存在提交 `7704b32dde617c161540432b6f71867fb3cf9ed8`，提交信息为 `v3.5.2`；截至 2026-07-23，上游没有同名 Git tag 或 GitHub Release，因此本应用将其标记为官方发布镜像版本，不把它表述为 GitHub 正式 Release。
-- Docker Hub 的 `dushixiang/next-terminal` 仓库在 2026-07-23 显示约 100 万次拉取。本应用按高下载量可信镜像策略接受该来源，并固定 manifest digest 防止标签漂移。
-- Guacd 固定为上游兼容版本 `1.6.0`，manifest 为 `sha256:40872b125c3d946314bd322a3a54325ee2d9a58ecd788f76720ca11874548e42`。
+- Docker Hub 的 `dushixiang/next-terminal` 仓库在 2026-07-23 显示约 100 万次拉取。本应用按高下载量可信镜像策略接受该来源；`latest` 更新后仍需重新验证来源与默认工作流。
+- Guacd 使用上游兼容版本 `1.6.0`；固定版本目录保留 manifest `sha256:40872b125c3d946314bd322a3a54325ee2d9a58ecd788f76720ca11874548e42`。
 
 这些容器不需要特权模式、Docker Socket、额外 capability 或 host network。上游镜像默认以 root 用户运行，部署前应按实际暴露范围配置防火墙和反向代理。
 
@@ -71,7 +71,7 @@ Next Terminal is an interactive operations-audit platform supporting RDP, SSH, V
 
 Versions `3.5.2` and `latest` deploy Next Terminal with Guacd and require a PostgreSQL 16.x service selected from an installed 1Panel PostgreSQL application. The historical `3.1.1` package retains its bundled PostgreSQL topology for existing installations.
 
-The `v3.5.2` image is referenced by the upstream deployment channel and has a matching upstream source commit, but no matching Git tag or GitHub Release was available on 2026-07-23. The package therefore pins the published multi-architecture image digest and documents the Docker Hub repository's approximately one million pulls. Direct `3.1.1` to `3.5.2` upgrades remain disabled because database migration is manual.
+The `v3.5.2` image is referenced by the upstream deployment channel and has a matching upstream source commit, but no matching Git tag or GitHub Release was available on 2026-07-23. The fixed `3.5.2` package pins the published multi-architecture image digest; `latest` uses the same version tag without a digest so rebuilt images can be pulled. Direct `3.1.1` to `3.5.2` upgrades remain disabled because database migration is manual.
 
 ## Features
 - Manage and audit remote connections and sessions.
