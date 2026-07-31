@@ -1,0 +1,31 @@
+name: Liwan
+tags:
+  - 实用工具
+title: 轻量、注重隐私的网站分析平台
+description: 轻量、注重隐私的网站分析平台
+additionalProperties:
+  key: liwan
+  name: Liwan
+  tags:
+    - Tool
+  shortDescZh: 轻量、注重隐私的网站分析平台
+  shortDescEn: Lightweight, privacy-focused web analytics
+  description:
+    en: Lightweight, privacy-focused web analytics
+    zh: 轻量、注重隐私的网站分析平台
+    zh-Hant: 輕量、注重隱私的網站分析平台
+    ja: 軽量でプライバシーを重視した Web 解析
+    ko: 가볍고 개인정보 보호에 중점을 둔 웹 분석
+    ru: Легкая веб-аналитика с упором на конфиденциальность
+    ms: Analitik web ringan yang berfokus pada privasi
+    pt-br: Analise web leve com foco em privacidade
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://liwan.dev
+  github: https://github.com/explodingcamera/liwan
+  document: https://liwan.dev/guides
+  architectures:
+    - amd64
+    - arm64

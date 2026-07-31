@@ -1,0 +1,6 @@
+Liwan logo
+
+Source: https://github.com/explodingcamera/liwan/blob/da515f41cbf009b9d13cd1be2efc63e1eb14b78f/web/public/favicon.svg
+License: Apache-2.0
+Copyright: Liwan contributors
+License text: https://github.com/explodingcamera/liwan/blob/da515f41cbf009b9d13cd1be2efc63e1eb14b78f/LICENSE.md

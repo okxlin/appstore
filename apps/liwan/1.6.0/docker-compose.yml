@@ -1,0 +1,22 @@
+services:
+  liwan:
+    image: "ghcr.io/explodingcamera/liwan:1.6.0@sha256:ba4a4e9f1aba9798ef5ffdd99b97dddf02d878ecdbca191d32a952d2f433cc24"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9042"
+    environment:
+      LIWAN_BASE_URL: "${LIWAN_BASE_URL}"
+      LIWAN_LISTEN: "0.0.0.0:9042"
+      LIWAN_DATA_DIR: /data
+      LIWAN_DISABLE_FAVICONS: "${LIWAN_DISABLE_FAVICONS}"
+    labels:
+      createdBy: "Apps"
+    restart: unless-stopped
+    volumes:
+      - "${LIWAN_HOST_DATA_DIR}:/data"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
