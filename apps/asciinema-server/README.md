@@ -30,7 +30,7 @@ asciinema server 是 asciinema 生态的服务端组件，用于托管、浏览�
 
 ## 镜像安全说明
 
-固定的 asciinema server `20260626` 镜像在交付时报告 `0 Critical / 5 High`。这些发现位于 Alpine OpenSSL 和 Expat 系统库，均已有修复包但最新稳定镜像尚未重建。PostgreSQL 镜像报告的 `1 Critical / 14 High` 全部来自仅用于启动时降权的 `gosu` Go 二进制；数据库不对外提供 TLS/HTTP/邮件处理面。更换任一镜像 digest 时必须重新扫描和复核。
+本次审计使用的 asciinema server `20260626` 镜像快照报告 `0 Critical / 5 High`。这些发现位于 Alpine OpenSSL 和 Expat 系统库，均已有修复包但该快照尚未重建。PostgreSQL 镜像快照报告的 `1 Critical / 14 High` 全部来自仅用于启动时降权的 `gosu` Go 二进制；数据库不对外提供 TLS/HTTP/邮件处理面。固定版本目录保留已审计 digest；`latest` 目录使用不带 digest 的移动标签，标签解析到新镜像后必须重新扫描和复核。
 
 ## Introduction
 

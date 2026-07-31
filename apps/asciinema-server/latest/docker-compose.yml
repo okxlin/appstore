@@ -1,6 +1,6 @@
 services:
   asciinema-server:
-    image: "ghcr.io/asciinema/asciinema-server:latest@sha256:0474b2186be46b23f5e16dbd4319727dbb68f27a303705fbe632821bf524b313"
+    image: "ghcr.io/asciinema/asciinema-server:latest"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
@@ -46,7 +46,7 @@ services:
       createdBy: "Apps"
 
   asciinema-postgres:
-    image: "postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193"
+    image: "postgres:17-alpine"
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
