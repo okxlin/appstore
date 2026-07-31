@@ -28,7 +28,7 @@ LittleLink Server is a lightweight self-hosted personal link page. Environment v
 
 ## Deployment And Security
 
-- The package pins the official `latest` image to the reviewed OCI digest because upstream does not publish versioned releases.
+- The package follows the official unpinned `latest` tag because upstream does not publish versioned releases. This supports Watchtower-style updates, but each newly resolved image requires renewed review.
 - The container runs as the image's non-root `node` user, drops all Linux capabilities, prevents privilege escalation, and uses a read-only root filesystem.
 - Values are rendered into a public page. Do not place passwords, private tokens, or non-public URLs in profile fields.
 - External avatar and link URLs are loaded by visitors' browsers. Use trusted HTTPS destinations and terminate public access through the 1Panel reverse proxy.
