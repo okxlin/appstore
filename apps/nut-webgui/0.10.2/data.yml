@@ -1,0 +1,123 @@
+additionalProperties:
+  formFields:
+    - default: 9000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: UPSD_ADDRESS
+      labelEn: NUT Server Address
+      labelZh: NUT 服务器地址
+      label:
+        en: NUT Server Address
+        zh: NUT 服务器地址
+        zh-Hant: NUT 伺服器位址
+        ja: NUT サーバーアドレス
+        ko: NUT 서버 주소
+        ru: Адрес сервера NUT
+        ms: Alamat pelayan NUT
+        pt-br: Endereco do servidor NUT
+      required: true
+      type: text
+    - default: 3493
+      edit: true
+      envKey: UPSD_PORT
+      labelEn: NUT Server Port
+      labelZh: NUT 服务器端口
+      label:
+        en: NUT Server Port
+        zh: NUT 服务器端口
+        zh-Hant: NUT 伺服器埠
+        ja: NUT サーバーポート
+        ko: NUT 서버 포트
+        ru: Порт сервера NUT
+        ms: Port pelayan NUT
+        pt-br: Porta do servidor NUT
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: UPSD_USERNAME
+      labelEn: NUT Username
+      labelZh: NUT 用户名
+      label:
+        en: NUT Username
+        zh: NUT 用户名
+        zh-Hant: NUT 使用者名稱
+        ja: NUT ユーザー名
+        ko: NUT 사용자 이름
+        ru: Имя пользователя NUT
+        ms: Nama pengguna NUT
+        pt-br: Usuario NUT
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: UPSD_PASSWORD
+      labelEn: NUT Password
+      labelZh: NUT 密码
+      label:
+        en: NUT Password
+        zh: NUT 密码
+        zh-Hant: NUT 密碼
+        ja: NUT パスワード
+        ko: NUT 비밀번호
+        ru: Пароль NUT
+        ms: Kata laluan NUT
+        pt-br: Senha NUT
+      required: false
+      type: password
+    - default: disable
+      edit: true
+      envKey: UPSD_TLS_MODE
+      labelEn: NUT TLS Mode
+      labelZh: NUT TLS 模式
+      label:
+        en: NUT TLS Mode
+        zh: NUT TLS 模式
+        zh-Hant: NUT TLS 模式
+        ja: NUT TLS モード
+        ko: NUT TLS 모드
+        ru: Режим TLS NUT
+        ms: Mod TLS NUT
+        pt-br: Modo TLS NUT
+      required: true
+      type: select
+      values:
+        - label: disable
+          value: disable
+        - label: strict
+          value: strict
+        - label: skip
+          value: skip
+    - default: ./data
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Configuration Directory
+      labelZh: 配置目录
+      label:
+        en: Configuration Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori konfigurasi
+        pt-br: Diretorio de configuracao
+      required: true
+      type: text
