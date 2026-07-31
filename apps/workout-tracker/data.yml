@@ -1,0 +1,31 @@
+name: Workout Tracker
+tags:
+  - 实用工具
+title: 个人运动记录、轨迹分析与统计服务
+description: 个人运动记录、轨迹分析与统计服务
+additionalProperties:
+  key: workout-tracker
+  name: Workout Tracker
+  tags:
+    - Tool
+  shortDescZh: 个人运动记录、轨迹分析与统计服务
+  shortDescEn: Personal workout logging, route analysis, and statistics
+  description:
+    en: Personal workout logging, route analysis, and statistics
+    zh: 个人运动记录、轨迹分析与统计服务
+    zh-Hant: 個人運動記錄、路線分析與統計服務
+    ja: 個人向けのワークアウト記録、ルート分析、統計サービス
+    ko: 개인 운동 기록, 경로 분석 및 통계 서비스
+    ru: Персональный учет тренировок, анализ маршрутов и статистика
+    ms: Perkhidmatan rekod senaman, analisis laluan dan statistik peribadi
+    pt-br: Registro pessoal de treinos, analise de rotas e estatisticas
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/jovandeginste/workout-tracker
+  github: https://github.com/jovandeginste/workout-tracker
+  document: https://github.com/jovandeginste/workout-tracker/blob/d72d10327582230c6e67c976e067a820eeadf68d/README.md
+  architectures:
+    - amd64
+    - arm64
