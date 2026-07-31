@@ -71,5 +71,5 @@ tasks, labels, comments, time tracking, live updates, and integrations.
 ## References
 
 - Source: <https://github.com/usekaneo/kaneo>
-- Release: <https://github.com/usekaneo/kaneo/releases/tag/v2.9.9>
+- Fixed release: <https://github.com/usekaneo/kaneo/releases/tag/v2.9.10>
 - Self-hosting: <https://github.com/usekaneo/kaneo#self-hosting>
