@@ -1,0 +1,146 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: AUTH_HOST
+      labelEn: Authentication Host
+      labelZh: 认证域名
+      label:
+        en: Authentication Host
+        zh: 认证域名
+        zh-Hant: 驗證網域
+        ja: 認証ホスト
+        ko: 인증 호스트
+        ru: Хост аутентификации
+        ms: Hos pengesahan
+        pt-br: Host de autenticacao
+      required: true
+      type: text
+    - default: admin
+      edit: true
+      envKey: AUTH_USERNAME
+      labelEn: Administrator Username
+      labelZh: 管理员用户名
+      label:
+        en: Administrator Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama pengguna pentadbir
+        pt-br: Usuario administrador
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: AUTH_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: TOKEN_SECRET
+      labelEn: Token Signing Secret
+      labelZh: Token 签名密钥
+      label:
+        en: Token Signing Secret
+        zh: Token 签名密钥
+        zh-Hant: Token 簽章密鑰
+        ja: Token 署名シークレット
+        ko: Token 서명 비밀키
+        ru: Секрет подписи токенов
+        ms: Rahsia tandatangan token
+        pt-br: Segredo de assinatura de token
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: COOKIE_SECURE
+      labelEn: Secure Cookies
+      labelZh: 安全 Cookie
+      label:
+        en: Secure Cookies
+        zh: 安全 Cookie
+        zh-Hant: 安全 Cookie
+        ja: Secure Cookie
+        ko: 보안 Cookie
+        ru: Защищенные Cookie
+        ms: Cookie selamat
+        pt-br: Cookies seguros
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: PASS_USER_HEADER
+      labelEn: Pass User Header
+      labelZh: 传递用户请求头
+      label:
+        en: Pass User Header
+        zh: 传递用户请求头
+        zh-Hant: 傳遞使用者標頭
+        ja: ユーザーヘッダーを転送
+        ko: 사용자 헤더 전달
+        ru: Передавать заголовок пользователя
+        ms: Hantar pengepala pengguna
+        pt-br: Encaminhar cabecalho do usuario
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
