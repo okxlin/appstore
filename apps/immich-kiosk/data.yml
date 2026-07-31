@@ -1,0 +1,31 @@
+name: Immich Kiosk
+tags:
+  - 多媒体
+title: 为浏览器和显示设备提供高度可配置的 Immich 照片轮播
+description: 为浏览器和显示设备提供高度可配置的 Immich 照片轮播
+additionalProperties:
+  key: immich-kiosk
+  name: Immich Kiosk
+  tags:
+    - Media
+  shortDescZh: 为浏览器和显示设备提供高度可配置的 Immich 照片轮播
+  shortDescEn: Highly configurable slideshows for Immich assets
+  description:
+    en: Highly configurable slideshows for displaying Immich assets on browsers and devices.
+    zh: 为浏览器和显示设备提供高度可配置的 Immich 照片轮播。
+    zh-Hant: 為瀏覽器和顯示裝置提供高度可設定的 Immich 相片輪播。
+    ja: ブラウザーや表示端末向けの高度に設定可能な Immich スライドショーです。
+    ko: 브라우저와 디스플레이 장치용으로 세밀하게 구성할 수 있는 Immich 슬라이드쇼입니다.
+    ru: Настраиваемое слайд-шоу ресурсов Immich для браузеров и экранов.
+    ms: Tayangan slaid aset Immich yang boleh dikonfigurasi untuk pelayar dan peranti paparan.
+    pt-br: Apresentacoes de slides configuraveis de ativos do Immich para navegadores e telas.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://immichkiosk.app/
+  github: https://github.com/damongolding/immich-kiosk
+  document: https://docs.immichkiosk.app/
+  architectures:
+    - amd64
+    - arm64

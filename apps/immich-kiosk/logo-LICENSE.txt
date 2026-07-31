@@ -1,0 +1,9 @@
+Immich Kiosk logo
+
+Source: https://github.com/damongolding/immich-kiosk/blob/e618b371846479757f6eea20b8c6ff1dc98f0cf2/assets/logo.png
+Source commit: e618b371846479757f6eea20b8c6ff1dc98f0cf2
+Source SHA-256: 6f0d356804d0f0f69be06e590fc384d1954479d433a34a73ff318c8b0af758e3
+License: GNU Affero General Public License v3.0 (AGPL-3.0-only)
+License text: https://github.com/damongolding/immich-kiosk/blob/e618b371846479757f6eea20b8c6ff1dc98f0cf2/LICENSE
+
+The store asset is a proportional rendering of the official project logo.
