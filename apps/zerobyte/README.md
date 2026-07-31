@@ -27,7 +27,7 @@ Zerobyte 当前没有针对备份操作的细粒度 RBAC。组织成员可以操
 
 ## 镜像安全说明
 
-固定的 v0.41.0 镜像无 Critical 漏洞，扫描报告包含七个 High 记录：rclone 的 TIFF 解码问题仅位于可选 Internxt 后端；gRPC 问题位于可选 GCS/Google Drive 客户端而非入站服务器或 xDS 控制面；Go `os.Root` 问题在 rclone、restic 和 shoutrrr 的对应源码版本中均无调用点。更换镜像 digest 后应重新评估这些结论。
+固定版本中的 v0.41.0 镜像快照无 Critical 漏洞，扫描报告包含七个 High 记录：rclone 的 TIFF 解码问题仅位于可选 Internxt 后端；gRPC 问题位于可选 GCS/Google Drive 客户端而非入站服务器或 xDS 控制面；Go `os.Root` 问题在 rclone、restic 和 shoutrrr 的对应源码版本中均无调用点。`latest` 目录使用移动标签，解析到新镜像后应重新评估这些结论。
 
 ## Introduction
 
@@ -56,4 +56,4 @@ Zerobyte does not currently provide fine-grained RBAC for backup operations. Org
 
 ## Image Security Note
 
-The pinned v0.41.0 image has no Critical findings and seven High records. The rclone TIFF issues are confined to the optional Internxt backend; the gRPC findings are in optional GCS/Google Drive clients rather than an inbound server or xDS control plane; and the affected rclone, restic, and shoutrrr source revisions contain no `os.Root` call site. Reassess these findings whenever the image digest changes.
+The image snapshot pinned by the fixed v0.41.0 package has no Critical findings and seven High records. The rclone TIFF issues are confined to the optional Internxt backend; the gRPC findings are in optional GCS/Google Drive clients rather than an inbound server or xDS control plane; and the affected rclone, restic, and shoutrrr source revisions contain no `os.Root` call site. The `latest` package follows a moving tag; reassess these findings after it resolves to a new image.
