@@ -1,0 +1,6 @@
+HitKeep logo
+
+Source: https://github.com/PascaleBeier/hitkeep/blob/bf1c1462ce44ca3ea8bc1f4a12dacb2f7d445ef3/frontend/dashboard/public/icon.png
+License: MIT
+Copyright: Pascale Beier and HitKeep contributors
+License text: https://github.com/PascaleBeier/hitkeep/blob/bf1c1462ce44ca3ea8bc1f4a12dacb2f7d445ef3/LICENSE

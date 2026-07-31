@@ -1,0 +1,26 @@
+services:
+  hitkeep:
+    image: "docker.io/pascalebeier/hitkeep:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      HITKEEP_PUBLIC_URL: "${HITKEEP_PUBLIC_URL}"
+      HITKEEP_JWT_SECRET: "${HITKEEP_JWT_SECRET}"
+      HITKEEP_DB_PATH: /var/lib/hitkeep/data/hitkeep.db
+      HITKEEP_DATA_PATH: /var/lib/hitkeep/data
+      HITKEEP_ARCHIVE_PATH: /var/lib/hitkeep/archive
+      HITKEEP_BACKUP_PATH: /var/lib/hitkeep/backups
+      HITKEEP_BACKUP_INTERVAL: "60"
+      HITKEEP_BACKUP_RETENTION: "24"
+    labels:
+      createdBy: Apps
+    restart: unless-stopped
+    volumes:
+      - "${HITKEEP_DATA_DIR}:/var/lib/hitkeep"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true

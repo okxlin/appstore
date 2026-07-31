@@ -1,0 +1,31 @@
+name: HitKeep
+tags:
+  - 实用工具
+title: 单容器部署的隐私优先网站与产品分析平台
+description: 单容器部署的隐私优先网站与产品分析平台
+additionalProperties:
+  key: hitkeep
+  name: HitKeep
+  tags:
+    - Tool
+  shortDescZh: 单容器部署的隐私优先网站与产品分析平台
+  shortDescEn: Privacy-first web and product analytics in a single container
+  description:
+    en: Privacy-first web and product analytics in a single container
+    zh: 单容器部署的隐私优先网站与产品分析平台
+    zh-Hant: 單容器部署的隱私優先網站與產品分析平台
+    ja: 単一コンテナで動作するプライバシー重視の Web・プロダクト分析
+    ko: 단일 컨테이너로 실행되는 개인정보 보호 중심 웹 및 제품 분석
+    ru: Аналитика сайтов и продуктов с упором на конфиденциальность в одном контейнере
+    ms: Analitik web dan produk berfokus privasi dalam satu bekas
+    pt-br: Analise de sites e produtos com foco em privacidade em um unico container
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://hitkeep.com
+  github: https://github.com/PascaleBeier/hitkeep
+  document: https://hitkeep.com/guides/installation/
+  architectures:
+    - amd64
+    - arm64
