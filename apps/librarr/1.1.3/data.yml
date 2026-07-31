@@ -1,0 +1,83 @@
+additionalProperties:
+  formFields:
+    - default: 5050
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/librarr
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Application data directory
+      labelZh: 应用数据目录
+      label:
+        en: Application data directory
+        zh: 应用数据目录
+        zh-Hant: 應用資料目錄
+        ja: アプリケーションデータディレクトリ
+        ko: 애플리케이션 데이터 디렉터리
+        ru: Каталог данных приложения
+        ms: Direktori data aplikasi
+        pt-br: Diretório de dados do aplicativo
+      required: true
+      type: text
+    - default: ./data/ebooks
+      edit: true
+      envKey: APP_EBOOK_DIR
+      labelEn: Ebook directory
+      labelZh: 电子书目录
+      label:
+        en: Ebook directory
+        zh: 电子书目录
+        zh-Hant: 電子書目錄
+        ja: 電子書籍ディレクトリ
+        ko: 전자책 디렉터리
+        ru: Каталог электронных книг
+        ms: Direktori e-buku
+        pt-br: Diretório de ebooks
+      required: true
+      type: text
+    - default: ./data/audiobooks
+      edit: true
+      envKey: APP_AUDIOBOOK_DIR
+      labelEn: Audiobook directory
+      labelZh: 有声书目录
+      label:
+        en: Audiobook directory
+        zh: 有声书目录
+        zh-Hant: 有聲書目錄
+        ja: オーディオブックディレクトリ
+        ko: 오디오북 디렉터리
+        ru: Каталог аудиокниг
+        ms: Direktori buku audio
+        pt-br: Diretório de audiolivros
+      required: true
+      type: text
+    - default: ./data/manga
+      edit: true
+      envKey: APP_MANGA_DIR
+      labelEn: Manga directory
+      labelZh: 漫画目录
+      label:
+        en: Manga directory
+        zh: 漫画目录
+        zh-Hant: 漫畫目錄
+        ja: 漫画ディレクトリ
+        ko: 만화 디렉터리
+        ru: Каталог манги
+        ms: Direktori manga
+        pt-br: Diretório de mangás
+      required: true
+      type: text

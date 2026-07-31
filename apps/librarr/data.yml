@@ -1,0 +1,30 @@
+name: Librarr
+tags:
+  - Media
+title: 自托管的电子书、有声书和漫画管理器
+description: 自托管的电子书、有声书和漫画管理器
+additionalProperties:
+  key: librarr
+  name: Librarr
+  description:
+    en: A self-hosted manager for ebooks, audiobooks, and manga
+    zh: 自托管的电子书、有声书和漫画管理器
+    zh-Hant: 自託管的電子書、有聲書和漫畫管理器
+    ja: 電子書籍、オーディオブック、漫画向けのセルフホスト型管理ツール
+    ko: 전자책, 오디오북 및 만화를 위한 자체 호스팅 관리자
+    ru: Самостоятельно размещаемый менеджер электронных и аудиокниг и манги
+    ms: Pengurus hos sendiri untuk e-buku, buku audio dan manga
+    pt-br: Gerenciador auto-hospedado de ebooks, audiolivros e mangás
+  tags:
+    - Media
+  shortDescZh: 自托管的电子书、有声书和漫画管理器
+  shortDescEn: A self-hosted manager for ebooks, audiobooks, and manga
+  type: tool
+  crossVersionUpdate: true
+  limit: 1
+  recommend: 0
+  website: https://github.com/JeremiahM37/librarr
+  github: https://github.com/JeremiahM37/librarr
+  document: https://github.com/JeremiahM37/librarr#readme
+  architectures:
+    - amd64
