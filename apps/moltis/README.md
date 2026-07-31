@@ -36,14 +36,14 @@ Moltis 是使用 Rust 构建的持久化个人 AI 代理服务器，提供 Web �
 
 ## 镜像漏洞说明
 
-2026-07-28 对固定 amd64 与 arm64 镜像的 Trivy 扫描均报告 `9 Critical / 124 High / 0 secrets`。Critical 项来自未被当前进程加载或调用的系统 Perl、SQLite、GLib、libxml2 与 npm CLI node-tar 路径，以及 zlib 中未随 Debian `zlib1g` 运行库提供的 MiniZip 路径；其中 `CVE-2026-8376` 只影响 32 位 Perl。两个重点 Chromium High 需要浏览器进程，而本包不注册 Browser 工具且运行时没有 Chromium 进程。
+2026-07-28 对已审计 amd64 与 arm64 镜像快照的 Trivy 扫描均报告 `9 Critical / 124 High / 0 secrets`。Critical 项来自未被当前进程加载或调用的系统 Perl、SQLite、GLib、libxml2 与 npm CLI node-tar 路径，以及 zlib 中未随 Debian `zlib1g` 运行库提供的 MiniZip 路径；其中 `CVE-2026-8376` 只影响 32 位 Perl。两个重点 Chromium High 需要浏览器进程，而本包不注册 Browser 工具且运行时没有 Chromium 进程。
 
-该例外仅适用于固定镜像、WASM 实际初始化成功、浏览器关闭、无容器运行时 socket、无 enabled stdio MCP 的配置。启动日志必须包含 `sandbox backend: wasm`；出现 `restricted-host` 或 fallback 日志时应停止使用并重新审计。
+该例外仅适用于已审计镜像快照、WASM 实际初始化成功、浏览器关闭、无容器运行时 socket、无 enabled stdio MCP 的配置。`latest` 标签解析到新镜像后必须重新审计。启动日志必须包含 `sandbox backend: wasm`；出现 `restricted-host` 或 fallback 日志时应停止使用并重新审计。
 
 ## 版本
 
-- `latest` 跟随上游 latest 标签，但固定到本次审计的 OCI index digest。
-- `20260723.03` 固定到上游同名版本。评估时两个标签指向同一多架构 OCI index。
+- `latest` 直接跟随上游移动标签，不固定 digest，以便 Watchtower 等工具拉取更新。
+- 固定版本目录中的 `20260723.03` 保留上游同名版本及已审计 digest。评估时两个标签指向同一多架构 OCI index。
 
 ## 参考资料
 
@@ -84,7 +84,7 @@ Do not enable the browser, host terminal, stdio MCP, SSH/node execution, or anot
 
 ## Image Vulnerability Notice
 
-On 2026-07-28, Trivy scans of the pinned amd64 and arm64 images each reported `9 Critical / 124 High / 0 secrets`. The accepted exceptions are bound to the exact image and restricted topology documented above. Startup logs must contain `sandbox backend: wasm`; stop and re-audit if logs report `restricted-host` or any fallback.
+On 2026-07-28, Trivy scans of the audited amd64 and arm64 image snapshots each reported `9 Critical / 124 High / 0 secrets`. The accepted exceptions are bound to those exact images and the restricted topology documented above. The `latest` package follows a moving tag and must be re-audited after it resolves to a new image. Startup logs must contain `sandbox backend: wasm`; stop and re-audit if logs report `restricted-host` or any fallback.
 
 ## References
 
