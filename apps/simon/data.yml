@@ -1,0 +1,32 @@
+name: Simon
+tags:
+  - 实用工具
+title: 轻量级系统与 Docker 实时监控面板
+description: 轻量级系统与 Docker 实时监控面板
+additionalProperties:
+  key: simon
+  name: Simon
+  tags:
+    - Tool
+  shortDescZh: 轻量级系统与 Docker 实时监控面板
+  shortDescEn: A lightweight real-time system and Docker monitoring dashboard
+  description:
+    en: A lightweight real-time system and Docker monitoring dashboard
+    zh: 轻量级系统与 Docker 实时监控面板
+    zh-Hant: 輕量級系統與 Docker 即時監控面板
+    ja: 軽量なシステムおよび Docker リアルタイム監視ダッシュボード
+    ko: 경량 시스템 및 Docker 실시간 모니터링 대시보드
+    ru: Легкая панель мониторинга системы и Docker в реальном времени
+    ms: Papan pemuka pemantauan sistem dan Docker masa nyata yang ringan
+    pt-br: Painel leve de monitoramento em tempo real do sistema e Docker
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/alibahmanyar/simon
+  github: https://github.com/alibahmanyar/simon
+  document: https://github.com/alibahmanyar/simon/blob/f17c4b9c6f13afcc532cfdb7ee9a6ba0205163f0/docs/SETUP.md
+  architectures:
+    - amd64
+    - arm64
+    - arm/v7
