@@ -21,8 +21,8 @@ MicroBin 是使用 Rust 编写的轻量自托管分享服务，可发布文本�
 ## 安全与部署风险
 
 - 官方镜像默认以 root 运行；本应用强制使用 `65534:65534`，并已验证文本、附件、重启和持久化流程。容器使用只读根文件系统、丢弃全部 Linux capabilities，并启用 `no-new-privileges`。
-- 当前官方镜像的新鲜双架构扫描包含基础系统漏洞。MicroBin 二进制只动态链接 libc、libm 和 libgcc，不链接系统 OpenSSL，也不调用镜像中的 Perl、Archive::Tar、Storable、gzip、mount、libcap 或 ncurses 工具。32 位 OpenSSL Critical 不适用于支持的 amd64/arm64 架构。
-- 这些结论只覆盖官方入口和默认配置，并不表示镜像中没有漏洞。镜像摘要、入口或运行用户发生变化后必须重新扫描。
+- 本次审计的官方镜像快照在双架构扫描中包含基础系统漏洞。MicroBin 二进制只动态链接 libc、libm 和 libgcc，不链接系统 OpenSSL，也不调用镜像中的 Perl、Archive::Tar、Storable、gzip、mount、libcap 或 ncurses 工具。32 位 OpenSSL Critical 不适用于支持的 amd64/arm64 架构。
+- 这些结论只覆盖审计时的镜像快照、官方入口和默认配置，并不表示后续镜像中没有漏洞。移动 `latest` 标签解析到新镜像，或入口、运行用户发生变化后必须重新扫描。
 
 ## Introduction
 
@@ -42,11 +42,11 @@ MicroBin is a lightweight self-hosted sharing service written in Rust. It publis
 
 ## Security Note
 
-Fresh scans of the official images contain base-system vulnerabilities. The MicroBin binary dynamically links only libc, libm, and libgcc; it neither links system OpenSSL nor invokes the image's Perl, Archive::Tar, Storable, gzip, mount, libcap, or ncurses tooling. The 32-bit-only OpenSSL Critical does not apply to the supported amd64/arm64 images. These are default-entrypoint reachability exceptions, not claims that the image is vulnerability-free. Any digest, entrypoint, or runtime-user change requires a fresh review.
+Fresh scans of the audited official image snapshot contain base-system vulnerabilities. The MicroBin binary dynamically links only libc, libm, and libgcc; it neither links system OpenSSL nor invokes the image's Perl, Archive::Tar, Storable, gzip, mount, libcap, or ncurses tooling. The 32-bit-only OpenSSL Critical does not apply to the supported amd64/arm64 images. These are default-entrypoint reachability exceptions, not claims that later images are vulnerability-free. A new image resolved from the moving `latest` tag, or any entrypoint or runtime-user change, requires a fresh review.
 
 ## References
 
 - Project: <https://github.com/szabodanika/microbin>
-- Stable release: <https://github.com/szabodanika/microbin/releases/tag/v2.1.0>
-- Official Compose: <https://github.com/szabodanika/microbin/blob/v2.1.0/compose.yaml>
-- License: <https://github.com/szabodanika/microbin/blob/v2.1.0/LICENSE> (BSD-3-Clause)
+- Stable release: <https://github.com/szabodanika/microbin/releases/tag/v2.1.4>
+- Official Compose: <https://github.com/szabodanika/microbin/blob/v2.1.4/compose.yaml>
+- License: <https://github.com/szabodanika/microbin/blob/v2.1.4/LICENSE> (BSD-3-Clause)
