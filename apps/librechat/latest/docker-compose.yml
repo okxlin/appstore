@@ -1,6 +1,6 @@
 services:
   librechat-api:
-    image: "registry.librechat.ai/danny-avila/librechat-dev:latest@sha256:c174e6b040e0a3305bbdfc7e0a8a16633f30ef0e52573034053d2dfff9e70cc5"
+    image: "registry.librechat.ai/danny-avila/librechat-dev:latest"
     container_name: ${CONTAINER_NAME}
     user: root
     restart: always
@@ -84,7 +84,7 @@ services:
       createdBy: "Apps"
 
   librechat-admin:
-    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest@sha256:3958c838caa00a1a883b8d0b91e442acafe727c97d700c3ec4558cf7d7724f8e"
+    image: "registry.librechat.ai/clickhouse/librechat-admin-panel:latest"
     container_name: ${CONTAINER_NAME}-admin
     restart: always
     depends_on:
@@ -181,7 +181,7 @@ services:
       createdBy: "Apps"
 
   librechat-rag-api:
-    image: "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest@sha256:c0ad82657b556c1e16dcfca85d045788f67caa223e25e70eb687f4d16b41dedc"
+    image: "registry.librechat.ai/danny-avila/librechat-rag-api-dev-lite:latest"
     container_name: ${CONTAINER_NAME}-rag-api
     restart: always
     depends_on:

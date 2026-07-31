@@ -24,7 +24,7 @@ LibreChat is an open source multi-user AI chat platform with model provider inte
 - 本应用基于 LibreChat 官方 Docker Compose 拓扑适配，包含 LibreChat API/Web、Admin Panel、MongoDB、Meilisearch、pgvector PostgreSQL 和 RAG API。
 - 应用分类：AI。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`。LibreChat 官方主镜像当前使用 moving `latest` 标签，本应用使用 `tag@sha256` 固定已测试镜像摘要，并关闭跨版本自动升级。
+- 可选版本：`latest`。本目录中的所有镜像保留各自现有标签但不固定 digest；其中 LibreChat 官方主镜像使用 moving `latest`，便于 Watchtower 等工具拉取上游更新。1Panel 的跨版本升级入口仍保持关闭。
 - 内部服务名使用 `librechat-*` 前缀，避免主服务和管理面板同时加入 `1panel-network` 时解析到其他应用的同名服务。
 - 本应用不会把供应商 API Key 作为安装必填项；安装完成后请在 LibreChat 内按需配置模型供应商。
 
@@ -62,10 +62,10 @@ LibreChat is an open source multi-user AI chat platform with model provider inte
 - 首次公开部署时，请把 `DOMAIN_CLIENT`、`DOMAIN_SERVER` 和 `ADMIN_PANEL_URL` 改为真实外部访问地址。
 - 如需关闭开放注册，请将 `ALLOW_REGISTRATION` 设置为 `false`。
 - 模型供应商 Key、OAuth、SMTP、对象存储等高级配置请在应用内或后续自定义配置中维护，不建议在安装表单中暴露大量可选密钥。
-- 当前包不加入 Renovate 自动合并白名单：LibreChat 使用多个数据库/检索服务，官方主镜像来源仍是 moving tag，升级前需要查看上游变更、更新摘要并备份数据。
+- 当前包不加入 Renovate 自动合并白名单：LibreChat 使用多个数据库/检索服务，官方主镜像来源仍是 moving tag，更新前需要查看上游变更并备份数据。
 
 ## 安全提示
-- LibreChat 包含 Web/API、管理面板、数据库、检索和 RAG 等多个联网服务，上游镜像及依赖可能存在镜像扫描器报告的 High 或 Critical 漏洞；摘要固定只能锁定测试版本，不能消除已知漏洞。
+- LibreChat 包含 Web/API、管理面板、数据库、检索和 RAG 等多个联网服务，上游镜像及依赖可能存在镜像扫描器报告的 High 或 Critical 漏洞。移动标签更新后必须重新执行镜像扫描和默认工作流验证。
 - 请及时更新应用并在升级前备份数据，仅向可信网络开放端口，关闭不需要的公开注册，并通过 HTTPS、反向代理和访问控制保护 Web 与管理入口。
 
 ## 参考资料
