@@ -1,0 +1,4 @@
+The Polaris logo is copied from the agersant/polaris source repository and is
+distributed under that repository's MIT license.
+
+Source: https://github.com/agersant/polaris/blob/0d75a85724f43b064410c3dff7e1a78fe5aab04f/res/branding/logo/logo.png

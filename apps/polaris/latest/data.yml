@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+    - default: 5050
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/music
+      edit: true
+      envKey: POLARIS_MUSIC_DIR
+      labelEn: Music Directory
+      labelZh: 音乐目录
+      label:
+        en: Music Directory
+        zh: 音乐目录
+        zh-Hant: 音樂目錄
+        ja: 音楽ディレクトリ
+        ko: 음악 디렉터리
+        ru: Каталог музыки
+        ms: Direktori muzik
+        pt-br: Diretorio de musicas
+      required: true
+      type: text
+    - default: ./data/cache
+      edit: true
+      envKey: POLARIS_CACHE_DIR
+      labelEn: Cache Directory
+      labelZh: 缓存目录
+      label:
+        en: Cache Directory
+        zh: 缓存目录
+        zh-Hant: 快取目錄
+        ja: キャッシュディレクトリ
+        ko: 캐시 디렉터리
+        ru: Каталог кеша
+        ms: Direktori cache
+        pt-br: Diretorio de cache
+      required: true
+      type: text
+    - default: ./data/data
+      edit: true
+      envKey: POLARIS_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text

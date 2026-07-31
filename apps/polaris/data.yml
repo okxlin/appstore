@@ -1,0 +1,30 @@
+name: Polaris
+tags:
+  - 多媒体
+title: 自托管的音乐收藏与流媒体服务器
+description: 自托管的音乐收藏与流媒体服务器
+additionalProperties:
+  key: polaris
+  name: Polaris
+  tags:
+    - Media
+  shortDescZh: 自托管的音乐收藏与流媒体服务器
+  shortDescEn: A self-hosted music collection and streaming server
+  description:
+    en: A self-hosted music collection and streaming server
+    zh: 自托管的音乐收藏与流媒体服务器
+    zh-Hant: 自託管的音樂收藏與串流伺服器
+    ja: セルフホスト型の音楽コレクションおよびストリーミングサーバー
+    ko: 자체 호스팅 음악 컬렉션 및 스트리밍 서버
+    ru: Самостоятельно размещаемый сервер музыкальной коллекции и потоковой передачи
+    ms: Pelayan koleksi muzik dan penstriman hos kendiri
+    pt-br: Servidor auto-hospedado de colecao de musicas e streaming
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://polaris.stream
+  github: https://github.com/agersant/polaris
+  document: https://github.com/agersant/polaris/blob/0d75a85724f43b064410c3dff7e1a78fe5aab04f/docs/CONFIGURATION.md
+  architectures:
+    - amd64
