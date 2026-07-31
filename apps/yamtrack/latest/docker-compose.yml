@@ -1,6 +1,6 @@
 services:
   yamtrack:
-    image: "ghcr.io/fuzzygrim/yamtrack:latest@sha256:00acf008bca8171226063bc0f8f08ef7ffe24a10bcebf8676cce335ce312c307"
+    image: "ghcr.io/fuzzygrim/yamtrack:latest"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
@@ -34,7 +34,7 @@ services:
       createdBy: "Apps"
 
   yamtrack-redis:
-    image: "redis:8-alpine@sha256:8096655e437712b07503796fb64d81359256cfcff0ab29d95a7da72863786efb"
+    image: "redis:8-alpine"
     container_name: ${CONTAINER_NAME}-redis
     restart: unless-stopped
     networks:
