@@ -1,6 +1,6 @@
 services:
   zipline-postgres:
-    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    image: postgres:16-alpine
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
@@ -30,7 +30,7 @@ services:
       createdBy: "Apps"
 
   zipline:
-    image: ghcr.io/diced/zipline:latest@sha256:bfd5b0f7b5b8b3ed058a81667c78a14a7f997115d8433bec273620ec81be51d4
+    image: ghcr.io/diced/zipline:latest
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
