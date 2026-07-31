@@ -29,14 +29,14 @@ Do not manually enable the browser, host terminal, stdio MCP, SSH/node execution
 
 ## Image Vulnerability Notice
 
-On 2026-07-28, Trivy scans of the pinned amd64 and arm64 images each reported `9 Critical / 124 High / 0 secrets`. The Critical records are in OS Perl, SQLite, GLib, libxml2, and npm CLI node-tar paths that the candidate process does not load or invoke, plus a MiniZip path not shipped by Debian's runtime `zlib1g` package. `CVE-2026-8376` affects only 32-bit Perl. The two reviewed Chromium High findings require a browser process; this package does not register the Browser tool and starts no Chromium process.
+On 2026-07-28, Trivy scans of the audited amd64 and arm64 image snapshots each reported `9 Critical / 124 High / 0 secrets`. The Critical records are in OS Perl, SQLite, GLib, libxml2, and npm CLI node-tar paths that the candidate process does not load or invoke, plus a MiniZip path not shipped by Debian's runtime `zlib1g` package. `CVE-2026-8376` affects only 32-bit Perl. The two reviewed Chromium High findings require a browser process; this package does not register the Browser tool and starts no Chromium process.
 
-The exception applies only to the pinned image while WASM initializes successfully, the browser stays disabled, no container-runtime socket is mounted, and no stdio MCP server is enabled. Startup logs must contain `sandbox backend: wasm`. Stop and re-audit if logs report `restricted-host` or any fallback.
+The exception applies only to the audited image snapshot while WASM initializes successfully, the browser stays disabled, no container-runtime socket is mounted, and no stdio MCP server is enabled. The `latest` tag must be re-audited after it resolves to a new image. Startup logs must contain `sandbox backend: wasm`. Stop and re-audit if logs report `restricted-host` or any fallback.
 
 ## Versions
 
-- `latest` follows the upstream latest tag but is pinned to the audited OCI index digest.
-- `20260723.03` pins the matching upstream release. Both tags resolved to the same multi-architecture OCI index during evaluation.
+- `latest` follows the upstream moving tag without a digest so tools such as Watchtower can pull updates.
+- The fixed `20260723.03` package retains the matching upstream release and audited digest. Both tags resolved to the same multi-architecture OCI index during evaluation.
 
 ## References
 
