@@ -1,0 +1,153 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: "*"
+      edit: true
+      envKey: PDFDING_HOST_NAME
+      labelEn: Allowed Hosts
+      labelZh: 允许的主机
+      label:
+        en: Allowed Hosts
+        zh: 允许的主机
+        zh-Hant: 允許的主機
+        ja: 許可するホスト
+        ko: 허용된 호스트
+        ru: Разрешенные хосты
+        ms: Hos yang dibenarkan
+        pt-br: Hosts permitidos
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: PDFDING_SECRET_KEY
+      labelEn: Application Secret
+      labelZh: 应用密钥
+      label:
+        en: Application Secret
+        zh: 应用密钥
+        zh-Hant: 應用程式密鑰
+        ja: アプリケーションシークレット
+        ko: 애플리케이션 비밀 키
+        ru: Секрет приложения
+        ms: Rahsia aplikasi
+        pt-br: Segredo do aplicativo
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "FALSE"
+      edit: true
+      envKey: PDFDING_CSRF_COOKIE_SECURE
+      labelEn: Secure CSRF Cookie
+      labelZh: 安全 CSRF Cookie
+      label:
+        en: Secure CSRF Cookie
+        zh: 安全 CSRF Cookie
+        zh-Hant: 安全 CSRF Cookie
+        ja: セキュア CSRF Cookie
+        ko: 보안 CSRF Cookie
+        ru: Защищенный CSRF Cookie
+        ms: Cookie CSRF selamat
+        pt-br: Cookie CSRF seguro
+      required: true
+      type: select
+      values:
+        - label: "Disabled"
+          value: "FALSE"
+        - label: "Enabled"
+          value: "TRUE"
+    - default: "FALSE"
+      edit: true
+      envKey: PDFDING_SESSION_COOKIE_SECURE
+      labelEn: Secure Session Cookie
+      labelZh: 安全会话 Cookie
+      label:
+        en: Secure Session Cookie
+        zh: 安全会话 Cookie
+        zh-Hant: 安全工作階段 Cookie
+        ja: セキュアセッション Cookie
+        ko: 보안 세션 Cookie
+        ru: Защищенный Cookie сеанса
+        ms: Cookie sesi selamat
+        pt-br: Cookie de sessão seguro
+      required: true
+      type: select
+      values:
+        - label: "Disabled"
+          value: "FALSE"
+        - label: "Enabled"
+          value: "TRUE"
+    - default: "FALSE"
+      edit: true
+      envKey: PDFDING_DISABLE_USER_SIGNUP
+      labelEn: Disable User Signup
+      labelZh: 禁止用户注册
+      label:
+        en: Disable User Signup
+        zh: 禁止用户注册
+        zh-Hant: 禁止使用者註冊
+        ja: ユーザー登録を無効化
+        ko: 사용자 가입 비활성화
+        ru: Отключить регистрацию пользователей
+        ms: Lumpuhkan pendaftaran pengguna
+        pt-br: Desativar cadastro de usuários
+      required: true
+      type: select
+      values:
+        - label: "No"
+          value: "FALSE"
+        - label: "Yes"
+          value: "TRUE"
+    - default: http
+      edit: true
+      envKey: PDFDING_ACCOUNT_PROTOCOL
+      labelEn: Public URL Scheme
+      labelZh: 公共 URL 协议
+      label:
+        en: Public URL Scheme
+        zh: 公共 URL 协议
+        zh-Hant: 公開 URL 通訊協定
+        ja: 公開 URL スキーム
+        ko: 공개 URL 스킴
+        ru: Схема публичного URL
+        ms: Skema URL awam
+        pt-br: Esquema da URL pública
+      required: true
+      type: select
+      values:
+        - label: HTTP
+          value: http
+        - label: HTTPS
+          value: https
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
