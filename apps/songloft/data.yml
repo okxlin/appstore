@@ -1,0 +1,32 @@
+name: Songloft
+tags:
+  - 多媒体
+title: 自托管的个人音乐服务器，支持本地音乐管理、扫描和播放
+description: 自托管的个人音乐服务器，支持本地音乐管理、扫描和播放
+additionalProperties:
+  key: songloft
+  name: Songloft
+  description:
+    en: A self-hosted personal music server for managing, scanning, and playing local music
+    zh: 自托管的个人音乐服务器，支持本地音乐管理、扫描和播放
+    zh-Hant: 自託管的個人音樂伺服器，支援本機音樂管理、掃描和播放
+    ja: ローカル音楽の管理、スキャン、再生に対応するセルフホスト型個人音楽サーバー
+    ko: 로컬 음악 관리, 스캔 및 재생을 지원하는 셀프 호스팅 개인 음악 서버
+    ru: Самостоятельно размещаемый персональный музыкальный сервер для управления, сканирования и воспроизведения локальной музыки
+    ms: Pelayan muzik peribadi hos sendiri untuk mengurus, mengimbas dan memainkan muzik setempat
+    pt-br: Servidor de música pessoal auto-hospedado para gerenciar, escanear e reproduzir músicas locais
+  tags:
+    - Media
+  shortDescZh: 自托管的个人音乐服务器，支持本地音乐管理、扫描和播放
+  shortDescEn: A self-hosted personal music server for managing, scanning, and playing local music
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://songloft.hanxi.cc
+  github: https://github.com/songloft-org/songloft
+  document: https://songloft.hanxi.cc
+  architectures:
+    - amd64
+    - arm64
+    - arm/v7
