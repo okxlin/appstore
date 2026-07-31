@@ -1,0 +1,31 @@
+name: ShutHost
+tags:
+  - 实用工具
+title: 通过 Wake-on-LAN 和轻量代理管理局域网主机电源
+description: 通过 Wake-on-LAN 和轻量代理管理局域网主机电源
+additionalProperties:
+  key: shuthost
+  name: ShutHost
+  tags:
+    - Tool
+  shortDescZh: 通过 Wake-on-LAN 和轻量代理管理局域网主机电源
+  shortDescEn: Manage LAN host power with Wake-on-LAN and lightweight agents
+  description:
+    en: Manage LAN host power states with Wake-on-LAN, a web coordinator, and lightweight host agents.
+    zh: 通过 Wake-on-LAN、Web 协调器和轻量主机代理管理局域网主机电源状态。
+    zh-Hant: 透過 Wake-on-LAN、Web 協調器和輕量主機代理管理區域網路主機電源狀態。
+    ja: Wake-on-LAN、Web コーディネーター、軽量ホストエージェントで LAN ホストの電源状態を管理します。
+    ko: Wake-on-LAN, 웹 코디네이터, 경량 호스트 에이전트로 LAN 호스트 전원 상태를 관리합니다.
+    ru: Управление питанием узлов локальной сети через Wake-on-LAN, веб-координатор и легкие агенты.
+    ms: Urus kuasa hos LAN dengan Wake-on-LAN, penyelaras web dan ejen hos ringan.
+    pt-br: Gerencie a energia de hosts da LAN com Wake-on-LAN, coordenador web e agentes leves.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/9SMTM6/shuthost
+  github: https://github.com/9SMTM6/shuthost
+  document: https://github.com/9SMTM6/shuthost/tree/main/docs
+  architectures:
+    - amd64
+    - arm64
