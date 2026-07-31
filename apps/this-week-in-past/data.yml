@@ -1,0 +1,33 @@
+name: This Week in Past
+tags:
+  - 多媒体
+title: 展示往年本周照片的自托管幻灯片
+description: 展示往年本周照片的自托管幻灯片
+additionalProperties:
+  key: this-week-in-past
+  name: This Week in Past
+  tags:
+    - Media
+  shortDescZh: 展示往年本周照片的自托管幻灯片
+  shortDescEn: A self-hosted slideshow of photos taken this week in previous years
+  description:
+    en: A self-hosted slideshow that finds and displays photos taken during this week in previous years.
+    zh: 自托管照片幻灯片，用于查找并展示往年同一周拍摄的照片。
+    zh-Hant: 自託管相片幻燈片，用於尋找並展示往年同一週拍攝的相片。
+    ja: 過去の同じ週に撮影した写真を探して表示するセルフホスト型スライドショーです。
+    ko: 지난 여러 해의 같은 주에 촬영한 사진을 찾아 보여 주는 자체 호스팅 슬라이드쇼입니다.
+    ru: Самостоятельно размещаемое слайд-шоу из фотографий, снятых на этой неделе в прошлые годы.
+    ms: Tayangan slaid hos sendiri yang memaparkan foto yang diambil pada minggu ini dalam tahun-tahun lalu.
+    pt-br: Apresentacao de slides auto-hospedada com fotos tiradas nesta semana em anos anteriores.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/RouHim/this-week-in-past
+  github: https://github.com/RouHim/this-week-in-past
+  document: https://github.com/RouHim/this-week-in-past/blob/1cbf1e33bc96810d14549daf19e62ac0ecf9eb5d/README.md
+  architectures:
+    - amd64
+    - arm64
+    - armv7
+    - armv6
