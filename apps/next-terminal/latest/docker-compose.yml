@@ -6,7 +6,7 @@ services:
       - 1panel-network
     volumes:
       - "${DATA_PATH}:/usr/local/next-terminal/data"
-    image: dushixiang/guacd:1.6.0@sha256:40872b125c3d946314bd322a3a54325ee2d9a58ecd788f76720ca11874548e42
+    image: dushixiang/guacd:1.6.0
     labels:
       createdBy: "Apps"
 
@@ -32,7 +32,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    image: dushixiang/next-terminal:v3.5.2@sha256:4e095f8a0309878e2966d3157af5667b6911b6890d5e4c4abfa5116e0209ca3e
+    image: dushixiang/next-terminal:v3.5.2
     labels:
       createdBy: "Apps"
 
