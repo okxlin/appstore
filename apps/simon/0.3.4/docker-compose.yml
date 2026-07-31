@@ -1,0 +1,32 @@
+services:
+  simon:
+    image: "alibahmanyar/simon:0.3.4"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:30000"
+    environment:
+      - SIMON_ADDRESS=0.0.0.0
+      - SIMON_PORT=30000
+      - SIMON_PASSWORD_HASH=${SIMON_PASSWORD_HASH}
+      - SIMON_DB_PATH=/app/simon-data/simon.db
+      - SIMON_UPDATE_INTERVAL=2
+    volumes:
+      - "/sys:/sys:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "${APP_DATA_DIR}:/app/simon-data"
+    read_only: true
+    tmpfs:
+      - /tmp:nodev,noexec,nosuid,size=16M
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
