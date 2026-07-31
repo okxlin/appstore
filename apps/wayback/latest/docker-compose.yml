@@ -1,6 +1,6 @@
 services:
   wayback:
-    image: "wabarc/wayback:latest@sha256:60cc26d4678462a866d34866d2f1d07c0419d4b87940640bdf2e3030e3b77a06"
+    image: "wabarc/wayback:latest"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     command: ["wayback", "--ia", "--is", "--ga", "-d", "web"]
