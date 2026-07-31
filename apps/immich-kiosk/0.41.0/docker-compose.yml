@@ -1,0 +1,33 @@
+services:
+  immich-kiosk:
+    image: "ghcr.io/damongolding/immich-kiosk:0.41.0@sha256:979167f38aad5e441d2709c37e4b9374827d23e8c0a966cdfcaff7037a16da1d"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - LANG=en_US
+      - TZ=${TIME_ZONE}
+      - KIOSK_PORT=3000
+      - KIOSK_IMMICH_URL=${KIOSK_IMMICH_URL}
+      - KIOSK_IMMICH_API_KEY=${KIOSK_IMMICH_API_KEY}
+      - KIOSK_IMMICH_EXTERNAL_URL=${KIOSK_IMMICH_EXTERNAL_URL}
+      - KIOSK_DURATION=${KIOSK_DURATION}
+      - KIOSK_ALBUMS=${KIOSK_ALBUMS}
+      - KIOSK_SHOW_TIME=${KIOSK_SHOW_TIME}
+      - KIOSK_LAYOUT=${KIOSK_LAYOUT}
+      - KIOSK_BEHIND_PROXY=true
+    healthcheck:
+      test: ["CMD", "/kiosk", "--healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    labels:
+      createdBy: Apps
+
+networks:
+  1panel-network:
+    external: true

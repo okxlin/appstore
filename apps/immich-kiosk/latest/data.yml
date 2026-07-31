@@ -1,0 +1,174 @@
+additionalProperties:
+  formFields:
+    - default: 0.0.0.0
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 40098
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://immich-server:2283
+      edit: true
+      envKey: KIOSK_IMMICH_URL
+      labelEn: Immich URL
+      labelZh: Immich 地址
+      label:
+        en: Immich URL
+        zh: Immich 地址
+        zh-Hant: Immich 位址
+        ja: Immich URL
+        ko: Immich URL
+        ru: Адрес Immich
+        ms: URL Immich
+        pt-br: URL do Immich
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: KIOSK_IMMICH_API_KEY
+      labelEn: Immich API Key
+      labelZh: Immich API 密钥
+      label:
+        en: Immich API Key
+        zh: Immich API 密钥
+        zh-Hant: Immich API 金鑰
+        ja: Immich API キー
+        ko: Immich API 키
+        ru: Ключ API Immich
+        ms: Kunci API Immich
+        pt-br: Chave de API do Immich
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: KIOSK_IMMICH_EXTERNAL_URL
+      labelEn: Public Immich URL
+      labelZh: Immich 公网地址
+      label:
+        en: Public Immich URL
+        zh: Immich 公网地址
+        zh-Hant: Immich 公開位址
+        ja: 公開 Immich URL
+        ko: 공개 Immich URL
+        ru: Публичный адрес Immich
+        ms: URL awam Immich
+        pt-br: URL publico do Immich
+      required: false
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon masa
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: 60
+      edit: true
+      envKey: KIOSK_DURATION
+      labelEn: Slide Duration
+      labelZh: 轮播时长
+      label:
+        en: Slide Duration
+        zh: 轮播时长
+        zh-Hant: 輪播時長
+        ja: スライド表示時間
+        ko: 슬라이드 표시 시간
+        ru: Длительность слайда
+        ms: Tempoh slaid
+        pt-br: Duracao do slide
+      required: true
+      type: number
+    - default: ""
+      edit: true
+      envKey: KIOSK_ALBUMS
+      labelEn: Album IDs
+      labelZh: 相册 ID
+      label:
+        en: Album IDs
+        zh: 相册 ID
+        zh-Hant: 相簿 ID
+        ja: アルバム ID
+        ko: 앨범 ID
+        ru: Идентификаторы альбомов
+        ms: ID album
+        pt-br: IDs de albuns
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: KIOSK_SHOW_TIME
+      labelEn: Show Clock
+      labelZh: 显示时钟
+      label:
+        en: Show Clock
+        zh: 显示时钟
+        zh-Hant: 顯示時鐘
+        ja: 時計を表示
+        ko: 시계 표시
+        ru: Показывать часы
+        ms: Tunjukkan jam
+        pt-br: Mostrar relogio
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: single
+      edit: true
+      envKey: KIOSK_LAYOUT
+      labelEn: Layout
+      labelZh: 布局
+      label:
+        en: Layout
+        zh: 布局
+        zh-Hant: 版面配置
+        ja: レイアウト
+        ko: 레이아웃
+        ru: Макет
+        ms: Susun atur
+        pt-br: Layout
+      required: true
+      type: select
+      values:
+        - label: single
+          value: single
+        - label: splitview
+          value: splitview
