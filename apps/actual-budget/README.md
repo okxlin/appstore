@@ -21,8 +21,8 @@ Actual Budget 是隐私优先的开源个人财务应用，提供信封预算、
 ## 安全与部署风险
 
 - 容器以 UID/GID `1001:1001` 运行，丢弃全部 Linux capabilities，并启用只读根文件系统和 `no-new-privileges`。
-- 当前官方 `26.7.0` 镜像的新鲜 Trivy 扫描仍包含上游未修复漏洞。其中两份受 `CVE-2026-59873` 影响的 `node-tar` 分别属于 npm CLI 和仅由 `node-gyp` 导入的构建链；Actual 的运行时导入、备份和同步上传路径使用 `AdmZip` 或限长后原样存储，未调用 `node-tar`。该结论是默认运行路径例外，不代表镜像中不存在漏洞。
-- 如果在容器内手动运行 npm/node-gyp、增加执行外部命令的插件或改变官方入口，上述可达性结论将不再成立。镜像摘要变更时必须重新扫描。
+- 固定版本 `26.7.0` 使用的镜像快照在 Trivy 扫描中仍包含上游未修复漏洞。其中两份受 `CVE-2026-59873` 影响的 `node-tar` 分别属于 npm CLI 和仅由 `node-gyp` 导入的构建链；Actual 的运行时导入、备份和同步上传路径使用 `AdmZip` 或限长后原样存储，未调用 `node-tar`。该结论是默认运行路径例外，不代表后续镜像中不存在漏洞。
+- 如果在容器内手动运行 npm/node-gyp、增加执行外部命令的插件或改变官方入口，上述可达性结论将不再成立。`latest` 标签解析到新镜像时必须重新扫描。
 
 ## Introduction
 
@@ -42,7 +42,7 @@ Actual Budget is a privacy-focused open-source personal finance app with envelop
 
 ## Security Note
 
-The current official image contains upstream vulnerabilities. Two `node-tar` copies affected by `CVE-2026-59873` belong to the npm CLI and the `node-gyp` build chain; Actual's runtime import, backup, and sync-upload paths use `AdmZip` or bounded opaque storage and do not invoke them. This is a default-path reachability exception, not a claim that the packages are absent. Running npm/node-gyp inside the container or replacing the official entrypoint invalidates the exception.
+The image snapshot used by the fixed `26.7.0` package contains upstream vulnerabilities. Two `node-tar` copies affected by `CVE-2026-59873` belong to the npm CLI and the `node-gyp` build chain; Actual's runtime import, backup, and sync-upload paths use `AdmZip` or bounded opaque storage and do not invoke them. This is a default-path reachability exception, not a claim that later images are unaffected. The `latest` package follows a moving tag; a newly resolved image, running npm/node-gyp inside the container, or replacing the official entrypoint invalidates the exception and requires renewed review.
 
 ## References
 
