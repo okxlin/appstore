@@ -1,6 +1,6 @@
 services:
   jianmu-server:
-    image: "docker.jianmuhub.com/jianmu/jianmu-server:v2.8.2@sha256:b835c4117c268c3417dc985ef57c0253de84033f904bacf9ee0ad25088699a3c"
+    image: "docker.jianmuhub.com/jianmu/jianmu-server:v2.8.2"
     container_name: ${CONTAINER_NAME}-server
     restart: always
     entrypoint:
@@ -35,7 +35,7 @@ services:
       createdBy: "Apps"
 
   jianmu-worker:
-    image: "docker.jianmuhub.com/jianmu/jianmu-worker-docker:v1.0.14@sha256:bcb45def4af7133b0c5b7a49fa36158c6d8a71e8fbcb1806b179e7b954f7b5af"
+    image: "docker.jianmuhub.com/jianmu/jianmu-worker-docker:v1.0.14"
     container_name: ${CONTAINER_NAME}-worker
     restart: always
     depends_on:
@@ -55,7 +55,7 @@ services:
       createdBy: "Apps"
 
   jianmu-web:
-    image: "docker.jianmuhub.com/jianmu/jianmu-ui:v2.8.2@sha256:cde848330e4105923d05c23ea1608f4c1ba686b3679348ff413b55d26317536b"
+    image: "docker.jianmuhub.com/jianmu/jianmu-ui:v2.8.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     depends_on:
