@@ -1,6 +1,6 @@
 services:
   misskey:
-    image: "misskey/misskey:2026.6.0"
+    image: "misskey/misskey:2026.7.0"
     container_name: ${CONTAINER_NAME}
     user: root
     restart: always
