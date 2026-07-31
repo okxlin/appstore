@@ -1,0 +1,31 @@
+name: Pulse
+tags:
+  - 实用工具
+title: 面向 Proxmox 与多平台基础设施的监控和告警工具
+description: 面向 Proxmox 与多平台基础设施的监控和告警工具
+additionalProperties:
+  key: pulse
+  name: Pulse
+  tags:
+    - Tool
+  shortDescZh: 面向 Proxmox 与多平台基础设施的监控和告警工具
+  shortDescEn: Monitoring and alerting for Proxmox and multi-platform infrastructure
+  description:
+    en: Monitoring and alerting for Proxmox and multi-platform infrastructure
+    zh: 面向 Proxmox 与多平台基础设施的监控和告警工具
+    zh-Hant: 面向 Proxmox 與多平台基礎設施的監控和警示工具
+    ja: Proxmox とマルチプラットフォーム基盤向けの監視およびアラートツール
+    ko: Proxmox 및 멀티플랫폼 인프라를 위한 모니터링 및 알림 도구
+    ru: Мониторинг и оповещения для Proxmox и мультиплатформенной инфраструктуры
+    ms: Pemantauan dan amaran untuk Proxmox serta infrastruktur berbilang platform
+    pt-br: Monitoramento e alertas para Proxmox e infraestrutura multiplataforma
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/rcourtman/Pulse
+  github: https://github.com/rcourtman/Pulse
+  document: https://github.com/rcourtman/Pulse/blob/fe33d2321016fec0653def94b0f7eeae2b078504/docs/DOCKER.md
+  architectures:
+    - amd64
+    - arm64

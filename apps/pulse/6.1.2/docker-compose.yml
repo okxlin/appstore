@@ -1,0 +1,42 @@
+services:
+  pulse:
+    image: "docker.io/rcourtman/pulse:v6.1.2@sha256:d1c8d64d0f5ba88799e6808a0180eda2b19e42797a4b0df07c9f8ca380eb646f"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:7655"
+    environment:
+      - TZ=${PULSE_TIMEZONE}
+      - PULSE_AUTH_USER=${PULSE_AUTH_USER}
+      - PULSE_AUTH_PASS=${PULSE_AUTH_PASS}
+      - PULSE_DATA_DIR=/data
+      - PULSE_DOCKER=true
+      - PULSE_DEPLOYMENT_METHOD=docker_compose
+      - PULSE_TELEMETRY=${PULSE_TELEMETRY}
+      - PULSE_DISABLE_DOCKER_UPDATE_ACTIONS=true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "/docker-healthcheck.sh"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
