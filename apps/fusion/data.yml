@@ -25,7 +25,7 @@ additionalProperties:
   recommend: 0
   website: https://github.com/0x2E/fusion
   github: https://github.com/0x2E/fusion
-  document: https://github.com/0x2E/fusion/blob/v1.2.0/README.md
+  document: https://github.com/0x2E/fusion/blob/v1.2.1/README.md
   architectures:
     - amd64
     - arm64
