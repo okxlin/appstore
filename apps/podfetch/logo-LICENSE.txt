@@ -1,0 +1,9 @@
+PodFetch logo
+
+Source: https://github.com/SamTV12345/PodFetch/blob/b28002a56bd0291df3a4b184cf5673dcd99aceec/ui/public/logo.png
+Source commit: b28002a56bd0291df3a4b184cf5673dcd99aceec
+Source SHA-256: 3ad03a34777eff296167d19f38f0084c54096f7b78e725958953d05d7e8d58c4
+License: Apache License 2.0 (Apache-2.0)
+License text: https://github.com/SamTV12345/PodFetch/blob/b28002a56bd0291df3a4b184cf5673dcd99aceec/LICENSE
+
+The store asset is a proportional rendering of the official project logo.

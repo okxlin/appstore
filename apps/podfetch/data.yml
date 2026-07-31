@@ -1,0 +1,31 @@
+name: PodFetch
+tags:
+  - 多媒体
+title: 自托管的播客管理器和下载器
+description: 自托管的播客管理器和下载器
+additionalProperties:
+  key: podfetch
+  name: PodFetch
+  tags:
+    - Media
+  shortDescZh: 自托管的播客管理器和下载器
+  shortDescEn: Self-hosted podcast manager and downloader
+  description:
+    en: Self-hosted podcast manager and downloader with web, mobile, and feed-reader integrations.
+    zh: 支持 Web、移动端和订阅阅读器集成的自托管播客管理器与下载器。
+    zh-Hant: 支援 Web、行動端和訂閱閱讀器整合的自託管播客管理器與下載器。
+    ja: Web、モバイル、フィードリーダー連携に対応したセルフホスト型ポッドキャスト管理・ダウンロードツールです。
+    ko: 웹, 모바일, 피드 리더 연동을 지원하는 자체 호스팅 팟캐스트 관리자 및 다운로더입니다.
+    ru: Самостоятельно размещаемый менеджер и загрузчик подкастов с интеграциями.
+    ms: Pengurus dan pemuat turun podcast dihos sendiri dengan integrasi web dan mudah alih.
+    pt-br: Gerenciador e baixador de podcasts auto-hospedado com integracoes web e moveis.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://samtv12345.github.io/PodFetch/
+  github: https://github.com/SamTV12345/PodFetch
+  document: https://samtv12345.github.io/PodFetch/
+  architectures:
+    - amd64
+    - arm64
