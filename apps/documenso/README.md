@@ -27,8 +27,8 @@ Documenso 是开源文档签署平台，支持文档上传、收件人工作流�
 ## 安全说明
 
 - 默认关闭 Documenso 匿名遥测，容器丢弃全部 Linux capabilities，并启用只读根文件系统和 `no-new-privileges`。
-- 当前官方镜像的新鲜 Trivy 扫描仍含上游漏洞。`CVE-2026-59873` 位于 npm CLI 的 `tar@7.5.11`；本包不运行 npm/npx，而是直接执行镜像内的本地 Prisma CLI，文档上传也不会进入该依赖。`CVE-2025-68121` 位于 `react-email` 开发/预览 CLI 携带的 esbuild Go 二进制，生产服务器只使用 `@react-email/render`，不会执行 esbuild。
-- 若镜像摘要改变、入口改回 npm/npx、加入运行时包安装/归档解包，或生产流程开始调用 `react-email`/esbuild CLI，上述默认路径例外立即失效，必须重新扫描与验证。
+- 本次审计的官方镜像快照仍含上游漏洞。`CVE-2026-59873` 位于 npm CLI 的 `tar@7.5.11`；本包不运行 npm/npx，而是直接执行镜像内的本地 Prisma CLI，文档上传也不会进入该依赖。`CVE-2025-68121` 位于 `react-email` 开发/预览 CLI 携带的 esbuild Go 二进制，生产服务器只使用 `@react-email/render`，不会执行 esbuild。
+- 若 `latest` 标签解析到新镜像、入口改回 npm/npx、加入运行时包安装/归档解包，或生产流程开始调用 `react-email`/esbuild CLI，上述默认路径例外立即失效，必须重新扫描与验证。
 
 ## Introduction
 
@@ -52,7 +52,7 @@ On first install, the initialization script creates a passphrase-protected self-
 
 ## Security Note
 
-The official images currently contain upstream vulnerabilities. This package bypasses the npm/npx startup path containing vulnerable `tar@7.5.11` and directly invokes the installed Prisma CLI. The vulnerable esbuild Go binary belongs to the unused `react-email` preview/build CLI; production rendering imports `@react-email/render` and does not execute esbuild. These are reachability exceptions, not claims that the vulnerable files are absent. Reassess whenever image digests or runtime commands change.
+The audited official image snapshot contains upstream vulnerabilities. This package bypasses the npm/npx startup path containing vulnerable `tar@7.5.11` and directly invokes the installed Prisma CLI. The vulnerable esbuild Go binary belongs to the unused `react-email` preview/build CLI; production rendering imports `@react-email/render` and does not execute esbuild. These are reachability exceptions, not claims that the vulnerable files are absent. Reassess whenever the moving `latest` tag resolves to a new image or runtime commands change.
 
 ## References
 
