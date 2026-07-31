@@ -1,0 +1,37 @@
+services:
+  nora:
+    image: "ghcr.io/getnora-io/nora:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    tmpfs:
+      - /tmp:size=256M
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4000"
+    volumes:
+      - nora-data:/data
+    environment:
+      - RUST_LOG=${RUST_LOG}
+      - NORA_HOST=0.0.0.0
+      - NORA_PORT=4000
+      - NORA_PUBLIC_URL=${NORA_PUBLIC_URL}
+      - NORA_AUTH_ENABLED=${NORA_AUTH_ENABLED}
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:4000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+
+volumes:
+  nora-data:
