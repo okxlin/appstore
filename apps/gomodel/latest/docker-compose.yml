@@ -1,0 +1,51 @@
+services:
+  gomodel:
+    image: "enterpilot/gomodel:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "65532:65532"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - PORT=8080
+      - GOMODEL_MASTER_KEY=${GOMODEL_MASTER_KEY}
+      - STORAGE_TYPE=sqlite
+      - SQLITE_PATH=/app/data/gomodel.db
+      - GOMODEL_CACHE_DIR=/app/.cache
+      - CONFIG_STRICT=true
+      - BODY_SIZE_LIMIT=10M
+      - ADMIN_ENDPOINTS_ENABLED=true
+      - ADMIN_UI_ENABLED=true
+      - LOGGING_ENABLED=true
+      - LOGGING_LOG_BODIES=false
+      - LOGGING_LOG_HEADERS=false
+      - LOGGING_ONLY_MODEL_INTERACTIONS=true
+      - USAGE_ENABLED=true
+      - METRICS_ENABLED=false
+      - SWAGGER_ENABLED=false
+      - PPROF_ENABLED=false
+      - LOG_LEVEL=info
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    read_only: true
+    tmpfs:
+      - /app/.cache:uid=65532,gid=65532,mode=0750,size=64m
+      - /tmp:uid=65532,gid=65532,mode=1777,size=64m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "/gomodel", "--health"]
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 5
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
