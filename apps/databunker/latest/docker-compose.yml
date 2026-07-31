@@ -1,0 +1,33 @@
+services:
+  databunker:
+    image: "securitybunker/databunker:latest"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    entrypoint:
+      - /bin/busybox
+      - sh
+      - -ec
+    command:
+      - |
+        /databunker/bin/databunker -init -db "$${PANEL_DB_NAME}" -conf /databunker/conf/databunker.yaml
+        exec /databunker/bin/databunker -start -db "$${PANEL_DB_NAME}" -conf /databunker/conf/databunker.yaml
+    environment:
+      - DATABUNKER_MASTERKEY=${DATABUNKER_MASTER_KEY}
+      - DATABUNKER_ROOTTOKEN=${DATABUNKER_ROOTTOKEN}
+      - MYSQL_USER_NAME=${PANEL_DB_USER}
+      - MYSQL_USER_PASS=${PANEL_DB_USER_PASSWORD}
+      - MYSQL_HOST=${PANEL_DB_HOST}
+      - MYSQL_PORT=${PANEL_DB_PORT}
+      - PANEL_DB_NAME=${PANEL_DB_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    volumes:
+      - "${APP_DATA_DIR}/runtime:/databunker/data"
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
