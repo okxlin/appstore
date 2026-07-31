@@ -1,6 +1,6 @@
 services:
   kaneo-postgres:
-    image: postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777
+    image: postgres:16-alpine
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
@@ -30,7 +30,7 @@ services:
       createdBy: "Apps"
 
   kaneo:
-    image: ghcr.io/usekaneo/kaneo:latest@sha256:f1940688542264de86a4360ce6654c83c2a457eb23ccfe533f231909d4297943
+    image: ghcr.io/usekaneo/kaneo:latest
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1001:1001"
