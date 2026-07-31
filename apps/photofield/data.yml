@@ -1,0 +1,33 @@
+name: Photofield
+tags:
+  - Media
+  - Website
+title: 高速只读自托管照片图库
+description: 高速只读自托管照片图库
+additionalProperties:
+  key: photofield
+  name: Photofield
+  tags:
+    - Media
+    - Website
+  shortDescZh: 高速只读自托管照片图库
+  shortDescEn: Fast read-only self-hosted photo gallery
+  description:
+    en: A fast self-hosted photo gallery that indexes read-only photo libraries.
+    zh: 一款可索引只读照片目录的高速自托管照片图库。
+    zh-Hant: 一款可索引唯讀照片目錄的高速自架照片圖庫。
+    ja: 読み取り専用の写真ライブラリを索引化する高速なセルフホスト写真ギャラリーです。
+    ko: 읽기 전용 사진 라이브러리를 색인하는 빠른 자체 호스팅 사진 갤러리입니다.
+    ru: Быстрая самостоятельно размещаемая фотогалерея для индексации каталогов только для чтения.
+    ms: Galeri foto hos kendiri yang pantas untuk mengindeks pustaka foto baca sahaja.
+    pt-br: Galeria de fotos auto-hospedada e rapida que indexa bibliotecas somente leitura.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://photofield.dev
+  github: https://github.com/SmilyOrg/photofield
+  document: https://photofield.dev/quick-start
+  architectures:
+    - amd64
+    - arm64
