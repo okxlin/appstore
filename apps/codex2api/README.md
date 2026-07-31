@@ -40,8 +40,8 @@ Codex2API is a Codex account-pool gateway that exposes OpenAI and Anthropic comp
 
 - 仅应在可信环境中部署，并建议通过反向代理启用 HTTPS、限制管理后台来源并配置防火墙访问控制。不要在 HTTP 明文连接中上传真实 Token。
 - 本应用强制设置 `CODEX_ALLOW_ANONYMOUS=false`。下游 API Key 仍需在管理后台创建，不能只依赖网络边界。
-- 固定版本镜像来自上游作者的 GHCR，OCI source、revision 和版本标签与 `v2.5.8` 源码提交一致。
-- 截至 2026-07-21，上游 `2.5.8` 镜像基于已结束支持的 Alpine 3.19。Trivy 在运行文件系统中报告 `musl` 和 `musl-utils` 的 `CVE-2026-40200`（High），镜像安装的是 `1.2.4_git20230717-r5`，修复版本为 `r6`。应用二进制以 `CGO_ENABLED=0` 构建，但镜像内基础工具仍受影响；对该风险敏感时应等待上游发布更新镜像后再部署。
+- 固定版本 `2.6.1` 的镜像来自上游作者的 GHCR，并保留已验证 digest。
+- `latest` 目录直接跟随上游移动标签，不固定 digest，以便 Watchtower 等工具拉取更新。标签解析到新镜像后必须重新执行镜像扫描、管理登录、API Key、重启与数据持久化验证。
 - 上游 README 声明使用 MIT License，但仓库没有独立的 `LICENSE` 文件，OCI license 标签也为空。部署和再分发前请自行确认许可证条件。
 
 ## 参考资料
