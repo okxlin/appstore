@@ -1,0 +1,34 @@
+name: NUT Web GUI
+tags:
+  - 实用工具
+title: 用于监控 Network UPS Tools 设备的轻量级 Web 界面
+description: 用于监控 Network UPS Tools 设备的轻量级 Web 界面
+additionalProperties:
+  key: nut-webgui
+  name: NUT Web GUI
+  tags:
+    - Tool
+  shortDescZh: 用于监控 Network UPS Tools 设备的轻量级 Web 界面
+  shortDescEn: A lightweight web interface for monitoring Network UPS Tools devices
+  description:
+    en: A lightweight web interface for monitoring Network UPS Tools devices
+    zh: 用于监控 Network UPS Tools 设备的轻量级 Web 界面
+    zh-Hant: 用於監控 Network UPS Tools 裝置的輕量級 Web 介面
+    ja: Network UPS Tools デバイスを監視する軽量 Web インターフェース
+    ko: Network UPS Tools 장치를 모니터링하는 경량 웹 인터페이스
+    ru: Легкий веб-интерфейс для мониторинга устройств Network UPS Tools
+    ms: Antara muka web ringan untuk memantau peranti Network UPS Tools
+    pt-br: Interface web leve para monitorar dispositivos Network UPS Tools
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://github.com/SuperioOne/nut_webgui
+  github: https://github.com/SuperioOne/nut_webgui
+  document: https://github.com/SuperioOne/nut_webgui/blob/0f27202af128ade7bb93a951110cd61690a0599a/docs/examples/02_compose.md
+  architectures:
+    - amd64
+    - arm64
+    - riscv64
+    - arm/v6
+    - arm/v7

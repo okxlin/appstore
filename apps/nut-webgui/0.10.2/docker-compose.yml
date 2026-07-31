@@ -1,0 +1,36 @@
+services:
+  nut-webgui:
+    image: "ghcr.io/superioone/nut_webgui:0.10.2"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:9000"
+    environment:
+      - UPSD_ADDR=${UPSD_ADDRESS}
+      - UPSD_PORT=${UPSD_PORT}
+      - UPSD_USER=${UPSD_USERNAME}
+      - UPSD_PASS=${UPSD_PASSWORD}
+      - UPSD_TLS=${UPSD_TLS_MODE}
+      - LISTEN=0.0.0.0
+      - PORT=9000
+      - UID=1000
+      - GID=1000
+      - LOG_LEVEL=info
+    volumes:
+      - "${APP_CONFIG_DIR}:/etc/nut_webgui"
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:9000/probes/health >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
