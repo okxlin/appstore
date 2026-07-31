@@ -1,0 +1,56 @@
+services:
+  snipo:
+    image: "ghcr.io/mohamedelashri/snipo:1.7.4@sha256:bd9d1fa2245ad2bcdaaac0e34df3094f2005e7397de3e42c9aeb0ae9ec765e9f"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - SNIPO_MASTER_PASSWORD=${SNIPO_MASTER_PASSWORD}
+      - SNIPO_SESSION_SECRET=${SNIPO_SESSION_SECRET}
+      - SNIPO_ENCRYPTION_SALT=${SNIPO_ENCRYPTION_SALT}
+      - SNIPO_SESSION_DURATION=${SNIPO_SESSION_DURATION}
+      - SNIPO_HOST=0.0.0.0
+      - SNIPO_PORT=8080
+      - SNIPO_TRUST_PROXY=${SNIPO_TRUST_PROXY}
+      - SNIPO_MAX_FILES_PER_SNIPPET=${SNIPO_MAX_FILES_PER_SNIPPET}
+      - SNIPO_DB_PATH=/data/snipo.db
+      - SNIPO_DB_MAX_CONNS=1
+      - SNIPO_DB_BUSY_TIMEOUT=5000
+      - SNIPO_DB_JOURNAL=WAL
+      - SNIPO_DB_SYNC=NORMAL
+      - SNIPO_DB_MMAP_SIZE=67108864
+      - SNIPO_DB_CACHE_SIZE=-1000
+      - SNIPO_RATE_LIMIT=100
+      - SNIPO_RATE_LIMIT_READ=1000
+      - SNIPO_RATE_LIMIT_WRITE=500
+      - SNIPO_RATE_LIMIT_ADMIN=100
+      - SNIPO_ENABLE_PUBLIC_SNIPPETS=${SNIPO_ENABLE_PUBLIC_SNIPPETS}
+      - SNIPO_ENABLE_API_TOKENS=${SNIPO_ENABLE_API_TOKENS}
+      - SNIPO_ENABLE_BACKUP_RESTORE=${SNIPO_ENABLE_BACKUP_RESTORE}
+      - SNIPO_LOG_LEVEL=${SNIPO_LOG_LEVEL}
+      - SNIPO_LOG_FORMAT=${SNIPO_LOG_FORMAT}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=16m,uid=1000,gid=1000,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "/snipo", "health"]
+      interval: 30s
+      timeout: 5s
+      retries: 8
+      start_period: 10s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

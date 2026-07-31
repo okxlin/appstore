@@ -1,0 +1,265 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: SNIPO_MASTER_PASSWORD
+      labelEn: Master Password
+      labelZh: 主密码
+      label:
+        en: Master Password
+        zh: 主密码
+        zh-Hant: 主密碼
+        ja: マスターパスワード
+        ko: 마스터 비밀번호
+        ru: Главный пароль
+        ms: Kata laluan induk
+        pt-br: Senha mestra
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: false
+      envKey: SNIPO_SESSION_SECRET
+      labelEn: Session Secret (Auto-generated)
+      labelZh: 会话密钥（自动生成）
+      label:
+        en: Session Secret (Auto-generated)
+        zh: 会话密钥（自动生成）
+        zh-Hant: 工作階段密鑰（自動產生）
+        ja: セッションシークレット（自動生成）
+        ko: 세션 비밀 키(자동 생성)
+        ru: Секрет сеанса (создается автоматически)
+        ms: Rahsia sesi (dijana secara automatik)
+        pt-br: Segredo de sessao (gerado automaticamente)
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: false
+      envKey: SNIPO_ENCRYPTION_SALT
+      labelEn: Encryption Salt (Auto-generated)
+      labelZh: 加密盐（自动生成）
+      label:
+        en: Encryption Salt (Auto-generated)
+        zh: 加密盐（自动生成）
+        zh-Hant: 加密鹽值（自動產生）
+        ja: 暗号化ソルト（自動生成）
+        ko: 암호화 솔트(자동 생성)
+        ru: Соль шифрования (создается автоматически)
+        ms: Garam penyulitan (dijana secara automatik)
+        pt-br: Sal de criptografia (gerado automaticamente)
+      random: true
+      required: true
+      type: password
+    - default: 168h
+      edit: true
+      envKey: SNIPO_SESSION_DURATION
+      labelEn: Session Duration
+      labelZh: 会话有效期
+      label:
+        en: Session Duration
+        zh: 会话有效期
+        zh-Hant: 工作階段有效期
+        ja: セッション有効期間
+        ko: 세션 유효 기간
+        ru: Срок действия сеанса
+        ms: Tempoh sesi
+        pt-br: Duracao da sessao
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: SNIPO_TRUST_PROXY
+      labelEn: Trust Reverse Proxy Headers
+      labelZh: 信任反向代理请求头
+      label:
+        en: Trust Reverse Proxy Headers
+        zh: 信任反向代理请求头
+        zh-Hant: 信任反向代理請求標頭
+        ja: リバースプロキシヘッダーを信頼
+        ko: 리버스 프록시 헤더 신뢰
+        ru: Доверять заголовкам обратного прокси
+        ms: Percayai pengepala proksi songsang
+        pt-br: Confiar nos cabecalhos do proxy reverso
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 10
+      edit: true
+      envKey: SNIPO_MAX_FILES_PER_SNIPPET
+      labelEn: Maximum Files per Snippet
+      labelZh: 每个片段的最大文件数
+      label:
+        en: Maximum Files per Snippet
+        zh: 每个片段的最大文件数
+        zh-Hant: 每個片段的最大檔案數
+        ja: スニペットごとの最大ファイル数
+        ko: 코드 조각당 최대 파일 수
+        ru: Максимум файлов в одном фрагменте
+        ms: Fail maksimum bagi setiap cebisan
+        pt-br: Maximo de arquivos por trecho
+      required: true
+      type: number
+    - default: "true"
+      edit: true
+      envKey: SNIPO_ENABLE_PUBLIC_SNIPPETS
+      labelEn: Enable Public Snippets
+      labelZh: 启用公开片段
+      label:
+        en: Enable Public Snippets
+        zh: 启用公开片段
+        zh-Hant: 啟用公開片段
+        ja: 公開スニペットを有効化
+        ko: 공개 코드 조각 활성화
+        ru: Включить публичные фрагменты
+        ms: Dayakan cebisan awam
+        pt-br: Ativar trechos publicos
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: SNIPO_ENABLE_API_TOKENS
+      labelEn: Enable API Tokens
+      labelZh: 启用 API Token
+      label:
+        en: Enable API Tokens
+        zh: 启用 API Token
+        zh-Hant: 啟用 API Token
+        ja: API トークンを有効化
+        ko: API 토큰 활성화
+        ru: Включить токены API
+        ms: Dayakan token API
+        pt-br: Ativar tokens de API
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: SNIPO_ENABLE_BACKUP_RESTORE
+      labelEn: Enable Backup and Restore
+      labelZh: 启用备份与恢复
+      label:
+        en: Enable Backup and Restore
+        zh: 启用备份与恢复
+        zh-Hant: 啟用備份與還原
+        ja: バックアップと復元を有効化
+        ko: 백업 및 복원 활성화
+        ru: Включить резервное копирование и восстановление
+        ms: Dayakan sandaran dan pemulihan
+        pt-br: Ativar backup e restauracao
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: info
+      edit: true
+      envKey: SNIPO_LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журнала
+        ms: Tahap log
+        pt-br: Nivel de log
+      required: true
+      type: select
+      values:
+        - label: info
+          value: info
+        - label: warn
+          value: warn
+        - label: error
+          value: error
+        - label: debug
+          value: debug
+    - default: json
+      edit: true
+      envKey: SNIPO_LOG_FORMAT
+      labelEn: Log Format
+      labelZh: 日志格式
+      label:
+        en: Log Format
+        zh: 日志格式
+        zh-Hant: 日誌格式
+        ja: ログ形式
+        ko: 로그 형식
+        ru: Формат журнала
+        ms: Format log
+        pt-br: Formato de log
+      required: true
+      type: select
+      values:
+        - label: json
+          value: json
+        - label: text
+          value: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
