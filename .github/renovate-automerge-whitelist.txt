@@ -374,3 +374,7 @@ ech0
 flipt
 helium-linuxserver
 wakapi
+
+# Reviewed single-service Renovate candidates (2026-08-01).
+codex2api
+opencode
