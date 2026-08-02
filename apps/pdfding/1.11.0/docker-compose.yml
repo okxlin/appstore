@@ -1,6 +1,6 @@
 services:
   pdfding:
-    image: "mrmn/pdfding:v1.11.0"
+    image: "mrmn/pdfding:v1.12.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
