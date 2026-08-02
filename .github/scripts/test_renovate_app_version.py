@@ -531,6 +531,40 @@ class RenovateAppVersionTests(unittest.TestCase):
                 any(str(volume).endswith(":/app/config.toml") for volume in service["volumes"])
             )
 
+    def test_telegram_init_reads_only_config_path_from_dotenv(self):
+        init_paths = sorted(
+            (REPO_ROOT / "apps" / "telegram-linuxserver").glob("*/scripts/init.sh")
+        )
+
+        self.assertTrue(init_paths)
+        for init_path in init_paths:
+            with self.subTest(version=init_path.parents[1].name):
+                with tempfile.TemporaryDirectory(prefix="telegram-init-") as tmp:
+                    version_dir = pathlib.Path(tmp) / "version"
+                    scripts_dir = version_dir / "scripts"
+                    scripts_dir.mkdir(parents=True)
+                    copied_init = scripts_dir / "init.sh"
+                    copied_init.write_bytes(init_path.read_bytes())
+                    marker = version_dir / "dotenv-command-ran"
+                    (version_dir / ".env").write_text(
+                        "CONFIG_PATH=./data/config\n"
+                        f"MARKER_PATH={marker}\n"
+                        'TITLE=$(touch "$MARKER_PATH")\n',
+                        encoding="utf-8",
+                    )
+
+                    result = subprocess.run(
+                        ["bash", str(copied_init)],
+                        cwd=version_dir,
+                        text=True,
+                        capture_output=True,
+                        check=False,
+                    )
+
+                    self.assertEqual(0, result.returncode, result.stderr)
+                    self.assertTrue((version_dir / "data" / "config").is_dir())
+                    self.assertFalse(marker.exists())
+
     def test_wukongim_primary_service_and_sidecar_policy_are_explicit(self):
         primary = json.loads(
             (REPO_ROOT / ".github" / "renovate-primary-services.json").read_text(
