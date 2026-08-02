@@ -1,0 +1,31 @@
+name: OmniTools
+tags:
+- Tool
+title: 在浏览器本地处理数据的工具集
+description: 在浏览器本地处理数据的工具集
+additionalProperties:
+  key: omnitools
+  name: OmniTools
+  tags:
+  - Tool
+  shortDescZh: 在浏览器本地处理数据的工具集
+  shortDescEn: Browser tools that process data locally
+  description:
+    en: A collection of browser tools that processes data locally.
+    zh: 在浏览器本地处理数据的工具集。
+    zh-Hant: 在瀏覽器本機處理資料的工具集。
+    ja: ブラウザー内でデータをローカル処理するツール集です。
+    ko: 브라우저에서 데이터를 로컬로 처리하는 도구 모음입니다.
+    ru: Набор инструментов для локальной обработки данных в браузере.
+    ms: Koleksi alat untuk memproses data secara setempat dalam pelayar.
+    pt-br: Uma coleção de ferramentas para processar dados localmente no navegador.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://omnitools.app/
+  github: https://github.com/iib0011/omni-tools
+  document: https://github.com/iib0011/omni-tools#self-hostrun
+  architectures:
+  - amd64
+  - arm64
