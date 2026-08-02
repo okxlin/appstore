@@ -1,6 +1,6 @@
 services:
   resin:
-    image: "ghcr.io/resinat/resin:1.1.2"
+    image: "ghcr.io/resinat/resin:1.2.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:

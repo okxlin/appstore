@@ -21,7 +21,7 @@ Resin 是一个高性能智能代理池网关，可将多个代理订阅聚合�
 
 ## 安全说明
 
-当前上游 `1.1.2` 镜像包含 Trivy 报告的 `CVE-2026-33186` Critical 漏洞以及若干 High 漏洞。本应用按维护者明确接受的安全例外提供，部署前应结合网络暴露范围评估风险，并在上游发布修复镜像后尽快升级。
+当前上游 `1.2.0` 镜像仍包含 Trivy 报告的 `CVE-2026-33186` Critical 漏洞以及若干 High 漏洞。本应用按维护者明确接受的安全例外提供，部署前应结合网络暴露范围评估风险，并在上游发布修复镜像后尽快升级。
 
 ## Introduction
 
@@ -37,4 +37,4 @@ Resin is a high-performance intelligent proxy pool gateway. It combines multiple
 
 ## Security Notice
 
-The current upstream `1.1.2` image contains the Trivy-reported Critical vulnerability `CVE-2026-33186` and several High vulnerabilities. This package is provided under an explicitly accepted maintainer exception. Review the exposure risk before deployment and upgrade when upstream publishes a fixed image.
+The current upstream `1.2.0` image still contains the Trivy-reported Critical vulnerability `CVE-2026-33186` and several High vulnerabilities. This package is provided under an explicitly accepted maintainer exception. Review the exposure risk before deployment and upgrade when upstream publishes a fixed image.
