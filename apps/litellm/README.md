@@ -38,7 +38,7 @@ LiteLLM 是一个兼容 OpenAI API 的 AI 网关，可统一接入多种大模�
 
 - 固定版本和 `latest` 当前解析到同一官方 OCI 镜像；镜像标签关联的源码 revision 与对应上游 release commit 一致，支持 `amd64` 和 `arm64`。
 - 该镜像约 1.09 GB，默认以 `root` 用户运行。Compose 不授予 `privileged`、host network、额外 capability、设备或 Docker Socket。
-- Trivy 对固定版本和当前 `latest` 的准入扫描结果为 Critical=0、High=2。两项 High 都来自 Wolfi 的 `python-3.13` / `python-3.13-base`，漏洞编号为 `CVE-2026-11940`；镜像内版本为 `3.13.14-r1`，上游安全包修复版本为 `3.13.14-r2`。升级镜像前请关注新的扫描结果。
+- Trivy 对固定版本和当前 `latest` 的准入扫描结果为 Critical=0、High=2。两项 High 都来自 Wolfi 的 `python-3.13` / `python-3.13-base`，漏洞编号为 `CVE-2026-15308`；镜像内版本为 `3.13.14-r2`，上游安全包修复版本为 `3.13.14-r3`。升级镜像前请关注新的扫描结果。
 - 未授权请求访问受保护的代理 API 会返回 `401`；`/health/liveliness` 用作容器健康检查。
 
 ## 许可证
