@@ -27,7 +27,7 @@ additionalProperties:
   recommend: 0
   website: https://github.com/Resinat/Resin
   github: https://github.com/Resinat/Resin
-  document: https://github.com/Resinat/Resin/blob/v1.1.2/README.zh-CN.md
+  document: https://github.com/Resinat/Resin/blob/v1.2.0/README.zh-CN.md
   architectures:
   - amd64
   - arm64
