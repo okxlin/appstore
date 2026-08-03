@@ -1,6 +1,6 @@
 services:
   stump:
-    image: aaronleopold/stump:0.1.5
+    image: aaronleopold/stump:0.1.6
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
