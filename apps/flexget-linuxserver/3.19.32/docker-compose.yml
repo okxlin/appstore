@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   flexget:
-    image: "linuxserver/flexget:3.19.31"
+    image: "linuxserver/flexget:3.19.32"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
