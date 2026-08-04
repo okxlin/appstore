@@ -1,6 +1,6 @@
 services:
   dragonfly:
-    image: "docker.dragonflydb.io/dragonflydb/dragonfly:v1.39.0"
+    image: "docker.dragonflydb.io/dragonflydb/dragonfly:v1.40.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
