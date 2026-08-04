@@ -1,6 +1,6 @@
 services:
   this-week-in-past:
-    image: "rouhim/this-week-in-past:1.32.44"
+    image: "rouhim/this-week-in-past:1.32.45"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
