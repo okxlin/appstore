@@ -1,6 +1,6 @@
 services:
   opencode:
-    image: "ghcr.io/anomalyco/opencode:1.18.11"
+    image: "ghcr.io/anomalyco/opencode:1.18.12"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
