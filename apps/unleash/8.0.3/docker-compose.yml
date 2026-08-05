@@ -1,6 +1,6 @@
 services:
   unleash:
-    image: "unleashorg/unleash-server:8.0.3"
+    image: "unleashorg/unleash-server:8.1.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
