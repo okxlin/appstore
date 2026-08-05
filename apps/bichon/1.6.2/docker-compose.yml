@@ -1,6 +1,6 @@
 services:
   bichon:
-    image: "rustmailer/bichon:1.6.2"
+    image: "rustmailer/bichon:2.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     user: "1000:1000"
