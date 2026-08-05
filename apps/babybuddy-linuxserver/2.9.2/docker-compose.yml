@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   babybuddy:
-    image: "linuxserver/babybuddy:2.9.2"
+    image: "linuxserver/babybuddy:2.10.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
