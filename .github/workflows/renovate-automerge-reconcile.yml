@@ -21,7 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Find eligible Renovate PRs missing automerge label
+      - name: Find eligible Renovate PRs
         id: scan
         env:
           GH_TOKEN: ${{ github.token }}
@@ -36,7 +36,7 @@ jobs:
 
           mapfile -t pr_numbers < <(
             gh pr list --repo "$REPO" --state open --limit 100 \
-              --json number,author,labels,isDraft,baseRefName,headRefName,headRepositoryOwner,isCrossRepository \
+              --json number,author,isDraft,baseRefName,headRefName,headRepositoryOwner,isCrossRepository \
               --jq '.[]
                 | select(
                     .author.login == "app/renovate" or
@@ -51,7 +51,6 @@ jobs:
                   )
                 | select(.isDraft | not)
                 | select(.baseRefName == "localApps")
-                | select(([.labels[].name] | index("renovate-auto")) | not)
                 | .number'
           )
 
@@ -86,19 +85,6 @@ jobs:
             done
 
             if [[ "$allowed" == false ]]; then
-              continue
-            fi
-
-            pull_commits=$(gh api "repos/$REPO/pulls/$pr_number/commits" --paginate --jq '.[].commit.message' || true)
-            base_sha=$(gh pr view "$pr_number" --repo "$REPO" --json baseRefOid --jq '.baseRefOid' || true)
-            head_sha=$(gh pr view "$pr_number" --repo "$REPO" --json headRefOid --jq '.headRefOid' || true)
-            compare_commits=''
-            if [ -n "$base_sha" ] && [ -n "$head_sha" ]; then
-              compare_commits=$(gh api "repos/$REPO/compare/$base_sha...$head_sha" --jq '.commits[].commit.message' || true)
-            fi
-
-            all_commits="$(printf '%s\n%s\n' "$pull_commits" "$compare_commits")"
-            if ! echo "$all_commits" | grep -Fq 'Update app version [skip ci]'; then
               continue
             fi
 

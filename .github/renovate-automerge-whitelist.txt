@@ -378,3 +378,26 @@ wakapi
 # Reviewed single-service Renovate candidates (2026-08-01).
 codex2api
 opencode
+
+# Reviewed digest-only Renovate candidates (2026-08-07).
+podfetch
+isrvd
+chromium-kasm
+filezilla-kasm
+firefox-kasm
+insomnia-kasm
+only-office-kasm
+postman-kasm
+signal-kasm
+slack-kasm
+vlc-kasm
+audacity-kasm
+blender-kasm
+brave-kasm
+gimp-kasm
+inkscape-kasm
+obsidian-kasm
+pinta-kasm
+remmina-kasm
+sublime-text-kasm
+vivaldi-kasm
