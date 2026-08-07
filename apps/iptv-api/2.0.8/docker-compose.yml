@@ -1,6 +1,6 @@
 services:
   iptv-api:
-    image: "guovern/iptv-api:2.0.8"
+    image: "guovern/iptv-api:3.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     tty: true
