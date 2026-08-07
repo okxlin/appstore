@@ -1,6 +1,6 @@
 services:
   isrvd:
-    image: "rehiy/isrvd:slim@sha256:c0e7c48fa5c0f8d3594533a645313730435aeb35c6326561a7341dc7664f45bc"
+    image: "rehiy/isrvd:slim@sha256:9165cdaad71abb43ccbd7bc44d08ab4661df98c7bb4505de7fa6fce9aadeb7ca"
     container_name: ${CONTAINER_NAME}
     entrypoint:
       - /data/conf/app-entrypoint.sh
