@@ -9,7 +9,7 @@ services:
     volumes:
       - ./data:/var/lib/grafana
     user: '0'
-    image: grafana/grafana:13.1.2
+    image: grafana/grafana:13.1.3
     labels:  
       createdBy: "Apps"
 
