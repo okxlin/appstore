@@ -1,0 +1,36 @@
+services:
+  filerise:
+    image: "error311/filerise-docker:v3.26.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:80"
+    environment:
+      TIMEZONE: "${FILERISE_TIMEZONE}"
+      TOTAL_UPLOAD_SIZE: "${FILERISE_TOTAL_UPLOAD_SIZE}"
+      SECURE: "${FILERISE_SECURE}"
+      PUID: "1000"
+      PGID: "1000"
+      CHOWN_ON_START: "false"
+      SCAN_ON_START: "true"
+      CLAMAV_AUTO_UPDATE: "false"
+    volumes:
+      - "${APP_DATA_DIR}/uploads:/var/www/uploads"
+      - "${APP_DATA_DIR}/users:/var/www/users"
+      - "${APP_DATA_DIR}/metadata:/var/www/metadata"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
