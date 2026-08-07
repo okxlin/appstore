@@ -55,6 +55,9 @@
   "teldrive": [
     "teldrive"
   ],
+  "unifi-network-application-linuxserver": [
+    "unifi-network-application"
+  ],
   "uuwaf": [
     "uuwaf"
   ],

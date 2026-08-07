@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   unifi-network-application:
-    image: "linuxserver/unifi-network-application:10.4.57"
+    image: "linuxserver/unifi-network-application:10.5.67"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
