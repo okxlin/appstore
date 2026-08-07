@@ -159,12 +159,21 @@ jobs:
                   reject(f"compose must contain exactly one service: {path}")
               return data, services
 
+          def digest_reference(image):
+              if not isinstance(image, str):
+                  return None
+              match = re.fullmatch(r"([^@\s]+)@sha256:([0-9a-fA-F]{64})", image)
+              if match is None:
+                  return None
+              return match.group(1), match.group(2).lower()
+
           try:
               with open("/tmp/renovate-pr-files.json", encoding="utf-8") as fh:
                   files = json.load(fh)
 
               apps = set()
               compose_files = []
+              digest_only = True
 
               for file_info in files:
                   filename = file_info["filename"]
@@ -178,8 +187,14 @@ jobs:
                           reject(f"changed file outside apps/: {path}")
                       apps.add(match.group(1))
 
-                  if filename.endswith("/docker-compose.yml") or (previous and previous.endswith("/docker-compose.yml")):
+                  filename_is_compose = filename.endswith("/docker-compose.yml")
+                  previous_is_compose = bool(previous and previous.endswith("/docker-compose.yml"))
+                  if filename_is_compose or previous_is_compose:
                       compose_files.append((previous or filename, filename))
+                      if previous and filename_is_compose != previous_is_compose:
+                          digest_only = False
+                  else:
+                      digest_only = False
 
               if len(apps) != 1:
                   reject(f"PR must affect exactly one app, got {', '.join(sorted(apps))}")
@@ -205,6 +220,16 @@ jobs:
                   if not old_image or not new_image or old_image == new_image:
                       reject(f"compose service image must change: {new_resolved_path}")
 
+                  old_digest = digest_reference(old_image)
+                  new_digest = digest_reference(new_image)
+                  if (
+                      old_digest is None
+                      or new_digest is None
+                      or old_digest[0] != new_digest[0]
+                      or old_digest[1] == new_digest[1]
+                  ):
+                      digest_only = False
+
                   old_data.pop("version", None)
                   new_data.pop("version", None)
                   for service in old_services.values():
@@ -221,6 +246,11 @@ jobs:
                   checked += 1
 
               print(f"single-service image-only update verified for {app_name} across {checked} compose file(s)")
+              with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+                  if digest_only:
+                      output.write("digest_only=true\n")
+                  else:
+                      output.write("digest_only=false\n")
           except GateReject as exc:
               print(str(exc), file=sys.stderr)
               sys.exit(42)
@@ -260,6 +290,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          if [ "${{ steps.shape.outputs.digest_only }}" = "true" ]; then
+            echo "Digest-only image update; app-version marker is not required"
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           PR_NUMBER="${{ github.event.pull_request.number || inputs.pr_number }}"
           REPO="${{ github.repository }}"
 
