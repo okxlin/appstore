@@ -1,0 +1,38 @@
+services:
+  hermitstash:
+    image: "ghcr.io/dotcoocoo/hermitstash:1.14.4@sha256:0db29a6075466ec0e5874510d1d88c7cda7803bbb6825d9d7c3f1e12b037f106"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    init: true
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - NODE_ENV=production
+      - HERMITSTASH_TMPDIR=/dev/shm
+      - PORT=3000
+      - LOCAL_AUTH=true
+      - REGISTRATION_OPEN=false
+      - PUBLIC_UPLOAD=false
+      - PASSKEY_ENABLED=true
+      - CA_KEY_SEALED=auto
+      - TLS_KEY_SEALED=auto
+    shm_size: 256m
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+      - "${APP_UPLOADS_DIR}:/app/uploads"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
