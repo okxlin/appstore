@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   winegui:
-    image: "linuxserver/winegui:4.2.0"
+    image: "linuxserver/winegui:4.2.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
