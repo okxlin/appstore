@@ -29,7 +29,7 @@ services:
       - 1panel-network
 
   http-proxy:
-    image: "gogost/gost:latest"
+    image: "gogost/gost:latest@sha256:48d6196d850c6f37588a33ea22072e745b15d072e3d08cbc36c278fc7d5a1308"
     container_name: ${CONTAINER_NAME}-http
     labels:
       createdBy: "Apps"

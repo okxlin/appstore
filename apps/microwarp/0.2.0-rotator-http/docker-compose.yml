@@ -1,6 +1,6 @@
 services:
   microwarp:
-    image: "ghcr.io/ccbkkb/microwarp:0.2.0"
+    image: "ghcr.io/ccbkkb/microwarp:0.2.0@sha256:0f20511e3e2a887d6b72c448da262a230a32d489547e96c3d7bbb27b30217634"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -36,7 +36,7 @@ services:
       - 1panel-network
 
   http-proxy:
-    image: "gogost/gost:latest"
+    image: "gogost/gost:latest@sha256:48d6196d850c6f37588a33ea22072e745b15d072e3d08cbc36c278fc7d5a1308"
     container_name: ${CONTAINER_NAME}-http
     labels:
       createdBy: "Apps"
