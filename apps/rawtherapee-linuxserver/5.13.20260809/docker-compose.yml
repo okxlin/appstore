@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   rawtherapee:
-    image: "linuxserver/rawtherapee:5.13.20260726"
+    image: "linuxserver/rawtherapee:5.13.20260809"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
