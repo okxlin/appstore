@@ -1,0 +1,260 @@
+additionalProperties:
+  formFields:
+    - default: 1080
+      envKey: PANEL_APP_PORT_SOCKS5
+      labelEn: SOCKS5 Port
+      labelZh: SOCKS5 端口
+      label:
+        en: SOCKS5 Port
+        zh: SOCKS5 端口
+        zh-Hant: SOCKS5 連接埠
+        ja: SOCKS5 ポート
+        ko: SOCKS5 포트
+        ru: Порт SOCKS5
+        ms: Port SOCKS5
+        pt-br: Porta SOCKS5
+      required: true
+      rule: paramPort
+      type: number
+      edit: true
+    - default: 1080
+      envKey: BIND_PORT
+      labelEn: Internal Bind Port
+      labelZh: 容器内部绑定端口
+      label:
+        en: Internal Bind Port
+        zh: 容器内部绑定端口
+        zh-Hant: 容器內部綁定連接埠
+        ja: コンテナ内部バインドポート
+        ko: 컨테이너 내부 바인드 포트
+        ru: Внутренний порт привязки контейнера
+        ms: Port bind dalaman kontena
+        pt-br: Porta interna de bind do contêiner
+      required: true
+      rule: paramPort
+      type: number
+      edit: true
+    - default: 0
+      envKey: ROTATE_INTERVAL_MINUTES
+      labelEn: Rotate Interval Minutes
+      labelZh: 轮换间隔（分钟）
+      label:
+        en: Rotate Interval Minutes
+        zh: 轮换间隔（分钟）
+        zh-Hant: 輪換間隔（分鐘）
+        ja: ローテーション間隔（分）
+        ko: 로테이션 간격(분)
+        ru: Интервал ротации (минуты)
+        ms: Selang putaran (minit)
+        pt-br: Intervalo de rotação (minutos)
+      required: true
+      type: number
+      edit: true
+    - default: 5
+      envKey: ROTATE_MAX_ATTEMPTS
+      labelEn: Rotation Attempts
+      labelZh: 轮换尝试次数
+      label:
+        en: Rotation Attempts
+        zh: 轮换尝试次数
+        zh-Hant: 輪換嘗試次數
+        ja: ローテーション試行回数
+        ko: 로테이션 시도 횟수
+        ru: Количество попыток ротации
+        ms: Bilangan percubaan putaran
+        pt-br: Número de tentativas de rotação
+      required: true
+      type: number
+      edit: true
+    - default: 5
+      envKey: ROTATE_RETRY_DELAY_SECONDS
+      labelEn: Rotation Retry Delay Seconds
+      labelZh: 轮换重试间隔（秒）
+      label:
+        en: Rotation Retry Delay Seconds
+        zh: 轮换重试间隔（秒）
+        zh-Hant: 輪換重試間隔（秒）
+        ja: ローテーション再試行間隔（秒）
+        ko: 로테이션 재시도 간격(초)
+        ru: Задержка между попытками ротации (секунды)
+        ms: Kelewatan percubaan semula putaran (saat)
+        pt-br: Atraso entre tentativas de rotação (segundos)
+      required: true
+      type: number
+      edit: true
+    - default: https://cloudflare.com/cdn-cgi/trace
+      envKey: TEST_URL
+      labelEn: Probe URL
+      labelZh: 探测 URL
+      label:
+        en: Probe URL
+        zh: 探测 URL
+        zh-Hant: 探測 URL
+        ja: プローブ URL
+        ko: 점검 URL
+        ru: URL проверки
+        ms: URL ujian
+        pt-br: URL de verificação
+      required: true
+      type: text
+      edit: true
+    - default: https://cloudflare.com/cdn-cgi/trace
+      envKey: IP_CHECK_URL
+      labelEn: Egress IP Check URL
+      labelZh: 出口 IP 检查 URL
+      label:
+        en: Egress IP Check URL
+        zh: 出口 IP 检查 URL
+        zh-Hant: 出口 IP 檢查 URL
+        ja: 出口 IP 確認 URL
+        ko: 출구 IP 확인 URL
+        ru: URL проверки исходного IP
+        ms: URL semakan IP keluar
+        pt-br: URL de verificação do IP de saída
+      required: true
+      type: text
+      edit: true
+    - default: ""
+      envKey: SOCKS_USER
+      labelEn: SOCKS Username
+      labelZh: SOCKS 用户名
+      label:
+        en: SOCKS Username
+        zh: SOCKS 用户名
+        zh-Hant: SOCKS 使用者名稱
+        ja: SOCKS ユーザー名
+        ko: SOCKS 사용자명
+        ru: Имя пользователя SOCKS
+        ms: Nama pengguna SOCKS
+        pt-br: Usuário SOCKS
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: SOCKS_PASS
+      labelEn: SOCKS Password
+      labelZh: SOCKS 密码
+      label:
+        en: SOCKS Password
+        zh: SOCKS 密码
+        zh-Hant: SOCKS 密碼
+        ja: SOCKS パスワード
+        ko: SOCKS 비밀번호
+        ru: Пароль SOCKS
+        ms: Kata laluan SOCKS
+        pt-br: Senha SOCKS
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: ENDPOINT_IP
+      labelEn: WARP Endpoint
+      labelZh: WARP 终结点
+      label:
+        en: WARP Endpoint
+        zh: WARP 终结点
+        zh-Hant: WARP 終結點
+        ja: WARP エンドポイント
+        ko: WARP 엔드포인트
+        ru: WARP endpoint
+        ms: Titik akhir WARP
+        pt-br: Endpoint WARP
+      required: false
+      type: text
+      edit: true
+    - default: ""
+      envKey: GH_PROXY
+      labelEn: wgcf Download Proxy
+      labelZh: wgcf 下载代理
+      label:
+        en: wgcf Download Proxy
+        zh: wgcf 下载代理
+        zh-Hant: wgcf 下載代理
+        ja: wgcf ダウンロードプロキシ
+        ko: wgcf 다운로드 프록시
+        ru: Прокси для загрузки wgcf
+        ms: Proksi muat turun wgcf
+        pt-br: Proxy de download do wgcf
+      required: false
+      type: text
+      edit: true
+    - default: 100.64.0.0/10
+      envKey: TAILSCALE_CIDR
+      labelEn: Tailscale Return Route CIDR
+      labelZh: Tailscale 回程路由 CIDR
+      label:
+        en: Tailscale Return Route CIDR
+        zh: Tailscale 回程路由 CIDR
+        zh-Hant: Tailscale 回程路由 CIDR
+        ja: Tailscale 戻りルート CIDR
+        ko: Tailscale 리턴 라우트 CIDR
+        ru: CIDR обратного маршрута Tailscale
+        ms: CIDR laluan balik Tailscale
+        pt-br: CIDR de rota de retorno do Tailscale
+      required: true
+      type: text
+      edit: true
+    - default: 1280
+      envKey: MTU
+      labelEn: WireGuard MTU
+      labelZh: WireGuard MTU
+      label:
+        en: WireGuard MTU
+        zh: WireGuard MTU
+        zh-Hant: WireGuard MTU
+        ja: WireGuard MTU
+        ko: WireGuard MTU
+        ru: MTU WireGuard
+        ms: MTU WireGuard
+        pt-br: MTU do WireGuard
+      required: true
+      type: number
+      edit: true
+    - default: ""
+      envKey: WARP_WGCF_CONF
+      labelEn: WireGuard Config Content
+      labelZh: WireGuard 配置内容
+      label:
+        en: WireGuard Config Content
+        zh: WireGuard 配置内容
+        zh-Hant: WireGuard 設定內容
+        ja: WireGuard 設定内容
+        ko: WireGuard 구성 내용
+        ru: Содержимое конфигурации WireGuard
+        ms: Kandungan konfigurasi WireGuard
+        pt-br: Conteúdo da configuração WireGuard
+      required: false
+      type: text
+      edit: true
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+      edit: true
+    - default: ./data
+      envKey: APP_DATA_DIR_1
+      labelEn: WireGuard Data Directory
+      labelZh: WireGuard 数据目录
+      label:
+        en: WireGuard Data Directory
+        zh: WireGuard 数据目录
+        zh-Hant: WireGuard 資料目錄
+        ja: WireGuard データディレクトリ
+        ko: WireGuard 데이터 디렉터리
+        ru: Каталог данных WireGuard
+        ms: Direktori data WireGuard
+        pt-br: Diretório de dados do WireGuard
+      required: true
+      type: text
+      edit: true
