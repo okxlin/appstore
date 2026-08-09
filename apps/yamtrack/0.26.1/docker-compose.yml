@@ -1,6 +1,6 @@
 services:
   yamtrack:
-    image: "ghcr.io/fuzzygrim/yamtrack:0.25.3@sha256:00acf008bca8171226063bc0f8f08ef7ffe24a10bcebf8676cce335ce312c307"
+    image: "ghcr.io/fuzzygrim/yamtrack:0.26.1@sha256:2c4c8ef6b73ba00aeb3e7cda5a34751f01448034a23d2fbcc98e48e44d377bb8"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
