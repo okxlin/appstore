@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   sabnzbd:
-    image: "linuxserver/sabnzbd:5.0.4"
+    image: "linuxserver/sabnzbd:5.1.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
