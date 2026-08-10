@@ -401,3 +401,8 @@ pinta-kasm
 remmina-kasm
 sublime-text-kasm
 vivaldi-kasm
+
+# Reviewed single-service Renovate candidates (2026-08-10).
+filerise
+hermitstash
+pulse
