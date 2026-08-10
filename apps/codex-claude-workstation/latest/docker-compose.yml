@@ -13,6 +13,7 @@ services:
     environment:
       - TZ=${TZ:-Asia/Shanghai}
       - PASSWORD=${CODE_SERVER_PASSWORD:-change-me}
+      - PASEO_PASSWORD=${PASEO_PASSWORD:-}
       - ROOT_PASSWORD=${ROOT_PASSWORD:-codex2024}
       - FIX_WORKSPACE_OWNERSHIP_RECURSIVE=${FIX_WORKSPACE_OWNERSHIP_RECURSIVE:-false}
       - GITHUB_TOKEN=${GITHUB_TOKEN}
@@ -29,6 +30,7 @@ services:
       - ${DOCKER_SOCK_SRC:-/dev/null}:/var/run/docker.sock
     ports:
       - ${PANEL_APP_PORT_HTTP}:8080
+      - "127.0.0.1:${PANEL_APP_PORT_PASEO:-6767}:6767"
     healthcheck:
       test: ["CMD", "/usr/local/bin/healthcheck.sh"]
       interval: 30s

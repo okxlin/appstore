@@ -17,6 +17,23 @@ additionalProperties:
         ms: Port Web
         pt-br: Porta Web
       edit: true
+    - envKey: PANEL_APP_PORT_PASEO
+      type: number
+      required: true
+      default: 6767
+      rule: paramPort
+      labelZh: Paseo 本机反向代理端口
+      labelEn: Paseo Local Proxy Port
+      label:
+        en: Paseo Local Proxy Port
+        zh: Paseo 本机反向代理端口
+        zh-Hant: Paseo 本機反向代理端口
+        ja: Paseo ローカルプロキシポート
+        ko: Paseo 로컬 프록시 포트
+        ru: Локальный прокси-порт Paseo
+        ms: Port Proksi Setempat Paseo
+        pt-br: Porta de Proxy Local do Paseo
+      edit: true
     - envKey: CODE_SERVER_PASSWORD
       type: password
       required: true
@@ -33,6 +50,31 @@ additionalProperties:
         ru: Пароль code-server
         ms: Kata Laluan code-server
         pt-br: Senha do code-server
+      edit: true
+    - envKey: PASEO_PASSWORD
+      type: password
+      required: false
+      default: ""
+      labelZh: Paseo 密码（留空沿用 code-server 密码）
+      labelEn: Paseo Password (blank uses code-server password)
+      label:
+        en: Paseo Password (blank uses code-server password)
+        zh: Paseo 密码（留空沿用 code-server 密码）
+        zh-Hant: Paseo 密碼（留空沿用 code-server 密碼）
+        ja: Paseo パスワード（空欄時は code-server と共用）
+        ko: Paseo 비밀번호 (비우면 code-server 비밀번호 사용)
+        ru: Пароль Paseo (пустое значение использует пароль code-server)
+        ms: Kata Laluan Paseo (kosong menggunakan kata laluan code-server)
+        pt-br: Senha do Paseo (em branco usa a senha do code-server)
+      description:
+        en: For public access, paste a separate 20+ character HTTP-token-safe password; use `openssl rand -hex 24`. Leave blank only for legacy fallback.
+        zh: 公网使用请粘贴至少 20 位、可作为 HTTP token 的独立密码；推荐使用 `openssl rand -hex 24` 生成。仅旧安装兼容时留空。
+        zh-Hant: 公網使用請貼上至少 20 位、可作為 HTTP token 的獨立密碼；建議使用 `openssl rand -hex 24` 產生。僅舊安裝相容時留空。
+        ja: 公開利用では HTTP トークンとして有効な20文字以上の独立パスワードを設定してください。`openssl rand -hex 24` を推奨します。空欄は旧環境の互換用です。
+        ko: 공개 사용 시 HTTP 토큰으로 사용할 수 있는 20자 이상의 별도 비밀번호를 입력하세요. `openssl rand -hex 24` 사용을 권장합니다. 빈 값은 기존 설치 호환용입니다.
+        ru: Для публичного доступа задайте отдельный пароль длиной не менее 20 символов, допустимый как HTTP token; рекомендуется `openssl rand -hex 24`. Пустое значение оставляйте только для совместимости со старой установкой.
+        ms: Untuk akses awam, tampal kata laluan berasingan sekurang-kurangnya 20 aksara yang selamat sebagai token HTTP; gunakan `openssl rand -hex 24`. Biarkan kosong hanya untuk keserasian pemasangan lama.
+        pt-br: Para acesso público, use uma senha separada com pelo menos 20 caracteres válida como token HTTP; recomenda-se `openssl rand -hex 24`. Deixe em branco apenas para compatibilidade com instalações antigas.
       edit: true
     - envKey: ROOT_PASSWORD
       type: password
