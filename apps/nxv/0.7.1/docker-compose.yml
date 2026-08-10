@@ -1,6 +1,6 @@
 services:
   nxv:
-    image: "ghcr.io/utensils/nxv:0.7.1@sha256:892ac4da12bcc350f980dc7ce743cbda2a9ed5bcdccae587290f284c87b00215"
+    image: "ghcr.io/utensils/nxv:0.7.2@sha256:28e3f559195e47ba2775ed1bea62a767f42216edb8b8059e4de8574dd687496b"
     container_name: ${CONTAINER_NAME}
     command:
       - --db-path
