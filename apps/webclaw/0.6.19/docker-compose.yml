@@ -1,6 +1,6 @@
 services:
   webclaw:
-    image: "ghcr.io/0xmassi/webclaw:v0.6.18@sha256:ced4e7674f29aa0ac28ba010e740f02ca4a5ed032f4874f7653018acec1064e5"
+    image: "ghcr.io/0xmassi/webclaw:v0.6.19@sha256:61a55376a7f2d68b41c7b7291bf26f90753f5df6596de523e942bb1ccb5cfed8"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     command:
