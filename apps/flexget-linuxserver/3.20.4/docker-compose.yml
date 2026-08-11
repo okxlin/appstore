@@ -2,21 +2,24 @@ networks:
   1panel-network:
     external: true
 services:
-  sabnzbd:
-    image: "linuxserver/sabnzbd:5.0.4"
+  flexget:
+    image: "linuxserver/flexget:3.20.4"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:8080"
+      - "${PANEL_APP_PORT_HTTP}:5050"
     volumes:
       - "${CONFIG_PATH}:/config"
-      - "${INCOMPLETE_DOWNLOAD_PATH}:/incomplete-downloads"
-      - "${DOWNLOAD_PATH}:/downloads"
+      - "${DOWNLOADS_PATH}:/data"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=${TIME_ZONE}
+      - FG_LOG_LEVEL=${FG_LOG_LEVEL}
+      - FG_LOG_FILE=${FG_LOG_FILE}
+      - FG_CONFIG_FILE=${FG_CONFIG_FILE}
+      - FG_WEBUI_PASSWORD=${FG_WEBUI_PASSWORD}
     labels:
       createdBy: "Apps"
