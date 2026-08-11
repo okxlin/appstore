@@ -17,6 +17,48 @@ additionalProperties:
         ms: Port Web
         pt-br: Porta Web
       edit: true
+    - envKey: PANEL_APP_PORT_PASEO
+      type: number
+      required: true
+      default: 6767
+      rule: paramPort
+      labelZh: Paseo 宿主端口
+      labelEn: Paseo Host Port
+      label:
+        en: Paseo Host Port
+        zh: Paseo 宿主端口
+        zh-Hant: Paseo 宿主端口
+        ja: Paseo ホストポート
+        ko: Paseo 호스트 포트
+        ru: Порт Paseo на хосте
+        ms: Port Hos Paseo
+        pt-br: Porta do Paseo no host
+      edit: true
+    - envKey: PASEO_BIND_IP
+      type: text
+      required: true
+      default: 127.0.0.1
+      labelZh: Paseo 绑定地址
+      labelEn: Paseo Bind Address
+      label:
+        en: Paseo Bind Address
+        zh: Paseo 绑定地址
+        zh-Hant: Paseo 綁定地址
+        ja: Paseo バインドアドレス
+        ko: Paseo 바인드 주소
+        ru: Адрес привязки Paseo
+        ms: Alamat Ikatan Paseo
+        pt-br: Endereço de vínculo do Paseo
+      description:
+        en: Keep 127.0.0.1 when proxying through 1Panel OpenResty. Using 0.0.0.0 exposes the port on every host interface and expands the attack surface.
+        zh: 通过 1Panel OpenResty 反向代理时请保留 127.0.0.1。设置为 0.0.0.0 会在所有宿主接口暴露端口并扩大攻击面。
+        zh-Hant: 透過 1Panel OpenResty 反向代理時請保留 127.0.0.1。設為 0.0.0.0 會在所有宿主介面暴露端口並擴大攻擊面。
+        ja: 1Panel OpenResty 経由でプロキシする場合は 127.0.0.1 のままにしてください。0.0.0.0 はすべてのホストインターフェースに公開されます。
+        ko: 1Panel OpenResty로 프록시할 때는 127.0.0.1을 유지하세요. 0.0.0.0은 모든 호스트 인터페이스에 포트를 노출합니다.
+        ru: При проксировании через 1Panel OpenResty оставьте 127.0.0.1. Значение 0.0.0.0 откроет порт на всех интерфейсах хоста.
+        ms: Kekalkan 127.0.0.1 apabila menggunakan proksi 1Panel OpenResty. 0.0.0.0 mendedahkan port pada semua antara muka hos.
+        pt-br: Mantenha 127.0.0.1 ao usar proxy pelo 1Panel OpenResty. 0.0.0.0 expõe a porta em todas as interfaces do host.
+      edit: true
     - envKey: CODE_SERVER_PASSWORD
       type: password
       required: true
@@ -33,6 +75,31 @@ additionalProperties:
         ru: Пароль code-server
         ms: Kata Laluan code-server
         pt-br: Senha do code-server
+      edit: true
+    - envKey: PASEO_PASSWORD
+      type: password
+      required: false
+      default: ""
+      labelZh: Paseo 密码（留空沿用 code-server 密码）
+      labelEn: Paseo Password (blank uses code-server password)
+      label:
+        en: Paseo Password (blank uses code-server password)
+        zh: Paseo 密码（留空沿用 code-server 密码）
+        zh-Hant: Paseo 密碼（留空沿用 code-server 密碼）
+        ja: Paseo パスワード（空欄時は code-server と共用）
+        ko: Paseo 비밀번호 (비우면 code-server 비밀번호 사용)
+        ru: Пароль Paseo (пустое значение использует пароль code-server)
+        ms: Kata Laluan Paseo (kosong menggunakan kata laluan code-server)
+        pt-br: Senha do Paseo (em branco usa a senha do code-server)
+      description:
+        en: For public access, paste a separate 20+ character HTTP-token-safe password; use `openssl rand -hex 24`. Leave blank only for legacy fallback.
+        zh: 公网使用请粘贴至少 20 位、可作为 HTTP token 的独立密码；推荐使用 `openssl rand -hex 24` 生成。仅旧安装兼容时留空。
+        zh-Hant: 公網使用請貼上至少 20 位、可作為 HTTP token 的獨立密碼；建議使用 `openssl rand -hex 24` 產生。僅舊安裝相容時留空。
+        ja: 公開利用では HTTP トークンとして有効な20文字以上の独立パスワードを設定してください。`openssl rand -hex 24` を推奨します。空欄は旧環境の互換用です。
+        ko: 공개 사용 시 HTTP 토큰으로 사용할 수 있는 20자 이상의 별도 비밀번호를 입력하세요. `openssl rand -hex 24` 사용을 권장합니다. 빈 값은 기존 설치 호환용입니다.
+        ru: Для публичного доступа задайте отдельный пароль длиной не менее 20 символов, допустимый как HTTP token; рекомендуется `openssl rand -hex 24`. Пустое значение оставляйте только для совместимости со старой установкой.
+        ms: Untuk akses awam, tampal kata laluan berasingan sekurang-kurangnya 20 aksara yang selamat sebagai token HTTP; gunakan `openssl rand -hex 24`. Biarkan kosong hanya untuk keserasian pemasangan lama.
+        pt-br: Para acesso público, use uma senha separada com pelo menos 20 caracteres válida como token HTTP; recomenda-se `openssl rand -hex 24`. Deixe em branco apenas para compatibilidade com instalações antigas.
       edit: true
     - envKey: ROOT_PASSWORD
       type: password
