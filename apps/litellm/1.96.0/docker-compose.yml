@@ -1,6 +1,6 @@
 services:
   litellm:
-    image: "ghcr.io/berriai/litellm-database:v1.96.0@sha256:5c6fbd79d36e3c902e049627026d1b4211cf4ebcce2409ab240c5be388984d04"
+    image: "ghcr.io/berriai/litellm-database:v1.96.2@sha256:80e5e92bdcca246cd4153d451e5f75b65e19c7e39c46cc88a38bed4b65cc5836"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
