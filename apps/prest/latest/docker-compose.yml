@@ -1,6 +1,6 @@
 services:
   prest:
-    image: "prest/prest:v2.4.1"
+    image: "prest/prest:v2.4.2"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "65532:65532"
