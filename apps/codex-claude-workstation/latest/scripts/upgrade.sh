@@ -84,8 +84,37 @@ paseo_bind_ip_is_valid() {
 ensure_env_default() {
   local key="$1"
   local value="$2"
+  local fill_empty="${3:-false}"
 
   if grep -qE "^${key}=" "$ENV_FILE"; then
+    if [[ "$fill_empty" == "true" && -z "$(get_env_value "$key")" ]]; then
+      local replacement_file
+      replacement_file="$(mktemp "${ENV_FILE}.tmp.XXXXXX")"
+      awk -v key="$key" -v value="$value" '
+        BEGIN {
+          prefix = key "="
+          written = 0
+        }
+        index($0, prefix) == 1 {
+          if (written == 0) {
+            print prefix value
+            written = 1
+          }
+          next
+        }
+        { print }
+        END {
+          if (written == 0) {
+            print prefix value
+          }
+        }
+      ' "$ENV_FILE" > "$replacement_file"
+      chmod --reference="$ENV_FILE" -- "$replacement_file"
+      chown --reference="$ENV_FILE" -- "$replacement_file" 2>/dev/null || true
+      mv -- "$replacement_file" "$ENV_FILE"
+      echo "Filled empty ${key}"
+      return
+    fi
     echo "${key} already exists"
     return
   fi
@@ -124,7 +153,7 @@ elif [[ -f "$ENV_FILE" ]]; then
   fi
 
   ensure_env_default "PANEL_APP_PORT_PASEO" "6767"
-  ensure_env_default "PASEO_BIND_IP" "127.0.0.1"
+  ensure_env_default "PASEO_BIND_IP" "127.0.0.1" "true"
   ensure_env_default "PASEO_PASSWORD" ""
   ensure_env_default "FIX_WORKSPACE_OWNERSHIP_RECURSIVE" "false"
   ensure_env_default "CUSTOM_ENV_FILE" "./data/custom.env"

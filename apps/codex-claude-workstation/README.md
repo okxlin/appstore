@@ -112,7 +112,7 @@ location / {
 
 Paseo 浏览器客户端会把密码直接放进 WebSocket 子协议，因此不能使用任意符号组合。最简单可靠的格式是 40-128 位十六进制字符串；空格以及 `@`、`:`、`/`、`=`、逗号等 HTTP 分隔字符不兼容。1Panel 新安装会在 Compose 启动前拒绝非空但不兼容或少于 20 位的 Paseo 密码。此字段特意不使用 1Panel 的通用 `random: true`，因为当前 `dev-v2@1b76c91e` 实现[固定只追加 6 个字符](https://github.com/1Panel-dev/1Panel/blob/1b76c91e1b92705ed6662d0a361230ff0f7fb817/frontend/src/views/app-store/detail/params/index.vue#L219-L224)，且[生成器使用 `Math.random()`](https://github.com/1Panel-dev/1Panel/blob/1b76c91e1b92705ed6662d0a361230ff0f7fb817/frontend/src/utils/id.ts#L3-L9)，不能作为公网强密码来源。
 
-旧安装升级后若 `.env` 中没有 `PASEO_BIND_IP`，升级脚本会幂等补充 `127.0.0.1`；已有自定义绑定地址和 `PANEL_APP_PORT_PASEO` 不会被重写。若没有 `PASEO_PASSWORD`，脚本会补充空值并继续沿用原有 `CODE_SERVER_PASSWORD`。如果旧密码包含上述不兼容字符，code-server 仍可访问，但 Paseo 健康检查会显示异常，手机连接也会失败；在 1Panel 中设置独立、兼容的 `PASEO_PASSWORD` 并重建容器即可恢复。
+旧安装升级后若 `.env` 中没有 `PASEO_BIND_IP` 或该值为空，升级脚本会幂等填充 `127.0.0.1`；已有自定义绑定地址和 `PANEL_APP_PORT_PASEO` 不会被重写。若没有 `PASEO_PASSWORD`，脚本会补充空值并继续沿用原有 `CODE_SERVER_PASSWORD`。如果旧密码包含上述不兼容字符，code-server 仍可访问，但 Paseo 健康检查会显示异常，手机连接也会失败；在 1Panel 中设置独立、兼容的 `PASEO_PASSWORD` 并重建容器即可恢复。
 
 新安装只接受应用目录内的相对 `APP_DATA_DIR` 和 `CUSTOM_ENV_FILE`。升级脚本会在修改 `.env` 前拒绝符号链接、目录或绝对 `CUSTOM_ENV_FILE`；旧安装若曾配置绝对自定义环境文件，请先把该文件迁移到应用目录内（例如 `./data/custom.env`）并更新配置，再执行升级。已有 `codex-home` 卷和工作区数据不会由升级或卸载脚本删除。
 
