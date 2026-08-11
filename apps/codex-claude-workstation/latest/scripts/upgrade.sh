@@ -67,6 +67,20 @@ paseo_password_is_websocket_token() {
   [[ ${#value} -ge 1 && ${#value} -le 128 && "$value" =~ $token_pattern ]]
 }
 
+paseo_bind_ip_is_valid() {
+  local value="$1"
+  local octet decimal
+  local -a octets=()
+
+  [[ "$value" =~ ^[0-9]{1,3}(\.[0-9]{1,3}){3}$ ]] || return 1
+  IFS='.' read -r -a octets <<< "$value"
+  [[ ${#octets[@]} -eq 4 ]] || return 1
+  for octet in "${octets[@]}"; do
+    decimal=$((10#${octet}))
+    (( decimal <= 255 )) || return 1
+  done
+}
+
 ensure_env_default() {
   local key="$1"
   local value="$2"
@@ -84,6 +98,12 @@ if [[ -L "$ENV_FILE" ]]; then
   echo "Refusing to update a symlinked .env file" >&2
   exit 1
 elif [[ -f "$ENV_FILE" ]]; then
+  paseo_bind_ip_value="$(get_env_value PASEO_BIND_IP)"
+  if [[ -n "$paseo_bind_ip_value" ]] && ! paseo_bind_ip_is_valid "$paseo_bind_ip_value"; then
+    echo "PASEO_BIND_IP must be a valid IPv4 address" >&2
+    exit 1
+  fi
+
   paseo_password_value="$(get_env_value PASEO_PASSWORD)"
   if [[ -n "$paseo_password_value" ]]; then
     if ! paseo_password_is_websocket_token "$paseo_password_value"; then
@@ -104,6 +124,7 @@ elif [[ -f "$ENV_FILE" ]]; then
   fi
 
   ensure_env_default "PANEL_APP_PORT_PASEO" "6767"
+  ensure_env_default "PASEO_BIND_IP" "127.0.0.1"
   ensure_env_default "PASEO_PASSWORD" ""
   ensure_env_default "FIX_WORKSPACE_OWNERSHIP_RECURSIVE" "false"
   ensure_env_default "CUSTOM_ENV_FILE" "./data/custom.env"

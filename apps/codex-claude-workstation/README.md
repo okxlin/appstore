@@ -35,14 +35,14 @@ Codex Claude Workstation provides a browser-accessible VS Code environment with 
 ## 访问说明
 
 - code-server：访问 `http://<服务器地址>:<PANEL_APP_PORT_HTTP>`，使用 `CODE_SERVER_PASSWORD` 登录
-- Paseo：先配置 HTTPS 反向代理到 `127.0.0.1:<PANEL_APP_PORT_PASEO>`，再从手机访问反向代理域名
-- Paseo daemon 的内部端口 `6768` 不对外提供服务
+- Paseo：默认配置 HTTPS 反向代理到 `127.0.0.1:<PANEL_APP_PORT_PASEO>`，再从手机访问反向代理域名
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | PANEL_APP_PORT_HTTP | Web 访问端口 | 8080 | 是 |
-| PANEL_APP_PORT_PASEO | Paseo 本机反向代理端口，仅绑定 `127.0.0.1` | 6767 | 是 |
+| PANEL_APP_PORT_PASEO | Paseo 宿主端口；由 1Panel 执行端口占用检查 | 6767 | 是 |
+| PASEO_BIND_IP | Paseo 宿主绑定地址 | 127.0.0.1 | 是 |
 
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
@@ -80,21 +80,39 @@ codex login --device-auth
 
 ### 手机远程 Codex
 
-Paseo 在容器内由安全代理监听 `6767`，Compose 只把该端口发布到宿主机回环地址。公网服务器不要直接开放 6767；请在 1Panel 中创建 HTTPS 反向代理：
+Paseo daemon 直接监听容器端口 `6767`，镜像内不包含 Nginx。Compose 默认将该端口发布到宿主机 `127.0.0.1`；公网服务器请在 1Panel 中使用 OpenResty 配置 HTTPS 反向代理，而不是直接开放 6767。
 
-- 上游地址：`http://127.0.0.1:<PANEL_APP_PORT_PASEO>`，默认是 `http://127.0.0.1:6767`
-- 开启 WebSocket，并保留 HTTP/1.1 的 `Upgrade` 与 `Connection` 请求头
-- 为长时间 Codex 会话设置较长的代理读取和发送超时
-- 使用 `openssl rand -hex 24` 生成独立密码，粘贴到 `PASEO_PASSWORD`
-- 手机访问反向代理的 HTTPS 域名，并输入该密码
+推荐的 OpenResty/Nginx 位置配置如下，其中上游端口应替换为表单中的 `PANEL_APP_PORT_PASEO`：
 
-容器内部的 Paseo daemon 端口 `6768` 仅监听回环地址，不应映射或反向代理。Paseo relay、语音模式和本地语音模型自动下载默认关闭。
+```nginx
+location / {
+    proxy_pass http://127.0.0.1:6767;
+    proxy_http_version 1.1;
+    proxy_set_header Host paseo.internal;
+    proxy_set_header X-Forwarded-Host paseo.internal;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Origin http://paseo.internal;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header Accept-Encoding "";
+    proxy_hide_header X-Powered-By;
+    proxy_read_timeout 3600s;
+    proxy_send_timeout 3600s;
 
-`PASEO_SERVICE_PROXY_ENABLED=false` 不会移除 Paseo 内置的 localhost Service Proxy 路由分类；真正的隔离边界是容器内 6767 端口上的固定 Host Nginx。不要绕过 6767 直接连接、映射或反向代理 6768。
+    sub_filter_once on;
+    sub_filter '</head>' '<script>window.__PASEO_INITIAL_DAEMON_CONNECTION__={listen:window.location.host,useTls:window.location.protocol==="https:",label:"Codex Workstation"};</script></head>';
+}
+```
+
+如果 1Panel OpenResty 自身运行在容器中，`127.0.0.1` 指向的是 OpenResty 容器本身。此时应让 OpenResty 与工作站容器共同加入 `1panel-network`，并把 `proxy_pass` 改为 `http://<1Panel 实际生成的工作站容器名>:6767`。不要假定固定容器名；无论使用宿主端口还是容器网络，上述固定 `Host`/`Origin` 和 WebSocket 配置都必须保留。
+
+使用 `openssl rand -hex 24` 生成独立密码并粘贴到 `PASEO_PASSWORD`，然后从手机访问反向代理的 HTTPS 域名。Paseo relay、语音模式、听写和本地语音模型自动下载默认关闭。
+
+`PASEO_SERVICE_PROXY_ENABLED=false` 不会移除 Paseo 内置的 localhost Service Proxy 路由分类，因此 OpenResty 应固定上游 Host/Origin。默认 `PASEO_BIND_IP=127.0.0.1` 可阻止公网客户端绕过该代理；改为 `0.0.0.0` 或其他外部接口地址会扩大暴露面，仅在明确需要且另有防火墙控制时使用。
 
 Paseo 浏览器客户端会把密码直接放进 WebSocket 子协议，因此不能使用任意符号组合。最简单可靠的格式是 40-128 位十六进制字符串；空格以及 `@`、`:`、`/`、`=`、逗号等 HTTP 分隔字符不兼容。1Panel 新安装会在 Compose 启动前拒绝非空但不兼容或少于 20 位的 Paseo 密码。此字段特意不使用 1Panel 的通用 `random: true`，因为当前 `dev-v2@1b76c91e` 实现[固定只追加 6 个字符](https://github.com/1Panel-dev/1Panel/blob/1b76c91e1b92705ed6662d0a361230ff0f7fb817/frontend/src/views/app-store/detail/params/index.vue#L219-L224)，且[生成器使用 `Math.random()`](https://github.com/1Panel-dev/1Panel/blob/1b76c91e1b92705ed6662d0a361230ff0f7fb817/frontend/src/utils/id.ts#L3-L9)，不能作为公网强密码来源。
 
-旧安装升级后若 `.env` 中没有 `PASEO_PASSWORD`，升级脚本会补充空值并继续沿用原有 `CODE_SERVER_PASSWORD`，不会重写旧密码。如果旧密码包含上述不兼容字符，code-server 仍可访问，但 Paseo 健康检查会显示异常，手机连接也会失败；在 1Panel 中设置独立、兼容的 `PASEO_PASSWORD` 并重建容器即可恢复。
+旧安装升级后若 `.env` 中没有 `PASEO_BIND_IP`，升级脚本会幂等补充 `127.0.0.1`；已有自定义绑定地址和 `PANEL_APP_PORT_PASEO` 不会被重写。若没有 `PASEO_PASSWORD`，脚本会补充空值并继续沿用原有 `CODE_SERVER_PASSWORD`。如果旧密码包含上述不兼容字符，code-server 仍可访问，但 Paseo 健康检查会显示异常，手机连接也会失败；在 1Panel 中设置独立、兼容的 `PASEO_PASSWORD` 并重建容器即可恢复。
 
 新安装只接受应用目录内的相对 `APP_DATA_DIR` 和 `CUSTOM_ENV_FILE`。升级脚本会在修改 `.env` 前拒绝符号链接、目录或绝对 `CUSTOM_ENV_FILE`；旧安装若曾配置绝对自定义环境文件，请先把该文件迁移到应用目录内（例如 `./data/custom.env`）并更新配置，再执行升级。已有 `codex-home` 卷和工作区数据不会由升级或卸载脚本删除。
 

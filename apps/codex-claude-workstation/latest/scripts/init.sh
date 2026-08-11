@@ -51,6 +51,20 @@ paseo_password_is_websocket_token() {
   [[ ${#value} -ge 1 && ${#value} -le 128 && "$value" =~ $token_pattern ]]
 }
 
+paseo_bind_ip_is_valid() {
+  local value="$1"
+  local octet decimal
+  local -a octets=()
+
+  [[ "$value" =~ ^[0-9]{1,3}(\.[0-9]{1,3}){3}$ ]] || return 1
+  IFS='.' read -r -a octets <<< "$value"
+  [[ ${#octets[@]} -eq 4 ]] || return 1
+  for octet in "${octets[@]}"; do
+    decimal=$((10#${octet}))
+    (( decimal <= 255 )) || return 1
+  done
+}
+
 resolve_app_path() {
   local key="$1"
   local raw="$2"
@@ -89,8 +103,14 @@ APP_DATA_DIR_RAW="$(get_config_value APP_DATA_DIR ./data)"
 CUSTOM_ENV_FILE_RAW="$(get_config_value CUSTOM_ENV_FILE ./data/custom.env)"
 PANEL_APP_PORT_HTTP_VALUE="$(get_config_value PANEL_APP_PORT_HTTP 8080)"
 PANEL_APP_PORT_PASEO_VALUE="$(get_config_value PANEL_APP_PORT_PASEO 6767)"
+PASEO_BIND_IP_VALUE="$(get_config_value PASEO_BIND_IP 127.0.0.1)"
 PASEO_PASSWORD_VALUE="$(get_config_value PASEO_PASSWORD "")"
 CODE_SERVER_PASSWORD_VALUE="$(get_config_value CODE_SERVER_PASSWORD change-me)"
+
+if ! paseo_bind_ip_is_valid "$PASEO_BIND_IP_VALUE"; then
+  echo "PASEO_BIND_IP must be a valid IPv4 address" >&2
+  exit 1
+fi
 
 if [[ -n "$PASEO_PASSWORD_VALUE" ]]; then
   if ! paseo_password_is_websocket_token "$PASEO_PASSWORD_VALUE"; then
@@ -136,7 +156,7 @@ echo "  ${CUSTOM_ENV_FILE_ABS} -> custom env_file"
 echo ""
 echo "Access:"
 echo "  http://<server-ip>:${PANEL_APP_PORT_HTTP_VALUE}"
-echo "  Paseo: reverse proxy HTTPS to 127.0.0.1:${PANEL_APP_PORT_PASEO_VALUE}"
+echo "  Paseo: reverse proxy HTTPS to ${PASEO_BIND_IP_VALUE}:${PANEL_APP_PORT_PASEO_VALUE}"
 echo "  Login: code-server password"
 echo "  Switch to root: su - root (password configured from ROOT_PASSWORD)"
 echo ""

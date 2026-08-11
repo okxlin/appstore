@@ -30,7 +30,7 @@ services:
       - ${DOCKER_SOCK_SRC:-/dev/null}:/var/run/docker.sock
     ports:
       - ${PANEL_APP_PORT_HTTP}:8080
-      - "127.0.0.1:${PANEL_APP_PORT_PASEO:-6767}:6767"
+      - "${PASEO_BIND_IP:-127.0.0.1}:${PANEL_APP_PORT_PASEO:-6767}:6767"
     healthcheck:
       test: ["CMD", "/usr/local/bin/healthcheck.sh"]
       interval: 30s
