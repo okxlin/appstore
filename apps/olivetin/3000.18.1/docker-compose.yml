@@ -1,6 +1,6 @@
 services:
   olivetin:
-    image: "jamesread/olivetin:3000.18.1"
+    image: "jamesread/olivetin:3000.19.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     read_only: true
