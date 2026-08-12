@@ -1,6 +1,6 @@
 services:
   firefox-kasm:
-    image: "kasmweb/firefox:1.19.0-rolling-weekly@sha256:a0d12f54ab2a51f2aa70adbe14b68ad8cefdbbb2d71fb41bbc0cbfdfa1e902e4"
+    image: "kasmweb/firefox:1.19.0-rolling-weekly@sha256:0f546a6d45b15ca19eef7cd9a18a916d7e1ecf1bef2f23c5c1788db38d957581"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
