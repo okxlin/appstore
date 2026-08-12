@@ -1,6 +1,6 @@
 services:
   blender-kasm:
-    image: "kasmweb/blender:1.19.0-rolling-weekly@sha256:a80430080504eacd1092842ea5fc4627b945406bbdab1f85c3e098ef4a048b0d"
+    image: "kasmweb/blender:1.19.0-rolling-weekly@sha256:68b3a11ee54c72b77f79fa637099d2f46e11dfd8c55b1586170230680f9912ac"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
