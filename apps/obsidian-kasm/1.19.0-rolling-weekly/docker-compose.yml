@@ -1,6 +1,6 @@
 services:
   obsidian-kasm:
-    image: "kasmweb/obsidian:1.19.0-rolling-weekly@sha256:550546e270b79ad07a61e7fe9789262137c3239939e114c1a5d703bcc0c7544b"
+    image: "kasmweb/obsidian:1.19.0-rolling-weekly@sha256:b9ca3a72bddc7fc77467644a7274b8b83873ea1b5b539161ca65d7e102290b0c"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
