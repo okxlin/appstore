@@ -1,6 +1,6 @@
 services:
   remmina-kasm:
-    image: "kasmweb/remmina:1.19.0-rolling-weekly@sha256:01e6a6a8b8406bc7700dbcd604ec132a781ab0df84f8eb2e2eaabf270e08c364"
+    image: "kasmweb/remmina:1.19.0-rolling-weekly@sha256:65ac35101aa500530e02e2e156aac30212124984f40fd6f2ef0a875a3908f691"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
