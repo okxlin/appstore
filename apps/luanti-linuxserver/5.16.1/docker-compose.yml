@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   luanti:
-    image: "linuxserver/luanti:5.16.1"
+    image: "linuxserver/luanti:5.17.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
