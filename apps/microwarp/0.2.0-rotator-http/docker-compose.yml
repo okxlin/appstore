@@ -1,6 +1,6 @@
 services:
   microwarp:
-    image: "ghcr.io/ccbkkb/microwarp:0.2.0@sha256:0f20511e3e2a887d6b72c448da262a230a32d489547e96c3d7bbb27b30217634"
+    image: "ghcr.io/ccbkkb/microwarp:0.3.0@sha256:fe499f658f13c1362365f5fa86a0802d67ada1ea299031c047bdb95b7ea5afb0"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
