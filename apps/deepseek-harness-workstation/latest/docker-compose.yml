@@ -1,0 +1,41 @@
+services:
+  deepseek-harness-workstation:
+    image: "moelin/deepseek-harness:workstation"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TZ=${TZ:-Asia/Shanghai}
+      - PUBLIC_URL=${DSH_PUBLIC_URL}
+      - AUTH_MODE=caddy-security
+      - AUTH_USERNAME=${DSH_AUTH_USERNAME:-admin}
+      - AUTH_PASSWORD=${DSH_AUTH_PASSWORD}
+      - AUTH_TOKEN_LIFETIME=${DSH_AUTH_TOKEN_LIFETIME:-3600}
+      - AUTH_COOKIE_INSECURE=false
+      - DSH_TRUSTED_HOSTS=${DSH_TRUSTED_HOSTS:-}
+      - PORT=8080
+      - DSH_TELEMETRY_DISABLED=1
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS:-127.0.0.1}:${PANEL_APP_PORT_HTTP:-56789}:8080"
+    volumes:
+      - dsh-data:/data
+      - "${DOCKER_SOCK_PATH:-/dev/null}:/var/run/docker.sock"
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
+
+volumes:
+  dsh-data:
+    name: deepseek-harness-workstation-data
