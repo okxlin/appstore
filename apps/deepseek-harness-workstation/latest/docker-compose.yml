@@ -1,0 +1,49 @@
+services:
+  deepseek-harness-workstation:
+    image: "moelin/deepseek-harness:workstation"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TZ=${APP_TIMEZONE:-Asia/Shanghai}
+      - PUBLIC_URL=${PUBLIC_URL}
+      - AUTH_MODE=caddy-security
+      - AUTH_USERNAME=${AUTH_USERNAME:-admin}
+      - AUTH_PASSWORD=${AUTH_PASSWORD}
+      - AUTH_TOKEN_LIFETIME=${AUTH_TOKEN_LIFETIME:-3600}
+      - AUTH_COOKIE_INSECURE=false
+      - PORT=8080
+      - DSH_INTERNAL_PORT=3080
+      - GOMEMLIMIT=128MiB
+      - GOMAXPROCS=2
+      - DSH_TELEMETRY_DISABLED=1
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "deepseek-harness-workstation-state:/data"
+      - "deepseek-harness-workstation-home:/home/node"
+      - "deepseek-harness-workstation-workspace:/workspace"
+      - "${DOCKER_SOCK_SRC:-/dev/null}:/var/run/docker.sock"
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - 1panel-network
+
+volumes:
+  deepseek-harness-workstation-state:
+    name: deepseek-harness-workstation-state
+  deepseek-harness-workstation-home:
+    name: deepseek-harness-workstation-home
+  deepseek-harness-workstation-workspace:
+    name: deepseek-harness-workstation-workspace
+
+networks:
+  1panel-network:
+    external: true

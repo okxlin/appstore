@@ -1,0 +1,204 @@
+additionalProperties:
+  formFields:
+    - envKey: PANEL_APP_PORT_HTTP
+      type: number
+      required: true
+      default: 56789
+      rule: paramPort
+      edit: true
+      labelZh: Web 访问端口
+      labelEn: Web Port
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取連接埠
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta web
+    - envKey: BIND_ADDRESS
+      type: select
+      required: true
+      default: 127.0.0.1
+      edit: true
+      labelZh: 宿主绑定地址
+      labelEn: Host Bind Address
+      label:
+        en: Host Bind Address
+        zh: 宿主绑定地址
+        zh-Hant: 主機綁定位址
+        ja: ホストのバインドアドレス
+        ko: 호스트 바인드 주소
+        ru: Адрес привязки хоста
+        ms: Alamat ikatan hos
+        pt-br: Endereço de vínculo do host
+      description:
+        en: Keep loopback for a 1Panel OpenResty reverse proxy. All interfaces expose the port to the host network.
+        zh: 使用 1Panel OpenResty 反向代理时保留回环地址；所有接口会把端口暴露到宿主网络。
+        zh-Hant: 使用 1Panel OpenResty 反向代理時保留回環位址；所有介面會把連接埠暴露到主機網路。
+        ja: 1Panel OpenResty のリバースプロキシではループバックを使用してください。全インターフェースはホストネットワークに公開されます。
+        ko: 1Panel OpenResty 리버스 프록시에서는 루프백을 유지하세요. 모든 인터페이스는 호스트 네트워크에 포트를 노출합니다.
+        ru: Для обратного прокси 1Panel OpenResty оставьте loopback. Все интерфейсы откроют порт в сети хоста.
+        ms: Kekalkan gelung balik untuk proksi songsang 1Panel OpenResty. Semua antara muka mendedahkan port kepada rangkaian hos.
+        pt-br: Mantenha o loopback para o proxy reverso do 1Panel OpenResty. Todas as interfaces expõem a porta à rede do host.
+      values:
+        - label: Loopback (127.0.0.1)
+          value: 127.0.0.1
+        - label: All interfaces (0.0.0.0)
+          value: 0.0.0.0
+    - envKey: APP_TIMEZONE
+      type: text
+      required: true
+      default: Asia/Shanghai
+      edit: true
+      labelZh: 时区
+      labelEn: Timezone
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      description:
+        en: Use an IANA timezone such as Asia/Shanghai or UTC for terminal and tool timestamps.
+        zh: 使用 Asia/Shanghai 或 UTC 等 IANA 时区，用于终端和开发工具时间。
+        zh-Hant: 使用 Asia/Shanghai 或 UTC 等 IANA 時區，用於終端與開發工具時間。
+        ja: 端末と開発ツールの時刻には Asia/Shanghai や UTC などの IANA タイムゾーンを使用します。
+        ko: 터미널과 개발 도구 시간에 Asia/Shanghai 또는 UTC 같은 IANA 시간대를 사용합니다.
+        ru: Используйте часовой пояс IANA, например Asia/Shanghai или UTC, для терминала и инструментов.
+        ms: Gunakan zon waktu IANA seperti Asia/Shanghai atau UTC untuk masa terminal dan alat pembangunan.
+        pt-br: Use um fuso horário IANA, como Asia/Shanghai ou UTC, para horários do terminal e das ferramentas.
+    - envKey: PUBLIC_URL
+      type: text
+      required: true
+      default: ""
+      rule: paramExtUrl
+      edit: true
+      labelZh: 公网 HTTPS 地址
+      labelEn: Public HTTPS URL
+      label:
+        en: Public HTTPS URL
+        zh: 公网 HTTPS 地址
+        zh-Hant: 公開 HTTPS 網址
+        ja: 公開 HTTPS URL
+        ko: 공개 HTTPS URL
+        ru: Публичный HTTPS URL
+        ms: URL HTTPS awam
+        pt-br: URL HTTPS público
+      description:
+        en: Enter the complete HTTPS origin, for example https://dsh.example.com. Paths are not supported.
+        zh: 输入完整的 HTTPS Origin，例如 https://dsh.example.com；不支持子路径。
+        zh-Hant: 輸入完整的 HTTPS Origin，例如 https://dsh.example.com；不支援子路徑。
+        ja: https://dsh.example.com のような完全な HTTPS オリジンを入力してください。サブパスは非対応です。
+        ko: https://dsh.example.com 같은 전체 HTTPS 오리진을 입력하세요. 하위 경로는 지원하지 않습니다.
+        ru: Укажите полный HTTPS origin, например https://dsh.example.com. Подпути не поддерживаются.
+        ms: Masukkan origin HTTPS lengkap seperti https://dsh.example.com. Subpath tidak disokong.
+        pt-br: Informe a origem HTTPS completa, por exemplo https://dsh.example.com. Subcaminhos não são suportados.
+    - envKey: AUTH_USERNAME
+      type: text
+      required: true
+      default: admin
+      edit: true
+      labelZh: 登录用户名
+      labelEn: Login Username
+      label:
+        en: Login Username
+        zh: 登录用户名
+        zh-Hant: 登入使用者名稱
+        ja: ログインユーザー名
+        ko: 로그인 사용자 이름
+        ru: Имя пользователя
+        ms: Nama pengguna log masuk
+        pt-br: Nome de usuário
+    - envKey: AUTH_PASSWORD
+      type: password
+      required: true
+      default: ""
+      rule: paramComplexity
+      edit: true
+      labelZh: 登录密码
+      labelEn: Login Password
+      label:
+        en: Login Password
+        zh: 登录密码
+        zh-Hant: 登入密碼
+        ja: ログインパスワード
+        ko: 로그인 비밀번호
+        ru: Пароль для входа
+        ms: Kata laluan log masuk
+        pt-br: Senha de login
+      description:
+        en: Use at least 12 characters. The image hashes the password before storing authentication state.
+        zh: 至少使用 12 个字符；镜像会在写入鉴权状态前对密码进行哈希。
+        zh-Hant: 至少使用 12 個字元；映像會在寫入驗證狀態前雜湊密碼。
+        ja: 12文字以上を使用してください。イメージは認証状態へ保存する前にパスワードをハッシュ化します。
+        ko: 12자 이상을 사용하세요. 이미지는 인증 상태에 저장하기 전에 비밀번호를 해시합니다.
+        ru: Используйте не менее 12 символов. Образ хеширует пароль перед сохранением состояния аутентификации.
+        ms: Gunakan sekurang-kurangnya 12 aksara. Imej menghash kata laluan sebelum menyimpan keadaan pengesahan.
+        pt-br: Use pelo menos 12 caracteres. A imagem aplica hash à senha antes de salvar o estado de autenticação.
+    - envKey: AUTH_TOKEN_LIFETIME
+      type: select
+      required: true
+      default: "3600"
+      edit: true
+      labelZh: 登录会话有效期
+      labelEn: Login Session Lifetime
+      label:
+        en: Login Session Lifetime
+        zh: 登录会话有效期
+        zh-Hant: 登入工作階段有效期
+        ja: ログインセッションの有効期間
+        ko: 로그인 세션 유효 기간
+        ru: Срок действия сеанса
+        ms: Tempoh sesi log masuk
+        pt-br: Duração da sessão de login
+      description:
+        en: Controls newly issued authentication tokens and cookies. Shorter sessions reduce exposure on unattended browsers.
+        zh: 控制新签发的鉴权令牌和 Cookie；较短会话可降低浏览器无人值守时的风险。
+        zh-Hant: 控制新簽發的驗證權杖與 Cookie；較短工作階段可降低瀏覽器無人值守時的風險。
+        ja: 新しく発行される認証トークンと Cookie の有効期間です。短いほど無人ブラウザでのリスクを抑えられます。
+        ko: 새로 발급되는 인증 토큰과 쿠키의 유효 기간입니다. 짧을수록 무인 브라우저의 노출 위험이 줄어듭니다.
+        ru: Определяет срок новых токенов и cookie. Короткий сеанс снижает риск на оставленном без присмотра браузере.
+        ms: Mengawal tempoh token dan kuki baharu. Sesi lebih pendek mengurangkan risiko pada pelayar tanpa pengawasan.
+        pt-br: Controla novos tokens e cookies. Sessões menores reduzem o risco em navegadores sem supervisão.
+      values:
+        - label: 1 h
+          value: "3600"
+        - label: 8 h
+          value: "28800"
+        - label: 24 h
+          value: "86400"
+    - envKey: DOCKER_SOCK_SRC
+      type: select
+      required: true
+      default: /dev/null
+      edit: true
+      labelZh: Docker 套接字访问
+      labelEn: Docker Socket Access
+      label:
+        en: Docker Socket Access
+        zh: Docker 套接字访问
+        zh-Hant: Docker 通訊端存取
+        ja: Docker ソケットアクセス
+        ko: Docker 소켓 접근
+        ru: Доступ к Docker Socket
+        ms: Akses soket Docker
+        pt-br: Acesso ao socket Docker
+      description:
+        en: Disabled is the safe default. Enabling grants the workstation effective control of the host Docker daemon.
+        zh: 默认禁用最安全；启用后工作站可有效控制宿主 Docker 守护进程。
+        zh-Hant: 預設停用最安全；啟用後工作站可有效控制主機 Docker 常駐程式。
+        ja: 無効が安全な既定値です。有効にするとワークステーションはホスト Docker デーモンを実質的に制御できます。
+        ko: 비활성화가 안전한 기본값입니다. 활성화하면 워크스테이션이 호스트 Docker 데몬을 사실상 제어할 수 있습니다.
+        ru: Безопасное значение по умолчанию — отключено. Включение дает рабочей станции фактический контроль над Docker хоста.
+        ms: Dilumpuhkan ialah lalai selamat. Mengaktifkannya memberi stesen kerja kawalan berkesan terhadap daemon Docker hos.
+        pt-br: Desabilitado é o padrão seguro. Habilitar concede à estação controle efetivo do daemon Docker do host.
+      values:
+        - label: Disabled
+          value: /dev/null
+        - label: Enabled (/var/run/docker.sock)
+          value: /var/run/docker.sock
