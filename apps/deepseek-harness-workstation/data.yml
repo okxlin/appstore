@@ -1,0 +1,30 @@
+name: DeepSeek Harness Workstation
+tags:
+  - AI
+title: 带网页登录与完整开发工具链的 DeepSeek Harness 工作站
+description: 带网页登录与完整开发工具链的 DeepSeek Harness 工作站
+additionalProperties:
+  key: deepseek-harness-workstation
+  name: DeepSeek Harness Workstation
+  tags:
+    - AI
+  type: tool
+  website: https://github.com/deepseek-ai/deepseek-harness
+  document: https://github.com/okxlin/release-factory/blob/main/deepseek-harness-builder/README.md
+  architectures:
+    - amd64
+    - arm64
+  github: https://github.com/okxlin/release-factory
+  shortDescZh: 带网页登录与完整开发工具链的 DeepSeek Harness 工作站
+  shortDescEn: DeepSeek Harness workstation with browser login and a complete development toolchain
+  description:
+    en: DeepSeek Harness workstation with browser login and a complete development toolchain
+    zh: 带网页登录与完整开发工具链的 DeepSeek Harness 工作站
+    zh-Hant: 具備網頁登入與完整開發工具鏈的 DeepSeek Harness 工作站
+    ja: ブラウザログインと完全な開発ツールチェーンを備えた DeepSeek Harness ワークステーション
+    ko: 브라우저 로그인과 완전한 개발 도구 체인을 갖춘 DeepSeek Harness 워크스테이션
+    ru: Рабочая станция DeepSeek Harness с веб-аутентификацией и полным набором инструментов разработки
+    ms: Stesen kerja DeepSeek Harness dengan log masuk pelayar dan set alat pembangunan lengkap
+    pt-br: Estação de trabalho DeepSeek Harness com login pelo navegador e toolchain de desenvolvimento completa
+  crossVersionUpdate: false
+  limit: 1
