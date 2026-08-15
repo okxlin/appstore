@@ -1,6 +1,6 @@
 services:
   deepseek-harness-workstation:
-    image: "moelin/deepseek-harness:workstation"
+    image: "moelin/deepseek-harness:0.1.0-rc.6-workstation"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     labels:

@@ -10,7 +10,7 @@ additionalProperties:
     - AI
   type: tool
   website: https://github.com/deepseek-ai/deepseek-harness
-  document: https://github.com/okxlin/release-factory/blob/da111a430655c96ee31c9d97a19180511ded25ea/deepseek-harness-builder/README.md
+  document: https://github.com/okxlin/release-factory/blob/main/deepseek-harness-builder/README.md
   architectures:
     - amd64
     - arm64
