@@ -26,7 +26,7 @@ DeepSeek Harness Workstation combines DeepSeek Harness, browser-based form authe
 
 ## 访问说明
 
-安装时填写浏览器使用的完整 HTTPS Origin，例如 `https://dsh.toolman.me`。请保持 1Panel 的“端口外部访问”关闭；1Panel 会把端口绑定到宿主回环地址：
+安装时填写浏览器使用的完整 HTTPS Origin，例如 `https://dsh.example.com`。请保持 1Panel 的“端口外部访问”关闭；1Panel 会把端口绑定到宿主回环地址：
 
 ```text
 127.0.0.1:56789 -> container:8080
@@ -71,7 +71,9 @@ http://127.0.0.1:56789
 
 鉴权状态位于 `/data/auth`，Caddy 状态位于 `/data/caddy`，DeepSeek Harness 状态位于 `/data/dsh`。`/data`、`/home/node` 与 `/workspace` 都是直接挂载的真实目录，不使用符号链接。
 
-镜像以 root 启动，仅用于准备挂载目录权限和可选 Docker Socket 组，然后以 UID/GID `1000:1000` 运行 DeepSeek Harness 与 Caddy。首次启动时入口会把 HOME 和 workspace 准备为该用户可写，因此通常不需要手工执行 `chmod` 或 `chown`。
+镜像以 root 启动，用于准备挂载目录权限、执行旧状态迁移和设置可选 Docker Socket 组，然后以 UID/GID `1000:1000` 运行 DeepSeek Harness 与 Caddy。首次启动时入口会把 HOME 和 workspace 准备为该用户可写，因此通常不需要手工执行 `chmod` 或 `chown`。
+
+首次安装不需要预先创建 `./data/data`、`./data/workspace` 或 `dsh-home`。当前 Compose 使用的短语法 bind mount 会在源目录不存在时由 Docker 自动创建目录，`dsh-home` named volume 也会自动创建；镜像入口随后会规范化 bind 根目录和应用子目录的权限。因此不需要在 `init.sh` 中额外添加 `mkdir` 或递归 `chown`。
 
 从旧版工作站布局升级时，如果 `/data/auth` 为空，镜像入口会在首次启动时把 `dsh-home:/home/node/.local/share/deepseek-harness` 中的旧鉴权、Caddy 和 DSH 状态复制到 `/data`。迁移不会删除旧 HOME 数据；请先备份 `./data/data` 和 `dsh-home`，确认新版本启动正常后再自行清理旧副本。
 
@@ -119,7 +121,7 @@ The image does not add a separate login rate-limit plugin. For public deployment
 
 ## 镜像与源码
 
-- 应用版本：移动版本 `latest` 与对应的固定版本目录
+- 应用版本：滚动版本 `latest` 与对应的固定版本目录
 - 镜像：`latest` 使用 `moelin/deepseek-harness:workstation`，固定版本使用匹配的 `<版本>-workstation` tag
 - DeepSeek Harness：<https://github.com/deepseek-ai/deepseek-harness>
 - 镜像构建源码：<https://github.com/okxlin/release-factory/blob/main/deepseek-harness-builder/README.md>
