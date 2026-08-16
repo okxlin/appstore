@@ -1,6 +1,6 @@
 services:
   dailytxt:
-    image: "phitux/dailytxt:2.6.2"
+    image: "phitux/dailytxt:2.6.3"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
