@@ -61,18 +61,21 @@ http://127.0.0.1:56789
 
 ## 数据持久化
 
-应用使用一个 Docker named volume 和一个应用目录 bind mount：
+应用使用一个应用状态 bind mount、一个工作区 bind mount，以及一个 HOME named volume：
 
 | 持久化来源 | 容器路径 | 用途 |
 | --- | --- | --- |
-| `dsh-home` | `/home/node` | 用户安装的软件、配置、缓存，以及鉴权、Caddy 和 DeepSeek Harness 状态 |
-| `./data/workspace` | `/workspace` | 用户项目与工作区，便于通过 1Panel 文件管理和应用备份访问 |
+| `./data/data` | `/data` | 鉴权数据库、JWT 签名密钥、Caddy 状态和 DeepSeek Harness 状态，随 1Panel 应用目录备份 |
+| `./data/workspace` | `/workspace` | 用户项目与工作区；该目录与 `./data/data` 同级，便于通过 1Panel 文件管理和应用备份访问 |
+| `dsh-home` | `/home/node` | 用户安装的软件、shell 配置、语言工具链缓存和包管理器缓存 |
 
-鉴权状态位于 `/home/node/.local/share/deepseek-harness/auth`，Caddy 状态位于 `/home/node/.local/share/deepseek-harness/caddy`，DeepSeek Harness 状态位于 `/home/node/.local/share/deepseek-harness/dsh`。`/home/node` 与 `/workspace` 都是直接挂载的真实目录，不使用符号链接。
+鉴权状态位于 `/data/auth`，Caddy 状态位于 `/data/caddy`，DeepSeek Harness 状态位于 `/data/dsh`。`/data`、`/home/node` 与 `/workspace` 都是直接挂载的真实目录，不使用符号链接。
 
 镜像以 root 启动，仅用于准备挂载目录权限和可选 Docker Socket 组，然后以 UID/GID `1000:1000` 运行 DeepSeek Harness 与 Caddy。首次启动时入口会把 HOME 和 workspace 准备为该用户可写，因此通常不需要手工执行 `chmod` 或 `chown`。
 
-1Panel 的应用备份覆盖应用安装目录，因此会包含 `./data/workspace`，但不会包含独立的 HOME named volume。卸载会移除应用目录中的 workspace，并通过 `docker compose down --volumes` 删除 `dsh-home`；HOME 卷不应被当作备份。升级、卸载或迁移前，请停止应用并单独备份 `dsh-home`：
+从旧版工作站布局升级时，如果 `/data/auth` 为空，镜像入口会在首次启动时把 `dsh-home:/home/node/.local/share/deepseek-harness` 中的旧鉴权、Caddy 和 DSH 状态复制到 `/data`。迁移不会删除旧 HOME 数据；请先备份 `./data/data` 和 `dsh-home`，确认新版本启动正常后再自行清理旧副本。
+
+1Panel 的应用备份覆盖应用安装目录，因此会包含 `./data/data` 和 `./data/workspace`。独立的 HOME named volume 不在应用目录内，升级、卸载或迁移前如需保留用户安装的工具和缓存，请停止应用并单独备份 `dsh-home`：
 
 ```bash
 docker run --rm --entrypoint tar \
@@ -92,7 +95,7 @@ docker run --rm --entrypoint tar \
   -C /target -xzf /backup/dsh-home.tar.gz
 ```
 
-普通 `docker compose down` 会保留 named volume；本应用的卸载脚本使用 `docker compose down --volumes --remove-orphans` 删除 `dsh-home`，该操作不可恢复。
+本应用的卸载脚本只执行 `docker compose down --remove-orphans`，默认保留 `./data/data`、`./data/workspace` 和 `dsh-home`。手工执行 `docker compose down --volumes` 或删除 `dsh-home` 卷会移除 HOME 中的用户工具、配置和缓存，该操作不可恢复。
 
 ## 沙箱与 Docker Socket
 
@@ -102,11 +105,11 @@ Docker Socket 默认通过 `/dev/null` 禁用。启用 `/var/run/docker.sock` �
 
 ## 鉴权说明
 
-访问外部地址后会跳转到 `/auth/login`。登录表单支持浏览器密码管理器，除 `/healthz` 外的应用页面和 WebSocket 都受鉴权保护。Caddy 本地账号数据库保存 bcrypt 密码哈希，JWT 签名密钥保存在 `/home/node/.local/share/deepseek-harness/auth` 中。为支持 1Panel 密码表单，提交的明文密码仍会存在于 1Panel 生成的 `.env` 和 Docker 容器配置中，宿主 root、1Panel 与 Docker 管理员可读取；镜像会在启动后从 DSH/Caddy 子进程环境中移除该值。
+访问外部地址后会跳转到 `/auth/login`。登录表单支持浏览器密码管理器，除 `/healthz` 外的应用页面和 WebSocket 都受鉴权保护。Caddy 本地账号数据库保存 bcrypt 密码哈希，JWT 签名密钥保存在 `/data/auth` 中。为支持 1Panel 密码表单，提交的明文密码仍会存在于 1Panel 生成的 `.env` 和 Docker 容器配置中，宿主 root、1Panel 与 Docker 管理员可读取；镜像会在启动后从 DSH/Caddy 子进程环境中移除该值。
 
 Caddy Security 当前不会自动刷新访问令牌。默认登录有效期为 7 天，可在安装表单中选择最长 30 天；有效期结束后需要重新登录。更长有效期也会延长被盗 Cookie 的可用窗口，公网部署应按实际需要选择尽可能短的有效期。
 
-The local Caddy account database stores a bcrypt password hash and keeps its JWT signing key under `/home/node/.local/share/deepseek-harness/auth`. To support the 1Panel password form, the submitted plaintext password remains in the panel-generated `.env` and Docker container configuration, where host root, 1Panel, and Docker administrators can read it; the image removes the value from the DSH and Caddy child-process environments after startup.
+The local Caddy account database stores a bcrypt password hash and keeps its JWT signing key under `/data/auth`. To support the 1Panel password form, the submitted plaintext password remains in the panel-generated `.env` and Docker container configuration, where host root, 1Panel, and Docker administrators can read it; the image removes the value from the DSH and Caddy child-process environments after startup.
 
 镜像不额外内置登录限速插件。公网部署请在 Cloudflare、1Panel WAF 或外层 OpenResty 对 `/auth/login` 和 `/auth/sandbox/*` 设置限速；使用基于客户端 IP 的规则前，请先正确配置可信真实客户端 IP 转发链。
 

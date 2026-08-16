@@ -21,6 +21,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
+      - ./data/data:/data
       - dsh-home:/home/node
       - ./data/workspace:/workspace
       - "${DOCKER_SOCK_PATH:-/dev/null}:/var/run/docker.sock"

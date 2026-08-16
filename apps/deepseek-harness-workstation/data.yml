@@ -26,5 +26,5 @@ additionalProperties:
     ru: Рабочая станция DeepSeek Harness с веб-аутентификацией и полным набором инструментов разработки
     ms: Stesen kerja DeepSeek Harness dengan log masuk pelayar dan set alat pembangunan lengkap
     pt-br: Estação de trabalho DeepSeek Harness com login pelo navegador e toolchain de desenvolvimento completa
-  crossVersionUpdate: false
+  crossVersionUpdate: true
   limit: 1
