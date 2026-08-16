@@ -72,7 +72,7 @@ http://127.0.0.1:56789
 
 镜像以 root 启动，仅用于准备挂载目录权限和可选 Docker Socket 组，然后以 UID/GID `1000:1000` 运行 DeepSeek Harness 与 Caddy。首次启动时入口会把 HOME 和 workspace 准备为该用户可写，因此通常不需要手工执行 `chmod` 或 `chown`。
 
-1Panel 的应用备份覆盖应用安装目录，因此会包含 `./data/workspace`，但不会包含独立的 HOME named volume。卸载会移除应用目录中的 workspace；HOME 卷也不应被当作备份。升级、卸载或迁移前，请停止应用并单独备份 `dsh-home`：
+1Panel 的应用备份覆盖应用安装目录，因此会包含 `./data/workspace`，但不会包含独立的 HOME named volume。卸载会移除应用目录中的 workspace，并通过 `docker compose down --volumes` 删除 `dsh-home`；HOME 卷不应被当作备份。升级、卸载或迁移前，请停止应用并单独备份 `dsh-home`：
 
 ```bash
 docker run --rm --entrypoint tar \
@@ -92,7 +92,7 @@ docker run --rm --entrypoint tar \
   -C /target -xzf /backup/dsh-home.tar.gz
 ```
 
-普通 `docker compose down` 会保留 named volume；`docker compose down --volumes`、`docker volume rm` 和 `docker volume prune` 可以删除它。
+普通 `docker compose down` 会保留 named volume；本应用的卸载脚本使用 `docker compose down --volumes --remove-orphans` 删除 `dsh-home`，该操作不可恢复。
 
 ## 沙箱与 Docker Socket
 
