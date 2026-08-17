@@ -1,6 +1,6 @@
 services:
   simon:
-    image: "alibahmanyar/simon:0.3.4"
+    image: "alibahmanyar/simon:0.3.5"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
