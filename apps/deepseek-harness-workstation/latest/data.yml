@@ -117,6 +117,25 @@ additionalProperties:
           value: "604800"
         - label: 30 days
           value: "2592000"
+    - envKey: CADDY_TRUSTED_PROXIES
+      type: text
+      required: true
+      default: private_ranges
+      edit: true
+      labelZh: 可信代理范围
+      labelEn: Trusted Proxy Ranges
+      label:
+        en: Trusted Proxy Ranges
+        zh: 可信代理范围
+        zh-Hant: 受信任代理範圍
+        ja: 信頼済みプロキシ範囲
+        ko: 신뢰할 수 있는 프록시 범위
+        ru: Диапазоны доверенных прокси
+        ms: Julat Proksi Dipercayai
+        pt-br: Faixas de proxies confiáveis
+      description:
+        en: Use space-separated CIDRs or private_ranges. Keep private_ranges behind 1Panel/OpenResty; use none only when clients connect directly to Caddy.
+        zh: 使用空格分隔的 CIDR 或 private_ranges。通过 1Panel/OpenResty 反向代理时保留 private_ranges；仅在客户端直连 Caddy 时使用 none。
     - envKey: DSH_TRUSTED_HOSTS
       type: text
       required: false
