@@ -1,6 +1,6 @@
 services:
   pocket-id:
-    image: pocketid/pocket-id:v2.12.0-distroless
+    image: pocketid/pocket-id:v2.14.0-distroless
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
