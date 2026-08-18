@@ -1,6 +1,6 @@
 services:
   imgproxy:
-    image: "ghcr.io/imgproxy/imgproxy:v4.0.12"
+    image: "ghcr.io/imgproxy/imgproxy:v4.0.13"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     ports:
