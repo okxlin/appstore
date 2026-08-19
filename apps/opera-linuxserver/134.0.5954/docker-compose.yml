@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   opera:
-    image: "linuxserver/opera:134.0.5954"
+    image: "linuxserver/opera:135.0.5973"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
