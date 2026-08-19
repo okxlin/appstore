@@ -1,6 +1,6 @@
 services:
   socket-proxy:
-    image: "ghcr.io/yusing/socket-proxy:latest@sha256:d2f20bd06728c9465a01725f1782f591c2cd5ade79027654fcf8b436a0fd0ca6"
+    image: "ghcr.io/yusing/socket-proxy:latest@sha256:35394fdc4bf97de34ac5a121fb543f9233af17176fc11c8bd10d35f180460608"
     container_name: ${CONTAINER_NAME}-socket-proxy
     restart: unless-stopped
     environment:
