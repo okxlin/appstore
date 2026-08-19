@@ -1,6 +1,6 @@
 services:
   postman-kasm:
-    image: "kasmweb/postman:1.19.0-rolling-weekly@sha256:c657c792e6c30a5c113f8e91bc3dde2315056fcd5e2caa9f3574ff715d05ba2e"
+    image: "kasmweb/postman:1.19.0-rolling-weekly@sha256:d50f9fdeca0e0f23ce5cba3da8047eb4e5ade9d14d4712b705ac7c39e501adc2"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
