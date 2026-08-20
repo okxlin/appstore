@@ -1,6 +1,6 @@
 services:
   joplin:
-    image: "linuxserver/joplin:3.6.15"
+    image: "linuxserver/joplin:3.6.16"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
