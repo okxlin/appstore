@@ -406,3 +406,7 @@ vivaldi-kasm
 filerise
 hermitstash
 pulse
+
+# Reviewed single-service Renovate candidates (2026-08-21).
+librarr
+webclaw
