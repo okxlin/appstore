@@ -1,6 +1,6 @@
 services:
   directus:
-    image: "directus/directus:12.2.0"
+    image: "directus/directus:12.3.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
