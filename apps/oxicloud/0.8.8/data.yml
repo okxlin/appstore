@@ -106,7 +106,7 @@ additionalProperties:
     rule: paramComplexity
     type: password
   - default: ./data
-    edit: false
+    edit: true
     envKey: APP_DATA_DIR
     labelEn: Data Directory
     labelZh: 数据目录
@@ -158,19 +158,3 @@ additionalProperties:
       value: 'false'
     - label: 'true'
       value: 'true'
-  - default: Asia/Shanghai
-    edit: true
-    envKey: TZ
-    labelEn: Timezone
-    labelZh: 时区
-    label:
-      en: Timezone
-      zh: 时区
-      zh-Hant: 時區
-      ja: タイムゾーン
-      ko: 시간대
-      ru: Часовой пояс
-      ms: Zon waktu
-      pt-br: Fuso horário
-    required: true
-    type: text
