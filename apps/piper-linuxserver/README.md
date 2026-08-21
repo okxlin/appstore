@@ -1,5 +1,24 @@
 # Piper
 
+## 产品介绍
+Piper 是一个通过 Wyoming 协议提供文本转语音服务的应用，镜像由 LinuxServer.io 维护。
+
+## 主要功能
+- 提供 Piper 文本转语音服务。
+- 支持选择语音模型、语速、噪声和说话人参数。
+- 持久化保存配置和模型数据。
+
+## 访问说明
+安装完成后，通过 1Panel 查看容器状态与日志，并使用配置的 Wyoming 端口连接客户端。
+
+## Introduction
+Piper is a text-to-speech service exposed through the Wyoming protocol and maintained by LinuxServer.io.
+
+## Features
+- Text-to-speech service with configurable voice and runtime parameters.
+- Persistent configuration and model storage.
+- Wyoming protocol connectivity on the configured port.
+
 ## 应用简介
 Piper 文本转语音 Wyoming 服务。
 
