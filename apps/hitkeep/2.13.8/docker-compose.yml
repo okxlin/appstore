@@ -1,6 +1,6 @@
 services:
   hitkeep:
-    image: "docker.io/pascalebeier/hitkeep:2.13.7@sha256:4d08cc5508a6a70451d8d478b29c4d384c1e7f71a76a835908debd5ed7f9a1bf"
+    image: "docker.io/pascalebeier/hitkeep:2.13.8@sha256:285e232ee5ba78fc6d7309fa7741bc32a9227daa6d17218af2a60fad8ebad11b"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
