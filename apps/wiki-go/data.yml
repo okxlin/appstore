@@ -7,9 +7,18 @@ additionalProperties:
   key: wiki-go
   name: Wiki-Go
   tags:
-    - Website
+  - Website
+  type: website
+  website: https://leomoon.com/downloads/web-apps/wiki-go/
+  document: https://github.com/leomoon-studios/wiki-go/blob/master/README.md
+  github: https://github.com/leomoon-studios/wiki-go
   shortDescZh: 基于 Markdown 的轻量级自托管 Wiki
   shortDescEn: A lightweight self-hosted Markdown wiki
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: A lightweight self-hosted Markdown wiki
     zh: 基于 Markdown 的轻量级自托管 Wiki
@@ -19,13 +28,3 @@ additionalProperties:
     ru: Легкая самостоятельно размещаемая Wiki на Markdown
     ms: Wiki Markdown hos kendiri yang ringan
     pt-br: Wiki Markdown leve e auto-hospedada
-  type: website
-  crossVersionUpdate: true
-  limit: 0
-  recommend: 0
-  website: https://leomoon.com/downloads/web-apps/wiki-go/
-  github: https://github.com/leomoon-studios/wiki-go
-  document: https://github.com/leomoon-studios/wiki-go/blob/master/README.md
-  architectures:
-    - amd64
-    - arm64
