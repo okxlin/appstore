@@ -1,0 +1,39 @@
+services:
+  librarr:
+    image: "ghcr.io/jeremiahm37/librarr:v1.2.1"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    tmpfs:
+      - /tmp:size=512M
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5050"
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+      - "${APP_EBOOK_DIR}:/books/ebooks"
+      - "${APP_AUDIOBOOK_DIR}:/books/audiobooks"
+      - "${APP_MANGA_DIR}:/books/manga"
+    environment:
+      - LIBRARR_PORT=5050
+      - LIBRARR_DB_PATH=/data/librarr.db
+      - EBOOK_DIR=/books/ebooks
+      - AUDIOBOOK_DIR=/books/audiobooks
+      - MANGA_DIR=/books/manga
+      - WISHLIST_CLEANUP_ENABLED=false
+      - OIDC_PROXY_HEADERS_ENABLED=false
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:5050/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 9
+      start_period: 15s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

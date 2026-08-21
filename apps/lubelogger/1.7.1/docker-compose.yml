@@ -1,0 +1,46 @@
+services:
+  lubelogger:
+    image: "ghcr.io/hargata/lubelogger:v1.7.1@sha256:678a5c4af387e525f06ef954b454efe536745f517f2078dc646ccce9332adb9d"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    init: true
+    user: "1000:1000"
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    env_file:
+      - path: "${APP_DATA_DIR}/.lubelogger-auth.env"
+        required: false
+    environment:
+      - HOME=/App/data
+      - TZ=${TIME_ZONE}
+      - ASPNETCORE_HTTP_PORTS=8080
+      - Kestrel__EndpointDefaults__Protocols=Http1
+      - DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT=false
+      - LUBELOGGER_LOCALE_OVERRIDE=en_US
+      - LUBELOGGER_LOCALE_DT_OVERRIDE=en_US
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          bash -lc 'exec 3<>/dev/tcp/127.0.0.1/8080; exec 3>&-; exec 3<&-'
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+    volumes:
+      - "${APP_DATA_DIR}:/App/data"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

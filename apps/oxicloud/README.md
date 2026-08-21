@@ -21,7 +21,7 @@ OxiCloud 是一个使用 Rust 构建的自托管云存储平台，提供文件�
 ## 数据库和存储
 
 - 安装时选择 1Panel 中已运行的 PostgreSQL 服务。1Panel 会创建并关联独立的数据库与用户，OxiCloud 启动时自动执行数据库迁移。当前 1Panel 会将关联用户创建为 PostgreSQL 超级用户；在共享数据库实例上，这不是强隔离边界。面向不受信任用户或高价值数据时，应为 OxiCloud 使用专用 PostgreSQL 实例。
-- `APP_DATA_DIR` 挂载到容器 `/app/storage`，保存文件内容、上传临时数据和自动生成的 JWT 密钥。该值必须是应用版本目录内的相对路径；初始化脚本会拒绝绝对路径、目录逃逸和指向目录外的符号链接。升级、迁移或卸载前请备份该目录及 PostgreSQL 数据库。
+- `APP_DATA_DIR` 挂载到容器 `/app/storage`，保存文件内容、上传临时数据和自动生成的 JWT 密钥。该值必须是应用版本目录内的相对路径；升级时会保留已配置的目录，不应改写为固定路径。升级、迁移或卸载前请备份该目录及 PostgreSQL 数据库。
 - 数据库密码由 1Panel 生成并写入应用环境文件；不要提交或共享安装后的 `.env`。
 - 当前镜像的数据库初始化模块会在 `INFO` 级别错误输出未脱敏连接串。本应用包通过 `RUST_LOG` 将该模块限制为 `WARN`，防止数据库凭据进入 Docker 日志；升级镜像后仍应复核此项。
 - 应用包在容器启动时对 PostgreSQL 用户名、密码和数据库名进行 URI 编码，因此表单允许的 URL 保留字符不会改变连接凭据。
@@ -45,7 +45,7 @@ OxiCloud is a self-hosted cloud storage platform built with Rust, providing file
 - Local disk, S3-compatible, and Azure Blob storage backends
 - Password, magic-link, and OIDC authentication
 
-`APP_DATA_DIR` persists file content, upload staging data, and the generated JWT key at `/app/storage`. It must be a relative path contained by the application version directory; absolute paths, directory traversal, and symlinks resolving outside that directory are rejected. Back up this directory and the PostgreSQL database before upgrades, migrations, or uninstalling.
+`APP_DATA_DIR` is mounted at `/app/storage` for file content, upload staging data, and the generated JWT key. It must be a relative path contained by the application version directory; upgrades preserve the configured directory. Back up this directory and the PostgreSQL database before upgrades, migrations, or uninstalling.
 
 1Panel currently creates linked PostgreSQL roles as superusers. A linked role is therefore not a strong isolation boundary on a shared PostgreSQL instance; use a dedicated PostgreSQL instance for untrusted users or high-value data. The package URI-encodes PostgreSQL credential components at container startup so reserved characters accepted by the form retain their literal meaning.
 

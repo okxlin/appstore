@@ -4,6 +4,7 @@ services:
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     entrypoint: ["/bin/sh", "/usr/local/bin/oxicloud-package-entrypoint.sh"]
+    command: ["/usr/local/bin/oxicloud"]
     networks:
       - 1panel-network
     ports:

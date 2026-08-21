@@ -1,15 +1,26 @@
 name: MediaMTX
 tags:
-  - Media
+- Media
 title: 多协议媒体服务器
 description: 多协议媒体服务器
 additionalProperties:
   key: mediamtx
   name: MediaMTX
   tags:
-    - Media
+  - Media
+  type: tool
+  website: https://mediamtx.org/
+  document: https://mediamtx.org/docs/kickoff/install
+  github: https://github.com/bluenviron/mediamtx
   shortDescZh: 多协议媒体服务器
   shortDescEn: A ready-to-use multi-protocol media server
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
+  - armv6
+  - armv7
   description:
     en: A ready-to-use multi-protocol media server
     zh: 开箱即用的多协议媒体服务器
@@ -19,14 +30,3 @@ additionalProperties:
     ru: Готовый к работе мультипротокольный медиасервер
     ms: Pelayan media berbilang protokol yang sedia digunakan
     pt-br: Servidor de mídia multiprotocolo pronto para uso
-  type: tool
-  crossVersionUpdate: true
-  limit: 0
-  website: https://mediamtx.org/
-  github: https://github.com/bluenviron/mediamtx
-  document: https://mediamtx.org/docs/kickoff/install
-  architectures:
-    - amd64
-    - arm64
-    - armv6
-    - armv7
