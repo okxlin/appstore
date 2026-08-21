@@ -1,15 +1,24 @@
 name: Documenso
 tags:
-  - 办公
+- Tool
 title: 开源文档签署平台
 description: 开源文档签署平台
 additionalProperties:
   key: documenso
   name: Documenso
   tags:
-    - Tool
+  - Tool
+  type: website
+  website: https://documenso.com/
+  document: https://docs.documenso.com/docs/self-hosting
+  github: https://github.com/documenso/documenso
   shortDescZh: 开源文档签署平台
   shortDescEn: Open-source document signing platform
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: Open-source document signing platform
     zh: 开源文档签署平台
@@ -19,14 +28,3 @@ additionalProperties:
     ru: Платформа с открытым кодом для подписания документов
     ms: Platform sumber terbuka untuk menandatangani dokumen
     pt-br: Plataforma de codigo aberto para assinatura de documentos
-  type: website
-  crossVersionUpdate: true
-  limit: 0
-  recommend: 0
-  website: https://documenso.com/
-  github: https://github.com/documenso/documenso
-  document: https://docs.documenso.com/docs/self-hosting
-  memoryRequired: 2048
-  architectures:
-    - amd64
-    - arm64
