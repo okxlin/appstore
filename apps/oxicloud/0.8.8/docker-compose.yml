@@ -1,6 +1,6 @@
 services:
   oxicloud:
-    image: "diocrafts/oxicloud:0.8.8@sha256:189e4b5dd9ab53ef425a28fb543be046397caa5fe806f7b6850c28d8d404aa5e"
+    image: "diocrafts/oxicloud:0.8.8@sha256:2c071978f6bce98d57baaf00cbb963cb9ebe8acb3e02acaa2b5e348161074c8a"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     entrypoint: ["/bin/sh", "/usr/local/bin/oxicloud-package-entrypoint.sh"]
