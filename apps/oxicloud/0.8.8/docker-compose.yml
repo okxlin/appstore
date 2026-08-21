@@ -23,7 +23,7 @@ services:
       - MIMALLOC_PURGE_DELAY=0
       - RUST_LOG=info,oxicloud::infrastructure::db=warn
     volumes:
-      - "./data:/app/storage"
+      - "${APP_DATA_DIR}:/app/storage"
       - "./scripts/container-entrypoint.sh:/usr/local/bin/oxicloud-package-entrypoint.sh:ro"
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8086/ready >/dev/null || exit 1"]

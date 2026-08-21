@@ -375,19 +375,3 @@ additionalProperties:
       pt-br: URL de banco de dados gerada
     required: true
     type: password
-  - default: Asia/Shanghai
-    edit: true
-    envKey: TZ
-    labelEn: Timezone
-    labelZh: 时区
-    label:
-      en: Timezone
-      zh: 时区
-      zh-Hant: 時區
-      ja: タイムゾーン
-      ko: 시간대
-      ru: Часовой пояс
-      ms: Zon waktu
-      pt-br: Fuso horário
-    required: true
-    type: text

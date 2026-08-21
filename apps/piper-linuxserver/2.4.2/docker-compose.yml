@@ -11,7 +11,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_WYOMING}:10200"
     volumes:
-      - "./data/config:/config"
+      - "${CONFIG_PATH}:/config"
     environment:
       - PUID=1000
       - PGID=1000
