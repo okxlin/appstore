@@ -1,15 +1,24 @@
 name: Pocket ID
 tags:
-  - Security
+- Security
 title: 以通行密钥为核心的 OIDC 身份提供商
 description: 以通行密钥为核心的 OIDC 身份提供商
 additionalProperties:
   key: pocket-id
   name: Pocket ID
   tags:
-    - Security
+  - Security
+  type: website
+  website: https://pocket-id.org/
+  document: https://pocket-id.org/docs/
+  github: https://github.com/pocket-id/pocket-id
   shortDescZh: 以通行密钥为核心的 OIDC 身份提供商
   shortDescEn: A passkey-first OIDC identity provider
+  crossVersionUpdate: true
+  limit: 1
+  architectures:
+  - amd64
+  - arm64
   description:
     en: A passkey-first OIDC identity provider for self-hosted services
     zh: 面向自托管服务、以通行密钥为核心的 OIDC 身份提供商
@@ -18,13 +27,5 @@ additionalProperties:
     ko: 자체 호스팅 서비스를 위한 패스키 우선 OIDC ID 공급자
     ru: OIDC-провайдер для самостоятельного размещения с приоритетом ключей доступа
     ms: Penyedia identiti OIDC berasaskan kunci laluan untuk perkhidmatan hos kendiri
-    pt-br: Provedor de identidade OIDC com foco em chaves de acesso para servicos auto-hospedados
-  type: website
-  crossVersionUpdate: true
-  limit: 1
-  website: https://pocket-id.org/
-  github: https://github.com/pocket-id/pocket-id
-  document: https://pocket-id.org/docs/
-  architectures:
-    - amd64
-    - arm64
+    pt-br: Provedor de identidade OIDC com foco em chaves de acesso para servicos
+      auto-hospedados
