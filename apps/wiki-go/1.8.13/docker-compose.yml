@@ -1,6 +1,6 @@
 services:
   wiki-go:
-    image: "leomoonstudios/wiki-go:1.8.12"
+    image: "leomoonstudios/wiki-go:1.8.13"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
