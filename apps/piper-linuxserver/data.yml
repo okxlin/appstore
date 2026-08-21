@@ -8,8 +8,17 @@ additionalProperties:
   name: Piper
   tags:
   - AI
+  type: tool
+  website: https://github.com/rhasspy/piper
+  document: https://docs.linuxserver.io/images/docker-piper/
+  github: https://github.com/linuxserver/docker-piper
   shortDescZh: Piper 文本转语音 Wyoming 服务
   shortDescEn: Text to speech Wyoming service maintained by LinuxServer.io
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: Text to speech Wyoming service maintained by LinuxServer.io
     zh: Piper 文本转语音 Wyoming 服务
@@ -19,12 +28,3 @@ additionalProperties:
     ru: Сервис синтеза речи Wyoming, поддерживаемый LinuxServer.io
     ms: Perkhidmatan teks ke pertuturan Wyoming yang diselenggara oleh LinuxServer.io
     pt-br: Servico Wyoming de texto para fala mantido pela LinuxServer.io
-  type: tool
-  crossVersionUpdate: true
-  limit: 0
-  website: https://github.com/rhasspy/piper
-  github: https://github.com/linuxserver/docker-piper
-  document: https://docs.linuxserver.io/images/docker-piper/
-  architectures:
-  - amd64
-  - arm64

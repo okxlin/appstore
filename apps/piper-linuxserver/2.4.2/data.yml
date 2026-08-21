@@ -18,7 +18,7 @@ additionalProperties:
     type: number
     rule: paramPort
   - default: ./data/config
-    edit: true
+    edit: false
     envKey: CONFIG_PATH
     labelEn: Config folder path
     labelZh: 配置文件路径
@@ -65,7 +65,7 @@ additionalProperties:
       pt-br: Voz do Piper
     required: true
     type: text
-  - default: ""
+  - default: ''
     edit: true
     envKey: LOCAL_ONLY
     labelEn: Local only mode
@@ -82,11 +82,11 @@ additionalProperties:
     required: false
     type: select
     values:
-      - label: "false"
-        value: ""
-      - label: "true"
-        value: "true"
-  - default: "1.0"
+    - label: 'false'
+      value: ''
+    - label: 'true'
+      value: 'true'
+  - default: '1.0'
     edit: true
     envKey: PIPER_LENGTH
     labelEn: Voice speaking rate
@@ -102,7 +102,7 @@ additionalProperties:
       pt-br: Velocidade da fala
     required: false
     type: text
-  - default: "0.667"
+  - default: '0.667'
     edit: true
     envKey: PIPER_NOISE
     labelEn: Voice noise
@@ -118,7 +118,7 @@ additionalProperties:
       pt-br: Ruido de variacao da voz
     required: false
     type: text
-  - default: "0.333"
+  - default: '0.333'
     edit: true
     envKey: PIPER_NOISEW
     labelEn: Cadence noise
@@ -134,7 +134,7 @@ additionalProperties:
       pt-br: Ruido de cadencia
     required: false
     type: text
-  - default: "0"
+  - default: '0'
     edit: true
     envKey: PIPER_SPEAKER
     labelEn: Speaker number
@@ -150,7 +150,7 @@ additionalProperties:
       pt-br: Numero do locutor
     required: false
     type: text
-  - default: ""
+  - default: ''
     edit: true
     envKey: NO_STREAMING
     labelEn: Disable streaming
@@ -167,7 +167,23 @@ additionalProperties:
     required: false
     type: select
     values:
-      - label: "false"
-        value: ""
-      - label: "true"
-        value: "true"
+    - label: 'false'
+      value: ''
+    - label: 'true'
+      value: 'true'
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   piper:
-    image: "linuxserver/piper:latest"
+    image: "linuxserver/piper:2.4.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -11,7 +11,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_WYOMING}:10200"
     volumes:
-      - "${CONFIG_PATH}:/config"
+      - "./data/config:/config"
     environment:
       - PUID=1000
       - PGID=1000
