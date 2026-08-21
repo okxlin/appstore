@@ -106,7 +106,7 @@ additionalProperties:
       rule: paramComplexity
       type: password
     - default: ./data
-      edit: true
+      edit: false
       envKey: APP_DATA_DIR
       labelEn: Data Directory
       labelZh: 数据目录
