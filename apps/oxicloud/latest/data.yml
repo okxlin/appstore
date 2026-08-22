@@ -49,7 +49,7 @@ additionalProperties:
         ms: Port PostgreSQL
         pt-br: Porta PostgreSQL
       required: true
-      rule: paramPort
+      rule: paramCommon
       type: number
     - default: oxicloud
       edit: true
