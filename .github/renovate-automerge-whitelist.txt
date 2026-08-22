@@ -240,6 +240,7 @@ blender-linuxserver
 forwardx
 commafeed
 whois
+dagu
 weaviate
 infinite-canvas
 openobserve
