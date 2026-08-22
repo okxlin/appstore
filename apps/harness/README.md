@@ -25,7 +25,7 @@ Harness Open Source is an open source developer platform for code hosting, pipel
 - 本应用使用官方 Docker 镜像 `harness/harness:3.3.0`。
 - 应用分类：DevOps。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`，当前固定使用 `3.3.0` 镜像。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 - 默认禁用 Gitspaces、指标上报以及内网/loopback webhook 访问。
 - 默认不挂载 `/var/run/docker.sock`。需要 Docker runner、Gitspaces 或流水线容器执行能力时，请先评估宿主机 Docker socket 暴露风险。
 

@@ -25,7 +25,7 @@ IntelliJ IDEA is a Java IDE by JetBrains. This app uses the LinuxServer.io image
 - 本应用使用镜像 `linuxserver/intellij-idea`。
 - 应用分类：Development。
 - 支持架构：amd64。
-- 可选版本：`latest`、`42026.1.20260505`。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |

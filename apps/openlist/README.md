@@ -9,7 +9,7 @@
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：存储、工具。
 - 支持架构：amd64、arm64、ppc64le、armv6、armv7、loong64、riscv64。
-- 可选版本：`latest`、`4.2.2`、`4.2.2-aio`、`4.2.2-aria2`、`4.2.2-ffmpeg`。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口

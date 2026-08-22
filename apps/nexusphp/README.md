@@ -35,7 +35,7 @@ NexusPHP is a full private tracker site platform built with NexusPHP, Laravel, a
 - 应用内部会使用固定的上游 release `v1.10.2` 初始化代码，而不是沿用原镜像“每次重建自动拉取最新 release”的行为。
 - 应用分类：Website。
 - 支持架构：`amd64`。
-- 可选版本：`1.10.2`、`latest`；当前 `latest` 同样固定到 `v1.10.2` 发布线。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 - 由于维护者镜像本身内置 MySQL、Redis、cron 和 supervisor，本适配无法复用 1Panel 商店里的 MySQL/Redis runtime，这一点与当前优先策略不完全一致，已在此明确标注。
 
 ## 端口

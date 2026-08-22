@@ -9,7 +9,7 @@
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64。
-- 可选版本：`latest`、`7.4.11`、`7.4.11&mysql`、`7.4.11-postgres`、`6.4.13`、`6.4.13&mysql`、`6.4.13-postgres`、`latest&mysql`、`latest-postgres`。
+- 可选版本：`latest`、`latest&mysql`、`latest-postgres`；固定版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 Web UI 或对应服务。
 
 ## 端口

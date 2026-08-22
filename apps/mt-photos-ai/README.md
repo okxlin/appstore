@@ -9,7 +9,7 @@ MT Photos AI 相关的独立服务。
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：媒体、AI。
 - 支持架构：amd64。
-- 可选版本：`latest`、`1.2.1`、`latest-cuda`、`latest-onnx`。
+- 可选版本：`latest`、`latest-cuda`、`latest-onnx`；固定版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口

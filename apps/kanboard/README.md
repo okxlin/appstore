@@ -23,7 +23,7 @@ Kanboard is open-source project management software focused on the Kanban method
 - 本应用采用上游官方单镜像 SQLite 拓扑，使用官方镜像 `kanboard/kanboard`。
 - 镜像内由 s6 管理 nginx 和 PHP-FPM；应用限制为单实例，不应横向扩容共享 SQLite 数据目录。
 - 仅发布容器 HTTP 端口。证书目录仍按上游契约持久化，但内部 HTTPS 端口不对外发布。
-- 可选版本：`latest` 和 `v1.2.53`。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |

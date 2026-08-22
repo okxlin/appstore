@@ -35,7 +35,7 @@ PerfreeBlog is an open source Java-based blog and CMS platform with content mana
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：网站。
 - 支持架构：amd64。
-- 可选版本：`4.0.11`。
+- 可选版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口

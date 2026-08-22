@@ -28,7 +28,7 @@ Headscale is an open-source, self-hosted implementation of the Tailscale control
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
 - 支持架构：amd64。
-- 可选版本：`0.23.0-alpha3`、`0.26.1`、`0.27.1`、`0.28.0`、`0.29.2`。
+- 可选版本以应用商店当前版本目录和安装表单为准。
 - 安装后通过应用表单中的端口访问 Headscale HTTP 控制服务。
 
 ## 端口

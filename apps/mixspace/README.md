@@ -28,7 +28,7 @@ MixSpace is an open-source self-hosted backend for personal blogs. The current `
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：网站。
 - 支持架构：amd64。
-- 可选版本：`latest`、`13`。
+- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 MixSpace API 或对应服务。
 
 ## 端口
