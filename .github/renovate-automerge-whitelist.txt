@@ -238,6 +238,8 @@ windows
 wireguard
 blender-linuxserver
 forwardx
+commafeed
+whois
 weaviate
 infinite-canvas
 openobserve
