@@ -1,6 +1,6 @@
 services:
   pulse:
-    image: "docker.io/rcourtman/pulse:6.2.1@sha256:5cf69280269cf150beb9274102ccb6913addb2b2a0165943860dc91b831ffebd"
+    image: "docker.io/rcourtman/pulse:6.3.0@sha256:285f4b1bb6871e62ac2b640b1694a0bc89e9c9d7c13be263ffd2e62dc920e33c"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
