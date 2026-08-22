@@ -241,6 +241,7 @@ forwardx
 commafeed
 whois
 dagu
+deepseek-harness-workstation
 weaviate
 infinite-canvas
 openobserve
