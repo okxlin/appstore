@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   ferdium:
-    image: "linuxserver/ferdium:7.2.1"
+    image: "linuxserver/ferdium:7.2.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
