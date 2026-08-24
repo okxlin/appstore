@@ -272,6 +272,7 @@ duckdns-linuxserver
 duplicati-linuxserver
 emby-linuxserver
 fail2ban-linuxserver
+ferdium-linuxserver
 flexget-linuxserver
 foldingathome-linuxserver
 freshrss-linuxserver

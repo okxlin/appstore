@@ -600,6 +600,7 @@ class RenovateAppVersionTests(unittest.TestCase):
             ["unifi-network-application"],
             primary["unifi-network-application-linuxserver"],
         )
+        self.assertEqual(["yamtrack"], primary["yamtrack"])
         self.assertEqual(["zipline"], primary["zipline"])
 
     def test_automerge_whitelist_contains_only_single_service_apps(self):
