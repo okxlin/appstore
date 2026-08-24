@@ -1,6 +1,6 @@
 services:
   nora:
-    image: "ghcr.io/getnora-io/nora:1.1.0"
+    image: "ghcr.io/getnora-io/nora:1.2.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     read_only: true
