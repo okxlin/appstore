@@ -64,6 +64,10 @@
   "weblate": [
     "weblate"
   ],
+  "woodpecker": [
+    "woodpecker-server",
+    "woodpecker-agent"
+  ],
   "wukongim": [
     "wukongim"
   ],
