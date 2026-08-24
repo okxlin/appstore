@@ -242,6 +242,9 @@ commafeed
 whois
 dagu
 deepseek-harness-workstation
+nora
+centrifugo
+litellm
 weaviate
 infinite-canvas
 openobserve
@@ -323,6 +326,7 @@ tvheadend-linuxserver
 ubooquity-linuxserver
 webgrabplus-linuxserver
 wikijs-linuxserver
+winegui-linuxserver
 xbackbone-linuxserver
 znc-linuxserver
 # Apps with official GitHub compose/deployment fields unchanged since 2025-06-27 and no high-risk compose flags.
