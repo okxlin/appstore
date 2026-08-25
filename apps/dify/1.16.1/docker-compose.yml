@@ -240,7 +240,7 @@ services:
       - ssrf_proxy_network
 
   local_sandbox:
-    image: "langgenius/dify-agent-local-sandbox:1.16.1"
+    image: "langgenius/dify-agent-local-sandbox:1.17.0"
     container_name: ${CONTAINER_NAME}-local-sandbox
     labels:
       createdBy: "Apps"
