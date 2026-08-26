@@ -1,6 +1,6 @@
 services:
   slack-kasm:
-    image: "kasmweb/slack:1.19.0-rolling-weekly@sha256:937acdfd0d7c04c3cf67b33b4dc8aa0e07e54ae0b22cf4578f6df0858e6e27d6"
+    image: "kasmweb/slack:1.19.0-rolling-weekly@sha256:3debe384664e18acdc9b23fce4c26a102e97b47da8b1b1433a9ecc3842bc6ec2"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
