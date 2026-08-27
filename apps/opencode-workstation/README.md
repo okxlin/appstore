@@ -39,7 +39,6 @@ OpenCode Workstation – 可持久化的多智能体开发运行环境。
 | OPENCODE_BOOTSTRAP | 启动时安装 OpenCode | 1 | 是 |
 | OMO_AUTO_INSTALL | 启动时自动安装 oh-my-opencode | 1 | 是 |
 | DCP_INSTALL | 安装 DCP 插件 | 1 | 是 |
-| GPT_UNLOCKED_INSTALL | 安装 GPT Unlocked 插件 | 1 | 是 |
 | OMO_CLAUDE_MODE | Claude 安装模式 | no | 是 |
 | OMO_GEMINI_MODE | Gemini 安装模式 | no | 是 |
 | OMO_COPILOT_MODE | Copilot 安装模式 | no | 是 |
@@ -49,7 +48,7 @@ OpenCode Workstation – 可持久化的多智能体开发运行环境。
 ## 使用说明
 ### 内部升级说明
 
-重建容器会更新镜像层，但是否重新安装 / 刷新 OpenCode 与 oh-my-opencode，取决于当前表单开关和持久化目录状态。
+重建容器会更新镜像层，但是否重新安装 / 刷新 OpenCode 与 oh-my-opencode，取决于当前表单开关和持久化目录状态。当前镜像不再预装 GPT Unlocked。
 
 常见场景：
 
@@ -57,6 +56,14 @@ OpenCode Workstation – 可持久化的多智能体开发运行环境。
 - **刷新 OpenCode 本体**：进入容器执行 `/app/scripts/update-opencode-userland.sh`
 - **刷新 oh-my-opencode 行为**：重建容器，或手动重新执行 `bunx oh-my-opencode install --no-tui ...`
 - **额外环境变量**：升级脚本会确保 `CUSTOM_ENV_FILE` 存在；后续可直接编辑该文件追加自定义变量
+
+### 升级迁移
+
+- 从旧版本升级时，镜像首次启动会从生成的全局配置 `~/.config/opencode/opencode.json`（或 `.jsonc`）中移除 `opencode-gpt-unlocked` 及其 `experimental.refusal_patcher` 配置。
+- 迁移是幂等的，只清理上述已废弃条目，不删除其它 provider、model、MCP、插件配置或用户覆盖文件。
+- 镜像会将 OMO 的 `~/.omo` 桥接到持久化配置目录 `~/.config/.omo`，避免 OMO 刷新时跨挂载点迁移失败；旧 `.omo` 内容会先复制并保留备份。
+- 旧 `.env` 中的 `GPT_UNLOCKED_*` 键不再由新 Compose 的显式环境映射读取；若它们仍留在 `custom.env`，虽然可能随通用环境文件进入容器，也不会被镜像读取或注册。升级前仍应按上面的数据目录范围完成备份。
+- 持久化目录和 `CUSTOM_ENV_FILE` 由生命周期脚本限制为版本目录下的 `./...` 相对路径；若旧配置使用绝对路径或路径穿越，升级会停止并保留原数据，迁移路径后再重试。
 
 ### 注意事项
 

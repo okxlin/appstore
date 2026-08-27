@@ -11,7 +11,7 @@ additionalProperties:
   shortDescZh: OpenCode Workstation – 可持久化的多智能体开发运行环境
   shortDescEn: OpenCode Workstation – persistent multi-agent dev runtime.
   description:
-    en: OpenCode Workstation – persistent multi-agent dev runtime with oh-my-opencode bootstrap and plugin-friendly storage.
+    en: OpenCode Workstation – persistent multi-agent dev runtime with oh-my-opencode bootstrap and optional user-managed plugins.
     zh: OpenCode Workstation – 可持久化的多智能体开发运行环境
     zh-Hant: OpenCode Workstation – 可持久化的多智慧體開發執行環境
     ja: OpenCode Workstation – 永続化対応マルチエージェント開発ランタイム

@@ -1,18 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # upgrade.sh - opencode-workstation 1Panel upgrade helper
-set -eo pipefail
+set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
-APP_ROOT="${APP_ROOT:-$ROOT_DIR}"
 
 resolve_app_path() {
-  local raw="$1"
-  if [[ "$raw" = /* ]]; then
-    printf '%s\n' "$raw"
-  else
-    printf '%s\n' "$APP_ROOT/${raw#./}"
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
   fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
 }
 
 get_env_value() {
@@ -54,9 +78,10 @@ else
   echo "${ENV_FILE} not found; skipped environment migration"
 fi
 
-custom_env_file="$(resolve_app_path "$(get_env_value "CUSTOM_ENV_FILE" "./data/custom.env")")"
-mkdir -p "$(dirname "$custom_env_file")"
-touch "$custom_env_file"
+custom_env_file_raw="$(get_env_value "CUSTOM_ENV_FILE" "./data/custom.env")"
+custom_env_file="$(resolve_app_path "CUSTOM_ENV_FILE" "$custom_env_file_raw")"
+mkdir -p -- "$(dirname -- "$custom_env_file")"
+touch -- "$custom_env_file"
 echo "Ensured custom env file: ${custom_env_file}"
 
 echo "OpenCode Workstation upgrade migration completed."
