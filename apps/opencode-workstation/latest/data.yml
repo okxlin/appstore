@@ -262,27 +262,6 @@ additionalProperties:
           value: "1"
         - label: "false"
           value: "0"
-    - default: "1"
-      edit: true
-      envKey: GPT_UNLOCKED_INSTALL
-      type: select
-      required: true
-      labelEn: Install GPT Unlocked Plugin
-      labelZh: 安装 GPT Unlocked 插件
-      label:
-        en: Install GPT Unlocked Plugin
-        zh: 安装 GPT Unlocked 插件
-        zh-Hant: 安裝 GPT Unlocked 外掛
-        ja: GPT Unlockedプラグインをインストール
-        ko: GPT Unlocked 플러그인 설치
-        ru: Установить плагин GPT Unlocked
-        ms: Pasang plugin GPT Unlocked
-        pt-br: Instalar plugin GPT Unlocked
-      values:
-        - label: "true"
-          value: "1"
-        - label: "false"
-          value: "0"
     - default: "no"
       edit: true
       envKey: OMO_CLAUDE_MODE
@@ -700,51 +679,3 @@ additionalProperties:
         ru: Email коммиттера Git
         ms: E-mel komit Git
         pt-br: Email do committer Git
-    - default: ""
-      edit: true
-      envKey: GPT_UNLOCKED_BASE_URL
-      type: text
-      required: false
-      labelEn: GPT Unlocked Base URL
-      labelZh: GPT Unlocked Base URL
-      label:
-        en: GPT Unlocked Base URL
-        zh: GPT Unlocked Base URL
-        zh-Hant: GPT Unlocked Base URL
-        ja: GPT Unlocked Base URL
-        ko: GPT Unlocked Base URL
-        ru: GPT Unlocked Base URL
-        ms: GPT Unlocked Base URL
-        pt-br: GPT Unlocked Base URL
-    - default: ""
-      edit: true
-      envKey: GPT_UNLOCKED_API_KEY
-      type: password
-      required: false
-      labelEn: GPT Unlocked API Key
-      labelZh: GPT Unlocked API Key
-      label:
-        en: GPT Unlocked API Key
-        zh: GPT Unlocked API Key
-        zh-Hant: GPT Unlocked API Key
-        ja: GPT Unlocked API Key
-        ko: GPT Unlocked API Key
-        ru: GPT Unlocked API Key
-        ms: GPT Unlocked API Key
-        pt-br: GPT Unlocked API Key
-    - default: ""
-      edit: true
-      envKey: GPT_UNLOCKED_MODEL
-      type: text
-      required: false
-      labelEn: GPT Unlocked Model
-      labelZh: GPT Unlocked 模型
-      label:
-        en: GPT Unlocked Model
-        zh: GPT Unlocked 模型
-        zh-Hant: GPT Unlocked 模型
-        ja: GPT Unlockedモデル
-        ko: GPT Unlocked 모델
-        ru: Модель GPT Unlocked
-        ms: Model GPT Unlocked
-        pt-br: Modelo GPT Unlocked
