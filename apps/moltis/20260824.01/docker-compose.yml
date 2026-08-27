@@ -1,6 +1,6 @@
 services:
   moltis:
-    image: "ghcr.io/moltis-org/moltis:20260824.01@sha256:6ef99158d20788d29bfb71c508c7ff088de4f66d4b6cd3822ad606c84bcca35e"
+    image: "ghcr.io/moltis-org/moltis:20260827.01@sha256:8e81e37b1091a60338cd278a772d48d55eb77a608f5fbc15e34e43a7cef1b0f6"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1001"
