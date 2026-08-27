@@ -1,6 +1,6 @@
 services:
   kspeeder:
-    image: "linkease/kspeeder:0.7.15"
+    image: "linkease/kspeeder:0.7.16"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:5003"
