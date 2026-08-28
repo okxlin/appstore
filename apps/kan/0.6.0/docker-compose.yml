@@ -1,6 +1,6 @@
 services:
   kan:
-    image: ghcr.io/kanbn/kan@sha256:0087a72a123d8462c66ddce3a303049d4ec92f03cfba297d41466605ef8cb5b5
+    image: ghcr.io/kanbn/kan:0.6.0
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
@@ -21,7 +21,7 @@ services:
       createdBy: "Apps"
 
   kan-migrate:
-    image: ghcr.io/kanbn/kan-migrate@sha256:3296fd28e037a93dda478981494a72c6905ecd4f0d0739e79139172844acbc4b
+    image: ghcr.io/kanbn/kan-migrate:0.6.0
     container_name: ${CONTAINER_NAME}-migrate
     restart: unless-stopped
     networks:

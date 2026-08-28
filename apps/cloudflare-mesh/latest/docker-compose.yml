@@ -1,6 +1,6 @@
 services:
   cloudflare-mesh:
-    image: cloudflare/mesh@sha256:18fad6d500e8ca48b7e4d5ae1905d65e8a50c1f5f5e21eba020d54d5cbf82571
+    image: cloudflare/mesh:2026.7.0
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     cap_add:
