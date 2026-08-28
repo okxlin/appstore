@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   nzbget:
-    image: "linuxserver/nzbget:26.2.20260821"
+    image: "linuxserver/nzbget:26.3.20260827"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
