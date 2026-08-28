@@ -22,6 +22,9 @@ http://服务器IP:端口
 - `APP_DATA_DIR`：持久化 `/app/data`
 - `APP_UPLOADS_DIR`：持久化 `/app/uploads`
 
+## 安全风险提示
+维护侧对候选镜像的固定 digest 扫描发现当前基础镜像层包含 Critical=10、High=78 项漏洞，部分项目暂无上游修复版本。该版本已完成真实 1Panel 安装、升级、重启和卸载实装；使用前请评估暴露面，并优先部署在可信内网，等待上游镜像更新。
+
 ## Introduction
 TREK is a travel planning and collaborative map application with itineraries, budgets, files, maps, and multi-user collaboration.
 
@@ -30,6 +33,9 @@ TREK is a travel planning and collaborative map application with itineraries, bu
 - Budget, files, and task collaboration
 - Can auto-seed the first admin account on initial startup
 - Preserves the upstream read-only root filesystem and minimal privilege setup
+
+## Security risk notice
+The maintainer scan of the pinned candidate image found Critical=10 and High=78 vulnerabilities in the current base image layers; some findings have no upstream fix yet. The version passed a real 1Panel install, upgrade, restart, and uninstall test. Assess your exposure before use, prefer a trusted network, and follow upstream image updates.
 
 ## 参考资料
 - 源码: <https://github.com/mauriceboe/TREK>
