@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   dosbox-staging:
-    image: "linuxserver/dosbox-staging:0.82.2"
+    image: "linuxserver/dosbox-staging:0.83.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
