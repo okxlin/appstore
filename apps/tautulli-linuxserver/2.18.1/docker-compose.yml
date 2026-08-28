@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   tautulli:
-    image: "linuxserver/tautulli:2.18.0"
+    image: "linuxserver/tautulli:2.18.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
