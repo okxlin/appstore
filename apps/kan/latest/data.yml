@@ -1,0 +1,158 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Web-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: NEXT_PUBLIC_BASE_URL
+      labelEn: Public Base URL
+      labelZh: 公开访问 URL
+      label:
+        en: Public Base URL
+        zh: 公开访问 URL
+        zh-Hant: 公開存取 URL
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL Asas Awam
+        pt-br: URL base público
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: ""
+      edit: true
+      envKey: BETTER_AUTH_SECRET
+      labelEn: Better Auth Secret (32+ characters)
+      labelZh: Better Auth 密钥（至少 32 个字符）
+      label:
+        en: Better Auth Secret (32+ characters)
+        zh: Better Auth 密钥（至少 32 个字符）
+        zh-Hant: Better Auth 密鑰（至少 32 個字元）
+        ja: Better Auth シークレット（32文字以上）
+        ko: Better Auth 시크릿 (32자 이상)
+        ru: Секрет Better Auth (не менее 32 символов)
+        ms: Rahsia Better Auth (sekurang-kurangnya 32 aksara)
+        pt-br: Segredo do Better Auth (32 caracteres ou mais)
+      required: true
+      type: password
+    - default: postgresql
+      edit: false
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Runtime
+      labelZh: 数据库 Runtime
+      label:
+        en: 'Database Runtime'
+        zh: '数据库 Runtime'
+        zh-Hant: '資料庫 Runtime'
+        ja: 'データベース Runtime'
+        ko: '데이터베이스 Runtime'
+        ru: 'Среда базы данных'
+        ms: 'Runtime pangkalan data'
+        pt-br: 'Runtime do banco de dados'
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+      child:
+        default: ""
+        edit: false
+        envKey: PANEL_DB_HOST
+        labelEn: PostgreSQL Database Service
+        labelZh: PostgreSQL 数据库服务
+        label:
+          en: 'PostgreSQL Database Service'
+          zh: 'PostgreSQL 数据库服务'
+          zh-Hant: 'PostgreSQL 資料庫服務'
+          ja: 'PostgreSQL データベースサービス'
+          ko: 'PostgreSQL 데이터베이스 서비스'
+          ru: 'Сервис базы данных PostgreSQL'
+          ms: 'Perkhidmatan pangkalan data PostgreSQL'
+          pt-br: 'Serviço de banco de dados PostgreSQL'
+        required: true
+        type: service
+    - default: 5432
+      edit: false
+      envKey: PANEL_DB_PORT
+      labelEn: PostgreSQL Service Port
+      labelZh: PostgreSQL 服务端口
+      label:
+        en: 'PostgreSQL Service Port'
+        zh: 'PostgreSQL 服务端口'
+        zh-Hant: 'PostgreSQL 服務埠'
+        ja: 'PostgreSQL サービスポート'
+        ko: 'PostgreSQL 서비스 포트'
+        ru: 'Порт сервиса PostgreSQL'
+        ms: 'Port perkhidmatan PostgreSQL'
+        pt-br: 'Porta do serviço PostgreSQL'
+      required: true
+      type: number
+    - default: kan_db
+      edit: false
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: 'Database Name'
+        zh: '数据库名'
+        zh-Hant: '資料庫名'
+        ja: 'データベース名'
+        ko: '데이터베이스 이름'
+        ru: 'Имя базы данных'
+        ms: 'Nama pangkalan data'
+        pt-br: 'Nome do banco de dados'
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: kan
+      edit: false
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: 'Database User'
+        zh: '数据库用户'
+        zh-Hant: '資料庫用戶'
+        ja: 'データベースユーザー'
+        ko: '데이터베이스 사용자'
+        ru: 'Пользователь базы данных'
+        ms: 'Pengguna pangkalan data'
+        pt-br: 'Usuário do banco de dados'
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: false
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database User Password (URL-safe characters)
+      labelZh: 数据库用户密码（使用 URL 安全字符）
+      label:
+        en: 'Database User Password (URL-safe characters)'
+        zh: '数据库用户密码（使用 URL 安全字符）'
+        zh-Hant: '資料庫用戶密碼（使用 URL 安全字元）'
+        ja: 'データベースユーザーパスワード（URLセーフ文字）'
+        ko: '데이터베이스 사용자 비밀번호 (URL 안전 문자)'
+        ru: 'Пароль пользователя базы данных (символы, безопасные в URL)'
+        ms: 'Kata laluan pengguna pangkalan data (aksara selamat URL)'
+        pt-br: 'Senha do usuário do banco de dados (caracteres seguros em URL)'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
