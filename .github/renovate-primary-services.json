@@ -1,4 +1,8 @@
 {
+  "chatwoot": [
+    "chatwoot",
+    "chatwoot-sidekiq"
+  ],
   "clearflask": [
     "clearflask-connect",
     "clearflask-server"
