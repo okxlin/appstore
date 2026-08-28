@@ -27,7 +27,7 @@ PostgreSQL 数据由所选的 1Panel 数据库应用负责持久化，Kan 卸载
 
 ## 安全提醒
 
-本适配直接使用 Kan 官方发布的 Web 与迁移容器镜像，没有在适配层重打包或修补上游代码。针对当前官方镜像快照的扫描发现了 Critical/High 级别依赖告警，涉及 Web 身份认证/解析依赖和迁移镜像工具链；这不代表所有问题都能从 Kan 入口利用，但也不能视为已经修复。按用户授权保留这些官方镜像并在此处明确告警；生产环境请限制管理入口、使用 HTTPS，分别关注 Kan 与所选 PostgreSQL 镜像的安全更新。
+本适配直接使用 Kan 官方发布的 Web 与迁移容器镜像，没有在适配层重打包或修补上游代码。针对当前使用的官方 `0.6.0` 镜像版本扫描发现了 Critical/High 级别依赖告警，涉及 Web 身份认证/解析依赖和迁移镜像工具链；这不代表所有问题都能从 Kan 入口利用，但也不能视为已经修复。按用户授权保留这些官方镜像并在此处明确告警；生产环境请限制管理入口、使用 HTTPS，分别关注 Kan 与所选 PostgreSQL 镜像的安全更新。
 
 Kan 采用 AGPLv3；分发修改后的应用或镜像时，请遵守上游许可证及源码提供义务：[LICENSE](https://github.com/kanbn/kan/blob/v0.6.0/LICENSE)。
 
@@ -56,6 +56,6 @@ Kan is a self-hosted project management tool for teams. It provides boards, work
 
 ## Security notice
 
-This package uses Kan's official published web and migration images without repacking or patching the upstream code. The current official image snapshot has Critical/High dependency findings in the web authentication/parser dependencies and migration toolchain. These findings are not a claim that every item is exploitable through Kan, but they are also not treated as fixed. The images are retained under the user's authorization with this warning; restrict administrative access, use HTTPS, and track security updates for both Kan and the selected PostgreSQL image.
+This package uses Kan's official published web and migration images without repacking or patching the upstream code. Scans of the currently used official `0.6.0` image version found Critical/High dependency findings in the web authentication/parser dependencies and migration toolchain. These findings are not a claim that every item is exploitable through Kan, but they are also not treated as fixed. The images are retained under the user's authorization with this warning; restrict administrative access, use HTTPS, and track security updates for both Kan and the selected PostgreSQL image.
 
 Kan is licensed under AGPLv3. Follow the upstream license and source-disclosure obligations when distributing modified applications or images: [LICENSE](https://github.com/kanbn/kan/blob/v0.6.0/LICENSE).
