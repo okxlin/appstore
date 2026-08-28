@@ -1,0 +1,39 @@
+additionalProperties:
+  formFields:
+    - default: ""
+      edit: true
+      envKey: MESH_NODE_TOKEN
+      labelEn: Mesh Node Token
+      labelZh: Mesh 节点令牌
+      label:
+        en: Mesh Node Token
+        zh: Mesh 节点令牌
+        zh-Hant: Mesh 節點權杖
+        ja: Mesh ノードトークン
+        ko: Mesh 노드 토큰
+        ru: Токен узла Mesh
+        ms: Token Nod Mesh
+        pt-br: Token do nó Mesh
+      required: true
+      type: password
+    - default: "true"
+      edit: true
+      envKey: SRCNAT_ENABLED
+      labelEn: Enable Source NAT
+      labelZh: 启用源地址转换
+      label:
+        en: Enable Source NAT
+        zh: 启用源地址转换
+        zh-Hant: 啟用來源位址轉換
+        ja: ソース NAT を有効化
+        ko: 소스 NAT 활성화
+        ru: Включить Source NAT
+        ms: Dayakan Source NAT
+        pt-br: Ativar Source NAT
+      required: true
+      type: select
+      values:
+        - label: "True"
+          value: "true"
+        - label: "False"
+          value: "false"

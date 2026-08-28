@@ -1,0 +1,43 @@
+services:
+  kan:
+    image: ghcr.io/kanbn/kan@sha256:0087a72a123d8462c66ddce3a303049d4ec92f03cfba297d41466605ef8cb5b5
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    depends_on:
+      kan-migrate:
+        condition: service_healthy
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
+      - POSTGRES_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+      - NEXT_PUBLIC_ALLOW_CREDENTIALS=true
+      - NEXT_PUBLIC_DISABLE_EMAIL=true
+      - NEXT_PUBLIC_DISABLE_SIGN_UP=false
+    labels:
+      createdBy: "Apps"
+
+  kan-migrate:
+    image: ghcr.io/kanbn/kan-migrate@sha256:3296fd28e037a93dda478981494a72c6905ecd4f0d0739e79139172844acbc4b
+    container_name: ${CONTAINER_NAME}-migrate
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    environment:
+      - POSTGRES_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
+    command: ["sh", "-c", "npx drizzle-kit migrate && touch /tmp/kan-migrate-done && exec tail -f /dev/null"]
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/kan-migrate-done"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

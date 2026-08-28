@@ -1,0 +1,30 @@
+name: Cloudflare Mesh
+tags:
+  - Tool
+title: Cloudflare Mesh
+description: Cloudflare Mesh
+additionalProperties:
+  key: cloudflare-mesh
+  name: Cloudflare Mesh
+  tags:
+    - Tool
+  shortDescZh: Cloudflare Mesh
+  shortDescEn: Cloudflare Mesh
+  description:
+    en: A Cloudflare Mesh connector container for connecting private networks through the Cloudflare One platform.
+    zh: Cloudflare Mesh 连接器容器，用于通过 Cloudflare One 平台连接私有网络。
+    zh-Hant: Cloudflare Mesh 連接器容器，用於透過 Cloudflare One 平台連接私有網路。
+    ja: Cloudflare One プラットフォームを通じてプライベートネットワークを接続する Cloudflare Mesh コネクタコンテナです。
+    ko: Cloudflare One 플랫폼을 통해 사설 네트워크를 연결하는 Cloudflare Mesh 커넥터 컨테이너입니다.
+    ru: Контейнер-коннектор Cloudflare Mesh для соединения частных сетей через платформу Cloudflare One.
+    ms: Kontena penyambung Cloudflare Mesh untuk menyambungkan rangkaian peribadi melalui platform Cloudflare One.
+    pt-br: Contêiner conector do Cloudflare Mesh para conectar redes privadas pela plataforma Cloudflare One.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://www.cloudflare.com/
+  github: https://github.com/cloudflare
+  document: https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-mesh/containers/
+  architectures:
+    - amd64
+    - arm64

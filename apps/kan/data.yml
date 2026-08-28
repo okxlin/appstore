@@ -1,0 +1,30 @@
+name: Kan
+tags:
+  - Website
+title: Kan
+description: Kan
+additionalProperties:
+  key: kan
+  name: Kan
+  tags:
+    - Website
+  shortDescZh: Kan
+  shortDescEn: Kan
+  description:
+    en: A self-hosted project management alternative to Trello with boards, workspaces, labels, comments, activity history, and Trello import.
+    zh: 自托管的团队项目管理工具，提供看板、工作区、标签、评论、活动记录和 Trello 导入。
+    zh-Hant: 自託管的團隊專案管理工具，提供看板、工作區、標籤、留言、活動記錄與 Trello 匯入。
+    ja: ボード、ワークスペース、ラベル、コメント、アクティビティ履歴、Trello インポートに対応したセルフホスト型のプロジェクト管理ツールです。
+    ko: 보드, 워크스페이스, 라벨, 댓글, 활동 기록, Trello 가져오기를 제공하는 셀프 호스팅 프로젝트 관리 도구입니다.
+    ru: Самостоятельно размещаемый инструмент управления проектами с досками, рабочими пространствами, метками, комментариями, журналом активности и импортом из Trello.
+    ms: Alat pengurusan projek kendiri dengan papan, ruang kerja, label, komen, sejarah aktiviti dan import Trello.
+    pt-br: Ferramenta de gerenciamento de projetos auto-hospedada com quadros, espaços de trabalho, etiquetas, comentários, histórico de atividades e importação do Trello.
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  website: https://kan.bn
+  github: https://github.com/kanbn/kan
+  document: https://github.com/kanbn/kan#self-hosting
+  architectures:
+    - amd64
+    - arm64
