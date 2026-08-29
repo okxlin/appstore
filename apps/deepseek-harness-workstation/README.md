@@ -82,7 +82,7 @@ http://127.0.0.1:56789
 
 从旧版工作站布局升级时，如果 `/data/auth` 为空，镜像入口会在首次启动时把 `dsh-home:/home/node/.local/share/deepseek-harness` 中的旧鉴权、Caddy 和 DSH 状态复制到 `/data`。迁移不会删除旧 HOME 数据；请先备份 `./data/data` 和 `dsh-home`，确认新版本启动正常后再自行清理旧副本。
 
-从旧版 AppStore 包升级时，已有 `.env` 通常不包含 `CADDY_TRUSTED_PROXIES`。新 Compose 会自动使用 `private_ranges`，因此标准 1Panel/OpenResty 部署无需手工补写该变量，也不会改变 `/data`、`/home/node` 或 `/workspace` 的挂载和数据。升级后可在应用参数中按实际代理链调整该值。
+从旧版 AppStore 包升级时，已有 `.env` 通常不包含 `CADDY_TRUSTED_PROXIES`。新 Compose 会自动使用 `private_ranges`，因此标准 1Panel/OpenResty 部署无需手工补写该变量，也不会改变 `/data`、`/home/node` 或 `/workspace` 的挂载和数据。升级后可在应用参数中按实际代理链调整该值。`0.1.2-alpha.1` 使用新的 `ghcr.io/okxlin/deepseek-harness` 工作站镜像，现有安装可以直接执行 1Panel 应用升级；升级前仍建议备份应用目录和 `dsh-home`，不要删除旧卷。
 
 1Panel 的应用备份覆盖应用安装目录，因此会包含 `./data/data` 和 `./data/workspace`。独立的 HOME named volume 不在应用目录内，升级、卸载或迁移前如需保留用户安装的工具和缓存，请停止应用并单独备份 `dsh-home`：
 
@@ -90,7 +90,7 @@ http://127.0.0.1:56789
 docker run --rm --entrypoint tar \
   -v dsh-home:/source:ro \
   -v "$PWD":/backup \
-  moelin/deepseek-harness:workstation \
+  ghcr.io/okxlin/deepseek-harness:workstation \
   -C /source -czf /backup/dsh-home.tar.gz .
 ```
 
@@ -100,7 +100,7 @@ docker run --rm --entrypoint tar \
 docker run --rm --entrypoint tar \
   -v dsh-home:/target \
   -v "$PWD":/backup:ro \
-  moelin/deepseek-harness:workstation \
+  ghcr.io/okxlin/deepseek-harness:workstation \
   -C /target -xzf /backup/dsh-home.tar.gz
 ```
 
@@ -130,7 +130,7 @@ The image limits username-stage POSTs to 30 per minute and password-stage POSTs 
 
 ## 镜像与源码
 
-- 应用版本：滚动版本 `latest` 与对应的固定版本目录
-- 镜像：`latest` 使用 `moelin/deepseek-harness:workstation`，固定版本使用匹配的 `<版本>-workstation` tag
+- 应用版本：滚动版本 `latest` 与固定版本 `0.1.2-alpha.1`
+- 镜像：`latest` 使用 `ghcr.io/okxlin/deepseek-harness:workstation`，固定版本使用匹配的 `<版本>-workstation` tag
 - DeepSeek Harness：<https://github.com/deepseek-ai/deepseek-harness>
 - 镜像构建源码：<https://github.com/okxlin/release-factory/blob/main/deepseek-harness-builder/README.md>
