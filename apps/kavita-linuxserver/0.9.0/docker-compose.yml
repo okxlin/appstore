@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   kavita:
-    image: "linuxserver/kavita:0.9.0"
+    image: "linuxserver/kavita:0.9.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
