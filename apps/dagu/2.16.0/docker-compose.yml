@@ -1,6 +1,6 @@
 services:
   dagu:
-    image: "ghcr.io/dagucloud/dagu:2.15.4"
+    image: "ghcr.io/dagucloud/dagu:2.16.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
