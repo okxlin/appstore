@@ -1,6 +1,6 @@
 services:
   homer:
-    image: b4bz/homer:v26.08.2
+    image: b4bz/homer:v26.08.3
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
