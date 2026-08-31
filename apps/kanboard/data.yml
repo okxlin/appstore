@@ -8,8 +8,19 @@ additionalProperties:
   name: Kanboard
   tags:
   - DevOps
+  type: tool
+  website: https://kanboard.org/
+  document: https://docs.kanboard.org/v1/admin/docker/
+  github: https://github.com/kanboard/kanboard
   shortDescZh: 专注看板方法的开源项目管理软件
   shortDescEn: Open-source project management software focused on the Kanban methodology
+  crossVersionUpdate: true
+  limit: 1
+  architectures:
+  - amd64
+  - arm64
+  - armv6
+  - armv7
   description:
     en: Open-source project management software focused on the Kanban methodology
     zh: 专注看板方法的开源项目管理软件
@@ -18,15 +29,5 @@ additionalProperties:
     ko: 칸반 방식에 중점을 둔 오픈 소스 프로젝트 관리 소프트웨어
     ru: Система управления проектами с открытым исходным кодом на основе метода Канбан
     ms: Perisian pengurusan projek sumber terbuka yang memfokuskan kaedah Kanban
-    pt-br: Software de gerenciamento de projetos de codigo aberto focado no metodo Kanban
-  type: tool
-  crossVersionUpdate: true
-  limit: 1
-  website: https://kanboard.org/
-  github: https://github.com/kanboard/kanboard
-  document: https://docs.kanboard.org/v1/admin/docker/
-  architectures:
-  - amd64
-  - arm64
-  - armv6
-  - armv7
+    pt-br: Software de gerenciamento de projetos de codigo aberto focado no metodo
+      Kanban
