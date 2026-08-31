@@ -8,8 +8,17 @@ additionalProperties:
   name: Yaak
   tags:
   - DevOps
+  type: tool
+  website: https://yaak.app/
+  document: https://docs.linuxserver.io/images/docker-yaak/
+  github: https://github.com/linuxserver/docker-yaak
   shortDescZh: Yaak API 客户端桌面
   shortDescEn: API client desktop maintained by LinuxServer.io
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: API client desktop maintained by LinuxServer.io
     zh: Yaak API 客户端桌面
@@ -19,12 +28,3 @@ additionalProperties:
     ru: Рабочий стол API-клиента, поддерживаемый LinuxServer.io
     ms: Desktop klien API yang diselenggara oleh LinuxServer.io
     pt-br: Desktop de cliente API mantido pela LinuxServer.io
-  type: tool
-  crossVersionUpdate: true
-  limit: 0
-  website: https://yaak.app/
-  github: https://github.com/linuxserver/docker-yaak
-  document: https://docs.linuxserver.io/images/docker-yaak/
-  architectures:
-  - amd64
-  - arm64

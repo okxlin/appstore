@@ -66,7 +66,6 @@ additionalProperties:
       pt-br: Fuso horário
     required: true
     type: text
-
   - default: admin
     edit: true
     envKey: CUSTOM_USER
@@ -150,12 +149,12 @@ additionalProperties:
     required: false
     type: select
     values:
-      - label: selkies-dashboard
-        value: selkies-dashboard
-      - label: selkies-dashboard-zinc
-        value: selkies-dashboard-zinc
-      - label: selkies-dashboard-wish
-        value: selkies-dashboard-wish
+    - label: selkies-dashboard
+      value: selkies-dashboard
+    - label: selkies-dashboard-zinc
+      value: selkies-dashboard-zinc
+    - label: selkies-dashboard-wish
+      value: selkies-dashboard-wish
   - default: zh_CN.UTF-8
     edit: true
     envKey: LC_ALL
@@ -171,4 +170,20 @@ additionalProperties:
       ms: Lokal bahasa desktop
       pt-br: Localidade do idioma da area de trabalho
     required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
     type: text
