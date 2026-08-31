@@ -1,6 +1,6 @@
 services:
   kanboard:
-    image: "kanboard/kanboard:latest"
+    image: "kanboard/kanboard:v1.2.54"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
