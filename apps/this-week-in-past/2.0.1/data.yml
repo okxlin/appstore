@@ -1,0 +1,105 @@
+additionalProperties:
+  formFields:
+  - default: 40829
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Web Port
+    labelZh: Web 端口
+    label:
+      en: Web Port
+      zh: Web 端口
+      zh-Hant: Web 連接埠
+      ja: Web ポート
+      ko: Web 포트
+      ru: Веб-порт
+      ms: Port Web
+      pt-br: Porta Web
+    required: true
+    rule: paramPort
+    type: number
+  - default: ./data/photos
+    edit: true
+    envKey: PHOTO_LIBRARY_PATH
+    labelEn: Photo Library Directory
+    labelZh: 照片库目录
+    label:
+      en: Photo Library Directory
+      zh: 照片库目录
+      zh-Hant: 相片庫目錄
+      ja: 写真ライブラリーディレクトリ
+      ko: 사진 라이브러리 디렉터리
+      ru: Каталог фототеки
+      ms: Direktori Pustaka Foto
+      pt-br: Diretorio da biblioteca de fotos
+    required: true
+    type: text
+  - default: ./data/app
+    disabled: true
+    envKey: APP_DATA_DIR
+    labelEn: Application Data Directory
+    labelZh: 应用数据目录
+    label:
+      en: Application Data Directory
+      zh: 应用数据目录
+      zh-Hant: 應用程式資料目錄
+      ja: アプリケーションデータディレクトリ
+      ko: 애플리케이션 데이터 디렉터리
+      ru: Каталог данных приложения
+      ms: Direktori Data Aplikasi
+      pt-br: Diretorio de dados do aplicativo
+    required: true
+    type: text
+    edit: true
+  - default: 30
+    edit: true
+    envKey: SLIDESHOW_INTERVAL
+    labelEn: Slideshow Interval (seconds)
+    labelZh: 幻灯片间隔（秒）
+    label:
+      en: Slideshow Interval (seconds)
+      zh: 幻灯片间隔（秒）
+      zh-Hant: 幻燈片間隔（秒）
+      ja: スライドショー間隔（秒）
+      ko: 슬라이드쇼 간격(초)
+      ru: Интервал слайд-шоу (секунды)
+      ms: Selang Tayangan Slaid (saat)
+      pt-br: Intervalo da apresentacao (segundos)
+    required: true
+    type: number
+  - default: 'false'
+    edit: true
+    envKey: RANDOM_SLIDESHOW
+    labelEn: Random Slideshow
+    labelZh: 随机幻灯片
+    label:
+      en: Random Slideshow
+      zh: 随机幻灯片
+      zh-Hant: 隨機幻燈片
+      ja: ランダムスライドショー
+      ko: 무작위 슬라이드쇼
+      ru: Случайное слайд-шоу
+      ms: Tayangan Slaid Rawak
+      pt-br: Apresentacao aleatoria
+    required: true
+    type: select
+    values:
+    - label: 'false'
+      value: 'false'
+    - label: 'true'
+      value: 'true'
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
