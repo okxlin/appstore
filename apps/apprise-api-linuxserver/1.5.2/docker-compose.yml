@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   apprise-api:
-    image: "linuxserver/apprise-api:1.5.2"
+    image: "linuxserver/apprise-api:1.5.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
