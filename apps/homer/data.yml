@@ -1,30 +1,33 @@
 name: Homer
 tags:
-  - Website
+- Website
 title: 基于 YAML 配置的轻量级静态服务仪表板
 description: 基于 YAML 配置的轻量级静态服务仪表板
 additionalProperties:
   key: homer
   name: Homer
   tags:
-    - Website
+  - Website
+  type: website
+  website: https://homer-demo.netlify.app/
+  document: https://github.com/bastienwirtz/homer/tree/main/docs
+  github: https://github.com/bastienwirtz/homer
   shortDescZh: 基于 YAML 配置的轻量级静态服务仪表板
   shortDescEn: A lightweight static service dashboard configured with YAML
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
-    en: A lightweight static dashboard that keeps self-hosted services within easy reach
+    en: A lightweight static dashboard that keeps self-hosted services within easy
+      reach
     zh: 一个轻量级静态仪表板，用于集中展示和访问自托管服务
     zh-Hant: 一個輕量級靜態儀表板，用於集中展示和存取自託管服務
     ja: セルフホストサービスをまとめて表示し、すぐに開ける軽量な静的ダッシュボード
     ko: 자체 호스팅 서비스를 한곳에서 보고 빠르게 열 수 있는 경량 정적 대시보드
-    ru: Легкая статическая панель для быстрого доступа к самостоятельно размещенным сервисам
-    ms: Papan pemuka statik ringan untuk memaparkan dan mencapai perkhidmatan hos kendiri
+    ru: Легкая статическая панель для быстрого доступа к самостоятельно размещенным
+      сервисам
+    ms: Papan pemuka statik ringan untuk memaparkan dan mencapai perkhidmatan hos
+      kendiri
     pt-br: Painel estatico leve para organizar e acessar servicos auto-hospedados
-  type: website
-  crossVersionUpdate: true
-  limit: 0
-  website: https://homer-demo.netlify.app/
-  github: https://github.com/bastienwirtz/homer
-  document: https://github.com/bastienwirtz/homer/tree/main/docs
-  architectures:
-    - amd64
-    - arm64
