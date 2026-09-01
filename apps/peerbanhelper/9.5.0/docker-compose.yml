@@ -1,6 +1,6 @@
 services:
   peerbanhelper:
-    image: "ghostchu/peerbanhelper:v9.5.0"
+    image: "ghostchu/peerbanhelper:v9.5.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
