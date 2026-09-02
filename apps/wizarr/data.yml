@@ -1,15 +1,24 @@
 name: Wizarr
 tags:
-  - Media
+- Media
 title: 媒体服务器邀请与用户管理工具
 description: 媒体服务器邀请与用户管理工具
 additionalProperties:
   key: wizarr
   name: Wizarr
   tags:
-    - Media
+  - Media
+  type: website
+  website: https://docs.wizarr.dev/
+  document: https://docs.wizarr.dev/getting-started/installation
+  github: https://github.com/wizarrrr/wizarr
   shortDescZh: 媒体服务器邀请与用户管理工具
   shortDescEn: Media server invitation and user management
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: Media server invitation and user management
     zh: 媒体服务器邀请与用户管理工具
@@ -19,12 +28,3 @@ additionalProperties:
     ru: Управление приглашениями и пользователями медиасервера
     ms: Pengurusan jemputan dan pengguna pelayan media
     pt-br: Gerenciamento de convites e usuarios de servidor de midia
-  type: website
-  crossVersionUpdate: true
-  limit: 0
-  website: https://docs.wizarr.dev/
-  github: https://github.com/wizarrrr/wizarr
-  document: https://docs.wizarr.dev/getting-started/installation
-  architectures:
-    - amd64
-    - arm64
