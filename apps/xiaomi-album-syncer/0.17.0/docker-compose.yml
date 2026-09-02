@@ -1,6 +1,6 @@
 services:
   xiaomi-album-syncer:
-    image: "coolfan1024/xiaomi-album-syncer:0.17.0"
+    image: "coolfan1024/xiaomi-album-syncer:0.17.1"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
