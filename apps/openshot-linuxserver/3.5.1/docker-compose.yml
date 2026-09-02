@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   openshot:
-    image: "linuxserver/openshot:3.5.1"
+    image: "linuxserver/openshot:4.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
