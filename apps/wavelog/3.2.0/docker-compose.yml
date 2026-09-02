@@ -1,0 +1,22 @@
+services:
+  wavelog:
+    container_name: ${CONTAINER_NAME}
+    image: ghcr.io/wavelog/wavelog:3.2.0
+    environment:
+      - CI_ENV=docker
+      - TZ=${TZ:-Asia/Shanghai}
+    networks:
+      - 1panel-network
+    volumes:
+      - ./data/wavelog-config:/var/www/html/application/config/docker
+      - ./data/wavelog-uploads:/var/www/html/uploads
+      - ./data/wavelog-userdata:/var/www/html/userdata
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:80
+    restart: unless-stopped
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true

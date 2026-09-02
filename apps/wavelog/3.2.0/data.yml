@@ -1,0 +1,130 @@
+additionalProperties:
+  formFields:
+    - default: 3792
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Web Port
+        ja: Web ポート
+        ms: Port Web
+        pt-br: Porta Web
+        ru: Веб-порт
+        ko: 웹 포트
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+      required: true
+      rule: paramPort
+      type: number
+    - default: mariadb
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        ja: データベースサービス
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
+        ru: Сервис базы данных
+        ko: 데이터베이스 서비스
+        zh: 数据库服务
+        zh-Hant: 資料庫服務
+      required: true
+      type: apps
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
+      values:
+        - label: MariaDB
+          value: mariadb
+        - label: MySQL
+          value: mysql
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        ja: データベースポート
+        ms: Port Pangkalan Data
+        pt-br: Porta de Banco de Dados
+        ru: Порт базы данных
+        ko: 데이터베이스 포트
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+      required: true
+      rule: paramPort
+      type: number
+    - default: wavelog
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database
+      labelZh: 数据库名
+      label:
+        en: Database
+        ja: データベース
+        ms: Pangkalan Data
+        pt-br: Banco de Dados
+        ru: База данных
+        ko: 데이터베이스
+        zh: 数据库名
+        zh-Hant: 數據庫名
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: wavelog
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: User
+      labelZh: 数据库用户
+      label:
+        en: User
+        ja: ユーザー
+        ms: Pengguna
+        pt-br: Usuário
+        ru: Пользователь
+        ko: 사용자
+        zh: 数据库用户
+        zh-Hant: 數據庫用戶
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Password
+      labelZh: 数据库用户密码
+      label:
+        en: Password
+        ja: パスワード
+        ms: Kata Laluan
+        pt-br: Senha
+        ru: Пароль
+        ko: 비밀번호
+        zh: 数据库用户密码
+        zh-Hant: 數據庫用戶密碼
+      random: true
+      required: true
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        ja: タイムゾーン
+        ms: Zon Masa
+        pt-br: Fuso horario
+        ru: Chasovoy poyas
+        ko: 시간대
+        zh: 时区
+        zh-Hant: 時區
+      required: true
+      type: text
