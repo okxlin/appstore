@@ -1,6 +1,6 @@
 services:
   vivaldi-kasm:
-    image: "kasmweb/vivaldi:1.19.0-rolling-weekly@sha256:01fd030bd2e8800bd46c010e0899085274e7e4b8cb4820a1f3ea328628d5f78d"
+    image: "kasmweb/vivaldi:1.19.0-rolling-weekly@sha256:4a712407f0bb3f67fc0b219c85a3f6f843637c7b24fe787449cad4dbafb07b49"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
