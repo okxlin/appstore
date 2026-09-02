@@ -1,0 +1,37 @@
+services:
+  note-mark:
+    image: "ghcr.io/enchant97/note-mark:1.1.0"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:8080"
+    environment:
+      - AUTH_TOKEN__SECRET=${NOTE_MARK_AUTH_SECRET}
+      - PUBLIC_URL=${NOTE_MARK_PUBLIC_URL}
+      - DATA_PATH=/data
+      - BIND__HOST=0.0.0.0
+      - BIND__PORT=8080
+      - ENABLE_INTERNAL_SIGNUP=${ENABLE_INTERNAL_SIGNUP}
+      - ENABLE_INTERNAL_LOGIN=${ENABLE_INTERNAL_LOGIN}
+      - ENABLE_ANONYMOUS_USER_SEARCH=${ENABLE_ANONYMOUS_USER_SEARCH}
+      - FILE_SIZE_LIMIT=${FILE_SIZE_LIMIT}
+      - LOGGING__LEVEL=${LOGGING_LEVEL}
+      - LOGGING__ENABLE_JSON=true
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/data"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,noexec,size=32m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
