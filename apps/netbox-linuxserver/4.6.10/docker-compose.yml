@@ -1,0 +1,71 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  netbox:
+    image: "linuxserver/netbox:4.6.10"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+    volumes:
+      - "${CONFIG_PATH}:/config"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TIME_ZONE}
+      - SUPERUSER_EMAIL=${SUPERUSER_EMAIL}
+      - SUPERUSER_PASSWORD=${SUPERUSER_PASSWORD}
+      - ALLOWED_HOST=${ALLOWED_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_USERNAME=${REDIS_USERNAME:-}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_DB_TASK=${REDIS_DB_TASK}
+      - REDIS_DB_CACHE=${REDIS_DB_CACHE}
+      - BASE_PATH=${BASE_PATH:-}
+      - CSRF_TRUSTED_ORIGINS=${CSRF_TRUSTED_ORIGINS:-}
+    depends_on:
+      - netbox-db
+      - netbox-redis
+    labels:
+      createdBy: "Apps"
+  netbox-db:
+    image: "postgres:16-alpine"
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DB_DATA_PATH}:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    labels:
+      createdBy: "Apps"
+  netbox-redis:
+    image: "redis:7-alpine"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        if [ -n "$${REDIS_PASSWORD:-}" ]; then
+          exec redis-server --requirepass "$${REDIS_PASSWORD}"
+        fi
+        exec redis-server
+    restart: always
+    networks:
+      - 1panel-network
+    volumes:
+      - "${REDIS_DATA_PATH}:/data"
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+    labels:
+      createdBy: "Apps"
