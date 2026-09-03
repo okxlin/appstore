@@ -1,6 +1,6 @@
 services:
   owncast-init:
-    image: owncast/owncast:0.2.5
+    image: owncast/owncast:0.3.0
     container_name: ${CONTAINER_NAME}-init
     user: "101:101"
     network_mode: none
@@ -30,7 +30,7 @@ services:
       createdBy: "Apps"
 
   owncast:
-    image: owncast/owncast:0.2.5
+    image: owncast/owncast:0.3.0
     container_name: ${CONTAINER_NAME}
     restart: always
     user: "101:101"
