@@ -1,6 +1,6 @@
 services:
   librarr:
-    image: "ghcr.io/jeremiahm37/librarr:v1.2.1"
+    image: "ghcr.io/jeremiahm37/librarr:v1.3.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     read_only: true
