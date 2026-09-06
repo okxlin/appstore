@@ -1,6 +1,6 @@
 services:
   moodist:
-    image: "ghcr.io/remvze/moodist:v2.6.1"
+    image: "ghcr.io/remvze/moodist:v3.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
