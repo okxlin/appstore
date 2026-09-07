@@ -11,6 +11,10 @@ Moltis is a persistent personal AI agent server written in Rust. It provides web
 - The installation form generates a login password, or accepts a safe password from 16 to 128 characters. Moltis migrates it into its credential store on first start.
 - No model provider or provider API key is bundled. Configure a provider in Settings after signing in.
 
+## Runtime Compatibility
+
+On some older x86_64 hosts, a Moltis image may use CPU instructions that the host does not support and exit with `SIGILL` (exit code 132) during startup. If the container repeatedly restarts and cannot be reached, check CPU compatibility with the selected image and, if necessary, roll back to a version that runs; this is usually not a 1Panel form configuration error.
+
 ## Data And Backup
 
 Under `DATA_PATH`, `config` stores `moltis.toml`, authentication, and certificate configuration; `data` stores databases, sessions, memory, and runtime state. Back up the complete directory before upgrades or migration. Uninstall removes containers but preserves the bind-mounted data.

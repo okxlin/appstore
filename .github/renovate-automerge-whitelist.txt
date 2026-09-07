@@ -419,3 +419,6 @@ pulse
 # Reviewed single-service Renovate candidates (2026-08-21).
 librarr
 webclaw
+
+# Reviewed single-service Renovate candidates (2026-09-07).
+moltis
