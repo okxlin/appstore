@@ -18,7 +18,8 @@ MicroWARP 将 Cloudflare WARP 封装为可在 1Panel 中直接部署的 SOCKS5 �
 - SOCKS5 端口由 `PANEL_APP_PORT_SOCKS5` 配置
 - HTTP 变体的 HTTP 代理端口由 `PANEL_APP_PORT_HTTP_PROXY` 配置
 - 代理服务不提供 Web 管理界面；请使用对应端口和 SOCKS5/HTTP 客户端连接
-- 默认不启用认证，公网部署时建议同时设置 `SOCKS_USER` 与 `SOCKS_PASS`
+- 默认不启用认证；`ALLOW_NO_AUTH` 已在安装表单中提供，默认值为 `1` 以兼容旧版行为。设置为 `0` 时必须同时设置 `SOCKS_USER` 与 `SOCKS_PASS`，公网部署建议启用认证。
+- 上游 0.3.1 及以后版本要求无认证模式显式设置 `ALLOW_NO_AUTH=1`；本应用会将表单值传入容器。`SOCKS_USER` 与 `SOCKS_PASS` 必须成对设置，半套凭据会被上游拒绝。
 
 ## 版本说明
 
@@ -79,6 +80,7 @@ MicroWARP 将 Cloudflare WARP 封装为可在 1Panel 中直接部署的 SOCKS5 �
 
 ## 升级说明
 
+- 升级旧安装时，如果 `.env` 尚未有 `ALLOW_NO_AUTH`，升级脚本会补写 `ALLOW_NO_AUTH=1`；已有 `0` 或 `1` 会保留，不会覆盖用户选择。
 - 已有 `rotator-latest` 与 `rotator-http-latest` 安装可分别直接升级到 `0.1.3-rotator` 与 `0.1.3-rotator-http`，不需要中间版本；新版本名用于确保 1Panel 真正提供升级入口
 - 旧轮换版本仍保留以兼容既有安装；新安装请选择带 `0.1.3` 前缀的版本
 - 升级会保留 `APP_DATA_DIR_1` 中的 `wg0.conf`、WARP 注册信息和用户自定义环境变量；升级前仍建议使用 1Panel 备份该目录
@@ -97,8 +99,14 @@ MicroWARP packages Cloudflare WARP as a 1Panel-ready SOCKS5 proxy. The HTTP vari
 - Egress IPv4 verification before and after each rotation
 - Retries for unchanged or unverifiable egress, with rollback to the last working WireGuard configuration
 
+## Access
+
+- Authentication is disabled by default; `ALLOW_NO_AUTH` is exposed in the installation form and defaults to `1` for legacy compatibility. When set to `0`, both `SOCKS_USER` and `SOCKS_PASS` must be provided; authentication is recommended for public deployments.
+- Upstream 0.3.1 and later require `ALLOW_NO_AUTH=1` to be explicit in no-auth mode; this package passes the form value into the container. `SOCKS_USER` and `SOCKS_PASS` must be configured together; a partial credential pair is rejected upstream.
+
 ## Upgrade notes
 
+- When upgrading an existing installation whose `.env` lacks `ALLOW_NO_AUTH`, the upgrade script adds `ALLOW_NO_AUTH=1`; an existing `0` or `1` is preserved.
 - Existing `rotator-latest` and `rotator-http-latest` installations can upgrade directly to `0.1.3-rotator` and `0.1.3-rotator-http`; no intermediate version is required. The bumped package versions ensure that 1Panel exposes a real upgrade path.
 - The legacy rotator versions remain for existing-install compatibility. New installations should use the `0.1.3`-prefixed variants.
 - The upgrade preserves `APP_DATA_DIR_1`, including `wg0.conf`, WARP registration data, and existing user-defined environment values. Back up that directory through 1Panel before upgrading.
