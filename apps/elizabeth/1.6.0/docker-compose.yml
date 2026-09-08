@@ -1,6 +1,6 @@
 services:
   elizabeth:
-    image: yunique001/elizabeth:1.7.0
+    image: yunique001/elizabeth:1.8.3
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     init: true
