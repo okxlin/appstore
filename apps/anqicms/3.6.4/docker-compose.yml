@@ -8,7 +8,7 @@ services:
       - "${PANEL_APP_PORT_HTTP}:8001"
     volumes:
       - anqicms-data:/app
-    image: "anqicms/anqicms:v3.6.3"
+    image: "anqicms/anqicms:v3.6.4"
     labels:
       createdBy: "Apps"
 
