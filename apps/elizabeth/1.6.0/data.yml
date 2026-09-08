@@ -40,9 +40,9 @@ additionalProperties:
         zh: "JWT 密钥"
         tr: "JWT Gizli Anahtarı"
       description:
-        en: "Secret used to sign sessions. 1Panel generates a value of at least 32 characters; do not change it after install unless you accept invalidating existing sessions."
-        zh-Hant: "用於簽署工作階段的密鑰。1Panel 會產生至少 32 個字元的值；安裝後勿隨意更換，否則既有工作階段會失效。"
-        zh: "用于签名会话的密钥。1Panel 会生成至少 32 个字符的值；安装后勿随意更换，否则既有会话会失效。"
+        en: "Secret used to sign sessions. Must be at least 32 characters. 1Panel generates a value automatically; do not shorten or change it after install unless you accept invalidating existing sessions."
+        zh-Hant: "用於簽署工作階段的密鑰，長度必須至少為 32 個字元。1Panel 會自動產生；安裝後不要縮短或更換，否則現有工作階段會失效。"
+        zh: "用于签名会话的密钥，长度必须至少为 32 个字符。1Panel 会自动生成；安装后不要缩短或更换，否则现有会话会失效。"
       random: true
       required: true
       rule: paramComplexity
