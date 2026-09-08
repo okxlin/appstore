@@ -10,6 +10,7 @@ services:
       - TZ=${TZ}
       - BIND_ADDR=0.0.0.0
       - BIND_PORT=${BIND_PORT}
+      - ALLOW_NO_AUTH=${ALLOW_NO_AUTH:-1}
       - SOCKS_USER=${SOCKS_USER:-}
       - SOCKS_PASS=${SOCKS_PASS:-}
       - ENDPOINT_IP=${ENDPOINT_IP:-}

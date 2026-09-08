@@ -34,6 +34,30 @@ additionalProperties:
       rule: paramPort
       type: number
       edit: true
+    - default: "1"
+      envKey: ALLOW_NO_AUTH
+      labelEn: Allow Unauthenticated Access
+      labelZh: 允许无认证访问
+      label:
+        en: Allow Unauthenticated Access
+        zh: 允许无认证访问
+        zh-Hant: 允許未驗證存取
+        ja: 未認証アクセスを許可
+        ko: 인증되지 않은 액세스 허용
+        ru: Разрешить доступ без аутентификации
+        ms: Benarkan akses tanpa pengesahan
+        pt-br: Permitir acesso não autenticado
+      description:
+        en: Allow startup without SOCKS credentials. Keep enabled to preserve existing installations; disable only when SOCKS_USER and SOCKS_PASS are both set.
+        zh: 允许未配置 SOCKS 凭据时启动。为兼容已有安装请保持开启；关闭后必须同时设置 SOCKS_USER 与 SOCKS_PASS。
+        zh-Hant: 允許未設定 SOCKS 憑據時啟動。為相容既有安裝請保持開啟；關閉後必須同時設定 SOCKS_USER 與 SOCKS_PASS。
+      required: true
+      type: select
+      values:
+        - label: Enabled (legacy-compatible default)
+          value: "1"
+        - label: Disabled (requires credentials)
+          value: "0"
     - default: ""
       envKey: SOCKS_USER
       labelEn: SOCKS Username

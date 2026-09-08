@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(CDPATH="" cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 APP_ROOT="${APP_ROOT:-$(CDPATH="" cd -- "${SCRIPT_DIR}/.." && pwd -P)}"
 ENV_FILE="${ENV_FILE:-${APP_ROOT}/.env}"
-TARGET_VERSION_DIR="0.1.3-rotator"
+TARGET_VERSION_DIR="0.3.1-rotator-http"
 
 if [[ "${ENV_FILE}" != /* ]]; then
   ENV_FILE="${APP_ROOT}/${ENV_FILE#./}"
@@ -70,6 +70,35 @@ strip_matching_quotes() {
   esac
   printf '%s\n' "${value}"
 }
+
+ensure_allow_no_auth() {
+  local current temp_file
+
+  current="${ALLOW_NO_AUTH:-}"
+  if [[ -z "${current}" && -f "${ENV_FILE}" ]]; then
+    current="$(sed -n 's/^ALLOW_NO_AUTH=//p' "${ENV_FILE}" | tail -n 1)"
+    current="$(strip_matching_quotes "${current}")"
+  fi
+  [[ -n "${current}" || ! -f "${ENV_FILE}" ]] && return 0
+
+  temp_file="$(mktemp "${ENV_FILE}.upgrade.XXXXXX")"
+  awk '
+    BEGIN { updated = 0 }
+    /^ALLOW_NO_AUTH=/ {
+      if (!updated) {
+        print "ALLOW_NO_AUTH=1"
+        updated = 1
+      }
+      next
+    }
+    { print }
+    END { if (!updated) print "ALLOW_NO_AUTH=1" }
+  ' "${ENV_FILE}" >"${temp_file}"
+  chmod --reference="${ENV_FILE}" "${temp_file}" 2>/dev/null || chmod 0600 "${temp_file}"
+  mv -f -- "${temp_file}" "${ENV_FILE}"
+}
+
+ensure_allow_no_auth
 
 rotate_target="${APP_ROOT}/rotate.sh"
 rotate_source="$(find_rotate_source || true)"

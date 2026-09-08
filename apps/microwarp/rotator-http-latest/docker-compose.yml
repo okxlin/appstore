@@ -1,6 +1,6 @@
 services:
   microwarp:
-    image: "ghcr.io/ccbkkb/microwarp:0.2.0@sha256:0f20511e3e2a887d6b72c448da262a230a32d489547e96c3d7bbb27b30217634"
+    image: "ghcr.io/ccbkkb/microwarp:0.3.1@sha256:d5b709efd49dbec3a965c617eb263b46cdf1449e65776d1b9a351927439b2b17"
     container_name: ${CONTAINER_NAME}
     labels:
       createdBy: "Apps"
@@ -10,6 +10,7 @@ services:
       - TZ=${TZ}
       - BIND_ADDR=0.0.0.0
       - BIND_PORT=${BIND_PORT}
+      - ALLOW_NO_AUTH=${ALLOW_NO_AUTH:-1}
       - ROTATE_INTERVAL_MINUTES=${ROTATE_INTERVAL_MINUTES:-0}
       - ROTATE_MAX_ATTEMPTS=${ROTATE_MAX_ATTEMPTS:-5}
       - ROTATE_RETRY_DELAY_SECONDS=${ROTATE_RETRY_DELAY_SECONDS:-5}

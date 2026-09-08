@@ -25,6 +25,35 @@ strip_matching_quotes() {
   printf '%s\n' "${value}"
 }
 
+ensure_allow_no_auth() {
+  local current temp_file
+
+  current="${ALLOW_NO_AUTH:-}"
+  if [[ -z "${current}" && -f "${ENV_FILE}" ]]; then
+    current="$(sed -n 's/^ALLOW_NO_AUTH=//p' "${ENV_FILE}" | tail -n 1)"
+    current="$(strip_matching_quotes "${current}")"
+  fi
+  [[ -n "${current}" || ! -f "${ENV_FILE}" ]] && return 0
+
+  temp_file="$(mktemp "${ENV_FILE}.upgrade.XXXXXX")"
+  awk '
+    BEGIN { updated = 0 }
+    /^ALLOW_NO_AUTH=/ {
+      if (!updated) {
+        print "ALLOW_NO_AUTH=1"
+        updated = 1
+      }
+      next
+    }
+    { print }
+    END { if (!updated) print "ALLOW_NO_AUTH=1" }
+  ' "${ENV_FILE}" >"${temp_file}"
+  chmod --reference="${ENV_FILE}" "${temp_file}" 2>/dev/null || chmod 0600 "${temp_file}"
+  mv -f -- "${temp_file}" "${ENV_FILE}"
+}
+
+ensure_allow_no_auth
+
 app_data_dir="${APP_DATA_DIR_1:-}"
 if [[ -z "${app_data_dir}" && -f "${ENV_FILE}" ]]; then
   app_data_dir="$(sed -n 's/^APP_DATA_DIR_1=//p' "${ENV_FILE}" | tail -n 1)"
