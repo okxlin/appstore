@@ -1,6 +1,6 @@
 services:
   signal-kasm:
-    image: "kasmweb/signal:1.19.0-rolling-weekly@sha256:2272bf44bdb189978b3f962440dfa87fe48dfb47974f556aed54d34cc14aa7a4"
+    image: "kasmweb/signal:1.19.0-rolling-weekly@sha256:ae540178cfc264c10871c7ce171e3163d617bbea6b4e5b4ab528665f13202827"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
