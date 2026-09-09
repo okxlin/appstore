@@ -1,15 +1,24 @@
 name: Misskey
 tags:
-  - Website
+- Website
 title: 开源联邦社交网络平台
 description: 开源联邦社交网络平台
 additionalProperties:
   key: misskey
   name: Misskey
   tags:
-    - Website
+  - Website
+  type: website
+  website: https://misskey-hub.net/
+  document: https://github.com/misskey-dev/misskey/blob/develop/compose_example.yml
+  github: https://github.com/misskey-dev/misskey
   shortDescZh: 开源联邦社交网络平台
   shortDescEn: Open source federated social media platform
+  crossVersionUpdate: false
+  limit: 0
+  architectures:
+  - amd64
+  - arm64
   description:
     en: Open source federated social media platform powered by ActivityPub.
     zh: 基于 ActivityPub 的开源联邦社交网络平台。
@@ -19,13 +28,3 @@ additionalProperties:
     ru: Открытая федеративная социальная платформа на базе ActivityPub.
     ms: Platform media sosial bersekutu sumber terbuka berasaskan ActivityPub.
     pt-br: Plataforma federada de midia social open source baseada em ActivityPub.
-  type: website
-  crossVersionUpdate: false
-  limit: 0
-  recommend: 0
-  website: https://misskey-hub.net/
-  github: https://github.com/misskey-dev/misskey
-  document: https://github.com/misskey-dev/misskey/blob/develop/compose_example.yml
-  architectures:
-    - amd64
-    - arm64
