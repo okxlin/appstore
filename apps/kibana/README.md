@@ -26,7 +26,7 @@ Kibana is the data visualization, exploration and management interface for Elast
 - 单节点默认把 Elasticsearch 磁盘 flood-stage 水位线设为 99%，避免小盘环境首次启动时因剩余空间比例偏低导致安全索引被立即设为只读。
 - 应用分类：Tool。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`；镜像更新会保持在当前兼容版本线内，并在合并前进行多服务升级测试。
+- 可选版本以应用商店当前版本目录和安装表单为准；镜像更新会保持在当前兼容版本线内，并在合并前进行多服务升级测试。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
