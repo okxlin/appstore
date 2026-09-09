@@ -1,14 +1,14 @@
 services:
   libredb-studio:
-    image: libredb/libredb-studio:0.14.1
+    image: "libredb/libredb-studio:0.15.0"
     container_name: ${CONTAINER_NAME}
     ports:
-      - ${PANEL_APP_PORT_HTTP}:3000
+      - "${PANEL_APP_PORT_HTTP}:3000"
     environment:
       - TZ=${TZ}
       - STORAGE_SQLITE_PATH=/app/data/libredb-storage.db
     labels:
-      createdBy: Apps
+      createdBy: "Apps"
     restart: on-failure:3
     volumes:
       - "${APP_DATA_DIR_1}:/app/data"

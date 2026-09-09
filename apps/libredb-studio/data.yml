@@ -1,7 +1,7 @@
 name: LibreDB Studio
 tags:
   - Database
-  - Developer tools
+  - Tool
 title: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
 description: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
 additionalProperties:
@@ -9,7 +9,7 @@ additionalProperties:
   name: LibreDB Studio
   tags:
     - Database
-    - Developer tools
+    - Tool
   shortDescZh: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
   shortDescEn: Self-hosted, browser-based database IDE for 16 engines
   description:
