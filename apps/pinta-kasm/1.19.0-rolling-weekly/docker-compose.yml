@@ -1,6 +1,6 @@
 services:
   pinta-kasm:
-    image: "kasmweb/pinta:1.19.0-rolling-weekly@sha256:d84c6d27d3a868d9148dd464f09da0dcda228bd8aae3cc9789ec21e1dc9d953c"
+    image: "kasmweb/pinta:1.19.0-rolling-weekly@sha256:5f3e26f2f65e27827cf5fd7ef80ea966f46f6b7d161917711310d5595957b8e8"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
