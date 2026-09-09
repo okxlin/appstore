@@ -1,5 +1,23 @@
 services:
+  woodpecker-data-permissions:
+    image: busybox:1.37.0@sha256:9db7b59979c38555a39def84a31fb98b5296952f9e3afd4f6f11f05b07adfab0
+    command: ["sh", "-c", "chown -R 1000:1000 /var/lib/woodpecker && exec tail -f /dev/null"]
+    restart: unless-stopped
+    network_mode: none
+    volumes:
+      - ${DATA_PATH}/server/woodpecker:/var/lib/woodpecker
+    healthcheck:
+      test: ["CMD-SHELL", "test \"$(stat -c '%u:%g' /var/lib/woodpecker)\" = \"1000:1000\""]
+      interval: 5s
+      timeout: 3s
+      retries: 6
+    labels:
+      createdBy: "Apps"
+
   woodpecker-server:
+    depends_on:
+      woodpecker-data-permissions:
+        condition: service_healthy
     container_name: ${CONTAINER_NAME}-server
     restart: always
     networks:
@@ -56,7 +74,8 @@ services:
       - 1panel-network
     command: agent
     depends_on:
-      - woodpecker-server
+      woodpecker-server:
+        condition: service_healthy
     volumes:
       - ${DATA_PATH}/agent/woodpecker:/etc/woodpecker
       - /var/run/docker.sock:/var/run/docker.sock
