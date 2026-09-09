@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   emby:
-    image: "linuxserver/emby:4.9.5"
+    image: "linuxserver/emby:4.10.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
