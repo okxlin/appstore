@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   freshrss:
-    image: "linuxserver/freshrss:1.29.1"
+    image: "linuxserver/freshrss:1.30.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
