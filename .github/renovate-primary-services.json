@@ -33,6 +33,10 @@
   "karakeep": [
     "karakeep"
   ],
+  "kibana": [
+    "kibana",
+    "kibana-elasticsearch"
+  ],
   "immich": [
     "immich-server"
   ],
@@ -43,6 +47,9 @@
   ],
   "manyfold-linuxserver": [
     "manyfold"
+  ],
+  "misskey": [
+    "misskey"
   ],
   "netbox-linuxserver": [
     "netbox"
