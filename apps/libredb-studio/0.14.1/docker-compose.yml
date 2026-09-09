@@ -1,6 +1,6 @@
 services:
   libredb-studio:
-    image: libredb/libredb-studio:0.14.1
+    image: libredb/libredb-studio:0.15.0
     container_name: ${CONTAINER_NAME}
     ports:
       - ${PANEL_APP_PORT_HTTP}:3000
