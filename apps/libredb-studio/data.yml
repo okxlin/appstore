@@ -1,0 +1,33 @@
+name: LibreDB Studio
+tags:
+  - Database
+  - Developer tools
+title: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
+description: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
+additionalProperties:
+  key: libredb-studio
+  name: LibreDB Studio
+  tags:
+    - Database
+    - Developer tools
+  shortDescZh: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
+  shortDescEn: Self-hosted, browser-based database IDE for 16 engines
+  description:
+    en: LibreDB Studio is an MIT-licensed, self-hosted, browser-based database IDE for 16 engines including PostgreSQL, MySQL, Oracle, SQL Server, SQLite, MongoDB, Redis, ClickHouse, Elasticsearch and more. SSO (OIDC), RBAC and query audit logs ship in the free build. On first run the admin password is printed to the container log.
+    zh: LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 IDE，支持 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、MongoDB、Redis、ClickHouse、Elasticsearch 等 16 种引擎。免费版包含 SSO (OIDC)、RBAC 和查询审计日志。首次启动时管理员密码会打印到容器日志。
+    zh-Hant: LibreDB Studio 是一個 MIT 授權、自託管、基於瀏覽器的資料庫 IDE，支援 16 種引擎。免費版包含 SSO (OIDC)、RBAC 和查詢稽核日誌。
+    ja: LibreDB Studio は、16 のデータベースエンジンに対応した MIT ライセンスのセルフホスト型ブラウザベース データベース IDE です。無料版に SSO (OIDC)、RBAC、監査ログを搭載しています。
+    ko: LibreDB Studio는 16개 데이터베이스 엔진을 지원하는 MIT 라이선스의 셀프 호스팅 브라우저 기반 데이터베이스 IDE입니다. 무료 버전에 SSO(OIDC), RBAC, 감사 로그가 포함됩니다.
+    ru: LibreDB Studio - самостоятельно размещаемая браузерная IDE для баз данных с поддержкой 16 движков, под лицензией MIT. SSO (OIDC), RBAC и журналы аудита включены в бесплатную версию.
+    ms: LibreDB Studio ialah IDE pangkalan data berasaskan pelayar yang dihoskan sendiri untuk 16 enjin, dilesenkan MIT. SSO (OIDC), RBAC dan log audit disertakan dalam binaan percuma.
+    pt-br: LibreDB Studio e uma IDE de banco de dados baseada em navegador e auto-hospedada para 16 motores, licenciada sob MIT. SSO (OIDC), RBAC e logs de auditoria na versao gratuita.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://libredb.org
+  github: https://github.com/libredb/libredb-studio
+  document: https://libredb.org
+  architectures:
+    - amd64
+    - arm64

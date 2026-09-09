@@ -1,0 +1,51 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR_1
+      labelEn: Data Directory 1
+      labelZh: 数据目录 1
+      label:
+        en: Data Directory 1
+        zh: 数据目录 1
+        zh-Hant: 資料目錄 1
+        ja: データディレクトリ 1
+        ko: 데이터 디렉터리 1
+        ru: Каталог данных 1
+        ms: Direktori data 1
+        pt-br: Diretório de dados 1
+      required: true
+      type: text
