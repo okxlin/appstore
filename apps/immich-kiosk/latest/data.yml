@@ -14,6 +14,10 @@ additionalProperties:
         ru: Адрес привязки
         ms: Alamat ikatan
         pt-br: Endereco de vinculacao
+        tr: Bağlama Adresi
+        es-es: Dirección de enlace
+        fa: نشانی اتصال
+        lo: ທີ່ຢູ່ຜູກມັດ
       required: true
       type: text
     - default: 40098
@@ -30,6 +34,10 @@ additionalProperties:
         ru: HTTP-порт
         ms: Port HTTP
         pt-br: Porta HTTP
+        tr: HTTP Bağlantı Noktası
+        es-es: Puerto HTTP
+        fa: درگاه HTTP
+        lo: ພອດ HTTP
       required: true
       rule: paramPort
       type: number
@@ -42,11 +50,15 @@ additionalProperties:
         en: Immich URL
         zh: Immich 地址
         zh-Hant: Immich 位址
-        ja: Immich URL
-        ko: Immich URL
+        ja: Immich アドレス
+        ko: Immich 주소
         ru: Адрес Immich
         ms: URL Immich
         pt-br: URL do Immich
+        tr: Immich URL'si
+        es-es: URL de Immich
+        fa: نشانی Immich
+        lo: URL Immich
       required: true
       type: text
     - default: ""
@@ -63,6 +75,10 @@ additionalProperties:
         ru: Ключ API Immich
         ms: Kunci API Immich
         pt-br: Chave de API do Immich
+        tr: Immich API Anahtarı
+        es-es: Clave API de Immich
+        fa: کلید API ایمیچ
+        lo: ຄີ API Immich
       random: true
       required: true
       type: password
@@ -80,6 +96,10 @@ additionalProperties:
         ru: Публичный адрес Immich
         ms: URL awam Immich
         pt-br: URL publico do Immich
+        tr: Genel Immich Adresi
+        es-es: URL pública de Immich
+        fa: نشانی عمومی Immich
+        lo: URL Immich ສາທາລະນະ
       required: false
       type: text
     - default: Asia/Shanghai
@@ -96,6 +116,10 @@ additionalProperties:
         ru: Часовой пояс
         ms: Zon masa
         pt-br: Fuso horario
+        tr: Saat Dilimi
+        es-es: Zona horaria
+        fa: منطقه زمانی
+        lo: ເຂດເວລາ
       required: true
       type: text
     - default: 60
@@ -112,6 +136,10 @@ additionalProperties:
         ru: Длительность слайда
         ms: Tempoh slaid
         pt-br: Duracao do slide
+        tr: Slayt Süresi
+        es-es: Duración de la diapositiva
+        fa: مدت نمایش اسلاید
+        lo: ໄລຍະເວລາສະໄລດ໌
       required: true
       type: number
     - default: ""
@@ -128,6 +156,10 @@ additionalProperties:
         ru: Идентификаторы альбомов
         ms: ID album
         pt-br: IDs de albuns
+        tr: Albüm Kimlikleri
+        es-es: ID de álbumes
+        fa: شناسه‌های آلبوم
+        lo: ລະຫັດອັນບັ້ມ
       required: false
       type: text
     - default: "false"
@@ -144,6 +176,10 @@ additionalProperties:
         ru: Показывать часы
         ms: Tunjukkan jam
         pt-br: Mostrar relogio
+        tr: Saati Göster
+        es-es: Mostrar reloj
+        fa: نمایش ساعت
+        lo: ສະແດງໂມງ
       required: true
       type: select
       values:
@@ -164,7 +200,11 @@ additionalProperties:
         ko: 레이아웃
         ru: Макет
         ms: Susun atur
-        pt-br: Layout
+        pt-br: Disposição
+        tr: Düzen
+        es-es: Diseño
+        fa: چیدمان
+        lo: ຮູບແບບ
       required: true
       type: select
       values:

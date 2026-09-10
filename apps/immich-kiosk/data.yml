@@ -19,6 +19,10 @@ additionalProperties:
     ru: Настраиваемое слайд-шоу ресурсов Immich для браузеров и экранов.
     ms: Tayangan slaid aset Immich yang boleh dikonfigurasi untuk pelayar dan peranti paparan.
     pt-br: Apresentacoes de slides configuraveis de ativos do Immich para navegadores e telas.
+    tr: Tarayıcılarda ve ekranlarda Immich varlıklarını göstermek için yapılandırılabilir slayt gösterileri.
+    es-es: Presentaciones configurables para mostrar recursos de Immich en navegadores y dispositivos.
+    fa: نمایش اسلایدی قابل تنظیم برای نمایش محتوای Immich در مرورگرها و دستگاه‌ها.
+    lo: ສະໄລດ໌ໂຊທີ່ປັບແຕ່ງໄດ້ສູງສຳລັບສະແດງສິນຊັບ Immich ໃນເບຣາວເຊີ ແລະ ອຸປະກອນ.
   type: tool
   crossVersionUpdate: true
   limit: 0
