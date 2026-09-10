@@ -1,6 +1,6 @@
 services:
   upsnap:
-    image: "seriousm4x/upsnap:5.5"
+    image: "seriousm4x/upsnap:5.6"
     container_name: ${CONTAINER_NAME}
     network_mode: host
     restart: always
