@@ -100,6 +100,8 @@ ensure_dir() {
   path="$(resolve_app_path "$key" "$raw")"
   mkdir -p -- "$path"
   [[ "$(resolve_app_path "$key" "$raw")" == "$path" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  chown -R 1000:1000 -- "$path"
+  chmod 755 -- "$path"
 }
 
 ensure_dir "APP_DATA_DIR" "./data"
