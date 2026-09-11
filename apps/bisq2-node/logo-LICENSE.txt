@@ -1,0 +1,10 @@
+Bisq 2 icon
+
+Source: https://github.com/bisq-network/bisq2/blob/v2.1.11/Bisq2_icon.svg
+Source commit: 3e0f0f8d69e2449a717d8a4bb404a9fa7dd9b295
+Source SHA-256: 05f92725f611bc5df2ba5c1a769f9508b28de2a7d0fe85165345265832c9ee14
+License: AGPL-3.0-only
+License text: https://github.com/bisq-network/bisq2/blob/v2.1.11/LICENSE
+
+Bisq and its icon are trademarks of their respective owners. This package is
+not sponsored, endorsed by, or affiliated with Bisq contributors.
