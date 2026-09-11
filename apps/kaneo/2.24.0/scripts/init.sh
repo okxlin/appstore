@@ -20,10 +20,59 @@ read_env_value() {
   printf '%s\n' "$value"
 }
 
+configured_value() {
+  local key="$1"
+  local default_value="$2"
+  local value
+  value="${!key:-}"
+  if [[ -z "$value" ]]; then
+    value="$(read_env_value "$key")"
+  fi
+  printf '%s\n' "${value:-$default_value}"
+}
+
+resolve_app_path() {
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
+  fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
+}
+
 set_env_value() {
   local key="$1"
-  local value="$2"
+  local value
   local temp_file
+  case "$key" in
+    POSTGRES_PASSWORD|AUTH_SECRET) value="${!key}" ;;
+    *) fail "unsupported environment key: $key" ;;
+  esac
   temp_file="$(mktemp "${ROOT_DIR}/.kaneo-env.tmp.XXXXXX")"
   awk -v key="$key" -v value="$value" '
     BEGIN { written = 0 }
@@ -93,43 +142,22 @@ postgres_user="$(read_env_value POSTGRES_USER)"
 [[ "$postgres_db" =~ ^[A-Za-z_][A-Za-z0-9_]{0,62}$ ]] || fail "POSTGRES_DB is invalid"
 [[ "$postgres_user" =~ ^[A-Za-z_][A-Za-z0-9_]{0,62}$ ]] || fail "POSTGRES_USER is invalid"
 
-postgres_password="$(read_env_value POSTGRES_PASSWORD)"
-if [[ -z "$postgres_password" || "$postgres_password" == generate ]]; then
-  postgres_password="$(generate_alphanumeric 48)"
+POSTGRES_PASSWORD="$(read_env_value POSTGRES_PASSWORD)"
+if [[ -z "$POSTGRES_PASSWORD" || "$POSTGRES_PASSWORD" == generate ]]; then
+  POSTGRES_PASSWORD="$(generate_alphanumeric 48)"
 fi
-[[ "$postgres_password" =~ ^[A-Za-z0-9]{32,128}$ ]] ||
+[[ "$POSTGRES_PASSWORD" =~ ^[A-Za-z0-9]{32,128}$ ]] ||
   fail "POSTGRES_PASSWORD must contain 32 to 128 alphanumeric characters"
 
-auth_secret="$(read_env_value AUTH_SECRET)"
-if [[ -z "$auth_secret" || "$auth_secret" == generate ]]; then
-  auth_secret="$(openssl rand -hex 32)"
+AUTH_SECRET="$(read_env_value AUTH_SECRET)"
+if [[ -z "$AUTH_SECRET" || "$AUTH_SECRET" == generate ]]; then
+  AUTH_SECRET="$(openssl rand -hex 32)"
 fi
-[[ "$auth_secret" =~ ^[A-Fa-f0-9]{64,128}$ ]] ||
+[[ "$AUTH_SECRET" =~ ^[A-Fa-f0-9]{64,128}$ ]] ||
   fail "AUTH_SECRET must contain 64 to 128 hexadecimal characters"
 
-data_raw="$(read_env_value APP_DATA_DIR)"
-[[ -n "$data_raw" && "$data_raw" != /* ]] || fail "APP_DATA_DIR must be a non-empty relative path"
-case "$data_raw" in
-  *$'\n'* | *$'\r'* | *\\* | *:* | *'$'* | *'#'* | *'"'* | *"'"*)
-    fail "APP_DATA_DIR contains unsupported characters"
-    ;;
-esac
-
-relative_data="${data_raw#./}"
-[[ -n "$relative_data" ]] || fail "APP_DATA_DIR must not resolve to the version root"
-current="$ROOT_DIR"
-IFS=/ read -r -a components <<< "$relative_data"
-for component in "${components[@]}"; do
-  [[ -n "$component" && "$component" != . && "$component" != .. ]] || fail "APP_DATA_DIR contains traversal"
-  current="$current/$component"
-  [[ ! -L "$current" ]] || fail "APP_DATA_DIR must not contain symbolic-link components"
-done
-
-data_dir="$(realpath -m -- "$ROOT_DIR/$relative_data")"
-case "$data_dir" in
-  "$ROOT_DIR"/*) ;;
-  *) fail "APP_DATA_DIR must stay inside the application version directory" ;;
-esac
+data_raw="$(configured_value APP_DATA_DIR ./data)"
+data_dir="$(resolve_app_path APP_DATA_DIR "$data_raw")"
 
 install -d -m 0700 -- "$data_dir/postgres"
 resolved_data="$(realpath -e -- "$data_dir")"
@@ -140,6 +168,6 @@ esac
 chown -R 70:70 -- "$resolved_data/postgres"
 chmod 0700 -- "$resolved_data/postgres"
 
-set_env_value POSTGRES_PASSWORD "$postgres_password"
-set_env_value AUTH_SECRET "$auth_secret"
+set_env_value POSTGRES_PASSWORD
+set_env_value AUTH_SECRET
 chmod 600 "$ENV_FILE"
