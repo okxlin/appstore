@@ -1,10 +1,9 @@
 services:
   server:
-    image: "ghcr.io/bisq-network/bisq2-api:2.1.12.0@sha256:beba2f2db5aefca0f4b8d49285b105cb0b29d0eb0ed0f8136712aace0e167906"
+    image: "ghcr.io/bisq-network/bisq2-api:2.1.12.1@sha256:79fb71d64d23863c8f48d484a9d84754dae40e12cb395bca348f17dcec46b297"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     stop_grace_period: 1m
-    mem_limit: 2g
     networks:
       - 1panel-network
     ports:
