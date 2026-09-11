@@ -12,6 +12,10 @@ additionalProperties:
       ru: Веб-порт
       ms: Port Web
       pt-br: Porta Web
+      tr: Web Portu
+      es-es: Puerto web
+      fa: درگاه وب
+      lo: ພອດເວັບ
     required: true
     rule: paramPort
     type: number
@@ -26,6 +30,10 @@ additionalProperties:
       ru: Сервис базы данных
       ms: Perkhidmatan Pangkalan Data
       pt-br: Serviço de Banco de Dados
+      tr: Veritabanı Hizmeti
+      es-es: Servicio de base de datos
+      fa: سرویس پایگاه داده
+      lo: ບໍລິການຖານຂໍ້ມູນ
     required: true
     type: apps
     values:
@@ -43,6 +51,10 @@ additionalProperties:
         ru: Сервис базы данных
         ms: Perkhidmatan Pangkalan Data
         pt-br: Serviço de Banco de Dados
+        tr: Veritabanı Hizmeti
+        es-es: Servicio de base de datos
+        fa: سرویس پایگاه داده
+        lo: ບໍລິການຖານຂໍ້ມູນ
       required: true
       type: service
   - default: 3306
@@ -57,8 +69,11 @@ additionalProperties:
       ru: Порт базы данных
       ms: Port Pangkalan Data
       pt-br: Porta de Banco de Dados
+      tr: Veritabanı Portu
+      es-es: Puerto de base de datos
+      fa: درگاه پایگاه داده
+      lo: ພອດຖານຂໍ້ມູນ
     required: true
-    rule: paramPort
     type: number
   - default: gotab
     edit: true
@@ -72,6 +87,10 @@ additionalProperties:
       ru: Имя базы данных
       ms: Nama Pangkalan Data
       pt-br: Nome do Banco de Dados
+      tr: Veritabanı Adı
+      es-es: Nombre de la base de datos
+      fa: نام پایگاه داده
+      lo: ຊື່ຖານຂໍ້ມູນ
     random: true
     required: true
     rule: paramCommon
@@ -88,6 +107,10 @@ additionalProperties:
       ru: Пользователь базы данных
       ms: Pengguna Pangkalan Data
       pt-br: Usuário do Banco de Dados
+      tr: Veritabanı Kullanıcısı
+      es-es: Usuario de la base de datos
+      fa: کاربر پایگاه داده
+      lo: ຜູ້ໃຊ້ຖານຂໍ້ມູນ
     random: true
     required: true
     rule: paramCommon
@@ -104,6 +127,10 @@ additionalProperties:
       ru: Пароль базы данных
       ms: Kata Laluan Pangkalan Data
       pt-br: Senha do Banco de Dados
+      tr: Veritabanı Parolası
+      es-es: Contraseña de la base de datos
+      fa: گذرواژه پایگاه داده
+      lo: ລະຫັດຜ່ານຖານຂໍ້ມູນ
     random: true
     required: true
     rule: paramComplexity
@@ -120,5 +147,9 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat Dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
