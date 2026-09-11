@@ -4,7 +4,6 @@ services:
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     stop_grace_period: 1m
-    mem_limit: 2g
     networks:
       - 1panel-network
     ports:
