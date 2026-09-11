@@ -19,6 +19,10 @@ additionalProperties:
     ru: Высокопроизводительное решение для самостоятельного резервного копирования фото и видео
     ms: Penyelesaian sandaran foto dan video hos kendiri berprestasi tinggi
     pt-br: Solução de backup de fotos e vídeos auto-hospedada e de alto desempenho
+    tr: Yüksek performanslı, kendi kendine barındırılan fotoğraf ve video yedekleme çözümü
+    es-es: Solución de copia de seguridad de fotos y vídeos autoalojada de alto rendimiento
+    fa: راهکار پشتیبان‌گیری از عکس و ویدئو با میزبانی شخصی و کارایی بالا
+    lo: ໂຊລູຊັນສຳຮອງຮູບພາບ ແລະ ວິດີໂອແບບໂຮສເອງປະສິດທິພາບສູງ
   type: tool
   crossVersionUpdate: true
   limit: 0
