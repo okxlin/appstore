@@ -17,7 +17,7 @@ services:
       - PROXY_DOMAIN=${PROXY_DOMAIN:-}
       - DEFAULT_WORKSPACE=${DEFAULT_WORKSPACE:-/config/workspace}
       - PWA_APPNAME=${PWA_APPNAME:-code-server}
-    image: "linuxserver/code-server:4.136.2"
+    image: "linuxserver/code-server:4.137.0"
     labels:  
       createdBy: "Apps"
 
