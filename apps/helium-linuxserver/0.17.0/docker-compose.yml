@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   helium:
-    image: "linuxserver/helium:0.16.6"
+    image: "linuxserver/helium:0.17.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
