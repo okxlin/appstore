@@ -71,7 +71,6 @@ ensure_dir() {
   raw="$(configured_value "$key" "$2")"
   path="$(resolve_app_path "$key" "$raw")"
   mkdir -p -- "$path"
-  chown -R 1001:1001 -- "$path"
   [[ "$(resolve_app_path "$key" "$raw")" == "$path" ]] || { echo "unsafe ${key} path" >&2; return 1; }
 }
 
