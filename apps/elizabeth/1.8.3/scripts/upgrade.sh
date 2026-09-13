@@ -30,6 +30,30 @@ configured_value() {
   printf '%s\n' "${value:-$default_value}"
 }
 
+set_env_value() {
+  local key="$1"
+  local value="$2"
+  local temp_file
+
+  temp_file="$(mktemp "${ENV_FILE}.tmp.XXXXXX")"
+  awk -v key="$key" -v value="$value" '
+    BEGIN { updated = 0 }
+    $0 ~ ("^" key "=") {
+      if (!updated) {
+        print key "=" value
+        updated = 1
+      }
+      next
+    }
+    { print }
+    END {
+      if (!updated) print key "=" value
+    }
+  ' "$ENV_FILE" >"$temp_file"
+  chmod 600 "$temp_file"
+  mv -f -- "$temp_file" "$ENV_FILE"
+}
+
 resolve_app_path() {
   local key="$1"
   local raw="$2"
@@ -71,9 +95,33 @@ ensure_dir() {
   raw="$(configured_value "$key" "$2")"
   path="$(resolve_app_path "$key" "$raw")"
   mkdir -p -- "$path"
-  chown -R 1001:1001 -- "$path"
   [[ "$(resolve_app_path "$key" "$raw")" == "$path" ]] || { echo "unsafe ${key} path" >&2; return 1; }
 }
 
 ensure_dir APP_DATA_DIR ./data
 ensure_dir APP_STORAGE_DIR ./storage
+
+ensure_jwt_secret() {
+  local value
+
+  value="$(read_env_value JWT_SECRET)"
+  if [[ -z "$value" && ${JWT_SECRET+x} ]]; then
+    value="$JWT_SECRET"
+  fi
+  if [[ ${#value} -ge 32 ]]; then
+    return 0
+  fi
+
+  command -v openssl >/dev/null 2>&1 || {
+    echo "openssl is required to repair a short JWT_SECRET" >&2
+    return 1
+  }
+  value="$(openssl rand -hex 32)"
+  [[ ${#value} -eq 64 ]] || {
+    echo "openssl returned an invalid JWT_SECRET" >&2
+    return 1
+  }
+  set_env_value JWT_SECRET "$value"
+}
+
+ensure_jwt_secret

@@ -1,6 +1,6 @@
 services:
   elizabeth:
-    image: yunique001/elizabeth:1.8.4
+    image: yunique001/elizabeth:1.8.3
     user: "1001:1001"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
@@ -43,3 +43,4 @@ services:
 networks:
   1panel-network:
     external: true
+
