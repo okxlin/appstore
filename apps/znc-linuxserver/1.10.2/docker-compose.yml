@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   znc:
-    image: "linuxserver/znc:1.10.2"
+    image: "linuxserver/znc:1.10.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
