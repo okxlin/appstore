@@ -14,6 +14,10 @@ additionalProperties:
       ru: Порт Wyoming
       ms: Port Wyoming
       pt-br: Porta Wyoming
+      tr: Wyoming Bağlantı Noktası
+      es-es: Puerto de Wyoming
+      fa: پورت Wyoming
+      lo: ພອດ Wyoming
     required: true
     type: number
     rule: paramPort
@@ -31,6 +35,10 @@ additionalProperties:
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشه پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -47,6 +55,30 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
   - default: en_US-lessac-medium
@@ -63,6 +95,10 @@ additionalProperties:
       ru: Голос Piper
       ms: Suara Piper
       pt-br: Voz do Piper
+      tr: Piper sesi
+      es-es: Voz de Piper
+      fa: صدای Piper
+      lo: ສຽງ Piper
     required: true
     type: text
   - default: ''
@@ -79,6 +115,10 @@ additionalProperties:
       ru: Локальный режим
       ms: Mod tempatan sahaja
       pt-br: Modo somente local
+      tr: Yalnızca yerel mod
+      es-es: Modo solo local
+      fa: حالت فقط محلی
+      lo: ໂໝດໃຊ້ງານພາຍໃນເຄື່ອງ
     required: false
     type: select
     values:
@@ -100,6 +140,10 @@ additionalProperties:
       ru: Скорость речи
       ms: Kadar pertuturan suara
       pt-br: Velocidade da fala
+      tr: Konuşma hızı
+      es-es: Velocidad de habla
+      fa: سرعت گفتار
+      lo: ຄວາມໄວການເວົ້າ
     required: false
     type: text
   - default: '0.667'
@@ -116,6 +160,10 @@ additionalProperties:
       ru: Шум вариативности голоса
       ms: Hingar variasi suara
       pt-br: Ruido de variacao da voz
+      tr: Ses gürültüsü
+      es-es: Ruido de voz
+      fa: نویز صدا
+      lo: ສຽງລົບກວນຂອງສຽງ
     required: false
     type: text
   - default: '0.333'
@@ -132,6 +180,10 @@ additionalProperties:
       ru: Шум речевого ритма
       ms: Hingar rentak pertuturan
       pt-br: Ruido de cadencia
+      tr: Ritim gürültüsü
+      es-es: Ruido de cadencia
+      fa: نویز آهنگ گفتار
+      lo: ສຽງລົບກວນຈັງຫວະ
     required: false
     type: text
   - default: '0'
@@ -148,6 +200,10 @@ additionalProperties:
       ru: Номер диктора
       ms: Nombor penutur
       pt-br: Numero do locutor
+      tr: Konuşmacı numarası
+      es-es: Número del hablante
+      fa: شماره گوینده
+      lo: ໝາຍເລກຜູ້ເວົ້າ
     required: false
     type: text
   - default: ''
@@ -164,6 +220,10 @@ additionalProperties:
       ru: Отключить потоковую передачу
       ms: Nyahdaya penstriman
       pt-br: Desativar streaming
+      tr: Akışı devre dışı bırak
+      es-es: Desactivar streaming
+      fa: غیرفعال کردن پخش جریانی
+      lo: ປິດການສະຕຣີມ
     required: false
     type: select
     values:
