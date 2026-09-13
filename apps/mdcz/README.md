@@ -32,6 +32,10 @@ MDCz 是一个高效、现代的影片元数据刮削与管理工具。它提供
 
 MDCz 的核心功能会创建目录与 NFO/图片文件，并可能按照设置移动、重命名或清理媒体文件。请先在少量文件上验证整理规则，不要直接对唯一副本执行批量操作。
 
+## 安全风险提示
+
+当前上游镜像的 Debian 基础组件扫描到尚未修复的 CVE（包括 `CVE-2026-13221`、`CVE-2026-42496`、`CVE-2026-8376` 和 `CVE-2023-45853`，涉及 `perl-base` 与 `zlib1g`）。本次版本更新已完成 1Panel 安装、升级、访问、重启、卸载和清理验证，维护者已按维护流程接受该基础组件风险；这不代表漏洞已修复，请在部署前评估暴露面并持续关注上游镜像更新。
+
 ## 网络与内容说明
 
 - 不同元数据源可能存在地区访问限制，部分站点需要合适的代理或出口地区。
@@ -55,6 +59,10 @@ MDCz is a self-hosted video metadata scraper and library management tool. It pro
 - Generate NFO files and organize local media with configurable naming rules.
 - Persist configuration, authentication state, and tasks in SQLite under `/data`.
 - Mount the writable media library at `/media`; verify rules on a small sample before batch operations.
+
+### Security warning
+
+The current upstream image contains Debian base components with unresolved CVE findings, including `CVE-2026-13221`, `CVE-2026-42496`, `CVE-2026-8376`, and `CVE-2023-45853` in `perl-base` and `zlib1g`. The upgraded image passed 1Panel install, upgrade, access, restart, uninstall, and cleanup checks; this base-component risk is accepted through the maintainer review process, not fixed by the application update. Assess exposure before deployment and monitor upstream image updates.
 
 ## Links
 
