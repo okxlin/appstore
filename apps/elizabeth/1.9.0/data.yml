@@ -1,0 +1,247 @@
+additionalProperties:
+  formFields:
+    - default: 4092
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: "Web UI Port"
+      labelZh: "Web UI 端口"
+      label:
+        en: "Web UI Port"
+        es-es: "Puerto web"
+        ja: "Web UI ポート"
+        ms: "Port Web UI"
+        pt-br: "Porta da interface web"
+        ru: "Порт веб-интерфейса"
+        ko: "웹 UI 포트"
+        zh-Hant: "Web UI 埠"
+        zh: "Web UI 端口"
+        tr: "Web UI Bağlantı Noktası"
+      description:
+        en: "Host port used to access Elizabeth."
+        zh-Hant: "用於存取 Elizabeth 的主機連接埠。"
+        zh: "用于访问 Elizabeth 的宿主机端口。"
+      required: true
+      rule: paramPort
+      type: number
+    - default: ElizabethJwtSecretKey2026
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: "JWT Secret"
+      labelZh: "JWT 密钥"
+      label:
+        en: "JWT Secret"
+        es-es: "Secreto JWT"
+        ja: "JWT シークレット"
+        ms: "Rahsia JWT"
+        pt-br: "Segredo JWT"
+        ru: "Секрет JWT"
+        ko: "JWT 시크릿"
+        zh-Hant: "JWT 金鑰"
+        zh: "JWT 密钥"
+        tr: "JWT Gizli Anahtarı"
+      description:
+        en: "Secret used to sign sessions. 1Panel generates a value of at least 32 characters; do not change it after install unless you accept invalidating existing sessions."
+        zh-Hant: "用於簽署工作階段的密鑰。1Panel 會產生至少 32 個字元的值；安裝後勿隨意更換，否則既有工作階段會失效。"
+        zh: "用于签名会话的密钥。1Panel 会生成至少 32 个字符的值；安装后勿随意更换，否则既有会话会失效。"
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: sqlite:///app/data/elizabeth.db
+      edit: true
+      envKey: DATABASE_URL
+      labelEn: "Database URL"
+      labelZh: "数据库连接串"
+      label:
+        en: "Database URL"
+        es-es: "URL de base de datos"
+        ja: "データベース URL"
+        ms: "URL pangkalan data"
+        pt-br: "URL do banco de dados"
+        ru: "URL базы данных"
+        ko: "데이터베이스 URL"
+        zh-Hant: "資料庫連線字串"
+        zh: "数据库连接串"
+        tr: "Veritabanı URL'si"
+      description:
+        en: "Uses SQLite in the persistent data directory by default. An external PostgreSQL URL is also supported."
+        zh-Hant: "預設使用持久化資料目錄中的 SQLite，也支援外部 PostgreSQL 連線字串。"
+        zh: "默认使用持久化数据目录中的 SQLite，也支持外部 PostgreSQL 连接串。"
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: "Data Directory"
+      labelZh: "数据目录"
+      label:
+        en: "Data Directory"
+        es-es: "Directorio de datos"
+        ja: "データディレクトリ"
+        ms: "Direktori data"
+        pt-br: "Diretório de dados"
+        ru: "Каталог данных"
+        ko: "데이터 디렉터리"
+        zh-Hant: "資料目錄"
+        zh: "数据目录"
+        tr: "Veri Dizini"
+      description:
+        en: "Host path mounted to /app/data for SQLite and other local state."
+        zh-Hant: "掛載到 /app/data 的主機路徑，用於 SQLite 與其他本地狀態。"
+        zh: "挂载到 /app/data 的主机路径，用于 SQLite 与其他本地状态。"
+      required: true
+      type: text
+    - default: ./storage
+      edit: true
+      envKey: APP_STORAGE_DIR
+      labelEn: "Storage Directory"
+      labelZh: "文件存储目录"
+      label:
+        en: "Storage Directory"
+        es-es: "Directorio de almacenamiento"
+        ja: "ストレージディレクトリ"
+        ms: "Direktori storan"
+        pt-br: "Diretório de armazenamento"
+        ru: "Каталог хранилища"
+        ko: "스토리지 디렉터리"
+        zh-Hant: "檔案儲存目錄"
+        zh: "文件存储目录"
+        tr: "Depolama Dizini"
+      description:
+        en: "Host path mounted to /app/storage for room file uploads."
+        zh-Hant: "掛載到 /app/storage 的主機路徑，用於房間上傳檔案。"
+        zh: "挂载到 /app/storage 的主机路径，用于房间上传文件。"
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: "Timezone"
+      labelZh: "时区"
+      label:
+        en: "Timezone"
+        es-es: "Zona horaria"
+        ja: "タイムゾーン"
+        ms: "Zon waktu"
+        pt-br: "Fuso horário"
+        ru: "Часовой пояс"
+        ko: "시간대"
+        zh-Hant: "時區"
+        zh: "时区"
+        tr: "Saat Dilimi"
+      description:
+        en: "Container timezone used for log timestamps."
+        zh-Hant: "容器時區，影響日誌時間戳。"
+        zh: "容器时区，影响日志时间戳。"
+      required: true
+      type: text
+    - default: 50MiB
+      edit: true
+      envKey: ROOM_MAX_SIZE
+      labelEn: "Room Max Size"
+      labelZh: "房间最大容量"
+      label:
+        en: "Room Max Size"
+        es-es: "Tamaño máximo de sala"
+        ja: "ルーム最大サイズ"
+        ms: "Saiz maksimum bilik"
+        pt-br: "Tamanho máximo da sala"
+        ru: "Максимальный размер комнаты"
+        ko: "방 최대 크기"
+        zh-Hant: "房間最大容量"
+        zh: "房间最大容量"
+        tr: "Oda en fazla boyutu"
+      description:
+        en: "Maximum total content size per room. Human-readable values such as 50MiB, 100M, and 1G are supported."
+        zh-Hant: "每個房間允許的內容總容量，支援 50MiB、100M、1G 等人類可讀格式。"
+        zh: "每个房间允许的内容总容量，支持 50MiB、100M、1G 等人类可读格式。"
+      required: true
+      type: text
+    - default: 100
+      edit: true
+      envKey: ROOM_MAX_TIMES_ENTERED
+      labelEn: "Room Entry Limit"
+      labelZh: "房间进入次数上限"
+      label:
+        en: "Room Entry Limit"
+        es-es: "Límite de entradas a la sala"
+        ja: "ルーム入場回数上限"
+        ms: "Had kemasukan bilik"
+        pt-br: "Máximo de entradas na sala"
+        ru: "Лимит входов в комнату"
+        ko: "방 입장 횟수 한도"
+        zh-Hant: "房間進入次數上限"
+        zh: "房间进入次数上限"
+        tr: "Oda giriş limiti"
+      description:
+        en: "Maximum number of successful entries allowed for a newly created room."
+        zh-Hant: "新建房間允許成功進入的最大次數。"
+        zh: "新建房间允许成功进入的最大次数。"
+      required: true
+      type: number
+    - default: 1m,30m,2h,12h,1d,7d,30d,365d
+      edit: true
+      envKey: ROOM_ALLOWED_AGES
+      labelEn: "Allowed Room Ages"
+      labelZh: "允许的房间有效期"
+      label:
+        en: "Allowed Room Ages"
+        es-es: "Vigencias de sala permitidas"
+        ja: "許可するルーム有効期限"
+        ms: "Tempoh bilik dibenarkan"
+        pt-br: "Tempos de sala permitidos"
+        ru: "Допустимые сроки комнаты"
+        ko: "허용되는 방 유효기간"
+        zh-Hant: "允許的房間有效期"
+        zh: "允许的房间有效期"
+        tr: "İzin verilen oda süreleri"
+      description:
+        en: "Comma-separated humantime values exposed to the UI and accepted by the backend."
+        zh-Hant: "以逗號分隔的 humantime 時長；前端會展示這些選項，後端也只接受這些值。"
+        zh: "以逗号分隔的 humantime 时长；前端会展示这些选项，后端也只接受这些值。"
+      required: true
+      type: text
+    - default: 2h
+      edit: true
+      envKey: ROOM_DEFAULT_AGE
+      labelEn: "Default Room Age"
+      labelZh: "默认房间有效期"
+      label:
+        en: "Default Room Age"
+        es-es: "Vigencia de sala predeterminada"
+        ja: "既定のルーム有効期限"
+        ms: "Tempoh bilik lalai"
+        pt-br: "Tempo padrão da sala"
+        ru: "Срок комнаты по умолчанию"
+        ko: "기본 방 유효기간"
+        zh-Hant: "預設房間有效期"
+        zh: "默认房间有效期"
+        tr: "Varsayılan oda süresi"
+      description:
+        en: "Default lifetime for newly created rooms. It must also appear in Allowed Room Ages."
+        zh-Hant: "新建房間的預設有效期，且必須包含在「允許的房間有效期」中。"
+        zh: "新建房间的默认有效期，且必须包含在“允许的房间有效期”中。"
+      required: true
+      type: text
+    - default: 1h
+      edit: true
+      envKey: ROOM_SHARE_DISABLED_LOCK_DURATION
+      labelEn: "Share-disabled Lock Duration"
+      labelZh: "禁用分享后的锁定时长"
+      label:
+        en: "Share-disabled Lock Duration"
+        es-es: "Duración de bloqueo sin compartir"
+        ja: "共有無効後のロック期間"
+        ms: "Tempoh kunci selepas kongsi dilumpuhkan"
+        pt-br: "Duração do bloqueio sem compartilhamento"
+        ru: "Срок блокировки после отключения шаринга"
+        ko: "공유 비활성화 후 잠금 기간"
+        zh-Hant: "停用分享後的鎖定時長"
+        zh: "禁用分享后的锁定时长"
+        tr: "Paylaşım kapalı kilit süresi"
+      description:
+        en: "How long a private room name remains reserved after sharing is disabled. Supports humantime values such as 30m and 1h."
+        zh-Hant: "停用分享後，私密房間名稱繼續保留的時長；支援 30m、1h 等 humantime 格式。"
+        zh: "禁用分享后，私密房间名称继续保留的时长；支持 30m、1h 等 humantime 格式。"
+      required: true
+      type: text
