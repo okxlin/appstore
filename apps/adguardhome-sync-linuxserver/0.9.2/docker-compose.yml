@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   adguardhome-sync:
-    image: "linuxserver/adguardhome-sync:0.9.2"
+    image: "linuxserver/adguardhome-sync:0.9.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
