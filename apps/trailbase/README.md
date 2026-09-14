@@ -24,20 +24,20 @@ TrailBase 首次启动时会自动创建 `admin@localhost` 管理员，并将随
 
 ## 数据与备份
 
-安装表单中的“数据目录”会挂载到容器的 `/app/traildepot`。该目录保存数据库、配置、密钥、迁移和上传内容，卸载应用时不会删除。升级前应完整备份此目录；TrailBase 当前仍处于快速迭代阶段，跨版本升级前还应阅读上游发行说明。
+安装表单中的“数据目录”会挂载到容器的 `/app/traildepot`，默认是版本目录内的 `./data`。该值必须是版本目录内的相对路径，应用脚本会拒绝绝对路径、目录逃逸和符号链接。该目录保存数据库、配置、密钥、迁移和上传内容，卸载应用时不会删除。升级前应完整备份此目录；TrailBase 当前仍处于快速迭代阶段，跨版本升级前还应阅读上游发行说明。
 
 ## 安全建议
 
 - 不要公开初始管理员密码，首次登录后立即更换凭据。
 - 公网部署时建议通过 1Panel 反向代理启用 HTTPS，并限制管理界面的访问来源。
 - TrailBase 默认允许较宽的 API 跨域来源；请根据实际客户端和上游文档收紧部署边界。
-- 数据目录包含数据库和认证密钥，应限制宿主机访问权限并纳入备份。
+- 数据目录包含数据库和认证密钥，应限制宿主机访问权限并纳入备份。不要让多个实例共用同一数据目录。
 
 ## Introduction
 
 TrailBase is a lightweight application backend built with Rust, SQLite, and WebAssembly. It provides a database, authentication, real-time record APIs, an administration dashboard, and an extension runtime from a single executable.
 
-On first start, TrailBase creates the `admin@localhost` administrator and prints a randomly generated password to the container logs. Sign in at `/_/admin/`, then change the initial email and password immediately. The selected data directory contains databases, configuration, secrets, migrations, and uploaded data and is preserved when the app is uninstalled.
+On first start, TrailBase creates the `admin@localhost` administrator and prints a randomly generated password to the container logs. Sign in at `/_/admin/`, then change the initial email and password immediately. The selected data directory defaults to `./data` inside the version directory and must remain a relative path inside that directory; absolute paths, traversal, and symlinks are rejected. It contains databases, configuration, secrets, migrations, and uploaded data and is preserved when the app is uninstalled.
 
 ## Features
 
@@ -46,6 +46,7 @@ On first start, TrailBase creates the `admin@localhost` administrator and prints
 - Table, index, view, and row management
 - WebAssembly server extension runtime
 - Non-root execution with one persistent data directory
+- Constrained, version-local data directory configuration
 
 ## 来源
 

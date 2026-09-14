@@ -1,62 +1,109 @@
 #!/usr/bin/env bash
 set -euo pipefail
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
-APP_DATA_DIR_RAW="${APP_DATA_DIR:-}"
-TRAILBASE_UID=1000
-TRAILBASE_GID=1000
 
-if [[ -z "$APP_DATA_DIR_RAW" && -f "$ENV_FILE" ]]; then
-  APP_DATA_DIR_RAW="$(grep '^APP_DATA_DIR=' "$ENV_FILE" | tail -n 1 | cut -d '=' -f 2- || true)"
-fi
-APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW:-./data}"
+read_env_value() {
+  local key="$1"
+  [[ -f "$ENV_FILE" ]] || return 0
+  local value
+  value="$(sed -n "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
+  case "$value" in
+    \"*\") value="${value#\"}"; value="${value%\"}" ;;
+    \'*\') value="${value#\'}"; value="${value%\'}" ;;
+  esac
+  printf '%s\n' "$value"
+}
 
-case "$APP_DATA_DIR_RAW" in
-  \"*\")
-    APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW#\"}"
-    APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW%\"}"
-    ;;
-  \'*\')
-    APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW#\'}"
-    APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW%\'}"
-    ;;
-esac
-
-if [[ -z "$APP_DATA_DIR_RAW" ]]; then
-  echo "APP_DATA_DIR must not be empty" >&2
-  exit 1
-fi
-
-case "$APP_DATA_DIR_RAW" in
-  /*)
-    APP_DATA_DIR_ABS="$(realpath -m -- "$APP_DATA_DIR_RAW")"
-    APP_DATA_DIR_SCOPE="absolute"
-    ;;
-  *)
-    APP_DATA_DIR_ABS="$(realpath -m -- "$ROOT_DIR/${APP_DATA_DIR_RAW#./}")"
-    case "$APP_DATA_DIR_ABS" in
-      "$ROOT_DIR"/*) ;;
-      *)
-        echo "Relative APP_DATA_DIR must stay inside the application directory" >&2
-        exit 1
-        ;;
-    esac
-    APP_DATA_DIR_SCOPE="application"
-    ;;
-esac
-
-DATA_DIR_EXISTED=false
-[[ -d "$APP_DATA_DIR_ABS" ]] && DATA_DIR_EXISTED=true
-mkdir -p "$APP_DATA_DIR_ABS"
-
-if [[ "$APP_DATA_DIR_SCOPE" == "application" || "$DATA_DIR_EXISTED" == "false" ]]; then
-  chown -R "$TRAILBASE_UID:$TRAILBASE_GID" "$APP_DATA_DIR_ABS"
-else
-  CURRENT_UID="$(stat -c '%u' "$APP_DATA_DIR_ABS")"
-  CURRENT_GID="$(stat -c '%g' "$APP_DATA_DIR_ABS")"
-  if [[ "$CURRENT_UID" != "$TRAILBASE_UID" || "$CURRENT_GID" != "$TRAILBASE_GID" ]]; then
-    echo "Existing absolute APP_DATA_DIR must be owned by ${TRAILBASE_UID}:${TRAILBASE_GID}" >&2
-    exit 1
+configured_value() {
+  local key="$1"
+  local default_value="$2"
+  local value
+  value="${!key:-}"
+  if [[ -z "$value" ]]; then
+    value="$(read_env_value "$key")"
   fi
-fi
+  printf '%s\n' "${value:-$default_value}"
+}
+
+resolve_app_path() {
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
+  fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
+}
+
+resolve_direct_child() {
+  local key="$1"
+  local raw="$2"
+  local clean path
+  clean="${raw#./}"
+  if [[ -z "$clean" || "$clean" == */* ]]; then
+    echo "unsafe ${key} path: lifecycle directories must be direct children of the version root" >&2
+    return 1
+  fi
+  path="$(resolve_app_path "$key" "$raw")"
+  [[ "$path" == "$ROOT_DIR/$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  printf '%s\n' "$path"
+}
+
+verify_trusted_root_chain() {
+  local current owner mode
+  [[ "$(id -u)" == "0" ]] || { echo "directory ownership initialization must run as root" >&2; return 1; }
+  command -v stat >/dev/null 2>&1 || { echo "stat is required" >&2; return 1; }
+  current="$ROOT_DIR"
+  while [[ "$current" != "/" ]]; do
+    [[ -d "$current" && ! -L "$current" ]] || { echo "unsafe version root chain: $current" >&2; return 1; }
+    IFS=':' read -r owner mode < <(stat -c '%u:%a' -- "$current")
+    [[ "$owner" == "0" ]] || { echo "unsafe version root chain owner: $current" >&2; return 1; }
+    [[ "$mode" =~ ^[0-7]{3,4}$ ]] || { echo "unsafe version root chain mode: $current" >&2; return 1; }
+    (( (8#$mode & 0022) == 0 )) || { echo "unsafe version root chain permissions: $current" >&2; return 1; }
+    current="$(dirname -- "$current")"
+  done
+}
+
+ensure_dir() {
+  local key="$1"
+  local raw
+  local path
+  raw="$(configured_value "$key" "$2")"
+  path="$(resolve_app_path "$key" "$raw")"
+  mkdir -p -- "$path"
+  [[ "$(resolve_app_path "$key" "$raw")" == "$path" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+}
+
+ensure_dir "APP_DATA_DIR" "./data"
+
+APP_DATA_DIR_VALUE="$(configured_value "APP_DATA_DIR" "./data")"
+DATA_DIR="$(resolve_app_path "APP_DATA_DIR" "$APP_DATA_DIR_VALUE")"
+chown -R 1000:1000 -- "$DATA_DIR"
