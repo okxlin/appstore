@@ -40,44 +40,19 @@ configured_value() {
   fi
 }
 
-path_is_dotenv_safe() {
-  local value="$1"
-
-  case "$value" in
-    *$'\n'* | *$'\r'* | *\\* | *'$'* | *'#'* | *'"'* | *"'"*) return 1 ;;
-    *) return 0 ;;
-  esac
-}
-
 [[ -f "$ENV_FILE" ]] || fail "$ENV_FILE not found"
 [[ ! -L "$ENV_FILE" ]] || fail "$ENV_FILE must not be a symbolic link"
 
-APP_DATA_DIR_RAW="$(configured_value APP_DATA_DIR)"
-APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW:-./data}"
-[[ -n "$APP_DATA_DIR_RAW" ]] || fail "APP_DATA_DIR must not be empty"
-path_is_dotenv_safe "$APP_DATA_DIR_RAW" || fail "APP_DATA_DIR contains unsupported dotenv characters"
+legacy_data_dir="$(configured_value APP_DATA_DIR)"
+case "$legacy_data_dir" in
+  ""|data|./data) ;;
+  *) fail "APP_DATA_DIR is no longer configurable; migrate its data to ${ROOT_DIR}/data before upgrading" ;;
+esac
 
-if [[ "$APP_DATA_DIR_RAW" == /* ]]; then
-  APP_DATA_DIR_PATH="$(realpath -ms -- "$APP_DATA_DIR_RAW")"
-  [[ ! -L "$APP_DATA_DIR_PATH" ]] || fail "APP_DATA_DIR must not be a symbolic link"
-  APP_DATA_DIR_ABS="$(realpath -m -- "$APP_DATA_DIR_PATH")"
-else
-  APP_DATA_DIR_PATH="$(realpath -ms -- "${ROOT_DIR}/${APP_DATA_DIR_RAW#./}")"
-  case "$APP_DATA_DIR_PATH" in
-    "${ROOT_DIR}" | "${ROOT_DIR}"/*) ;;
-    *) fail "Relative APP_DATA_DIR must stay inside the application directory" ;;
-  esac
-  [[ ! -L "$APP_DATA_DIR_PATH" ]] || fail "APP_DATA_DIR must not be a symbolic link"
-  APP_DATA_DIR_ABS="$(realpath -m -- "$APP_DATA_DIR_PATH")"
-  case "$APP_DATA_DIR_ABS" in
-    "${ROOT_DIR}" | "${ROOT_DIR}"/*) ;;
-    *) fail "Relative APP_DATA_DIR must stay inside the application directory" ;;
-  esac
-fi
-
-[[ "$APP_DATA_DIR_ABS" != "/" ]] || fail "APP_DATA_DIR must not be the filesystem root"
+APP_DATA_DIR_ABS="$ROOT_DIR/data"
+[[ ! -L "$APP_DATA_DIR_ABS" ]] || fail "package data directory must not be a symbolic link"
 if [[ -e "$APP_DATA_DIR_ABS" && ! -d "$APP_DATA_DIR_ABS" ]]; then
-  fail "APP_DATA_DIR must be a directory"
+  fail "package data directory must be a directory"
 fi
 for child in data logs; do
   [[ ! -L "${APP_DATA_DIR_ABS}/${child}" ]] || fail "${child} directory must not be a symbolic link"

@@ -22,8 +22,8 @@ services:
       - "--storage-snapshot-interval-sec=${MEMGRAPH_SNAPSHOT_INTERVAL}"
       - "--metrics-format=OpenMetrics"
     volumes:
-      - "${APP_DATA_DIR}/data:/var/lib/memgraph"
-      - "${APP_DATA_DIR}/logs:/var/log/memgraph"
+      - "./data/data:/var/lib/memgraph"
+      - "./data/logs:/var/log/memgraph"
     stop_grace_period: 1m
     healthcheck:
       test: ["CMD-SHELL", "printf 'RETURN 1;\\n' | FLAGS_username=\"$$MEMGRAPH_USER\" FLAGS_password=\"$$MEMGRAPH_PASSWORD\" mgconsole --tryfromenv=username,password --host=127.0.0.1 --port=7687 >/dev/null"]

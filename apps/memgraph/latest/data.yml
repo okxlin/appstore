@@ -133,19 +133,3 @@ additionalProperties:
         pt-br: Intervalo de Snapshots (segundos)
       required: true
       type: number
-    - default: ./data
-      edit: true
-      envKey: APP_DATA_DIR
-      labelEn: Data Directory
-      labelZh: 数据目录
-      label:
-        en: Data Directory
-        zh: 数据目录
-        zh-Hant: 資料目錄
-        ja: データディレクトリ
-        ko: 데이터 디렉터리
-        ru: Каталог данных
-        ms: Direktori Data
-        pt-br: Diretório de Dados
-      required: true
-      type: text

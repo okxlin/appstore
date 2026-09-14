@@ -38,7 +38,7 @@ Memgraph 核心镜像不提供最终用户管理 Web UI。`/metrics` 无数据�
 
 ## 数据、WAL、快照与升级
 
-安装表单中的数据目录会分别挂载到 `/var/lib/memgraph` 和 `/var/log/memgraph`。生命周期脚本创建 `data`、`logs` 子目录，将所有者设置为镜像用户 UID/GID `101:103`，目录权限设置为 `0750`，并将 `.env` 收紧为 `0600`。
+数据目录固定为版本目录内的 `./data`，分别挂载到 `/var/lib/memgraph` 和 `/var/log/memgraph`。生命周期脚本创建 `data`、`logs` 子目录，将所有者设置为镜像用户 UID/GID `101:103`，目录权限设置为 `0750`，并将 `.env` 收紧为 `0600`。为避免未解析的主机绑定路径，不能再通过 `APP_DATA_DIR` 指定其他目录；已有自定义目录的实例需在升级前手动迁移到版本目录内的 `./data`。
 
 官方镜像默认开启 WAL、周期快照、启动恢复和退出快照。本包默认每 300 秒创建快照，也可以通过 Cypher 执行 `CREATE SNAPSHOT`。升级前应确认快照和 WAL 正常，并备份整个数据目录；升级或重启后应验证用户、节点和索引仍可读取。
 
@@ -68,7 +68,7 @@ sudo sysctl -w vm.max_map_count=524288
 
 ## Introduction
 
-Memgraph is a high-performance graph database for real-time analytics and AI workloads. This package runs the official core image as one service, requires native database authentication, persists WAL and snapshots, and exposes Bolt, monitoring, and OpenMetrics ports. It does not bundle MAGE or integrate with a 1Panel Runtime.
+Memgraph is a high-performance graph database for real-time analytics and AI workloads. This package runs the official core image as one service, requires native database authentication, persists WAL and snapshots, and exposes Bolt, monitoring, and OpenMetrics ports. Data is stored in the version-local `./data` directory; `APP_DATA_DIR` is no longer configurable so Compose never receives an unresolved host bind path. Existing installations using a custom data directory must migrate it before upgrading. It does not bundle MAGE or integrate with a 1Panel Runtime.
 
 Memgraph Community is source-available under an amended Business Source License 1.1 with restrictions on distribution, third-party control, database-as-a-service use, and competing products. Enterprise features use the Memgraph Enterprise License. Review the upstream terms before deployment.
 
