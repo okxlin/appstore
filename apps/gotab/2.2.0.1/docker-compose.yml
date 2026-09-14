@@ -1,6 +1,6 @@
 services:
   gotab-server:
-    image: "doxwant/gotab:2.2.0.1"
+    image: "doxwant/gotab:2.2.0.1@sha256:63ba5fe753a6cb8ea989f9fc49a874cfe0bba7e3c240c38b1f985a65a13ec05e"
     container_name: ${CONTAINER_NAME}
     entrypoint:
       - /bin/sh
