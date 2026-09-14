@@ -37,6 +37,9 @@
     "kibana",
     "kibana-elasticsearch"
   ],
+  "kimai-linuxserver": [
+    "kimai"
+  ],
   "immich": [
     "immich-server"
   ],
