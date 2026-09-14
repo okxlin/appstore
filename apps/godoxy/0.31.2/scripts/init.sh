@@ -75,24 +75,14 @@ if [[ -z "$jwt_secret" || "$jwt_secret" == "generate" ]]; then
 fi
 [[ "$jwt_secret" =~ ^[A-Za-z0-9+/]{43}=$ ]] || fail "GODOXY_API_JWT_SECRET must be base64 for exactly 32 bytes"
 
-data_dir_raw="$(read_env_value APP_DATA_DIR)"
-[[ -n "$data_dir_raw" ]] || data_dir_raw="./data"
-case "$data_dir_raw" in
-  /*) fail "APP_DATA_DIR must be relative to the application version directory" ;;
-  *$'\n'* | *$'\r'* | *\\* | *'$'* | *'#'* | *'"'* | *"'") fail "APP_DATA_DIR contains unsupported characters" ;;
-esac
-data_dir="$(realpath -m -- "${ROOT_DIR}/${data_dir_raw#./}")"
-case "$data_dir" in
-  "${ROOT_DIR}"/*) ;;
-  *) fail "APP_DATA_DIR must stay inside the application version directory" ;;
-esac
-[[ ! -L "$data_dir" ]] || fail "APP_DATA_DIR must not be a symbolic link"
+data_dir="${ROOT_DIR}/data"
+[[ ! -L "$data_dir" ]] || fail "data directory must not be a symbolic link"
 
 install -d -m 0750 -- "$data_dir" "$data_dir/config" "$data_dir/logs" "$data_dir/error_pages" "$data_dir/runtime" "$data_dir/certs"
 resolved_data_dir="$(realpath -e -- "$data_dir")"
 case "$resolved_data_dir" in
   "${ROOT_DIR}"/*) ;;
-  *) fail "APP_DATA_DIR resolves outside the application version directory" ;;
+  *) fail "data directory resolves outside the application directory" ;;
 esac
 
 config_file="$data_dir/config/config.yml"
@@ -106,7 +96,7 @@ fi
 if [[ "$(id -u)" -eq 0 ]]; then
   chown -R 1000:1000 -- "$data_dir"
 else
-  [[ "$(stat -c '%u:%g' "$data_dir")" == "1000:1000" ]] || fail "GoDoxy init must run as root to prepare APP_DATA_DIR"
+  [[ "$(stat -c '%u:%g' "$data_dir")" == "1000:1000" ]] || fail "GoDoxy init must run as root to prepare the data directory"
 fi
 chmod 0750 "$data_dir" "$data_dir/config" "$data_dir/logs" "$data_dir/error_pages" "$data_dir/runtime" "$data_dir/certs"
 chmod 0640 "$config_file"

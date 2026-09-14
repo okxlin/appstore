@@ -56,11 +56,11 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
-      - "${APP_DATA_DIR}/config:/app/config"
-      - "${APP_DATA_DIR}/logs:/app/logs"
-      - "${APP_DATA_DIR}/error_pages:/app/error_pages"
-      - "${APP_DATA_DIR}/runtime:/app/data"
-      - "${APP_DATA_DIR}/certs:/app/certs"
+      - "./data/config:/app/config"
+      - "./data/logs:/app/logs"
+      - "./data/error_pages:/app/error_pages"
+      - "./data/runtime:/app/data"
+      - "./data/certs:/app/certs"
     labels:
       createdBy: "Apps"
 

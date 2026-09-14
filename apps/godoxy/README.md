@@ -16,7 +16,7 @@ GoDoxy 是一个带有内置 WebUI 的轻量级反向代理，支持 Docker 标�
 
 本应用要求设置管理员用户名和密码，并始终为会话 Cookie 启用 `Secure`。请通过 HTTPS 端口登录，或在 GoDoxy 前端使用 HTTPS 反向代理终止 TLS。HTTP 端口仍可用于不需要会话的路由。
 
-GoDoxy 的 HTTPS 监听器需要证书。首次使用前，请在 `config/config.yml` 中配置证书提供程序，或让 1Panel 网站反向代理为 WebUI 终止 TLS。
+GoDoxy 的 HTTPS 监听器需要证书。首次使用前，请在 `data/config/config.yml` 中配置证书提供程序，或让 1Panel 网站反向代理为 WebUI 终止 TLS。
 
 ## Introduction
 
@@ -34,7 +34,7 @@ Create a DNS record for the configured **WebUI Host** and open it through the co
 
 The package requires an administrator username and password and always marks its session cookie `Secure`. Sign in through the HTTPS listener or through an HTTPS reverse proxy in front of GoDoxy. The HTTP listener can still serve routes that do not require a session.
 
-GoDoxy's HTTPS listener requires a certificate. Before first login, configure a certificate provider in `config/config.yml`, or use a 1Panel website reverse proxy to terminate TLS for the WebUI.
+GoDoxy's HTTPS listener requires a certificate. Before first login, configure a certificate provider in `data/config/config.yml`, or use a 1Panel website reverse proxy to terminate TLS for the WebUI.
 
 ## Published Port Scope
 
@@ -42,7 +42,7 @@ This package publishes only `80/tcp`, `443/tcp`, and `443/udp` from the containe
 
 ## Docker Access
 
-The package uses GoDoxy's official socket proxy on a private Compose network. Its default policy permits only Docker container inspection, events, daemon information, ping, and version requests. Container start, stop, restart, create, exec, image, network, volume, and other write endpoints are disabled.
+The package uses GoDoxy's official socket proxy on a private Compose network. The proxy container mounts the host `/var/run/docker.sock` read-only, which remains a high-risk Docker host-control boundary. Its default policy permits only Docker container inspection, events, daemon information, ping, and version requests. Container start, stop, restart, create, exec, image, network, volume, archive, and other write endpoints are disabled. Keep the WebUI private and keep the host Docker Engine updated.
 
 Docker container inspection can reveal metadata and environment variables from other containers. Treat GoDoxy administrator access as privileged and do not expose the WebUI without authentication and transport protection.
 
@@ -54,4 +54,4 @@ The image snapshots retained by the fixed `0.30.1` package report three High fin
 
 ## Data
 
-Configuration, logs, certificates, generated error pages, and runtime data are stored below the configured data directory. The initialization script preserves an existing `config/config.yml` during reinstall and upgrade.
+Configuration, logs, certificates, generated error pages, and runtime data are stored below the fixed `./data` directory in the 1Panel installation instance. The initialization script preserves an existing `data/config/config.yml` during reinstall and upgrade; back up the entire `data` directory before upgrades or removal.
