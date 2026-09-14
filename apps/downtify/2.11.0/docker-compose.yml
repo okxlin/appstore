@@ -1,6 +1,6 @@
 services:
   downtify:
-    image: "ghcr.io/henriquesebastiao/downtify:2.11.0@sha256:2b3f37e872fa96705f0bb3319da5fe5cc7eba78a790c76a9d61365b05e5344c0"
+    image: "ghcr.io/henriquesebastiao/downtify:2.12.0@sha256:481394ec344d7798c2b98ecec78bd9f645f04b7818b6cc3f3a2911aacea0a2a4"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
