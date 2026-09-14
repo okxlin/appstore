@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   ungoogled-chromium:
-    image: "linuxserver/ungoogled-chromium:152.0.7977"
+    image: "linuxserver/ungoogled-chromium:153.0.8010"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
