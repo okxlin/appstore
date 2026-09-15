@@ -22,7 +22,7 @@ ClearFlask is an open source feedback management platform for collecting ideas, 
 - Provide an admin dashboard and public feedback portal
 
 ## 部署说明
-- 本应用使用官方 ClearFlask `2.3.1` server/connect 镜像，并沿用官方 self-host 依赖拓扑：MariaDB 和 LocalStack。
+- 本应用使用官方 ClearFlask `2.6.4` server/connect 镜像，并沿用官方 self-host 依赖拓扑：MariaDB 和 LocalStack。
 - 默认使用 Mailpit 作为本地测试 SMTP，方便首次安装后查看注册/登录邮件。
 - 应用分类：CRM。
 - 支持架构：amd64、arm64。
@@ -37,9 +37,9 @@ ClearFlask is an open source feedback management platform for collecting ideas, 
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
-| APP_DATA_DIR | ClearFlask 配置、密钥、MariaDB 和 LocalStack 数据目录 | ./data | 是 |
+| `./data` | ClearFlask 配置、密钥、MariaDB 和 LocalStack 数据目录（固定在应用目录内） | `./data` | 是 |
 
-升级或迁移前，请先在 1Panel 中备份上述数据目录。
+升级或迁移前，请先在 1Panel 中备份上述数据目录。旧安装如果自定义过 `APP_DATA_DIR`，请先将数据迁移到应用目录下的 `./data`；升级脚本会拒绝静默切换到空目录。
 
 ## 参数说明
 | 变量 | 说明 | 默认值 | 必填 |

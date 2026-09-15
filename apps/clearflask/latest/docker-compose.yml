@@ -50,8 +50,8 @@ services:
       - CLEARFLASK_DOMAIN=${CLEARFLASK_DOMAIN}
       - CLEARFLASK_AUTH_COOKIE_SECURE=${CLEARFLASK_AUTH_COOKIE_SECURE}
     volumes:
-      - "${APP_DATA_DIR}/connect:/opt/clearflask"
-      - "${APP_DATA_DIR}/shared:/opt/clearflask-shared"
+      - "./data/connect:/opt/clearflask"
+      - "./data/shared:/opt/clearflask-shared"
     healthcheck:
       test: ["CMD-SHELL", "node -e \"require('http').get('http://127.0.0.1:9080/', r => process.exit(r.statusCode < 500 ? 0 : 1)).on('error', () => process.exit(1))\""]
       interval: 10s
@@ -169,8 +169,8 @@ services:
       - SMTP_FROM_LOCAL_PART=${SMTP_FROM_LOCAL_PART}
       - SMTP_FROM_DOMAIN_OVERRIDE=${SMTP_FROM_DOMAIN_OVERRIDE}
     volumes:
-      - "${APP_DATA_DIR}/server:/opt/clearflask"
-      - "${APP_DATA_DIR}/shared:/opt/clearflask-shared"
+      - "./data/server:/opt/clearflask"
+      - "./data/shared:/opt/clearflask-shared"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
       interval: 10s
@@ -195,7 +195,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
-      - "${APP_DATA_DIR}/mysql:/var/lib/mysql"
+      - "./data/mysql:/var/lib/mysql"
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p\"$${MYSQL_ROOT_PASSWORD}\" --silent"]
       interval: 10s
@@ -229,7 +229,7 @@ services:
       - DATA_DIR=/tmp/localstack/data
       - LEGACY_PERSISTENCE=1
     volumes:
-      - "${APP_DATA_DIR}/localstack:/tmp/localstack"
+      - "./data/localstack:/tmp/localstack"
     labels:
       createdBy: "Apps"
 
