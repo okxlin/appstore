@@ -35,7 +35,7 @@ additionalProperties:
       child:
         default: ""
         envKey: PANEL_DB_HOST
-        required: true
+        required: false
         type: service
       values:
         - label: MariaDB
@@ -57,7 +57,6 @@ additionalProperties:
         zh: 数据库端口
         zh-Hant: 資料庫連接埠
       required: true
-      rule: paramPort
       type: number
     - default: wavelog
       edit: true

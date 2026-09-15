@@ -1,7 +1,8 @@
 services:
   elizabeth:
     image: yunique001/elizabeth:1.9.0
-    container_name: "${CONTAINER_NAME}"
+    container_name: ${CONTAINER_NAME}
+    user: "0:0"
     restart: unless-stopped
     init: true
     security_opt:

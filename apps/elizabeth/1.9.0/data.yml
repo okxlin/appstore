@@ -23,7 +23,7 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
-    - default: ElizabethJwtSecretKey2026
+    - default: ElizabethJwtSecretKey2026ChangeMe
       edit: true
       envKey: JWT_SECRET
       labelEn: "JWT Secret"

@@ -55,7 +55,7 @@ additionalProperties:
         es-es: Servicio de base de datos
         fa: سرویس پایگاه داده
         lo: ບໍລິການຖານຂໍ້ມູນ
-      required: true
+      required: false
       type: service
   - default: 3306
     edit: true
