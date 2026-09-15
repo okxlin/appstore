@@ -85,9 +85,9 @@ verify_trusted_root_chain() {
   while [[ "$current" != "/" ]]; do
     [[ -d "$current" && ! -L "$current" ]] || { echo "unsafe version root chain: $current" >&2; return 1; }
     IFS=':' read -r owner mode < <(stat -c '%u:%a' -- "$current")
-    [[ "$owner" == "0" ]] || { echo "unsafe version root chain owner: $current" >&2; return 1; }
+    [[ "$current" == "$ROOT_DIR" || "$owner" == "0" ]] || { echo "unsafe version root chain owner: $current" >&2; return 1; }
     [[ "$mode" =~ ^[0-7]{3,4}$ ]] || { echo "unsafe version root chain mode: $current" >&2; return 1; }
-    (( (8#$mode & 0022) == 0 )) || { echo "unsafe version root chain permissions: $current" >&2; return 1; }
+    (( (8#$mode & 0022) == 0 || (8#$mode & 01000) != 0 )) || { echo "unsafe version root chain permissions: $current" >&2; return 1; }
     current="$(dirname -- "$current")"
   done
 }
