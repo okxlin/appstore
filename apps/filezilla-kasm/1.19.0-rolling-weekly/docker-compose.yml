@@ -1,6 +1,6 @@
 services:
   filezilla-kasm:
-    image: "kasmweb/filezilla:1.19.0-rolling-weekly@sha256:9aec9124139afcfa61464beaff0b566ba0e08723f1afccc29651756f849ae2f7"
+    image: "kasmweb/filezilla:1.19.0-rolling-weekly@sha256:76dc4e43d5cad00bc67a2aa543dd6b60f22046f4e58741e9d66364adbca9f3a3"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
