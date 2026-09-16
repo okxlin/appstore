@@ -1,6 +1,6 @@
 services:
   chhoto-url:
-    image: "sintan1729/chhoto-url:7.5.5"
+    image: "sintan1729/chhoto-url:7.6.1"
     container_name: ${CONTAINER_NAME}
     restart: always
     tty: true
