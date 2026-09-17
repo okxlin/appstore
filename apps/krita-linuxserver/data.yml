@@ -13,12 +13,16 @@ additionalProperties:
   description:
     en: Digital painting desktop maintained by LinuxServer.io
     zh: Krita 数字绘画桌面
-    zh-Hant: Krita 數位繪畫桌面
+    zh-hant: Krita 數位繪畫桌面
     ja: LinuxServer.io が保守するデジタルペイントデスクトップ
     ko: LinuxServer.io에서 유지 관리하는 디지털 페인팅 데스크톱
     ru: Рабочий стол цифровой живописи, поддерживаемый LinuxServer.io
     ms: Desktop lukisan digital yang diselenggara oleh LinuxServer.io
     pt-br: Desktop de pintura digital mantido pela LinuxServer.io
+    tr: LinuxServer.io tarafından sürdürülen dijital çizim masaüstü
+    es-es: Escritorio de pintura digital mantenido por LinuxServer.io
+    fa: دسکتاپ نقاشی دیجیتال با نگهداری LinuxServer.io
+    lo: ຈໍເຮັດງານແຕ້ມຮູບດິຈິຕອນທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0
