@@ -1,13 +1,13 @@
 name: TrailBase
 tags:
-  - Database
+- Database
 title: 轻量级、可扩展的 SQLite 应用后端
 description: 轻量级、可扩展的 SQLite 应用后端
 additionalProperties:
   key: trailbase
   name: TrailBase
   tags:
-    - Database
+  - Database
   shortDescZh: 轻量级、可扩展的 SQLite 应用后端
   shortDescEn: Lightweight and extensible SQLite application backend
   type: website
@@ -15,16 +15,20 @@ additionalProperties:
   document: https://trailbase.io/getting-started/install/
   github: https://github.com/trailbaseio/trailbase
   architectures:
-    - amd64
-    - arm64
+  - amd64
+  - arm64
   crossVersionUpdate: true
   limit: 0
   description:
     en: Lightweight and extensible SQLite application backend.
     zh: 轻量级、可扩展的 SQLite 应用后端。
-    zh-Hant: 輕量且可擴充的 SQLite 應用程式後端。
+    zh-hant: 輕量且可擴充的 SQLite 應用程式後端。
     ja: 軽量で拡張可能な SQLite アプリケーションバックエンドです。
     ko: 가볍고 확장 가능한 SQLite 애플리케이션 백엔드입니다.
     ru: Легкий и расширяемый сервер приложений на базе SQLite.
     ms: Bahagian belakang aplikasi SQLite yang ringan dan boleh diperluas.
     pt-br: Backend de aplicativos SQLite leve e extensível.
+    tr: Hafif ve genişletilebilir SQLite uygulama arka ucu.
+    es-es: Backend de aplicaciones SQLite ligero y extensible.
+    fa: بک‌اند برنامهٔ سبک و قابل توسعه مبتنی بر SQLite.
+    lo: ແບັກເອັນຂອງແອັບພລິເຄຊັນ SQLite ທີ່ເບົາແລະຂະຫຍາຍໄດ້.
