@@ -1,6 +1,6 @@
 services:
   trail:
-    image: "trailbase/trailbase:0.33.18@sha256:c9f107d6d3544646b6f847291f59d3cf4ceb83ab6d685f171c6d83081ab997fa"
+    image: "trailbase/trailbase:0.33.19@sha256:36f8cb953e48dcc5d69438edcc530496848b85a2eceb577f62fb6d75412580d5"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     ports:
