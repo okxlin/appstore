@@ -31,6 +31,16 @@ This is ServerKit's containerized deployment. The package does not mount the Doc
 
 The SQLite database is persisted at `data/serverkit.db` in the application install directory and bind-mounted to `/app/instance`. This keeps the data under the 1Panel application directory for application backups. Do not remove this directory unless the ServerKit data can be discarded. When upgrading from the legacy `serverkit-data` volume, the target version migrates the SQLite files when the new directory is empty; the legacy volume is retained and is not deleted automatically.
 
+## Security notice
+
+The maintainer scanned each packaged `serverkit` image tag with Trivy; each report contains Critical=5, High=77, Total=82 (both tags resolve to the same image content). These findings originate from the upstream image and its base-system components and are not remediated by this package. Prefer trusted private networks and monitor upstream image updates.
+
+High-risk examples:
+
+- Critical `CVE-2025-7458` (`libsqlite3-0`): no fix is currently available.
+- Critical `CVE-2026-13221`, `CVE-2026-42496`, and `CVE-2026-8376` (`perl-base`): no fix is currently available.
+- Critical `CVE-2023-45853` (`zlib1g`): no fix is currently available.
+
 ## Versions
 
 Both `latest` and the pinned `1.11.4` release are available. They use the upstream Docker Hub image and support amd64 and arm64.

@@ -31,6 +31,16 @@ ServerKit 是一个自托管的远程服务器管理与运维面板，提供服�
 
 SQLite 数据库持久化在应用安装目录的 `data/serverkit.db`，并以 bind mount 映射到容器内的 `/app/instance`。该目录位于 1Panel 应用目录中，便于随应用数据一起备份。不要删除该目录，否则会丢失 ServerKit 数据。由旧版 `serverkit-data` 卷升级时，目标版本会在新目录为空时自动迁移 SQLite 文件；旧卷会保留，不会自动删除。
 
+## 安全提示
+
+维护侧使用 Trivy 对 `serverkit` 的每个版本镜像进行了漏洞扫描；当前每个扫描报告包含 Critical=5、High=77、Total=82（两个版本标签解析到相同镜像内容）。这些风险来自上游镜像及其基础系统组件，本应用包未对其进行修复。请优先在可信内网中使用，并关注上游镜像更新。
+
+高风险示例：
+
+- Critical `CVE-2025-7458`（`libsqlite3-0`）：当前暂无修复版本。
+- Critical `CVE-2026-13221`、`CVE-2026-42496`、`CVE-2026-8376`（`perl-base`）：当前暂无修复版本。
+- Critical `CVE-2023-45853`（`zlib1g`）：当前暂无修复版本。
+
 ## 版本
 
 应用同时提供 `latest` 和固定版本 `1.11.4`，两者均来自上游 Docker Hub 发布镜像，并支持 amd64 与 arm64。
