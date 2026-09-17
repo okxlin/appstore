@@ -24,10 +24,14 @@ additionalProperties:
   description:
     en: Open-source feature flag and remote configuration platform
     zh: 开源功能标志和远程配置平台
-    zh-Hant: 開源功能旗標與遠端設定平台
+    zh-hant: 開源功能旗標與遠端設定平台
     ja: オープンソースの機能フラグおよびリモート設定プラットフォーム
     ko: 오픈 소스 기능 플래그 및 원격 구성 플랫폼
     ru: Платформа с открытым исходным кодом для флагов функций и удаленной конфигурации
     ms: Platform sumber terbuka untuk bendera ciri dan konfigurasi jauh
     pt-br: Plataforma de codigo aberto para sinalizadores de recursos e configuracao
       remota
+    tr: Açık kaynaklı özellik bayrağı ve uzak yapılandırma platformu
+    es-es: Plataforma de código abierto para indicadores de funciones y configuración remota
+    fa: پلتفرم متن‌باز پرچم‌گذاری ویژگی‌ها و پیکربندی از راه دور
+    lo: ແພລດຟອມແບບເປີດສຳລັບທຸງຄຸນສົມບັດ ແລະການກຳນົດຄ່າໄລຍະໄກ
