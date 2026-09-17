@@ -1,0 +1,171 @@
+additionalProperties:
+  formFields:
+  - default: 5000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP port
+      zh: HTTP 端口
+      zh-hant: HTTP 埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: Порт HTTP
+      ms: Port HTTP
+      pt-br: Porta HTTP
+      tr: HTTP bağlantı noktası
+      es-es: Puerto HTTP
+      fa: پورت HTTP
+      lo: ພອດ HTTP
+    required: true
+    rule: paramPort
+    type: number
+  - default: ''
+    edit: true
+    envKey: SECRET_KEY
+    labelEn: Flask secret key (unique hex value)
+    labelZh: Flask 密钥（请填写唯一的十六进制值）
+    label:
+      en: Flask secret key (unique hex value)
+      zh: Flask 密钥（请填写唯一的十六进制值）
+      zh-hant: Flask 金鑰（請填寫唯一的十六進位值）
+      ja: Flask シークレットキー（固有の 16 進数値）
+      ko: Flask 비밀 키(고유한 16진수 값)
+      ru: Секретный ключ Flask (уникальное шестнадцатеричное значение)
+      ms: Kunci rahsia Flask (nilai heks unik)
+      pt-br: Chave secreta do Flask (valor hexadecimal exclusivo)
+      tr: Flask gizli anahtarı (benzersiz onaltılık değer)
+      es-es: Clave secreta de Flask (valor hexadecimal único)
+      fa: کلید مخفی Flask (مقدار هگزادسیمال یکتا)
+      lo: ຄີລັບ Flask (ຄ່າເລກຖານ 16 ທີ່ບໍ່ຊ້ຳກັນ)
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ''
+    edit: true
+    envKey: JWT_SECRET_KEY
+    labelEn: JWT secret key (unique hex value)
+    labelZh: JWT 密钥（请填写唯一的十六进制值）
+    label:
+      en: JWT secret key (unique hex value)
+      zh: JWT 密钥（请填写唯一的十六进制值）
+      zh-hant: JWT 金鑰（請填寫唯一的十六進位值）
+      ja: JWT シークレットキー（固有の 16 進数値）
+      ko: JWT 비밀 키(고유한 16진수 값)
+      ru: Секретный ключ JWT (уникальное шестнадцатеричное значение)
+      ms: Kunci rahsia JWT (nilai heks unik)
+      pt-br: Chave secreta JWT (valor hexadecimal exclusivo)
+      tr: JWT gizli anahtarı (benzersiz onaltılık değer)
+      es-es: Clave secreta JWT (valor hexadecimal único)
+      fa: کلید مخفی JWT (مقدار هگزادسیمال یکتا)
+      lo: ຄີລັບ JWT (ຄ່າເລກຖານ 16 ທີ່ບໍ່ຊ້ຳກັນ)
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: ''
+    edit: true
+    envKey: SERVERKIT_ENCRYPTION_KEY
+    labelEn: Fernet encryption key (44-character value ending in =)
+    labelZh: Fernet 加密密钥（44 位且以 = 结尾）
+    label:
+      en: Fernet encryption key (44-character value ending in =)
+      zh: Fernet 加密密钥（44 位且以 = 结尾）
+      zh-hant: Fernet 加密金鑰（44 位且以 = 結尾）
+      ja: Fernet 暗号化キー（= で終わる 44 文字の値）
+      ko: Fernet 암호화 키(=로 끝나는 44자 값)
+      ru: Ключ шифрования Fernet (44 символа с окончанием =)
+      ms: Kunci penyulitan Fernet (44 aksara dan berakhir dengan =)
+      pt-br: Chave de criptografia Fernet (44 caracteres terminados em =)
+      tr: Fernet şifreleme anahtarı (= ile biten 44 karakterlik değer)
+      es-es: Clave de cifrado Fernet (valor de 44 caracteres terminado en =)
+      fa: کلید رمزنگاری Fernet (مقدار ۴۴ کاراکتری که با = تمام می‌شود)
+      lo: ຄີເຂົ້າລະຫັດ Fernet (ຄ່າ 44 ຕົວອັກສອນທີ່ລົງທ້າຍດ້ວຍ =)
+    required: true
+    type: password
+  - default: http://localhost
+    edit: true
+    envKey: CORS_ORIGINS
+    labelEn: Allowed browser origins (comma-separated)
+    labelZh: 允许的浏览器来源（多个来源用逗号分隔）
+    label:
+      en: Allowed browser origins (comma-separated)
+      zh: 允许的浏览器来源（多个来源用逗号分隔）
+      zh-hant: 允許的瀏覽器來源（多個來源以逗號分隔）
+      ja: 許可するブラウザーオリジン（カンマ区切り）
+      ko: 허용된 브라우저 오리진(쉼표로 구분)
+      ru: Разрешённые источники браузера (через запятую)
+      ms: Asal pelayar yang dibenarkan (dipisahkan koma)
+      pt-br: Origens de navegador permitidas (separadas por vírgula)
+      tr: İzin verilen tarayıcı kaynakları (virgülle ayrılmış)
+      es-es: Orígenes de navegador permitidos (separados por comas)
+      fa: مبدأهای مجاز مرورگر (با ویرگول جدا شوند)
+      lo: ແຫຼ່ງທີ່ມາຂອງບຣາວເຊີທີ່ອະນຸຍາດ (ຄັ່ນດ້ວຍຈຸນ)
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: SERVERKIT_PUBLIC_URL
+    labelEn: Public URL (optional, for reverse proxy and agents)
+    labelZh: 公网 URL（可选，用于反向代理和远程代理）
+    label:
+      en: Public URL (optional, for reverse proxy and agents)
+      zh: 公网 URL（可选，用于反向代理和远程代理）
+      zh-hant: 公開 URL（選填，用於反向代理與遠端代理）
+      ja: パブリック URL（任意、リバースプロキシとエージェント用）
+      ko: 공용 URL(선택 사항, 역방향 프록시 및 에이전트용)
+      ru: Публичный URL (необязательно, для обратного прокси и агентов)
+      ms: URL awam (pilihan, untuk proksi terbalik dan ejen)
+      pt-br: URL público (opcional, para proxy reverso e agentes)
+      tr: Genel URL (isteğe bağlı, ters proxy ve aracılar için)
+      es-es: URL público (opcional, para proxy inverso y agentes)
+      fa: نشانی عمومی (اختیاری، برای پراکسی معکوس و عامل‌ها)
+      lo: URL ສາທາລະນະ (ທາງເລືອກ, ສຳລັບ reverse proxy ແລະ agent)
+    required: false
+    rule: paramExtUrl
+    type: text
+  - default: 'false'
+    edit: true
+    envKey: TRUST_PROXY_HEADERS
+    labelEn: Trust reverse-proxy headers
+    labelZh: 信任反向代理请求头
+    label:
+      en: Trust reverse-proxy headers
+      zh: 信任反向代理请求头
+      zh-hant: 信任反向代理標頭
+      ja: リバースプロキシヘッダーを信頼
+      ko: 역방향 프록시 헤더 신뢰
+      ru: Доверять заголовкам обратного прокси
+      ms: Percayai pengepala proksi terbalik
+      pt-br: Confiar nos cabeçalhos do proxy reverso
+      tr: Ters proxy başlıklarına güven
+      es-es: Confiar en las cabeceras del proxy inverso
+      fa: اعتماد به سرخط‌های پراکسی معکوس
+      lo: ເຊື່ອຖື header ຂອງ reverse proxy
+    required: true
+    type: select
+    values:
+    - label: Direct access
+      value: 'false'
+    - label: Behind a trusted reverse proxy
+      value: 'true'
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    required: true
+    type: text
