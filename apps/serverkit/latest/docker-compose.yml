@@ -1,0 +1,44 @@
+services:
+  serverkit:
+    image: "jhd3197/serverkit:latest"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5000"
+    environment:
+      - "TZ=${TZ}"
+      - "DATABASE_URL=sqlite:////app/instance/serverkit.db"
+      - "FLASK_ENV=production"
+      - "SECRET_KEY=${SECRET_KEY}"
+      - "JWT_SECRET_KEY=${JWT_SECRET_KEY}"
+      - "SERVERKIT_ENCRYPTION_KEY=${SERVERKIT_ENCRYPTION_KEY}"
+      - "CORS_ORIGINS=${CORS_ORIGINS}"
+      - "SERVERKIT_PUBLIC_URL=${SERVERKIT_PUBLIC_URL:-}"
+      - "TRUST_PROXY_HEADERS=${TRUST_PROXY_HEADERS}"
+      - "TRUSTED_PROXY_HOPS=1"
+      - "SERVERKIT_GITHUB_REPO=jhd3197/ServerKit"
+    volumes:
+      - "serverkit-data:/app/instance"
+    networks:
+      - "1panel-network"
+    labels:
+      createdBy: "Apps"
+    restart: "unless-stopped"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f \"http://127.0.0.1:5000/api/v1/system/health\" || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  serverkit-data:
+    name: serverkit-data
+
+networks:
+  1panel-network:
+    external: true

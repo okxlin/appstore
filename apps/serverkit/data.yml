@@ -1,0 +1,36 @@
+name: ServerKit
+tags:
+- Server
+title: 远程服务器管理与运维面板
+description: 远程服务器管理与运维面板
+additionalProperties:
+  key: serverkit
+  name: ServerKit
+  tags:
+  - Server
+  shortDescZh: 远程服务器管理与运维面板
+  shortDescEn: Remote server management and operations panel
+  description:
+    en: A self-hosted panel for remote server management, fleet operations, and deployments.
+    zh: 面向远程服务器管理、集群运维与部署的自托管面板。
+    zh-hant: 用於遠端伺服器管理、叢集維運與部署的自託管面板。
+    ja: リモートサーバー管理、フリート運用、デプロイに対応したセルフホスト型パネル。
+    ko: 원격 서버 관리, 플릿 운영 및 배포를 위한 셀프 호스팅 패널입니다.
+    ru: Самостоятельно размещаемая панель для управления удалёнными серверами, парком
+      и развёртываниями.
+    ms: Panel kendiri untuk pengurusan pelayan jauh, operasi armada dan penggunaan.
+    pt-br: Painel auto-hospedado para gerenciar servidores remotos, frotas e implantações.
+    tr: Uzak sunucu yönetimi, filo operasyonları ve dağıtımlar için kendi kendine
+      barındırılan panel.
+    es-es: Panel autoalojado para gestionar servidores remotos, flotas y despliegues.
+    fa: پنل خودمیزبان برای مدیریت سرورهای راه دور، ناوگان و استقرارها.
+    lo: ແຜງຄວບຄຸມແບບໂຮສຕ໌ເອງສຳລັບຈັດການເຊີບເວີລະໄກ, ຟລີດ ແລະການນຳໃຊ້.
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  website: https://github.com/jhd3197/ServerKit
+  github: https://github.com/jhd3197/ServerKit
+  document: https://github.com/jhd3197/ServerKit/blob/v1.11.4/docs/INSTALLATION.md#quick-install-docker
+  architectures:
+  - amd64
+  - arm64
