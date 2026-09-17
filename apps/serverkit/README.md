@@ -29,7 +29,7 @@ ServerKit 是一个自托管的远程服务器管理与运维面板，提供服�
 3. 通过安装时配置的 HTTP 端口打开 ServerKit。首次打开时使用注册页面创建第一个用户；第一个用户会被授予管理员角色。
 4. 如果使用反向代理，请填写 `SERVERKIT_PUBLIC_URL`，并仅在请求一定经过可信反向代理时将 `TRUST_PROXY_HEADERS` 设为 `true`。需要同时允许多个浏览器来源时，在 `CORS_ORIGINS` 中用逗号分隔填写。
 
-SQLite 数据库持久化在应用安装目录的 `data/serverkit.db`，并以 bind mount 映射到容器内的 `/app/instance`。该目录位于 1Panel 应用目录中，便于随应用数据一起备份。不要删除该目录，否则会丢失 ServerKit 数据。
+SQLite 数据库持久化在应用安装目录的 `data/serverkit.db`，并以 bind mount 映射到容器内的 `/app/instance`。该目录位于 1Panel 应用目录中，便于随应用数据一起备份。不要删除该目录，否则会丢失 ServerKit 数据。由旧版 `serverkit-data` 卷升级时，目标版本会在新目录为空时自动迁移 SQLite 文件；旧卷会保留，不会自动删除。
 
 ## 版本
 

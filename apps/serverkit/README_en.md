@@ -29,7 +29,7 @@ This is ServerKit's containerized deployment. The package does not mount the Doc
 3. Open ServerKit on the configured HTTP port. On the first visit, use the registration page to create the first user; the first user is given the administrator role.
 4. When using a reverse proxy, set `SERVERKIT_PUBLIC_URL`. Set `TRUST_PROXY_HEADERS` to `true` only when every request is guaranteed to pass through a trusted proxy. Add multiple browser origins as a comma-separated `CORS_ORIGINS` value.
 
-The SQLite database is persisted at `data/serverkit.db` in the application install directory and bind-mounted to `/app/instance`. This keeps the data under the 1Panel application directory for application backups. Do not remove this directory unless the ServerKit data can be discarded.
+The SQLite database is persisted at `data/serverkit.db` in the application install directory and bind-mounted to `/app/instance`. This keeps the data under the 1Panel application directory for application backups. Do not remove this directory unless the ServerKit data can be discarded. When upgrading from the legacy `serverkit-data` volume, the target version migrates the SQLite files when the new directory is empty; the legacy volume is retained and is not deleted automatically.
 
 ## Versions
 
