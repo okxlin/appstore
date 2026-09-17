@@ -17,7 +17,7 @@ services:
       - "TRUSTED_PROXY_HOPS=1"
       - "SERVERKIT_GITHUB_REPO=jhd3197/ServerKit"
     volumes:
-      - "serverkit-data:/app/instance"
+      - "./data:/app/instance"
     networks:
       - "1panel-network"
     labels:
@@ -34,10 +34,6 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
-volumes:
-  serverkit-data:
-    name: serverkit-data
 
 networks:
   1panel-network:
