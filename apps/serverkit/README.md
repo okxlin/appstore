@@ -29,7 +29,17 @@ ServerKit 是一个自托管的远程服务器管理与运维面板，提供服�
 3. 通过安装时配置的 HTTP 端口打开 ServerKit。首次打开时使用注册页面创建第一个用户；第一个用户会被授予管理员角色。
 4. 如果使用反向代理，请填写 `SERVERKIT_PUBLIC_URL`，并仅在请求一定经过可信反向代理时将 `TRUST_PROXY_HEADERS` 设为 `true`。需要同时允许多个浏览器来源时，在 `CORS_ORIGINS` 中用逗号分隔填写。
 
-SQLite 数据库持久化在 `serverkit-data` 卷的 `/app/instance/serverkit.db`。不要删除该卷，否则会丢失 ServerKit 数据。
+SQLite 数据库持久化在应用安装目录的 `data/serverkit.db`，并以 bind mount 映射到容器内的 `/app/instance`。该目录位于 1Panel 应用目录中，便于随应用数据一起备份。不要删除该目录，否则会丢失 ServerKit 数据。由旧版 `serverkit-data` 卷升级时，目标版本会在新目录为空时自动迁移 SQLite 文件；旧卷会保留，不会自动删除。
+
+## 安全提示
+
+维护侧使用 Trivy 对 `serverkit` 的每个版本镜像进行了漏洞扫描；当前每个扫描报告包含 Critical=5、High=77、Total=82（两个版本标签解析到相同镜像内容）。这些风险来自上游镜像及其基础系统组件，本应用包未对其进行修复。请优先在可信内网中使用，并关注上游镜像更新。
+
+高风险示例：
+
+- Critical `CVE-2025-7458`（`libsqlite3-0`）：当前暂无修复版本。
+- Critical `CVE-2026-13221`、`CVE-2026-42496`、`CVE-2026-8376`（`perl-base`）：当前暂无修复版本。
+- Critical `CVE-2023-45853`（`zlib1g`）：当前暂无修复版本。
 
 ## 版本
 
