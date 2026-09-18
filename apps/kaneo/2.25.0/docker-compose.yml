@@ -30,7 +30,7 @@ services:
       createdBy: "Apps"
 
   kaneo:
-    image: ghcr.io/usekaneo/kaneo:2.24.0@sha256:1f1fc35e45da5dd4a991ce741e2492510068449db3e37b8e06a4de13a91bce2a
+    image: ghcr.io/usekaneo/kaneo:2.25.0@sha256:a85a23996c36166cfcebcb4ee161b40cc62c7b924faf06353684a84d5e84162c
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1001:1001"
