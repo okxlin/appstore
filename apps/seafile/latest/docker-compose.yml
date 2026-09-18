@@ -42,7 +42,7 @@ services:
           mv /opt/seafile/seafile-server-13.0.25/pro /opt/seafile/seafile-server-13.0.25/pro.disabled
         fi
         exec /sbin/my_init -- /scripts/enterpoint.sh
-    image: seafileltd/seafile-mc:13.0.25
+    image: seafileltd/seafile-mc:13.0.28
     labels:  
       createdBy: "Apps"
 
