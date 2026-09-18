@@ -21,9 +21,14 @@ additionalProperties:
   description:
     en: Lightweight database manager supporting 25+ databases
     zh: 轻量级数据库管理工具，支持 25+ 种数据库
-    zh-Hant: 輕量級資料庫管理工具，支援 25 種以上資料庫
+    zh-hant: 輕量級資料庫管理工具，支援 25 種以上資料庫
     ja: 25 種類以上のデータベースに対応した軽量データベース管理ツール
     ko: 25개 이상의 데이터베이스를 지원하는 경량 데이터베이스 관리 도구
     ru: Легкий менеджер баз данных с поддержкой более 25 баз данных
-    ms: Pengurus pangkalan data ringan yang menyokong lebih daripada 25 pangkalan data
+    ms: Pengurus pangkalan data ringan yang menyokong lebih daripada 25 pangkalan
+      data
     pt-br: Gerenciador de banco de dados leve com suporte a mais de 25 bancos de dados
+    tr: 25'ten fazla veritabanını destekleyen hafif veritabanı yöneticisi
+    es-es: Gestor de bases de datos ligero compatible con más de 25 bases de datos
+    fa: مدیر پایگاه‌دادهٔ سبک با پشتیبانی از بیش از ۲۵ پایگاه‌داده
+    lo: ຕົວຈັດການຖານຂໍ້ມູນຂະໜາດເບົາທີ່ຮອງຮັບຫຼາຍກວ່າ 25 ຖານຂໍ້ມູນ

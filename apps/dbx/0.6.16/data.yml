@@ -8,12 +8,16 @@ additionalProperties:
     label:
       zh: 端口
       en: Port
-      zh-Hant: 連接埠
+      zh-hant: 連接埠
       ja: ポート
       ko: 포트
       ru: Порт
       ms: Port
       pt-br: Porta
+      tr: Bağlantı noktası
+      es-es: Puerto
+      fa: درگاه
+      lo: ພອດ
     required: true
     rule: paramPort
     type: number
@@ -25,12 +29,16 @@ additionalProperties:
     label:
       zh: 访问密码
       en: Access Password
-      zh-Hant: 存取密碼
+      zh-hant: 存取密碼
       ja: アクセスパスワード
       ko: 접속 비밀번호
       ru: Пароль доступа
       ms: Kata Laluan Akses
       pt-br: Senha de acesso
+      tr: Erişim parolası
+      es-es: Contraseña de acceso
+      fa: گذرواژه دسترسی
+      lo: ລະຫັດຜ່ານເຂົ້າໃຊ້ງານ
     required: true
     rule: paramComplexity
     type: password
@@ -43,11 +51,15 @@ additionalProperties:
     label:
       en: Timezone
       zh: 时区
-      zh-Hant: 時區
+      zh-hant: 時區
       ja: タイムゾーン
       ko: 시간대
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
