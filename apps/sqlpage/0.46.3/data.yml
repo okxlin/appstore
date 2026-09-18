@@ -8,12 +8,16 @@ additionalProperties:
     label:
       en: Bind Address
       zh: 绑定地址
-      zh-Hant: 綁定位址
+      zh-hant: 綁定位址
       ja: バインドアドレス
       ko: 바인드 주소
       ru: Адрес привязки
       ms: Alamat ikatan
       pt-br: Endereco de vinculacao
+      tr: Bağlama adresi
+      es-es: Dirección de enlace
+      fa: نشانی اتصال
+      lo: ທີ່ຢູ່ສຳລັບຜູກ
     required: true
     type: text
   - default: 8080
@@ -24,12 +28,16 @@ additionalProperties:
     label:
       en: HTTP Port
       zh: HTTP 端口
-      zh-Hant: HTTP 埠
+      zh-hant: HTTP 埠
       ja: HTTP ポート
       ko: HTTP 포트
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: Puerto HTTP
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     rule: paramPort
     type: number
@@ -41,12 +49,16 @@ additionalProperties:
     label:
       en: Runtime Environment
       zh: 运行环境
-      zh-Hant: 執行環境
+      zh-hant: 執行環境
       ja: 実行環境
       ko: 실행 환경
       ru: Среда выполнения
       ms: Persekitaran masa jalan
       pt-br: Ambiente de execucao
+      tr: Çalışma ortamı
+      es-es: Entorno de ejecución
+      fa: محیط اجرا
+      lo: ສະພາບແວດລ້ອມການໃຊ້ງານ
     required: true
     type: select
     values:
@@ -62,12 +74,16 @@ additionalProperties:
     label:
       en: Log Level
       zh: 日志级别
-      zh-Hant: 日誌級別
+      zh-hant: 日誌級別
       ja: ログレベル
       ko: 로그 수준
       ru: Уровень журнала
       ms: Tahap log
       pt-br: Nivel de log
+      tr: Günlük düzeyi
+      es-es: Nivel de registro
+      fa: سطح گزارش
+      lo: ລະດັບບັນທຶກ
     required: true
     type: select
     values:
@@ -87,12 +103,16 @@ additionalProperties:
     label:
       en: Compress Responses
       zh: 压缩响应
-      zh-Hant: 壓縮回應
+      zh-hant: 壓縮回應
       ja: レスポンスを圧縮
       ko: 응답 압축
       ru: Сжатие ответов
       ms: Mampatkan respons
       pt-br: Compactar respostas
+      tr: Yanıtları sıkıştır
+      es-es: Comprimir respuestas
+      fa: فشرده‌سازی پاسخ‌ها
+      lo: ບີບອັດຄຳຕອບ
     required: true
     type: select
     values:
@@ -108,12 +128,16 @@ additionalProperties:
     label:
       en: Maximum Upload Size (bytes)
       zh: 最大上传大小（字节）
-      zh-Hant: 最大上傳大小（位元組）
+      zh-hant: 最大上傳大小（位元組）
       ja: 最大アップロードサイズ（バイト）
       ko: 최대 업로드 크기(바이트)
       ru: Максимальный размер загрузки (байт)
       ms: Saiz muat naik maksimum (bait)
       pt-br: Tamanho maximo de upload (bytes)
+      tr: Maksimum yükleme boyutu (bayt)
+      es-es: Tamaño máximo de carga (bytes)
+      fa: حداکثر اندازه بارگذاری (بایت)
+      lo: ຂະໜາດອັບໂຫຼດສູງສຸດ (ໄບຕ໌)
     required: true
     type: number
   - default: ./data
@@ -124,12 +148,16 @@ additionalProperties:
     label:
       en: Website Data Directory
       zh: 网站数据目录
-      zh-Hant: 網站資料目錄
+      zh-hant: 網站資料目錄
       ja: Web サイトデータディレクトリ
       ko: 웹사이트 데이터 디렉터리
       ru: Каталог данных сайта
       ms: Direktori data laman web
       pt-br: Diretorio de dados do site
+      tr: Web sitesi veri dizini
+      es-es: Directorio de datos del sitio web
+      fa: شاخه داده‌های وب‌سایت
+      lo: ໄດເຣັກທໍຣີຂໍ້ມູນເວັບໄຊ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -140,11 +168,15 @@ additionalProperties:
     label:
       en: Timezone
       zh: 时区
-      zh-Hant: 時區
+      zh-hant: 時區
       ja: タイムゾーン
       ko: 시간대
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
