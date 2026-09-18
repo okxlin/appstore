@@ -103,7 +103,7 @@ services:
       createdBy: "Apps"
 
   firecrawl-rabbitmq:
-    image: "rabbitmq:3-management@sha256:e582c0bc7766f3342496d8485efb5a1df782b5ce3886ad017e2eaae442311f69"
+    image: "rabbitmq:4-management@sha256:612ebf172397edbd30a5908a4ea27abc43e01e815f0eb9a222811ae338195c55"
     container_name: ${CONTAINER_NAME}-rabbitmq
     restart: always
     networks:
