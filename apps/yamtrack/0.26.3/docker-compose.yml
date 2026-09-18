@@ -34,7 +34,7 @@ services:
       createdBy: "Apps"
 
   yamtrack-redis:
-    image: "redis:8-alpine@sha256:8096655e437712b07503796fb64d81359256cfcff0ab29d95a7da72863786efb"
+    image: "redis:8-alpine@sha256:7d509f5640f5ed199d8781b5f5a45050133efe700aed34491f0b060665066d76"
     container_name: ${CONTAINER_NAME}-redis
     restart: unless-stopped
     networks:
