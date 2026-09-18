@@ -73,9 +73,6 @@ services:
       - no-new-privileges:true
     cap_drop:
       - ALL
-    cpus: 2.0
-    mem_limit: 4G
-    memswap_limit: 4G
     tmpfs:
       - /tmp/.cache:noexec,nosuid,size=1g
     logging:
