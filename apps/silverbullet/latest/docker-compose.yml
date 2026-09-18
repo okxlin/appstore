@@ -1,6 +1,6 @@
 services:
   silverbullet:
-    image: "ghcr.io/silverbulletmd/silverbullet:latest"
+    image: "ghcr.io/silverbulletmd/silverbullet:latest@sha256:535efe0a5d97587593edd88dfd7b2523f7c3a11482aa5c75887cce64f741acfc"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
