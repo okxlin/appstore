@@ -46,7 +46,7 @@ services:
       createdBy: "Apps"
 
   asciinema-postgres:
-    image: "postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193"
+    image: "postgres:17-alpine@sha256:9beea1b7f176d67e49e23092c63db9e98db32b303ce1b510749379ef46a3dcdd"
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
