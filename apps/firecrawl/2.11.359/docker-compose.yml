@@ -1,0 +1,160 @@
+services:
+  firecrawl:
+    image: "ghcr.io/firecrawl/firecrawl@sha256:87ebe1dc85b02e3d32ffc1daedb11bb863a6224d8f18548217eee1a58a4227ab"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+      - firecrawl-backend
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3002"
+    environment:
+      - REDIS_URL=redis://firecrawl-redis:6379
+      - REDIS_RATE_LIMIT_URL=redis://firecrawl-redis:6379
+      - PLAYWRIGHT_MICROSERVICE_URL=http://firecrawl-playwright:3000/scrape
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=postgres
+      - POSTGRES_HOST=firecrawl-postgres
+      - POSTGRES_PORT=5432
+      - USE_DB_AUTHENTICATION=false
+      - NUM_WORKERS_PER_QUEUE=${NUM_WORKERS_PER_QUEUE}
+      - CRAWL_CONCURRENT_REQUESTS=${CRAWL_CONCURRENT_REQUESTS}
+      - MAX_CONCURRENT_JOBS=${MAX_CONCURRENT_JOBS}
+      - BROWSER_POOL_SIZE=${BROWSER_POOL_SIZE}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL:-}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-}
+      - NUQ_BACKEND=pg
+      - HOST=0.0.0.0
+      - PORT=3002
+      - EXTRACT_WORKER_PORT=3004
+      - WORKER_PORT=3005
+      - NUQ_RABBITMQ_URL=amqp://firecrawl-rabbitmq:5672
+      - HARNESS_STARTUP_TIMEOUT_MS=60000
+      - ENV=local
+    depends_on:
+      firecrawl-redis:
+        condition: service_started
+      firecrawl-playwright:
+        condition: service_started
+      firecrawl-rabbitmq:
+        condition: service_healthy
+      firecrawl-postgres:
+        condition: service_healthy
+    command: ["node", "dist/src/harness.js", "--start-docker"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+    labels:
+      createdBy: "Apps"
+
+  firecrawl-playwright:
+    image: "ghcr.io/firecrawl/playwright-service@sha256:df1a393ce8bfc3801570a826a9b0dcc400ae48789adb4a0ad9d6cbf0229b059b"
+    container_name: ${CONTAINER_NAME}-playwright
+    restart: always
+    networks:
+      - firecrawl-backend
+    environment:
+      - PORT=3000
+      - ALLOW_LOCAL_WEBHOOKS=false
+      - BLOCK_MEDIA=false
+      - MAX_CONCURRENT_PAGES=${CRAWL_CONCURRENT_REQUESTS}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp/.cache:noexec,nosuid,size=1g
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+    labels:
+      createdBy: "Apps"
+
+  firecrawl-redis:
+    image: "redis:alpine@sha256:becdda6c7f4b3fb42e42fd7f120bbf5c54c4caaaf16f26da24e4563d2c1f0576"
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    networks:
+      - firecrawl-backend
+    command: ["redis-server", "--bind", "0.0.0.0"]
+    volumes:
+      - ./data/redis:/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+        compress: "true"
+    labels:
+      createdBy: "Apps"
+
+  firecrawl-rabbitmq:
+    image: "rabbitmq:3-management@sha256:e582c0bc7766f3342496d8485efb5a1df782b5ce3886ad017e2eaae442311f69"
+    container_name: ${CONTAINER_NAME}-rabbitmq
+    restart: always
+    networks:
+      - firecrawl-backend
+    command: ["rabbitmq-server"]
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_running"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "2"
+        compress: "true"
+    labels:
+      createdBy: "Apps"
+
+  firecrawl-postgres:
+    image: "ghcr.io/firecrawl/nuq-postgres@sha256:9b638af78d99873bc0ba2b57c9cbcd01df6ce96efeaa72d36cfbe0f76521e8fc"
+    container_name: ${CONTAINER_NAME}-postgres
+    restart: always
+    networks:
+      - firecrawl-backend
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+        compress: "true"
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+  firecrawl-backend:
+    driver: bridge

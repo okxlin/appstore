@@ -1,0 +1,35 @@
+name: Firecrawl
+tags:
+  - AI
+title: 开源网页数据提取 API
+description: 开源网页数据提取 API
+additionalProperties:
+  key: firecrawl
+  name: Firecrawl
+  tags:
+    - AI
+  shortDescZh: 开源网页抓取、搜索和内容提取 API
+  shortDescEn: Open-source API for web scraping, search, and content extraction
+  description:
+    en: Open-source API for web scraping, search, and content extraction
+    zh: 开源网页抓取、搜索和内容提取 API
+    zh-hant: 開源網頁抓取、搜尋和內容提取 API
+    ja: オープンソースのウェブスクレイピング・検索・コンテンツ抽出 API
+    ko: 오픈 소스 웹 스크래핑, 검색 및 콘텐츠 추출 API
+    ru: API с открытым исходным кодом для веб-скрейпинга, поиска и извлечения контента
+    ms: API sumber terbuka untuk pengikisan web, carian dan pengekstrakan kandungan
+    pt-br: API de código terbuka para raspagem, pesquisa e extração de conteúdo web
+    tr: Web kazıma, arama ve içerik çıkarma için açık kaynaklı API
+    es-es: API de código abierto para scraping web, búsqueda y extracción de contenido
+    fa: API متن‌باز برای خزش وب، جست‌وجو و استخراج محتوا
+    lo: API ໂອເພັນຊອດສຳລັບການດຶງຂໍ້ມູນເວັບ, ການຄົ້ນຫາ ແລະ ການສະກັດເນື້ອຫາ
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://firecrawl.dev
+  github: https://github.com/firecrawl/firecrawl
+  document: https://github.com/firecrawl/firecrawl/blob/v2.11.359/SELF_HOST.md
+  architectures:
+    - amd64
+    - arm64
