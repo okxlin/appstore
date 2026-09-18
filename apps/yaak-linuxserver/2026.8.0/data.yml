@@ -8,12 +8,16 @@ additionalProperties:
     label:
       en: HTTP Port
       zh: HTTP 端口
-      zh-Hant: HTTP 連接埠
+      zh-hant: HTTP 連接埠
       ja: HTTP ポート
       ko: HTTP 포트
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: HTTP bağlantı noktası
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     type: number
     rule: paramPort
@@ -25,12 +29,16 @@ additionalProperties:
     label:
       en: Https Port
       zh: Https 端口
-      zh-Hant: Https 連接埠
+      zh-hant: Https 連接埠
       ja: Https ポート
       ko: Https 포트
       ru: Порт Https
       ms: Port Https
       pt-br: Porta Https
+      tr: HTTPS bağlantı noktası
+      es-es: Puerto HTTPS
+      fa: درگاه HTTPS
+      lo: ພອດ HTTPS
     required: true
     type: number
     rule: paramPort
@@ -42,12 +50,16 @@ additionalProperties:
     label:
       en: Config folder path
       zh: 配置文件路径
-      zh-Hant: 設定檔資料夾路徑
+      zh-hant: 設定檔資料夾路徑
       ja: 設定フォルダーのパス
       ko: 설정 폴더 경로
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشه پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -58,12 +70,16 @@ additionalProperties:
     label:
       en: Time zone
       zh: 时区
-      zh-Hant: 時區
+      zh-hant: 時區
       ja: タイムゾーン
       ko: 시간대
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
   - default: admin
@@ -74,12 +90,16 @@ additionalProperties:
     label:
       en: Basic Auth Username
       zh: 访问用户名（Basic Auth）
-      zh-Hant: 存取使用者名稱（Basic Auth）
+      zh-hant: 存取使用者名稱（Basic Auth）
       ja: ベーシック認証ユーザー名
       ko: 기본 인증 사용자명
       ru: Имя пользователя (Basic Auth)
       ms: Nama pengguna (Basic Auth)
       pt-br: Usuario Basic Auth
+      tr: Basic Auth kullanıcı adı
+      es-es: Nombre de usuario de Basic Auth
+      fa: نام کاربری احراز هویت پایه
+      lo: ຊື່ຜູ້ໃຊ້ Basic Auth
     required: true
     type: text
   - default: linuxserver-change-me
@@ -90,12 +110,16 @@ additionalProperties:
     label:
       en: Basic Auth Password
       zh: 访问密码（Basic Auth）
-      zh-Hant: 存取密碼（Basic Auth）
+      zh-hant: 存取密碼（Basic Auth）
       ja: ベーシック認証パスワード
       ko: 기본 인증 비밀번호
       ru: Пароль (Basic Auth)
       ms: Kata laluan Basic Auth
       pt-br: Senha Basic Auth
+      tr: Basic Auth parolası
+      es-es: Contraseña de Basic Auth
+      fa: گذرواژه احراز هویت پایه
+      lo: ລະຫັດຜ່ານ Basic Auth
     random: true
     required: true
     rule: paramComplexity
@@ -108,12 +132,16 @@ additionalProperties:
     label:
       en: Browser page title
       zh: 浏览器页面标题
-      zh-Hant: 瀏覽器頁面標題
+      zh-hant: 瀏覽器頁面標題
       ja: ブラウザーのページタイトル
       ko: 브라우저 페이지 제목
       ru: Заголовок страницы браузера
       ms: Tajuk halaman pelayar
       pt-br: Titulo da pagina do navegador
+      tr: Tarayıcı sayfa başlığı
+      es-es: Título de la página del navegador
+      fa: عنوان صفحه مرورگر
+      lo: ຫົວຂໍ້ໜ້າເບຣາວເຊີ
     required: false
     type: text
   - default: Selkies
@@ -124,12 +152,16 @@ additionalProperties:
     label:
       en: Sidebar title
       zh: 侧边栏标题
-      zh-Hant: 側邊欄標題
+      zh-hant: 側邊欄標題
       ja: サイドバータイトル
       ko: 사이드바 제목
       ru: Заголовок боковой панели
       ms: Tajuk bar sisi
       pt-br: Titulo da barra lateral
+      tr: Kenar çubuğu başlığı
+      es-es: Título de la barra lateral
+      fa: عنوان نوار کناری
+      lo: ຫົວຂໍ້ແຖບດ້ານຂ້າງ
     required: false
     type: text
   - default: selkies-dashboard
@@ -140,12 +172,16 @@ additionalProperties:
     label:
       en: Dashboard UI
       zh: 仪表盘界面
-      zh-Hant: 儀表板介面
+      zh-hant: 儀表板介面
       ja: ダッシュボード UI
       ko: 대시보드 UI
       ru: Интерфейс панели
       ms: UI papan pemuka
       pt-br: Interface do painel
+      tr: Gösterge paneli arayüzü
+      es-es: Interfaz del panel
+      fa: رابط کاربری داشبورد
+      lo: ສ່ວນຕິດຕໍ່ Dashboard
     required: false
     type: select
     values:
@@ -163,12 +199,16 @@ additionalProperties:
     label:
       en: Desktop language locale
       zh: 桌面语言区域
-      zh-Hant: 桌面語言區域
+      zh-hant: 桌面語言區域
       ja: デスクトップ言語ロケール
       ko: 데스크톱 언어 로케일
       ru: Локаль языка рабочего стола
       ms: Lokal bahasa desktop
       pt-br: Localidade do idioma da area de trabalho
+      tr: Masaüstü dil yerel ayarı
+      es-es: Configuración regional del idioma del escritorio
+      fa: منطقه زبانی دسکتاپ
+      lo: ພາສາທ້ອງຖິ່ນຂອງເດັສທັອບ
     required: false
     type: text
   - default: Asia/Shanghai
@@ -179,11 +219,15 @@ additionalProperties:
     label:
       en: Timezone
       zh: 时区
-      zh-Hant: 時區
+      zh-hant: 時區
       ja: タイムゾーン
       ko: 시간대
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text

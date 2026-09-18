@@ -60,6 +60,7 @@ Yaak is a desktop API client distributed through a LinuxServer.io container imag
 ## 安全提示
 - LinuxServer 桌面镜像包含图形桌面、基础系统和配套工具，镜像扫描器可能报告继承自这些组件的 High 或 Critical 漏洞；固定镜像版本不代表不存在已知漏洞。
 - 请及时更新应用，仅向可信网络开放访问端口，使用随机生成的强 Basic Auth 密码，并优先通过 HTTPS 反向代理提供外部访问。
+- 当前复核的 `linux-libc-dev` Critical 漏洞（CVE-2026-64535、CVE-2026-64564、CVE-2026-72287、CVE-2026-74394）来自 `linuxserver/yaak:2026.8.0` 的基础系统，当前 Trivy 报告未提供修复版本；本版本按已授权风险接受流程合并，不代表漏洞已修复。请在上游镜像提供修复版本后及时更新，并避免将管理入口暴露到不可信网络。
 
 ## 参考资料
 - 官网: <https://yaak.app/>
