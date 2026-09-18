@@ -23,9 +23,13 @@ additionalProperties:
   description:
     en: A dynamic website builder powered entirely by SQL
     zh: 完全由 SQL 驱动的动态网站构建器
-    zh-Hant: 完全由 SQL 驅動的動態網站建置工具
+    zh-hant: 完全由 SQL 驅動的動態網站建置工具
     ja: SQL だけで動的な Web サイトを構築するツール
     ko: SQL만으로 동적 웹사이트를 구축하는 도구
     ru: Конструктор динамических сайтов, полностью управляемый SQL
     ms: Pembina laman web dinamik yang dikuasakan sepenuhnya oleh SQL
     pt-br: Construtor de sites dinamicos totalmente orientado por SQL
+    tr: SQL ile tamamen çalışan dinamik web sitesi oluşturucu
+    es-es: Generador de sitios web dinámicos impulsado completamente por SQL
+    fa: سازنده وب‌سایت پویا که کاملاً با SQL کار می‌کند
+    lo: ເຄື່ອງມືສ້າງເວັບໄຊແບບໄດນາມິກທີ່ຂັບເຄື່ອນດ້ວຍ SQL
