@@ -1,0 +1,49 @@
+services:
+  elizabeth:
+    image: yunique001/elizabeth:2.0.2
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    init: true
+    # The image runs as distroless `nonroot` (65532); scripts/init.sh hands the
+    # data and storage directories to that user before Compose starts.
+    user: "65532:65532"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4092"
+    environment:
+      JWT_SECRET: "${JWT_SECRET}"
+      DATABASE_URL: "${DATABASE_URL}"
+      ROOM_MAX_SIZE: "${ROOM_MAX_SIZE}"
+      ROOM_MAX_TIMES_ENTERED: "${ROOM_MAX_TIMES_ENTERED}"
+      ROOM_ALLOWED_AGES: "${ROOM_ALLOWED_AGES}"
+      ROOM_DEFAULT_AGE: "${ROOM_DEFAULT_AGE}"
+      ROOM_SHARE_DISABLED_LOCK_DURATION: "${ROOM_SHARE_DISABLED_LOCK_DURATION}"
+      TZ: "${TZ}"
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+      - "${APP_STORAGE_DIR}:/app/storage"
+    healthcheck:
+      # The distroless runtime ships no `curl`, so the probe is the binary itself.
+      test:
+        - CMD
+        - /app/board
+        - health
+        - "--config-file"
+        - /app/config/backend.yaml
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    labels:
+      createdBy: Apps
+networks:
+  1panel-network:
+    external: true
