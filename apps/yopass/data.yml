@@ -1,24 +1,28 @@
 name: Yopass
 tags:
-  - Tool
+- Tool
 title: 安全的一次性秘密共享服务
 description: 安全的一次性秘密共享服务
 additionalProperties:
   key: yopass
   name: Yopass
   tags:
-    - Tool
+  - Tool
   shortDescZh: 安全的一次性秘密共享服务
   shortDescEn: Secure one-time secret sharing service
   description:
     en: Secure one-time secret sharing service
     zh: 安全的一次性秘密共享服务
-    zh-Hant: 安全的一次性秘密分享服務
+    zh-hant: 安全的一次性秘密分享服務
     ja: 安全なワンタイムシークレット共有サービス
     ko: 안전한 일회용 비밀 공유 서비스
     ru: Сервис безопасного обмена одноразовыми секретами
     ms: Perkhidmatan perkongsian rahsia sekali guna yang selamat
     pt-br: Serviço seguro de compartilhamento de segredos de uso único
+    tr: Güvenli tek kullanımlık gizli bilgi paylaşım hizmeti
+    es-es: Servicio seguro para compartir secretos de un solo uso
+    fa: سرویس امن اشتراک‌گذاری اسرار یک‌بارمصرف
+    lo: ບໍລິການແບ່ງປັນຄວາມລັບໃຊ້ຄັ້ງດຽວທີ່ປອດໄພ
   type: website
   crossVersionUpdate: true
   limit: 0
@@ -28,5 +32,5 @@ additionalProperties:
   github: https://github.com/jhaals/yopass
   document: https://yopass.se/docs
   architectures:
-    - amd64
-    - arm64
+  - amd64
+  - arm64
