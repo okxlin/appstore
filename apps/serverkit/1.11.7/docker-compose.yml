@@ -1,6 +1,6 @@
 services:
   serverkit:
-    image: "jhd3197/serverkit:1.11.4"
+    image: "jhd3197/serverkit:1.11.7"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:5000"
