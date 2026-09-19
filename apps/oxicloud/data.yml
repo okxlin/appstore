@@ -24,9 +24,13 @@ additionalProperties:
   description:
     en: A self-hosted cloud storage platform built with Rust
     zh: 基于 Rust 的自托管云存储平台
-    zh-Hant: 基於 Rust 的自託管雲端儲存平台
+    zh-hant: 基於 Rust 的自託管雲端儲存平台
     ja: Rust で構築されたセルフホスト型クラウドストレージ
     ko: Rust로 구축된 셀프 호스팅 클라우드 스토리지 플랫폼
     ru: Самостоятельно размещаемая платформа облачного хранения на Rust
     ms: Platform storan awan hos sendiri yang dibina dengan Rust
     pt-br: Plataforma de armazenamento em nuvem auto-hospedada criada com Rust
+    tr: Rust ile oluşturulmuş, kendi kendine barındırılan bulut depolama platformu
+    es-es: Plataforma de almacenamiento en la nube autoalojada creada con Rust
+    fa: پلتفرم ذخیره‌سازی ابری خودمیزبان ساخته‌شده با Rust
+    lo: ແພລດຟອມເກັບຮັກສາຄລາວທີ່ໂຮສດ້ວຍຕົນເອງສ້າງດ້ວຍ Rust
