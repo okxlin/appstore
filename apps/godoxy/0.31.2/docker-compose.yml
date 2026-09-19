@@ -25,7 +25,7 @@ services:
       createdBy: "Apps"
 
   godoxy:
-    image: "ghcr.io/yusing/godoxy:v0.31.2@sha256:ffd87e14539c41e91929fb1ed391a826dbf2fbeb5d7cf1ea4bf4ec9d0b5a0e22"
+    image: "ghcr.io/yusing/godoxy:v0.31.3@sha256:3edf8b84879482160371a36b468a6be65f482bfcb579082e61d9f2b494cd6fab"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
