@@ -23,10 +23,14 @@ additionalProperties:
       penggunaan dan kebolehcerapan
     pt-br: Gateway leve para varios provedores de IA com API compativel com OpenAI,
       rastreamento de uso e observabilidade
-    tr: OpenAI uyumlu API, kullanım takibi ve gözlemlenebilirlik sunan hafif çok sağlayıcılı yapay zekâ ağ geçidi
-    es-es: Pasarela ligera de IA para varios proveedores con una API compatible con OpenAI, seguimiento del uso y observabilidad
-    fa: درگاه سبک هوش مصنوعی چندارائه‌دهنده با API سازگار با OpenAI، ردیابی مصرف و قابلیت مشاهده
-    lo: ປະຕູ AI ຫຼາຍຜູ້ໃຫ້ບໍລິການຂະໜາດເບົາ ພ້ອມ API ທີ່ໃຊ້ງານຮ່ວມກັບ OpenAI, ການຕິດຕາມການໃຊ້ງານ ແລະການສັງເກດການ
+    tr: OpenAI uyumlu API, kullanım takibi ve gözlemlenebilirlik sunan hafif çok sağlayıcılı
+      yapay zekâ ağ geçidi
+    es-es: Pasarela ligera de IA para varios proveedores con una API compatible con
+      OpenAI, seguimiento del uso y observabilidad
+    fa: درگاه سبک هوش مصنوعی چندارائه‌دهنده با API سازگار با OpenAI، ردیابی مصرف و
+      قابلیت مشاهده
+    lo: ປະຕູ AI ຫຼາຍຜູ້ໃຫ້ບໍລິການຂະໜາດເບົາ ພ້ອມ API ທີ່ໃຊ້ງານຮ່ວມກັບ OpenAI, ການຕິດຕາມການໃຊ້ງານ
+      ແລະການສັງເກດການ
   type: tool
   crossVersionUpdate: true
   limit: 0
