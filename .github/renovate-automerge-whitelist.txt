@@ -422,3 +422,6 @@ webclaw
 
 # Reviewed single-service Renovate candidates (2026-09-07).
 moltis
+
+# Explicit owner-requested exception; retain the normal shape and security gates.
+1panel
