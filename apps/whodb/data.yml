@@ -13,12 +13,16 @@ additionalProperties:
   description:
     en: A lightweight workspace for multiple databases
     zh: 轻量级多数据库管理工作台
-    zh-Hant: 輕量級多資料庫管理工作台
+    zh-hant: 輕量級多資料庫管理工作台
     ja: 複数データベース向けの軽量管理ワークスペース
     ko: 여러 데이터베이스를 위한 가벼운 관리 작업 공간
     ru: Легковесная рабочая среда для управления разными базами данных
     ms: Ruang kerja ringan untuk mengurus pelbagai pangkalan data
     pt-br: Espaco de trabalho leve para gerenciar varios bancos de dados
+    tr: Birden fazla veritabanı için hafif bir çalışma alanı
+    es-es: Espacio de trabajo ligero para múltiples bases de datos
+    fa: محیط کاری سبک برای چندین پایگاه داده
+    lo: ພື້ນທີ່ເຮັດວຽກຂະໜາດເບົາສຳລັບຫຼາຍຖານຂໍ້ມູນ
   type: tool
   crossVersionUpdate: true
   limit: 1

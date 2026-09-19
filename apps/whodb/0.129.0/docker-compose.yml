@@ -1,6 +1,6 @@
 services:
   whodb:
-    image: clidey/whodb:latest
+    image: "clidey/whodb:0.129.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:

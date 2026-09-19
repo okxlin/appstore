@@ -62,6 +62,40 @@ set_env_value() {
   mv -f -- "$temp_file" "$ENV_FILE"
 }
 
+resolve_app_path() {
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
+  fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
+}
+
 generate_key() {
   local value=""
   if command -v openssl >/dev/null 2>&1; then
@@ -89,20 +123,7 @@ write_key_cache() {
 
 data_dir_raw="$(read_effective_value APP_DATA_DIR)"
 [[ -n "$data_dir_raw" ]] || data_dir_raw="./data"
-case "$data_dir_raw" in
-  *$'\n'* | *$'\r'* | *\\* | *'$'* | *'#'* | *'"'* | *"'") fail "APP_DATA_DIR contains unsupported dotenv characters" ;;
-esac
-
-case "$data_dir_raw" in
-  /*) data_dir_abs="$(realpath -m -- "$data_dir_raw")" ;;
-  *)
-    data_dir_abs="$(realpath -m -- "${ROOT_DIR}/${data_dir_raw#./}")"
-    case "$data_dir_abs" in
-      "${ROOT_DIR}" | "${ROOT_DIR}"/*) ;;
-      *) fail "Relative APP_DATA_DIR must stay inside the application directory" ;;
-    esac
-    ;;
-esac
+data_dir_abs="$(resolve_app_path "APP_DATA_DIR" "$data_dir_raw")"
 
 [[ "$data_dir_abs" != "/" ]] || fail "APP_DATA_DIR must not be the filesystem root"
 if [[ -e "$data_dir_abs" && ! -d "$data_dir_abs" ]]; then
@@ -112,20 +133,7 @@ mkdir -p -- "$data_dir_abs"
 
 db_data_dir_raw="$(read_effective_value DB_DATA_DIR)"
 [[ -n "$db_data_dir_raw" ]] || db_data_dir_raw="./db-data"
-case "$db_data_dir_raw" in
-  *$'\n'* | *$'\r'* | *\\* | *'$'* | *'#'* | *'"'* | *"'") fail "DB_DATA_DIR contains unsupported dotenv characters" ;;
-esac
-
-case "$db_data_dir_raw" in
-  /*) db_data_dir_abs="$(realpath -m -- "$db_data_dir_raw")" ;;
-  *)
-    db_data_dir_abs="$(realpath -m -- "${ROOT_DIR}/${db_data_dir_raw#./}")"
-    case "$db_data_dir_abs" in
-      "${ROOT_DIR}" | "${ROOT_DIR}"/*) ;;
-      *) fail "Relative DB_DATA_DIR must stay inside the application directory" ;;
-    esac
-    ;;
-esac
+db_data_dir_abs="$(resolve_app_path "DB_DATA_DIR" "$db_data_dir_raw")"
 
 [[ "$db_data_dir_abs" != "/" ]] || fail "DB_DATA_DIR must not be the filesystem root"
 [[ "$db_data_dir_abs" != "$data_dir_abs" ]] || fail "DB_DATA_DIR must differ from APP_DATA_DIR"
@@ -159,7 +167,7 @@ secure_cookie="$(read_effective_value WHODB_SECURE)"
 [[ "$secure_cookie" == "true" || "$secure_cookie" == "false" ]] || fail "WHODB_SECURE must be true or false"
 
 write_key_cache "$cache_file" "$encryption_key"
-set_env_value APP_DATA_DIR "$data_dir_raw"
-set_env_value DB_DATA_DIR "$db_data_dir_raw"
+set_env_value APP_DATA_DIR "$data_dir_abs"
+set_env_value DB_DATA_DIR "$db_data_dir_abs"
 set_env_value WHODB_ENCRYPTION_KEY "$encryption_key"
 set_env_value WHODB_SECURE "$secure_cookie"
