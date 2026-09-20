@@ -1,0 +1,429 @@
+additionalProperties:
+  formFields:
+  - default: 4092
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Web UI Port
+    labelZh: Web UI 端口
+    label:
+      en: Web UI Port
+      es-es: Puerto web
+      ja: Web UI ポート
+      ms: Port Web UI
+      pt-br: Porta da interface web
+      ru: Порт веб-интерфейса
+      ko: 웹 UI 포트
+      zh-hant: Web UI 埠
+      zh: Web UI 端口
+      tr: Web UI Bağlantı Noktası
+      fa: پورت وب
+      lo: ພອດເວັບ
+    description:
+      en: Host port used to access Elizabeth.
+      es-es: Puerto del host utilizado para acceder a Elizabeth.
+      ja: Elizabeth にアクセスするためのホストポート。
+      ms: Port hos yang digunakan untuk mengakses Elizabeth.
+      pt-br: Porta do host usada para acessar o Elizabeth.
+      ru: Порт хоста для доступа к Elizabeth.
+      ko: Elizabeth에 접속할 때 사용하는 호스트 포트입니다.
+      zh-hant: 用於存取 Elizabeth 的主機連接埠。
+      zh: 用于访问 Elizabeth 的宿主机端口。
+      tr: Elizabeth'e erişmek için kullanılan ana bilgisayar bağlantı noktası.
+      fa: پورت میزبان برای دسترسی به Elizabeth.
+      lo: ພອດໂຮສຕ໌ທີ່ໃຊ້ເຂົ້າເຖິງ Elizabeth.
+    required: true
+    rule: paramPort
+    type: number
+  - default: ElizabethJwtSecretKey2026ChangeMe
+    edit: true
+    envKey: JWT_SECRET
+    labelEn: JWT Secret
+    labelZh: JWT 密钥
+    label:
+      en: JWT Secret
+      es-es: Secreto JWT
+      ja: JWT シークレット
+      ms: Rahsia JWT
+      pt-br: Segredo JWT
+      ru: Секрет JWT
+      ko: JWT 시크릿
+      zh-hant: JWT 金鑰
+      zh: JWT 密钥
+      tr: JWT Gizli Anahtarı
+      fa: کلید محرمانه JWT
+      lo: ຄວາມລັບ JWT
+    description:
+      en: Secret used to sign sessions. 1Panel generates a value of at least 32 characters;
+        do not change it after install unless you accept invalidating existing sessions.
+      es-es: Secreto utilizado para firmar las sesiones. 1Panel genera un valor de
+        al menos 32 caracteres; no lo cambie después de la instalación si no desea
+        invalidar las sesiones existentes.
+      ja: セッションの署名に使用する秘密鍵。1Panel は 32 文字以上の値を生成します。既存のセッションを無効にしてよい場合を除き、インストール後は変更しないでください。
+      ms: Rahsia yang digunakan untuk menandatangani sesi. 1Panel menjana nilai sekurang-kurangnya
+        32 aksara; jangan ubah selepas pemasangan kecuali anda menerima sesi sedia
+        ada menjadi tidak sah.
+      pt-br: Segredo usado para assinar sessões. O 1Panel gera um valor com pelo menos
+        32 caracteres; não o altere após a instalação, a menos que aceite invalidar
+        as sessões existentes.
+      ru: Секрет для подписи сеансов. 1Panel создаёт значение длиной не менее 32 символов;
+        не изменяйте его после установки, если не готовы сделать существующие сеансы
+        недействительными.
+      ko: 세션 서명에 사용하는 비밀 값입니다. 1Panel은 32자 이상의 값을 생성하므로, 기존 세션을 무효화해도 되는 경우가 아니면 설치
+        후 변경하지 마세요.
+      zh-hant: 用於簽署工作階段的密鑰。1Panel 會產生至少 32 個字元的值；安裝後勿隨意更換，否則既有工作階段會失效。
+      zh: 用于签名会话的密钥。1Panel 会生成至少 32 个字符的值；安装后勿随意更换，否则既有会话会失效。
+      tr: Oturumları imzalamak için kullanılan gizli anahtar. 1Panel en az 32 karakterlik
+        bir değer oluşturur; mevcut oturumları geçersiz kılmayı kabul etmiyorsanız
+        kurulumdan sonra değiştirmeyin.
+      fa: کلید مورد استفاده برای امضای نشست‌ها. 1Panel مقداری حداقل ۳۲ نویسه‌ای تولید
+        می‌کند؛ پس از نصب آن را تغییر ندهید، مگر اینکه بی‌اعتبار شدن نشست‌های موجود
+        را بپذیرید.
+      lo: ຄວາມລັບທີ່ໃຊ້ເຊັນເຊດຊັນ. 1Panel ຈະສ້າງຄ່າຢ່າງໜ້ອຍ 32 ຕົວອັກສອນ; ຢ່າປ່ຽນຫຼັງຕິດຕັ້ງ
+        ນອກຈາກຍອມຮັບໃຫ້ເຊດຊັນເກົ່າໃຊ້ບໍ່ໄດ້.
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: sqlite:///app/data/elizabeth.db
+    edit: true
+    envKey: DATABASE_URL
+    labelEn: Database URL
+    labelZh: 数据库连接串
+    label:
+      en: Database URL
+      es-es: URL de base de datos
+      ja: データベース URL
+      ms: URL pangkalan data
+      pt-br: URL do banco de dados
+      ru: URL базы данных
+      ko: 데이터베이스 URL
+      zh-hant: 資料庫連線字串
+      zh: 数据库连接串
+      tr: Veritabanı URL'si
+      fa: نشانی پایگاه داده
+      lo: URL ຖານຂໍ້ມູນ
+    description:
+      en: Uses SQLite in the persistent data directory by default. An external PostgreSQL
+        URL is also supported.
+      es-es: Usa SQLite en el directorio de datos persistente de forma predeterminada.
+        También admite una URL externa de PostgreSQL.
+      ja: 既定では永続データディレクトリ内の SQLite を使用します。外部 PostgreSQL の URL も利用できます。
+      ms: Menggunakan SQLite dalam direktori data berterusan secara lalai. URL PostgreSQL
+        luaran juga disokong.
+      pt-br: Usa SQLite no diretório de dados persistente por padrão. Uma URL externa
+        do PostgreSQL também é compatível.
+      ru: По умолчанию используется SQLite в постоянном каталоге данных. Также поддерживается
+        внешний URL PostgreSQL.
+      ko: 기본적으로 영구 데이터 디렉터리의 SQLite를 사용하며, 외부 PostgreSQL URL도 지원합니다.
+      zh-hant: 預設使用持久化資料目錄中的 SQLite，也支援外部 PostgreSQL 連線字串。
+      zh: 默认使用持久化数据目录中的 SQLite，也支持外部 PostgreSQL 连接串。
+      tr: Varsayılan olarak kalıcı veri dizinindeki SQLite kullanılır. Harici PostgreSQL
+        URL'si de desteklenir.
+      fa: به‌صورت پیش‌فرض از SQLite در پوشه داده‌های پایدار استفاده می‌کند. نشانی
+        خارجی PostgreSQL نیز پشتیبانی می‌شود.
+      lo: ໃຊ້ SQLite ໃນໂຟນເດີຂໍ້ມູນຖາວອນໂດຍຄ່າເລີ່ມຕົ້ນ. ຍັງຮອງຮັບ URL PostgreSQL
+        ພາຍນອກ.
+    required: true
+    type: text
+  - default: ./data
+    edit: true
+    envKey: APP_DATA_DIR
+    labelEn: Data Directory
+    labelZh: 数据目录
+    label:
+      en: Data Directory
+      es-es: Directorio de datos
+      ja: データディレクトリ
+      ms: Direktori data
+      pt-br: Diretório de dados
+      ru: Каталог данных
+      ko: 데이터 디렉터리
+      zh-hant: 資料目錄
+      zh: 数据目录
+      tr: Veri Dizini
+      fa: پوشه داده‌ها
+      lo: ໄດເຣັກະທໍລີຂໍ້ມູນ
+    description:
+      en: Host path mounted to /app/data for SQLite and other local state.
+      es-es: Ruta del host montada en /app/data para SQLite y otros datos locales.
+      ja: SQLite やその他のローカル状態を保存するために /app/data へマウントするホストパス。
+      ms: Laluan hos yang dipasang ke /app/data untuk SQLite dan keadaan tempatan
+        yang lain.
+      pt-br: Caminho do host montado em /app/data para o SQLite e outros dados locais.
+      ru: Путь хоста, монтируемый в /app/data для SQLite и других локальных данных.
+      ko: SQLite 및 기타 로컬 상태를 위해 /app/data에 마운트할 호스트 경로입니다.
+      zh-hant: 掛載到 /app/data 的主機路徑，用於 SQLite 與其他本地狀態。
+      zh: 挂载到 /app/data 的主机路径，用于 SQLite 与其他本地状态。
+      tr: SQLite ve diğer yerel durumlar için /app/data konumuna bağlanan ana bilgisayar
+        yolu.
+      fa: مسیر میزبان که برای SQLite و سایر وضعیت‌های محلی روی /app/data متصل می‌شود.
+      lo: ເສັ້ນທາງໂຮສຕ໌ທີ່ເມົາທ໌ເຂົ້າ /app/data ສຳລັບ SQLite ແລະຂໍ້ມູນທ້ອງຖິ່ນອື່ນໆ.
+    required: true
+    type: text
+  - default: ./storage
+    edit: true
+    envKey: APP_STORAGE_DIR
+    labelEn: Storage Directory
+    labelZh: 文件存储目录
+    label:
+      en: Storage Directory
+      es-es: Directorio de almacenamiento
+      ja: ストレージディレクトリ
+      ms: Direktori storan
+      pt-br: Diretório de armazenamento
+      ru: Каталог хранилища
+      ko: 스토리지 디렉터리
+      zh-hant: 檔案儲存目錄
+      zh: 文件存储目录
+      tr: Depolama Dizini
+      fa: پوشه ذخیره‌سازی
+      lo: ໄດເຣັກະທໍລີບ່ອນເກັບ
+    description:
+      en: Host path mounted to /app/storage for room file uploads.
+      es-es: Ruta del host montada en /app/storage para las cargas de archivos de
+        las salas.
+      ja: ルームのファイルアップロード用に /app/storage へマウントするホストパス。
+      ms: Laluan hos yang dipasang ke /app/storage untuk muat naik fail bilik.
+      pt-br: Caminho do host montado em /app/storage para uploads de arquivos das
+        salas.
+      ru: Путь хоста, монтируемый в /app/storage для загрузки файлов комнат.
+      ko: 방 파일 업로드를 위해 /app/storage에 마운트할 호스트 경로입니다.
+      zh-hant: 掛載到 /app/storage 的主機路徑，用於房間上傳檔案。
+      zh: 挂载到 /app/storage 的主机路径，用于房间上传文件。
+      tr: Odaların dosya yüklemeleri için /app/storage konumuna bağlanan ana bilgisayar
+        yolu.
+      fa: مسیر میزبان که برای بارگذاری فایل‌های اتاق روی /app/storage متصل می‌شود.
+      lo: ເສັ້ນທາງໂຮສຕ໌ທີ່ເມົາທ໌ເຂົ້າ /app/storage ສຳລັບອັບໂຫຼດໄຟລ໌ຫ້ອງ.
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      es-es: Zona horaria
+      ja: タイムゾーン
+      ms: Zon waktu
+      pt-br: Fuso horário
+      ru: Часовой пояс
+      ko: 시간대
+      zh-hant: 時區
+      zh: 时区
+      tr: Saat Dilimi
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    description:
+      en: Container timezone used for log timestamps.
+      es-es: Zona horaria del contenedor utilizada para las marcas de tiempo de los
+        registros.
+      ja: ログのタイムスタンプに使用するコンテナのタイムゾーン。
+      ms: Zon waktu kontena yang digunakan untuk cap masa log.
+      pt-br: Fuso horário do contêiner usado para os carimbos de data e hora dos logs.
+      ru: Часовой пояс контейнера, используемый для временных меток журналов.
+      ko: 로그 타임스탬프에 사용하는 컨테이너 시간대입니다.
+      zh-hant: 容器時區，影響日誌時間戳。
+      zh: 容器时区，影响日志时间戳。
+      tr: Günlük zaman damgaları için kullanılan konteyner saat dilimi.
+      fa: منطقه زمانی کانتینر که برای مُهرهای زمانی گزارش‌ها استفاده می‌شود.
+      lo: ເຂດເວລາຂອງຄອນເທນເນີທີ່ໃຊ້ສຳລັບເວລາໃນບັນທຶກ.
+    required: true
+    type: text
+  - default: 50MiB
+    edit: true
+    envKey: ROOM_MAX_SIZE
+    labelEn: Room Max Size
+    labelZh: 房间最大容量
+    label:
+      en: Room Max Size
+      es-es: Tamaño máximo de sala
+      ja: ルーム最大サイズ
+      ms: Saiz maksimum bilik
+      pt-br: Tamanho máximo da sala
+      ru: Максимальный размер комнаты
+      ko: 방 최대 크기
+      zh-hant: 房間最大容量
+      zh: 房间最大容量
+      tr: Oda en fazla boyutu
+      fa: حداکثر اندازه اتاق
+      lo: ຂະໜາດສູງສຸດຂອງຫ້ອງ
+    description:
+      en: Maximum total content size per room. Human-readable values such as 50MiB,
+        100M, and 1G are supported.
+      es-es: Tamaño máximo total del contenido por sala. Admite valores legibles como
+        50MiB, 100M y 1G.
+      ja: 1 ルームあたりのコンテンツ合計サイズ上限。50MiB、100M、1G などの読みやすい値に対応します。
+      ms: Saiz kandungan maksimum bagi setiap bilik. Nilai mudah dibaca seperti 50MiB,
+        100M dan 1G disokong.
+      pt-br: Tamanho total máximo do conteúdo por sala. São aceitos valores legíveis
+        como 50MiB, 100M e 1G.
+      ru: Максимальный общий размер содержимого комнаты. Поддерживаются понятные значения,
+        такие как 50MiB, 100M и 1G.
+      ko: 방별 전체 콘텐츠 크기 한도입니다. 50MiB, 100M, 1G와 같은 사람이 읽기 쉬운 값을 지원합니다.
+      zh-hant: 每個房間允許的內容總容量，支援 50MiB、100M、1G 等人類可讀格式。
+      zh: 每个房间允许的内容总容量，支持 50MiB、100M、1G 等人类可读格式。
+      tr: Oda başına toplam içerik boyutu üst sınırı. 50MiB, 100M ve 1G gibi okunabilir
+        değerler desteklenir.
+      fa: حداکثر اندازه کل محتوا برای هر اتاق. مقادیر خوانا مانند 50MiB، 100M و 1G
+        پشتیبانی می‌شوند.
+      lo: ຂະໜາດເນື້ອຫາລວມສູງສຸດຕໍ່ຫ້ອງ. ຮອງຮັບຄ່າທີ່ອ່ານງ່າຍເຊັ່ນ 50MiB, 100M ແລະ
+        1G.
+    required: true
+    type: text
+  - default: 100
+    edit: true
+    envKey: ROOM_MAX_TIMES_ENTERED
+    labelEn: Room Entry Limit
+    labelZh: 房间进入次数上限
+    label:
+      en: Room Entry Limit
+      es-es: Límite de entradas a la sala
+      ja: ルーム入場回数上限
+      ms: Had kemasukan bilik
+      pt-br: Máximo de entradas na sala
+      ru: Лимит входов в комнату
+      ko: 방 입장 횟수 한도
+      zh-hant: 房間進入次數上限
+      zh: 房间进入次数上限
+      tr: Oda giriş limiti
+      fa: محدودیت ورود به اتاق
+      lo: ຈຳກັດການເຂົ້າຫ້ອງ
+    description:
+      en: Maximum number of successful entries allowed for a newly created room.
+      es-es: Número máximo de entradas correctas permitidas para una sala recién creada.
+      ja: 新しく作成したルームへの正常な入室を許可する最大回数。
+      ms: Bilangan maksimum kemasukan berjaya yang dibenarkan untuk bilik yang baru
+        dibuat.
+      pt-br: Número máximo de entradas bem-sucedidas permitidas para uma sala recém-criada.
+      ru: Максимальное число успешных входов, разрешённых для вновь созданной комнаты.
+      ko: 새로 만든 방에 허용되는 성공적인 입장 횟수의 최대값입니다.
+      zh-hant: 新建房間允許成功進入的最大次數。
+      zh: 新建房间允许成功进入的最大次数。
+      tr: Yeni oluşturulan bir odaya izin verilen başarılı girişlerin maksimum sayısı.
+      fa: حداکثر تعداد ورود موفق مجاز برای اتاق تازه ایجادشده.
+      lo: ຈຳນວນການເຂົ້າທີ່ສຳເລັດສູງສຸດທີ່ອະນຸຍາດສຳລັບຫ້ອງທີ່ສ້າງໃໝ່.
+    required: true
+    type: number
+  - default: 1m,30m,2h,12h,1d,7d,30d,365d
+    edit: true
+    envKey: ROOM_ALLOWED_AGES
+    labelEn: Allowed Room Ages
+    labelZh: 允许的房间有效期
+    label:
+      en: Allowed Room Ages
+      es-es: Vigencias de sala permitidas
+      ja: 許可するルーム有効期限
+      ms: Tempoh bilik dibenarkan
+      pt-br: Tempos de sala permitidos
+      ru: Допустимые сроки комнаты
+      ko: 허용되는 방 유효기간
+      zh-hant: 允許的房間有效期
+      zh: 允许的房间有效期
+      tr: İzin verilen oda süreleri
+      fa: مدت‌های مجاز اتاق
+      lo: ອາຍຸຫ້ອງທີ່ອະນຸຍາດ
+    description:
+      en: Comma-separated humantime values exposed to the UI and accepted by the backend.
+      es-es: Valores humantime separados por comas que se muestran en la interfaz
+        y acepta el backend.
+      ja: UI に表示され、バックエンドが受け付けるカンマ区切りの humantime 値。
+      ms: Nilai humantime dipisahkan koma yang dipaparkan dalam UI dan diterima oleh
+        bahagian belakang.
+      pt-br: Valores humantime separados por vírgulas, exibidos na interface e aceitos
+        pelo backend.
+      ru: Разделённые запятыми значения humantime, отображаемые в интерфейсе и принимаемые
+        бэкендом.
+      ko: UI에 표시되고 백엔드에서 허용하는 쉼표로 구분된 humantime 값입니다.
+      zh-hant: 以逗號分隔的 humantime 時長；前端會展示這些選項，後端也只接受這些值。
+      zh: 以逗号分隔的 humantime 时长；前端会展示这些选项，后端也只接受这些值。
+      tr: Arayüzde gösterilen ve arka uç tarafından kabul edilen virgülle ayrılmış
+        humantime değerleri.
+      fa: مقادیر humantime جداشده با ویرگول که در رابط کاربری نمایش داده می‌شوند و
+        بک‌اند می‌پذیرد.
+      lo: ຄ່າ humantime ທີ່ຄັ່ນດ້ວຍຈຸດ ເຊິ່ງສະແດງໃນ UI ແລະຍອມຮັບໂດຍແບັກເອັນ.
+    required: true
+    type: text
+  - default: 2h
+    edit: true
+    envKey: ROOM_DEFAULT_AGE
+    labelEn: Default Room Age
+    labelZh: 默认房间有效期
+    label:
+      en: Default Room Age
+      es-es: Vigencia de sala predeterminada
+      ja: 既定のルーム有効期限
+      ms: Tempoh bilik lalai
+      pt-br: Tempo padrão da sala
+      ru: Срок комнаты по умолчанию
+      ko: 기본 방 유효기간
+      zh-hant: 預設房間有效期
+      zh: 默认房间有效期
+      tr: Varsayılan oda süresi
+      fa: عمر پیش‌فرض اتاق
+      lo: ອາຍຸຫ້ອງເລີ່ມຕົ້ນ
+    description:
+      en: Default lifetime for newly created rooms. It must also appear in Allowed
+        Room Ages.
+      es-es: Duración predeterminada de las salas nuevas. También debe aparecer en
+        las vigencias permitidas.
+      ja: 新しく作成するルームの既定の有効期間。許可するルーム有効期限にも含める必要があります。
+      ms: Jangka hayat lalai untuk bilik yang baru dibuat. Nilai ini juga mesti ada
+        dalam Tempoh Bilik yang Dibenarkan.
+      pt-br: Duração padrão das salas recém-criadas. Ela também deve aparecer em Vigências
+        de Sala Permitidas.
+      ru: Срок действия по умолчанию для новых комнат. Он также должен присутствовать
+        в списке допустимых сроков комнат.
+      ko: 새로 만든 방의 기본 수명입니다. 허용되는 방 유효기간에도 포함되어야 합니다.
+      zh-hant: 新建房間的預設有效期，且必須包含在「允許的房間有效期」中。
+      zh: 新建房间的默认有效期，且必须包含在“允许的房间有效期”中。
+      tr: Yeni oluşturulan odaların varsayılan süresi. İzin verilen oda süreleri içinde
+        de yer almalıdır.
+      fa: عمر پیش‌فرض اتاق‌های تازه ایجادشده. این مقدار باید در مدت‌های مجاز اتاق
+        نیز وجود داشته باشد.
+      lo: ອາຍຸເລີ່ມຕົ້ນສຳລັບຫ້ອງທີ່ສ້າງໃໝ່. ຄ່ານີ້ຕ້ອງຢູ່ໃນອາຍຸຫ້ອງທີ່ອະນຸຍາດນຳ.
+    required: true
+    type: text
+  - default: 1h
+    edit: true
+    envKey: ROOM_SHARE_DISABLED_LOCK_DURATION
+    labelEn: Share-disabled Lock Duration
+    labelZh: 禁用分享后的锁定时长
+    label:
+      en: Share-disabled Lock Duration
+      es-es: Duración de bloqueo sin compartir
+      ja: 共有無効後のロック期間
+      ms: Tempoh kunci selepas kongsi dilumpuhkan
+      pt-br: Duração do bloqueio sem compartilhamento
+      ru: Срок блокировки после отключения шаринга
+      ko: 공유 비활성화 후 잠금 기간
+      zh-hant: 停用分享後的鎖定時長
+      zh: 禁用分享后的锁定时长
+      tr: Paylaşım kapalı kilit süresi
+      fa: مدت قفل پس از غیرفعال‌کردن اشتراک‌گذاری
+      lo: ໄລຍະລັອກຫຼັງປິດການແບ່ງປັນ
+    description:
+      en: How long a private room name remains reserved after sharing is disabled.
+        Supports humantime values such as 30m and 1h.
+      es-es: Tiempo durante el que el nombre de una sala privada permanece reservado
+        después de desactivar el uso compartido. Admite valores humantime como 30m
+        y 1h.
+      ja: 共有を無効にした後、プライベートルーム名を予約しておく期間。30m や 1h などの humantime 値に対応します。
+      ms: Tempoh nama bilik peribadi kekal ditempah selepas perkongsian dilumpuhkan.
+        Nilai humantime seperti 30m dan 1h disokong.
+      pt-br: Tempo durante o qual o nome de uma sala privada permanece reservado após
+        o compartilhamento ser desativado. Aceita valores humantime como 30m e 1h.
+      ru: Время, в течение которого имя приватной комнаты остаётся зарезервированным
+        после отключения общего доступа. Поддерживаются значения humantime, например
+        30m и 1h.
+      ko: 공유를 비활성화한 뒤 비공개 방 이름을 예약된 상태로 유지하는 시간입니다. 30m, 1h와 같은 humantime 값을 지원합니다.
+      zh-hant: 停用分享後，私密房間名稱繼續保留的時長；支援 30m、1h 等 humantime 格式。
+      zh: 禁用分享后，私密房间名称继续保留的时长；支持 30m、1h 等 humantime 格式。
+      tr: Paylaşım devre dışı bırakıldıktan sonra özel oda adının rezerve kaldığı
+        süre. 30m ve 1h gibi humantime değerleri desteklenir.
+      fa: مدتی که نام اتاق خصوصی پس از غیرفعال شدن اشتراک‌گذاری رزروشده باقی می‌ماند.
+        مقادیر humantime مانند 30m و 1h پشتیبانی می‌شوند.
+      lo: ໄລຍະເວລາທີ່ຊື່ຫ້ອງສ່ວນຕົວຍັງຖືກຈອງຫຼັງຈາກປິດການແບ່ງປັນ. ຮອງຮັບຄ່າ humantime
+        ເຊັ່ນ 30m ແລະ 1h.
+    required: true
+    type: text

@@ -1,10 +1,12 @@
 services:
   elizabeth:
-    image: yunique001/elizabeth:1.9.0
+    image: "yunique001/elizabeth:2.0.2@sha256:7075becf9fec4d17a9abde0cc98a669a3ff91d4de4d2ec97c05369e95b62c8a9"
     container_name: ${CONTAINER_NAME}
-    user: "0:0"
     restart: unless-stopped
     init: true
+    # The image runs as distroless `nonroot` (65532); scripts/init.sh hands the
+    # data and storage directories to that user before Compose starts.
+    user: "65532:65532"
     security_opt:
       - no-new-privileges:true
     cap_drop:
@@ -29,11 +31,13 @@ services:
       - "${APP_DATA_DIR}:/app/data"
       - "${APP_STORAGE_DIR}:/app/storage"
     healthcheck:
+      # The distroless runtime ships no `curl`, so the probe is the binary itself.
       test:
         - CMD
-        - curl
-        - "-f"
-        - http://127.0.0.1:4092/api/v1/health
+        - /app/board
+        - health
+        - "--config-file"
+        - /app/config/backend.yaml
       interval: 30s
       timeout: 10s
       retries: 3
