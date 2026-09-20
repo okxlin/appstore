@@ -1,6 +1,6 @@
 services:
   mazanoke:
-    image: "ghcr.io/civilblur/mazanoke:v1.1.6@sha256:92cc7474deb789af6549318563b7a9ee750131f9f7b297cc9c87ab67e656c22c"
+    image: "ghcr.io/civilblur/mazanoke:v1.1.7@sha256:296914fe6eda7fd80dae090c9ca6cf43ad4c3902a9a8b36ca78f13f6a90bc515"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
