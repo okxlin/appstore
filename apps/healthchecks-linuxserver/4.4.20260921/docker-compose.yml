@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   healthchecks:
-    image: "linuxserver/healthchecks:4.4.20260907"
+    image: "linuxserver/healthchecks:4.4.20260921"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
