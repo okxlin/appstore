@@ -1,6 +1,6 @@
 services:
   codex2api:
-    image: "ghcr.io/james-6-23/codex2api:2.9.9@sha256:a0ae1cc504fa1569410a610f93583729ec0e2082c3b89fb30594a1fe5d9dcfbb"
+    image: "ghcr.io/james-6-23/codex2api:3.0.0@sha256:d5f824bbe902ec99bde092ba1ac77156031beddf44109b6f87cb4581697353f8"
     container_name: ${CONTAINER_NAME}
     restart: always
     security_opt:
