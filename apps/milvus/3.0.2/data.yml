@@ -1,0 +1,86 @@
+additionalProperties:
+  formFields:
+  - default: 19530
+    edit: true
+    envKey: PANEL_APP_PORT_GRPC
+    labelEn: Milvus gRPC Port
+    labelZh: Milvus gRPC 端口
+    label:
+      en: Milvus gRPC Port
+      zh: Milvus gRPC 端口
+      zh-hant: Milvus gRPC 連接埠
+      ja: Milvus gRPC ポート
+      ko: Milvus gRPC 포트
+      ru: Порт gRPC Milvus
+      ms: Port gRPC Milvus
+      pt-br: Porta gRPC do Milvus
+      tr: Milvus gRPC Portu
+      es-es: Puerto gRPC de Milvus
+      fa: پورت gRPC میلووس
+      lo: ພອດ gRPC ຂອງ Milvus
+    required: true
+    rule: paramPort
+    type: number
+  - default: 9091
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Milvus HTTP/WebUI Port
+    labelZh: Milvus HTTP/WebUI 端口
+    label:
+      en: Milvus HTTP/WebUI Port
+      zh: Milvus HTTP/WebUI 端口
+      zh-hant: Milvus HTTP/WebUI 連接埠
+      ja: Milvus HTTP/WebUI ポート
+      ko: Milvus HTTP/WebUI 포트
+      ru: Порт HTTP/WebUI Milvus
+      ms: Port HTTP/WebUI Milvus
+      pt-br: Porta HTTP/WebUI do Milvus
+      tr: Milvus HTTP/WebUI Portu
+      es-es: Puerto HTTP/WebUI de Milvus
+      fa: پورت HTTP/WebUI میلووس
+      lo: ພອດ HTTP/WebUI ຂອງ Milvus
+    required: true
+    rule: paramPort
+    type: number
+  - default: 9000
+    edit: true
+    envKey: PANEL_APP_PORT_MINIO_API
+    labelEn: MinIO API Port
+    labelZh: MinIO API 端口
+    label:
+      en: MinIO API Port
+      zh: MinIO API 端口
+      zh-hant: MinIO API 連接埠
+      ja: MinIO API ポート
+      ko: MinIO API 포트
+      ru: Порт API MinIO
+      ms: Port API MinIO
+      pt-br: Porta da API MinIO
+      tr: MinIO API Portu
+      es-es: Puerto de API de MinIO
+      fa: پورت API مین‌آی‌او
+      lo: ພອດ API MinIO
+    required: true
+    rule: paramPort
+    type: number
+  - default: 9001
+    edit: true
+    envKey: PANEL_APP_PORT_MINIO_CONSOLE
+    labelEn: MinIO Console Port
+    labelZh: MinIO 控制台端口
+    label:
+      en: MinIO Console Port
+      zh: MinIO 控制台端口
+      zh-hant: MinIO 主控台連接埠
+      ja: MinIO コンソールポート
+      ko: MinIO 콘솔 포트
+      ru: Порт консоли MinIO
+      ms: Port Konsol MinIO
+      pt-br: Porta do console MinIO
+      tr: MinIO Konsol Portu
+      es-es: Puerto de consola de MinIO
+      fa: پورت کنسول مین‌آی‌او
+      lo: ພອດ console MinIO
+    required: true
+    rule: paramPort
+    type: number
