@@ -1,0 +1,35 @@
+name: Milvus
+tags:
+- Database
+title: Milvus
+description: 面向高性能向量检索与数据分析的开源向量数据库
+additionalProperties:
+  key: milvus
+  name: Milvus
+  tags:
+  - Database
+  shortDescZh: 面向高性能向量检索与数据分析的开源向量数据库
+  shortDescEn: An open-source vector database for high-performance vector search and data analytics
+  description:
+    en: An open-source vector database for high-performance vector search and data analytics
+    zh: 面向高性能向量检索与数据分析的开源向量数据库
+    zh-hant: 面向高效能向量搜尋與資料分析的開源向量資料庫
+    ja: 高性能なベクトル検索とデータ分析のためのオープンソースベクトルデータベース
+    ko: 고성능 벡터 검색과 데이터 분석을 위한 오픈 소스 벡터 데이터베이스
+    ru: Векторная база данных с открытым исходным кодом для высокопроизводительного поиска и аналитики
+    ms: Pangkalan data vektor sumber terbuka untuk carian vektor berprestasi tinggi dan analisis data
+    pt-br: Banco de dados vetorial de código aberto para pesquisa vetorial de alto desempenho e análise de dados
+    tr: Yüksek performanslı vektör arama ve veri analizi için açık kaynaklı vektör veritabanı
+    es-es: Base de datos vectorial de código abierto para búsquedas vectoriales de alto rendimiento y análisis de datos
+    fa: پایگاه داده برداری متن‌باز برای جست‌وجوی برداری پربازده و تحلیل داده
+    lo: ຖານຂໍ້ມູນ vector ແບບ open-source ສຳລັບການຄົ້ນຫາ vector ປະສິດທິພາບສູງ ແລະ ວິເຄາະຂໍ້ມູນ
+  type: tool
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 0
+  website: https://milvus.io/
+  github: https://github.com/milvus-io/milvus
+  document: https://milvus.io/docs/
+  architectures:
+  - amd64
+  - arm64
