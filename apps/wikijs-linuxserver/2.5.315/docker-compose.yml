@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   wikijs:
-    image: "linuxserver/wikijs:2.5.314"
+    image: "linuxserver/wikijs:2.5.315"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
