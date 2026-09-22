@@ -1,6 +1,6 @@
 services:
   romm:
-    image: "rommapp/romm:5.2.0"
+    image: "rommapp/romm:5.3.0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
