@@ -19,6 +19,10 @@ additionalProperties:
     ru: Клиент сетевой связи Reticulum
     ms: Klien komunikasi mesh Reticulum
     pt-br: Cliente de comunicacao em malha Reticulum
+    tr: Reticulum mesh iletişim istemcisi
+    es-es: Cliente de comunicación en malla de Reticulum
+    fa: کلاینت ارتباطی مش Reticulum
+    lo: ລູກຂ່າຍສື່ສານເຄືອຂ່າຍ Reticulum
   type: website
   crossVersionUpdate: true
   limit: 0
