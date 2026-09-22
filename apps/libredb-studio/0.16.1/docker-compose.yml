@@ -6,6 +6,7 @@ services:
       - "${PANEL_APP_PORT_HTTP}:3000"
     environment:
       - TZ=${TZ}
+      - STORAGE_PROVIDER=sqlite
       - STORAGE_SQLITE_PATH=/app/data/libredb-storage.db
     labels:
       createdBy: "Apps"
