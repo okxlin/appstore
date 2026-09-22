@@ -1,6 +1,6 @@
 services:
   meshchatx:
-    image: "ghcr.io/quad4-software/meshchatx:v4.9.0@sha256:6afdd931e717c63dc3e88c5ad7e0cf21a046a2296cc6f164c5bb484543bb9d5b"
+    image: "ghcr.io/quad4-software/meshchatx:v4.9.1@sha256:075b8f49eb1d480297ea946a2ad8044365fa2d7da85ba4a8fb91b6878ffa2a64"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     init: true
