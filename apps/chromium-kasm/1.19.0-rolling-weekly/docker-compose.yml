@@ -1,6 +1,6 @@
 services:
   chromium-kasm:
-    image: "kasmweb/chromium:1.19.0-rolling-weekly@sha256:28dcec2384910181911a91bf988c819f247b42f342c901c3e3b74d343c9915fa"
+    image: "kasmweb/chromium:1.19.0-rolling-weekly@sha256:e237ba05019afdf2e21c4b982d8319d9fcf4a6a57224a43618510f917c0e90cd"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
