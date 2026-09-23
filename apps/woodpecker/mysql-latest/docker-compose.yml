@@ -1,6 +1,6 @@
 services:
   woodpecker-data-permissions:
-    image: busybox:1.37.0@sha256:9db7b59979c38555a39def84a31fb98b5296952f9e3afd4f6f11f05b07adfab0
+    image: busybox:1.37.0@sha256:4f93577242de6585bb7211f687673fc8a715571fdec8cf0901fd0724dc05dea2
     command: ["sh", "-c", "chown -R 1000:1000 /var/lib/woodpecker && exec tail -f /dev/null"]
     restart: unless-stopped
     network_mode: none
