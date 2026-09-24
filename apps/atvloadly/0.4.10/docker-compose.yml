@@ -1,6 +1,6 @@
 services:
   atvloadly:
-    image: "bitxeno/atvloadly:v0.4.10"
+    image: "bitxeno/atvloadly:v0.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
