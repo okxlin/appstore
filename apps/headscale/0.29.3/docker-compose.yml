@@ -19,7 +19,7 @@ services:
       timeout: 5s
       retries: 5
     command: ['serve']
-    image: headscale/headscale:v0.29.3
+    image: headscale/headscale:v0.29.4
     labels:
       createdBy: "Apps"
 
