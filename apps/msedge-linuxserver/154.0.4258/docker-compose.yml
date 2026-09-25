@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   msedge:
-    image: "linuxserver/msedge:153.0.4234"
+    image: "linuxserver/msedge:154.0.4258"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
