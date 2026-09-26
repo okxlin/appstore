@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   bookstack:
-    image: "linuxserver/bookstack:26.05.20260608"
+    image: "linuxserver/bookstack:26.09.20260924"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
