@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   azahar:
-    image: "linuxserver/azahar:12126.1.1"
+    image: "linuxserver/azahar:12126.1.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
