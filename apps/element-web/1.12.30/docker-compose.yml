@@ -6,7 +6,7 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
-    image: vectorim/element-web:v1.12.29
+    image: vectorim/element-web:v1.12.30
     labels:  
       createdBy: "Apps"
 
