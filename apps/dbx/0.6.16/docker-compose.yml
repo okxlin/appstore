@@ -1,6 +1,6 @@
 services:
   dbx:
-    image: "t8y2/dbx@sha256:09d8c8b79fd7a4a370e6e37e299909c052af15d0d5cf2d84e8d940c110a530b2"
+    image: "t8y2/dbx@sha256:033692fd56cad4c4033c8659e7225a7f319c7a169b2b75676cfc77bd7d545d8d"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:4224"
