@@ -2,25 +2,25 @@ name: LibreDB Studio
 tags:
   - Database
   - Tool
-title: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
-description: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
+title: 自托管、基于浏览器的数据库 IDE，18 种驱动覆盖 46 种引擎
+description: 自托管、基于浏览器的数据库 IDE，18 种驱动覆盖 46 种引擎
 additionalProperties:
   key: libredb-studio
   name: LibreDB Studio
   tags:
     - Database
     - Tool
-  shortDescZh: 自托管、基于浏览器的数据库 IDE，支持 16 种引擎
-  shortDescEn: Self-hosted, browser-based database IDE for 16 engines
+  shortDescZh: 自托管、基于浏览器的数据库 IDE，18 种驱动覆盖 46 种引擎
+  shortDescEn: Self-hosted, browser-based database IDE, 18 drivers reaching 46 named engines
   description:
-    en: LibreDB Studio is an MIT-licensed, self-hosted, browser-based database IDE for 16 engines including PostgreSQL, MySQL, Oracle, SQL Server, SQLite, MongoDB, Redis, ClickHouse, Elasticsearch and more. SSO (OIDC), RBAC and query audit logs ship in the free build. On first run the admin password is printed to the container log.
-    zh: LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 IDE，支持 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、MongoDB、Redis、ClickHouse、Elasticsearch 等 16 种引擎。免费版包含 SSO (OIDC)、RBAC 和查询审计日志。首次启动时管理员密码会打印到容器日志。
-    zh-Hant: LibreDB Studio 是一個 MIT 授權、自託管、基於瀏覽器的資料庫 IDE，支援 16 種引擎。免費版包含 SSO (OIDC)、RBAC 和查詢稽核日誌。
-    ja: LibreDB Studio は、16 種類のデータベースエンジンに対応した MIT ライセンスのセルフホスト型・ブラウザベースのデータベース IDE です。無料版に SSO (OIDC)、RBAC、監査ログを搭載しています。
-    ko: LibreDB Studio는 16개 데이터베이스 엔진을 지원하는 MIT 라이선스의 셀프 호스팅 브라우저 기반 데이터베이스 IDE입니다. 무료 버전에 SSO(OIDC), RBAC, 감사 로그가 포함됩니다.
-    ru: LibreDB Studio представляет собой самостоятельно размещаемую браузерную IDE для баз данных с поддержкой 16 движков, под лицензией MIT. SSO (OIDC), RBAC и журналы аудита включены в бесплатную версию.
-    ms: LibreDB Studio ialah IDE pangkalan data berlesen MIT yang berasaskan pelayar dan dihoskan sendiri untuk 16 enjin. SSO (OIDC), RBAC dan log audit disertakan dalam versi percuma.
-    pt-br: LibreDB Studio é uma IDE baseada em navegador e auto-hospedada para 16 motores de banco de dados, licenciada sob MIT. SSO (OIDC), RBAC e logs de auditoria estão incluídos na versão gratuita.
+    en: LibreDB Studio is an MIT-licensed, self-hosted, browser-based database IDE whose eighteen drivers reach forty-six named engines, including PostgreSQL, MySQL, Oracle, SQL Server, SQLite, MongoDB, Redis and ClickHouse. Five of the eighteen are read-only, among them Prometheus and Apache Kafka. SSO (OIDC), RBAC and query audit logs ship in the free build. On first run the admin password is printed to the container log.
+    zh: LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 IDE，18 种驱动覆盖 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、MongoDB、Redis、ClickHouse 等 46 种引擎，其中 5 种驱动为只读（包括 Prometheus 和 Apache Kafka）。免费版包含 SSO (OIDC)、RBAC 和查询审计日志。首次启动时管理员密码会打印到容器日志。
+    zh-Hant: LibreDB Studio 是一個 MIT 授權、自託管、基於瀏覽器的資料庫 IDE，18 種驅動覆蓋 46 種引擎，其中 5 種驅動為唯讀（包括 Prometheus 和 Apache Kafka）。免費版包含 SSO (OIDC)、RBAC 和查詢稽核日誌。
+    ja: LibreDB Studio は、18 種類のドライバーで 46 種類のデータベースエンジンに対応した MIT ライセンスのセルフホスト型・ブラウザベースのデータベース IDE です。ドライバー 18 種類のうち 5 種類は読み取り専用で、Prometheus と Apache Kafka がこれに含まれます。無料版でも SSO (OIDC)、RBAC、クエリ監査ログが利用できます。
+    ko: LibreDB Studio는 18개 드라이버로 46개 데이터베이스 엔진을 지원하는 MIT 라이선스의 셀프 호스팅 브라우저 기반 데이터베이스 IDE입니다. 드라이버 18개 중 5개는 읽기 전용이며 Prometheus와 Apache Kafka가 여기에 해당합니다. 무료 버전에 SSO(OIDC), RBAC, 쿼리 감사 로그가 포함됩니다.
+    ru: LibreDB Studio представляет собой самостоятельно размещаемую браузерную IDE для баз данных под лицензией MIT, где 18 драйверов охватывают 46 движков. Пять из этих 18 драйверов работают только для чтения, среди них Prometheus и Apache Kafka. SSO (OIDC), RBAC и журналы аудита запросов включены в бесплатную версию.
+    ms: LibreDB Studio ialah IDE pangkalan data berlesen MIT yang berasaskan pelayar dan dihoskan sendiri, dengan 18 pemacu pangkalan data yang merangkumi 46 enjin. Lima daripada 18 pemacu itu bersifat baca sahaja, antaranya Prometheus dan Apache Kafka. SSO (OIDC), RBAC dan log audit pertanyaan disertakan dalam versi percuma.
+    pt-br: LibreDB Studio é uma IDE baseada em navegador e auto-hospedada para bancos de dados, licenciada sob MIT, com 18 drivers que alcançam 46 motores de banco de dados. Cinco desses 18 drivers são somente leitura, entre eles Prometheus e Apache Kafka. SSO (OIDC), RBAC e logs de auditoria de consultas estão incluídos na versão gratuita.
   type: tool
   crossVersionUpdate: true
   limit: 0
