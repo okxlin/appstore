@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   rustdesk:
-    image: "linuxserver/rustdesk:1.4.9"
+    image: "linuxserver/rustdesk:1.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
