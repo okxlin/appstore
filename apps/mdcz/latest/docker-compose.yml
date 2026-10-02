@@ -1,6 +1,6 @@
 services:
   mdcz:
-    image: "ghcr.io/shotheadman/mdcz:latest@sha256:188bf8122f1030058c321b4fb068c751fd34ffde8c323a99f2d3f7eb73696b55"
+    image: "ghcr.io/shotheadman/mdcz:latest@sha256:dcd353deaf4f8bb62e998f4b97b99b4fcca4b8faaa49cd56e17c1543c8156265"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
