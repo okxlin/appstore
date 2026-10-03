@@ -1,6 +1,6 @@
 services:
   immich-kiosk:
-    image: "ghcr.io/damongolding/immich-kiosk:0.43.2@sha256:df06e9dc066f2c6a9cef10b37e34ad524a430412a7b21a02f6b300e4cf4ae104"
+    image: "ghcr.io/damongolding/immich-kiosk:0.44.0@sha256:b8d3f19dba36bfe7004f231cf238eb4e1ac21ebae9f57800e455196ed4a5c899"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
