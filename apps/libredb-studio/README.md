@@ -2,13 +2,13 @@
 
 ## 产品介绍
 
-LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 IDE，支持 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、MongoDB、Redis、ClickHouse、Elasticsearch 等 16 种引擎。首次启动时管理员密码会打印到容器日志（零配置）。
+LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 IDE，18 种驱动覆盖 PostgreSQL、MySQL、Oracle、SQL Server、SQLite、MongoDB、Redis、ClickHouse 等 46 种引擎，其中 5 种驱动为只读（Apache Druid、Elasticsearch、OpenSearch、Prometheus 和 Apache Kafka）。首次启动时管理员密码会打印到容器日志（零配置）。
 
 这里列出的数据库引擎是应用连接目标，应用商店包本身只运行 LibreDB Studio，不会自动安装 PostgreSQL、Redis 或其他数据库服务。
 
 ## 主要功能
 
-- 一个浏览器界面管理 16 种数据库引擎
+- 一个浏览器界面接入 18 种数据库驱动，其中 5 种为只读
 - SSO (OIDC)、RBAC 与查询审计日志（免费版内置）
 - ER 图、EXPLAIN 可视化、模式对比
 
@@ -20,13 +20,13 @@ LibreDB Studio 是一个 MIT 许可、自托管、基于浏览器的数据库 ID
 
 ## Introduction
 
-LibreDB Studio is an MIT-licensed, self-hosted, browser-based database IDE and client for 16 engines: PostgreSQL, MySQL, Oracle, SQL Server, SQLite, libSQL, DuckDB, MongoDB, Redis, Couchbase, ClickHouse, Druid, Elasticsearch, OpenSearch, Apache Trino and Apache Cassandra.
+LibreDB Studio is an MIT-licensed, self-hosted, browser-based database IDE and client for 18 engines: PostgreSQL, MySQL, SQLite, DuckDB, libSQL, MongoDB, Redis, Oracle, SQL Server, Couchbase, ClickHouse, Apache Druid, Elasticsearch, OpenSearch, Trino, Apache Cassandra, Prometheus and Apache Kafka. Those eighteen drivers reach forty-six named engines in all, and five of the eighteen are read-only: Apache Druid, Elasticsearch, OpenSearch, Prometheus and Apache Kafka.
 
 The listed database engines are connection targets. This AppStore package runs LibreDB Studio as a single service and does not provision PostgreSQL, Redis, or other database servers.
 
 ## Features
 
-- One browser interface for 16 database engines
+- One browser interface for 18 database engines, five of them read-only
 - SSO (OIDC), RBAC and query audit logs in the free build
 - ER diagrams, EXPLAIN visualization and schema comparison
 - Website: https://libredb.org
