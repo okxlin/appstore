@@ -1,6 +1,6 @@
 services:
   songloft:
-    image: "songloft/songloft:2.12.1"
+    image: "songloft/songloft:2.13.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
