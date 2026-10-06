@@ -59,7 +59,7 @@ services:
       createdBy: "Apps"
 
   firecrawl-playwright:
-    image: "ghcr.io/firecrawl/playwright-service@sha256:df1a393ce8bfc3801570a826a9b0dcc400ae48789adb4a0ad9d6cbf0229b059b"
+    image: "ghcr.io/firecrawl/playwright-service@sha256:717699bf8a61d94451926c810d19ca1d36278192907e307bf5229a558b08fcc6"
     container_name: ${CONTAINER_NAME}-playwright
     restart: always
     networks:
