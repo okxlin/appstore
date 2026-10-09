@@ -38,7 +38,7 @@ services:
       createdBy: "Apps"
 
   web:
-    image: "ghcr.io/bisq-network/bisq2-api-web-ui:2.1.12.1@sha256:3819d97d98b12fc4ea7253c1da69ca201b85d500e36c992b8bb71173500036a5"
+    image: "ghcr.io/bisq-network/bisq2-api-web-ui:2.1.13.0@sha256:9f818767031aeef0ae6018dfd1c02dd0fad392207013e4a6b6a12f6161f6fd27"
     container_name: ${CONTAINER_NAME}-web
     restart: unless-stopped
     network_mode: "service:server"
