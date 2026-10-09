@@ -17,8 +17,8 @@ read_env_value() {
   local value
   # Read as the compose file reads it, trimmed before quotes come off.
   value="$(sed -n \
+    -e "s/^[[:space:]]*export[[:space:]]\{1,\}${key}[[:space:]]*=//p;t" \
     -e "s/^[[:space:]]*${key}[[:space:]]*=//p" \
-    -e "s/^[[:space:]]*export[[:space:]]\{1,\}${key}[[:space:]]*=//p" \
     "$ENV_FILE" | tail -n 1)"
   value="$(trim "$value")"
   case "$value" in
@@ -28,13 +28,31 @@ read_env_value() {
   printf '%s\n' "$value"
 }
 
+env_has_key() {
+  local key="$1"
+  [[ -f "$ENV_FILE" ]] || return 1
+  grep -qE "^[[:space:]]*(export[[:space:]]+)?${key}[[:space:]]*=" "$ENV_FILE"
+}
+
+# A value that is set but empty is not defaulted. Compose refuses the project on
+# one, so saying why here beats letting it fail with an opaque mount spec.
 configured_value() {
   local key="$1"
   local default_value="$2"
   local value
-  value="$(trim "${!key:-}")"
-  if [[ -z "$value" ]]; then
-    value="$(read_env_value "$key")"
+  if [[ -n "${!key+x}" ]]; then
+    value="$(trim "${!key}")"
+    if [[ -z "$value" ]]; then
+      printf '%s\n' "unsafe ${key} path: ${key} is set to an empty value" >&2
+      return 1
+    fi
+    printf '%s\n' "$value"
+    return 0
+  fi
+  value="$(read_env_value "$key")"
+  if [[ -z "$value" ]] && env_has_key "$key"; then
+    printf '%s\n' "unsafe ${key} path: ${key} in .env has an empty value" >&2
+    return 1
   fi
   printf '%s\n' "${value:-$default_value}"
 }
@@ -148,6 +166,10 @@ resolve_app_path() {
       return 1
     fi
   done
+  if [[ -e "$candidate" && ! -d "$candidate" ]]; then
+    printf '%s\n' "unsafe ${key} path: ${candidate} exists and is not a directory" >&2
+    return 1
+  fi
   printf '%s\n' "$candidate"
 }
 
