@@ -1,6 +1,6 @@
 services:
   trek:
-    image: "mauriceboe/trek:4.3.1@sha256:819bee7d6b15cfe4252215fe0ddd8a99da8ab0c68fef7f9cb2b02ce2fa82f104"
+    image: "mauriceboe/trek:4.3.3@sha256:1ef1ccf41af8ae409e0435518facb5789b6adc99681ef26d1869508355455749"
     container_name: ${CONTAINER_NAME}
     read_only: true
     security_opt:
