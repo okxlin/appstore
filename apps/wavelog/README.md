@@ -47,8 +47,10 @@
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 安全提示
-- 当前应用使用上游官方镜像 `ghcr.io/wavelog/wavelog`。官方镜像功能完整，但常见镜像扫描结果可能包含较多 High / Critical 级别漏洞条目，请结合自身暴露面评估风险。
-- 建议仅在可信网络中部署，及时跟进上游镜像更新，并通过反向代理、访问控制和最小暴露原则降低风险。
+- 2026-10-10 对 `ghcr.io/wavelog/wavelog:3.2.3`（digest `sha256:600c3205ca2b5d7976beedabd023cb91e3f3dfdf45b5d58708dab75ade3b94e3`）的 Trivy 扫描报告了 2 个 Critical 和 223 个 High 漏洞；镜像更新后应重新评估扫描结果。
+- Critical 项 [`CVE-2026-6653`](https://security-tracker.debian.org/tracker/CVE-2026-6653) 涉及镜像中的 `libxml2`；扫描时 Debian 13 尚无修复版本。Wavelog 会解析外部 XML 数据；在上游发布修复镜像前，请限制不可信 XML 输入，并只在可信网络中部署。
+- Critical 项 [`CVE-2026-43185`](https://security-tracker.debian.org/tracker/CVE-2026-43185) 来自 `linux-libc-dev` 头文件包，描述的是 Linux `ksmbd` 内核漏洞。镜像中未发现内核镜像或 `ksmbd` 模块，容器也不提供宿主机内核；此扫描结果不代表宿主机已修复，请单独维护部署主机的内核。
+- 及时跟进上游镜像更新，并通过反向代理、访问控制和最小暴露原则降低风险。
 
 ## 参考资料
 - 官网: <https://www.wavelog.org/>
