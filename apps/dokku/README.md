@@ -38,9 +38,9 @@ Dokku 的核心功能必须挂载宿主机 `/var/run/docker.sock`。这相当于
 
 ## 镜像安全提示
 
-当前镜像的 Docker 相关工具包含 Trivy 标记为 High 的 Moby/Docker 与 Go 标准库问题，其中包括授权插件绕过、针对恶意容器镜像执行 `docker cp`/压缩归档上传时的宿主机代码执行或文件覆盖风险，以及符号链接目录遍历风险。由于 Dokku 必须直接访问宿主机 Docker Socket，这些问题不能按普通低权限容器处理。
+Dokku 容器必须访问宿主机 Docker Socket。镜像内 Docker/Moby、Go 标准库及系统组件的漏洞，可能通过 Docker API、归档处理或网络服务影响宿主机或 Dokku 服务；不能按普通低权限容器处理。部署前应按 Compose 中固定的镜像摘要复核当前安全扫描结果，并及时升级到包含上游修复的镜像。
 
-仅部署受信任镜像和应用源码；不要对不受信任容器执行 `docker cp` 或压缩归档上传；不要向不受信任用户授予 Dokku SSH、插件安装或 Docker 操作权限。后续 Dokku 镜像包含已修复的 Docker/Go 工具链后应尽快升级。
+仅部署受信任镜像和应用源码；不要对不受信任容器执行 `docker cp` 或压缩归档上传；不要向不受信任用户授予 Dokku SSH、插件安装或 Docker 操作权限。
 
 ## 端口与网络风险
 
