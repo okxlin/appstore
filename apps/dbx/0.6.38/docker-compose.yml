@@ -1,0 +1,19 @@
+services:
+  dbx:
+    image: "t8y2/dbx:0.6.38@sha256:d1b03b7e3e232ca9c67c524b53d56e9f240d68e179b1dca9cdd69fed7d51ed8f"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:4224"
+    environment:
+      - DBX_PASSWORD=${PANEL_DB_PASSWORD}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
+    networks:
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
