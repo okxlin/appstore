@@ -1,6 +1,6 @@
 services:
   drawdb:
-    image: "ghcr.io/drawdb-io/drawdb:v1.8.1"
+    image: "ghcr.io/drawdb-io/drawdb:v1.8.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
