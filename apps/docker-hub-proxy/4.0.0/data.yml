@@ -1,0 +1,131 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: '10.0'
+      edit: true
+      envKey: PROXY_TIMEOUT
+      labelEn: Proxy Timeout
+      labelZh: 代理超时秒数
+      label:
+        en: Proxy Timeout
+        zh: 代理超时秒数
+        zh-Hant: 代理逾時秒數
+        ja: プロキシタイムアウト
+        ko: 프록시 타임아웃
+        ru: Таймаут прокси
+        ms: Tamat Masa Proksi
+        pt-br: Tempo Limite do Proxy
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: ADMIN_USER
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama Pengguna Admin
+        pt-br: Nome de Usuario do Admin
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: ADMIN_PASS
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Admin
+        pt-br: Senha do Admin
+      required: false
+      type: password
+    - default: ''
+      edit: true
+      envKey: IP_WHITELIST
+      labelEn: IP Whitelist
+      labelZh: IP 白名单
+      label:
+        en: IP Whitelist
+        zh: IP 白名单
+        zh-Hant: IP 白名單
+        ja: IP ホワイトリスト
+        ko: IP 허용 목록
+        ru: Белый список IP
+        ms: Senarai Putih IP
+        pt-br: Lista de Permissao de IP
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: IMAGE_WHITELIST_REGEX
+      labelEn: Image Whitelist Regex
+      labelZh: 镜像白名单正则
+      label:
+        en: Image Whitelist Regex
+        zh: 镜像白名单正则
+        zh-Hant: 映像白名單正則
+        ja: イメージ許可正規表現
+        ko: 이미지 화이트리스트 정규식
+        ru: Regex белого списка образов
+        ms: Regex Senarai Putih Imej
+        pt-br: Regex da Lista de Permissao de Imagens
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: IMAGE_BLACKLIST_REGEX
+      labelEn: Image Blacklist Regex
+      labelZh: 镜像黑名单正则
+      label:
+        en: Image Blacklist Regex
+        zh: 镜像黑名单正则
+        zh-Hant: 映像黑名單正則
+        ja: イメージ拒否正規表現
+        ko: 이미지 블랙리스트 정규식
+        ru: Regex черного списка образов
+        ms: Regex Senarai Hitam Imej
+        pt-br: Regex da Lista Negra de Imagens
+      required: false
+      type: text
