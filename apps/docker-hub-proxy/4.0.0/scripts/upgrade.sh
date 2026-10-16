@@ -1,5 +1,5 @@
 #!/bin/bash
 set -euo pipefail
 
-DATA_DIR="${APP_DATA_DIR:-./data}"
-mkdir -p "$DATA_DIR"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+bash "$SCRIPT_DIR/init.sh"
