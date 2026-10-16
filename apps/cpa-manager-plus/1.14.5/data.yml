@@ -1,0 +1,92 @@
+additionalProperties:
+  formFields:
+    - default: 18317
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: CPA_MANAGER_ADMIN_KEY
+      labelEn: Admin Key
+      labelZh: 管理员密钥
+      label:
+        en: Admin Key
+        zh: 管理员密钥
+        zh-Hant: 管理員密鑰
+        ja: 管理者キー
+        ko: 관리자 키
+        ru: Ключ администратора
+        ms: Kunci Pentadbir
+        pt-br: Chave de Admin
+      required: false
+      type: password
+    - default: auto
+      edit: true
+      envKey: USAGE_COLLECTOR_MODE
+      labelEn: Collector Mode
+      labelZh: 采集模式
+      label:
+        en: Collector Mode
+        zh: 采集模式
+        zh-Hant: 採集模式
+        ja: 収集モード
+        ko: 수집 모드
+        ru: Режим сбора
+        ms: Mod Pengumpulan
+        pt-br: Modo de Coleta
+      required: true
+      type: select
+      values:
+        - label: auto
+          value: auto
+        - label: subscribe
+          value: subscribe
+        - label: http
+          value: http
+        - label: resp
+          value: resp
+    - default: '*'
+      edit: true
+      envKey: USAGE_CORS_ORIGINS
+      labelEn: CORS Origins
+      labelZh: CORS 来源
+      label:
+        en: CORS Origins
+        zh: CORS 来源
+        zh-Hant: CORS 來源
+        ja: CORS オリジン
+        ko: CORS Origin
+        ru: Источники CORS
+        ms: Origin CORS
+        pt-br: Origens CORS
+      required: false
+      type: text
