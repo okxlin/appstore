@@ -1,0 +1,169 @@
+additionalProperties:
+  formFields:
+    - default: "Hermes Dashboard 是附属应用。请先部署 Hermes gateway，并把 APP_DATA_DIR 指向 Hermes Agent 的同一份数据目录，再把 GATEWAY_HEALTH_URL 填成它的完整地址。公开绑定现在强制启用认证，`--insecure` 已不能绕过认证；请设置 Dashboard 用户名、强密码和会话签名密钥。旧版本升级时，脚本只会为缺失或空白的认证项生成随机值，不会覆盖已有配置；升级完成后请在应用参数中设置自己知道的密码。"
+      disabled: true
+      envKey: TIPS
+      labelEn: Tips
+      labelZh: 提示
+      label:
+        en: Tips
+        zh: 提示
+        zh-Hant: 提示
+        ja: ヒント
+        ko: 팁
+        ru: Подсказка
+        ms: Petua
+        pt-br: Dicas
+      edit: true
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      edit: true
+      required: true
+      type: text
+    - default: /opt/1panel/apps/local/hermes-agent/hermes-agent/data
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      edit: true
+      required: true
+      type: text
+    - default: 10000
+      envKey: HERMES_UID
+      labelEn: Hermes Runtime UID
+      labelZh: Hermes 运行用户 UID
+      label:
+        en: Hermes Runtime UID
+        zh: Hermes 运行用户 UID
+        zh-Hant: Hermes 執行使用者 UID
+        ja: Hermes 実行ユーザー UID
+        ko: Hermes 실행 사용자 UID
+        ru: UID пользователя Hermes
+        ms: UID pengguna runtime Hermes
+        pt-br: UID do usuário de execução do Hermes
+      edit: true
+      required: true
+      type: number
+    - default: 10000
+      envKey: HERMES_GID
+      labelEn: Hermes Runtime GID
+      labelZh: Hermes 运行用户 GID
+      label:
+        en: Hermes Runtime GID
+        zh: Hermes 运行用户 GID
+        zh-Hant: Hermes 執行使用者 GID
+        ja: Hermes 実行ユーザー GID
+        ko: Hermes 실행 사용자 GID
+        ru: GID пользователя Hermes
+        ms: GID pengguna runtime Hermes
+        pt-br: GID do usuário de execução do Hermes
+      edit: true
+      required: true
+      type: number
+    - default: 9119
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Dashboard Port
+      labelZh: Dashboard 端口
+      label:
+        en: Dashboard Port
+        zh: Dashboard 端口
+        zh-Hant: Dashboard 連接埠
+        ja: Dashboard ポート
+        ko: 대시보드 포트
+        ru: Порт dashboard
+        ms: Port dashboard
+        pt-br: Porta do dashboard
+      edit: true
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://172.18.0.240:8642
+      envKey: GATEWAY_HEALTH_URL
+      labelEn: Gateway Health URL
+      labelZh: 网关健康检查 URL
+      label:
+        en: Gateway Health URL
+        zh: 网关健康检查 URL
+        zh-Hant: 閘道健康檢查 URL
+        ja: Gateway ヘルス URL
+        ko: 게이트웨이 헬스 URL
+        ru: URL проверки шлюза
+        ms: URL kesihatan gateway
+        pt-br: URL de verificação do gateway
+      edit: true
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: admin
+      envKey: DASHBOARD_USERNAME
+      labelEn: Dashboard Username
+      labelZh: Dashboard 用户名
+      label:
+        en: Dashboard Username
+        zh: Dashboard 用户名
+        zh-Hant: Dashboard 使用者名稱
+        ja: Dashboard ユーザー名
+        ko: Dashboard 사용자 이름
+        ru: Имя пользователя dashboard
+        ms: Nama pengguna dashboard
+        pt-br: Usuário do dashboard
+      edit: true
+      required: true
+      type: text
+    - default: ""
+      envKey: DASHBOARD_PASSWORD
+      labelEn: Dashboard Password
+      labelZh: Dashboard 密码
+      label:
+        en: Dashboard Password
+        zh: Dashboard 密码
+        zh-Hant: Dashboard 密碼
+        ja: Dashboard パスワード
+        ko: Dashboard 비밀번호
+        ru: Пароль dashboard
+        ms: Kata laluan dashboard
+        pt-br: Senha do dashboard
+      edit: true
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      envKey: DASHBOARD_SESSION_SECRET
+      labelEn: Dashboard Session Secret
+      labelZh: Dashboard 会话签名密钥
+      label:
+        en: Dashboard Session Secret
+        zh: Dashboard 会话签名密钥
+        zh-Hant: Dashboard 工作階段簽章密鑰
+        ja: Dashboard セッション署名シークレット
+        ko: Dashboard 세션 서명 비밀값
+        ru: Секрет подписи сессии dashboard
+        ms: Rahsia tandatangan sesi dashboard
+        pt-br: Segredo de assinatura da sessão do dashboard
+      edit: true
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
