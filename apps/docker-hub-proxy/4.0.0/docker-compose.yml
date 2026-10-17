@@ -1,0 +1,181 @@
+services:
+  docker-hub-proxy:
+    image: "qq510023514/docker-hub:v4.0.0"
+    container_name: ${CONTAINER_NAME}
+    command:
+      - python
+      - -c
+      - |
+        import ipaddress
+        import os
+        import re
+        import signal
+        import subprocess
+        import sys
+        import tempfile
+        from pathlib import Path
+
+        domain = os.environ.get("PROXY_DOMAIN", "localhost").strip()
+        ipv4_pattern = re.fullmatch(r"(?:[0-9]{1,3}\.){3}[0-9]{1,3}", domain)
+        domain_pattern = re.fullmatch(
+            r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*",
+            domain,
+        )
+        if ipv4_pattern:
+            address = ipaddress.ip_address(domain)
+            if address.version != 4:
+                raise SystemExit("PROXY_DOMAIN must be a valid IPv4 address or DNS name")
+            subject_alt_name = f"IP:{address},IP:127.0.0.1"
+        elif domain_pattern:
+            subject_alt_name = f"DNS:{domain},IP:127.0.0.1"
+        else:
+            raise SystemExit("PROXY_DOMAIN must be a DNS name or IPv4 address without a scheme or port")
+
+        cert_dir = Path("/app/data/certs")
+        if cert_dir.is_symlink():
+            raise SystemExit("/app/data/certs must not be a symbolic link")
+        cert_dir.mkdir(mode=0o700, parents=True, exist_ok=True)
+        cert_file = cert_dir / "fullchain.pem"
+        key_file = cert_dir / "privkey.pem"
+        if cert_file.is_symlink() or key_file.is_symlink():
+            raise SystemExit("TLS certificate files must not be symbolic links")
+
+        if cert_file.exists() or key_file.exists():
+            if (
+                not cert_file.is_file()
+                or not key_file.is_file()
+                or not cert_file.stat().st_size
+                or not key_file.stat().st_size
+            ):
+                raise SystemExit("Both TLS certificate files must exist and be non-empty; refusing to replace either file")
+            cert_public_key = subprocess.run(
+                ["openssl", "x509", "-in", str(cert_file), "-pubkey", "-noout"],
+                check=True,
+                capture_output=True,
+            ).stdout
+            cert_public_key = subprocess.run(
+                ["openssl", "pkey", "-pubin", "-outform", "DER"],
+                input=cert_public_key,
+                check=True,
+                capture_output=True,
+            ).stdout
+            key_public_key = subprocess.run(
+                ["openssl", "pkey", "-in", str(key_file), "-pubout", "-outform", "DER"],
+                check=True,
+                capture_output=True,
+            ).stdout
+            if cert_public_key != key_public_key:
+                raise SystemExit("TLS certificate and private key do not match")
+            check_name = "-checkip" if ipv4_pattern else "-checkhost"
+            certificate_name = subprocess.run(
+                ["openssl", "x509", "-in", str(cert_file), "-noout", check_name, domain],
+                capture_output=True,
+                text=True,
+            )
+            if certificate_name.returncode != 0:
+                raise SystemExit("existing TLS certificate does not match PROXY_DOMAIN")
+        else:
+            temporary_paths = []
+            try:
+                for prefix in (".fullchain.", ".privkey."):
+                    descriptor, temporary_path = tempfile.mkstemp(prefix=prefix, dir=cert_dir)
+                    os.close(descriptor)
+                    temporary_paths.append(Path(temporary_path))
+                temporary_cert, temporary_key = temporary_paths
+                subprocess.run(
+                    [
+                        "openssl", "req", "-x509", "-newkey", "rsa:2048", "-sha256", "-nodes",
+                        "-days", "825", "-keyout", str(temporary_key), "-out", str(temporary_cert),
+                        "-subj", f"/CN={domain}", "-addext", f"subjectAltName={subject_alt_name}",
+                        "-addext", "basicConstraints=critical,CA:TRUE", "-addext",
+                        "keyUsage=critical,digitalSignature,keyEncipherment,keyCertSign",
+                    ],
+                    check=True,
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                )
+                os.chmod(temporary_key, 0o600)
+                os.chmod(temporary_cert, 0o644)
+                os.replace(temporary_key, key_file)
+                os.replace(temporary_cert, cert_file)
+            finally:
+                for temporary_path in temporary_paths:
+                    temporary_path.unlink(missing_ok=True)
+
+        children = []
+
+        def stop_children(signum, _frame):
+            for child in children:
+                if child.poll() is None:
+                    child.terminate()
+            for child in children:
+                try:
+                    child.wait(timeout=20)
+                except subprocess.TimeoutExpired:
+                    child.kill()
+                    child.wait()
+            raise SystemExit(128 + signum)
+
+        signal.signal(signal.SIGTERM, stop_children)
+        signal.signal(signal.SIGINT, stop_children)
+        for service in ("web", "proxy"):
+            children.append(
+                subprocess.Popen(
+                    [sys.executable, "-m", "app.main", "--service", service]
+                )
+            )
+        try:
+            pid, status = os.wait()
+        except ChildProcessError:
+            raise SystemExit(1)
+        for child in children:
+            if child.pid != pid and child.poll() is None:
+                child.terminate()
+        for child in children:
+            if child.pid != pid:
+                try:
+                    child.wait(timeout=20)
+                except subprocess.TimeoutExpired:
+                    child.kill()
+                    child.wait()
+        if os.WIFEXITED(status):
+            raise SystemExit(os.WEXITSTATUS(status))
+        raise SystemExit(128 + os.WTERMSIG(status))
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8000"
+      - "${PANEL_APP_PORT_HTTPS}:8443"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - PROXY_PORT=8443
+      - PROXY_URL=https://${PROXY_DOMAIN}:${PANEL_APP_PORT_HTTPS}
+      - PROXY_TIMEOUT=${PROXY_TIMEOUT}
+      - ADMIN_USER=${ADMIN_USER}
+      - ADMIN_PASS=${ADMIN_PASS}
+      - IP_WHITELIST=${IP_WHITELIST}
+      - IMAGE_WHITELIST_REGEX=${IMAGE_WHITELIST_REGEX}
+      - IMAGE_BLACKLIST_REGEX=${IMAGE_BLACKLIST_REGEX}
+      - SSL_CERTFILE=/app/data/certs/fullchain.pem
+      - SSL_KEYFILE=/app/data/certs/privkey.pem
+    volumes:
+      - "${APP_DATA_DIR}:/app/data"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import ssl, urllib.request; urllib.request.urlopen("http://127.0.0.1:8000/openapi.json", timeout=10).close(); urllib.request.urlopen("https://127.0.0.1:8443/openapi.json", context=ssl._create_unverified_context(), timeout=10).close()
+      interval: 10s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    labels:
+      createdBy: Apps
+    networks:
+      - 1panel-network
+    stop_grace_period: 30s
+    restart: unless-stopped
+
+networks:
+  1panel-network:
+    external: true
