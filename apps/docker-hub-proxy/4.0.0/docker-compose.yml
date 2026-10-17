@@ -1,6 +1,6 @@
 services:
   docker-hub-proxy:
-    image: "qq510023514/docker-hub:v3.0.1"
+    image: "qq510023514/docker-hub:v4.0.0"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:8000"
