@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   vlc:
-    image: "linuxserver/vlc:3.0.23"
+    image: "linuxserver/vlc:3.0.24"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
