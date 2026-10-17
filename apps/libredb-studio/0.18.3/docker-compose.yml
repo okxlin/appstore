@@ -1,0 +1,16 @@
+services:
+  libredb-studio:
+    image: "libredb/libredb-studio:0.18.3"
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:3000"
+    environment:
+      - TZ=${TZ}
+      - STORAGE_PROVIDER=sqlite
+      - STORAGE_SQLITE_PATH=/app/data/libredb-storage.db
+    labels:
+      createdBy: "Apps"
+    restart: on-failure:3
+    volumes:
+      - "${APP_DATA_DIR_1}:/app/data"
+networks: {}
