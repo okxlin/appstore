@@ -93,5 +93,14 @@
   ],
   "zipline": [
     "zipline"
+  ],
+  "bookstack-linuxserver": [
+    "bookstack"
+  ],
+  "mastodon-linuxserver": [
+    "mastodon"
+  ],
+  "odoo": [
+    "odoo"
   ]
 }
