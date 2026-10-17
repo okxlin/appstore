@@ -1,6 +1,6 @@
 services:
   odoo:
-    image: "odoo:19.0"
+    image: "odoo:20.0"
     container_name: ${CONTAINER_NAME}
     user: root
     restart: always
