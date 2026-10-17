@@ -1,6 +1,6 @@
 services:
   bark:
-    image: "finab/bark-server:v2.3.7"
+    image: "finab/bark-server:v2.3.8"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
