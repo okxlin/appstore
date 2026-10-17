@@ -1,0 +1,230 @@
+additionalProperties:
+  description:
+    en: Docker Hub image proxy and acceleration service.
+    zh: Docker Hub 镜像代理与加速服务。
+    zh-Hant: Docker Hub 映像代理與加速服務。
+    ja: Docker Hub イメージのプロキシおよび高速化サービス。
+    ko: Docker Hub 이미지 프록시 및 가속 서비스입니다.
+    ru: Сервис проксирования и ускорения образов Docker Hub.
+    ms: Perkhidmatan proksi dan pecutan imej Docker Hub.
+    pt-br: Serviço de proxy e aceleração de imagens do Docker Hub.
+    tr: Docker Hub imajları için proxy ve hızlandırma hizmeti.
+    es-es: Servicio de proxy y aceleración de imágenes de Docker Hub.
+    fa: سرویس پراکسی و شتاب‌دهی تصویرهای Docker Hub.
+    lo: ບໍລິການພຣັອກຊີແລະເລັ່ງຄວາມໄວຮູບພາບ Docker Hub.
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+        tr: Web Portu
+        es-es: Puerto web
+        fa: درگاه وب
+        lo: ພອດເວັບ
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8443
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: Registry Proxy HTTPS Port
+      labelZh: 镜像代理 HTTPS 端口
+      label:
+        en: Registry Proxy HTTPS Port
+        zh: 镜像代理 HTTPS 端口
+        zh-Hant: 映像代理 HTTPS 連接埠
+        ja: レジストリプロキシ HTTPS ポート
+        ko: 레지스트리 프록시 HTTPS 포트
+        ru: HTTPS-порт прокси реестра
+        ms: Port HTTPS Proksi Registry
+        pt-br: Porta HTTPS do Proxy de Registro
+        tr: Kayıt Defteri Proxy HTTPS Portu
+        es-es: Puerto HTTPS del proxy del registro
+        fa: درگاه HTTPS پراکسی رجیستری
+        lo: ພອດ HTTPS ຂອງພຣັອກຊີ Registry
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+        tr: Veri Dizini
+        es-es: Directorio de datos
+        fa: مسیر داده‌ها
+        lo: ໄດເຣັກທໍຣີຂໍ້ມູນ
+      required: true
+      type: text
+    - default: localhost
+      edit: true
+      envKey: PROXY_DOMAIN
+      labelEn: Registry Proxy Domain (certificate name)
+      labelZh: 镜像代理域名（证书名称）
+      label:
+        en: Registry Proxy Domain (certificate name)
+        zh: 镜像代理域名（证书名称）
+        zh-Hant: 映像代理網域（憑證名稱）
+        ja: レジストリプロキシドメイン（証明書名）
+        ko: 레지스트리 프록시 도메인(인증서 이름)
+        ru: Домен прокси реестра (имя сертификата)
+        ms: Domain Proksi Registry (nama sijil)
+        pt-br: Domínio do Proxy de Registro (nome do certificado)
+        tr: Kayıt Defteri Proxy Etki Alanı (sertifika adı)
+        es-es: Dominio del proxy del registro (nombre del certificado)
+        fa: دامنه پراکسی رجیستری (نام گواهی)
+        lo: ໂດເມນພຣັອກຊີ Registry (ຊື່ໃບຮັບຮອງ)
+      description:
+        en: A self-signed certificate is generated under the app data directory. Docker clients must trust it. If you change this domain later, replace both files under certs/.
+        zh: 应用会在数据目录生成自签名证书，Docker 客户端需信任该证书。以后更改域名时，请同时替换 certs/ 下的证书和密钥。
+        zh-Hant: 應用會在資料目錄產生自簽名憑證，Docker 用戶端必須信任該憑證。之後若變更網域，請同時替換 certs/ 下的憑證與金鑰。
+        ja: アプリのデータディレクトリに自己署名証明書が生成されます。Docker クライアントでこの証明書を信頼する必要があります。後でドメインを変更する場合は、certs/ 内の証明書と鍵を両方置き換えてください。
+        ko: 앱 데이터 디렉터리에 자체 서명 인증서가 생성됩니다. Docker 클라이언트가 이 인증서를 신뢰해야 합니다. 나중에 도메인을 변경하면 certs/의 인증서와 키를 모두 교체하세요.
+        ru: В каталоге данных приложения создаётся самоподписанный сертификат. Клиенты Docker должны ему доверять. При последующем изменении домена замените оба файла в каталоге certs/.
+        ms: Sijil ditandatangani sendiri dijana dalam direktori data aplikasi. Klien Docker perlu mempercayai sijil ini. Jika domain diubah kemudian, gantikan kedua-dua fail dalam certs/.
+        pt-br: Um certificado autoassinado é gerado no diretório de dados do app. Os clientes Docker precisam confiar nele. Se você alterar o domínio depois, substitua os dois arquivos em certs/.
+        tr: Uygulama veri dizininde kendinden imzalı bir sertifika oluşturulur. Docker istemcileri bu sertifikaya güvenmelidir. Etki alanını sonradan değiştirirseniz certs/ altındaki iki dosyayı da değiştirin.
+        es-es: Se genera un certificado autofirmado en el directorio de datos de la aplicación. Los clientes Docker deben confiar en él. Si cambia el dominio más adelante, sustituya los dos archivos de certs/.
+        fa: یک گواهی خودامضا در مسیر داده‌های برنامه ساخته می‌شود. کلاینت‌های Docker باید به این گواهی اعتماد کنند. اگر بعداً دامنه را تغییر دادید، هر دو فایل داخل certs/ را جایگزین کنید.
+        lo: ໃບຮັບຮອງແບບເຊັນຕົນເອງຈະຖືກສ້າງໃນໄດເຣັກທໍຣີຂໍ້ມູນຂອງແອັບ. ລູກຂ່າຍ Docker ຕ້ອງໄວ້ໃຈໃບຮັບຮອງນີ້. ຖ້າປ່ຽນໂດເມນພາຍຫຼັງ ໃຫ້ປ່ຽນທັງສອງໄຟລ໌ໃນ certs/.
+      required: true
+      type: text
+    - default: '10.0'
+      edit: true
+      envKey: PROXY_TIMEOUT
+      labelEn: Proxy Timeout
+      labelZh: 代理超时秒数
+      label:
+        en: Proxy Timeout
+        zh: 代理超时秒数
+        zh-Hant: 代理逾時秒數
+        ja: プロキシタイムアウト
+        ko: 프록시 타임아웃
+        ru: Таймаут прокси
+        ms: Tamat Masa Proksi
+        pt-br: Tempo Limite do Proxy
+        tr: Proxy Zaman Aşımı
+        es-es: Tiempo de espera del proxy
+        fa: مهلت‌زمان پراکسی
+        lo: ເວລາໝົດກຳນົດຂອງພຣັອກຊີ
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: ADMIN_USER
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama Pengguna Admin
+        pt-br: Nome de Usuario do Admin
+        tr: Yönetici Kullanıcı Adı
+        es-es: Nombre de usuario del administrador
+        fa: نام کاربری مدیر
+        lo: ຊື່ຜູ້ໃຊ້ຜູ້ດູແລ
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: ADMIN_PASS
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Admin
+        pt-br: Senha do Admin
+        tr: Yönetici Parolası
+        es-es: Contraseña del administrador
+        fa: رمز عبور مدیر
+        lo: ລະຫັດຜ່ານຜູ້ດູແລ
+      required: false
+      type: password
+    - default: ''
+      edit: true
+      envKey: IP_WHITELIST
+      labelEn: IP Whitelist
+      labelZh: IP 白名单
+      label:
+        en: IP Whitelist
+        zh: IP 白名单
+        zh-Hant: IP 白名單
+        ja: IP ホワイトリスト
+        ko: IP 허용 목록
+        ru: Белый список IP
+        ms: Senarai Putih IP
+        pt-br: Lista de Permissao de IP
+        tr: IP İzin Listesi
+        es-es: Lista de IP permitidas
+        fa: فهرست مجاز IP
+        lo: ລາຍຊື່ IP ທີ່ອະນຸຍາດ
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: IMAGE_WHITELIST_REGEX
+      labelEn: Image Whitelist Regex
+      labelZh: 镜像白名单正则
+      label:
+        en: Image Whitelist Regex
+        zh: 镜像白名单正则
+        zh-Hant: 映像白名單正則
+        ja: イメージ許可正規表現
+        ko: 이미지 화이트리스트 정규식
+        ru: Regex белого списка образов
+        ms: Regex Senarai Putih Imej
+        pt-br: Regex da Lista de Permissao de Imagens
+        tr: İmaj İzin Listesi Regex
+        es-es: Regex de imágenes permitidas
+        fa: عبارت منظم تصاویر مجاز
+        lo: Regex ຂອງຮູບພາບທີ່ອະນຸຍາດ
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: IMAGE_BLACKLIST_REGEX
+      labelEn: Image Blacklist Regex
+      labelZh: 镜像黑名单正则
+      label:
+        en: Image Blacklist Regex
+        zh: 镜像黑名单正则
+        zh-Hant: 映像黑名單正則
+        ja: イメージ拒否正規表現
+        ko: 이미지 블랙리스트 정규식
+        ru: Regex черного списка образов
+        ms: Regex Senarai Hitam Imej
+        pt-br: Regex da Lista Negra de Imagens
+        tr: İmaj Engelleme Listesi Regex
+        es-es: Regex de imágenes bloqueadas
+        fa: عبارت منظم تصاویر مسدود
+        lo: Regex ຂອງຮູບພາບທີ່ຖືກບລັອກ
+      required: false
+      type: text
