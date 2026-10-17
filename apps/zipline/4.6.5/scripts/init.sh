@@ -20,27 +20,6 @@ read_env_value() {
   printf '%s\n' "$value"
 }
 
-set_env_value() {
-  local key="$1"
-  local value="$2"
-  local temp_file
-  temp_file="$(mktemp "${ROOT_DIR}/.zipline-env.tmp.XXXXXX")"
-  awk -v key="$key" -v value="$value" '
-    BEGIN { written = 0 }
-    $0 ~ "^" key "=" {
-      if (!written) {
-        print key "=" value
-        written = 1
-      }
-      next
-    }
-    { print }
-    END { if (!written) print key "=" value }
-  ' "$ENV_FILE" > "$temp_file"
-  chmod 600 "$temp_file"
-  mv -f -- "$temp_file" "$ENV_FILE"
-}
-
 validate_ipv4() {
   local key="$1"
   local value="$2"
@@ -59,18 +38,11 @@ validate_port() {
   ((10#$value >= 1 && 10#$value <= 65535)) || fail "PANEL_APP_PORT_HTTP must be between 1 and 65535"
 }
 
-generate_alphanumeric() {
-  local length="$1"
-  local material
-  material="$(openssl rand -base64 96 | tr -dc A-Za-z0-9)"
-  [[ ${#material} -ge $length ]] || fail "unable to generate sufficient random material"
-  printf '%s\n' "${material:0:length}"
-}
-
 [[ -f "$ENV_FILE" ]] || fail "$ENV_FILE not found"
 [[ ! -L "$ENV_FILE" ]] || fail "$ENV_FILE must not be a symbolic link"
 [[ "$(id -u)" -eq 0 ]] || fail "Zipline init must run as root"
 command -v openssl >/dev/null 2>&1 || fail "openssl is required to generate credentials"
+source "${ROOT_DIR}/scripts/credentials.sh"
 
 validate_ipv4 PANEL_APP_BIND_ADDRESS "$(read_env_value PANEL_APP_BIND_ADDRESS)"
 validate_port "$(read_env_value PANEL_APP_PORT_HTTP)"
@@ -79,20 +51,6 @@ postgres_db="$(read_env_value POSTGRES_DB)"
 postgres_user="$(read_env_value POSTGRES_USER)"
 [[ "$postgres_db" =~ ^[A-Za-z_][A-Za-z0-9_]{0,62}$ ]] || fail "POSTGRES_DB is invalid"
 [[ "$postgres_user" =~ ^[A-Za-z_][A-Za-z0-9_]{0,62}$ ]] || fail "POSTGRES_USER is invalid"
-
-postgres_password="$(read_env_value POSTGRES_PASSWORD)"
-if [[ -z "$postgres_password" || "$postgres_password" == generate ]]; then
-  postgres_password="$(generate_alphanumeric 48)"
-fi
-[[ "$postgres_password" =~ ^[A-Za-z0-9]{32,128}$ ]] ||
-  fail "POSTGRES_PASSWORD must contain 32 to 128 alphanumeric characters"
-
-core_secret="$(read_env_value CORE_SECRET)"
-if [[ -z "$core_secret" || "$core_secret" == generate ]]; then
-  core_secret="$(openssl rand -hex 32)"
-fi
-[[ "$core_secret" =~ ^[A-Fa-f0-9]{64,128}$ ]] ||
-  fail "CORE_SECRET must contain 64 to 128 hexadecimal characters"
 
 max_file_size="$(read_env_value FILES_MAX_FILE_SIZE)"
 [[ "$max_file_size" =~ ^[1-9][0-9]*(b|kb|mb|gb|tb)$ ]] ||
@@ -133,6 +91,5 @@ chown -R 70:70 -- "$resolved_data/postgres"
 chown -R 1000:1000 -- "$resolved_data/uploads" "$resolved_data/public" "$resolved_data/themes"
 chmod 0700 -- "$resolved_data/postgres"
 
-set_env_value POSTGRES_PASSWORD "$postgres_password"
-set_env_value CORE_SECRET "$core_secret"
+zipline_init_credentials "$ENV_FILE" "$resolved_data"
 chmod 600 "$ENV_FILE"
