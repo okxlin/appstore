@@ -8,9 +8,12 @@ services:
       - "${PANEL_APP_PORT_HTTP}:6806"
     volumes:
       - "${DATA_PATH}:/siyuan/workspace"
-    user: "1000:1000"
-    command: "--workspace=/siyuan/workspace/"
-    image: b3log/siyuan:latest
+    environment:
+      - SIYUAN_ACCESS_AUTH_CODE=${SIYUAN_ACCESS_AUTH_CODE}
+    command:
+      - serve
+      - --workspace=/siyuan/workspace/
+    image: "b3log/siyuan:latest"
     labels:  
       createdBy: "Apps"
 

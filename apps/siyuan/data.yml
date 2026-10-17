@@ -19,6 +19,10 @@ additionalProperties:
     ru: Персональная система управления знаниями с приоритетом конфиденциальности
     ms: Sistem pengurusan pengetahuan peribadi berteraskan privasi
     pt-br: Sistema de gestão de conhecimento pessoal com foco em privacidade
+    tr: Gizliliğe öncelik veren kişisel bilgi yönetim sistemi
+    es-es: Sistema personal de gestión del conocimiento que prioriza la privacidad
+    fa: سامانه مدیریت دانش شخصی با اولویت حریم خصوصی
+    lo: ລະບົບຈັດການຄວາມຮູ້ສ່ວນຕົວທີ່ເນັ້ນຄວາມເປັນສ່ວນຕົວ
   type: tool
   crossVersionUpdate: true
   limit: 0
