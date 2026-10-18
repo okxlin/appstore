@@ -5,6 +5,7 @@ services:
     environment:
       - ADDR=${ADDR}
       - PASS=${PASS}
+      - WEB_MANUAL=1
     ports:
       - "${PANEL_APP_PORT_SMP}:5223"
     volumes:
