@@ -2,25 +2,25 @@ name: LibreDB Studio
 tags:
   - Database
   - Tool
-title: 自托管、基于浏览器的数据库 IDE，27 种驱动
-description: 自托管、基于浏览器的数据库 IDE，27 种驱动
+title: 自托管、基于浏览器的数据库 IDE，41 种驱动
+description: 自托管、基于浏览器的数据库 IDE，41 种驱动
 additionalProperties:
   key: libredb-studio
   name: LibreDB Studio
   tags:
     - Database
     - Tool
-  shortDescZh: 自托管、基于浏览器的数据库 IDE，27 种驱动
-  shortDescEn: Self-hosted, browser-based database IDE, 27 drivers
+  shortDescZh: 自托管、基于浏览器的数据库 IDE，41 种驱动
+  shortDescEn: Self-hosted, browser-based database IDE, 41 drivers
   description:
-    en: Self-hosted, browser-based database IDE. 27 drivers reach 54 named engines.
-    zh: 自托管、基于浏览器的数据库 IDE。27 种驱动覆盖 54 种引擎。
-    zh-Hant: 自託管、基於瀏覽器的資料庫 IDE。27 種驅動程式涵蓋 54 種引擎。
-    ja: セルフホスト型・ブラウザベースのデータベース IDE。27 種類のドライバーで 54 種類のエンジンに接続できます。
-    ko: 셀프 호스팅 방식의 브라우저 기반 데이터베이스 IDE입니다. 드라이버 27개로 엔진 54개에 연결합니다.
-    ru: Браузерная IDE для баз данных, которую вы разворачиваете у себя. 27 драйверов обеспечивают доступ к 54 движкам.
-    ms: IDE pangkalan data berasaskan pelayar yang anda hoskan sendiri. 27 pemacu memberi akses kepada 54 enjin.
-    pt-br: IDE de banco de dados auto-hospedada e executada no navegador. 27 drivers dão acesso a 54 motores de banco de dados.
+    en: Self-hosted, browser-based database IDE. 41 drivers reach 68 named engines.
+    zh: 自托管、基于浏览器的数据库 IDE。41 种驱动覆盖 68 种引擎。
+    zh-Hant: 自託管、基於瀏覽器的資料庫 IDE。41 種驅動程式涵蓋 68 種引擎。
+    ja: セルフホスト型・ブラウザベースのデータベース IDE。41 種類のドライバーで 68 種類のエンジンに接続できます。
+    ko: 셀프 호스팅 방식의 브라우저 기반 데이터베이스 IDE입니다. 드라이버 41개로 엔진 68개에 연결합니다.
+    ru: Браузерная IDE для баз данных, которую вы разворачиваете у себя. 41 драйвер обеспечивает доступ к 68 движкам.
+    ms: IDE pangkalan data berasaskan pelayar yang anda hoskan sendiri. 41 pemacu memberi akses kepada 68 enjin.
+    pt-br: IDE de banco de dados auto-hospedada e executada no navegador. 41 drivers dão acesso a 68 motores de banco de dados.
   type: tool
   crossVersionUpdate: true
   limit: 0
