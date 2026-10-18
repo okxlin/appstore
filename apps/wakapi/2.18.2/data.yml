@@ -1,0 +1,95 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: change-me
+      edit: true
+      envKey: WAKAPI_PASSWORD_SALT
+      labelEn: Password Salt
+      labelZh: 密码盐
+      label:
+        en: Password Salt
+        zh: 密码盐
+        zh-Hant: 密碼鹽
+        ja: パスワードソルト
+        ko: 비밀번호 솔트
+        ru: Соль паролей
+        ms: Garam kata laluan
+        pt-br: Sal de senha
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "true"
+      edit: true
+      envKey: WAKAPI_INSECURE_COOKIES
+      labelEn: Allow Insecure Cookies
+      labelZh: 允许非安全 Cookie
+      label:
+        en: Allow Insecure Cookies
+        zh: 允许非安全 Cookie
+        zh-Hant: 允許非安全 Cookie
+        ja: 非セキュア Cookie を許可
+        ko: 보안이 적용되지 않은 Cookie 허용
+        ru: Разрешить небезопасные cookie
+        ms: Benarkan kuki tidak selamat
+        pt-br: Permitir cookies inseguros
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: WAKAPI_ALLOW_SIGNUP
+      labelEn: Allow Sign-up
+      labelZh: 允许注册
+      label:
+        en: Allow Sign-up
+        zh: 允许注册
+        zh-Hant: 允許註冊
+        ja: ユーザー登録を許可
+        ko: 회원가입 허용
+        ru: Разрешить регистрацию
+        ms: Benarkan pendaftaran
+        pt-br: Permitir cadastro
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
