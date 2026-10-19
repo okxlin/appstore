@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   onlyoffice:
-    image: "linuxserver/onlyoffice:9.4.0"
+    image: "linuxserver/onlyoffice:10.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
