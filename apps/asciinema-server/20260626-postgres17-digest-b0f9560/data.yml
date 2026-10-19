@@ -1,0 +1,195 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 4000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http
+      edit: true
+      envKey: ASCIINEMA_URL_SCHEME
+      labelEn: Public URL Scheme
+      labelZh: 公开 URL 协议
+      label:
+        en: Public URL Scheme
+        zh: 公开 URL 协议
+        zh-Hant: 公開 URL 協定
+        ja: 公開 URL スキーム
+        ko: 공개 URL 스킴
+        ru: Схема публичного URL
+        ms: Skema URL awam
+        pt-br: Esquema da URL publica
+      required: true
+      type: select
+      values:
+        - label: HTTP
+          value: http
+        - label: HTTPS
+          value: https
+    - default: asciinema.local
+      edit: true
+      envKey: ASCIINEMA_URL_HOST
+      labelEn: Public URL Host
+      labelZh: 公开 URL 主机名
+      label:
+        en: Public URL Host
+        zh: 公开 URL 主机名
+        zh-Hant: 公開 URL 主機名稱
+        ja: 公開 URL ホスト
+        ko: 공개 URL 호스트
+        ru: Хост публичного URL
+        ms: Hos URL awam
+        pt-br: Host da URL publica
+      required: true
+      type: text
+    - default: 4000
+      edit: true
+      envKey: ASCIINEMA_URL_PORT
+      labelEn: Public URL Port
+      labelZh: 公开 URL 端口
+      label:
+        en: Public URL Port
+        zh: 公开 URL 端口
+        zh-Hant: 公開 URL 連接埠
+        ja: 公開 URL ポート
+        ko: 공개 URL 포트
+        ru: Порт публичного URL
+        ms: Port URL awam
+        pt-br: Porta da URL publica
+      required: true
+      rule: paramPort
+      type: number
+    - default: generate
+      edit: true
+      envKey: ASCIINEMA_SECRET_KEY_BASE
+      labelEn: Session Secret
+      labelZh: 会话密钥
+      label:
+        en: Session Secret
+        zh: 会话密钥
+        zh-Hant: 工作階段密鑰
+        ja: セッションシークレット
+        ko: 세션 비밀 키
+        ru: Секрет сеанса
+        ms: Rahsia sesi
+        pt-br: Segredo de sessao
+      required: true
+      type: password
+    - default: generate
+      edit: true
+      envKey: ASCIINEMA_POSTGRES_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      required: true
+      type: password
+    - default: "false"
+      edit: true
+      envKey: ASCIINEMA_SIGN_UP_DISABLED
+      labelEn: Disable Public Signup
+      labelZh: 禁用公开注册
+      label:
+        en: Disable Public Signup
+        zh: 禁用公开注册
+        zh-Hant: 停用公開註冊
+        ja: 公開登録を無効化
+        ko: 공개 가입 비활성화
+        ru: Отключить публичную регистрацию
+        ms: Lumpuhkan pendaftaran awam
+        pt-br: Desativar cadastro publico
+      required: true
+      type: select
+      values:
+        - label: "False"
+          value: "false"
+        - label: "True"
+          value: "true"
+    - default: "true"
+      edit: true
+      envKey: ASCIINEMA_UPLOAD_AUTH_REQUIRED
+      labelEn: Require Upload Authentication
+      labelZh: 要求上传认证
+      label:
+        en: Require Upload Authentication
+        zh: 要求上传认证
+        zh-Hant: 要求上傳驗證
+        ja: アップロード認証を必須化
+        ko: 업로드 인증 필요
+        ru: Требовать аутентификацию загрузки
+        ms: Wajibkan pengesahan muat naik
+        pt-br: Exigir autenticacao para envio
+      required: true
+      type: select
+      values:
+        - label: "True"
+          value: "true"
+        - label: "False"
+          value: "false"
+    - default: UTC
+      edit: true
+      envKey: ASCIINEMA_TIMEZONE
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
