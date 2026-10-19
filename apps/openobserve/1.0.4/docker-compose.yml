@@ -1,6 +1,6 @@
 services:
   openobserve:
-    image: "openobserve/openobserve:v1.0.4"
+    image: "openobserve/openobserve:v1.1.1"
     container_name: ${CONTAINER_NAME}
     init: true
     restart: unless-stopped
