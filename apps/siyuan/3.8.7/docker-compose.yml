@@ -13,7 +13,7 @@ services:
     command:
       - serve
       - --workspace=/siyuan/workspace/
-    image: "b3log/siyuan:v3.8.7"
+    image: "b3log/siyuan:v3.8.8"
     labels:
       createdBy: "Apps"
 
