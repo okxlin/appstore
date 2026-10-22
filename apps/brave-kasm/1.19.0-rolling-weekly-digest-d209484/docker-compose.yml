@@ -1,6 +1,6 @@
 services:
   brave-kasm:
-    image: "kasmweb/brave:1.19.0-rolling-weekly@sha256:d209484006536f11eb38d55d1944f5b4f80c046f684cb054fa9a946c7c1773ae"
+    image: "kasmweb/brave:1.19.0-rolling-weekly@sha256:7572468fa4752180aa800bc49b4c9aa3858a0a8de1c4dcbfafeb499e090bf7d1"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
