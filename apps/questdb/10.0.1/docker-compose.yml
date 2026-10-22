@@ -1,6 +1,6 @@
 services:
   questdb:
-    image: "questdb/questdb:10.0.1"
+    image: "questdb/questdb:10.1.0"
     container_name: ${CONTAINER_NAME}
     init: true
     restart: unless-stopped
