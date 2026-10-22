@@ -1,6 +1,6 @@
 services:
   firecrawl:
-    image: "ghcr.io/firecrawl/firecrawl@sha256:d9d3cacff6b0fa62dba01540e5901f5952138c461237d18b1558ec90f2fec714"
+    image: "ghcr.io/firecrawl/firecrawl@sha256:c74688ac88d5498c10c1d8209aba2835fdd7d50c8d3eac795760fbc092ce149c"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
