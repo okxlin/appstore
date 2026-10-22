@@ -20,7 +20,7 @@ services:
       - "/var/opt/bytebase"
       - "--port"
       - "8080"
-    image: bytebase/bytebase:3.23.1
+    image: bytebase/bytebase:3.24.0
     labels:  
       createdBy: "Apps"
 
