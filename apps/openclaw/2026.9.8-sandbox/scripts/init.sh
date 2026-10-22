@@ -5,6 +5,20 @@ ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 COMPOSE_FILE="$ROOT_DIR/docker-compose.yml"
 COMPOSE_CMD=(docker compose -f "$COMPOSE_FILE" --project-directory "$ROOT_DIR")
 
+# Resolve the service key because 1Panel may rename Compose services on install.
+SERVICES="$("${COMPOSE_CMD[@]}" config --services)"
+SERVICE_NAME=""
+SERVICE_COUNT=0
+while IFS= read -r COMPOSE_SERVICE; do
+  [ -n "$COMPOSE_SERVICE" ] || continue
+  SERVICE_NAME="$COMPOSE_SERVICE"
+  SERVICE_COUNT=$((SERVICE_COUNT + 1))
+done <<< "$SERVICES"
+if [ "$SERVICE_COUNT" -ne 1 ]; then
+  echo "Expected exactly one Compose service, found ${SERVICE_COUNT}" >&2
+  exit 1
+fi
+
 # 读取环境变量并提供默认值（与 docker-compose/.env 保持一致）
 CONFIG_DIR_RAW="${OPENCLAW_CONFIG_DIR:-./data/conf}"
 WORKSPACE_DIR_RAW="${OPENCLAW_WORKSPACE_DIR:-./data/workspace}"
@@ -48,23 +62,23 @@ mkdir -p "$CONFIG_DIR" "$WORKSPACE_DIR"
 chown -R 1000:1000 "$ROOT_DIR/data" 2>/dev/null || true
 
 echo "==> 执行 onboard 初始化"
-"${COMPOSE_CMD[@]}" run --rm openclaw \
-  node dist/index.js onboard --mode local --no-install-daemon
+"${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
+  node dist/index.js onboard --mode local --no-install-daemon --non-interactive --accept-risk --auth-choice skip --skip-health
 
 echo "==> 初始化 gateway.mode / gateway.bind"
-"${COMPOSE_CMD[@]}" run --rm openclaw \
+"${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
   node dist/index.js config set gateway.mode local
-"${COMPOSE_CMD[@]}" run --rm openclaw \
+"${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
   node dist/index.js config set gateway.bind "$BIND"
 
 # 如果是从 Sandbox 目录部署 (含 docker.sock 挂载)，自动应用 Sandbox 最佳安全配置
 if grep -q "DOCKER_SOCK_PATH" "$COMPOSE_FILE"; then
   echo "==> 检测到 Sandbox 模式，初始化 Sandbox 极简安全配置"
-  "${COMPOSE_CMD[@]}" run --rm openclaw \
+  "${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
     node dist/index.js config set agents.defaults.sandbox.mode "non-main"
-  "${COMPOSE_CMD[@]}" run --rm openclaw \
+  "${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
     node dist/index.js config set agents.defaults.sandbox.scope "agent"
-  "${COMPOSE_CMD[@]}" run --rm openclaw \
+  "${COMPOSE_CMD[@]}" run --rm "$SERVICE_NAME" \
     node dist/index.js config set agents.defaults.sandbox.workspaceAccess "none"
 fi
 
