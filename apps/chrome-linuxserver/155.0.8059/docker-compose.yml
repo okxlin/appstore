@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   chrome:
-    image: "linuxserver/chrome:155.0.8059"
+    image: "linuxserver/chrome:156.0.8078"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
