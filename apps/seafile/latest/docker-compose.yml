@@ -34,15 +34,7 @@ services:
       - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD:-}
       - MEMCACHED_HOST=${MEMCACHED_HOST:-memcached}
       - MEMCACHED_PORT=${MEMCACHED_PORT:-11211}
-    command:
-      - /bin/bash
-      - -c
-      - |
-        if test -d /opt/seafile/seafile-server-13.0.25/pro; then
-          mv /opt/seafile/seafile-server-13.0.25/pro /opt/seafile/seafile-server-13.0.25/pro.disabled
-        fi
-        exec /sbin/my_init -- /scripts/enterpoint.sh
-    image: seafileltd/seafile-mc:13.0.28
+    image: seafileltd/seafile-mc:14.0.9
     labels:  
       createdBy: "Apps"
 
