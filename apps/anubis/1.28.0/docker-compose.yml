@@ -1,6 +1,6 @@
 services:
   anubis:
-    image: "ghcr.io/techarohq/anubis:v1.28.0@sha256:48deacf791149e27c2cf6f5d8b4243e1a3db7a5816a168de0af6e58d9a519e2e"
+    image: "ghcr.io/techarohq/anubis:v1.28.1@sha256:1744c03a918160a28b0d2e8c1656de6585f4071b30b4c3b0d51d02282c9b7c25"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
