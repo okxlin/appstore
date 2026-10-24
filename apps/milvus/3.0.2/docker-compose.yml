@@ -43,7 +43,7 @@ services:
       createdBy: "Apps"
 
   standalone:
-    image: "milvusdb/milvus:v3.0.2"
+    image: "milvusdb/milvus:v3.0.3"
     container_name: ${CONTAINER_NAME}-standalone
     command: ["milvus", "run", "standalone"]
     security_opt:
