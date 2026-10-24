@@ -1,6 +1,6 @@
 services:
   passky-server:
-    image: "rabbitcompany/passky-server:8.1.8@sha256:e9bf7b9ecdf4904f1e3893b5968e98cbb61d4984bca1482081df2f59df05fca6"
+    image: "rabbitcompany/passky-server:9.0.0@sha256:c5229f4b88a47aaddd4e25eadea8a47331af3a8cae6b7a0bb176ef906849afd6"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     entrypoint:
