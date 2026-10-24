@@ -1,6 +1,6 @@
 services:
   flagsmith-migrate:
-    image: "flagsmith/flagsmith:2.274.0@sha256:1434ba89760b11fd2b038c524fd54be914a355f05535e1605dd7e5c600b5250f"
+    image: "flagsmith/flagsmith:2.287.0@sha256:ecd69b757e2694ce0ea9974af91661f51a2fd1834eda9480883d2f90981ed110"
     container_name: ${CONTAINER_NAME}-migrate
     restart: unless-stopped
     entrypoint: ["/bin/sh", "-c"]
@@ -34,7 +34,7 @@ services:
       createdBy: "Apps"
 
   flagsmith:
-    image: "flagsmith/flagsmith:2.274.0@sha256:1434ba89760b11fd2b038c524fd54be914a355f05535e1605dd7e5c600b5250f"
+    image: "flagsmith/flagsmith:2.287.0@sha256:ecd69b757e2694ce0ea9974af91661f51a2fd1834eda9480883d2f90981ed110"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     command: ["serve"]
@@ -71,7 +71,7 @@ services:
       createdBy: "Apps"
 
   flagsmith-task-processor:
-    image: "flagsmith/flagsmith:2.274.0@sha256:1434ba89760b11fd2b038c524fd54be914a355f05535e1605dd7e5c600b5250f"
+    image: "flagsmith/flagsmith:2.287.0@sha256:ecd69b757e2694ce0ea9974af91661f51a2fd1834eda9480883d2f90981ed110"
     container_name: ${CONTAINER_NAME}-task-processor
     restart: unless-stopped
     command: ["run-task-processor"]
