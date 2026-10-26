@@ -1,6 +1,6 @@
 services:
   mediamtx:
-    image: "bluenviron/mediamtx:1.21.2"
+    image: "bluenviron/mediamtx:1.21.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
