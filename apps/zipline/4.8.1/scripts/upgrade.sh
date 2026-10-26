@@ -28,9 +28,32 @@ for attempt in {1..60}; do
 done
 [[ "$ready" == true ]] || zipline_fail "Zipline PostgreSQL did not become ready for the staged upgrade"
 
-migration_state="$(timeout 15 "${compose[@]}" exec -T zipline-postgres sh -ec 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Atq -c "SELECT CASE WHEN count(*) = 1 AND bool_and(finished_at IS NOT NULL AND rolled_back_at IS NULL AND applied_steps_count >= 1) THEN '\''ok'\'' ELSE '\''bad'\'' END FROM public._prisma_migrations WHERE migration_name = '\''20260806081144_remove_version_api'\'' AND checksum = '\''08368d44344f934f07757dc014bd3a2022b14a8b377e1f8f5fb2d4836c3dc1ce'\'';"')" ||
-  zipline_fail "Zipline 4.7 migration history could not be verified; keep the existing version and repair the database before upgrading"
-[[ "$migration_state" == ok ]] ||
-  zipline_fail "Zipline 4.7 migration is missing or incomplete; keep the existing version and allow its migration to finish before upgrading"
+drizzle_table_exists="$(timeout 15 "${compose[@]}" exec -T zipline-postgres \
+  sh -ec 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Atq -c "$1"' sh \
+  "SELECT to_regclass('drizzle.__drizzle_migrations') IS NOT NULL")" ||
+  zipline_fail "Zipline migration history could not be verified; keep the existing version and repair the database before upgrading"
 
-printf '%s\n' "Zipline 4.7 migration verified; proceeding with the 4.8 upgrade."
+migration_state="prisma"
+if [[ "$drizzle_table_exists" == t ]]; then
+  drizzle_history="$(timeout 15 "${compose[@]}" exec -T zipline-postgres \
+    sh -ec 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Atq -c "$1"' sh \
+    "SELECT EXISTS (SELECT 1 FROM drizzle.__drizzle_migrations)")" ||
+    zipline_fail "Zipline Drizzle migration history could not be verified; keep the existing version and repair the database before upgrading"
+  if [[ "$drizzle_history" == t ]]; then
+    migration_state="drizzle"
+  fi
+fi
+
+if [[ "$migration_state" != drizzle ]]; then
+  prisma_migration_state="$(timeout 15 "${compose[@]}" exec -T zipline-postgres sh -ec 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Atq -c "SELECT CASE WHEN count(*) = 1 AND bool_and(finished_at IS NOT NULL AND rolled_back_at IS NULL AND applied_steps_count >= 1) THEN '\''ok'\'' ELSE '\''bad'\'' END FROM public._prisma_migrations WHERE migration_name = '\''20260806081144_remove_version_api'\'' AND checksum = '\''08368d44344f934f07757dc014bd3a2022b14a8b377e1f8f5fb2d4836c3dc1ce'\'';"')" ||
+    zipline_fail "Zipline 4.7 migration history could not be verified; keep the existing version and repair the database before upgrading"
+  [[ "$prisma_migration_state" == ok ]] ||
+    zipline_fail "Zipline 4.7 migration is missing or incomplete; keep the existing version and allow its migration to finish before upgrading"
+  migration_state="prisma"
+fi
+
+if [[ "$migration_state" == drizzle ]]; then
+  printf '%s\n' "Zipline Drizzle migration history verified; proceeding with the 4.8 upgrade."
+else
+  printf '%s\n' "Zipline 4.7 migration verified; proceeding with the 4.8 upgrade."
+fi
