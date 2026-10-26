@@ -9,21 +9,31 @@ fail() {
   exit 1
 }
 
-read_env_value() {
-  local key="$1"
-  local value=""
-  value="$(sed -n "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
+unquote_value() {
+  local value="$1"
   case "$value" in
     \"*\") value="${value#\"}"; value="${value%\"}" ;;
     \'*\') value="${value#\'}"; value="${value%\'}" ;;
   esac
+  value="${value//\\\$/\$}"
   printf '%s\n' "$value"
+}
+
+read_env_value() {
+  local key="$1"
+  local value=""
+  value="$(sed -n "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
+  unquote_value "$value"
 }
 
 effective_value() {
   local key="$1"
+  local value=""
   if [[ -v "$key" ]]; then
-    printf '%s\n' "${!key}"
+    value="${!key}"
+  fi
+  if [[ -n "$value" ]]; then
+    unquote_value "$value"
   else
     read_env_value "$key"
   fi
