@@ -1,6 +1,6 @@
 services:
   prest:
-    image: "prest/prest:v2.5.1@sha256:238cc982a02ec03e2ea3d5181a950ed743e3cd05a042e81cd1cbaa6d29e8dd88"
+    image: "prest/prest:v2.5.2@sha256:c66d3878fa66b0b42dc276691dbbededc24760d9c1c423fa5b87a4184edd1296"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "65532:65532"

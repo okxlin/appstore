@@ -75,13 +75,13 @@ Seafile is an open source file sync, sharing, and collaboration platform. This p
 - 新安装会使用 `seafile_ccnet_db`、`seafile_seafile_db` 和 `seafile_seahub_db`，避免与同一 MySQL runtime 中的 SeaTable 等应用发生库名冲突。旧安装升级时会保留原有 `ccnet_db`、`seafile_db` 和 `seahub_db` 名称，不会自动迁移数据库。
 - `LocalMySQL` 仅用于兼容直接选择本地商店 runtime 的场景；它不是 1Panel 的数据库生命周期类型，必须手工保证 root 密码和端口与所选 runtime 一致。
 - 旧安装升级时，`upgrade.sh` 不覆盖任何已有 `.env` 值；仅在字段缺失时保留旧数据库名、补 `PANEL_DB_PORT=3306`、保留旧 Memcached 缓存路径，并生成新的 64 位十六进制 JWT 私钥。升级前仍应备份数据目录和三个数据库。
-- `latest` 目录已固定到 `13.0.25`，避免 Docker Hub 上长期滞后的浮动 `latest` 标签落到 11.x 镜像。历史 `latest` 安装跨主版本升级前必须按 Seafile 官方升级顺序确认中间版本并完整备份；不要依赖自动镜像更新直接跨主版本。
+- `latest` 目录已固定到 `14.0.9`，避免 Docker Hub 上长期滞后的浮动 `latest` 标签落到旧版镜像。历史 `latest` 安装跨主版本升级前必须按 Seafile 官方升级顺序确认中间版本并完整备份；不要依赖自动镜像更新直接跨主版本。
 - 新安装使用 Redis。`MEMCACHED_HOST` 与 `MEMCACHED_PORT` 仅保留给历史安装迁移，不建议新部署继续使用 Memcached。
-- 官方 `seafileltd/seafile-mc:13.0.25` CE 镜像仍包含 `pro` 目录，初始化会被上游脚本误判为专业版并重复创建 Seahub 表，容器重建后也可能误启专业版组件。本适配在每次容器启动时仅将镜像可写层内的该目录改名为临时路径，随后按 CE 流程启动；不修改 `/shared` 数据，升级和重启会保留现有数据，也不会执行数据库删表。
+- Seafile 14 CE 使用镜像自带的启动命令；升级时保留镜像内的 `pro` 目录。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
 - 官网: <https://www.seafile.com>
 - 文档: <https://manual.seafile.com>
-- Docker 13 部署文档: <https://manual.seafile.com/13.0/setup/setup_ce_by_docker/>
+- Docker 14 部署文档: <https://manual.seafile.com/14.0/setup/setup_ce_by_docker/>
 - 源码: <https://github.com/haiwen/seafile>

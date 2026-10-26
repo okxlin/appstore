@@ -1,6 +1,6 @@
 services:
   verdaccio:
-    image: "verdaccio/verdaccio:6.10.6"
+    image: "verdaccio/verdaccio:6.10.7"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:

@@ -16,6 +16,12 @@ If you want a personal, single-user assistant that feels local, fast, and always
 - **Companion apps** — macOS menu bar app + iOS/Android nodes.
 - **Onboarding + skills** — wizard-driven setup with bundled/managed/workspace skills.
 
+## High-Risk Permission
+
+> **High risk: this app mounts the host Docker socket.**
+
+A process inside the container with access to the socket can control the host Docker daemon and may obtain root-equivalent control of the host. Deploy only in a trusted environment and restrict who can access or change this app's configuration.
+
 ## Post-Deployment Guide
 
 After deployment, to ensure OpenClaw operates correctly and can be accessed externally, please follow these configuration steps:
