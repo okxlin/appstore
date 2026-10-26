@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 ENV_FILE="${ENV_FILE:-${ROOT_DIR}/.env}"
-MATOMO_IMAGE="matomo:5.12.0-fpm-alpine"
+MATOMO_IMAGE="matomo:5.14.2-fpm-alpine"
 
 fail() {
   printf '%s\n' "$1" >&2
