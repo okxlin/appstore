@@ -1,0 +1,49 @@
+networks:
+  1panel-network:
+    external: true
+services:
+  socket-proxy:
+    image: "linuxserver/socket-proxy:3.4.7"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    read_only: true
+    tmpfs:
+      - /run
+    networks:
+      - 1panel-network
+    volumes:
+      - "${DOCKER_SOCK_PATH}:/var/run/docker.sock:ro"
+    environment:
+      - ALLOW_START=${ALLOW_START}
+      - ALLOW_STOP=${ALLOW_STOP}
+      - ALLOW_RESTARTS=${ALLOW_RESTARTS}
+      - ALLOW_PAUSE=${ALLOW_PAUSE}
+      - ALLOW_UNPAUSE=${ALLOW_UNPAUSE}
+      - AUTH=${AUTH}
+      - BUILD=${BUILD}
+      - COMMIT=${COMMIT}
+      - CONFIGS=${CONFIGS}
+      - CONTAINERS=${CONTAINERS}
+      - DISABLE_IPV6=${DISABLE_IPV6}
+      - DISTRIBUTION=${DISTRIBUTION}
+      - EVENTS=${EVENTS}
+      - EXEC=${EXEC}
+      - IMAGES=${IMAGES}
+      - INFO=${INFO}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - NETWORKS=${NETWORKS}
+      - NODES=${NODES}
+      - PING=${PING}
+      - PLUGINS=${PLUGINS}
+      - POST=${POST}
+      - SECRETS=${SECRETS}
+      - SERVICES=${SERVICES}
+      - SESSION=${SESSION}
+      - SWARM=${SWARM}
+      - SYSTEM=${SYSTEM}
+      - TASKS=${TASKS}
+      - TZ=${TIME_ZONE}
+      - VERSION=${VERSION}
+      - VOLUMES=${VOLUMES}
+    labels:
+      createdBy: "Apps"

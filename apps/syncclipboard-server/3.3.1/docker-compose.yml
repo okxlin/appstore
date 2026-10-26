@@ -1,6 +1,6 @@
 services:
   syncclipboard-server:
-    image: jericx/syncclipboard-server:v3.3.1
+    image: jericx/syncclipboard-server:v3.3.3
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -8,7 +8,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:5033"
     volumes:
-      - ${CONFIG_FILE_PATH}:/app/appsettings.json
+      - ${CONFIG_FILE_PATH}:/app/data/appsettings.json
     labels:  
       createdBy: "Apps"
 

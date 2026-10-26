@@ -15,7 +15,7 @@ OpenCloud 是一个开源的文件管理、共享与协作平台，提供 Web �
 
 - OpenCloud 源码仓库由 `opencloud-eu` 官方组织维护，采用 Apache License 2.0。
 - 本应用基于官方 `opencloud-compose` 的基础服务与 Traefik TLS 部署方式，Compose 证据固定到提交 `8d2d89f283faa410bc9ed9f63e8247f6518d5c43`。
-- OpenCloud `v7.3.0` 于 2026-07-14 发布；官方在 `opencloudeu/opencloud-rolling:7.3.0` 发布该版本，镜像内报告 `Edition: rolling`。官方 production 镜像仓库在适配时仍停留于 `7.2.2`，因此这里明确使用官方 rolling 仓库的固定 `7.3.0` tag，而不是浮动 tag。
+- OpenCloud [`v8.1.0`](https://github.com/opencloud-eu/opencloud/releases/tag/v8.1.0) 于 2026-10-05 作为 rolling release 发布。本应用使用官方镜像 `opencloudeu/opencloud-rolling:8.1.0` 的版本化 tag，不使用浮动 `latest` tag。
 - OpenCloud 与 Traefik 镜像均提供 `linux/amd64` 和 `linux/arm64` manifest。
 
 ## 部署拓扑
@@ -81,7 +81,7 @@ OpenCloud service 不使用 privileged、host network、额外 capability 或设
 
 OpenCloud is an open-source platform for file management, sharing, and collaboration. This package follows the official OpenCloud Compose topology: one fixed-version OpenCloud container and one Traefik container providing the HTTPS endpoint required by the built-in identity provider.
 
-The package uses the official `opencloudeu/opencloud-rolling:7.3.0` image because OpenCloud 7.3.0 was published only in the official rolling image repository at adaptation time. The tag is fixed; neither packaged version follows a floating image tag.
+OpenCloud [v8.1.0](https://github.com/opencloud-eu/opencloud/releases/tag/v8.1.0) is an official rolling release published on 2026-10-05. This package uses the versioned official image tag `opencloudeu/opencloud-rolling:8.1.0` rather than a floating `latest` tag.
 
 A trusted certificate is required for production. Back up the complete `${APP_DATA_DIR}` before upgrading. The lifecycle scripts do not delete persisted data or recursively rewrite existing files.
 

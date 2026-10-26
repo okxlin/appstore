@@ -16,7 +16,9 @@ Zipline 是自托管的文件分享和 URL 缩短平台，提供用户管理、�
 
 ## 数据持久化
 
-`APP_DATA_DIR` 中的 `postgres`、`uploads`、`public` 和 `themes` 分别保存数据库、上传文件、公开资源和自定义主题。卸载不会删除这些目录，请定期独立备份。
+`APP_DATA_DIR` 中的 `postgres`、`uploads`、`public` 和 `themes` 分别保存数据库、上传文件、公开资源和自定义主题。升级时保持现有 `APP_DATA_DIR` 不变。1Panel 卸载应用时会删除应用安装目录，因此位于该目录内的相对数据目录也会被删除；卸载前请先将数据备份到应用目录之外。
+
+从 `4.6.5` 升级到 `4.8.0` 时，先升级到 `4.7.0` 并等待应用完成数据库迁移、恢复健康后，再升级到 `4.8.0`。升级前请备份 PostgreSQL 数据；升级期间保留现有 `APP_DATA_DIR` 和数据库身份配置。
 
 ## 安全与部署风险
 
@@ -38,12 +40,13 @@ Zipline is a self-hosted file sharing and URL shortening platform with user mana
 ## Usage Notes
 
 - Access the service at `http://<server-ip>:<port>`. It binds to `127.0.0.1` by default; publish it through an HTTPS reverse proxy for remote access. The first account created becomes the administrator.
-- `APP_DATA_DIR` contains PostgreSQL data, uploads, public assets, and custom themes. Uninstallation preserves these directories.
+- `APP_DATA_DIR` contains PostgreSQL data, uploads, public assets, and custom themes. Keep its existing value during upgrades. 1Panel removes the app installation directory during uninstall, including relative data directories beneath it; back up the data outside the app directory before uninstalling.
+- To upgrade an existing `4.6.5` installation to `4.8.0`, upgrade to `4.7.0` first and wait for its database migrations and health check to finish. Back up PostgreSQL before upgrading, and keep the existing `APP_DATA_DIR` and database identity settings.
 - Zipline runs as UID/GID `1000:1000`; PostgreSQL runs as `70:70` on an internal-only network. Both containers drop all capabilities, use read-only root filesystems, and enable `no-new-privileges`.
 
 ## Security Note
 
-The audited official image snapshot contains upstream vulnerabilities. Two Critical `CVE-2026-59873` findings are confined to npm/corepack tooling that the default service entrypoint does not invoke. `CVE-2026-15074` in `@fastify/static 9.1.3` bypasses route-scoped guards but cannot escape a configured static root; Zipline exposes `build/client` as intentionally public, registers its temporary root with `serve:false`, and sends authenticated exports by a fixed server-selected filename. Other High findings are confined to build tooling, Prisma migration configuration, static schema/router dependencies, or features such as HTTP/2 and RSC that the default service does not enable. These are default-path reachability exceptions, not claims that the packages are absent from later images. A new image resolved from the moving `latest` tag, running package managers in the container, loading untrusted Prisma configuration, or replacing the official entrypoint invalidates them.
+The prior audit applies to the official `4.6.5` image snapshot only. It found two Critical `CVE-2026-59873` findings confined to npm/corepack tooling that the default service entrypoint does not invoke. `CVE-2026-15074` in `@fastify/static 9.1.3` bypasses route-scoped guards but cannot escape a configured static root; Zipline exposes `build/client` as intentionally public, registers its temporary root with `serve:false`, and sends authenticated exports by a fixed server-selected filename. Other High findings are confined to build tooling, Prisma migration configuration, static schema/router dependencies, or features such as HTTP/2 and RSC that the default service does not enable. These are default-path reachability exceptions, not claims that the packages are absent from later images. The `4.7.0` and `4.8.0` image CVEs have not been assessed in this maintenance run.
 
 ## References
 

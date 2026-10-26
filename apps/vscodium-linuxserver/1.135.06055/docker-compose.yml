@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   vscodium:
-    image: "linuxserver/vscodium:1.135.06055"
+    image: "linuxserver/vscodium:1.140.06880"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:

@@ -1,0 +1,88 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: IMGPROXY_KEY
+      labelEn: Signature Key
+      labelZh: 签名 Key
+      label:
+        en: Signature Key
+        zh: 签名 Key
+        zh-Hant: 簽章金鑰
+        ja: 署名キー
+        ko: 서명 키
+        ru: Ключ подписи
+        ms: Kunci Tandatangan
+        pt-br: Chave de assinatura
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: IMGPROXY_SALT
+      labelEn: Signature Salt
+      labelZh: 签名 Salt
+      label:
+        en: Signature Salt
+        zh: 签名 Salt
+        zh-Hant: 簽章鹽值
+        ja: 署名ソルト
+        ko: 서명 솔트
+        ru: Соль подписи
+        ms: Garam Tandatangan
+        pt-br: Salt de assinatura
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: IMGPROXY_ALLOWED_SOURCES
+      labelEn: Allowed Sources
+      labelZh: 来源白名单
+      label:
+        en: Allowed Sources
+        zh: 来源白名单
+        zh-Hant: 來源允許清單
+        ja: 許可する取得元
+        ko: 허용된 원본
+        ru: Разрешенные источники
+        ms: Sumber Dibenarkan
+        pt-br: Origens permitidas
+      required: false
+      type: text
+    - default: "false"
+      edit: true
+      envKey: IMGPROXY_ALLOW_PRIVATE_SOURCE_ADDRESSES
+      labelEn: Allow Private Sources
+      labelZh: 允许私有网络来源
+      label:
+        en: Allow Private Sources
+        zh: 允许私有网络来源
+        zh-Hant: 允許私有網路來源
+        ja: プライベートネットワークを許可
+        ko: 사설 네트워크 원본 허용
+        ru: Разрешить частные сети
+        ms: Benarkan Sumber Rangkaian Peribadi
+        pt-br: Permitir origens de rede privada
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"

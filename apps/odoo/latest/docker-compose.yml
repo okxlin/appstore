@@ -28,6 +28,7 @@ services:
           printf '%s\n' '[options]'
           printf '%s\n' 'addons_path = /mnt/extra-addons'
           printf '%s\n' 'data_dir = /var/lib/odoo'
+          printf '%s\n' 'http_interface = 0.0.0.0'
           printf 'admin_passwd = %s\n' "$${ODOO_MASTER_PASSWORD}"
         } > /var/lib/odoo/odoo.conf
         chown odoo:odoo /var/lib/odoo/odoo.conf

@@ -1,0 +1,69 @@
+additionalProperties:
+  formFields:
+    - default: 41006
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: HTTPS Port
+      labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 連接埠
+        ja: HTTPS ポート
+        ko: HTTPS 포트
+        ru: Порт HTTPS
+        ms: Port HTTPS
+        pt-br: Porta HTTPS
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: HTTP_PWD
+      labelEn: Access Password
+      labelZh: 访问密码
+      label:
+        en: Access Password
+        zh: 访问密码
+        zh-Hant: 存取密碼
+        ja: アクセスパスワード
+        ko: 접속 비밀번호
+        ru: Пароль доступа
+        ms: Kata Laluan Akses
+        pt-br: Senha de Acesso
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 1024m
+      edit: true
+      envKey: SHM_SIZE
+      labelEn: Shared Memory Size
+      labelZh: 共享内存大小
+      label:
+        en: Shared Memory Size
+        zh: 共享内存大小
+        zh-Hant: 共享記憶體大小
+        ja: 共有メモリサイズ
+        ko: 공유 메모리 크기
+        ru: Размер общей памяти
+        ms: Saiz Memori Dikongsi
+        pt-br: Tamanho da Memória Compartilhada
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text

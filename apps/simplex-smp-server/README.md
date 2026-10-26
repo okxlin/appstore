@@ -17,6 +17,9 @@ smp://指纹[:创建队列密码]@ADDR:PANEL_APP_PORT_SMP
 
 `ADDR` 默认值为 `127.0.0.1`，仅适用于本地初始化与测试。正式安装时请直接填写你的公网域名或公网 IP，SimpleX 客户端通过该地址与 SMP 端口连接。
 
+## 运行模式
+此包使用 SimpleX 官方 Docker manual 模式，SMP 主要监听端口为 5223。本包不启动 Caddy/Let's Encrypt，也不提供 443 的服务器信息页。首次启动仍会初始化 SMP 指纹和 `smp-server.ini`。
+
 ## 数据持久化
 - `APP_CONFIG_DIR`：持久化 `/etc/opt/simplex`，保存证书、指纹与 `smp-server.ini`
 - `APP_STATE_DIR`：持久化 `/var/opt/simplex`，保存 store log、统计与运行状态文件
@@ -34,8 +37,13 @@ SimpleX SMP Server is the official self-hosted relay server for SimpleX. This ad
 - Optional password for creating new queues
 - `ADDR` must be set to your public domain or public IP during installation
 
+## Runtime mode
+This package uses SimpleX's official Docker manual setup, with SMP on TCP 5223. It does not include Caddy/Let's Encrypt or the automatically managed HTTPS server information page on port 443. First startup still initializes the SMP fingerprint and `smp-server.ini`.
+
 ## 版本说明
-固定版本使用官方镜像 `simplexchat/smp-server:v7.0.0`，`latest` 当前同样基于 7.0.0 发布线。
+固定版本目录更新至官方镜像 `simplexchat/smp-server:v7.0.1`；`latest` 继续跟随官方滚动标签，可能独立变化。
+
+The fixed version directory uses the official `simplexchat/smp-server:v7.0.1` image. The `latest` directory follows the upstream rolling tag and may move independently.
 
 ## 参考资料
 - 官网: <https://simplex.chat/>

@@ -1,6 +1,6 @@
 services:
   glance:
-    image: "glanceapp/glance:v0.8.6"
+    image: "glanceapp/glance:v0.8.7"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -8,7 +8,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
-      - ${GLANCE_CONFIG_PATH}:/app/glance.yml
+      - ${GLANCE_CONFIG_PATH}:/app/config/glance.yml
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
