@@ -15,6 +15,7 @@ unquote_value() {
     \"*\") value="${value#\"}"; value="${value%\"}" ;;
     \'*\') value="${value#\'}"; value="${value%\'}" ;;
   esac
+  value="${value//\\\$/\$}"
   printf '%s\n' "$value"
 }
 
