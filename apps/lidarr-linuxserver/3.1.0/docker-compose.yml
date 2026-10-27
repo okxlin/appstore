@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   lidarr:
-    image: "linuxserver/lidarr:3.1.0"
+    image: "linuxserver/lidarr:3.1.6"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
