@@ -59,7 +59,7 @@ services:
       createdBy: "Apps"
 
   firecrawl-playwright:
-    image: "ghcr.io/firecrawl/playwright-service@sha256:df1a393ce8bfc3801570a826a9b0dcc400ae48789adb4a0ad9d6cbf0229b059b"
+    image: "ghcr.io/firecrawl/playwright-service@sha256:c9789ffbf5571eb5b8456891ae688bdee095a6f9662e0bed50d9e86eb022bd6f"
     container_name: ${CONTAINER_NAME}-playwright
     restart: always
     networks:
@@ -127,7 +127,7 @@ services:
       createdBy: "Apps"
 
   firecrawl-postgres:
-    image: "ghcr.io/firecrawl/nuq-postgres@sha256:9b638af78d99873bc0ba2b57c9cbcd01df6ce96efeaa72d36cfbe0f76521e8fc"
+    image: "ghcr.io/firecrawl/nuq-postgres@sha256:d719b36160eac2fcbe16dc7e7360ddb9c82c40ea5da183d07bf4a755c6a0b2ae"
     container_name: ${CONTAINER_NAME}-postgres
     restart: always
     networks:
