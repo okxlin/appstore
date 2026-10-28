@@ -1,6 +1,6 @@
 services:
   zerobyte:
-    image: "ghcr.io/nicotsx/zerobyte:v0.43.0@sha256:546443056b5ec5310f09aa290a53615eeefb4d497e9a31339a7984d7f2c902ab"
+    image: "ghcr.io/nicotsx/zerobyte:v0.43.2@sha256:bca46c0e78b8fb57cb6b8030c9be71178324290750501239b0121cdb43dfdf87"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
