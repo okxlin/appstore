@@ -1,0 +1,146 @@
+services:
+  mysql:
+    image: mysql:8.0-debian
+    container_name: ${CONTAINER_NAME}-mysql
+    restart: always
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${PANEL_MYSQL_ROOT_PASSWORD}"
+      - "MYSQL_DATABASE=${PANEL_MYSQL_DATABASE}"
+      - "MYSQL_USER=${PANEL_MYSQL_USER}"
+      - "MYSQL_PASSWORD=${PANEL_MYSQL_PASSWORD}"
+      - "LANG=C.UTF-8"
+      - "TZ=${TZ}"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u $$MYSQL_USER -p$$MYSQL_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+    networks:
+      - xiaozhi-internal
+    labels:
+      createdBy: "Apps"
+
+  redis:
+    image: redis:7-alpine
+    container_name: ${CONTAINER_NAME}-redis
+    restart: always
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./data/redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - xiaozhi-internal
+    labels:
+      createdBy: "Apps"
+
+  server:
+    image: ghcr.io/joey-zhou/xiaozhi-server:6.1.0
+    container_name: ${CONTAINER_NAME}-server
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${PANEL_APP_PORT_API}:8091"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+      - "SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/${PANEL_MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+      - "SPRING_DATASOURCE_USERNAME=${PANEL_MYSQL_USER}"
+      - "SPRING_DATASOURCE_PASSWORD=${PANEL_MYSQL_PASSWORD}"
+      - "SPRING_DATA_REDIS_HOST=redis"
+      # 下发给设备的服务器 IP，留空则自动探测
+      - "HOST_IP=${HOST_IP}"
+      # 设备接入鉴权密钥，留空等于不设防
+      - "XIAOZHI_DEVICE_AUTH_SECRET=${XIAOZHI_DEVICE_AUTH_SECRET}"
+      - "TZ=${TZ}"
+    volumes:
+      - ./data/audio:/app/audio
+      - ./data/uploads:/app/uploads
+      - ./data/logs/server:/app/logs
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/8091'"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      # 首次启动要跑完 Flyway 建表
+      start_period: 90s
+    networks:
+      - xiaozhi-internal
+    labels:
+      createdBy: "Apps"
+
+  dialogue:
+    image: ghcr.io/joey-zhou/xiaozhi-dialogue:6.1.0
+    container_name: ${CONTAINER_NAME}-dialogue
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      # 等 server 建完表
+      server:
+        condition: service_healthy
+    ports:
+      - "${PANEL_APP_PORT_WS}:8092"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+      - "SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/${PANEL_MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+      - "SPRING_DATASOURCE_USERNAME=${PANEL_MYSQL_USER}"
+      - "SPRING_DATASOURCE_PASSWORD=${PANEL_MYSQL_PASSWORD}"
+      - "SPRING_DATA_REDIS_HOST=redis"
+      - "HOST_IP=${HOST_IP}"
+      - "XIAOZHI_DEVICE_AUTH_SECRET=${XIAOZHI_DEVICE_AUTH_SECRET}"
+      - "TZ=${TZ}"
+    volumes:
+      # audio/uploads 必须与 server 共享，否则 TTS 缓存与上传文件互相读不到
+      - ./data/audio:/app/audio
+      - ./data/uploads:/app/uploads
+      - ./data/logs/dialogue:/app/logs
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/8092'"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    networks:
+      - xiaozhi-internal
+    labels:
+      createdBy: "Apps"
+
+  web:
+    image: ghcr.io/joey-zhou/xiaozhi-web:6.1.0
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    depends_on:
+      - server
+      - dialogue
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8084"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O- http://localhost:8084/ >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - xiaozhi-internal
+      - 1panel-network
+    labels:
+      createdBy: "Apps"
+
+networks:
+  # 服务间互访走项目内部网络，避免与 1panel-network 上其他应用的服务名冲突
+  xiaozhi-internal:
+  1panel-network:
+    external: true
