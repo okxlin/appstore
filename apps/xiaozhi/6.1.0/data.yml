@@ -15,8 +15,8 @@ additionalProperties:
         ru: Порт консоли
         ko: 콘솔 포트
         zh-Hant: 管理介面埠
-        tr: Konsol Bağlantı Noktası
         zh: 管理界面端口
+        tr: Konsol Bağlantı Noktası
       required: true
       rule: paramPort
       type: number
@@ -35,8 +35,8 @@ additionalProperties:
         ru: Порт API / OTA
         ko: API / OTA 포트
         zh-Hant: API / OTA 埠
-        tr: API / OTA Bağlantı Noktası
         zh: API / OTA 端口
+        tr: API / OTA Bağlantı Noktası
       required: true
       rule: paramPort
       type: number
@@ -55,13 +55,41 @@ additionalProperties:
         ru: Порт WebSocket устройств
         ko: 기기 WebSocket 포트
         zh-Hant: 設備 WebSocket 埠
-        tr: Cihaz WebSocket Bağlantı Noktası
         zh: 设备 WebSocket 端口
+        tr: Cihaz WebSocket Bağlantı Noktası
       required: true
       rule: paramPort
       type: number
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
+      default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        es-es: Servicio de base de datos
+        fa: 'سرویس پایگاه داده'
+        ja: データベースサービス
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
+        ru: Сервис баз данных
+        ko: 데이터베이스 서비스
+        zh-Hant: 資料庫服務
+        zh: 数据库服务
+        tr: Veritabanı Hizmeti
+      required: true
+      type: apps
+      values:
+        - label: MySQL
+          value: mysql
+        - label: MariaDB
+          value: mariadb
     - default: xiaozhi
-      envKey: PANEL_MYSQL_DATABASE
+      envKey: PANEL_DB_NAME
       labelEn: Database Name
       labelZh: 数据库名
       label:
@@ -74,13 +102,14 @@ additionalProperties:
         ru: Имя базы данных
         ko: 데이터베이스 이름
         zh-Hant: 資料庫名稱
-        tr: Veritabanı Adı
         zh: 数据库名
+        tr: Veritabanı Adı
+      random: true
       required: true
       rule: paramCommon
       type: text
     - default: xiaozhi
-      envKey: PANEL_MYSQL_USER
+      envKey: PANEL_DB_USER
       labelEn: Database User
       labelZh: 数据库用户
       label:
@@ -93,13 +122,14 @@ additionalProperties:
         ru: Пользователь базы данных
         ko: 데이터베이스 사용자
         zh-Hant: 資料庫使用者
-        tr: Veritabanı Kullanıcısı
         zh: 数据库用户
+        tr: Veritabanı Kullanıcısı
+      random: true
       required: true
       rule: paramCommon
       type: text
     - default: xiaozhi123
-      envKey: PANEL_MYSQL_PASSWORD
+      envKey: PANEL_DB_USER_PASSWORD
       labelEn: Database Password
       labelZh: 数据库密码
       label:
@@ -112,28 +142,8 @@ additionalProperties:
         ru: Пароль базы данных
         ko: 데이터베이스 비밀번호
         zh-Hant: 資料庫密碼
-        tr: Veritabanı Parolası
         zh: 数据库密码
-      random: true
-      required: true
-      rule: paramComplexity
-      type: password
-    - default: root123456
-      envKey: PANEL_MYSQL_ROOT_PASSWORD
-      labelEn: MySQL Root Password
-      labelZh: MySQL Root 密码
-      label:
-        en: MySQL Root Password
-        es-es: Contraseña root de MySQL
-        fa: 'رمز عبور root مای‌اس‌کیوال'
-        ja: MySQL root パスワード
-        ms: Kata Laluan Root MySQL
-        pt-br: Senha root do MySQL
-        ru: Пароль root MySQL
-        ko: MySQL root 비밀번호
-        zh-Hant: MySQL Root 密碼
-        tr: MySQL Root Parolası
-        zh: MySQL Root 密码
+        tr: Veritabanı Parolası
       random: true
       required: true
       rule: paramComplexity
@@ -153,8 +163,8 @@ additionalProperties:
         ru: Часовой пояс
         ko: 시간대
         zh-Hant: 時區
-        tr: Saat Dilimi
         zh: 时区
+        tr: Saat Dilimi
       required: true
       type: text
     - default: ""
@@ -172,8 +182,8 @@ additionalProperties:
         ru: IP хоста (передается устройствам, пусто — автоопределение)
         ko: 호스트 IP (기기에 전달, 비우면 자동 감지)
         zh-Hant: 宿主機 IP（下發給設備，留空自動探測）
-        tr: Ana Bilgisayar IP'si (cihelere gönderilir, otomatik için boş bırakın)
         zh: 宿主机 IP（下发给设备，留空自动探测）
+        tr: Ana Bilgisayar IP'si (cihelere gönderilir, otomatik için boş bırakın)
       required: false
       type: text
     - default: ""
@@ -190,7 +200,7 @@ additionalProperties:
         ru: Секрет аутентификации устройств (пусто — без аутентификации)
         ko: 기기 인증 시크릿 (비우면 인증 없음)
         zh-Hant: 設備接入鑑權密鑰（留空不鑑權）
-        tr: Cihaz Kimlik Doğrulama Anahtarı (boş = kimlik doğrulama yok)
         zh: 设备接入鉴权密钥（留空不鉴权）
+        tr: Cihaz Kimlik Doğrulama Anahtarı (boş = kimlik doğrulama yok)
       required: false
       type: password

@@ -1,29 +1,5 @@
 services:
-  mysql:
-    image: mysql:8.0-debian
-    container_name: ${CONTAINER_NAME}-mysql
-    restart: always
-    environment:
-      - "MYSQL_ROOT_PASSWORD=${PANEL_MYSQL_ROOT_PASSWORD}"
-      - "MYSQL_DATABASE=${PANEL_MYSQL_DATABASE}"
-      - "MYSQL_USER=${PANEL_MYSQL_USER}"
-      - "MYSQL_PASSWORD=${PANEL_MYSQL_PASSWORD}"
-      - "LANG=C.UTF-8"
-      - "TZ=${TZ}"
-    volumes:
-      - ./data/mysql:/var/lib/mysql
-    healthcheck:
-      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u $$MYSQL_USER -p$$MYSQL_PASSWORD"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-      start_period: 40s
-    networks:
-      - xiaozhi-internal
-    labels:
-      createdBy: "Apps"
-
-  redis:
+  xiaozhi-redis:
     image: redis:7-alpine
     container_name: ${CONTAINER_NAME}-redis
     restart: always
@@ -37,27 +13,22 @@ services:
       retries: 5
       start_period: 10s
     networks:
-      - xiaozhi-internal
+      - 1panel-network
     labels:
       createdBy: "Apps"
 
-  server:
+  xiaozhi-server:
     image: ghcr.io/joey-zhou/xiaozhi-server:6.1.0
     container_name: ${CONTAINER_NAME}-server
     restart: always
-    depends_on:
-      mysql:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
     ports:
       - "${PANEL_APP_PORT_API}:8091"
     environment:
       - "SPRING_PROFILES_ACTIVE=dev"
-      - "SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/${PANEL_MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
-      - "SPRING_DATASOURCE_USERNAME=${PANEL_MYSQL_USER}"
-      - "SPRING_DATASOURCE_PASSWORD=${PANEL_MYSQL_PASSWORD}"
-      - "SPRING_DATA_REDIS_HOST=redis"
+      - "SPRING_DATASOURCE_URL=jdbc:mysql://${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+      - "SPRING_DATASOURCE_USERNAME=${PANEL_DB_USER}"
+      - "SPRING_DATASOURCE_PASSWORD=${PANEL_DB_USER_PASSWORD}"
+      - "SPRING_DATA_REDIS_HOST=xiaozhi-redis"
       # 下发给设备的服务器 IP，留空则自动探测
       - "HOST_IP=${HOST_IP}"
       # 设备接入鉴权密钥，留空等于不设防
@@ -75,30 +46,22 @@ services:
       # 首次启动要跑完 Flyway 建表
       start_period: 90s
     networks:
-      - xiaozhi-internal
+      - 1panel-network
     labels:
       createdBy: "Apps"
 
-  dialogue:
+  xiaozhi-dialogue:
     image: ghcr.io/joey-zhou/xiaozhi-dialogue:6.1.0
     container_name: ${CONTAINER_NAME}-dialogue
     restart: always
-    depends_on:
-      mysql:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-      # 等 server 建完表
-      server:
-        condition: service_healthy
     ports:
       - "${PANEL_APP_PORT_WS}:8092"
     environment:
       - "SPRING_PROFILES_ACTIVE=dev"
-      - "SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/${PANEL_MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
-      - "SPRING_DATASOURCE_USERNAME=${PANEL_MYSQL_USER}"
-      - "SPRING_DATASOURCE_PASSWORD=${PANEL_MYSQL_PASSWORD}"
-      - "SPRING_DATA_REDIS_HOST=redis"
+      - "SPRING_DATASOURCE_URL=jdbc:mysql://${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true"
+      - "SPRING_DATASOURCE_USERNAME=${PANEL_DB_USER}"
+      - "SPRING_DATASOURCE_PASSWORD=${PANEL_DB_USER_PASSWORD}"
+      - "SPRING_DATA_REDIS_HOST=xiaozhi-redis"
       - "HOST_IP=${HOST_IP}"
       - "XIAOZHI_DEVICE_AUTH_SECRET=${XIAOZHI_DEVICE_AUTH_SECRET}"
       - "TZ=${TZ}"
@@ -114,19 +77,22 @@ services:
       retries: 10
       start_period: 60s
     networks:
-      - xiaozhi-internal
+      - 1panel-network
     labels:
       createdBy: "Apps"
 
-  web:
+  xiaozhi-web:
     image: ghcr.io/joey-zhou/xiaozhi-web:6.1.0
     container_name: ${CONTAINER_NAME}
     restart: always
-    depends_on:
-      - server
-      - dialogue
     ports:
       - "${PANEL_APP_PORT_HTTP}:8084"
+    environment:
+      - "TZ=${TZ}"
+    # 上游 nginx.conf 固定按 server/dialogue 服务名反代，这里挂载改写版，
+    # 指向带 xiaozhi- 前缀的服务名，避免与 1panel-network 上其他应用撞名
+    volumes:
+      - ./conf/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     healthcheck:
       test: ["CMD-SHELL", "wget -q -O- http://localhost:8084/ >/dev/null 2>&1 || exit 1"]
       interval: 15s
@@ -134,13 +100,10 @@ services:
       retries: 5
       start_period: 10s
     networks:
-      - xiaozhi-internal
       - 1panel-network
     labels:
       createdBy: "Apps"
 
 networks:
-  # 服务间互访走项目内部网络，避免与 1panel-network 上其他应用的服务名冲突
-  xiaozhi-internal:
   1panel-network:
     external: true

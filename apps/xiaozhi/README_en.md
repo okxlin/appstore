@@ -10,6 +10,10 @@
 - **Conversation history**: full dialogue history with audio replay, plus knowledge-base augmented Q&A;
 - **Multi-client access**: ESP32 devices (WebSocket), mini program, and web console.
 
+## Prerequisites
+
+Before installing this app, install a **MySQL** (8.x) or **MariaDB** (10.6+) app from the app store first. Select the installed database in the "Database Service" field during installation — 1Panel creates the database and user automatically, and the server applies its schema via Flyway migrations on first start.
+
 ## After Installation
 
 1. Wait until all containers become healthy (the first start runs database migrations, about 1–2 minutes);
@@ -30,6 +34,11 @@
 ## Resource Requirements
 
 Recommended: 2 CPU cores and 4 GB+ available memory (the server and dialogue services reserve 2 GB each).
+
+## Data & Upgrades
+
+- Business data lives in the selected MySQL/MariaDB app — back it up together with that database app;
+- Conversation audio (`data/audio`), uploads (`data/uploads`), Redis cache and logs are kept under the version directory's `data/` folder.
 
 ## More Documentation
 

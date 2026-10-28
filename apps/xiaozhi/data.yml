@@ -30,5 +30,6 @@ additionalProperties:
   website: https://github.com/joey-zhou/xiaozhi-esp32-server-java
   github: https://github.com/joey-zhou/xiaozhi-esp32-server-java
   document: https://github.com/joey-zhou/xiaozhi-esp32-server-java/blob/main/docs/DOCKER.md
+  memoryRequired: 4096
   architectures:
     - amd64
