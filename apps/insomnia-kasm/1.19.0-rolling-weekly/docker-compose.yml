@@ -1,6 +1,6 @@
 services:
   insomnia-kasm:
-    image: "kasmweb/insomnia:1.19.0-rolling-weekly@sha256:09fad0138a405f0e16804614d39f51f3249b12f066e033c51012688d0aae7e16"
+    image: "kasmweb/insomnia:1.19.0-rolling-weekly@sha256:b3071e6249cf8b7e34e101a070ae2d9f68af9dba48e23622585053d556664cab"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
