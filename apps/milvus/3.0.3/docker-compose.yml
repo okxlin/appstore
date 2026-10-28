@@ -21,7 +21,7 @@ services:
       createdBy: "Apps"
 
   milvus-minio:
-    image: "quay.io/minio/minio:RELEASE.2024-05-28T17-19-04Z"
+    image: "milvusdb/minio:RELEASE.2024-05-28T17-19-04Z"
     container_name: ${CONTAINER_NAME}-minio
     environment:
       - MINIO_ACCESS_KEY=minioadmin
