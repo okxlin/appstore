@@ -1,6 +1,6 @@
 services:
   dokku:
-    image: "dokku/dokku:0.38.32@sha256:32756611ec7219d91ed2675652e030f9967a90707baa5afb7e3e09edca131c1e"
+    image: "dokku/dokku:0.38.33@sha256:d8eae242b43178193ef3067db6b1ba5167e6d8391043f696e3a8b0dd45458150"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     network_mode: bridge
