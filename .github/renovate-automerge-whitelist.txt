@@ -98,6 +98,10 @@ beszel-agent
 calibre-web
 remmina
 dashy
+# Reviewed 2026-10-29: stable single-service image-only Renovate history.
+anubis
+gomodel
+liwan
 slink
 ntfy
 cloudreve
