@@ -425,3 +425,13 @@ moltis
 
 # Explicit owner-requested exception; retain the normal shape and security gates.
 1panel
+
+# Reviewed 2026-10-29: stable single-service compose and image-only Renovate history.
+# No special runtime flags, recent maintainer repairs, or open PR at admission.
+immich-kiosk
+kanboard
+mediamtx
+resin
+shlink
+silverbullet
+xiaomi-album-syncer
