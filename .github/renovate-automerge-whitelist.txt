@@ -439,3 +439,6 @@ xiaomi-album-syncer
 # Reviewed 2026-10-29: #8029 exact upgrade smoke and secret checks passed; stable single-service shape.
 # CVE scan deferred at owner request; future PRs remain subject to the workflow's image-only and shape gates.
 pdfding
+
+# Reviewed 2026-10-29 after #8012: stable single-service shape; recent Renovate updates are image-only; exact upgrade smoke to v4.0.20 and source secret scan passed. CVE status remains unassessed.
+imgproxy
