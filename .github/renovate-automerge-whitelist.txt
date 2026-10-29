@@ -435,3 +435,7 @@ resin
 shlink
 silverbullet
 xiaomi-album-syncer
+
+# Reviewed 2026-10-29: #8029 exact upgrade smoke and secret checks passed; stable single-service shape.
+# CVE scan deferred at owner request; future PRs remain subject to the workflow's image-only and shape gates.
+pdfding
