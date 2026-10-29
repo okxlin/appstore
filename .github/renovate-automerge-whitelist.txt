@@ -98,9 +98,7 @@ beszel-agent
 calibre-web
 remmina
 dashy
-# Reviewed 2026-10-29: stable single-service image-only Renovate history.
-anubis
-gomodel
+# Candidate 2026-10-29: #7805 has stable single-service image-only changes; upgrade smoke pending.
 liwan
 slink
 ntfy
