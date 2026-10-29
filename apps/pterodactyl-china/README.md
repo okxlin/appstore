@@ -35,6 +35,7 @@
 | PANEL_DB_NAME | 数据库名 | pterodactyl | 是 |
 | PANEL_DB_USER | 数据库用户 | pterodactyl | 是 |
 | PANEL_DB_USER_PASSWORD | 数据库用户密码 | pterodactyl | 是 |
+| PANEL_DB_SSL_CA | 可选 MySQL CA 证书路径；证书放在现有 `./data/var/` 挂载目录，并填写容器内路径，例如 `/app/var/mysql-ca.pem`。 | 空 | 否 |
 | PANEL_APP_URL | 外部访问地址 | http://localhost:40222 | 是 |
 | PANEL_REDIS_DB_HOST | 缓存服务服务 | - | 是 |
 | PANEL_REDIS_ROOT_PASSWORD | 缓存服务服务密码 | - | 是 |

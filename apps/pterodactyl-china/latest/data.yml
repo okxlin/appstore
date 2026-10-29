@@ -72,6 +72,22 @@ additionalProperties:
       required: true
       rule: paramPort
       type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_SSL_CA
+      labelEn: MySQL CA certificate path
+      labelZh: MySQL CA 证书路径
+      label:
+        en: "MySQL CA certificate path"
+        zh: "MySQL CA 证书路径"
+        zh-Hant: "MySQL CA 憑證路徑"
+        ja: "MySQL CA 証明書のパス"
+        ko: "MySQL CA 인증서 경로"
+        ru: "Путь к сертификату центра сертификации MySQL"
+        ms: "Laluan sijil CA MySQL"
+        pt-br: "Caminho do certificado CA do MySQL"
+      required: false
+      type: text
     - default: pterodactyl
       envKey: PANEL_DB_NAME
       labelEn: Database
