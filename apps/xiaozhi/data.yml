@@ -1,0 +1,35 @@
+name: Xiaozhi ESP32 Server
+tags:
+    - AI
+title: 小智 ESP32 AI 聊天机器人服务端（Java 企业级）
+description: 小智 ESP32 硬件的 Java 企业级服务端，提供设备管理、音色定制、角色切换与对话记录管理
+additionalProperties:
+  key: xiaozhi
+  name: Xiaozhi ESP32 Server
+  tags:
+    - AI
+  shortDescZh: 小智 ESP32 硬件的 Java 企业级服务端，含设备管理、音色定制与对话记录
+  shortDescEn: Java enterprise server for Xiaozhi ESP32 AI devices with device management and conversation history
+  description:
+    en: Enterprise-grade Java server for Xiaozhi ESP32 AI chatbot hardware, providing device management, voice cloning and TTS customization, persona switching, and conversation history management with a built-in web console.
+    es-es: Servidor Java de nivel empresarial para el hardware del chatbot IA Xiaozhi ESP32, con gestión de dispositivos, personalización de voz, cambio de roles y gestión del historial de conversaciones.
+    fa: سرور جاوی سازمانی برای سخت‌افزار ربات گفتگوی هوشمند Xiaozhi ESP32، شامل مدیریت دستگاه، شخصی‌سازی صدا، تغییر شخصیت و مدیریت تاریخچه گفتگو.
+    ja: Xiaozhi ESP32 AIチャットボットハードウェア向けのエンタープライズ級Javaサーバー。デバイス管理、音声カスタマイズ、ロール切り替え、会話履歴管理を提供します。
+    ms: Pelayan Java gred perusahaan untuk perkakasan bot sembang AI Xiaozhi ESP32, menyediakan pengurusan peranti, penyesuaian suara, pertukaran watak dan pengurusan sejarah perbualan.
+    pt-br: Servidor Java de nível empresarial para o hardware de chatbot de IA Xiaozhi ESP32, com gerenciamento de dispositivos, personalização de voz, troca de papéis e gerenciamento do histórico de conversas.
+    ru: 'Корпоративный Java-сервер для оборудования ИИ-чат-бота Xiaozhi ESP32: управление устройствами, настройка голоса, переключение ролей и управление историей диалогов.'
+    ko: Xiaozhi ESP32 AI 챗봇 하드웨어를 위한 엔터프라이즈급 Java 서버로, 기기 관리, 음성 사용자 지정, 역할 전환 및 대화 기록 관리를 제공합니다.
+    zh-Hant: 小智 ESP32 硬體的 Java 企業級服務端，提供設備管理、音色定製、角色切換與對話記錄管理
+    tr: Xiaozhi ESP32 yapay zeka sohbet botu donanımı için kurumsal düzeyde Java sunucusu; cihaz yönetimi, ses özelleştirme, rol değiştirme ve sohbet geçmişi yönetimi sağlar.
+    zh: 小智 ESP32 硬件的 Java 企业级服务端，提供设备管理、音色定制、角色切换与对话记录管理
+  type: website
+  crossVersionUpdate: false
+  limit: 0
+  recommend: 15
+  batchInstallSupport: true
+  website: https://github.com/joey-zhou/xiaozhi-esp32-server-java
+  github: https://github.com/joey-zhou/xiaozhi-esp32-server-java
+  document: https://github.com/joey-zhou/xiaozhi-esp32-server-java/blob/main/docs/DOCKER.md
+  memoryRequired: 4096
+  architectures:
+    - amd64

@@ -1,0 +1,206 @@
+additionalProperties:
+  formFields:
+    - default: 8084
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Console Port
+      labelZh: 管理界面端口
+      label:
+        en: Console Port
+        es-es: Puerto de la consola
+        fa: 'پورت کنسول'
+        ja: コンソールポート
+        ms: Port Konsol
+        pt-br: Porta do Console
+        ru: Порт консоли
+        ko: 콘솔 포트
+        zh-Hant: 管理介面埠
+        zh: 管理界面端口
+        tr: Konsol Bağlantı Noktası
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8091
+      edit: true
+      envKey: PANEL_APP_PORT_API
+      labelEn: API / OTA Port
+      labelZh: API / OTA 端口
+      label:
+        en: API / OTA Port
+        es-es: Puerto API / OTA
+        fa: 'پورت API / OTA'
+        ja: API / OTA ポート
+        ms: Port API / OTA
+        pt-br: Porta API / OTA
+        ru: Порт API / OTA
+        ko: API / OTA 포트
+        zh-Hant: API / OTA 埠
+        zh: API / OTA 端口
+        tr: API / OTA Bağlantı Noktası
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8092
+      edit: true
+      envKey: PANEL_APP_PORT_WS
+      labelEn: Device WebSocket Port
+      labelZh: 设备 WebSocket 端口
+      label:
+        en: Device WebSocket Port
+        es-es: Puerto WebSocket del dispositivo
+        fa: 'پورت WebSocket دستگاه'
+        ja: デバイス WebSocket ポート
+        ms: Port WebSocket Peranti
+        pt-br: Porta WebSocket do dispositivo
+        ru: Порт WebSocket устройств
+        ko: 기기 WebSocket 포트
+        zh-Hant: 設備 WebSocket 埠
+        zh: 设备 WebSocket 端口
+        tr: Cihaz WebSocket Bağlantı Noktası
+      required: true
+      rule: paramPort
+      type: number
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        required: true
+        type: service
+      default: mysql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        es-es: Servicio de base de datos
+        fa: 'سرویس پایگاه داده'
+        ja: データベースサービス
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Serviço de Banco de Dados
+        ru: Сервис баз данных
+        ko: 데이터베이스 서비스
+        zh-Hant: 資料庫服務
+        zh: 数据库服务
+        tr: Veritabanı Hizmeti
+      required: true
+      type: apps
+      values:
+        - label: MySQL
+          value: mysql
+        - label: MariaDB
+          value: mariadb
+    - default: xiaozhi
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        es-es: Nombre de la base de datos
+        fa: 'نام پایگاه داده'
+        ja: データベース名
+        ms: Nama Pangkalan Data
+        pt-br: Nome do banco de dados
+        ru: Имя базы данных
+        ko: 데이터베이스 이름
+        zh-Hant: 資料庫名稱
+        zh: 数据库名
+        tr: Veritabanı Adı
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: xiaozhi
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        es-es: Usuario de la base de datos
+        fa: 'کاربر پایگاه داده'
+        ja: データベースユーザー
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuário do banco de dados
+        ru: Пользователь базы данных
+        ko: 데이터베이스 사용자
+        zh-Hant: 資料庫使用者
+        zh: 数据库用户
+        tr: Veritabanı Kullanıcısı
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: xiaozhi123
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        es-es: Contraseña de la base de datos
+        fa: 'رمز عبور پایگاه داده'
+        ja: データベースのパスワード
+        ms: Kata Laluan Pangkalan Data
+        pt-br: Senha do banco de dados
+        ru: Пароль базы данных
+        ko: 데이터베이스 비밀번호
+        zh-Hant: 資料庫密碼
+        zh: 数据库密码
+        tr: Veritabanı Parolası
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        es-es: Zona horaria
+        fa: 'منطقه زمانی'
+        ja: タイムゾーン
+        ms: Zon masa
+        pt-br: Fuso horário
+        ru: Часовой пояс
+        ko: 시간대
+        zh-Hant: 時區
+        zh: 时区
+        tr: Saat Dilimi
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: HOST_IP
+      labelEn: Host IP (sent to devices, leave empty to auto-detect)
+      labelZh: 宿主机 IP（下发给设备，留空自动探测）
+      label:
+        en: Host IP (sent to devices, leave empty to auto-detect)
+        es-es: IP del host (se envía a los dispositivos, vacío para detección automática)
+        fa: 'IP میزبان (به دستگاه‌ها ارسال می‌شود، برای تشخیص خودکار خالی بگذارید)'
+        ja: ホストIP（デバイスに通知、空で自動検出）
+        ms: IP Hos (dihantar ke peranti, kosongkan untuk pengesanan automatik)
+        pt-br: IP do host (enviado aos dispositivos, vazio para detecção automática)
+        ru: IP хоста (передается устройствам, пусто — автоопределение)
+        ko: 호스트 IP (기기에 전달, 비우면 자동 감지)
+        zh-Hant: 宿主機 IP（下發給設備，留空自動探測）
+        zh: 宿主机 IP（下发给设备，留空自动探测）
+        tr: Ana Bilgisayar IP'si (cihelere gönderilir, otomatik için boş bırakın)
+      required: false
+      type: text
+    - default: ""
+      envKey: XIAOZHI_DEVICE_AUTH_SECRET
+      labelEn: Device Auth Secret (empty = no auth)
+      labelZh: 设备接入鉴权密钥（留空不鉴权）
+      label:
+        en: Device Auth Secret (empty = no auth)
+        es-es: Secreto de autenticación del dispositivo (vacío = sin autenticación)
+        fa: 'رمز احراز هویت دستگاه (خالی = بدون احراز هویت)'
+        ja: デバイス認証シークレット（空で認証なし）
+        ms: Rahsia Auth Peranti (kosong = tiada auth)
+        pt-br: Segredo de autenticação do dispositivo (vazio = sem autenticação)
+        ru: Секрет аутентификации устройств (пусто — без аутентификации)
+        ko: 기기 인증 시크릿 (비우면 인증 없음)
+        zh-Hant: 設備接入鑑權密鑰（留空不鑑權）
+        zh: 设备接入鉴权密钥（留空不鉴权）
+        tr: Cihaz Kimlik Doğrulama Anahtarı (boş = kimlik doğrulama yok)
+      required: false
+      type: password
