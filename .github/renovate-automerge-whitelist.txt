@@ -447,7 +447,7 @@ imgproxy
 # Reviewed 2026-10-31: stable single-service Compose, no special runtime flags, and recent merged
 # Renovate image updates. PRs changed the Compose image; other package files were unchanged moves
 # into new version directories where applicable.
-# Evidence: #7333, #7117, #7832, #7809, #7643, #7813/#7814, #7203, and #6755.
+# Evidence: #7333, #7117, #7832, #7809, #7643, #7813/#7814, and #6755.
 freecad-linuxserver
 intellij-idea-linuxserver
 onlyoffice-linuxserver
@@ -456,11 +456,12 @@ scummvm-linuxserver
 vlc-linuxserver
 vscodium-linuxserver
 vscodium-web-linuxserver
-yaak-linuxserver
 
-# Kept out after review: Audacity needed a recent source-trust correction; MariaDB is stateful;
-# Speedtest Tracker had recent init/upgrade script maintenance. All 24 KasmWeb app packages are
-# already listed above.
+# Kept out after review: Yaak needed recent source-trust/rebuild work (#6397/#6983); Audacity had a
+# source-trust correction (#6401); Piper needed package maintenance (#6083); Speedtest Tracker had
+# recent init/upgrade maintenance; Krita needed a maintainer rebuild (#6939); MariaDB is stateful;
+# Altus #4968 changed README/security guidance beyond the image update. All 24 KasmWeb app packages
+# are already listed.
 
 # Reviewed 2026-10-31: single-service Compose shape, no special runtime permissions, and merged
 # Renovate PRs changed only the image while leaving the packaged app files unchanged or moved.
@@ -470,3 +471,9 @@ dosbox-staging-linuxserver
 obsidian-linuxserver
 vivaldi-linuxserver
 webcord-linuxserver
+
+# Reviewed 2026-10-31: separate BabyBuddy and Grocy package keys using the lscr.io alias have
+# stable single-service Compose shapes, no special flags, and their own image-only Renovate history.
+# Evidence: #5649/#6776/#7062 (BabyBuddy) and #6494 (Grocy).
+babybuddy
+grocy
