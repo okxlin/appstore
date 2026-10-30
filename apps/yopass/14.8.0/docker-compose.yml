@@ -1,6 +1,6 @@
 services:
   yopass:
-    image: "jhaals/yopass:16.0.0"
+    image: "jhaals/yopass:16.0.1"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     ports:
