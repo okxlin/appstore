@@ -1,6 +1,6 @@
 services:
   hermitstash:
-    image: "ghcr.io/dotcoocoo/hermitstash:1.15.10@sha256:059469f11b27784df7b6acc5ba3a1bf5f97b00935f82f5addb3231c717033236"
+    image: "ghcr.io/dotcoocoo/hermitstash:1.15.13@sha256:8d8ebd4a5638baccacc1804f6eb51ddcae274075cb601157738a440fc6eac23c"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     init: true
