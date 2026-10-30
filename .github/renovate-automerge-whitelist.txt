@@ -461,3 +461,12 @@ yaak-linuxserver
 # Kept out after review: Audacity needed a recent source-trust correction; MariaDB is stateful;
 # Speedtest Tracker had recent init/upgrade script maintenance. All 24 KasmWeb app packages are
 # already listed above.
+
+# Reviewed 2026-10-31: single-service Compose shape, no special runtime permissions, and merged
+# Renovate PRs changed only the image while leaving the packaged app files unchanged or moved.
+# Evidence: #6244 (DOSBox Staging), #5395/#5771/#5831 (Obsidian), #4864/#6958 (Vivaldi), and
+# #5935 (Webcord). Upgrade scripts remain unchanged by these image updates.
+dosbox-staging-linuxserver
+obsidian-linuxserver
+vivaldi-linuxserver
+webcord-linuxserver
