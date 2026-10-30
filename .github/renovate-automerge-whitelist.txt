@@ -322,6 +322,7 @@ socket-proxy-linuxserver
 synclounge-linuxserver
 syslog-ng-linuxserver
 tautulli-linuxserver
+telegram-linuxserver
 thelounge-linuxserver
 tvheadend-linuxserver
 ubooquity-linuxserver
