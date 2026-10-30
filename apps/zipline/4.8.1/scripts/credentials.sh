@@ -222,7 +222,7 @@ zipline_find_upgrade_snapshot() {
     old_env_mode="$(stat -c '%a' "$old_env")" || continue
     [[ "$old_env_uid" == 0 ]] || continue
     (( (8#$old_env_mode & 077) == 0 )) || continue
-    grep -Eq 'image:[[:space:]]*"?ghcr\.io/diced/zipline:4\.(6\.5|7\.0|8\.0)@sha256:[[:xdigit:]]{64}"?[[:space:]]*$' "$old_compose" || continue
+    grep -Eq 'image:[[:space:]]*"?ghcr\.io/diced/zipline:4\.(6\.5|7\.0|8\.0|8\.1)@sha256:[[:xdigit:]]{64}"?[[:space:]]*$' "$old_compose" || continue
     old_name="$(zipline_read_env_value "$old_env" CONTAINER_NAME)" || continue
     [[ "$old_name" == "$current_name" ]] || continue
     old_data="$(zipline_read_env_value "$old_env" APP_DATA_DIR)" || zipline_fail "matching 1Panel snapshot lacks APP_DATA_DIR"
