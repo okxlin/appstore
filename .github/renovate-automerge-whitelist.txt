@@ -447,10 +447,11 @@ imgproxy
 # Reviewed 2026-10-31: stable single-service Compose, no special runtime flags, and recent merged
 # Renovate image updates. PRs changed the Compose image; other package files were unchanged moves
 # into new version directories where applicable.
-# Evidence: #7333, #7117, #7832, #7809, #7643, #7813/#7814, and #7203.
+# Evidence: #7333, #7117, #7832, #7809, #7643, #7813/#7814, #7203, and #6755.
 freecad-linuxserver
 intellij-idea-linuxserver
 onlyoffice-linuxserver
+pcsx2-linuxserver
 scummvm-linuxserver
 vlc-linuxserver
 vscodium-linuxserver
