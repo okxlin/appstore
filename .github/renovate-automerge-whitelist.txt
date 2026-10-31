@@ -424,6 +424,10 @@ webclaw
 # Reviewed single-service Renovate candidates (2026-09-07).
 moltis
 
+# Reviewed single-service LinuxServer Renovate candidates (2026-10-31).
+audacity-linuxserver
+speedtest-tracker-linuxserver
+
 # Explicit owner-requested exception; retain the normal shape and security gates.
 1panel
 
