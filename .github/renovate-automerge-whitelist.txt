@@ -481,3 +481,8 @@ webcord-linuxserver
 # Evidence: #5649/#6776/#7062 (BabyBuddy) and #6494 (Grocy).
 babybuddy
 grocy
+
+# Reviewed 2026-11-01: stable single-service Compose, image-only Renovate history,
+# no special runtime flags or recent package repairs. #8157 upgrade smoke passed
+# on the exact PR tree (2.8.10 package directory with image tag 2.8.11); CVE remains unassessed.
+bentopdf
