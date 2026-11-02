@@ -1,6 +1,6 @@
 services:
   claper:
-    image: "ghcr.io/claperco/claper:3.1.2@sha256:7df61dd04ffecfed17b7d7004e12504e52e340a33334a4ef9f34f4bf88dbb7f9"
+    image: "ghcr.io/claperco/claper:3.2.0@sha256:5174bee0afb32428af6e30fce3d744b783f4eafff1e21819142de39b2da04df1"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
