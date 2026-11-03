@@ -254,7 +254,7 @@ yesplaymusic
 yourls
 zabbix-agent
 zfile
-# LinuxServer apps with passed latest+fixed smoke reports and unchanged upstream compose fields since 2025-06-27.
+# LinuxServer apps with passed fixed+latest runtime evidence (smoke or digest-equivalent reuse) and unchanged upstream compose fields since 2025-06-27.
 adguardhome-sync-linuxserver
 airsonic-advanced-linuxserver
 apprise-api-linuxserver
@@ -291,6 +291,7 @@ librespeed-linuxserver
 lidarr-linuxserver
 luanti-linuxserver
 lychee-linuxserver
+mariadb-linuxserver
 medusa-linuxserver
 modmanager-linuxserver
 mstream-linuxserver
