@@ -496,3 +496,7 @@ gomodel
 olivetin
 trailbase
 stump
+
+# Reviewed 2026-11-04: stable single-service shape; #6357 and #8181 were image-only Renovate updates.
+# #8181 exact upgrade smoke and source secret scan passed; CVE scan was intentionally not run.
+actual-budget
