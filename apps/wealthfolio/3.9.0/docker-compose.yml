@@ -1,6 +1,6 @@
 services:
   wealthfolio:
-    image: "wealthfolio/wealthfolio:3.10.0@sha256:6dcf9019aee7ba0747344087365ea57846107943ff0e2718a9bee72a98e20f85"
+    image: "wealthfolio/wealthfolio:3.12.0@sha256:5790528fcd9795b571176cad78bcca09e3fa5875ec20968356586939e154c3cb"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "0:0"
