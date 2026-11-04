@@ -500,3 +500,8 @@ stump
 # Reviewed 2026-11-04: stable single-service shape; #6357 and #8181 were image-only Renovate updates.
 # #8181 exact upgrade smoke and source secret scan passed; CVE scan was intentionally not run.
 actual-budget
+# Reviewed 2026-11-04: stable single-service Compose shapes, image-only Renovate updates,
+# no special runtime flags or recent package repairs; exact upgrade smoke passed on #8193 and #8195.
+# CVE scans were skipped; see task-local parameter notes and bound reports.
+drawdb
+hitkeep
