@@ -486,3 +486,12 @@ grocy
 # no special runtime flags or recent package repairs. #8157 upgrade smoke passed
 # on the exact PR tree (2.8.10 package directory with image tag 2.8.11); CVE remains unassessed.
 bentopdf
+
+# Reviewed 2026-11-03: stable single-service Compose shapes, image-only Renovate updates,
+# no special runtime permissions or recent package repairs; exact upgrade smoke passed on
+# #8106 (Trailbase), #8125 (Downtify), #8130 (OliveTin), and #8141 (GoModel). CVE scans
+# were not run; see the task-local reports and parameter notes for bound evidence.
+downtify
+gomodel
+olivetin
+trailbase
