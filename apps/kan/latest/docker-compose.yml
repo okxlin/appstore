@@ -1,6 +1,6 @@
 services:
   kan:
-    image: ghcr.io/kanbn/kan:0.6.0
+    image: ghcr.io/kanbn/kan:0.7.0
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     depends_on:
