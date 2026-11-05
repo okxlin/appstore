@@ -1,12 +1,12 @@
 services:
   chevereto:
-    image: "chevereto/chevereto:4.5.7"
+    image: "chevereto/chevereto:4.5.8"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
       - 1panel-network
     ports:
-      - "${PANEL_APP_PORT_HTTP}:80"
+      - "${PANEL_APP_PORT_HTTP}:8080"
     volumes:
       - ${CHEVERETO_IMAGES_PATH}:/var/www/html/images/
     environment:
