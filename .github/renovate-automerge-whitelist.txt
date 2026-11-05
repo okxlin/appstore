@@ -505,3 +505,6 @@ actual-budget
 # CVE scans were skipped; see task-local parameter notes and bound reports.
 drawdb
 hitkeep
+
+# Reviewed 2026-11-06: single-service LinuxServer Cura image-only update (#8318), stable Compose shape, and no special runtime permissions. The existing upgrade script only fills missing/empty environment defaults.
+cura-linuxserver
