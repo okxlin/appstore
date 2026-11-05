@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   spotube:
-    image: "linuxserver/spotube:5.1.2"
+    image: "linuxserver/spotube:6.0.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
