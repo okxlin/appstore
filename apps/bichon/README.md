@@ -49,7 +49,17 @@ Bichon is a self-hosted email archiving service written in Rust. It downloads ma
 
 升级或迁移前，应停止 Bichon 并备份 `APP_DATA_DIR` 指向的完整目录以及安装时使用的加密口令。默认 `./data` 位于 1Panel 应用版本目录内，卸载时会随应用目录移除；若需要跨卸载保留归档，请选择独立绝对路径，并预先保证其所有权为 UID/GID `1000:1000`。
 
-本应用只打包稳定版 `1.6.2`。截至本批次适配时，上游 `latest` 已指向 `2.0.0-alpha.1` 预发布镜像，因此没有将 `latest` 作为稳定版本交付。
+从 `1.6.2` 升级到 `2.x` 时，升级脚本会调用上游管理工具将 Fjall 邮件对象存储迁移到新格式；现有索引和元数据保持不变。迁移会保留旧存储供验证；确认新版运行正常前，不要手动删除旧数据。`APP_DATA_DIR` 挂载路径保持不变，也支持自定义绝对路径。
+
+本应用提供固定版本 `1.6.2` 和 `2.3.0`。上游 `latest` 可能先于稳定版指向预发布镜像，因此不作为固定稳定版本交付。
+
+## Backup and upgrades
+
+Before upgrading or migrating, stop Bichon and back up the full `APP_DATA_DIR` directory and the encryption password used at installation. The default `./data` is inside the 1Panel app directory and is removed when the app is uninstalled; choose a separate absolute path to retain archives across uninstall, owned by UID/GID `1000:1000`.
+
+When upgrading from `1.6.2` to `2.x`, the upgrade script runs the upstream admin migration from Fjall blob storage to the new format; existing indexes and metadata are left unchanged. The migration keeps the old storage for verification; do not remove it until the upgraded app works. The `APP_DATA_DIR` mount remains unchanged, including custom absolute paths.
+
+The app provides fixed versions `1.6.2` and `2.3.0`. Upstream `latest` may point to a prerelease before a stable release, so it is not used as a fixed stable version.
 
 ## 参考资料
 
