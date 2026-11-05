@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Snipo applies embedded SQLite migrations when the new container starts.
-exit 0
+# Restore the retained-data path after 1Panel reapplies upgrade form values.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+exec bash "${SCRIPT_DIR}/init.sh"
