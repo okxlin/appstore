@@ -1,6 +1,6 @@
 services:
   cup:
-    image: "ghcr.io/sergi0g/cup:v3.5.1"
+    image: "ghcr.io/sergi0g/cup:v3.6.0"
     container_name: ${CONTAINER_NAME}
     command:
       - serve
