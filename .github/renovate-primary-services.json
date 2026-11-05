@@ -102,5 +102,8 @@
   ],
   "odoo": [
     "odoo"
+  ],
+  "planka-linuxserver": [
+    "planka"
   ]
 }
