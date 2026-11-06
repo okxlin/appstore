@@ -21,6 +21,20 @@
   ],
   "packageRules": [
     {
+      "description": "Track DeepSeek Harness workstation release tags",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchFileNames": [
+        "apps/deepseek-harness-workstation/*-workstation/docker-compose.yml"
+      ],
+      "matchPackageNames": [
+        "ghcr.io/okxlin/deepseek-harness"
+      ],
+      "versioning": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?:-(?<prerelease>alpha\\.\\d+|beta\\.\\d+|rc\\.\\d+))?-(?<compatibility>workstation)$",
+      "ignoreUnstable": false
+    },
+    {
       "matchPackageNames": [
         "docker-compose"
       ],
