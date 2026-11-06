@@ -688,16 +688,19 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertEqual(["flagsmith"], primary["flagsmith"])
         self.assertEqual(["godoxy"], primary["godoxy"])
         self.assertEqual(["kaneo"], primary["kaneo"])
+        self.assertEqual(["asciinema-server"], primary["asciinema-server"])
+        self.assertEqual(["server"], primary["bisq2-node"])
+        self.assertEqual(["firecrawl"], primary["firecrawl"])
+        self.assertEqual(["hedgedoc"], primary["hedgedoc-linuxserver"])
         self.assertEqual(["manyfold"], primary["manyfold-linuxserver"])
+        self.assertEqual(["standalone"], primary["milvus"])
         self.assertEqual(["netbox"], primary["netbox-linuxserver"])
+        self.assertEqual(["opencloud"], primary["opencloud"])
         self.assertEqual(
             ["unifi-network-application"],
             primary["unifi-network-application-linuxserver"],
         )
-        self.assertEqual(
-            ["woodpecker-server", "woodpecker-agent"],
-            primary["woodpecker"],
-        )
+        self.assertEqual(["woodpecker-server"], primary["woodpecker"])
         self.assertEqual(["yamtrack"], primary["yamtrack"])
         self.assertEqual(["zipline"], primary["zipline"])
 
