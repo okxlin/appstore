@@ -16,7 +16,7 @@ services:
     #  interval: 30s
     #  timeout: 10s
     #  retries: 3
-    image: nriver/trilium-cn:0.64.0
+    image: nriver/trilium-cn:0.64.1
     labels:  
       createdBy: "Apps"
 
