@@ -82,8 +82,7 @@
     "weblate"
   ],
   "woodpecker": [
-    "woodpecker-server",
-    "woodpecker-agent"
+    "woodpecker-server"
   ],
   "wukongim": [
     "wukongim"
@@ -94,11 +93,29 @@
   "zipline": [
     "zipline"
   ],
+  "asciinema-server": [
+    "asciinema-server"
+  ],
+  "bisq2-node": [
+    "server"
+  ],
   "bookstack-linuxserver": [
     "bookstack"
   ],
+  "firecrawl": [
+    "firecrawl"
+  ],
+  "hedgedoc-linuxserver": [
+    "hedgedoc"
+  ],
   "mastodon-linuxserver": [
     "mastodon"
+  ],
+  "milvus": [
+    "standalone"
+  ],
+  "opencloud": [
+    "opencloud"
   ],
   "odoo": [
     "odoo"
