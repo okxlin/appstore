@@ -1,0 +1,83 @@
+additionalProperties:
+  formFields:
+  - default: 8000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Port
+    labelZh: 端口
+    label:
+      en: Port
+      zh: 端口
+      zh-hant: 埠
+      ja: ポート
+      ko: 포트
+      ru: Порт
+      ms: Port
+      pt-br: Porta
+      tr: Bağlantı noktası
+      es-es: Puerto
+      fa: درگاه
+      lo: ພອດ
+    required: true
+    rule: paramPort
+    type: number
+  - default: ./data
+    edit: true
+    envKey: APP_DATA_DIR
+    labelEn: Data Directory
+    labelZh: 数据目录
+    label:
+      en: Data Directory
+      zh: 数据目录
+      zh-hant: 資料目錄
+      ja: データディレクトリ
+      ko: 데이터 디렉터리
+      ru: Каталог данных
+      ms: Direktori data
+      pt-br: Diretório de dados
+      tr: Veri dizini
+      es-es: Directorio de datos
+      fa: پوشه داده‌ها
+      lo: ໄດເຣັກທໍຣີຂໍ້ມູນ
+    required: true
+    type: text
+  - default: ./downloads
+    edit: true
+    envKey: APP_DOWNLOADS_DIR
+    labelEn: Downloads Directory
+    labelZh: 下载目录
+    label:
+      en: Downloads Directory
+      zh: 下载目录
+      zh-hant: 下載目錄
+      ja: ダウンロードディレクトリ
+      ko: 다운로드 디렉터리
+      ru: Каталог загрузок
+      ms: Direktori muat turun
+      pt-br: Diretório de downloads
+      tr: İndirme dizini
+      es-es: Directorio de descargas
+      fa: پوشه دانلودها
+      lo: ໄດເຣັກທໍຣີດາວໂຫຼດ
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    required: true
+    type: text
