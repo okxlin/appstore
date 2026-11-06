@@ -58,7 +58,7 @@ jobs:
           fi
           git cat-file -e "${base_ref}^{commit}"
           echo "base_ref=$base_ref" >> "$GITHUB_OUTPUT"
-          git diff --name-only -z "$base_ref" HEAD > "$RUNNER_TEMP/changed-files.zlist"
+          git diff --name-only -z "$base_ref...HEAD" > "$RUNNER_TEMP/changed-files.zlist"
 
       - name: Checkout trusted version updater
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
