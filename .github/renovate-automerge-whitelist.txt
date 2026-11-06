@@ -508,3 +508,13 @@ hitkeep
 
 # Reviewed 2026-11-06: single-service LinuxServer Cura image-only update (#8318), stable Compose shape, and no special runtime permissions. The existing upgrade script only fills missing/empty environment defaults.
 cura-linuxserver
+
+# Reviewed 2026-11-06: #8359 (Keila), #8375 (Autobrr), and #8394 (LMS)
+# are stable single-service packages with no special runtime privileges. Exact
+# new-version trees were verified as image-only copies; earlier Renovate image
+# updates exist in #8211, #6687/#5871, and #7043. Upgrade scripts and data paths
+# are unchanged. CVEs remain unassessed; owner-authorized whitelist updates skip
+# upgrade smoke and retain the automerge shape and source checks.
+autobrr
+keila
+lms
