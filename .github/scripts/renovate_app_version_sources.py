@@ -114,6 +114,8 @@ def select_sources(
         raise ValueError("base and head refs must be full Git commit SHAs")
     grouped: dict[str, list[str]] = {}
     for raw_path in paths:
+        if not raw_path.endswith("/docker-compose.yml"):
+            continue
         app, version = parse_compose_path(raw_path)
         if version in ROLLING_VERSIONS or not git_path_exists(base_ref, raw_path):
             continue

@@ -266,6 +266,74 @@ class RenovateAppVersionTests(unittest.TestCase):
                 output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"),
             )
 
+    def test_source_selector_ignores_base_only_non_compose_paths(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-source-base-only-") as tmp:
+            repo = pathlib.Path(tmp)
+            app_compose = repo / "apps" / "demo" / "1.0.0" / "docker-compose.yml"
+            app_compose.parent.mkdir(parents=True)
+            app_compose.write_text(
+                "services:\n  app:\n    image: example/demo:1.0.0\n",
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test User"], cwd=repo, check=True)
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add demo source"], cwd=repo, check=True)
+            common_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+
+            unrelated = repo / "apps" / "gomodel" / "0.2.2" / ".env.sample"
+            unrelated.parent.mkdir(parents=True)
+            unrelated.write_text("EXAMPLE=value\n", encoding="utf-8")
+            subprocess.run(["git", "add", "apps/gomodel"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add base-only package"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+
+            subprocess.run(["git", "checkout", "-q", "-b", "renovate", common_ref], cwd=repo, check=True)
+            app_compose.write_text(
+                "services:\n  app:\n    image: example/demo:1.1.0\n",
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "add", "apps/demo"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "update demo image"], cwd=repo, check=True)
+            head_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+
+            two_tree = subprocess.run(
+                ["git", "diff", "--name-only", "-z", base_ref, head_ref],
+                cwd=repo, check=True, capture_output=True,
+            ).stdout
+            three_dot = subprocess.run(
+                ["git", "diff", "--name-only", "-z", f"{base_ref}...{head_ref}"],
+                cwd=repo, check=True, capture_output=True,
+            ).stdout
+            self.assertIn(b"apps/gomodel/0.2.2/.env.sample", two_tree)
+            self.assertNotIn(b"apps/gomodel/0.2.2/.env.sample", three_dot)
+
+            changed_file_list = repo / "changed-files.zlist"
+            changed_file_list.write_bytes(two_tree)
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+            output_file = repo / "selected.zlist"
+            script = REPO_ROOT / ".github" / "scripts" / "renovate_app_version_sources.py"
+            result = subprocess.run(
+                [
+                    sys.executable, str(script), "--base-ref", base_ref, "--head-ref", head_ref,
+                    "--changed-files", str(changed_file_list), "--policy-file", str(policy_file),
+                    "--output-file", str(output_file),
+                ], cwd=repo, text=True, capture_output=True, check=False,
+            )
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertEqual(
+                ["apps/demo/1.0.0/docker-compose.yml"],
+                output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"),
+            )
+
     def test_source_selector_fails_on_ambiguous_newest_version(self):
         with tempfile.TemporaryDirectory(prefix="renovate-source-ambiguity-") as tmp:
             repo = pathlib.Path(tmp)
@@ -1142,6 +1210,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("renovate_app_version_sources.py", app_version)
         self.assertIn('--head-ref "$(git rev-parse HEAD)"', app_version)
         self.assertIn("selected-source-files.zlist", app_version)
+        self.assertIn('git diff --name-only -z "$base_ref...HEAD"', app_version)
         self.assertIn('git cat-file -e "$BASE_REF:$changed_file"', app_version)
         self.assertIn('git diff --cached --quiet "$BASE_REF" -- "$source_dir"', app_version)
         self.assertIn('git restore --source="$BASE_REF" --staged --worktree -- "$changed_dir"', app_version)
@@ -1162,16 +1231,31 @@ class RenovateAppVersionTests(unittest.TestCase):
         workflow = (
             REPO_ROOT / ".github" / "workflows" / "renovate-automerge.yml"
         ).read_text(encoding="utf-8")
+        shape_helper = (
+            REPO_ROOT / ".github" / "scripts" / "renovate_automerge_shape.py"
+        ).read_text(encoding="utf-8")
 
-        self.assertIn("def digest_reference(image):", workflow)
+        self.assertIn("renovate_automerge_shape.py", workflow)
+        self.assertIn("Verify Renovate PR identity", workflow)
+        self.assertIn('.user.login == "renovate[bot]"', workflow)
+        self.assertIn('.user.login == "app/renovate"', workflow)
+        self.assertIn('.head.repo.full_name == $repo', workflow)
+        self.assertIn('(.head.ref | startswith("renovate/"))', workflow)
+        self.assertIn('(.head.ref | startswith("selfhosted-renovate/"))', workflow)
+        self.assertIn("--files-json /tmp/renovate-pr-files.json", workflow)
+        self.assertIn('echo "head_sha=$HEAD_SHA"', workflow)
+        self.assertIn('--match-head-commit "$VERIFIED_HEAD_SHA"', workflow)
+        self.assertIn("PR head changed after shape verification", workflow)
+        self.assertIn('gh api "repos/$REPO/git/ref/heads/localApps"', workflow)
+        self.assertIn("localApps moved after shape verification", workflow)
         self.assertIn(
             're.fullmatch(r"([^@\\s]+)@sha256:([0-9a-fA-F]{64})", image)',
-            workflow,
+            shape_helper,
         )
-        self.assertIn("old_digest[0] != new_digest[0]", workflow)
-        self.assertIn("old_digest[1] == new_digest[1]", workflow)
-        self.assertIn("filename_is_compose != previous_is_compose", workflow)
-        self.assertIn("digest_only=true", workflow)
+        self.assertIn("old_digest[0] == new_digest[0]", shape_helper)
+        self.assertIn("old_digest[1] != new_digest[1]", shape_helper)
+        self.assertIn('echo "digest_only=$digest_only"', workflow)
+        self.assertIn('"digest_only": digest_only', shape_helper)
         self.assertIn("steps.shape.outputs.digest_only", workflow)
         self.assertIn("Digest-only image update; app-version marker is not required", workflow)
         self.assertIn("Update app version [skip ci]", workflow)
