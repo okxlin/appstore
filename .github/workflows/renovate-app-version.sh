@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# This script renames a version directory to match the changed primary service image tag.
+# This script adds an image-tagged version directory while preserving the source version.
 
 app_name=${1:?missing app name}
 old_version=${2:?missing source version}
@@ -38,8 +38,10 @@ fi
 
 target_dir="apps/$app_name/$trimmed_version"
 if [[ -e "$target_dir" ]]; then
-  echo "target already exists: $target_dir" >&2
-  exit 1
+  echo "skip: $target_dir already exists; restore the Renovate-edited source version"
+  git restore --source="$base_ref" --staged --worktree -- "$source_dir"
+  exit 0
 fi
 
-mv "$source_dir" "$target_dir"
+cp -a "$source_dir" "$target_dir"
+git restore --source="$base_ref" --staged --worktree -- "$source_dir"

@@ -1,0 +1,46 @@
+name: Retain DeepSeek Harness versions
+
+on:
+  schedule:
+    - cron: "29 5 * * 1"
+  push:
+    branches:
+      - localApps
+    paths:
+      - 'apps/deepseek-harness-workstation/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deepseek-harness-version-retention
+  cancel-in-progress: false
+
+jobs:
+  prune-old-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout localApps
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: localApps
+          fetch-depth: 0
+
+      - name: Configure repository identity
+        run: |
+          git config --local user.email "githubaction@githubaction.com"
+          git config --local user.name "github-action version retention"
+
+      - name: Record new versions and prune expired DeepSeek Harness versions
+        run: python3 .github/scripts/prune_deepseek_harness_versions.py
+
+      - name: Commit and push cleanup
+        run: |
+          git add -- .github/state/deepseek-harness-version-retention.json
+          if git diff --cached --quiet; then
+            echo "No version retention changes."
+            exit 0
+          fi
+          git commit -m "Prune expired DeepSeek Harness versions [skip ci]" --no-verify
+          git push origin HEAD:refs/heads/localApps
