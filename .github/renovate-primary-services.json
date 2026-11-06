@@ -114,6 +114,9 @@
   "milvus": [
     "standalone"
   ],
+  "mixspace": [
+    "mixspace"
+  ],
   "opencloud": [
     "opencloud"
   ],
