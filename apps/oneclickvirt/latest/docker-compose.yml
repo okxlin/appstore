@@ -1,6 +1,6 @@
 services:
   oneclickvirt:
-    image: spiritlhl/oneclickvirt:no-db
+    image: oneclickvirt/oneclickvirt:no-db
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
