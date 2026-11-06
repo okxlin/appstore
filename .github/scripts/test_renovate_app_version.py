@@ -2,6 +2,7 @@ import importlib.util
 import json
 import os
 import pathlib
+import re
 import subprocess
 import sys
 import tempfile
@@ -65,6 +66,99 @@ class RenovateAppVersionTests(unittest.TestCase):
             "github>okxlin/appstore//.github/renovate-docker.json",
             config["extends"],
         )
+
+    def test_deepseek_harness_workstation_tags_are_recognized(self):
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
+        rule = next(
+            item
+            for item in config["packageRules"]
+            if item.get("description") == "Track DeepSeek Harness workstation release tags"
+        )
+        self.assertEqual(["ghcr.io/okxlin/deepseek-harness"], rule["matchPackageNames"])
+        self.assertEqual(
+            ["apps/deepseek-harness-workstation/*-workstation/docker-compose.yml"],
+            rule["matchFileNames"],
+        )
+        self.assertFalse(rule["ignoreUnstable"])
+        python_regex = rule["versioning"].removeprefix("regex:").replace("(?<", "(?P<")
+        matcher = re.compile(python_regex)
+        for tag in (
+            "0.2.1-rc.3-workstation",
+            "0.2.2-alpha.2-workstation",
+            "0.2.2-rc.1-workstation",
+            "0.2.2-workstation",
+        ):
+            with self.subTest(tag=tag):
+                match = matcher.fullmatch(tag)
+                self.assertIsNotNone(match)
+                self.assertEqual("workstation", match.group("compatibility"))
+
+    def test_version_directory_update_preserves_old_version(self):
+        old_version = "0.2.1-rc.2-workstation"
+        new_version = "0.2.1-rc.3-workstation"
+        app_key = "demo"
+        source = pathlib.Path("apps") / app_key / old_version
+        target = pathlib.Path("apps") / app_key / new_version
+        compose = source / "docker-compose.yml"
+        old_image = f"ghcr.io/okxlin/deepseek-harness:{old_version}"
+        new_image = f"ghcr.io/okxlin/deepseek-harness:{new_version}"
+
+        with tempfile.TemporaryDirectory(prefix="renovate-version-copy-") as tmp:
+            repo = pathlib.Path(tmp)
+            (repo / compose).parent.mkdir(parents=True)
+            (repo / compose).write_text(
+                f"services:\n  app:\n    image: {old_image}\n", encoding="utf-8"
+            )
+            (repo / source / "data.yml").write_text("name: demo\n", encoding="utf-8")
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"], cwd=repo, check=True
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Test User"], cwd=repo, check=True
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add old version"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+
+            changed_compose = (repo / compose).read_text(encoding="utf-8").replace(
+                old_image, new_image
+            )
+            (repo / compose).write_text(changed_compose, encoding="utf-8")
+            script = REPO_ROOT / ".github" / "workflows" / "renovate-app-version.sh"
+            command = ["bash", str(script), app_key, old_version, compose.as_posix(), base_ref]
+            first = subprocess.run(
+                command, cwd=repo, text=True, capture_output=True, check=False
+            )
+
+            self.assertEqual(0, first.returncode, first.stderr)
+            self.assertEqual(old_image, (repo / compose).read_text(encoding="utf-8").split("image: ", 1)[1].strip())
+            self.assertIn(new_image, (repo / target / "docker-compose.yml").read_text(encoding="utf-8"))
+            self.assertTrue((repo / target / "data.yml").is_file())
+            self.assertEqual(
+                "",
+                subprocess.run(
+                    ["git", "status", "--porcelain", "--", source.as_posix()],
+                    cwd=repo,
+                    check=True,
+                    text=True,
+                    capture_output=True,
+                ).stdout,
+            )
+
+            (repo / compose).write_text(changed_compose, encoding="utf-8")
+            second = subprocess.run(
+                command, cwd=repo, text=True, capture_output=True, check=False
+            )
+            self.assertEqual(0, second.returncode, second.stderr)
+            self.assertIn("already exists", second.stdout)
+            self.assertEqual(old_image, (repo / compose).read_text(encoding="utf-8").split("image: ", 1)[1].strip())
 
     def test_self_hosted_compose_scan_is_semimonthly_read_only_audit(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
@@ -594,16 +688,19 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertEqual(["flagsmith"], primary["flagsmith"])
         self.assertEqual(["godoxy"], primary["godoxy"])
         self.assertEqual(["kaneo"], primary["kaneo"])
+        self.assertEqual(["asciinema-server"], primary["asciinema-server"])
+        self.assertEqual(["server"], primary["bisq2-node"])
+        self.assertEqual(["firecrawl"], primary["firecrawl"])
+        self.assertEqual(["hedgedoc"], primary["hedgedoc-linuxserver"])
         self.assertEqual(["manyfold"], primary["manyfold-linuxserver"])
+        self.assertEqual(["standalone"], primary["milvus"])
         self.assertEqual(["netbox"], primary["netbox-linuxserver"])
+        self.assertEqual(["opencloud"], primary["opencloud"])
         self.assertEqual(
             ["unifi-network-application"],
             primary["unifi-network-application-linuxserver"],
         )
-        self.assertEqual(
-            ["woodpecker-server", "woodpecker-agent"],
-            primary["woodpecker"],
-        )
+        self.assertEqual(["woodpecker-server"], primary["woodpecker"])
         self.assertEqual(["yamtrack"], primary["yamtrack"])
         self.assertEqual(["zipline"], primary["zipline"])
 
@@ -809,8 +906,16 @@ class RenovateAppVersionTests(unittest.TestCase):
         reconcile = (workflows / "renovate-automerge-reconcile.yml").read_text(encoding="utf-8")
         labeling = (workflows / "label-third-party-prs.yml").read_text(encoding="utf-8")
 
-        self.assertIn("'selfhosted-renovate/*'", app_version)
-        self.assertIn("startsWith(github.ref_name, 'selfhosted-renovate/')", app_version)
+        self.assertIn("'selfhosted-renovate/'", app_version)
+        self.assertIn("pull_request_target:", app_version)
+        self.assertIn("startsWith(github.event.pull_request.head.ref", app_version)
+        self.assertIn("path: trusted-helper", app_version)
+        self.assertIn("persist-credentials: false", app_version)
+        self.assertIn("ref: ${{ steps.updated-files.outputs.base_ref }}", app_version)
+        self.assertIn(
+            'bash "$GITHUB_WORKSPACE/trusted-helper/.github/workflows/renovate-app-version.sh"',
+            app_version,
+        )
         for workflow in (sidecar_guard, automerge, labeling):
             self.assertIn("github.event.pull_request.head.repo.full_name == github.repository", workflow)
             self.assertIn(

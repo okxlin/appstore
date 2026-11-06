@@ -1,0 +1,181 @@
+additionalProperties:
+  formFields:
+    - envKey: PANEL_APP_PORT_HTTP
+      type: number
+      required: true
+      default: 56789
+      rule: paramPort
+      edit: true
+      labelZh: Web 访问端口
+      labelEn: Web Port
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 訪問端口
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+    - envKey: TZ
+      type: text
+      required: true
+      default: Asia/Shanghai
+      edit: true
+      labelZh: 时区
+      labelEn: Timezone
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+    - envKey: DSH_PUBLIC_URL
+      type: text
+      required: true
+      default: ""
+      edit: true
+      labelZh: 外部 HTTPS 地址
+      labelEn: External HTTPS URL
+      label:
+        en: External HTTPS URL
+        zh: 外部 HTTPS 地址
+        zh-Hant: 外部 HTTPS 位址
+        ja: 外部 HTTPS URL
+        ko: 외부 HTTPS URL
+        ru: Внешний HTTPS-адрес
+        ms: URL HTTPS Luaran
+        pt-br: URL HTTPS externa
+      description:
+        en: Enter the complete browser origin, for example https://dsh.example.com. Paths are not supported.
+        zh: 输入浏览器使用的完整 Origin，例如 https://dsh.example.com；不支持子路径。
+    - envKey: DSH_AUTH_USERNAME
+      type: text
+      required: true
+      default: admin
+      edit: true
+      labelZh: 登录用户名
+      labelEn: Login Username
+      label:
+        en: Login Username
+        zh: 登录用户名
+        zh-Hant: 登入使用者名稱
+        ja: ログインユーザー名
+        ko: 로그인 사용자 이름
+        ru: Имя пользователя
+        ms: Nama Pengguna Log Masuk
+        pt-br: Nome de usuário de login
+    - envKey: DSH_AUTH_PASSWORD
+      type: password
+      required: true
+      default: ""
+      edit: true
+      labelZh: 登录密码
+      labelEn: Login Password
+      label:
+        en: Login Password
+        zh: 登录密码
+        zh-Hant: 登入密碼
+        ja: ログインパスワード
+        ko: 로그인 비밀번호
+        ru: Пароль для входа
+        ms: Kata Laluan Log Masuk
+        pt-br: Senha de login
+      description:
+        en: Use at least 12 characters. The image stores a bcrypt hash in its authentication database, while the submitted plaintext value remains visible to host, 1Panel, and Docker administrators.
+        zh: 至少使用 12 个字符；镜像会在鉴权数据库中保存 bcrypt 哈希，但宿主、1Panel 与 Docker 管理员仍可读取提交的明文值。
+    - envKey: DSH_AUTH_TOKEN_LIFETIME
+      type: select
+      required: true
+      default: "604800"
+      edit: true
+      labelZh: 登录会话有效期
+      labelEn: Login Session Lifetime
+      label:
+        en: Login Session Lifetime
+        zh: 登录会话有效期
+        zh-Hant: 登入工作階段有效期
+        ja: ログインセッション有効期間
+        ko: 로그인 세션 유효 기간
+        ru: Срок действия сеанса
+        ms: Tempoh Sesi Log Masuk
+        pt-br: Duração da sessão de login
+      description:
+        en: The token is not renewed automatically. When it expires, the browser must sign in again.
+        zh: 登录令牌不会自动续期；到期后浏览器需要重新登录。
+      values:
+        - label: 1 hour
+          value: "3600"
+        - label: 8 hours
+          value: "28800"
+        - label: 24 hours
+          value: "86400"
+        - label: 7 days
+          value: "604800"
+        - label: 30 days
+          value: "2592000"
+    - envKey: CADDY_TRUSTED_PROXIES
+      type: text
+      required: true
+      default: private_ranges
+      edit: true
+      labelZh: 可信代理范围
+      labelEn: Trusted Proxy Ranges
+      label:
+        en: Trusted Proxy Ranges
+        zh: 可信代理范围
+        zh-Hant: 受信任代理範圍
+        ja: 信頼済みプロキシ範囲
+        ko: 신뢰할 수 있는 프록시 범위
+        ru: Диапазоны доверенных прокси
+        ms: Julat Proksi Dipercayai
+        pt-br: Faixas de proxies confiáveis
+      description:
+        en: Use space-separated CIDRs or private_ranges. Keep private_ranges behind 1Panel/OpenResty; use none only when clients connect directly to Caddy.
+        zh: 使用空格分隔的 CIDR 或 private_ranges。通过 1Panel/OpenResty 反向代理时保留 private_ranges；仅在客户端直连 Caddy 时使用 none。
+    - envKey: DSH_TRUSTED_HOSTS
+      type: text
+      required: false
+      default: ""
+      edit: true
+      labelZh: 附加可信主机
+      labelEn: Additional Trusted Hosts
+      label:
+        en: Additional Trusted Hosts
+        zh: 附加可信主机
+        zh-Hant: 附加受信任主機
+        ja: 追加の信頼済みホスト
+        ko: 추가 신뢰 호스트
+        ru: Дополнительные доверенные хосты
+        ms: Hos Dipercayai Tambahan
+        pt-br: Hosts confiáveis adicionais
+      description:
+        en: Optional comma-separated host authorities without a scheme. The authority from the external URL is trusted automatically.
+        zh: 可选的逗号分隔主机 authority，不要包含协议；外部地址中的 authority 会自动加入可信列表。
+    - envKey: DOCKER_SOCK_PATH
+      type: select
+      required: true
+      default: /dev/null
+      edit: true
+      labelZh: Docker 套接字访问
+      labelEn: Docker Socket Access
+      label:
+        en: Docker Socket Access
+        zh: Docker 套接字访问
+        zh-Hant: Docker 通訊端存取
+        ja: Docker ソケットアクセス
+        ko: Docker 소켓 접근
+        ru: Доступ к сокету Docker
+        ms: Akses Soket Docker
+        pt-br: Acesso ao socket do Docker
+      description:
+        en: Disabled is the safe default. Enabling grants the workstation effective control of the host Docker daemon.
+        zh: 默认禁用最安全；启用后工作站可有效控制宿主 Docker 守护进程。
+      values:
+        - label: Disabled
+          value: /dev/null
+        - label: Enabled (/var/run/docker.sock)
+          value: /var/run/docker.sock
