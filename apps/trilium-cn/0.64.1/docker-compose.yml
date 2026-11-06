@@ -1,0 +1,25 @@
+services:
+  trilium-cn:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${DATA_PATH}:/root/trilium-data"
+    environment:
+      - TRILIUM_DATA_DIR=/root/trilium-data
+    # 可选功能: 健康检查。需要启用的话，把下面的注释去掉
+    #healthcheck:
+    #  test: ["CMD-SHELL", "curl --fail http://localhost:8080/api/health-check | jq -e '.status == "ok"' || exit 1"]
+    #  interval: 30s
+    #  timeout: 10s
+    #  retries: 3
+    image: nriver/trilium-cn:0.64.1
+    labels:  
+      createdBy: "Apps"
+
+networks:  
+  1panel-network:  
+    external: true
