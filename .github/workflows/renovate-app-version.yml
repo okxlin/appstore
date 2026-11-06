@@ -1,26 +1,39 @@
-name: Update app version in Renovate Branches
+name: Update app version in Renovate PRs
 
 on:
-  push:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
     branches:
-      - 'renovate/*'
-      - 'selfhosted-renovate/*'
+      - localApps
+    paths:
+      - 'apps/**/docker-compose.yml'
   workflow_dispatch:
     inputs:
       manual-trigger:
         description: 'Manually trigger Renovate'
         default: ''
+
+permissions:
+  contents: write
+
 jobs:
   update-app-version:
     if: >
-      github.event_name == 'workflow_dispatch' ||
-      startsWith(github.ref_name, 'renovate/') ||
-      startsWith(github.ref_name, 'selfhosted-renovate/')
+      (
+        startsWith(github.event.pull_request.head.ref || github.ref_name, 'renovate/') ||
+        startsWith(github.event.pull_request.head.ref || github.ref_name, 'selfhosted-renovate/')
+      ) &&
+      (
+        github.event_name != 'pull_request_target' ||
+        github.event.pull_request.head.repo.full_name == github.repository
+      )
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
           fetch-depth: 0
 
       - name: Configure repo
@@ -28,50 +41,80 @@ jobs:
           git config --local user.email "githubaction@githubaction.com"
           git config --local user.name "github-action update-app-version"
 
-      - name: Get list of updated files by the last commit in this branch separated by space
+      - name: Find changed Compose files
         id: updated-files
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_BEFORE: ${{ github.event.before }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          base_ref="${{ github.event.before }}"
-          if [[ -z "$base_ref" || "$base_ref" =~ ^0+$ ]]; then
-            base_ref="HEAD^"
+          if [[ "$EVENT_NAME" == "pull_request_target" ]]; then
+            base_ref="$PR_BASE_SHA"
+          elif [[ "$EVENT_NAME" == "push" && -n "$EVENT_BEFORE" && ! "$EVENT_BEFORE" =~ ^0+$ ]]; then
+            base_ref="$EVENT_BEFORE"
+          else
+            git fetch origin localApps
+            base_ref=$(git merge-base origin/localApps HEAD)
           fi
+          git cat-file -e "${base_ref}^{commit}"
           echo "base_ref=$base_ref" >> "$GITHUB_OUTPUT"
-          echo "files=$(git diff --name-only "$base_ref" "${{ github.sha }}" | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+          git diff --name-only -z "$base_ref" HEAD > "$RUNNER_TEMP/changed-files.zlist"
+
+      - name: Checkout trusted version updater
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ steps.updated-files.outputs.base_ref }}
+          path: trusted-helper
+          fetch-depth: 1
+          persist-credentials: false
 
       - name: Run renovate-app-version.sh on updated files
+        env:
+          BASE_REF: ${{ steps.updated-files.outputs.base_ref }}
         run: |
-          IFS=' ' read -ra files <<< "${{ steps.updated-files.outputs.files }}"
-
-          for file in "${files[@]}"; do
-            if [[ $file == *"docker-compose.yml"* ]]; then
-              app_name=$(echo "$file" | cut -d'/' -f 2)
-              old_version=$(echo "$file" | cut -d'/' -f 3)
-              chmod +x .github/workflows/renovate-app-version.sh
-              .github/workflows/renovate-app-version.sh \
+          selected_files="$RUNNER_TEMP/selected-source-files.zlist"
+          python3 "$GITHUB_WORKSPACE/trusted-helper/.github/scripts/renovate_app_version_sources.py" \
+            --base-ref "$BASE_REF" \
+            --head-ref "$(git rev-parse HEAD)" \
+            --changed-files "$RUNNER_TEMP/changed-files.zlist" \
+            --policy-file "$GITHUB_WORKSPACE/trusted-helper/.github/renovate-primary-services.json" \
+            --output-file "$selected_files"
+          while IFS= read -r -d '' file; do
+            if [[ $file =~ ^apps/([^/]+)/([^/]+)/docker-compose\.yml$ ]]; then
+              app_name="${BASH_REMATCH[1]}"
+              old_version="${BASH_REMATCH[2]}"
+              source_dir="apps/$app_name/$old_version"
+              bash "$GITHUB_WORKSPACE/trusted-helper/.github/workflows/renovate-app-version.sh" \
                 "$app_name" \
                 "$old_version" \
                 "$file" \
-                "${{ steps.updated-files.outputs.base_ref }}"
+                "$BASE_REF"
+              if git diff --cached --quiet "$BASE_REF" -- "$source_dir"; then
+                while IFS= read -r -d '' changed_file; do
+                  if [[ $changed_file =~ ^apps/([^/]+)/([^/]+)/docker-compose\.yml$ ]]; then
+                    changed_app="${BASH_REMATCH[1]}"
+                    changed_dir="apps/$changed_app/${BASH_REMATCH[2]}"
+                    if [[ "$changed_app" == "$app_name" && "$changed_dir" != "$source_dir" ]] \
+                      && git cat-file -e "$BASE_REF:$changed_file" 2>/dev/null; then
+                      git restore --source="$BASE_REF" --staged --worktree -- "$changed_dir"
+                    fi
+                  fi
+                done < "$RUNNER_TEMP/changed-files.zlist"
+              fi
             fi
-          done
+          done < "$selected_files"
 
       - name: Commit & Push Changes
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
-          IFS=' ' read -ra files <<< "${{ steps.updated-files.outputs.files }}"
-          declare -A apps=()
-
-          for file in "${files[@]}"; do
-            if [[ $file == *"docker-compose.yml"* ]]; then
-              app_name=$(echo "$file" | cut -d'/' -f 2)
-              apps["$app_name"]=1
-            fi
-          done
-
-          for app_name in "${!apps[@]}"; do
-            git add "apps/$app_name"
-            if git diff --cached --quiet; then
-              continue
-            fi
-            git commit -m "Update app version [skip ci]" --no-verify
-            git push
-          done
+          git check-ref-format --branch "$BRANCH_NAME"
+          git add apps
+          if git diff --cached --quiet; then
+            echo "No app-version directory changes to commit."
+            exit 0
+          fi
+          git config --local user.email "githubaction@githubaction.com"
+          git config --local user.name "github-action update-app-version"
+          git commit -m "Update app version [skip ci]" --no-verify
+          git push origin "HEAD:refs/heads/$BRANCH_NAME"
