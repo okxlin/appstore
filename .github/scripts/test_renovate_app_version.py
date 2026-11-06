@@ -160,6 +160,233 @@ class RenovateAppVersionTests(unittest.TestCase):
             self.assertIn("already exists", second.stdout)
             self.assertEqual(old_image, (repo / compose).read_text(encoding="utf-8").split("image: ", 1)[1].strip())
 
+    def test_source_selector_chooses_newest_primary_image_and_ignores_new_directories(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-source-selection-") as tmp:
+            repo = pathlib.Path(tmp)
+            versions = {
+                "apps/demo/1.9.0/docker-compose.yml": "example/demo:1.9.0",
+                "apps/demo/1.9.0-postgres16/docker-compose.yml": "example/demo:1.9.0",
+                "apps/demo/1.10.0/docker-compose.yml": "example/demo:1.10.0",
+                "apps/other/2.0.0/docker-compose.yml": "example/other:2.0.0",
+                "apps/multi/1.9.0/docker-compose.yml": {
+                    "api": "example/multi-api:1.9.0",
+                    "worker": "example/multi-worker:1.9.0",
+                },
+                "apps/multi/1.10.0/docker-compose.yml": {
+                    "api": "example/multi-api:1.10.0",
+                    "worker": "example/multi-worker:1.10.0",
+                },
+                "apps/same-image/0.30.2/docker-compose.yml": "example/same-image:0.40.1",
+                "apps/same-image/0.30.3/docker-compose.yml": "example/same-image:0.40.1",
+            }
+            for path, images in versions.items():
+                compose_path = repo / path
+                compose_path.parent.mkdir(parents=True, exist_ok=True)
+                service_images = images if isinstance(images, dict) else {"app": images}
+                lines = ["services:"]
+                for service, image in service_images.items():
+                    lines.extend([f"  {service}:", f"    image: {image}"])
+                compose_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test User"], cwd=repo, check=True)
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add source versions"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            target_tags = {
+                "demo": "1.11.0",
+                "multi": "1.11.0",
+                "other": "2.1.0",
+                "same-image": "0.40.2",
+            }
+            for path, images in versions.items():
+                compose_path = repo / path
+                service_images = images if isinstance(images, dict) else {"app": images}
+                updated = compose_path.read_text(encoding="utf-8")
+                target_tag = target_tags[path.split("/")[1]]
+                for image in service_images.values():
+                    updated = updated.replace(image, f"{image.rsplit(':', 1)[0]}:{target_tag}")
+                compose_path.write_text(updated, encoding="utf-8")
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "update image tags"], cwd=repo, check=True)
+            head_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+
+            changed_file_list = repo / "changed-files.zlist"
+            changed_file_list.write_bytes(
+                b"\0".join([
+                    b"apps/demo/1.9.0/docker-compose.yml",
+                    b"apps/demo/1.10.0/docker-compose.yml",
+                    b"apps/demo/1.9.0-postgres16/docker-compose.yml",
+                    b"apps/demo/1.11.0/docker-compose.yml",  # Added in the PR, not a source.
+                    b"apps/other/2.0.0/docker-compose.yml",
+                    b"apps/multi/1.9.0/docker-compose.yml",
+                    b"apps/multi/1.10.0/docker-compose.yml",
+                    b"apps/same-image/0.30.2/docker-compose.yml",
+                    b"apps/same-image/0.30.3/docker-compose.yml",
+                    b"",
+                ])
+            )
+            policy_file = repo / "policy.json"
+            policy_file.write_text('{"multi": ["api"]}\n', encoding="utf-8")
+            output_file = repo / "selected.zlist"
+            script = REPO_ROOT / ".github" / "scripts" / "renovate_app_version_sources.py"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--base-ref",
+                    base_ref,
+                    "--head-ref",
+                    head_ref,
+                    "--changed-files",
+                    str(changed_file_list),
+                    "--policy-file",
+                    str(policy_file),
+                    "--output-file",
+                    str(output_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertEqual(
+                [
+                    "apps/demo/1.10.0/docker-compose.yml",
+                    "apps/multi/1.10.0/docker-compose.yml",
+                    "apps/other/2.0.0/docker-compose.yml",
+                    "apps/same-image/0.30.3/docker-compose.yml",
+                ],
+                output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"),
+            )
+
+    def test_source_selector_fails_on_ambiguous_newest_version(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-source-ambiguity-") as tmp:
+            repo = pathlib.Path(tmp)
+            versions = {
+                "apps/demo/1.9.0/docker-compose.yml": "example/demo:1.9.0",
+                "apps/demo/1.10.0/docker-compose.yml": "example/demo:1.10.0",
+                "apps/demo/1.10.0-postgres16/docker-compose.yml": "example/demo:1.10.0",
+            }
+            for path, image in versions.items():
+                compose_path = repo / path
+                compose_path.parent.mkdir(parents=True, exist_ok=True)
+                compose_path.write_text(f"services:\n  app:\n    image: {image}\n", encoding="utf-8")
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test User"], cwd=repo, check=True)
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add source versions"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            for path, image in versions.items():
+                compose_path = repo / path
+                compose_path.write_text(
+                    compose_path.read_text(encoding="utf-8").replace(image, "example/demo:1.11.0"),
+                    encoding="utf-8",
+                )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "update image tags"], cwd=repo, check=True)
+            head_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            changed_file_list = repo / "changed-files.zlist"
+            changed_file_list.write_bytes(
+                b"apps/demo/1.10.0/docker-compose.yml\0"
+                b"apps/demo/1.10.0-postgres16/docker-compose.yml\0"
+            )
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+            output_file = repo / "selected.zlist"
+            script = REPO_ROOT / ".github" / "scripts" / "renovate_app_version_sources.py"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--base-ref",
+                    base_ref,
+                    "--head-ref",
+                    head_ref,
+                    "--changed-files",
+                    str(changed_file_list),
+                    "--policy-file",
+                    str(policy_file),
+                    "--output-file",
+                    str(output_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(1, result.returncode)
+            self.assertIn("ambiguous newest source", result.stderr)
+            self.assertFalse(output_file.exists())
+
+    def test_source_selector_skips_digest_only_primary_image_updates(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-source-digest-only-") as tmp:
+            repo = pathlib.Path(tmp)
+            compose_path = repo / "apps" / "demo" / "1.0.0" / "docker-compose.yml"
+            compose_path.parent.mkdir(parents=True)
+            compose_path.write_text(
+                "services:\n  app:\n    image: example/demo@sha256:aaaa\n",
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test User"], cwd=repo, check=True)
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add digest-pinned version"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            compose_path.write_text(
+                "services:\n  app:\n    image: example/demo@sha256:bbbb\n",
+                encoding="utf-8",
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "update image digest"], cwd=repo, check=True)
+            head_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            changed_file_list = repo / "changed-files.zlist"
+            changed_file_list.write_bytes(b"apps/demo/1.0.0/docker-compose.yml\0")
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+            output_file = repo / "selected.zlist"
+            script = REPO_ROOT / ".github" / "scripts" / "renovate_app_version_sources.py"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--base-ref",
+                    base_ref,
+                    "--head-ref",
+                    head_ref,
+                    "--changed-files",
+                    str(changed_file_list),
+                    "--policy-file",
+                    str(policy_file),
+                    "--output-file",
+                    str(output_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertEqual(b"", output_file.read_bytes())
+
     def test_self_hosted_compose_scan_is_semimonthly_read_only_audit(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "renovate.yml").read_text(
             encoding="utf-8"
@@ -912,6 +1139,12 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("path: trusted-helper", app_version)
         self.assertIn("persist-credentials: false", app_version)
         self.assertIn("ref: ${{ steps.updated-files.outputs.base_ref }}", app_version)
+        self.assertIn("renovate_app_version_sources.py", app_version)
+        self.assertIn('--head-ref "$(git rev-parse HEAD)"', app_version)
+        self.assertIn("selected-source-files.zlist", app_version)
+        self.assertIn('git cat-file -e "$BASE_REF:$changed_file"', app_version)
+        self.assertIn('git diff --cached --quiet "$BASE_REF" -- "$source_dir"', app_version)
+        self.assertIn('git restore --source="$BASE_REF" --staged --worktree -- "$changed_dir"', app_version)
         self.assertIn(
             'bash "$GITHUB_WORKSPACE/trusted-helper/.github/workflows/renovate-app-version.sh"',
             app_version,
