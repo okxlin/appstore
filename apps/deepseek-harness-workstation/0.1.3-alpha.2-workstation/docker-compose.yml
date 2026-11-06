@@ -1,6 +1,6 @@
 services:
   deepseek-harness-workstation:
-    image: "ghcr.io/okxlin/deepseek-harness:0.2.2-rc.1-workstation"
+    image: "ghcr.io/okxlin/deepseek-harness:0.1.3-alpha.2-workstation"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     labels:
