@@ -1,0 +1,117 @@
+additionalProperties:
+  formFields:
+    - default: 40031
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
+      required: true
+      type: text
+    - default: code
+      envKey: WEB_PASSWORD
+      labelEn: Web access password
+      labelZh: 网页访问密码
+      label:
+        en: 'Web access password'
+        zh: '网页访问密码'
+        zh-Hant: '網頁存取密碼'
+        ja: 'Web アクセスパスワード'
+        ko: '웹 액세스 비밀번호'
+        ru: 'Пароль для веб-доступа'
+        ms: 'Kata laluan akses web'
+        pt-br: 'Senha de acesso web'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: code
+      envKey: SUDO_PASSWORD
+      labelEn: sudo password
+      labelZh: sudo密码
+      label:
+        en: 'sudo password'
+        zh: 'sudo密码'
+        zh-Hant: 'sudo 密碼'
+        ja: 'sudo パスワード'
+        ko: 'sudo 비밀번호'
+        ru: 'Пароль sudo'
+        ms: 'Kata laluan sudo'
+        pt-br: 'Senha do sudo'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: PROXY_DOMAIN
+      labelEn: Reverse proxy domain
+      labelZh: 反向代理子域名
+      label:
+        en: Reverse proxy domain
+        zh: 反向代理子域名
+        zh-Hant: 反向代理子網域
+        ja: リバースプロキシドメイン
+        ko: 리버스 프록시 도메인
+        ru: Домен обратного прокси
+        ms: Domain proksi songsang
+        pt-br: Dominio de proxy reverso
+      required: false
+      type: text
+    - default: /config/workspace
+      edit: true
+      envKey: DEFAULT_WORKSPACE
+      labelEn: Default workspace
+      labelZh: 默认工作目录
+      label:
+        en: Default workspace
+        zh: 默认工作目录
+        zh-Hant: 預設工作目錄
+        ja: デフォルトワークスペース
+        ko: 기본 작업 공간
+        ru: Рабочая область по умолчанию
+        ms: Ruang kerja lalai
+        pt-br: Espaco de trabalho padrao
+      required: false
+      type: text
+    - default: code-server
+      edit: true
+      envKey: PWA_APPNAME
+      labelEn: PWA app name
+      labelZh: PWA 应用名称
+      label:
+        en: PWA app name
+        zh: PWA 应用名称
+        zh-Hant: PWA 應用名稱
+        ja: PWA アプリ名
+        ko: PWA 앱 이름
+        ru: Имя приложения PWA
+        ms: Nama aplikasi PWA
+        pt-br: Nome do app PWA
+      required: false
+      type: text
