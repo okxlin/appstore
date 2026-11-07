@@ -1,0 +1,24 @@
+services:
+  this-week-in-past:
+    image: "rouhim/this-week-in-past:4.1.1@sha256:23bbde8a8babdd28bc7ad1030589f512d66e2d0a7244cf8eef344a923b3de9c9"
+    container_name: ${CONTAINER_NAME}
+    restart: unless-stopped
+    environment:
+      - RESOURCE_PATHS=/resources
+      - DATA_FOLDER=/data
+      - PORT=8080
+      - SLIDESHOW_INTERVAL=${SLIDESHOW_INTERVAL}
+      - RANDOM_SLIDESHOW=${RANDOM_SLIDESHOW}
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:8080"
+    volumes:
+      - "${PHOTO_LIBRARY_PATH}:/resources:ro"
+      - "${APP_DATA_DIR}:/data"
+    labels:
+      createdBy: "Apps"
+    networks:
+      - 1panel-network
+
+networks:
+  1panel-network:
+    external: true
