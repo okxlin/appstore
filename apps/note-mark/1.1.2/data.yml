@@ -1,0 +1,223 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://127.0.0.1:8080
+      edit: true
+      envKey: NOTE_MARK_PUBLIC_URL
+      labelEn: Public URL
+      labelZh: 公开访问 URL
+      label:
+        en: Public URL
+        zh: 公开访问 URL
+        zh-Hant: 公開存取 URL
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL awam
+        pt-br: URL publica
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: NOTE_MARK_SECRET_SEED
+      labelEn: Authentication Secret Seed
+      labelZh: 认证密钥种子
+      label:
+        en: Authentication Secret Seed
+        zh: 认证密钥种子
+        zh-Hant: 驗證密鑰種子
+        ja: 認証シークレットシード
+        ko: 인증 비밀 시드
+        ru: Начальное значение секрета аутентификации
+        ms: Benih rahsia pengesahan
+        pt-br: Semente do segredo de autenticacao
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      disabled: true
+      edit: false
+      envKey: NOTE_MARK_AUTH_SECRET
+      labelEn: Authentication Secret (Derived)
+      labelZh: 认证密钥（自动派生）
+      label:
+        en: Authentication Secret (Derived)
+        zh: 认证密钥（自动派生）
+        zh-Hant: 驗證密鑰（自動衍生）
+        ja: 認証シークレット（自動導出）
+        ko: 인증 비밀 키(자동 파생)
+        ru: Секрет аутентификации (производный)
+        ms: Rahsia pengesahan (diterbitkan)
+        pt-br: Segredo de autenticacao (derivado)
+      required: false
+      type: password
+    - default: "true"
+      edit: true
+      envKey: ENABLE_INTERNAL_SIGNUP
+      labelEn: Enable Internal Signup
+      labelZh: 启用内部注册
+      label:
+        en: Enable Internal Signup
+        zh: 启用内部注册
+        zh-Hant: 啟用內部註冊
+        ja: 内部登録を有効化
+        ko: 내부 가입 활성화
+        ru: Включить внутреннюю регистрацию
+        ms: Dayakan pendaftaran dalaman
+        pt-br: Ativar cadastro interno
+      required: true
+      type: select
+      values:
+        - label: Enabled
+          value: "true"
+        - label: Disabled
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: ENABLE_INTERNAL_LOGIN
+      labelEn: Enable Internal Login
+      labelZh: 启用内部登录
+      label:
+        en: Enable Internal Login
+        zh: 启用内部登录
+        zh-Hant: 啟用內部登入
+        ja: 内部ログインを有効化
+        ko: 내부 로그인 활성화
+        ru: Включить внутренний вход
+        ms: Dayakan log masuk dalaman
+        pt-br: Ativar login interno
+      required: true
+      type: select
+      values:
+        - label: Enabled
+          value: "true"
+        - label: Disabled
+          value: "false"
+    - default: "true"
+      edit: true
+      envKey: ENABLE_ANONYMOUS_USER_SEARCH
+      labelEn: Enable Anonymous User Search
+      labelZh: 启用匿名用户搜索
+      label:
+        en: Enable Anonymous User Search
+        zh: 启用匿名用户搜索
+        zh-Hant: 啟用匿名使用者搜尋
+        ja: 匿名ユーザー検索を有効化
+        ko: 익명 사용자 검색 활성화
+        ru: Включить анонимный поиск пользователей
+        ms: Dayakan carian pengguna tanpa nama
+        pt-br: Ativar busca anonima de usuarios
+      required: true
+      type: select
+      values:
+        - label: Enabled
+          value: "true"
+        - label: Disabled
+          value: "false"
+    - default: 12M
+      edit: true
+      envKey: FILE_SIZE_LIMIT
+      labelEn: File Size Limit
+      labelZh: 文件大小限制
+      label:
+        en: File Size Limit
+        zh: 文件大小限制
+        zh-Hant: 檔案大小限制
+        ja: ファイルサイズ上限
+        ko: 파일 크기 제한
+        ru: Ограничение размера файла
+        ms: Had saiz fail
+        pt-br: Limite de tamanho de arquivo
+      required: true
+      type: text
+    - default: info
+      edit: true
+      envKey: LOGGING_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌等級
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журналирования
+        ms: Tahap log
+        pt-br: Nivel de log
+      required: true
+      type: select
+      values:
+        - label: Debug
+          value: debug
+        - label: Info
+          value: info
+        - label: Warn
+          value: warn
+        - label: Error
+          value: error
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
