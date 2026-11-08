@@ -1,6 +1,6 @@
 services:
   pdfmathtranslate:
-    image: "awwaawwa/pdfmathtranslate-next:2.9.0"
+    image: "awwaawwa/pdfmathtranslate-next:2.10.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
