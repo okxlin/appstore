@@ -1,0 +1,37 @@
+services:
+  zerobyte:
+    image: "ghcr.io/nicotsx/zerobyte:v0.44.1@sha256:35c69a25666e35dc1fb31f7aa456ae60fa44899666e54794b81494e78e2fc159"
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_BIND_ADDRESS}:${PANEL_APP_PORT_HTTP}:4096"
+    environment:
+      - APP_SECRET=${APP_SECRET}
+      - BASE_URL=${BASE_URL}
+      - TZ=${TZ}
+    volumes:
+      - "${APP_DATA_DIR}:/var/lib/zerobyte"
+      - "${SOURCE_PATH}:/source"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=128m
+    cap_drop:
+      - ALL
+    cap_add:
+      - DAC_OVERRIDE
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:4096/ || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 45s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
