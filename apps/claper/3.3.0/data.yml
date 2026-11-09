@@ -1,0 +1,180 @@
+additionalProperties:
+  formFields:
+    - default: 4000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web port
+      labelZh: Web 端口
+      label:
+        en: Web port
+        zh: Web 端口
+        zh-Hant: Web 埠
+        ja: Web ポート
+        ko: 웹 포트
+        ru: Веб-порт
+        ms: Port web
+        pt-br: Porta web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_HOST
+      key: postgresql
+      labelEn: PostgreSQL service
+      labelZh: PostgreSQL 服务
+      label:
+        en: PostgreSQL service
+        zh: PostgreSQL 服务
+        zh-Hant: PostgreSQL 服務
+        ja: PostgreSQL サービス
+        ko: PostgreSQL 서비스
+        ru: Сервис PostgreSQL
+        ms: Perkhidmatan PostgreSQL
+        pt-br: Serviço PostgreSQL
+      required: true
+      type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: PostgreSQL port
+      labelZh: PostgreSQL 端口
+      label:
+        en: PostgreSQL port
+        zh: PostgreSQL 端口
+        zh-Hant: PostgreSQL 埠
+        ja: PostgreSQL ポート
+        ko: PostgreSQL 포트
+        ru: Порт PostgreSQL
+        ms: Port PostgreSQL
+        pt-br: Porta PostgreSQL
+      required: true
+      type: number
+    - default: claper
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database name
+      labelZh: 数据库名
+      label:
+        en: Database name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      type: text
+    - default: claper
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database user
+      labelZh: 数据库用户
+      label:
+        en: Database user
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+      random: true
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database password
+      labelZh: 数据库用户密码
+      label:
+        en: Database password
+        zh: 数据库用户密码
+        zh-Hant: 資料庫使用者密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль пользователя базы данных
+        ms: Kata laluan pengguna pangkalan data
+        pt-br: Senha do usuário do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: SECRET_KEY_BASE
+      labelEn: Secret key base
+      labelZh: 应用密钥
+      label:
+        en: Secret key base
+        zh: 应用密钥
+        zh-Hant: 應用程式金鑰
+        ja: アプリケーションシークレットキー
+        ko: 애플리케이션 시크릿 키
+        ru: Секретный ключ приложения
+        ms: Kunci rahsia aplikasi
+        pt-br: Chave secreta da aplicação
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: BASE_URL
+      labelEn: Public base URL
+      labelZh: 公共访问地址
+      label:
+        en: Public base URL
+        zh: 公共访问地址
+        zh-Hant: 公開基礎網址
+        ja: 公開ベース URL
+        ko: 공개 기본 URL
+        ru: Публичный базовый URL
+        ms: URL asas awam
+        pt-br: URL base público
+      required: true
+      type: text
+    - default: "true"
+      edit: true
+      envKey: ENABLE_ACCOUNT_CREATION
+      labelEn: Allow account creation
+      labelZh: 允许创建账户
+      label:
+        en: Allow account creation
+        zh: 允许创建账户
+        zh-Hant: 允許建立帳戶
+        ja: アカウント作成を許可
+        ko: 계정 생성 허용
+        ru: Разрешить создание учетных записей
+        ms: Benarkan penciptaan akaun
+        pt-br: Permitir criação de contas
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: EMAIL_CONFIRMATION
+      labelEn: Require email confirmation
+      labelZh: 要求邮箱确认
+      label:
+        en: Require email confirmation
+        zh: 要求邮箱确认
+        zh-Hant: 要求電子郵件確認
+        ja: メール確認を必須にする
+        ko: 이메일 확인 필요
+        ru: Требовать подтверждение электронной почты
+        ms: Memerlukan pengesahan e-mel
+        pt-br: Exigir confirmação de e-mail
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
