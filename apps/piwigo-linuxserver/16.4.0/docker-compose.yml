@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   piwigo:
-    image: "linuxserver/piwigo:16.4.0"
+    image: "linuxserver/piwigo:16.5.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
