@@ -30,4 +30,8 @@ if [[ -f "$ENV_FILE" ]] && ! grep -q '^SUB_STORE_BACKEND_SYNC_CRON=' "$ENV_FILE"
   fi
 fi
 
+if [[ -f "$ENV_FILE" ]] && ! grep -Eq '^[[:space:]]*(export[[:space:]]+)?SUB_STORE_CORS_ALLOWED_ORIGINS[[:space:]]*=' "$ENV_FILE"; then
+  printf '\nSUB_STORE_CORS_ALLOWED_ORIGINS=""\n' >> "$ENV_FILE"
+fi
+
 echo "Sub-Store upgrade preflight completed."
