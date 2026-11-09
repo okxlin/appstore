@@ -65,6 +65,29 @@ additionalProperties:
         pt-br: "Caminho do frontend/backend"
       required: true
       type: text
+    - default: ""
+      edit: true
+      envKey: SUB_STORE_CORS_ALLOWED_ORIGINS
+      labelEn: Allowed frontend origins (comma-separated)
+      labelZh: 允许的前端来源（逗号分隔）
+      label:
+        en: Allowed frontend origins (comma-separated)
+        zh: 允许的前端来源（逗号分隔）
+        zh-hant: 允許的前端來源（逗號分隔）
+        zh-Hant: 允許的前端來源（逗號分隔）
+        ja: 許可するフロントエンドのオリジン（カンマ区切り）
+        ko: 허용할 프런트엔드 출처(쉼표로 구분)
+        ru: Разрешённые источники фронтенда (через запятую)
+        ms: Asal antara muka yang dibenarkan (dipisahkan koma)
+        pt-br: Origens de frontend permitidas (separadas por vírgulas)
+        pt-BR: Origens de frontend permitidas (separadas por vírgulas)
+        tr: İzin verilen ön uç kaynakları (virgülle ayrılmış)
+        es-es: Orígenes de frontend permitidos (separados por comas)
+        es-ES: Orígenes de frontend permitidos (separados por comas)
+        fa: مبدأهای مجاز رابط کاربری (جداشده با ویرگول)
+        lo: ແຫຼ່ງທີ່ມາຂອງສ່ວນຕິດຕໍ່ທີ່ອະນຸຍາດ (ຄັ່ນດ້ວຍຈຸນ)
+      required: false
+      type: text
     - default: "./data"
       edit: true
       envKey: DATA_PATH
