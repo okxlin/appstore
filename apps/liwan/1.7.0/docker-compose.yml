@@ -1,6 +1,6 @@
 services:
   liwan:
-    image: "ghcr.io/explodingcamera/liwan:1.7.0@sha256:992159faa3652d828b0ee0ebcb6d60feccc42a6be097e96a856ec44e26850a7e"
+    image: "ghcr.io/explodingcamera/liwan:1.8.2@sha256:a87a131a227b3dbdf1487b999aff35a605aeb37382a1e421b3c501924270db21"
     container_name: ${CONTAINER_NAME}
     ports:
       - "${PANEL_APP_PORT_HTTP}:9042"
