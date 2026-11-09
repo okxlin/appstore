@@ -24,7 +24,21 @@ http://<服务器 IP>:<HTTP 端口>
 
 `SUB_STORE_CORS_ALLOWED_ORIGINS` 留空时采用镜像默认白名单，仅使用官方前端时可留空。填写后会替换默认白名单；如需同时使用官方前端，也应将其 Origin 加入列表。请填写可信前端的实际来源，不使用 `*`。
 
-旧安装同步应用库后，可在应用参数中填写该项并重建容器使其生效。升级脚本仅为缺少该参数的 `.env` 补齐空值，保留已有的空值或自定义来源。
+旧安装同步应用库后，已安装的 Compose 仍可能使用旧模板。启用该参数前，先更新其中的环境变量映射。升级到包含该映射的新模板会更新编排；同一标签没有升级选项时，在 1Panel 中编辑已安装应用的编排，沿用现有服务名，并按其 `environment` 格式添加以下一项。
+
+列表格式：
+
+```yaml
+- SUB_STORE_CORS_ALLOWED_ORIGINS=${SUB_STORE_CORS_ALLOWED_ORIGINS:-}
+```
+
+键值格式：
+
+```yaml
+SUB_STORE_CORS_ALLOWED_ORIGINS: ${SUB_STORE_CORS_ALLOWED_ORIGINS:-}
+```
+
+随后在应用参数中填写允许的前端来源并重建容器。升级脚本仅为缺少该参数的 `.env` 补齐空值，保留已有的空值或自定义来源。
 
 ## Introduction
 Sub-Store is an advanced subscription manager for Quantumult X, Loon, Surge, Stash, Egern, Shadowrocket, and related clients.
@@ -42,7 +56,21 @@ When using the bundled frontend or a separately hosted frontend, set `SUB_STORE_
 
 An empty value keeps the image's default allowlist for official frontends. A custom value replaces that allowlist, so include the official frontend's origin too if needed. List only trusted frontend origins and avoid `*`.
 
-For an existing installation, sync the app store, edit this parameter, and rebuild the container. The upgrade script adds an empty value only when the key is absent and preserves existing empty or custom values.
+After syncing the app store, an existing installation may still use its previous Compose template. Update its environment variable mapping before enabling this parameter. Upgrading to a template that includes the mapping updates the Compose file; if the same tag has no upgrade option, edit the installed application's Compose in 1Panel, keep its existing service name, and add the entry using its current `environment` format.
+
+List format:
+
+```yaml
+- SUB_STORE_CORS_ALLOWED_ORIGINS=${SUB_STORE_CORS_ALLOWED_ORIGINS:-}
+```
+
+Mapping format:
+
+```yaml
+SUB_STORE_CORS_ALLOWED_ORIGINS: ${SUB_STORE_CORS_ALLOWED_ORIGINS:-}
+```
+
+Then set the allowed frontend origins in the app parameters and rebuild the container. The upgrade script adds an empty value only when the key is absent and preserves existing empty or custom values.
 
 ## 应用简介
 适用于 QX、Loon、Surge、Stash 和 Shadowrocket 的高级订阅管理器。
