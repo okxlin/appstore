@@ -1,0 +1,65 @@
+additionalProperties:
+  formFields:
+    - default: 40138
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data folder path
+      labelZh: 数据文件夹路径
+      label:
+        en: 'Data folder path'
+        zh: '数据文件夹路径'
+        zh-Hant: '資料夾路徑'
+        ja: 'データフォルダパス'
+        ko: '데이터 폴더 경로'
+        ru: 'Путь к папке данных'
+        ms: 'Laluan folder data'
+        pt-br: 'Caminho da pasta de dados'
+        tr: 'Veri klasör yolu'
+        es-es: 'Ruta de la carpeta de datos'
+        fa: 'مسیر پوشهٔ داده'
+        lo: 'ເສັ້ນທາງໂຟນເດີຂໍ້ມູນ'
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: SIYUAN_ACCESS_AUTH_CODE
+      labelEn: Lock screen password
+      labelZh: 锁屏密码
+      label:
+        en: 'Lock screen password'
+        zh: '锁屏密码'
+        zh-Hant: '鎖定螢幕密碼'
+        ja: 'ロック画面のパスワード'
+        ko: '잠금 화면 비밀번호'
+        ru: 'Пароль экрана блокировки'
+        ms: 'Kata laluan skrin kunci'
+        pt-br: 'Senha da tela de bloqueio'
+        tr: 'Ekran kilidi parolası'
+        es-es: 'Contraseña de pantalla de bloqueo'
+        fa: 'گذرواژهٔ قفل صفحه'
+        lo: 'ລະຫັດຜ່ານໜ້າຈໍລັອກ'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
