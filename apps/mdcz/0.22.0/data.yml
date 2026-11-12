@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: 3838
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 端口
+      label:
+        en: Web Port
+        zh: Web 端口
+        zh-Hant: Web 連接埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: ./data/media
+      edit: true
+      envKey: MEDIA_DIR
+      labelEn: Media Directory
+      labelZh: 媒体目录
+      label:
+        en: Media Directory
+        zh: 媒体目录
+        zh-Hant: 媒體目錄
+        ja: メディアディレクトリ
+        ko: 미디어 디렉터리
+        ru: Каталог медиафайлов
+        ms: Direktori Media
+        pt-br: Diretório de Mídia
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: MDCZ_ADMIN_PASSWORD
+      labelEn: Administrator Password
+      labelZh: 管理员密码
+      label:
+        en: Administrator Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata Laluan Pentadbir
+        pt-br: Senha do Administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horário
+      required: true
+      type: text
