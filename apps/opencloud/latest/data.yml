@@ -84,22 +84,6 @@ additionalProperties:
         pt-br: Diretório de dados
       required: true
       type: text
-    - default: /var/run/docker.sock
-      edit: true
-      envKey: DOCKER_SOCKET_PATH
-      labelEn: Docker Socket Path
-      labelZh: Docker Socket 路径
-      label:
-        en: Docker Socket Path
-        zh: Docker Socket 路径
-        zh-Hant: Docker Socket 路徑
-        ja: Docker Socket パス
-        ko: Docker Socket 경로
-        ru: Путь к Docker Socket
-        ms: Laluan Docker Socket
-        pt-br: Caminho do Docker Socket
-      required: true
-      type: text
     - default: Asia/Shanghai
       edit: true
       envKey: TZ
