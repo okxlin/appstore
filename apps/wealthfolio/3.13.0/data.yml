@@ -18,7 +18,7 @@ additionalProperties:
       rule: paramPort
       type: number
     - default: Wealthfolio_Admin_2026!
-      edit: true
+      edit: false
       envKey: ADMIN_PASSWORD
       labelEn: Login Password
       labelZh: 登录密码
@@ -36,7 +36,7 @@ additionalProperties:
       rule: paramComplexity
       type: password
     - default: 0123456789abcdef0123456789abcdef
-      edit: true
+      edit: false
       envKey: WF_SECRET_KEY
       labelEn: Encryption Key
       labelZh: 加密密钥
