@@ -21,10 +21,14 @@ Rocket.Chat is an open source team communication platform for channels, direct m
 
 ## 部署说明
 - 本应用基于官方 `rocketchat-compose` 的核心服务适配，包含 Rocket.Chat、MongoDB 单节点复制集和 NATS。
-- 当前固定使用 `registry.rocket.chat/rocketchat/rocket.chat:8.0.1`、`mongodb/mongodb-community-server:8.2-ubi8` 和 `nats:2.11-alpine`。
+- 当前可选的最高版本为 `9.0.0`；对应镜像固定为 `registry.rocket.chat/rocketchat/rocket.chat:9.0.0`、`mongodb/mongodb-community-server:8.2-ubi8` 和 `nats:2.11-alpine`。
 - 应用分类：工具。
 - 支持架构：amd64、arm64。
 - 可选版本：`latest`，但镜像版本固定，避免自动跨版本升级。
+
+### Rocket.Chat 9.0.0 升级提示
+- 9.0.0 起，LDAP、SAML 和自定义 OAuth 仅适用于 Starter、Commercial、Government、Defense 方案；社区版不可用。Drupal、Facebook、LinkedIn、Meteor、X、WordPress 和 Dolphin 登录方式已移除。
+- 升级前确认管理员可使用本地账号登录，并检查工作区的登录方式是否仍受支持。详情见 [9.0.0 发布说明](https://github.com/RocketChat/Rocket.Chat/releases/tag/9.0.0)。
 
 ## 端口
 | 变量 | 说明 | 默认值 | 必填 |
@@ -60,5 +64,6 @@ Rocket.Chat is an open source team communication platform for channels, direct m
 - 项目仓库: <https://github.com/RocketChat/Rocket.Chat>
 - 官方 Docker Compose 文档: <https://docs.rocket.chat/docs/deploy-with-docker-docker-compose>
 - 官方 Compose 仓库: <https://github.com/RocketChat/rocketchat-compose>
+- Rocket.Chat 9.0.0 发布说明: <https://github.com/RocketChat/Rocket.Chat/releases/tag/9.0.0>
 - 初始管理员文档: <https://docs.rocket.chat/docs/admin-account-creation>
 - 安全升级指南: <https://docs.rocket.chat/docs/guidelines-for-updating-rocketchat>
