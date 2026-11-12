@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   wireshark:
-    image: "linuxserver/wireshark:4.6.9"
+    image: "linuxserver/wireshark:4.6.6"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
