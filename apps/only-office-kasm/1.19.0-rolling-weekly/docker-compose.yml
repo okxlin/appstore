@@ -1,6 +1,6 @@
 services:
   only-office-kasm:
-    image: "kasmweb/only-office:1.19.0-rolling-weekly@sha256:a2d2622f807463670f4a8e1b37cce30513e17f4cfc02a421a6a4ac748594b445"
+    image: "kasmweb/only-office:1.19.0-rolling-weekly@sha256:658519b913cf9c10353bbf20e8dc59ceedf386db59432c1aee63f5f7ee9bef97"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
