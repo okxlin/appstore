@@ -1,0 +1,341 @@
+additionalProperties:
+  formFields:
+  - default: 8000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: HTTP Port
+    labelZh: HTTP 端口
+    label:
+      en: HTTP Port
+      zh: HTTP 端口
+      zh-Hant: HTTP 連接埠
+      ja: HTTP ポート
+      ko: HTTP 포트
+      ru: HTTP-порт
+      ms: Port HTTP
+      pt-br: Porta HTTP
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: admin@example.com
+    edit: true
+    envKey: SUPERUSER_EMAIL
+    labelEn: Admin email
+    labelZh: 管理员邮箱
+    label:
+      en: Admin email
+      zh: 管理员邮箱
+      zh-Hant: 管理員信箱
+      ja: 管理者メール
+      ko: 관리자 이메일
+      ru: Email администратора
+      ms: E-mel pentadbir
+      pt-br: Email do administrador
+    required: true
+    type: text
+  - default: netbox-change-me
+    edit: true
+    envKey: SUPERUSER_PASSWORD
+    labelEn: Admin password
+    labelZh: 管理员密码
+    label:
+      en: Admin password
+      zh: 管理员密码
+      zh-Hant: 管理員密碼
+      ja: 管理者パスワード
+      ko: 관리자 비밀번호
+      ru: Пароль администратора
+      ms: Kata laluan pentadbir
+      pt-br: Senha do administrador
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: "*"
+    edit: true
+    envKey: ALLOWED_HOST
+    labelEn: Allowed host
+    labelZh: 允许访问主机
+    label:
+      en: Allowed host
+      zh: 允许访问主机
+      zh-Hant: 允許存取主機
+      ja: 許可ホスト
+      ko: 허용 호스트
+      ru: Разрешенный хост
+      ms: Hos dibenarkan
+      pt-br: Host permitido
+    required: true
+    type: text
+  - default: netbox-db
+    edit: true
+    envKey: DB_HOST
+    labelEn: Database host
+    labelZh: 数据库主机
+    label:
+      en: Database host
+      zh: 数据库主机
+      zh-Hant: 資料庫主機
+      ja: データベースホスト
+      ko: 데이터베이스 호스트
+      ru: Хост базы данных
+      ms: Hos pangkalan data
+      pt-br: Host do banco
+    required: true
+    type: text
+  - default: 5432
+    edit: true
+    envKey: DB_PORT
+    labelEn: Database port
+    labelZh: 数据库端口
+    label:
+      en: Database port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco
+    required: true
+    type: number
+  - default: netbox
+    edit: true
+    envKey: DB_USER
+    labelEn: Database username
+    labelZh: 数据库用户名
+    label:
+      en: Database username
+      zh: 数据库用户名
+      zh-Hant: 資料庫使用者名稱
+      ja: データベースユーザー名
+      ko: 데이터베이스 사용자 이름
+      ru: Имя пользователя базы
+      ms: Nama pengguna pangkalan data
+      pt-br: Usuario do banco
+    required: true
+    type: text
+  - default: netbox
+    edit: true
+    envKey: DB_NAME
+    labelEn: Database name
+    labelZh: 数据库名称
+    label:
+      en: Database name
+      zh: 数据库名称
+      zh-Hant: 資料庫名稱
+      ja: データベース名
+      ko: 데이터베이스 이름
+      ru: Имя базы данных
+      ms: Nama pangkalan data
+      pt-br: Nome do banco
+    required: true
+    type: text
+  - default: netbox-change-me
+    edit: true
+    envKey: DB_PASSWORD
+    labelEn: Database password
+    labelZh: 数据库密码
+    label:
+      en: Database password
+      zh: 数据库密码
+      zh-Hant: 資料庫密碼
+      ja: データベースパスワード
+      ko: 데이터베이스 비밀번호
+      ru: Пароль базы данных
+      ms: Kata laluan pangkalan data
+      pt-br: Senha do banco de dados
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: netbox-redis
+    edit: true
+    envKey: REDIS_HOST
+    labelEn: Redis host
+    labelZh: Redis 主机
+    label:
+      en: Redis host
+      zh: Redis 主机
+      zh-Hant: Redis 主機
+      ja: Redis ホスト
+      ko: Redis 호스트
+      ru: Хост Redis
+      ms: Hos Redis
+      pt-br: Host do Redis
+    required: true
+    type: text
+  - default: 6379
+    edit: true
+    envKey: REDIS_PORT
+    labelEn: Redis port
+    labelZh: Redis 端口
+    label:
+      en: Redis port
+      zh: Redis 端口
+      zh-Hant: Redis 連接埠
+      ja: Redis ポート
+      ko: Redis 포트
+      ru: Порт Redis
+      ms: Port Redis
+      pt-br: Porta do Redis
+    required: true
+    type: number
+  - default: ''
+    edit: true
+    envKey: REDIS_USERNAME
+    labelEn: Redis username
+    labelZh: Redis 用户名
+    label:
+      en: Redis username
+      zh: Redis 用户名
+      zh-Hant: Redis 使用者名稱
+      ja: Redis ユーザー名
+      ko: Redis 사용자 이름
+      ru: Имя пользователя Redis
+      ms: Nama pengguna Redis
+      pt-br: Usuario do Redis
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: REDIS_PASSWORD
+    labelEn: Redis password
+    labelZh: Redis 密码
+    label:
+      en: Redis password
+      zh: Redis 密码
+      zh-Hant: Redis 密碼
+      ja: Redis パスワード
+      ko: Redis 비밀번호
+      ru: Пароль Redis
+      ms: Kata laluan Redis
+      pt-br: Senha do Redis
+    required: false
+    type: password
+  - default: 0
+    edit: true
+    envKey: REDIS_DB_TASK
+    labelEn: Redis task database
+    labelZh: Redis 任务数据库
+    label:
+      en: Redis task database
+      zh: Redis 任务数据库
+      zh-Hant: Redis 任務資料庫
+      ja: Redis タスクデータベース
+      ko: Redis 작업 데이터베이스
+      ru: База Redis для задач
+      ms: Pangkalan data tugas Redis
+      pt-br: Banco Redis de tarefas
+    required: true
+    type: number
+  - default: 1
+    edit: true
+    envKey: REDIS_DB_CACHE
+    labelEn: Redis cache database
+    labelZh: Redis 缓存数据库
+    label:
+      en: Redis cache database
+      zh: Redis 缓存数据库
+      zh-Hant: Redis 快取資料庫
+      ja: Redis キャッシュデータベース
+      ko: Redis 캐시 데이터베이스
+      ru: База Redis для кэша
+      ms: Pangkalan data cache Redis
+      pt-br: Banco Redis de cache
+    required: true
+    type: number
+  - default: ''
+    edit: true
+    envKey: BASE_PATH
+    labelEn: Base path
+    labelZh: 基础路径
+    label:
+      en: Base path
+      zh: 基础路径
+      zh-Hant: 基礎路徑
+      ja: ベースパス
+      ko: 기본 경로
+      ru: Базовый путь
+      ms: Laluan asas
+      pt-br: Caminho base
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: CSRF_TRUSTED_ORIGINS
+    labelEn: CSRF trusted origins
+    labelZh: CSRF 可信来源
+    label:
+      en: CSRF trusted origins
+      zh: CSRF 可信来源
+      zh-Hant: CSRF 可信來源
+      ja: CSRF 信頼済みオリジン
+      ko: CSRF 신뢰 출처
+      ru: Доверенные источники CSRF
+      ms: Asal dipercayai CSRF
+      pt-br: Origens CSRF confiaveis
+    required: false
+    type: text
+  - default: ./data/db
+    edit: true
+    envKey: DB_DATA_PATH
+    labelEn: Database data path
+    labelZh: 数据库数据目录
+    label:
+      en: Database data path
+      zh: 数据库数据目录
+      zh-Hant: 資料庫資料目錄
+      ja: データベースデータディレクトリ
+      ko: 데이터베이스 데이터 디렉터리
+      ru: Каталог данных базы
+      ms: Laluan data pangkalan data
+      pt-br: Caminho de dados do banco
+    required: true
+    type: text
+  - default: ./data/redis
+    edit: true
+    envKey: REDIS_DATA_PATH
+    labelEn: Redis data path
+    labelZh: Redis 数据目录
+    label:
+      en: Redis data path
+      zh: Redis 数据目录
+      zh-Hant: Redis 資料目錄
+      ja: Redis データディレクトリ
+      ko: Redis 데이터 디렉터리
+      ru: Каталог данных Redis
+      ms: Laluan data Redis
+      pt-br: Caminho de dados Redis
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
