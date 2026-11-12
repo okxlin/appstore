@@ -1,0 +1,150 @@
+additionalProperties:
+  formFields:
+    - default: 18087
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://127.0.0.1:18087
+      edit: true
+      envKey: ROOT_URL
+      labelEn: Public URL
+      labelZh: 外部访问地址
+      label:
+        en: Public URL
+        zh: 外部访问地址
+        zh-Hant: 外部存取位址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL awam
+        pt-br: URL publico
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: REG_TOKEN
+      labelEn: Registration Token
+      labelZh: 注册令牌
+      label:
+        en: Registration Token
+        zh: 注册令牌
+        zh-Hant: 註冊權杖
+        ja: 登録トークン
+        ko: 등록 토큰
+        ru: Токен регистрации
+        ms: Token pendaftaran
+        pt-br: Token de registro
+      required: false
+      type: text
+    - default: admin
+      edit: true
+      envKey: ADMIN_USERNAME
+      labelEn: Admin Username
+      labelZh: 管理员用户名
+      label:
+        en: Admin Username
+        zh: 管理员用户名
+        zh-Hant: 管理員使用者名稱
+        ja: 管理者ユーザー名
+        ko: 관리자 사용자 이름
+        ru: Имя администратора
+        ms: Nama pengguna pentadbir
+        pt-br: Nome de usuario administrador
+      required: true
+      type: text
+    - default: Admin
+      edit: true
+      envKey: ADMIN_NAME
+      labelEn: Admin Name
+      labelZh: 管理员姓名
+      label:
+        en: Admin Name
+        zh: 管理员姓名
+        zh-Hant: 管理員姓名
+        ja: 管理者名
+        ko: 관리자 이름
+        ru: Имя администратора
+        ms: Nama pentadbir
+        pt-br: Nome do administrador
+      required: true
+      type: text
+    - default: admin@example.com
+      edit: true
+      envKey: ADMIN_EMAIL
+      labelEn: Admin Email
+      labelZh: 管理员邮箱
+      label:
+        en: Admin Email
+        zh: 管理员邮箱
+        zh-Hant: 管理員信箱
+        ja: 管理者メール
+        ko: 관리자 이메일
+        ru: Email администратора
+        ms: E-mel pentadbir
+        pt-br: Email do administrador
+      required: true
+      type: text
+    - default: rocket_admin_password
+      edit: true
+      envKey: ADMIN_PASS
+      labelEn: Admin Password
+      labelZh: 管理员密码
+      label:
+        en: Admin Password
+        zh: 管理员密码
+        zh-Hant: 管理員密碼
+        ja: 管理者パスワード
+        ko: 관리자 비밀번호
+        ru: Пароль администратора
+        ms: Kata laluan pentadbir
+        pt-br: Senha do administrador
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
