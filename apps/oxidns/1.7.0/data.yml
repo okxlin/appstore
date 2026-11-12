@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: 9199
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: 管理端口
+      label:
+        en: Web Port
+        zh: 管理端口
+        zh-Hant: 管理埠
+        ja: 管理ポート
+        ko: 관리 포트
+        ru: Порт управления
+        ms: Port Pengurusan
+        pt-br: Porta de Gerenciamento
+      required: true
+      rule: paramPort
+      type: number
+    - default: 53
+      edit: true
+      envKey: PANEL_APP_PORT_DNS_TCP
+      labelEn: DNS TCP Port
+      labelZh: DNS TCP 端口
+      label:
+        en: DNS TCP Port
+        zh: DNS TCP 端口
+        zh-Hant: DNS TCP 埠
+        ja: DNS TCP ポート
+        ko: DNS TCP 포트
+        ru: DNS TCP порт
+        ms: Port TCP DNS
+        pt-br: Porta TCP DNS
+      required: true
+      rule: paramPort
+      type: number
+    - default: 53
+      edit: true
+      envKey: PANEL_APP_PORT_DNS_UDP
+      labelEn: DNS UDP Port
+      labelZh: DNS UDP 端口
+      label:
+        en: DNS UDP Port
+        zh: DNS UDP 端口
+        zh-Hant: DNS UDP 埠
+        ja: DNS UDP ポート
+        ko: DNS UDP 포트
+        ru: DNS UDP порт
+        ms: Port UDP DNS
+        pt-br: Porta UDP DNS
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_CONFIG_DIR
+      labelEn: Config Directory
+      labelZh: 配置目录
+      label:
+        en: Config Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori Konfigurasi
+        pt-br: Diretório de Configuração
+      required: true
+      type: text
+    - default: UTC
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text

@@ -1,0 +1,33 @@
+log:
+  level: info
+
+api:
+  http:
+    listen: ":9199"
+    webui:
+      root: "./webui"
+
+plugins:
+  - tag: forward
+    type: forward
+    args:
+      upstreams:
+        - addr: "223.5.5.5"
+
+  - tag: main_sequence
+    type: sequence
+    args:
+      - exec: $forward
+      - exec: accept
+
+  - tag: udp_server
+    type: udp_server
+    args:
+      entry: main_sequence
+      listen: ":53"
+
+  - tag: tcp_server
+    type: tcp_server
+    args:
+      entry: main_sequence
+      listen: ":53"
