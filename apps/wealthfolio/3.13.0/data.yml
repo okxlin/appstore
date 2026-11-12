@@ -1,0 +1,71 @@
+additionalProperties:
+  formFields:
+    - default: 8088
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 連接埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: Wealthfolio_Admin_2026!
+      edit: true
+      envKey: ADMIN_PASSWORD
+      labelEn: Login Password
+      labelZh: 登录密码
+      label:
+        en: Login Password
+        zh: 登录密码
+        zh-Hant: 登入密碼
+        ja: ログインパスワード
+        ko: 로그인 비밀번호
+        ru: Пароль для входа
+        ms: Kata Laluan Log Masuk
+        pt-br: Senha de Login
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 0123456789abcdef0123456789abcdef
+      edit: true
+      envKey: WF_SECRET_KEY
+      labelEn: Encryption Key
+      labelZh: 加密密钥
+      label:
+        en: Encryption Key
+        zh: 加密密钥
+        zh-Hant: 加密金鑰
+        ja: 暗号化キー
+        ko: 암호화 키
+        ru: Ключ шифрования
+        ms: Kunci Penyulitan
+        pt-br: Chave de Criptografia
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de Dados
+      required: true
+      type: text
