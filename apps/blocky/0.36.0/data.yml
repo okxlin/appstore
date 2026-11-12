@@ -1,0 +1,51 @@
+additionalProperties:
+  formFields:
+    - default: 127.0.0.1
+      edit: true
+      envKey: DNS_BIND_ADDRESS
+      labelEn: DNS Bind Address
+      labelZh: DNS 绑定地址
+      label:
+        en: DNS Bind Address
+        zh: DNS 绑定地址
+        zh-Hant: DNS 綁定位址
+        ja: DNS バインドアドレス
+        ko: DNS 바인드 주소
+        ru: Адрес привязки DNS
+        ms: Alamat ikatan DNS
+        pt-br: Endereco de vinculacao DNS
+      required: true
+      type: text
+    - default: 5353
+      edit: true
+      envKey: PANEL_APP_PORT_DNS
+      labelEn: DNS Port
+      labelZh: DNS 端口
+      label:
+        en: DNS Port
+        zh: DNS 端口
+        zh-Hant: DNS 埠
+        ja: DNS ポート
+        ko: DNS 포트
+        ru: Порт DNS
+        ms: Port DNS
+        pt-br: Porta DNS
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de Dados
+      required: true
+      type: text
