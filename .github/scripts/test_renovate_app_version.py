@@ -515,7 +515,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertEqual("wait", too_soon["decision"])
         self.assertEqual("limit", too_many["decision"])
 
-    def test_retry_workflow_and_sidecar_branch_cleanup_are_guarded(self):
+    def test_retry_workflow_and_sidecar_updates_are_reviewed_without_branch_cleanup(self):
         retry_workflow = (
             REPO_ROOT / ".github" / "workflows" / "renovate-rate-limit-retry.yml"
         ).read_text(encoding="utf-8")
@@ -527,9 +527,11 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("actions: write", retry_workflow)
         self.assertIn("renovate_retry_gate.py", retry_workflow)
         self.assertIn("automatic retry after Docker Hub 429", retry_workflow)
-        self.assertIn('[[ "$head_repo" == "$REPO" ]]', sidecar_workflow)
-        self.assertIn('selfhosted-renovate/*|renovate/*', sidecar_workflow)
-        self.assertIn("git/refs/heads/$head_ref", sidecar_workflow)
+        self.assertIn("decision == 'review'", sidecar_workflow)
+        self.assertIn("gh pr comment", sidecar_workflow)
+        self.assertNotIn("gh pr close", sidecar_workflow)
+        self.assertNotIn("git/refs/heads/$head_ref", sidecar_workflow)
+
     def test_image_tag_strips_digest_from_tagged_image(self):
         module = load_module()
 

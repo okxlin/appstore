@@ -161,9 +161,36 @@ def compare_compose(
         service_count,
         changed_services,
         primary_services,
-        "close",
+        "review",
         "multi-service compose changed only auxiliary services",
     )
+
+
+def aggregate_decisions(decisions: list[ComposeDecision], *, seen_compose: bool) -> dict:
+    if not seen_compose:
+        return {
+            "decision": "allow",
+            "reason": "no compose files changed",
+            "details": [],
+        }
+
+    manual_review = [d for d in decisions if d.outcome == "review"]
+    blocking_unknown = [d for d in decisions if d.outcome == "unknown"]
+    if manual_review and not blocking_unknown:
+        summary = "; ".join(
+            f"{d.app}:{','.join(d.changed_services)}" for d in manual_review
+        )
+        return {
+            "decision": "review",
+            "reason": f"auxiliary-only update needs full-stack review ({summary})",
+            "details": [d.__dict__ for d in decisions],
+        }
+
+    return {
+        "decision": "allow",
+        "reason": "keep PR open",
+        "details": [d.__dict__ for d in decisions],
+    }
 
 
 def main() -> int:
@@ -221,31 +248,7 @@ def main() -> int:
             )
         )
 
-    if not seen_compose:
-        result = {
-            "decision": "allow",
-            "reason": "no compose files changed",
-            "details": [],
-        }
-    else:
-        closable = [d for d in decisions if d.outcome == "close"]
-        blocking_unknown = [d for d in decisions if d.outcome == "unknown"]
-        primary_changed = [d for d in decisions if d.outcome == "allow"]
-        if closable and not blocking_unknown and not primary_changed:
-            summary = "; ".join(
-                f"{d.app}:{','.join(d.changed_services)}" for d in closable
-            )
-            result = {
-                "decision": "close",
-                "reason": f"sidecar-only Renovate update detected ({summary})",
-                "details": [d.__dict__ for d in decisions],
-            }
-        else:
-            result = {
-                "decision": "allow",
-                "reason": "keep PR open",
-                "details": [d.__dict__ for d in decisions],
-            }
+    result = aggregate_decisions(decisions, seen_compose=seen_compose)
 
     json.dump(result, sys.stdout, ensure_ascii=False, indent=2)
     sys.stdout.write("\n")

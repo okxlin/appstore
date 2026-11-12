@@ -14,6 +14,7 @@ SPEC.loader.exec_module(GUARD)
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PRIMARY_SERVICES_PATH = REPOSITORY_ROOT / ".github" / "renovate-primary-services.json"
 RENOVATE_CONFIG_PATH = REPOSITORY_ROOT / ".github" / "renovate-docker.json"
+SIDECAR_GUARD_WORKFLOW_PATH = REPOSITORY_ROOT / ".github" / "workflows" / "renovate-sidecar-guard.yml"
 
 
 def compose(**images: str) -> dict:
@@ -55,14 +56,14 @@ class ResolvePrimaryServicesTests(unittest.TestCase):
 
 
 class InferredPrimaryDecisionTests(unittest.TestCase):
-    def test_closes_weblate_sidecar_only_update(self) -> None:
+    def test_marks_weblate_sidecar_only_update_for_manual_review(self) -> None:
         base = compose(cache="valkey:9.1.0", database="postgres:18", weblate="weblate:latest")
         head = compose(cache="valkey:9.1.1", database="postgres:18", weblate="weblate:latest")
         primary = GUARD.resolve_primary_services("weblate", [], base, head)
 
         decision = GUARD.compare_compose("weblate", "apps/weblate/latest/docker-compose.yml", base, head, primary)
 
-        self.assertEqual(decision.outcome, "close")
+        self.assertEqual(decision.outcome, "review")
         self.assertEqual(decision.changed_services, ["cache"])
 
     def test_allows_inferred_primary_update(self) -> None:
@@ -82,6 +83,24 @@ class InferredPrimaryDecisionTests(unittest.TestCase):
 
         self.assertEqual(decision.outcome, "allow")
         self.assertEqual(decision.detail, "single-service compose")
+
+
+class DecisionAggregationTests(unittest.TestCase):
+    def test_auxiliary_only_update_emits_manual_review_decision(self) -> None:
+        decision = GUARD.ComposeDecision(
+            app="firecrawl",
+            path="apps/firecrawl/2.11.359/docker-compose.yml",
+            services_total=2,
+            changed_services=["firecrawl-playwright"],
+            primary_services=["firecrawl"],
+            outcome="review",
+            detail="multi-service compose changed only auxiliary services",
+        )
+
+        result = GUARD.aggregate_decisions([decision], seen_compose=True)
+
+        self.assertEqual(result["decision"], "review")
+        self.assertIn("firecrawl:firecrawl-playwright", result["reason"])
 
 
 class RepositoryPolicyTests(unittest.TestCase):
@@ -119,7 +138,7 @@ class RepositoryPolicyTests(unittest.TestCase):
             self.primary_services["dify"],
         )
 
-        self.assertEqual(decision.outcome, "close")
+        self.assertEqual(decision.outcome, "review")
 
     def test_safeline_components_are_grouped_behind_management_service(self) -> None:
         self.assertEqual(self.primary_services["safeline"], ["safeline-mgt"])
@@ -173,7 +192,7 @@ class RepositoryPolicyTests(unittest.TestCase):
             self.primary_services["uuwaf"],
         )
 
-        self.assertEqual(decision.outcome, "close")
+        self.assertEqual(decision.outcome, "review")
 
     def test_langflow_updates_require_manual_compatibility_review(self) -> None:
         self.assertTrue(
@@ -182,6 +201,16 @@ class RepositoryPolicyTests(unittest.TestCase):
                 "langflowai/langflow",
             )
         )
+
+
+class WorkflowSafetyTests(unittest.TestCase):
+    def test_sidecar_only_updates_are_reviewed_without_closing_or_deleting_branches(self) -> None:
+        workflow = SIDECAR_GUARD_WORKFLOW_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("decision == 'review'", workflow)
+        self.assertIn("gh pr comment", workflow)
+        self.assertNotIn("gh pr close", workflow)
+        self.assertNotIn("git/refs/heads", workflow)
 
 
 if __name__ == "__main__":
