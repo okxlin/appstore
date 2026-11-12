@@ -1,6 +1,6 @@
 services:
   keila:
-    image: "pentacent/keila:0.40.1"
+    image: "pentacent/keila:0.40.2"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
