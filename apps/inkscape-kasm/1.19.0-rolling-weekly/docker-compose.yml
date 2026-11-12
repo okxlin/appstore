@@ -1,6 +1,6 @@
 services:
   inkscape-kasm:
-    image: "kasmweb/inkscape:1.19.0-rolling-weekly@sha256:831fff3eb0aad6d47eede45bf187f9c2c0d2f72b3c072e4f61615540a5bfb32f"
+    image: "kasmweb/inkscape:1.19.0-rolling-weekly@sha256:8f292ca0c5252011a21967d984789517e40b645806a08a3c912147d0cce36fae"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
