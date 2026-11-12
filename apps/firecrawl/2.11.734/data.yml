@@ -1,0 +1,185 @@
+additionalProperties:
+  formFields:
+    - default: 3002
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: API port
+      labelZh: API 端口
+      label:
+        en: API port
+        zh: API 端口
+        zh-hant: API 埠
+        ja: API ポート
+        ko: API 포트
+        ru: Порт API
+        ms: Port API
+        pt-br: Porta da API
+        tr: API bağlantı noktası
+        es-es: Puerto de la API
+        fa: پورت API
+        lo: ພອດ API
+      required: true
+      rule: paramPort
+      type: number
+    - default: ''
+      edit: true
+      envKey: POSTGRES_PASSWORD
+      labelEn: PostgreSQL password
+      labelZh: PostgreSQL 数据库密码
+      label:
+        en: PostgreSQL password
+        zh: PostgreSQL 数据库密码
+        zh-hant: PostgreSQL 資料庫密碼
+        ja: PostgreSQL パスワード
+        ko: PostgreSQL 비밀번호
+        ru: Пароль PostgreSQL
+        ms: Kata laluan PostgreSQL
+        pt-br: Senha do PostgreSQL
+        tr: PostgreSQL parolası
+        es-es: Contraseña de PostgreSQL
+        fa: گذرواژه PostgreSQL
+        lo: ລະຫັດຜ່ານ PostgreSQL
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 8
+      edit: true
+      envKey: NUM_WORKERS_PER_QUEUE
+      labelEn: Workers per queue
+      labelZh: 每个队列的工作进程数
+      label:
+        en: Workers per queue
+        zh: 每个队列的工作进程数
+        zh-hant: 每個佇列的工作程序數
+        ja: キューごとのワーカー数
+        ko: 큐당 워커 수
+        ru: Воркеры на очередь
+        ms: Pekerja bagi setiap baris gilir
+        pt-br: Workers por fila
+        tr: Kuyruk başına çalışan sayısı
+        es-es: Trabajadores por cola
+        fa: تعداد worker برای هر صف
+        lo: ຈຳນວນ worker ຕໍ່ຄິວ
+      required: true
+      type: number
+    - default: 10
+      edit: true
+      envKey: CRAWL_CONCURRENT_REQUESTS
+      labelEn: Concurrent crawl requests
+      labelZh: 并发抓取请求数
+      label:
+        en: Concurrent crawl requests
+        zh: 并发抓取请求数
+        zh-hant: 併發抓取請求數
+        ja: 同時クロールリクエスト数
+        ko: 동시 크롤링 요청 수
+        ru: Параллельные запросы сканирования
+        ms: Permintaan crawl serentak
+        pt-br: Solicitações de rastreamento simultâneas
+        tr: Eşzamanlı tarama isteği sayısı
+        es-es: Solicitudes de rastreo simultáneas
+        fa: درخواست‌های هم‌زمان خزش
+        lo: ຈຳນວນຄຳຮ້ອງຂໍ crawl ພ້ອມກັນ
+      required: true
+      type: number
+    - default: 5
+      edit: true
+      envKey: MAX_CONCURRENT_JOBS
+      labelEn: Maximum concurrent jobs
+      labelZh: 最大并发任务数
+      label:
+        en: Maximum concurrent jobs
+        zh: 最大并发任务数
+        zh-hant: 最大併發工作數
+        ja: 最大同時ジョブ数
+        ko: 최대 동시 작업 수
+        ru: Максимум параллельных задач
+        ms: Bilangan kerja serentak maksimum
+        pt-br: Máximo de tarefas simultâneas
+        tr: Maksimum eşzamanlı iş sayısı
+        es-es: Máximo de trabajos simultáneos
+        fa: حداکثر jobهای هم‌زمان
+        lo: ຈຳນວນວຽກພ້ອມກັນສູງສຸດ
+      required: true
+      type: number
+    - default: 5
+      edit: true
+      envKey: BROWSER_POOL_SIZE
+      labelEn: Browser pool size
+      labelZh: 浏览器池大小
+      label:
+        en: Browser pool size
+        zh: 浏览器池大小
+        zh-hant: 瀏覽器集區大小
+        ja: ブラウザプールサイズ
+        ko: 브라우저 풀 크기
+        ru: Размер пула браузеров
+        ms: Saiz kumpulan pelayar
+        pt-br: Tamanho do pool de navegadores
+        tr: Tarayıcı havuzu boyutu
+        es-es: Tamaño del grupo de navegadores
+        fa: اندازه pool مرورگر
+        lo: ຂະໜາດ browser pool
+      required: true
+      type: number
+    - default: ''
+      edit: true
+      envKey: OPENAI_API_KEY
+      labelEn: OpenAI API key
+      labelZh: OpenAI API 密钥
+      label:
+        en: OpenAI API key
+        zh: OpenAI API 密钥
+        zh-hant: OpenAI API 金鑰
+        ja: OpenAI API キー
+        ko: OpenAI API 키
+        ru: API-ключ OpenAI
+        ms: Kunci API OpenAI
+        pt-br: Chave da API OpenAI
+        tr: OpenAI API anahtarı
+        es-es: Clave de API de OpenAI
+        fa: کلید API OpenAI
+        lo: API key OpenAI
+      required: false
+      type: password
+    - default: ''
+      edit: true
+      envKey: OPENAI_BASE_URL
+      labelEn: OpenAI-compatible base URL
+      labelZh: OpenAI 兼容接口地址
+      label:
+        en: OpenAI-compatible base URL
+        zh: OpenAI 兼容接口地址
+        zh-hant: OpenAI 相容介面位址
+        ja: OpenAI 互換ベース URL
+        ko: OpenAI 호환 기본 URL
+        ru: Базовый URL, совместимый с OpenAI
+        ms: URL asas serasi OpenAI
+        pt-br: URL base compatível com OpenAI
+        tr: OpenAI uyumlu temel URL
+        es-es: URL base compatible con OpenAI
+        fa: نشانی پایه سازگار با OpenAI
+        lo: URL ພື້ນຖານທີ່ຮອງຮັບ OpenAI
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: OLLAMA_BASE_URL
+      labelEn: Ollama base URL
+      labelZh: Ollama 接口地址
+      label:
+        en: Ollama base URL
+        zh: Ollama 接口地址
+        zh-hant: Ollama 介面位址
+        ja: Ollama ベース URL
+        ko: Ollama 기본 URL
+        ru: Базовый URL Ollama
+        ms: URL asas Ollama
+        pt-br: URL base do Ollama
+        tr: Ollama temel URL
+        es-es: URL base de Ollama
+        fa: نشانی پایه Ollama
+        lo: URL ພື້ນຖານ Ollama
+      required: false
+      type: text
