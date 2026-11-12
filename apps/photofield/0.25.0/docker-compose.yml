@@ -1,6 +1,6 @@
 services:
   photofield:
-    image: "ghcr.io/smilyorg/photofield:v0.25.1@sha256:f2e362f80a698feca12cfbd120c11e4f9ec34dc5119a98a8de985982e18acae4"
+    image: "ghcr.io/smilyorg/photofield:v0.25.0@sha256:cd4fde4dc6297b20eedd14b6445ed62a5cc457fda5dcf4f6f500aeed406ec976"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
