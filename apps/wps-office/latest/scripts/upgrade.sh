@@ -55,3 +55,5 @@ if [[ -f "$ENV_FILE" ]]; then
 else
   echo "$ENV_FILE not found; skipped LinuxServer environment migration"
 fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+exec "${SCRIPT_DIR}/init.sh"
