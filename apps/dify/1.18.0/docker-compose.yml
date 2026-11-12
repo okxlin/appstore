@@ -240,7 +240,7 @@ services:
       - ssrf_proxy_network
 
   local_sandbox:
-    image: "langgenius/dify-agent-local-sandbox:1.18.0"
+    image: "langgenius/dify-agent-local-sandbox:1.19.0"
     command: ["shellctl", "serve", "--listen", "0.0.0.0:5004", "--require-auth-token"]
     container_name: ${CONTAINER_NAME}-local-sandbox
     labels:
