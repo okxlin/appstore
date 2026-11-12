@@ -1,6 +1,6 @@
 services:
   this-week-in-past:
-    image: "rouhim/this-week-in-past:4.1.2@sha256:bc8f1d567e2eee60118d575e12d3134ab93443e9d5d2ca07177fea538bc968f9"
+    image: "rouhim/this-week-in-past:4.1.1@sha256:23bbde8a8babdd28bc7ad1030589f512d66e2d0a7244cf8eef344a923b3de9c9"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
