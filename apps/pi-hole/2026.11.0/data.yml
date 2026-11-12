@@ -1,0 +1,126 @@
+additionalProperties:
+  formFields:
+  - default: 8082
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Web Port
+    labelZh: 管理端口
+    label:
+      en: Web Port
+      zh: 管理端口
+      zh-hant: 管理連接埠
+      ja: 管理ポート
+      ko: 관리 포트
+      ru: Порт управления
+      ms: Port Pengurusan
+      pt-br: Porta de Gerenciamento
+      tr: Web Portu
+      es-es: Puerto web
+      fa: پورت وب
+      lo: ພອດເວັບ
+    required: true
+    rule: paramPort
+    type: number
+  - default: 53
+    edit: true
+    envKey: PANEL_APP_PORT_DNS
+    labelEn: DNS Port
+    labelZh: DNS 端口
+    label:
+      en: DNS Port
+      zh: DNS 端口
+      zh-hant: DNS 連接埠
+      ja: DNS ポート
+      ko: DNS 포트
+      ru: Порт DNS
+      ms: Port DNS
+      pt-br: Porta DNS
+      tr: DNS Portu
+      es-es: Puerto DNS
+      fa: پورت DNS
+      lo: ພອດ DNS
+    required: true
+    rule: paramPort
+    type: number
+  - default: 0.0.0.0
+    edit: true
+    envKey: DNS_BIND_ADDRESS
+    labelEn: DNS Bind IPv4 Address
+    labelZh: DNS 绑定 IPv4 地址
+    label:
+      en: DNS Bind IPv4 Address
+      zh: DNS 绑定 IPv4 地址
+      zh-hant: DNS 綁定 IPv4 位址
+      ja: DNS バインド IPv4 アドレス
+      ko: DNS 바인드 IPv4 주소
+      ru: IPv4-адрес привязки DNS
+      ms: Alamat IPv4 Ikatan DNS
+      pt-br: Endereco IPv4 de Vinculacao DNS
+      tr: DNS Bağlama IPv4 Adresi
+      es-es: Dirección IPv4 de enlace DNS
+      fa: نشانی IPv4 اتصال DNS
+      lo: ທີ່ຢູ່ IPv4 ສຳລັບຜູກ DNS
+    required: true
+    type: text
+  - default: PiHole_Admin_2026!
+    edit: true
+    envKey: ADMIN_PASSWORD
+    labelEn: Administrator Password
+    labelZh: 管理员密码
+    label:
+      en: Administrator Password
+      zh: 管理员密码
+      zh-hant: 管理員密碼
+      ja: 管理者パスワード
+      ko: 관리자 비밀번호
+      ru: Пароль администратора
+      ms: Kata Laluan Pentadbir
+      pt-br: Senha do Administrador
+      tr: Yönetici Parolası
+      es-es: Contraseña de administrador
+      fa: گذرواژه مدیر
+      lo: ລະຫັດຜ່ານຜູ້ດູແລ
+    random: true
+    required: true
+    rule: paramComplexity
+    type: password
+  - default: Etc/UTC
+    edit: true
+    envKey: TZ
+    labelEn: Time Zone
+    labelZh: 时区
+    label:
+      en: Time Zone
+      zh: 时区
+      zh-hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon Masa
+      pt-br: Fuso Horario
+      tr: Saat Dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    required: true
+    type: text
+  - default: ./data
+    edit: true
+    envKey: APP_DATA_DIR
+    labelEn: Data Directory
+    labelZh: 数据目录
+    label:
+      en: Data Directory
+      zh: 数据目录
+      zh-hant: 資料目錄
+      ja: データディレクトリ
+      ko: 데이터 디렉터리
+      ru: Каталог данных
+      ms: Direktori Data
+      pt-br: Diretorio de Dados
+      tr: Veri Dizini
+      es-es: Directorio de datos
+      fa: پوشه داده
+      lo: ໄດເຣັກທໍຣີຂໍ້ມູນ
+    required: true
+    type: text
