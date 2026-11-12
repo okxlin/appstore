@@ -9,6 +9,36 @@ fail() {
   exit 1
 }
 
+ensure_no_symlink_components() {
+  local path="$1"
+  local current="/"
+  local part
+  local -a components
+
+  [[ "$path" == /* ]] || fail "Path must be absolute: $path"
+  IFS='/' read -r -a components <<< "$path"
+  for part in "${components[@]}"; do
+    case "$part" in
+      "" | .) continue ;;
+      ..)
+        if [[ "$current" == /*/* ]]; then
+          current="${current%/*}"
+        else
+          current="/"
+        fi
+        ;;
+      *)
+        if [[ "$current" == / ]]; then
+          current="/$part"
+        else
+          current="$current/$part"
+        fi
+        ;;
+    esac
+    [[ ! -L "$current" ]] || fail "Data path must not contain a symbolic link: $current"
+  done
+}
+
 read_env_value() {
   local key="$1"
   local value=""
@@ -31,14 +61,24 @@ else
 fi
 APP_DATA_DIR_RAW="${APP_DATA_DIR_RAW:-./data}"
 
+if [[ ${OC_DOMAIN+x} ]]; then
+  OC_DOMAIN_RAW="$OC_DOMAIN"
+else
+  OC_DOMAIN_RAW="$(read_env_value OC_DOMAIN)"
+fi
+
 [[ -n "$APP_DATA_DIR_RAW" ]] || fail "APP_DATA_DIR must not be empty"
 case "$APP_DATA_DIR_RAW" in
   *$'\n'* | *$'\r'* | *'$'* | *'#'*) fail "APP_DATA_DIR contains unsupported dotenv characters" ;;
 esac
 
 case "$APP_DATA_DIR_RAW" in
-  /*) APP_DATA_DIR_ABS="$(realpath -m -- "$APP_DATA_DIR_RAW")" ;;
+  /*)
+    ensure_no_symlink_components "$APP_DATA_DIR_RAW"
+    APP_DATA_DIR_ABS="$(realpath -m -- "$APP_DATA_DIR_RAW")"
+    ;;
   *)
+    ensure_no_symlink_components "${ROOT_DIR}/${APP_DATA_DIR_RAW#./}"
     APP_DATA_DIR_ABS="$(realpath -m -- "${ROOT_DIR}/${APP_DATA_DIR_RAW#./}")"
     case "$APP_DATA_DIR_ABS" in
       "$ROOT_DIR" | "$ROOT_DIR"/*) ;;
@@ -63,8 +103,38 @@ traefik_paths=(
   "$APP_DATA_DIR_ABS/traefik/certs"
 )
 
+for path in "${opencloud_paths[@]}" "${traefik_paths[@]}"; do
+  ensure_no_symlink_components "$path"
+done
+
 mkdir -p -- "${opencloud_paths[@]}" "${traefik_paths[@]}"
 for path in "${opencloud_paths[@]}"; do
-  [[ ! -L "$path" ]] || fail "OpenCloud data subdirectory must not be a symbolic link: $path"
   chown 1000:1000 -- "$path" 2>/dev/null || true
 done
+
+[[ "$OC_DOMAIN_RAW" =~ ^[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?)*$ ]] || fail "OC_DOMAIN must be a hostname without a scheme, port, or path"
+[[ ${#OC_DOMAIN_RAW} -le 253 ]] || fail "OC_DOMAIN is too long"
+
+route_template="$ROOT_DIR/config/traefik/opencloud.yml"
+route_file="$APP_DATA_DIR_ABS/traefik/dynamic/1panel-opencloud-route.yml"
+[[ -f "$route_template" && ! -L "$route_template" ]] || fail "OpenCloud Traefik route template is missing or invalid"
+[[ ! -L "$route_file" ]] || fail "OpenCloud Traefik route must not be a symbolic link: $route_file"
+if [[ -e "$route_file" && ! -f "$route_file" ]]; then
+  fail "OpenCloud Traefik route must be a regular file: $route_file"
+fi
+
+if [[ ! -e "$route_file" ]]; then
+  route_tmp="$(mktemp "${route_file}.tmp.XXXXXX")"
+  if ! sed "s/@OC_DOMAIN@/${OC_DOMAIN_RAW}/g" "$route_template" > "$route_tmp"; then
+    rm -f -- "$route_tmp"
+    fail "Could not create OpenCloud Traefik route"
+  fi
+  chmod 0644 -- "$route_tmp"
+  if ! ln -- "$route_tmp" "$route_file" 2>/dev/null; then
+    if [[ ! -f "$route_file" || -L "$route_file" ]]; then
+      rm -f -- "$route_tmp"
+      fail "Could not create OpenCloud Traefik route"
+    fi
+  fi
+  rm -f -- "$route_tmp"
+fi

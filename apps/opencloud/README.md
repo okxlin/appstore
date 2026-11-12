@@ -14,8 +14,8 @@ OpenCloud 是一个开源的文件管理、共享与协作平台，提供 Web �
 ## 来源与版本
 
 - OpenCloud 源码仓库由 `opencloud-eu` 官方组织维护，采用 Apache License 2.0。
-- 本应用基于官方 `opencloud-compose` 的基础服务与 Traefik TLS 部署方式，Compose 证据固定到提交 `8d2d89f283faa410bc9ed9f63e8247f6518d5c43`。
-- OpenCloud [`v8.1.0`](https://github.com/opencloud-eu/opencloud/releases/tag/v8.1.0) 于 2026-10-05 作为 rolling release 发布。本应用使用官方镜像 `opencloudeu/opencloud-rolling:8.1.0` 的版本化 tag，不使用浮动 `latest` tag。
+- 本应用基于官方 `opencloud-compose` 的基础服务与 Traefik TLS 部署方式，并在初始化时将随包提供的 file-provider 路由配置安全地创建到持久化目录；Compose 证据固定到提交 `8d2d89f283faa410bc9ed9f63e8247f6518d5c43`。
+- 本应用使用官方版本化镜像 tag，不使用浮动 `latest` tag。
 - OpenCloud 与 Traefik 镜像均提供 `linux/amd64` 和 `linux/arm64` manifest。
 
 ## 部署拓扑
@@ -25,7 +25,7 @@ OpenCloud 是一个开源的文件管理、共享与协作平台，提供 Web �
 - `opencloud`：使用官方 OpenCloud 镜像，以 UID/GID `1000:1000` 运行并持久化配置、文件数据和 Web 扩展。
 - `traefik`：使用官方 OpenCloud Compose 指定的 Traefik 版本，为 OpenCloud 提供必须的 HTTPS 入口和 HTTP 到 HTTPS 跳转。
 
-两个 service 通过以 1Panel 实例容器名命名的专用 Docker 网络联动；OpenCloud 后端只加入该专用网络，Traefik 另行加入 `1panel-network` 作为商店入口。每个 Traefik 通过实例标签只发现对应的 OpenCloud 容器，不同安装不会互相加载或覆盖同名路由。
+两个 service 通过以 1Panel 实例容器名命名的专用 Docker 网络联动；OpenCloud 后端只加入该专用网络，Traefik 另行加入 `1panel-network` 作为商店入口。Traefik 从应用包内的 file-provider 配置读取路由，并通过专用网络访问 `opencloud:9200`，不需要发现或控制 Docker 容器。
 
 OpenCloud 的 IDM、IDP、NATS、存储和 Web 服务由同一个官方镜像内部管理，不需要 MySQL、PostgreSQL、Redis 或其他 1Panel Runtime。可选的 Collabora、全文检索、杀毒、外部 LDAP/Keycloak 等扩展没有包含在此基础应用中。
 
@@ -57,15 +57,17 @@ tls:
 - `${APP_DATA_DIR}/config`：OpenCloud 生成的配置和随机密钥。
 - `${APP_DATA_DIR}/storage`：用户文件、元数据和应用状态。
 - `${APP_DATA_DIR}/apps`：本地 Web 扩展。
-- `${APP_DATA_DIR}/traefik`：TLS 动态配置和证书。
+- `${APP_DATA_DIR}/traefik/dynamic/1panel-opencloud-route.yml`：应用首次初始化时创建的 OpenCloud 路由。已存在的文件不会被覆盖。
+- `${APP_DATA_DIR}/traefik/dynamic`：可选 TLS 动态配置。
+- `${APP_DATA_DIR}/traefik/certs`：TLS 证书。
 
 初始管理员密码只在空数据目录第一次启动时生效，后续修改 `.env` 不会重置密码。升级前必须整体备份 `${APP_DATA_DIR}`；配置、存储和证书应作为同一个一致性边界备份和恢复。
 
-`scripts/upgrade.sh` 只复用安装初始化逻辑：创建缺失目录，并校正 OpenCloud 持久化目录顶层的 UID/GID，不递归改写文件、不删除数据、不重建配置。卸载脚本只停止 Compose service，不删除 `${APP_DATA_DIR}`。
+`scripts/upgrade.sh` 复用安装初始化逻辑：创建缺失目录和缺失的 OpenCloud Traefik 路由，并校正 OpenCloud 持久化目录顶层的 UID/GID，不递归改写已有文件、不删除数据。卸载脚本只停止 Compose service，不删除 `${APP_DATA_DIR}`。
 
 ## 权限与安全
 
-Traefik 按官方 Compose 方案以只读方式挂载 Docker Socket，用于读取容器标签和发现 OpenCloud 路由。即使挂载标记为只读，Docker Socket 仍属于高权限主机接口；只应在可信主机上使用，并保持 Traefik 镜像及时更新。Compose 已关闭 `exposedByDefault`，Traefik 只处理明确标记的 OpenCloud service。
+Traefik 使用应用包生成并保存在 `${APP_DATA_DIR}` 中的静态路由配置，不挂载 Docker Socket，也不读取其他容器的标签。HTTP 请求经 Traefik 转发至同一专用网络中的 OpenCloud 服务。
 
 OpenCloud service 不使用 privileged、host network、额外 capability 或设备映射。请使用强管理员密码、受信任 TLS 证书和主机防火墙，并限制不必要的公网入口。
 
@@ -79,9 +81,9 @@ OpenCloud service 不使用 privileged、host network、额外 capability 或设
 
 ## Introduction
 
-OpenCloud is an open-source platform for file management, sharing, and collaboration. This package follows the official OpenCloud Compose topology: one fixed-version OpenCloud container and one Traefik container providing the HTTPS endpoint required by the built-in identity provider.
+OpenCloud is an open-source platform for file management, sharing, and collaboration. This package follows the official OpenCloud Compose service topology and creates a package-provided Traefik file-provider route in persistent app data to serve OpenCloud over HTTPS without Docker API access. Existing route files are preserved.
 
-OpenCloud [v8.1.0](https://github.com/opencloud-eu/opencloud/releases/tag/v8.1.0) is an official rolling release published on 2026-10-05. This package uses the versioned official image tag `opencloudeu/opencloud-rolling:8.1.0` rather than a floating `latest` tag.
+This package uses versioned official image tags rather than a floating `latest` tag.
 
 A trusted certificate is required for production. Back up the complete `${APP_DATA_DIR}` before upgrading. The lifecycle scripts do not delete persisted data or recursively rewrite existing files.
 

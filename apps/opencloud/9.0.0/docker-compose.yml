@@ -14,10 +14,6 @@ services:
       - --entryPoints.https.transport.respondingTimeouts.readTimeout=12h
       - --entryPoints.https.transport.respondingTimeouts.writeTimeout=12h
       - --entryPoints.https.transport.respondingTimeouts.idleTimeout=3m
-      - --providers.docker.endpoint=unix:///var/run/docker.sock
-      - --providers.docker.exposedByDefault=false
-      - --providers.docker.network=${CONTAINER_NAME}-network
-      - "--providers.docker.constraints=Label(`opencloud.instance`,`${CONTAINER_NAME}`)"
       - --providers.file.directory=/etc/traefik/dynamic
       - --providers.file.watch=true
     networks:
@@ -29,7 +25,6 @@ services:
       - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
       - "${PANEL_APP_PORT_HTTPS}:${PANEL_APP_PORT_HTTPS}"
     volumes:
-      - "${DOCKER_SOCKET_PATH}:/var/run/docker.sock:ro"
       - "${APP_DATA_DIR}/traefik/dynamic:/etc/traefik/dynamic:ro"
       - "${APP_DATA_DIR}/traefik/certs:/certs:ro"
     healthcheck:
@@ -95,13 +90,6 @@ services:
       retries: 5
     labels:
       createdBy: "Apps"
-      opencloud.instance: "${CONTAINER_NAME}"
-      traefik.enable: "true"
-      traefik.http.routers.opencloud.entrypoints: https
-      traefik.http.routers.opencloud.rule: Host(`${OC_DOMAIN}`)
-      traefik.http.routers.opencloud.service: opencloud
-      traefik.http.routers.opencloud.tls: "true"
-      traefik.http.services.opencloud.loadbalancer.server.port: "9200"
 
 networks:
   opencloud-network:
