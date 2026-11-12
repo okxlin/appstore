@@ -22,13 +22,14 @@ MDCz 是一个高效、现代的影片元数据刮削与管理工具。它提供
 ## 数据持久化
 
 - `APP_DATA_DIR` 挂载到 `/data`，保存 SQLite 数据库、配置文件和认证状态。
+- `APP_DATA_DIR` 必须是当前应用目录内的相对路径；不支持绝对路径、路径穿越或符号链接。
 - `MEDIA_DIR` 挂载到 `/media`，供 MDCz 扫描和整理影片文件。
-- 默认媒体目录位于 `./data/media`，也可以改为现有媒体库的绝对路径。
+- 默认媒体目录位于 `./data/media`，也可以改为已存在的绝对路径。初始化脚本不会修改该绝对路径的属主或权限。
 - 升级前应备份 `APP_DATA_DIR`；执行批量整理前还应备份媒体文件或先使用预览功能。
 
 ## 权限与文件操作风险
 
-官方镜像以 UID/GID `1000:1000` 的非 root 用户运行。初始化脚本会修正应用数据目录权限；如果 `MEDIA_DIR` 指向已有媒体库，需要确保 UID `1000` 对其中的文件和子目录具有读写权限。
+官方镜像以 UID/GID `1000:1000` 的非 root 用户运行。初始化脚本只调整应用数据目录和相对媒体目录本身，不递归修改目录内现有文件；如果 `MEDIA_DIR` 指向已有媒体库，需要确保 UID `1000` 对其中的文件和子目录具有读写权限。
 
 MDCz 的核心功能会创建目录与 NFO/图片文件，并可能按照设置移动、重命名或清理媒体文件。请先在少量文件上验证整理规则，不要直接对唯一副本执行批量操作。
 
@@ -59,6 +60,10 @@ MDCz is a self-hosted video metadata scraper and library management tool. It pro
 - Generate NFO files and organize local media with configurable naming rules.
 - Persist configuration, authentication state, and tasks in SQLite under `/data`.
 - Mount the writable media library at `/media`; verify rules on a small sample before batch operations.
+
+## Data paths
+
+`APP_DATA_DIR` must be a relative path inside the current app directory. Absolute paths, traversal, and symlink paths are rejected. `MEDIA_DIR` may point to an existing absolute media directory; initialization does not change its ownership or permissions. Ensure UID `1000` can read and write the selected media directory.
 
 ### Security warning
 
