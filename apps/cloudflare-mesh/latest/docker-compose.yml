@@ -1,6 +1,6 @@
 services:
   cloudflare-mesh:
-    image: cloudflare/mesh:2026.7.0
+    image: cloudflare/mesh:2026.10.0
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     cap_add:
