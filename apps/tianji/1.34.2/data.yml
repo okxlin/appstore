@@ -1,0 +1,167 @@
+additionalProperties:
+  formFields:
+    - default: 40205
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_HOST
+      key: postgresql
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: 'Database Service'
+        zh: '数据库服务'
+        zh-Hant: '資料庫服務'
+        ja: 'データベースサービス'
+        ko: '데이터베이스 서비스'
+        ru: 'Сервис базы данных'
+        ms: 'Perkhidmatan Pangkalan Data'
+        pt-br: 'Serviço de Banco de Dados'
+      required: true
+      type: service
+    - default: "5432"
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port Number
+      labelZh: 数据库端口号
+      label:
+        en: 'Database Port Number'
+        zh: '数据库端口号'
+        zh-Hant: '資料庫埠號'
+        ja: 'データベースポート番号'
+        ko: '데이터베이스 포트 번호'
+        ru: 'Номер порта базы данных'
+        ms: 'Nombor port pangkalan data'
+        pt-br: 'Número da porta do banco de dados'
+      required: true
+      rule: paramPort
+      type: number
+    - default: tianji
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: 'Database Name'
+        zh: '数据库名'
+        zh-Hant: '資料庫名'
+        ja: 'データベース名'
+        ko: '데이터베이스 이름'
+        ru: 'Имя базы данных'
+        ms: 'Nama pangkalan data'
+        pt-br: 'Nome do banco de dados'
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: tianji
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: 'Database User'
+        zh: '数据库用户'
+        zh-Hant: '資料庫用戶'
+        ja: 'データベースユーザー'
+        ko: '데이터베이스 사용자'
+        ru: 'Пользователь базы данных'
+        ms: 'Pengguna pangkalan data'
+        pt-br: 'Usuário do banco de dados'
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: tianji
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: 'Database Password'
+        zh: '数据库用户密码'
+        zh-Hant: '資料庫用戶密碼'
+        ja: 'データベースユーザーパスワード'
+        ko: '데이터베이스 사용자 비밀번호'
+        ru: 'Пароль пользователя базы данных'
+        ms: 'Kata laluan pengguna pangkalan data'
+        pt-br: 'Senha do usuário do banco de dados'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: any-random-text
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: Secret
+      labelZh: 秘钥
+      label:
+        en: 'Secret'
+        zh: '密钥'
+        zh-Hant: '金鑰'
+        ja: 'シークレット'
+        ko: '비밀 키'
+        ru: 'Секрет'
+        ms: 'Rahsia'
+        pt-br: 'Segredo'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: text
+    - default: "true"
+      edit: true
+      envKey: ALLOW_OPENAPI
+      labelEn: Allow OpenAPI
+      labelZh: 是否开启OpenAPI
+      label:
+        en: 'Allow OpenAPI'
+        zh: '允许开启 OpenAPI'
+        zh-Hant: '允許啟用 OpenAPI'
+        ja: 'OpenAPI を許可'
+        ko: 'OpenAPI 허용'
+        ru: 'Разрешить OpenAPI'
+        ms: 'Benarkan OpenAPI'
+        pt-br: 'Permitir OpenAPI'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: ALLOW_REGISTER
+      labelEn: Allow Register
+      labelZh: 是否允许注册
+      label:
+        en: 'Allow Register'
+        zh: '允许注册'
+        zh-Hant: '允許註冊'
+        ja: '登録を許可'
+        ko: '등록 허용'
+        ru: 'Разрешить регистрацию'
+        ms: 'Benarkan pendaftaran'
+        pt-br: 'Permitir registro'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
