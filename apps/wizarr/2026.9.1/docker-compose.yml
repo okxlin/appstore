@@ -1,6 +1,6 @@
 services:
   wizarr:
-    image: "ghcr.io/wizarrrr/wizarr:v2026.10.1@sha256:08f2c6de534ec7d36d39a4f55b7c5c379021ca881dc519c702aad0ddafbdc67a"
+    image: "ghcr.io/wizarrrr/wizarr:v2026.9.1@sha256:3e89f4850092d60f532406209100f5e929e06dd679bfd78c5f3559065f2854e0"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
