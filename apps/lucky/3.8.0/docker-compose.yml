@@ -5,6 +5,6 @@ services:
     network_mode: host
     volumes:
       - ${DATA_PATH}:/goodluck
-    image: gdy666/lucky:v3.8.0
+    image: gdy666/lucky:v3.8.1
     labels:  
       createdBy: "Apps"
