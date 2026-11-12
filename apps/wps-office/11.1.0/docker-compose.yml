@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   wps-office:
-    image: "linuxserver/wps-office:11.1.0"
+    image: "linuxserver/wps-office:12.1.2"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
