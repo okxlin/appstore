@@ -1,0 +1,85 @@
+additionalProperties:
+  formFields:
+    - default: 0.0.0.0
+      edit: true
+      envKey: PANEL_APP_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 绑定地址
+      label:
+        en: Bind Address
+        zh: 绑定地址
+        zh-Hant: 綁定位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: 40102
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: WEBCLAW_API_KEY
+      labelEn: API Token
+      labelZh: API Token
+      label:
+        en: API Token
+        zh: API Token
+        zh-Hant: API Token
+        ja: API トークン
+        ko: API 토큰
+        ru: API-токен
+        ms: Token API
+        pt-br: Token da API
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: WEBCLAW_CLOUD_API_KEY
+      labelEn: Cloud Fallback Key
+      labelZh: Cloud 回退密钥
+      label:
+        en: Cloud Fallback Key
+        zh: Cloud 回退密钥
+        zh-Hant: Cloud 備援金鑰
+        ja: Cloud フォールバックキー
+        ko: Cloud 대체 키
+        ru: Ключ резервного облачного сервиса
+        ms: Kunci sandaran Cloud
+        pt-br: Chave de fallback do Cloud
+      required: false
+      type: password
+    - default: ""
+      edit: true
+      envKey: SERPER_API_KEY
+      labelEn: Serper Search Key
+      labelZh: Serper 搜索密钥
+      label:
+        en: Serper Search Key
+        zh: Serper 搜索密钥
+        zh-Hant: Serper 搜尋金鑰
+        ja: Serper 検索キー
+        ko: Serper 검색 키
+        ru: Ключ поиска Serper
+        ms: Kunci carian Serper
+        pt-br: Chave de pesquisa Serper
+      required: false
+      type: password
