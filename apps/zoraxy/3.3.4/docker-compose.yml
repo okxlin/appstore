@@ -1,6 +1,6 @@
 services:
   zoraxy:
-    image: "zoraxydocker/zoraxy:v3.3.5@sha256:2dfc5acf4c84e3e477a8f1fcb7d05a600a8c3cd5fd1296a848372375910ae9dd"
+    image: "zoraxydocker/zoraxy:v3.3.4@sha256:c64ed57e10631d8f7482ce1ed6b337e653052a05646bd5dd77b009dcf0ae786d"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "0:0"
