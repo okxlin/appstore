@@ -1,0 +1,11 @@
+listenAddressSingleHTTPFrontend: 0.0.0.0:1337
+logLevel: INFO
+saveLogs:
+  resultsDirectory: /config/logs/results/
+  outputDirectory: /config/logs/output/
+actions:
+  - title: Hello from 1Panel
+    id: hello_from_1panel
+    shell: 'printf "Hello from 1Panel\n"'
+    onclick: execution-dialog
+    timeout: 10
