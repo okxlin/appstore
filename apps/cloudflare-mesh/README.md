@@ -23,7 +23,7 @@ Cloudflare Mesh 是 Cloudflare One 的私有网络连接器容器。它没有 We
 
 容器镜像使用 Cloudflare 产品条款，Cloudflare Mesh 连接器并非本适配项目重新编译的开源镜像。部署和再分发时请遵守 [Cloudflare Terms](https://www.cloudflare.com/terms/) 以及 Cloudflare One 的产品条款。
 
-当前使用的 `2026.7.0` 镜像版本扫描还发现了未解决的 High 级基础镜像告警（`CVE-2026-38754`、`CVE-2026-14456`，涉及 BusyBox/OpenSSL 软件包）。这些问题位于厂商镜像内部，本适配不会自行修补；请关注 Cloudflare 发布的修复镜像并及时更新镜像 tag。
+历史扫描仅针对 `2026.7.0` 镜像版本，记录了未解决的 High 级基础镜像告警（`CVE-2026-38754`、`CVE-2026-14456`，涉及 BusyBox/OpenSSL 软件包）。本次升级到 `2026.10.0` 时未进行 CVE 扫描，因此这些发现对新镜像的适用情况尚未验证；镜像内部问题需由 Cloudflare 修复。
 
 ## 数据与升级
 
@@ -65,7 +65,7 @@ The connector requires these permissions for its core function and they must rem
 
 The image contains Cloudflare product software and is not rebuilt as an open-source image by this package. Follow the [Cloudflare Terms](https://www.cloudflare.com/terms/) and Cloudflare One product terms when deploying or redistributing it.
 
-The currently used `2026.7.0` image version also has unresolved High-severity base-image findings (`CVE-2026-38754` and `CVE-2026-14456`, affecting BusyBox/OpenSSL packages). They are inside the vendor image and are not patched by this package; update the image tag when Cloudflare publishes a fixed build.
+A historical scan of image version `2026.7.0` reported unresolved High-severity base-image findings (`CVE-2026-38754` and `CVE-2026-14456`, affecting BusyBox/OpenSSL packages). CVE scanning was not run for this update to `2026.10.0`, so the status of those findings in the new image has not been verified; issues inside the vendor image must be fixed by Cloudflare.
 
 ## Data and upgrades
 
