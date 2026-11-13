@@ -10,7 +10,7 @@ services:
     ports:
       - ${PANEL_APP_PORT_HTTP}:9999
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:9999/actuator/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:9999/actuator/health/readiness"]
       interval: 30s
       timeout: 5s
       retries: 5
