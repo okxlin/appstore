@@ -1,6 +1,6 @@
 services:
   gomodel:
-    image: "enterpilot/gomodel:0.2.2"
+    image: "enterpilot/gomodel:0.2.3"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "65532:65532"
