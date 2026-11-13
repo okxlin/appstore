@@ -1,0 +1,119 @@
+additionalProperties:
+  formFields:
+    - default: 5030
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: Порт HTTP
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 50300
+      edit: true
+      envKey: PANEL_APP_PORT_SOULSEEK
+      labelEn: Soulseek Listen Port
+      labelZh: Soulseek 监听端口
+      label:
+        en: Soulseek Listen Port
+        zh: Soulseek 监听端口
+        zh-Hant: Soulseek 監聽連接埠
+        ja: Soulseek 待受ポート
+        ko: Soulseek 수신 포트
+        ru: Порт прослушивания Soulseek
+        ms: Port Mendengar Soulseek
+        pt-br: Porta de Escuta Soulseek
+      required: true
+      rule: paramPort
+      type: number
+    - default: slskd
+      edit: true
+      envKey: SLSKD_WEB_USERNAME
+      labelEn: Web Username
+      labelZh: Web 用户名
+      label:
+        en: Web Username
+        zh: Web 用户名
+        zh-Hant: Web 使用者名稱
+        ja: Web ユーザー名
+        ko: Web 사용자 이름
+        ru: Имя пользователя Web
+        ms: Nama Pengguna Web
+        pt-br: Usuario Web
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: SLSKD_WEB_PASSWORD
+      labelEn: Web Password
+      labelZh: Web 密码
+      label:
+        en: Web Password
+        zh: Web 密码
+        zh-Hant: Web 密碼
+        ja: Web パスワード
+        ko: Web 비밀번호
+        ru: Пароль Web
+        ms: Kata Laluan Web
+        pt-br: Senha Web
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: SLSKD_NETWORK_USERNAME
+      labelEn: Soulseek Username
+      labelZh: Soulseek 用户名
+      label:
+        en: Soulseek Username
+        zh: Soulseek 用户名
+        zh-Hant: Soulseek 使用者名稱
+        ja: Soulseek ユーザー名
+        ko: Soulseek 사용자 이름
+        ru: Имя пользователя Soulseek
+        ms: Nama Pengguna Soulseek
+        pt-br: Usuario Soulseek
+      required: false
+      type: text
+    - default: ""
+      edit: true
+      envKey: SLSKD_NETWORK_PASSWORD
+      labelEn: Soulseek Password
+      labelZh: Soulseek 密码
+      label:
+        en: Soulseek Password
+        zh: Soulseek 密码
+        zh-Hant: Soulseek 密碼
+        ja: Soulseek パスワード
+        ko: Soulseek 비밀번호
+        ru: Пароль Soulseek
+        ms: Kata Laluan Soulseek
+        pt-br: Senha Soulseek
+      required: false
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Time Zone
+      labelZh: 时区
+      label:
+        en: Time Zone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon Waktu
+        pt-br: Fuso Horario
+      required: true
+      type: text
