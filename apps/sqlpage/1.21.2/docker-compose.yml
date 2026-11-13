@@ -24,6 +24,8 @@ services:
     read_only: true
     tmpfs:
       - /tmp:rw,nosuid,nodev,noexec,size=32m,uid=1000,gid=1000,mode=1777
+    cap_add:
+      - NET_BIND_SERVICE
     cap_drop:
       - ALL
     security_opt:
