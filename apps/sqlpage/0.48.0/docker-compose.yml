@@ -1,6 +1,6 @@
 services:
   sqlpage:
-    image: "lovasoa/sqlpage:v1.21.2@sha256:b2c303b39d4bfadc5d266ef317a83ecddfb73556bdb49cec9caa35f09d63e69c"
+    image: "lovasoa/sqlpage:v0.48.0@sha256:ab972cb8e0090458f7d528c7fc41f2311c2daf6a8d7e1895cf4b4e7cd2d63c1f"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
