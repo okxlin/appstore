@@ -1,0 +1,69 @@
+additionalProperties:
+  formFields:
+    - default: 40101
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 0.0.0.0
+      edit: true
+      envKey: SHUTHOST_BIND_ADDRESS
+      labelEn: Bind Address
+      labelZh: 监听地址
+      label:
+        en: Bind Address
+        zh: 监听地址
+        zh-Hant: 監聽位址
+        ja: バインドアドレス
+        ko: 바인드 주소
+        ru: Адрес привязки
+        ms: Alamat ikatan
+        pt-br: Endereco de vinculacao
+      required: true
+      type: text
+    - default: ""
+      edit: true
+      envKey: SHUTHOST_AUTH_TOKEN
+      labelEn: Login Token
+      labelZh: 登录 Token
+      label:
+        en: Login Token
+        zh: 登录 Token
+        zh-Hant: 登入 Token
+        ja: ログイントークン
+        ko: 로그인 토큰
+        ru: Токен входа
+        ms: Token log masuk
+        pt-br: Token de login
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ./data
+      edit: true
+      envKey: SHUTHOST_DATA_DIR
+      labelEn: Configuration Directory
+      labelZh: 配置目录
+      label:
+        en: Configuration Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori konfigurasi
+        pt-br: Diretorio de configuracao
+      required: true
+      type: text
