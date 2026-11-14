@@ -1,6 +1,6 @@
 services:
   flare:
-    image: "soulteary/flare:0.6.14"
+    image: "soulteary/flare:0.6.15"
     container_name: ${CONTAINER_NAME}
     command:
       - flare
