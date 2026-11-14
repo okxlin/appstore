@@ -9,7 +9,6 @@ services:
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
       - JWT_SECRET=${JWT_SECRET}
       - ENCRYPT_KEY=${ENCRYPT_KEY}
-      - ENCRYPT_ENABLE=${ENCRYPT_ENABLE}
       - PG_HOST=mixspace-postgres
       - PG_PORT=5432
       - PG_USER=mx

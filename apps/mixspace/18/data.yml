@@ -52,17 +52,17 @@ additionalProperties:
     - default: ''
       edit: true
       envKey: JWT_SECRET
-      labelEn: JWT key (16 to 32 characters)
-      labelZh: JWT 密钥 (16 到 32 位字符)
+      labelEn: JWT key (at least 32 characters; shorter existing values rotate during upgrade and end sessions)
+      labelZh: JWT 密钥（至少 32 位；较短的旧值会在升级时轮换并使会话退出）
       label:
-        en: 'JWT key (16 to 32 characters)'
-        zh: 'JWT 密钥 (16 到 32 位字符)'
-        zh-Hant: 'JWT 金鑰（16 到 32 位字元）'
-        ja: 'JWT キー（16〜32 文字）'
-        ko: 'JWT 키(16~32자)'
-        ru: 'Ключ JWT (16–32 символа)'
-        ms: 'Kunci JWT (16 hingga 32 aksara)'
-        pt-br: 'Chave JWT (16 a 32 caracteres)'
+        en: 'JWT key (at least 32 characters; shorter existing values rotate during upgrade and end sessions)'
+        zh: 'JWT 密钥（至少 32 位；较短的旧值会在升级时轮换并使会话退出）'
+        zh-Hant: 'JWT 金鑰（至少 32 個字元；較短的舊值會在升級時輪換並結束工作階段）'
+        ja: 'JWT キー（32 文字以上。短い既存値はアップグレード時にローテーションされ、再ログインが必要）'
+        ko: 'JWT 키(32자 이상, 짧은 기존 값은 업그레이드 중 교체되어 다시 로그인해야 함)'
+        ru: 'Ключ JWT (не менее 32 символов; короткое старое значение будет заменено при обновлении, потребуется повторный вход)'
+        ms: 'Kunci JWT (sekurang-kurangnya 32 aksara; nilai lama yang lebih pendek akan ditukar semasa naik taraf dan sesi perlu dimulakan semula)'
+        pt-br: 'Chave JWT (pelo menos 32 caracteres; valores antigos menores serão trocados ao atualizar e exigirão novo login)'
       random: true
       required: true
       rule: paramComplexity
@@ -88,35 +88,19 @@ additionalProperties:
     - default: ''
       edit: true
       envKey: ENCRYPT_KEY
-      labelEn: Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)
-      labelZh: 加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)
+      labelEn: Field encryption key (64 hexadecimal characters; keep the existing key when upgrading)
+      labelZh: 字段加密密钥（64 位十六进制；升级时保留现有密钥）
       label:
-        en: 'Encryption key (not recommended for non-special needs, run "openssl rand -hex 32" on the terminal to obtain it)'
-        zh: '加密密钥 (非特殊需求不建议填写,终端执行 "openssl rand -hex 32" 获取)'
-        zh-Hant: '加密金鑰（非特殊需求不建議填寫，終端執行 "openssl rand -hex 32" 取得）'
-        ja: '暗号化キー（特別な必要がない限り非推奨。端末で "openssl rand -hex 32" を実行して取得）'
-        ko: '암호화 키(특별한 경우가 아니면 권장하지 않음. 터미널에서 "openssl rand -hex 32" 실행으로 획득)'
-        ru: 'Ключ шифрования (не рекомендуется без особой необходимости; получите, выполнив "openssl rand -hex 32" в терминале)'
-        ms: 'Kunci penyulitan (tidak disyorkan kecuali perlu; jalankan "openssl rand -hex 32" di terminal untuk mendapatkannya)'
-        pt-br: 'Chave de criptografia (não recomendada sem necessidade especial; execute "openssl rand -hex 32" no terminal para obtê-la)'
+        en: 'Field encryption key (64 hexadecimal characters; keep the existing key when upgrading)'
+        zh: '字段加密密钥（64 位十六进制；升级时保留现有密钥）'
+        zh-Hant: '欄位加密金鑰（64 個十六進位字元；升級時保留現有金鑰）'
+        ja: 'フィールド暗号化キー（16 進数 64 文字。アップグレード時は既存のキーを保持）'
+        ko: '필드 암호화 키(16진수 64자, 업그레이드할 때 기존 키 유지)'
+        ru: 'Ключ шифрования полей (64 шестнадцатеричных символа; при обновлении сохраните прежний ключ)'
+        ms: 'Kunci penyulitan medan (64 aksara heksadesimal; kekalkan kunci sedia ada semasa naik taraf)'
+        pt-br: 'Chave de criptografia de campos (64 caracteres hexadecimais; mantenha a chave existente ao atualizar)'
       required: false
-      type: text
-    - default: "false"
-      edit: true
-      envKey: ENCRYPT_ENABLE
-      labelEn: Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)
-      labelZh: 是否开启加密 (true或false,开启则需要填写加密密钥)
-      label:
-        en: 'Whether to enable encryption (true or false, if you want to enable it, you need to enter the encryption key)'
-        zh: '是否开启加密 (true或false,开启则需要填写加密密钥)'
-        zh-Hant: '是否啟用加密（true 或 false，啟用需填寫加密金鑰）'
-        ja: '暗号化を有効にするか（true/false。有効にする場合は暗号化キーが必要）'
-        ko: '암호화를 활성化할지 여부(true/false, 활성化하려면 암호화 키 입력 필요)'
-        ru: 'Включать шифрование (true/false; для включения требуется ключ шифрования)'
-        ms: 'Sama ada untuk mengaktifkan penyulitan (true/false; jika aktif, perlu masukkan kunci penyulitan)'
-        pt-br: 'Habilitar criptografia (true/false; para habilitar, é necessário inserir a chave de criptografia)'
-      required: true
-      type: text
+      type: password
     - default: Asia/Shanghai
       edit: true
       envKey: TIME_ZONE
