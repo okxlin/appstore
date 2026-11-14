@@ -5,6 +5,17 @@ umask 077
 ENV_FILE="${ENV_FILE:-./.env}"
 APP_SERVICE="mixspace"
 DB_SERVICE="mixspace-postgres"
+APP_DIR="$(pwd -P)"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+COMPOSE_FILE="${SCRIPT_DIR}/../docker-compose.yml"
+
+# 1Panel runs the release script before replacing the installed app's Compose
+# file, so select this release's Compose file while keeping the install dir as
+# the project directory for .env and relative data paths.
+compose() {
+  PG_PASSWORD="${pg_password:-}" ENCRYPT_KEY="${field_key:-}" JWT_SECRET="${jwt_secret:-}" \
+    docker-compose --project-directory "$APP_DIR" -f "$COMPOSE_FILE" "$@"
+}
 
 read_env_value() {
   local key="$1"
@@ -127,8 +138,7 @@ run_upgrade_tool() {
   local jwt_secret="$2"
   local pg_password="$3"
   shift 3
-  PG_PASSWORD="$pg_password" ENCRYPT_KEY="$field_key" JWT_SECRET="$jwt_secret" \
-    docker-compose run --rm --no-deps -T \
+  compose run --rm --no-deps -T \
       -e PG_PASSWORD -e ENCRYPT_KEY -e JWT_SECRET "$APP_SERVICE" node upgrade.mjs "$@"
 }
 
@@ -136,8 +146,7 @@ run_release_migration() {
   local field_key="$1"
   local jwt_secret="$2"
   local pg_password="$3"
-  PG_PASSWORD="$pg_password" ENCRYPT_KEY="$field_key" JWT_SECRET="$jwt_secret" \
-    docker-compose run --rm --no-deps -T \
+  compose run --rm --no-deps -T \
       -e PG_PASSWORD -e ENCRYPT_KEY -e JWT_SECRET "$APP_SERVICE" node migrate.mjs
 }
 
@@ -174,9 +183,6 @@ allowed = {
     "METRICS_INCOMPLETE",
     "CONFIG_MIGRATION_MISSING",
     "JWT_TOO_SHORT",
-    "ENCRYPTION_DISABLED",
-    "PREPARATION_MARKER_MISSING",
-    "V2_WRITES_DISABLED",
 }
 unknown = sorted(set(codes) - allowed)
 if unknown:
@@ -198,6 +204,10 @@ if [[ ! -f "$ENV_FILE" ]]; then
 fi
 if ! command -v docker-compose >/dev/null 2>&1; then
   echo "MixSpace upgrade stopped: docker-compose is unavailable"
+  exit 1
+fi
+if [[ ! -f "$COMPOSE_FILE" ]]; then
+  echo "MixSpace upgrade stopped: v18 Compose file is missing at $COMPOSE_FILE" >&2
   exit 1
 fi
 
@@ -247,10 +257,16 @@ if [[ ! -e "${DATA_PATH}/postgres/PG_VERSION" ]]; then
   exit 1
 fi
 
-PG_PASSWORD="$pg_password" docker-compose up -d "$DB_SERVICE"
+if ! compose config --images 2>/dev/null | grep -Fxq 'innei/mx-server:18'; then
+  echo "MixSpace upgrade stopped: v18 Compose does not select innei/mx-server:18" >&2
+  exit 1
+fi
+echo "Using v18 Compose file: $COMPOSE_FILE"
+
+compose up -d "$DB_SERVICE"
 db_ready=false
 for ((attempt = 0; attempt < 30; attempt++)); do
-  if docker-compose exec -T "$DB_SERVICE" pg_isready -U mx -d mx_core >/dev/null 2>&1; then
+  if compose exec -T "$DB_SERVICE" pg_isready -U mx -d mx_core >/dev/null 2>&1; then
     db_ready=true
     break
   fi
@@ -299,7 +315,7 @@ if (( free_kb < snapshot_size_kb + snapshot_headroom_kb )); then
   echo "MixSpace upgrade stopped: insufficient free space for database and file snapshots"
   exit 1
 fi
-docker-compose stop "$APP_SERVICE"
+compose stop "$APP_SERVICE"
 
 stamp="$(date -u +%Y%m%dT%H%M%SZ)-$$"
 backup_env="${backup_dir}/mixspace-env-before-v18-${stamp}.env"
@@ -315,7 +331,7 @@ fi
 if [[ -z "$jwt_secret_from_env" ]]; then
   ENV_FILE="$backup_env" write_env_value JWT_SECRET "$jwt_secret"
 fi
-if ! docker-compose exec -T "$DB_SERVICE" pg_dump -U mx -d mx_core -Fc > "$backup_tmp"; then
+if ! compose exec -T "$DB_SERVICE" pg_dump -U mx -d mx_core -Fc > "$backup_tmp"; then
   rm -f "$backup_tmp"
   rm -f "$files_tmp" "$backup_env"
   echo "MixSpace upgrade stopped: PostgreSQL backup failed"
@@ -362,7 +378,7 @@ if [[ "$short_jwt" == true ]]; then
   printf '%s' "$jwt_secret" > "$tmp_dir/old-jwt"
   printf '%s' "$new_jwt" > "$tmp_dir/new-jwt"
   chmod 600 "$tmp_dir/old-jwt" "$tmp_dir/new-jwt"
-  if ! PG_PASSWORD="$pg_password" ENCRYPT_KEY="$field_key" JWT_SECRET="$jwt_secret" docker-compose run --rm --no-deps -T \
+  if ! compose run --rm --no-deps -T \
     -e PG_PASSWORD -e ENCRYPT_KEY -e JWT_SECRET \
     -v "$tmp_dir/old-jwt:/tmp/mixspace-old-jwt:ro" \
     -v "$tmp_dir/new-jwt:/tmp/mixspace-new-jwt:ro" \
