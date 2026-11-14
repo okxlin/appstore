@@ -6,12 +6,12 @@ ENV_FILE="${ENV_FILE:-./.env}"
 APP_SERVICE="mixspace"
 DB_SERVICE="mixspace-postgres"
 APP_DIR="$(pwd -P)"
-SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-COMPOSE_FILE="${SCRIPT_DIR}/../docker-compose.yml"
+PANEL_ROOT="$(cd -- "${APP_DIR}/../../../.." && pwd -P)"
+COMPOSE_FILE="${PANEL_ROOT}/resource/apps/local/mixspace/18/docker-compose.yml"
 
-# 1Panel runs the release script before replacing the installed app's Compose
-# file, so select this release's Compose file while keeping the install dir as
-# the project directory for .env and relative data paths.
+# 1Panel runs the upgrade script in the installed app directory while its
+# Compose file still points to v17. Load v18 from the panel resource tree while
+# keeping the install dir as project directory for .env and relative data paths.
 compose() {
   PG_PASSWORD="${pg_password:-}" ENCRYPT_KEY="${field_key:-}" JWT_SECRET="${jwt_secret:-}" \
     docker-compose --project-directory "$APP_DIR" -f "$COMPOSE_FILE" "$@"
@@ -257,11 +257,11 @@ if [[ ! -e "${DATA_PATH}/postgres/PG_VERSION" ]]; then
   exit 1
 fi
 
+echo "Validating v18 Compose file: $COMPOSE_FILE"
 if ! compose config --images 2>/dev/null | grep -Fxq 'innei/mx-server:18'; then
   echo "MixSpace upgrade stopped: v18 Compose does not select innei/mx-server:18" >&2
   exit 1
 fi
-echo "Using v18 Compose file: $COMPOSE_FILE"
 
 compose up -d "$DB_SERVICE"
 db_ready=false
