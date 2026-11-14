@@ -524,3 +524,8 @@ lms
 # tag; both upgrade hooks are no-op. The existing automerge shape checks remain unchanged.
 flare
 slskd
+
+# Reviewed 2026-11-14: PR #8840's v1.7.1 package matches v1.7.0 except for the
+# image reference. Upgrade creates the config directory and copies defaults only
+# when the config is missing, preserving existing config.
+oxidns
