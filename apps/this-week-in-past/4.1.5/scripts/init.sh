@@ -80,5 +80,29 @@ ensure_dir() {
   chown -R --no-dereference 1337:1337 "$path"
 }
 
-ensure_dir "PHOTO_LIBRARY_PATH" "./data/photos"
+ensure_photo_library() {
+  local raw path
+  raw="$(configured_value PHOTO_LIBRARY_PATH "./data/photos")"
+  case "$raw" in
+    ""|.|..|../*|*/../*|*/..) fail "unsafe PHOTO_LIBRARY_PATH path" ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    fail "unsafe PHOTO_LIBRARY_PATH path"
+  fi
+
+  if [[ "$raw" == /* ]]; then
+    path="$raw"
+  else
+    path="$(realpath -m -- "$ROOT_DIR/$raw")" || fail "unsafe PHOTO_LIBRARY_PATH path"
+  fi
+
+  if [[ "$raw" != /* && "$path" == "$ROOT_DIR/"* ]]; then
+    mkdir -p -- "$path"
+    return
+  fi
+
+  [[ -d "$path" ]] || fail "PHOTO_LIBRARY_PATH must point to an existing directory"
+}
+
+ensure_photo_library
 ensure_dir "APP_DATA_DIR" "./data/app"
