@@ -10,6 +10,7 @@ services:
       - JWT_SECRET=${JWT_SECRET}
       - ENCRYPT_KEY=${ENCRYPT_KEY}
       - ENCRYPT_ENABLE=${ENCRYPT_ENABLE}
+      - MX_SECRET_STORAGE_V2=${MX_SECRET_STORAGE_V2:-false}
       - PG_HOST=mixspace-postgres
       - PG_PORT=5432
       - PG_USER=mx
