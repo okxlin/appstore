@@ -1,0 +1,135 @@
+additionalProperties:
+  formFields:
+    - default: 40203
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data root path
+      labelZh: 数据根目录
+      label:
+        en: 'Data root path'
+        zh: '数据根目录'
+        zh-Hant: '資料根目錄'
+        ja: 'データルートパス'
+        ko: '데이터 루트 경로'
+        ru: 'Корневой каталог данных'
+        ms: 'Laluan akar data'
+        pt-br: 'Caminho raiz de dados'
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: ALLOWED_ORIGINS
+      labelEn: Allowed domain (multiple delimited with ",")
+      labelZh: 被允许的域名 (多个使用英文逗号分割)
+      label:
+        en: 'Allowed domain (multiple delimited with ",")'
+        zh: '被允许的域名 (多个使用英文逗号分割)'
+        zh-Hant: '允許的網域（多個用英文逗號分隔）'
+        ja: '許可するドメイン（複数は「,」区切り）'
+        ko: '허용된 도메인(여러 개는 ","로 구분)'
+        ru: 'Разрешённые домены (несколько через ",")'
+        ms: 'Domain yang dibenarkan (lebih daripada satu dipisahkan dengan ",")'
+        pt-br: 'Domínios permitidos (múltiplos separados por ",")'
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: JWT_SECRET
+      labelEn: JWT key (at least 32 characters; shorter existing values rotate during upgrade and end sessions)
+      labelZh: JWT 密钥（至少 32 位；较短的旧值会在升级时轮换并使会话退出）
+      label:
+        en: 'JWT key (at least 32 characters; shorter existing values rotate during upgrade and end sessions)'
+        zh: 'JWT 密钥（至少 32 位；较短的旧值会在升级时轮换并使会话退出）'
+        zh-Hant: 'JWT 金鑰（至少 32 個字元；較短的舊值會在升級時輪換並結束工作階段）'
+        ja: 'JWT キー（32 文字以上。短い既存値はアップグレード時にローテーションされ、再ログインが必要）'
+        ko: 'JWT 키(32자 이상, 짧은 기존 값은 업그레이드 중 교체되어 다시 로그인해야 함)'
+        ru: 'Ключ JWT (не менее 32 символов; короткое старое значение будет заменено при обновлении, потребуется повторный вход)'
+        ms: 'Kunci JWT (sekurang-kurangnya 32 aksara; nilai lama yang lebih pendek akan ditukar semasa naik taraf dan sesi perlu dimulakan semula)'
+        pt-br: 'Chave JWT (pelo menos 32 caracteres; valores antigos menores serão trocados ao atualizar e exigirão novo login)'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ''
+      edit: true
+      envKey: PG_PASSWORD
+      labelEn: PostgreSQL password
+      labelZh: PostgreSQL 密码
+      label:
+        en: 'PostgreSQL password'
+        zh: 'PostgreSQL 密码'
+        zh-Hant: 'PostgreSQL 密碼'
+        ja: 'PostgreSQL パスワード'
+        ko: 'PostgreSQL 비밀번호'
+        ru: 'Пароль PostgreSQL'
+        ms: 'Kata laluan PostgreSQL'
+        pt-br: 'Senha do PostgreSQL'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ''
+      edit: true
+      envKey: ENCRYPT_KEY
+      labelEn: Field encryption key (64 hexadecimal characters; keep the existing key when upgrading)
+      labelZh: 字段加密密钥（64 位十六进制；升级时保留现有密钥）
+      label:
+        en: 'Field encryption key (64 hexadecimal characters; keep the existing key when upgrading)'
+        zh: '字段加密密钥（64 位十六进制；升级时保留现有密钥）'
+        zh-Hant: '欄位加密金鑰（64 個十六進位字元；升級時保留現有金鑰）'
+        ja: 'フィールド暗号化キー（16 進数 64 文字。アップグレード時は既存のキーを保持）'
+        ko: '필드 암호화 키(16진수 64자, 업그레이드할 때 기존 키 유지)'
+        ru: 'Ключ шифрования полей (64 шестнадцатеричных символа; при обновлении сохраните прежний ключ)'
+        ms: 'Kunci penyulitan medan (64 aksara heksadesimal; kekalkan kunci sedia ada semasa naik taraf)'
+        pt-br: 'Chave de criptografia de campos (64 caracteres hexadecimais; mantenha a chave existente ao atualizar)'
+      required: false
+      type: password
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TIME_ZONE
+      labelEn: Time zone
+      labelZh: 时区
+      label:
+        en: 'Time zone'
+        zh: '时区'
+        zh-Hant: '時區'
+        ja: 'タイムゾーン'
+        ko: '시간대'
+        ru: 'Часовой пояс'
+        ms: 'Zon masa'
+        pt-br: 'Fuso horário'
+      required: true
+      type: text
+    - default: 10.250.0
+      edit: true
+      envKey: SUBNET_PREFIX
+      labelEn: New docker network subnet prefix
+      labelZh: 新 docker 网络子网前缀
+      label:
+        en: 'New docker network subnet prefix'
+        zh: '新 docker 网络子网前缀'
+        zh-Hant: '新的 Docker 網路子網前綴'
+        ja: '新しい Docker ネットワークのサブネットプレフィックス'
+        ko: '새 Docker 네트워크 서브넷 접두사'
+        ru: 'Новый префикс подсети Docker сети'
+        ms: 'Awalan subnet rangkaian Docker baharu'
+        pt-br: 'Novo prefixo de sub-rede da rede Docker'
+      required: true
+      type: text
