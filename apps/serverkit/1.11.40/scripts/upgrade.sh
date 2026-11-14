@@ -6,7 +6,6 @@ export PATH
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
 DATA_DIR="$ROOT_DIR/data"
-COMPOSE_FILE="$ROOT_DIR/docker-compose.yml"
 LEGACY_VOLUME="serverkit-data"
 MIGRATION_IMAGE="jhd3197/serverkit:1.11.4"
 
@@ -26,10 +25,6 @@ has_data_files() {
 }
 
 bash "$SCRIPT_DIR/init.sh"
-
-if ! grep -Fq 'serverkit-data:/app/instance' "$COMPOSE_FILE"; then
-  exit 0
-fi
 
 if [[ -f "$DATA_DIR/serverkit.db" ]]; then
   exit 0
