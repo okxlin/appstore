@@ -174,6 +174,9 @@ allowed = {
     "METRICS_INCOMPLETE",
     "CONFIG_MIGRATION_MISSING",
     "JWT_TOO_SHORT",
+    "ENCRYPTION_DISABLED",
+    "PREPARATION_MARKER_MISSING",
+    "V2_WRITES_DISABLED",
 }
 unknown = sorted(set(codes) - allowed)
 if unknown:
