@@ -518,3 +518,9 @@ cura-linuxserver
 autobrr
 keila
 lms
+
+# Reviewed 2026-11-14: stable single-service Compose; PRs #8834 (Flare) and #8852
+# (slskd) add packages identical to their prior snapshots except for the image
+# tag; both upgrade hooks are no-op. The existing automerge shape checks remain unchanged.
+flare
+slskd
