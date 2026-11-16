@@ -1,0 +1,17 @@
+instance_name = "default"
+instance_id = "3d3db819-ad54-4d86-bf9a-faac864478ab"
+dhcp = false
+listeners = [
+    "tcp://0.0.0.0:11010",
+    "udp://0.0.0.0:11010",
+    "wg://0.0.0.0:11011",
+    "ws://0.0.0.0:11011/",
+    "wss://0.0.0.0:11012/",
+]
+exit_nodes = []
+peer = []
+rpc_portal = "0.0.0.0:15889"
+
+[network_identity]
+network_name = "default"
+network_secret = ""
