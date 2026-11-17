@@ -7,7 +7,7 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:5100"
     environment:
-      - DATABASE_URL=mysql2://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PWPUSHER_DB_PORT}/${PANEL_DB_NAME}
+      - DATABASE_URL=mysql2://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PWPUSHER_DB_PORT}/${PANEL_DB_NAME}?ssl_verify=false
     image: pglombardo/pwpush:2.17.3
     labels:  
       createdBy: "Apps"
