@@ -250,6 +250,8 @@ CUSTOM_ENV_FILE_ABS="$(resolve_app_path "$CUSTOM_ENV_FILE_RAW")"
 mkdir -p \
   "$APP_DATA_DIR_ABS/app/storage" \
   "$APP_DATA_DIR_ABS/plugin_daemon" \
+  "$APP_DATA_DIR_ABS/agent_local_sandbox/home" \
+  "$APP_DATA_DIR_ABS/agent_local_sandbox/workspace" \
   "$APP_DATA_DIR_ABS/sandbox/dependencies" \
   "$APP_DATA_DIR_ABS/weaviate" \
   "$APP_DATA_DIR_ABS/nginx/ssl" \
