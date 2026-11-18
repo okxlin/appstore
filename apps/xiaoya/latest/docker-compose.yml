@@ -13,9 +13,9 @@ services:
     #  - HTTPS_PROXY=${proxy_url}
     #  - no_proxy=*.aliyundrive.com
     image: xiaoyaliu/alist:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

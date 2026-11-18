@@ -18,9 +18,9 @@ services:
       - YOURLS_DB_PASS=${PANEL_DB_USER_PASSWORD}
       - YOURLS_DB_PREFIX=${PANEL_DB_PREFIX}
     image: yourls:1.10.6
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
