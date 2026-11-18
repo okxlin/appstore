@@ -2,14 +2,14 @@ name: Cloudflare Mesh
 tags:
   - Tool
 title: Cloudflare Mesh
-description: Cloudflare Mesh
+description: 通过 Cloudflare One 连接私有网络的连接器容器。
 additionalProperties:
   key: cloudflare-mesh
   name: Cloudflare Mesh
   tags:
     - Tool
-  shortDescZh: Cloudflare Mesh
-  shortDescEn: Cloudflare Mesh
+  shortDescZh: 通过 Cloudflare One 连接私有网络的连接器容器。
+  shortDescEn: A Cloudflare Mesh connector container for connecting private networks through the Cloudflare One platform.
   description:
     en: A Cloudflare Mesh connector container for connecting private networks through the Cloudflare One platform.
     zh: Cloudflare Mesh 连接器容器，用于通过 Cloudflare One 平台连接私有网络。

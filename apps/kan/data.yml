@@ -2,14 +2,14 @@ name: Kan
 tags:
   - Website
 title: Kan
-description: Kan
+description: 自托管的团队项目管理工具，提供看板、工作区和协作功能。
 additionalProperties:
   key: kan
   name: Kan
   tags:
     - Website
-  shortDescZh: Kan
-  shortDescEn: Kan
+  shortDescZh: 自托管的团队项目管理工具，提供看板、工作区和协作功能。
+  shortDescEn: A self-hosted team project management tool with boards, workspaces, and collaboration features.
   description:
     en: A self-hosted project management alternative to Trello with boards, workspaces, labels, comments, activity history, and Trello import.
     zh: 自托管的团队项目管理工具，提供看板、工作区、标签、评论、活动记录和 Trello 导入。
