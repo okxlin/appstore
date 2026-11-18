@@ -125,5 +125,8 @@
   ],
   "planka-linuxserver": [
     "planka"
+  ],
+  "matomo": [
+    "matomo"
   ]
 }
