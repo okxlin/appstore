@@ -11,14 +11,14 @@ services:
       - "${MUSIC_PATH}:/music:ro"
     environment:
       ND_SCANSCHEDULE: 1h
-      ND_LOGLEVEL: info  
+      ND_LOGLEVEL: info
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ""
     user: 1000:1000
     image: deluan/navidrome:pr-2295
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

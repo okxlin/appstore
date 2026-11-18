@@ -20,9 +20,9 @@ services:
       - CUSTOM_USER=${HTTP_USER}
       - PASSWORD=${HTTP_PWD}
     image: sytone/obsidian-remote:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

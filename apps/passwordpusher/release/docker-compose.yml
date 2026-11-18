@@ -29,11 +29,11 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 
 volumes:

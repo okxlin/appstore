@@ -27,9 +27,9 @@ services:
       - RCON_PORT=${PANEL_APP_PORT_RCON}
       - QUERY_PORT=${PANEL_APP_PORT_QUERY}
     image: thijsvanloef/palworld-server-docker:v2.8.1
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -25,9 +25,9 @@ services:
       - RCON_ENABLED=${RCON_SWITCH}
       - RCON_PORT=${PANEL_APP_PORT_RCON}
     image: kagurazakanyaa/palworld:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

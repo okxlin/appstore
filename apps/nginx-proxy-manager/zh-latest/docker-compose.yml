@@ -12,9 +12,9 @@ services:
       - "${DATA_PATH}:/data"
       - "${SSL_PATH}:/etc/letsencrypt"
     image: chishin/nginx-proxy-manager-zh:release
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -11,9 +11,9 @@ services:
       - "${DATA_PATH}/nv-themes:/usr/src/app/nv-themes"
       - "${DATA_PATH}/nv-plugins:/usr/src/app/nv-plugins"
     image: pandastd/nvpress:6.1.2
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

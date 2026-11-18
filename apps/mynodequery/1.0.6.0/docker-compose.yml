@@ -12,9 +12,9 @@ services:
       options:
         max-size: 256MB
     image: jaydenlee2019/mynodequery:1.0.6.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -11,9 +11,9 @@ services:
       - "./config:/app/data"
     command: /start
     image: xhongc/music_tag_web:2.8.1
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

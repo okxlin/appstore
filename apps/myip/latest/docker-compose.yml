@@ -11,9 +11,9 @@ services:
       - ALLOWED_DOMAINS=${ALLOWED_DOMAINS}
       - IPINFO_API_TOKEN=${IPINFO_API_TOKEN}
     image: jason5ng32/myip:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
