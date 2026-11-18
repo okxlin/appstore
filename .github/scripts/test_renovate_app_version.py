@@ -837,7 +837,7 @@ class RenovateAppVersionTests(unittest.TestCase):
         app_data = yaml.safe_load((app_dir / "data.yml").read_text(encoding="utf-8"))
         self.assertFalse(app_data["additionalProperties"]["crossVersionUpdate"])
         self.assertTrue((app_dir / "1.10.34-lts").is_dir())
-        self.assertTrue((app_dir / "2.2.4").is_dir())
+        self.assertTrue((app_dir / "2.5.1").is_dir())
         self.assertTrue((app_dir / "v1").is_dir())
         self.assertTrue((app_dir / "v2").is_dir())
         self.assertTrue((app_dir / "global-1.10.34-lts").is_dir())
@@ -992,6 +992,8 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertEqual(["manyfold"], primary["manyfold-linuxserver"])
         self.assertEqual(["standalone"], primary["milvus"])
         self.assertEqual(["netbox"], primary["netbox-linuxserver"])
+        self.assertEqual(["sharelatex"], primary["overleaf"])
+        self.assertEqual(["yopass"], primary["yopass"])
         self.assertEqual(["opencloud"], primary["opencloud"])
         self.assertEqual(
             ["unifi-network-application"],
