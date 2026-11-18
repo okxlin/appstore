@@ -18,13 +18,27 @@ additionalProperties:
     ja: "ブラウザーから利用できる、メモとToDoリスト用のJoplinアプリ。"
     ko: "브라우저에서 사용할 수 있는 Joplin 메모 및 할 일 목록 앱입니다."
     ru: "Приложение Joplin для заметок и списков дел, доступное через браузер."
-    ms: "Aplikasi Joplin untuk nota dan senarai tugasan yang boleh diakses melalui pelayar."
-    pt-br: "Aplicativo Joplin de notas e listas de tarefas acessível pelo navegador."
-    pt-BR: "Aplicativo Joplin de notas e listas de tarefas acessível pelo navegador."
-    tr: "Tarayıcıdan erişilebilen Joplin not ve yapılacaklar listesi uygulaması."
-    es-es: "Aplicación Joplin de notas y listas de tareas accesible desde el navegador."
-    es-ES: "Aplicación Joplin de notas y listas de tareas accesible desde el navegador."
-    fa: "برنامه Joplin برای یادداشت‌ها و فهرست کارها که از طریق مرورگر در دسترس است."
+    ms: >-
+      Aplikasi Joplin untuk nota dan senarai tugasan yang boleh diakses melalui
+      pelayar.
+    pt-br: >-
+      Aplicativo Joplin de notas e listas de tarefas acessível pelo
+      navegador.
+    pt-BR: >-
+      Aplicativo Joplin de notas e listas de tarefas acessível pelo
+      navegador.
+    tr: >-
+      Tarayıcıdan erişilebilen Joplin not ve yapılacaklar listesi
+      uygulaması.
+    es-es: >-
+      Aplicación Joplin de notas y listas de tareas accesible desde el
+      navegador.
+    es-ES: >-
+      Aplicación Joplin de notas y listas de tareas accesible desde el
+      navegador.
+    fa: >-
+      برنامه Joplin برای یادداشت‌ها و فهرست کارها که از طریق مرورگر در دسترس
+      است.
     lo: "ແອັບ Joplin ສຳລັບບັນທຶກແລະລາຍການວຽກ ທີ່ໃຊ້ຜ່ານບຣາວເຊີໄດ້."
   type: tool
   crossVersionUpdate: true

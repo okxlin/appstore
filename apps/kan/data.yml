@@ -9,23 +9,45 @@ additionalProperties:
   tags:
     - Website
   shortDescZh: "自托管的团队项目管理工具，使用看板和工作区组织任务与协作。"
-  shortDescEn: "A self-hosted team project management tool for organizing work on boards and workspaces."
+  shortDescEn: >-
+    A self-hosted team project management tool for organizing work on boards and
+    workspaces.
   description:
-    en: "A self-hosted team project management tool for organizing work on boards and workspaces."
+    en: >-
+      A self-hosted team project management tool for organizing work on boards
+      and workspaces.
     zh: "自托管的团队项目管理工具，使用看板和工作区组织任务与协作。"
     zh-hant: "自架式團隊專案管理工具，透過看板和工作區安排任務與協作。"
     zh-Hant: "自架式團隊專案管理工具，透過看板和工作區安排任務與協作。"
     ja: "ボードとワークスペースでチームのタスクを整理するセルフホスト型プロジェクト管理ツール。"
     ko: "보드와 워크스페이스로 팀의 작업을 정리하는 자체 호스팅 프로젝트 관리 도구입니다."
-    ru: "Самостоятельно размещаемый инструмент управления проектами для команд с досками и рабочими пространствами."
-    ms: "Alat pengurusan projek pasukan yang dihos sendiri untuk menyusun kerja melalui papan dan ruang kerja."
-    pt-br: "Ferramenta de gestão de projetos auto-hospedada para equipes, com quadros e espaços de trabalho."
-    pt-BR: "Ferramenta de gestão de projetos auto-hospedada para equipes, com quadros e espaços de trabalho."
-    tr: "Panolar ve çalışma alanlarıyla ekip işlerini düzenleyen, kendi sunucunuzda barındırabileceğiniz proje yönetimi aracı."
-    es-es: "Herramienta de gestión de proyectos autoalojada para organizar el trabajo en equipo con tableros y espacios de trabajo."
-    es-ES: "Herramienta de gestión de proyectos autoalojada para organizar el trabajo en equipo con tableros y espacios de trabajo."
-    fa: "ابزار مدیریت پروژه خودمیزبان برای سامان‌دهی کار تیمی با تخته‌ها و فضاهای کاری."
-    lo: "ເຄື່ອງມືຈັດການໂຄງການທີມແບບໂຮສເອງ ສຳລັບຈັດລະບຽບວຽກດ້ວຍບອດແລະພື້ນທີ່ເຮັດວຽກ."
+    ru: >-
+      Самостоятельно размещаемый инструмент управления проектами для команд с
+      досками и рабочими пространствами.
+    ms: >-
+      Alat pengurusan projek pasukan yang dihos sendiri untuk menyusun kerja
+      melalui papan dan ruang kerja.
+    pt-br: >-
+      Ferramenta de gestão de projetos auto-hospedada para equipes, com quadros
+      e espaços de trabalho.
+    pt-BR: >-
+      Ferramenta de gestão de projetos auto-hospedada para equipes, com quadros
+      e espaços de trabalho.
+    tr: >-
+      Panolar ve çalışma alanlarıyla ekip işlerini düzenleyen, kendi sunucunuzda
+      barındırabileceğiniz proje yönetimi aracı.
+    es-es: >-
+      Herramienta de gestión de proyectos autoalojada para organizar el trabajo
+      en equipo con tableros y espacios de trabajo.
+    es-ES: >-
+      Herramienta de gestión de proyectos autoalojada para organizar el trabajo
+      en equipo con tableros y espacios de trabajo.
+    fa: >-
+      ابزار مدیریت پروژه خودمیزبان برای سامان‌دهی کار تیمی با تخته‌ها و فضاهای
+      کاری.
+    lo: >-
+      ເຄື່ອງມືຈັດການໂຄງການທີມແບບໂຮສເອງ
+      ສຳລັບຈັດລະບຽບວຽກດ້ວຍບອດແລະພື້ນທີ່ເຮັດວຽກ.
   type: website
   crossVersionUpdate: true
   limit: 0
