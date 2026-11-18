@@ -2,29 +2,33 @@ name: Password Pusher
 tags:
   - 工具
 title: 一个通过网络传递密码的开源应用程序
-description: 一个通过网络传递密码的开源应用程序
+description: 一个通过网络传递密码的开源应用程序；2.17.3 和 release 使用 PostgreSQL，MySQL/MariaDB 老用户升级前须先迁移数据
 additionalProperties:
   key: passwordpusher
   name: Password Pusher
   tags:
     - Tool
   shortDescZh: 一个通过网络传递密码的开源应用程序
-  shortDescEn: An opensource application to communicate passwords over the web
+  shortDescEn: An open source application to share passwords over the web
   description:
-    en: An opensource application to communicate passwords over the web
-    zh: 一个通过网络传递密码的开源应用程序
-    zh-Hant: 一個透過網路傳遞密碼的開源應用程式
+    en: An open source application to share passwords over the web. Packages 2.17.3 and release use PostgreSQL; existing MySQL/MariaDB users must migrate data before upgrading.
+    zh: 一个通过网络传递密码的开源应用程序。2.17.3 和 release 使用 PostgreSQL；MySQL/MariaDB 老用户升级前必须迁移数据。
+    zh-Hant: 一個透過網路傳遞密碼的開源應用程式。2.17.3 和 release 使用 PostgreSQL；MySQL/MariaDB 舊用戶升級前必須遷移資料。
     ja: Webでパスワードを伝達するオープンソースアプリ
     ko: 웹을 통해 비밀번호를 전달하는 오픈소스 애플리케이션
     ru: Открытое приложение для передачи паролей через веб
     ms: Aplikasi sumber terbuka untuk menyampaikan kata laluan melalui web
     pt-br: Aplicativo open-source para compartilhar senhas pela web
+    tr: Parolaları web üzerinden paylaşmak için açık kaynaklı bir uygulama. 2.17.3 ve release PostgreSQL kullanır; MySQL/MariaDB kullanıcıları yükseltmeden önce verileri taşımalıdır.
+    es-es: Aplicación de código abierto para compartir contraseñas en la web. 2.17.3 y release usan PostgreSQL; quienes usan MySQL/MariaDB deben migrar los datos antes de actualizar.
+    fa: برنامه‌ای متن‌باز برای اشتراک‌گذاری گذرواژه در وب. نسخه‌های 2.17.3 و release از PostgreSQL استفاده می‌کنند؛ کاربران MySQL/MariaDB باید پیش از ارتقا داده‌ها را منتقل کنند.
+    lo: ແອັບໂອເພັນຊອດສຳລັບແບ່ງປັນລະຫັດຜ່ານຜ່ານເວັບ. 2.17.3 ແລະ release ໃຊ້ PostgreSQL; ຜູ້ໃຊ້ MySQL/MariaDB ຕ້ອງຍ້າຍຂໍ້ມູນກ່ອນອັບເກຣດ.
   type: tool
   crossVersionUpdate: true
   limit: 0
   recommend: 0
   website: https://pwpush.com
   github: https://github.com/pglombardo/PasswordPusher
-  document: https://github.com/pglombardo/PasswordPusher/wiki
+  document: https://docs.pwpush.com
   architectures:
     - amd64

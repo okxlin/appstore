@@ -6,12 +6,35 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:5100"
+    volumes:
+      - passwordpusher-storage:/opt/PasswordPusher/storage
     environment:
-      - DATABASE_URL=mysql2://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PWPUSHER_DB_PORT}/${PANEL_DB_NAME}
+      - DATABASE_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT:-5432}/${PANEL_DB_NAME}
+      - PWPUSH_MASTER_KEY=${PWPUSH_MASTER_KEY:-}
     image: pglombardo/pwpush:release
+    user: "0:0"
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |-
+        mkdir -p /opt/PasswordPusher/storage
+        if [ -z "$$(find /opt/PasswordPusher/storage -mindepth 1 -maxdepth 1 -print -quit)" ]; then
+          chown 1000:1000 /opt/PasswordPusher/storage
+        fi
+        su -p -s /bin/sh pwpusher -c 'test -w /opt/PasswordPusher/storage' || { echo "Storage must be writable by UID 1000; preserve existing file ownership and fix it before starting." >&2; exit 1; }
+        exec su -p -s /bin/bash pwpusher -c 'exec /bin/bash containers/docker/entrypoint.sh'
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:5100/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     labels:  
       createdBy: "Apps"
 
 networks:  
   1panel-network:  
     external: true
+
+volumes:
+  passwordpusher-storage:
