@@ -12,7 +12,7 @@ services:
     command: node /usr/local/bin/picgo-server -k ${AUTH_KEY}
     labels:
       createdBy: "Apps"
-   
+
 networks:
   1panel-network:
     external: true

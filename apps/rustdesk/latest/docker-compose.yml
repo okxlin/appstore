@@ -20,7 +20,7 @@ services:
 #          memory: 64M
     image: rustdesk/rustdesk-server:latest
 #    image: rustdesk/rustdesk-server:latest-arm64v8 # 镜像选用 arm64 版
-    labels:  
+    labels:
       createdBy: "Apps"
 
   hbbr:
@@ -40,10 +40,10 @@ services:
 #          memory: 64M
     image: rustdesk/rustdesk-server:latest
 #    image: rustdesk/rustdesk-server:latest-arm64v8 # 镜像选用 arm64 版
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 

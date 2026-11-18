@@ -20,7 +20,7 @@ services:
       #-s "${SHARE_2}"
       #-u "${USER_3}"
       #-s "${SHARE_3}"
-      
+
     labels:
       createdBy: "Apps"
 

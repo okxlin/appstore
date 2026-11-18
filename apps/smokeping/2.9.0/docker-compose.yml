@@ -17,9 +17,9 @@ services:
     volumes:
       - ${DATA_PATH}/config:/config
       - ${DATA_PATH}/data:/data
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

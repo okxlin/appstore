@@ -9,9 +9,9 @@ services:
     volumes:
       - ./data/assets:/code/app/assets
     image: 239144498/streaming:2023-01-03
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

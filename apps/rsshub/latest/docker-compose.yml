@@ -28,9 +28,9 @@ services:
         hard: 0
         soft: 0
     image: browserless/chrome:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

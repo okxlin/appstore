@@ -12,5 +12,5 @@ services:
       - "./data:/app/pfg/forward-agent/conf"
     cap_add:
       - NET_ADMIN
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"

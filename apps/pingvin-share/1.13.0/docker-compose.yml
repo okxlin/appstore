@@ -10,9 +10,9 @@ services:
       - "${DATA_PATH}:/opt/app/backend/data"
       - "${UPLOAD_PATH}:/opt/app/frontend/public/img"
     image: stonith404/pingvin-share:v1.13.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
