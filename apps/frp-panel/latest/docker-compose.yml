@@ -5,5 +5,5 @@ services:
     network_mode: host
     command: ${COMMAND_LINE}
     image: vaalacat/frp-panel:latest
-    labels:  
+    labels:
       createdBy: "Apps"

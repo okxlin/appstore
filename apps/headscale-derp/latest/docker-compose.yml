@@ -19,9 +19,9 @@ services:
       - DERP_CERT_DIR=/app/certs
       - DERP_VERIFY_CLIENTS=${CLIENTS_VERIFY_SWITCH}
     image: fredliang/derper:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

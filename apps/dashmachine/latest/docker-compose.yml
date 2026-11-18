@@ -9,9 +9,9 @@ services:
     volumes:
       - "${DATA_PATH}:/dashmachine/dashmachine/user_data"
     image: rmountjoy/dashmachine:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -13,9 +13,9 @@ services:
       - "LIB_NAME_1=${LIBRARY_NAME}"
     user: 1000:1000
     image: jinker25/diosic:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

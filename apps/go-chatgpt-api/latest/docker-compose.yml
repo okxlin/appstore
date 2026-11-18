@@ -20,7 +20,7 @@ services:
       options:
         max-size: "20m"
         max-file: "1"
-    labels:  
+    labels:
       createdBy: "Apps"
 
   chatgpt-proxy-server-warp:
@@ -36,7 +36,7 @@ services:
       options:
         max-size: "20m"
         max-file: "1"
-    labels:  
+    labels:
       createdBy: "Apps"
 networks:
   1panel-network:

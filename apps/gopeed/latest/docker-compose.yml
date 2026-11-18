@@ -9,9 +9,9 @@ services:
     volumes:
       - "${DOWNLOAD_PATH}:/root/Downloads"
     image: liwei2633/gopeed:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

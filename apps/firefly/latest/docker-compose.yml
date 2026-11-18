@@ -18,5 +18,5 @@ services:
       - FIREFLY_PASSWORD=${FIREFLY_PASSWORD}
       - FIREFLY_AUTO_SSL=${FIREFLY_AUTO_SSL}
       - FIREFLY_PORT=${PANEL_APP_PORT_HTTP}
-    labels:  
+    labels:
       createdBy: "Apps"

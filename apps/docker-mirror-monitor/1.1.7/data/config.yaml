@@ -4,7 +4,7 @@ server:
   refresh_interval: 1800s    # 全局刷新间隔，<= 300s，系统将自动启用 WebSocket，> 300s，系统将自动启用 HTTP 定时拉取
   slow_threshold: 3000     # 响应时间超过3000ms视为缓慢
   api_token: "test-token-for-api-auth"  # API访问令牌
-  
+
   # 站点配置
   site:
     logo: "容器镜像监控"            # Header左侧Logo文字
@@ -14,7 +14,7 @@ server:
     # 2. 本地图片: "/custom/logo.png", "/custom/my-icon.svg" (需放在 ./data/public/ 目录下)
     # 3. 网络图片: "https://example.com/logo.png"
     # 4. Base64图片: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
-    # 
+    #
     # 提示：Font Awesome 5 图标请注意前缀：
     # * 品牌图标（如 Docker, GitHub, 微信）：使用 **fab** (例如 fab fa-weixin)
     # * 常规图标（如 首页, 设置）：使用 **fas** (例如 fas fa-home)
@@ -24,17 +24,17 @@ server:
     favicon: ""                     # favicon图标URL（留空使用默认）
     # 示例: favicon: "https://example.com/favicon.ico"
     # 示例: favicon: "./favicon.png"
-  
+
   # User-Agent 配置（防止被目标站点识别为机器人）
   # 默认使用 Chrome 浏览器的 User-Agent
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-  
+
   # 代理配置 (支持 HTTP/HTTPS/SOCKS5)
   # proxy: "http://127.0.0.1:7890"      # HTTP代理
   # proxy: "socks5://127.0.0.1:1080"    # SOCKS5代理
   # proxy: "socks5://user:pass@127.0.0.1:1080"  # 带认证的SOCKS5
   proxy: ""
-  
+
   # 推荐镜像配置（按分组ID配置，为空则按配置顺序选择前5个在线镜像）
   recommended_mirrors:
     dockerhub:
@@ -47,12 +47,12 @@ server:
     #   - "https://ghcr.1ms.run"
     # quay:
     #   - "https://quay.1ms.run"
-  
+
   # 推荐配置是否只选择在线镜像
   # true: 只选中推荐列表中且在线的镜像
   # false: 选中推荐列表中的所有镜像，无论是否在线
   recommended_only_online: false
-  
+
   # TLS/HTTPS 配置 (可选)
   # 如果配置了 cert_file 和 key_file，服务将自动启用 HTTPS
   tls:
@@ -86,14 +86,14 @@ server:
     links:                 # 自定义链接
        - name: "GitHub"
          url: "https://github.com/okxlin/docker-mirror-monitor"
-  
+
   # 标签颜色配置 (keyword匹配不区分大小写，按顺序优先匹配)
   tag_colors:
     # 官方源
     - keyword: "官方"
       color: "#4f6ef7"
       bg_color: "rgba(79,110,247,0.15)"
-    
+
     # CDN/服务商
     - keyword: "CloudFlare"
       color: "#f6821e"
@@ -104,7 +104,7 @@ server:
     - keyword: "EdgeOne"
       color: "#006eff"
       bg_color: "rgba(0,110,255,0.15)"
-    
+
     # 云厂商
     - keyword: "阿里"
       color: "#ff9900"
@@ -121,7 +121,7 @@ server:
     - keyword: "Oracle"
       color: "#f80000"
       bg_color: "rgba(248,0,0,0.15)"
-    
+
     # 项目/组织
     - keyword: "1Panel"
       color: "#005eeb"
@@ -138,7 +138,7 @@ server:
     - keyword: "Elastic"
       color: "#fed10a"
       bg_color: "rgba(254,209,10,0.15)"
-    
+
     # 警告类 (需登录/限速等)
     - keyword: "需"
       color: "#ff5722"
@@ -146,7 +146,7 @@ server:
     - keyword: "限"
       color: "#ff5722"
       bg_color: "rgba(255,87,34,0.15)"
-  
+
   # 配置生成器模板（可选，不配置则使用默认值）
   # config_templates:
   #   empty_hint: "// 请先选择镜像源"   # 空选择时的提示文字
@@ -178,11 +178,11 @@ server:
     description: |                   # 项目介绍（支持HTML）
       <p>容器镜像监控系统是一个开源项目，帮助开发者实时监控各种容器镜像加速器的可用性和响应速度。</p>
       <p>本项目支持 Docker Hub、GHCR、Quay、MCR、K8s、GCR、Elastic、NVCR 等多种镜像仓库的加速器监控。</p>
-    
+
     # 自定义HTML文件路径（可选，启用后将使用该文件内容替代默认关于页面）
     # 文件内容将直接嵌入到关于页面的内容区域
     custom_html_file: ""             # 如 "about.html"
-    
+
     # 捐赠配置
     donate:
       enabled: false                 # 是否显示捐赠信息
@@ -198,7 +198,7 @@ server:
         #   icon: "fab fa-alipay"     # 支付宝也有专门的图标
         #   qrcode: ""
         #   color: "#1677ff"
-    
+
     # 合作伙伴/推广配置
     partners:
       enabled: false                 # 是否显示推荐/合作伙伴
@@ -208,7 +208,7 @@ server:
         #   url: "https://example.com"
         #   image: ""                 # 广告图片URL（可选）
         #   color: "#4f6ef7"          # 边框颜色
-    
+
     # 自定义链接
     links:
       # - name: "GitHub"
@@ -217,7 +217,7 @@ server:
       # - name: "文档"
       #   url: "https://docs.example.com"
       #   icon: "fas fa-book"         # 通用图标使用 fas
-    
+
     # 免责声明配置
     disclaimer:
       enabled: true                  # 是否显示免责声明

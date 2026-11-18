@@ -20,9 +20,9 @@ services:
      retries: 3
      start_period: 40s
     image: lissy93/dashy:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

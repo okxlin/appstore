@@ -8,5 +8,5 @@ services:
         - "${CONFIG_FILE_PATH}:/etc/frp/frpc.toml"
         - "${SSL_FOLDER_PATH}:/etc/frp/ssl"
     image: "snowdreamtech/frpc:latest"
-    labels:  
+    labels:
       createdBy: "Apps"

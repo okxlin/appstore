@@ -19,9 +19,9 @@ services:
       - net.ipv6.conf.all.forwarding=1
     command: ['headscale', 'serve']
     image: headscale/headscale:0.23.0-alpha3
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
