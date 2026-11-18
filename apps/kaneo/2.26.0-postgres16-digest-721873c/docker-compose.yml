@@ -1,6 +1,6 @@
 services:
   kaneo-postgres:
-    image: postgres:16-alpine@sha256:81e77a4833487b8132fe4b00bedd39dc3f74b8641e387f19312a48f7de218c2e
+    image: postgres:16-alpine@sha256:1758b87430847848ff5a71cbdd898c7a21e469166c3e25244940f05ea97800ad
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
