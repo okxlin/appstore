@@ -2,23 +2,30 @@ name: Palworld Dedicated Server (幻兽帕鲁)
 tags:
   - 休闲游戏
 title: 幻兽帕鲁服务端
-description: 幻兽帕鲁服务端
+description: "用于托管 Palworld 多人联机世界的专用服务器。"
 additionalProperties:
   key: palworld-server
   name: Palworld Dedicated Server (幻兽帕鲁)
   tags:
     - Game
-  shortDescZh: 幻兽帕鲁服务端
-  shortDescEn: Palworld Dedicated Server (幻兽帕鲁)
+  shortDescZh: "用于托管 Palworld 多人联机世界的专用服务器。"
+  shortDescEn: "A dedicated server for hosting multiplayer Palworld worlds."
   description:
-    en: Palworld Dedicated Server (幻兽帕鲁)
-    zh: 幻兽帕鲁服务端
-    zh-Hant: 幻獸帕魯伺服端
-    ja: パルワールド専用サーバー（幻兽帕鲁）
-    ko: 팰월드 전용 서버(幻兽帕鲁)
-    ru: Выделенный сервер Palworld (幻兽帕鲁)
-    ms: Pelayan khusus Palworld (幻兽帕鲁)
-    pt-br: Servidor dedicado do Palworld (幻兽帕鲁)
+    en: "A dedicated server for hosting multiplayer Palworld worlds."
+    zh: "用于托管 Palworld 多人联机世界的专用服务器。"
+    zh-hant: "用於託管 Palworld 多人連線世界的專用伺服器。"
+    zh-Hant: "用於託管 Palworld 多人連線世界的專用伺服器。"
+    ja: "Palworldのマルチプレイ用ワールドをホストする専用サーバー。"
+    ko: "Palworld 멀티플레이 월드를 호스팅하는 전용 서버입니다."
+    ru: "Выделенный сервер для размещения многопользовательских миров Palworld."
+    ms: "Pelayan khusus untuk mengehos dunia berbilang pemain Palworld."
+    pt-br: "Servidor dedicado para hospedar mundos multijogador de Palworld."
+    pt-BR: "Servidor dedicado para hospedar mundos multijogador de Palworld."
+    tr: "Palworld çok oyunculu dünyalarını barındırmak için özel sunucu."
+    es-es: "Servidor dedicado para alojar mundos multijugador de Palworld."
+    es-ES: "Servidor dedicado para alojar mundos multijugador de Palworld."
+    fa: "سرور اختصاصی برای میزبانی جهان‌های چندنفره Palworld."
+    lo: "ເຊີບເວີສະເພາະສຳລັບໂຮສໂລກຫຼາຍຜູ້ຫຼິ້ນຂອງ Palworld."
   type: tool
   crossVersionUpdate: true
   limit: 0

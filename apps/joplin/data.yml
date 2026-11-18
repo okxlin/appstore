@@ -2,24 +2,30 @@ name: Joplin（浏览器版）
 tags:
   - Tool
 title: Joplin（浏览器版）
-description: Joplin（浏览器版）
+description: "可通过浏览器使用的 Joplin 笔记与待办事项应用。"
 additionalProperties:
   key: joplin
   name: Joplin（浏览器版）
   tags:
     - Tool
-  shortDescZh: Joplin（浏览器版）
-  shortDescEn: Joplin (browser)
+  shortDescZh: "可通过浏览器使用的 Joplin 笔记与待办事项应用。"
+  shortDescEn: "A browser-accessible Joplin app for notes and to-do lists."
   description:
-    en: Joplin (browser)
-    zh: Joplin（浏览器版）
-    zh-hant: Joplin（瀏覽器版）
-    zh-Hant: Joplin（瀏覽器版）
-    ja: Joplin（ブラウザ版）
-    ko: Joplin(브라우저)
-    ru: Joplin (в браузере)
-    ms: Joplin (pelayar)
-    pt-br: Joplin (navegador)
+    en: "A browser-accessible Joplin app for notes and to-do lists."
+    zh: "可通过浏览器使用的 Joplin 笔记与待办事项应用。"
+    zh-hant: "可透過瀏覽器使用的 Joplin 筆記與待辦事項應用程式。"
+    zh-Hant: "可透過瀏覽器使用的 Joplin 筆記與待辦事項應用程式。"
+    ja: "ブラウザーから利用できる、メモとToDoリスト用のJoplinアプリ。"
+    ko: "브라우저에서 사용할 수 있는 Joplin 메모 및 할 일 목록 앱입니다."
+    ru: "Приложение Joplin для заметок и списков дел, доступное через браузер."
+    ms: "Aplikasi Joplin untuk nota dan senarai tugasan yang boleh diakses melalui pelayar."
+    pt-br: "Aplicativo Joplin de notas e listas de tarefas acessível pelo navegador."
+    pt-BR: "Aplicativo Joplin de notas e listas de tarefas acessível pelo navegador."
+    tr: "Tarayıcıdan erişilebilen Joplin not ve yapılacaklar listesi uygulaması."
+    es-es: "Aplicación Joplin de notas y listas de tareas accesible desde el navegador."
+    es-ES: "Aplicación Joplin de notas y listas de tareas accesible desde el navegador."
+    fa: "برنامه Joplin برای یادداشت‌ها و فهرست کارها که از طریق مرورگر در دسترس است."
+    lo: "ແອັບ Joplin ສຳລັບບັນທຶກແລະລາຍການວຽກ ທີ່ໃຊ້ຜ່ານບຣາວເຊີໄດ້."
   type: tool
   crossVersionUpdate: true
   limit: 1

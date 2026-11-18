@@ -2,23 +2,30 @@ name: 哪吒监控 - Dashboard
 tags:
   - 实用工具
 title: 哪吒监控 - Dashboard
-description: 哪吒监控 - Dashboard
+description: "自托管的监控面板，用于查看服务器和网站状态、接收告警并运行计划任务。"
 additionalProperties:
   key: nezha-dashboard
   name: 哪吒监控 - Dashboard
   description:
-    en: Nezha Monitoring - Dashboard
-    zh: 哪吒监控 - Dashboard
-    zh-Hant: 哪吒監控 - Dashboard
-    ja: 哪吒監控 - ダッシュボード
-    ko: 哪吒 모니터링 - 대시보드
-    ru: Nezha Monitoring — панель
-    ms: Pemantauan Nezha - Papan Pemuka
-    pt-br: Nezha Monitoring - Painel
+    en: "A self-hosted monitoring dashboard for server and website status, alerts, and scheduled tasks."
+    zh: "自托管的监控面板，用于查看服务器和网站状态、接收告警并运行计划任务。"
+    zh-hant: "自架式監控面板，可查看伺服器與網站狀態、接收告警並執行排程任務。"
+    zh-Hant: "自架式監控面板，可查看伺服器與網站狀態、接收告警並執行排程任務。"
+    ja: "サーバーやWebサイトの状態確認、アラート、スケジュールタスクに対応するセルフホスト型監視ダッシュボード。"
+    ko: "서버와 웹사이트 상태 확인, 알림, 예약 작업을 지원하는 자체 호스팅 모니터링 대시보드입니다."
+    ru: "Самостоятельно размещаемая панель мониторинга серверов и сайтов с оповещениями и запланированными задачами."
+    ms: "Papan pemuka pemantauan yang dihos sendiri untuk status pelayan dan laman web, amaran serta tugas berjadual."
+    pt-br: "Painel de monitoramento auto-hospedado de servidores e sites, com alertas e tarefas agendadas."
+    pt-BR: "Painel de monitoramento auto-hospedado de servidores e sites, com alertas e tarefas agendadas."
+    tr: "Sunucu ve web sitesi durumunu izleyen, uyarılar ve zamanlanmış görevler sunan kendi sunucunuzda barındırılabilir bir panel."
+    es-es: "Panel de monitorización autoalojado de servidores y sitios web, con alertas y tareas programadas."
+    es-ES: "Panel de monitorización autoalojado de servidores y sitios web, con alertas y tareas programadas."
+    fa: "داشبورد مانیتورینگ خودمیزبان برای وضعیت سرورها و وب‌سایت‌ها، هشدارها و وظایف زمان‌بندی‌شده."
+    lo: "ແຜງຄວບຄຸມຕິດຕາມແບບໂຮສເອງ ສຳລັບສະຖານະເຊີບເວີແລະເວັບໄຊ, ການແຈ້ງເຕືອນ ແລະວຽກຕາມກຳນົດ."
   tags:
     - Tool
-  shortDescZh: 哪吒监控 - Dashboard
-  shortDescEn: Nezha Monitoring - Dashboard
+  shortDescZh: "自托管的监控面板，用于查看服务器和网站状态、接收告警并运行计划任务。"
+  shortDescEn: "A self-hosted monitoring dashboard for server and website status, alerts, and scheduled tasks."
   type: tool
   crossVersionUpdate: true
   limit: 0
