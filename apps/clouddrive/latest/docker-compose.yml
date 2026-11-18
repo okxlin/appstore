@@ -18,7 +18,7 @@ services:
       - /dev/fuse:/dev/fuse
     pid: "host"
     privileged: ${PRIVILEGED_MODE}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

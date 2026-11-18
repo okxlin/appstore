@@ -9,9 +9,9 @@ services:
     volumes:
       - "${DATA_PATH}:/data"
     image: answerdev/answer:1.2.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

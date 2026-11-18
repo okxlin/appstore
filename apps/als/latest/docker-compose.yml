@@ -6,6 +6,6 @@ services:
     environment:
       - HTTP_PORT=${PANEL_APP_PORT_HTTP}
     image: wikihostinc/looking-glass-server
-    labels:  
+    labels:
       createdBy: "Apps"
 

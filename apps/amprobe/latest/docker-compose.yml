@@ -12,5 +12,5 @@ services:
       - ./data/configs:/app/configs
       - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./data/supervisor:/etc/supervisor/conf.d
-    labels:  
+    labels:
       createdBy: "Apps"

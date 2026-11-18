@@ -15,9 +15,9 @@ services:
       - GITEA_RUNNER_NAME=${RUNNER_NAME}
       - GITEA_RUNNER_LABELS=${RUNNER_LABELS}
     image: gitea/act_runner:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

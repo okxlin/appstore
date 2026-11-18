@@ -14,7 +14,7 @@ services:
       - TZ=${TIME_ZONE}
     # 删除以下行前的#号表示启用 (Delete the # sign in front of the following lines to indicate enablement)
     #  - ${ENV1}=${ENV1}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

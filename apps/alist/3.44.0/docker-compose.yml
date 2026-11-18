@@ -14,10 +14,10 @@ services:
       - PGID=0
       - UMASK=022
     image: xhofe/alist:v3.44.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 
