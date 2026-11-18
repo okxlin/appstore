@@ -10,9 +10,9 @@ services:
       - "${DATA_PATH}/files:/surveyking/files"
       - "${DATA_PATH}/logs:/surveyking/logs"
     image: surveyking/surveyking:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

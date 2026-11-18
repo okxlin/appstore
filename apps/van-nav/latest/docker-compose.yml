@@ -9,10 +9,10 @@ services:
     volumes:
       - "${DATA_PATH}:/app/data"
     image: mereith/van-nav:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 

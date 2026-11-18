@@ -11,9 +11,9 @@ services:
       - "${DATA_PATH}/apps:/webos/web/apps"
     tty: true
     image: fs185085781/webos:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

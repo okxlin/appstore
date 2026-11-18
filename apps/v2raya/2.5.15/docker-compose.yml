@@ -13,5 +13,5 @@ services:
       - /lib/modules:/lib/modules:ro
       - /etc/resolv.conf:/etc/resolv.conf
     image: mzz2017/v2raya:v2.5.15
-    labels:  
+    labels:
       createdBy: "Apps"

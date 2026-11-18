@@ -10,9 +10,9 @@ services:
       - "./data:/www"
     tty: true
     image: tznb/twonav:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

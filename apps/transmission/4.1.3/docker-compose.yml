@@ -23,9 +23,9 @@ services:
       - PEERPORT=${PEER_PORT_VALUE}
       - HOST_WHITELIST=${HOST_WHITELIST:-}
     image: "linuxserver/transmission:4.1.4"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

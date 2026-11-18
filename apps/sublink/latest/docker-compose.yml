@@ -9,13 +9,13 @@ services:
     volumes:
       - sublink_data:/app/app/db
     image: jaaksi/sublink:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   sublink_data:
     name: sublink_data
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

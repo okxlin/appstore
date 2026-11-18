@@ -24,5 +24,5 @@ services:
       - TS_USERSPACE=${TS_USERSPACE}
       - TS_EXTRA_ARGS=${TS_EXTRA_ARGS}
     image: tailscale/tailscale:v1.104
-    labels:  
+    labels:
       createdBy: "Apps"

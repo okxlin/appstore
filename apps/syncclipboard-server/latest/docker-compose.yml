@@ -9,9 +9,9 @@ services:
       - "${PANEL_APP_PORT_HTTP}:5033"
     volumes:
       - ${CONFIG_FILE_PATH}:/app/appsettings.json
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
