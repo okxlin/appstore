@@ -15,9 +15,9 @@ services:
       - ACCESS_KEYS=${ACCESS_KEYS}
       - DB_DSN=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
     image: magiccoders/nginxpulse:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

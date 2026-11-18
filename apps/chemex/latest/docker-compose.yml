@@ -20,10 +20,10 @@ services:
       - "REDIS_PASSWORD=${PANEL_DB_ROOT_PASSWORD}"
     tty: true
     image: celaraze/chemex:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 

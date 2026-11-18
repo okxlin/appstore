@@ -8,12 +8,19 @@ additionalProperties:
     label:
       en: SSH Port
       zh: SSH 端口
-      zh-Hant: SSH 埠
+      zh-hant: SSH 埠
       ja: SSH ポート
       ko: SSH 포트
       ru: Порт SSH
       ms: Port SSH
       pt-br: Porta SSH
+      tr: SSH bağlantı noktası
+      es-es: Puerto SSH
+      fa: درگاه SSH
+      lo: ພອດ SSH
+      zh-Hant: SSH 埠
+      pt-BR: Porta SSH
+      es-ES: Puerto SSH
     required: true
     rule: paramPort
     type: number
@@ -22,6 +29,22 @@ additionalProperties:
     envKey: DATA_PATH
     labelEn: LXC data path
     labelZh: LXC 数据目录
+    label:
+      en: LXC data path
+      zh: LXC 数据目录
+      zh-hant: LXC 資料目錄
+      ja: LXCデータパス
+      ko: LXC 데이터 경로
+      ru: Путь к данным LXC
+      ms: Laluan data LXC
+      pt-br: Caminho dos dados do LXC
+      tr: LXC veri yolu
+      es-es: Ruta de datos de LXC
+      fa: مسیر داده LXC
+      lo: ເສັ້ນທາງຂໍ້ມູນ LXC
+      zh-Hant: LXC 資料目錄
+      pt-BR: Caminho dos dados do LXC
+      es-ES: Ruta de datos de LXC
     required: true
     type: text
   - default: ./data/shared
@@ -29,6 +52,22 @@ additionalProperties:
     envKey: SHARED_PATH
     labelEn: Shared host path
     labelZh: 共享宿主目录
+    label:
+      en: Shared host path
+      zh: 共享宿主目录
+      zh-hant: 共用主機目錄
+      ja: 共有ホストパス
+      ko: 공유 호스트 경로
+      ru: Общий путь на хосте
+      ms: Laluan hos kongsi
+      pt-br: Caminho compartilhado do host
+      tr: Paylaşılan ana makine yolu
+      es-es: Ruta compartida del host
+      fa: مسیر مشترک میزبان
+      lo: ເສັ້ນທາງໂຮສທີ່ແບ່ງປັນ
+      zh-Hant: 共用主機目錄
+      pt-BR: Caminho compartilhado do host
+      es-ES: Ruta compartida del host
     required: true
     type: text
   - default: /vol/shared
@@ -36,6 +75,22 @@ additionalProperties:
     envKey: SHARED_TARGET
     labelEn: Shared mount target in LXC
     labelZh: LXC 内共享挂载路径
+    label:
+      en: Shared mount target in LXC
+      zh: LXC 内共享挂载路径
+      zh-hant: LXC 內共用掛載路徑
+      ja: LXC内の共有マウント先
+      ko: LXC 내 공유 마운트 대상
+      ru: Общая точка монтирования в LXC
+      ms: Sasaran lekap kongsi dalam LXC
+      pt-br: Destino da montagem compartilhada no LXC
+      tr: LXC içindeki paylaşılan bağlama hedefi
+      es-es: Destino del montaje compartido en LXC
+      fa: مقصد اتصال اشتراکی در LXC
+      lo: ປາຍທາງການເມາທ໌ແບບແບ່ງປັນໃນ LXC
+      zh-Hant: LXC 內共用掛載路徑
+      pt-BR: Destino da montagem compartilhada no LXC
+      es-ES: Destino del montaje compartido en LXC
     required: true
     type: text
   - default: alpine
@@ -43,6 +98,22 @@ additionalProperties:
     envKey: DISTRIBUTION
     labelEn: Initial distribution
     labelZh: 初始发行版
+    label:
+      en: Initial distribution
+      zh: 初始发行版
+      zh-hant: 初始發行版
+      ja: 初期ディストリビューション
+      ko: 초기 배포판
+      ru: Исходный дистрибутив
+      ms: Distribusi awal
+      pt-br: Distribuição inicial
+      tr: İlk dağıtım
+      es-es: Distribución inicial
+      fa: توزیع اولیه
+      lo: ດິສຕຣິບິວຊັນເບື້ອງຕົ້ນ
+      zh-Hant: 初始發行版
+      pt-BR: Distribuição inicial
+      es-ES: Distribución inicial
     required: true
     type: select
     values:
@@ -55,6 +126,22 @@ additionalProperties:
     envKey: ALPINE_VERSION
     labelEn: Alpine version
     labelZh: Alpine 版本
+    label:
+      en: Alpine version
+      zh: Alpine 版本
+      zh-hant: Alpine 版本
+      ja: Alpineのバージョン
+      ko: Alpine 버전
+      ru: Версия Alpine
+      ms: Versi Alpine
+      pt-br: Versão do Alpine
+      tr: Alpine sürümü
+      es-es: Versión de Alpine
+      fa: نسخه Alpine
+      lo: ເວີຊັນ Alpine
+      zh-Hant: Alpine 版本
+      pt-BR: Versão do Alpine
+      es-ES: Versión de Alpine
     required: true
     type: text
   - default: ""
@@ -62,6 +149,22 @@ additionalProperties:
     envKey: ALPINE_EXTRA_PACKAGES
     labelEn: Alpine extra packages
     labelZh: Alpine 额外软件包
+    label:
+      en: Alpine extra packages
+      zh: Alpine 额外软件包
+      zh-hant: Alpine 額外套件
+      ja: Alpineの追加パッケージ
+      ko: Alpine 추가 패키지
+      ru: Дополнительные пакеты Alpine
+      ms: Pakej tambahan Alpine
+      pt-br: Pacotes adicionais do Alpine
+      tr: Ek Alpine paketleri
+      es-es: Paquetes adicionales de Alpine
+      fa: بسته‌های اضافی Alpine
+      lo: ແພັກເກດເພີ່ມເຕີມຂອງ Alpine
+      zh-Hant: Alpine 額外套件
+      pt-BR: Pacotes adicionais do Alpine
+      es-ES: Paquetes adicionales de Alpine
     required: false
     type: text
   - default: ""
@@ -69,6 +172,22 @@ additionalProperties:
     envKey: SSH_KEY
     labelEn: Initial SSH public key
     labelZh: 初始 SSH 公钥
+    label:
+      en: Initial SSH public key
+      zh: 初始 SSH 公钥
+      zh-hant: 初始 SSH 公鑰
+      ja: 初期 SSH 公開鍵
+      ko: 초기 SSH 공개 키
+      ru: Исходный открытый ключ SSH
+      ms: Kunci awam SSH awal
+      pt-br: Chave pública SSH inicial
+      tr: İlk SSH ortak anahtarı
+      es-es: Clave pública SSH inicial
+      fa: کلید عمومی اولیه SSH
+      lo: ກະແຈສາທາລະນະ SSH ເບື້ອງຕົ້ນ
+      zh-Hant: 初始 SSH 公鑰
+      pt-BR: Chave pública SSH inicial
+      es-ES: Clave pública SSH inicial
     required: false
     type: text
   - default: lxc1
@@ -76,6 +195,22 @@ additionalProperties:
     envKey: LXC_HOSTNAME
     labelEn: LXC hostname
     labelZh: LXC 主机名
+    label:
+      en: LXC hostname
+      zh: LXC 主机名
+      zh-hant: LXC 主機名稱
+      ja: LXCのホスト名
+      ko: LXC 호스트 이름
+      ru: Имя узла LXC
+      ms: Nama hos LXC
+      pt-br: Nome do host do LXC
+      tr: LXC ana bilgisayar adı
+      es-es: Nombre de host de LXC
+      fa: نام میزبان LXC
+      lo: ຊື່ໂຮສ LXC
+      zh-Hant: LXC 主機名稱
+      pt-BR: Nome do host do LXC
+      es-ES: Nombre de host de LXC
     required: true
     type: text
   - default: "false"
@@ -83,6 +218,22 @@ additionalProperties:
     envKey: USE_LXCFS
     labelEn: Enable LXCFS
     labelZh: 启用 LXCFS
+    label:
+      en: Enable LXCFS
+      zh: 启用 LXCFS
+      zh-hant: 啟用 LXCFS
+      ja: LXCFSを有効にする
+      ko: LXCFS 사용
+      ru: Включить LXCFS
+      ms: Dayakan LXCFS
+      pt-br: Ativar LXCFS
+      tr: LXCFS'yi etkinleştir
+      es-es: Habilitar LXCFS
+      fa: فعال‌سازی LXCFS
+      lo: ເປີດໃຊ້ LXCFS
+      zh-Hant: 啟用 LXCFS
+      pt-BR: Ativar LXCFS
+      es-ES: Habilitar LXCFS
     required: true
     type: select
     values:
@@ -95,6 +246,22 @@ additionalProperties:
     envKey: COPY_RESOLV_CONF
     labelEn: Copy resolv.conf
     labelZh: 复制 resolv.conf
+    label:
+      en: Copy resolv.conf
+      zh: 复制 resolv.conf
+      zh-hant: 複製 resolv.conf
+      ja: resolv.confをコピー
+      ko: resolv.conf 복사
+      ru: Копировать resolv.conf
+      ms: Salin resolv.conf
+      pt-br: Copiar resolv.conf
+      tr: resolv.conf dosyasını kopyala
+      es-es: Copiar resolv.conf
+      fa: کپی کردن resolv.conf
+      lo: ຄັດລອກ resolv.conf
+      zh-Hant: 複製 resolv.conf
+      pt-BR: Copiar resolv.conf
+      es-ES: Copiar resolv.conf
     required: true
     type: select
     values:

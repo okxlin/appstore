@@ -14,9 +14,9 @@ services:
               count: all
               capabilities: [gpu]
     image: registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -11,7 +11,7 @@ services:
     networks:
       - 1panel-network
     volumes:
-      - ${SERVERSTATUS_CONFIG_PATH}:/ServerStatus/server/config.json 
+      - ${SERVERSTATUS_CONFIG_PATH}:/ServerStatus/server/config.json
       - ${SERVERSTATUS_JSON_PATH}:/usr/share/nginx/html/json
     ports:
       - ${PANEL_APP_PORT_COMM}:35601

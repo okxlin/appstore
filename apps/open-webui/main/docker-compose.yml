@@ -14,9 +14,9 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - "${DATA_PATH}:/app/backend/data"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

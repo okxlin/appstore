@@ -25,7 +25,7 @@ services:
       - ./data/storage:/storage
     networks:
       - 1panel-network
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

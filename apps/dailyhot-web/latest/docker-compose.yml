@@ -10,9 +10,9 @@ services:
       - "API=${API_URL}"
       - "ICP=${ICP_TEXT}"
     image: liwangsheng/dailyhot-web:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

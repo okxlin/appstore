@@ -17,9 +17,9 @@ services:
     #  timeout: 10s
     #  retries: 3
     image: nriver/trilium-cn:0.64.1
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

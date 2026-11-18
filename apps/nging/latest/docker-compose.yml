@@ -12,5 +12,5 @@ services:
       - ./data/myconfig:/home/nging_linux_amd64/myconfig
       - ./data/public:/home/nging_linux_amd64/public
     command: [ "-p", "${PANEL_APP_PORT_HTTP}", "-c", "myconfig/config.yaml" ]
-    labels:  
+    labels:
       createdBy: "Apps"

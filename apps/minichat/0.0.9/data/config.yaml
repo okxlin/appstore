@@ -1,2 +1,2 @@
 port: 8080
-server_url: "" # 此处为html页面去请求服务器的地址，例子：8.8.8.8:8080 或 abc.com 或 abc.com:8080
+server_url: ""  # 此处为html页面去请求服务器的地址，例子：8.8.8.8:8080 或 abc.com 或 abc.com:8080

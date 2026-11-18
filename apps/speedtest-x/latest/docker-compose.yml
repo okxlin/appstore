@@ -12,9 +12,9 @@ services:
       - IP_SERVICE=${IP_SERVICE}
       - SAME_IP_MULTI_LOGS=${SAME_IP_MULTI_LOGS}
     image: badapple9/speedtest-x:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

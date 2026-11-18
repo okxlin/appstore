@@ -2,23 +2,52 @@ name: Plex Media Server
 tags:
   - 多媒体
 title: Plex 媒体服务器
-description: Plex 媒体服务器
+description: "通过一台个人媒体服务器整理并串流播放电影、电视节目、音乐和照片。"
 additionalProperties:
   key: plex
   name: Plex Media Server
   tags:
     - Media
-  shortDescZh: Plex 媒体服务器
-  shortDescEn: Plex Media Server
+  shortDescZh: "通过一台个人媒体服务器整理并串流播放电影、电视节目、音乐和照片。"
+  shortDescEn: >-
+    Organize and stream movies, TV shows, music, and photos from one personal
+    media server.
   description:
-    en: "Plex media server."
-    zh: "Plex 媒体服务器。"
-    zh-Hant: "Plex 媒體伺服器。"
-    ja: "Plex メディアサーバーです。"
-    ko: "Plex 미디어 서버입니다."
-    ru: "Медиасервер Plex."
-    ms: "Pelayan media Plex."
-    pt-br: "Servidor de mídia Plex."
+    en: >-
+      Organize and stream movies, TV shows, music, and photos from one personal
+      media server.
+    zh: "通过一台个人媒体服务器整理并串流播放电影、电视节目、音乐和照片。"
+    zh-hant: "透過個人媒體伺服器整理並串流播放電影、電視節目、音樂和照片。"
+    zh-Hant: "透過個人媒體伺服器整理並串流播放電影、電視節目、音樂和照片。"
+    ja: "映画、テレビ番組、音楽、写真を一元管理してストリーミング再生できる個人用メディアサーバー。"
+    ko: "영화, TV 프로그램, 음악, 사진을 한곳에서 정리하고 스트리밍하는 개인 미디어 서버입니다."
+    ru: >-
+      Персональный медиасервер для организации и потокового воспроизведения
+      фильмов, сериалов, музыки и фотографий.
+    ms: >-
+      Pelayan media peribadi untuk menyusun dan menstrim filem, rancangan TV,
+      muzik dan foto.
+    pt-br: >-
+      Servidor de mídia pessoal para organizar e transmitir filmes, séries,
+      músicas e fotos.
+    pt-BR: >-
+      Servidor de mídia pessoal para organizar e transmitir filmes, séries,
+      músicas e fotos.
+    tr: >-
+      Filmleri, dizileri, müzikleri ve fotoğrafları düzenleyip yayınlayan
+      kişisel medya sunucusu.
+    es-es: >-
+      Servidor multimedia personal para organizar y reproducir en streaming
+      películas, series, música y fotos.
+    es-ES: >-
+      Servidor multimedia personal para organizar y reproducir en streaming
+      películas, series, música y fotos.
+    fa: >-
+      سرور رسانه شخصی برای سازمان‌دهی و پخش جریانی فیلم‌ها، سریال‌ها، موسیقی و
+      عکس‌ها.
+    lo: >-
+      ເຊີບເວີສື່ສ່ວນຕົວສຳລັບຈັດລະບຽບແລະສະຕຣີມຮູບເງົາ, ລາຍການໂທລະທັດ, ເພງ
+      ແລະຮູບພາບ.
   type: tool
   crossVersionUpdate: true
   limit: 0

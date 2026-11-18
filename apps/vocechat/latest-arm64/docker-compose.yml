@@ -9,9 +9,9 @@ services:
     volumes:
       - "${DATA_PATH}:/home/vocechat-server/data"
     image: privoce/vocechat-server:latest-arm64
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -64,7 +64,7 @@ services:
       #- WOODPECKER_DATABASE_DRIVER=postgres
       #- WOODPECKER_DATABASE_DATASOURCE=postgres://root:password@1.2.3.4:5432/postgres?sslmode=disable
     image: woodpeckerci/woodpecker-server:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
   woodpecker-agent:
@@ -83,9 +83,9 @@ services:
       - WOODPECKER_SERVER=woodpecker-server:9000
       - WOODPECKER_AGENT_SECRET=${WOODPECKER_AGENT_SECRET}
     image: woodpeckerci/woodpecker-agent:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

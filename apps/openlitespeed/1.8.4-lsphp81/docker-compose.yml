@@ -21,9 +21,9 @@ services:
     environment:
       - TZ=${TIME_ZONE}
     image: litespeedtech/openlitespeed:1.8.4-lsphp81
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

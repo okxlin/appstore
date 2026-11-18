@@ -14,10 +14,10 @@ services:
     volumes:
         - baota:/www
     image: "btpanel/baota:latest"
-    labels:  
+    labels:
       createdBy: "Apps"
 volumes:
   baota:
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

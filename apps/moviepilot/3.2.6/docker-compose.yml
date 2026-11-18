@@ -85,7 +85,7 @@ services:
       - 'PLEX_HOST=${PLEX_HOST}'
       - 'PLEX_TOKEN=${PLEX_TOKEN}'
       - 'MEDIASERVER_SYNC_INTERVAL=${MEDIASERVER_SYNC_INTERVAL}'
-      - 'MEDIASERVER_SYNC_BLACKLIST=${MEDIASERVER_SYNC_BLACKLIST}'    
+      - 'MEDIASERVER_SYNC_BLACKLIST=${MEDIASERVER_SYNC_BLACKLIST}'
       - 'AUTH_SITE=${AUTH_SITE}'
       - 'IYUU_SIGN=${IYUU_SIGN}'
       - 'HHCLUB_USERNAME=${HHCLUB_USERNAME}'
@@ -130,7 +130,7 @@ services:
       - '${CORE_PATH}:/moviepilot'
       - '${DOCKER_SOCK_PATH}:/var/run/docker.sock:ro'
       - '${MEDIA_PATH}:/media'
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

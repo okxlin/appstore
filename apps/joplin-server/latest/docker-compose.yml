@@ -16,9 +16,9 @@ services:
       - POSTGRES_HOST=${POSTGRES_HOST}
       - DB_CLIENT=pg
     image: florider89/joplin-server:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -15,9 +15,9 @@ services:
       - TZ=${TIME_ZONE}
       - FG_WEBUI_PASSWD=${WEB_PASSWORD}
     image: wiserain/flexget:3.22.12
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -9,9 +9,9 @@ services:
     volumes:
         - "${DATA_PATH}:/root/.dbgate"
     image: "dbgate/dbgate:7.3.6"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -12,9 +12,9 @@ services:
       - TZ=${TIME_ZONE}
       - ALIST_HOST=${ALIST_HOST}
     image: prophet310/alist-encrypt:beta
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

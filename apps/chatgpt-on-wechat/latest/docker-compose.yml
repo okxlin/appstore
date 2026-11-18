@@ -128,9 +128,9 @@ services:
       - LINKAI_API_KEY=${LINKAI_API_KEY}
       - LINKAI_APP_CODE=${LINKAI_APP_CODE}
       - LINKAI_API_BASE=${LINKAI_API_BASE}
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

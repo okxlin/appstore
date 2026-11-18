@@ -15,9 +15,9 @@ services:
       - SIZE=${DISPLAY_SIZE}
     privileged: ${PRIVILEGED_MODE}
     image: hcyxsmile/obsidian-docker:v1.0-ob1.3.5
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

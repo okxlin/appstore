@@ -9,12 +9,12 @@ services:
     volumes:
       - "moments_data:/app"
     image: drizzle2001/moments:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   moments_data:
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

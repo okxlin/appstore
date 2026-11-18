@@ -15,9 +15,9 @@ services:
       - "SITE_PASSWORD=${SECRET_KEY}"
       - "OPENAI_API_MODEL=${API_MODEL}"
     image: ddiu8081/chatgpt-demo:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

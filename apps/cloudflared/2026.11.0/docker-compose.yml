@@ -6,7 +6,7 @@ services:
     networks:
       - 1panel-network
     command: tunnel --no-autoupdate run --token ${CFD_TOKEN}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

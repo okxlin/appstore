@@ -11,9 +11,9 @@ services:
       - ${DATA_PATH}/uploads:/app/uploads
       - ${DATA_PATH}/database:/app/database
     image: hslr/sun-panel:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

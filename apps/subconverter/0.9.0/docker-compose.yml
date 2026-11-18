@@ -9,9 +9,9 @@ services:
       - "${PANEL_APP_PORT_HTTP}:25500"
     volumes:
       - ./data:/mnt
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -18,9 +18,9 @@ services:
       - HTTP_ALL_INTERFACES=yes
       - ZTNCUI_PASSWD=${PASSWORD}
     image: keynetworks/ztncui:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

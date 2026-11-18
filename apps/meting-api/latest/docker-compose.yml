@@ -7,9 +7,9 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:3000"
     image: intemd/meting-api:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -13,9 +13,9 @@ services:
     privileged: true
     tty: true
     image: mauricenino/dashdot:sha-6f7544d
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

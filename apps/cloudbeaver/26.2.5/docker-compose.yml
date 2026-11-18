@@ -10,9 +10,9 @@ services:
       - "${DATA_PATH}:/opt/cloudbeaver/workspace"
     tty: true
     image: dbeaver/cloudbeaver:26.2.5
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

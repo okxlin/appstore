@@ -17,12 +17,12 @@ services:
     shm_size: ${MEM_USE}
     tty: true
     image: kasmweb/qbittorrent:1.19.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   qbittorrent-vnc_data:
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

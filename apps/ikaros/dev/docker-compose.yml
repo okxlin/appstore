@@ -34,7 +34,7 @@ services:
       - --spring.flyway.locations=classpath:db/${PANEL_DB_TYPE}/migration
       - --spring.flyway.user=${PANEL_DB_USER}
       - --spring.flyway.password=${PANEL_DB_USER_PASSWORD}
-      # springdoc 
+      # springdoc
       - --springdoc.api-docs.enabled=false
       - --springdoc.swagger-ui.enabled=false
       # ikaros

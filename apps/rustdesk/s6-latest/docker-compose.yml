@@ -17,9 +17,9 @@ services:
       - "RELAY=${HOST_ADDRESS}:${HBBR_PORT}"
       - "ENCRYPTED_ONLY=1"
     image: rustdesk/rustdesk-server-s6:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

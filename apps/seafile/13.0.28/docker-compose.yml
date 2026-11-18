@@ -35,9 +35,9 @@ services:
       - MEMCACHED_HOST=${MEMCACHED_HOST:-memcached}
       - MEMCACHED_PORT=${MEMCACHED_PORT:-11211}
     image: seafileltd/seafile-mc:14.0.9
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

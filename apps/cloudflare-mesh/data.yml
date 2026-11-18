@@ -2,23 +2,52 @@ name: Cloudflare Mesh
 tags:
   - Tool
 title: Cloudflare Mesh
-description: Cloudflare Mesh
+description: "通过 Cloudflare One 连接私有网络的 Cloudflare Mesh 连接器。"
 additionalProperties:
   key: cloudflare-mesh
   name: Cloudflare Mesh
   tags:
     - Tool
-  shortDescZh: Cloudflare Mesh
-  shortDescEn: Cloudflare Mesh
+  shortDescZh: "通过 Cloudflare One 连接私有网络的 Cloudflare Mesh 连接器。"
+  shortDescEn: >-
+    A Cloudflare Mesh connector for linking private networks through Cloudflare
+    One.
   description:
-    en: A Cloudflare Mesh connector container for connecting private networks through the Cloudflare One platform.
-    zh: Cloudflare Mesh 连接器容器，用于通过 Cloudflare One 平台连接私有网络。
-    zh-Hant: Cloudflare Mesh 連接器容器，用於透過 Cloudflare One 平台連接私有網路。
-    ja: Cloudflare One プラットフォームを通じてプライベートネットワークを接続する Cloudflare Mesh コネクタコンテナです。
-    ko: Cloudflare One 플랫폼을 통해 사설 네트워크를 연결하는 Cloudflare Mesh 커넥터 컨테이너입니다.
-    ru: Контейнер-коннектор Cloudflare Mesh для соединения частных сетей через платформу Cloudflare One.
-    ms: Kontena penyambung Cloudflare Mesh untuk menyambungkan rangkaian peribadi melalui platform Cloudflare One.
-    pt-br: Contêiner conector do Cloudflare Mesh para conectar redes privadas pela plataforma Cloudflare One.
+    en: >-
+      A Cloudflare Mesh connector for linking private networks through
+      Cloudflare One.
+    zh: "通过 Cloudflare One 连接私有网络的 Cloudflare Mesh 连接器。"
+    zh-hant: "透過 Cloudflare One 連接私人網路的 Cloudflare Mesh 連接器。"
+    zh-Hant: "透過 Cloudflare One 連接私人網路的 Cloudflare Mesh 連接器。"
+    ja: "Cloudflare Oneを通じてプライベートネットワークを接続するCloudflare Meshコネクター。"
+    ko: "Cloudflare One을 통해 사설 네트워크를 연결하는 Cloudflare Mesh 커넥터입니다."
+    ru: >-
+      Коннектор Cloudflare Mesh для подключения частных сетей через Cloudflare
+      One.
+    ms: >-
+      Penyambung Cloudflare Mesh untuk menghubungkan rangkaian persendirian
+      melalui Cloudflare One.
+    pt-br: >-
+      Conector Cloudflare Mesh para conectar redes privadas por meio do
+      Cloudflare One.
+    pt-BR: >-
+      Conector Cloudflare Mesh para conectar redes privadas por meio do
+      Cloudflare One.
+    tr: >-
+      Cloudflare One üzerinden özel ağları birbirine bağlayan Cloudflare Mesh
+      bağlayıcısı.
+    es-es: >-
+      Conector de Cloudflare Mesh para conectar redes privadas a través de
+      Cloudflare One.
+    es-ES: >-
+      Conector de Cloudflare Mesh para conectar redes privadas a través de
+      Cloudflare One.
+    fa: >-
+      اتصال‌دهنده Cloudflare Mesh برای پیوند شبکه‌های خصوصی از طریق Cloudflare
+      One.
+    lo: >-
+      ຕົວເຊື່ອມຕໍ່ Cloudflare Mesh ສຳລັບເຊື່ອມໂຍງເຄືອຂ່າຍສ່ວນຕົວຜ່ານ Cloudflare
+      One.
   type: tool
   crossVersionUpdate: true
   limit: 0

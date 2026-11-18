@@ -11,9 +11,9 @@ services:
     environment:
       - BASE_URL=${SEARXNG_EXTERNAL_URL}
     image: searxng/searxng:2023.7.1-5720844f
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

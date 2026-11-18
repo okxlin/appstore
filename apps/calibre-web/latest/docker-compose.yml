@@ -16,9 +16,9 @@ services:
       - DOCKER_MODS=${DOCKER_MODS:-linuxserver/mods:universal-calibre}
       - OAUTHLIB_RELAX_TOKEN_SCOPE=${OAUTHLIB_RELAX_TOKEN_SCOPE:-1}
     image: "linuxserver/calibre-web:latest"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

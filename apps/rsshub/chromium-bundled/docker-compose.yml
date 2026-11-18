@@ -14,6 +14,6 @@ services:
     labels:
       createdBy: Apps
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

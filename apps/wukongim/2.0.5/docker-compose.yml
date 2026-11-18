@@ -25,7 +25,7 @@ services:
       - ${PANEL_APP_PORT_COMM}:11110 # 分布式节点通讯端口
     networks:
       - 1panel-network
-    labels:  
+    labels:
       createdBy: "Apps"
   wukongim-prometheus:  # 监控服务
     container_name: ${CONTAINER_NAME}-prometheus

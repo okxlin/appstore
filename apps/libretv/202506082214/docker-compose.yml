@@ -9,7 +9,7 @@ services:
             - ${PANEL_APP_PORT_HTTP}:80
         environment:
             - PASSWORD=${PANEL_APP_PASSWORD}  # 关键配置
-        command: ["/docker-entrypoint.sh", "nginx", "-g", "daemon off;"] 
+        command: ["/docker-entrypoint.sh", "nginx", "-g", "daemon off;"]
         labels:
             createdBy: "Apps"
 networks:

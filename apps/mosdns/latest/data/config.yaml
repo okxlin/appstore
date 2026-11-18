@@ -5,7 +5,7 @@ log:
   level: info   # 日志级别。可选 "debug" "info" "warn" "error"。默认 "info"。
   production: true            # 纯 json 输出。
 
-# API 入口设置     
+# API 入口设置
 api:
   http: "127.0.0.1:8080" # 在该地址启动 api 接口。
 
@@ -26,7 +26,7 @@ plugins:
   - tag: "geosite-cn"
     type: domain_set
     args:
-      files: 
+      files:
         - "/etc/mosdns/direct-list.txt"
         - "/etc/mosdns/apple-cn.txt"
         - "/etc/mosdns/google-cn.txt"
@@ -35,7 +35,7 @@ plugins:
   - tag: "geosite-nocn"
     type: domain_set
     args:
-      files: 
+      files:
         - "/etc/mosdns/proxy-list.txt"
         - "/etc/mosdns/gfw.txt"
 
@@ -141,9 +141,9 @@ plugins:
       - exec: query_summary hosts
       - matches: has_wanted_ans
         exec: accept
-      
+
       - exec: query_summary qtype65
-      - matches: 
+      - matches:
         - qtype 65
         exec: reject 0
 
@@ -161,14 +161,14 @@ plugins:
       - matches: has_resp
         exec: accept
 
-      - matches: 
+      - matches:
         - qname $geosite-cn
         exec: $forward_local
       - exec: query_summary geosite-cn
       - matches: has_wanted_ans
         exec: accept
 
-      - matches: 
+      - matches:
         - qname $force-cn
         exec: $forward_local
       - exec: query_summary force-cn
@@ -190,12 +190,12 @@ plugins:
         exec: goto gfw-list
 
       - exec: $fallback
-      
+
   # 启动监听服务
   - tag: "udp_server"
     type: "udp_server"
     args:
-      entry: main_sequence 
+      entry: main_sequence
       listen: 0.0.0.0:53
 
   - tag: "tcp_server"

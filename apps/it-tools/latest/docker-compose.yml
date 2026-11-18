@@ -7,9 +7,9 @@ services:
     ports:
       - "${PANEL_APP_PORT_HTTP}:80"
     image: corentinth/it-tools:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

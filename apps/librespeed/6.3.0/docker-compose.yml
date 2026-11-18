@@ -18,7 +18,7 @@ services:
       - DISABLE_IPINFO=${DISABLE_IPINFO}
       - DISTANCE=${DISTANCE}
       - WEBPORT=${PANEL_APP_PORT_HTTP}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

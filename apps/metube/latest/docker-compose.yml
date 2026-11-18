@@ -28,7 +28,7 @@ services:
       - DEFAULT_OPTION_PLAYLIST_ITEM_LIMIT=${DEFAULT_OPTION_PLAYLIST_ITEM_LIMIT}
     labels:
       createdBy: "Apps"
-      
+
 networks:
   1panel-network:
     external: true

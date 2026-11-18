@@ -11,5 +11,5 @@ services:
     volumes:
       - ./data:/var/lib/zerotier-one
     image: "zerotier/zerotier:latest"
-    labels:  
+    labels:
       createdBy: "Apps"

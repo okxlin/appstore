@@ -9,12 +9,12 @@ services:
     volumes:
       - fossbilling:/var/www/html
     image: fossbilling/fossbilling:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   fossbilling:
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

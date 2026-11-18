@@ -10,9 +10,9 @@ services:
       - DATABASE_URL=mysql2://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PWPUSHER_DB_PORT}/${PANEL_DB_NAME}
       - MARIADB_TLS_DISABLE_PEER_VERIFICATION=1
     image: pglombardo/pwpush:2.17.2
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

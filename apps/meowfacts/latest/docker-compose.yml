@@ -11,10 +11,10 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:5000"
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 

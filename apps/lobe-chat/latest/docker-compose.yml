@@ -12,9 +12,9 @@ services:
       - OPENAI_PROXY_URL=${OPENAI_PROXY_URL}
       - ACCESS_CODE=${ACCESS_CODE}
       - OPENAI_MODEL_LIST=${OPENAI_MODEL_LIST}
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

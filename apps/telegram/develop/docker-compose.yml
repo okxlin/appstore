@@ -13,12 +13,12 @@ services:
     shm_size: ${MEM_USE}
     tty: true
     image: kasmweb/telegram:develop
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   telegram_data:
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -11,7 +11,7 @@ services:
       - "${CONFIG_PATH}:/app/config.yaml"
     environment:
       - TEMPLATE_NAME=${TEMPLATE_NAME}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

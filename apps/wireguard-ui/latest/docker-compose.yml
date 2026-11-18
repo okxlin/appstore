@@ -33,7 +33,7 @@ services:
       driver: json-file
       options:
         max-size: 50m
-    labels:  
+    labels:
       createdBy: "Apps"
 
   wireguard:
@@ -54,9 +54,9 @@ services:
       - PEERS=1
       - SERVERPORT=${PANEL_APP_PORT_WIREGUARD}
     image: "linuxserver/wireguard:latest"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

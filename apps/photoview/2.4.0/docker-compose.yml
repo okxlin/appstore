@@ -18,9 +18,9 @@ services:
       # - GODEBUG=asyncpreemptoff=1  # Optional: If you are using Samba/CIFS-Share and experience problems with "directory not found"
       # - MAPBOX_TOKEN=<YOUR TOKEN HERE>  # A token can be generated for free here https://account.mapbox.com/access-tokens/
     image: viktorstrate/photoview:2.4.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

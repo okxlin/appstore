@@ -19,9 +19,9 @@ services:
       - VAN_BLOG_CDN_URL=${VAN_BLOG_CDN_URL}
       - VAN_BLOG_WALINE_DB=${VAN_BLOG_WALINE_DB}
       - VAN_BLOG_DATABASE_URL=mongodb://${PANEL_DB_ROOT_USER}:${PANEL_DB_ROOT_PASSWORD}@${MONGO_HOST}:27017/${MONGO_DB}?authSource=admin
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

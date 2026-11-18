@@ -7,9 +7,9 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:8080"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -14,9 +14,9 @@ services:
     environment:
       - TZ=Asia/Shanghai
     image: uozi/nginx-ui:v2.0.0-beta.3
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

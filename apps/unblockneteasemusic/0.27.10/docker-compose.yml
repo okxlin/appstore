@@ -57,9 +57,9 @@ services:
       - SEARCH_ALBUM=true
     #command: ["-o", "bilibili"]  # 设置要传递给容器的参数
     image: pan93412/unblock-netease-music-enhanced:v0.27.10
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

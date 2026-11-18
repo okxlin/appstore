@@ -144,9 +144,9 @@ services:
     image: qdtoday/qd:latest
     # image: a76yyyy/qiandao:latest
     # image: a76yyyy/qiandao:lite-latest
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

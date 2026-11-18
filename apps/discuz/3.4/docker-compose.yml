@@ -10,12 +10,12 @@ services:
     volumes:
       - discuz_data:/var/www/html
     image: tencentci/discuz:v3.4
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   discuz_data:
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

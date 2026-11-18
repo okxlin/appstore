@@ -18,7 +18,7 @@ services:
         reservations:
           devices:
             - capabilities: [gpu]
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

@@ -15,9 +15,9 @@ services:
       - TZ=Asia/Shanghai
       - ALLOW_INTERNAL_REQUESTS=${ALLOW_INTERNAL_REQUESTS:-false}
     image: "linuxserver/heimdall:latest"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

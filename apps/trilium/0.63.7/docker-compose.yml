@@ -10,9 +10,9 @@ services:
       - "${DATA_PATH}:/home/node/trilium-data"
     tty: true
     image: zadam/trilium:0.63.7
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

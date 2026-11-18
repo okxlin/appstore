@@ -14,10 +14,10 @@ services:
     volumes:
         - aapanel:/www
     image: "aapanel/aapanel:lib"
-    labels:  
+    labels:
       createdBy: "Apps"
 volumes:
   aapanel:
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

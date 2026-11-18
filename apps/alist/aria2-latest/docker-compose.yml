@@ -14,10 +14,10 @@ services:
       - PGID=0
       - UMASK=022
     image: xhofe/alist-aria2:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
 

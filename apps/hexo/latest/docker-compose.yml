@@ -15,9 +15,9 @@ services:
       - GIT_USER=${GIT_USERNAME}
       - GIT_EMAIL=${GIT_MAIL}
     image: bloodstar/hexo:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

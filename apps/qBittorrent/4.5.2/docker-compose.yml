@@ -19,9 +19,9 @@ services:
         - "${CACHE_PATH}:/data/.cache"
         - "${DOWNLOAD_PATH}:/data/downloads"
     image: "jarylc/qbittorrent:4.5.2_2.0.8"
-    labels:  
+    labels:
       createdBy: "Apps"
-   
-networks:  
-  1panel-network:  
+
+networks:
+  1panel-network:
     external: true

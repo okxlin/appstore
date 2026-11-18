@@ -9,9 +9,9 @@ services:
     volumes:
       - ./data:/usr/src/app/public/uploads
     image: nodebb/docker:latest
-    labels:  
+    labels:
       createdBy: "Apps"
-    
-networks:  
-  1panel-network:  
+
+networks:
+  1panel-network:
     external: true

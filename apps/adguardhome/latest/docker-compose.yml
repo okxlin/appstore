@@ -23,9 +23,9 @@ services:
       - ${WORK_PATH}:/opt/adguardhome/work
       - ${CONFIG_PATH}:/opt/adguardhome/conf
     image: adguard/adguardhome:latest
-    labels:  
-      createdBy: "Apps" 
+    labels:
+      createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true
