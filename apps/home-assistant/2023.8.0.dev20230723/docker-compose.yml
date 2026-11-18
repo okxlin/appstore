@@ -8,5 +8,5 @@ services:
     environment:
       - TZ=Asia/Shanghai
     image: homeassistant/home-assistant:2023.8.0.dev20230723
-    labels:  
+    labels:
       createdBy: "Apps"

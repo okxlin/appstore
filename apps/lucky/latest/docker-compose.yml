@@ -6,5 +6,5 @@ services:
     volumes:
       - ${DATA_PATH}:/goodluck
     image: gdy666/lucky:latest
-    labels:  
+    labels:
       createdBy: "Apps"

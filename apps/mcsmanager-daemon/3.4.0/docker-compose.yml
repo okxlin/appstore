@@ -10,9 +10,9 @@ services:
       - "${DATA_PATH}:/opt/mcsmanager/daemon/data"
       - /var/run/docker.sock:/var/run/docker.sock
     image: alisaqaq/mcsmanager-daemon:3.4.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

@@ -17,7 +17,7 @@ services:
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
       - WEB_PORT=${PANEL_APP_PORT_HTTP}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:

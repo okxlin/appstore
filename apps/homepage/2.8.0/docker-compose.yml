@@ -13,9 +13,9 @@ services:
       - PUID=1000
       - PGID=1000
     image: ghcr.io/gethomepage/homepage:v2.8.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

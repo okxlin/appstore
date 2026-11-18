@@ -16,13 +16,13 @@ services:
       - MADDY_HOSTNAME=${MAIL_HOSTNAME}
       - MADDY_DOMAIN=${MAIL_DOMAIN}
     image: foxcpp/maddy:0.9.7
-    labels:  
+    labels:
       createdBy: "Apps"
 
 volumes:
   maddydata:
     external: true
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

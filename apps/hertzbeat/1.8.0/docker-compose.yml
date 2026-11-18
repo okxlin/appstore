@@ -13,9 +13,9 @@ services:
       - "${DATA_PATH}/data:/opt/hertzbeat/data"
       - "${DATA_PATH}/logs:/opt/hertzbeat/logs"
     image: tancloud/hertzbeat:1.8.0
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

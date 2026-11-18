@@ -13,7 +13,7 @@ services:
       - RUN_MODE=${RUN_MODE}
       - DEFAULT_LANG=${DEFAULT_LANG}
     command: ${COMMAND}
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

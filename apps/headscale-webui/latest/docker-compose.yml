@@ -19,9 +19,9 @@ services:
       - BASIC_AUTH_PASS=${HTTP_PWD}
       - KEY=${SECRET_KEY}
     image: ifargle/headscale-webui:latest
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

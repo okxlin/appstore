@@ -22,9 +22,9 @@ services:
     #security_opt:
     #  - seccomp:unconfined #optional
     image: "linuxserver/libreoffice:25.8.7"
-    labels:  
+    labels:
       createdBy: "Apps"
 
-networks:  
-  1panel-network:  
+networks:
+  1panel-network:
     external: true

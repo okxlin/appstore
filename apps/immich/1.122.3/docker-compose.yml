@@ -21,7 +21,7 @@ services:
       - immich-database
     healthcheck:
       disable: false
-    labels:  
+    labels:
       createdBy: "Apps"
 
   immich-machine-learning:
@@ -40,7 +40,7 @@ services:
       - REDIS_HOSTNAME=${CONTAINER_NAME}-redis
     healthcheck:
       disable: false
-    labels:  
+    labels:
       createdBy: "Apps"
 
   immich-redis:
@@ -51,7 +51,7 @@ services:
     image: "redis:6.2-alpine"
     healthcheck:
       test: redis-cli ping || exit 1
-    labels:  
+    labels:
       createdBy: "Apps"
 
   immich-database:
@@ -86,7 +86,7 @@ services:
       -c max_wal_size=2GB
       -c shared_buffers=512MB
       -c wal_compression=on
-    labels:  
+    labels:
       createdBy: "Apps"
 
 networks:

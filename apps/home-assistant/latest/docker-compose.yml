@@ -8,5 +8,5 @@ services:
     environment:
       - TZ=Asia/Shanghai
     image: homeassistant/home-assistant:latest
-    labels:  
+    labels:
       createdBy: "Apps"
