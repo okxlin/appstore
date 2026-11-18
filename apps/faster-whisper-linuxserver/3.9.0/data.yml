@@ -1,0 +1,131 @@
+additionalProperties:
+  formFields:
+  - default: 10300
+    edit: true
+    envKey: PANEL_APP_PORT_WYOMING
+    labelEn: Wyoming port
+    labelZh: Wyoming 端口
+    label:
+      en: Wyoming port
+      zh: Wyoming 端口
+      zh-Hant: Wyoming 連接埠
+      ja: Wyoming ポート
+      ko: Wyoming 포트
+      ru: Порт Wyoming
+      ms: Port Wyoming
+      pt-br: Porta Wyoming
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: DEBUG
+    labelEn: Debug mode
+    labelZh: 调试模式
+    label:
+      en: Debug mode
+      zh: 调试模式
+      zh-Hant: 除錯模式
+      ja: デバッグモード
+      ko: 디버그 모드
+      ru: Режим отладки
+      ms: Mod nyahpepijat
+      pt-br: Modo de depuracao
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: LOCAL_ONLY
+    labelEn: Local only mode
+    labelZh: 仅本地模式
+    label:
+      en: Local only mode
+      zh: 仅本地模式
+      zh-Hant: 僅本機模式
+      ja: ローカル専用モード
+      ko: 로컬 전용 모드
+      ru: Только локальный режим
+      ms: Mod tempatan sahaja
+      pt-br: Modo somente local
+    required: false
+    type: text
+  - default: 1
+    edit: true
+    envKey: WHISPER_BEAM
+    labelEn: Whisper beam size
+    labelZh: Whisper beam 大小
+    label:
+      en: Whisper beam size
+      zh: Whisper beam 大小
+      zh-Hant: Whisper beam 大小
+      ja: Whisper beam サイズ
+      ko: Whisper beam 크기
+      ru: Размер beam Whisper
+      ms: Saiz beam Whisper
+      pt-br: Tamanho do beam Whisper
+    required: false
+    type: text
+  - default: auto
+    edit: true
+    envKey: WHISPER_LANG
+    labelEn: Whisper language
+    labelZh: Whisper 语言
+    label:
+      en: Whisper language
+      zh: Whisper 语言
+      zh-Hant: Whisper 語言
+      ja: Whisper 言語
+      ko: Whisper 언어
+      ru: Язык Whisper
+      ms: Bahasa Whisper
+      pt-br: Idioma Whisper
+    required: false
+    type: text
+  - default: auto
+    edit: true
+    envKey: WHISPER_MODEL
+    labelEn: Whisper model
+    labelZh: Whisper 模型
+    label:
+      en: Whisper model
+      zh: Whisper 模型
+      zh-Hant: Whisper 模型
+      ja: Whisper モデル
+      ko: Whisper 모델
+      ru: Модель Whisper
+      ms: Model Whisper
+      pt-br: Modelo Whisper
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text
