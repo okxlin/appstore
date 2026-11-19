@@ -1,0 +1,103 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP API Port
+      labelZh: HTTP API 端口
+      label:
+        en: HTTP API Port
+        zh: HTTP API 端口
+        zh-Hant: HTTP API 連接埠
+        ja: HTTP API ポート
+        ko: HTTP API 포트
+        ru: Порт HTTP API
+        ms: Port API HTTP
+        pt-br: Porta da API HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 50051
+      edit: true
+      envKey: PANEL_APP_PORT_GRPC
+      labelEn: gRPC API Port
+      labelZh: gRPC API 端口
+      label:
+        en: gRPC API Port
+        zh: gRPC API 端口
+        zh-Hant: gRPC API 連接埠
+        ja: gRPC API ポート
+        ko: gRPC API 포트
+        ru: Порт gRPC API
+        ms: Port API gRPC
+        pt-br: Porta da API gRPC
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: WEAVIATE_API_USER
+      labelEn: API User
+      labelZh: API 用户
+      label:
+        en: API User
+        zh: API 用户
+        zh-Hant: API 使用者
+        ja: API ユーザー
+        ko: API 사용자
+        ru: Пользователь API
+        ms: Pengguna API
+        pt-br: Usuário da API
+      required: true
+      rule: paramCommon
+      type: text
+    - default: weaviate_api_key_change_me
+      edit: true
+      envKey: WEAVIATE_API_KEY
+      labelEn: API Key
+      labelZh: API 密钥
+      label:
+        en: API Key
+        zh: API 密钥
+        zh-Hant: API 金鑰
+        ja: API キー
+        ko: API 키
+        ru: Ключ API
+        ms: Kunci API
+        pt-br: Chave da API
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 25
+      edit: true
+      envKey: QUERY_DEFAULTS_LIMIT
+      labelEn: Default Query Limit
+      labelZh: 默认查询数量限制
+      label:
+        en: Default Query Limit
+        zh: 默认查询数量限制
+        zh-Hant: 預設查詢數量限制
+        ja: デフォルトのクエリ件数上限
+        ko: 기본 쿼리 개수 제한
+        ru: Лимит результатов запроса по умолчанию
+        ms: Had Pertanyaan Lalai
+        pt-br: Limite padrão de resultados da consulta
+      required: true
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
