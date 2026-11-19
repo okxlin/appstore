@@ -17,6 +17,7 @@ OxiCloud 是一个使用 Rust 构建的自托管云存储平台，提供文件�
 - 安装后通过 `http://<服务器 IP>:8086` 访问，实际端口以安装表单中的 `PANEL_APP_PORT_HTTP` 为准。
 - 首次打开时按页面提示创建管理员账户。
 - `OXICLOUD_BASE_URL` 应填写用户实际访问 OxiCloud 的公开 HTTP 或 HTTPS 地址，以便生成正确的分享链接和回调地址。
+- 升级提醒：升级后请检查 1Panel 中保存的 `OXICLOUD_BASE_URL`。如果仍为旧默认值 `http://localhost:8086`，请改为实际访问地址（含协议、服务器 IP 或域名及对外端口），并在再次登录或生成分享链接前完成。
 
 ## 数据库和存储
 
