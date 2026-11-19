@@ -1,0 +1,55 @@
+additionalProperties:
+  formFields:
+    - default: 1.2.3.4:8025
+      edit: true
+      envKey: NPS_SERVER_ADDR
+      labelEn: NPS server address
+      labelZh: NPS 服务端地址
+      label:
+        en: 'NPS server address'
+        zh: 'NPS 服务端地址'
+        zh-Hant: 'NPS 服務端位址'
+        ja: 'NPS サーバーアドレス'
+        ko: 'NPS 서버 주소'
+        ru: 'Адрес сервера NPS'
+        ms: 'Alamat pelayan NPS'
+        pt-br: 'Endereço do servidor NPS'
+      required: true
+      type: text
+    - default: "xly7traGe3r0t6UWltristuh1"
+      edit: true
+      envKey: NPS_VKEY
+      labelEn: Client connection key displayed by the server
+      labelZh: 服务端显示的客户端连接密钥
+      label:
+        en: 'Client connection key displayed by the server'
+        zh: '服务端显示的客户端连接密钥'
+        zh-Hant: '伺服器顯示的用戶端連線金鑰'
+        ja: 'サーバーに表示されるクライアント接続キー'
+        ko: '서버에 표시되는 클라이언트 연결 키'
+        ru: 'Ключ подключения клиента, отображаемый сервером'
+        ms: 'Kunci sambungan klien yang dipaparkan oleh pelayan'
+        pt-br: 'Chave de conexão do cliente exibida pelo servidor'
+      required: true
+      rule: paramCommon
+      type: text
+    - default: "true"
+      envKey: TLS_ENABLE_SWITCH
+      labelEn: Whether TLS is enabled for server-client communication
+      labelZh: 服务端与客户端的通信是否启用 TLS
+      label:
+        en: 'Whether TLS is enabled for server-client communication'
+        zh: '服务端与客户端通信是否启用 TLS'
+        zh-Hant: '伺服器與用戶端通訊是否啟用 TLS'
+        ja: 'サーバーとクライアント間通信で TLS を有効にするか'
+        ko: '서버-클라이언트 통신에서 TLS 사용 여부'
+        ru: 'Включен ли TLS для связи сервер-клиент'
+        ms: 'Sama ada TLS didayakan untuk komunikasi pelayan-klien'
+        pt-br: 'Se o TLS está ativado para a comunicação servidor-cliente'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
