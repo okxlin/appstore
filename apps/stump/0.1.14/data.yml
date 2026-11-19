@@ -1,0 +1,67 @@
+additionalProperties:
+  formFields:
+    - default: 10801
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data/config
+      edit: true
+      envKey: CONFIG_PATH
+      labelEn: Config Directory
+      labelZh: 配置目录
+      label:
+        en: Config Directory
+        zh: 配置目录
+        zh-Hant: 設定目錄
+        ja: 設定ディレクトリ
+        ko: 설정 디렉터리
+        ru: Каталог конфигурации
+        ms: Direktori konfigurasi
+        pt-br: Diretorio de configuracao
+      required: true
+      type: text
+    - default: ./data/library
+      edit: true
+      envKey: LIBRARY_PATH
+      labelEn: Library Directory
+      labelZh: 书库目录
+      label:
+        en: Library Directory
+        zh: 书库目录
+        zh-Hant: 書庫目錄
+        ja: ライブラリディレクトリ
+        ko: 라이브러리 디렉터리
+        ru: Каталог библиотеки
+        ms: Direktori pustaka
+        pt-br: Diretorio da biblioteca
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horario
+      required: true
+      type: text

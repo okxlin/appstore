@@ -1,0 +1,228 @@
+additionalProperties:
+  formFields:
+    - default: 40209
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Management Port
+      labelZh: web 管理端口
+      label:
+        en: 'Web Management Port'
+        zh: 'web 管理端口'
+        zh-Hant: 'Web 管理埠'
+        ja: 'Web 管理ポート'
+        ko: '웹 관리 포트'
+        ru: 'Порт веб-управления'
+        ms: 'Port pengurusan web'
+        pt-br: 'Porta de gerenciamento web'
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8024
+      edit: true
+      envKey: NPS_BRIDGE_PORT
+      labelEn: Server-Client Communication Port
+      labelZh: 服务端客户端通信端口
+      label:
+        en: 'Server-Client Communication Port'
+        zh: '服务端客户端通信端口'
+        zh-Hant: '伺服器與用戶端通訊埠'
+        ja: 'サーバー・クライアント通信ポート'
+        ko: '서버-클라이언트 통신 포트'
+        ru: 'Порт связи сервер-клиент'
+        ms: 'Port komunikasi pelayan-klien'
+        pt-br: 'Porta de comunicação servidor-cliente'
+      required: true
+      rule: paramPort
+      type: number
+    - default: 8025
+      edit: true
+      envKey: NPS_BRIDGE_TLS_PORT
+      labelEn: Server-Client Communication TLS Port
+      labelZh: 服务端客户端 TLS 通信端口
+      label:
+        en: 'Server-Client Communication TLS Port'
+        zh: '服务端客户端 TLS 通信端口'
+        zh-Hant: '伺服器與用戶端 TLS 通訊埠'
+        ja: 'サーバー・クライアント TLS 通信ポート'
+        ko: '서버-클라이언트 TLS 통신 포트'
+        ru: 'TLS-порт связи сервер-клиент'
+        ms: 'Port TLS komunikasi pelayan-klien'
+        pt-br: 'Porta TLS de comunicação servidor-cliente'
+      required: true
+      rule: paramPort
+      type: number
+    - default: "true"
+      envKey: TLS_ENABLE_SWITCH
+      labelEn: Whether TLS is enabled for server-client communication
+      labelZh: 服务端与客户端的通信是否启用 TLS
+      label:
+        en: 'Whether TLS is enabled for server-client communication'
+        zh: '服务端与客户端通信是否启用 TLS'
+        zh-Hant: '伺服器與用戶端通訊是否啟用 TLS'
+        ja: 'サーバーとクライアント間通信で TLS を有効にするか'
+        ko: '서버-클라이언트 통신에서 TLS 사용 여부'
+        ru: 'Включен ли TLS для связи сервер-клиент'
+        ms: 'Sama ada TLS didayakan untuk komunikasi pelayan-klien'
+        pt-br: 'Se o TLS está ativado para a comunicação servidor-cliente'
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: http://localhost:40209
+      edit: true
+      envKey: NPS_WEB_HOST
+      labelEn: External URL(If the default address, please replace localhost with the current service IP)
+      labelZh: 外部访问地址(若默认地址请替换 localhost 为当前服务 IP)
+      label:
+        en: 'External URL(If the default address, please replace localhost with the current service IP)'
+        zh: '外部访问地址(若默认地址请替换 localhost 为当前服务 IP)'
+        zh-Hant: '外部訪問地址（若為預設地址請將 localhost 替換為當前服務 IP）'
+        ja: '外部アクセスURL（デフォルトのアドレスの場合は localhost を現在のサービス IP に置き換えてください）'
+        ko: '외부 접속 주소(기본 주소인 경우 localhost를 현재 서비스 IP로 바꾸세요)'
+        ru: 'Внешний URL (если используется адрес по умолчанию, замените localhost на текущий IP сервиса)'
+        ms: 'URL luaran (jika alamat lalai, gantikan localhost dengan IP perkhidmatan semasa)'
+        pt-br: 'URL externo (se estiver usando o endereço padrão, substitua localhost pelo IP atual do serviço)'
+      required: true
+      rule: paramExtUrl
+      type: text
+    - default: admin
+      edit: true
+      envKey: NPS_WEB_USERNAME
+      labelEn: Web Interface Management Account
+      labelZh: web 界面管理账号
+      label:
+        en: 'Web Interface Management Account'
+        zh: 'web 界面管理账号'
+        zh-Hant: 'Web 介面管理帳號'
+        ja: 'Web インターフェース管理アカウント'
+        ko: '웹 인터페이스 관리 계정'
+        ru: 'Учетная запись управления веб-интерфейсом'
+        ms: 'Akaun pengurusan antara muka web'
+        pt-br: 'Conta de gerenciamento da interface web'
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: "123"
+      edit: true
+      envKey: NPS_WEB_PASSWORD
+      labelEn: Web Interface Management Password
+      labelZh: web 界面管理密码
+      label:
+        en: 'Web Interface Management Password'
+        zh: 'web 界面管理密码'
+        zh-Hant: 'Web 介面管理密碼'
+        ja: 'Web インターフェース管理パスワード'
+        ko: '웹 인터페이스 관리 비밀번호'
+        ru: 'Пароль управления веб-интерфейсом'
+        ms: 'Kata laluan pengurusan antara muka web'
+        pt-br: 'Senha de gerenciamento da interface web'
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "false"
+      edit: true
+      envKey: NPS_WEB_OPEN_SSL
+      labelEn: Enable webui https access
+      labelZh: web 界面开启 https 访问
+      label:
+        en: 'Enable webui https access'
+        zh: 'web 界面开启 https 访问'
+        zh-Hant: 'Web 介面啟用 HTTPS 訪問'
+        ja: 'Web UI の HTTPS アクセスを有効化'
+        ko: '웹 UI HTTPS 접속 활성화'
+        ru: 'Включить доступ по HTTPS к веб-интерфейсу'
+        ms: 'Aktifkan akses HTTPS untuk web UI'
+        pt-br: 'Ativar acesso HTTPS ao web UI'
+      required: true
+      rule: paramCommon
+      type: text
+    - default: "xly7traGe3r0t6UWltristuh1"
+      edit: true
+      envKey: NPS_PUBLIC_VKEY
+      labelEn: Key When the Client Starts in Configuration File Mode
+      labelZh: 客户端以配置文件模式启动时的密钥
+      label:
+        en: 'Key When the Client Starts in Configuration File Mode'
+        zh: '客户端以配置文件模式启动时的密钥'
+        zh-Hant: '客戶端以設定檔模式啟動時的金鑰'
+        ja: 'クライアントが設定ファイルモードで起動する際のキー'
+        ko: '클라이언트가 설정 파일 모드로 시작할 때의 키'
+        ru: 'Ключ при запуске клиента в режиме конфигурационного файла'
+        ms: 'Kunci apabila klien bermula dalam mod fail konfigurasi'
+        pt-br: 'Chave quando o cliente inicia no modo de arquivo de configuração'
+      required: true
+      rule: paramCommon
+      type: text
+    - default: "gl8r0tujikih7br5"
+      edit: true
+      envKey: NPS_AUTH_CRYPT_KEY
+      labelEn: 16-bit AES Encryption Key
+      labelZh: 16 位 AES 加密密钥
+      label:
+        en: '16-bit AES Encryption Key'
+        zh: '16 位 AES 加密密钥'
+        zh-Hant: '16 位 AES 加密金鑰'
+        ja: '16 ビット AES 暗号化キー'
+        ko: '16비트 AES 암호화 키'
+        ru: '16-битный ключ шифрования AES'
+        ms: 'Kunci penyulitan AES 16-bit'
+        pt-br: 'Chave de criptografia AES de 16 bits'
+      required: true
+      rule: paramCommon
+      type: text
+    - default: 0.0.0.0
+      edit: true
+      envKey: NPS_HTTP_PROXY_IP
+      labelEn: Http Proxy IP
+      labelZh: 域名代理 http 代理监听地址
+      label:
+        en: 'Http Proxy IP'
+        zh: '域名代理 http 代理监听地址'
+        zh-Hant: '網域代理 HTTP 代理監聽位址'
+        ja: 'ドメインプロキシの HTTP プロキシ監聴アドレス'
+        ko: '도메인 프록시 HTTP 프록시 리스닝 주소'
+        ru: 'Адрес прослушивания HTTP-прокси доменного прокси'
+        ms: 'Alamat dengar proksi HTTP untuk proksi domain'
+        pt-br: 'Endereço de escuta do proxy HTTP do proxy de domínio'
+      required: true
+      rule: paramCommon
+      type: text
+    - default: 50080
+      edit: true
+      envKey: NPS_HTTP_PROXY_PORT
+      labelEn: Http Proxy Port
+      labelZh: 域名代理 http 代理监听端口
+      label:
+        en: 'Http Proxy Port'
+        zh: '域名代理 http 代理监听端口'
+        zh-Hant: '網域代理 HTTP 代理監聽埠'
+        ja: 'ドメインプロキシの HTTP プロキシ監聴ポート'
+        ko: '도메인 프록시 HTTP 프록시 리스닝 포트'
+        ru: 'Порт прослушивания HTTP-прокси доменного прокси'
+        ms: 'Port dengar proksi HTTP untuk proksi domain'
+        pt-br: 'Porta de escuta do proxy HTTP do proxy de domínio'
+      required: true
+      rule: paramPort
+      type: number
+    - default: 50443
+      edit: true
+      envKey: NPS_HTTPS_PROXY_PORT
+      labelEn: Https Proxy Port
+      labelZh: 域名代理 https 代理监听端口
+      label:
+        en: 'Https Proxy Port'
+        zh: '域名代理 https 代理监听端口'
+        zh-Hant: '網域代理 HTTPS 代理監聽埠'
+        ja: 'ドメインプロキシの HTTPS プロキシ監聴ポート'
+        ko: '도메인 프록시 HTTPS 프록시 리스닝 포트'
+        ru: 'Порт прослушивания HTTPS-прокси доменного прокси'
+        ms: 'Port dengar proksi HTTPS untuk proksi domain'
+        pt-br: 'Porta de escuta do proxy HTTPS do proxy de domínio'
+      required: true
+      rule: paramPort
+      type: number
