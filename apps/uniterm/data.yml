@@ -1,0 +1,32 @@
+name: UniTerm
+tags:
+  - 实用工具
+title: UniTerm
+description: "浏览器多用户终端与远程运维工具"
+additionalProperties:
+  key: uniterm
+  name: UniTerm
+  tags:
+    - Tool
+  shortDescZh: "浏览器多用户终端与远程运维工具"
+  shortDescEn: "Browser-based multi-user terminal and remote operations tool"
+  description:
+    en: "Browser-based multi-user terminal and remote operations tool"
+    es-es: "Browser-based multi-user terminal and remote operations tool"
+    ja: "Browser-based multi-user terminal and remote operations tool"
+    ms: "Browser-based multi-user terminal and remote operations tool"
+    pt-br: "Browser-based multi-user terminal and remote operations tool"
+    ru: "Browser-based multi-user terminal and remote operations tool"
+    ko: "Browser-based multi-user terminal and remote operations tool"
+    zh-Hant: "瀏覽器多使用者終端與遠端維運工具"
+    zh: "浏览器多用户终端与远程运维工具"
+    tr: "Browser-based multi-user terminal and remote operations tool"
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  architectures:
+    - amd64
+    - arm64
+  website: https://uniterm.net
+  github: https://github.com/ys-ll/uniterm
+  document: https://uniterm.net/guide/en/introduction
