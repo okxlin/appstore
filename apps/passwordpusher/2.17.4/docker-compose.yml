@@ -1,0 +1,29 @@
+services:
+  passwordpusher:
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    networks:
+      - 1panel-network
+    ports:
+      - "${PANEL_APP_PORT_HTTP}:5100"
+    volumes:
+      - passwordpusher-storage:/opt/PasswordPusher/storage
+    environment:
+      - DATABASE_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT:-5432}/${PANEL_DB_NAME}
+      - PWPUSH_MASTER_KEY=${PWPUSH_MASTER_KEY:-}
+    image: pglombardo/pwpush:2.17.4
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5100/up"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      createdBy: "Apps"
+
+networks:
+  1panel-network:
+    external: true
+
+volumes:
+  passwordpusher-storage:

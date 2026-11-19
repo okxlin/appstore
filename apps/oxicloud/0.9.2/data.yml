@@ -149,7 +149,7 @@ additionalProperties:
       lo: ໂຟນເດີຂໍ້ມູນ
     required: true
     type: text
-  - default: http://localhost:8086
+  - default: ""
     edit: true
     envKey: OXICLOUD_BASE_URL
     labelEn: Public Base URL

@@ -1,0 +1,79 @@
+additionalProperties:
+  formFields:
+    - default: 4000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: http://localhost:4000
+      edit: true
+      envKey: NORA_PUBLIC_URL
+      labelEn: Public URL
+      labelZh: 公共访问地址
+      label:
+        en: Public URL
+        zh: 公共访问地址
+        zh-Hant: 公共存取位址
+        ja: 公開 URL
+        ko: 공개 URL
+        ru: Публичный URL
+        ms: URL awam
+        pt-br: URL público
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: NORA_AUTH_ENABLED
+      labelEn: Enable authentication
+      labelZh: 启用身份验证
+      label:
+        en: Enable authentication
+        zh: 启用身份验证
+        zh-Hant: 啟用身分驗證
+        ja: 認証を有効化
+        ko: 인증 사용
+        ru: Включить аутентификацию
+        ms: Dayakan pengesahan
+        pt-br: Ativar autenticação
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: info
+      edit: true
+      envKey: RUST_LOG
+      labelEn: Log level
+      labelZh: 日志级别
+      label:
+        en: Log level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журналирования
+        ms: Tahap log
+        pt-br: Nível de log
+      required: true
+      type: select
+      values:
+        - label: info
+          value: info
+        - label: debug
+          value: debug
+        - label: warn
+          value: warn

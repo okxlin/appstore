@@ -1,0 +1,13 @@
+http:
+  routers:
+    opencloud:
+      entryPoints:
+        - https
+      rule: "Host(`@OC_DOMAIN@`)"
+      service: opencloud
+      tls: {}
+  services:
+    opencloud:
+      loadBalancer:
+        servers:
+          - url: http://opencloud:9200
