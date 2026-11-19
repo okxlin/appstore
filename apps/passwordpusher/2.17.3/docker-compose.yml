@@ -11,7 +11,7 @@ services:
     environment:
       - DATABASE_URL=postgres://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT:-5432}/${PANEL_DB_NAME}
       - PWPUSH_MASTER_KEY=${PWPUSH_MASTER_KEY:-}
-    image: pglombardo/pwpush:2.17.3
+    image: pglombardo/pwpush:2.17.4
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5100/up"]
       interval: 30s
