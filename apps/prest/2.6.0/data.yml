@@ -1,0 +1,148 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_HOST
+      key: postgresql
+      labelEn: PostgreSQL Service
+      labelZh: PostgreSQL 服务
+      label:
+        en: PostgreSQL Service
+        zh: PostgreSQL 服务
+        zh-Hant: PostgreSQL 服務
+        ja: PostgreSQL サービス
+        ko: PostgreSQL 서비스
+        ru: Сервис PostgreSQL
+        ms: Perkhidmatan PostgreSQL
+        pt-br: Servico PostgreSQL
+      required: true
+      type: service
+    - default: 5432
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: PostgreSQL Port
+      labelZh: PostgreSQL 端口
+      label:
+        en: PostgreSQL Port
+        zh: PostgreSQL 端口
+        zh-Hant: PostgreSQL 連接埠
+        ja: PostgreSQL ポート
+        ko: PostgreSQL 포트
+        ru: Порт PostgreSQL
+        ms: Port PostgreSQL
+        pt-br: Porta PostgreSQL
+      required: true
+      rule: paramPort
+      type: number
+    - default: prest
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: prest
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna pangkalan data
+        pt-br: Usuario do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: prest
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: disable
+      edit: true
+      envKey: PREST_PG_SSL_MODE
+      labelEn: PostgreSQL SSL Mode
+      labelZh: PostgreSQL SSL 模式
+      label:
+        en: PostgreSQL SSL Mode
+        zh: PostgreSQL SSL 模式
+        zh-Hant: PostgreSQL SSL 模式
+        ja: PostgreSQL SSL モード
+        ko: PostgreSQL SSL 모드
+        ru: Режим SSL PostgreSQL
+        ms: Mod SSL PostgreSQL
+        pt-br: Modo SSL do PostgreSQL
+      required: true
+      type: select
+      values:
+        - label: disable
+          value: disable
+        - label: require
+          value: require
+        - label: verify-ca
+          value: verify-ca
+        - label: verify-full
+          value: verify-full
+    - default: generate
+      edit: true
+      envKey: PREST_JWT_KEY
+      labelEn: JWT Signing Key
+      labelZh: JWT 签名密钥
+      label:
+        en: JWT Signing Key
+        zh: JWT 签名密钥
+        zh-Hant: JWT 簽章金鑰
+        ja: JWT 署名キー
+        ko: JWT 서명 키
+        ru: Ключ подписи JWT
+        ms: Kunci tandatangan JWT
+        pt-br: Chave de assinatura JWT
+      required: true
+      type: password
