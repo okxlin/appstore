@@ -1,0 +1,25 @@
+services:
+  nps:
+    image: yisier1/nps:v0.26.41
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    volumes:
+      - ./conf:/conf
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      NPS_WEB_HOST: ${NPS_WEB_HOST}
+      NPS_WEB_PORT: ${PANEL_APP_PORT_HTTP}
+      NPS_WEB_USERNAME: ${NPS_WEB_USERNAME}
+      NPS_WEB_PASSWORD: ${NPS_WEB_PASSWORD}
+      NPS_WEB_OPEN_SSL: ${NPS_WEB_OPEN_SSL}
+      NPS_PUBLIC_VKEY: ${NPS_PUBLIC_VKEY}
+      NPS_BRIDGE_PORT: ${NPS_BRIDGE_PORT}
+      NPS_BRIDGE_TLS_PORT: ${NPS_BRIDGE_TLS_PORT}
+      NPS_AUTH_CRYPT_KEY: ${NPS_AUTH_CRYPT_KEY}
+      NPS_HTTP_PROXY_IP: ${NPS_HTTP_PROXY_IP}
+      NPS_HTTP_PROXY_PORT: ${NPS_HTTP_PROXY_PORT}
+      NPS_HTTPS_PROXY_PORT: ${NPS_HTTPS_PROXY_PORT}
+      TLS_ENABLE_SWITCH: ${TLS_ENABLE_SWITCH}
+    network_mode: "host"
+    labels:
+      createdBy: "Apps"

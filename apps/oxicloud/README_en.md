@@ -20,6 +20,10 @@ file management, sharing, search, WebDAV, calendar, and address-book features.
 - Create the administrator account when the first-use page is displayed.
 - Set `OXICLOUD_BASE_URL` to the public HTTP or HTTPS URL used to access
   OxiCloud so that share links and callbacks use the correct address.
+- Upgrade note: check the saved `OXICLOUD_BASE_URL` in 1Panel after
+  upgrading. If it still contains the former default `http://localhost:8086`,
+  replace it with the actual URL (scheme, host, and exposed port) before
+  signing in again or generating share links.
 
 ## Database and storage
 
