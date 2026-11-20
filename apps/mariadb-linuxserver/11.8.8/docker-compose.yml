@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   mariadb:
-    image: "linuxserver/mariadb:11.8.9"
+    image: "linuxserver/mariadb:11.8.10"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
