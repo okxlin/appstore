@@ -1,0 +1,174 @@
+additionalProperties:
+  formFields:
+    - default: mysql
+      edit: true
+      envKey: PANEL_DB_TYPE
+      labelEn: Database Service
+      labelZh: 数据库服务
+      label:
+        en: Database Service
+        zh: 数据库服务
+        zh-Hant: 資料庫服務
+        ja: データベースサービス
+        ko: 데이터베이스 서비스
+        ru: Сервис базы данных
+        ms: Perkhidmatan Pangkalan Data
+        pt-br: Servico de banco de dados
+      required: true
+      type: apps
+      values:
+        - label: MySQL
+          value: mysql
+      child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: MySQL Service
+        labelZh: MySQL 服务
+        label:
+          en: MySQL Service
+          zh: MySQL 服务
+          zh-Hant: MySQL 服務
+          ja: MySQL サービス
+          ko: MySQL 서비스
+          ru: Сервис MySQL
+          ms: Perkhidmatan MySQL
+          pt-br: Servico MySQL
+        required: true
+        type: service
+    - default: 3306
+      edit: true
+      envKey: PANEL_DB_PORT
+      labelEn: Database Port
+      labelZh: 数据库端口
+      label:
+        en: Database Port
+        zh: 数据库端口
+        zh-Hant: 資料庫連接埠
+        ja: データベースポート
+        ko: 데이터베이스 포트
+        ru: Порт базы данных
+        ms: Port Pangkalan Data
+        pt-br: Porta do banco de dados
+      required: true
+      type: number
+    - default: databunker
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ru: Имя базы данных
+        ms: Nama Pangkalan Data
+        pt-br: Nome do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: databunker
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ru: Пользователь базы данных
+        ms: Pengguna Pangkalan Data
+        pt-br: Usuario do banco de dados
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: ""
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库密码
+      label:
+        en: Database Password
+        zh: 数据库密码
+        zh-Hant: 資料庫密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ru: Пароль базы данных
+        ms: Kata Laluan Pangkalan Data
+        pt-br: Senha do banco de dados
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: DATABUNKER_MASTER_KEY
+      labelEn: Encryption Master Key
+      labelZh: 加密主密钥
+      label:
+        en: Encryption Master Key
+        zh: 加密主密钥
+        zh-Hant: 加密主金鑰
+        ja: 暗号化マスターキー
+        ko: 암호화 마스터 키
+        ru: Главный ключ шифрования
+        ms: Kunci Induk Penyulitan
+        pt-br: Chave mestra de criptografia
+      random: true
+      required: true
+      type: password
+    - default: ""
+      edit: true
+      envKey: DATABUNKER_ROOTTOKEN
+      labelEn: Root API Token
+      labelZh: 根 API 令牌
+      label:
+        en: Root API Token
+        zh: 根 API 令牌
+        zh-Hant: 根 API 權杖
+        ja: ルート API トークン
+        ko: 루트 API 토큰
+        ru: Корневой токен API
+        ms: Token API Akar
+        pt-br: Token raiz da API
+      random: true
+      required: true
+      type: password
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: HTTP Port
+      labelZh: HTTP 端口
+      label:
+        en: HTTP Port
+        zh: HTTP 端口
+        zh-Hant: HTTP 連接埠
+        ja: HTTP ポート
+        ko: HTTP 포트
+        ru: HTTP-порт
+        ms: Port HTTP
+        pt-br: Porta HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretorio de dados
+      required: true
+      type: text
