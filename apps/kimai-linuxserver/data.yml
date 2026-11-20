@@ -19,6 +19,10 @@ additionalProperties:
     ru: Система учета времени Kimai, поддерживаемая LinuxServer.io
     ms: Sistem penjejakan masa Kimai yang diselenggara oleh LinuxServer.io
     pt-br: Sistema de controle de tempo Kimai mantido pela LinuxServer.io
+    tr: LinuxServer.io tarafından sürdürülen Kimai zaman takip sistemi
+    es-es: Sistema de seguimiento del tiempo Kimai mantenido por LinuxServer.io
+    fa: سامانهٔ ردیابی زمان Kimai نگهداری‌شده توسط LinuxServer.io
+    lo: ລະບົບຕິດຕາມເວລາ Kimai ທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0

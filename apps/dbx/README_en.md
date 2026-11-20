@@ -14,13 +14,16 @@ systems, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, and DuckDB.
 ## Deployment
 
 Set a strong access password and expose the configured `PANEL_APP_PORT_HTTP`
-port. Back up `./data` before an upgrade or migration. The app uses the
-official `t8y2/dbx` image, pinned to the reviewed `0.6.16` manifest digest.
+port. Back up `./data` before an upgrade or migration. The currently packaged
+`t8y2/dbx:0.6.72` image is pinned to manifest digest
+`sha256:30bc1628fef79e17d36ba0cfaf48c08f8d6f5e43124929b52689494aa216f01e`.
+The retained image versions support amd64 and arm64.
 
 ## Security notice
 
-The reviewed image has no privileged mode, host networking, or Docker Socket.
-Trivy 0.72.0 reports six Critical base-image/package findings with no fixed
-version: CVE-2026-58016, CVE-2025-7458, CVE-2026-13221, CVE-2026-42496,
-CVE-2026-8376, and CVE-2023-45853. These findings are recorded as accepted
-upstream risk and should be rechecked when the upstream image publishes fixes.
+The current Compose file does not use privileged mode, host networking, or a
+Docker Socket. A historical Trivy 0.72.0 record for `t8y2/dbx:0.6.16` lists six
+Critical base-image/package findings: CVE-2026-58016, CVE-2025-7458,
+CVE-2026-13221, CVE-2026-42496, CVE-2026-8376, and CVE-2023-45853. Version
+0.6.72 was not scanned as part of this update, so that historical record does
+not establish its current CVE status.

@@ -14,6 +14,10 @@ additionalProperties:
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: HTTP bağlantı noktası
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     type: number
     rule: paramPort
@@ -31,6 +35,10 @@ additionalProperties:
       ru: HTTPS-порт
       ms: Port HTTPS
       pt-br: Porta HTTPS
+      tr: HTTPS bağlantı noktası
+      es-es: Puerto HTTPS
+      fa: درگاه HTTPS
+      lo: ພອດ HTTPS
     required: true
     type: number
     rule: paramPort
@@ -48,6 +56,10 @@ additionalProperties:
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشهٔ پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: kimai-change-me
@@ -64,6 +76,10 @@ additionalProperties:
       ru: Пароль базы данных
       ms: Kata laluan pangkalan data
       pt-br: Senha do banco de dados
+      tr: Veritabanı parolası
+      es-es: Contraseña de la base de datos
+      fa: گذرواژهٔ پایگاه داده
+      lo: ລະຫັດຜ່ານຖານຂໍ້ມູນ
     required: true
     type: password
     rule: paramComplexity
@@ -81,6 +97,10 @@ additionalProperties:
       ru: Секрет приложения
       ms: Rahsia aplikasi
       pt-br: Segredo do aplicativo
+      tr: Uygulama gizli anahtarı
+      es-es: Secreto de la aplicación
+      fa: کلید محرمانهٔ برنامه
+      lo: ລະຫັດລັບແອັບ
     random: true
     required: true
     type: password
@@ -99,6 +119,10 @@ additionalProperties:
       ru: Каталог данных базы
       ms: Laluan data pangkalan data
       pt-br: Caminho de dados do banco
+      tr: Veritabanı veri dizini
+      es-es: Directorio de datos de la base de datos
+      fa: مسیر دادهٔ پایگاه داده
+      lo: ໂຟນເດີຂໍ້ມູນຖານຂໍ້ມູນ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -115,6 +139,10 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقهٔ زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
   - default: .*
@@ -131,6 +159,10 @@ additionalProperties:
       ru: Регулярное выражение доверенных хостов
       ms: Ungkapan biasa hos dipercayai
       pt-br: Expressao regular de hosts confiaveis
+      tr: Güvenilir ana bilgisayarlar için düzenli ifade
+      es-es: Expresión regular de hosts de confianza
+      fa: عبارت منظم میزبان‌های مورد اعتماد
+      lo: ຮູບແບບ regex ຂອງໂຮສທີ່ໄວ້ໃຈ
     required: true
     type: text
   - default: 127.0.0.1/32
@@ -147,5 +179,9 @@ additionalProperties:
       ru: Доверенные прокси
       ms: Proksi dipercayai
       pt-br: Proxies confiaveis
+      tr: Güvenilir proxy sunucuları
+      es-es: Proxies de confianza
+      fa: پراکسی‌های مورد اعتماد
+      lo: ພຣັອກຊີທີ່ໄວ້ໃຈ
     required: false
     type: text

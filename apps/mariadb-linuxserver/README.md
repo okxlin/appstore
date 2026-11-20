@@ -1,15 +1,24 @@
 # MariaDB
 
-## 应用简介
-MariaDB 数据库服务。
+## 产品介绍
+MariaDB 是由 LinuxServer.io 维护的关系型数据库服务，兼容 MySQL。
 
-英文说明：MariaDB database service maintained by LinuxServer.io.
+## 主要功能
+- 提供持久化的 MariaDB 数据库服务。
+- 支持通过安装表单配置初始数据库、用户和数据目录。
+
+## Introduction
+MariaDB is a MySQL-compatible relational database service maintained by LinuxServer.io.
+
+## Features
+- Persistent MariaDB database service.
+- Configure the initial database, user, and data directory through the install form.
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：数据库。
 - 支持架构：amd64、arm64。
-- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
+- 可选版本：固定目录 `11.8.8`、`11.8.10` 和 `latest`。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
 ## 端口
@@ -24,6 +33,8 @@ MariaDB 数据库服务。
 | MYSQL_DATABASE | 初始数据库 | - | 否 |
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
+
+新安装建议保留默认相对路径 `./data/config`。已有绝对路径可以继续使用，但升级时请保持 `CONFIG_PATH` 不变，并确保目录已存在；初始化脚本不会创建或递归修改绝对路径的属主。相对路径必须位于应用目录内，防止初始化误操作其他数据目录。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |

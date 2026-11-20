@@ -12,7 +12,7 @@
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
 - 应用分类：工具。
-- 支持架构：amd64。
+- 支持架构：amd64、arm64。
 - 可选版本以应用商店当前版本目录和安装表单为准。
 - 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
@@ -37,8 +37,8 @@
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 安全提示
-- 当前 `t8y2/dbx:0.6.16` 已固定到经过核验的 manifest digest；该镜像未使用 privileged、host network 或 Docker Socket。
-- Trivy 0.72.0 对镜像报告了以下 Critical 风险，当前均未提供固定版本：CVE-2026-58016（libglib2.0-0）、CVE-2025-7458（libsqlite3-0）、CVE-2026-13221/CVE-2026-42496/CVE-2026-8376（perl-base）以及 CVE-2023-45853（zlib1g）。这些风险属于上游基础镜像/系统包范围，已按维护授权记录接受风险，并将在上游提供修复后复核。
+- 当前 `t8y2/dbx:0.6.72` 固定到 manifest digest `sha256:30bc1628fef79e17d36ba0cfaf48c08f8d6f5e43124929b52689494aa216f01e`；当前 Compose 未使用 privileged、host network 或 Docker Socket。
+- 历史 Trivy 0.72.0 记录针对 `t8y2/dbx:0.6.16`，报告了以下 Critical 风险：CVE-2026-58016（libglib2.0-0）、CVE-2025-7458（libsqlite3-0）、CVE-2026-13221/CVE-2026-42496/CVE-2026-8376（perl-base）以及 CVE-2023-45853（zlib1g）。本次没有扫描 0.6.72，不能据此判断这些问题在新版本中是否仍存在。
 - 请保持访问密码为强随机值，不要在不受信任的网络中关闭密码保护。
 
 ## 参考资料

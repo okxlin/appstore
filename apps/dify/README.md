@@ -37,6 +37,22 @@ http://<服务器 IP>:<HTTP 端口>
 
 Webhook 与插件远程调试依赖公网可访问地址；未填写 `公网基础 URL` 时，包内默认只保留相对路径，避免向远程用户暴露误导性的 `localhost` 地址。协作模式默认走同源 `/socket.io`。升级前建议备份 `./data` 目录。
 
+## 升级提示：1.19.0 → 1.20.0
+
+1.20.0 的 `APP_DATA_DIR` 和 `CUSTOM_ENV_FILE` 必须指向当前 Dify 实例目录内的相对路径；绝对路径、目录穿越和符号链接都会被拒绝。若旧实例任一设置指向实例目录外，或使用了目录穿越/符号链接路径，请先完整备份现有数据目录和 `custom.env`（若 `custom.env` 不在数据目录内，需单独备份），再将数据复制到实例目录内的 `./data`，并将自定义环境文件复制为 `./data/custom.env`。然后在旧实例设置中将两项分别改为 `APP_DATA_DIR=./data` 和 `CUSTOM_ENV_FILE=./data/custom.env`，确认旧实例仍能读取原有数据后再升级。保留旧目录和备份，直至 1.20.0 验证通过。
+
+旧版 `local_sandbox` 没有把 `/home/dify` 和 `/workspace` 挂载到 `APP_DATA_DIR`，其中的文件只存在于旧容器可写层。1Panel 会先停止并移除旧容器，再运行新版 `upgrade.sh`，因此升级脚本无法自动复制这些文件；未备份的内容会丢失。如果 Agent home 或 workspace 中有需要保留的内容，请在升级前、旧容器仍存在时备份：
+
+```sh
+CONTAINER="当前 Dify 实例的 local-sandbox 容器名"
+BACKUP_DIR="/path/to/dify-local-sandbox-backup"
+mkdir -p "$BACKUP_DIR/home" "$BACKUP_DIR/workspace"
+docker cp -a "$CONTAINER:/home/dify/." "$BACKUP_DIR/home/"
+docker cp -a "$CONTAINER:/workspace/." "$BACKUP_DIR/workspace/"
+```
+
+确认两次复制都成功后再升级，并保留备份。升级后核对本实例 `APP_DATA_DIR`，将备份内容恢复到其中的 `agent_local_sandbox/home` 和 `agent_local_sandbox/workspace`，再重启并检查 Dify。若这两处目录为空或未使用，则无需迁移。
+
 ## Introduction
 
 Dify is an open-source LLM application development platform for building agents, workflows, RAG applications, model integrations, plugins, and published AI apps.
@@ -54,3 +70,19 @@ This package follows Dify's official Docker Compose deployment path. PostgreSQL 
 - Persistent Weaviate, uploaded files, and plugin data under the configured data directory.
 
 PostgreSQL 15 is recommended. The package was tested with 1Panel PostgreSQL 15.18 and Redis for install, restart, and upgrade flows; PostgreSQL 18 is not recommended for Dify migrations. Runtime defaults live in `dify.env`, while `.env.sample` remains a standalone Compose helper. Collaboration mode is disabled by default and uses same-origin `/socket.io` when enabled; set `PUBLIC_BASE_URL` when you want webhook or plugin callback URLs derived for remote users.
+
+### Upgrade note: 1.19.0 to 1.20.0
+
+In 1.20.0, `APP_DATA_DIR` and `CUSTOM_ENV_FILE` must resolve to relative paths inside the current Dify instance directory; absolute paths, traversal, and symbolic links are rejected. If either old setting points outside the instance directory, uses traversal, or passes through a symbolic link, first back up the complete data directory and `custom.env` (back up the env file separately when it is outside the data directory), then copy the data into `./data` inside the instance directory and copy the custom env file to `./data/custom.env`. Change the old installation settings to `APP_DATA_DIR=./data` and `CUSTOM_ENV_FILE=./data/custom.env`, confirm the old installation still reads its existing data, and then upgrade. Keep the old data and backup until 1.20.0 has been verified.
+
+The 1.19.0 `local_sandbox` service did not bind `/home/dify` or `/workspace` to `APP_DATA_DIR`; files there exist only in the old container's writable layer. 1Panel removes the old containers before running the target version's `upgrade.sh`, so this package cannot copy those files automatically. Unbacked data will be lost. If you stored Agent home or workspace data, back it up before upgrading while the old container still exists:
+
+```sh
+CONTAINER="the current Dify local-sandbox container name"
+BACKUP_DIR="/path/to/dify-local-sandbox-backup"
+mkdir -p "$BACKUP_DIR/home" "$BACKUP_DIR/workspace"
+docker cp -a "$CONTAINER:/home/dify/." "$BACKUP_DIR/home/"
+docker cp -a "$CONTAINER:/workspace/." "$BACKUP_DIR/workspace/"
+```
+
+Start the upgrade only after both copies succeed, and keep the backup. After upgrading, check this instance's `APP_DATA_DIR`, restore the files to `agent_local_sandbox/home` and `agent_local_sandbox/workspace` beneath it, then restart and verify Dify. Empty or unused directories do not need migration.
