@@ -1,6 +1,6 @@
 services:
   gimp-kasm:
-    image: "kasmweb/gimp:1.19.0-rolling-weekly@sha256:70016710d9e54f0021c17d9dfe19cc8f0d1ad98f02d22b3eb756bb2f6052331f"
+    image: "kasmweb/gimp:1.19.0-rolling-weekly@sha256:6330673f9f29d4708d3179d1499a5a3ff03366792a2cad82113539e449d6b2a9"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
