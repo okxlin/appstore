@@ -26,13 +26,22 @@ services:
           echo "Initializing permissions for $${DIR}"
           chown -R 1000:1000 "$${DIR}" && touch "$${FLAG_FILE}" || exit 1
         done
-        echo "Permissions initialized. Exiting."
+        touch /tmp/init-permissions-ready
+        echo "Permissions initialized."
+        exec tail -f /dev/null
     volumes:
       - ${APP_DATA_DIR}/app/storage:/app/api/storage
       - ${APP_DATA_DIR}/plugin_daemon:/app/plugin_daemon/storage
       - ${APP_DATA_DIR}/agent_local_sandbox/home:/home/dify
       - ${APP_DATA_DIR}/agent_local_sandbox/workspace:/workspace
-    restart: "no"
+    network_mode: none
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /tmp/init-permissions-ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 30m
+    restart: always
 
   api:
     image: "langgenius/dify-api:1.20.0"
@@ -71,7 +80,7 @@ services:
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       agent_backend:
         condition: service_started
     volumes:
@@ -154,7 +163,7 @@ services:
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       api:
         condition: service_healthy
       agent_backend:
@@ -198,7 +207,7 @@ services:
       - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       api:
         condition: service_healthy
     networks:
@@ -285,7 +294,7 @@ services:
       - local_sandbox_proxy_network
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       agent_ssrf_proxy:
         condition: service_started
 
@@ -386,7 +395,7 @@ services:
       - ${APP_DATA_DIR}/plugin_daemon:/app/storage
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
     networks:
       - ssrf_proxy_network
       - default

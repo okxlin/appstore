@@ -122,12 +122,37 @@ ensure_agent_server_secret() {
 }
 
 resolve_app_path() {
-  local raw="$1"
-  if [[ "$raw" = /* ]]; then
-    printf '%s\n' "$raw"
-  else
-    printf '%s\n' "$ROOT_DIR/${raw#./}"
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
   fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
 }
 
 trim_trailing_slash() {
@@ -241,44 +266,12 @@ APP_DATA_DIR_RAW="${APP_DATA_DIR:-$(get_env_value "APP_DATA_DIR" "./data")}"
 CUSTOM_ENV_FILE_RAW="${CUSTOM_ENV_FILE:-$(get_env_value "CUSTOM_ENV_FILE" "./data/custom.env")}"
 PUBLIC_BASE_URL_RAW="${PUBLIC_BASE_URL:-$(get_env_value "PUBLIC_BASE_URL" "")}"
 ENABLE_COLLABORATION_MODE_RAW="${ENABLE_COLLABORATION_MODE:-$(get_env_value "ENABLE_COLLABORATION_MODE" "false")}"
-CONTAINER_NAME_RAW="${CONTAINER_NAME:-$(get_env_value "CONTAINER_NAME" "dify")}"
-
-migrate_local_sandbox_directory() {
-  local source_path="$1"
-  local destination="$2"
-  local owner_id="$3"
-  local container="${CONTAINER_NAME_RAW}-local-sandbox"
-  local temporary_directory
-
-  if find "$destination" -mindepth 1 -maxdepth 1 -print -quit | grep -q .; then
-    return
-  fi
-  if ! command -v docker >/dev/null 2>&1 || ! docker container inspect "$container" >/dev/null 2>&1; then
-    return
-  fi
-
-  temporary_directory="$(mktemp -d "${destination}.migration.XXXXXX")"
-  if ! docker cp "${container}:${source_path}/." "$temporary_directory" >/dev/null 2>&1; then
-    rmdir "$temporary_directory" 2>/dev/null || true
-    echo "[dify:upgrade] cannot preserve existing ${source_path} data from ${container}; aborting upgrade" >&2
-    return 1
-  fi
-
-  chown -R "${owner_id}:${owner_id}" "$temporary_directory"
-  if find "$destination" -mindepth 1 -maxdepth 1 -print -quit | grep -q .; then
-    echo "[dify:upgrade] ${destination} changed during migration; preserving copy at ${temporary_directory} and aborting" >&2
-    return 1
-  fi
-  rmdir "$destination"
-  mv "$temporary_directory" "$destination"
-  echo "[dify:upgrade] migrated ${source_path} into ${destination}"
-}
 
 ensure_env_secret "DIFY_AGENT_SHELLCTL_AUTH_TOKEN"
 ensure_agent_server_secret
 
-APP_DATA_DIR_ABS="$(resolve_app_path "$APP_DATA_DIR_RAW")"
-CUSTOM_ENV_FILE_ABS="$(resolve_app_path "$CUSTOM_ENV_FILE_RAW")"
+APP_DATA_DIR_ABS="$(resolve_app_path APP_DATA_DIR "$APP_DATA_DIR_RAW")"
+CUSTOM_ENV_FILE_ABS="$(resolve_app_path CUSTOM_ENV_FILE "$CUSTOM_ENV_FILE_RAW")"
 
 mkdir -p \
   "$APP_DATA_DIR_ABS/app/storage" \
@@ -294,10 +287,8 @@ mkdir -p \
 mkdir -p "$(dirname "$CUSTOM_ENV_FILE_ABS")"
 touch "$CUSTOM_ENV_FILE_ABS"
 
-migrate_local_sandbox_directory "/home/dify" "$APP_DATA_DIR_ABS/agent_local_sandbox/home" 1000
-migrate_local_sandbox_directory "/workspace" "$APP_DATA_DIR_ABS/agent_local_sandbox/workspace" 1000
-
 rewrite_managed_custom_env "$CUSTOM_ENV_FILE_ABS" "$PUBLIC_BASE_URL_RAW" "$ENABLE_COLLABORATION_MODE_RAW"
 
+echo "[dify:upgrade] old local-sandbox /home/dify and /workspace data is not migrated automatically; restore a backup created before upgrade if applicable" >&2
 echo "[dify:upgrade] ensured persistent directories under ${APP_DATA_DIR_ABS}"
 echo "[dify:upgrade] refreshed managed custom env block in ${CUSTOM_ENV_FILE_ABS}"

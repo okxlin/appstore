@@ -14,6 +14,10 @@ additionalProperties:
         ru: HTTP-порт
         ms: Port HTTP
         pt-br: Porta HTTP
+        es-es: Puerto HTTP
+        fa: پورت HTTP
+        lo: ພອດ HTTP
+        tr: HTTP Portu
       required: true
       rule: paramPort
       type: number
@@ -31,6 +35,10 @@ additionalProperties:
         ru: Каталог данных
         ms: Direktori data
         pt-br: Diretório de dados
+        es-es: Directorio de datos
+        fa: پوشهٔ داده‌ها
+        lo: ໄດເລກະທໍລີຂໍ້ມູນ
+        tr: Veri dizini
       required: true
       type: text
     - default: Asia/Shanghai
@@ -47,6 +55,10 @@ additionalProperties:
         ru: Часовой пояс
         ms: Zon waktu
         pt-br: Fuso horário
+        es-es: Zona horaria
+        fa: منطقهٔ زمانی
+        lo: ເຂດເວລາ
+        tr: Saat dilimi
       required: true
       type: text
     - default: ""
@@ -63,6 +75,10 @@ additionalProperties:
         ru: Публичный базовый URL
         ms: URL asas awam
         pt-br: URL base pública
+        es-es: URL base pública
+        fa: URL پایهٔ عمومی
+        lo: URL ພື້ນຖານສາທາລະນະ
+        tr: Genel temel URL
       required: false
       type: text
     - default: ""
@@ -79,6 +95,10 @@ additionalProperties:
         ru: Начальный пароль администратора
         ms: Kata laluan pentadbir awal
         pt-br: Senha inicial do administrador
+        es-es: Contraseña inicial del administrador
+        fa: گذرواژهٔ اولیهٔ مدیر
+        lo: ລະຫັດຜ່ານຜູ້ດູແລເລີ່ມຕົ້ນ
+        tr: İlk yönetici parolası
       random: true
       required: true
       rule: paramComplexity
@@ -97,6 +117,10 @@ additionalProperties:
         ru: Режим совместной работы
         ms: Mod kolaborasi
         pt-br: Modo de colaboração
+        es-es: Modo de colaboración
+        fa: حالت همکاری
+        lo: ໂໝດການຮ່ວມມື
+        tr: İş birliği modu
       required: true
       type: select
       values:
@@ -118,6 +142,10 @@ additionalProperties:
           ru: Сервис PostgreSQL
           ms: Perkhidmatan PostgreSQL
           pt-br: Serviço PostgreSQL
+          es-es: Servicio PostgreSQL (se recomienda la versión 15)
+          fa: سرویس PostgreSQL (نسخهٔ ۱۵ توصیه می‌شود)
+          lo: ບໍລິການ PostgreSQL (ແນະນຳເວີຊັນ 15)
+          tr: PostgreSQL hizmeti (15 önerilir)
         required: true
         type: service
       default: postgresql
@@ -133,6 +161,10 @@ additionalProperties:
         ru: База данных
         ms: Pangkalan Data
         pt-br: Banco de dados
+        es-es: Base de datos
+        fa: پایگاه داده
+        lo: ຖານຂໍ້ມູນ
+        tr: Veritabanı
       required: true
       type: apps
       values:
@@ -152,6 +184,10 @@ additionalProperties:
         ru: Имя базы данных
         ms: Nama pangkalan data
         pt-br: Nome do banco de dados
+        es-es: Nombre de la base de datos
+        fa: نام پایگاه داده
+        lo: ຊື່ຖານຂໍ້ມູນ
+        tr: Veritabanı adı
       random: true
       required: true
       rule: paramCommon
@@ -170,6 +206,10 @@ additionalProperties:
         ru: Пользователь базы данных
         ms: Pengguna pangkalan data
         pt-br: Usuário do banco de dados
+        es-es: Usuario de la base de datos
+        fa: کاربر پایگاه داده
+        lo: ຜູ້ໃຊ້ຖານຂໍ້ມູນ
+        tr: Veritabanı kullanıcısı
       random: true
       required: true
       rule: paramCommon
@@ -188,6 +228,10 @@ additionalProperties:
         ru: Пароль пользователя базы данных
         ms: Kata laluan pengguna pangkalan data
         pt-br: Senha do usuário do banco de dados
+        es-es: Contraseña de la base de datos
+        fa: گذرواژهٔ پایگاه داده
+        lo: ລະຫັດຜ່ານຖານຂໍ້ມູນ
+        tr: Veritabanı parolası
       random: true
       required: true
       rule: paramComplexity
@@ -206,8 +250,11 @@ additionalProperties:
         ru: Порт базы данных
         ms: Port pangkalan data
         pt-br: Porta do banco de dados
+        es-es: Puerto de la base de datos
+        fa: درگاه پایگاه داده
+        lo: ພອດຖານຂໍ້ມູນ
+        tr: Veritabanı bağlantı noktası
       required: true
-      rule: paramPort
       type: number
     - default: ""
       edit: true
@@ -224,6 +271,10 @@ additionalProperties:
         ru: Сервис Redis
         ms: Perkhidmatan Redis
         pt-br: Serviço Redis
+        es-es: Servicio Redis
+        fa: سرویس Redis
+        lo: ບໍລິການ Redis
+        tr: Redis hizmeti
       required: true
       type: service
     - default: 6379
@@ -240,8 +291,11 @@ additionalProperties:
         ru: Порт Redis
         ms: Port Redis
         pt-br: Porta Redis
+        es-es: Puerto Redis
+        fa: درگاه Redis
+        lo: ພອດ Redis
+        tr: Redis bağlantı noktası
       required: true
-      rule: paramPort
       type: number
     - default: ""
       edit: true
@@ -257,6 +311,10 @@ additionalProperties:
         ru: Пароль Redis
         ms: Kata laluan Redis
         pt-br: Senha do Redis
+        es-es: Contraseña de Redis
+        fa: گذرواژهٔ Redis
+        lo: ລະຫັດຜ່ານ Redis
+        tr: Redis parolası
       required: true
       type: password
     - default: 0
@@ -273,6 +331,10 @@ additionalProperties:
         ru: База данных Redis
         ms: Pangkalan data Redis
         pt-br: Banco de dados Redis
+        es-es: Base de datos de Redis
+        fa: پایگاه دادهٔ Redis
+        lo: ຖານຂໍ້ມູນ Redis
+        tr: Redis veritabanı
       required: true
       type: number
     - default: ""
@@ -289,6 +351,10 @@ additionalProperties:
         ru: API-ключ Sandbox
         ms: Kunci API Sandbox
         pt-br: Chave da API do Sandbox
+        es-es: Clave API de Sandbox
+        fa: کلید API محیط Sandbox
+        lo: ຄີ API ຂອງ Sandbox
+        tr: Sandbox API anahtarı
       random: true
       required: true
       rule: paramComplexity
@@ -307,6 +373,10 @@ additionalProperties:
         ru: Ключ Plugin Daemon
         ms: Kunci Plugin Daemon
         pt-br: Chave do Plugin Daemon
+        es-es: Clave del daemon de complementos
+        fa: کلید daemon افزونه‌ها
+        lo: ຄີ daemon ຂອງປລັກອິນ
+        tr: Eklenti daemon anahtarı
       random: true
       required: true
       rule: paramComplexity
@@ -325,6 +395,10 @@ additionalProperties:
         ru: Внутренний API-ключ Plugin
         ms: Kunci API dalaman Plugin
         pt-br: Chave interna da API do Plugin
+        es-es: Clave API interna de Dify
+        fa: کلید API داخلی Dify
+        lo: ຄີ API ພາຍໃນຂອງ Dify
+        tr: Dify dahili API anahtarı
       random: true
       required: true
       rule: paramComplexity
@@ -343,10 +417,34 @@ additionalProperties:
         ru: Токен доступа к песочнице Agent
         ms: Token Pengesahan Kotak Pasir Agent
         pt-br: Token de Autenticacao do Sandbox do Agent
+        es-es: Token de autenticación del Sandbox del agente
+        fa: توکن احراز هویت Sandbox عامل
+        lo: ໂທເຄັນຢືນຢັນຕົວຕົນ Sandbox ຂອງ Agent
+        tr: Agent Sandbox kimlik doğrulama belirteci
       random: true
       required: true
       rule: paramComplexity
       type: password
+    - default: http://api:5001
+      edit: true
+      envKey: DIFY_AGENT_SANDBOX_FILES_BASE_URL
+      labelEn: Agent Sandbox Files Base URL
+      labelZh: Agent 沙箱文件基础 URL
+      label:
+        en: Agent Sandbox Files Base URL
+        zh: Agent 沙箱文件基础 URL
+        zh-Hant: Agent 沙箱檔案基礎 URL
+        ja: Agent サンドボックスファイルのベース URL
+        ko: Agent 샌드박스 파일 기본 URL
+        ru: Базовый URL файлов песочницы Agent
+        ms: URL asas fail kotak pasir Agent
+        pt-br: URL base dos arquivos do sandbox do Agent
+        tr: Agent sandbox dosyaları temel URL'si
+        es-es: URL base de archivos del sandbox de Agent
+        fa: نشانی پایه پرونده‌های Agent sandbox
+        lo: URL ພື້ນຖານໄຟລ໌ Agent sandbox
+      required: false
+      type: text
     - default: ""
       edit: true
       envKey: DIFY_AGENT_SERVER_SECRET_KEY
@@ -361,6 +459,10 @@ additionalProperties:
         ru: Ключ сервера Agent (Base64URL, 32 байта)
         ms: Kunci Rahsia Pelayan Agent (Base64URL 32 bait)
         pt-br: Chave Secreta do Servidor Agent (Base64URL de 32 bytes)
+        es-es: Clave secreta del servidor Agent (Base64URL de 32 bytes)
+        fa: کلید محرمانهٔ سرور Agent (Base64URL سی‌ودوبایتی)
+        lo: ຄີລັບຂອງເຊີເວີ Agent (Base64URL 32 ໄບຕ໌)
+        tr: Agent sunucu gizli anahtarı (32 bayt Base64URL)
       random: true
       required: true
       rule: paramComplexity
@@ -379,6 +481,10 @@ additionalProperties:
         ru: API-ключ Weaviate
         ms: Kunci API Weaviate
         pt-br: Chave da API do Weaviate
+        es-es: Clave API de Weaviate
+        fa: کلید API Weaviate
+        lo: ຄີ API ຂອງ Weaviate
+        tr: Weaviate API anahtarı
       random: true
       required: true
       rule: paramComplexity
@@ -397,6 +503,10 @@ additionalProperties:
         ru: Уровень логирования
         ms: Tahap log
         pt-br: Nivel de log
+        es-es: Nivel de registro
+        fa: سطح ثبت رویداد
+        lo: ລະດັບບັນທຶກລະບົບ
+        tr: Günlük düzeyi
       required: true
       type: select
       values:
@@ -422,5 +532,9 @@ additionalProperties:
         ru: Пользовательский файл переменных окружения
         ms: Fail env tersuai
         pt-br: Arquivo env personalizado
+        es-es: Archivo de entorno personalizado
+        fa: فایل محیط سفارشی
+        lo: ໄຟລ໌ environment ແບບກຳນົດເອງ
+        tr: Özel ortam dosyası
       required: false
       type: text
