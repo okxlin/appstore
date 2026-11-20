@@ -30,7 +30,7 @@ services:
       createdBy: "Apps"
 
   zipline:
-    image: ghcr.io/diced/zipline:4.8.4@sha256:9fef0ad6ed0c176c737a8016abccf6f098d26f2f84f6931f39fcbb1d2004499d
+    image: ghcr.io/diced/zipline:4.8.3@sha256:b51581d2834066a67050c08a7e54d5501f84082ac6f7a14a25a6df517a62765a
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
