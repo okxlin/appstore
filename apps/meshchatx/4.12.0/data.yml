@@ -1,0 +1,69 @@
+additionalProperties:
+  formFields:
+    - default: 8000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTPS
+      labelEn: HTTPS Port
+      labelZh: HTTPS 端口
+      label:
+        en: HTTPS Port
+        zh: HTTPS 端口
+        zh-Hant: HTTPS 連接埠
+        ja: HTTPS ポート
+        ko: HTTPS 포트
+        ru: HTTPS-порт
+        ms: Port HTTPS
+        pt-br: Porta HTTPS
+        tr: HTTPS Bağlantı Noktası
+        es-es: Puerto HTTPS
+        fa: پورت HTTPS
+        lo: ພອດ HTTPS
+      description:
+        en: Host port used to access MeshChatX over HTTPS.
+        zh: 用于通过 HTTPS 访问 MeshChatX 的宿主机端口。
+        zh-Hant: 用於透過 HTTPS 存取 MeshChatX 的主機連接埠。
+        ja: HTTPS 経由で MeshChatX にアクセスするためのホストポート。
+        ko: HTTPS를 통해 MeshChatX에 접속할 때 사용하는 호스트 포트입니다.
+        ru: Порт хоста для доступа к MeshChatX по HTTPS.
+        ms: Port hos yang digunakan untuk mengakses MeshChatX melalui HTTPS.
+        pt-br: Porta do host usada para acessar o MeshChatX via HTTPS.
+        tr: MeshChatX'e HTTPS üzerinden erişmek için kullanılan ana bilgisayar bağlantı noktası.
+        es-es: Puerto del host utilizado para acceder a MeshChatX mediante HTTPS.
+        fa: پورت میزبان برای دسترسی به MeshChatX از طریق HTTPS.
+        lo: ພອດໂຮສຕ໌ທີ່ໃຊ້ເຂົ້າເຖິງ MeshChatX ຜ່ານ HTTPS.
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretorio de dados
+        tr: Veri dizini
+        es-es: Directorio de datos
+        fa: پوشه داده‌ها
+        lo: ໄດເຣັກທໍຣີຂໍ້ມູນ
+      description:
+        en: Persistent directory for MeshChatX configuration and data.
+        zh: 用于保存 MeshChatX 配置和数据的持久化目录。
+        zh-Hant: 用於保存 MeshChatX 設定與資料的持久化目錄。
+        ja: MeshChatX の設定とデータを保存する永続ディレクトリ。
+        ko: MeshChatX 설정과 데이터를 저장하는 영구 디렉터리입니다.
+        ru: Постоянный каталог для конфигурации и данных MeshChatX.
+        ms: Direktori berterusan untuk konfigurasi dan data MeshChatX.
+        pt-br: Diretório persistente para a configuração e os dados do MeshChatX.
+        tr: MeshChatX yapılandırmasını ve verilerini saklayan kalıcı dizin.
+        es-es: Directorio persistente para la configuración y los datos de MeshChatX.
+        fa: پوشه پایدار برای پیکربندی و داده‌های MeshChatX.
+        lo: ໄດເຣັກທໍຣີຖາວອນສຳລັບການຕັ້ງຄ່າແລະຂໍ້ມູນຂອງ MeshChatX.
+      required: true
+      type: text
