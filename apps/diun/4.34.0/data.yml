@@ -1,0 +1,133 @@
+additionalProperties:
+  formFields:
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: 20
+      edit: true
+      envKey: DIUN_WATCH_WORKERS
+      labelEn: Concurrent workers
+      labelZh: 并发检查数
+      label:
+        en: Concurrent workers
+        zh: 并发检查数
+        zh-Hant: 並行檢查數
+        ja: 並列ワーカー数
+        ko: 동시 작업자 수
+        ru: Число параллельных обработчиков
+        ms: Pekerja serentak
+        pt-br: Processos simultâneos
+      required: true
+      type: number
+    - default: "0 */6 * * *"
+      edit: true
+      envKey: DIUN_WATCH_SCHEDULE
+      labelEn: Check schedule
+      labelZh: 检查计划
+      label:
+        en: Check schedule
+        zh: 检查计划
+        zh-Hant: 檢查排程
+        ja: チェックスケジュール
+        ko: 검사 일정
+        ru: Расписание проверки
+        ms: Jadual semakan
+        pt-br: Agenda de verificação
+      required: true
+      type: text
+    - default: 30s
+      edit: true
+      envKey: DIUN_WATCH_JITTER
+      labelEn: Schedule jitter
+      labelZh: 调度随机延迟
+      label:
+        en: Schedule jitter
+        zh: 调度随机延迟
+        zh-Hant: 排程隨機延遲
+        ja: スケジュールのランダム遅延
+        ko: 일정 임의 지연
+        ru: Случайная задержка расписания
+        ms: Kelewatan rawak jadual
+        pt-br: Atraso aleatório da agenda
+      required: true
+      type: text
+    - default: "false"
+      edit: true
+      envKey: DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT
+      labelEn: Watch unlabeled containers
+      labelZh: 监视未标记容器
+      label:
+        en: Watch unlabeled containers
+        zh: 监视未标记容器
+        zh-Hant: 監視未標記容器
+        ja: ラベルなしコンテナを監視
+        ko: 라벨 없는 컨테이너 감시
+        ru: Отслеживать контейнеры без метки
+        ms: Pantau bekas tanpa label
+        pt-br: Monitorar contêineres sem rótulo
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: "false"
+      edit: true
+      envKey: DIUN_PROVIDERS_DOCKER_WATCHSTOPPED
+      labelEn: Include stopped containers
+      labelZh: 包含已停止容器
+      label:
+        en: Include stopped containers
+        zh: 包含已停止容器
+        zh-Hant: 包含已停止容器
+        ja: 停止中のコンテナを含める
+        ko: 중지된 컨테이너 포함
+        ru: Включать остановленные контейнеры
+        ms: Sertakan bekas yang dihentikan
+        pt-br: Incluir contêineres parados
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: info
+      edit: true
+      envKey: LOG_LEVEL
+      labelEn: Log level
+      labelZh: 日志级别
+      label:
+        en: Log level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 수준
+        ru: Уровень журнала
+        ms: Tahap log
+        pt-br: Nível de log
+      required: true
+      type: select
+      values:
+        - label: debug
+          value: debug
+        - label: info
+          value: info
+        - label: warn
+          value: warn
+        - label: error
+          value: error
