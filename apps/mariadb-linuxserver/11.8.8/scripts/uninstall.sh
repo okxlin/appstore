@@ -1,2 +1,3 @@
-#!/bin/bash
-docker-compose down --volumes
+#!/usr/bin/env bash
+set -euo pipefail
+docker-compose down

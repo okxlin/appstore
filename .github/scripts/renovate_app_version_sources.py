@@ -15,6 +15,20 @@ from renovate_app_version import image_tag, load_yaml_text, services
 VERSION_PREFIX_RE = re.compile(r"^[vV]?(\d+(?:\.\d+)*)(.*)$")
 PRERELEASE_RE = re.compile(r"(?:^|[-.])(?:alpha|beta|rc|pre|preview|dev|snapshot|nightly)(?:[-.+]|\d|$)", re.IGNORECASE)
 ROLLING_VERSIONS = {"latest", "stable"}
+ARCH_SUFFIXES = (
+    "-aarch64",
+    "-arm64",
+    "-armv8",
+    "-armv7",
+    "-armv6",
+    "-armhf",
+    "-amd64",
+    "-x86_64",
+    "-ppc64le",
+    "-riscv64",
+    "-s390x",
+    "-386",
+)
 
 
 def parse_compose_path(raw_path: str) -> tuple[str, str]:
@@ -104,6 +118,14 @@ def version_order_key(tag: str) -> tuple[tuple[int, ...], int]:
     return core, 0 if is_prerelease else 1
 
 
+def architecture_lane(version: str) -> str:
+    match = VERSION_PREFIX_RE.fullmatch(version.strip())
+    if not match:
+        return ""
+    suffix = match.group(2).lower()
+    return next((arch for arch in ARCH_SUFFIXES if suffix.endswith(arch)), "")
+
+
 def select_sources(
     paths: list[str],
     base_ref: str,
@@ -153,15 +175,24 @@ def select_sources(
             ranked.append((rank, path, old_tag, new_tag))
         if not ranked:
             continue
-        target_tags = {item[3] for item in ranked}
-        if len(target_tags) != 1:
-            raise ValueError(f"{app}: changed source Compose files target different image tags")
-        highest = max(item[0] for item in ranked)
-        winners = [item for item in ranked if item[0] == highest]
-        if len(winners) != 1:
-            detail = ", ".join(f"{path}={old_tag}" for _, path, old_tag, _ in winners)
-            raise ValueError(f"{app}: ambiguous newest source Compose files: {detail}")
-        selected.append(winners[0][1])
+        target_versions = {version_order_key(item[3]) for item in ranked}
+        if len(target_versions) != 1:
+            raise ValueError(f"{app}: changed source Compose files target different version cores")
+        lanes: dict[str, list[tuple[tuple[tuple[int, ...], int], str, str, str]]] = {}
+        for item in ranked:
+            _, directory_version = parse_compose_path(item[1])
+            lanes.setdefault(architecture_lane(directory_version), []).append(item)
+        for lane in sorted(lanes):
+            lane_items = lanes[lane]
+            lane_tags = {item[3] for item in lane_items}
+            if len(lane_tags) != 1:
+                raise ValueError(f"{app}: architecture lane {lane or '<default>'} targets different image tags")
+            highest = max(item[0] for item in lane_items)
+            winners = [item for item in lane_items if item[0] == highest]
+            if len(winners) != 1:
+                detail = ", ".join(f"{path}={old_tag}" for _, path, old_tag, _ in winners)
+                raise ValueError(f"{app}: ambiguous newest source Compose files: {detail}")
+            selected.append(winners[0][1])
     return selected
 
 

@@ -1,0 +1,132 @@
+additionalProperties:
+  formFields:
+  - default: 3306
+    edit: true
+    envKey: PANEL_APP_PORT_DB
+    labelEn: Database Port
+    labelZh: 数据库端口
+    label:
+      en: Database Port
+      zh: 数据库端口
+      zh-Hant: 資料庫連接埠
+      ja: データベースポート
+      ko: 데이터베이스 포트
+      ru: Порт базы данных
+      ms: Port pangkalan data
+      pt-br: Porta do banco de dados
+    required: true
+    type: number
+    rule: paramPort
+  - default: ./data/config
+    edit: true
+    envKey: CONFIG_PATH
+    labelEn: Config folder path
+    labelZh: 配置文件路径
+    label:
+      en: Config folder path
+      zh: 配置文件路径
+      zh-Hant: 設定檔資料夾路徑
+      ja: 設定フォルダーのパス
+      ko: 설정 폴더 경로
+      ru: Путь к папке конфигурации
+      ms: Laluan folder konfigurasi
+      pt-br: Caminho da pasta de configuração
+    required: true
+    type: text
+  - default: mariadb-root-change-me
+    edit: true
+    envKey: MYSQL_ROOT_PASSWORD
+    labelEn: Root password
+    labelZh: Root 密码
+    label:
+      en: Root password
+      zh: Root 密码
+      zh-Hant: Root 密碼
+      ja: root パスワード
+      ko: root 비밀번호
+      ru: Пароль root
+      ms: Kata laluan root
+      pt-br: Senha root
+    required: true
+    type: password
+    rule: paramComplexity
+  - default: ''
+    edit: true
+    envKey: MYSQL_DATABASE
+    labelEn: Initial database
+    labelZh: 初始数据库
+    label:
+      en: Initial database
+      zh: 初始数据库
+      zh-Hant: 初始資料庫
+      ja: 初期データベース
+      ko: 초기 데이터베이스
+      ru: Начальная база данных
+      ms: Pangkalan data awal
+      pt-br: Banco inicial
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MYSQL_USER
+    labelEn: Initial user
+    labelZh: 初始用户
+    label:
+      en: Initial user
+      zh: 初始用户
+      zh-Hant: 初始使用者
+      ja: 初期ユーザー
+      ko: 초기 사용자
+      ru: Начальный пользователь
+      ms: Pengguna awal
+      pt-br: Usuario inicial
+    required: false
+    type: text
+  - default: ''
+    edit: true
+    envKey: MYSQL_PASSWORD
+    labelEn: Initial user password
+    labelZh: 初始用户密码
+    label:
+      en: Initial user password
+      zh: 初始用户密码
+      zh-Hant: 初始使用者密碼
+      ja: 初期ユーザーパスワード
+      ko: 초기 사용자 비밀번호
+      ru: Пароль начального пользователя
+      ms: Kata laluan pengguna awal
+      pt-br: Senha do usuario inicial
+    required: false
+    type: password
+  - default: ''
+    edit: true
+    envKey: CLI_OPTS
+    labelEn: CLI options
+    labelZh: 命令行选项
+    label:
+      en: CLI options
+      zh: 命令行选项
+      zh-Hant: 命令列選項
+      ja: CLI オプション
+      ko: CLI 옵션
+      ru: Параметры CLI
+      ms: Pilihan CLI
+      pt-br: Opcoes CLI
+    required: false
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TIME_ZONE
+    labelEn: Time zone
+    labelZh: 时区
+    label:
+      en: Time zone
+      zh: 时区
+      zh-Hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+    required: true
+    type: text

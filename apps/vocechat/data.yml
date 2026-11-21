@@ -19,6 +19,10 @@ additionalProperties:
     ru: "Личный облачный социальный чат-сервис с возможностью самостоятельного развёртывания."
     ms: "Perkhidmatan sembang sosial awan peribadi yang menyokong penggunaan kendiri."
     pt-br: "Serviço pessoal de chat social em nuvem com implantação independente."
+    tr: "Kendi sunucunuzda barındırabileceğiniz kişisel bulut sohbet hizmeti."
+    es-es: "Servicio de chat personal en la nube que admite alojamiento propio."
+    fa: "سرویس گفت‌وگوی ابری شخصی با امکان میزبانی مستقل."
+    lo: "ບໍລິການແຊັດຄລາວສ່ວນຕົວທີ່ຮອງຮັບການໂຮສຕ໌ເອງ."
   type: tool
   crossVersionUpdate: true
   limit: 0

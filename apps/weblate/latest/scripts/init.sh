@@ -1,13 +1,108 @@
 #!/usr/bin/env bash
 set -euo pipefail
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH
 
-DATA_DIR="${APP_DATA_DIR:-./data}"
-mkdir -p \
-  "${DATA_DIR}/postgres" \
-  "${DATA_DIR}/redis" \
-  "${DATA_DIR}/weblate-data" \
-  "${DATA_DIR}/weblate-cache"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
+ENV_FILE="${ENV_FILE:-$ROOT_DIR/.env}"
 
-chown -R 1000:1000 \
-  "${DATA_DIR}/weblate-data" \
-  "${DATA_DIR}/weblate-cache"
+read_env_value() {
+  local key="$1"
+  [[ -f "$ENV_FILE" ]] || return 0
+  local value
+  value="$(sed -n "s/^${key}=//p" "$ENV_FILE" | tail -n 1)"
+  case "$value" in
+    \"*\") value="${value#\"}"; value="${value%\"}" ;;
+    \'*\') value="${value#\'}"; value="${value%\'}" ;;
+  esac
+  printf '%s\n' "$value"
+}
+
+configured_value() {
+  local key="$1"
+  local default_value="$2"
+  local value
+  value="${!key:-}"
+  if [[ -z "$value" ]]; then
+    value="$(read_env_value "$key")"
+  fi
+  printf '%s\n' "${value:-$default_value}"
+}
+
+resolve_app_path() {
+  local key="$1"
+  local raw="$2"
+  local clean candidate resolved current part
+  local -a parts=()
+  case "$raw" in
+    ""|/*|.|..|../*|*/../*|*/..) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  if [[ "$raw" =~ [[:cntrl:]] ]]; then
+    echo "unsafe ${key} path" >&2
+    return 1
+  fi
+  clean="${raw#./}"
+  [[ -n "$clean" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+  command -v realpath >/dev/null 2>&1 || { echo "realpath is required" >&2; return 1; }
+  candidate="$ROOT_DIR/$clean"
+  resolved="$(realpath -m -- "$candidate")" || { echo "unsafe ${key} path" >&2; return 1; }
+  case "$resolved" in
+    "$ROOT_DIR"/*) ;;
+    *) echo "unsafe ${key} path" >&2; return 1 ;;
+  esac
+  current="$ROOT_DIR"
+  IFS='/' read -r -a parts <<< "$clean"
+  for part in "${parts[@]}"; do
+    [[ -z "$part" || "$part" == "." ]] && continue
+    current="$current/$part"
+    if [[ -L "$current" ]]; then
+      echo "unsafe ${key} path" >&2
+      return 1
+    fi
+  done
+  printf '%s\n' "$resolved"
+}
+
+ensure_dir() {
+  local key="$1"
+  local raw
+  local path
+  raw="$(configured_value "$key" "$2")"
+  path="$(resolve_app_path "$key" "$raw")"
+  mkdir -p -- "$path"
+  [[ "$(resolve_app_path "$key" "$raw")" == "$path" ]] || { echo "unsafe ${key} path" >&2; return 1; }
+}
+
+APP_DATA_DIR_VALUE="$(configured_value "APP_DATA_DIR" "./data")"
+
+[[ "$APP_DATA_DIR_VALUE" != /* ]] || {
+  LEGACY_DATA_DIR="$(realpath -e -- "$APP_DATA_DIR_VALUE")" || {
+    echo "unsafe APP_DATA_DIR path: existing absolute paths must resolve to a real directory" >&2
+    exit 1
+  }
+  [[ "$LEGACY_DATA_DIR" == "$APP_DATA_DIR_VALUE" && "$LEGACY_DATA_DIR" != "/" && -d "$LEGACY_DATA_DIR" && ! -L "$LEGACY_DATA_DIR" ]] || {
+    echo "unsafe APP_DATA_DIR path: existing absolute paths must be canonical real directories" >&2
+    exit 1
+  }
+  for child in postgres redis weblate-data weblate-cache; do
+    [[ -d "$LEGACY_DATA_DIR/$child" && ! -L "$LEGACY_DATA_DIR/$child" ]] || {
+      echo "unsafe APP_DATA_DIR path: missing existing data directory $child" >&2
+      exit 1
+    }
+  done
+  exit 0
+}
+
+ensure_dir "APP_DATA_DIR" "./data"
+DATA_DIR="$(resolve_app_path "APP_DATA_DIR" "$APP_DATA_DIR_VALUE")"
+for child in postgres redis weblate-data weblate-cache; do
+  child_path="$DATA_DIR/$child"
+  [[ ! -L "$child_path" ]] || { echo "unsafe APP_DATA_DIR path: symlink at $child" >&2; exit 1; }
+  mkdir -p -- "$child_path"
+  [[ -d "$child_path" && ! -L "$child_path" ]] || { echo "unsafe APP_DATA_DIR path: invalid directory $child" >&2; exit 1; }
+done
+[[ "$(resolve_app_path "APP_DATA_DIR" "$APP_DATA_DIR_VALUE")" == "$DATA_DIR" ]] || {
+  echo "unsafe APP_DATA_DIR path" >&2
+  exit 1
+}
+chown -R --no-dereference 1000:1000 -- "$DATA_DIR/weblate-data" "$DATA_DIR/weblate-cache"

@@ -1,0 +1,51 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de dados
+      required: true
+      type: text
+    - default: ./uploads
+      edit: true
+      envKey: APP_UPLOADS_DIR
+      labelEn: Uploads Directory
+      labelZh: 上传目录
+      label:
+        en: Uploads Directory
+        zh: 上传目录
+        zh-Hant: 上傳目錄
+        ja: アップロードディレクトリ
+        ko: 업로드 디렉터리
+        ru: Каталог загрузок
+        ms: Direktori muat naik
+        pt-br: Diretório de uploads
+      required: true
+      type: text

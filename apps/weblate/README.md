@@ -38,6 +38,8 @@ Weblate is a libre web-based continuous localization platform for translating so
 
 升级或迁移前，请先在 1Panel 中备份上述数据目录。
 
+新安装请使用应用版本目录内的相对路径，默认值 `./data`。已有绝对路径可继续升级，但请保留目录及 `postgres`、`redis`、`weblate-data`、`weblate-cache` 子目录；初始化脚本只验证已有绝对路径，不会创建目录或递归修改属主。
+
 ## 参数说明
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
