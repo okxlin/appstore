@@ -1,4 +1,5 @@
 services:
+  # Keep this helper running; 1Panel marks exited app containers unhealthy.
   init_permissions:
     image: "busybox:latest"
     container_name: ${CONTAINER_NAME}-init
@@ -8,16 +9,24 @@ services:
       - sh
       - -c
       - |
-        if [ -f /app/api/storage/.init_permissions ]; then
-          echo "Permissions already initialized. Exiting."
-          exit 0
+        set -eu
+        if [ ! -f /app/api/storage/.init_permissions ]; then
+          echo "Initializing permissions for /app/api/storage"
+          chown -R 1001:1001 /app/api/storage
+          touch /app/api/storage/.init_permissions
         fi
-        echo "Initializing permissions for /app/api/storage"
-        chown -R 1001:1001 /app/api/storage && touch /app/api/storage/.init_permissions
-        echo "Permissions initialized. Exiting."
+        exec tail -f /dev/null
     volumes:
       - ${APP_DATA_DIR}/app/storage:/app/api/storage
-    restart: "no"
+    restart: always
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - test -f /app/api/storage/.init_permissions
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
 
   api:
     image: "langgenius/dify-api:1.19.0"
@@ -56,7 +65,7 @@ services:
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       agent_backend:
         condition: service_started
     volumes:
@@ -139,7 +148,7 @@ services:
       - SENTRY_PROFILES_SAMPLE_RATE=1.0
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       api:
         condition: service_healthy
       agent_backend:
@@ -183,7 +192,7 @@ services:
       - CODE_EXECUTION_API_KEY=${SANDBOX_API_KEY}
     depends_on:
       init_permissions:
-        condition: service_completed_successfully
+        condition: service_healthy
       api:
         condition: service_healthy
     networks:
@@ -240,7 +249,7 @@ services:
       - ssrf_proxy_network
 
   local_sandbox:
-    image: "langgenius/dify-agent-local-sandbox:1.19.0"
+    image: "langgenius/dify-agent-local-sandbox:1.20.0"
     command: ["shellctl", "serve", "--listen", "0.0.0.0:5004", "--require-auth-token"]
     container_name: ${CONTAINER_NAME}-local-sandbox
     labels:
@@ -263,7 +272,7 @@ services:
       - default
 
   agent_backend:
-    image: "langgenius/dify-agent-backend:1.19.0"
+    image: "langgenius/dify-agent-backend:1.20.0"
     container_name: ${CONTAINER_NAME}-agent-backend
     labels:
       createdBy: "Apps"

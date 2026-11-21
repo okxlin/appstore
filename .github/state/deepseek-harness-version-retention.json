@@ -1,7 +1,5 @@
 {
   "schema_version": 1,
   "app": "apps/deepseek-harness-workstation",
-  "versions": {
-    "0.2.2-rc.3-workstation": "2026-11-15T15:44:55+00:00"
-  }
+  "versions": {}
 }
