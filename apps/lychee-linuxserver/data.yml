@@ -19,6 +19,10 @@ additionalProperties:
     ru: Менеджер фотогалереи, поддерживаемый LinuxServer.io
     ms: Pengurus galeri foto yang diselenggara oleh LinuxServer.io
     pt-br: Gerenciador de galeria de fotos mantido pela LinuxServer.io
+    tr: LinuxServer.io tarafından sürdürülen fotoğraf galerisi yöneticisi
+    es-es: Gestor de galerías de fotos mantenido por LinuxServer.io
+    fa: مدیر گالری عکس نگهداری‌شده توسط LinuxServer.io
+    lo: ຕົວຈັດການຄັງຮູບພາບທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0

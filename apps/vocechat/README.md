@@ -1,35 +1,24 @@
 # VoceChat
 
-## 应用简介
-一款支持独立部署的个人云社交媒体聊天服务。
+## 产品介绍
 
-英文说明：a secure chat software that supports independent deployment.
+VoceChat 是可自行部署的聊天服务，服务端运行在自己的服务器上，聊天数据保存在所配置的数据目录中。
+
+## 主要功能
+
+- 支持私聊和群聊。
+- 提供 Web 客户端，并有 Android 和 iOS 移动客户端。
+- 支持自行托管服务端和聊天数据。
 
 ## 部署说明
-- 本应用使用 Docker Compose 在 1Panel 中部署。
-- 应用分类：工具。
-- 支持架构：amd64、arm64。
-- 可选版本：`latest`、`latest-arm64`；固定版本以应用商店当前版本目录和安装表单为准。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
 
-## 端口
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| PANEL_APP_PORT_HTTP | 端口 | 40067 | 是 |
-
-## 数据持久化
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| DATA_PATH | 数据文件夹路径 | ./data | 是 |
-
-升级或迁移前，请在 1Panel 中备份上述数据目录。
-
-## 使用说明
-- 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
-- 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
+- 在 1Panel 应用表单中设置访问端口和数据目录。
+- 默认 Web 端口为 `40067`，容器内服务端口为 `3000`。
+- 数据目录默认是 `./data`。升级或迁移前，请先在 1Panel 中备份该目录。
+- 对外提供访问时，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
-- 官网: <https://voce.chat>
-- 文档: <https://doc.voce.chat>
-- 源码: <https://github.com/Privoce/vocechat-web>
+
+- [官网](https://voce.chat)
+- [产品文档](https://doc.voce.chat)
+- [服务端源码](https://github.com/Privoce/vocechat-server-rust)

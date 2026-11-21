@@ -1,44 +1,20 @@
 # OpenList
 
-## 应用简介
-一个支持多种存储的文件列表程序。
+## 产品介绍
 
-英文说明：A file list program that supports multiple storage.
+OpenList 是一款支持多种存储服务的文件列表程序，可通过网页界面管理已配置的文件存储。
 
-## 部署说明
-- 本应用使用 Docker Compose 在 1Panel 中部署。
-- 应用分类：存储、工具。
-- 支持架构：amd64、arm64、ppc64le、armv6、armv7、loong64、riscv64。
-- 可选版本：`latest`；固定版本以应用商店当前版本目录和安装表单为准。
-- 安装后按应用表单中的端口访问 Web UI、SSH 或对应服务。
+## 主要功能
 
-## 端口
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| PANEL_APP_PORT_HTTP | 网页端口 | 40337 | 是 |
-| PANEL_APP_PORT_S3 | S3 端口 | 5246 | 是 |
+- 通过统一的网页界面浏览和管理多种文件存储。
+- 提供网页访问和 S3 服务端口。
+- 支持将本地目录挂载到应用中作为存储位置。
 
-## 数据持久化
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| DATA_PATH | 数据文件夹路径 | ./data/data | 是 |
-| MOUNT_PATH | 挂载文件夹路径 | ./data/mnt | 是 |
+## 访问说明
 
-升级或迁移前，请在 1Panel 中备份上述数据目录。
+- 部署完成后，通过网页端口（默认 `40337`）访问 OpenList。S3 服务使用单独的端口（默认 `5246`）。
+- 首次使用时，在容器终端运行 `./openlist admin random` 生成管理员密码；也可运行 `./openlist admin set NEW_PASSWORD` 设置密码。
+- `DATA_PATH` 保存应用数据；`MOUNT_PATH` 是容器内的本地存储挂载目录。升级前请备份这两个目录。
+- `TIME_ZONE` 用于设置容器时区。
 
-## 配置项
-| 变量 | 说明 | 默认值 | 必填 |
-| --- | --- | --- | --- |
-| TIME_ZONE | 时区 | Asia/Shanghai | 是 |
-
-## 使用说明
-### 默认账户密码
-
-容器列表点击 `终端` 按钮，进入容器内执行命令设置密码。
-
-- **生成随机密码**: `./openlist admin random`
-- **手动设置密码**: `./openlist admin set NEW_PASSWORD`
-
-## 参考资料
-- 官网: <https://docs.oplist.org/>
-- 源码: <https://github.com/OpenListTeam/OpenList>
+参考文档：<https://docs.oplist.org/>。

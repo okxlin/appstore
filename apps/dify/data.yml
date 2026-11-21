@@ -19,6 +19,10 @@ additionalProperties:
     ru: Платформа с открытым исходным кодом для разработки LLM-приложений
     ms: Platform pembangunan aplikasi LLM sumber terbuka
     pt-br: Plataforma open-source para desenvolvimento de aplicativos LLM
+    es-es: Plataforma de desarrollo de aplicaciones LLM de código abierto
+    fa: پلتفرم متن‌باز توسعه برنامه‌های LLM
+    lo: ແພລດຟອມພັດທະນາແອັບ LLM ແບບໂອເພັນຊອດ
+    tr: Açık kaynaklı LLM uygulama geliştirme platformu
   type: tool
   crossVersionUpdate: true
   limit: 1
