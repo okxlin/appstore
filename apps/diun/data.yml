@@ -19,6 +19,10 @@ additionalProperties:
     ru: Отслеживает образы контейнеров и уведомляет о доступных обновлениях
     ms: Pantau imej bekas dan maklumkan kemas kini yang tersedia
     pt-br: Monitora imagens de contêiner e notifica sobre atualizações disponíveis
+    tr: Diun, Docker kapsayıcılarının kullandığı imajları denetler ve etiket veya özet değişikliklerini kaydedip bildirir. Varsayılan olarak yalnızca diun.enable=true etiketli kapsayıcıları izler; etiketsiz kapsayıcılar formdan etkinleştirilebilir.
+    es-es: Diun comprueba las imágenes que utilizan los contenedores Docker y registra y notifica los cambios de etiquetas o resúmenes. De forma predeterminada, solo supervisa los contenedores con la etiqueta diun.enable=true; la supervisión de contenedores sin etiqueta puede activarse en el formulario.
+    fa: Diun ایمیج‌های مورد استفاده کانتینرهای Docker را بررسی می‌کند و تغییر برچسب یا digest را ثبت و اعلام می‌کند. به‌طور پیش‌فرض فقط کانتینرهای دارای برچسب diun.enable=true را پایش می‌کند؛ پایش کانتینرهای بدون برچسب از فرم قابل فعال‌سازی است.
+    lo: Diun ກວດສອບອິມເມຈທີ່ຄອນເທນເນີ Docker ໃຊ້ ແລະບັນທຶກພ້ອມແຈ້ງເມື່ອ tag ຫຼື digest ປ່ຽນ. ຕາມຄ່າເລີ່ມຕົ້ນຈະຕິດຕາມສະເພາະຄອນເທນເນີທີ່ມີປ້າຍ diun.enable=true; ສາມາດເປີດການຕິດຕາມຄອນເທນເນີທີ່ບໍ່ມີປ້າຍຜ່ານແບບຟອມ.
   type: tool
   crossVersionUpdate: true
   limit: 1

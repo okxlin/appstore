@@ -14,6 +14,10 @@ additionalProperties:
         ru: Часовой пояс
         ms: Zon waktu
         pt-br: Fuso horário
+        tr: Saat dilimi
+        es-es: Zona horaria
+        fa: منطقه زمانی
+        lo: ເຂດເວລາ
       required: true
       type: text
     - default: 20
@@ -30,6 +34,10 @@ additionalProperties:
         ru: Число параллельных обработчиков
         ms: Pekerja serentak
         pt-br: Processos simultâneos
+        tr: Eşzamanlı işçi sayısı
+        es-es: Trabajadores simultáneos
+        fa: تعداد پردازشگرهای هم‌زمان
+        lo: ຈຳນວນໂປຣເຊສເຮັດວຽກພ້ອມກັນ
       required: true
       type: number
     - default: "0 */6 * * *"
@@ -46,6 +54,10 @@ additionalProperties:
         ru: Расписание проверки
         ms: Jadual semakan
         pt-br: Agenda de verificação
+        tr: Denetim zamanlaması
+        es-es: Programación de comprobaciones
+        fa: زمان‌بندی بررسی
+        lo: ຕາຕະລາງການກວດສອບ
       required: true
       type: text
     - default: 30s
@@ -62,6 +74,10 @@ additionalProperties:
         ru: Случайная задержка расписания
         ms: Kelewatan rawak jadual
         pt-br: Atraso aleatório da agenda
+        tr: Zamanlama sapması
+        es-es: Variación aleatoria del horario
+        fa: نوسان تصادفی زمان‌بندی
+        lo: ຄ່າສຸ່ມຄວາມລ່າຊ້າໃນຕາຕະລາງ
       required: true
       type: text
     - default: "false"
@@ -78,6 +94,10 @@ additionalProperties:
         ru: Отслеживать контейнеры без метки
         ms: Pantau bekas tanpa label
         pt-br: Monitorar contêineres sem rótulo
+        tr: Etiketsiz kapsayıcıları izle
+        es-es: Supervisar contenedores sin etiqueta
+        fa: پایش کانتینرهای بدون برچسب
+        lo: ຕິດຕາມຄອນເທນເນີທີ່ບໍ່ມີປ້າຍ
       required: true
       type: select
       values:
@@ -99,6 +119,10 @@ additionalProperties:
         ru: Включать остановленные контейнеры
         ms: Sertakan bekas yang dihentikan
         pt-br: Incluir contêineres parados
+        tr: Durdurulmuş kapsayıcıları dahil et
+        es-es: Incluir contenedores detenidos
+        fa: شامل‌کردن کانتینرهای متوقف‌شده
+        lo: ລວມຄອນເທນເນີທີ່ຢຸດແລ້ວ
       required: true
       type: select
       values:
@@ -120,6 +144,10 @@ additionalProperties:
         ru: Уровень журнала
         ms: Tahap log
         pt-br: Nível de log
+        tr: Günlük düzeyi
+        es-es: Nivel de registro
+        fa: سطح گزارش‌گیری
+        lo: ລະດັບບັນທຶກ
       required: true
       type: select
       values:
