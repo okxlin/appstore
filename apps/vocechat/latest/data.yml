@@ -14,6 +14,10 @@ additionalProperties:
         ru: 'Порт'
         ms: 'Port'
         pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
       required: true
       rule: paramPort
       type: number
@@ -31,5 +35,9 @@ additionalProperties:
         ru: 'Путь к папке данных'
         ms: 'Laluan folder data'
         pt-br: 'Caminho da pasta de dados'
+        tr: 'Veri klasörü yolu'
+        es-es: 'Ruta de la carpeta de datos'
+        fa: 'مسیر پوشهٔ داده'
+        lo: 'ເສັ້ນທາງໂຟນເດີຂໍ້ມູນ'
       required: true
       type: text
