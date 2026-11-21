@@ -3,6 +3,7 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -264,6 +265,132 @@ class RenovateAppVersionTests(unittest.TestCase):
                     "apps/same-image/0.30.3/docker-compose.yml",
                 ],
                 output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"),
+            )
+
+    def test_source_selector_keeps_architecture_version_tracks(self):
+        with tempfile.TemporaryDirectory(prefix="renovate-source-architectures-") as tmp:
+            repo = pathlib.Path(tmp)
+            versions = {
+                "apps/vocechat/0.5.40/docker-compose.yml": "privoce/vocechat-server:v0.5.40",
+                "apps/vocechat/0.5.40-arm64/docker-compose.yml": "privoce/vocechat-server:v0.5.40-arm64",
+            }
+            for path, image in versions.items():
+                compose_path = repo / path
+                compose_path.parent.mkdir(parents=True, exist_ok=True)
+                compose_path.write_text(
+                    f"services:\n  vocechat:\n    image: {image}\n",
+                    encoding="utf-8",
+                )
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, check=True)
+            subprocess.run(["git", "config", "user.name", "Test User"], cwd=repo, check=True)
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add architecture sources"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+            for path, image in versions.items():
+                compose_path = repo / path
+                target = image.replace("0.5.40", "0.5.41")
+                compose_path.write_text(
+                    compose_path.read_text(encoding="utf-8").replace(image, target),
+                    encoding="utf-8",
+                )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "update architecture images"], cwd=repo, check=True)
+            head_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"], cwd=repo, check=True, text=True, capture_output=True
+            ).stdout.strip()
+
+            changed_file_list = repo / "changed-files.zlist"
+            changed_file_list.write_bytes(
+                b"\0".join(path.encode("utf-8") for path in versions) + b"\0"
+            )
+            policy_file = repo / "policy.json"
+            policy_file.write_text("{}\n", encoding="utf-8")
+            output_file = repo / "selected.zlist"
+            script = REPO_ROOT / ".github" / "scripts" / "renovate_app_version_sources.py"
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    str(script),
+                    "--base-ref",
+                    base_ref,
+                    "--head-ref",
+                    head_ref,
+                    "--changed-files",
+                    str(changed_file_list),
+                    "--policy-file",
+                    str(policy_file),
+                    "--output-file",
+                    str(output_file),
+                ],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertEqual(
+                [
+                    "apps/vocechat/0.5.40/docker-compose.yml",
+                    "apps/vocechat/0.5.40-arm64/docker-compose.yml",
+                ],
+                output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"),
+            )
+
+            github_dir = repo / ".github"
+            workflows_dir = github_dir / "workflows"
+            scripts_dir = github_dir / "scripts"
+            workflows_dir.mkdir(parents=True)
+            scripts_dir.mkdir()
+            shutil.copyfile(
+                REPO_ROOT / ".github" / "workflows" / "renovate-app-version.sh",
+                workflows_dir / "renovate-app-version.sh",
+            )
+            shutil.copyfile(SCRIPT_PATH, scripts_dir / "renovate_app_version.py")
+            (github_dir / "renovate-primary-services.json").write_text("{}\n", encoding="utf-8")
+
+            for path in output_file.read_bytes().decode("utf-8").rstrip("\0").split("\0"):
+                _, app, version, _ = path.split("/")
+                result = subprocess.run(
+                    [
+                        "bash",
+                        str(workflows_dir / "renovate-app-version.sh"),
+                        app,
+                        version,
+                        path,
+                        base_ref,
+                    ],
+                    cwd=repo,
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                self.assertEqual(0, result.returncode, result.stderr)
+
+            standard_target = yaml.safe_load(
+                (repo / "apps/vocechat/0.5.41/docker-compose.yml").read_text(encoding="utf-8")
+            )
+            arm64_target = yaml.safe_load(
+                (repo / "apps/vocechat/0.5.41-arm64/docker-compose.yml").read_text(encoding="utf-8")
+            )
+            self.assertEqual(
+                "privoce/vocechat-server:v0.5.41",
+                standard_target["services"]["vocechat"]["image"],
+            )
+            self.assertEqual(
+                "privoce/vocechat-server:v0.5.41-arm64",
+                arm64_target["services"]["vocechat"]["image"],
+            )
+            self.assertIn(
+                "image: privoce/vocechat-server:v0.5.40\n",
+                (repo / "apps/vocechat/0.5.40/docker-compose.yml").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "image: privoce/vocechat-server:v0.5.40-arm64\n",
+                (repo / "apps/vocechat/0.5.40-arm64/docker-compose.yml").read_text(encoding="utf-8"),
             )
 
     def test_source_selector_ignores_base_only_non_compose_paths(self):
