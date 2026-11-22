@@ -19,6 +19,10 @@ additionalProperties:
     ru: Открытая система видеонаблюдения в реальном времени
     ms: Sistem pemantauan video masa nyata sumber terbuka
     pt-br: Sistema de vigilância por vídeo em tempo real de código aberto
+    tr: Açık kaynaklı gerçek zamanlı video gözetim sistemi
+    es-es: Sistema de videovigilancia en tiempo real de código abierto
+    fa: سامانه متن‌باز نظارت تصویری بلادرنگ
+    lo: ລະບົບກວດກາວິດີໂອແບບເປີດແຫຼ່ງແບບເວລາຈິງ
   type: tool
   crossVersionUpdate: true
   limit: 0

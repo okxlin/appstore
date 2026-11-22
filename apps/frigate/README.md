@@ -1,9 +1,14 @@
 # Frigate
 
-## 应用简介
+## 产品介绍
 一个开源的实时视频监控系统。
 
 英文说明：NVR With Realtime Object Detection for IP Cameras.
+
+## 主要功能
+- 接入 IP 摄像头并进行实时视频监控。
+- 使用目标检测处理摄像头视频流。
+- 提供 RTSP 与 WebRTC 视频流服务。
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
@@ -16,9 +21,9 @@
 | 变量 | 说明 | 默认值 | 必填 |
 | --- | --- | --- | --- |
 | PANEL_APP_PORT_HTTPS | 端口 | 8971 | 是 |
-| RTSP_PORT | RTSP 端口 | 8554 | 是 |
-| WEBRTC_TCP_PORT | WebRTC TCP 端口 | 8555 | 是 |
-| WEBRTC_UDP_PORT | WebRTC UDP 端口 | 8555 | 是 |
+| PANEL_APP_PORT_RTSP | RTSP 端口 | 8554 | 是 |
+| PANEL_APP_PORT_WEBRTC_TCP | WebRTC TCP 端口 | 8555 | 是 |
+| PANEL_APP_PORT_WEBRTC_UDP | WebRTC UDP 端口 | 8555 | 是 |
 
 ## 数据持久化
 | 变量 | 说明 | 默认值 | 必填 |
@@ -27,6 +32,7 @@
 | STORAGE_PATH | 存储路径 | ./data/storage | 是 |
 
 升级或迁移前，请在 1Panel 中备份上述数据目录。
+从旧版本升级时，升级脚本会把 `RTSP_PORT`、`WEBRTC_TCP_PORT` 和 `WEBRTC_UDP_PORT` 迁移到新端口字段，并保留已有的自定义端口。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |

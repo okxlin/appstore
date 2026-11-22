@@ -14,6 +14,10 @@ additionalProperties:
         ru: 'Привилегированный режим'
         ms: 'Mod istimewa'
         pt-br: 'Modo privilegiado'
+        tr: 'Ayrıcalıklı mod'
+        es-es: 'Modo privilegiado'
+        fa: 'حالت ویژه'
+        lo: 'ໂໝດສິດພິເສດ'
       required: true
       type: select
       values:
@@ -35,6 +39,10 @@ additionalProperties:
         ru: 'Размер разделяемой памяти'
         ms: 'Saiz memori kongsi'
         pt-br: 'Tamanho da memória compartilhada'
+        tr: 'Paylaşılan bellek boyutu'
+        es-es: 'Tamaño de memoria compartida'
+        fa: 'اندازه حافظه مشترک'
+        lo: 'ຂະໜາດຄວາມຈຳຮ່ວມ'
       required: true
       type: text
     - default: "./data/config"
@@ -51,6 +59,10 @@ additionalProperties:
         ru: 'Путь к конфигурации'
         ms: 'Laluan konfigurasi'
         pt-br: 'Caminho de configuração'
+        tr: 'Yapılandırma yolu'
+        es-es: 'Ruta de configuración'
+        fa: 'مسیر پیکربندی'
+        lo: 'ເສັ້ນທາງການຕັ້ງຄ່າ'
       required: true
       type: text
     - default: "./data/storage"
@@ -67,6 +79,10 @@ additionalProperties:
         ru: 'Путь хранилища'
         ms: 'Laluan storan'
         pt-br: 'Caminho de armazenamento'
+        tr: 'Depolama yolu'
+        es-es: 'Ruta de almacenamiento'
+        fa: 'مسیر ذخیره‌سازی'
+        lo: 'ເສັ້ນທາງບ່ອນເກັບຂໍ້ມູນ'
       required: true
       type: text
     - default: "1000000000"
@@ -83,6 +99,10 @@ additionalProperties:
         ru: 'Размер tmpfs'
         ms: 'Saiz tmpfs'
         pt-br: 'Tamanho do tmpfs'
+        tr: 'Tmpfs boyutu'
+        es-es: 'Tamaño de tmpfs'
+        fa: 'اندازه tmpfs'
+        lo: 'ຂະໜາດ tmpfs'
       required: true
       type: number
     - default: "8971"
@@ -99,12 +119,16 @@ additionalProperties:
         ru: 'Порт'
         ms: 'Port'
         pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
       required: true
       rule: paramPort
       type: number
     - default: "8554"
       edit: true
-      envKey: RTSP_PORT
+      envKey: PANEL_APP_PORT_RTSP
       labelEn: RTSP Port
       labelZh: RTSP 端口
       label:
@@ -116,12 +140,16 @@ additionalProperties:
         ru: 'Порт RTSP'
         ms: 'Port RTSP'
         pt-br: 'Porta RTSP'
+        tr: 'RTSP bağlantı noktası'
+        es-es: 'Puerto RTSP'
+        fa: 'درگاه RTSP'
+        lo: 'ພອດ RTSP'
       required: true
       rule: paramPort
       type: number
     - default: "8555"
       edit: true
-      envKey: WEBRTC_TCP_PORT
+      envKey: PANEL_APP_PORT_WEBRTC_TCP
       labelEn: WebRTC TCP Port
       labelZh: WebRTC TCP 端口
       label:
@@ -133,12 +161,16 @@ additionalProperties:
         ru: 'Порт WebRTC TCP'
         ms: 'Port WebRTC TCP'
         pt-br: 'Porta WebRTC TCP'
+        tr: 'WebRTC TCP bağlantı noktası'
+        es-es: 'Puerto TCP de WebRTC'
+        fa: 'درگاه TCP ‏WebRTC'
+        lo: 'ພອດ TCP WebRTC'
       required: true
       rule: paramPort
       type: number
     - default: "8555"
       edit: true
-      envKey: WEBRTC_UDP_PORT
+      envKey: PANEL_APP_PORT_WEBRTC_UDP
       labelEn: WebRTC UDP Port
       labelZh: WebRTC UDP 端口
       label:
@@ -150,6 +182,10 @@ additionalProperties:
         ru: 'Порт WebRTC UDP'
         ms: 'Port WebRTC UDP'
         pt-br: 'Porta WebRTC UDP'
+        tr: 'WebRTC UDP bağlantı noktası'
+        es-es: 'Puerto UDP de WebRTC'
+        fa: 'درگاه UDP ‏WebRTC'
+        lo: 'ພອດ UDP WebRTC'
       required: true
       rule: paramPort
       type: number
@@ -167,6 +203,10 @@ additionalProperties:
         ru: 'Пароль RTSP'
         ms: 'Kata laluan RTSP'
         pt-br: 'Senha RTSP'
+        tr: 'RTSP parolası'
+        es-es: 'Contraseña RTSP'
+        fa: 'گذرواژه RTSP'
+        lo: 'ລະຫັດຜ່ານ RTSP'
       random: true
       required: true
       rule: paramComplexity

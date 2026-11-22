@@ -1,6 +1,6 @@
 services:
   frigate:
-    image: "ghcr.io/blakeblackshear/frigate:0.18.2"
+    image: "ghcr.io/blakeblackshear/frigate:0.18.3-standard-arm64"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
@@ -16,15 +16,13 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${CONFIG_PATH}:/config
       - ${STORAGE_PATH}:/media/frigate
-      - type: tmpfs
-        target: /tmp/cache
-        tmpfs:
-          size: "${TMPFS_SIZE}"
+    tmpfs:
+      - "/tmp/cache:size=${TMPFS_SIZE}"
     ports:
       - "${PANEL_APP_PORT_HTTPS}:8971"
-      - "${RTSP_PORT}:8554"
-      - "${WEBRTC_TCP_PORT}:8555/tcp"
-      - "${WEBRTC_UDP_PORT}:8555/udp"
+      - "${PANEL_APP_PORT_RTSP}:8554"
+      - "${PANEL_APP_PORT_WEBRTC_TCP}:8555/tcp"
+      - "${PANEL_APP_PORT_WEBRTC_UDP}:8555/udp"
     environment:
       - FRIGATE_RTSP_PASSWORD=${FRIGATE_RTSP_PASSWORD}
     labels:
