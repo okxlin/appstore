@@ -19,12 +19,16 @@ additionalProperties:
     ru: Самостоятельно размещаемый трекер инвестиционного портфеля
     ms: Penjejak portfolio pelaburan hos kendiri
     pt-br: Rastreador de carteira de investimentos auto-hospedado
+    tr: Varlıklarınızı takip etmek ve yatırım portföyünüzü yönetmek için açık kaynaklı uygulama
+    es-es: Aplicación de código abierto para seguir tus activos y gestionar tu cartera de inversión
+    fa: برنامه‌ای متن‌باز برای پیگیری دارایی‌ها و مدیریت سبد سرمایه‌گذاری شما
+    lo: ແອັບໂອເພນຊອດສຳລັບຕິດຕາມຊັບສິນ ແລະຈັດການພອດການລົງທຶນ
   type: website
   crossVersionUpdate: true
   limit: 0
   website: https://wealthfolio.app/
   github: https://github.com/wealthfolio/wealthfolio
-  document: https://github.com/wealthfolio/wealthfolio/blob/v3.6.2/docs/self-host/README.md
+  document: https://github.com/wealthfolio/wealthfolio/blob/main/docs/self-host/README.md
   architectures:
     - amd64
     - arm64
