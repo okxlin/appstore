@@ -46,15 +46,15 @@ Immich is a high-performance open source photo and video management platform for
 
 从 `1.132.3` 升级到 `3.x` 前请特别注意：
 
+- 仍在 `1.122.3` 或更早 1.x 版本的实例，应先升级到 `1.132.3` 并确认服务正常，再迁移到 `3.4.2`；不要跳过此过渡版本。
+
 - 必须先备份 `UPLOAD_LOCATION`，并通过 PostgreSQL 导出方式备份数据库；运行中的 `DB_PATH` 热拷贝不能作为可靠数据库备份。
 - 数据库镜像会从已弃用的 `pgvecto-rs` 切换到官方 VectorChord 兼容镜像。首次启动会执行扩展迁移和索引重建，大型图库可能需要较长时间。
 - 完成 VectorChord 迁移后不可降级到低于 `1.133.0` 的 Immich 版本。
 - v3 包含 API 等破坏性变更，依赖 Immich API 的第三方工具需要按官方 v3 migration guide 检查兼容性。
 - 移动客户端应在服务器升级前更新到与服务器主版本兼容的版本。
 
-从 `3.0.2` 升级到 `3.0.3` 不改变表单、持久化路径、Valkey 或 PostgreSQL 镜像。首次启动会自动执行数据库迁移；升级前仍需备份数据库和上传目录，并等待服务恢复健康后再执行其他操作。
-
-从 `3.0.3` 升级到 `3.1.0` 保持四服务拓扑、表单、上传/缓存/数据库路径和 PostgreSQL 镜像不变，仅更新 Immich server、machine-learning 与 Valkey 镜像。官方发布说明未列出服务端部署迁移，但首次启动仍可能执行数据库迁移；升级前请备份上传目录和 PostgreSQL 数据库，并等待所有服务恢复健康。
+从 `3.1.0` 升级到 `3.4.2` 保持四服务拓扑、表单、上传/缓存/数据库路径和 PostgreSQL 镜像不变，仅更新 Immich server 与 machine-learning 镜像。首次启动仍可能执行数据库迁移；升级前请备份上传目录和 PostgreSQL 数据库，并等待所有服务恢复健康。
 
 ## 配置项
 | 变量 | 说明 | 默认值 | 必填 |
