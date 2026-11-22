@@ -48,7 +48,7 @@ services:
         condition: service_healthy
       nt-guacd:
         condition: service_started
-    image: dushixiang/next-terminal:v3.1.1
+    image: dushixiang/next-terminal:v3.10.3
     labels:
       createdBy: "Apps"
 
