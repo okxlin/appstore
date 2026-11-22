@@ -1,9 +1,12 @@
 # OrcaSlicer
 
-## 应用简介
+## 产品介绍
 OrcaSlicer 3D 打印切片桌面。
 
-英文说明：3D printing slicer desktop maintained by LinuxServer.io.
+## 主要功能
+- 在浏览器中运行 OrcaSlicer 3D 打印切片桌面。
+- 通过 Selkies Web UI 访问远程桌面，并使用 Basic Auth 登录。
+- 持久化保存 `/config` 配置目录。
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
