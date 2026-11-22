@@ -6,7 +6,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.4
-    image: chaitin/safeline-mgt:9.3.10
+    image: chaitin/safeline-mgt:9.4.7
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - ${SAFELINE_DIR}/resources/mgt:/app/data
@@ -36,7 +36,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.5
-    image: chaitin/safeline-detector:9.3.10
+    image: chaitin/safeline-detector:9.4.7
     volumes:
     - ${SAFELINE_DIR}/resources/detector:/resources/detector
     - ${SAFELINE_DIR}/logs/detector:/logs/detector
@@ -49,7 +49,7 @@ services:
   safeline-tengine:
     container_name: ${CONTAINER_NAME}-tengine
     restart: always
-    image: chaitin/safeline-tengine:9.3.10
+    image: chaitin/safeline-tengine:9.4.7
     volumes:
     - /etc/localtime:/etc/localtime:ro
     - /etc/resolv.conf:/etc/resolv.conf:ro
@@ -77,7 +77,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.7
-    image: chaitin/safeline-luigi:9.3.10
+    image: chaitin/safeline-luigi:9.4.7
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${SAFELINE_DIR}/resources/luigi:/app/data
@@ -101,7 +101,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.8
-    image: chaitin/safeline-fvm:9.3.10
+    image: chaitin/safeline-fvm:9.4.7
     volumes:
       - /etc/localtime:/etc/localtime:ro
     logging:
@@ -138,7 +138,7 @@ services:
       1panel-network:
       safeline-ce:
         ipv4_address: ${SUBNET_PREFIX}.10
-    image: chaitin/safeline-chaos:9.3.10
+    image: chaitin/safeline-chaos:9.4.7
     logging:
       options:
         max-size: "100m"
