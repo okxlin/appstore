@@ -1,6 +1,6 @@
 services:
   commafeed:
-    image: athou/commafeed:7.5.2-h2
+    image: athou/commafeed:7.5.3-h2
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
