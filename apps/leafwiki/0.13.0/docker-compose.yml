@@ -1,6 +1,6 @@
 services:
   leafwiki:
-    image: "ghcr.io/perber/leafwiki:v0.15.0@sha256:bacd15c0fb12c53d034d80c3cb1828f1eb6177fcac362fe90077d1f7f32e307c"
+    image: "ghcr.io/perber/leafwiki:v0.14.2@sha256:bc07b7d0f3de916233a570f6d4b54fe14de0e2cb77e179e6a07bf417fb109585"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     init: true
