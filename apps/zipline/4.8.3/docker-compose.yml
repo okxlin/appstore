@@ -1,6 +1,6 @@
 services:
   zipline-postgres:
-    image: postgres:16-alpine@sha256:1758b87430847848ff5a71cbdd898c7a21e469166c3e25244940f05ea97800ad
+    image: postgres:16-alpine@sha256:f2f98726820d0342055351c6e9d36e705f5bfffb3dd53ff556325114b08afb6d
     container_name: ${CONTAINER_NAME}-postgres
     restart: unless-stopped
     user: "70:70"
