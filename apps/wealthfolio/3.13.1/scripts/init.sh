@@ -112,7 +112,7 @@ salt="$(printf '%s' "$secret_key" | sha256sum | cut -c1-16)"
 # shellcheck disable=SC2016
 auth_hash="$(
   printf '%s' "$admin_password" |
-    "$DOCKER_BIN" run --rm -i --user 0:0 --entrypoint /bin/sh "$IMAGE" -ec \
+    "$DOCKER_BIN" run --rm --network host -i --user 0:0 --entrypoint /bin/sh "$IMAGE" -ec \
       'apk add --no-cache argon2 >/dev/null; exec argon2 "$1" -id -e -t 3 -m 16 -p 1' \
       sh "$salt"
 )"

@@ -14,10 +14,14 @@ additionalProperties:
         ru: Порт
         ms: Port
         pt-br: Porta
+        tr: Port
+        es-es: Puerto
+        fa: درگاه
+        lo: ພອດ
       required: true
       rule: paramPort
       type: number
-    - default: Wealthfolio_Admin_2026!
+    - default: ''
       edit: false
       envKey: ADMIN_PASSWORD
       labelEn: Login Password
@@ -31,11 +35,15 @@ additionalProperties:
         ru: Пароль для входа
         ms: Kata Laluan Log Masuk
         pt-br: Senha de Login
+        tr: Giriş Parolası
+        es-es: Contraseña de inicio de sesión
+        fa: گذرواژه ورود
+        lo: ລະຫັດຜ່ານເຂົ້າລະບົບ
       random: true
       required: true
       rule: paramComplexity
       type: password
-    - default: 0123456789abcdef0123456789abcdef
+    - default: ''
       edit: false
       envKey: WF_SECRET_KEY
       labelEn: Encryption Key
@@ -49,6 +57,10 @@ additionalProperties:
         ru: Ключ шифрования
         ms: Kunci Penyulitan
         pt-br: Chave de Criptografia
+        tr: Şifreleme Anahtarı
+        es-es: Clave de cifrado
+        fa: کلید رمزنگاری
+        lo: ກະແຈການເຂົ້າລະຫັດ
       random: true
       required: true
       rule: paramComplexity
@@ -67,5 +79,9 @@ additionalProperties:
         ru: Каталог данных
         ms: Direktori Data
         pt-br: Diretorio de Dados
+        tr: Veri Dizini
+        es-es: Directorio de datos
+        fa: فهرست داده‌ها
+        lo: ໄດເລກະທໍລີຂໍ້ມູນ
       required: true
       type: text
