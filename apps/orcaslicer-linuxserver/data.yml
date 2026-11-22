@@ -19,6 +19,10 @@ additionalProperties:
     ru: Рабочий стол слайсера 3D-печати, поддерживаемый LinuxServer.io
     ms: Desktop penghiris cetakan 3D yang diselenggara oleh LinuxServer.io
     pt-br: Desktop de fatiador de impressao 3D mantido pela LinuxServer.io
+    tr: LinuxServer.io tarafından bakımı yapılan 3D baskı dilimleme masaüstü uygulaması
+    es-es: Escritorio de laminado para impresión 3D mantenido por LinuxServer.io
+    fa: میزکار برش سه‌بعدی نگهداری‌شده توسط LinuxServer.io
+    lo: ເດັສທັອບຕັດສ່ວນ 3D ທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0
