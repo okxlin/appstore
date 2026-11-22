@@ -56,7 +56,7 @@ services:
       createdBy: "Apps"
 
   overleaf-redis:
-    image: "redis:8.10"
+    image: "redis:7.4"
     container_name: ${CONTAINER_NAME}-redis
     restart: always
     command: redis-server --appendonly yes
