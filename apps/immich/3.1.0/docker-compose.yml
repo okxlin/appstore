@@ -4,7 +4,7 @@ services:
     restart: always
     networks:
       - 1panel-network
-    image: "ghcr.io/immich-app/immich-server:v3.4.2"
+    image: "ghcr.io/immich-app/immich-server:v3.1.0"
     volumes:
       - ${UPLOAD_LOCATION}:/data
       - /etc/localtime:/etc/localtime:ro
@@ -29,7 +29,7 @@ services:
     restart: always
     networks:
       - 1panel-network
-    image: "ghcr.io/immich-app/immich-machine-learning:v3.4.2"
+    image: "ghcr.io/immich-app/immich-machine-learning:v3.1.0"
     volumes:
       - ${CACHE_PATH}:/cache
     environment:
