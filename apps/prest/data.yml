@@ -13,6 +13,10 @@ additionalProperties:
     ru: Мгновенный REST API для PostgreSQL
     ms: REST API segera untuk PostgreSQL
     pt-br: API REST instantanea para PostgreSQL
+    tr: PostgreSQL için anında REST API
+    es-es: API REST instantánea para PostgreSQL
+    fa: REST API فوری برای PostgreSQL
+    lo: REST API ທັນທີສຳລັບ PostgreSQL
   key: prest
   name: PreST
   tags:

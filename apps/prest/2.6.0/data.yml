@@ -14,6 +14,10 @@ additionalProperties:
         ru: HTTP-порт
         ms: Port HTTP
         pt-br: Porta HTTP
+        tr: HTTP Portu
+        es-es: Puerto HTTP
+        fa: درگاه HTTP
+        lo: ພອດ HTTP
       required: true
       rule: paramPort
       type: number
@@ -32,6 +36,10 @@ additionalProperties:
         ru: Сервис PostgreSQL
         ms: Perkhidmatan PostgreSQL
         pt-br: Servico PostgreSQL
+        tr: PostgreSQL Hizmeti
+        es-es: Servicio PostgreSQL
+        fa: سرویس PostgreSQL
+        lo: ບໍລິການ PostgreSQL
       required: true
       type: service
     - default: 5432
@@ -48,8 +56,11 @@ additionalProperties:
         ru: Порт PostgreSQL
         ms: Port PostgreSQL
         pt-br: Porta PostgreSQL
+        tr: PostgreSQL Portu
+        es-es: Puerto PostgreSQL
+        fa: درگاه PostgreSQL
+        lo: ພອດ PostgreSQL
       required: true
-      rule: paramPort
       type: number
     - default: prest
       edit: true
@@ -65,6 +76,10 @@ additionalProperties:
         ru: Имя базы данных
         ms: Nama pangkalan data
         pt-br: Nome do banco de dados
+        tr: Veritabanı Adı
+        es-es: Nombre de la base de datos
+        fa: نام پایگاه داده
+        lo: ຊື່ຖານຂໍ້ມູນ
       random: true
       required: true
       rule: paramCommon
@@ -83,6 +98,10 @@ additionalProperties:
         ru: Пользователь базы данных
         ms: Pengguna pangkalan data
         pt-br: Usuario do banco de dados
+        tr: Veritabanı Kullanıcısı
+        es-es: Usuario de la base de datos
+        fa: کاربر پایگاه داده
+        lo: ຜູ້ໃຊ້ຖານຂໍ້ມູນ
       random: true
       required: true
       rule: paramCommon
@@ -101,6 +120,10 @@ additionalProperties:
         ru: Пароль базы данных
         ms: Kata laluan pangkalan data
         pt-br: Senha do banco de dados
+        tr: Veritabanı Parolası
+        es-es: Contraseña de la base de datos
+        fa: گذرواژه پایگاه داده
+        lo: ລະຫັດຜ່ານຖານຂໍ້ມູນ
       random: true
       required: true
       rule: paramComplexity
@@ -119,6 +142,10 @@ additionalProperties:
         ru: Режим SSL PostgreSQL
         ms: Mod SSL PostgreSQL
         pt-br: Modo SSL do PostgreSQL
+        tr: PostgreSQL SSL Modu
+        es-es: Modo SSL de PostgreSQL
+        fa: حالت SSL در PostgreSQL
+        lo: ໂໝດ SSL ຂອງ PostgreSQL
       required: true
       type: select
       values:
@@ -144,5 +171,9 @@ additionalProperties:
         ru: Ключ подписи JWT
         ms: Kunci tandatangan JWT
         pt-br: Chave de assinatura JWT
+        tr: JWT İmzalama Anahtarı
+        es-es: Clave de firma JWT
+        fa: کلید امضای JWT
+        lo: ກະແຈລົງລາຍເຊັນ JWT
       required: true
       type: password
