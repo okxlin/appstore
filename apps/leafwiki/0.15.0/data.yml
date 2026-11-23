@@ -1,0 +1,107 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: admin
+      edit: true
+      envKey: LEAFWIKI_ADMIN_USERNAME
+      labelEn: Initial Admin Username
+      labelZh: 初始管理员用户名
+      label:
+        en: Initial Admin Username
+        zh: 初始管理员用户名
+        zh-Hant: 初始管理員使用者名稱
+        ja: 初期管理者ユーザー名
+        ko: 초기 관리자 사용자 이름
+        ru: Имя начального администратора
+        ms: Nama Pengguna Pentadbir Awal
+        pt-br: Nome do Administrador Inicial
+      required: true
+      rule: paramCommon
+      type: text
+    - default: admin@localhost
+      edit: true
+      envKey: LEAFWIKI_ADMIN_EMAIL
+      labelEn: Initial Admin Email
+      labelZh: 初始管理员邮箱
+      label:
+        en: Initial Admin Email
+        zh: 初始管理员邮箱
+        zh-Hant: 初始管理員電子郵件
+        ja: 初期管理者メール
+        ko: 초기 관리자 이메일
+        ru: Email начального администратора
+        ms: E-mel Pentadbir Awal
+        pt-br: E-mail do Administrador Inicial
+      required: true
+      type: text
+    - default: LeafWiki_Admin
+      edit: true
+      envKey: LEAFWIKI_ADMIN_PASSWORD
+      labelEn: Initial Admin Password
+      labelZh: 初始管理员密码
+      label:
+        en: Initial Admin Password
+        zh: 初始管理员密码
+        zh-Hant: 初始管理員密碼
+        ja: 初期管理者パスワード
+        ko: 초기 관리자 비밀번호
+        ru: Пароль начального администратора
+        ms: Kata Laluan Pentadbir Awal
+        pt-br: Senha do Administrador Inicial
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: "false"
+      edit: true
+      envKey: LEAFWIKI_ALLOW_INSECURE
+      labelEn: Allow Plain HTTP Login (Insecure, Trusted LAN Only)
+      labelZh: 允许明文 HTTP 登录（不安全，仅限可信局域网）
+      label:
+        en: Allow Plain HTTP Login (Insecure, Trusted LAN Only)
+        zh: 允许明文 HTTP 登录（不安全，仅限可信局域网）
+        zh-Hant: 允許明文 HTTP 登入（不安全，僅限可信區域網路）
+        ja: 平文 HTTP ログインを許可（非推奨）
+        ko: 일반 HTTP 로그인 허용(안전하지 않음)
+        ru: Разрешить вход по HTTP без шифрования (небезопасно)
+        ms: Benarkan Log Masuk HTTP Biasa (Tidak Selamat)
+        pt-br: Permitir Login HTTP sem Criptografia (Inseguro)
+      required: true
+      type: select
+      values:
+        - label: "true"
+          value: "true"
+        - label: "false"
+          value: "false"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
