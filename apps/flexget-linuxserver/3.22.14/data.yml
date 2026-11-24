@@ -14,6 +14,10 @@ additionalProperties:
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: HTTP Bağlantı Noktası
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     type: number
     rule: paramPort
@@ -31,6 +35,10 @@ additionalProperties:
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشهٔ پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: ./data/downloads
@@ -47,6 +55,10 @@ additionalProperties:
       ru: Путь к папке загрузок
       ms: Laluan folder muat turun
       pt-br: Caminho da pasta de downloads
+      tr: İndirme klasörü yolu
+      es-es: Ruta de la carpeta de descargas
+      fa: مسیر پوشهٔ بارگیری‌ها
+      lo: ເສັ້ນທາງໂຟນເດີດາວໂຫຼດ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -63,6 +75,10 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقهٔ زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
   - default: info
@@ -79,6 +95,10 @@ additionalProperties:
       ru: Уровень журнала
       ms: Tahap log
       pt-br: Nivel de log
+      tr: Günlük düzeyi
+      es-es: Nivel de registro
+      fa: سطح گزارش
+      lo: ລະດັບບັນທຶກ
     required: true
     type: select
     values:
@@ -104,6 +124,10 @@ additionalProperties:
       ru: Путь к файлу журнала
       ms: Laluan fail log
       pt-br: Caminho do arquivo de log
+      tr: Günlük dosyası yolu
+      es-es: Ruta del archivo de registro
+      fa: مسیر فایل گزارش
+      lo: ເສັ້ນທາງໄຟລ໌ບັນທຶກ
     required: false
     type: text
   - default: /config/.flexget/config.yml
@@ -120,6 +144,10 @@ additionalProperties:
       ru: Путь к файлу конфигурации
       ms: Laluan fail konfigurasi
       pt-br: Caminho do arquivo de configuracao
+      tr: Yapılandırma dosyası yolu
+      es-es: Ruta del archivo de configuración
+      fa: مسیر فایل پیکربندی
+      lo: ເສັ້ນທາງໄຟລ໌ການຕັ້ງຄ່າ
     required: false
     type: text
   - default: linuxserver-change-me
@@ -136,6 +164,10 @@ additionalProperties:
       ru: Пароль Web UI
       ms: Kata laluan Web UI
       pt-br: Senha da Web UI
+      tr: Web arayüzü parolası
+      es-es: Contraseña de la interfaz web
+      fa: گذرواژهٔ رابط وب
+      lo: ລະຫັດຜ່ານໜ້າເວັບ
     random: true
     required: true
     rule: paramComplexity
