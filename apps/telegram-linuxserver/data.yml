@@ -19,6 +19,10 @@ additionalProperties:
     ru: Настольный клиент Telegram, поддерживаемый LinuxServer.io
     ms: Klien desktop Telegram yang diselenggara oleh LinuxServer.io
     pt-br: Cliente desktop Telegram mantido pela LinuxServer.io
+    tr: LinuxServer.io tarafından bakımı yapılan Telegram masaüstü istemcisi
+    es-es: Cliente de escritorio de Telegram mantenido por LinuxServer.io
+    fa: کلاینت دسکتاپ تلگرام که توسط LinuxServer.io نگهداری می‌شود
+    lo: ແອັບລູກຂ່າຍ Telegram ເທິງເດັສທັອບທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0

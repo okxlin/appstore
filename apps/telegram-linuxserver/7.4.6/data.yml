@@ -14,6 +14,10 @@ additionalProperties:
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: HTTP Bağlantı Noktası
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     type: number
     rule: paramPort
@@ -31,6 +35,10 @@ additionalProperties:
       ru: HTTPS-порт
       ms: Port HTTPS
       pt-br: Porta HTTPS
+      tr: HTTPS Bağlantı Noktası
+      es-es: Puerto HTTPS
+      fa: درگاه HTTPS
+      lo: ພອດ HTTPS
     required: true
     type: number
     rule: paramPort
@@ -48,6 +56,10 @@ additionalProperties:
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشهٔ پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: admin
@@ -64,6 +76,10 @@ additionalProperties:
       ru: Имя пользователя (Basic Auth)
       ms: Nama pengguna Basic Auth
       pt-br: Usuario Basic Auth
+      tr: Basic Auth kullanıcı adı
+      es-es: Nombre de usuario de Basic Auth
+      fa: نام کاربری احراز هویت پایه
+      lo: ຊື່ຜູ້ໃຊ້ Basic Auth
     required: true
     type: text
   - default: linuxserver-change-me
@@ -80,6 +96,10 @@ additionalProperties:
       ru: Пароль Basic Auth
       ms: Kata laluan Basic Auth
       pt-br: Senha Basic Auth
+      tr: Basic Auth parolası
+      es-es: Contraseña de Basic Auth
+      fa: گذرواژهٔ احراز هویت پایه
+      lo: ລະຫັດຜ່ານ Basic Auth
     random: true
     required: true
     rule: paramComplexity
@@ -98,6 +118,10 @@ additionalProperties:
       ru: Заголовок страницы браузера
       ms: Tajuk halaman pelayar
       pt-br: Titulo da pagina do navegador
+      tr: Tarayıcı sayfa başlığı
+      es-es: Título de la página del navegador
+      fa: عنوان صفحهٔ مرورگر
+      lo: ຫົວຂໍ້ໜ້າເບຣາວເຊີ
     required: false
     type: text
   - default: Selkies
@@ -114,6 +138,10 @@ additionalProperties:
       ru: Заголовок боковой панели
       ms: Tajuk bar sisi
       pt-br: Titulo da barra lateral
+      tr: Kenar çubuğu başlığı
+      es-es: Título de la barra lateral
+      fa: عنوان نوار کناری
+      lo: ຫົວຂໍ້ແຖບດ້ານຂ້າງ
     required: false
     type: text
   - default: selkies-dashboard
@@ -130,6 +158,10 @@ additionalProperties:
       ru: Интерфейс панели
       ms: UI papan pemuka
       pt-br: Interface do painel
+      tr: Pano arayüzü
+      es-es: Interfaz del panel
+      fa: رابط داشبورد
+      lo: ໜ້າຕາ Dashboard
     required: false
     type: select
     values:
@@ -153,6 +185,10 @@ additionalProperties:
       ru: Локаль языка рабочего стола
       ms: Lokal bahasa desktop
       pt-br: Localidade do idioma da area de trabalho
+      tr: Masaüstü dil yerel ayarı
+      es-es: Configuración regional del escritorio
+      fa: محلی‌سازی زبان دسکتاپ
+      lo: ພາສາທ້ອງຖິ່ນຂອງເດັສທັອບ
     required: false
     type: text
   - default: 1gb
@@ -169,6 +205,10 @@ additionalProperties:
       ru: Размер общей памяти
       ms: Saiz memori kongsi
       pt-br: Tamanho da memoria compartilhada
+      tr: Paylaşılan bellek boyutu
+      es-es: Tamaño de memoria compartida
+      fa: اندازهٔ حافظهٔ اشتراکی
+      lo: ຂະໜາດໜ່ວຍຄວາມຈຳທີ່ແບ່ງປັນ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -185,5 +225,9 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقهٔ زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
