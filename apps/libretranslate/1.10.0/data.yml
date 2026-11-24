@@ -1,0 +1,61 @@
+additionalProperties:
+  formFields:
+    - default: 5000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        zh: Web 访问端口
+        zh-Hant: Web 存取埠
+        ja: Web ポート
+        ko: Web 포트
+        ru: Веб-порт
+        ms: Port Web
+        pt-br: Porta Web
+      required: true
+      rule: paramPort
+      type: number
+    - default: 'false'
+      edit: true
+      envKey: LT_API_KEYS
+      labelEn: Enable API Keys
+      labelZh: 启用 API Key
+      label:
+        en: Enable API Keys
+        zh: 启用 API Key
+        zh-Hant: 啟用 API Key
+        ja: API キーを有効化
+        ko: API Key 활성화
+        ru: Включить API-ключи
+        ms: Aktifkan API Key
+        pt-br: Habilitar API Keys
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 'false'
+      edit: true
+      envKey: LT_UPDATE_MODELS
+      labelEn: Update Models
+      labelZh: 自动更新模型
+      label:
+        en: Update Models
+        zh: 自动更新模型
+        zh-Hant: 自動更新模型
+        ja: モデルを更新
+        ko: 모델 자동 업데이트
+        ru: Обновлять модели
+        ms: Kemas Kini Model
+        pt-br: Atualizar Modelos
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
