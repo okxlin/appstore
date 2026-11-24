@@ -1,6 +1,6 @@
 services:
   fusion:
-    image: ghcr.io/0x2e/fusion:1.3.1@sha256:e1a7410d8b424e7a5f2195a858900291e138d99211eb2f12553627ed48c66fe2
+    image: ghcr.io/0x2e/fusion:1.3.2@sha256:5e929945c3b966e515ffa037b9d4922fa8e214d6a243ca3699ed8610755ce617
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "100:101"
