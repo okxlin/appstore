@@ -19,6 +19,10 @@ additionalProperties:
     ru: Инструмент автоматизации, поддерживаемый LinuxServer.io
     ms: Alat automasi yang diselenggara oleh LinuxServer.io
     pt-br: Ferramenta de automacao mantida pela LinuxServer.io
+    tr: LinuxServer.io tarafından bakımı yapılan otomasyon aracı
+    es-es: Herramienta de automatización mantenida por LinuxServer.io
+    fa: ابزار خودکارسازی که توسط LinuxServer.io نگهداری می‌شود
+    lo: ເຄື່ອງມືອັດຕະໂນມັດທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0
