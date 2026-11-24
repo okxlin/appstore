@@ -1,0 +1,104 @@
+additionalProperties:
+  formFields:
+  - default: 3000
+    edit: true
+    envKey: PANEL_APP_PORT_HTTP
+    labelEn: Web Port
+    labelZh: Web 端口
+    label:
+      en: Web Port
+      zh: Web 端口
+      zh-hant: Web 連接埠
+      ja: Web ポート
+      ko: Web 포트
+      ru: Веб-порт
+      ms: Port Web
+      pt-br: Porta Web
+      tr: Web Portu
+      es-es: Puerto web
+      fa: پورت وب
+      lo: ພອດເວັບ
+    required: true
+    rule: paramPort
+    type: number
+  - default: admin
+    edit: true
+    envKey: SB_USERNAME
+    labelEn: Login Username
+    labelZh: 登录用户名
+    label:
+      en: Login Username
+      zh: 登录用户名
+      zh-hant: 登入使用者名稱
+      ja: ログインユーザー名
+      ko: 로그인 사용자 이름
+      ru: Имя пользователя
+      ms: Nama Pengguna Log Masuk
+      pt-br: Nome de usuario
+      tr: Kullanıcı adı
+      es-es: Nombre de usuario
+      fa: نام کاربری ورود
+      lo: ຊື່ຜູ້ໃຊ້ເຂົ້າລະບົບ
+    required: true
+    type: text
+  - default: ''
+    edit: true
+    envKey: SB_PASSWORD
+    labelEn: Login Password
+    labelZh: 登录密码
+    label:
+      en: Login Password
+      zh: 登录密码
+      zh-hant: 登入密碼
+      ja: ログインパスワード
+      ko: 로그인 비밀번호
+      ru: Пароль
+      ms: Kata Laluan Log Masuk
+      pt-br: Senha de acesso
+      tr: Giriş parolası
+      es-es: Contraseña de acceso
+      fa: گذرواژه ورود
+      lo: ລະຫັດຜ່ານເຂົ້າລະບົບ
+    random: true
+    required: true
+    type: password
+  - default: ./data
+    edit: true
+    envKey: SPACE_DIR
+    labelEn: Space Directory
+    labelZh: Space 数据目录
+    label:
+      en: Space Directory
+      zh: Space 数据目录
+      zh-hant: Space 資料目錄
+      ja: Space ディレクトリ
+      ko: Space 데이터 디렉터리
+      ru: Каталог Space
+      ms: Direktori Space
+      pt-br: Diretorio do Space
+      tr: Space dizini
+      es-es: Directorio de Space
+      fa: پوشه Space
+      lo: ໂຟນເດີ Space
+    required: true
+    type: text
+  - default: Asia/Shanghai
+    edit: true
+    envKey: TZ
+    labelEn: Timezone
+    labelZh: 时区
+    label:
+      en: Timezone
+      zh: 时区
+      zh-hant: 時區
+      ja: タイムゾーン
+      ko: 시간대
+      ru: Часовой пояс
+      ms: Zon waktu
+      pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقه زمانی
+      lo: ເຂດເວລາ
+    required: true
+    type: text
