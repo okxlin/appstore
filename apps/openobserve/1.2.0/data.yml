@@ -1,0 +1,126 @@
+additionalProperties:
+  formFields:
+    - default: 5080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web, HTTP API and OTLP HTTP Port
+      labelZh: Web、HTTP API 与 OTLP HTTP 端口
+      label:
+        en: Web, HTTP API and OTLP HTTP Port
+        zh: Web、HTTP API 与 OTLP HTTP 端口
+        zh-Hant: Web、HTTP API 與 OTLP HTTP 連接埠
+        ja: Web、HTTP API、OTLP HTTP ポート
+        ko: Web, HTTP API 및 OTLP HTTP 포트
+        ru: Порт Web, HTTP API и OTLP HTTP
+        ms: Port Web, API HTTP dan OTLP HTTP
+        pt-br: Porta Web, API HTTP e OTLP HTTP
+      required: true
+      rule: paramPort
+      type: number
+    - default: 5081
+      edit: true
+      envKey: PANEL_APP_PORT_GRPC
+      labelEn: OTLP gRPC Port
+      labelZh: OTLP gRPC 端口
+      label:
+        en: OTLP gRPC Port
+        zh: OTLP gRPC 端口
+        zh-Hant: OTLP gRPC 連接埠
+        ja: OTLP gRPC ポート
+        ko: OTLP gRPC 포트
+        ru: Порт OTLP gRPC
+        ms: Port OTLP gRPC
+        pt-br: Porta OTLP gRPC
+      required: true
+      rule: paramPort
+      type: number
+    - default: root@example.com
+      edit: true
+      envKey: OPENOBSERVE_ROOT_EMAIL
+      labelEn: Root User Email
+      labelZh: 根用户邮箱
+      label:
+        en: Root User Email
+        zh: 根用户邮箱
+        zh-Hant: 根使用者電子郵件
+        ja: ルートユーザーのメールアドレス
+        ko: 루트 사용자 이메일
+        ru: Электронная почта корневого пользователя
+        ms: E-mel Pengguna Root
+        pt-br: E-mail do usuário raiz
+      required: true
+      type: text
+    - default: generate
+      edit: true
+      envKey: OPENOBSERVE_ROOT_PASSWORD
+      labelEn: Root User Password
+      labelZh: 根用户密码
+      label:
+        en: Root User Password
+        zh: 根用户密码
+        zh-Hant: 根使用者密碼
+        ja: ルートユーザーのパスワード
+        ko: 루트 사용자 비밀번호
+        ru: Пароль корневого пользователя
+        ms: Kata Laluan Pengguna Root
+        pt-br: Senha do usuário raiz
+      required: true
+      type: password
+    - default: "false"
+      edit: true
+      envKey: OPENOBSERVE_TELEMETRY
+      labelEn: Enable Anonymous Telemetry
+      labelZh: 启用匿名遥测
+      label:
+        en: Enable Anonymous Telemetry
+        zh: 启用匿名遥测
+        zh-Hant: 啟用匿名遙測
+        ja: 匿名テレメトリを有効化
+        ko: 익명 원격 측정 활성화
+        ru: Включить анонимную телеметрию
+        ms: Dayakan Telemetri Tanpa Nama
+        pt-br: Ativar telemetria anônima
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: "false"
+      edit: true
+      envKey: OPENOBSERVE_COOKIE_SECURE_ONLY
+      labelEn: Secure Cookie (HTTPS Only)
+      labelZh: 安全 Cookie（仅 HTTPS）
+      label:
+        en: Secure Cookie (HTTPS Only)
+        zh: 安全 Cookie（仅 HTTPS）
+        zh-Hant: 安全 Cookie（僅 HTTPS）
+        ja: セキュア Cookie（HTTPS のみ）
+        ko: 보안 쿠키(HTTPS 전용)
+        ru: Безопасные Cookie (только HTTPS)
+        ms: Cookie Selamat (HTTPS Sahaja)
+        pt-br: Cookie seguro (somente HTTPS)
+      required: true
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉터리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de dados
+      required: true
+      type: text
