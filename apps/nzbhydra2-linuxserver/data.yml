@@ -19,6 +19,10 @@ additionalProperties:
     ru: Метапоиск NZB, поддерживаемый LinuxServer.io
     ms: Carian meta NZB yang diselenggara oleh LinuxServer.io
     pt-br: Metabusca NZB mantida pela LinuxServer.io
+    tr: LinuxServer.io tarafından bakımı yapılan NZB meta arama aracı
+    es-es: Metabuscador de NZB mantenido por LinuxServer.io
+    fa: ابزار فراداده‌یابی NZB که توسط LinuxServer.io نگهداری می‌شود
+    lo: ເຄື່ອງມືຄົ້ນຫາ NZB meta ທີ່ດູແລໂດຍ LinuxServer.io
   type: tool
   crossVersionUpdate: true
   limit: 0

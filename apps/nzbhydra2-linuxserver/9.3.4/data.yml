@@ -14,6 +14,10 @@ additionalProperties:
       ru: HTTP-порт
       ms: Port HTTP
       pt-br: Porta HTTP
+      tr: HTTP Bağlantı Noktası
+      es-es: Puerto HTTP
+      fa: درگاه HTTP
+      lo: ພອດ HTTP
     required: true
     type: number
     rule: paramPort
@@ -31,6 +35,10 @@ additionalProperties:
       ru: Путь к папке конфигурации
       ms: Laluan folder konfigurasi
       pt-br: Caminho da pasta de configuração
+      tr: Yapılandırma klasörü yolu
+      es-es: Ruta de la carpeta de configuración
+      fa: مسیر پوشهٔ پیکربندی
+      lo: ເສັ້ນທາງໂຟນເດີການຕັ້ງຄ່າ
     required: true
     type: text
   - default: ./data/downloads
@@ -47,6 +55,10 @@ additionalProperties:
       ru: Каталог загрузок
       ms: Laluan muat turun
       pt-br: Caminho de downloads
+      tr: İndirme yolu
+      es-es: Ruta de descargas
+      fa: مسیر بارگیری‌ها
+      lo: ເສັ້ນທາງດາວໂຫຼດ
     required: true
     type: text
   - default: Asia/Shanghai
@@ -63,5 +75,9 @@ additionalProperties:
       ru: Часовой пояс
       ms: Zon waktu
       pt-br: Fuso horário
+      tr: Saat dilimi
+      es-es: Zona horaria
+      fa: منطقهٔ زمانی
+      lo: ເຂດເວລາ
     required: true
     type: text
