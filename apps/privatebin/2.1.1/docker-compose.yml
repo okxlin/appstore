@@ -1,6 +1,6 @@
 services:
   privatebin:
-    image: "privatebin/nginx-fpm-alpine:2.1.1@sha256:023fe5d30c67aa1f015b4007a644d65474a300bf908725a10c8d0d64abe0086a"
+    image: "privatebin/nginx-fpm-alpine:2.1.1@sha256:2e2674fa2f8b18a263fe5577841a6959c5954cd09b9a5476d80a422c277f5a1a"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
