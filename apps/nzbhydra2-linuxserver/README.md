@@ -1,9 +1,16 @@
 # NZBHydra2
 
-## 应用简介
-NZBHydra2 NZB 聚合搜索。
+## 产品介绍
+NZBHydra2 是由 LinuxServer.io 维护的 NZB 元搜索工具。
 
-英文说明：NZB meta search maintained by LinuxServer.io.
+## 主要功能
+- 聚合搜索已配置的 NZB 索引器。
+
+## Introduction
+NZBHydra2 is an NZB meta-search tool maintained by LinuxServer.io.
+
+## Features
+- Aggregated search across configured NZB indexers.
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。
@@ -32,7 +39,7 @@ NZBHydra2 NZB 聚合搜索。
 
 ## 使用说明
 - 安装完成后，在 1Panel 应用页面查看运行状态、端口和日志。
-- 首次启用前，请按安装表单填写域名、账号、密码、Token、数据目录等参数。
+- 首次启用前，请按安装表单填写数据目录等参数。
 - 如需对外开放访问，请同步检查防火墙、安全组和反向代理配置。
 
 ## 参考资料
