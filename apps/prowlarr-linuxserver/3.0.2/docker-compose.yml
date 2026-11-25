@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   prowlarr:
-    image: "linuxserver/prowlarr:3.0.2"
+    image: "linuxserver/prowlarr:3.1.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
