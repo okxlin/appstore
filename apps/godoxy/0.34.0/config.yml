@@ -1,3 +1,0 @@
-providers:
-  docker:
-    local!: $DOCKER_HOST
