@@ -1,0 +1,373 @@
+additionalProperties:
+  formFields:
+    - default: 8080
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: Port
+        zh: 端口
+        zh-Hant: 埠
+        ja: ポート
+        ko: 포트
+        ru: Порт
+        ms: Port
+        pt-br: Porta
+      required: true
+      rule: paramPort
+      type: number
+    - default: ''
+      edit: true
+      envKey: CPA_BASE_URL
+      labelEn: CPA Service URL
+      labelZh: CPA 服务地址
+      label:
+        en: CPA Service URL
+        zh: CPA 服务地址
+        zh-Hant: CPA 服務地址
+        ja: CPA サービス URL
+        ko: CPA 서비스 URL
+        ru: URL сервиса CPA
+        ms: URL Perkhidmatan CPA
+        pt-br: URL do Serviço CPA
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: CPA_MANAGEMENT_KEY
+      labelEn: CPA Management Key
+      labelZh: CPA 管理密钥
+      label:
+        en: CPA Management Key
+        zh: CPA 管理密钥
+        zh-Hant: CPA 管理密鑰
+        ja: CPA 管理キー
+        ko: CPA 관리 키
+        ru: Ключ управления CPA
+        ms: Kunci Pengurusan CPA
+        pt-br: Chave de Gerenciamento CPA
+      required: true
+      type: password
+    - default: ''
+      edit: true
+      envKey: REDIS_QUEUE_ADDR
+      labelEn: CPA Redis Address
+      labelZh: CPA Redis 地址
+      label:
+        en: CPA Redis Address
+        zh: CPA Redis 地址
+        zh-Hant: CPA Redis 地址
+        ja: CPA Redis アドレス
+        ko: CPA Redis 주소
+        ru: Адрес Redis CPA
+        ms: Alamat Redis CPA
+        pt-br: Endereço Redis CPA
+      required: false
+      type: text
+    - default: 'false'
+      edit: true
+      envKey: AUTH_ENABLED
+      labelEn: Enable Auth
+      labelZh: 启用登录保护
+      label:
+        en: Enable Auth
+        zh: 启用登录保护
+        zh-Hant: 啟用登入保護
+        ja: 認証を有効化
+        ko: 인증 활성화
+        ru: Включить аутентификацию
+        ms: Aktifkan Pengesahan
+        pt-br: Habilitar Autenticação
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: ''
+      edit: true
+      envKey: LOGIN_PASSWORD
+      labelEn: Login Password
+      labelZh: 登录密码
+      label:
+        en: Login Password
+        zh: 登录密码
+        zh-Hant: 登入密碼
+        ja: ログインパスワード
+        ko: 로그인 비밀번호
+        ru: Пароль для входа
+        ms: Kata Laluan Log Masuk
+        pt-br: Senha de Login
+      required: false
+      type: password
+    - default: ''
+      edit: true
+      envKey: APP_BASE_PATH
+      labelEn: Base Path
+      labelZh: 子路径前缀
+      label:
+        en: Base Path
+        zh: 子路径前缀
+        zh-Hant: 子路徑前綴
+        ja: ベースパス
+        ko: 기본 경로
+        ru: Базовый путь
+        ms: Laluan Asas
+        pt-br: Caminho Base
+      required: false
+      type: text
+    - default: ./data
+      edit: true
+      envKey: APP_DATA_DIR
+      labelEn: Data Directory
+      labelZh: 数据目录
+      label:
+        en: Data Directory
+        zh: 数据目录
+        zh-Hant: 資料目錄
+        ja: データディレクトリ
+        ko: 데이터 디렉토리
+        ru: Каталог данных
+        ms: Direktori Data
+        pt-br: Diretório de Dados
+      required: true
+      type: text
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ru: Часовой пояс
+        ms: Zon waktu
+        pt-br: Fuso horário
+      required: true
+      type: text
+    - default: info
+      edit: true
+      envKey: LOG_LEVEL
+      labelEn: Log Level
+      labelZh: 日志级别
+      label:
+        en: Log Level
+        zh: 日志级别
+        zh-Hant: 日誌級別
+        ja: ログレベル
+        ko: 로그 레벨
+        ru: Уровень журнала
+        ms: Tahap Log
+        pt-br: Nível de Log
+      required: false
+      type: select
+      values:
+        - label: debug
+          value: debug
+        - label: info
+          value: info
+        - label: warn
+          value: warn
+        - label: error
+          value: error
+    - default: 168h
+      edit: true
+      envKey: AUTH_SESSION_TTL
+      labelEn: Session TTL
+      labelZh: 登录会话时长
+      label:
+        en: Session TTL
+        zh: 登录会话时长
+        zh-Hant: 登入會話時長
+        ja: セッション有効期間
+        ko: 세션 유효기간
+        ru: Время жизни сессии
+        ms: TTL Sesi
+        pt-br: TTL da Sessão
+      required: false
+      type: text
+    - default: 'false'
+      edit: true
+      envKey: REDIS_QUEUE_TLS
+      labelEn: Redis TLS
+      labelZh: Redis TLS
+      label:
+        en: Redis TLS
+        zh: Redis TLS
+        zh-Hant: Redis TLS
+        ja: Redis TLS 接続
+        ko: Redis TLS 연결
+        ru: TLS для Redis
+        ms: Redis TLS
+        pt-br: Redis TLS
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 1000
+      edit: true
+      envKey: REDIS_QUEUE_BATCH_SIZE
+      labelEn: Redis Batch Size
+      labelZh: Redis 批次大小
+      label:
+        en: Redis Batch Size
+        zh: Redis 批次大小
+        zh-Hant: Redis 批次大小
+        ja: Redis バッチサイズ
+        ko: Redis 배치 크기
+        ru: Размер пакета Redis
+        ms: Saiz Kumpulan Redis
+        pt-br: Tamanho do Lote Redis
+      required: false
+      type: number
+    - default: 1s
+      edit: true
+      envKey: REDIS_QUEUE_IDLE_INTERVAL
+      labelEn: Redis Idle Interval
+      labelZh: Redis 空闲间隔
+      label:
+        en: Redis Idle Interval
+        zh: Redis 空闲间隔
+        zh-Hant: Redis 閒置間隔
+        ja: Redis アイドル間隔
+        ko: Redis 유휴 간격
+        ru: Интервал простоя Redis
+        ms: Interval Melahu Redis
+        pt-br: Intervalo Ocioso Redis
+      required: false
+      type: text
+    - default: 30s
+      edit: true
+      envKey: REQUEST_TIMEOUT
+      labelEn: Request Timeout
+      labelZh: 请求超时
+      label:
+        en: Request Timeout
+        zh: 请求超时
+        zh-Hant: 請求逾時
+        ja: リクエストタイムアウト
+        ko: 요청 타임아웃
+        ru: Таймаут запроса
+        ms: Tamat Masa Permintaan
+        pt-br: Tempo Limite da Requisição
+      required: false
+      type: text
+    - default: 'false'
+      edit: true
+      envKey: TLS_SKIP_VERIFY
+      labelEn: Skip TLS Verify
+      labelZh: 跳过 TLS 验证
+      label:
+        en: Skip TLS Verify
+        zh: 跳过 TLS 验证
+        zh-Hant: 跳過 TLS 驗證
+        ja: TLS 検証をスキップ
+        ko: TLS 검증 건너뛰기
+        ru: Пропустить проверку TLS
+        ms: Langkahkan Pengesahan TLS
+        pt-br: Pular Verificação TLS
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 'true'
+      edit: true
+      envKey: LOG_FILE_ENABLED
+      labelEn: Enable Log File
+      labelZh: 启用日志文件
+      label:
+        en: Enable Log File
+        zh: 启用日志文件
+        zh-Hant: 啟用日誌檔案
+        ja: ログファイルを有効化
+        ko: 로그 파일 활성화
+        ru: Включить файл журнала
+        ms: Aktifkan Fail Log
+        pt-br: Habilitar Arquivo de Log
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 7
+      edit: true
+      envKey: LOG_RETENTION_DAYS
+      labelEn: Log Retention Days
+      labelZh: 日志保留天数
+      label:
+        en: Log Retention Days
+        zh: 日志保留天数
+        zh-Hant: 日誌保留天數
+        ja: ログ保持日数
+        ko: 로그 보존 일수
+        ru: Дни хранения журнала
+        ms: Hari Penyimpanan Log
+        pt-br: Dias de Retenção de Log
+      required: false
+      type: number
+    - default: 'true'
+      edit: true
+      envKey: BACKUP_ENABLED
+      labelEn: Enable Backup
+      labelZh: 启用备份
+      label:
+        en: Enable Backup
+        zh: 启用备份
+        zh-Hant: 啟用備份
+        ja: バックアップを有効化
+        ko: 백업 활성화
+        ru: Включить резервное копирование
+        ms: Aktifkan Sandaran
+        pt-br: Habilitar Backup
+      required: false
+      type: select
+      values:
+        - label: "false"
+          value: "false"
+        - label: "true"
+          value: "true"
+    - default: 24h
+      edit: true
+      envKey: BACKUP_INTERVAL
+      labelEn: Backup Interval
+      labelZh: 备份间隔
+      label:
+        en: Backup Interval
+        zh: 备份间隔
+        zh-Hant: 備份間隔
+        ja: バックアップ間隔
+        ko: 백업 간격
+        ru: Интервал резервного копирования
+        ms: Interval Sandaran
+        pt-br: Intervalo de Backup
+      required: false
+      type: text
+    - default: 7
+      edit: true
+      envKey: BACKUP_RETENTION_DAYS
+      labelEn: Backup Retention Days
+      labelZh: 备份保留天数
+      label:
+        en: Backup Retention Days
+        zh: 备份保留天数
+        zh-Hant: 備份保留天數
+        ja: バックアップ保持日数
+        ko: 백업 보존 일수
+        ru: Дни хранения резервных копий
+        ms: Hari Penyimpanan Sandaran
+        pt-br: Dias de Retenção de Backup
+      required: false
+      type: number
