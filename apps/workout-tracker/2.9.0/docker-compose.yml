@@ -1,6 +1,6 @@
 services:
   workout-tracker:
-    image: "ghcr.io/jovandeginste/workout-tracker:2.11.0@sha256:ff56f9a1c2cff36e1af9131ad67ce252c2b2f7d0e4d31afccb4a6cf39649a36a"
+    image: "ghcr.io/jovandeginste/workout-tracker:2.10.1@sha256:7fc2c00ce6a8bc26f6939631d4b988fef395bbd895b6a3847d778deb28488ec8"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
