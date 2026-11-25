@@ -1,6 +1,6 @@
 services:
   sublime-text-kasm:
-    image: "kasmweb/sublime-text:1.19.0-rolling-weekly@sha256:8c9dd4b19578a378e8d816ac43b8c74dc3b104954299bfbb38e52694d08f0d9c"
+    image: "kasmweb/sublime-text:1.19.0-rolling-weekly@sha256:05ddf8fe3013b6e5b66491872a186d39072695148f1c40deb848c5b9d2b7f088"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     networks:
