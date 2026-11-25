@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   altus:
-    image: "linuxserver/altus:5.8.4"
+    image: "linuxserver/altus:5.8.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
