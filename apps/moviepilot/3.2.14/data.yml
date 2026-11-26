@@ -258,7 +258,7 @@ additionalProperties:
           value: "tmdb"
         - label: "bing"
           value: "bing"
-    - default: "roduqib1o8ldrl8uyax7"
+    - default: ''
       edit: true
       envKey: API_TOKEN
       labelEn: API Token
@@ -272,8 +272,12 @@ additionalProperties:
         ru: 'Токен API'
         ms: 'Token API'
         pt-br: 'Token da API'
-      required: true
-      type: text
+      description:
+        en: Leave blank to generate a unique 256-bit token. Existing values are preserved during upgrades. Rotate the old shared default manually and update integrations.
+        zh: 留空时安装脚本会生成独立的 256 位随机令牌。升级时保留已有值；若仍使用旧模板的共用默认值，请手动轮换并同步更新相关集成。
+        zh-hant: 留空時安裝腳本會產生獨立的 256 位隨機權杖。升級時保留既有值；若仍使用舊模板的共用預設值，請手動輪換並同步更新相關整合。
+      required: false
+      type: password
     - default: ""
       edit: true
       envKey: PROXY_HOST
