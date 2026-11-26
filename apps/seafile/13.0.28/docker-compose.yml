@@ -34,7 +34,7 @@ services:
       - REDIS_PASSWORD=${PANEL_REDIS_ROOT_PASSWORD:-}
       - MEMCACHED_HOST=${MEMCACHED_HOST:-memcached}
       - MEMCACHED_PORT=${MEMCACHED_PORT:-11211}
-    image: seafileltd/seafile-mc:14.0.9
+    image: seafileltd/seafile-mc:14.0.11
     labels:
       createdBy: "Apps"
 
