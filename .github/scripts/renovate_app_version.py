@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path, PurePosixPath
@@ -40,6 +42,48 @@ def image_tag(image: object) -> str:
         return ""
     tag = value[colon + 1 :].strip()
     return tag[1:] if tag.startswith("v") else tag
+
+
+def is_numeric_version_directory(version: str) -> bool:
+    return re.fullmatch(r"\d+(?:\.\d+)*", version) is not None
+
+
+def renovate_excludes_version_directory(app: str, version: str, config: dict[str, Any]) -> bool:
+    compose_path = f"apps/{app}/{version}/docker-compose.yml"
+    for pattern in config.get("ignorePaths", []):
+        if isinstance(pattern, str) and fnmatch.fnmatchcase(compose_path, pattern):
+            return True
+
+    for rule in config.get("packageRules", []):
+        if not isinstance(rule, dict) or rule.get("enabled") is not False:
+            continue
+        file_patterns = rule.get("matchFileNames")
+        if not isinstance(file_patterns, list):
+            continue
+        # Package-scoped disables (for example, sidecar-only exclusions) do
+        # not make the entire version directory a retained historical track.
+        if any(key.startswith("match") and key != "matchFileNames" for key in rule):
+            continue
+        if any(
+            isinstance(pattern, str) and fnmatch.fnmatchcase(compose_path, pattern)
+            for pattern in file_patterns
+        ):
+            return True
+    return False
+
+
+def should_prune_source_version_directory(
+    app: str,
+    old_version: str,
+    new_version: str,
+    config: dict[str, Any],
+) -> bool:
+    if not is_numeric_version_directory(old_version) or not is_numeric_version_directory(new_version):
+        return False
+    return not (
+        renovate_excludes_version_directory(app, old_version, config)
+        or renovate_excludes_version_directory(app, new_version, config)
+    )
 
 
 def select_target_version(
@@ -171,10 +215,31 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Select the app version from the changed primary service image.")
     parser.add_argument("--app", required=True)
     parser.add_argument("--old-version", required=True)
-    parser.add_argument("--compose", required=True)
-    parser.add_argument("--base-ref", required=True)
-    parser.add_argument("--policy-file", required=True)
+    parser.add_argument("--compose")
+    parser.add_argument("--base-ref")
+    parser.add_argument("--policy-file")
+    parser.add_argument("--target-version")
+    parser.add_argument("--renovate-config")
+    parser.add_argument("--check-prune-source", action="store_true")
     args = parser.parse_args()
+
+    if args.check_prune_source:
+        if not args.target_version or not args.renovate_config:
+            parser.error("--check-prune-source requires --target-version and --renovate-config")
+        config_payload = json.loads(Path(args.renovate_config).read_text(encoding="utf-8"))
+        if not isinstance(config_payload, dict):
+            raise ValueError("Renovate config must decode to an object")
+        print(
+            "true"
+            if should_prune_source_version_directory(
+                args.app, args.old_version, args.target_version, config_payload
+            )
+            else "false"
+        )
+        return 0
+
+    if not args.compose or not args.base_ref or not args.policy_file:
+        parser.error("version selection requires --compose, --base-ref, and --policy-file")
 
     compose_path = validate_compose_path(args.app, args.old_version, args.compose)
     head_compose = load_yaml_text(Path(compose_path).read_text(encoding="utf-8"), "head compose")

@@ -94,7 +94,7 @@ class RenovateAppVersionTests(unittest.TestCase):
                 self.assertIsNotNone(match)
                 self.assertEqual("workstation", match.group("compatibility"))
 
-    def test_version_directory_update_preserves_old_version(self):
+    def test_non_numeric_workstation_update_preserves_old_version(self):
         old_version = "0.2.1-rc.2-workstation"
         new_version = "0.2.1-rc.3-workstation"
         app_key = "demo"
@@ -160,6 +160,163 @@ class RenovateAppVersionTests(unittest.TestCase):
             self.assertEqual(0, second.returncode, second.stderr)
             self.assertIn("already exists", second.stdout)
             self.assertEqual(old_image, (repo / compose).read_text(encoding="utf-8").split("image: ", 1)[1].strip())
+
+    def test_numeric_version_retention_follows_renovate_path_exclusions(self):
+        module = load_module()
+        config = json.loads(DOCKER_CONFIG.read_text(encoding="utf-8"))
+
+        self.assertTrue(
+            module.should_prune_source_version_directory("dbx", "0.6.74", "0.6.75", config)
+        )
+        self.assertTrue(
+            module.should_prune_source_version_directory("mysql", "8.4.13", "8.4.14", config)
+        )
+        self.assertFalse(
+            module.should_prune_source_version_directory("mysql", "5.5.62", "5.5.63", config)
+        )
+        self.assertFalse(
+            module.should_prune_source_version_directory("geekbench", "5", "6", config)
+        )
+        self.assertFalse(
+            module.should_prune_source_version_directory("immich", "1.132.3", "1.133.0", config)
+        )
+        self.assertTrue(
+            module.should_prune_source_version_directory("immich", "3.4.2", "3.4.3", config)
+        )
+        self.assertFalse(
+            module.should_prune_source_version_directory(
+                "mysql-cluster", "8.0.1", "8.0.2", config
+            )
+        )
+        self.assertFalse(
+            module.should_prune_source_version_directory("demo", "0.2.1-workstation", "0.2.2", config)
+        )
+
+    def test_numeric_version_update_removes_old_directory(self):
+        old_version = "0.2.1"
+        new_version = "0.2.2"
+        app_key = "demo"
+        source = pathlib.Path("apps") / app_key / old_version
+        target = pathlib.Path("apps") / app_key / new_version
+        compose = source / "docker-compose.yml"
+        old_image = f"ghcr.io/example/demo:{old_version}"
+        new_image = f"ghcr.io/example/demo:{new_version}"
+
+        with tempfile.TemporaryDirectory(prefix="renovate-numeric-version-prune-") as tmp:
+            repo = pathlib.Path(tmp)
+            (repo / compose).parent.mkdir(parents=True)
+            (repo / compose).write_text(
+                f"services:\n  app:\n    image: {old_image}\n", encoding="utf-8"
+            )
+            (repo / source / "data.yml").write_text("name: demo\n", encoding="utf-8")
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"], cwd=repo, check=True
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Test User"], cwd=repo, check=True
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add old version"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+
+            changed_compose = (repo / compose).read_text(encoding="utf-8").replace(
+                old_image, new_image
+            )
+            (repo / compose).write_text(changed_compose, encoding="utf-8")
+            script = REPO_ROOT / ".github" / "workflows" / "renovate-app-version.sh"
+            result = subprocess.run(
+                ["bash", str(script), app_key, old_version, compose.as_posix(), base_ref],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertIn("removed obsolete numeric version directory", result.stdout)
+            self.assertFalse((repo / source).exists())
+            self.assertIn(new_image, (repo / target / "docker-compose.yml").read_text(encoding="utf-8"))
+            self.assertTrue((repo / target / "data.yml").is_file())
+            deleted_source = subprocess.run(
+                ["git", "diff", "--cached", "--name-status", base_ref, "--", source.as_posix()],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+            self.assertTrue(deleted_source.startswith("D\t"), deleted_source)
+
+    def test_numeric_duplicate_target_prunes_old_source_directory(self):
+        old_version = "0.2.1"
+        new_version = "0.2.2"
+        app_key = "demo"
+        source = pathlib.Path("apps") / app_key / old_version
+        target = pathlib.Path("apps") / app_key / new_version
+        compose = source / "docker-compose.yml"
+        old_image = f"ghcr.io/example/demo:{old_version}"
+        new_image = f"ghcr.io/example/demo:{new_version}"
+
+        with tempfile.TemporaryDirectory(prefix="renovate-duplicate-target-prune-") as tmp:
+            repo = pathlib.Path(tmp)
+            (repo / compose).parent.mkdir(parents=True)
+            (repo / compose).write_text(
+                f"services:\n  app:\n    image: {old_image}\n", encoding="utf-8"
+            )
+            (repo / source / "data.yml").write_text("name: demo\n", encoding="utf-8")
+            (repo / target).mkdir(parents=True)
+            (repo / target / "docker-compose.yml").write_text(
+                f"services:\n  app:\n    image: {new_image}\n", encoding="utf-8"
+            )
+            (repo / target / "data.yml").write_text("name: demo\n", encoding="utf-8")
+            subprocess.run(["git", "init", "-q"], cwd=repo, check=True)
+            subprocess.run(
+                ["git", "config", "user.email", "test@example.com"], cwd=repo, check=True
+            )
+            subprocess.run(
+                ["git", "config", "user.name", "Test User"], cwd=repo, check=True
+            )
+            subprocess.run(["git", "add", "apps"], cwd=repo, check=True)
+            subprocess.run(["git", "commit", "-qm", "add current versions"], cwd=repo, check=True)
+            base_ref = subprocess.run(
+                ["git", "rev-parse", "HEAD"],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+
+            (repo / compose).write_text(
+                (repo / compose).read_text(encoding="utf-8").replace(old_image, new_image),
+                encoding="utf-8",
+            )
+            script = REPO_ROOT / ".github" / "workflows" / "renovate-app-version.sh"
+            result = subprocess.run(
+                ["bash", str(script), app_key, old_version, compose.as_posix(), base_ref],
+                cwd=repo,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+
+            self.assertEqual(0, result.returncode, result.stderr)
+            self.assertIn("target already exists", result.stdout)
+            self.assertFalse((repo / source).exists())
+            self.assertIn(new_image, (repo / target / "docker-compose.yml").read_text(encoding="utf-8"))
+            deleted_source = subprocess.run(
+                ["git", "diff", "--cached", "--name-status", base_ref, "--", source.as_posix()],
+                cwd=repo,
+                check=True,
+                text=True,
+                capture_output=True,
+            ).stdout.strip()
+            self.assertTrue(deleted_source.startswith("D\t"), deleted_source)
 
     def test_source_selector_chooses_newest_primary_image_and_ignores_new_directories(self):
         with tempfile.TemporaryDirectory(prefix="renovate-source-selection-") as tmp:
@@ -345,6 +502,7 @@ class RenovateAppVersionTests(unittest.TestCase):
             scripts_dir = github_dir / "scripts"
             workflows_dir.mkdir(parents=True)
             scripts_dir.mkdir()
+            shutil.copyfile(DOCKER_CONFIG, github_dir / "renovate-docker.json")
             shutil.copyfile(
                 REPO_ROOT / ".github" / "workflows" / "renovate-app-version.sh",
                 workflows_dir / "renovate-app-version.sh",
@@ -384,10 +542,7 @@ class RenovateAppVersionTests(unittest.TestCase):
                 "privoce/vocechat-server:v0.5.41-arm64",
                 arm64_target["services"]["vocechat"]["image"],
             )
-            self.assertIn(
-                "image: privoce/vocechat-server:v0.5.40\n",
-                (repo / "apps/vocechat/0.5.40/docker-compose.yml").read_text(encoding="utf-8"),
-            )
+            self.assertFalse((repo / "apps/vocechat/0.5.40").exists())
             self.assertIn(
                 "image: privoce/vocechat-server:v0.5.40-arm64\n",
                 (repo / "apps/vocechat/0.5.40-arm64/docker-compose.yml").read_text(encoding="utf-8"),
@@ -1327,6 +1482,7 @@ class RenovateAppVersionTests(unittest.TestCase):
     def test_self_hosted_renovate_branches_are_recognized_by_workflows(self):
         workflows = REPO_ROOT / ".github" / "workflows"
         app_version = (workflows / "renovate-app-version.yml").read_text(encoding="utf-8")
+        app_version_script = (workflows / "renovate-app-version.sh").read_text(encoding="utf-8")
         sidecar_guard = (workflows / "renovate-sidecar-guard.yml").read_text(encoding="utf-8")
         automerge = (workflows / "renovate-automerge.yml").read_text(encoding="utf-8")
         reconcile = (workflows / "renovate-automerge-reconcile.yml").read_text(encoding="utf-8")
@@ -1341,6 +1497,8 @@ class RenovateAppVersionTests(unittest.TestCase):
         self.assertIn("renovate_app_version_sources.py", app_version)
         self.assertIn('--head-ref "$(git rev-parse HEAD)"', app_version)
         self.assertIn("selected-source-files.zlist", app_version)
+        self.assertIn('renovate_config="$script_dir/../renovate-docker.json"', app_version_script)
+        self.assertIn('git rm -r -f -- "$source_dir"', app_version_script)
         self.assertIn('git diff --name-only -z "$base_ref...HEAD"', app_version)
         self.assertIn('git cat-file -e "$BASE_REF:$changed_file"', app_version)
         self.assertIn('git diff --cached --quiet "$BASE_REF" -- "$source_dir"', app_version)
