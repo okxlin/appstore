@@ -1,6 +1,6 @@
 services:
   podfetch:
-    image: "docker.io/samuel19982/podfetch:v5.3.2@sha256:a291f0952cfec1019f0e700eca3d5a50200a5d7c29db50c003890310ca432c3b"
+    image: "docker.io/samuel19982/podfetch:v5.3.2@sha256:cafdf6932da0a2ba0b9b1583cdcc745373198c4b4f11cd8243c07efe5312f1b6"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "${PUID}:${PGID}"
