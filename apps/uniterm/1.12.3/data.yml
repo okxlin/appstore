@@ -126,6 +126,40 @@ additionalProperties:
         tr: "Ek dağıtım adresleri, örneğin https://term.example.com. Birden fazlasını virgülle ayırın. Yalnızca aynı kaynağa izin vermek için boş bırakın."
       required: false
       type: text
+    - default: "./data/docker.sock.disabled"
+      edit: true
+      envKey: UNITERM_DOCKER_SOCKET_SOURCE
+      labelEn: "Host Docker Management"
+      labelZh: "本机 Docker 管理"
+      label:
+        en: "Host Docker Management"
+        es-es: "Host Docker Management"
+        ja: "Host Docker Management"
+        ms: "Host Docker Management"
+        pt-br: "Host Docker Management"
+        ru: "Host Docker Management"
+        ko: "Host Docker Management"
+        zh-Hant: "本機 Docker 管理"
+        zh: "本机 Docker 管理"
+        tr: "Host Docker Management"
+      description:
+        en: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        es-es: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ja: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ms: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        pt-br: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ru: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ko: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        zh-Hant: "開啟後將掛載宿主機 Docker Socket 並安裝 docker-cli。應用使用者可能取得宿主機容器控制權，等同高權限。僅限可信環境，修改此選項會重建容器。"
+        zh: "开启后将挂载宿主机 Docker Socket 并安装 docker-cli。应用用户可能取得宿主机容器控制权，等同高权限。仅限可信环境，修改此选项会重建容器。"
+        tr: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+      required: true
+      type: select
+      values:
+        - label: "Disabled / 关闭（推荐）"
+          value: "./data/docker.sock.disabled"
+        - label: "Enabled / 开启（高风险）"
+          value: "/var/run/docker.sock"
     - default: 8080
       envKey: PANEL_APP_PORT_HTTP
       labelEn: "Web UI Port"

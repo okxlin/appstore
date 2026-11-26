@@ -1,0 +1,180 @@
+additionalProperties:
+  formFields:
+    - default: admin
+      envKey: UNITERM_ADMIN_USER
+      labelEn: "Initial Admin Username"
+      labelZh: "初始管理员用户名"
+      label:
+        en: "Initial Admin Username"
+        es-es: "Initial Admin Username"
+        ja: "Initial Admin Username"
+        ms: "Initial Admin Username"
+        pt-br: "Initial Admin Username"
+        ru: "Initial Admin Username"
+        ko: "Initial Admin Username"
+        zh-Hant: "初始管理員使用者名稱"
+        zh: "初始管理员用户名"
+        tr: "Initial Admin Username"
+      required: true
+      rule: paramCommon
+      type: text
+    - default: UniTermAdmin2026
+      envKey: UNITERM_ADMIN_PASSWORD
+      labelEn: "Initial Admin Password"
+      labelZh: "初始管理员密码"
+      label:
+        en: "Initial Admin Password"
+        es-es: "Initial Admin Password"
+        ja: "Initial Admin Password"
+        ms: "Initial Admin Password"
+        pt-br: "Initial Admin Password"
+        ru: "Initial Admin Password"
+        ko: "Initial Admin Password"
+        zh-Hant: "初始管理員密碼"
+        zh: "初始管理员密码"
+        tr: "Initial Admin Password"
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: 60
+      envKey: UNITERM_WORKER_IDLE_MINUTES
+      labelEn: "Idle Workspace Timeout (Minutes)"
+      labelZh: "空闲工作区回收时间（分钟）"
+      label:
+        en: "Idle Workspace Timeout (Minutes)"
+        es-es: "Idle Workspace Timeout (Minutes)"
+        ja: "Idle Workspace Timeout (Minutes)"
+        ms: "Idle Workspace Timeout (Minutes)"
+        pt-br: "Idle Workspace Timeout (Minutes)"
+        ru: "Idle Workspace Timeout (Minutes)"
+        ko: "Idle Workspace Timeout (Minutes)"
+        zh-Hant: "閒置工作區回收時間（分鐘）"
+        zh: "空闲工作区回收时间（分钟）"
+        tr: "Idle Workspace Timeout (Minutes)"
+      description:
+        en: "Measured in minutes; defaults to 60. An idle user workspace is recycled after this period and restores automatically on the next visit."
+        es-es: "Se mide en minutos; valor predeterminado: 60. El espacio inactivo se recicla tras este periodo y se restaura al volver a acceder."
+        ja: "単位は分、既定値は60です。アイドル状態がこの時間を超えるとワークスペースを回収し、次回アクセス時に自動復元します。"
+        ms: "Diukur dalam minit; lalai 60. Ruang kerja melahu dikitar semula selepas tempoh ini dan dipulihkan secara automatik pada lawatan seterusnya."
+        pt-br: "Medido em minutos; padrão 60. Um workspace inativo é reciclado após esse período e restaurado automaticamente no próximo acesso."
+        ru: "Единица измерения — минуты; значение по умолчанию — 60. Неактивное рабочее пространство перезапускается после этого периода и восстанавливается при следующем входе."
+        ko: "단위는 분이며 기본값은 60입니다. 유휴 작업 공간은 이 시간 후 재활용되고 다음 접속 시 자동으로 복원됩니다."
+        zh-Hant: "單位為分鐘，預設 60。閒置工作區超過此時間後回收，下次存取時會自動恢復。"
+        zh: "单位为分钟，默认 60。空闲工作区超过该时间后回收，下次访问时自动恢复。"
+        tr: "Dakika cinsindendir; varsayılan 60'tır. Boşta kalan çalışma alanı bu süreden sonra geri dönüştürülür ve sonraki girişte otomatik olarak geri yüklenir."
+      required: true
+      type: number
+    - default: "false"
+      envKey: UNITERM_COOKIE_SECURE
+      labelEn: "Secure Cookie"
+      labelZh: "安全 Cookie"
+      label:
+        en: "Secure Cookie"
+        es-es: "Secure Cookie"
+        ja: "Secure Cookie"
+        ms: "Secure Cookie"
+        pt-br: "Secure Cookie"
+        ru: "Secure Cookie"
+        ko: "Secure Cookie"
+        zh-Hant: "安全 Cookie"
+        zh: "安全 Cookie"
+        tr: "Secure Cookie"
+      description:
+        en: "Enable only when UniTerm is accessed through an HTTPS reverse proxy. Keep it disabled for direct HTTP access, or the login session may not persist."
+        es-es: "Actívelo solo detrás de un proxy inverso HTTPS. Con acceso HTTP directo, la sesión puede no mantenerse."
+        ja: "HTTPSリバースプロキシ経由の場合のみ有効にします。直接HTTPでアクセスする場合はオフにしてください。ログインセッションが維持されない可能性があります。"
+        ms: "Dayakan hanya apabila diakses melalui proksi songsang HTTPS. Jika akses terus melalui HTTP, sesi log masuk mungkin tidak kekal."
+        pt-br: "Habilite somente ao acessar por um proxy reverso HTTPS. Em acesso HTTP direto, a sessão de login pode não persistir."
+        ru: "Включайте только при доступе через HTTPS-обратный прокси. При прямом HTTP-доступе сеанс входа может не сохраняться."
+        ko: "HTTPS 역방향 프록시를 통해 접속할 때만 활성화하세요. 직접 HTTP로 접속하면 로그인 세션이 유지되지 않을 수 있습니다."
+        zh-Hant: "僅在透過 HTTPS 反向代理存取時啟用。直接使用 HTTP 存取時請保持關閉，否則登入工作階段可能無法維持。"
+        zh: "仅在通过 HTTPS 反向代理访问时启用。直接使用 HTTP 访问时请保持关闭，否则登录会话可能无法保持。"
+        tr: "Yalnızca HTTPS ters proxy üzerinden erişirken etkinleştirin. Doğrudan HTTP erişiminde oturum korunmayabilir."
+      required: true
+      type: select
+      values:
+        - label: Enabled
+          value: "true"
+        - label: Disabled
+          value: "false"
+    - default: ""
+      envKey: UNITERM_ALLOWED_ORIGINS
+      labelEn: "Deployment Origins"
+      labelZh: "部署访问地址"
+      label:
+        en: "Deployment Origins"
+        es-es: "Orígenes de despliegue"
+        ja: "デプロイ元"
+        ms: "Asal Deploy"
+        pt-br: "Origens de implantação"
+        ru: "Источники развертывания"
+        ko: "배포 출처"
+        zh-Hant: "部署存取位址"
+        zh: "部署访问地址"
+        tr: "Dağıtım Kaynakları"
+      description:
+        en: "Additional deployment addresses, for example https://term.example.com. Separate multiple addresses with commas. Leave empty to allow only same-origin access."
+        es-es: "Direcciones de despliegue adicionales, por ejemplo https://term.example.com. Separe varias con comas. Déjelo vacío para permitir solo el mismo origen."
+        ja: "追加で許可するデプロイ先（例: https://term.example.com）。複数はカンマで区切ります。空欄の場合は同一オリジンのみ許可します。"
+        ms: "Alamat deploy tambahan, contohnya https://term.example.com. Pisahkan berbilang alamat dengan koma. Biarkan kosong untuk membenarkan asal yang sama sahaja."
+        pt-br: "Endereços de implantação adicionais, por exemplo https://term.example.com. Separe vários com vírgulas. Deixe vazio para permitir apenas a mesma origem."
+        ru: "Дополнительные адреса развертывания, например https://term.example.com. Разделяйте несколько адресов запятыми. Оставьте пустым, чтобы разрешить только тот же источник."
+        ko: "추가로 허용할 배포 주소입니다(예: https://term.example.com). 여러 주소는 쉼표로 구분하세요. 비워 두면 동일 출처만 허용합니다."
+        zh-Hant: "額外允許的部署位址，例如 https://term.example.com；多個以英文逗號分隔。留空時僅允許同源存取。"
+        zh: "额外允许的部署地址，例如 https://term.example.com；多个用英文逗号分隔。留空时仅允许同源访问。"
+        tr: "Ek dağıtım adresleri, örneğin https://term.example.com. Birden fazlasını virgülle ayırın. Yalnızca aynı kaynağa izin vermek için boş bırakın."
+      required: false
+      type: text
+    - default: "./data/docker.sock.disabled"
+      edit: true
+      envKey: UNITERM_DOCKER_SOCKET_SOURCE
+      labelEn: "Host Docker Management"
+      labelZh: "本机 Docker 管理"
+      label:
+        en: "Host Docker Management"
+        es-es: "Host Docker Management"
+        ja: "Host Docker Management"
+        ms: "Host Docker Management"
+        pt-br: "Host Docker Management"
+        ru: "Host Docker Management"
+        ko: "Host Docker Management"
+        zh-Hant: "本機 Docker 管理"
+        zh: "本机 Docker 管理"
+        tr: "Host Docker Management"
+      description:
+        en: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        es-es: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ja: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ms: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        pt-br: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ru: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        ko: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+        zh-Hant: "開啟後將掛載宿主機 Docker Socket 並安裝 docker-cli。應用使用者可能取得宿主機容器控制權，等同高權限。僅限可信環境，修改此選項會重建容器。"
+        zh: "开启后将挂载宿主机 Docker Socket 并安装 docker-cli。应用用户可能取得宿主机容器控制权，等同高权限。仅限可信环境，修改此选项会重建容器。"
+        tr: "Enable this to mount the host Docker socket and install docker-cli. App users may gain control of host containers, equivalent to high host privileges. Use only in trusted environments; changing this option rebuilds the container."
+      required: true
+      type: select
+      values:
+        - label: "Disabled / 关闭（推荐）"
+          value: "./data/docker.sock.disabled"
+        - label: "Enabled / 开启（高风险）"
+          value: "/var/run/docker.sock"
+    - default: 8080
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: "Web UI Port"
+      labelZh: "Web UI 端口"
+      label:
+        en: "Web UI Port"
+        es-es: "Puerto web"
+        ja: "Web UIポート"
+        ms: "Port Web UI"
+        pt-br: "Porta da Web UI"
+        ru: "Порт веб-интерфейса"
+        ko: "웹 UI 포트"
+        zh-Hant: "Web UI 埠"
+        zh: "Web UI 端口"
+        tr: "Web UI Bağlantı Noktası"
+      required: true
+      rule: paramPort
+      type: number

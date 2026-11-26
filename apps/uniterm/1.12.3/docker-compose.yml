@@ -15,9 +15,22 @@ services:
       UNITERM_WORKER_IDLE_MINUTES: "${UNITERM_WORKER_IDLE_MINUTES}"
       UNITERM_COOKIE_SECURE: "${UNITERM_COOKIE_SECURE}"
       UNITERM_ALLOWED_ORIGINS: "${UNITERM_ALLOWED_ORIGINS}"
+      UNITERM_DOCKER_SOCKET_SOURCE: "${UNITERM_DOCKER_SOCKET_SOURCE:-./data/docker.sock.disabled}"
     volumes:
       - ./data:/data
       - /etc/localtime:/etc/localtime:ro
+      - "${UNITERM_DOCKER_SOCKET_SOURCE:-./data/docker.sock.disabled}:/var/run/docker.sock"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        if [ "${UNITERM_DOCKER_SOCKET_SOURCE:-./data/docker.sock.disabled}" = "/var/run/docker.sock" ] && ! command -v docker >/dev/null 2>&1; then
+          if ! apk add --no-cache docker-cli; then
+            echo "[uniterm] WARNING: failed to install docker-cli; host Docker management is unavailable" >&2
+          fi
+        fi
+        exec /app/uniterm-gateway
     healthcheck:
       test:
         - CMD
