@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   digikam:
-    image: "linuxserver/digikam:9.1.0"
+    image: "linuxserver/digikam:9.2.0"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
