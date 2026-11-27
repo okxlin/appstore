@@ -14,6 +14,10 @@ additionalProperties:
         ru: 'Порт (соответствует внутреннему 8080)'
         ms: 'Port (sepadan dengan dalaman 8080)'
         pt-br: 'Porta (correspondente à interna 8080)'
+        tr: 'Bağlantı noktası (iç 8080 ile eşleşir)'
+        es-es: 'Puerto (corresponde al puerto interno 8080)'
+        fa: 'درگاه (معادل پورت داخلی 8080)'
+        lo: 'ພອດ (ກົງກັບພອດ 8080 ພາຍໃນ)'
       required: true
       rule: paramPort
       type: number
@@ -31,5 +35,9 @@ additionalProperties:
         ru: 'IP подсети 1panel-network (посмотрите сеть Docker, чтобы получить блок CIDR)'
         ms: 'IP subnet 1panel-network (lihat rangkaian docker untuk mendapatkan blok CIDR)'
         pt-br: 'IP de sub-rede 1panel-network (veja a rede docker para obter o bloco CIDR)'
+        tr: '1panel-network Alt Ağ IP’si (CIDR bloğu için Docker ağına bakın)'
+        es-es: 'IP de subred de 1panel-network (consulta la red de Docker para obtener el bloque CIDR)'
+        fa: 'نشانی IP زیرشبکه 1panel-network (برای دریافت بلوک CIDR شبکه Docker را بررسی کنید)'
+        lo: 'IP ເຄືອຂ່າຍຍ່ອຍ 1panel-network (ເບິ່ງເຄືອຂ່າຍ Docker ເພື່ອຮັບບລັອກ CIDR)'
       required: true
       type: text
