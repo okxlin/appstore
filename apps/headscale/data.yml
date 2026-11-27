@@ -19,6 +19,10 @@ additionalProperties:
     ru: Самостоятельно размещаемая реализация сервера управления Tailscale с открытым исходным кодом
     ms: Pelaksanaan pelayan kawalan Tailscale sumber terbuka yang dihos sendiri
     pt-br: Implementação open source e auto-hospedada do servidor de controle do Tailscale
+    tr: Tailscale kontrol sunucusunun açık kaynaklı, kendi sunucunuzda barındırılabilen uygulaması
+    es-es: Implementación de código abierto y autoalojada del servidor de control de Tailscale
+    fa: پیاده‌سازی متن‌باز و خودمیزبان سرور کنترل Tailscale
+    lo: ການນຳໃຊ້ເຊີບເວີຄວບຄຸມ Tailscale ແບບໂອເພນຊອດ ແລະໂຮສດ້ວຍຕົນເອງ
   type: tool
   crossVersionUpdate: true
   limit: 0
