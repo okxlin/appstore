@@ -7,7 +7,7 @@ services:
       - 1panel-network
     ports:
       - "${PANEL_APP_PORT_HTTP}:${PANEL_APP_PORT_HTTP}"
-      - "${VNC_PORT}:${VNC_PORT}"
+      - "${PANEL_APP_PORT_VNC:-40328}:${VNC_PORT}"
     volumes:
       - ${CONFIG_PATH}:/config:rw
     environment:

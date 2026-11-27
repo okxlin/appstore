@@ -19,6 +19,13 @@ additionalProperties:
     ru: "Почтовый клиент с открытым исходным кодом."
     ms: "Klien e-mel sumber terbuka."
     pt-br: "Cliente de e-mail de código aberto."
+    zh-hant: "開源的電子郵件用戶端。"
+    tr: "Açık kaynaklı e-posta istemcisi."
+    es-es: "Cliente de correo electrónico de código abierto."
+    es-ES: "Cliente de correo electrónico de código abierto."
+    fa: "کارخواه رایانامهٔ متن‌باز."
+    lo: "ໂປຣແກຣມອີເມວລະຫັດເປີດ."
+    pt-BR: "Cliente de e-mail de código aberto."
   type: tool
   crossVersionUpdate: true
   limit: 0

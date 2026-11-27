@@ -9,28 +9,66 @@ additionalProperties:
         en: 'Web Port'
         zh: 'Web 端口'
         zh-Hant: 'Web 埠'
+        zh-hant: "Web 埠"
         ja: 'Web ポート'
         ko: '웹 포트'
         ru: 'Веб-порт'
         ms: 'Port Web'
         pt-br: 'Porta Web'
+        tr: "Web bağlantı noktası"
+        es-es: "Puerto web"
+        fa: "درگاه وب"
+        lo: "ພອດເວັບ"
+        pt-BR: "Porta Web"
+        es-ES: "Puerto web"
       required: true
       rule: paramPort
       type: number
     - default: "40328"
       edit: true
-      envKey: VNC_PORT
+      envKey: PANEL_APP_PORT_VNC
       labelEn: VNC Port
       labelZh: VNC 端口
       label:
-        en: 'VNC Port'
-        zh: 'VNC 端口'
-        zh-Hant: 'VNC 埠'
-        ja: 'VNC ポート'
-        ko: 'VNC 포트'
-        ru: 'Порт VNC'
-        ms: 'Port VNC'
-        pt-br: 'Porta VNC'
+        en: "VNC Port"
+        zh: "VNC 端口"
+        zh-Hant: "VNC 埠"
+        zh-hant: "VNC 埠"
+        ja: "VNC ポート"
+        ko: "VNC 포트"
+        ru: "Порт VNC"
+        ms: "Port VNC"
+        pt-br: "Porta VNC"
+        pt-BR: "Porta VNC"
+        tr: "VNC bağlantı noktası"
+        es-es: "Puerto VNC"
+        es-ES: "Puerto VNC"
+        fa: "درگاه VNC"
+        lo: "ພອດ VNC"
+      required: true
+      rule: paramPort
+      type: number
+    - default: "40328"
+      edit: false
+      envKey: VNC_PORT
+      labelEn: Internal VNC Listening Port (Legacy)
+      labelZh: 内部 VNC 侦听端口（旧字段）
+      label:
+        en: 'Internal VNC Listening Port (Legacy)'
+        zh: '内部 VNC 侦听端口（旧字段）'
+        zh-Hant: '內部 VNC 監聽埠（舊欄位）'
+        zh-hant: "內部 VNC 監聽埠（舊欄位）"
+        ja: '内部 VNC リッスンポート（旧フィールド）'
+        ko: '내부 VNC 수신 포트 (레거시)'
+        ru: 'Внутренний порт прослушивания VNC (устаревшее поле)'
+        ms: 'Port pendengaran VNC dalaman (medan lama)'
+        pt-br: 'Porta de escuta VNC interna (campo legado)'
+        tr: "Dahili VNC dinleme bağlantı noktası (eski alan)"
+        es-es: "Puerto de escucha VNC interno (campo heredado)"
+        fa: "درگاه شنود داخلی VNC (فیلد قدیمی)"
+        lo: "ພອດຮັບ VNC ພາຍໃນ (ຟິວເກົ່າ)"
+        pt-BR: "Porta de escuta VNC interna (campo legado)"
+        es-ES: "Puerto de escucha VNC interno (campo heredado)"
       required: true
       type: number
     - default: "password"
@@ -42,12 +80,18 @@ additionalProperties:
         en: 'VNC Password'
         zh: 'VNC 密码'
         zh-Hant: 'VNC 密碼'
+        zh-hant: "VNC 密碼"
         ja: 'VNC パスワード'
         ko: 'VNC 비밀번호'
         ru: 'Пароль VNC'
         ms: 'Kata laluan VNC'
         pt-br: 'Senha VNC'
-      random: true
+        tr: "VNC parolası"
+        es-es: "Contraseña VNC"
+        fa: "گذرواژهٔ VNC"
+        lo: "ລະຫັດຜ່ານ VNC"
+        pt-BR: "Senha VNC"
+        es-ES: "Contraseña VNC"
       required: true
       rule: paramComplexity
       type: password
@@ -60,11 +104,18 @@ additionalProperties:
         en: 'Configuration Path'
         zh: '配置路径'
         zh-Hant: '設定路徑'
+        zh-hant: "設定路徑"
         ja: '設定パス'
         ko: '구성 경로'
         ru: 'Путь к конфигурации'
         ms: 'Laluan konfigurasi'
         pt-br: 'Caminho de configuração'
+        tr: "Yapılandırma yolu"
+        es-es: "Ruta de configuración"
+        fa: "مسیر پیکربندی"
+        lo: "ເສັ້ນທາງການຕັ້ງຄ່າ"
+        pt-BR: "Caminho de configuração"
+        es-ES: "Ruta de configuración"
       required: true
       type: text
     - default: "1000"
@@ -76,11 +127,18 @@ additionalProperties:
         en: 'User ID'
         zh: '用户 ID'
         zh-Hant: '使用者 ID'
+        zh-hant: "使用者 ID"
         ja: 'ユーザー ID'
         ko: '사용자 ID'
         ru: 'ID пользователя'
         ms: 'ID pengguna'
         pt-br: 'ID do usuário'
+        tr: "Kullanıcı kimliği"
+        es-es: "ID de usuario"
+        fa: "شناسهٔ کاربر"
+        lo: "ລະຫັດຜູ້ໃຊ້"
+        pt-BR: "ID do usuário"
+        es-ES: "ID de usuario"
       required: true
       type: number
     - default: "1000"
@@ -92,11 +150,18 @@ additionalProperties:
         en: 'Group ID'
         zh: '用户组 ID'
         zh-Hant: '使用者群組 ID'
+        zh-hant: "使用者群組 ID"
         ja: 'ユーザーグループ ID'
         ko: '사용자 그룹 ID'
         ru: 'ID группы пользователей'
         ms: 'ID kumpulan pengguna'
         pt-br: 'ID do grupo de usuários'
+        tr: "Grup kimliği"
+        es-es: "ID de grupo"
+        fa: "شناسهٔ گروه"
+        lo: "ລະຫັດກຸ່ມ"
+        pt-BR: "ID do grupo de usuários"
+        es-ES: "ID de grupo"
       required: true
       type: number
     - default: ""
@@ -108,11 +173,18 @@ additionalProperties:
         en: 'Supplementary Group IDs'
         zh: '补充用户组 ID'
         zh-Hant: '補充使用者群組 ID'
+        zh-hant: "補充使用者群組 ID"
         ja: '追加グループ ID'
         ko: '추가 그룹 ID'
         ru: 'Дополнительные ID групп'
         ms: 'ID kumpulan tambahan'
         pt-br: 'IDs de grupo suplementares'
+        tr: "Ek grup kimlikleri"
+        es-es: "ID de grupos suplementarios"
+        fa: "شناسه‌های گروه تکمیلی"
+        lo: "ລະຫັດກຸ່ມເພີ່ມເຕີມ"
+        pt-BR: "IDs de grupo suplementares"
+        es-ES: "ID de grupos suplementarios"
       required: false
       type: text
     - default: "0022"
@@ -124,11 +196,18 @@ additionalProperties:
         en: 'Umask'
         zh: '文件创建权限掩码'
         zh-Hant: 'umask 值'
+        zh-hant: "umask 值"
         ja: 'umask 値'
         ko: 'umask 값'
         ru: 'Значение umask'
         ms: 'Nilai umask'
         pt-br: 'Valor do umask'
+        tr: "Dosya izin maskesi"
+        es-es: "Máscara de permisos de archivos"
+        fa: "ماسک مجوز فایل"
+        lo: "ຄ່າ umask ສຳລັບໄຟລ໌"
+        pt-BR: "Valor do umask"
+        es-ES: "Máscara de permisos de archivos"
       required: true
       type: text
     - default: "en_US.UTF-8"
@@ -140,11 +219,18 @@ additionalProperties:
         en: 'Locale'
         zh: '语言环境'
         zh-Hant: '語言環境'
+        zh-hant: "語言環境"
         ja: 'ロケール'
         ko: '로케일'
         ru: 'Локаль'
-        ms: 'Locale'
+        ms: 'Bahasa dan rantau'
         pt-br: 'Localidade'
+        tr: "Dil ve yerel ayar"
+        es-es: "Idioma y configuración regional"
+        fa: "زبان و تنظیمات منطقه‌ای"
+        lo: "ພາສາ ແລະ ການຕັ້ງຄ່າພາກພື້ນ"
+        pt-BR: "Localidade"
+        es-ES: "Idioma y configuración regional"
       required: true
       type: text
     - default: "Asia/Shanghai"
@@ -156,11 +242,18 @@ additionalProperties:
         en: 'Timezone'
         zh: '时区'
         zh-Hant: '時區'
+        zh-hant: "時區"
         ja: 'タイムゾーン'
         ko: '시간대'
         ru: 'Часовой пояс'
         ms: 'Zon waktu'
         pt-br: 'Fuso horário'
+        tr: "Saat dilimi"
+        es-es: "Zona horaria"
+        fa: "منطقهٔ زمانی"
+        lo: "ເຂດເວລາ"
+        pt-BR: "Fuso horário"
+        es-ES: "Zona horaria"
       required: true
       type: text
     - default: "0"
@@ -172,11 +265,18 @@ additionalProperties:
         en: 'Keep App Running'
         zh: '保持应用运行'
         zh-Hant: '保持應用運行'
+        zh-hant: "保持應用運行"
         ja: 'アプリを実行し続ける'
         ko: '앱 계속 실행'
         ru: 'Поддерживать работу приложения'
         ms: 'Kekalkan aplikasi berjalan'
         pt-br: 'Manter o aplicativo em execução'
+        tr: "Uygulamayı çalışır durumda tut"
+        es-es: "Mantener la aplicación en ejecución"
+        fa: "برنامه را در حال اجرا نگه دارید"
+        lo: "ຮັກສາແອັບໃຫ້ເຮັດວຽກ"
+        pt-BR: "Manter o aplicativo em execução"
+        es-ES: "Mantener la aplicación en ejecución"
       required: true
       type: select
       values:
@@ -193,11 +293,18 @@ additionalProperties:
         en: 'App Niceness'
         zh: '应用优先级'
         zh-Hant: '應用優先級'
+        zh-hant: "應用優先級"
         ja: 'アプリ優先度'
         ko: '앱 우선순위'
         ru: 'Приоритет приложения'
         ms: 'Keutamaan aplikasi'
         pt-br: 'Prioridade do aplicativo'
+        tr: "Uygulama önceliği"
+        es-es: "Prioridad de la aplicación"
+        fa: "اولویت برنامه"
+        lo: "ລຳດັບຄວາມສຳຄັນຂອງແອັບ"
+        pt-BR: "Prioridade do aplicativo"
+        es-ES: "Prioridad de la aplicación"
       required: true
       type: select
       values:
@@ -216,11 +323,18 @@ additionalProperties:
         en: 'Install Packages'
         zh: '安装包'
         zh-Hant: '安裝套件'
+        zh-hant: "安裝套件"
         ja: 'パッケージのインストール'
         ko: '패키지 설치'
         ru: 'Установка пакетов'
         ms: 'Pasang pakej'
         pt-br: 'Instalar pacotes'
+        tr: "Kurulacak paketler"
+        es-es: "Paquetes para instalar"
+        fa: "بسته‌های قابل نصب"
+        lo: "ແພັກເກດທີ່ຈະຕິດຕັ້ງ"
+        pt-BR: "Instalar pacotes"
+        es-ES: "Paquetes para instalar"
       required: false
       type: text
     - default: ""
@@ -232,11 +346,18 @@ additionalProperties:
         en: 'Packages Mirror'
         zh: '软件包镜像'
         zh-Hant: '套件鏡像'
+        zh-hant: "套件鏡像"
         ja: 'パッケージミラー'
         ko: '패키지 미러'
         ru: 'Зеркало пакетов'
         ms: 'Cermin pakej'
         pt-br: 'Espelho de pacotes'
+        tr: "Paket yansısı"
+        es-es: "Espejo de paquetes"
+        fa: "آینهٔ مخزن بسته‌ها"
+        lo: "ແຫຼ່ງສຳເນົາແພັກເກດ"
+        pt-BR: "Espelho de pacotes"
+        es-ES: "Espejo de paquetes"
       required: false
       type: text
     - default: "0"
@@ -248,11 +369,18 @@ additionalProperties:
         en: 'Container Debug'
         zh: '容器调试'
         zh-Hant: '容器除錯'
+        zh-hant: "容器除錯"
         ja: 'コンテナデバッグ'
         ko: '컨테이너 디버그'
         ru: 'Отладка контейнера'
         ms: 'Nyahpepijat kontena'
         pt-br: 'Depuração de contêiner'
+        tr: "Konteyner hata ayıklama"
+        es-es: "Depuración del contenedor"
+        fa: "اشکال‌زدایی کانتینر"
+        lo: "ການດີບັກຄອນເທນເນີ"
+        pt-BR: "Depuração de contêiner"
+        es-ES: "Depuración del contenedor"
       required: true
       type: select
       values:
@@ -269,11 +397,18 @@ additionalProperties:
         en: 'Display Width'
         zh: '显示宽度'
         zh-Hant: '顯示寬度'
+        zh-hant: "顯示寬度"
         ja: '表示幅'
         ko: '디스플레이 너비'
         ru: 'Ширина экрана'
         ms: 'Lebar paparan'
         pt-br: 'Largura da tela'
+        tr: "Ekran genişliği"
+        es-es: "Ancho de la pantalla"
+        fa: "عرض نمایشگر"
+        lo: "ຄວາມກວ້າງໜ້າຈໍ"
+        pt-BR: "Largura da tela"
+        es-ES: "Ancho de la pantalla"
       required: true
       type: number
     - default: "1080"
@@ -285,11 +420,18 @@ additionalProperties:
         en: 'Display Height'
         zh: '显示高度'
         zh-Hant: '顯示高度'
+        zh-hant: "顯示高度"
         ja: '表示高さ'
         ko: '디스플레이 높이'
         ru: 'Высота экрана'
         ms: 'Ketinggian paparan'
         pt-br: 'Altura da tela'
+        tr: "Ekran yüksekliği"
+        es-es: "Alto de la pantalla"
+        fa: "ارتفاع نمایشگر"
+        lo: "ຄວາມສູງໜ້າຈໍ"
+        pt-BR: "Altura da tela"
+        es-ES: "Alto de la pantalla"
       required: true
       type: number
     - default: "0"
@@ -301,11 +443,18 @@ additionalProperties:
         en: 'Dark Mode'
         zh: '暗黑模式'
         zh-Hant: '深色模式'
+        zh-hant: "深色模式"
         ja: 'ダークモード'
         ko: '다크 모드'
         ru: 'Тёмный режим'
         ms: 'Mod gelap'
         pt-br: 'Modo escuro'
+        tr: "Koyu mod"
+        es-es: "Modo oscuro"
+        fa: "حالت تاریک"
+        lo: "ໂໝດມືດ"
+        pt-BR: "Modo escuro"
+        es-ES: "Modo oscuro"
       required: true
       type: select
       values:
@@ -322,11 +471,18 @@ additionalProperties:
         en: 'Web Audio'
         zh: 'Web 音频'
         zh-Hant: 'Web 音訊'
+        zh-hant: "Web 音訊"
         ja: 'Web オーディオ'
         ko: '웹 오디오'
         ru: 'Веб-аудио'
         ms: 'Audio web'
         pt-br: 'Áudio da Web'
+        tr: "Web ses desteği"
+        es-es: "Audio en el navegador"
+        fa: "صدای مرورگر"
+        lo: "ສຽງໃນເວັບບຣາວເຊີ"
+        pt-BR: "Áudio da Web"
+        es-ES: "Audio en el navegador"
       required: true
       type: select
       values:
@@ -343,11 +499,18 @@ additionalProperties:
         en: 'Web Authentication'
         zh: 'Web 身份验证'
         zh-Hant: 'Web 身份驗證'
+        zh-hant: "Web 身份驗證"
         ja: 'Web 認証'
         ko: '웹 인증'
         ru: 'Веб-аутентификация'
         ms: 'Pengesahan web'
         pt-br: 'Autenticação Web'
+        tr: "Web kimlik doğrulaması"
+        es-es: "Autenticación web"
+        fa: "احراز هویت وب"
+        lo: "ການຢືນຢັນຕົວຕົນເວັບ"
+        pt-BR: "Autenticação Web"
+        es-ES: "Autenticación web"
       required: true
       type: select
       values:
@@ -364,11 +527,18 @@ additionalProperties:
         en: 'Web Authentication Username'
         zh: 'Web 身份验证用户名'
         zh-Hant: 'Web 身份驗證使用者名稱'
+        zh-hant: "Web 身份驗證使用者名稱"
         ja: 'Web 認証ユーザー名'
         ko: '웹 인증 사용자 이름'
         ru: 'Имя пользователя веб-аутентификации'
         ms: 'Nama pengguna pengesahan web'
         pt-br: 'Nome de usuário da autenticação Web'
+        tr: "Web kimlik doğrulama kullanıcı adı"
+        es-es: "Usuario de autenticación web"
+        fa: "نام کاربری احراز هویت وب"
+        lo: "ຊື່ຜູ້ໃຊ້ສຳລັບການຢືນຢັນເວັບ"
+        pt-BR: "Nome de usuário da autenticação Web"
+        es-ES: "Usuario de autenticación web"
       required: false
       type: text
     - default: ""
@@ -380,11 +550,18 @@ additionalProperties:
         en: 'Web Authentication Password'
         zh: 'Web 身份验证密码'
         zh-Hant: 'Web 身份驗證密碼'
+        zh-hant: "Web 身份驗證密碼"
         ja: 'Web 認証パスワード'
         ko: '웹 인증 비밀번호'
         ru: 'Пароль веб-аутентификации'
         ms: 'Kata laluan pengesahan web'
         pt-br: 'Senha da autenticação Web'
+        tr: "Web kimlik doğrulama parolası"
+        es-es: "Contraseña de autenticación web"
+        fa: "گذرواژهٔ احراز هویت وب"
+        lo: "ລະຫັດຜ່ານສຳລັບການຢືນຢັນເວັບ"
+        pt-BR: "Senha da autenticação Web"
+        es-ES: "Contraseña de autenticación web"
       required: false
       type: text
     - default: "1"
@@ -396,11 +573,18 @@ additionalProperties:
         en: 'Secure Connection'
         zh: '安全连接'
         zh-Hant: '安全連線'
+        zh-hant: "安全連線"
         ja: 'セキュア接続'
         ko: '보안 연결'
         ru: 'Безопасное соединение'
         ms: 'Sambungan selamat'
         pt-br: 'Conexão segura'
+        tr: "Güvenli bağlantı"
+        es-es: "Conexión segura"
+        fa: "اتصال امن"
+        lo: "ການເຊື່ອມຕໍ່ປອດໄພ"
+        pt-BR: "Conexão segura"
+        es-ES: "Conexión segura"
       required: true
       type: select
       values:
@@ -417,11 +601,18 @@ additionalProperties:
         en: 'Secure VNC Method'
         zh: '安全 VNC 方法'
         zh-Hant: '安全 VNC 方法'
+        zh-hant: "安全 VNC 方法"
         ja: 'セキュア VNC 方法'
         ko: '보안 VNC 방식'
         ru: 'Безопасный метод VNC'
         ms: 'Kaedah VNC selamat'
         pt-br: 'Método VNC seguro'
+        tr: "Güvenli VNC yöntemi"
+        es-es: "Método VNC seguro"
+        fa: "روش امن VNC"
+        lo: "ວິທີ VNC ປອດໄພ"
+        pt-BR: "Método VNC seguro"
+        es-ES: "Método VNC seguro"
       required: true
       type: select
       values:
@@ -438,11 +629,18 @@ additionalProperties:
         en: 'Secure Connection Certs Check Interval'
         zh: '安全连接证书检查间隔'
         zh-Hant: '安全連線憑證檢查間隔'
+        zh-hant: "安全連線憑證檢查間隔"
         ja: 'セキュア接続証明書の確認間隔'
         ko: '보안 연결 인증서 확인 간격'
         ru: 'Интервал проверки сертификатов безопасного соединения'
         ms: 'Selang semakan sijil sambungan selamat'
         pt-br: 'Intervalo de verificação de certificados da conexão segura'
+        tr: "Sertifika denetim aralığı"
+        es-es: "Intervalo de comprobación de certificados"
+        fa: "فاصلهٔ بررسی گواهی‌ها"
+        lo: "ໄລຍະເວລາກວດສອບໃບຮັບຮອງ"
+        pt-BR: "Intervalo de verificação de certificados da conexão segura"
+        es-ES: "Intervalo de comprobación de certificados"
       required: true
       type: number
     - default: "0"
@@ -454,11 +652,18 @@ additionalProperties:
         en: 'Enable CJK Font'
         zh: '启用 CJK 字体'
         zh-Hant: '啟用 CJK 字體'
+        zh-hant: "啟用 CJK 字體"
         ja: 'CJK フォントを有効化'
         ko: 'CJK 글꼴 사용'
         ru: 'Включить шрифты CJK'
         ms: 'Dayakan fon CJK'
         pt-br: 'Ativar fonte CJK'
+        tr: "CJK yazı tiplerini etkinleştir"
+        es-es: "Habilitar fuentes CJK"
+        fa: "فعال‌کردن قلم‌های CJK"
+        lo: "ເປີດໃຊ້ຟອນ CJK"
+        pt-BR: "Ativar fonte CJK"
+        es-ES: "Habilitar fuentes CJK"
       required: true
       type: select
       values:
