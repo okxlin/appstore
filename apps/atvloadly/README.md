@@ -1,9 +1,16 @@
 # ATVLoadly
 
-## 应用简介
+## 产品介绍
 轻松将 IPA 侧载到 AppleTV。
 
-英文说明：Easily sideload the IPA to AppleTV.
+## 主要功能
+- 将 IPA 文件侧载到 Apple TV。
+
+## Introduction
+Easily sideload IPA files to Apple TV.
+
+## Features
+- Sideload IPA files to Apple TV.
 
 ## 部署说明
 - 本应用使用 Docker Compose 在 1Panel 中部署。

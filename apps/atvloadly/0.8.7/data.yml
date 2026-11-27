@@ -14,11 +14,16 @@ additionalProperties:
         ru: 'Порт'
         ms: 'Port'
         pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
       required: true
       rule: paramPort
       type: number
     - default: "true"
       disabled: true
+      edit: false
       envKey: PRIVILEGED_MODE
       labelEn: Privilege mode switch
       labelZh: 特权模式开关
@@ -31,6 +36,10 @@ additionalProperties:
         ru: "Переключатель привилегированного режима"
         ms: "Suis mod keistimewaan"
         pt-br: "Chave do modo privilegiado"
+        tr: "Ayrıcalıklı mod anahtarı"
+        es-es: "Interruptor del modo privilegiado"
+        fa: "کلید حالت ممتاز"
+        lo: "ສະວິດໂໝດສິດພິເສດ"
       required: true
       type: text
     - default: "./data"
@@ -47,10 +56,15 @@ additionalProperties:
         ru: 'Путь к данным'
         ms: 'Laluan data'
         pt-br: 'Caminho de dados'
+        tr: 'Veri yolu'
+        es-es: 'Ruta de datos'
+        fa: 'مسیر داده'
+        lo: 'ເສັ້ນທາງຂໍ້ມູນ'
       required: true
       type: text
     - default: "/var/run/dbus"
       disabled: true
+      edit: false
       envKey: DBUS_PATH
       labelEn: DBus Path
       labelZh: DBus 路径
@@ -63,10 +77,15 @@ additionalProperties:
         ru: 'Путь к DBus'
         ms: 'Laluan DBus'
         pt-br: 'Caminho do DBus'
+        tr: 'DBus yolu'
+        es-es: 'Ruta de DBus'
+        fa: 'مسیر DBus'
+        lo: 'ເສັ້ນທາງ DBus'
       required: true
       type: text
     - default: "/var/run/avahi-daemon"
       disabled: true
+      edit: false
       envKey: AVAHI_DAEMON_PATH
       labelEn: Avahi Daemon Path
       labelZh: Avahi Daemon 路径
@@ -79,5 +98,9 @@ additionalProperties:
         ru: 'Путь к Avahi Daemon'
         ms: 'Laluan Avahi Daemon'
         pt-br: 'Caminho do Avahi Daemon'
+        tr: 'Avahi Daemon yolu'
+        es-es: 'Ruta de Avahi Daemon'
+        fa: 'مسیر Avahi Daemon'
+        lo: 'ເສັ້ນທາງ Avahi Daemon'
       required: true
       type: text

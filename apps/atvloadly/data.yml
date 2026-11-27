@@ -21,6 +21,10 @@ additionalProperties:
     ru: Лёгкая сайдлоадинг IPA на Apple TV.
     ms: Mudah menyideload fail IPA ke Apple TV.
     pt-br: Faça sideload de arquivos IPA no Apple TV com facilidade.
+    tr: IPA dosyalarını Apple TV'ye kolayca yan yükleyin.
+    es-es: Instala fácilmente archivos IPA en el Apple TV.
+    fa: فایل‌های IPA را به‌سادگی روی Apple TV نصب جانبی کنید.
+    lo: ຕິດຕັ້ງໄຟລ໌ IPA ລົງໃນ Apple TV ໄດ້ຢ່າງງ່າຍດາຍ
   type: tool
   crossVersionUpdate: true
   limit: 0
