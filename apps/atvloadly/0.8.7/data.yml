@@ -1,0 +1,43 @@
+additionalProperties:
+  formFields:
+    - default: "40338"
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Port
+      labelZh: 端口
+      label:
+        en: 'Port'
+        zh: '端口'
+        zh-Hant: '埠'
+        ja: 'ポート'
+        ko: '포트'
+        ru: 'Порт'
+        ms: 'Port'
+        pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
+      required: true
+      rule: paramPort
+      type: number
+    - default: "./data"
+      edit: true
+      envKey: DATA_PATH
+      labelEn: Data Path
+      labelZh: 数据路径
+      label:
+        en: 'Data Path'
+        zh: '数据路径'
+        zh-Hant: '資料路徑'
+        ja: 'データパス'
+        ko: '데이터 경로'
+        ru: 'Путь к данным'
+        ms: 'Laluan data'
+        pt-br: 'Caminho de dados'
+        tr: 'Veri yolu'
+        es-es: 'Ruta de datos'
+        fa: 'مسیر داده'
+        lo: 'ເສັ້ນທາງຂໍ້ມູນ'
+      required: true
+      type: text

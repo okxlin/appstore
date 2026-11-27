@@ -14,25 +14,13 @@ additionalProperties:
         ru: 'Порт'
         ms: 'Port'
         pt-br: 'Porta'
+        tr: 'Bağlantı noktası'
+        es-es: 'Puerto'
+        fa: 'درگاه'
+        lo: 'ພອດ'
       required: true
       rule: paramPort
       type: number
-    - default: "true"
-      disabled: true
-      envKey: PRIVILEGED_MODE
-      labelEn: Privilege mode switch
-      labelZh: 特权模式开关
-      label:
-        en: "Privilege Mode Switch"
-        zh: "特权模式开关"
-        zh-Hant: "特權模式開關"
-        ja: "特権モード切替"
-        ko: "특권 모드 스위치"
-        ru: "Переключатель привилегированного режима"
-        ms: "Suis mod keistimewaan"
-        pt-br: "Chave do modo privilegiado"
-      required: true
-      type: text
     - default: "./data"
       edit: true
       envKey: DATA_PATH
@@ -47,37 +35,9 @@ additionalProperties:
         ru: 'Путь к данным'
         ms: 'Laluan data'
         pt-br: 'Caminho de dados'
-      required: true
-      type: text
-    - default: "/var/run/dbus"
-      disabled: true
-      envKey: DBUS_PATH
-      labelEn: DBus Path
-      labelZh: DBus 路径
-      label:
-        en: 'DBus Path'
-        zh: 'DBus 路径'
-        zh-Hant: 'DBus 路徑'
-        ja: 'DBus パス'
-        ko: 'DBus 경로'
-        ru: 'Путь к DBus'
-        ms: 'Laluan DBus'
-        pt-br: 'Caminho do DBus'
-      required: true
-      type: text
-    - default: "/var/run/avahi-daemon"
-      disabled: true
-      envKey: AVAHI_DAEMON_PATH
-      labelEn: Avahi Daemon Path
-      labelZh: Avahi Daemon 路径
-      label:
-        en: 'Avahi Daemon Path'
-        zh: 'Avahi Daemon 路径'
-        zh-Hant: 'Avahi Daemon 路徑'
-        ja: 'Avahi Daemon パス'
-        ko: 'Avahi Daemon 경로'
-        ru: 'Путь к Avahi Daemon'
-        ms: 'Laluan Avahi Daemon'
-        pt-br: 'Caminho do Avahi Daemon'
+        tr: 'Veri yolu'
+        es-es: 'Ruta de datos'
+        fa: 'مسیر داده'
+        lo: 'ເສັ້ນທາງຂໍ້ມູນ'
       required: true
       type: text
