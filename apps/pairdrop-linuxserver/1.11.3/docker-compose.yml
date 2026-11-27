@@ -3,7 +3,7 @@ networks:
     external: true
 services:
   pairdrop:
-    image: "linuxserver/pairdrop:1.11.2"
+    image: "linuxserver/pairdrop:1.11.3"
     container_name: ${CONTAINER_NAME}
     restart: always
     networks:
