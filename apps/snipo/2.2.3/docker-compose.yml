@@ -1,6 +1,6 @@
 services:
   snipo:
-    image: "ghcr.io/mohamedelashri/snipo:2.2.3@sha256:b6edf058ca6514982582fb61d1d8b9d53eb77f93da1765f58135de0077a51931"
+    image: "ghcr.io/mohamedelashri/snipo:2.2.4@sha256:ff570c564f666a5adeba675e251c3ce836616f235a41136f4513847e70521f23"
     container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     user: "1000:1000"
